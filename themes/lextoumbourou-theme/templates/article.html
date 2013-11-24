@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+<div class="articles">
+    <a name="article"></a>
+    <article>
+        <header class="title">
+            <h2>
+                {{ article.date|strftime('%b %d, %Y') }}.
+                <a href="{{ SITE_URL }}/{{ article.url }}" rel="bookmark">{{ article.title }}</a>
+            </h2>
+            <div class="tagline">{{ article.tagline }}</div>
+        </div>
+
+        <div class="article_body">
+            {{ article.content }}
+        </div>
+    </article>
+</div>
+{% endblock %}
