@@ -173,6 +173,13 @@ blockquote.pull_quote {
     text-align:center;
 }
 
+pre {
+    display: block;
+    padding: .5em;
+    color: #333;
+    background: #f8f8ff;
+}
+
 /* Prettify override */
 pre.prettyprint {
     border: 0;
