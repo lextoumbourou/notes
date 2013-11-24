@@ -310,11 +310,6 @@ compile the CSS client-side, however, in production we would use
 
 And now, we should be good to go.
 
-* * * * *
-
-Twitter link that goes at the bottom of a blog post I will put
-[here][1].
-
   [Bootstrap]: http://twitter.github.com/bootstrap/
   [ways]: https://groups.google.com/forum/?fromgroups#!topic/twitter-bootstrap/GMMmF_nHEiI
   [friends]: http://stackoverflow.com/questions/10451317/twitter-bootstrap-customization-best-practices
@@ -324,6 +319,3 @@ Twitter link that goes at the bottom of a blog post I will put
   [this]: https://gist.github.com/1242040
   [Julia Elman]: http://www.caktusgroup.com/blog/2012/03/05/using-less-django/
   [Django Compressor]: https://github.com/jezdez/django_compressor
-  [1]: http://twitter.com/lexandstuff
-  [comments powered by Disqus.]: http://disqus.com/?ref_noscript
-  [comments powered by <span class="logo-disqus">Disqus</span>]: http://disqus.com

@@ -233,3 +233,12 @@ pre.prettyprint {
     padding: 10px;
     text-align: center;
 }
+
+.twitter-link {
+    text-align: center;
+    font-size: 50px;
+}
+
+.twitter-link a, .twitter-link a:visited {
+   color: #CECAB8;
+}

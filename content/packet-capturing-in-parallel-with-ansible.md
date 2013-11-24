@@ -76,8 +76,6 @@ Here's the entire Playbook:
 
 <script src="https://gist.github.com/lextoumbourou/7611499.js"></script>
 
-[&#x2764;](https://twitter.com/lexandstuff)
-
   [fire-and-forget]: http://www.ansibleworks.com/docs/playbooks2.html#id19
   [paused]: http://www.ansibleworks.com/docs/modules.html#pause
   [fetch]: http://www.ansibleworks.com/docs/modules.html#fetch

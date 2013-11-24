@@ -186,5 +186,3 @@ be found.
 ### [Summary (tl;dr)](#summary)
 
 To recap, zombie processes are not orphan processes, they are dead processes: processes that have finished executing and are waiting for the parent to reap them (collect information about their status). You are barking up the wrong tree trying to kill a zombie process because they are already dead. To get rid of a zombie process, kill its parent. Hope that helps.
-
-[&#x2764;](https://twitter.com/lexandstuff)
