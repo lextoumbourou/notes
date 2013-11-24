@@ -28,5 +28,7 @@ THEME = "themes/lextoumbourou-theme"
 
 STATIC_PATHS = ['images']
 
+DISQUS_SITENAME = 'lextoumbouroucom'
+
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
