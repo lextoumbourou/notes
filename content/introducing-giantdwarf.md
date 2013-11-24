@@ -1,4 +1,5 @@
 Title: Introducing GiantDwarf
+Tagline: A silly little Nagios bot for Campfire
 Slug: introducing-giantdwarf
 Date: 2012-07-31
 
@@ -43,8 +44,8 @@ More at [Github][].
   [Campfire API]: https://github.com/37signals/campfire-api
   [PyFire]: https://github.com/mariano/pyfire
   [Pinder]: https://github.com/rhymes/pinder
-  [image]: http://lexandstuff.com/static/lexandstuff/images/articles/giant_dwarf_warning.png
-  [1]: http://lexandstuff.com/static/lexandstuff/images/articles/giant_dwarf_critical.png
-  [2]: http://lexandstuff.com/static/lexandstuff/images/articles/giant_dwarf_fail.png
-  [3]: http://lexandstuff.com/static/lexandstuff/images/articles/giant_dwarf_ok.png
+  [image]: /images/giant_dwarf_warning.png
+  [1]: /images/giant_dwarf_critical.png
+  [2]: /images/giant_dwarf_fail.png
+  [3]: /images/giant_dwarf_ok.png
   [Github]: https://github.com/lextoumbourou/GiantDwarf

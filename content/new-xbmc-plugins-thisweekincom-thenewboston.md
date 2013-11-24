@@ -1,20 +1,18 @@
 Title: New XBMC plugins: ThisWeekIn.com & TheNewBoston
+Tagline: More XBMC plugins because I think you're a nice person
 Slug: new-xbmc-plugins-thisweekincom-thenewboston
 Date: 2012-08-09
 
+</p>
+
+<div class="intro">
 And *lo*, the Lord said let them watch videos from [This Week In
 Startups][] and [The New Boston][] in XBMC, and so it was.
+</div>
 
-</p>
-
-This Week In
-------------
-
-</p>
+### This Week In
 
 (from their website)
-
-</p>
 
 <strong>*ThisWeekIn</strong>, Inc. is a web television network covering
 a wide variety of topics from tech to entertainment. Produced out of our
@@ -24,28 +22,17 @@ speed on what’s happening this week with a fast and funny style.
 Informative and entertaining, ThisWeekIn is the place for whatever your
 interests may be.*
 
-</p>
-
-The New Boston
---------------
-
-</p>
+### The New Boston
 
 (from their website)
-
-</p>
 
 *Welcome to TheNewBoston, the ultimate source for free video tutorials
 on the internet! Here you can find all of TheNewBoston Tutorials
 organized in an orderly fashion in the Tutorials Section of the
 website.*
 
-</p>
-
 And then what?
 --------------
-
-</p>
 
 The plugins are available via the official repo. You install them like
 this.
