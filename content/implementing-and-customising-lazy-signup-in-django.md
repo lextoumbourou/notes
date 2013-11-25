@@ -9,7 +9,7 @@ Date: 2012-10-21
 In an internet saturated with new things, if you expect anybody to give
 your new web application a glance, then you'd better make the barrier to
 entry pretty damn low. Hence, Lazy Signup. If you're new to Lazy Sign
-up, then this [video][] should help.
+up, then this <a href="http://www.youtube.com/watch?v=uBT2niL2jKM">video</a> should help.
 
 </p>
 
@@ -60,8 +60,8 @@ tasks. On the file system, it looks a little something like this:
 
 As per the [docs][], *django-lazysignup* can be installed with Pip.
 
-:::bash
-lex@server:~/twotasks> pip install django-lazysignup
+    :::bash
+    lex@server:~/twotasks> pip install django-lazysignup
 
 Next, I added *lazysignup* to the *INSTALLED\_APPS* section of my
 settings.py file. Also, I ensured that*django.contrib.auth* was
@@ -345,9 +345,6 @@ Hopefully that helped you get up and running with *django-lazysignup*.
 
 Feel free to [let me know][] if there's any issues with my tutorial.
 
-Just as long as you don't follow me on [Twitter][].
-
-  [video]: http://www.youtube.com/watch?v=uBT2niL2jKM
   [Dan Fair]: https://github.com/danfairs/
   [django-lazysignup]: https://github.com/danfairs/django-lazysignup
   [two tasks per day]: http://www.justtwotasks.com
@@ -355,6 +352,3 @@ Just as long as you don't follow me on [Twitter][].
   [Github]: https://github.com/danfairs/django-lazysignup/tree/master/lazysignup/templates
   [here]: http://django-lazysignup.readthedocs.org/en/latest/usage.html#the-converted-signal
   [let me know]: mailto:lextoumbourou@gmail.com
-  [Twitter]: http://twitter.com/lexandstuff
-  [comments powered by Disqus.]: http://disqus.com/?ref_noscript
-  [comments powered by <span class="logo-disqus">Disqus</span>]: http://disqus.com

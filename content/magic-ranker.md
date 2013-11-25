@@ -6,7 +6,7 @@ Date: 2011-07-31
 ### Magic Formula
 
 I finished reading Joel Greenblatt's [The Little Book That Beats The
-Market][] a while back and thought it was excellent. Basically, it's
+Market](http://www.amazon.com/Little-Book-That-Beats-Market/dp/0471733067) a while back and thought it was excellent. Basically, it's
 value investing à la Warren Buffett, Benjamin Graham explained through
 easy analogy. Joel does an amazing job of explaining a complex idea such
 that a 12 year old could understand (or even me!). The premise, of
@@ -14,16 +14,15 @@ course, is to *buy great companies at bargain rates*. Joel describes a
 formula toward the end of the book that provides a strategy for listing
 these companies and buying them annually. Finally, if that wasn't simple
 enough for you (how simple do you need it exactly?), Joel runs a site
-[MagicFormulaInvesting.com][] that lists these companies and even offers
-a [fund][] that manages it all for you.
+[MagicFormulaInvesting.com](MagicFormulaInvesting.com) that lists these companies and even offers
+a [fund](http://http//www.formulainvesting.com/) that manages it all for you.
 
 This is awesome if you're in North America and investing in NASDAQ, but
-not so if your house is upside down in Australia. Hence,
-[MagicRanker][].
+not so if your house is upside down in Australia. Hence, [MagicRanker][].
 
 ### Magic Ranker
 
-[![image][]][]  
+[![image][]]  
 
 MagicRanker, in brief, is what's in the book but for the ASX plus some
 additives and artificial colours. It'd probably be easy to extend to
@@ -42,8 +41,6 @@ I've added a couple of features like having the average ROE over a 5 /
 course they're not necessarily the cheapist) and a debt percentage
 filter. Feel free to ignore those options.
 
-[![image][1]][]
-
 Lastly, I automated the whole thing with a couple of cronjobs:
 
 -   **Daily cron** scrapes the web for ROE, P/E and ranks the stocks.  
@@ -61,15 +58,12 @@ financial tool. I'm not sure if I'll invest real money yet, might just
 setup an E-trade watchlist and see how it goes. You should consider
 doing that too.
 
-So, here it is: [MagicRanker.com][MagicRanker].
+So, here it is: [MagicRanker.com](http://MagicRanker.com).
 
-  [The Little Book That Beats The Market]: http://www.amazon.com/Little-Book-That-Beats-Market/dp/0471733067
-  [MagicFormulaInvesting.com]: http://www.magicformulainvesting.com
-  [fund]: http://http://www.formulainvesting.com/
   [MagicRanker]: http://www.magicranker.com
   [image]: /images/magic_ranker_home.png
   [![image][]]: http://magicranker.com
   [1]: /images/magic_ranker_example.png
-  [![image][1]]: http://www.magicranker.com/interface/process?roe_options=5+Year+Average&pe_options=5+or+more&market_cap_options=Over+500M&debt_options=Below+50%25&limit=30&main_submit=undefined&roe_check=Yes&debt_check=Yes&market_cap_check=Yes&pe_check=Yes
+  [![image][1]]: http://magicranker.com
   [YUI]: http://developer.yahoo.com/yui/
   [Blueprint]: http://blueprintcss.org/
