@@ -28,13 +28,23 @@ require tweaking).
 1\. First I utilised Ansible's host variables to create a unique file
 name for each server.
 
-<script src="https://gist.github.com/lextoumbourou/7623119.js"></script>
+    :::yaml
+    - hosts: all
+      sudo: yes
+      vars:
+          cap_file: packet_capture_{{ ansible_hostname }}_{{ ansible_date_time['epoch'] }}.cap
+
 
 2\. Then I kicked off a Tcpdump on each server in parallel. (Ansible
 runs 5 parallel processes by default, this can be increased by passing
 the `--forks=10` parameter to the `ansible-playbook` script.
 
-<script src="https://gist.github.com/lextoumbourou/7623122.js"></script>
+    :::yaml
+      tasks:
+         - name: start tcpdump
+           command: /usr/sbin/tcpdump -i eth0 -s 0 -w /tmp/${cap_file}
+           async: 60
+           poll: 0
 
 As well as running Playbooks against servers in parallel, tasks can be
 run asynchronously by setting the `async` (maximum runtime) and `poll`
@@ -45,11 +55,15 @@ pausing, allowing me to kill it later on in the Playbook.
 3\. Next the script is [paused][] for a minute allowing the testers to
 run through their failing tests.
 
-<script src="https://gist.github.com/lextoumbourou/7623129.js"></script>
+    :::yaml
+        - pause: minutes=1 prompt="pause for 60 seconds or press Ctrl + c then c to continue"
 
 4\. Then I kill off the tcpdump command with pkill.
 
-<script src="https://gist.github.com/lextoumbourou/7623137.js"></script>
+    :::yaml
+        - name: kill tcpdump
+          command: /usr/bin/pkill tcpdump
+          ignore_errors: yes
 
 5\. Lastly, I can compress the logs and copy them to my localhost using
 the [fetch][] module. The `flat` parameter copies up each file
@@ -57,20 +71,33 @@ individually. Without it, the files are stored in a
 `${server_name}/{$path}/file` directory structure, ensuring files with
 the same name don't overwrite each other.
 
-<script src="https://gist.github.com/lextoumbourou/7623141.js"></script>
+    :::yaml
+        - name: compress capture file
+          command: gzip ${cap_file} chdir=/tmp
+     
+        - name: copy logs to local boxes webroot
+          fetch: src=/tmp/${cap_file}.gz dest=/var/www/ flat=yes
 
 It's probably a good idea to clean up the files on the remote server
 too.
 
-<script src="https://gist.github.com/lextoumbourou/7623146.js"></script>
+    :::yaml
+        - name: remove files from server
+          file: path=/tmp/${cap_file}.gz state=absent
+
 
 6\. Now I run it from the command line...
 
-<script src="https://gist.github.com/lextoumbourou/7623149.js"></script>
+    :::bash
+    (ENV)> ansible-playbook parallel-tcpdump.yml -i hosts
 
 And like magic:
 
-<script src="https://gist.github.com/lextoumbourou/7623153.js"></script>
+    :::bash
+    (ENV)> ls -1 /var/www/ | grep packet_capture
+    packet_capture_server1_1376450197.cap.gz
+    packet_capture_server2_1376450500.cap.gz
+    packet_capture_server3_1376451234.cap.gz
 
 Here's the entire Playbook:
 
