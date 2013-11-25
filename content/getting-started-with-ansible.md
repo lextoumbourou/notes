@@ -22,20 +22,20 @@ good opportunity.
 
 </p>
 
-[Why Ansible?][]  
-[My Requirements][]  
-[Part 1: Preparing my Inventory][]  
-[Part 2: Configuring Users and Groups with Modules][]  
-[Part 3: Automating Tasks Using Playbooks][]  
-[Part 4: Using Templates To Setup Privileges and SSH Security][]  
-[Part 5: Source Control][]  
-[Summary][]  
+* [Why Ansible?][]  
+* [My Requirements][]  
+* [Part 1: Preparing my Inventory][]  
+* [Part 2: Configuring Users and Groups with Modules][]  
+* [Part 3: Automating Tasks Using Playbooks][]  
+* [Part 4: Using Templates To Setup Privileges and SSH Security][]  
+* [Part 5: Source Control][]  
+* [Summary][]  
 
 * * * * *
 
 <a name="why-ansible"></a>
 
-### Why Ansible?
+### [Why Ansible?](#why-ansible)
 
 In short: simplicity. Ansible is the kind of tool that you just pick up
 and use; the learning curve is minimal. All the communication is handled
@@ -48,7 +48,7 @@ biggest draw card, the source code is written in Python.
 
 <a name="requirements"></a>
 
-### My Requirements
+### [My Requirements](#requirements)
 
 Before beginning my Ansible journey, I set aside some goals to guide the
 process:
@@ -73,7 +73,7 @@ in the interest of brevity, let's keep it...brief.
 
 <a name="part-1"></a>
 
-### Part 1: Preparing my Inventory
+### [Part 1: Preparing my Inventory](#part-1)
 
 I started by creating a new Ubuntu VM at Linode and setting a default
 password.
@@ -105,7 +105,8 @@ list all my servers in production).
 ##### /etc/ansible/hosts
 
     :::ini
-    [webservers]prodweb03
+    [webservers]
+    prodweb03
 
 The host file can also include additional per-host and per-group
 variables which are useful for configuring things like network settings
@@ -125,7 +126,7 @@ I then tested connectivity to the web servers using the `ping` module
 
 <a name="part-2"></a>
 
-### Part 2: Configuring Users and Groups with Modules
+### [Part 2: Configuring Users and Groups with Modules](#part-2)
 
 Ansible has a reasonable library of modules built-in which can be
 executed via Playbooks or directly via the command line. The latter's
@@ -155,7 +156,8 @@ commands to Playbooks.
 
 Here I created a group called `admin`, with a GID of 1000.
 
-lex@desktop:/etc/ansible> ansible webservers -m group -a "gid=1000 name=admin state=present" -u root --ask-pass
+    :::bash
+    lex@desktop:/etc/ansible> ansible webservers -m group -a "gid=1000 name=admin state=present" -u root --ask-pass
 
 Hopefully, the arguments I'm passing to the module are self-explanatory.
 If not, consult the amazingly simple [documentation][].
@@ -179,7 +181,7 @@ server(s) as myself.
 
 <a name="part-3"></a>
 
-### Part 3: Automating Tasks Using Playbooks
+### [Part 3: Automating Tasks Using Playbooks](#part-3)
 
 Playbooks are [YAML][] configuration files that define a set of tasks or
 *Plays* to be executed on the remote server. Following Ansible's [Best
@@ -282,7 +284,7 @@ it from within my main Playbook.
 
 <a name="part-4"></a>
 
-### Part 4: Using Templates To Setup Privileges and SSH Security
+### [Part 4: Using Templates To Setup Privileges and SSH Security](#part-4)
 
 Ansible relies on the very powerful Jinja2 engine to handle templating.
 In this last part of the tutorial, I'm going to utilise templates to
@@ -422,7 +424,7 @@ And we're done.
 
 <a name="part-5"></a>
 
-### Part 5: Source Control
+### [Part 5: Source Control](#part-5)
 
 Lastly, I put my entire repo in source control.
 
@@ -438,7 +440,7 @@ access to them from anywhere.
 
 <a name="summary"></a>
 
-### Summary
+### [Summary](#summary)
 
 In conclusion, Ansible is awesome. Straight-forward, easy,
 self-documenting and, dare I say it, fun. If you're finding yourself
