@@ -1,6 +1,6 @@
 Title: Integrating Bootstrap with Django using Less and Fabric
 Tagline: My quest to find the "perfect" way to integrate and customise Bootstrap using Django
-Slug: integrating-bootstrap-with-django-using-less-and-fabric
+Slug: integrating-bootstrap-django-using-less-and-fabric
 Date: 2012-11-11
 
 <p>
@@ -64,7 +64,7 @@ ya'll.
     lex@server:~/> cd project/templates/static
     lex@server:~/project/templates/static/> mkdir less
 
-\2. Then, I cloned the Bootstrap repo and copied the `less` directory
+2\. Then, I cloned the Bootstrap repo and copied the `less` directory
 into my project's directory, renaming it to `bootstrap`. Like so:
 
     :::bash
@@ -161,9 +161,9 @@ following lines of html.
 
 ##### project/templates/base.html
 
-:::html
-<link rel="stylesheet/less" type="text/css" media="all" href="{{STATIC_URL}}less/theme.less" />
-<script src="{{STATIC_URL}}js/less-1.3.1.min.js"></script>
+    :::html
+    <link rel="stylesheet/less" type="text/css" media="all" href="{{STATIC_URL}}less/theme.less" />
+    <script src="{{STATIC_URL}}js/less-1.3.1.min.js"></script>
 
 And that works! So that's requirement 1 complete. On to the second.
 
@@ -278,7 +278,7 @@ completeness.
         ('text/less', 'lessc {infile} {outfile}'),
     )
 
-5\. Since I am using Django’s staticfiles contrib app, I have to add
+5\. Since I am using Django's staticfiles contrib app, I have to add
 Django Compressor’s file finder to the `STATICFILES_FINDERS` tuple.
 
     :::python
