@@ -219,7 +219,7 @@ for 1 second and a parent process that'll sleep indefinitely.
     if pid == 0:
         exit("Child: Goodbye, cruel world")
     else:
-        print "Parent: I created a child with pid", pid,
+        print "Parent: I created a child with pid", pid,\
               "and now all I want to do is sleep..."
         while True:
             sleep(1)
