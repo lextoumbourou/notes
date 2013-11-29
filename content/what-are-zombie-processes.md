@@ -219,7 +219,7 @@ for 1 second and a parent process that'll sleep indefinitely.
     if pid == 0:
         exit("Child: Goodbye, cruel world")
     else:
-        print "Parent: I created a child:", pid\
+        print "Parent: I created a child with pid", pid,
               "and now all I want to do is sleep..."
         while True:
             sleep(1)
@@ -228,7 +228,7 @@ for 1 second and a parent process that'll sleep indefinitely.
 
     :::bash
     > python fork_zombie.py
-    Parent: I created a child and now all I want to do is sleep...
+    Parent: I created a child with pid 26556 and now all I want to do is sleep...
     Child: Goodbye cruel world!
 
 Now, in a separate terminal instance (or a separate Screen, Tmux or
