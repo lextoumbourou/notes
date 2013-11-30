@@ -15,7 +15,7 @@ start.
 
 ### The setup
 
-The expectations for plugins would be that the class's name matches its
+The expectations for plugins would be that the class's name matches the
 file's name, PascalCased after removing the *plugin\_* prefix. For
 example, for module *plugin\_do\_something.py*, the class name will be
 *DoSomething()*. So, the setup should look something like this:
