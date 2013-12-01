@@ -87,7 +87,11 @@ Most of this week however was set aside to talk about the homework assigment, an
 
 ### Week 8
 
-The final module covered performing event studies with Bollinger Bands and back testing with Bolliger Bands as two homework assignments. I wish I had had more time to spend on them but ended up knocking together a half baked solution in order to pass the exam the night before my holiday. I'm not proud of the code, but I did get a sense of exactly what back testing was. This also gave me some ideas for ways to improve MagicRanker (coming soon).
+The final module. Centered around two homework assignments building from previous   week's work. Where, in the first, we were to perform an event study based on Bollinger bands and, in the second, feed that data into a market simulator.
+
+I wish I had had more time to spend on them but ended up knocking together a half baked solution in order to pass the exam the night before I left for a weeklong holiday with my girlfriend. I'm not proud of the code, and I doubt I would have done very well if an instructor graded it, but I got it done and passed. This also gave me some ideas for ways to improve MagicRanker (coming soon).
+
+The Week concludes by covering Jensen's Alpha, a measure of evaluting mutual fund managers. I had difficulty following the lesson and also limited time. Then, elaborates on back testing, including the risks, components and considerations (a very useful video) and a small module on Machine Learning.
 
 ## What I Loved About It
 
