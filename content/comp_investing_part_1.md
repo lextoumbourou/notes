@@ -6,18 +6,57 @@ Status: draft
 </p>
 
 <div class="intro">
-A couple of weeks ago I completed my first Coursera course, Computational Investing, Part I run by Tucker Balch a professor at 	Georgia Tech. I have been running a site for a couple of years now called <a href="http://magicranker.com">MagicRanker</a>. Essentially a very simple implementation of a thing called The Magic Formula from a book on investing I read. I have a decent sum of money invested in the market following this approach so I guess you could say I have some experience with "computational investing". But if you were to say that I had any idea what I was doing, you'd be wrong. So, when I saw the course was available on Coursera I leaped at the idea.
+I was franctically trying debug an ugly script that was supposed simulate an event study based on Bollinger band indicators.
+
+<p>
+
+"Just fucking do it later." Kelly told me. "Our plane is leaving in like 2 hours."
 
 </p>
 
-The purpose of this article is to provide a sort of "review" of my experience in both the course content and Coursera as a service.
+<p>
+
+I started making packing noises by kicking my bag with my feet while I scoured the forum for anything that looked like an answer. The last couple of weeks had been exhausting and I was looking forward to doing nothing but destroy brain cells for the entirty of our holiday; I was not going to let this course be a third wheel.
+
+</p>
+
+<p>
+
+I knew I was close. I had understood the task but I couldn't get my simulator to match the expected output.
+
+</p>
+
+<p>
+
+Then, some beautiful human called Gene reminded me that there should be no BUY orders in the first and last 20 days. Honestly, I didn't quite understand why at the time, but I cut 20 days and punched the values into the exam and...
+
+</p>
+
+I passed. Fuck you Mr Denison, my high school math teacher who hated me so badly.
 </div>
+
 
 ## About the Course
 
-It's run by a Professor at Georgia Institure of Technology called Tucker Balch. Tucker is an ex-fighter pilot (according to his opening video) who has a PhD in Robotics & Machine Learning and is the founder of a quantite analysis company called Lucena Research.
+Computational Investing, Part I is instructed by Tucker Balch, a professor at Georgia Institure of Technology. Baltch is an ex-fighter pilot (according to his opening video) who has a PhD in Robotics and Machine Learning and is the founder of a quantative analysis company called Lucena Research.
 
-It's aimed primiarly at beginners to the world of Computational Investing but who have a bit of experience programming. 
+The course is "intended for folks who have a strong programming background, but who are new to finance and investing".
+
+
+## Prequistes
+
+The prerequites fit my description pretty closely.
+
+I have been running a site for a couple of years now called <a href="http://magicranker.com">MagicRanker</a>. Essentially a very simple implementation of a thing called The Magic Formula from a book on investing I read. I have a decent sum of money invested in the market following this approach so I guess you could say I have some experience with "computational investing". But if you were to say that I had any idea what I was doing, you'd be wrong.
+
+## My Background
+
+I went into this course with absolute *zero* financial experience. I have read a couple of books on value investing: [Peter Lynch](http://www.amazon.com/Beating-Street-Peter-Lynch/dp/0671891634), [Ben Graham](http://en.wikipedia.org/wiki/The_Intelligent_Investor) and, from the last paragraph, The Magic Ranker. So, I'm far from an expert but I guess I have a slight penchant toward it.
+
+I have spent the last couple of years coding mostly in Python, and I feel pretty comfortable with it. I've got most of the Python internals down pat but hadn't played with many of the data science tools like NumPy and Pandas much. I'm also fairly comfortable with intermediary Computer Science topics, though, most grad-level Comp Sci majors would run rings around me.
+
+I also have very little formal education. My education has mostly been on-the-job and I currently work as a Senior Engineer. I have completed a number of MOOCs and half-completed a number more. <span class="pull-right">Despite the persistant critisims, the MOOC phenomena over the last couple of years has honestly improved almost every part of my life and I'm indebt to the people who are willing to take the time to change us for the better.</span>
+
 
 ## Signature Track
 
@@ -25,15 +64,7 @@ Tucker's class was one of the first Coursera courses to utilise the [Signature T
 
 By being slightly out of pocket, I definitely felt a motivation to finish and it felt over all a little more "official". It's difficult to tell your friends that you can't drink with them because you've got homework due when you're completeing a self-paced, free online course, but <span class="pull_quote right">by being a bit out of pocket through Signature Track, it was easier to pass on social events in favour of the course.</span>
 
-## Prequistes
-
-The prerequites fit my description pretty closely: "intended for folks who have a strong programming background, but who are new to finance and investing".
-
-I went into this course with absolute *zero* financial experience. I have read a couple of books on value investing: [Peter Lynch](http://www.amazon.com/Beating-Street-Peter-Lynch/dp/0671891634), [Ben Graham](http://en.wikipedia.org/wiki/The_Intelligent_Investor) and, from the last paragraph, The Magic Ranker. So, I'm far from an expert but I guess I have a slight penchant toward it.
-
-I have spent the last couple of years coding mostly in Python, and I feel pretty comfortable with it. I've got most of the Python internals down pat but hadn't played with many of the data science tools like NumPy and Pandas much. I'm also fairly comfortable with intermediary Computer Science topics, though, most grad-level Comp Sci majors would run rings around me.
-
-I also have very little formal education. My education has mostly been on-the-job and I currently work as a Senior Engineer. I have completed a number of MOOCs and half-completed a number more. <span class="pull-right">Despite the persistant critisims, the MOOC phenomena over the last couple of years has honestly improved almost every part of my life and I'm indebt to the people who are willing to take the time to change us for the better.</span>
+Interestingly, according to Baltch's blog, the "completion rate for MOOC students who invested $40.00 at the beginning of the course for a validated certificate was 99.0%." A good sign for MOOCs, who, it seems have been getting a bit of flack for their low completion rates.
 
 ## Course Overview
 
@@ -101,13 +132,15 @@ Two of the most incredible libraries I have ever played with. With the little bi
 
 I was also quite thankful that the homework was relatively easy. Hard enough to keep me thinking but, for a person with a decent amount of programming experience, definitely passable.
 
+I also thoroughly enjoyed the practical side of the course, far more so than the theoretical side.
+
 ## What I Would Live to See Improved
 
-The course material was a little dry and, due to my Gen Y attention span, I found the lectures a little long. I think 5 mins is the max each lecture needs to be. I really like the way Udacity adds questions along the way to test your knowledge of each part. The course started with a couple of them but by the end, they seized.
+The course material was a little dry and, due to my Gen Y attention span, I found the lectures a little long. I think 5 mins is the max each lecture needs to be. Udacity's model of providing question-based "checkpoints" along the way, really helps to keep engagement up. The course had a couple of them in earlier videos but they seemed to disappear completely by module two.
 
 ### Coursera Interface
 
-Yick. Not a big fan. I hated how the video couldn't be made full screen. But, I worked out how to download them to my local machine and found it preferable to using the interface
+I found it quite distracting that the video couldn't be made full screen via the UI. However, the videos are made downloadable and I found it preferable to using the interface
 
 ### Forums - piazza
 
@@ -115,4 +148,4 @@ I find it a little disorientating. Especially coming from Udacity's forum system
 
 ## Summary
 
-Tucker was saying that the content will be revamped for the next course. When it is and if you've got an interest in finance and a reasonable programming background, you will be laughing.
+Tucker was saying that the content will be revamped for the next course. When it is and if you've got an interest in finance and a reasonable programming background, you will almost certainly find this course worthwhile. All I can say is, thank you so much to the whole team for the opportunity and I cannot wait for Part 2!
