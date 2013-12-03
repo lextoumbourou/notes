@@ -35,7 +35,7 @@ name for each server.
           cap_file: packet_capture_{{ ansible_hostname }}_{{ ansible_date_time['epoch'] }}.cap
 
 
-2\. Then I kicked off a Tcpdump on each server in parallel. (Ansible
+2\. Then I kicked off a Tcpdump on each server in parallel. Ansible
 runs 5 parallel processes by default, this can be increased by passing
 the `--forks=10` parameter to the `ansible-playbook` script.
 
