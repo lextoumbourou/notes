@@ -6,50 +6,44 @@ Status: draft
 </p>
 
 <div class="intro">
-I was franctically trying debug an ugly script that was supposed simulate an event study based on Bollinger band indicators.
+I was trying to debug an ugly script that was supposed to simulate an event study based on Bollinger band indicators.
 
 <p>
 
-"Just fucking do it later." Kelly told me. "Our plane is leaving in like 2 hours."
+"Just fucking do it later," Kelly yelled from the other room, "Our plane is leaving in like 2 hours. You haven't even packed."
+
+"Okay, okay!"
 
 </p>
 
 <p>
-
-I started making packing noises by kicking my bag with my feet while I scoured the forum for anything that looked like an answer. The last couple of weeks had been exhausting and I was looking forward to doing nothing but destroy brain cells for the entirty of our holiday; I was not going to let this course be a third wheel.
-
+I stuffed a couple of shirts into the bag, then sat down and scoured the course's forum looking for help. The last couple of weeks had been exhausting marathon of work and study and I was determined to leave every part of it behind when the plane took off.I knew I was close. I was sure I had understood the task but I couldn't get my simulator to match the expected output. 
 </p>
 
 <p>
 
-I knew I was close. I had understood the task but I couldn't get my simulator to match the expected output.
-
+Then Gene entered my life. Gene reminded me that there should be no BUY orders in the first and last 20 days. I remembered something about that in one of the videos and, honestly, I didn't understand why that was the case, but I cut 20 days off the start and end of the data sequence, punched the values into the exam and...
 </p>
 
 <p>
-
-Then, some beautiful human called Gene reminded me that there should be no BUY orders in the first and last 20 days. Honestly, I didn't quite understand why at the time, but I cut 20 days and punched the values into the exam and...
-
+"YOU PASSED".
 </p>
 
-I passed. Fuck you Mr Denison, my high school math teacher who hated me so badly.
+<p>
+I might have forgotten to pack a single pair of socks but I passed.
+</p>
 </div>
 
 
 ## About the Course
 
-Computational Investing, Part I is instructed by Tucker Balch, a professor at Georgia Institure of Technology. Baltch is an ex-fighter pilot (according to his opening video) who has a PhD in Robotics and Machine Learning and is the founder of a quantative analysis company called Lucena Research.
+Computational Investing, Part I is instructed by Tucker Balch. Tucker is a professor at Georgia Institure of Technology, an ex-fighter pilot (according to his opening video), the founder of a quantative analysis company called Lucena Research and has a PhD in Robotics and Machine Learning.
 
-The course is "intended for folks who have a strong programming background, but who are new to finance and investing".
-
-
-## Prequistes
-
-The prerequites fit my description pretty closely.
-
-I have been running a site for a couple of years now called <a href="http://magicranker.com">MagicRanker</a>. Essentially a very simple implementation of a thing called The Magic Formula from a book on investing I read. I have a decent sum of money invested in the market following this approach so I guess you could say I have some experience with "computational investing". But if you were to say that I had any idea what I was doing, you'd be wrong.
+I came across the course through some comments on Hacker News and signed up almost immediately. The course page notes that it is "intended for folks who have a strong programming background, but who are new to finance and investing". I would say that's a reasonable fit.
 
 ## My Background
+
+I have been running a site for a couple of years now called <a href="http://magicranker.com">MagicRanker</a>. Essentially a very simple implementation of a thing called The Magic Formula from a book on investing I read. I have a decent sum of money invested in the market following this approach so I guess you could say I have some experience with "computational investing". But if you were to say that I had any idea what I was doing, you'd be wrong.
 
 I went into this course with absolute *zero* financial experience. I have read a couple of books on value investing: [Peter Lynch](http://www.amazon.com/Beating-Street-Peter-Lynch/dp/0671891634), [Ben Graham](http://en.wikipedia.org/wiki/The_Intelligent_Investor) and, from the last paragraph, The Magic Ranker. So, I'm far from an expert but I guess I have a slight penchant toward it.
 
