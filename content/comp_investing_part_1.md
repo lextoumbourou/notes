@@ -21,7 +21,7 @@ I was trying to debug an ugly script. It was supposed to simulate an event study
 </p>
 
 <p>
-I stuffed a couple of shirts into the bag, then sat down to scour the course's forum for help. The last couple of weeks had been an exhausting marathon of work and study. I was determined to leave every part of it behind for the week. I knew I was close to the answer. I had understood the task, I was certain, but the interpreter was being stubborn.
+I stuffed a couple of shirts into the bag, then sat down to search the course's forum for help. The last couple of weeks had been a marathon of work and study and I was determined to leave it all behind for the week. I knew I was close to the answer. I had understood the task, I was certain, but the interpreter was being stubborn.
 </p>
 
 <p>
@@ -55,33 +55,33 @@ I heard a horn in the driveway.
 
 Computational Investing, Part I was instructed by Tucker Balch, a professor at Georgia Institure of Technology. Tucker is an ex-fighter pilot (according to his opening video), the founder of [Lucena Research](https://lucenaresearch.com/) and has a PhD in Robotics and Machine Learning.
 
-The course page notes that it is "intended for folks who have a strong programming background, but who are new to finance and investing". For me, that's a fairly accurate description.
+The course page notes that it is "intended for folks who have a strong programming background, but who are new to finance and investing". For me, that's a close enough description.
 
 <a name="my-background"></a>
 
 ## [My Background](#my-background)
 
-I came across the course through someone's comment on Hacker News and signed up immediately.  I have been running a site for a couple of years called [MagicRanker](http://en.wikipedia.org/wiki/Efficient-market_hypothesis), a very simple implementation of a thing called the Magic Formula from a small book called [The Little Book That Beats The Market](http://www.amazon.com/Little-Still-Market-Books-Profits/dp/0470624159). I have a decent amount of money invested in the market following this approach so I guess you could say I have some experience with "computational investing". But, it would be wrong of me to suggest I had any idea what I was doing.
+I came across the course through someone's comment on Hacker News and signed up immediately.  I have been running a site for a couple of years called [MagicRanker](http://en.wikipedia.org/wiki/Efficient-market_hypothesis), a simple implementation of a thing called the Magic Formula from a small book called [The Little Book That Beats The Market](http://www.amazon.com/Little-Still-Market-Books-Profits/dp/0470624159). I have money invested in the market following this approach so I guess you could say I have experience with "computational investing". But, it would be wrong of me to say I had any idea what I was doing.
 
-I have, however, spent the last couple of years coding mostly in Python, and I'm pretty comfortable with it. So, it was lucky for me that the course's projects were all Python-based. At the time though I hadn't played with the cornerstone data science libraries like NumPy and Pandas. I'm also fairly comfortable with intermediary Computer Science topics.
+I have, however, spent the last couple of years coding mostly in Python and I'm pretty comfortable with it. So, it was lucky for me that the course's projects were all Python-based. At the time though I hadn't played with the cornerstone data science libraries like NumPy and Pandas. I'm also comfortable with intermediary Computer Science topics.
 
 <a name="signature-track"></a>
 
 ## [Signature Track](#signature-track)
 
-Tucker's class was one of the first Coursera courses to utilise the [Signature Track](http://blog.coursera.org/post/40080531667/signaturetrack). Which, for a $50 (AUS) fee, provides identity verification through ID scans and "keystroke biometric" profiling (apparently which turns out to be a [thing](http://en.wikipedia.org/wiki/Efficient-market_hypothesis)!)</a> and, therefore, is able to give you a certificate with a little more credibility. I decided to sign up for it and I'm glad I did. Like a lot of people, I imagine, one of the challenges in completing MOOCs is maintaining motivation until the course end. <blockquote class="pull_quote right">By being slightly out of pocket though Signature Track, I felt a sense of commitment that helped me stay focused to the end.</blockquote> Plus, I feel like it felt more "official".
+Tucker's class was one of the first Coursera courses to utilise the [Signature Track](http://blog.coursera.org/post/40080531667/signaturetrack). Which, for a $50 (AUS) fee, provides identity verification through ID scans and "keystroke biometric" profiling (apparently which turns out to be a [thing](http://en.wikipedia.org/wiki/Efficient-market_hypothesis)!)</a> and is therefore able to give you a certificate with a little credibility. I decided to sign up for it and I'm glad I did. My problem with MOOCs is I often can't maintain motivation until the course end. <span class="pull_quote right">By being slightly out of pocket though Signature Track, I felt a sense of commitment that helped me stay focused to the end.</span> Plus, I feel like it felt more "official".
 
-Interestingly, according to Tucker's blog, the "completion rate for MOOC students who invested ... at the beginning of the course for a validated certificate was 99.0%." A good sign for MOOCs, who, journalists seem to love to bemoan for their apparently [low completion rates](http://www.timeshighereducation.co.uk/news/mooc-completion-rates-below-7/2003710.article).
+Interestingly, according to Tucker's blog, the "completion rate for MOOC students who invested ... at the beginning of the course for a validated certificate was 99.0%." A good sign for MOOCs who journalists seem to love to bemoan for their apparently [low completion rates](http://www.timeshighereducation.co.uk/news/mooc-completion-rates-below-7/2003710.article).
 
 <a name="course-overview"></a>
 
 ## [Course Overview](#course-overview)
 
-Week 1 begun with an overview of the course. It was mentioned in one of the first slides that "students will grade each other". I'd heard about this before and was interested to see how well it works. Turned out, however, that all assigments were server graded. Given my extremely busy life circumstances, I was thankful.
+Week 1 begun with an overview of the course. It was mentioned in one of the first slides that "students will grade each other". I'd heard about this before and was interested to see if it works. Turned out, however, that all assigments were server graded. Given my busy circumstances, I was thankful.
 
-The next lot of modules covered the basics of hedge fund management, including how managers are paid and how they attract investors. Then, a glimpse of what to expect from the rest of the course.
+The next modules covered the basics of hedge fund management, including how managers are paid and how they attract investors. Then a glimpse of what to expect from the rest of the course.
 
-Week 2 covered methods of estimating company value using balance sheet metrics, news and other information. Event studies are discussed.
+Week 2 opened with methods of estimating company value using balance sheet metrics, news and other information. Event studies were discussed.
 
 The [Capital asset pricing module](http://en.wikipedia.org/wiki/Capital_asset_pricing_model) is introduced detailing the implications of it for investors. If I'm honest, I found the presentation of the topic a little dry and hard to follow. For me, [MBA Bullshit](http://www.mbabullshit.com) had a far simpler [CAPM Introductory series](http://www.youtube.com/watch?v=LWsEJYPSw0k).
 
