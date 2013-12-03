@@ -6,55 +6,54 @@ Status: draft
 </p>
 
 <div class="intro">
-I was trying to debug an ugly script that was supposed to simulate an event study based on Bollinger band indicators.
+I was frantically trying to debug an ugly script. It was supposed to simulate an event study based on Bollinger band indicators, but I couldn't get the output to match the example. Mine said the Sharpe ratio was somewhere above 2, it was supposed to be 0.878.
 
 <p>
 
-"Just fucking do it later," Kelly yelled from the other room, "Our plane is leaving in like 2 hours. You haven't even packed."
-
-"Okay, okay!"
+"Just fucking do it later," Kelly yelled from the other room, "Our plane is leaving in like 2 hours. You haven't even started packing."
 
 </p>
 
 <p>
-I stuffed a couple of shirts into the bag, then sat down and scoured the course's forum looking for help. The last couple of weeks had been exhausting marathon of work and study and I was determined to leave every part of it behind when the plane took off.I knew I was close. I was sure I had understood the task but I couldn't get my simulator to match the expected output. 
+
+"I am packing!"
+
+</p>
+
+<p>
+I stuffed a couple of shirts into the bag, then sat down to scour the course's forum for help. The last couple of weeks had been exhausting marathon of work and study. I was determined to leave every part of it behind for a week or so. I knew I was close to the answer. I had understood the task, I was certain, but why was the computer being cruel?
 </p>
 
 <p>
 
-Then Gene entered my life. Gene reminded me that there should be no BUY orders in the first and last 20 days. I remembered something about that in one of the videos and, honestly, I didn't understand why that was the case, but I cut 20 days off the start and end of the data sequence, punched the values into the exam and...
+Then Gene entered my life. Gene posted on the forum without an avatar. Gene had problems on his own, but he had reminded me that there should be no BUY orders in the first and last 20 days. I remembered something about that in one of the videos and, honestly, I didn't understand why that was the case, but I cut 20 days off the start and end of the data sequence, punched the values into the exam and...passed.
 </p>
 
 <p>
-"YOU PASSED".
+I heard a horn in the driveway.
 </p>
 
 <p>
-I might have forgotten to pack a single pair of socks but I passed.
+"The cab is here!", she yelled.
 </p>
 </div>
 
 
 ## About the Course
 
-Computational Investing, Part I is instructed by Tucker Balch. Tucker is a professor at Georgia Institure of Technology, an ex-fighter pilot (according to his opening video), the founder of a quantative analysis company called Lucena Research and has a PhD in Robotics and Machine Learning.
+Computational Investing, Part I is instructed by Tucker Balch. Tucker is a professor at Georgia Institure of Technology, an ex-fighter pilot (according to his opening video), the founder Lucena Research and has a PhD in Robotics and Machine Learning.
 
-I came across the course through some comments on Hacker News and signed up almost immediately. The course page notes that it is "intended for folks who have a strong programming background, but who are new to finance and investing". I would say that's a reasonable fit.
+I came across the course through someone's comment on Hacker News, I think, and signed up almost immediately. The course page notes that it is "intended for folks who have a strong programming background, but who are new to finance and investing". I would say that's a reasonable fit.
 
 ## My Background
 
-I have been running a site for a couple of years now called <a href="http://magicranker.com">MagicRanker</a>. Essentially a very simple implementation of a thing called The Magic Formula from a book on investing I read. I have a decent sum of money invested in the market following this approach so I guess you could say I have some experience with "computational investing". But if you were to say that I had any idea what I was doing, you'd be wrong.
+I have been running a site for a couple of years now called <a href="http://magicranker.com">MagicRanker</a>. Essentially a very simple implementation of a thing called The Magic Formula from a book on investing called <a href="http://www.amazon.com/Little-Still-Market-Books-Profits/dp/0470624159">The Little Book That Beats The Market</a>. I have a decent sum of money invested in the market following this approach so I guess you could say I have some experience with "computational investing". But it would be wrong of me to even hint I had any idea what I was doing in the finance world.
 
-I went into this course with absolute *zero* financial experience. I have read a couple of books on value investing: [Peter Lynch](http://www.amazon.com/Beating-Street-Peter-Lynch/dp/0671891634), [Ben Graham](http://en.wikipedia.org/wiki/The_Intelligent_Investor) and, from the last paragraph, The Magic Ranker. So, I'm far from an expert but I guess I have a slight penchant toward it.
-
-I have spent the last couple of years coding mostly in Python, and I feel pretty comfortable with it. I've got most of the Python internals down pat but hadn't played with many of the data science tools like NumPy and Pandas much. I'm also fairly comfortable with intermediary Computer Science topics, though, most grad-level Comp Sci majors would run rings around me.
-
-I also have very little formal education. My education has mostly been on-the-job and I currently work as a Senior Engineer. I have completed a number of MOOCs and half-completed a number more. <span class="pull-right">Despite the persistant critisims, the MOOC phenomena over the last couple of years has honestly improved almost every part of my life and I'm indebt to the people who are willing to take the time to change us for the better.</span>
-
+I have, however, spent the last couple of years coding mostly in Python, and I'm pretty comfortable with it. Though at the time I hadn't played with many of the data science tools like NumPy and Pandas much. I'm also fairly comfortable with intermediary Computer Science topics.
 
 ## Signature Track
 
-Tucker's class was one of the first Coursera courses to utilise the [Signature Track](http://blog.coursera.org/post/40080531667/signaturetrack). Which, for a $50 fee, provides identity verification through ID scans and "biometric profiling" and, therefore, is able to give you a certificate with a little more credibility. I decided to sign up for the Signature Track program and I'm glad I did. Like a lot of people, I imagine, one of the challenges in MOOCs is self-motivation, without any sort of incentive, other than an unverifiable certificate at the end, it's easy to loose interest in the process and add completing the course to the "to do sometime later" pile.
+Tucker's class was one of the first Coursera courses to utilise the [Signature Track](http://blog.coursera.org/post/40080531667/signaturetrack). Which, for a $50 fee, provides identity verification through ID scans and "keystroke biometrics" profiling <a href="http://en.wikipedia.org/wiki/Keystroke_dynamics">(apparently is it a thing!)</a> and, therefore, is able to give you a certificate with a little more credibility. I decided to do Signature Track and I'm glad I did. Like a lot of people, I imagine, one of the challenges in MOOCs is self-motivation, without any sort of incentive, other than an unverifiable certificate at the end, it's easy to loose interest in the process and add completing the course to the "to do sometime later" pile.
 
 By being slightly out of pocket, I definitely felt a motivation to finish and it felt over all a little more "official". It's difficult to tell your friends that you can't drink with them because you've got homework due when you're completeing a self-paced, free online course, but <span class="pull_quote right">by being a bit out of pocket through Signature Track, it was easier to pass on social events in favour of the course.</span>
 
@@ -62,35 +61,35 @@ Interestingly, according to Baltch's blog, the "completion rate for MOOC student
 
 ## Course Overview
 
-### Week 1
+### Week 1...
 
-The first week begins with an overview of the course. It was mentioned in one of the first slides that "student's will grade each other". I'd heard about this in Coursera and was interested to see how well it would work. However, all assigments turned out to be server graded. Given some extremely busy work circumstances at the time, I was thankful for that.
+...begins with an overview of the course. It was mentioned in one of the first slides that "student's will grade each other". I'd heard about this and was interested to see how well it would work. Turns out, however, that all assigments were server graded. Given some extremely busy life circumstances at the time, I was thankful for that.
 
-The next modules touched on the basics of hedge fund management, including how they're paid and how they attract investors. Then, the last lot of modules touched on what to expect from the rest of the course.
+The next lot of modules touched on the basics of hedge fund management, including how managers are paid and how they attract investors. Then, the last lot of modules touched on what to expect from the rest of the course.
 
-### Week 2
+### Week 2...
 
-The sophomore week, covered methods of estimating company value using balance sheet metrics, news and other information. The concept of an event study is introduced.
+...covered methods of estimating company value using balance sheet metrics, news and other information. The concept of an event study is introduced.
 
-In the second module, the "Capital Assets Pricing Module" is introduced and the implication of it for investors. If I'm honest, I found the presentation of the topic a little dry and hard to follow. [MBA Bullshit]() had a far better [CAPM Introductory series](http://www.youtube.com/watch?v=LWsEJYPSw0k). I think it's important to stress that it wasn't necessarily through any fault of Tucker's that I was bored; it seems like this topic is not all that interesting to me.
+The "Capital Assets Pricing Module" is introduced detailing the implications of it for investors. If I'm honest, I found the presentation of the topic a little dry and hard to follow. [MBA Bullshit](http://www.mbabullshit.com) had a far better [CAPM Introductory series](http://www.youtube.com/watch?v=LWsEJYPSw0k).
 
-### Week 3
+### Week 3...
 
-NumPy is introduced in the first couple of modules. That shit was a real eye-opener for me. Learning NumPy and, eventually, pandas was probably the most useful part of the course for me. 
+...was a joy. [NumPy](http://www.numpy.org) is introduced, as is [pandas](http://pandas.pydata.org) through a series of video tutorials based on a text-based series.
 
-The video tutorials covering NumPy were, however, a little slow for my tastes and, as they were mostly just a video version of tutorials available on the course's [wiki](), I ended up preferring the text-only versions of the tuts.
+The video tutorials were a little slow for my tastes and I ended up preferring the text-only versions on the [wiki](http://wiki.quantsoftware.org/index.php?title=Numpy_Tutorial_1).
 
-The course also comes with a quant library called [QSTK]() which I've found to be extremely useful. I really have to reiterate how thankful I am to Tucker and the course team for making the library available online.
+The course also covered a quant library built for the course called [QSTK](http://wiki.quantsoftware.org/index.php?title=QuantSoftware_ToolKit). It's pretty god damn incredible how much was provided for free as part of the course. 
 
-### Week 4
+### Week 4...
 
-Market arbitrage, essentially the various ways quant investors find discrepancies between price and value, is introduced. The Effective Market Hypothesis is introduced.
+...delved deeper into hedge fund tactics like market arbitrage - the various ways investors exploit market inefficiencies. A theory called [The Effective-market Hypothesis](http://en.wikipedia.org/wiki/Efficient-market_hypothesis) is introduced.
 
 The sound quality for most of the modules in this week was particularly poor. Clearly Tucker and the team were experimenting with video recording. I'm not one to complain, of course :)
 
 Lastly, a lengthy discussion around Portfolio Optimisation is covered and the first homework assigment is introduced: creating a "brute force" optimiser. I found the course work to be fairly easy as most of the code was already provided. I'm not one to complain, of course :)
 
-### Week 5
+### Week 5...
 
 Another extremely useful week for me. Bolliger Bands are introduced, a discussion around the different between "closing" price and "actual" price, where we learn that "actual close" represents closing price with things like stock splits and dividends payments are factored in.
 
@@ -143,3 +142,4 @@ I find it a little disorientating. Especially coming from Udacity's forum system
 ## Summary
 
 Tucker was saying that the content will be revamped for the next course. When it is and if you've got an interest in finance and a reasonable programming background, you will almost certainly find this course worthwhile. All I can say is, thank you so much to the whole team for the opportunity and I cannot wait for Part 2!
+I also have very little formal education. My education has mostly been on-the-job and I currently work as a Senior Engineer. I have completed a number of MOOCs and half-completed a number more. <span class="pull-right">Despite the persistant critisims, the MOOC phenomena over the last couple of years has honestly improved almost every part of my life and I'm indebt to the people who are willing to take the time to change us for the better.<
