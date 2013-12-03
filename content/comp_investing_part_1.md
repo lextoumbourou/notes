@@ -1,6 +1,7 @@
 Title: Computational Investing, Part I (Coursera) Review
 Tagline: The highs and the lows of a MOOC offering from Georgia Tech
 Date: 2013-12-02
+Status: draft
 
 </p>
 
