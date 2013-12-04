@@ -36,6 +36,17 @@ hr {
     border:0;
 }
 
+.img-annotated {
+    margin: 40px auto;
+    text-align: center;
+    font-size: 10px;
+}
+
+.img-annotated img {
+    border-radius: 20px;
+    border: 1px solid #000;
+}
+
 .intro {
     padding: 15px;
     background-color: rgba(206, 202, 184, 0.36);
