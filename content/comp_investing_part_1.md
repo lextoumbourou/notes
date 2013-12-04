@@ -43,7 +43,7 @@ I heard a horn in the driveway.
 * [Signature Track](#signature-track)
 * [Course Overview](#course-overview)
 * [What I Loved](#what-i-loved)
-* [What I Would Improve](#what-i-would-improve)
+* [What Could Be Improved](#what-i-would-improve)
 * [Summary](#summary)
 
 ***
@@ -132,7 +132,7 @@ I was also quite thankful that the homework was relatively easy. Hard enough to 
 
 <a name="what-i-would-improve"></a>
 
-## [What I Would Improve](#what-i-would-improve)
+## [What Could Be Improved](#what-i-would-improve)
 
 The course lectures were sometimes a little dry and, perhaps due to my Gen Y attention span, a bit long. Udacity's model of providing question-based "checkpoints" along the way, really helped to keep me engaged and break up the videos. This course could consider something similar. Come to think of it, there were actually a couple of them in earlier videos but they seemed to disappear by Week 2.
 
