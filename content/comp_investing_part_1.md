@@ -80,13 +80,13 @@ Interestingly, according to Tucker's blog, the "completion rate for MOOC student
 
 ## [Course Overview](#course-overview)
 
-Week 1 begun with an overview of the course. It was mentioned in one of the first slides that "students will grade each other". I'd heard about this before and was interested to see if it would work. Turned out, however, that all assigments were server graded. Given my busy circumstances, I was thankful. The next modules covered the basics of hedge fund management, including how managers are paid and how they attract investors. Then a look at what to expect from the rest of the course.
+Week 1 begun with an overview of the course. It was mentioned in one of the first slides that "students will grade each other". I'd heard about this before and was interested to see if it would work. Turned out, however, that all assignments were server graded. Given my busy circumstances, I was thankful. The next modules covered the basics of hedge fund management, including how managers are paid and how they attract investors. Then a look at what to expect from the rest of the course.
 
 Week 2 opened with a series on estimating company value using balance sheet metrics, news and other information. Event studies were also discussed, followed by a lecture on [Capital Asset Pricing Model (CAPM)](http://en.wikipedia.org/wiki/Capital_asset_pricing_model). If I'm honest, I found the presentation of this topic a little dry and hard to follow. For me, [MBA Bullshit](http://www.mbabullshit.com) had a far simpler [CAPM Introductory Series](http://www.youtube.com/watch?v=LWsEJYPSw0k).
 
 Week 3 was a joy. [NumPy](http://www.numpy.org) was introduced, as was [pandas](http://pandas.pydata.org), through a series of video tutorials that accompanied a [text-only series](http://wiki.quantsoftware.org/index.php?title=Numpy_Tutorial_1). The video tutorials were paced a little slow for me and I generally preferred the text version. Next a quant library built for the course called [QuantSoftware ToolKit](http://wiki.quantsoftware.org/index.php?title=QuantSoftware_ToolKit) was introduced, really highlighting the richness of resources provided by the team.
 
-The very first homework was assigned, creating a "brute force" portfolio optimiser. I found the assigment to be easier than understanding the lectures, at least the parts of the assigment required to pass.
+The very first homework was assigned, creating a "brute force" portfolio optimiser. I found the assignment to be easier than understanding the lectures, at least the parts of the assignment required to pass.
 
 Week 4 delved into market arbitrage: the various ways investors exploit market inefficiencies. A theory called [The Effective-market Hypothesis](http://en.wikipedia.org/wiki/Efficient-market_hypothesis) was covered. The video sound quality this week was particularly poor. I think the team was experimenting with different recording techniques, as it improved the week after. 
 
@@ -95,26 +95,26 @@ Week 4 delved into market arbitrage: the various ways investors exploit market i
     <p>Definitely coffee in the cup</p>
 </div>
 
-Lastly, there was a lengthy discussion around portfolio optimisation and the second homework assigment was introduced: performing an Event Study. Most of the code was already provided and only minor tweaks were required to pass the exam.
+Lastly, there was a lengthy discussion around portfolio optimisation and the second homework assignment was introduced: performing an Event Study. Most of the code was already provided and only minor tweaks were required to pass the exam.
 
-Week 5 was another extremely useful week for me. Bolliger Bands were introduced, followed by a discussion around the difference between *closing* price and *actual closing* price (actual close factors in things like stock splits and dividends). Additionally, there were modules covered practical techniques for dealing with bad market data from providers. 
+Week 5 was another extremely useful week for me. Bollinger Bands were introduced, followed by a discussion around the difference between *closing* price and *actual closing* price (actual close factors in things like stock splits and dividends). Additionally, there were modules covered practical techniques for dealing with bad market data from providers. 
 
 The homework here was harder than last week's; creating a straight forward Market Simulator. But, with a bit of effort, I was able to piece something together quickly that passed the quiz. I do question how well I would have done had a human graded my code - it was often not pretty.
 
 Week 6 furthered the discussion around assessing event studies. Then, different investing strategies were compared using [Warren Buffett](http://en.wikipedia.org/wiki/Warren_Buffett) and [Jim Simons](http://en.wikipedia.org/wiki/James_Harris_Simons) as opposing case studies. An in-depth discussion about CAPM followed. As before, I had trouble getting this. Partly, I'm sure, due to a lack of interest.
 
-The week's homework pieced together two of the earlier assigments, creating an event study and then running it through a simulator. Since the hard work was already done, the task was trivial.
+The week's homework pieced together two of the earlier assignments, creating an event study and then running it through a simulator. Since the hard work was already done, the task was trivial.
 
 Week 7 was, from a financial perspective, probably the most practical week. Videos covered the different information feeds available for hedge fund managers.
 
-The majority of the latter half of the week was set aside to talk about the homework assigment, an implementation of Bollinger Bands.
+The majority of the latter half of the week was set aside to talk about the homework assignment, an implementation of Bollinger Bands.
 
 <div class="img-annotated">
     <img src="/images/comp_investing_question.jpg" alt="An example of the quiz from Week 7">
     <p>An example of the quiz from Week 7</p>
 </div>
 
-Week 8, the final module, was centered around two homework assignments building from previous week's work. Where, in the first, we were to perform an event study based on Bollinger Bands and, in the second, feed that data into a market simulator.
+Week 8, the final module, was centred around two homework assignments building from previous week's work. Where, in the first, we were to perform an event study based on Bollinger Bands and, in the second, feed that data into a market simulator.
 
 I wish I had had more time to spend on them but ended up knocking together a half baked solution in order to pass the exam the moment before I left for a week long holiday. I also needed help from the forum here. I'm not proud of the code, and I doubt I would have done very well if an instructor graded it, but I got it done and passed.
 
@@ -146,6 +146,6 @@ Completely unrelated to the course quality, but I also had a bit of trouble with
 
 ## [Summary](#summary)
 
-Despite it's minor flaws, this course was really quite phenomenal. If you've got an interest in the quant world and a reasonable programming background, you will almost certainly find this course worthwhile. If you haven't programmed before, then I would consider taking an introductory course first.
+Despite its minor flaws, this course was really quite phenomenal. If you've got an interest in the quant world and a reasonable programming background, you will almost certainly find this course worthwhile. If you haven't programmed before, then I would consider taking an introductory course first.
 
-Despite the persistant criticisms, the MOOC phenomena over the last couple of years has improved my life considerably and I'm in debt to people, like Tucker and his team, who are willing to upload high-quality courses like this for *free*. We are living in a magical time.
+Despite the persistent criticisms, the MOOC phenomena over the last couple of years has improved my life considerably and I'm in debt to people, like Tucker and his team, who are willing to upload high-quality courses like this for *free*. We are living in a magical time.
