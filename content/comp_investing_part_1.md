@@ -1,5 +1,5 @@
 Title: Computational Investing, Part I (Coursera) Review
-Tagline: "I'll give you a MOOC"
+Tagline: "I'll give you a MOOC!"
 Date: 2013-12-02
 
 </p>
