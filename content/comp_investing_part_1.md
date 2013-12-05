@@ -68,7 +68,7 @@ I have, however, spent the last couple of years coding mostly in Python and I'm 
 
 ## [Signature Track](#signature-track)
 
-Tucker's class was one of the first to utilise Coursera's [Signature Track](http://blog.coursera.org/post/40080531667/signaturetrack). Which, for a $50 (AUS) fee, provides identity verification through ID scans and "keystroke biometric" profiling (apparently a [thing](http://en.wikipedia.org/wiki/Efficient-market_hypothesis))</a> and is therefore able to give you a credible certificate. I decided to sign up for it and I'm glad I did. My problem with MOOCs is that I often find myself distracted with life halfway through the course, and emptily promise that I'll come back to it one day. <span class="pull_quote right">By being slightly out of pocket though Signature Track, I felt a sense of commitment that helped me prioritise the course.</span> Though I didn't like the idea initially, I think Coursera's hard start and end course dates helps with this too.
+Tucker's class was one of the first to utilise Coursera's [Signature Track](http://blog.coursera.org/post/40080531667/signaturetrack). Which, for a $50 (AUS) fee, provides identity verification through ID scans and "keystroke biometric" profiling (apparently a [thing](http://en.wikipedia.org/wiki/Efficient-market_hypothesis))</a> and is therefore able to give you a credible certificate. I decided to sign up for it and I'm glad I did. My problem with MOOCs is that I often find myself distracted with life halfway through the course, and emptily promise that I'll finish it one day. <span class="pull_quote right">But, by being slightly out of pocket though Signature Track, I felt a sense of commitment that helped me prioritise the course.</span> Though I didn't like the idea initially, I think Coursera's hard course start and end dates helps with this too.
 
 Interestingly, according to Tucker's blog, the "completion rate for MOOC students who invested ... at the beginning of the course for a validated certificate was 99.0%." A good sign for MOOCs, who journalists seem to love to bemoan for their apparently [low completion rates](http://www.timeshighereducation.co.uk/news/mooc-completion-rates-below-7/2003710.article).
 
@@ -84,7 +84,7 @@ Week 1 begun with an overview of the course. It was mentioned in one of the firs
 
 Week 2 opened with a series on estimating company value using balance sheet metrics, news and other information. Event studies were also discussed, followed by a lecture on [Capital Asset Pricing Model (CAPM)](http://en.wikipedia.org/wiki/Capital_asset_pricing_model). If I'm honest, I found the presentation of this topic a little dry and hard to follow. For me, [MBA Bullshit](http://www.mbabullshit.com) had a far simpler [CAPM Introductory Series](http://www.youtube.com/watch?v=LWsEJYPSw0k).
 
-Week 3 was a joy. [NumPy](http://www.numpy.org) was introduced, as was [pandas](http://pandas.pydata.org), through a series of video tutorials that accompanied a [text-only series](http://wiki.quantsoftware.org/index.php?title=Numpy_Tutorial_1). The video tutorials were paced a little slow for me and I generally preferred the text version. Next a quant library built for the course called [QuantSoftware ToolKit](http://wiki.quantsoftware.org/index.php?title=QuantSoftware_ToolKit) was introduced, really highlighting the richness of resources provided by the team.
+Week 3 was a joy. [NumPy](http://www.numpy.org) was introduced, as was [pandas](http://pandas.pydata.org), through a series of video tutorials that accompanied a [text-only series](http://wiki.quantsoftware.org/index.php?title=Numpy_Tutorial_1). The video tutorials were paced a little slow for me and I generally preferred the text version. Next we were acquainted with a quant library built for the course called [QuantSoftware ToolKit](http://wiki.quantsoftware.org/index.php?title=QuantSoftware_ToolKit), really highlighting the richness of resources provided by the team.
 
 The very first homework was assigned, creating a "brute force" portfolio optimiser. I found the assignment to be easier than understanding the lectures, at least the parts of the assignment required to pass.
 
@@ -95,7 +95,7 @@ Week 4 delved into market arbitrage: the various ways investors exploit market i
     <p>Definitely coffee in the cup</p>
 </div>
 
-Lastly, there was a lengthy discussion around portfolio optimisation and the second homework assignment was introduced: performing an Event Study. Most of the code was already provided and only minor tweaks were required to pass the exam.
+Lastly, there was a lengthy discussion around portfolio optimisation and the second homework assignment was assigned: performing an Event Study. Most of the code was already provided and only minor tweaks were required to pass the exam.
 
 Week 5 was another extremely useful week for me. Bollinger Bands were introduced, followed by a discussion around the difference between *closing* price and *actual closing* price (actual close factors in things like stock splits and dividends). Additionally, there were modules covered practical techniques for dealing with bad market data from providers. 
 
@@ -105,7 +105,7 @@ Week 6 furthered the discussion around assessing event studies. Then, different 
 
 The week's homework pieced together two of the earlier assignments, creating an event study and then running it through a simulator. Since the hard work was already done, the task was trivial.
 
-Week 7 was, from a financial perspective, probably the most practical week. Videos covered the different information feeds available for hedge fund managers.
+Week 7 was, from a financial perspective, probably the most practical week. Videos covered the different information feeds available for hedge fund managers and a discussion around Technical Analysis.
 
 The majority of the latter half of the week was set aside to talk about the homework assignment, an implementation of Bollinger Bands.
 
