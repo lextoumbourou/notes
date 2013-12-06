@@ -24,7 +24,7 @@ I stuffed a couple of shirts into a bag, then sat down to search the course's fo
 </p>
 
 <p>
-Then Gene entered my life. Gene posted on the forum without an avatar. Gene used caps lock liberally; exclamation marks to end sentences. Gene reminded me toward the end of a rant, that there should be "no BUY orders in the first and last 20 days!". I remembered something about that in one of the videos and, honestly, I didn't understand why that was the case, but I cut 20 days off the start and end of the data sequence, punched the values into the exam and...passed!
+Then Gene entered my life. Gene posted on the forum without an avatar. Gene used caps lock liberally, exclamation marks to end sentences. Gene reminded me toward the end of a rant, that there should be "no BUY orders in the first and last 20 days!". I remembered something about that in one of the videos and, honestly, I didn't understand why that was the case, but I cut 20 days off the start and end of the data sequence, punched the values into the exam and...passed!
 </p>
 
 <p>
