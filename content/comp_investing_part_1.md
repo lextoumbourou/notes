@@ -24,7 +24,7 @@ I stuffed a couple of shirts into a bag, then sat down to search the course's fo
 </p>
 
 <p>
-Then Gene entered my life. Gene posted on the forum without an avatar. Judging by Gene's liberal use of caps, Gene had problems of his own. Gene reminded me, however, toward the end a rant, that there should be "no BUY orders in the first and last 20 days!". I remembered something about that in one of the videos and, honestly, I didn't understand why that was the case, but I cut 20 days off the start and end of the data sequence, punched the values into the exam and...passed!
+Then Gene entered my life. Gene posted on the forum without an avatar. Gene used caps lock liberally; exclamation marks to end sentences. Gene reminded me toward the end of a rant, that there should be "no BUY orders in the first and last 20 days!". I remembered something about that in one of the videos and, honestly, I didn't understand why that was the case, but I cut 20 days off the start and end of the data sequence, punched the values into the exam and...passed!
 </p>
 
 <p>
@@ -60,7 +60,7 @@ The course page notes that it is "intended for folks who have a strong programmi
 
 ## [My Background](#my-background)
 
-I came across the course through someone's comment on Hacker News and signed up immediately.  I have been running a site for a couple of years called [MagicRanker](http://en.wikipedia.org/wiki/Efficient-market_hypothesis), a simple implementation of a thing called the Magic Formula from a book called [The Little Book That Beats The Market](http://www.amazon.com/Little-Still-Market-Books-Profits/dp/0470624159). I have money invested in the market following this approach so I guess you could say I have experience with "computational investing". But, generally I have no idea what I'm doing.
+I came across the course through someone's comment on Hacker News and signed up immediately.  I have been running a site for a couple of years called [MagicRanker](http://en.wikipedia.org/wiki/Efficient-market_hypothesis), a simple implementation of a thing called the Magic Formula from [The Little Book That Beats The Market](http://www.amazon.com/Little-Still-Market-Books-Profits/dp/0470624159). I have money invested following this approach so I guess you could say I have experience with "computational investing". But, generally I have no idea what I'm doing.
 
 I have, however, spent the last couple of years coding mostly in Python and I'm pretty comfortable with it. So I was lucky that the course's projects were all Python based. Though, at the time though I hadn't played with the cornerstone data science libraries like NumPy and Pandas.
 
@@ -68,9 +68,9 @@ I have, however, spent the last couple of years coding mostly in Python and I'm 
 
 ## [Signature Track](#signature-track)
 
-Tucker's class was one of the first to utilise Coursera's [Signature Track](http://blog.coursera.org/post/40080531667/signaturetrack). Which, for a $50 (AUS) fee, provides identity verification through ID scans and "keystroke biometric" profiling (apparently a [thing](http://en.wikipedia.org/wiki/Efficient-market_hypothesis))</a> and is therefore able to give you a credible certificate. I decided to sign up for it and I'm glad I did. My problem with MOOCs is that I often find myself distracted with life halfway through, and emptily promise that I'll "finish it one day". <span class="pull_quote right">But, by being slightly out of pocket though Signature Track, I felt a sense of commitment that helped me prioritise the course.</span> Though I didn't like the idea initially, I think Coursera's hard course start and end dates helps with this too.
+Tucker's class was one of the first to utilise Coursera's [Signature Track](http://blog.coursera.org/post/40080531667/signaturetrack). Which, for a $50 (AUS) fee, provides identity verification through ID scans and "keystroke biometric" profiling (apparently a [thing](http://en.wikipedia.org/wiki/Efficient-market_hypothesis))</a> and is therefore able to give you a credible certificate. I decided to sign up for it and I'm glad I did. My problem with MOOCs is that I often find myself distracted with life halfway through, and emptily promise that I'll "finish it one day". <span class="pull_quote right">But, by being slightly out of pocket though Signature Track, I felt a sense of commitment that helped me prioritise the course.</span> Though I didn't like the idea initially, I think Coursera's hard course start and end dates help with this too.
 
-Interestingly, according to Tucker's blog, the "completion rate for MOOC students who invested ... at the beginning of the course for a validated certificate was 99.0%." A good sign for MOOCs, who journalists seem to love to bemoan for their apparently [low completion rates](http://www.timeshighereducation.co.uk/news/mooc-completion-rates-below-7/2003710.article).
+Interestingly, according to Tucker's blog, the "completion rate for MOOC students who invested ... at the beginning of the course for a validated certificate was 99.0%." A good sign for MOOCs, who journalists love to bemoan for their apparently [low completion rates](http://www.timeshighereducation.co.uk/news/mooc-completion-rates-below-7/2003710.article).
 
 <div class="img-annotated">
     <img src="/images/comp_investing_verified.jpg" alt="Signature track">
@@ -84,7 +84,7 @@ Week 1 begun with an overview of the course. It was mentioned in one of the firs
 
 Week 2 opened with a series on estimating company value using balance sheet metrics, news and other information. Event studies were also discussed, followed by a lecture on [Capital Asset Pricing Model (CAPM)](http://en.wikipedia.org/wiki/Capital_asset_pricing_model). If I'm honest, I found the presentation of this topic a little dry and hard to follow. For me, [MBA Bullshit](http://www.mbabullshit.com) had a far simpler [CAPM Introductory Series](http://www.youtube.com/watch?v=LWsEJYPSw0k).
 
-Week 3 was a joy. [NumPy](http://www.numpy.org) was introduced, as was [pandas](http://pandas.pydata.org), through a series of video tutorials that accompanied a [text-only series](http://wiki.quantsoftware.org/index.php?title=Numpy_Tutorial_1). The video tutorials were paced a little slow for me and I generally preferred the text version. Next we were acquainted with a quant library built for the course called [QuantSoftware ToolKit](http://wiki.quantsoftware.org/index.php?title=QuantSoftware_ToolKit), really highlighting the richness of resources provided by the team.
+Week 3 was a joy. [NumPy](http://www.numpy.org) was introduced, as was [pandas](http://pandas.pydata.org), through a series of video tutorials that accompanied a [text-only series](http://wiki.quantsoftware.org/index.php?title=Numpy_Tutorial_1). The video tutorials were paced a little slow for me and I generally preferred the text version. Later we were acquainted with a quant library built for the course called [QuantSoftware ToolKit](http://wiki.quantsoftware.org/index.php?title=QuantSoftware_ToolKit), really highlighting the richness of resources provided by the team.
 
 The very first homework was assigned, creating a "brute force" portfolio optimiser. I found the assignment to be easier than understanding the lectures, at least the parts of the assignment required to pass.
 
@@ -95,17 +95,17 @@ Week 4 delved into market arbitrage: the various ways investors exploit market i
     <p>Definitely coffee in the cup</p>
 </div>
 
-Lastly, there was a lengthy discussion around portfolio optimisation and the second homework assignment was assigned: performing an Event Study. Most of the code was already provided and only minor tweaks were required to pass the exam.
+Lastly, there was a lengthy discussion around portfolio optimisation and the second homework was assigned: performing an Event Study. Most of the code was already provided and only minor tweaks were required to pass the exam.
 
-Week 5 was another extremely useful week for me. Bollinger Bands were introduced, followed by a discussion around the difference between *closing* price and *actual closing* price (actual close factors in things like stock splits and dividends). Additionally, there were modules covered practical techniques for dealing with bad market data from providers. 
+Week 5 was another extremely useful week for me. Bollinger Bands were introduced, followed by a discussion around the difference between *closing* price and *actual closing* price (actual close factors in things like stock splits and dividends). Additionally, there were modules covering practical techniques for dealing with bad market data from providers. 
 
-The homework here was harder than last week's; creating a straight forward Market Simulator. But, with a bit of effort, I was able to piece something together quickly that passed the quiz. I do question how well I would have done had a human graded my code - it was often not pretty.
+The homework here was harder than last week's. The assignment was to create a straight forward Market Simulator. With a bit of effort, though, I was able to piece something together that passed the quiz. I do question how well I would have done had a human graded my code - it was often not pretty.
 
-Week 6 furthered the discussion around assessing event studies. Then, different investing strategies were compared using [Warren Buffett](http://en.wikipedia.org/wiki/Warren_Buffett) and [Jim Simons](http://en.wikipedia.org/wiki/James_Harris_Simons) as opposing case studies. An in-depth discussion about CAPM followed. As before, I had trouble getting this. Partly, I'm sure, due to a lack of interest.
+Week 6 furthered the discussion around assessing event studies. Then, different investing strategies were compared using [Warren Buffett](http://en.wikipedia.org/wiki/Warren_Buffett) and [Jim Simons](http://en.wikipedia.org/wiki/James_Harris_Simons) as opposing case studies. An in-depth discussion about CAPM followed. As before, I had trouble groking this. Partly, I'm sure, due to a lack of interest.
 
 The week's homework pieced together two of the earlier assignments, creating an event study and then running it through a simulator. Since the hard work was already done, the task was trivial.
 
-Week 7 was, from a financial perspective, probably the most practical week. Videos covered the different information feeds available for hedge fund managers and a discussion around Technical Analysis.
+Week 7 was, from a financial perspective, probably the most practical week. Videos covered the different information feeds available for hedge fund managers then a discussion around Technical Analysis.
 
 The majority of the latter half of the week was set aside to talk about the homework assignment, an implementation of Bollinger Bands.
 
@@ -114,9 +114,9 @@ The majority of the latter half of the week was set aside to talk about the home
     <p>An example of the quiz from Week 7</p>
 </div>
 
-Week 8, the final module, was centred around two homework assignments building from previous week's work. Where, in the first, we were to perform an event study based on Bollinger Bands and, in the second, feed that data into a market simulator.
+Week 8, the final module, was centred around two homework assignments building from previous week's work. In the first, we were to perform an event study based on Bollinger Bands and, in the second, feed that data into a market simulator.
 
-I wish I had had more time to spend on them but ended up knocking together a half baked solution in order to pass the exam the moment before I left for a week long holiday. I also needed help from the forum here. I'm not proud of the code, and I doubt I would have done very well if an instructor graded it, but I got it done and passed.
+I wish I had had more time to spend on them. I ended up knocking together a half baked solution that narrowly passed the exam, moments before I left for a week long holiday. I also needed help from the forum here. I'm not proud of the code, and I doubt I would have done very well if an instructor graded it.
 
 ***
 
@@ -134,11 +134,11 @@ I was also quite thankful that the homework was relatively easy. Hard enough to 
 
 ## [What Could Be Improved](#what-i-would-improve)
 
-The course lectures were sometimes a little dry and, perhaps due to my Gen Y attention span, a bit long. Udacity's model of providing question-based "checkpoints" along the way, really helped to keep me engaged and break up the videos. This course could consider something similar. Come to think of it, there were actually a couple of them in earlier videos but they seemed to disappear by Week 2.
+The course lectures were sometimes a little dry and a bit long for my Gen Y attention span. Udacity's model of providing question-based "checkpoints" along the way, really helped to keep me engaged and break up the videos. This course could consider something similar. Come to think of it, there were actually a couple of them in earlier videos but they seemed to disappear by Week 2.
 
 There was also a number of problems with the video quality, including low audio, distorted audio, bloopers and so forth. Sometimes I wondered why they hadn't rerecorded the videos where there were clearly major defects.
 
-I think Coursera has some work to do with the interface too. I found it slightly annoying that the video couldn't be made full screen via the UI. Not sure why they would prevent that, since they have the videos available for download. Lastly, I found the forums a little disorientating. Especially coming from Udacity's forum system where posts can be linked to lessons making it clear what they're about. Though, in fairness, I didn't spend enough time on it.
+I think Coursera has some work to do with the interface too. I found it slightly annoying that the video couldn't be made full screen via the UI. Not sure why they would prevent that, since they have the videos available for download. Lastly, I found the forums a little disorientating. Especially coming from Udacity's forum system where posts are linked to lessons and assignments making it clear what they're about. Though, in fairness, I didn't spend much time getting used to them.
 
 Completely unrelated to the course quality, but I also had a bit of trouble with a lot of the "maths" that goes into finance. Often there's *theoretical world* values plugged into formulas that involve *real world* implications. The idea of the "risk premium" in CAPM is a good example of this - can the standard deviation of an investment's historic performance really be enough to say if it is safe or not?
 
