@@ -24,7 +24,7 @@ I stuffed a couple of shirts into a bag, then sat down to search the course's fo
 </p>
 
 <p>
-Then Gene entered my life. Gene posted on the forum without an avatar. Gene used Caps lock liberally and exclamation marks to end sentences. Gene reminded me toward the end of a rant, that there should be "no BUY orders in the first and last 20 days!". I remembered something about that in one of the videos and, honestly, I didn't understand why that was the case, but I cut 20 days off the start and end of the data sequence, punched the values into the exam and...passed!
+Then Gene entered my life. Gene posted on the forum without an avatar. Gene used Caps lock and exclamation marks liberally. Gene reminded us toward the end of a rant, that there should be "no BUY orders in the first and last 20 days!". I remembered something about that in one of the videos and, honestly, I didn't understand why that was the case, but I cut 20 days off the start and end of the data sequence, punched the values into the exam and...passed!
 </p>
 
 <p>
@@ -84,7 +84,7 @@ Week 1 begun with an overview of the course. It was mentioned in one of the firs
 
 Week 2 opened with a series on estimating company value using balance sheet metrics, news and other information. Event studies were also discussed, followed by a lecture on [Capital Asset Pricing Model (CAPM)](http://en.wikipedia.org/wiki/Capital_asset_pricing_model). If I'm honest, I found the presentation of this topic a little dry and hard to follow. For me, [MBA Bullshit](http://www.mbabullshit.com) had a far simpler [CAPM Introductory Series](http://www.youtube.com/watch?v=LWsEJYPSw0k).
 
-Week 3 was a joy. [NumPy](http://www.numpy.org) was introduced, as was [pandas](http://pandas.pydata.org), through a series of video tutorials that accompanied a [text-only series](http://wiki.quantsoftware.org/index.php?title=Numpy_Tutorial_1). The video tutorials were paced a little slow for me and I generally preferred the text version. Later we were acquainted with a quant library built for the course called [QuantSoftware ToolKit](http://wiki.quantsoftware.org/index.php?title=QuantSoftware_ToolKit), really highlighting the richness of resources provided by the team.
+Week 3 was a joy. [NumPy](http://www.numpy.org) was introduced, as was [pandas](http://pandas.pydata.org), through a series of video tutorials that accompanied a [text-only series](http://wiki.quantsoftware.org/index.php?title=Numpy_Tutorial_1). The video tutorials were paced a little slow and I preferred the text version. Later we were acquainted with a quant library built for the course called [QuantSoftware ToolKit](http://wiki.quantsoftware.org/index.php?title=QuantSoftware_ToolKit), highlighting the richness of resources provided by the team.
 
 The very first homework was assigned, creating a "brute force" portfolio optimiser. I found the assignment to be easier than understanding the lectures, at least the parts of the assignment required to pass.
 
@@ -126,7 +126,7 @@ I wish I had had more time to spend on them. I ended up knocking together a half
 
 Firstly, Tucker and the team put a lot of work into the course and it shows. The course was filled with supplimentary material like professional interviews, book recommendations, the QSTK libary, programming tutorials and a wiki rich with content.
 
-I really got a kick out of the programming side too. Just being introduced to NumPy and Pandas made the course worth my time. With the little bit of knowledge I got from this course and [this book](http://shop.oreilly.com/product/0636920023784.do), I was able to rewrite the internals of MagicRanker and make it a shit load faster and more extensibile. For that reason alone, the course was worth my time. 
+I really got a kick out of the programming side too. Just being introduced to NumPy and Pandas made the course worth my time. With the little bit of knowledge I got from this course and [this book](http://shop.oreilly.com/product/0636920023784.do), I was able to rewrite the internals of MagicRanker and make it a shit load faster and more extensible.
 
 I was also quite thankful that the homework was relatively easy. Hard enough to keep me thinking but, for a person with a decent amount of programming experience, definitely passable. Perhaps a little too easy at times.
 
@@ -138,7 +138,7 @@ The course lectures were sometimes a little dry and a bit long for my Gen Y atte
 
 There was also a number of problems with the video quality, including low audio, distorted audio, bloopers and so forth. Sometimes I wondered why they hadn't rerecorded the videos where there were clearly major defects.
 
-I think Coursera has some work to do with the interface too. I found it slightly annoying that the video couldn't be made full screen via the UI. Not sure why they would prevent that, since they have the videos available for download. Lastly, I found the forums a little disorientating. Especially coming from Udacity's forum system where posts are linked to lessons and assignments making it clear what they're about. Though, in fairness, I didn't spend much time getting used to them.
+I think Coursera has some work to do with the interface too. I found it slightly annoying that the video couldn't be made full screen via the UI. Not sure why they would prevent that, since they have the videos available for download. Lastly, I found the forums a little disorientating. Especially coming from Udacity's forum system where posts are linked to lessons and assignments making it clear what they're about. Though, in fairness, I didn't spend much time getting used to the forum.
 
 Completely unrelated to the course quality, but I also had a bit of trouble with a lot of the "maths" that goes into finance. Often there's *theoretical world* values plugged into formulas that involve *real world* implications. The idea of the "risk premium" in CAPM is a good example of this - can the standard deviation of an investment's historic performance really be enough to say if it is safe or not?
 
