@@ -20,7 +20,7 @@ I was trying to debug an ugly script. It was supposed to simulate an event study
 </p>
 
 <p>
-I stuffed a couple of shirts into a bag, then sat down to search the course's forum for help. The last couple of weeks had been a marathon of work and study and I was determined to leave it all behind for the week. I knew the answer was close. I had understood the task, I was certain, but the interpreter was being stubborn.
+I stuffed a couple of shirts into a bag, then sat down to search the course's forum for help. The last couple of weeks had been a marathon of work and study and I was determined to leave it all behind. I knew the answer was close. I had understood the task, I was certain, but the interpreter was being stubborn.
 </p>
 
 <p>
@@ -70,7 +70,7 @@ I have, however, spent the last couple of years coding mostly in Python and I'm 
 
 Tucker's class was one of the first to utilise Coursera's [Signature Track](http://blog.coursera.org/post/40080531667/signaturetrack). Which, for a $50 (AUS) fee, provides identity verification through ID scans and "keystroke biometric" profiling (apparently a [thing](http://en.wikipedia.org/wiki/Efficient-market_hypothesis))</a> and is therefore able to give you a credible certificate. I decided to sign up for it and I'm glad I did. My problem with MOOCs is that I often find myself distracted with life halfway through, and emptily promise that I'll "finish it one day". <span class="pull_quote right">But, by being slightly out of pocket though Signature Track, I felt a sense of commitment that helped me prioritise the course.</span> Though I didn't like the idea initially, I think Coursera's hard course start and end dates help with this too.
 
-Interestingly, according to Tucker's blog, the "completion rate for MOOC students who invested ... at the beginning of the course for a validated certificate was 99.0%." A good sign for MOOCs, who journalists love to bemoan for their apparently [low completion rates](http://www.timeshighereducation.co.uk/news/mooc-completion-rates-below-7/2003710.article).
+Interestingly, according to [Tucker's blog](http://augmentedtrader.wordpress.com/2013/11/20/a-comparison-of-online-mooc-versus-on-campus-course-delivery/), the "completion rate for MOOC students who invested ... at the beginning of the course for a validated certificate was 99.0%." A good sign for MOOCs, who journalists love to bemoan for their apparently [low completion rates](http://www.timeshighereducation.co.uk/news/mooc-completion-rates-below-7/2003710.article).
 
 <div class="img-annotated">
     <img src="/images/comp_investing_verified.jpg" alt="Signature track">
