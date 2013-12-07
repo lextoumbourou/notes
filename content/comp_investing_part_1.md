@@ -141,7 +141,7 @@ There was also a number of problems with the video quality, including low audio,
 
 I think Coursera has some work to do with the interface too. I found it slightly annoying that the video couldn't be made full screen via the UI. Not sure why they would prevent that, since they have the videos available for download. Lastly, I found the forums a little disorientating. Especially coming from Udacity's forum system where posts are linked to lessons and assignments making it clear what they're about. Though, in fairness, I didn't spend much time getting used to the forum.
 
-Completely unrelated to the course quality, but I also had a bit of trouble with a lot of the "maths" that goes into finance. Often there's *theoretical world* values plugged into formulas that involve *real world* implications. The idea of the "risk premium" in CAPM is a good example of this - can the standard deviation of an investment's historic performance really be enough to say if it is safe or not?
+Completely unrelated to the course quality, but I also had a bit of trouble with a lot of the "maths" that goes into finance. Often there are *theoretical world* values plugged into formulas that involve *real world* implications. The idea of the "risk premium" in CAPM is a good example of this - can the standard deviation of an investment's historic performance really be enough to say if it is safe or not?
 
 <a name="summary"></a>
 
