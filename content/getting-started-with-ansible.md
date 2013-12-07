@@ -1,7 +1,7 @@
 Title: Getting Started With Ansible
 Tagline: Losing my Ansible virginity and peer pressuring others to do the same
 Slug: getting-started-with-ansible
-Category: Ansible
+Tags: DevOps, Ansible
 Date: 2013-02-04
 
 <p>

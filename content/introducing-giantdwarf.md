@@ -2,6 +2,7 @@ Title: Introducing GiantDwarf
 Tagline: A silly little Nagios bot for Campfire
 Slug: introducing-giantdwarf
 Date: 2012-07-31
+Tags: Python, DevOps
 
 I had a couple of hours (somewhat) free this morning so I put together a
 little [Campfire][] bot for [Nagios][]. Nothing too fancy, the dwarf

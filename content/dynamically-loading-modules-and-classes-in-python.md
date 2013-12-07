@@ -2,6 +2,7 @@ Title: Dynamically loading modules and classes in Python
 Tagline: Using pkgutil and getattr to do exactly as the title implies
 Slug: dynamically-loading-modules-and-classes-in-python
 Date: 2012-10-12
+Tags: Python
 
 </p>
 

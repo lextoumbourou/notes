@@ -2,6 +2,7 @@ Title: Implementing and customising Lazy Signup in Django
 Tagline: Utilising django-lazysignup to save people signing up for your crappy web application
 Slug: implementing-and-customising-lazy-signup-in-django
 Date: 2012-10-21
+Tags: Python, Django
 
 <p>
 

@@ -2,6 +2,7 @@ Title: Magic Ranker
 Tagline: An ASX implementation of Joel Greenblatt's Magic Formula
 Slug: magic-ranker
 Date: 2011-07-31
+Tags: Python, Django
 
 ### Magic Formula
 

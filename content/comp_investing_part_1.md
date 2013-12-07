@@ -1,6 +1,7 @@
 Title: Computational Investing, Part I (Coursera) Review
 Tagline: "I'll give you a MOOC!"
 Date: 2013-12-02
+Tags: MOOCs, Investing, Python
 
 </p>
 
@@ -73,7 +74,7 @@ Tucker's class was one of the first to utilise Coursera's [Signature Track](http
 Interestingly, according to [Tucker's blog](http://augmentedtrader.wordpress.com/2013/11/20/a-comparison-of-online-mooc-versus-on-campus-course-delivery/), the "completion rate for MOOC students who invested ... at the beginning of the course for a validated certificate was 99.0%." A good sign for MOOCs, who journalists love to bemoan for their apparently [low completion rates](http://www.timeshighereducation.co.uk/news/mooc-completion-rates-below-7/2003710.article).
 
 <div class="img-annotated">
-    <img src="/images/comp_investing_verified.jpg" alt="Signature track">
+    <img src="http://lextoumbourou.com/images/comp_investing_verified.jpg" alt="Signature track">
 </div>
 
 <a name="course-overview"></a>
@@ -91,7 +92,7 @@ The very first homework was assigned, creating a "brute force" portfolio optimis
 Week 4 delved into market arbitrage: the various ways investors exploit market inefficiencies. A theory called [The Effective-market Hypothesis](http://en.wikipedia.org/wiki/Efficient-market_hypothesis) was covered. The video sound quality this week was particularly poor. I think the team was experimenting with different recording techniques, as it improved the week after. 
 
 <div class="img-annotated">
-    <img src="/images/comp_investing_efficient_markets.jpg" alt="Definitely coffee in the cup">
+    <img src="http://lextoumbourou.com/images/comp_investing_efficient_markets.jpg" alt="Definitely coffee in the cup">
     <p>Definitely coffee in the cup</p>
 </div>
 
@@ -110,7 +111,7 @@ Week 7 was, from a financial perspective, probably the most practical week. Vide
 The majority of the latter half of the week was set aside to talk about the homework assignment, an implementation of Bollinger Bands.
 
 <div class="img-annotated">
-    <img src="/images/comp_investing_question.jpg" alt="An example of the quiz from Week 7">
+    <img src="http://lextoumbourou.com/images/comp_investing_question.jpg" alt="An example of the quiz from Week 7">
     <p>An example of the quiz from Week 7</p>
 </div>
 

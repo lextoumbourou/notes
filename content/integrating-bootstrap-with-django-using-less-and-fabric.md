@@ -2,6 +2,7 @@ Title: Integrating Bootstrap with Django using Less and Fabric
 Tagline: My quest to find the "perfect" way to integrate and customise Bootstrap using Django
 Slug: integrating-bootstrap-django-using-less-and-fabric
 Date: 2012-11-11
+Tags: Python, Django
 
 <p>
 

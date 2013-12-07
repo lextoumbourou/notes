@@ -2,6 +2,7 @@ Title: Get the last day of every month in a range with Python
 Tagline: A problem I solved by stealing from Stack Overflow
 Slug: get-the-last-day-of-every-month-in-a-range-with-python
 Date: 2012-02-23
+Tags: Python
 
 </p>
 
