@@ -147,6 +147,6 @@ Completely unrelated to the course quality, but I also had a bit of trouble with
 
 ## [Summary](#summary)
 
-Minor flaws aside, this course was phenomenal. If you've got an interest in the quant world and a reasonable programming background, you will almost certainly find this course worthwhile. If you haven't programmed before, then I would consider taking an introductory course first.
+Minor flaws aside, if you've got an interest in the quant world and a reasonable programming background, you will almost certainly find this course worthwhile. If you haven't programmed before, then I would consider taking an introductory course first.
 
 Despite the persistent criticisms, the MOOC phenomena over the last couple of years has improved my life considerably and I'm in debt to people, like Tucker and his team, who are willing to upload high-quality courses like this for *free*. We are living in a magical time.
