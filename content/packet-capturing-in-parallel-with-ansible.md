@@ -37,7 +37,7 @@ name for each server.
 
 2\. Then I kicked off a Tcpdump on each server in parallel. Ansible
 runs 5 parallel processes by default, this can be increased by passing
-the `--forks=10` parameter to the `ansible-playbook` script.
+the `--forks=10` parameter (replacing 10 with the number of servers) to the `ansible-playbook` script.
 
     :::yaml
       tasks:
