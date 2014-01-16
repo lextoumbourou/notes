@@ -43,9 +43,9 @@ My latest XBMC addon is ready for human consumption: [Udacity](https://www.udaci
 
 ## [What's missing](#whats-missing)
 
-1\. Programming quizzes aren't supported and probably never will. XBMC doesn't really have the tools yet to support large amounts of text input.
+1\. Programming quizzes aren't supported and probably never will be. XBMC doesn't really have the tools yet to support large amounts of text input.
 
-2\. Any form of guarantee that the whole thing will actually work. As soon as Udacity update their API it's adios muchachos...
+2\. Any form of guarantee that the thing will actually work. As soon as Udacity update their API it's adios muchachos...
 
 ***
 
