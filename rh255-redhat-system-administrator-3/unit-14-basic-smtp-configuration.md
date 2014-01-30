@@ -1,4 +1,4 @@
-Basic SMTP Configuration
+Unit 14: Basic SMTP Configuration
 ========================
 
 * MTA (Mail Transfer Agent) - relay mail from point to point until it's delivered.
