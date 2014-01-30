@@ -4,8 +4,8 @@
 
 Complete!
 
-RHCSA - obtained 2013-08-09 (130-134-935)
-RHCE - obtained 2013-08-10 (130-134-935)
+* RHCSA - obtained 2013-08-09 (130-134-935)
+* RHCE - obtained 2013-08-10 (130-134-935)
 
 ## Contents
 
