@@ -6,6 +6,7 @@
 	* 90% of world's data was created in last 2 years alone
 	* Cell tower data (where signal strength is highest etc)
 	* Website logs
+        * etc
 * What is Big Data?
 	* Subjective term
 	* Generally described as "data too big to fit on one machine"
@@ -49,4 +50,4 @@
 
 ## Opinion
 
-Pretty simple stuff. Nothing I haven't heard before. Nevers hurts to hear the basics again though. :)
+Pretty simple stuff. Nothing I haven't heard before. Never hurts to hear the basics again though. :)
