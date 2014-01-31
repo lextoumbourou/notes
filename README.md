@@ -12,6 +12,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 #### 2013
 
+* [Computational Investing, Part I (Coursera)](./computational-investing-part-1-coursera)
 * [Red Hat System Administration III w. RHCSA & RHCE Exams (rh255)](./rh255-redhat-system-administrator-3)
 
 ### Abandoned/Failed
