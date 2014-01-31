@@ -9,13 +9,15 @@
     * Question: Total sales intermediate key?
         * What would be a suitable reducer?
 * Basic mapper code:
-    ```
-    def mapper():
-        for line in sys.stdin:
-            data = line.strip().split("\t")
-            date, time, store, item, cost, payment = data
-            print "{0}\t{1}".format(store, cost)
-    ```
+
+```
+def mapper():
+    for line in sys.stdin:
+        data = line.strip().split("\t")
+        date, time, store, item, cost, payment = data
+        print "{0}\t{1}".format(store, cost)
+```
+
 * Reducing
     * In the example, data comes in as lines of text
     ```
@@ -33,7 +35,6 @@
 
             if old_key and old_key != this_key:
                 print "{0}\t{1}".format(old_key, sales_total)
-
                 sales_total = 0
 
             old_key = this_key
@@ -53,17 +54,17 @@
     * Sample code available under ```~/udacity_training/code/```
     * To see sample code in action
         * Put ```purchases.txt``` onto the HDFS
-            ```
-            > cd ~/udacity_training/data
-            > hadoop fs -put training.txt
-            > hs mapper.py reducer.py training.txt output_path
-            > hadoop fs -ls output/
-            Found 3 items
-            -rw-r--r--   1 training supergroup          0 2014-01-31 05:00 output/_SUCCESS
-            drwxr-xr-x   - training supergroup          0 2014-01-31 04:58 output/_logs
-            -rw-r--r--   1 training supergroup       2296 2014-01-31 05:00 output/part-00000
-            > hadoop fs -cat output/part-00000
-            ```
+        ```
+        > cd ~/udacity_training/data
+        > hadoop fs -put training.txt
+        > hs mapper.py reducer.py training.txt output_path
+        > hadoop fs -ls output/
+        Found 3 items
+        -rw-r--r--   1 training supergroup          0 2014-01-31 05:00 output/_SUCCESS
+        drwxr-xr-x   - training supergroup          0 2014-01-31 04:58 output/_logs
+        -rw-r--r--   1 training supergroup       2296 2014-01-31 05:00 output/part-00000
+        > hadoop fs -cat output/part-00000
+        ```
 
 
   
