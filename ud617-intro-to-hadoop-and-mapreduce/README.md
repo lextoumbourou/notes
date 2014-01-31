@@ -12,3 +12,4 @@ In Progress
 ## Contents
 
 * [Lesson 1: Big Data](./lesson-1-big-data.md)
+* [Lesson 2: HDFS and Mapreduce](./lesson-2-hdfs-and-mapreduce.md)
