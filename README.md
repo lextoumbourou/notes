@@ -10,6 +10,10 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### Complete
 
+#### 2014
+
+* [Algorithms (Udacity - cs215)](./cs215-algorithms-udacity)
+
 #### 2013
 
 * [Computational Investing, Part I (Coursera)](./computational-investing-part-1-coursera)
