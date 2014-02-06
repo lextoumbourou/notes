@@ -53,7 +53,7 @@ My latest XBMC addon is ready for human consumption: [Udacity](https://www.udaci
 
 ## [How to install it](#installation)
 
-The addon is available via the official repo. Install it via **Videos** > **Add-ons** > **Get More...** > **Udacity** > **Install**.
+The addon is available through the official repo: **Videos** > **Add-ons** > **Get More...** > **Udacity** > **Install**.
 
 <div class="img-annotated">
     <img src="/images/udacity_xbmc_install.jpg" alt="Installation">
