@@ -29,15 +29,15 @@
     * Analyse correctness of code
     * Analyse efficiency of code
 * Naive algorithm
-```
-def naive(a, b):
-    x = a; y = b;
-    z = 0
-    while x > 0:
-        z = z + y
-        x = x - 1
-    return z
-```
+    ```
+    def naive(a, b):
+        x = a; y = b;
+        z = 0
+        while x > 0:
+            z = z + y
+            x = x - 1
+        return z
+    ```
     * What it does:
         * iterate through the loop a times
             * each time, add y to 0
@@ -50,24 +50,24 @@ def naive(a, b):
     * Running time of naive(a, b) = Theta(a)
         * Very much linear time
 * Russian Peasants algorithm
-```
-def russian(a, b):
-    x = a; y = b;
-    z = 0
-    while x > 0:
-        if x % 2 == 1: z = z + y
-        y = y << 1
-        x = x >> 1
-    return z
-```
+    ```
+    def russian(a, b):
+        x = a; y = b;
+        z = 0
+        while x > 0:
+            if x % 2 == 1: z = z + y
+            y = y << 1
+            x = x >> 1
+        return z
+    ```
     * Uses bitshift operator
         * Refresher
             ```
             > 17 >> 1
             > 8
             ```
-            > # Binary for 17 == ```10001```
-            > # After bit shifting right == ```01000```
+            * Binary for 17 == ```10001```
+            * After bit shifting right == ```01000```
     * What it does:
         * When x is odd, add y to z
         * Each iteration (until x is 0)
@@ -75,11 +75,13 @@ def russian(a, b):
             * halve x until x is 0
     * Example (for intuition)
         * ```russian(4, 5)```
+        ```
         | z  | x   | y   |
         | 0  | 4   | 5   |
         | 0  | 2   | 10  |
         | 0  | 1   | 20  |
         | 20 | 0   | 40  | 
+        ```
         * Addition occurs only once when x is 1
     * Correctness of algorithm
         * Same strategy for naive applies to russian
