@@ -20,3 +20,7 @@ A collection of notes from various courses, books and lectures either completed,
 * [Red Hat System Administration III w. RHCSA & RHCE Exams (rh255)](./rh255-redhat-system-administrator-3)
 
 ### Abandoned/Failed
+
+#### 2011
+
+* [Introduction to Computer Science (cs50)](./cs50-introduction-to-computer-science)
