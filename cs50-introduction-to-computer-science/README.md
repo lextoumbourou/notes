@@ -13,20 +13,20 @@ I really did enjoyed this course and would highly recommend it. Especially since
 ## Contents
 
 * Week 1
-    * [Lecture](./week-1-lecture.md)
+    * [Lecture](./week_1_lecture.md)
 * Week 2
-    * [Lecture](./week-2-lecture.md)
-    * [Section](./week-2-section.md) 
+    * [Lecture](./week_2_lecture.md)
+    * [Section](./week_2_section.md) 
 * Week 3
-    * [Lecture](./week-3-lecture.md)
-    * [Section](./week-3-section.md)
-    * [Walkthrough](./week-3-walkthrough.md)
+    * [Lecture](./week_3_lecture.md)
+    * [Section](./week_3_section.md)
+    * [Walkthrough](./week_3_walkthrough.md)
 * Week 4
-    * [Lecture](./week-4-lecture.md)
-    * [Section](./week-4-section.md)
-    * [Walkthrough](./week-4-walkthrough.md)
+    * [Lecture](./week_4_lecture.md)
+    * [Section](./week_4_section.md)
+    * [Walkthrough](./week_4_walkthrough.md)
 * Week 5
-    * [Lecture](./week-5-lecture.md)
-    * [Walkthrough](./week-5-walkthrough.md)
+    * [Lecture](./week_5_lecture.md)
+    * [Walkthrough](./week_5_walkthrough.md)
 * Week 7
-    * [Lecture](./week-7-lecture.md)
+    * [Lecture](./week_7_lecture.md)
