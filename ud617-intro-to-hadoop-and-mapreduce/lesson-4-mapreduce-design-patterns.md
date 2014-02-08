@@ -55,4 +55,18 @@
 * Mean and Standard Deviation
     * Work out something like: Any correlation between the day of the week and how much people spend on items?
 * Combiners
-    * "prereduction"
+    * reduce locally (on mappers) to reduce network traffic between mappers and reducers
+    * Syntax to setup a combiner:
+
+    ```
+    run_mapreduce_with_combiner() {
+        hadoop jar /usr/lib/hadoop-0.20-mapreduce/contrib/streaming/hadoop-streaming-2.0.0-mr1-cdh4.1.1.jar -mapper $1 -reducer $2 -combiner $2 -file $1 -file $2 -input $3 -output $4
+    }
+
+    ```
+    * The number of 'Reduce input records' should be drastically reduced with a combiner
+* Structural Pattern
+    * Used if migrating data from relational DB and moving to Hadoop
+    * Allows you to take advantage of hierarchical data
+    * Data sources must be linked by foreign keys
+    * Data must be structured or row-based
