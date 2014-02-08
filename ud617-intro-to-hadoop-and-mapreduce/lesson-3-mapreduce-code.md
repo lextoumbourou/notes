@@ -65,6 +65,3 @@ def mapper():
         -rw-r--r--   1 training supergroup       2296 2014-01-31 05:00 output/part-00000
         > hadoop fs -cat output/part-00000
         ```
-
-
-  
