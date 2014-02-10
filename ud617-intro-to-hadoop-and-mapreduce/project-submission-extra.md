@@ -10,5 +10,11 @@ One improvement that could be made to the index, is to sort the index by the "sc
 
 Some examples of other questions that could be answered by the dataset are:
 
-1. Who are the most active contributors to the forum?
+1. Who are the top contributors to the forum?
 2. Which contributors generate the most discussion per post?
+
+Here's an example of the first question:
+
+* [Top Contributors](./top-contributors)
+
+
