@@ -2,7 +2,7 @@
 
 ## Status
 
-In Progress
+In Progress (awaiting grade)
 
 ## Instructors
 
