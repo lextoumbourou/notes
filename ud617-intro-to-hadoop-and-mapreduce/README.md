@@ -4,7 +4,7 @@
 
 Complete - 2014-02-15
 
-<img src="./images/cert_of_completion.jpg"></img>
+<img src="./images/cert_of_completion.png"></img>
 
 ## Instructors
 
