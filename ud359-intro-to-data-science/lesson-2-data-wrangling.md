@@ -47,3 +47,7 @@ import numpy
 baseball = pandas.read_csv(filename)
 baseball['weight'] = baseball['weight'].fillna(baseball['weight'].mean())
 ```
+
+## Opinions
+
+* During the projects, it would be nice to see the way the instructor would do it, after you get the answer right - something to compare your solution against.
