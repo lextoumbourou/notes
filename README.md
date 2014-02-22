@@ -22,6 +22,10 @@ A collection of notes from various courses, books and lectures either completed,
 * [Red Hat System Administration III w. RHCSA & RHCE Exams (rh255)](./rh255-redhat-system-administrator-3)
 * [Statistics (Udacity - st095)](./st095-statistics)
 
+#### 2012
+
+* [Intro to Computer Science (Udacity - cs101)](./cs101-intro-to-computer-science)
+
 ### Abandoned/Failed
 
 #### 2011
