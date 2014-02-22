@@ -25,6 +25,7 @@ A collection of notes from various courses, books and lectures either completed,
 #### 2012
 
 * [Intro to Computer Science (Udacity - cs101)](./cs101-intro-to-computer-science)
+* [Web Development (Udacity - cs253)](./cs253-web-development)
 
 ### Abandoned/Failed
 
