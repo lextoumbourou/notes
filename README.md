@@ -18,6 +18,7 @@ A collection of notes from various courses, books and lectures either completed,
 #### 2013
 
 * [Computational Investing, Part I (Coursera)](./computational-investing-part-1-coursera)
+* [Programming Languages (Udacity - cs262)](./cs262-programming-languages)
 * [Red Hat System Administration III w. RHCSA & RHCE Exams (rh255)](./rh255-redhat-system-administrator-3)
 * [Statistics (Udacity - st095)](./st095-statistics)
 
