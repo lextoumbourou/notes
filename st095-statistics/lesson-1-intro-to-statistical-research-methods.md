@@ -5,7 +5,7 @@
     * who was surveyed
     * how the survey was conducted
 * Constructs
-    * Things that are generally difficult to measure precisely:
+    * Things that are generally difficult to measure precisely eg:
         * Happiness
         * Hunger
         * Health
@@ -39,3 +39,10 @@
         * Ensures everyone thinks they're the 'experimental group'
     * Double blind
         * Researchers observing results shouldn't know who's in control or experimental to prevent judgement bias
+* Independant variable = variable that is changed to test effect on dependant variables
+* Dependant variable = variable being tested
+
+## Opinion
+
+* Excellent introduction. Engaging, not too difficult. Very little prerequisite knowledge assumed.
+* One of the best Udacity courses.
