@@ -6,14 +6,14 @@
 * Continuous distribution
     * An equation that allows you to calculate proportion between any two values on x-axis of distribution
 * Area of normally proportionally distributed data will always be "1" or 100%
-* z
+* z score
     * number of standard deviations away from the mean on the x-axis
     <img src="./images/z-value.png"></img>
     * Formula:
     ```
     z = (x - mu) / std_dev
     ```
-    * Negative z-scores are to the left of the mean - less than the mean
+    * Negative z-scores are to the left of the mean (less than the mean)
 * Standardize distribution
     * converting the mean to 0 - shift the distribution left or right
     * standard deviation becomes 1
