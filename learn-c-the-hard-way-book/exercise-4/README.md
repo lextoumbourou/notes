@@ -1,4 +1,4 @@
-# Exercise 4: Introducting Valgrind
+# Exercise 4: Introducing Valgrind
 
 * Valgrind is used for memory debugging, memory leak detection and profiling
 ```
