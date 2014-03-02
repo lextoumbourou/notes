@@ -14,3 +14,4 @@ Complete - 2013-08-30
 * [Lesson 4: Variability](./lesson-4-variability.md)
 * [Lesson 5: Standardizing](./lesson-5-standardizing.md)
 * [Lesson 6: Normal Distribution](./lesson-6-normal-distribution.md)
+* [Lesson 7: Sampling Distributions](./lesson-7-sampling-distributions.md)
