@@ -18,3 +18,21 @@
     * .05% needs to be divided in half: 2.5% * 2
 
     <img src="./images/two-tailed_test.png"></img>
+
+    * Alpha levels (for two-tailed tests):
+        * 0.05 - 1.65
+        * 0.01 - 2.32
+        * 0.001 - 3.08
+* Null hypothesis vs alternative hypothesis
+    * With a sample: can't prove null hypothesis is true, can only get evidence to reject it or fail to reject it
+
+    <img src="./images/null_vs_alternative.png"></img>
+* Rejecting the null
+    * sample mean falls within the critical region
+    * z-score of sample mean is greater than z-critical value
+    * probability of obtainig the sample mean is less than the alpha level
+* Decision errors
+    * Type 1 error: reject the null and it's true
+    * Type 2 error: retain the null and it's false
+
+    <img src="./images/decision_errors.png"></img>
