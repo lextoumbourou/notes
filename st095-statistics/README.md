@@ -17,4 +17,5 @@ Complete - 2013-08-30
 * [Lesson 7: Sampling Distributions](./lesson-7-sampling-distributions.md)
 * [Lesson 8: Estimation](./lesson-8-estimation.md)
 * [Lesson 9: Hypothesis Testing](./lesson-9-hypothesis-testing.md)
+* [Lesson 10: t-Tests](./lesson-10-t-tests.md)
 

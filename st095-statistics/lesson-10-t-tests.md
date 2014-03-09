@@ -1,6 +1,20 @@
 # Lesson 10: T-Tests
 
-* Determine the sample standard deviation using Bessel's Correction #'
+## First half
+
+* Basic premise for t-test
+    1. Get the sample mean to compare to the population mean (or alternate sample)
+    2. Find the sample standard deviation
+    3. Use it to calculate t value
+    ```
+    t = (mu - sample_mu) / (std_dev / sqrt(n))
+    ```
+    4. Look up [t-table](https://s3.amazonaws.com/udacity-hosted-downloads/t-table.jpg) to find critical p-value for your alpha level.
+        * Degrees of freedom = sample_size - 1
+        * If it's a two-tailed test, then: ```alpha level / 2```
+    5. Is the t score further away from 0 than the critical probability?
+    6. If so, then it's statistically significant. Or, we reject the null hypothesis
+* Determine the sample standard deviation using Bessel's Correction
     * S = sqrt( variance / (n - 1) )
 * t-distribution
     * more prone to error
@@ -8,20 +22,13 @@
     * the larger n is (the sample size)
         * the closer the t-dist is to normal
         * the tails get skinnier
-        * the closer S is to the population standard deviation (sigma)
-* z-test works when we know ```mu``` and ```sigma```, but what if we don't have it? Only have samples.
-* t-distribution
-    * more prone to error than normal distribution
-* t-statistic is sometimes called student's
-* Degrees of Freedom
+        * less margin of error
+* Understanding degrees of freedom
     * Example: if you have 3 marbles to put in 3 cups
         * 1st cup: 3 choices of marbles
         * 2nd cup: 2 choices of marbles
         * 3rd cup: 1 choice
         * Therefore, the last cup is forced, so you have *2* degrees of freedom
-* t-table
-    * tells the critical values in the body
-    * on the left, degrees of freedom
 * Finch example (birds)
     * Scientists map a trait of the birds like beak width
     * Average beak width = 6.07mm
@@ -35,9 +42,27 @@
     * We can definitely reject the null
 
     <img src="./images/finch_t_statistic.png"></img>
-* p-value
-    * one-tailed =  p-value probability above the t-statistic
-    * two-tailed test
-        * p-value probability above the t-statistic
-        * p-value probability below the negative version of t-statistic
-    * find p-value interval estimate using t-table
+* Cohen's d
+    * Common measure of "effect" size when comparing means
+    * Measures the distance between two means in std deviation units
+    * Instead of dividing by standard error, divide by standard deviation of the sample
+* Dependent samples
+    * "When the same subject takes the test twice"
+    * Two different treatments
+    * Pre-test, post-test
+    * Growth over time (longitudinal study)
+
+## New half
+
+* Effect Size
+    * size of treatment effect
+        * if you have a treatment variable, what's the difference between two means?
+    * everyday meaning
+        * variables you can understand without special training
+    * types of effect size measures
+        * difference measures
+        * standardized differences
+            * Cohen's d
+        * correlation measures
+            * r2 
+                * "proportion (%) of variation in one variable that is related to ('explained by') another variable"
