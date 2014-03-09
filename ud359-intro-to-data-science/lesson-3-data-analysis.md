@@ -14,6 +14,17 @@
 
 <img src="./normal_distribution_lesson_3.png"></img>
 
-* t-test
-    * specified in terms of a "test statistic"
-    * a number that helps to decide whether to accept or reject the null hypothesis
+* null hypothesis
+    * statement to 'disprove' or reject with a test
+* Welch's T-test
+    * Used for comparing two samples which don't necessarily have the same sample size
+    * Formula:
+        
+    <img src="./images/welch-formula.png"></img>
+
+    * Calculate degrees of freedom (aka nu) 
+
+    <img src="./images/calculate-degrees-of-freedom.png"></img>
+
+    * Once you have t and nu, you can calculate p-value
+        * "p == probability of obtaining the t-statistic as extreme as the one observed, if null was true"
