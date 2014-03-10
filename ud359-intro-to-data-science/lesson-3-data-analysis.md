@@ -88,7 +88,11 @@
     * cost function: J(theta)
         * want to minimize theta
     * Personal: very lost here. Purpose of the formula has me very confused. Hopefully I don't need to understand it.
-* Gradient descent
-    * J(theta) gets smaller and smaller until it converges to some minimum value
-    * Line in graph is a U shape
-    
+* How to minimize cost function
+    1. Start with some Theta value
+    2. For each Theta, update Theta values according to this equation
+        
+    <img src="./images/theta-equation"></img>
+
+    * Function J has been provided as ```compute_cost``` (I think)
+    * Personal: absolutely no idea how to deal with this question. Struggled for an hour, clearly missing a key bit of information
