@@ -12,7 +12,7 @@
         * Std (sigma)
     * Variance = sigma^2
 
-<img src="./normal_distribution_lesson_3.png"></img>
+<img src="./images/normal-distribution.png"></img>
 
 * null hypothesis
     * statement to 'disprove' or reject with a test
@@ -82,3 +82,13 @@
             * Spam filter
         * Unsupervised learning
             * Split photos into groups without tell it what groups to use
+* Prediction with Regression
+    * Takes in data points as input variables and build most accurate equation
+* Linear Regression with Gradient Descent
+    * cost function: J(theta)
+        * want to minimize theta
+    * Personal: very lost here. Purpose of the formula has me very confused. Hopefully I don't need to understand it.
+* Gradient descent
+    * J(theta) gets smaller and smaller until it converges to some minimum value
+    * Line in graph is a U shape
+    
