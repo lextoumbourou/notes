@@ -24,7 +24,7 @@
         numerator = 0
         denominator = 0
         for i, j in zip(x, y):
-            result += (i - mean_x) * (j - mean_y)
+            numerator += (i - mean_x) * (j - mean_y)
             denominator += (x - mean_x) ** 2
 
         return numerator / (denominator)
