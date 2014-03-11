@@ -37,11 +37,12 @@
             * categorical data
         * saturation 
             * intensity of colour for a hue
-* Plotting in Python (with ```ggplot```)
+* Plotting with ```ggplot```
     1. Create plot
     ```
     > ggplot(data, aes(x_var, y_var))
     ```
+
         * ```data``` == dataframe
         * ```aes(x_var, y_var)```
     2. Represent data with geometic objects
