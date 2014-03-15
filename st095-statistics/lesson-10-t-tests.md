@@ -66,3 +66,18 @@
         * correlation measures
             * r2 
                 * "proportion (%) of variation in one variable that is related to ('explained by') another variable"
+* Statistical significance
+    * Rejected the null
+    * Results not likely due to chance (sampling error)
+* Cohen's d
+    * Provides "standardized mean difference"
+    * ```d = (x-bar - Mu) / std```
+    * Interpretation: how far apart the sampling mean is in standard deviations
+* R-squared - r^2 - coefficient of determination
+    * Result: 0.0 - 1.00
+        * 0 == variables that are not related
+        * 1 == variables that are perfectly related (near impossible)
+    * r^2 = ```t^2 / (t^2 + df)``` Note: t-score is not t-critical value
+        * Example:
+           * ```t = 2, df = 24 == 4 / (24 + 4) == 0.167
+* Results section
