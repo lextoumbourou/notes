@@ -91,8 +91,7 @@
     2. For each Theta, update Theta values according to this equation
         
     <img src="./images/theta-equation.png"></img>
-
-        * In code:
-        ```
+        
+        
         theta - alpha / m * numpy.dot((predicted_values) - values), features)
-        ```
+        
