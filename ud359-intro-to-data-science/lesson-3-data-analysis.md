@@ -85,14 +85,14 @@
 * Prediction with Regression
     * Takes in data points as input variables and build most accurate equation
 * Linear Regression with Gradient Descent
-    * cost function: J(theta)
-        * want to minimize theta
-    * Personal: very lost here. Purpose of the formula has me very confused. Hopefully I don't need to understand it.
+    * cost function: want to minimize J(theta)
 * How to minimize cost function
     1. Start with some Theta value
     2. For each Theta, update Theta values according to this equation
         
-    <img src="./images/theta-equation"></img>
+    <img src="./images/theta-equation.png"></img>
 
-    * Function J has been provided as ```compute_cost``` (I think)
-    * Personal: absolutely no idea how to deal with this question. Struggled for an hour, clearly missing a key bit of information
+        * In code:
+        ```
+        theta - alpha / m * numpy.dot((predicted_values) - values), features)
+        ```
