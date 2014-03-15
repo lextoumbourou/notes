@@ -27,3 +27,9 @@
 * i^26 == 1 * i^2 == 1 * -1 == -1
 * i^31 == 1 * i^28 * i^3 == 1 * -i == -i
 * i^12 == 1
+
+## Imaginary roots of negative numbers
+
+* Simply: ```sqrt(-52)```
+    * ```sqrt(-1) * sqrt(52)```
+    * Property only works when *one* of the numbers is negative
