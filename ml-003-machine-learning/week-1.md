@@ -125,3 +125,50 @@ Size of house (x) -> hypothesis (h) -> estimated price (y)
     <img src="./images/derivative-term.png"></img>
 
 * Algorithm should do a simultaneous update. Essentially, don't change ```Theta[0]``` until you've calculated new value for ```Theta[1]``` and ```Theta[0]```
+
+### Gradient Descent Intuition
+
+* Derivative term
+    * What is the slope of the line?
+* Alpha term
+    * If it's too small, it may take too long to find the minimum
+    * If it's too big, it might go too far ("overshoot the minimum") and could potentially never find the minimum
+* Gradient descent will automatically take smaller steps over time - no need to decrease *alpha*.
+
+## Linear Algebra Review
+
+### Matrices and Vectors
+
+* Matrix Elements (entries of matrix) 
+    * Matrix == rectangular array of numbers (defined in square brackets)
+    ```
+    [ 1402 191 ]
+    [ 1371 821 ]
+    [ 949 1437 ]
+    ```
+    * Dimension of matrix == number of rows x number of columns
+        * Above example is a ```3 x 2``` matrix
+    * Refer to entries like ```Aij``` or ```A[1][2] == 191```
+* Vector
+    * Matrix with only 1 column
+    ```
+    [450]
+    [123]
+    [345]
+    [335]
+    ```
+    * Above example == 4-dimensional vector
+    * Vectors could be 1-indexed or 0-indexed
+* Usually use capital letters to refer to matrices ```A, B, C```
+* Usually use lower case to refer to vector ```x, y, z```
+
+### Additional and Scalar Multiplication
+
+* To add each number that corresponds in the matrix
+
+<img src="./images/matrix-multiplication.png"></img>
+
+    * You can only add two matricies that are the same size
+* Scalar multiplication simply involves multiplying each entry in the matrix by a number
+
+<img src="./images/scalar-multiplication.png"></img>
