@@ -103,6 +103,25 @@ Size of house (x) -> hypothesis (h) -> estimated price (y)
         * (Multiple by ```1/2m``` to make the math "easier" (?))
         * This is called Cost Function or Squared Error
 
-### Gradient Descent for Linear Regression
+### Gradient Descent
 
-* Apply gradient descent to minimize: ```J( set(thetas) )```
+* An algorithm for minimizing a cost function (and any other function) J
+* Outline:
+    1. Start with some ```Theta[0], Theta[1]``` (or any set of Thetas)
+    2. Keep changing ```Theta[0], Theta[1]``` to reduce ```J(Theta[0], Theta[1])``` until we reach a minimum
+* Depending on where you start (which Thetas you test?) you may end up with various different mininums (thing of the hill/valley example)
+* Overview
+
+<img src="./images/gradient-descent.png"></img>
+
+* Mathematical notation:
+    * Assignment: ```a := b``` (as opposed to Truth Assertion ```a = b```)
+    * Alpha (number called "learning rate")
+    
+    <img src="./images/alpha.png"></img>
+    
+    * Derivative term (not covered yet)
+
+    <img src="./images/derivative-term.png"></img>
+
+* Algorithm should do a simultaneous update. Essentially, don't change ```Theta[0]``` until you've calculated new value for ```Theta[1]``` and ```Theta[0]```
