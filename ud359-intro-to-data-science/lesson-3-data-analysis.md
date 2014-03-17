@@ -92,6 +92,6 @@
         
     <img src="./images/theta-equation.png"></img>
         
-        
         theta - alpha / m * numpy.dot((predicted_values) - values), features)
+* Need to understand what the hell ```numpy.dot``` does. It's never explain.
         
