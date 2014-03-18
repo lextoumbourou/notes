@@ -172,3 +172,35 @@ Size of house (x) -> hypothesis (h) -> estimated price (y)
 * Scalar multiplication simply involves multiplying each entry in the matrix by a number
 
 <img src="./images/scalar-multiplication.png"></img>
+
+### Matrix Vector Multiplication
+
+* Matrix vector multiplication
+```
+a = [1 3]
+    [4 0]
+    [2 1]
+b = [1]
+    [5]
+```
+    * steps:
+        1. ```a[0][0] * b[0][0] + a[0][1] * b[1][0]```
+        2. ```a[1][0] * b[0][0] + a[1][1] * b[1][0]```
+        3. ```a[2][0] * b[0][0] + a[2][1] * b[1][0]```
+    * Result will be 3 x 1 matrix (3-dimensional vector) 
+    * Can be computational efficient to do it this way instead of using an iterator
+
+### Matrix Matrix Multiplication
+
+* Key steps to know for gradient descent
+* Example
+```
+a = [1 3 2]
+    [4 0 1]
+b = [1 0]
+    [0 1]
+    [5 2]
+```
+    * Split b in half and do matrix/vector multiplication to both sides
+    * 2 x 3 * 3 x 2 = first two x second two = 2 x 2 
+    * 2 x 2 * 2 x 2 = first two x second two = 2 x 2
