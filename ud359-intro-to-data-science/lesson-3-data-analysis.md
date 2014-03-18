@@ -93,5 +93,34 @@
     <img src="./images/theta-equation.png"></img>
         
         theta - alpha / m * numpy.dot((predicted_values) - values), features)
-* Need to understand what the hell ```numpy.dot``` does. It's never explain.
-        
+* Need to understand what the hell ```numpy.dot``` does. It's never explained.
+* Coefficients of determination (R-squared)
+    1. Have a number of data values ```y[i] through to y[n]```
+    2. Have a bunch of predictions ```f[i] through to f[n]```
+    3. Average value for the data ```y_bar```
+    * R^2 is:
+    ```
+    1 - (
+      sum(y[i] - f[i])^2) / sum((y[i] - y_bar)^2)
+    )
+    ```
+    * Point of it is to determine how effective your coefficients you've gotten from linear regression
+* Additional considerations
+    * Other types of linear regression
+        * Ordinary least squares regression
+            * Guaranteed to find optimal solution when performing linear regression
+    * Parameter estimation
+        * Putting confidence intervals on parameters
+    * Underfitting data
+        * Trying to fit linear model to non-linear data
+    * Gradient descent might find a "local minimum" that's not the actual minimum
+        * Could random start points and compare results
+* Kurt's Advice for Machine Learning practises
+    * With any problem:
+        * What do we know?
+        * What expectations do we have?
+        * Is there any intuition for the data?
+    * Pick which part of data science you are most interested in and focus on it
+        * Coding
+        * Maths/stats
+        * Communication
