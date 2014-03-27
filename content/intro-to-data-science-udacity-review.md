@@ -77,3 +77,15 @@ Two sample t-test comes in a few variations depending on assumptions about your 
 Performing Welch's t-test in Python was covered, and obviously this was useful for the final project.
 
 Next, non-parametric tests: statistical tests that do not assume data is normal. Again, probably useful for final project. Very interesting to learn, though difficult to see how it would fit into real life. Mann-whitney u-test where the examples given. What's the difference between the t-test and the mann_whitney test?
+
+The second-half focuses on a rudimentary analysis of Machine Learning. A comparison of statistics vs Machine Learning (Machine Learning is less about anaylsis and more about making preditions). Then a discussion around Supervised Learning (spam filter, cost estimate of property) and Unsupervised Learning.
+
+Next the discussion around Regression begun using Gradient Descent. I really got stuck here - close enough to give up if it wasn't for the money getting sucked out my account on a weekly basis. In the end, I followed this path to get the prerequisites to understand the material,
+
+In the end, I understood it as:
+
+We take some input variables (like age, weight, height), then multiple each by some value (called Theta) and add them together and use that to come up with an "output" variable.
+
+Coefficient of determination (r^2), covered next, allows you to determine how effective your model is. The programming exercise was fairly straight forward, just covering a mathematical formula to Python code.
+
+Concludes with an appetite whetener for other algorithms for linear regression and some additional considerations.
