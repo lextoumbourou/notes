@@ -10,5 +10,6 @@ data = pandas.DataFrame({'rain': rain, 'clear': clear, 'Hour': rain.index})
 
 line = vincent.Line(data)
 line.axis_titles(x='Hour', y='Mean entities per hour')
+line.legend('weather')
 vincent.core.initialize_notebook()
 line.display()
