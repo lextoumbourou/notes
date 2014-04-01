@@ -102,11 +102,11 @@ Based on this result, we fail to reject the null hypothesis that rain does not a
 
 ## Predicting Ridership Per Station
 
-Using Gradient Descent, we can determine a set of theta values that can help us predict ridership at a station using the following variables: rain, precipi, Hour and meantempi.
+Using Gradient Descent, we can collect a set of theta values that can help us predict ridership at a station using the following variables: rain, precipi, Hour and meantempi.
 
 In our model, we set a learning rate of 0.5 - a happy medium between learning too fast and overutilising our computational resources - and the value 50 as the number of iterations. With this, we get the following Theta results for each of the features, respectively: 3.57746093e+00   1.12934079e+01   2.04990276e+02  -2.66371483e+01.
 
-Why would provide us with an r squared is 0.45804446474. Not exactly ideal but someway toward working through an accuractely prediction.
+Which would provide us with an r-squared values of 0.45804446474 for our features. Not exactly ideal but moves us someway toward achieving an accuractely prediction.
 
 ([gradient_descent.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/gradient_descent.py))
 
@@ -120,7 +120,18 @@ We could put the large dataset onto a HDFS, then we might write a mapper and red
 
 Which, using the current dataset, returns the following information.
 
-[('R018', 1389878.0), ('R012', 1564752.0), ('R011', 1582914.0), ('R055', 1607534.0), ('R179', 1618261.0), ('R046', 1695150.0), ('R033', 1711663.0), ('R022', 1796932.0), ('R084', 1809423.0), ('R170', 2887918.0)]
+```
+('R170', 2887918.0)
+('R084', 1809423.0)
+('R022', 1796932.0)
+('R033', 1711663.0)
+('R046', 1695150.0)
+('R179', 1618261.0)
+('R055', 1607534.0)
+('R011', 1582914.0)
+('R012', 1564752.0)
+('R018', 1389878.0)
+```
 
 Where R170 appears to be the busiest station.
 
