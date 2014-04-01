@@ -12,17 +12,19 @@ In this short article, we're going to do some analysis on how weather affects th
 
 The dataset includes data from roughly 550 stations across New York. It begins on the 1st of May and ends on the 30th. 
 
-According to our dataset, there were over 144,532,327 people entering the turnstile for the month, an average of about 4,817,744 per day and about 33,724,209 entries per week ([/basic_stats.py])[ttps://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/basic_stats.py)).
+According to our dataset, there were over 144,532,327 people entering the turnstile for the month, an average of about 4,817,744 per day and about 33,724,209 entries per week.
 
-We could begin our analysis by plotting the determining mean ridership by hour for the month of May for our entire dataset.
+([basic_stats.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/basic_stats.py)).
+
+We could begin our analysis by plotting the determining mean ridership by hour for the month of May for the entire dataset.
 
 <img src="https://raw.githubusercontent.com/lextoumbourou/study-notes/master/ud359-intro-to-data-science/final_project/images/mean-entries-per-hour.png"></img>
 
 [entries_per_hour.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/entries_per_hour.py)
 
-So, we can see from the graph, that the busiest hour for the station is around ?? o'clock.
+So, we can see from the graph, that the busiest hour for the station is around 20:00.
 
-Now let's create the same line graph, but this time we'll separate wet days with non-wet days. The rainy days will be displayed in ??
+Now let's create the same line graph, but this time we'll separate wet days with non-wet days.
 
 <img src="https://raw.githubusercontent.com/lextoumbourou/study-notes/master/ud359-intro-to-data-science/final_project/images/mean-entries-per-hour-wet-vs-dry.png"></img>
 
@@ -102,9 +104,11 @@ Based on this result, we fail to reject the null hypothesis that rain does not a
 
 Using Gradient Descent, we can determine a set of theta values that can help us predict ridership at a station using the following variables: rain, precipi, Hour and meantempi.
 
-In our model, we set a learning rate of 0.5, a happy medium between learning too fast and over computionat , and the value 50 as the number of iterations. With this, we get the following Theta results for each of the features, respectively: 3.57746093e+00   1.12934079e+01   2.04990276e+02  -2.66371483e+01
+In our model, we set a learning rate of 0.5 - a happy medium between learning too fast and overutilising our computational resources - and the value 50 as the number of iterations. With this, we get the following Theta results for each of the features, respectively: 3.57746093e+00   1.12934079e+01   2.04990276e+02  -2.66371483e+01.
 
 Why would provide us with an r squared is 0.45804446474. Not exactly ideal but someway toward working through an accuractely prediction.
+
+([gradient_descent.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/gradient_descent.py))
 
 ## Working with a larger dataset 
 
