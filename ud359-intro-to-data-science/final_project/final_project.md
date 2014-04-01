@@ -12,21 +12,21 @@ In this short article, we're going to do some analysis on how weather affects th
 
 The dataset includes data from roughly 550 stations across New York. It begins on the 1st of May and ends on the 30th. 
 
-According to our dataset, there were over x amount of people entering the turnstile, an average of about x per day and about x entries per week ([./basic_stats.py](./basic_stats.py)).
+According to our dataset, there were over 144,532,327 people entering the turnstile for the month, an average of about 4,817,744 per day and about 33,724,209 entries per week ([/basic_stats.py])[ttps://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/basic_stats.py)).
 
 We could begin our analysis by plotting the determining mean ridership by hour for the month of May for our entire dataset.
 
-<img src="../images/mean-entries-per-hour.png"></img>
+<img src="https://raw.githubusercontent.com/lextoumbourou/study-notes/master/ud359-intro-to-data-science/final_project/images/mean-entries-per-hour.png"></img>
 
-[entries_per_hour.py](./entries_per_hour.py)
+[entries_per_hour.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/entries_per_hour.py)
 
 So, we can see from the graph, that the busiest hour for the station is around ?? o'clock.
 
 Now let's create the same line graph, but this time we'll separate wet days with non-wet days. The rainy days will be displayed in ??
 
-<img src="../images/mean-entries-per-hour-wet-vs-dry.png"></img>
+<img src="https://raw.githubusercontent.com/lextoumbourou/study-notes/master/ud359-intro-to-data-science/final_project/images/mean-entries-per-hour-wet-vs-dry.png"></img>
 
-[entries_per_hour_wet_to_dry.py](./entries_per_hour_wet_to_dry.py)
+[entries_per_hour_wet_to_dry.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/entries_per_hour_wet_to_dry.py)
 
 It appears, based on this chart alone, that there is a slight increase in ridership on wetter days.
 
@@ -88,13 +88,13 @@ Firstly, let's perform some basic statistical comparisons between the two datase
   </tbody>
 </table> 
 
-([compare_datasets.py](./compare_datasets.py))
+([compare_datasets.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/compare_datasets.py))
 
 Since our sample sizes are so different, Welch's t-test may be an appropriate test to determine whether the sample difference is statistically significant.
 
 In this example, we're setting a p-critical value of 0.05. We'll perform a two-tailed test, with the following result: 0.7861709004186308
 
-([welchs_t_test.py](./welchs_t_test.py))
+([welchs_t_test.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/welchs_t_test.py))
 
 Based on this result, we fail to reject the null hypothesis that rain does not affect ridership. It appears to affect ridership in the positive direction.
 
@@ -112,7 +112,7 @@ If we wanted to perform some similar calculations for a larger dataset, we could
 
 Perhaps we wanted to write some MapReduce code to determine top 10 stations for weekly average ridership?
 
-We could put the large dataset onto a HDFS, then we might write a mapper and reducer like the following: [mapper.py](./mapper.py) and [reducer.py](./reducer.py).
+We could put the large dataset onto a HDFS, then we might write a mapper and reducer like the following: [mapper.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/mapper.py) and [reducer.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/reducer.py).
 
 Which, using the current dataset, returns the following information.
 
