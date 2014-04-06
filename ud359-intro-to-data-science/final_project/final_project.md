@@ -6,11 +6,11 @@ The MTA (Metropolitan Transportation Authority) subway network runs from New Yor
 
 The subway is a quintessential piece of New York culture; having been featued in countless novels, movies and TV shows.
 
-In this short article, we're going to do some analysis on how weather affects the MTAs ridership, specifically asking the question: what happens when it rains?
+For subway operators, predicting and understanding the connection between people's behaviour and weather conditions can be absolutley essential for operational planning. So, in this short article, we're going to do some analysis on how weather affects the MTAs ridership, specifically asking the question: what happens when it rains?
 
 ## Dataset
 
-The dataset includes data from roughly 550 stations across New York. It begins on the 1st of May and ends on the 30th. 
+Our sample dataset includes data from roughly 550 stations across New York. It begins on the 1st of May and ends on the 30th. 
 
 According to our dataset, there were over 144,532,327 people entering the turnstile for the month, an average of about 4,817,744 per day and about 33,724,209 entries per week.
 
@@ -36,7 +36,7 @@ However, more statistical rigour is required before coming to any correlation co
 
 ## Statistical Anaylsis
 
-Firstly, let's perform some basic statistical comparisons between the two datasets.
+Firstly, let's perform some basic statistical comparisons between wet and dry days.
 
 <table border="1" class="dataframe">
   <thead>
@@ -94,11 +94,9 @@ Firstly, let's perform some basic statistical comparisons between the two datase
 
 Since our sample sizes are so different, Welch's t-test may be an appropriate test to determine whether the sample difference is statistically significant.
 
-In this example, we're setting a p-critical value of 0.05. We'll perform a two-tailed test, with the following result: 0.7861709004186308
+In this example, we're setting a p-critical value of 0.05. We'll perform a two-tailed test, with the following t-statistic: 1.1 and a two-tailed p-value: 0.27. Based on this, we fail to reject the null hypothesis. Rain does not appear to affect ridership.
 
 ([welchs_t_test.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/welchs_t_test.py))
-
-Based on this result, we fail to reject the null hypothesis that rain does not affect ridership. It appears to affect ridership in the positive direction.
 
 ## Predicting Ridership Per Station
 
@@ -137,4 +135,4 @@ Where R170 appears to be the busiest station.
 
 ## Conclusion
 
-Based on the tools available to us, we can infer that rain has a slight correlation with higher ridership on the MTA subway system. However, one would expect with more data we could get closer to a definitive solution.
+Based on the tools available to us, we can infer that rain doesn't have a statical correlation with ridership on the MTA subway system, however. However, one would expect with more data we could get closer to a definitive solution.

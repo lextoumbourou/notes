@@ -69,4 +69,3 @@ if __name__ == '__main__':
     data = np.array(df['ENTRIESn_hourly']).flatten()
 
     print "R^2 results ", compute_r_squared(data, predictions)
-    
