@@ -102,9 +102,7 @@ In this example, we're setting a p-critical value of 0.05. We'll perform a two-t
 
 Using Gradient Descent, we can collect a set of theta values that can help us predict ridership at a station using the following variables: rain, precipi, Hour and meantempi.
 
-In our model, we set a learning rate of 0.5 - a happy medium between learning too fast and overutilising our computational resources - and the value 50 as the number of iterations. With this, we get the following Theta results for each of the features, respectively: 3.57746093e+00   1.12934079e+01   2.04990276e+02  -2.66371483e+01.
-
-Which would provide us with an r-squared values of 0.45804446474 for our features. Not exactly ideal but moves us someway toward achieving an accuractely prediction.
+In our model, we set a learning rate of 0.5 - a happy medium between learning too fast and overutilising our computational resources - and the value 50 as the number of iterations. This provides us with an r-squared value of 0.45804446474. Not exactly ideal but moves us someway toward having a model for accurately predicting ridership.
 
 ([gradient_descent.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/gradient_descent.py))
 
