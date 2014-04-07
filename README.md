@@ -7,6 +7,7 @@ A collection of notes from various courses, books and lectures either completed,
 ### In Progress
 
 * [Intro to Data Science (Udacity - ud359)](./ud359-intro-to-data-science)
+* [Intro to Parallel Programming (Udacity - cs344)](./cs344-intro-to-parallel-programming)
 
 ### Complete
 

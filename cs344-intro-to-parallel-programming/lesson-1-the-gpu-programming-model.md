@@ -48,3 +48,64 @@
 * GPU is good at:
     * launching lots of threads
     * running lots of threads in parallel
+* Squaring numbers using CUDA:
+  * ```__global__``` is a "declaration spec", a C-language specifier.
+    * How CUDA knows it's a 'kernel' as opposed to CPU code.
+  * Code looks like this:
+  ```
+  __global__ void square(float *d_out, float *d_in) {
+    int idx = threadId.x; # A c-struct with 3 members: x, y and z
+    float f = d_in[idx];
+    d_out[idx] = f * f;
+  }
+  ```
+* Cubing numbers exercise was a fairly trivial exercise of copy and paste. Very helpful to begin to grasp the concepts though.
+* Kernel Launch Parameters
+  * Basic syntax looks like this: ```func_name<<<1, 64>>>(d_out, d_in)```
+  * blocks of threads:
+    * ```<<<1, 64>>>```
+      * 1 == number of blocks
+      * 64 == threads per block
+    * can run many blocks at once
+    * there is a maximum number of threads/blocks (512 older GPUs, 1024 on newer)
+    * to launch 128 threads either: ```<<<2, 64>>>``` or ```<<<1, 128>>>```
+    * each thread knows the index of its block and thread
+    * these are 1-dimensional examples
+    * 2/3-dimensional blocks:
+      * ```square<<<grid_of_blocks, block_of_threads, shmem>>>```
+      * launched like this: ```kernel<<<dim3(1, 1, 1), dim(64, 1, 1)>>>```
+      * where: ```dim3(x, y, z)```
+  * Within the kernel call, we can access the thread within the block using the ```threadIdx``` variable: ```threadIdx.y```
+  * ```blockDim``` - size of block (how many threads in block?)
+  * ```blockIdx``` - "which block am I in within the grid"
+  * ```gridDim``` - size of grid
+* Map
+  * Run a function on a set of elements
+  * Key building block of GPU programming
+  * GPUs are good at Map because:
+    * GPUs have many parallel processes
+    * GPUs optimize for throughput, not latency
+* How pixels are represented:
+  * R (red) G (green) B (blue) values:
+    * ```R = 0``` - red is fully absent
+    * ```R = 255``` - red is fully saturated
+
+## Project 1
+
+* Pixels are represented as follows:
+
+```
+struct uchar4 {
+  " red
+  unsigned char x;
+  " green
+  unsigned char y;
+  " blue
+  unsigned char z;
+  " alpha
+  unsigned char w;
+}
+```
+
+* Converting color to black and white  
+  * ```I = .299f * R + .587f * G + .114f * B```
