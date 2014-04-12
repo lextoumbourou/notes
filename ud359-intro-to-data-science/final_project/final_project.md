@@ -55,11 +55,19 @@ max    | 5965262.000000 | 5866031.000000
 
 [compare_datasets.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/compare_datasets.py)
 
-Since our sample sizes are so different, Welch's t-test may be an appropriate test to determine whether the sample difference is statistically significant.
+To perform a comparison between the two samples group, we first need to understand the distribution of the data. By plotting the hourly ridership for both sample groups, we end up with a non-normally distributed dataset.
 
-In this example, we're setting a p-critical value of 0.05. We'll perform a two-tailed test, with the following t-statistic: 1.1 and a two-tailed p-value: 0.27. Based on this, we fail to reject the null hypothesis. Rain does not appear to affect ridership. However, more data would be required for clarity of these results.
+### Histogram of Ridership Per Hour
 
-[welchs_t_test.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/welchs_t_test.py)
+<img src="https://raw.githubusercontent.com/lextoumbourou/study-notes/master/ud359-intro-to-data-science/final_project/images/histogram-entries.png"></img>
+
+[histogram.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/histogram.py)
+
+Therefore, the Mann Whitney U Test may be an appropriate test to determine whether the sample difference is statistically significant.
+
+In this example, we're setting a p-critical value of 0.05. We'll perform a two-tailed test, with the following U-value: 1924409167.0 and a two-tailed p-value: 0.0386192688276. Based on this, we reject the null hypothesis. Rain does appear to affect ridership. However, more data would be required for clarity of these results.
+
+[mann_whitney_i.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/mann_whitney_i.py)
 
 ## Predicting Ridership Per Station
 
