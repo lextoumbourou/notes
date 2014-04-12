@@ -18,6 +18,8 @@ According to our dataset, there were over 144,532,327 people entering the turnst
 
 We begin our analysis by plotting the mean ridership by hour for the month of May across our entire dataset.
 
+### Mean Ridership Per Hour
+
 <img src="https://raw.githubusercontent.com/lextoumbourou/study-notes/master/ud359-intro-to-data-science/final_project/images/mean-entries-per-hour.png"></img>
 
 [entries_per_hour.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/entries_per_hour.py)
@@ -25,6 +27,8 @@ We begin our analysis by plotting the mean ridership by hour for the month of Ma
 From simply examining the graph, we can see that the busiest hour for the station is around 20:00.
 
 Now let's create the same line graph, but this time we'll separate wet days with non-wet days.
+
+### Mean Ridership Per Hour (Wet vs Dry days)
 
 <img src="https://raw.githubusercontent.com/lextoumbourou/study-notes/master/ud359-intro-to-data-science/final_project/images/mean-entries-per-hour-wet-vs-dry.png"></img>
 
