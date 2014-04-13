@@ -63,9 +63,13 @@ To perform a comparison between the two samples group, we first need to understa
 
 [histogram.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/histogram.py)
 
-Therefore, the Mann Whitney U Test may be an appropriate test to determine whether the sample difference is statistically significant.
+We can also perform a Shapiro-Wilk test to determine if our data is normally distributed. Running it against our data, we're provided with a p-value for our test statistic of 0.0, which strongly suggest we can reject the null hypothesis that our data is from a normal distribution. 
 
-In this example, we're setting a p-critical value of 0.05. We'll perform a two-tailed test, with the following U-value: 1924409167.0 and a two-tailed p-value: 0.0386192688276. Based on this, we reject the null hypothesis. Rain does appear to affect ridership. However, more data would be required for clarity of these results.
+[shapiro_wilk.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/shapiro_wilk.py)
+
+Therefore, the Mann Whitney U Test may be an appropriate test to determine whether the sample difference is statistically significant, since it is known to have greater efficieny than a t-test on non-normal distributions.
+
+In this example, we're setting a p-critical value of 0.05. We'll perform a two-tailed test, with the following U-value: 1924409167.0 and a two-tailed p-value: 0.0386192688276. Based on this, we reject the null hypothesis: rain does appear to affect ridership. However, more data would be required for clarity of these results.
 
 [mann_whitney_i.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/mann_whitney_i.py)
 
