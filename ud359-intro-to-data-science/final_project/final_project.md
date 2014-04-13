@@ -75,9 +75,13 @@ In this example, we're setting a p-critical value of 0.05. We'll perform a two-t
 
 ## Predicting Ridership Per Station
 
-Using Linear Regression with the Gradient Descent algorithm, we can collect a set of theta values that can help us predict ridership at a station using the following input variables: rain, precipi, Hour, meantempi and station.
+We can use Linear Regression to help predict ridership at a station based on some set of input variables. Linear Regression works by taking in a set of input values and for each input value seeks to find a Theta value for which the input values can be multiplied against and summed to create the output variable. The Theta values, therefore, provide an indication of the weight of each input variable in predicting the output variable.
 
-In our model, we set a learning rate of 0.5 - a happy medium between learning too fast and over utilising our computational resources - and the value 50 as the number of iterations. This provides us with an r-squared value of 0.45804446474. Not exactly ideal but moves us some way toward having a model for accurately predicting ridership based on weather patterns.
+There are a number of algorithms one can use for Linear Regression. In our model, we'll use Gradient Descent because it's perhaps the simplest. Gradient Descent requires a defined Cost Function: ```J(Theta)``` which provides a measure of how successful the predicted values are against actual values. Then, it uses a search algorithm which seeks to find the set of Theta values that can minimize the Cost Function. A learning rate needs to be set in order to determine how "fast" the algorithm will iterate over Theta values. A too small learning rate could result in the algorithm taking an excessively long time to converge. Too high a rate, could result in the algorithm missing the target.
+
+In our model, we're using rain, precipi, Hour, meantempi and station as input values. We set a learning rate, or alpha, of 0.5 - a happy medium between learning too fast and over utilising our computational resources - and the value 50 as the number of iterations. This provides us with an r-squared value of 0.45804446474, not perfect but moves us some way toward finding an optimal solution.
+
+Some shortcomings of this approach is that Gradient Descent may not find the optimal solution as opposed to something like the ordinary least squares regression, which is guaranteed to find the optimal solution when performing linear regression.
 
 [gradient_descent.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/gradient_descent.py)
 
