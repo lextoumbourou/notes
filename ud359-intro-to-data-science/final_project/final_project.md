@@ -40,22 +40,7 @@ However, more statistical rigour is required before coming to any correlation co
 
 ## Statistical Analysis
 
-Firstly, let's perform some basic statistical comparisons between wet and dry days.
-
-&nbsp; | Clear          | Rain
------- | -------------- | -----
-count  | 20.000000      | 10.000000
-mean   | 4788886        | 4875460
-std    | 1392179.929718 | 1336030.366933
-min    | 2370432.000000 | 2661525.000000
-25%    | 3484968.250000 | 4064350.000000
-50%    | 5666797.500000 | 5549290.000000
-75%    | 5864204.500000 | 5806608.500000
-max    | 5965262.000000 | 5866031.000000
-
-[compare_datasets.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/compare_datasets.py)
-
-To perform a statistical comparison of the two samples group, we first need to understand the distribution of the data. By plotting the hourly ridership for both sample groups, we get a fairly clear sense that the data is not normally distributed.
+To perform a statistical comparison of the two samples group, we first need to understand the distribution of the data. By plotting the hourly ridership for both sample groups, we get a reasonable sense that the data is not normally distributed.
 
 ### Histogram of Ridership Per Hour
 
@@ -63,25 +48,25 @@ To perform a statistical comparison of the two samples group, we first need to u
 
 [histogram.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/histogram.py)
 
-However, we can also perform a Shapiro-Wilk test to help us determine that more definitely. Running it against our data, we're provided with a p-value for our test statistic of 0.0, which strongly suggest we can reject the null hypothesis that our data is from a normal distribution. 
+However, we can also perform a Shapiro-Wilk test to help us determine that more definitively. Running it against our data, we're return a p-value for our test statistic of 0.0, which strongly suggest we can reject the null hypothesis that our data is from a normal distribution. 
 
 [shapiro_wilk.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/shapiro_wilk.py)
 
 Therefore, the non-parametric, Mann Whitney U Test may be an appropriate test to determine whether the sample difference is statistically significant, since it is known to have greater efficiency than a t-test on non-normal distributions.
 
-In this example, we're setting a p-critical value of 0.05. We'll perform a two-tailed test, with the following U-value: 1924409167.0 and a two-tailed p-value: 0.0386192688276. Based on this, we reject the null hypothesis: rain does appear to affect ridership. However, more data would be required for clarity of these results.
+In this example, we're setting a p-critical value of 0.05. We'll perform a two-tailed test, with the following U-value: 1924409167.0 and a two-tailed p-value: 0.0386192688276. Based on this, we reject the null hypothesis. It appears rain does affect ridership. However, more data would be required for clarity of these results.
 
 [mann_whitney_i.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/mann_whitney_i.py)
 
 ## Predicting Ridership Per Station
 
-We can use Linear Regression to help predict ridership at a station based on some set of input variables. Linear Regression works by taking in a set of input values and for each input value seeks to find a coefficient, or Theta value, which is multiplied, then the resulted values are added to create  an output variable, or prediction value. The Theta values, therefore, provide an indication of the importance of each input variable in predicting the output variable.
+We can also use Linear Regression to help predict ridership at a station based on some set of input variables. Linear Regression's goal is to effectively draw a "best fit" line through historic data, which can then be used to predict values into the future. It works by taking in a set of input values, then for each input value seeking to find a coefficient, or Theta value, which can be multipled to create a cumulative output variable. The Theta values, therefore, provide an indication of the importance of each input variable in predicting the output variable.
 
-There are a number of algorithms one can use for Linear Regression. In our model, we'll use Gradient Descent. Gradient Descent requires a defined Cost Function which provides a measure of how accurate the predicted values compared to actual values. Then, it utilises a search algorithm which seeks to find the set of Theta values that can minimize the Cost Function. A learning rate, or alpha, needs to be set in order to determine how "fast" the algorithm will iterate over Theta values. A too small learning rate could result in the algorithm taking an excessively long time to converge. Too high a rate, could result in the algorithm missing the minimum values.
+There are a number of algorithms one can use for Linear Regression. In our model, we'll use Gradient Descent. Gradient Descent requires a defined Cost Function which provides a measure of how accurate the predicted values are compared to actual values. Then, it utilises a search algorithm which seeks to find the set of Theta values that can minimize the Cost Function. A learning rate, or alpha, needs to be set in order to determine how "fast" the algorithm will iterate through the search. A too small learning rate could result in the algorithm taking an excessively long time to converge. Too high a rate, could result in the algorithm missing the minimum values.
 
-In our model, we're using rain, precipi, Hour, meantempi and station as input values. We set a learning rate of 0.5 - a happy medium between learning too fast and over utilising our computational resources - and the value 50 as the number of iterations. This provides us with an r-squared value of 0.45804446474, not perfect but moves us some way toward finding an optimal solution.
+In our model, we're using rain, precipi, Hour, meantempi and station as input values. We set a learning rate of 0.5 - a happy medium between learning too fast and over utilising our computational resources - and the value 50 as the maximum number of iterations. This returns us an r-squared value of 0.45804446474, not perfect but moves us some way toward finding an optimal solution.
 
-Some shortcomings of this approach is that Gradient Descent may not find the optimal solution as opposed to other algorithms like the ordinary least squares regression, which is guaranteed to find the optimal solution when performing linear regression. Additionally, in our example, we are determining hard-coded Theta values for our input variables. However, in the real world the Theta values might have some confidence intervals allowing us to answer questions like: how likely is it I'd get a Theta value for this input variable if the variable had no effect on the output variable. Lastly, our Cost Function may get stuck at a "local minima" where it appears to minimized, however, a lower minimum can be found by taking a different "path" through the data. Such an example can be mitigated by running the algorithm numerous times using randomised initial Theta values.
+Some shortcomings of this approach are that Gradient Descent may not find the optimal solution as opposed to other algorithms, like the Ordinary Least Squares regression (OLS), which are guaranteed to find the optimal solution. Additionally, in our example, we are determining hard-coded Theta values for our input variables, however, in the real world the Theta values might have some confidence intervals allowing us to answer questions like: how likely is it we'd get a Theta value for this input variable if the variable had no effect on the output variable? Lastly, our Cost Function may get stuck at a "local minima" where it appears to have converge, however, a lower minimum can be found by taking a different "path" through the data. Such an example can be mitigated by running the algorithm numerous times using randomised initial Theta values and comparing the results.
 
 [gradient_descent.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/gradient_descent.py)
 
