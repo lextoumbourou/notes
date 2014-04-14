@@ -54,7 +54,7 @@ However, we can also perform a Shapiro-Wilk test, a statistical test of distribu
 
 Therefore, the non-parametric Mann Whitney U Test will be an appropriate test to compare the samples, since it is known to have greater efficiency than a t-test on non-normal distributions. When we perform a two-tailed Mann Whitney U test, we're returned the following U-value: 1924409167.0 and a two-tailed p-value: 0.0386192688276. Based on this, we reject the null hypothesis at p < 0.05: it appears rain does affect ridership. However, more data would be required for clarity of these results.
 
-[mann_whitney_i.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/mann_whitney_i.py)
+[mann_whitney_i.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/mann_whitney_u.py)
 
 ## Predicting Ridership Per Station
 
