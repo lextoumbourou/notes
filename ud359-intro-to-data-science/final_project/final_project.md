@@ -55,7 +55,7 @@ max    | 5965262.000000 | 5866031.000000
 
 [compare_datasets.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/compare_datasets.py)
 
-To perform a comparison between the two samples group, we first need to understand the distribution of the data. By plotting the hourly ridership for both sample groups, we end up with a non-normally distributed dataset.
+To perform a statistical comparison of the two samples group, we first need to understand the distribution of the data. By plotting the hourly ridership for both sample groups, we get a fairly clear sense that the data is not normally distributed.
 
 ### Histogram of Ridership Per Hour
 
@@ -63,11 +63,11 @@ To perform a comparison between the two samples group, we first need to understa
 
 [histogram.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/histogram.py)
 
-We can also perform a Shapiro-Wilk test to determine if our data is normally distributed. Running it against our data, we're provided with a p-value for our test statistic of 0.0, which strongly suggest we can reject the null hypothesis that our data is from a normal distribution. 
+However, we can also perform a Shapiro-Wilk test to help us determine that more definitely. Running it against our data, we're provided with a p-value for our test statistic of 0.0, which strongly suggest we can reject the null hypothesis that our data is from a normal distribution. 
 
 [shapiro_wilk.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/shapiro_wilk.py)
 
-Therefore, the Mann Whitney U Test may be an appropriate test to determine whether the sample difference is statistically significant, since it is known to have greater efficieny than a t-test on non-normal distributions.
+Therefore, the non-parametric, Mann Whitney U Test may be an appropriate test to determine whether the sample difference is statistically significant, since it is known to have greater efficiency than a t-test on non-normal distributions.
 
 In this example, we're setting a p-critical value of 0.05. We'll perform a two-tailed test, with the following U-value: 1924409167.0 and a two-tailed p-value: 0.0386192688276. Based on this, we reject the null hypothesis: rain does appear to affect ridership. However, more data would be required for clarity of these results.
 
@@ -75,13 +75,13 @@ In this example, we're setting a p-critical value of 0.05. We'll perform a two-t
 
 ## Predicting Ridership Per Station
 
-We can use Linear Regression to help predict ridership at a station based on some set of input variables. Linear Regression works by taking in a set of input values and for each input value seeks to find a Theta value for which the input values can be multiplied against and summed to create the output variable. The Theta values, therefore, provide an indication of the weight of each input variable in predicting the output variable.
+We can use Linear Regression to help predict ridership at a station based on some set of input variables. Linear Regression works by taking in a set of input values and for each input value seeks to find a coefficient, or Theta value, which is multiplied, then the resulted values are added to create  an output variable, or prediction value. The Theta values, therefore, provide an indication of the importance of each input variable in predicting the output variable.
 
-There are a number of algorithms one can use for Linear Regression. In our model, we'll use Gradient Descent because it's perhaps the simplest. Gradient Descent requires a defined Cost Function: ```J(Theta)``` which provides a measure of how successful the predicted values are against actual values. Then, it uses a search algorithm which seeks to find the set of Theta values that can minimize the Cost Function. A learning rate needs to be set in order to determine how "fast" the algorithm will iterate over Theta values. A too small learning rate could result in the algorithm taking an excessively long time to converge. Too high a rate, could result in the algorithm missing the target.
+There are a number of algorithms one can use for Linear Regression. In our model, we'll use Gradient Descent. Gradient Descent requires a defined Cost Function which provides a measure of how accurate the predicted values compared to actual values. Then, it utilises a search algorithm which seeks to find the set of Theta values that can minimize the Cost Function. A learning rate, or alpha, needs to be set in order to determine how "fast" the algorithm will iterate over Theta values. A too small learning rate could result in the algorithm taking an excessively long time to converge. Too high a rate, could result in the algorithm missing the minimum values.
 
-In our model, we're using rain, precipi, Hour, meantempi and station as input values. We set a learning rate, or alpha, of 0.5 - a happy medium between learning too fast and over utilising our computational resources - and the value 50 as the number of iterations. This provides us with an r-squared value of 0.45804446474, not perfect but moves us some way toward finding an optimal solution.
+In our model, we're using rain, precipi, Hour, meantempi and station as input values. We set a learning rate of 0.5 - a happy medium between learning too fast and over utilising our computational resources - and the value 50 as the number of iterations. This provides us with an r-squared value of 0.45804446474, not perfect but moves us some way toward finding an optimal solution.
 
-Some shortcomings of this approach is that Gradient Descent may not find the optimal solution as opposed to something like the ordinary least squares regression, which is guaranteed to find the optimal solution when performing linear regression.
+Some shortcomings of this approach is that Gradient Descent may not find the optimal solution as opposed to other algorithms like the ordinary least squares regression, which is guaranteed to find the optimal solution when performing linear regression. Additionally, in our example, we are determining hard-coded Theta values for our input variables. However, in the real world the Theta values might have some confidence intervals allowing us to answer questions like: how likely is it I'd get a Theta value for this input variable if the variable had no effect on the output variable. Lastly, our Cost Function may get stuck at a "local minima" where it appears to minimized, however, a lower minimum can be found by taking a different "path" through the data. Such an example can be mitigated by running the algorithm numerous times using randomised initial Theta values.
 
 [gradient_descent.py](https://github.com/lextoumbourou/study-notes/blob/master/ud359-intro-to-data-science/final_project/gradient_descent.py)
 
@@ -110,4 +110,4 @@ Based on this, it appears R170 is the busiest turnstile.
 
 ## Conclusion
 
-Based on the tools available to us, we can infer that rain doesn't have a statistical correlation with ridership on the MTA subway system. With that said, one would expect with more data we could get closer to a more definitive answer. Using Gradient Descent, we can predict ridership using input variables relating to the weather, providing us with a moderately accurate prediction model. Lastly, with a larger data size, map reduce techniques could help us scale out our processing to help answer additional questions about the data.
+Based on the tools available to us, we can infer that rain does have a statistical correlation with ridership on the MTA subway system. With that said, one would expect with more data we could get closer to a more definitive answer. Using Gradient Descent, we can predict ridership using input variables relating to the weather, providing us with a moderately accurate prediction model. Lastly, with a larger data size, map reduce techniques could help us scale out our processing to help answer additional questions about the data.
