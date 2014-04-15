@@ -2,7 +2,9 @@
 
 ## Status
 
-In Progress
+Complete - 2014-04-16
+
+<img src="./images/cert-of-completion.png"></img>
 
 ## Instructors
 

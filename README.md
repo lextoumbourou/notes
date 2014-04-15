@@ -6,7 +6,6 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-* [Intro to Data Science (Udacity - ud359)](./ud359-intro-to-data-science)
 * [Intro to Parallel Programming (Udacity - cs344)](./cs344-intro-to-parallel-programming)
 
 ### Complete
@@ -14,6 +13,7 @@ A collection of notes from various courses, books and lectures either completed,
 #### 2014
 
 * [Algorithms (Udacity - cs215)](./cs215-algorithms-udacity)
+* [Intro to Data Science (Udacity - ud359)](./ud359-intro-to-data-science)
 * [Intro to Hadoop and Mapreduce (Udacity - ud617)](./ud617-intro-to-hadoop-and-mapreduce)
 
 #### 2013
