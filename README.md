@@ -6,6 +6,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
+* [Machine Learning 1 - Supervised Learning (Udacity - ud675)](./ud657-machine-learning-1)
 * [Intro to Parallel Programming (Udacity - cs344)](./cs344-intro-to-parallel-programming)
 
 ### Complete
