@@ -33,3 +33,7 @@
 	<img src="images/layout-calculations.png"></img>
 
 	* The *Layout* step is rerun when a window is resized, or device orientation is changed.
+
+* Paint
+	* Actually putting pixels on the page
+	* Complicated CSS styles (box shadow, background-image etc) could slow down the paint step
