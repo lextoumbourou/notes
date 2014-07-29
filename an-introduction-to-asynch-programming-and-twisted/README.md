@@ -21,20 +21,20 @@
 * Blocking client basically just waits until socket no 1 has finished sending data, then goes to no 2 and so on.
 * Async client moves to the next socket each time there's a block, using:
 
-```while True:
-	try:
-			new_data = sock.recv(1024)
-	except socket.error, e:
-			if e.args[0] == errno.EWOULDBLOCK:
-					# this error code means we would have
-					# blocked if the socket was blocking.
-					# instead we skip to the next socket
-					break # Move to next socket
+```
+try:
+		new_data = sock.recv(1024)
+except socket.error, e:
+		if e.args[0] == errno.EWOULDBLOCK:
+				# this error code means we would have
+				# blocked if the socket was blocking.
+				# instead we skip to the next socket
+				break # Move to next socket
 ```
 
 * Contrast with Go's model:
-	* Non-blocking isn't really needed. It has "multiple threads of execution" so you can leave a thread blocked and do work in another
+    * Non-blocking isn't really needed. It has "multiple threads of execution" so you can leave a thread blocked and do work in another
 * The use of a loop that waits for events to happen then acts on them called a "Reactor Pattern".
 <img src="./images/reactor-pattern.png"></img>
-	* Called "reactor" because it waits for and reacts to events
-	* Twisted is basically an implementation of the Reactor Pattern with extras.
+    * Called "reactor" because it waits for and reacts to events
+    * Twisted is basically an implementation of the Reactor Pattern with extras.
