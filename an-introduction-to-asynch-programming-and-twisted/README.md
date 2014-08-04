@@ -87,3 +87,13 @@ print 'Stop!'
 
 * [3 independent counters example](./part_3_ex_1.py)
 * [LoopingClass example](./part_3_ex_2.py)
+
+## Part 4
+
+* ```reactor.addReader(self)``` takes an object that much conform to an [interface](http://twistedmatrix.com/trac/browser/tags/releases/twisted-8.2.0/twisted/internet/interfaces.py).
+* The ```addReader``` method should take an an ```IReadDescriptor``` provider
+
+### Exercises
+
+* The first exercise basically just requires the prevention of the task calling ```reactor.addReader(self)``` when the socket connection fails eg: ```try / except socket.error```
+* [Use callLater to make the client timeout](./part_4_ex_2.py) 
