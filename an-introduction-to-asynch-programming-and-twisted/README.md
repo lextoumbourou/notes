@@ -85,5 +85,5 @@ print 'Stop!'
 
 ### Exercises
 
-* [3 independent counters example](./part-3-ex-1.py)
-*  
+* [3 independent counters example](./part_3_ex_1.py)
+* [LoopingClass example](./part_3_ex_2.py)
