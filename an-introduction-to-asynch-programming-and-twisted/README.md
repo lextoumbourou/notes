@@ -38,3 +38,52 @@ except socket.error, e:
 <img src="./images/reactor-pattern.png"></img>
     * Called "reactor" because it waits for and reacts to events
     * Twisted is basically an implementation of the Reactor Pattern with extras.
+
+## Part 3
+
+* Reactor loop doesn't start until told to. You start by calling ```reactor.run()```
+* Reactor loop runs in same thread as started in.
+* Once loop starts, it doesn't stop until killed
+* Reactor isn't created - just imported
+    * Reactor is a singleton
+* Twisted contains multiple reactors. You need to install them before using them.
+```
+from twisted.reactor import pollreactor
+pollreactor.install() # Need to 'install' reactors before using them
+
+from twisted.internet import reactor
+reactor.run()
+```
+* Properties of callbacks:
+    * Callback code runs in same thread as Twisted loop
+    * When callbacks are running, Twisted loop isn't
+    * Vice versa
+    * Reactor loop resumes when callbacks are done 
+* Avoid making block calls in call backs.
+    * Network I/O blocking is handled by Twisted out the box
+    * Use Twisted API for stuff like ```os.system``` which is non-blocking
+* Example of callLater(<call_time_in_seconds>, <method>)
+```
+class Countdown(object):
+    counter = 5
+
+    def count(self):
+        if self.counter == 0:
+            reactor.stop()
+        else:
+            print self.counter, '....'
+            self.counter -= 1
+            reactor.callLater(0.1, self.count)
+
+reactor.callWhenRunning(Countdown().count)
+
+print 'Start'
+reactor.run()
+print 'Stop!'
+```
+* Exceptions raised in a call back won't cause the app to die. It'll report it and continue.
+
+### Exercises
+
+* [3 independent counters example](./part-3-ex-1.py)
+*  
