@@ -97,3 +97,19 @@ print 'Stop!'
 
 * The first exercise basically just requires the prevention of the task calling ```reactor.addReader(self)``` when the socket connection fails eg: ```try / except socket.error```
 * [Use callLater to make the client timeout](./part_4_ex_2.py) 
+
+## Part 5
+
+* Twisted architecture is composed of layers of abstraction
+	* Example: IReadDescriptor - "file descriptor you can read bytes from"
+* Transports
+	* Defined by ```ITransport``` in main ```interfaces``` module
+	* A Transport is a single connection that can send or receive bytes (TCP, UDP, Unix pipes)
+	* Generally use implementations that Twisted provide
+* Protocols
+	* Implements a networking protocol like FTP or IMAP (or something you create)
+* Protocol Factories
+	* Creates instances of Protocol Factories
+	* ```buildProtocol``` method should return a new Protocol instance when it's called
+
+
