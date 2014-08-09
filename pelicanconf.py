@@ -25,11 +25,11 @@ DEFAULT_PAGINATION = None
 
 THEME = "themes/lextoumbourou-theme"
 
-STATIC_PATHS = ['images']
+STATIC_PATHS = ['images', 'extra']
 
-FILES_TO_COPY = (
-    ('extra/robots.txt', 'robots.txt'),
-    ('extra/favicon.ico', 'favicon.ico'),
-)
+EXTRA_PATH_METADATA  = {
+    'extra/robots.txt': {'path': 'robots.txt'},
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+}
 
 DISQUS_SITENAME = 'lextoumbouroucom'
