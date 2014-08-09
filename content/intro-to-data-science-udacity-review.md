@@ -1,10 +1,20 @@
 Title: Intro to Data Science Udacity Review (2014)
-Tagline: 
+Tagline: Another course I did, and here's why.
 Slug: intro-to-data-science-udacity-review
 Tags: MOOC, Udacity 
 Date: 2014-03-24
+Status: Draft
 
+Summary
 <div class="intro">
+By Lesson 3 it got to hard so I gave up. I had regret not pursuing higher education. I let the lesson rot for a while. I caught up with important current events, like 2048, and moved on with my life
+
+A few months later Kelly saw my credit card statement.
+
+"Why is a company called Udacity billing you for $150 a month?"
+
+I came back and waded through the forums for a while. A few people had said that Coursera's Machine Learning course was far better than material at Udacity.
+
 I thought I understood the material until I tried to use it. T-tests? A thing you do to compare two samples. Linear regression? A thing you do to try to put a line through data. But when it came down to it, I really couldn't see how it would work with real numbers.
 
 So, I left the final project to rot for a while, while I got on living: beer, 2048, True Detective and generally making the least of life.
@@ -26,7 +36,7 @@ Days passed...
 
 ## Udacity so far
 
-* Talk about the courses I've done. What I like about it, what it means to me.
+I've been on Udacity for about 3 years and have had an amazing experience so far. I've learned about stuff that I never would have believed that I was capable of learning. And that's the honest truth. I've taken the introducry Computer Science course and have to say, it's one of the best out there, aside from Malen's CS50 - that's the best availalbe. The Algorithms course as well as the Programming Languages, the Programming Languages course was one of the best I've done.
 
 ## About the Course
 
@@ -35,6 +45,21 @@ Intro to Data Science continues along the Data Science track boasting "...?". Th
 The prerequistes state that you'll need a programming background to that of their CS101 program: Computer Sciense and some stats comparable to Statistics 101. I had done the statistics course a year ago or so, but it wasn't exactly fresh on my mind
 
 ## Course Overview
+
+The course was well-planned and executed. The lessons used a narrative of analysising a baseball dataset, where the projects used the New York transit system dataset.
+
+## Prereqs
+
+You will definitely need:
+  * a fairly strong programming background particularly in Python. You'll probably want to have played with Numpy or Pandas. If not, I would suggest spending a bit of time playing with those tools before starting this course.
+  * roughly early college/uni math. I managed to get through the course with no exposure to Linear Algebra and Calculus but a fairly solid Algebra foundation. Most of the stuff is available on Khan Academy. Here's the 3 main courses I recommend you take:
+    * Calculus
+    * Linear Regression
+    * Linear Algebra
+* Statistics is also a prerequistite. I rewatched the Udacity Statistics course up to Lesson 10 and it was enough to understand most of the early half of the course.
+  * Links: Statistics
+
+## Walkthrough (skip this part if you don't intend to take the course)
 
 ### Lesson 1
 
@@ -89,3 +114,35 @@ We take some input variables (like age, weight, height), then multiple each by s
 Coefficient of determination (r^2), covered next, allows you to determine how effective your model is. The programming exercise was fairly straight forward, just covering a mathematical formula to Python code.
 
 Concludes with an appetite whetener for other algorithms for linear regression and some additional considerations.
+
+## Lesson 4
+
+Begins with a question: "what is information visualization?" Covers some ideas around how to do effective data visulations. Then provides a wonderful example of a clear, information visualization using [Charles Minard's flow map of Napoleon's March](http://en.wikipedia.org/wiki/File:Minard.png). Next a discussion around the "ingredients" to a good dataset.
+
+Interviews a guy called Don Dini, he says "humans are hard-wired to receive things in story form" so one should "craft a narrative" to make the dataset more "compelling" and one should "know (their) audience". Another chap called Rishiraj Pravahan who says make it into a story so that even people who aren't familiar with the media will appreciate it.
+
+Followed by a discussion around Visual Encodings covering the different types of visual queues one could use for representing data: position (line chart), length (bar chart) and angle (pie chart). The question around perception of visual queues was fairly unclear.
+
+The section on Plotting in Python covered using ggplot over Matlabplot, for a number of reasons (looks nicer, has a "grammar of graphics", works well with pandas), though there were a heap of problems with ggplot due to its apparently lack of maturity.
+
+Different data types was covered. Numeric data - any data point that has exact data (quantitative data), can be categorised into discrete (whole numbers - player's number of home runs) or continous (can fall anywhere in a range). Categorical data - position, hometown, team etc. Time series - data collected via repeated measurements over time.
+
+An example of a bad use of scales was used. Interesting to see misleading graphs at work.
+
+The latter half of the video walkthrough an example of charting some real-world baseball data. I enjoyed how we went step-by-step through building the visulation highlight what worked about the chart-type and what needed improvement. Starting with a scatterplot of the data, moving to a line-chart, then to a LOESS curve (a form of weighted regression), then onto multivariate data.
+
+Rishraj's advice was: learn the tools and use them in the correct way. Don's advice was more about learning as many mathematical tools as possible.
+
+## Lesson 5
+
+The MapReduce lesson was pretty brief. I'd imagine for someone not familar with the content, it'd be near impossible to have a decent sense of what it does. Though it's hard to say. I've completed the Udacity Map/Reduce lesson and felt pretty comfortable with the material.
+
+The lesson begun with an overview of where Map/Reduce is useful (huge datasets!). Talks about Map/Reduce artictecure, then covers some examples of performing Map/Reduce to perform basic word counts. Then on writing a reducer.
+
+The example moved away using the baseball dataset to one of Aadhar data - the national Indian identification system.
+
+Closest with a brief overview of the MapReduce ecosystem, covering mostly Pig. Then concludes with an intro to the final project.
+
+## What was good about it.
+
+* Pretty phenemominal course. Very diverse range of stuff covered.
