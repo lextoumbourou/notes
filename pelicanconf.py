@@ -27,6 +27,9 @@ THEME = "themes/lextoumbourou-theme"
 
 STATIC_PATHS = ['images']
 
-FILES_TO_COPY = (('extra/robots.txt', 'robots.txt'),)
+FILES_TO_COPY = (
+    ('extra/robots.txt', 'robots.txt'),
+    ('extra/favicon.ico', 'favicon.ico'),
+)
 
 DISQUS_SITENAME = 'lextoumbouroucom'
