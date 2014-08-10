@@ -126,3 +126,22 @@ print 'Stop!'
 ### Exercises
 
 * [get poetry client with timeout][./part_5_ex_1.py]
+
+## Part 6
+
+* Can't mix synchronous code with async (obvious)
+* Use ```Failure``` object for handling passing errors back instead of callbacks (even better -- another abstraction discussed in later Parts)
+
+## Part 7
+
+* Consider that if errors aren't caught in async programs, program can become "stuck" waiting for callback that may never arrive
+* ```Deferred``` class is designed to make dealing with callbacks easier
+  * Defined in ```twisted.internet.defer```
+  * Contains a chain of callbacks and errbacks
+  * Will not let you fire the normal result callback twice
+    ```
+    d.addCallbacks(out, out)
+    d.callback('First result')
+    d.callback('Second result') # This will error with twisted.internet.defer.AlreadyCalledError
+    ```
+  * ```addBoth``` method is used to add same function to callback and errback handlers
