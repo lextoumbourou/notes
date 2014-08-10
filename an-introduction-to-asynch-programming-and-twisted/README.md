@@ -111,5 +111,18 @@ print 'Stop!'
 * Protocol Factories
 	* Creates instances of Protocol Factories
 	* ```buildProtocol``` method should return a new Protocol instance when it's called
+	* Primary Factory class is ```twisted.internet.protocol.Factory``` but will generally use a more specialised class
+* Protocol construction
+	* Step 1
+		* In Protocol Factory, need to specify Protocol to build with the ```protocol``` class var.
+		* Using ```buildProtocol``` method, we instantiat the protocol as above.
+		* Protocol created with same factory can share state with parent factory
+	* Step 2
+		* Protocol connects with a Transport using the ```makeConnection``` method. Stores a ref to the transport object in the ```self.transport``` attribute
+	* Step 3
+		* Protocol can process incoming data with ```dataReceived```, which takes as input a sequence of bytes (aka a string)
+		* ```self.transport.getPeer()``` returns information on the server data is coming from
 
+### Exercises
 
+* [get poetry client with timeout][./part_5_ex_1.py]
