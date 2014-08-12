@@ -1,18 +1,11 @@
-SQLAlchemy - notes from docs
+# SQL Expression Language Tutorial
 
-* Documentation separated into:
-    * ORM
-    * Core
-    * Dialects
-    
-## SQL Expression Language Tutorial
-
-### Connecting    
+## Connecting    
 
 * Return value of ```create_engine``` is an instance of ```Engine```
 * First time ```Engine.connect()``` or ```Engine.execute()``` is called, we establish a real DBAPI connection to the database
     
-### Define and Create Tables
+## Define and Create Tables
 
 * Column is usually represented by object called ```Column```
 * Table object is called ```Table```
@@ -37,7 +30,7 @@ In [9]: addresses = Table('addresses', metadata,
 ```
 * Then use ```create_all(engine)``` to actually create the tables. The method is idempotent and can be called multiple times with impunity.
 
-### Insert Expressions
+## Insert Expressions
 
 * ```Insert``` construct, represents an insert statement
     * Get ```str``` representation to see SQL generated
@@ -59,7 +52,7 @@ In [9]: addresses = Table('addresses', metadata,
     Out[20]: {'fullname': 'jacky hacky', 'name': 'bill'}
     ```
     
-### Executing
+## Executing
 
 * To connect to a database, use the ```engine.connect()``` method. It returns an instance of ```Connection```
 * The returned object, has a ```connect()``` method which you can pass a ```ins``` object into.
@@ -70,7 +63,7 @@ Out[27]: sqlalchemy.engine.result.ResultProxy
 ```
 * This includes an ```result.inserted_primary_key``` attribute which you can use to get the key of the inserted object
 
-### Executing Multiple Statements
+## Executing Multiple Statements
 
 * Can pass in a instance of ```Insert``` into ```conn.execute``` to insert in one line.
 * Passing a list of dicts as second param allows you to perform multiple inserts, like so:
@@ -81,7 +74,7 @@ In [32]: conn.execute(users.insert(), [
 ])
 ```
 
-### Selecting
+## Selecting
 
 * Use ```select``` function which returns an instance of ```sqlalchemy.sql.selectable.Select``` which can be passed into ```conn.execute```
 * This returns a ```ResultProxy``` which can be iterated through like so:
@@ -108,7 +101,7 @@ Out[44]: u'bill'
 * Call ```result.close()``` to return connection to connection pool.
 * Use ```.where()``` called against the ```Select``` object to add filter expressions
 
-### Operators
+## Operators
 
 * Using Python operators again ```Column``` objects, will generator SQL equivalent:
 ```
@@ -123,7 +116,7 @@ users.id IS NULL
 ```
 * Can generator operators using ```.op('OPERATOR')(value) method```
 
-### Conjunctions
+## Conjunctions
 
 * Import from ```sqlalchemy.sql``` to use
 ```
@@ -137,6 +130,6 @@ users.id < :id_1 AND users.id LIKE :id_2
 ```
 * The ```where``` method can be chained
 
-### Using Joins
+## Using Joins
 
 * Aside from manually performing ```joins```, they can also be performed with the ```join``` method. 
