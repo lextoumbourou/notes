@@ -85,8 +85,8 @@ print 'Stop!'
 
 ### Exercises
 
-* [3 independent counters example](./part_3_ex_1.py)
-* [LoopingClass example](./part_3_ex_2.py)
+* [3 independent counters example](./exercises/part_3_ex_1.py)
+* [LoopingClass example](./exercises/part_3_ex_2.py)
 
 ## Part 4
 
@@ -96,7 +96,7 @@ print 'Stop!'
 ### Exercises
 
 * The first exercise basically just requires the prevention of the task calling ```reactor.addReader(self)``` when the socket connection fails eg: ```try / except socket.error```
-* [Use callLater to make the client timeout](./part_4_ex_2.py) 
+* [Use callLater to make the client timeout](./exercises/part_4_ex_2.py) 
 
 ## Part 5
 
@@ -125,7 +125,7 @@ print 'Stop!'
 
 ### Exercises
 
-* [get poetry client with timeout][./part_5_ex_1.py]
+* [get poetry client with timeout](./exercises/part_5_ex_1.py)
 
 ## Part 6
 
