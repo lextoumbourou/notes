@@ -145,3 +145,12 @@ print 'Stop!'
     d.callback('Second result') # This will error with twisted.internet.defer.AlreadyCalledError
     ```
   * ```addBoth``` method is used to add same function to callback and errback handlers
+
+## Part 8
+
+* More about deferreds, contrasting synchronous programming returning actual results, with deferred returning something that'll fire later. Nothing new.
+
+### Exercises
+
+* [Exercise 1: Timeout if poem isn't received in time](./exercises/part_8_ex_1.py)
+* [Exercise 2: Print appropriate address on failure](./exercises/part_8_ex_2.py)
