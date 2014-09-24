@@ -32,12 +32,12 @@
   * ```expect(500).toBeGreaterThan(499);``` -- mathematical comparison
   * ```expect(badFunction()).toThrow();``` -- ensure function raises an exception
 
-## ```beforeEach(someFunction)``` and ```afterEach(someFunction)``` 
+## ```beforeEach()``` & ```afterEach()``` 
 
 * called before spec
 * use ```this``` to share objects between ```beforeEach``` and ```afterEach```.
 
-## Spies
+## ```spyOn```
 
 * ```expect(obj.someMethod).toHaveBeenCalled();```
 * ```expect(obj.someMethod).toHaveBeenCalledWith(123);```
@@ -55,8 +55,9 @@
 * ```calls.count()``` - returns number of times spy was called
 * Heaps more
 
-## Mock JS Timeout Function
+## ```jasmine.clock```
 
+* Mock JS Timeout Function
 * Install it with ```jasmine.clock().install```
 
 ## Async support
