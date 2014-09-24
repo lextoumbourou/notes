@@ -154,3 +154,14 @@ print 'Stop!'
 
 * [Exercise 1: Timeout if poem isn't received in time](./exercises/part_8_ex_1.py)
 * [Exercise 2: Print appropriate address on failure](./exercises/part_8_ex_2.py)
+
+## Part 9
+
+* low-context code - code like `socket.connect()` that is for general purposes and knows nothing about the functions from which it came form
+* high-context code - code like `main()` which knows all about the program and its purpose
+* Deferred class has tools to help catch general errors that wasn't explicitely caught and send to `errBack`. When an exception is caught, it will automatically fire the next `errBack` in the deferred.
+* Callbacks and errBacks are always registered in pairs:
+   * `addCallbacks` - takes in two arguments a callBack and an errBack
+   * `addCallback` - takes in 1 argument (plus arguments to pass into callBack). It adds an implicit pass-through `errback`, which just falls-through to next errback.
+   * `addErrback` - same but with implicit `callBack`
+   * `addBoth` - takes in 1 argument that's both a callback and errback
