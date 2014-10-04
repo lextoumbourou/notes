@@ -165,3 +165,21 @@ print 'Stop!'
    * `addCallback` - takes in 1 argument (plus arguments to pass into callBack). It adds an implicit pass-through `errback`, which just falls-through to next errback.
    * `addErrback` - same but with implicit `callBack`
    * `addBoth` - takes in 1 argument that's both a callback and errback
+
+## Part 10: Poetry Transformed
+
+* Callback chains
+  * ```d.addCallback(do_something_that_could_error_or_succeed)``` - if it asserts, it will pass to next errback. Else, pass result to callback
+  * ```d.addCallbacks(handle_success, handle_err)``` 
+* On errBack, returning a value will be passed to the next callBack in the chain, and thus continue the callBack/errBack chain.
+
+## Part 11
+
+* ```self.transport.write()``` - write data to connection.
+* ```self.transport.loseConnection()``` - Close connections after writing all data.
+* ```reactor.listenTCP``` method takes in an subclass instance of ```ServerFactory```,
+* ```Factory``` -- builds a protocol and saves persistant configuration. Does not need to know about network at all.
+* ```Protocol``` -- actually implements protocol handling.
+* ```reactor.listenTCP(port, factory)``` - method for ensuring a factory listens on the wire.
+  * Creates a "listening socket and adds it to the event loop"
+  * Twisted will create a ```Transport``` via the ```Factory``` class, which transports data to the ```Protocol```
