@@ -6,6 +6,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
+* [Software Testing (Udacity - cs258)](./cs258-software-testing)
 * [Website Performance Optimization (Udacity - ud884)](./ud884-website-performance-optimization)
 * [Learn C The Hard Way](./learn-c-the-hard-way-book)
 * [An Introduction To Asynchronous Programming and Twisted](./an-introduction-to-asynch-programming-and-twisted)
