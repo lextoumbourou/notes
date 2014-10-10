@@ -8,13 +8,13 @@ A collection of notes from various courses, books and lectures either completed,
 
 * [Software Testing (Udacity - cs258)](./cs258-software-testing)
 * [Website Performance Optimization (Udacity - ud884)](./ud884-website-performance-optimization)
-* [Learn C The Hard Way](./learn-c-the-hard-way-book)
-* [An Introduction To Asynchronous Programming and Twisted](./an-introduction-to-asynch-programming-and-twisted)
+* [Learn C The Hard Way](./books/learn-c-the-hard-way-book)
+* [An Introduction To Asynchronous Programming and Twisted](./tutorials/an-introduction-to-asynch-programming-and-twisted)
 
 ### Stalled
 
 * [Machine Learning 1 - Supervised Learning (Udacity - ud675)](./ud657-machine-learning-1) -- need to finish Calculus & Linear Algebra Khan Academy units
-* [Intro to Parallel Programming (Udacity - cs344)](./cs344-intro-to-parallel-programming) -- need to finish [Learn C The Hard Way](./learn-c-the-hard-way-book)
+* [Intro to Parallel Programming (Udacity - cs344)](./cs344-intro-to-parallel-programming) -- need to finish [Learn C The Hard Way](./books/learn-c-the-hard-way-book)
 
 ### Complete
 
