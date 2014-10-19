@@ -76,3 +76,21 @@
 * How to use coverage
   * Use coverage feedback to improve test suite
   * Poor coverage -> rethink tests (if necessary for problem domain)
+
+## Exercise 2
+
+* Splay tree
+  * Has methods: ```insert(key)```, ```delete(key)```, ```lookup(key)```
+  * Left child - always has a key ordered before the parent node.
+  * Right child - always has a key after
+  ```
+    5
+   |  |
+   3  6
+  | |  |
+  2 4  7
+  ```
+  * As you add elements, it balances tree.
+  * When you access node, it moves to the root.
+    * Frequently accessed elements become faster to access.
+  * ```find(key)``` -- lookup operation
