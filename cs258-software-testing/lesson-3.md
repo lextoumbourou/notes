@@ -51,4 +51,44 @@
       * Low crash rate for cmd line apps
       * 22/30 GUI apps crashed
   * From the early 2000s onward, fuzzing referred to network penetration testing through similar techniques
-* Random Testing Alternative Histories
+* The Queue (Quiz)
+  * Start off by creating a queue
+  * After each queue operation, random test should call ``checkRep()```
+  * Ensure that enqueues fails when queue is full and succeeds when not
+  * Ensure that dequeue fails when queue is empty and succeed when not
+  * Keep track of values that come out of dequeue operations
+* Generating Random Input 
+  * "Generative random testing"
+    * "inputs are created from scratch"
+  * "Mutation-based random testing"
+    * "inputs are created by modifying non-randomly generated test cases"
+* Mutation-based random tester
+  * Start with known input
+  * Randomly modify it but keep it within the domain of original input
+  * Examples (I can think of)
+    * Push JSON to API with fields randomly changed with random unicode chars
+    * Update database with random chars for each field
+    * Save random blobs on filesystem
+* [Charlie Miller's "Babysitting an Army of Monkeys"](https://www.youtube.com/watch?v=Xnwodi2CBws)
+* Oracles for Random Testing
+  * If oracle isn't automated, you don't have an oracle
+  * Weak oracles
+    * Crashes
+    * Violation of language rules (attempt to access list index that doesn't exist)
+  * Medium Oracle
+    * Assertions
+      * Provides good application specific checking
+      * Doesn't guarantee correct operation
+  * Strong Oracle
+    * Different implementation of same spec
+    * Differential testing of compilers
+    * Older version of software we're testing
+    * Reference implementation
+      * Ie new Python compiler reference against C Python compiler
+    * Function inverse pair
+      * Compress / decompress
+      * Save / load
+      * Transmit / receive
+      * Encode / decode
+    * Null space transformation
+      * change program in such a way that the output of the prog should not change and run through same interpreter
