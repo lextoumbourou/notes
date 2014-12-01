@@ -171,9 +171,9 @@ print 'Stop!'
 * Callback chains
   * ```d.addCallback(do_something_that_could_error_or_succeed)``` - if it asserts, it will pass to next errback. Else, pass result to callback
   * ```d.addCallbacks(handle_success, handle_err)``` 
-* On errBack, returning a value will be passed to the next callBack in the chain, and thus continue the callBack/errBack chain.
+* On errBack, returning a value will be passed to the next callBack in the chain, and thus continue the callBack/errBack chain.  
 
-## Part 11
+## Part 11: Your Poetry is Served
 
 * ```self.transport.write()``` - write data to connection.
 * ```self.transport.loseConnection()``` - Close connections after writing all data.
@@ -183,3 +183,15 @@ print 'Stop!'
 * ```reactor.listenTCP(port, factory)``` - method for ensuring a factory listens on the wire.
   * Creates a "listening socket and adds it to the event loop"
   * Twisted will create a ```Transport``` via the ```Factory``` class, which transports data to the ```Protocol```
+
+## Part 12: A Poetry Transformation Server
+
+* Separate protocol logic from service logic is a common pattern.
+  * Allows for providing the same service via multiple protocols.
+  * Question: under what circumstance would you use the same service via multiple protocols?
+* Smart to guard access to service through `xform` method prefix to prevent attackers from running arbitrary methods.
+
+### Exercises
+
+1. If client sends a malformed netstring, q ``NetstringParseError`` is raised, causing the ``self.transport.loseConnection()`` method to be called, dropping the connection.
+2. [Halve method](./exercises/part_12_ex_2.py) (test: ``echo -n "21:halve.HERE IS MY POEM,"  | nc localhost $1``)
