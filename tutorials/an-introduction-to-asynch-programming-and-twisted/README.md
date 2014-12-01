@@ -194,4 +194,4 @@ print 'Stop!'
 ### Exercises
 
 1. If client sends a malformed netstring, q ``NetstringParseError`` is raised, causing the ``self.transport.loseConnection()`` method to be called, dropping the connection.
-2. [Halve method](./exercises/part_12_ex_2.py) (test: ``echo -n "21:halve.HERE IS MY POEM,"  | nc localhost $1``)
+2. [Halve method](./exercises/part_12_ex_2.py#L92) (test: ``echo -n "21:halve.HERE IS MY POEM,"  | nc localhost $1``)
