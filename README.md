@@ -6,7 +6,6 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-* [Software Testing (Udacity - cs258)](./cs258-software-testing)
 * [Website Performance Optimization (Udacity - ud884)](./ud884-website-performance-optimization)
 * [Learn C The Hard Way](./books/learn-c-the-hard-way-book)
 * [An Introduction To Asynchronous Programming and Twisted](./tutorials/an-introduction-to-asynch-programming-and-twisted)
@@ -23,6 +22,7 @@ A collection of notes from various courses, books and lectures either completed,
 * [Algorithms (Udacity - cs215)](./cs215-algorithms-udacity)
 * [Intro to Data Science (Udacity - ud359)](./ud359-intro-to-data-science)
 * [Intro to Hadoop and Mapreduce (Udacity - ud617)](./ud617-intro-to-hadoop-and-mapreduce)
+* [Software Testing (Udacity - cs258)](./cs258-software-testing)
 
 #### 2013
 

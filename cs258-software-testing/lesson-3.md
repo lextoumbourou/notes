@@ -92,3 +92,7 @@
       * Encode / decode
     * Null space transformation
       * change program in such a way that the output of the prog should not change and run through same interpreter
+
+# Problem Set 3 - Sudoku Tester
+
+* [Sudoku checker](http://forums.udacity.com/answer_link/100237967/#cs258)
