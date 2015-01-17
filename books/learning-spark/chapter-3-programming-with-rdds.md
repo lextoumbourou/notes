@@ -14,7 +14,7 @@
   * or by distributing a collection of objects (like a list or set) into their driver program
 
 * Once created, offer two types of operations: *transformations* and *actions*
-  * Transform example: ``lines = lines.filter(lambda line: 'Some string' in line)
+  * Transform example: ``lines = lines.filter(lambda line: 'Some string' in line)``
   * Action example: ``lines.count()``
   * Spark computes RDDs lazily: only once first action is requested. Transforms are not run until *actions* are requested. 
 

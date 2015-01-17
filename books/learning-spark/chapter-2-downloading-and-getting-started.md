@@ -16,9 +16,9 @@
 > bin/pyspark
 ```
 
-* Reduce verbosity of shell by editing ``conf/log4j.properties`` (create ``conf/log4j.properties`` by copying ``conf/log4j.properties.template``
+* Reduce verbosity of shell by editing ``conf/log4j.properties`` (create ``conf/log4j.properties`` by copying ``conf/log4j.properties.template``)
 
-``
+```
 > cd conf
 conf/> cp log4j.properties.template log4j.properties
 conf/> vi log4j.properties
