@@ -32,3 +32,33 @@
 maxmemory 2mb
 maxmemory-policy allkeys-lru
 ```
+
+### Redis persistence
+
+* Options:
+  * RDB
+    * performs point-in-time snapshot of data at configurable intervals.
+    * pros
+      * compact (good for backups).
+      * good for disaster recovery.
+      * maximizes Redis performance.
+      * allows for faster restarts.
+    * cons
+      * not good for minimizing chance to data loss
+      * RDB needs to ``fork()`` to persist on disk with a child process - can be time consuming if dataset is big (may block clients)
+  * AOF
+    * logs every write operation received by server and plays it at server start up.
+    * pros
+      * durable
+      * append only log, so no seeks nor corruption problems if outage.
+      * Redis can rewrite AOF log in background when it gets too big.
+    * cons
+      * bigger files
+      * can be slower than RDB
+  * None - disable persistance and delete everything when Redis is restarted.
+* Snapshotting
+  * Redis saves to ``dump.rdb`` even N seconds if there are at least M changes to dataset:
+    ```
+    save N M
+    ```
+  * Append-only file can be configured if more durablility is required with ``appendonly yes``
