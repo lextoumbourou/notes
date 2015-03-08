@@ -7,8 +7,7 @@ findIntercept :: (Fractional a) => a -> a -> a -> a
 findIntercept slope x y = slope * x - y
 
 -- slopeAndIntercept: take in two coords and return a tuple: (slope, y-intercept)
-slopeAndIntercept :: (Fractional a) => (a, a) -> (a, a) -> (a (a, a))
-
-slopeAndIntercept xy1 xy2 =
-    let returnedSlope = slope (x1, y1) (x1, x2)
-    in (returnedSlope, findIntercept returnedSlope x1 y1)
+slopeAndIntercept :: (Fractional a) => (a, a) -> (a, a) -> (a, a)
+slopeAndIntercept (x1, y1) (x2, y2)  =
+    let returnedSlope = slope (x1, y1) (x2, y2)
+    in (returnedSlope, (findIntercept returnedSlope x1 y1))
