@@ -3,3 +3,4 @@
 ## Chapters
 
 * [Chapter 3: Types and Typeclasses](./chapter-3-types-and-typeclasses.md)
+* [Chapter 4: Syntax in functions](./chapter-4-syntax-in-functions.md)
