@@ -23,21 +23,31 @@
 
 ```
 try:
-		new_data = sock.recv(1024)
+    new_data = sock.recv(1024)
 except socket.error, e:
-		if e.args[0] == errno.EWOULDBLOCK:
-				# this error code means we would have
-				# blocked if the socket was blocking.
-				# instead we skip to the next socket
-				break # Move to next socket
+    if e.args[0] == errno.EWOULDBLOCK:
+        # this error code means we would have
+        # blocked if the socket was blocking.
+        # instead we skip to the next socket
+        break # Move to next socket
 ```
 
 * Contrast with Go's model:
-    * Non-blocking isn't really needed. It has "multiple threads of execution" so you can leave a thread blocked and do work in another
+  * Non-blocking isn't really needed. It has "multiple threads of execution" so you can leave a thread blocked and do work in another.
 * The use of a loop that waits for events to happen then acts on them called a "Reactor Pattern".
 <img src="./images/reactor-pattern.png"></img>
-    * Called "reactor" because it waits for and reacts to events
-    * Twisted is basically an implementation of the Reactor Pattern with extras.
+  * Called "reactor" because it waits for and reacts to events.
+  * Twisted is basically an implementation of the Reactor Pattern with extras.
+
+### Exercises
+
+2. Could the asynchronous client provide a get_poetry function that returned the text of the poem? Why not?
+
+No, because it doesn't know which server is going to finish returning data first.
+
+3. If you wanted a get_poetry function in the asynchronous client that was analogous to the synchronous version of get_poetry, how could it work? What arguments and return values might it have?
+
+Basically, you could pass a dict of callback functions mapping the sock id to a function that was called once a single poem was downloaded.
 
 ## Part 3
 
