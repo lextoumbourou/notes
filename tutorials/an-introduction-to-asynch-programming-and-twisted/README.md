@@ -41,11 +41,11 @@ except socket.error, e:
 
 ### Exercises
 
-2. Could the asynchronous client provide a get_poetry function that returned the text of the poem? Why not?
+2\. Could the asynchronous client provide a get_poetry function that returned the text of the poem? Why not?
 
 No, because it doesn't know which server is going to finish returning data first.
 
-3. If you wanted a get_poetry function in the asynchronous client that was analogous to the synchronous version of get_poetry, how could it work? What arguments and return values might it have?
+3\. If you wanted a get_poetry function in the asynchronous client that was analogous to the synchronous version of get_poetry, how could it work? What arguments and return values might it have?
 
 Basically, you could pass a dict of callback functions mapping the sock id to a function that was called once a single poem was downloaded.
 
@@ -54,9 +54,9 @@ Basically, you could pass a dict of callback functions mapping the sock id to a 
 * Reactor loop doesn't start until told to. You start by calling ```reactor.run()```
 * Reactor loop runs in same thread as started in.
 * Once loop starts, it doesn't stop until killed
-* Reactor isn't created - just imported
-    * Reactor is a singleton
+* Reactor is a singleton
 * Twisted contains multiple reactors. You need to install them before using them.
+
 ```
 from twisted.reactor import pollreactor
 pollreactor.install() # Need to 'install' reactors before using them
@@ -64,15 +64,17 @@ pollreactor.install() # Need to 'install' reactors before using them
 from twisted.internet import reactor
 reactor.run()
 ```
+
 * Properties of callbacks:
-    * Callback code runs in same thread as Twisted loop
-    * When callbacks are running, Twisted loop isn't
-    * Vice versa
-    * Reactor loop resumes when callbacks are done 
+  * Callback code runs in same thread as Twisted loop
+  * When callbacks are running, Twisted loop isn't
+  * Vice versa
+  * Reactor loop resumes when callbacks are done 
 * Avoid making block calls in call backs.
-    * Network I/O blocking is handled by Twisted out the box
-    * Use Twisted API for stuff like ```os.system``` which is non-blocking
+  * Network I/O blocking is handled by Twisted out the box
+  * Use Twisted API for stuff like ```os.system``` which is non-blocking
 * Example of callLater(<call_time_in_seconds>, <method>)
+
 ```
 class Countdown(object):
     counter = 5
@@ -91,51 +93,55 @@ print 'Start'
 reactor.run()
 print 'Stop!'
 ```
+
 * Exceptions raised in a call back won't cause the app to die. It'll report it and continue.
 
 ### Exercises
 
-* [3 independent counters example](./exercises/part_3_ex_1.py)
-* [LoopingClass example](./exercises/part_3_ex_2.py)
+* [3 independent counters example](./exercises/part_3/ex1.py)
+* [LoopingClass example](./exercises/part_3/ex2.py)
 
 ## Part 4
 
+* Interfaces: principle purpose is documentation.
+
 * ```reactor.addReader(self)``` takes an object that much conform to an [interface](http://twistedmatrix.com/trac/browser/tags/releases/twisted-8.2.0/twisted/internet/interfaces.py).
+
 * The ```addReader``` method should take an an ```IReadDescriptor``` provider
 
 ### Exercises
 
 * The first exercise basically just requires the prevention of the task calling ```reactor.addReader(self)``` when the socket connection fails eg: ```try / except socket.error```
-* [Use callLater to make the client timeout](./exercises/part_4_ex_2.py) 
+* [Use callLater to make the client timeout](./exercises/part_4/ex2.py) 
 
 ## Part 5
 
-* Twisted architecture is composed of layers of abstraction
-	* Example: IReadDescriptor - "file descriptor you can read bytes from"
-* Transports
-	* Defined by ```ITransport``` in main ```interfaces``` module
-	* A Transport is a single connection that can send or receive bytes (TCP, UDP, Unix pipes)
-	* Generally use implementations that Twisted provide
+* Twisted abstractions are usually defined by an interface, specifying how derives object should behave.
+* Transports:
+  * Defined by ```ITransport``` in main ```interfaces``` module.
+  * A Transport is a single connection that can send or receive bytes (TCP, UDP, Unix pipes).
+  * Generally use implementations that Twisted provide.
 * Protocols
-	* Implements a networking protocol like FTP or IMAP (or something you create)
+  * Implements a networking protocol like FTP or IMAP (or something you create)
 * Protocol Factories
-	* Creates instances of Protocol Factories
-	* ```buildProtocol``` method should return a new Protocol instance when it's called
-	* Primary Factory class is ```twisted.internet.protocol.Factory``` but will generally use a more specialised class
+  * Creates instances of Protocol Factories
+  * ```buildProtocol``` method should return a new Protocol instance when it's called
+  * Primary Factory class is ```twisted.internet.protocol.Factory``` but will generally use a more specialised class
 * Protocol construction
-	* Step 1
-		* In Protocol Factory, need to specify Protocol to build with the ```protocol``` class var.
-		* Using ```buildProtocol``` method, we instantiat the protocol as above.
-		* Protocol created with same factory can share state with parent factory
-	* Step 2
-		* Protocol connects with a Transport using the ```makeConnection``` method. Stores a ref to the transport object in the ```self.transport``` attribute
-	* Step 3
-		* Protocol can process incoming data with ```dataReceived```, which takes as input a sequence of bytes (aka a string)
-		* ```self.transport.getPeer()``` returns information on the server data is coming from
+  * Step 1
+    * In Protocol Factory, need to specify Protocol to build with the ```protocol``` class var.
+    * Using ```buildProtocol``` method, we instantiat the protocol as above.
+    * Protocol created with same factory can share state with parent factory
+  * Step 2
+    * Protocol connects with a Transport using the ```makeConnection``` method. Stores a ref to the transport object in the ```self.transport``` attribute
+  * Step 3
+    * Protocol can process incoming data with ```dataReceived```, which takes as input a sequence of bytes (aka a string)
+    * ```self.transport.getPeer()``` returns information on the server data is coming from
+  * [Example from memory](./exercises/part5/factory_and_client.py)
 
 ### Exercises
 
-* [get poetry client with timeout](./exercises/part_5_ex_1.py)
+* [get poetry client with timeout](./exercises/part_5/ex1.py)
 
 ## Part 6
 
