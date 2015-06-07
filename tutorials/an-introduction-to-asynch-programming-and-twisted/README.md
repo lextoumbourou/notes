@@ -141,12 +141,16 @@ print 'Stop!'
 
 ### Exercises
 
-* [get poetry client with timeout](./exercises/part_5/ex1.py)
+* [get poetry client with timeout](./exercises/part5/ex1.py)
 
 ## Part 6
 
-* Can't mix synchronous code with async (obvious)
+* Can't mix synchronous code with async (obvious).
 * Use ```Failure``` object for handling passing errors back instead of callbacks (even better -- another abstraction discussed in later Parts)
+
+### Exercises
+
+1. [Timeout Poem](./exercises/part6/ex1.py)
 
 ## Part 7
 
