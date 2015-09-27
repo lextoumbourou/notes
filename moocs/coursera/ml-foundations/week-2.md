@@ -81,3 +81,61 @@
   * Test error:
     * Same as RSS calculation but *just* test set.
   * Then: "how does training error and test error vary as a function of the model complexity"
+
+* Evaluating regression models
+
+  * As model order increases, the training error will decrease.
+  * The test error, on the other hand, will eventually increase as model order increases.
+
+* Adding other features
+
+  * Look at relationships between other features and observation.
+  * With an extra feature, we'd fit a "hyperplane" through features, instead of line in 2d space.
+
+## Exercise Notes
+
+* To randomly split the data for training and test data, use ``random_split`` method:
+
+  ```
+  train_data,test_data = sales.random_split(.8, seed=98765)
+  ```
+
+* Graphlab has a method for creating a linear regression model called: ``linear_regression.create(data, target, features)``
+
+  ```
+  sqft_model = graphlab.linear_regression.create(train_data, target='price', features=['sqft_living'])
+  ```
+
+* Can evaluate a model with the test data using ``evaluate(data_set)`` method:
+
+  ```
+  sqft_model.evaluate(test_data)
+  {'max_error': 4395151.7166637955, 'rmse': 269951.8883121436}
+  ```
+
+  * ```max_error``` - max badly predicted house.
+  * ```rmse``` - root mean squared error.
+
+* Importing stuff from ``matplotlib`` example:
+
+  ```
+  import matplotlib.pyplot as plt
+  ```
+
+* To show predicts on top of actual test data:
+
+  ```
+  plt.plot(test_data['sqft_living'],test_data['price'],'.',test_data['sqft_living'],sqft_model.predict(test_data),'-')
+  ```
+
+* To get ``coefficients`` from model:
+
+  ```
+  sqft_model.get('coefficients')
+  ```
+
+* To create a box whisker plot:
+
+  ```
+  sales.show(view='BoxWhisker Plot', x='zipcode', y='price')
+  ```
