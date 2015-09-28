@@ -114,7 +114,7 @@
   ```
 
   * ```max_error``` - max badly predicted house.
-  * ```rmse``` - root mean squared error.
+  * ```rmse``` - root mean squared error (square root of RSS).
 
 * Importing stuff from ``matplotlib`` example:
 
@@ -138,4 +138,10 @@
 
   ```
   sales.show(view='BoxWhisker Plot', x='zipcode', y='price')
+  ```
+
+* Logical filters:
+
+  ```
+  > sales[(sales['price'] > 100) & (sales['price'] < 200)]
   ```
