@@ -6,6 +6,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
+* [ML Foundations (Coursera - ml-foundations)](./moocs/coursera/ml-foundations)
 * [Website Performance Optimization (Udacity - ud884)](./moocs/udacity/ud884-website-performance-optimization)
 * [Learn C The Hard Way](./books/learn-c-the-hard-way-book)
 * [An Introduction To Asynchronous Programming and Twisted](./tutorials/an-introduction-to-asynch-programming-and-twisted)
