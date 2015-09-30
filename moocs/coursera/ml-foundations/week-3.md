@@ -13,6 +13,7 @@
     * Put sentences into "Sentence Sentiment Classifier".
 
 * Classifier:
+
   1. Takes in x
   2. Puts it through classified model and returns x's classification.
 
@@ -67,7 +68,7 @@ u  * Problems:
 
   * Compare against "baseline" approaches:
 
-    * Random guessing.
+    * Random guessing (would have at least a 50% accuracy for two types of labels/classes).
     * "Majority case" (eg: 90% success rate finding spam, but spam constitutes 90% of email): "class imbalance".
 
   * What does your application need?
