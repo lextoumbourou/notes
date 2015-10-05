@@ -31,15 +31,58 @@
     ```
 
   * Problem: bias against larger documents.
-  * Solution: normalise vector.
+
+  * Solution: *normalised count vector*.
 
     * Computing norm of vector: add square of every entry in the vector and take square root.
 
   * Problem: Common words "dominate" rare words in similarity score and usually rare words are important to doc context..
-  * Solution: prioritize important words with tf-idf.
+  * Solution: prioritize important words with *tf-idf*.
 
-* tf-idf (term frequency inverse document frequency).
+* tf-idf (term frequency - inverse document frequency).
   
   * Don't want to emphasis only rare words; want "important words".
+
     * "Common locally": appear frequently in document.
     * "Rare globally": appear rarely in corpus (rare globally). 
+
+  * Rough algorithm:
+
+    * Count words in document ("local" term frequency).
+    * Count inverse document freqency getting the ratio against whole corpus:
+
+      ```
+      word_frequency_ratio = log(
+          number_of_documents / (1 + number_of_documents_term_appears_in))
+      ```
+
+      * ``+ 1`` to deal with terms that appear in no documents (avoid dividing by 0).
+      * ``log`` to reduce the impact of result (I guess?)
+
+    * Multiply inverse document frequency with term frequency (``tf * idf``).
+
+    * [In code](./code/td-idf.py).
+
+* Retrieving similar documents 
+
+  * Nearest neighbor
+    * Specify: distance measure (similarity calculated above, for example).
+    * Ouput: set of most similar articles.
+    * Examples
+      * 1 - Nearest neighbor
+        * Find the most similar.
+      * K - Nearest neighbors
+        * Keep priority queue of top K found articles.
+
+* Clustering documents
+  * Goal: discover groups (clusters) of related articles.
+  * If labels are known: you could have a training set of labeled docs.
+    * Simply a multiclass classification problem.
+  * If not: unsupervised problem.
+    * Input: word count vector for docs.
+    * Output: cluster labels by grouping docs with similar word counts.
+    * Cluster defined by center and shape/spread.
+    * Assign observation (doc) to cluster (topic label).
+
+* k-means
+  * Up to here.
