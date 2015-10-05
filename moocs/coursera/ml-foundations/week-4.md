@@ -85,4 +85,35 @@
     * Assign observation (doc) to cluster (topic label).
 
 * k-means
-  * Up to here.
+
+  * Specify number of clusters and find closest to an average point (hence ``K`` means).
+  * Similarity metric == distance to cluster centre.
+  * Overview:
+    * 0. Initialize cluster centres (initially just randomly).
+    * 1. Assign observations to closest cluster centre.
+      * Uses "Voronoi Tessellation":
+        * Look at cluster centres.
+        * Define regions around them.
+        * Put any points that fall in the region in clusters.
+    * 2. Revise cluster centres as mean of assigned observations.
+      * Update definitions of cluster centres based on where stuff has been assigned.
+      * Change "centre of masses for clusters".
+      * Iterate until "convergence".
+
+* Other examples of clustering
+
+    * Image search - clustering similiar images.
+    * Grouping patients by medical condition.
+      * Grouping brain scans.
+    * Grouping products on Amazon
+    * Grouping related users. 
+    * Discovering similar neighbourhoods.
+    * Forecast violent crimes to regions.
+
+* Clustering and similarity ML block diagram
+
+    1. Training data: (doc id, doc text)
+    2. Extract features (tf-idf)
+    3. Put features through ML Model (clustering)
+      * y-hat == estimated cluster label.
+    4. Minimize distances between cluster centres (k-means).
