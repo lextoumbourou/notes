@@ -130,4 +130,32 @@
 
 * Discovering hidden structure by matrix factorization 
 
-  * Up to here.
+  * Using only observed rating (black squares), we want to estimate L and R matrices. 
+  * Look at predictions compared to actual observed rating (similar to Regression):
+  
+    ``RSS(L, R) = (Rating(u, v) - <Lu, Rv>) ** 2 + sum([(u_prime, v_prime) for pairs if Rating(u_prime, v_prime)`` 
+
+  * Reason called a "Matrix Factorization Model" because taking matrix and approximating with factorization.
+  * Many efficient algorithms for factorization.
+  * Limitations:
+    * Cold start problem: new user or new movies (no ratings).
+
+* Featurized matrix factorization
+
+  * Features capture context
+
+    * Time of day
+    * What I just saw
+    * User info
+    * Past purchases
+
+  * Discovered topics from matrix factorization capture "groups of users" who behave similarly.
+
+    * Women from Seattle who teach and have a baby.
+  * Combine to mitigate cold-start problem
+    * Ratings for a new user from features only.
+    * As more information about user is discovered, matrix factorization *topics* become more relevant.
+
+  * "Blending models"
+
+    * Winning team of Netflix prize blended over 100 models.
