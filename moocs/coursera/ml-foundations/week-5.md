@@ -159,3 +159,55 @@
   * "Blending models"
 
     * Winning team of Netflix prize blended over 100 models.
+
+* Performance metric for recommender systems
+
+  * Classification accurary
+
+    * Problems:
+      * Major class: recommend no items.
+      * Can only get a limited subset of correctly classified items, since user has limited attention.
+
+  * How many liked items were recommended?
+
+    * How many user liked vs how many were recommended.
+    * Formula: ```liked_and_shown / liked`` eg 
+    * "Precision": look at all the recommended items, what fraction were items the user liked.
+
+* Optimal recommenders
+
+  * "How do you maximise recall?" - just recommend everything.
+    * Small precision.
+  * What is optimal recommender:
+    * Recall = 1 (everything liked was recommended).
+    * Precision = 1 (everything recommended was liked).
+
+* Precision-recall curve
+
+  * Input: a specific recommender system
+  * Output: Algorithm-specific precision-recall curve
+  * Optimal recommender precision / recall curve:
+
+    <img src="../images/perfect-precision-recall-curve.png"></img>
+
+  * Realistic recommender:
+
+    <img src="../images/realistic-precision-recall-curve.png"></img>
+
+  * Comparing algorithms:
+
+    * Largest "area under the curve" (AUC).
+    * Set desired recall and maximise precision (precision at k).
+
+* Recommender systems ML block diagram
+
+  * Training data: user, products, ratings table
+  * Feature extraction:
+    * (user_id, product_id).
+    * Also may include other features like gender, age, product description etc.
+  * Goal (y-hat): predicted rating for user, product pair.
+  * Model: matrix factorization.
+    * Set of features for every user (how much user likes action, comedy etc).
+    * Set of features for every product (how much a movie action, comedy etc).
+  * Quality metric:
+    * RSS (compare error between predicted ratings and observed values).
