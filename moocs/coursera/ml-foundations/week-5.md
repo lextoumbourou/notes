@@ -36,16 +36,31 @@
   2. Collaborative filtering
 
     * "People who bought x also bought y."
-    * Matrix C:
+    * Requires co-occurrence matrix:
       * Store # users who bought both items i & j
-        * no items x no items matrix
-      * Considered a "symmetric" matrix because ``matrix['comic_book']['bmx'] == matrix['bmx']['comic_book']``
-        * "Number of users who bought a comic book and a BMX is the same as users who bought a BMX and a comic book."
-    `
-    * How it would be used:
-      1. User buys a comic book.
+      * In code:
+         
+        ```
+        purchased_items_pos                  =  ['Nike Air', 'Reebook Pump', 'Mercedes Pumas']
+        purchases_also_made['Nike Air']      =  [53,         2,               3] 
+        purchases_also_made['Reebook Pump']  =  [2,          22,              6]
+        purchases_also_made['Mercedes Pumas] =  [3,          6,               100] 
+        ```
 
-      2. Go to comic book row and find other items with the highest row.
+      * Considered a "symmetric" matrix because
+
+        * ``matrix['Nike Air']['Mercedes Pumas'] == matrix['Mercedes Pumas']['Nike Air']``
+
+        * "Number of users who bought Nike Airs and Mercedes Pumas is the same as users who bought a Mercedes Pumas and Nike Airs."
+
+    * How it would be used:
+
+      1. User buys Nike Airs.
+      2. Sort the Nike Airs row by "also made" purchases and display the top few.
+
+        ```
+        recommended = sorted(purchases_also_made['Nike Air'])[:recommendation_count]
+        ```
 
   * Need to normalize co-occurrence matrix
 
@@ -53,6 +68,8 @@
     * One strategy: "Jaccard similarity"
 
   * "Jaccard similarity"
+
+    <img src="./images/normalize-by-popularity.png"></img>
 
     * Normalize by popularity.
     * Overview:
@@ -63,9 +80,10 @@
 
     * In code:
     
-        ```
-        purchased_i.union(purchased_j) / purchased_i.intersection(purchased_j)
-        ```
+      ```
+      purchased_i.union(purchased_j) / purchased_i.intersection(purchased_j)
+      ```
+
 
     * Limitations:
 
@@ -97,28 +115,39 @@
 
   3. Discovering hidden structure by matrix factorization
 
-    * Matrix of movies x users.
+    * Matrix of movies x users:
+
+      ```
+      movie_pos     =  ['Taxi Driver', 'Goodfellas', 'Casino']
+      rating['John'] = [None,          8,            6      ]
+      rating['Bill'] = [3,             3,            5      ]
+      rating['Bob']  = [7,             2,            None   ]
+      ```
+
     * Attempt to fill in unrated movies with user's ratings and rating of other users.
       * Point: guess the rating a user would give to movies they haven't seen.
     * Overview:
 
-      1.  Descrive movie ```v``` with topics ```R(v)```: how much action, romance, drama:
+      1.  Describe movie ``v`` with topics ``R(v)``: how much action, romance, drama:
            ```
-           movie_genres = ['action', 'romance', 'drama']
-           taxi_driver_topic = [0.3, 0.001, 1.5]  # R(v)
+           movie_genres                       = ['action', 'romance', 'drama']
+           movie_genres_amount['Taxi Driver'] = [0.3,      0.1,        0.5]  # R(v)
+           movie_genres_amount['Goodfellas']  = [0.2,      0.1,        0.7]  # R(v)
            ```
 
       2. Describe how much user ``u`` with topics ``L(u)``.
 
            ```
-           user_genres = [2.5, 0, 0.9]  # L(u)
+           user_genres_prefered['John'] = [2.5,       0,         0.9]  # L(u)
+           user_genres_prefered['Bill'] = [5,         2,         10]   # L(u)
            ```
                
       3. ``Rating(u, v)`` is the product of two vectors:
 
             ```
-            Rating = lambda u, v: sum([x * y for x, y in zip(u, v)])
+            ratings = lambda u, v: sum([x * y for x, y in zip(user_genres_prefered, movie_genres_amount)])
             ```
+
       4. Sort movies by ```Rating(u, v)```
 
 * Predictions in matrix form
@@ -168,11 +197,29 @@
       * Major class: recommend no items.
       * Can only get a limited subset of correctly classified items, since user has limited attention.
 
-  * How many liked items were recommended?
+    * Solution:
+      * Metrics called "Precision" and "Recall".
 
-    * How many user liked vs how many were recommended.
-    * Formula: ```liked_and_shown / liked`` eg 
-    * "Precision": look at all the recommended items, what fraction were items the user liked.
+  * Recall
+
+    * Find all liked and figure out how many were recommended.
+    * Formula: ```liked_and_shown / liked``
+
+      ```
+      items_recommended = set(['Shoes', 'Jeans', 'Hat', 'Pants'])
+      items_liked       = set(['Jeans', 'Hat', 'Glasses'])
+      recall = len(items_recommended.intersection(items_liked)) / len(items_liked)  # 2 / 3
+      ```
+
+  * Precision
+
+    * Get all recommended items and figure out how many were liked.
+
+    * Formula: ``liked_and_shown / shown``
+
+      ```
+      precision = len(items_recommended.intersection(items_liked)) / len(items_recommended)  # 2 / 4
+      ```
 
 * Optimal recommenders
 
