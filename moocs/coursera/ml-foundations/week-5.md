@@ -13,23 +13,26 @@
   0. Popularity
 
     * What are people viewing now?
-    * Limitation
+    * Pros:
+      * Rudimentary solution to the "cold-start problem": what to show the user when you know nothing about them.
+    * Limitations:
       * No personalization
 
-  1. Classification model
+  1. Classification model (like sentiment analysis)
 
-    * "Use features of products and users to make recommendations"
-    * Features
-      * User info
-      * Purchase history
-      * Product info
-      * Other info
+    * Considered supervised learning (?).
+    * Potential features:
+      * User info.
+      * Purchase history.
+      * Product info.
+      * Other info.
     * Classifier takes features as input and return the probability of buying the product
     * Pros:
       * Personalized: considers user info etc
       * Features can capture context: time of day, what user just saw
       * Handles limited user history: age of user etc.
     * Cons:
+      * Quality of information may be low.
       * Features may not be available (might not know age etc).
       * Doesn't work as well as "collaborative filtering"
 
@@ -39,7 +42,7 @@
     * Requires co-occurrence matrix:
       * Store # users who bought both items i & j
       * In code:
-         
+ 
         ```
         purchased_items_pos                  =  ['Nike Air', 'Reebook Pump', 'Mercedes Pumas']
         purchases_also_made['Nike Air']      =  [53,         2,               3] 
@@ -62,34 +65,33 @@
         recommended = sorted(purchases_also_made['Nike Air'])[:recommendation_count]
         ```
 
-  * Need to normalize co-occurrence matrix
+    * Need to normalize co-occurrence matrix
 
-    * Very popular items "drowns out" other items.
-    * One strategy: "Jaccard similarity"
+      * Very popular items "drowns out" other items.
+      * One strategy: "Jaccard similarity"
 
-  * "Jaccard similarity"
+    * "Jaccard similarity"
 
-    <img src="./images/normalize-by-popularity.png"></img>
+      <img src="./images/normalize-by-popularity.png"></img>
 
-    * Normalize by popularity.
-    * Overview:
+      * Normalize by popularity.
+      * Overview:
 
-      1. Count people who purchased i and j
-      2. Count people who bought i or j
-      3. Divide 1 by 2
+        1. Count people who purchased i and j
+        2. Count people who bought i or j
+        3. Divide 1 by 2
 
-    * In code:
-    
-      ```
-      purchased_i.union(purchased_j) / purchased_i.intersection(purchased_j)
-      ```
-
+      * In code:
+      
+        ```
+        purchased_i.union(purchased_j) / purchased_i.intersection(purchased_j)
+        ```
 
     * Limitations:
-
       * Doesn't factor in purchase history, only looks at current item.
+        * Solution: "weighed average of purchased items".
 
-  * (Weighted) average of purchased items
+  * Weighted average of purchased items
 
     * For all potential recommendable products, go through and calculate similarity score based on each of user's purchase history (maybe weigh recent purchases higher).
 
