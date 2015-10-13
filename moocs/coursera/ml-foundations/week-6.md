@@ -1,21 +1,28 @@
 # Week 6
 
-* Linear classifiers:
-
-  * Creates a linear decision boundary between classifications.
-
 * Neural networks
 
   * Represent classifiers using graphs.
+
     * Allows for complex, non-linear features.
 
-  <img src="./basic-neural-network.png"></img>
+  <img src="./images/basic-neural-network.png"></img>
 
   * ``X[]`` - represents features.
   * ``W[]`` - represents weights.
-  * ``W0`` - gets multiplied by ``1`` (for some reason?).
+  * ``W0`` - not multiplied by any feature, gets multiplied by ``1`` (I guess it's a kinda "hard coded" part of the equation).
 
-  * Useful for cases which linear classifiers can't find.
+* One layer neural network:
+
+  * Basically the same as a linear classifier:
+    * Creates a linear decision boundary between classifications.
+    * Can represent
+      * ``X[1] OR X[2]``, ``X[1] AND X[2]``
+    * Can't represent XOR functions.
+
+* XOR problem can be solved by adding a layer.
+
+  * [Video missing...](https://www.coursera.org/learn/ml-foundations/lecture/iJyru/learning-very-non-linear-features-with-neural-networks/discussions/Qm4R4G9OEeWDzg4yGnIlTw#input-container) guess I'll never know...
 
 * Application of deep learning to computer vision
 
@@ -50,3 +57,28 @@
 
   * "Scene parsing" - figuring out what stuff is in a picture.
   * Retrieving similar images: take input image and output nearest neighbour.
+
+* Pros of Neural Networks
+
+  * Enables learning of features rather than hand tuning.
+  * Impressive performance gains
+    * Computer vision
+    * Speech recognition
+    * Some text analysis
+  * Potential for more impact
+
+* Cons
+  
+  * Requires *lots* of high-quality, labeled data
+  * Lots of complexity
+  * Computationally expensive
+  * Hard to tune
+
+* Deep features
+
+  * Let's you build neural networks without a lot of data.
+  * "Transfer learning"
+    * Use data from one task to learn another
+    * Take features from experiment to aid another.
+  * Use the layers in neural net that make sense for dataset, and use simple classifier for the layers that do not.
+    * Eg Layer 1 and Layer 2 for an algorithm for detecting butterflies could be use for algorithm to detect moths.
