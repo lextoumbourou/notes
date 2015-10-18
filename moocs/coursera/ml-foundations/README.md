@@ -1,5 +1,11 @@
 # Machine Learning Foundations: A Case Study Approach (Coursera - ml-foundations)
 
+## Status
+
+Complete - 2015-10-17
+
+<img src="./images/cert.png"></img>
+
 ## Contents
 
 * [Week 1](./week-1.md)
