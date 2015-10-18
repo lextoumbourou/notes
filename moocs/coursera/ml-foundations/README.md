@@ -4,7 +4,7 @@
 
 Complete - 2015-10-17
 
-<img src="./images/cert.png"></img>
+<img src="./images/cert.png" width="600px"></img>
 
 ## Contents
 
