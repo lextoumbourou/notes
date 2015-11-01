@@ -1,5 +1,6 @@
 # Week 1
 
+## 1.5 Union Find
 
 * About the "Union find problem"
 
@@ -14,6 +15,9 @@
   4. If not, figure out why.
   5. Find way to address problem.
   6. Iterate until satisfied.
+
+
+### Dynamic connectivity
 
 * Dynamic connectivity.
 
@@ -81,3 +85,50 @@
               """
       ```
 * [Dynamic connectivity client](./code/dynamic_connectivity_client.java)
+
+## Quick Find
+
+* "Eager" algorithm for solving the connectivity problem.
+* Data structure
+  * Integer array ``id[]`` of size ``N``.
+  * ``p`` and ``q`` are connected if and only if (iff) they have the same id.
+  * Objects are denoted by their position in the array. Eg object 0 = pos 0.
+
+    ```
+    # obj: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 
+    ids = [0, 1, 1, 8, 8, 0, 0, 1, 8, 8]
+
+    # component 1: {0, 5, 6}
+    # component 2: {1, 2, 7}
+    # component 3: {3, 4, 8, 9}
+    ```
+
+  * Find: simply check if p and q have same id.
+
+    ```
+    def connected(p, q):
+        return ids[p] == ids[q]
+    ``` 
+
+  * Union: to merge components containing ``p`` and ``q``, change all entries whose id is ``id[p]`` to ``id[q]``.
+
+    ```
+    def union(p, q):
+        for val, pos in ids:
+            if val == ids[p]:
+                ids[pos] == ids[q]
+    ```
+
+  * [Python implementation](./code/python/quick_find.py)
+  * [Java implementation](./code/java/QuickFind.class)
+
+  * Run time:
+
+    * Init: ``N``
+    * Union: ``N``
+    * Find: ``1``
+
+  * Defects:
+
+    * Union too expensive when processing sequence of ``N`` union command on ``N`` objects: quadratic run time (``N**2``)
+    * Quadratic time is "unacceptable" because it doesn't scale: eg if the amount of shit you can store in memory increases, the running time will get slower.
