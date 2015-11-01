@@ -6,6 +6,8 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
+* [Algorithm Part 1 (Coursera - algs4partI-009)](./moocs/coursera/algorithms-part-1)
+
 * [Website Performance Optimization (Udacity - ud884)](./moocs/udacity/ud884-website-performance-optimization)
 * [Learn C The Hard Way](./books/learn-c-the-hard-way-book)
 * [An Introduction To Asynchronous Programming and Twisted](./tutorials/an-introduction-to-asynch-programming-and-twisted)
