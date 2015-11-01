@@ -132,3 +132,51 @@
 
     * Union too expensive when processing sequence of ``N`` union command on ``N`` objects: quadratic run time (``N**2``)
     * Quadratic time is "unacceptable" because it doesn't scale: eg if the amount of shit you can store in memory increases, the running time will get slower.
+
+## Quick Union
+
+  * "Lazy" approach: don't do work until we have to.
+  * Same data structure as Quick Find but different representation in array.
+  * Array represents a set of trees called a "forest".
+  * Each element points to their parent, parents point to themselves.
+
+  ```
+  # 0   1     5
+  #          / \
+  #         4   2
+  #              \
+  #               3
+  # Obj: 0, 1, 2, 3, 4, 5
+  ids = [0, 1, 5, 2, 5, 5]
+  ```
+
+  * Find: check if ``p`` and ``q`` have same root.
+
+  ```
+  def get_root(i):
+      if self.ids[i] != i:
+          return get_root(self.ids[i])
+      return i
+
+  def find(p, q):
+     return self.get_root(p) == self.get_root(q)
+  ```
+
+  * Union: Connect the root of ``p`` to the root of ``q``.
+
+  ```
+  def union(p, q):
+     p_root = self.get_root(p)
+     q_root = self.get_root(q)
+     self.ids[p_root] = q_root
+  ```
+
+  * Run time:
+
+    * Init: ``N``
+    * Union: ``N``
+    * Find: ``N``  <  worst case
+
+  * Defects:
+
+    * Find too expensive: could be ``N`` array access in case where finding the root needs to interate over all nodes (linear time).
