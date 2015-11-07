@@ -180,3 +180,55 @@
   * Defects:
 
     * Find too expensive: could be ``N`` array access in case where finding the root needs to interate over all nodes (linear time).
+
+## Quick-Union Improvements
+
+  * "Weighted quick union":
+
+    * Quick union but when combining trees, ensure the smaller tree is linked to larger tree.
+    * Have to keep track of size of the tree.
+    * Example of union operation in Python.
+
+      ```
+      def union(p, q):
+          p_root = self.get_root(p)
+          q_root = self.get_root(q)
+          if p_root == q_root:
+              return
+
+          if self.size[p] < self.size[q]:
+              self.size[p_root] = q_root
+          else:
+              self.size[q_root] = p_root
+      ```
+    * Run times:
+
+      * Init: ``N``
+      * Find: ``log N`` - proportional to depth of ``p`` and ``q``.
+      * Union: ``1`` - constant time, given roots.
+
+    * Depth of node ``x`` is at most ``log(N, base=2)``
+
+      * Increase by 1 when tree ``T1`` containing x is merged with ``T2``.
+      * Size of tree containing ``x`` at least doubles since ``|T2| >= |T1|``.
+      * Size of tree containing ``x`` can double at most ``log(N, 2)`` times.
+      * |Question| The depth of any node is at most what?
+
+  * "Path compression"
+
+    * After computing root of ``p``, we point every node in the tree to the root.
+    * Running time is roughly linear (log * N).
+    * No such algorithm for Union Find that's exactly linear, but this is close enough.
+
+## Applications
+
+  * Percolation
+    * Model for many physical systems
+    * Each site is open with probability `p`` or blocked with probability ``1 - p``.
+    * System "percolates" iff top and bottom are connected by open sites.
+
+      <img src="./images/likelihood-of-percolation.png"></img>
+
+    * Phase transition: when ``p`` is less than some value the space will almost certainly perculate and vice versa.
+      * No solution to problem; need to use simulations to find solution. Fast union find is required.
+      * Threshold is roughly: 0.592746
