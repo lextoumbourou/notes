@@ -293,11 +293,49 @@
         * [C example](./code/c/brute_force_3_sum.c)
 
     * Measuring run time of program
+
       * Empirical analysis: run it for different sizes and measure how long it takes.
       * Standard plot:
+
         * Plot running time T(N) vs input size N using log-log scale.
         * Use Regression to fit straight line through data point:
 
           <img src="./images/log-log-run-time-plot.png"></img>
 
-        * Cont: Observations 6:19
+        * Can then use to figure out running time for different values of ``N``.
+
+        * Power law notes:
+
+          *  Relationship between two quantites: change one, it changes the other proportionally.
+
+      * Doubling hypothesis:
+
+        * Double the size of input and take the ratio.
+
+    * Experimental algorithmics:
+
+      * System independent effects:
+
+        * Algorithm
+        * Input data.
+
+      * System dependent effects:
+
+        * Hardware
+        * Software (compiler, interpreter, garbage collecter)
+        * System (os, network etc)
+
+  * Mathematical Models
+
+    * Total running time: sum of cost * frequency for all operations.
+    * Simplications made when calculating running time:
+
+      * 1. Cost model: Look at operation execute most frequently or that's most expensive (eg array access in 2-sum problem)
+      * 2. Tilde notation: ignore low order terms
+        * When ``N`` is large, terms are negligible.
+        * When ``N`` is small, who cares?
+        * Technical definition: ``f(N) ~ g(N)`` == "Limit of ``f(N) / g(N) == 1`` as N approaches infinity"
+
+    * Estimating a discrete sum:
+
+      * Don't know calculus: totally lost. :)
