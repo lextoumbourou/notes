@@ -31,7 +31,7 @@
 
 * Array implementation:
 
-  * [FixedCapacityStackOfStrings](./code/java/FixedCapacityStackOfStrings.class)
+  * [FixedCapacityStackOfStrings.class](./code/java/FixedCapacityStackOfStrings.class)
   * Fundamental defect: declare size of array ahead of time.
   * Extra considerations:
     * Underflow: throw exception if pop from empty stack.
@@ -79,3 +79,31 @@
       * Use if implementing something to conserve space, where occasional slowness of operations isn't an issue.
 
 * |Question| Trade off between Linked List implementation or Resizing-Array implementation?
+
+## Queues
+
+* Queue API:
+
+```
+public class QueueOfStrings
+
+  // Create an empty queue
+  QueueOfStrings()
+
+  // insert a string onto the queue
+  void enqueue(String item)
+
+  remove and return the last string
+  String dequeue()
+
+  is the queue empty?
+  boolean isEmpty()
+
+  number of strings on the queue
+  int size()
+```
+
+* Queue: linked-list representation
+
+  * Maintain pointer to first and last nodes in a linked list; insert / remove from opposite ends.
+  * [LinkedListQueue.class](./code/java/LinkedListQueue.class)
