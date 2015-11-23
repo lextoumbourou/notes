@@ -1,9 +1,11 @@
 public class QuickFind {
 
-	private int id[];
+	private int[] id;
 
 	public QuickFind(int N) {
-		for (int i = 0; int i < N; i++) {
+		id = new int[N];
+
+		for (int i = 0; i < N; i++) {
 			id[i] = i;
 		}
 	}
@@ -16,9 +18,9 @@ public class QuickFind {
 		int pid = id[p];
 		int qid = id[q];
 
-		for (int i = 0; int i < id.length; i++) {
-			if (ids[i] == pid) {
-				ids[i] = qid;
+		for (int i = 0; i < id.length; i++) {
+			if (id[i] == pid) {
+				id[i] = qid;
 			}
 		}
 	}

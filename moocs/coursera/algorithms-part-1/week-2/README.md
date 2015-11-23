@@ -103,7 +103,16 @@ public class QueueOfStrings
   int size()
 ```
 
-* Queue: linked-list representation
+* Linked-list representation:
 
   * Maintain pointer to first and last nodes in a linked list; insert / remove from opposite ends.
   * [LinkedListQueue.class](./code/java/LinkedListQueue.class)
+
+* Resizing array implementation:
+
+  * Use array ``q[]`` to store items in queue.
+  * ``enqueue()``: add item at ``q[tail]``.
+  * ``dequeue()``: remove item from ``q[head]``.
+  * Update ``head`` and ``tail`` modulo the capacity.
+  * Add resizing array
+  * [ResizingArrayQueue.class](./code/java/ResizingArrayQueue.class)

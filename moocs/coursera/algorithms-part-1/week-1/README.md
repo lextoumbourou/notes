@@ -84,7 +84,6 @@
                   bool
               """
       ```
-* [Dynamic connectivity client](./code/dynamic_connectivity_client.java)
 
 ### Quick Find
 
