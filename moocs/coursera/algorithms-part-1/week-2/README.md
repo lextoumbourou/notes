@@ -106,7 +106,7 @@ public class QueueOfStrings
 * Linked-list representation:
 
   * Maintain pointer to first and last nodes in a linked list; insert / remove from opposite ends.
-  * [LinkedListQueue.class](./code/java/LinkedListQueue.class)
+  * [LinkedListQueue.java](./code/java/LinkedListQueue.java)
 
 * Resizing array implementation:
 
@@ -114,5 +114,4 @@ public class QueueOfStrings
   * ``enqueue()``: add item at ``q[tail]``.
   * ``dequeue()``: remove item from ``q[head]``.
   * Update ``head`` and ``tail`` modulo the capacity.
-  * Add resizing array
-  * [ResizingArrayQueue.class](./code/java/ResizingArrayQueue.class)
+  * [ResizingArrayQueue.java](./code/java/ResizingArrayQueue.java)
