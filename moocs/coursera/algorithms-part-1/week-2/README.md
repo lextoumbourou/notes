@@ -115,3 +115,49 @@ public class QueueOfStrings
   * ``dequeue()``: remove item from ``q[head]``.
   * Update ``head`` and ``tail`` modulo the capacity.
   * [ResizingArrayQueue.java](./code/java/ResizingArrayQueue.java)
+
+## Generics
+
+* Avoid having multiple implementations for each type of data.
+* Avoid having to cast ``Object``s everywhere.
+* Client example:
+
+```
+Stack<String> s = new Stack<String>();
+String a = "Hello";
+String b = "World";
+s.push(a);
+s.push(b);
+a = s.pop();
+```
+
+* Java doesn't allow generic array creation. Required to cast:
+
+```
+s = new Item[capacity]; // Invalid!
+s = (Item[]) new Object[capacity]; // Fixed
+```
+
+* Primitive types all have a *wrapper* object in Java. The convention is to use the capitalize version like ``Integer``.
+
+## Iterators
+
+* ``Iterable``: class that has a method that returns an ``iterator()``.
+* ``Iterator``: class that has methods ``hasNext()`` and ``next()``.
+* Can use the foreach shorthand:
+
+```
+for (String s : stack)
+    StdOut.println(s);
+```
+
+equivalent to:
+
+```
+Iterator<String> i = stack.iterator();
+while (i.hasNext())
+{
+    String s = i.next();
+    StdOut.println(s);
+}
+```
