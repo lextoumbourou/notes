@@ -161,3 +161,53 @@ while (i.hasNext())
     StdOut.println(s);
 }
 ```
+
+# Elementary Sorts
+
+## Sorting Introduction
+
+* Problem summary: rearrange array of N items into ascending order.
+* Goal for clients: one client to sort *any* type of data.
+  * Requires a *Callback* (aka a reference to executable code).
+  * Java uses *interfaces* for implementing callbacks.
+* Object implementation:
+
+  ```
+  public interface Comparable<Item>
+  {
+      public int compareTo(Item that)
+  }
+  ```
+
+* Use of the interface requires "Total order"
+  * Binary relation ``<=`` that satisfies:
+    * Antisymmetry: if ``v <= w`` and ``w <= v`` then ``v = w``.
+      * |Question| define antisymmetry relationship.
+    * Transitivity: if ``v <= w`` and ``w <= x`` then ``v <= x``.
+      * |Question| define transitivity relationship.
+    * Totality: either ``v<=w`` or ``w<=v`` or both.
+      * |Question| define totality relationship.
+    * Examples: numbers, strings, dates.
+    * Anti-examples: rock, paper scissors.
+  * |Question| What are the 3 conditions that must be satisfied for a relationship to be considered "total order".
+
+* Helper functions:
+  * ``less`` is item ``v`` less than ``w``?  
+  
+    ```
+    private static boolean less(Comparable v, Comparable w)
+    {
+      return v.compareTo(w) < 0;
+    }
+    ```
+
+  * ``exch`` - swap items in array.
+
+    ```
+    private static void exch(Comparable[] a, int i, int j)
+    {
+        Comparable temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+    ```
