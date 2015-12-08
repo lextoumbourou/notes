@@ -161,3 +161,15 @@
 
 * "Prefer to under estimate than over"
   * Eg: don't want to predict my house price as too high.
+
+
+## Week 2
+
+* More inputs added to regression model lets you factor in other relationships between your output variable.
+
+  <img src="./images/general-notation.png"></img>
+  <img src="./images/more-notation.png"></img>
+
+* Commonly used equation:
+
+  <img src="./images/commonly-used-equation.png"></img>
