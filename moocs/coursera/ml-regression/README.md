@@ -165,10 +165,32 @@
 
 ## Week 2
 
+* Polynomial regression:
+
+  * Even with only a single input variable, a linear equation model may not represent the relationship between the output variable.
+  * Could use a higher-order function (quadratic, polynomial etc):
+    * ``yᵢ = W₀ + W₁Xᵢ + W₂Xᵢ² ... + WpXᵢ^p + εi``
+
+    * Treat different powers of ``x`` as "features":
+
+      * feature 1 = ``1 (constant)``
+      * feature 2 = ``x``
+      * ..
+      * feature p + 1 = ``x^p``
+
+    * Different coefficients = parameters.
+
 * More inputs added to regression model lets you factor in other relationships between your output variable.
 
   <img src="./images/general-notation.png"></img>
   <img src="./images/more-notation.png"></img>
+
+  * |Question| What letter will be used to represent number of observations?
+    * ``N``
+  * |Question| What letter will be used to represent no of inputs? (``x[i]``)
+    * ``d``
+  * |Question| What letter will be used to represent no of features? (``hⱼ(x)``)
+     * ``D``
 
 * Commonly used equation:
 
@@ -177,6 +199,7 @@
 * Interpreting coefficients of fitted function
   * Co-efficient's should be considered in the context of the entire model.
     * Eg: Number of bedrooms might have a negative coefficient if the square feet of the house is low.
+  * If in a situation where you can't "fix" an input (eg if all features are a power of one input), then you can't interpret the coefficient.
 
 * Matrices and vectors review
   * Matrix arithmetic:
@@ -203,11 +226,44 @@
       * ``A (2 x 3) * A (3 x 2)  # Works!``
       * ``A (2 x 3) * A (2 x 3)  # Doesn't work``
 
-* Stages for computing the least squares fit
-  * Step 1: rewrite the regression model for a single observation:
+* Stages for computing the least squares fit:
 
-    <img src="./images/rewrite-matrix-notation.png"></img>
+  * Step 1: Rewrite regression model using linear algebra
 
-  * Step 2: rewrite model for all observations:
+    * Rewrite the regression model for a single observation in matrix notation:
 
-    -- up to here.
+      <img src="./images/rewrite-matrix-notation.png"></img>
+    
+      * Multiple two vectors:
+
+        1. A row vector (aka transposed column vector) of parameters / coefficients
+        2. A column vector of features.
+
+      * Then add the error term.
+
+    * Rewrite model for all observations:
+
+      <img src="./images/matrix-notation-all-observations.png"></img>
+
+        * Rows of middle matrix (matrix ``H``) = vector of features from previous section.
+
+  * Step 2: Compute the cost
+
+    * Algorithm = search all different fits to find the smallest cost (RSS). 
+    * RSS in matrix notation:
+      
+      <img src="./images/rss-matrix-notation.png"></img>
+      
+      * ``y - Hw`` is a residual vector.
+      * Using vector multiplication of that vector times the transpose, you end up with a scalar of the residual sum of squares.
+
+  * Step 3: Take the gradient of the RSS:
+
+    * ``-2 * H_vector_transposed * (y_vector - H_vector * w_vector)``
+
+      <img src="./images/gradient-of-RSS-notes.png"></img>
+
+  * Step 4: Approach 1, closed-form solution: solve for W.
+
+    * Set result to 0 and solve.
+    * Matrix inverse * matrix = identity matrix (??)
