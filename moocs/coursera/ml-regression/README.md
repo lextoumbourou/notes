@@ -201,30 +201,7 @@
     * Eg: Number of bedrooms might have a negative coefficient if the square feet of the house is low.
   * If in a situation where you can't "fix" an input (eg if all features are a power of one input), then you can't interpret the coefficient.
 
-* Matrices and vectors review
-  * Matrix arithmetic:
-    * Can't add or subtract matrices with different sizes.
-    * Result A + B = new matrix with each corresponding position added.
-  * Matrix multiplication:
-    * Multiple rows by column:
-
-      ```
-      A = [1, 2, 4]   B = [4, 2]
-          [4, 3, 5]       [5, 8]
-                          [7, 1]
-
-           (2 x 3)        (3 x 2)
-   
-      Outcome = [(1 * 4) + (2 * 5) + (4 * 7)]
-                [(1 * 2) + (2 * 8) + (4 * 1)]
-                [(4 * 4) + (3 * 5) + (5 * 8)]
-                [(4 * 2) + (3 * 8) + (5 * 1)]
-      ```
-    * Multiple first row of matrix A, with both columns of B
-    * Multiple second row of matrix A, with both columns of B
-    * Number of columns in first matrix, must equal rows in 2nd matrix.
-      * ``A (2 x 3) * A (3 x 2)  # Works!``
-      * ``A (2 x 3) * A (2 x 3)  # Doesn't work``
+* [Linear Algebra Review](linear-algebra.md)
 
 * Stages for computing the least squares fit:
 
