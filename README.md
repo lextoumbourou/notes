@@ -6,16 +6,13 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-* [Algorithm Part 1 (Coursera - algs4partI-009)](./moocs/coursera/algorithms-part-1)
-* [Website Performance Optimization (Udacity - ud884)](./moocs/udacity/ud884-website-performance-optimization)
-* [Learn C The Hard Way](./books/learn-c-the-hard-way-book)
-* [An Introduction To Asynchronous Programming and Twisted](./tutorials/an-introduction-to-asynch-programming-and-twisted)
-* [Elasticsearch - The Definitive Guide](./books/elasticsearch-the-definitive-guide)
+* [ML Regression (Coursera - ml-regression)](./moocs/coursera/ml-regression)
 
 ### Stalled
 
 * [Machine Learning 1 - Supervised Learning (Udacity - ud675)](./moocs/udacity/ud657-machine-learning-1) -- need to finish Calculus & Linear Algebra Khan Academy units
 * [Intro to Parallel Programming (Udacity - cs344)](./moocs/udacity/cs344-intro-to-parallel-programming) -- need to finish [Learn C The Hard Way](./books/learn-c-the-hard-way-book)
+* [Algorithm Part 1 (Coursera - algs4partI-009)](./moocs/coursera/algorithms-part-1) -- waiting for next session.
 
 ### Complete
 
@@ -41,9 +38,3 @@ A collection of notes from various courses, books and lectures either completed,
 
 * [Intro to Computer Science (Udacity - cs101)](./moocs/udacity/cs101-intro-to-computer-science)
 * [Web Development (Udacity - cs253)](./moocs/udacity/cs253-web-development)
-
-### Abandoned/Failed
-
-#### 2011
-
-* [Introduction to Computer Science (cs50)](./cs50-introduction-to-computer-science)
