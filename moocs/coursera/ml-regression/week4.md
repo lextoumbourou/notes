@@ -36,3 +36,18 @@
 		* As $$ \lambda $$ get closer to infinitely, coefficients get smaller and less general.
 	* Low  $$ \lambda $$ = low bias, high variance.
 		* As $$ \lambda $$ get closer to 0, coefficients get larger (RSS takes over) and shit gets crazy.
+
+* The ridge coefficient path:
+  * Graphical representation of how the value of lambda affects the coefficient:
+
+    <img src="./images/coefficient-path.png"></png>
+
+    Again, at 0 it's just the RSS ($$ \hat{w}_{LS} $$), as it gets larger, they approach 0.
+
+  * Some sweet spot between smallish coefficients and a well fit model.
+
+* Computing the gradient of the ridge objective:
+  * Can rewrite the L2 norm ($$ || \mathbf{w} ||_2^2 $$) in vector notation as follows: $$ w^tw $$.
+  * Then, the entire ridge regression total cost can be rewritten like: $$ y - (\mathbf{H}\mathbf{w})^2(\mathbf{H}\mathbf{w}) + || \mathbf{w} ||_2^2 $$, which is just the RSS + the L2 norm.
+  * Can take the gradient of both terms and you get: $$ -2\mathbf{H}^T( y - (\mathbf{H}\mathbf{w})) + 2\mathbf{w} $$ .
+  * The gradient of the L2 norm is analygous to the 1d case: derivate of $$ w^2 $$ = $$ 2w $$
