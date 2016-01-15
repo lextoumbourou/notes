@@ -9,7 +9,7 @@
 	* Few observations (N small) can cause model to be rapidly overfit as complexity grows.
 	* Many observations (N very large) can be harder to overfit (but harder to find datasets).
 
-	<img src="./images/number-of-observations.png></img>
+        ![number of observations](./images/number-of-observations.png)
 
 * The larger the inputs, the more change of data not including inputs for all data points causing overfitting.
 
@@ -51,3 +51,31 @@
   * Then, the entire ridge regression total cost can be rewritten like: $$ y - (\mathbf{H}\mathbf{w})^2(\mathbf{H}\mathbf{w}) + || \mathbf{w} ||_2^2 $$, which is just the RSS + the L2 norm.
   * Can take the gradient of both terms and you get: $$ -2\mathbf{H}^T( y - (\mathbf{H}\mathbf{w})) + 2\mathbf{w} $$ .
   * The gradient of the L2 norm is analygous to the 1d case: derivate of $$ w^2 $$ = $$ 2w $$
+
+* Approach 1: closed-form solution:
+
+	* Summary: set the gradient = 0 and solve for $$ \hat{w} $$.
+	* Steps: 
+		1. Multiple the $$ \mathbf{w} $$ vector by the identity matrix to make the derivation easier.
+
+		  $$ \triangle cost(\mathbf{w})) = -2\mathbf{H}^T(\mathbf{y} - \mathbf{H}\mathbf{w}) + 2\lambda\mathbf{I}\mathbf{w} = 0 $$ 
+
+		2. Divide both sides by 2.
+
+			$$  =-\mathbf{H}^T(\mathbf{y} - \mathbf{H}\mathbf{w}) + \lambda\mathbf{I}\mathbf{w} = 0 $$
+
+		3. Multiple out.
+
+			$$ -\mathbf{H}^T\mathbf{y} + \mathbf{H}^T \mathbf{H}\mathbf{w} + \lambda\mathbf{I}\mathbf{w} = 0 $$
+
+		4. Add $$ \mathbf{H}^T\mathbf{y} $$ to both sides.
+
+			$$ \mathbf{H}^T \mathbf{H}\mathbf{w} + \lambda\mathbf{I}\mathbf{w} = \mathbf{H}^T\mathbf{y}  $$
+
+		5. Since the $$  \hat{w} $$ appears in both expressions, can factor it out.
+
+			$$ (\mathbf{H}^T \mathbf{H} + \lambda\mathbf{I})\mathbf{w} = \mathbf{H}^T\mathbf{y} $$
+
+		6. Multiple both sides by the inverse of $$ \mathbf{H}^T \mathbf{H} + \lambda\mathbf{I} $$.
+
+			$$ \mathbf{w} = (\mathbf{H}^T \mathbf{H} + \lambda\mathbf{I})^{-1}\mathbf{H}^T\mathbf{y} $$
