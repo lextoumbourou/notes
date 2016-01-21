@@ -4,12 +4,12 @@
 
 	* Example: low predictions causing house to be listed too cheap.
 
-* Loss can be measured with a *loss function*: $$ L(y, f _\hat{w}(\mathbf{x})) $$
+* Loss can be measured with a *loss function*: $$ L(y, f_\hat{w}(\mathbf{x})) $$
 
 	* Examples:
 
-	   * Absolute error:  $$ L(y, f _\hat{w}(\mathbf{x})) = |y - f _\hat{w}(\mathbf{x})| $$
-	   * Squared error: $$ L(y, f _\hat{w}(\mathbf{x})) = (y - f _\hat{w}(\mathbf{x}))^2 $$
+	   * Absolute error:  $$ L(y, f_\hat{w}(\mathbf{x})) = |y - f_\hat{w}(\mathbf{x})| $$
+	   * Squared error: $$ L(y, f_\hat{w}(\mathbf{x})) = (y - f_\hat{w}(\mathbf{x}))^2 $$
 		   * Can have a very high cost if difference is large, compared to absolute error.
 
 * Compute training error:
@@ -18,8 +18,8 @@
   2. Computing training error.
   
 	  * Example: Average loss on training set using squared error: 
-	      * = $$1/N \sum\limits_{i=1}^{N} L(y, f _\hat{w}(\mathbf{x}))$$ - average of loss function
-	      * = $$1/N \sum\limits_{i=1}^{N} (y - f _\hat{w}(\mathbf{x}))^2$$ - average of squared error
+	      * = $$1/N \sum\limits_{i=1}^{N} L(y, f_\hat{w}(\mathbf{x}))$$ - average of loss function
+	      * = $$1/N \sum\limits_{i=1}^{N} (y - f_\hat{w}(\mathbf{x}))^2$$ - average of squared error
 	      * = $$\sqrt{1/N \sum\limits_{i=1}^{N} (y - f _\hat{w}(\mathbf{x}))^2}$$ (convert to root mean squared error (RMSE))
 		     *provides more intuitive format (dollars, instead of squared dollars)*
 
@@ -39,8 +39,8 @@
 * *Test error*: like generalisation error but actually computable.
 
 	* Basically, use *test error* to roughly approximate generation error.
-	* Average loss on houses in test set: $$1/Ntest \sum_\limits{i=1}^{Ntest} L(y, f _\hat{w}(\mathbf{x}))$$
-		* Note: $$ f _\hat{w}(\mathbf{x}) $$  was fit with training data.
+	* Average loss on houses in test set: $$ 1/Ntest \sum_\limits{i=1}^{Ntest} L(y, f_\hat{w}(\mathbf{x})) $$
+		* Note: $$ f_\hat{w}(\mathbf{x}) $$  was fit with training data.
 
 * Defining overfitting:
 

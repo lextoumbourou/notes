@@ -1,9 +1,9 @@
 # Week 1
 
-## Overview
-
 * Course Outline:
+
   * Module 1: Simple regression
+
     * Low number of inputs
     * Fit a simple line through the data
     * Need to define "goodness-of-fit" metric for each possible line.
@@ -11,17 +11,24 @@
       * Get estimated parameters
         * Interpret
         * Use to form predictions
+
   * Module 2: Multiple relationships
+
     * More complicated relationship than just a line.
     * Incorporate more inputs when training the model.
+
   * Module 3: Assessing performance
+
     * Determine when "overfitting" the data.
     * "Bias-variance tradeoff"
       * Simple models are well behave but can be too simple to describe a behaviour accurately.
       * Complex models can have odd behaviour.
+
   * Module 4: Ridge Regression
+
     * ``Ridge total cost = measure of fit + measure of model complexity``
     * Cross validation (??)
+
   * Module 5: Feature Selection & Lasso Regression
     * What are the most important features for model?
     * ``Lasso total cost = measure of fit + (different) measure of model complexity``
