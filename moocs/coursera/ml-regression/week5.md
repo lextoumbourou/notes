@@ -44,3 +44,50 @@
 			![Coefficient path for Lasso](./images/coefficient-path-for-lasso.png)
 
 			* For certain lambda values, features jump out of the model and other fall to 0. Individual impact of features becomes clearer.
+
+* Optimising the lasso objective
+	* The derivate of $$ |w_j| $$ can't be calculated when $$ |w_j| = 0 $$. Therefore, can't calculate the derivate.
+	* Use "subgradients" over gradients. 
+
+* Coordinate descent
+	* Goal: minimise a function $$ g(w_0, w_1, ..., W_D) $$, a function with multivariables.
+	* Hard to find minimum for all coordinates, be easy for a single coordinate with all the other fixed..
+	* Algorithm:
+		* While not converged:
+			* Pick a coordinate (w coefficient) and fix the other.
+			* Find the minimum of that function.
+	* No stepsize required
+	* Converges for lasso objective
+	* Converges to optimum in some cases.
+	* Can pick next coordinate at random, round robin or something smarter...
+
+* Normalising features
+	* Idea: put all features into same numeric range (eg number of bathrooms, house square feet)
+	* Apply to a *column* of the feature matrix.
+	* Need to apply to training and test data.
+	* Formula:
+	
+		$$ \underline{h}_j(\mathbf{x}_k) = \frac{h_j(\mathbf{x}_k)}{ \sqrt{\sum\limits_{i=1}^{N} h_j(\mathbf{x}_i)^2}} $$ 
+
+* Coordinate descent for least squares regression
+	* For each j feature, fix all other coordinates $$  \mathbf{w}_{-j} $$ and take the partial with respect to $$ \mathbf{w}_j $$
+	* Gradient derived to $$ -2P_j + 2w_j $$ ($$ P_j $$ == residual without jth feature)
+	* Setting to 0 and solving for $$ \hat{w}_j $$ results in $$ \hat{w}_j = P_j $$	
+	* Intuition: if the residual between the predictions without j and the actual prediction is large, then the weight of j will be large and vice versa (to do: check this as your understanding improves).
+
+* Coordinate descent for lasso (for normalised features)
+	* Same as cord descent for least squares, except we set $$ \hat{w}_j $$ using a "thresholding" function (in code):
+
+		```
+		def set_w_j(p_j, lambda):
+          if p_j < -lambda / 2:
+              return p_j + lambda / 2
+          if -lambda / 2 < p_j < lambda / 2:
+              return 0
+          if p_j > lambda / 2:
+              return p_j - lambda / 2
+		``` 
+
+	* General idea here is "soft thresholding", aiming to get values to 0 that fit within some range:
+
+		![Soft thresholding]("./images/cord-descent-soft-thresholding.png")
