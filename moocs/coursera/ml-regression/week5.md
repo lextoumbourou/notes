@@ -1,5 +1,11 @@
 # Week 5 - Feature Selection & Lasso
 
+## Prerequisities
+
+Matrix n-norm: https://www.youtube.com/watch?v=tXCqr2UsbWQ
+
+## Notes
+
 * Feature selection task motivation
 	* Efficiency
 		* when faced with large feature sets, predictions can get expensive.
@@ -91,3 +97,23 @@
 	* General idea here is "soft thresholding", aiming to get values to 0 that fit within some range:
 
 		![Soft thresholding]("./images/cord-descent-soft-thresholding.png")
+
+* Coordinate descent for lasso (for unnormalised features)
+	* Normalisation factor is used during the set $$ w_j $$ portion of the regression.
+
+* Choosing the penalty strength and other practical issues with lasso.
+	* Same as ridge regression:
+		* If enough data, validation set.
+		* Compute average error 
+
+* Summary
+	* Searching for best features
+		* All subsets
+		* Greedy algorithms
+		* Lasso regularised regression approach
+	* Contrast greedy and optimal algorithms
+	* Describe geometrically why L1 penalty leads to sparsity
+	* Estimate lasso regression parameters using an iterative coordinate descent algorithm
+	* Implement K-fold cross validation to select lasso tuning parameter $$ \lambda $$    
+
+* Note: be careful about interpreting features, need to consider in the context of the entire model.
