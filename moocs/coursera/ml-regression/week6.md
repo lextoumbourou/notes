@@ -50,4 +50,23 @@
 		``` 
 	* Notes:
 		* Sensitive to regions with missing data; need heaps of data for it to be good.
-		* Sensitive to noisy datasets. 
+		* Sensitive to noisy datasets.
+
+* k-Nearest neighbours regression
+	* Same as 1-Nearest Neighbour but average over values of "k"-nearest neighbours.
+
+* k-Nearest neighbours in practise
+	* Usually has a much better fit than 1-nearest.
+	* Issues in regions where there's sparse data and at boundaries.
+
+* Weighted k-nearest neighbours
+	* Idea: weight neighbours by how close or far they are to data point.
+	* Formula (where $$ C_{qNN1} $$ refers to some weight for NN1:
+		$$ \hat{y}_q = \dfrac{C_{qNN1}Y_{qNN1} + C_{qNN2}Y_{qNN2} .. C_{qNNK}Y_{qNNK}}{\sum\limits_{j=1}^{K}C_{qNNj}} $$
+	* Weighting data points:
+		* Could just use inverse of distance: $$ C_{qNN1} = \dfrac{1}{distance(\mathbf{X_j}, \mathbf{X_q})} $$
+		* Can use "kernel" functions:
+			* Gaussian kernel
+			* Uniform kernel etc
+
+* Kernel regression
