@@ -70,3 +70,13 @@
 			* Uniform kernel etc
 
 * Kernel regression
+	* Instead of weighing n-neighbours, weigh all points with some "kernel":
+		$$ \hat{y}_q \frac{\sum\limits_{y=1}^{N} C_{qi}Y_{qi}}{\sum\limits_{y=1}^{N} C_{qi}} = \frac{\sum\limits_{y=1}^{N} kernel_{\lambda}(distance(\mathbf{x_i},\mathbf{x_q})) * y_i}{kernel_{\lambda}(distance(\mathbf{x_i},\mathbf{x_q}))} $$
+	* In stats called "Nadaya-Watson" kernel weighted averages.
+	* Need to choice a good "bandwidth" (lambda value)
+		* Too high = over smoothing; low variance, high bias.
+		* Too low = over fitting; high variance, high bias.   
+	* Need to choose kernel but bandwidth more important.
+	* Use validation set (if enough data) or cross-validation to choose $$ \lambda $$ value.
+
+* Global fits of parametric models vs local fits of kernel regression  
