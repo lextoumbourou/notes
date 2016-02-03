@@ -6,7 +6,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-* [ML Regression (Coursera - ml-regression)](./moocs/coursera/ml-regression)
+Coming soon.
 
 ### Stalled
 
@@ -15,6 +15,10 @@ A collection of notes from various courses, books and lectures either completed,
 * [Algorithm Part 1 (Coursera - algs4partI-009)](./moocs/coursera/algorithms-part-1) -- waiting for next session.
 
 ### Complete
+
+#### 2016
+
+* [ML Regression (Coursera - ml-regression)](./moocs/coursera/ml-regression)
 
 #### 2015
 

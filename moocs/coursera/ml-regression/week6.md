@@ -79,4 +79,6 @@
 	* Need to choose kernel but bandwidth more important.
 	* Use validation set (if enough data) or cross-validation to choose $$ \lambda $$ value.
 
-* Global fits of parametric models vs local fits of kernel regression  
+* Global fits of parametric models vs local fits of kernel regression
+  * If you were to predict datapoint by averaging all observations, you'd end up with a constant fit.
+  * Kernel gives constant fit at a single point; a "locally constant fit".
