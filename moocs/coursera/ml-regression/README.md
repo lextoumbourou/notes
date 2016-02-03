@@ -1,5 +1,13 @@
 # ML Regression
 
+## Status
+
+Complete - 2016-02-03
+
+<img src="./images/cert.png" width="600px"></img>
+
+## Contents
+
 * [Week 1 - Simple Regression](./week1.md)
 * [Week 2 - Multiple Regression](./week2.md)
 * [Week 3 - Assessing Performance](./week3.md)
