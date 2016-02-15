@@ -48,6 +48,11 @@ if __name__ == '__main__':
         logging.error('First argument should be file path.')
         sys.exit(1)
 
+    try:
+        max_items = sys.argv[2]
+    except IndexError:
+        max_items = None
+
     start = time.time()
 
     es = Elasticsearch()
@@ -71,5 +76,5 @@ if __name__ == '__main__':
     })
 
     print("Start index")
-    bulk(es, load_wiki(bz2.BZ2File(file_path), 1000))
+    bulk(es, load_wiki(bz2.BZ2File(file_path), max_items))
     print("Total time to index: {0}".format(time.time() - start))
