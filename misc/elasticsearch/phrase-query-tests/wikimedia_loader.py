@@ -1,38 +1,53 @@
+import sys
 import time
+import bz2
+import logging
+from xml.etree.cElementTree import iterparse
+
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
-import bz2
-import json
-from xml.etree.cElementTree import iterparse
-import time
 
-def load_wiki(max_items=None):
-    dump = bz2.BZ2File('/Users/lex/code/elasticsearch-testing/enwiki-latest-pages-articles.xml.bz2')
-    start = time.time()
 
+logging.basicConfig(level=logging.INFO)
+
+
+def load_wiki(dump, max_items=None):
     found = 0
-
     for event, elem in iterparse(dump):
         if elem.tag == '{http://www.mediawiki.org/xml/export-0.10/}page':
 
             found += 1
 
-            title = elem.find('{http://www.mediawiki.org/xml/export-0.10/}title').text
-            page_id = elem.find('{http://www.mediawiki.org/xml/export-0.10/}id').text
+            title = elem.find(
+                '{http://www.mediawiki.org/xml/export-0.10/}title').text
+            page_id = elem.find(
+                '{http://www.mediawiki.org/xml/export-0.10/}id').text
             output_text = None
-            revision = elem.find('{http://www.mediawiki.org/xml/export-0.10/}revision')
+            revision = elem.find(
+                '{http://www.mediawiki.org/xml/export-0.10/}revision')
             if revision:
-                text = revision.find('{http://www.mediawiki.org/xml/export-0.10/}text')
+                text = revision.find(
+                    '{http://www.mediawiki.org/xml/export-0.10/}text')
                 output_text = text.text
 
-            yield dict(_id=page_id, title=title, text=output_text, _index='wiki-test', _type='page')
+            yield dict(
+                _id=page_id, title=title, text=output_text,
+                _index='wiki-test', _type='page')
 
             if max_items and found >= max_items:
                 print("Found max item {0}".format(max_items))
                 return
 
+        elem.clear()
+
 
 if __name__ == '__main__':
+    try:
+        file_path = sys.argv[1]
+    except IndexError:
+        logging.error('First argument should be file path.')
+        sys.exit(1)
+
     start = time.time()
 
     es = Elasticsearch()
@@ -56,5 +71,5 @@ if __name__ == '__main__':
     })
 
     print("Start index")
-    bulk(es, load_wiki(1000))
+    bulk(es, load_wiki(bz2.BZ2File(file_path), 1000))
     print("Total time to index: {0}".format(time.time() - start))
