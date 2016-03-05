@@ -6,7 +6,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-Coming soon.
+* [ML Classification (Coursera - ml-classification)](./moocs/coursera/ml-classification)
 
 ### Stalled
 
