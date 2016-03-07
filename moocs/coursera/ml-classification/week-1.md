@@ -49,3 +49,41 @@
   * More general classifiers: more complicated (squiggly?) lines
 
 ### Linear classifier model
+
+* One you have your coefficients for each word, multiply each by the count of words and add together to get the score.
+
+  ```
+  Score(x) =
+    word_count = get_word_count(sentence)
+    W = get_coefficients_for_model()
+    Score = W[0] + W[1] * word_count["awesome"] + W[2] * word_count["awful"]  # ...
+  ```
+
+* Wrap ``Score()`` in a ``sign()`` function for producing a binary result (1 if above 0 or -1 if below).
+
+***
+
+* Course notation is the same as used in Regression course.
+* Can rewrite expression using course notation like:
+
+
+$$ Score(\mathbf{x_i}) = w_0 + w_1 \mathbf{x_i}[1]] + .. + W_d \mathbf{x_i}[d] = \mathbf{w}^T\mathbf{x}_i $$
+
+## Effect of coefficient values on decision boundaries
+
+* Increasing intercept value, shifts decision boundary up.
+* Increase value of coefficients can change the d.b. curve.
+
+## Using features
+
+* Features can modify impact of words in a sentence.
+* With feature added, equation looks like:
+
+$$ Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i})) = \mathbf{w}^Th(\mathbf{x}_i) $$
+
+* Flow chart summary:
+	1. Get some training data.
+	2. Extract features (word counts, td-idf etc).
+	3. Generate a model with said features (create coefficients).
+	4. Validate model (test data etc).
+	5. Make predicts using model. 
