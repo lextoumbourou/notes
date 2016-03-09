@@ -88,7 +88,7 @@ $$ Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i})) = \
 	4. Validate model (test data etc).
 	5. Make predicts using model. 
 
-### Class probabilities
+## Class probabilities
 
 * So far prediction = +1 or -1
 * How do you capture confidence that something is definitely positive or maybe negative etc? Enter probability.
@@ -123,3 +123,82 @@ $$ Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i})) = \
 
 * A lot of classifiers output degree of confidence.
 * We generally train a classifier to output some $$ \mathbf{\hat{P}} $$ which uses $$ \mathbf{\hat{w}} $$ values to make predictions. It can then use outputted probability to return +1 if > 0.5 (is positive) or -1 if < 0.5 (is negative) and also how confident we are with the answer.
+
+## Logistic Regression
+
+### Predicting class probabilities with (generalized) linear models
+
+* Goal: get probability from an outputted score.
+* Since the scores range from positive infinity to negative infinity (and probability from 0 to 1):
+	* a Score of positive infinity would have a probability of 1.
+	* a score of neg inf would have a probability of 0.
+	* a score of 0 would have a probability of 0.5.
+* Need to use a "link" function to convert score range to a probability:
+
+  $$  \hat{P}(y=+1|\mathbf{x}_i) = g(\mathbf{w}^Th(\mathbf{x}_i)) $$
+
+* Doing this is called a "generalised linear model".
+
+### The sigmoid (or logistic) link function
+
+* For logistic regression, the link function is called "logistic function" or "sigmoid":
+
+	$$ sigmoid(Score) = \dfrac{1}{1 + e^{-Score}} $$ 
+ 
+	Code examples:
+
+	```
+	>>> import math
+	>>> sigmoid = lambda score: 1 / (1 + math.e**(-score))
+	>>> sigmoid(float('inf'))
+	1.0
+
+	>>> sigmoid(float('-inf'))
+	0.0
+
+	>>> sigmoid(-2)
+	0.11920292202211757
+
+	>>> sigmoid(0)
+	0.5
+	```
+
+* This works because $$ e^{-\infty} = 0 $$ (sigmoid becomes 1/1) and $$ e^{\infty} = \infty $$ (sigmoid becomes 1 / inf).
+
+### Logistic regression model
+
+* Calculate the score with $$ \mathbf{w}^Th(\mathbf{x}_i) $$ then run it through sigmoid and you have your outputted probability.
+
+### Effect of coefficient values on predicted probabilities
+
+* By changing the constant, the decision boundary lines shifts. When in the negative direction, the negative count a lot more than positives.
+* The bigger the weights, the more "sure" you are: single words can effect the probability a lot.
+
+### Overview of learning logistic regression model
+
+* Training a classifier = learning coefficients
+	* Test learned model on validation set
+* To find best classifier need to define a quality metric.
+	* Going to use "likelihood $$ l(\mathbf{w}) $$" function.
+	* Best model = highest likelihood.
+	* Use gradient ascent algorithm that has the highest likelihood.
+
+## Practical issues for classification
+
+### Encoding categorical inputs
+
+* Numeric inputs usually make sense to multiply via coefficient directly: age, number of bedrooms etc  
+* Categorical inputs (gender, country of birth, postcode) need to be encoded in order to be multiplied via coefficient.
+* One way to encode categorical inputs: 1-hot encoding. Basically, for a table of features, all are 0 except 1 (hence 1-hot):
+
+	```
+	 x       h[1](x)    h[2](x)
+    ---------------------------
+    Male       0          1
+    Female     1          0
+	``` 
+
+* Another way: bag of words encoding. Summary: Take a bunch of text and count words.
+
+### Multiclass classification with 1 versus all
+
