@@ -200,5 +200,8 @@ $$ Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i})) = \
 
 * Another way: bag of words encoding. Summary: Take a bunch of text and count words.
 
-### Multiclass classification with 1 versus all
+### Multi class classification with 1 versus all
 
+* To classify more than 2 classes, can use "1 versus all" 
+  * Train a classifier for each category, comparing one class to the others.
+  * Figure out which $$ \hat{P} $$ value has the highest probability.
