@@ -66,3 +66,41 @@ while not converged:
 	* Find one that's too small.
 	* Find one that's too large.
 	* Try values inbetween.
+
+## Evaluating a classifier
+
+* Standard: Split training data into training set and validation set.
+* Figure out how many mistakes the model makes on the validation set.
+* Then classification error:
+
+  ```
+  error = num mistakes / total number of datapoints
+  ```
+
+  * Best possible value is 0: ```0 / # number of datapoints.```
+
+* Or classification accuracy:
+
+  ```
+  accuracy = num correct / total number of datapoints
+  ```
+
+## Review of overfitting in regression
+
+* Overfitting if there exists w*:
+
+  ```
+  training_error(w*) > training_error(ŵ) and true_error(w*) < true_error(ŵ)
+  ```
+
+* In other words, you've overfitted if you've got a model that works crazy well on your training data set but shit on validation set (representing true error), but there's another model that does less well on training data and better on validation set.
+* Can't expect to get 100% accuracy with your model: getting "everything right" should be a warning sign.
+* Large coefficients values are a warning sign.
+
+## Overfitting in classification
+
+* Use classification error (``# num mistakes / # num datapoints``) instead of RSS.
+* Same as regression, aim to weigh lower coefficients higher.
+* Can lead to extremely over confident predictions: high score, high sigmoid (close to 1) == 100% confidence in bullshite.
+
+## Visualising overconfident predictions
