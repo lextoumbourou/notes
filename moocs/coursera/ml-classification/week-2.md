@@ -103,4 +103,36 @@ while not converged:
 * Same as regression, aim to weigh lower coefficients higher.
 * Can lead to extremely over confident predictions: high score, high sigmoid (close to 1) == 100% confidence in bullshite.
 
-## Visualising overconfident predictions
+## Penalising large coefficients to mitigate overfitting
+
+* Idea similar to l2/l1 penalisation in regression course: need a way to penalise large coefficients in Quality Metric.
+* Firstly, measure of fit = log of the data likelihood function:
+    $$ l(\mathbf{w}) = ln \prod_\limits{i=1}^{N} P(y_i | \mathbf{x}_i, \mathbf{w}) $$
+
+* L2 norm: sum of squares of coefficients:
+
+   $$ ||w||_2^2 = w_0^2 + w_1^2 + w_2^2 + ... w_D^2 $$
+
+* L1 norm: sum of absolute value of coefficients:
+
+    $$ ||w||_1 = |w_0| + |w_1| + |w_2| + ... |w_D| $$
+
+* Final quality metric:
+
+    ```
+    total_quality = measure_of_fit - measure_of_coefficient_magnitude
+    ```
+
+## L2 regularised logistic regression
+
+* Want to choose a tuning parameter or $$ \lambda $$ value to balance fit and magnitude of coefficients
+* Consider extreme choices:
+	* $$ \lambda = 0 $$: data likelihood function wins, no coefficient magnitude parameter
+		* Low bias, high variance.
+	* $$ \lambda = \infty $$: coefficients are shrunk to 0.
+		* High bias, low variance.
+* Find best lambda with "L2 regularised logistic regression"
+	* Use validation set if you have enough data.
+	* Cross-validation for smaller datasets.
+
+## Learned L2 regularised logistic regression with gradient ascent
