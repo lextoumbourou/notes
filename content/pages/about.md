@@ -2,10 +2,14 @@ title: About
 
 My name is Lex.
 
-I work as a developer for a large Telecommunications company in Melbourne, Australia (if you live in Australia, you've probably heard of them) developing in-house monitoring tools, mainly written in PHP, Perl and Python.
+I'm a Lead Engineer at [Scrunch](https://scrunch.com).
 
-I'm also interested in [films](http://www.imdb.com/list/ONC8vcKMIs4/), [electronic music](http://5-footnothing.bandcamp.com/), [productivity](http://www.justtwotasks.com), nootropics, futurology, [investing](http://www.magicranker.com) and mixed-martial arts.
+I live in Melbourne, Australia.
 
-This blog will usually be about developing in Python but sometimes about the above interests and sometimes just random stories. I hope I don't bore you.
+I write a lot of Python and wrangle data in HBase, Elasticsearch and PostGres. I DevOps a lot.
 
-If you would like to be my friend, please email me at [lextoumbourou@gmail.com](mailto:lextoumbourou@gmail.com) or follow me on [Twitter](http://twitter.com/lexandstuff), [GitHub](http://github.com/lextoumbourou) or [LinkedIn](http://www.linkedin.com/in/lextoumbourou).
+I sometimes write stuff for my [company](https://tech.scrunch.com/blog/author/lex/).
+
+I'm also interested in automation, fitness, music and investing.
+
+You can email me at [lextoumbourou@gmail.com](mailto:lextoumbourou@gmail.com), find me on [Twitter](http://twitter.com/lexandstuff), [GitHub](http://github.com/lextoumbourou)  and [LinkedIn](http://www.linkedin.com/in/lextoumbourou).

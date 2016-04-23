@@ -1,8 +1,6 @@
 Title: Understanding recursive PostGres queries
-Tags: PostGres, SQL
 Date: 2016-04-23
-
-# Understanding recursive Postgres queries
+Tags: PostGres, SQL
 
 For a certain class of data relationships, there's no escaping recursive PostGres queries. Let's say, for example, you have some top-level product categories (like Shoes, Hats, Wigs etc) and each of those has subcategories, which can have their own subcategories and so on. Something like this:
 
