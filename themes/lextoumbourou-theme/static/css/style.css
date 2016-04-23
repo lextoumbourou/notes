@@ -62,8 +62,7 @@ hr {
 
 #header h1 a {
     color: #3B4653;
-    font-size: 2.2em;
-    font-weight: bold;
+    font-size: 2em;
     letter-spacing: -5px;
     text-decoration: none;
     margin-top:0;
@@ -179,7 +178,6 @@ blockquote.pull_quote {
 
 #slogan {
     font-size: 2.3em;
-    font-weight: bold;
     letter-spacing: -1px;
 }
 
@@ -213,6 +211,7 @@ pre.prettyprint {
 
 .article h2 {
     margin: 0pt;
+    font-weight: normal;
 }
 
 .article.blog_header a {

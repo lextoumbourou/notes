@@ -12,7 +12,6 @@
             <h2>
                {{ article.date|strftime('%b %d, %Y') }}. <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
             </h2> 
-            <div class="tagline">{{ article.tagline }}</div>    
         </div>
     </li>
 {% endfor %}
