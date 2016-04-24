@@ -1,6 +1,7 @@
 Title: Understanding recursive queries (PostGres)
 Date: 2016-04-23
 Tags: PostGres, SQL
+Status: Draft
 
 Let's say you have some top-level product categories (like Shoes, Hats, Wigs etc) and each of those has subcategories which can have their own subcategories and so on.
 
