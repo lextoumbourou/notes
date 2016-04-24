@@ -10,6 +10,6 @@ I write a lot of Python and wrangle data in HBase, Elasticsearch and PostGres. I
 
 I sometimes write stuff for my [company](https://tech.scrunch.com/blog/author/lex/).
 
-I'm also interested in automation, fitness, music and investing.
+I'm also interested in fitness (boxing and strength training), music and investing.
 
-You can email me at [lextoumbourou@gmail.com](mailto:lextoumbourou@gmail.com), find me on [Twitter](http://twitter.com/lexandstuff), [GitHub](http://github.com/lextoumbourou)  and [LinkedIn](http://www.linkedin.com/in/lextoumbourou).
+You can email me at [lextoumbourou@gmail.com](mailto:lextoumbourou@gmail.com), find me on [Twitter](http://twitter.com/lexandstuff), [GitHub](http://github.com/lextoumbourou) or [LinkedIn](http://www.linkedin.com/in/lextoumbourou).
