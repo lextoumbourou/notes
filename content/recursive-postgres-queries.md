@@ -88,7 +88,7 @@ Cool!
 
 Armed with that knowledge, we can head back to the original problem.
 
-irstly let's create the table to represent that data relationship:
+Firstly let's create the table to represent that data relationship:
 
 ```
 CREATE TABLE category (
