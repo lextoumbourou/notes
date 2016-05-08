@@ -60,8 +60,6 @@ WITH RECURSIVE bottles_of_beer(n) AS (              -- See #1
 SELECT * FROM bottles_of_beer;
 ```
 
-*Again, make sure you type this out into a ``psql`` session of your own to get the most out of this article.*
-
 Let's break it down:
 
 1. Create a temporary table, aka CTE, called ``bottles_of_beer`` with a single column referred to as ``n``.
@@ -97,7 +95,7 @@ Cool!
 
 Armed with that knowledge, we can head back to the original problem. But first, it'll help if we...
 
-## Understand JOINs in ``WITH RECURSIVE`` queries
+## Understand ``JOIN``s in ``WITH RECURSIVE`` queries
 
 Joins in ``WIH RECURSIVE`` queries can be used to join data from a table against the current output of the ``WITH`` query. We can see that in action by solving the problem described in the intro: **starting with Nike Air, can we walk up the tree finding all parent categories?**
 
@@ -313,4 +311,4 @@ And that's that!
 
 ***
 
-Hopefully you now have a better understanding of how Postgres recursive queries work. Feel free to hit me up on [Twitter](https://twitter.com/lexandstuff) if you have questions or if I got anything wrong.
+Hopefully you now have a better understanding of Postgres recursive queries and how they work. Feel free to hit me up on [Twitter](https://twitter.com/lexandstuff) if you have questions or if I've gotten anything wrong.
