@@ -162,3 +162,86 @@
 #### FirstKeyOnlyFilter
 
 Primary for rowcount jobs.
+
+## Master
+
+* ``HMaster`` - implementation of Master Server.
+* Usually run name node.
+* With multi masters - all compete to run cluster. If active master loses lease in ZooKeeper, all remaining Master try to get role.
+* Cluster can still survive without master, however, region failover and region splits won't work, so cluster will soon fail.
+
+### Interface
+
+* ``HMasterInterface`` methods:
+  * Table-related: ``createTable``, ``modifyTable``, ``removeTable``, ``enable`` or ``disable``
+  * ColumnFamily: ``addColumn``, ``modifyColumn`` or ``removeColumn``
+  * Region (move, assign, unassign operations)
+
+### Processes
+
+* Runs the following background threads:
+  * ``LoadBalancer`` - runs periodically to balance cluster's load.
+  * ``CatalogJanitor`` - checks and cleans up ``hbase:meta`` table periodically.
+
+## RegionServer
+
+* ``HRegionServer`` - implementation of RegionServer.
+* Runs on Hadoop DataNode.
+* Serves regions.
+
+### Interface
+
+* Data (get, put, delete, next).
+* Region (splitRegion, compactRegion etc)
+
+### Processes
+
+* ``CompactSplitThread`` - checks for splits and handle minor compactions.
+* ``MajorCompactionChecker`` - check for major compactions
+* ``MemStoreFlusher`` - flush in-memory writes to StoreFiles.
+* ``LogRoller`` - check the RegionServer WAL.
+
+## Coprocessors
+
+* Code that runs on RegionServers in response to certain events (data manipulation, WAL-related ops etc).
+
+## Block Cache
+
+* ``LruBlockCache`` - default on-heap cache.
+* ``BucketCache`` - usually off-heap.
+  * Memory not managed by GC, so latencies is less erratic but potentially slower on average.
+  * Creates a "two-tier" caching system:
+    * L1 cache (LruBlockCache)
+    * L2 cache (BucketCache
+  * Combined by ``CombinedBlockCache``
+
+### LruBlockCache Design
+
+* LRU cache with 3 levels of block priority:
+  * Single access priority: When block is first loaded from HDFS, it has this priority. Considered first for evictions.
+  * Multi access priority: graduates to this from first group once it is accessed again.
+  * In-memory access priority: used when a block is configured to be "in-memory" (catalog tables are configured like this).
+    * Call ``HColumnDescriptor.setInMemory(true);`` to set this.
+    * Or: ``create 't', {NAME => 'f', IN_MEMORY => 'true'}`` from the shell.
+
+#### LruBockCache Usage
+
+* Enabled by default for user tables.
+* Important concept for future tuning block caching: "working set size" (WSS) - amount of memory needed to compute the answer to a problem
+* Calculate memory required for HBase caching like: ``num region servers * heap size * hfile.block.cache.size * 0.99``
+  * Default ``hfile.block.cache.size`` is 0.25 (25% of heap).
+  * 0.99 = amount loaded in LRU before evictions happen.
+* Other things that live in block cache:
+  * Catalog Tables - ``hbase:meta`` tables have in-memory priority and are hard to evict.
+    * Can take a few MBs depending on num regions.
+  * HFiles Indexes.
+    * File format HBase uses to store data in HDFS.
+    * Has indexes to support fast seeks without reading whole file.
+  * Keys.
+    * Keys are stored along side data, so take into consideration.
+  * Bloom Filters.
+    * Also stored in the LRU.
+* Bad to use block cache when WSS doesn't fit into memory.
+  * If you have a fully random reading pattern: never access same row twice in a short period.
+  * Map reduce jobs: each row will be read once, no need to put in block cache.
+    * Question: how do I disable block caching via the Thrift API?
