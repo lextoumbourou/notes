@@ -7,12 +7,7 @@ A collection of notes from various courses, books and lectures either completed,
 ### In Progress
 
 * [ML Classification (Coursera - ml-classification)](./moocs/coursera/ml-classification)
-
-### Stalled
-
-* [Machine Learning 1 - Supervised Learning (Udacity - ud675)](./moocs/udacity/ud657-machine-learning-1) -- need to finish Calculus & Linear Algebra Khan Academy units
-* [Intro to Parallel Programming (Udacity - cs344)](./moocs/udacity/cs344-intro-to-parallel-programming) -- need to finish [Learn C The Hard Way](./books/learn-c-the-hard-way-book)
-* [Algorithm Part 1 (Coursera - algs4partI-009)](./moocs/coursera/algorithms-part-1) -- waiting for next session.
+* [Algorithms: Design and Analysis, Part 1](./moocs/coursera/algorithm-design-analysis)
 
 ### Complete
 
