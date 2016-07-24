@@ -1,5 +1,4 @@
-# Week 2
-
+# Week 2: Learning Linear Classifiers
 
 ## Data likelihood
 
@@ -135,4 +134,21 @@ while not converged:
 	* Use validation set if you have enough data.
 	* Cross-validation for smaller datasets.
 
-## Learned L2 regularised logistic regression with gradient ascent
+## Visualising effect of L2 regularisation in logistic regression
+
+* High lambda values, eg a higher penalty for large coefficients in your model, can clean up a decision boundary, even when you use heaps of features.
+* Can help with overfitting a lot.
+* Questions: when do I perform the L2 regularisation on my model?
+
+## Learning L2 regularised logistic regression with gradient ascent?
+
+* Standard gradient ascent but include the derivate of the L2 value in the equation.
+
+while not converged:
+$$ \mathbf{w^{(t+1)}} \leftarrow \mathbf{w^{(t)}} + \eta \triangledown l(\mathbf{w^{(t)}}) $$  
+
+## Sparse logistic regression with L1 regularisation
+
+* Useful for efficient: forces some coefficients to 0, allowing your predictions to ignore the majority of coefficients (useful when you have large feature sets).
+* Total quality:
+*   measure of fit - l1 penalty of coefficients

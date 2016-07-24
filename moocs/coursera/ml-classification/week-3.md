@@ -1,4 +1,4 @@
-# Week 3
+# Week 3: Decision Trees
 
 ## Intuition behind decision trees
 

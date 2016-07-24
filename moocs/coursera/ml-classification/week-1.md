@@ -1,4 +1,4 @@
-# Week 1
+# Week 1: Linear Classifiers & Logistic Regression
 
 ## Assumed background
 
