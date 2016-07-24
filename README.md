@@ -6,13 +6,13 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-* [ML Classification (Coursera - ml-classification)](./moocs/coursera/ml-classification)
 * [Algorithms: Design and Analysis, Part 1](./moocs/coursera/algorithm-design-analysis)
 
 ### Complete
 
 #### 2016
 
+* [ML Classification (Coursera - ml-classification)](./moocs/coursera/ml-classification)
 * [ML Regression (Coursera - ml-regression)](./moocs/coursera/ml-regression)
 
 #### 2015
