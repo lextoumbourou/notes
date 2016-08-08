@@ -103,6 +103,150 @@
     * Compromise: cap maximum word counts.
 * Other distance metrics: Mahalanobi, rank-based, correlation-based, Manhatten .
 * Combining distance metrics:
-	1. Text of document (cosine similarity)
-	2. \# of reads of the doc (euclidean distance)
-	3. Add together with user-specified weights    
+    1. Text of document (cosine similarity)
+    2. \# of reads of the doc (euclidean distance)
+    3. Add together with user-specified weights
+
+## Scaling up k-NN search using KD-trees
+
+### Complexity of brute force search
+
+* Given a given query point, need to scan through all others.
+  * 1-NN query = O(N)
+  * k-NN = O(N log k) (log k because can efficient use a priority queue)
+
+### KD-tree representation
+
+* Allows for efficiently pruning search space (works in many but not all cases).
+* Start with list of d-dimension, choose a feature and a split feature. Everything on one side falls within one side of the threshold etc.
+  * Then, in the partitioned space, choose another feature and split threshold etc.
+  * At each node in tree, you store 3 things:
+    * the dimension you split on.
+    * the split value.
+    * bounding box that is as small as possible while containing points (??).
+* Use heuristics to make splitting decisions:
+  * Dimensions to split on: widest or alternate.
+  * Value to split on: median (or centre of box, ignoring data in box)
+  * When to stop: fewer than m pts left or box hits minimum width.
+
+### NN search with KD-trees
+
+* NN search algo:
+  1. Start by exploring leaf node for query point.
+  2. Compute distance to each other point at leaf node.
+  3. Backtrack and try other branches at each node visited.
+* Can use bounding box of each node to prune parts of the tree that def won't contain NN.
+
+### Complexity of NN search with KD-trees
+
+* For (nearly) balanced binary trees:
+  * Construction
+    * Size: 2N - 1 nodes if 1 datapoint at each leaf.
+    * Depth: O(log N)
+    * Median + send points left right: O(N) at every level of the tree
+    * Construction time: O(N log N)
+  * 1-NN query
+    * Traverse down tree to starting point: O(log N)
+    * Maximum backtrack and traverse: O(N) worst case.
+    * Complexity range: O(log N) -> O(N)
+
+### Visualizing scaling behavior of KD-trees
+
+* Ask for nearest neighbor to each doc:
+  * Brute force 1-NN: ``O(N^2)``
+  * kd-trees: ``O(N log N) -> O(N^2)``
+
+### Approximate k-NN search using KD-trees
+
+* Idea: the best nearest neighbor is not always necessary, near-enough can suffice.
+
+* Before: prune tree when distance to bounding box is > ``distance found so far``.
+* Now: prune when distance to bounding box > r / alpha.
+  * Alpha = some number greater than 1.
+  * Produces a smaller bounding box to prune more aggressively.
+  * Could potentially prune closer neighbors, but saves a lot of searching.
+
+* Lots of variants of kd-trees
+* High-dimension spaces can be hard to put into KD-trees.
+
+## Locality sensitive hashing for approximate NN search
+
+### Limitations of KD-trees
+
+* Limitations:
+  * Not simple to implement.
+  * Problems with high-dimensional data.
+
+* KD-trees in high dimensions
+  * Low chance of having data points close to query point.
+    * With many dimensions, the splits could be all over the place.
+  * Once you find your nearby point, the search radius has to intersect many hypercubes.
+  * Hard to prune a lot of nodes.
+
+* Moving away from exact NN search
+  * Don't find exact neighbour; okay for many applications.
+  * Fous on method that provide probabilibites of NN.
+
+### LSH as an alternative to KD-trees
+
+* LSH = locality-sensitive hashing
+  * Partion data into bins by calculating sign of score then putting -1 into ``0`` bin and +1 into ``1`` binthen putting -1 into ``0`` bin and +1 into ``1`` bin.
+  * Then use hash table with bin index as key and list of query points in bin as value.
+  
+    ```
+    {
+      0: {1, 5, 6, 9},
+      1: {3, 10, 23, 7}
+    }
+    ```
+
+  * Doesn't always return an exact nn.
+
+### Using random lines to partition points
+
+* 3 potential issues with LSH approach
+
+  1. Challenge to find good parition line where goal is to have points in same bin that have close cosign similarity.
+    * Consider random line. Seems like a bad idea but there is actually a good probability that close points would end up in the same bin.
+  2. Poor quality solution: points close together get split into separate bins
+  3. Large computational cost: bins might contain many points, so still searching over large set for each NN query.
+      * With one line, you are only really halving the search space.
+
+### Defining more bins
+
+* Idea: add multiple lines. Instead of using single binary value as index, use multiple binary values.
+
+  ```
+  {
+      (0, 0, 0): {1, 7},
+      (0, 0, 1): {2, 6},
+      (0, 1, 1): {3, 9}
+  }
+  ```
+
+  * Somehow you get different scores for each line value and can use that to calculate the values in the index tuple (don't really get how that works...).
+
+### Searching neighbouring bins
+
+* The more lines you have, the more likely the nearest neighbour will not be in the same bin.
+  * Solution: search more bins for nn.
+* To find next closest bins, flip 1 bit: ``(0, 0, 0)`` -> ``(0, 1, 0)``
+* Could even consider flipping 2 bits: ``(0, 0, 0)`` -> ``(1, 1, 0)``
+* Algorithm: keep searching bins until computative cost is maxed out or quality of NN is good enough.
+  * Lets you control computation complexity vs accuracy tradeoff.
+
+### LSH in higher dimensions
+
+* Cost of binning in d-dimensions: requires d multiplications to compute.
+
+  ```
+  Score(x) = v1 * #awesome + v2 * #awful + v3 * #great
+  ```
+
+  * Cost is required to be computed once, then is efficient for future queries.
+  * For sparse datasets, lots of multiplication can be skipped.
+
+### Improving efficiency through multiple tables
+
+* Basic idea: create multiple hash tables with randomly generated lines and search them all for a single point.
+  * Probability of finding NN *mostly* higher in the multiple table case.
