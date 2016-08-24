@@ -73,3 +73,89 @@
 * How to choose k:
   * Want to trade off between low heterogeneity and useful clusters.
   * No right answer; depends on requirements.
+
+## MapReduce for scaling k-means
+
+### Motivating MapReduce
+
+* 10B documents, single machine.
+  * Init hashtable:
+
+    ```
+    count = {}
+    for d in documents:
+        for word in d:
+             count[word] += 1
+    ```
+* MapReduce: distribute data and each word does a subset of them, then they're combined together.
+* All counts for subset of words should go to the same machine.
+* Map words to machines with a hash function:
+
+  ```
+  h(word index) -> machine index
+  ```
+
+### The general MapReduce abstraction
+
+* Map:
+  * data processed in parallel.
+  * outputs ``(key, value)`` pairs.
+    * "Value" can be any data type.
+
+  ```
+  def map(doc);
+    for word in doc:
+      emit(word, 1)
+  ```
+
+* Reduce:
+  * Aggregate values for each key.
+  * Order of operations cannot matter (must be commutative-associative).
+  
+  ```
+  def reduce(word, counts_list):
+    c = 0
+    for i in counts_list
+      c += counts_list[i]
+
+    emit(word, c)
+  ```
+  * Also emits key value pairs.
+
+### MapReduce - Execution overview
+
+* Map phrase: emits key, values pairs across all data.
+* Shuffle phrase: sort data and assign to machines for reducing.
+* Reduce phrase: prepare data for output.
+
+* Can use combiners to reduce data locally before the reduce step.
+  * Word count example: do word count locally instead of emit ``word, 1`` for all data.
+  * Works because reduce is "commutative-associatative"
+
+
+### MapReducing 1 iteration of k-means
+
+* Once you have initialised the cluster centre, for each data point you can figure out the distance to it (map step). 
+  * Map takes in set of cluster centers and a data point.
+  * Emits the cluster assigned to and the data point.
+
+    ```
+    namedtuple('EmittedLabel', ['cluster_label', 'datapoint'])
+    ```
+
+* Then revise data points as mean of assigned observations (reduce step).
+  * Count each data point and emit the average for each cluster.
+
+* k-means is an iterative version of MapReduce.
+  * Needs a bit more work than the standard MR approach.
+
+## Summarizing clustering with k-means
+
+### Other applications of clustering
+
+* Grouping images - finding related images when searching for known images.
+  * Handling search terms with multiple meanings.
+* Clustering related seizures.
+* Amazon products: discover product categories from purchase histories.
+  * Discover groups of users.
+* Discover similar neighbourhoods for estimating prices at similar neighbourhoods.
