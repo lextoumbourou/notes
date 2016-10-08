@@ -6,12 +6,13 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-* [Algorithms: Design and Analysis, Part 1](./moocs/coursera/algorithm-design-analysis)
+* [ML Clustering & Retrieval (Coursera - ml-clustering-and-retrieval)](./moocs/coursera/ml-clustering-and-retrieval)
 
 ### Complete
 
 #### 2016
 
+* [Data Structures and Performance (Coursera - data-structures-optimizing-performance)](./moocs/coursera/data-structures-optimizing-performance)
 * [ML Classification (Coursera - ml-classification)](./moocs/coursera/ml-classification)
 * [ML Regression (Coursera - ml-regression)](./moocs/coursera/ml-regression)
 
