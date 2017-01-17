@@ -1,6 +1,7 @@
 # Week 1: Welcome
 
 * What is retrieval?
+  * Search for related items.
   * Input = features for query point + features of all other datapoints.
   * Output = "nearest" point or set of points to query.
   * Examples = find "nearest neighbour" of a set of articles (articles like this).
