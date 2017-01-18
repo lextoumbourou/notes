@@ -134,3 +134,225 @@
 
 ## The EM algorithm
 
+### EM iterates in equations and pictures
+
+1. First step is to initialise iter counter.
+
+    $$ \{{\pi_k}^{(0)}, \hat{\mu_k}^{(0)}, \hat{\Sigma_k}^{(0)}\} $$
+
+2. Next, estimate cluster responsibilities given current parameter estimations (E-step)
+
+     $$ r_{ik} = \frac{\pi_k \space N(x_i \mid \mu_k, \Sigma_k)}{\sum_{j=1}^{K} \pi_j \space N(x_i \mid \mu_k, \Sigma_k)} $$
+
+3. Last, maximise likelihood over parameters given calculated responsibilities (M-step)
+
+### Convergence, initialization and overfitting of EM
+
+* EM is a coordinate-ascent algorithm
+  * E and M steps same as alternating maximisations of an objective function.
+* Converges to a local mode.
+
+* Initialisation:
+  * Many way to init.
+  * Important for convergence rates and quality of local mode.
+  * Examples:
+    * Choose observations at random to be centres.
+    * Choose centres sequentially ala k-means++.
+    * Run K-means and use those centres.
+
+* Overfitting of MLE:
+  * Maximising likelihood can overfit data.
+  * A cluster that has only one value assigned to it would have an infinite likelihood function which would dominate overall likelihood function.
+
+* Overfitting high dimensions:
+  * Imagine only 1 doc assigned to cluster k has word w (or all docs in cluster agree on count of word w).
+  * Likelihood of any other doc with different count on word w being in cluster k is 0.
+
+* Simple fix: don't let variances get to 0. Add small amount to diagonal of covariance estimate.
+  * Alternatively: take Bayesian approach and place prior's on parameters.
+
+### Relationship to k-means
+
+* Summary: gaussian mixture models becomes near identical to k-means when variance parameter is set to 0.
+
+* If you consider a gaussian mixture model with spherically symmetric clusters (sigma squared is identical along covariance matrix diagonal) and set variance to 0:
+  * Clusters have equal variance so relative likelihood is just function of cluster centre.
+  * As variance goes to 0, likelihood ratio becomes 0 or 1.
+  * Responsibilities way in somewhat, but dominated by likelihood.   
+
+### Worked example for EM
+
+#### E-step: compute cluster resposbilities given cluster params
+
+Use whatever info we have at start time. If none, assign cluster centres randomly, and pick a diagonal covariance, then pick weights that give each cluster an even spread (1/3).
+
+##### Datapoint 0
+
+```
+In [4]: print 1/3. * multivariate_normal.pdf([10, 5], mean=[3, 4], cov=[[3, 0], [0, 3]])
+4.2506655934e-06
+
+In [5]: print 1/3. * multivariate_normal.pdf([10, 5], mean=[6, 3], cov=[[3, 0], [0, 3]])
+0.000630854709005
+
+In [6]: print 1/3. * multivariate_normal.pdf([10, 5], mean=[4, 6], cov=[[3, 0], [0, 3]])
+3.71046481027e-05
+
+In [7]: 4.2506655934e-06 + 0.000630854709005 + 3.71046481027e-05
+Out[7]: 0.0006722100227011
+```
+
+             Cluster A            | Cluster B          | Cluster C          | Sum
+
+Likelihood   4.2506655934e-06    | 0.000630854709005  | 3.71046481027e-05  | 0.0006722100227011
+L / sum      0.007               | 0.938              | 0.055
+
+##### Datapoint 1
+
+```
+In [11]: print 1/3. * multivariate_normal.pdf([2, 1], mean=[3, 4], cov=[[3, 0], [0, 3]])
+0.00334005398012
+
+In [12]: print 1/3. * multivariate_normal.pdf([2, 1], mean=[6, 3], cov=[[3, 0], [0, 3]])
+0.000630854709005
+
+In [13]: print 1/3. * multivariate_normal.pdf([2, 1], mean=[4, 6], cov=[[3, 0], [0, 3]])
+0.000140762712251
+
+In [14]: 0.00334005398012 + 0.000630854709005 + 0.000140762712251
+Out[14]: 0.004111671401376
+
+In [15]: 0.00334005398012 / 0.004111671401376
+Out[15]: 0.8123348521971447
+
+In [16]: 0.000630854709005 / 0.004111671401376
+Out[16]: 0.15343023491465782
+
+In [17]: 0.000140762712251 / 0.004111671401376
+Out[17]: 0.034234912888197425
+```
+
+             Cluster A           | Cluster B           | Cluster C          | Sum
+
+Likelihood   0.00334005398012    | 0.000630854709005   | 0.000140762712251  | 0.004111671401376
+L / sum      0.8123348521971447  | 0.15343023491465782 | 0.034234912888197
+
+##### Datapoint 2
+
+```
+In [18]: print 1/3. * multivariate_normal.pdf([3, 7], mean=[3, 4], cov=[[3, 0], [0, 3]])
+0.00394580754895
+
+In [19]: print 1/3. * multivariate_normal.pdf([3, 7], mean=[6, 3], cov=[[3, 0], [0, 3]])
+0.000274168326362
+
+In [20]: print 1/3. * multivariate_normal.pdf([3, 7], mean=[4, 6], cov=[[3, 0], [0, 3]])
+0.0126710555509
+
+In [21]: 0.00394580754895 + 0.000274168326362 + 0.0126710555509
+Out[21]: 0.016891031426212
+
+In [22]: 0.00394580754895 / 0.016891031426212
+Out[22]: 0.23360370656979415
+
+In [23]: 0.000274168326362 / 0.016891031426212
+Out[23]: 0.016231591750906195
+
+In [24]: 0.0126710555509 / 0.016891031426212
+Out[24]: 0.7501647016792996
+```
+
+             Cluster A           | Cluster B           | Cluster C          | Sum
+
+Likelihood   0.00394580754895    | 0.000274168326362   | 0.0126710555509    | 0.016891031426212
+L / sum      0.23360370656979415 | 0.01623159175090619 | 0.7501647016792996
+
+##### Full responsibility matrix
+
+```
+                 Cluster A | Cluster B | Cluster C
+Data point 0  |  0.007     | 0.938     | 0.055
+Data point 1  |  0.812     | 0.153     | 0.034
+Data point 2  |  0.234     | 0.016     | 0.75
+Soft counts   |  1.053     | 1.108     | 0.839
+```
+
+#### M-step: compute cluster parameters, given cluster responsibilities
+
+Get cluster weights by adding up soft counts and using to normalise
+
+```
+                 Cluster A | Cluster B | Cluster C | Sum
+Soft counts   |  1.053     | 1.108     | 0.839     | 1.053 + 1.108 + 0.839 = 3
+Normalized    |  0.351     | 0.369     | 0.280
+```
+
+##### Mean
+
+Get means by adding "fractional parts" of all data points using cluster responsibilities
+
+```
+= 0.007 * (10, 5) + 0.812 * (2, 1) + 0.234 * (3, 7)
+= (0.07, 0.035) + (1.624, 0.812) + (0.702, 1.638)
+= (2.396, 2.485)
+```
+
+Then divide sum by the soft count.
+
+```
+= (2.396, 2.485) / 1.053 
+= (2.275, 2.36)
+```
+
+Then repeat for other clusters to get new mean estimates
+
+```
+New means    | X        | Y
+
+Cluster A    | 2.275    | 2.360
+Cluster B    | 8.787    | 4.473
+Cluster C    | 3.418    | 6.626
+```
+
+##### Covariance
+
+Compute difference from the mean like so: ``data point i - cluster mean k``
+
+```
+# point 0
+= (10, 5) - (2.275, 2.360) = (7.725, 2.640)
+
+# point 1
+= (2, 1) - (2.275,2.360) = (-0.275, -1.360)
+
+# point 2
+= (3, 7) - (2.275, 2.360) = (0.725, 4.640)
+```
+
+Then compute the "outer products" which are two-by-two matrices:
+
+```
+= [[7.725], [2.640]] * [[7.725,2.640]] = [[59.676,20.394], [20.394,6.970]]
+
+= [[-0.275], [-1.360]] * [[-0.275,-1.360]] = [[0.076,0.374], [0.374,1.850]]
+
+= [[0.725], [4.640]] * [[0.725,4.640]] = [[0.526,3.364], [3.364,21.530]]
+```
+
+Then take the weighted average using cluster responsibilities:
+
+```
+=  0.007 * [[59.676,20.394], [20.394,6.970]] + 0.812*[[0.076,0.374], [0.374,1.850]] + 0.234*[[0.526,3.364], [3.364,21.530]]
+= (0.602, 1.234), (1.234, 6.589)
+```
+
+Normalise with soft count (??)
+
+```
+= ((0.602, 1.234), (1.234, 6.589)) / 1.053
+= ((0.572, 1.172), (1.172, 6.257))
+```
+
+##### Alternating between E-step and M-step
+
+Then, you can keep alternating between the E-step and M-step and each time they will improve the quality of each other.
