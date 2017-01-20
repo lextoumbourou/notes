@@ -6,7 +6,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-* [ML Clustering & Retrieval (Coursera - ml-clustering-and-retrieval)](./moocs/coursera/ml-clustering-and-retrieval)
+Tbc.
 
 ### Complete
 
