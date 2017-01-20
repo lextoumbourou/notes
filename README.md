@@ -10,6 +10,10 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### Complete
 
+#### 2017
+
+* [ML Clustering & Retrieval (Coursera - ml-clustering-and-retrieval)](./moocs/coursera/ml-clustering-and-retrieval)
+
 #### 2016
 
 * [Data Structures and Performance (Coursera - data-structures-optimizing-performance)](./moocs/coursera/data-structures-optimizing-performance)
