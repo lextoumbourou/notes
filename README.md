@@ -6,7 +6,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-Tbc.
+* [Bayesian Statistics: From Concept to Data Analysis (Coursera - bayesian-statistics)](./moocs/coursera/bayesian-statistics)
 
 ### Complete
 
