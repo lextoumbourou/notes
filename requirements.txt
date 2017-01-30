@@ -14,3 +14,4 @@ pycrypto==2.6.1
 pytz==2014.4
 six==1.7.2
 wsgiref==0.1.2
+Markdown==2.6.8
