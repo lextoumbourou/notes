@@ -100,3 +100,106 @@
   * Other
     * Critique / interview based recs.
     * Hybrid techniques.
+
+## Taxonomy of Recommenders 2
+
+* Notions every recommender needs:
+  * Users
+    * Users may have attributes (demographics).
+  * Items
+  * Ratings
+    * Users make rating on items somehow (implicity and explicit).
+
+* Non-personalized summary stats:
+  * External community data:
+    * Best selling, most popular, trending stuff.
+  * Summary of community ratings:
+    * Best liked.
+    * Pull out ratings for some item and take average.
+  * Examples:
+    * Zagat restaurant ratings
+    * Billbard music rankings.
+    * TripAdvisor hotel ratings.
+
+* Content-based filtering:
+  * User ratings x item attributes => model
+  * Model applied to new items via attributes
+    * User liked articles about soccer, future articles about soccer may be recommender.
+    * Fan of certain genres of movies.
+    * Fan of movies with certain actors.
+  * Alternative: knowledge-based
+    * Item attributes form model of item space.
+      * Users navigate/browse that space.
+  * Examples:
+    * Personalized news feeds.
+    * Artist or genre music feeds.
+
+* Personalized Collaborative Filtering
+  * Use opinions of others to predict/recommend.
+  * User model - set of ratings
+  * Item model - set of ratings
+  * Common core: sparse matrix of ratings
+    * Fill in missing values (predict)
+    * Select promising cells (recommend)
+  * Several different techniques.
+
+* Collaborative Filtering Techniques
+  * User-user
+    * Get "neighbourhood" of people with similar tasts.
+      * Could only select "trustworthy" people.
+  * Item-item
+    * Compute similarity amongst items using ratings.
+    * Use ratings to triangulate for recs.
+  * Dimensionality reduction
+    * Intuition: taste yields a lower-dim matrix.
+    * Compress and use taste representation.
+
+* Note on evalution:
+  * Will spend time on evaulation:
+    * Accuracy of predictions.
+    * Usefulnes of recommendations: correctness, non-obviousness, diversity.
+  * Computational performance.
+
+## Tour of Amazon
+
+* Dimesions of analysis:
+  * Recommendations based on implicit purchase data.
+  * Personalization level: one product at a time.
+
+## Recommender Systems: Past, Present and Future
+
+* Before recommender systems:
+  * Manual personalization
+  * Cross-sales and early product associations
+  * Product search.
+* Tech bubble:
+  * During: recommenders were seen as "key technology"
+  * After: recommenders were put in context of the things the business was actually trying to do.
+* Wave 2: The Netflix Prize
+  * Netflix $1M prize
+  * Recommendation as app area for data mining, machine learning
+  * Rapid growth in field
+  * New techniques:
+    * Algorithm stacking
+    * New matrix factorization techniques
+* Mature realizations:
+  * Predictions and top-n algos are limited
+    * Limitations to how good recommendation engines are with people driving them.
+* State of field today:
+  * Lots of well-known algos
+  * Effective recs still a "craft"
+    * Exploring data.
+    * Understanding usage cases and value proposition
+  * Still largely focuses on business apps
+    * Creativity
+    * Dream of consumer-owner not realized.
+* Looking forward:
+  * Hard problems unsolved:
+    * Temporal recommendations: "what should you consume next?"
+    * Recs for education.
+    * Low-frequency, high-stakes recs: can we help you find a house or other things you don't have rating for?
+  * Recognized speciality that brings ML, business + marketing, human-computer interaction etc. 
+* Promising directions:
+  * Context.
+  * Sequences: music, education etc.
+  * Lifetime value.
