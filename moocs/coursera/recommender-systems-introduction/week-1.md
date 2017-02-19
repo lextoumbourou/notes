@@ -203,3 +203,13 @@
   * Context.
   * Sequences: music, education etc.
   * Lifetime value.
+
+## Introducing the Honors Track
+
+* Involves implementing algorithms using LensKit toolkit.
+* Software required:
+  * Java dev kit.
+  * Dev environment (Eclipse, IntelliJ etc)..
+  * Data analysis software: Excel, R PyData etc.
+* LensKit handles external stuff like I/O, setting up data for evaluation etc.
+* Written in Java because a) lots of people know it and b) can achieve good performance.
