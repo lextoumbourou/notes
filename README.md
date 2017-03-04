@@ -12,6 +12,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 #### 2017
 
+* [Introduction to Recommender Systems: Non-Personalized and Content-Based (Coursera)](./moocs/coursera/recommender-systems-introduction)
 * [ML Clustering & Retrieval (Coursera - ml-clustering-and-retrieval)](./moocs/coursera/ml-clustering-and-retrieval)
 
 #### 2016
