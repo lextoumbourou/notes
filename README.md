@@ -6,7 +6,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-* [Bayesian Statistics: From Concept to Data Analysis (Coursera - bayesian-statistics)](./moocs/coursera/bayesian-statistics)
+* [Neural Networks and Deep Learning (Coursera - neural-networks-deep-learning)](./moocs/coursera/neural-networks-deep-learning)
 
 ### Complete
 
