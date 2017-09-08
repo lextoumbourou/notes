@@ -55,6 +55,15 @@
 
 * Derivate of a^2 = 2a.
 
+## Derivates with a Computation Graph
+
+* Chain rule in calculus: if a affects v which affect J, a -> v -> J, then the amount J changes when a is nudged, is the product of how much v changes when a is nudged and now much J changes when v is nudged:
+
+   ``dJ / da = (dJ/dv) * (dv/da)``
+
+* Will be a final output variable you want to calculate `d FindOutputVar / d var`: generally represent it as `dvar`.
+    * `dvar` - represent the derivative to final output with respect to various intermediate quantities. 
+
 # Python and Vectorization
 
 ## Vectorization
@@ -92,3 +101,51 @@
     import numpy as np
     u = np.log(v)
     ```
+
+## Vectorizing Logistic Regression
+
+* Instead of iterating through all training examples and calculating y_hat, can calculate as:
+  $$ w^TX + B $$ (where B is a row vector containing just b and X contains all training examples).
+* Written in Numpy as: ```Z = np.dot(w.T, X) + b```
+  * Broadcasting in Python = convert a matrix to fit an equation.
+
+## Vectorizing Logistic Regression's Gradient Output
+
+* Original version of gradient descent with for loops:
+
+    ```
+    J = 0
+    dw[1] = 0
+    dw[2] = 0
+    db = 0
+    for i = 1 to m:
+        z[i] = wT * x[i] + b
+        a[i] = sigma(z[i])
+        J += -(y[i] * log(a[i]) + (1 - y[i]) * log(1 - a[i]))
+        dz[i] = a[i] - y[i]
+        dw[1] += x[1][i] * dz[i]
+        dw[2] += x[2][i] * dz[i]
+        db ++ dz[i]
+    
+    J = J/m
+    dw[1] = dw[1] / m
+    dw[2] = dw[2] / m
+    db = db / m
+    ```
+
+* Gradient descent using vectorization:
+
+    ```
+    Z = wT * X + b
+    A = sigma(Z)
+    dZ = A - Y
+    dW = 1/m * X * dZT
+    db = 1/m * np.sum(dZ)
+    w := w - learning_rate * dw
+    b := b - learning_rate * db
+    ```
+
+## Broadcasting in Python
+
+* General principle:
+  * If you have a (m, n) matrix and multiple by (1, n) matrix, it will turn into (m, n) matrix.
