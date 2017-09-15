@@ -169,3 +169,32 @@
 * If an algorithm fails grad check, want to look at individual values to try to figure out what's up.
 * Remember to include regularization term.
 * Won't work with dropout.
+
+## Assignment 1 notes: initialization
+
+1. Different initialisations lead to different results.
+2. Random initialisation breaks symmetry and means different hidden units can learn different things.
+3. Don't initialise values that are too large.
+4. He init works well for networks with ReLU activations.
+
+## Assignment 2 notes: regularisation
+
+* Implications of L2-regularisation:
+  1. During cost computation: segularisation term is added to the cost.
+  2. In backpropagration: there are extra terms in gradients with respect to weight matrices.
+  3. Weights are pushed to smaller values.
+
+* Dropout:
+  1. Dropout is a regularization technique.
+  2. Only use dropout in training, not test or predictions.
+  3. Apply dropout in forward and back propagation steps.
+  4. Want to divide each dropout layer by keep_prob to keep same expected value for activations.
+
+* Regularization reduces overfitting,
+* Drives lower values.
+* L2 reg and dropout are effective regularisation techniques.
+
+## Assignment 3 notes: gradient checking
+
+* Grad check verifies closeness between gradients in backprop and numeric approximation of gradient.
+* Grad check is slow and should only be used in debug - not training.
