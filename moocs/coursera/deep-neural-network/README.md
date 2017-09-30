@@ -4,7 +4,7 @@
 
 Complete - 2017-09-24
 
-<img src="./images/cert.png" width="600px"></img>
+<img src="./assets/cert.png" width="600px"></img>
 
 ## Contents
 
