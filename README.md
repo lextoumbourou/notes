@@ -6,12 +6,13 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-* [Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization (Coursera - deep-neural-network)](./moocs/coursera/deep-neural-network)
 
 ### Complete
 
 #### 2017
 
+* [Structuring Machine Learning Projects (Coursera - machine-learning-projects)](./moocs/coursera/machine-learning-projects)
+* [Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization (Coursera - deep-neural-network)](./moocs/coursera/deep-neural-network)
 * [Neural Networks and Deep Learning (Coursera - neural-networks-deep-learning)](./moocs/coursera/neural-networks-deep-learning)
 * [Introduction to Recommender Systems: Non-Personalized and Content-Based (Coursera)](./moocs/coursera/recommender-systems-introduction)
 * [ML Clustering & Retrieval (Coursera - ml-clustering-and-retrieval)](./moocs/coursera/ml-clustering-and-retrieval)
