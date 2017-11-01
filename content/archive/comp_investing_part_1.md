@@ -1,43 +1,6 @@
 Title: Computational Investing, Part I (Coursera) Review
-Tagline: "I'll give you a MOOC!"
 Date: 2013-12-02
 Tags: MOOCs, Investing, Python
-
-</p>
-
-<div class="intro">
-I was trying to debug an ugly script. It was supposed to simulate an event study using Bollinger Bands, but I couldn't get the output to match the example.
-
-<p>
-
-"Fucking finish it later," Kelly yelled from the other room, "our plane is leaving in 2 hours!"
-
-</p>
-
-<p>
-
-"Okay, okay, I'm packing!"
-
-</p>
-
-<p>
-I stuffed a couple of shirts into a bag, then sat down to search the course's forum for help. The last couple of weeks had been a marathon of work and study and I was determined to leave it all behind. I knew the answer was close. I had understood the task, I was certain, but the interpreter was being stubborn.
-</p>
-
-<p>
-Then Gene entered my life. Gene posted on the forum without an avatar. Gene used Caps lock and exclamation marks liberally. Gene reminded us toward the end of a rant, that there should be "no BUY orders in the first and last 20 days!". I remembered something about that in one of the videos and, honestly, I didn't understand why that was the case, but I cut 20 days off the start and end of the data sequence, punched the values into the exam and...passed!
-</p>
-
-<p>
-I heard a horn in the driveway.
-</p>
-
-<p>
-"The cab is here!"
-</p>
-</div>
-
-</p>
 
 * [About The Course](#about-the-course)
 * [My Background](#my-background)
@@ -46,8 +9,6 @@ I heard a horn in the driveway.
 * [What I Loved](#what-i-loved)
 * [What Could Be Improved](#what-i-would-improve)
 * [Summary](#summary)
-
-***
 
 <a name="about-the-course"></a>
 
