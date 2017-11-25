@@ -6,6 +6,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
+* [Convolutional Neural Networks (Coursera - convolutional-neural-networks)](./moocs/coursera/convolutional-neural-networks)
 
 ### Complete
 
