@@ -135,3 +135,5 @@
 
 * Faster R-CNN:
   * Use conv network to propose regions.
+
+* Andrew thinks region proposal is interesting, but believes YOLO is a more promising direction for computer vision.

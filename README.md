@@ -6,12 +6,12 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
-* [Convolutional Neural Networks (Coursera - convolutional-neural-networks)](./moocs/coursera/convolutional-neural-networks)
 
 ### Complete
 
 #### 2017
 
+* [Convolutional Neural Networks (Coursera - convolutional-neural-networks)](./moocs/coursera/convolutional-neural-networks)
 * [Structuring Machine Learning Projects (Coursera - machine-learning-projects)](./moocs/coursera/machine-learning-projects)
 * [Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization (Coursera - deep-neural-network)](./moocs/coursera/deep-neural-network)
 * [Neural Networks and Deep Learning (Coursera - neural-networks-deep-learning)](./moocs/coursera/neural-networks-deep-learning)
