@@ -9,6 +9,10 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### Complete
 
+#### 2018
+
+* [Sequence Models (Coursera - nlp-sequence-models](./moocs/coursera/nlp-sequence-models)
+
 #### 2017
 
 * [Convolutional Neural Networks (Coursera - convolutional-neural-networks)](./moocs/coursera/convolutional-neural-networks)
