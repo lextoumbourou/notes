@@ -6,6 +6,7 @@ A collection of notes from various courses, books and lectures either completed,
 
 ### In Progress
 
+* [Mathematics for Machine Learning: Linear Algebra (Coursera - linear-algebra-machine-learning](./moocs/coursera/linear-algebra-machine-learning)
 
 ### Complete
 
