@@ -21,3 +21,4 @@ source activate fastai
 * [Lesson 4](lesson4.ipynb)
 * [Lesson 5](lesson5.ipynb)
 * [Lesson 6](lesson6.ipynb)
+* [Lesson 7](lesson7.ipynb)
