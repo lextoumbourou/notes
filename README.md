@@ -35,4 +35,3 @@ To build the blog without running setup, use the `build.sh` script:
 
 ```
 ./build.sh
-```
