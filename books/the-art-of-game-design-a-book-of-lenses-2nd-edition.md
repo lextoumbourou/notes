@@ -365,7 +365,7 @@ Topics: [[game design]]
     * [[Less Talk, More Rock]] by [[Superbrothers]]
     * [[Agile Software Developer]] on Wikipedia
     * [[The 4Fs of Game Design: Fail Faster, and Follow the Fun]] by [[Jason Vandenberghe]]
-  * Key takeaways:
+* Key takeaways:
       * Game design requires a lot of prototyping. You cannot be sure of the limitations of your designs until you do a lot of prototyping.
       * Prototyping can help answer the question about the true problem you're trying to solve.
       * 50% rule: plan game development so that if 50% of your budget were removed, you'd still have a shippable game. Then use the rest to make it great.
