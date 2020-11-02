@@ -310,6 +310,65 @@ Topics: [[game design]]
 * Key takeways:
     * Seek inspiration outside of games for the types of experiences you want to shar with your players.
     * Start with a clear problem statement for your game and expect to iterate on the problem statement as you learn more.
+    
+## Eight: The Game Improves Through Iteration
+* Don't get stuck with decision paralysis, pick an idea and commit to it quickly.
+	* Through commiting to an idea, you start to give it full attention and discover weaknesses and strengths you could otherwise miss.
+* **Lens 15: Law of Eight Filters** #lens 
+    * Game should pass through 8 filters:
+        * Does it feel "right" to you and your team?
+        * Are the intended audience likely to like it?
+        * Is it well designed - does it stand up to examiation through many lenses?
+        * Is the game innovative?
+        * Can the game become profitable?
+        * Does the game meet my community and social goals?
+        * Do playtesters enjoy the game?
+* Rule of loop: the more times you test and improve, the better the game will be.
+  * Ideally game can be iterated on quickly, but if not, innovation is require to figure out how to prototype it.
+  	* How can I make every loop count?
+    * How can I loop fast?
+* [[Winston Royce]] wrote the paper that was the foundation for Waterfall, though didn't use the word and actually advocated for iterative development.
+* [[Barry Boehm]] in 1986 presented the spiral model of software development:
+	* Create basic design.
+    * Assess risks in design.
+    * Build prototypes to mitigate risks.
+    * Test prototypes.
+    * Create more detailed dsesigns based on what you learn.
+* Agile Manifesto fleshed out the ideas in the spiral model: key part of it in risk management.
+**Lens #16: The Lens of Risk Management** #lens 
+  * What could keep the game from being great and how can we stop that from happening?
+      * We generally want to work on parts of the game we're confident in but you have to face up to the parts in danger.
+* Tips for Productive Prototyping:
+    * Answer a question: what can my graphics engine handle? Will core gameplay be fun? Do characters and setting fit?
+    * Forget quality: aim to answer questions quickly.
+    * Plan to throw a lot of the prototype away.
+    * Prioritise prototypes and consider dependance - does one prototype need to happen before another?
+    * Parrallelise prototypes: can the software team be testing the engine while design tries UX?
+    * Prototypes can be done on paper.
+    * Prototypes don't have to be interactive - sketches and animations can answer questions.
+    * Choose a fast game engine for prototyping (and ideally building)
+    * Build a toy first - make sure the core gameplay is fun.
+        * **Lens #17: The Lens of the Toy** #lens 
+            * If my game had no goals, would it still be fun?
+            * When people see my game, do they instantly want to play and interact with it?
+    * Always be looking for opportunities for more loops - porting to another platform could be opportunity to fix parts of game that didn't work.
+* "50% rule" for budgetting
+	* Plan game development so that if 50% of budget were lost, the game was still in a releasable state. Once the game is working, spend the rest of the budget making it great.
+        * Develops usually apply a 80/20 wrong, forgetting that things often go wrong, eating up the 20% time.
+* **Lens #18: The Lens of Passion** #lens 
+    * At the end of prototyping, as well as risk assessment, check how you feel about game 
+    	* Am I passionate about how great game can be or can I be?
+* Reading:
+	* [[Sketching User Experiences]] by [[Billl Buxton]]
+    * [[Have Paper, Will Prototype]] by [[Bill Lucas]]
+    * [[The Kodold Guide to Board Game Design]] by [[Mike Selinker]]
+    * [[Less Talk, More Rock]] by [[Superbrothers]]
+    * [[Agile Software Developer]] on Wikipedia
+    * [[The 4Fs of Game Design: Fail Faster, and Follow the Fun]] by [[Jason Vandenberghe]]
+  * Key takeaways:
+      * Game design requires a lot of prototyping. You cannot be sure of the limitations of your designs until you do a lot of prototyping.
+      * Prototyping can help answer the question about the true problem you're trying to solve.
+      * 50% rule: plan game development so that if 50% of your budget were removed, you'd still have a shippable game. Then use the rest to make it great.
 
 ## Chapter 19: Stories and Games Take Place in Worlds
 
