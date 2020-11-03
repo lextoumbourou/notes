@@ -19,7 +19,7 @@ Topics: [[maths]] [[geometry]]
 
 * A [[point]] refers to a dot on that plane and is the most basic geometric idea.
 
-    ![[Pasted image 20201104071230.png]]
+    ![[../_media/points.png]]
     
     * [[points]] are commonly labelled using upper case letters: A, B, C, D etc
 
@@ -29,7 +29,7 @@ Topics: [[maths]] [[geometry]]
 
 * A line that connects 2 points, is refered to as a [[line segment]]
 
-    ![[Pasted image 20201104080020.png]]
+    ![[../_media/line-segment.png]]
     
     * A [[line segment]] is described using its endpoints: the [[point]]s that it is connected by.
     * In math notation, a line is drawn over the endpoints to denote that it's a line segment.
@@ -46,7 +46,7 @@ Topics: [[maths]] [[geometry]]
 
 * A line that starts from one point that continues on infinitely in one direction is called a [[ray]]
 
-    ![[Pasted image 20201104080146.png]]
+    ![[../_media/ray.png]]
 
     * The order of a ray is meaninful, unlike a line segment, as it describes the direction of the ray:
 
@@ -57,7 +57,7 @@ Topics: [[maths]] [[geometry]]
 ## Line
  * A line that continues infinitely in either direction is formally called a [[line]].
  
-     ![[Pasted image 20201104080206.png]]
+     ![[../_media/line.png]]
     
      * A [[line]] is described by the endpoints it intersects, typically in alphabetical order though the order does not matter.
 
@@ -66,6 +66,6 @@ Topics: [[maths]] [[geometry]]
 ## Collinear points
 * If you have a line segment and introduce a point in the middle, you could describe all 3 points as "[[collinear]]" - they sit on the same line.
 
-   ![[Pasted image 20201104072620.png]]
+   ![[../_media/colinear-points.png]]
 
 * In the above picture, if the distance between $XZ$ was the same as the distance between $ZX$, then you would refer to Z as the [[midpoint]] of the line segment $XY$.
