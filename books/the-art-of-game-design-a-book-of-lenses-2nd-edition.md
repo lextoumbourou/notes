@@ -370,6 +370,120 @@ Topics: [[game design]]
       * Prototyping can help answer the question about the true problem you're trying to solve.
       * 50% rule: plan game development so that if 50% of your budget were removed, you'd still have a shippable game. Then use the rest to make it great.
 
+## Nine: The Game Is Made for a Player
+* Good designs find way to project themselves into the minds of players.
+* When creating something aimed at large groups of players, we consider ways we can group people aka [[demographics]].
+* Game industry usually breaks players of ages down as follows:
+    * 0-3 - infant / toddler
+        * Interested in toys.
+        * No complexity and problem solving skills.
+        * Can be fascinated with direct interfaces like touch screens.
+    * 4-6 - preschooler
+        * Show first interest in games.
+        * Simple games played with parents who are willing to bend the rules to keep kids engaged.
+    * 7-9 - kids
+        * The "age of reasoning"
+        * Usually can read and solve harder problems.
+        * Beginning to develop own interests separate from parents.
+    * 10-13 - preteen or "tween"
+    	* starting to consider things more deeply and with more nuance.
+    	* can be passionate about interests: "age of obsession"
+        * boys at this age in particular often become obsessed with games.
+    * 13-18 - teen
+        * getting ready for adulthood.
+        * can be significant divergence between male and female interests here.
+            * Boys = competition and mastery, girls = real-world issues and communication.
+        * Teens often interested in experimenting with new kinds of experiences.
+    * 18-24 - young adult
+        * Less experimentation - have clearer tastes.
+        * Often have time and money, hence becoming big consumers of games.
+    * 25-35 - twenties and thirties
+        * Age of "peak family formation"
+        * More responsibilities of adulthood and less time for games.
+        * Usually casual but also "hard core gamers" where games a primary hobby.
+    * 35-50 - thirties and forties
+        * "family maturation"
+        * caught up in career and adult responsibilities.
+        * want gameplay experiences for the whole family.
+    * 50+ - fifties and up
+        * "empty nesters"
+        * sometimes returning to games they enjoyed when young.
+        * games with strong social components: golf, tennis, bridge, online multiplayer games, Facebook games etc.
+* All play activities are connected to childhood, since childhood is centered around play. To create games for someone of a particular age, you must be in tune with the games and themes that were popular when they were children.
+* Gender differences show up sharply in purchasing preferences of games.
+* [[Raph Koster]] in [[Theory of Run]] suggests the core of winning games is mastering abstract formal systems, which is generally preferred by males to females.
+	* However, that is not the only gameplay experience available: story, creativity, learning and socialisation are experiences enjoyed by females.
+* 5 things males like in games:
+    * Mastery - even if not important or useful. Females prefer skills with interesting purpose
+    * Competition
+    * Destruction
+    * Spatial puzzles
+    * Trial and error
+* 5 things females like in games:
+    * Emotion-based
+    * Real world
+    * Nurturing
+    * Dialog and verbal puzzles
+    * Learning by example - prefer clear tutorials
+* **Lens #19: The Lens of The Players** #lens 
+    * Questions to ask about your players:
+        * What do they like?
+        * What don't they like?
+        * What would they expect to see in a game?
+        * If I were in their place, what would I want to see?
+        * What would they like a dislike about the game?
+* "Psycographics" is about grouping people by interests instead of how they look including lifestyle choices and the things they enjoy
+* [[Marc LeBlanc]] list of 8 primary game pleasures:
+    * Sensation
+        * Delivered through game aesthetics
+        * Usually about the "pleasure of the toy"
+        * Can't make a bad game good, but can make a good game great.
+    * Fantasy
+        * Imaging yourself as something you're not
+    * Narrative
+        * Watching the story unfold
+    * Challenge
+        * Problem solving and mastery
+    * Fellowship
+        * Community and cooperation
+    * Discovery
+        * Exploration of games world or features or game strategy
+    * Expression
+        * Building characters and levels
+        * Designing outfits
+    * Submission
+        * Submitting to game world
+        * Good games make suspending disbelief effortless
+* Taxonomy of player types by [[Richard Bartle]]
+    * Achievers - want to achieve goals of the game
+    * Explorers - want to discover and explore breadth of game 
+    * Socialities - pleasure of fellowship
+    * Killers - competing with and defeating others and "impressing themselves on others" which could also include helping others
+    * Graph shows that achievers are interested in acting on the world, explorers interacting with the world, socializers in interacting with players and killers interesed in acting on players:
+        ![Bartel's graph of player type space](../_media/bartles-player-space.png)
+* Other pleasures to consider:
+    * Anticipation
+    * Completion
+    * Delight in other's misfortune - schadenfreude
+    * Gift giving and making others happy
+    * Humor
+    * Possibility - having many choices and knowning you can pick any of them
+    * Pride in an accomplishment
+    * Surprise
+    * Thrill - "fear minus death equals fun"
+    * Triumph over adversity - Italian word for it: "fiero"
+    * Wonder - awe & amazement
+* **Lens #20: The Lens of Pleasure** #lens 
+    * Questions:
+        * What pleasures does my game give to players? Can they be improved?
+        * What pleasures are missing?
+    * Go through list of known pleasures and consider how well it's delivered.
+* Reading:
+    * [[Designing Virtual Worlds]] by [[Richard R. Bartle]] 
+    * [[Pleasures of the Brain]] by [[Morten L. Kringelbach]] and [[Kent C. Berridge]]
+ * Key takeaway:
+ 	* Understanding the key demographics and their interests is important, but equally import is thinking about the types of things that give your players pleasure.
+
 ## Chapter 19: Stories and Games Take Place in Worlds
 
 * Transmedia worlds
