@@ -483,6 +483,50 @@ Topics: [[game design]]
     * [[Pleasures of the Brain]] by [[Morten L. Kringelbach]] and [[Kent C. Berridge]]
  * Key takeaway:
  	* Understanding the key demographics and their interests is important, but equally import is thinking about the types of things that give your players pleasure.
+    
+## Ten: The Experience Is in the Player's Mind
+
+* The are 4 main mental abilities that are used when playing games: modelling, focus, imagination and empathy.
+* Modelling
+    * Our brains don't consume reality directly instead a simplified model of it.
+    * Example:
+        * Colours are just light wavelengths that our brains registers as being distinctly different through colours.
+        * We can look at a cartoon of a human and immediately understand it's a person even though it's lacking many details.
+    * Games are a "predigested model" of reality explaining why they're relaxing to play: the complexity has already been stripped away.
+    * By understanding the "reality illusion" you can make experiences feel as real (or even more real) than reality itself.
+* Focus
+    * Our brains have the capacity to focus attention selectively.
+        * Example:
+            * "Cocktail party effect" - can drown out noise of lots of conversations and focus on just one.
+    * [[Mihaly Csikszentmihalyi]] wrote about flow: "a feeling of complete and energized focus in an activity, with a high level of enjoyment and fulfillment"
+    * Key components necessary to create flow state for player:
+        * Clear goals
+            * If goals are unclear, we aren't sure whether our current action is useful.
+        * No distractions
+            * Want to engage both mind and hands
+                * Menial labour causes the mind to wander
+                * Sitting and thinking causes us to fidget
+        * Direct feedback
+            * Feedback should be directly after an action, so they know if they're closer to goal.
+        * Continuously challenging
+            * "flow activities must manage to stay in the narrow margin of challenge that lies between boredom and frustration"
+            * Ideal game has a cycle of "tense and release" where the play experience follows a track like this:
+                * ![Optimal challenges to skill for flow](../_media/optimal-challenges-to-skill-for-flow.png)
+    * **Lens #21: The Lens of Flow**
+        * Does my game have clear goals?
+        * Are the goals of the player the same goals I intended?
+        * Is there places in the game that distract the player to the point they forget their goal?
+        * Does the game provide the right level of challenge for the player?
+        * The the player's skills improving at the rate I hoped?
+* Empathy
+    * Humans have a strong ability to feel the feelings of others (or at least our model of others)
+    * Cinematographers use this knowledge to great effect
+    * If games are about problem solving, empathic projection is one method of problem solving: imagine myself in the place of another to make decisions for them
+* Imagination
+    * Imagination is an important human skill for problem solving and "filling in the details"
+    * It's also used for communication - ie story telling.
+* Reading
+    * [[Flow: The Psychology of Optimal Experience]] by [[Mihaly Csikszentmihaly]]
 
 ## Chapter 19: Stories and Games Take Place in Worlds
 
