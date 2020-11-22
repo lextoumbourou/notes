@@ -527,7 +527,61 @@ Topics: [[game design]]
     * It's also used for communication - ie story telling.
 * Reading
     * [[Flow: The Psychology of Optimal Experience]] by [[Mihaly Csikszentmihaly]]
-
+    
+ ## Eleven: The Player's Mind is Driven By The Player's Motivation
+ 
+ * All entertainment is the idea to make something unimportant seem important: they do this using motivation.
+ * Maslow's Hierarchy of Needs
+     * Represented as a pyramid.
+     * Idea is that lower levels need to be achieved before tackling higher levels of need.
+     * ![Maslows' Hierarchy of Needs](../_media/maslows-hierarchy-of-needs.png)
+     * Most games fulfill achievement and mastery needs, so even higher levels.
+ * More needs
+     * [[Edward Deci]] and [[Richard Ryan]] developed self-determination theory
+     * Suggest we have 3 core needs:
+         * **Competance** - being good at something
+         * **Autonomy** - ability to do things your way
+         * **Relatedness** - need to connect to others
+     * Games are good at fulfilling all these needs.
+ * **Lens #22: The Lens of Need**
+     * Which level of Maslow's hierarchy is my game operating?
+     * Does it fill needs of competence, autonomy and relatedness?
+     * Can game fill more basic needs than it already does? Can it fulfill the ones it does better?
+ * Even games need to fulfill human needs: if people imagine that game is going to make them feel better about themselves or connect with their friends, they'll want to play it.
+ 
+ * Intrinstic vs Extrinsic motivation
+     * Core idea is that intrinsic is stuff you do for fun, extrinsic is stuff others motivate you to do (ie for payment)
+     * Reality, most activities don't fit neatly into one category or other but on a spectrum.
+     * ![Extrinsic vs intrinsic motivation](../_media/extrinsic-vs-intrinsic-motivation.png)
+* Wanna vs Hafta
+    * Many gameplaying motivations are about pleasure seeking: collecting stars, getting combos etc; many are centered on pain avoidance: avoiding enemies, trying not to die.
+    * Free to play games often start out as pleasure seeking, then eventually pain avoidance: not keeping daily streak etc.
+* **Lens #24: The Lens of Motivation** #lens
+    * What motivations do players have to play my game?
+    * What motivations are most internal? Which are external?
+    * What are pleasure seeking? What are pain avoiding?
+    * What motivations support each other?
+    * Which motivations are in conflict?
+* Novelty
+    * Games are always keen for a "new" experience, but they won't hang around if there isn't substance as well as novelty.
+    * **Lens #25: The Lens of Novelty** #lens
+        * What is novel about my game?
+        * Does my game have novelties throughout or just at the beginning?
+        * Do I have the right mix of novel and familiar?
+        * When the novelty wears off, is my game still fun?
+* Judgement
+    * We have a need to know how we stack up compared to others.
+    * **Lens #26: The Lens of Judgement** #lens
+        * What does your game judge about your players?
+        * How does it communicate this judgement?
+        * Do players feel the judgement is fair?
+        * Do they care about the judgement?
+        * Does the judgement make them want to improve?
+* Reading
+    * [[Glued to Games]] by [[Scott Rigby]] and [[Richard M. Ryan]] an insightful guide to the relationship between self-determination theory and what makes games work.
+    * [[Punished by Rewards]] by [[Alfie Kohn]]. This book is an excellent overview of the vast body of research about the downsides of extrinsic rewards.
+    * [[Understanding Motivation and Emotion]] by [[Johnmarshall Reeve]] -college-level textbook about the world of psychological research on the subject.
+     
 ## Chapter 19: Stories and Games Take Place in Worlds
 
 * Transmedia worlds
