@@ -581,6 +581,92 @@ Topics: [[game design]]
     * [[Glued to Games]] by [[Scott Rigby]] and [[Richard M. Ryan]] an insightful guide to the relationship between self-determination theory and what makes games work.
     * [[Punished by Rewards]] by [[Alfie Kohn]]. This book is an excellent overview of the vast body of research about the downsides of extrinsic rewards.
     * [[Understanding Motivation and Emotion]] by [[Johnmarshall Reeve]] -college-level textbook about the world of psychological research on the subject.
+    
+## Twelve: Some Elements Are Game Mechanics
+
+* Skeleton of the game, when aesthetics have been stripped away is the Game Mechanics.
+* Though no universally agreed upon taxonomy for Game Mechanics exists, author breaks them down into seven main categories.
+* Mechanic 1: Space
+    * Generally:
+        * Are discrete or continuous
+        * Have some number of dimensions
+        * Have bounded areas that may or may not be connected
+    * Tic Tac Toe example
+        * Grid is 3x3 (discrete)
+        * Each circles is a 0d place.
+        * Adjacency is meaningful.
+    * Monopoly example
+        * Grid is discrete
+        * 1d space
+        * Connected by loop
+    * Useful to break game down into bare functional space so you aren't distracted by aesthetics
+    * Sometimes useful to consider parts of game in 2d or 3d
+        * Soccer example
+            * 2d and continuous for understanding and modifying boundaries
+            * 3d for modifying height of goals or changing rules are how high player can kick
+            * 2d and discrete to consider strategy, defence, player placement et.
+    * Nested spaces
+        * Spaces within spaces is common: consider map world that can be freely explored that takes you to less free levels.
+    * Zero dimensions
+        * 20 questions could be considered zero dimensions
+        * Still useful to imagine as a 1d space with a graph between question and answerer: `{Answerer's mind} -> {Conversation space} -> {Questioner's mind}`
+    * **Lens #26: The Lens of Functional Space**
+        * Is the game discrete or continuous?
+        * How many dimensions?
+        * What are the boundaries?
+        * Are there subspaces? How are they connected?
+        * Is there more than one useful way to abstractly model the space?
+    * "If you can simultaneously see your abstract functional space and the aesthetic space the player will experience, as well as how they interrelate, you can make confident decisions about the shape of your game’s world."
+* Mechanic #2: Time
+    * Games can have discrete or continuous time
+    * Word for unit of discrete time is "turn" aka turn-based games.
+    * Clocks and Races
+        * Used in many games to set absolute time limits for things
+        * Can be nested: basketball has round timer and shot clock to keep game interesting
+    * Controlling Time
+        * Can stop or pause time ala "time outs" in sports.
+        * Speed up time: Civilisation.
+        * Rewind time: when you die and start level again or from checkpoint.
+        * Games like Braid even make time a central mechanic.
+    * **Lens #27: The Lens of Time**
+        * Experiences can be spoiled when too long, too short, too fast or too slow
+        * What determines the length of gameplay activities?
+        * Are players frustrated that game is too short? Or bored that it's too long?
+        * Would the game be better without time limits?
+        * What hierarchy of time structure help game?
+    * Mechanic #3: Objects, Attributes and States
+        * Objects are nouns of game, attributes are adjective.
+        * Objects generally have one or more attributes including the position within the world.
+            * Some attributes rarely change, ie max speed of car.
+            * Some attributes are very dynamic: current speed of car.
+        * Some state changes are supposed to be hidden from players, others should be as clear as possible
+            * Rule of thumb: if things act the same, they should look the same.
+        * Games have many states and attributes and it's easy for designer to get confused:
+            * Useful to construct a state diagram for each attribute and to understand state changes and connections.
+        * **Lens #28: The Lens of The State Machine** #lens 
+            * What are the objects in the game?
+            * What are attributes of each object?
+            * What are the possible states?
+            * What triggers state changes of each attribute?
+        * Secrets	
+            * In most boardgames, all information is public
+            * In card games, hidden/private state is a key part of the game
+            * In video games, there's also information that only the AI is aware of and also stuff that only game is aware of.
+            * Small changes to who knows what information can radically change a game: great way to create drama is to make piece of private information suddenly public.
+            * **Lens #29: The Lens of Secrets** #lens 	
+                * What is known to the game only?
+                * What is known by all players?
+                * What is known by some or only one player?
+                * Would changing who knows what information improve my game in someway?
+    * Mechanic #4: Actions
+        * Actions are verbs of games: what can players do?
+        * Two perspectives on actions:
+            * First kind of action is *basic action*
+                * Run, walk, sit etc
+            * Second kind is *strategic action*
+                * How can players use basic actions to achieve a goal?
+        * Emergent gameplay
+        
      
 ## Chapter 19: Stories and Games Take Place in Worlds
 
