@@ -8,7 +8,7 @@ Topics: [[physics]]
 * Newton's 1st law:
     * "An object at rest remains at rest, or if in motion, remains in motion at a constant velocity unless acted on by a net external force."
     * A "net external force" is required for change in velocity, magnitude or direction.
-    * Before Galieo and Newton, it was assumed that objects have a tendendany to slow down. However, that didn't take into account the various forces that are acting on an object like gravity, friction and air.
+    * Before Galieo and Newton, it was assumed that objects have a tendency to slow down. However, that didn't take into account the various forces that are acting on an object like gravity, friction and air.
     * In deep interstellar space, we could observe an objects natural tendancy for motion when free from other influencers.
     * Force, external force and net force
         * A force is a push or pull exterted on an object by another object.
