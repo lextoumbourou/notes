@@ -634,39 +634,158 @@ Topics: [[game design]]
         * Are players frustrated that game is too short? Or bored that it's too long?
         * Would the game be better without time limits?
         * What hierarchy of time structure help game?
-    * Mechanic #3: Objects, Attributes and States
-        * Objects are nouns of game, attributes are adjective.
-        * Objects generally have one or more attributes including the position within the world.
-            * Some attributes rarely change, ie max speed of car.
-            * Some attributes are very dynamic: current speed of car.
-        * Some state changes are supposed to be hidden from players, others should be as clear as possible
-            * Rule of thumb: if things act the same, they should look the same.
-        * Games have many states and attributes and it's easy for designer to get confused:
-            * Useful to construct a state diagram for each attribute and to understand state changes and connections.
-        * **Lens #28: The Lens of The State Machine** #lens 
-            * What are the objects in the game?
-            * What are attributes of each object?
-            * What are the possible states?
-            * What triggers state changes of each attribute?
-        * Secrets	
-            * In most boardgames, all information is public
-            * In card games, hidden/private state is a key part of the game
-            * In video games, there's also information that only the AI is aware of and also stuff that only game is aware of.
-            * Small changes to who knows what information can radically change a game: great way to create drama is to make piece of private information suddenly public.
-            * **Lens #29: The Lens of Secrets** #lens 	
-                * What is known to the game only?
-                * What is known by all players?
-                * What is known by some or only one player?
-                * Would changing who knows what information improve my game in someway?
-    * Mechanic #4: Actions
-        * Actions are verbs of games: what can players do?
-        * Two perspectives on actions:
-            * First kind of action is *basic action*
-                * Run, walk, sit etc
-            * Second kind is *strategic action*
-                * How can players use basic actions to achieve a goal?
-        * Emergent gameplay
-        
+* Mechanic #3: Objects, Attributes and States
+    * Objects are nouns of game, attributes are adjective.
+    * Objects generally have one or more attributes including the position within the world.
+        * Some attributes rarely change, ie max speed of car.
+        * Some attributes are very dynamic: current speed of car.
+    * Some state changes are supposed to be hidden from players, others should be as clear as possible
+        * Rule of thumb: if things act the same, they should look the same.
+    * Games have many states and attributes and it's easy for designer to get confused:
+        * Useful to construct a state diagram for each attribute and to understand state changes and connections.
+    * **Lens #28: The Lens of The State Machine** #lens 
+        * What are the objects in the game?
+        * What are attributes of each object?
+        * What are the possible states?
+        * What triggers state changes of each attribute?
+    * Secrets	
+        * In most boardgames, all information is public
+        * In card games, hidden/private state is a key part of the game
+        * In video games, there's also information that only the AI is aware of and also stuff that only game is aware of.
+        * Small changes to who knows what information can radically change a game: great way to create drama is to make piece of private information suddenly public.
+        * **Lens #29: The Lens of Secrets** #lens 	
+            * What is known to the game only?
+            * What is known by all players?
+            * What is known by some or only one player?
+            * Would changing who knows what information improve my game in someway?
+* Mechanic #4: Actions
+    * Actions are verbs of games: what can players do?
+    * Two perspectives on actions:
+        * First kind of action is *basic action*
+            * Run, walk, sit etc
+        * Second kind is *strategic action*
+            * How can players use basic actions to achieve a goal?
+    * Emergent gameplay
+        * Strategic actions are actions that aren't usually part of the rules but emerge during gameplay.
+        * Ratio of strategic actions to basic actions is a good indication of how much emergent behaviour the game has.
+        * 5 things to add emergent gameplay:
+            * More verbs / basic actions
+                * Though too many that don't have good interactions can create a bloated / confusing game.
+            * Verbs that act on many object
+                * Instead of using a gun to shoot bad guys, can it shoot locks off doors / windows?
+            * Goals that can be achieved multiple ways
+                * Ie guns that can shoot at enemies or can shoot down chandeliers which kill enemies.
+                * This does make game harder to balance and can result in one path being the main path players take.
+            * Many subjects
+                * If checkers had just two pieces: a red and black one, it'd be a lot less interesting.
+                * The interaction of many pieces is what makes checkers interesting.
+            * Side effects that change constraints
+                * When a piece in checkers is moved, the opponents available moves are limited.
+        * **Lens #30: The Lens of Emergence**
+            * How many verbs do players have?
+            * How many objects can each verb act on?
+            * How many ways can players achieve goals?
+            * How many subjects do players control?
+            * How do side effects change constraints?
+    * Lots of games appear to be derivatives because they share the same action. Innovative games usually introduce new actions either basic or strategic.
+    * **Lens #31: The Lens of Action**
+        * What are the basic actions of the game?
+        * What are the strategic actions?
+        * Am I happy with ratio of basic to strategic actions?
+        * What actions do players want to do that they can't?
+        * Deciding on actions is most fundamental decision designers can make.
+* Mechanic #5: Rules
+    * David Parlett's game rule diagram
+        * ![David Parlett's Game Rule Diagram.png](../_media/david-parletts-game-rule-diagram.png)
+        * Operational rules
+            * Most basic: what do players do to play the game?
+            * Understanding required for players to play the game.
+        * Foundational rules
+            * Abstract / formal version of rules: operation might be "the player should role a 6-sided die and get that many chips", foundational: "the players power value is increased by random value from 1 to 6"
+            * Mathematical representation of game state, though there is no standard notation for game state.
+        * Behavioural rules
+            * Implicit / unwritten rules.
+            * "Don't tickle the other player while they're choosing a move in chess."
+        * Written rules
+            * Document that players read in order to learn rules.
+            * Falling out of favour in video games, in favor of teaching them through play.
+        * Laws
+            * Developed when game enters serious / high-stakes settings.
+            * Tekken 5 (a fighting game)at the 2005 Penny Arcade Expo:
+                * a. Single elimination.
+                * b. You may bring your own controller.
+                * c. Standard VS mode.
+                * d. 100% health.
+                * e. Random stage select.
+                * f. 60 second timer.
+                * g. best 3 of 5 rounds.
+                * h. best 2 of 3 games.
+                * i. Mokujin is banned
+            * Official rules
+                * Laws that merge with written rules to become offical.
+                    * Saying "check" when opponent is at risk of checkmate.
+            * Advisory rules
+                * Rules pertaining to strategy; stuff that helps you play better.
+    * Modes
+        * The mini/sub games within games ie playing yoga in GTA 5.
+        * Rules of play can change completely.
+        * Too many modes and game can get confusing.
+            * Sid Meier rule of thumb: "players shouldn't spend so long in the subgame that they forget the main game they were playing"
+    * Enforcer
+        * In traditional games, rules are enforced by other players or if stakes are high, referees.
+        * Digital games can be enforced by computer and become a constraint in the world.
+    * Cheatability
+        * If players feel like game can be cheated (even if not), some will cheat, most will no longer want to play.
+    * Most Important Rule
+        * The object of the game is the most important rule.
+        * Should be able to state the game's objective clearly: "capture your opponents King"
+        * Rules for good game objectives:
+            * Concrete - players understand and can state what they're doing.
+            * Achievable - players must think they can achieve the goal.
+            * Rewarding - players should feel rewarded and proud of their achievement.
+        * Must balance short-term and long-term goals.
+            * Players should know what to do next and what they're ultimately working towards.
+        * Lens #32: Lens of Goals
+            * What is the ultimate goal of my game?
+            * Is the goal clear to players?
+            * Is there a series of goals that are understood by players?
+            * Are different goals related to each other in a meaningful way?
+            * Are goals accurate, achievable and rewarding?
+            * Balance of short and long term goals?
+            * Can players decide on their own goals?
+        * Good idea to pick up Lens of Toy, Lens of Curiosity and Lens of Goals at the same time.
+    * Game is not just defined by it's rules, it is its rules.
+    * **Lens #33: The Lens of Rules** #lens 
+        * What are the foundational rules of the game? How are they different from operational rules?
+        * Are there "laws" or "house rules" that should be incorporated into formal rules.
+        * Are there different modes? Would game be better with more modes? Fewer modes?
+        * Who enforces the rules?
+        * Are rules easy to understand?
+    * Make notes while playtesting about holes in rules that appear - be weary of just patching them up as the same holes will appear again elsewhere.
+* Mechanic #6: Skill
+    * Players skill level should be a good match to game's difficulty to stay in flow channel.
+    * Games usually require a blend of skills:
+        * Physical skills
+            * Common in most sports.
+            * Controller manipulation is one sort of physical skill.
+        * Mental skills
+            * Memory, observation, puzzle solving. Games that require no mental skills are rare.
+            * Games are interesting when there are decisions to make.
+        * Social skills
+            * Reading/fooling opponent (Poker)
+            * Communicating (Overcooked)
+    * Real vs Virtual Skills
+        * Virtual skills: skills achiquired in game that are seperate to player's skill (ie sword upgrade).
+        * Virtual skills can give player a feeling of power but too many and the game will feel hollow.
+    * **Lens #34: The Lens of Skills**
+        * What skill does my game require?
+        * Are their categories of skill the game is misisng?
+        * What skills are dominant?
+        * Are these skills creating experiences I  want?
+        * Are some players better than others?
+        * Can players improve their skill with practice?
+        * Does the game demand the level of skill?
+    * Lens of skill works hand-in-hand with lens of essential experience.
      
 ## Chapter 19: Stories and Games Take Place in Worlds
 
@@ -760,4 +879,3 @@ Topics: [[game characters]]
 		* Because it's subconcious, character designers don't think to put status postures in.
 		* **Lens #88: Lens of Status**
 			* To do.
-	
