@@ -786,6 +786,86 @@ Topics: [[game design]]
         * Can players improve their skill with practice?
         * Does the game demand the level of skill?
     * Lens of skill works hand-in-hand with lens of essential experience.
+* Mechanic #7: Chance
+    * Ten rules of probability
+        * Rule #1: Fractions are decimals are percentages
+            * 1/2 = 0.5 = 50%
+            * Per cent = per 100
+        * Rule #2: Probabilities are between 0 and 1
+            * You cannot have a negative probability nor greater than 1.
+            * 0 = definitely won't happen, 1 = definitely will happen.
+        * Rule #3: Probability is simply "the outcomes you're looking for" / "all possible outcomes"
+            * Ie probability of getting red = 26 red cards / 52 total cards = 26 / 52 = 0.5
+        * Rule #4: Enumeration will solve any probability problem if you have enough time
+            * If you want to know probablity of flipping coin 3 times and getting heads at least twice, you can enumerate all possibilities of 3 flips:
+                * HHH --
+                * HHT --
+                * HTT
+                * HTH -- 
+                * THH --
+                * THT
+                * TTH
+                * TTT
+            * 4/8 = 50%
+        * Rule #5: If outcomes are mutually exclusive, OR means  add the probability
+            * For example, if you are getting the probability of drawing a face card OR an ace, since they're mutually exclusive they can be added:
+                * 12/52 + 4/52 = 16/52
+        * Rule #6: If outcomes are mutually exclusive, AND means multiple
+            * Probability of getting a Diamond and an Ace? Since they are not mutually exclusive, you must multiple the probablility
+                * 13/52 * 4/52 = 52/2704 = 1/52 (correct: there is only one Ace of Diamonds)
+        * Rule #7: 1 - the probability of something happening = the probabilty of it not happening
+            * If an event has a 10% chance, the probability of it not happening is 90%
+        * Rule #8: The sum of multiple linear random selection is not a linear random selection
+            * Linear random selection = random event with each outcome having a equal chance of winning (ie a dice roll)
+            * If you sum the results of 2 dice roles, you will end up with a normal probability distribution.
+        * Rule #9: Practical probabilty should get closer to theoritical probabilty with more samples
+            * Theoretical probability = I expect to roll a 6 with a probabiity of 1/6 (16.6%)
+            * Practical probabilty = I roll a dice 100 times and 20 times it rolled a 6 (20%)
+            * Determinig probability using simulators is referred to as the Monte Carlo method.
+        * Rule #10: Ask questions to math experts
+    * Expected value
+        * Average of all possiilible values that can result from an action.
+            * Dice roll example: (1 + 2 + 3 + 4 + 5 + 6) / 6 = 3.5
+        * Expected value is a good tool for game balancing
+            * Example, balaincg a fantasy role-playing game:
+                * Wind attack - 100% prob of hitting with 4 damage = 4 expected value
+                * Fire ball - 80% chance with 5 damange = 4 expected value
+                * Lightning bolt = 20% change with 40 damage = 8 expected value
+            * If you have an enemy with 500 hitpoints, it makes sense to use the lightning bolt, but 15? It may make sense to use wind attack.
+        * Human element of expected value
+            * If players weren't told the prob of lighting bolt attack and missed 3 times, they may assume it has a 0% chance of hitting.
+            * Even with perfect information, players won't necessarily choose option with highest EV
+                * Psychologists [[Kahneman and Tversky]] ask subjects which game they want to play:
+                    * Game A: 66% chance of winning $2400, 33% chance of winning $2500 and 1% chance of $0 (EV = $2409)
+                    * Game B: 100% chance of winning $2400 (EV = $2400)
+                * Only 18% picked A, even though it was better than B.
+                * Why? People seek out options that create the most pleasure and avoid pain
+                * Not only are people will to pay a price to avoid regret, they are willing to take risks.
+                * "When it comes to taking risks for gains, people are conservative. They will make a sure gain over a problem gain. But we are also finding that when people are faced with a choice between a small, certain loss and a large probable loss, they will gamble."
+            * Game designs must understand actual and perceived probablities when calculating expected values.
+        * **Lens #35: The Lens of Expected Value** #lens    
+            * What is the actual chance of an event occuring?
+            * What is the perceived chance?
+            * What valeu of the outcome of that even have? Are there other aspects of the value not considered?
+            * Am I happy with expected values of possible outcomes? Do they make the game interesting?
+        * Skills and chance
+            * Estimating chance is a skill: ie blackjack players do card counting to try to estimate the next card.
+            * Skills have a probabilty of success: even skill-based games like baseball, actions like stealing basis has some level of risk.
+            * Estimating an opponents skill is a skill
+            * Predicting pure chance is an imagined skill.
+            * Controlliung pure chance is an imagined skill (ie superstitious rituals)
+        * **Lens #36: The Lens of Chance** #lens   
+            * What in my game is truly random? What parts feel random?
+            * Does randomness give players positive feelings of excitment and challenge? Or negative feelings of hoplessness and lack of control?
+            * Would changing my probability distribution curves improve my game?
+            * Do players have opportunity to take interesting risks in the game?
+            * What's the relationship between chance and skill in the game? Can random elements feel like exercise of a skill?
+        * Risk and randomess can add spice to game, but too much can overwhelm everything else.
+    * Reading
+        * [[Game Mechanics: Advanced Game Design]] by [[Ernest Adams]] and [[Joris Dormans]]
+        * [[The Oxford Book of Board Games]] by [[David Parlett]]
+        * [[Uncertainty in Games]] by [[Greg Costikyan]]
+        * [[The Unfinished Game]] by [[Keith Devlin]]
      
 ## Chapter 19: Stories and Games Take Place in Worlds
 
