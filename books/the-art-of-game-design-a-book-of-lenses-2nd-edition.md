@@ -867,6 +867,80 @@ Topics: [[game design]]
         * [[Uncertainty in Games]] by [[Greg Costikyan]]
         * [[The Unfinished Game]] by [[Keith Devlin]]
      
+## Thirteen: Game Mechanics Must Be In Balance
+
+* Balance: adjusting elements of game until you get the experience you want.
+* 12 most common types of game balance:
+    * Balance Type #1: Fairness
+        * Symmetrical games
+            * Equal resources are given to all players.
+            * Sports and traditional board games (Monopoly, chess etc) use this method.
+            * Advantages like who goes first can be sorted with random selection or giving advantage to player with the least skill: "youngest goes first".
+        * Asymmetrical Games
+            * Equals resources are not given to all players.
+            * Lots of balancing required for these games.
+            * Why?
+                * Simulate real-world situations (ie warfare).
+                * Allows players to explore game space (ie can learn about all strengths/weaknesses of fighters in a fighting game.)
+                * Personalisation: make players feel powerful in shaping the game space.
+                * Level the playing field for inexperienced players (ie golf handicaps)
+                * To create interesting situaionts: players can find optimal combinations and can determine themselves if game is balanced.
+        * Strategies for balancing
+            * Assign a value to each resource then use expected value to determine if balanced (eg plane 1 speed = 1, firepower = 2, plane 2 speed = 2, firepower = 3).
+            * Making mathematical models like this requires careful playtesting.
+                * Rule of thumb for game balancing: half of development should be spent balancing.
+            * Make sure each thing in the game has something else that has an advantage over it: see rock, paper, scissors.
+        * **Lens #37: Lens of Fairness** #lens
+            * Should my game be symmetrical or asymetrical?
+            * Is it more important that game is a reliable measure of who has most skill or should it provide an interesting challenge to all players?
+            * If players with different skills player together, what do I use to make it more interesting and challenging for everyone?
+    * Balance Type #2: Challenge vs Success
+        * Finding right balance between challenge and success is key to keeping player in flow state.
+        * Common techniques:
+            * Increase difficulty with every success -> players build their skills until they can complete a level, then it's increased.
+            * Let skilled players get through the easy parts first.
+            * Layers of challenge: ie grade scores assigned to each level, extra bonuses that can be completed to "master" a level.
+            * Players choose difficulty (ie easy, medium and hard settings).
+            * Play test with a variety of players: don't fall into the trap of playtesting with only novices lest you make the game too easy, nor only experts lest you make the game too difficult.
+            * Give the losers a more opportunity to reclaim ground. Mario Kart would give better power ups to players further behind to level the playing field.
+        * Toughest challenge in game balancing: deciding how the difficulty should progress over time.
+            * Learning to play a game at all is a challenge - make sure first levels of game are simplistic while they try to understand controls and goals.
+        * **Lens #38: The Lens of Challenges** #lens
+            * What are the challenges in my game?
+            * Are they too easy, too hard, or just right?
+            * Can my challenges accomodate a variety of skill levels?
+            * How does the level of challenge increase as the player succeeds?
+            * Is there enough variety in the challenges?
+            * What's the maximum level of challenge in the game?
+    * Balance Type #3: Meaningful Choices
+        * Most designers fall into trap of offering meaningless choices: if you have 10 cars to choose from but they all drive the same, it's like no choice at all.
+        * On the flip side, if you have 10 cars but 1 is clearly better it's also like no choice at all.
+        * When you discover you have a "dominant strategy", you should work to correct it.
+            * Hidden "dominant strategies" can also be referred to as exploits.
+        * Consider how many meaningful choices to give to the player:
+            * If choices > desires, player is overwhelmed.
+            * If choices < desires, player is frustrated.
+            * If choices = desires, player feels free and fulfilled.
+        * Some games call for smaller choices other endless.
+        * **Lens #39: The Lens of Meaningful Choices** #lens 
+            * What choices am I asking the player to make?
+            * Are they meaningful? How?
+            * Are they getting the right number of choices?
+            * Are there dominant strategies in the game?
+        * Triangulation
+            * Games that are fun have elements of high-risk / high-reward options.
+                * Space invaders example: the space ship in space invaders. Gives a lot of points but risks losing focus on the aliens.
+                * Mario Kart example:
+                    * Pick manual or automatic cars.
+                    * Kart or bike? Kart has faster base speed but bike can do a wheelie to go faster than karts.
+                    * Grab power ups or ignore them?
+                    * Use power ups or focus on race?
+                    * Keep power up you've got or opt for something better?
+                    * Use speed boost pads?
+                    * Hit gas early at start line?
+                    * Take shortcut or safer route?
+    * Balance Type #4: Skill vs Chance
+     
 ## Chapter 19: Stories and Games Take Place in Worlds
 
 * Transmedia worlds
