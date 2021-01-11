@@ -940,6 +940,40 @@ Topics: [[game design]]
                     * Hit gas early at start line?
                     * Take shortcut or safer route?
     * Balance Type #4: Skill vs Chance
+        * Some players prefer very little elements of chance, others a lot. Need to understand your player.
+        *  "Key to addictive game design is designing your game such that players are doing three things at all times: exercising a skill, taking risks, and working a strategy"
+        *  **Lens #41: The Lens of Skill vs Chance**
+            *  Are my players here to be judged (skill) or take risks (chance)
+            *  Skills are usually more serious than chance: is the game serious or casual?
+            *  Are parts tedious? What elements of chance can enliven them?
+            *  Are parts of my game too random?
+    *  Balance Type #5: Head vs Hands
+        * More thinking or more physical activites?
+        * Understand what your target market prefers in a game.
+        * **Lens #42: Lens of Head and Hands**
+            * Are playing looking for physical or intellectual challenge?
+            * Would solving puzzles make the game more interesting?
+            * Are there places where player can relax the brain and play game without thinking?
+            * Can I give the player a choice - succeed by thinking or with physical dexterity?
+    * Balance Type #6: Competition vs Cooperation
+        * Both popular style of games.
+        * Team competition one way to get the best of both worlds.
+        * **Lens #43: The Lens of Competition**
+            * Does my game give fair measurement of player skill?
+            * Do people want to win my game?
+            * Is winning something people can be proud of?
+            * Can novices compete in the game?
+            * Can experts meaningfully compete?
+            * Can experts generally be sure they will defeat novices?
+        *  **Lens #44: The Lens of Cooperation**
+            *  Can cooperating players communicate?
+            *  Are players strangers? Do you need to break the ice?
+            *  Do players all have the same role?
+            * Does game have tasks players need to cooperate to complete?
+            * Do any tasks force communication?
+        * **Lens #45: The Lens of Competition vs. Cooperation**
+            *  Do players want competition or cooperation or a mix?
+            *  Does team competition make sense?
      
 ## Chapter 19: Stories and Games Take Place in Worlds
 
