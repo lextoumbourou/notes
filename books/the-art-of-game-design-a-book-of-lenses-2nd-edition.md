@@ -528,8 +528,7 @@ Topics: [[game design]]
 * Reading
     * [[Flow: The Psychology of Optimal Experience]] by [[Mihaly Csikszentmihaly]]
     
- ## Eleven: The Player's Mind is Driven By The Player's Motivation
- 
+## Eleven: The Player's Mind is Driven By The Player's Motivation
  * All entertainment is the idea to make something unimportant seem important: they do this using motivation.
  * Maslow's Hierarchy of Needs
      * Represented as a pyramid.
@@ -974,6 +973,58 @@ Topics: [[game design]]
         * **Lens #45: The Lens of Competition vs. Cooperation**
             *  Do players want competition or cooperation or a mix?
             *  Does team competition make sense?
+    * Balance Type #7: Game length
+        * Balancing game length:
+            * too long == players grow bored.
+            * too short == not enouch chance to develop meaningful strategies.
+    * Balance Type #8: Rewards
+        * Games are "structures of judgement" and people want to be judged (ideally favorably).
+        * Rewards tell your player they've done well.
+        * Types of rewards:
+            * Praise: Nintendo games famous for giving praise via animation and sound.
+            * Points: sometimes gateways to other rewards, other times reward unto themselves (especially when public)
+            * Prolonged Play: ie pinpall - allows for higher score and more rewards.
+            * A gateway: reward is to open a new part of the game.
+            * Spectable: animations / music etc - usually paired with other rewards.
+            * Expression: clothes / decoration etcs. Give more ways for a player to express themselves.
+            * Powers: becoming tall in Super Mario, better gun in shooter etc.
+            * Resources: in Casinos real money, games virtual currency / items.
+            * Status: leaderboard rankings, badges etc.
+            * Completion: feeling of closure from completing all the challenges.
+        * Games usually opt to combine rewards.
+        * Rules of thumb from psychology:
+            * Players acclimate to rewards quickly. Simple solution is to increase the value of rewards as the game progresses.
+            * [[variable rewards]]: if every 1/3 monsters you defeat gives you bonus items, it's a lot more interesting than getting them consistently.
+        * **Lens #46: Lens of Rewards**
+            * What are the game's current rewards? Is there room for more?
+            * Are players excited when they get rewards or bored?
+            * Do players understand the rewards they're getting?
+            * Are the rewards too regular? Should they be given out more variably.
+            * How are my rewards related to one another?
+            * How do rewards build? Too fast, too slow or just right?
+    * Balance Type #9: Punishment
+        * Reasons to punish players:
+            * Creating endogenuous value. For example, resources will be worth more if there's a chance they can be taken.
+            * Excitment: balancing rewards against punishments adds a sense of risk and makes success more rewarding.
+            * Possible punishment increases challenge.
+        * Common types of punishment:
+            * Shaming - display "Missed" or "You lose" on screen.
+            * Loss of points
+            * Shortened play
+            * Terminated play
+            * Setbacks
+            * Removal of powers
+            * Resource depletion
+        * Psychological studies show that rewards are better for reinforcement than punishment.
+            * Diablo change their original food system from: you have to eat to survive (boring and tedious) to food gives you extra powers.
+        * All punishment should be understood and preventable.
+        * Random / unstoppable = "unfair" experience
+        * **Lens #47: The Lens of Punishment**
+            * What are the punishments in game?
+            * Why am I punishing players?
+            * Do they seem fair?
+            * Could I turn punishments into rewards with same outcome?
+            * Are strong punishments balanced against strong rewards?
      
 ## Chapter 19: Stories and Games Take Place in Worlds
 
