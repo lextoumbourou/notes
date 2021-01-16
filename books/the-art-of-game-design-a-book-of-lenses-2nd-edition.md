@@ -1025,6 +1025,49 @@ Topics: [[game design]]
             * Do they seem fair?
             * Could I turn punishments into rewards with same outcome?
             * Are strong punishments balanced against strong rewards?
+    * Balance Type #10: Freedom vs Controlled Experience
+        * Getting control over every detail of a game experience can be boring for the player
+            * "Game is meant to be more interesting than real life"
+    * Balance Type #11: Simple vs Complex
+        *  Types of complexity:
+            *  Innate complexity
+                *  Lots of rules with lots of "exception cases"
+                *  Usually considered a bad thing - though some people do enjoy mastering complex rulesets.
+            *  Emergent complexity
+                *  The type of complexity that people praise: usually what people mean when they say "simple and complex"
+        *  **Lens #48: The Lens of Simplicity/Complexity** #lens    
+            *  What elements of innate complexity exist in my game?
+            *  Could innante complexity be turned into emergent complexity?
+            *  Do elements of emergent complexity arise from my game?
+            *  Are there elements of game that're too simple?
+        * Natural vs Artificial Balancing
+            * Adding too many rules to balance game called "artificial balancing"
+            * Prefer "natural balancing": desired effect comes naturally from interactions in game.
+                * Space Invaders rule: the less spaceships there are, the faster they go. Well balanced with only a single rule.
+        * Elegance
+            * Game is "simple to learn but full of interesting emergent complexity"
+            * Can rate the elegance of a game element by how many purposes it has.
+            * Dots in Pac man example:
+                * They give player short term goal: "eat dots near me"
+                * Long term goal: "clear all dots"
+                * Slow the player down slightly, giving triangularity scenario.
+                * Give player points: earning extra life and game success
+            * Hollywood rule of thumb: "if a line in a script doesn't serve at least 2 purposes, it should be cut."
+            * **Lens #49: The Lens of Elegance** 
+                * What are the elements of my game?
+                * What are the purposes of each element?
+                * For elements with only one or 2 purposes, can they be cut?
+                * Can other elements take on even more purposes?
+        * Character
+            * On the flip side of elegance, some elements are adding to give the game character.
+            * Why is Mario a plumber? Why are the tokens in Monopoly unrelated to real estate?
+            * **Lens #50: The Lens of Character**
+                * Is there strange stuff in my game people talk about excitedly?
+                * Does my game have funny qualities that make it unique?
+                * Does my game have flaws people like?
+    * Balance Type #12: Detail vs Imagination
+        * 
+            
      
 ## Chapter 19: Stories and Games Take Place in Worlds
 
