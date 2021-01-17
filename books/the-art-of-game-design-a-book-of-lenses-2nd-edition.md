@@ -1066,7 +1066,62 @@ Topics: [[game design]]
                 * Does my game have funny qualities that make it unique?
                 * Does my game have flaws people like?
     * Balance Type #12: Detail vs Imagination
-        * 
+        * Deciding what should be shown and what to leave to the player to imagine.
+        * Tips:
+            * Only detail what you can do well
+                * If you can't afford good voice acting, just do subtitles and leave to the player to imagine: the player's imagination will provide much richer experience than bad or synthesized voices.
+            * Give details their imagination can use
+                * Consider details filled in by chess game and how it helps to make sense of the rules: movement of the knights, castle etc.
+            * Familiar worlds don't need much detail
+                * For something familiar like a house or city, probably don't need much details.
+                * Unfamiliar environments may need a lot of detail
+            * Binocular effect
+                * At an Opera, people bring binoculars then mostly use at the beginning - once they have the details, their imagination can do the rest.
+            * Add details that inspire imagination
+                * Controlling members of a royal army may really inspire their imagination to fill in details.
+            * **Lens #51: The Lens of Imagination** #lens 
+                * What does the player need to understand to play?
+                * Can an element of imagination help understand that better?
+                * What high-quality, realistic detail should be provided?
+                * What details can be low-quality allowing them to fill in the details?
+                * Can I give details to allow the imagination to reuse?
+                * What details inspire/stifle imagination?
+        * Game Balancing Methodologies
+            * Clearly think about problem statement before you start balancing (Lens of Problem Statement)
+            * Doubling and halving
+                * When turning the value of something (ie rocket power), don't tune by small amounts, either double or half to really understand what direction they should go.
+            * Train intution by guessing exactly
+                * If a car is travelling at 60km per hour, and you think it's too slow, try to guess the exact speed it should travel then plug it in and see how far off you are. Eventually your intution will become stronger.
+            * Document your model
+                * Write down relationships between things you are balancing to clarify your thoughts and give framework to records results of experiments.
+            * Tune your model as you tune your game
+                * Alter your model if it doesn't match what you're expecting
+            * Plan to balance
+                * Add ability to tune your model while playing the game.
+                * Add CMS that lets your tune parameters after game ships.
+            * Let players do it
+                * Sometimes a good idea (setting difficulty level) but mostly should be left to players
+        * Balancing game economies
+            * Economy defined by 2 meaningful decisions
+                * How will I earn and spend money?
+            * Meaningful economy is the depth and meaning in those two choices.
+                * Usually in a loop: players can spend money to make more money.
+            * **Lens #52: The Lens of Economy** #lens     
+                * How can players earn money? Should their be more ways?
+                * What can players buy?
+                * Is money too easy to get? Too hard?
+                * Are choices about earning and spending meaningful?
+                * Is a universal currency the right idea or should their be specialised currencies?
+        * Dynamic game balancing
+            * Lots of young designers have a dream of a balancing system that adjusts to player skill level .It has some downsides:
+                * Spoils reality of world: if they know opponents skills levels are not absolute, it damages the illusion that they have fixed skills that can be learned and mastered.
+                * Exploitable: players may choose to play badly to keep difficulty low
+                * Players want to improve with practice
+        * Lens #53: The Lens of Balance
+            * Does my game feel right or not?
+        * Reading
+            * Game Mechanics: Advanced Game Design by Ernest Adams and Joris Dormans
+            * Design in Detail: Changing the Time between Shots for the Sniper Rifle from 0.5 to 0.7 Seconds for Halo 3 by Jaime Griesemer
             
      
 ## Chapter 19: Stories and Games Take Place in Worlds
