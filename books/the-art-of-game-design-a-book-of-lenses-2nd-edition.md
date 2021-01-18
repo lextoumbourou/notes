@@ -1122,8 +1122,56 @@ Topics: [[game design]]
         * Reading
             * Game Mechanics: Advanced Game Design by Ernest Adams and Joris Dormans
             * Design in Detail: Changing the Time between Shots for the Sniper Rifle from 0.5 to 0.7 Seconds for Halo 3 by Jaime Griesemer
-            
      
+ ## Chapter 14: Game Mechanics Support Puzzles
+ 
+ *  Explicit puzzles were a key part of early games, now they're "more woven into the fabric of the gameplay".
+ *  10 principles of puzzle design:
+     *  #1: Make goal easily understood
+         * If players aren’t sure what they are supposed to do, they will quickly lose interest
+     * #2: Make it easy to get started
+         * Quote from Scott Kim: "to design a good pizzle, first build a good toy"
+         * **Lens #54: The Lens of Accessibility**
+             * How do players know how to being solving the puzzle?
+             * Does the puzzle/game act like something they've seen before?
+             * Does the puzzle/game draw people in?
+     * #3: Give a sense of progress
+         * **Lens #55: The Lens of Visible Progress** #lens 
+             * What is progress in my game/puzzle?
+             * Is there enough progress? Can I add interim steps?
+             * What progress is visible and what is hidden? Can I find a way to reveal what is hidden?
+     * #4: Give a Sense of Solvability
+         * If player's feel they can't solve it, they'll likely abandon it.
+         * Rubik's Cube example: when it is purchased, it is completely solved.
+     * #5: Increase Difficulty Gradually
+         * Consider jigsaw puzzle: the difficultly increases as you progress to the more difficult sections.
+         * Crossword example: play is naturally increased gradually as players gravitate to the easier questions initially.
+     * #6: Parallelism Lets Player Rest
+         * Give several related puzzles at once to avoid players getting frustrated and giving up.
+         * **Lens #56: The Lens of Parallelism**
+             * Are there bottlenecks that stops player proceeding if they can't solve? Can I add parallel challenges to guard against this?
+             * Are parallel challenges different enough from each other?
+             * Can challenges be connected somehow? Can making progress on one solve the other?
+     * #7: Pyramid Structure Extends Interest
+         * When a series of small puzzles can give clue to a larger puzzle.
+         * **Lens #57: The Lens of the Pyramid**
+             * Can pieces of puzzle feed into a singular challenge at the end?
+             * Is the challenge at top of pyramid interesting, compelling and clear?
+     * #8: Hints Extend Interest
+         * A well-timed hint can renew their hope and their curiosity.
+     * #9: Give the Answer
+         * The "Aha!" experience people when they solve a problem, is also triggered by just seeing the answer.
+     * #10: Perceptual shifts are a Double-Edged Sword
+         * Puzzle where you "either get it or you don't"
+         * Players who get it with feel rewarded but others may abandon it completely - use sparingly in games where you're expected to make constant progress.
+ * **Lens #58: The Lens of the Puzzle**
+     * What puzzles are in my game?
+     * Should I have more puzzles or less?
+     * Which of the 10 principles applies to each of my puzzles?
+ * Reading
+     *  What is a Puzzle? by Scott Kim
+     *  Designing and Integrating Puzzles into Action Adventure Games by Pascal Luban
+ 
 ## Chapter 19: Stories and Games Take Place in Worlds
 
 * Transmedia worlds
