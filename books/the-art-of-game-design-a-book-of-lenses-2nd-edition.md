@@ -1171,6 +1171,135 @@ Topics: [[game design]]
  * Reading
      *  What is a Puzzle? by Scott Kim
      *  Designing and Integrating Puzzles into Action Adventure Games by Pascal Luban
+
+## Chapter 15: Players play games through an Interface
+
+* Goal of interface: make players feel in control of their experience.
+* **Lens #59: The Lens of Control** #lens
+    *  When players use the interface, does it do what they expect?
+    *  Is interface easy or hard to master?
+    *  Do players feel they have a strong influence over outcome of game?
+    *  Do players feel powerful and in control?
+*  Breaking it down:
+    *  Initially, we know we have a player and a game world.
+    *  We know we need some form of input, allowing to manipulate game world and some form of output, allowing to visualise the state of game world.
+    * There is also an intermediate game interface: coin/score indicator, menus, buttons etc: virtual interface.
+    * As designer Daniel burwen notes, "the less abstraction there is in an interface, the more emotional connection we feel to our content."
+    * Lastly, some form of mapping: data goes through transformation based on how software is designed:
+        * Physical input -> world: If I push joystick harder, does player run faster?
+        * World -> physical output: what parts of world will be shown at a time?
+        * Physical input -> virtual interface: if a mouse based interface, what does clicking do, right-clicking etc
+        * Virtula interface -> world: when a player manipulates interface what happens to the world?
+        * World -> virtual interface: how are world changes manifested in virtual interface?
+        * Virtual interface -> physical output: what data is shown to player? What colors etc?
+    * **Lens #60: The Lens of Physical Interface**
+        * What does player pick up and touch? Can it be more pleasing?
+            * How does this map to actions in world?
+        * What metaphor are you using to map inputs to game world?
+        * How does physical interface look under lens of toy?
+        * How does player see, hear or touch the world of the game? Would a physical input device make the world feel more real to player?
+    * **Lens #61: The Lens of Virtual Interface**
+        * What info does player need that they can't get from looking at game world?
+        * When does a player need this info? Always, end of game etc.
+        * How can info be delivered without ruining experince with game world?
+        * Are elements of the game easier to interact with using a virtual interface or directly?
+        * What kind of virtual interface works best for my physical input?
+    * Players project themselves into the game world: "I shot 10 rounds at the boss but couldn't beat him"
+    * Players forget that the interface is there at all, until it becomes confusing.
+    * "No matter how beautiful your interface is, it would be better if there were less of it." - Edward Tufte
+    * **Lens #62: The Lens of Transperancy** #lens  
+        * Does interface let players met their desires and be immersed?
+        * Can players use the interface without thinking (given enough practise)?
+        * Is it intuitive to new players?
+        * Does it work well in all situations or are there cases when it is confusing?
+        * Can they use the interface in stressful situations?
+    * Feedback: Information flows in a loop from player to game to player to game, round and round.A
+        * Basketball net example: doesn't affect gameplay but slows ball, so all players can see that the ball went in.
+        * Swiffer broom: shows feedback on sweeping with dirt on the cloth - makes cleaning pleasurable.
+        * Crosswalks in UK: people press button to walk and it immediately lights up making people feel confident and in control.
+    * The tenth of a second rule: response to button pushes should be within 1/10 of a second.
+    * **Lens #63: The Lens of Feedback** #lens  
+        * What do players need to know now?
+        * What do players want to know now?
+        * How can you add feedback to allow players to feel what you want them to feel?
+        * What is players goal? How can feedback help towards goal?
+    * When a system has a lot of "second-order motion" (ie a little effort has a lot of  impact/power/rewards), it's considered: "juicy" (as opposed to little feedback and being dry)
+        * **Lens #64: The Lens of Juiciness** #lens 
+            * Does interface give consistent feedback for actions?
+            * Is there second-order motion created by player actions? Is it powerful and interesting?
+            * When I give the player rewards, how many ways am I simultaneously rewarding them?
+    * Primality
+        * Touch interfaces are easy to understand, even by children, because of their "primality"
+        * "The more you can engage and involve the primal parts of the brain, the more intuitive and powerful your gameplay will feel"
+        * Explains why games contain:
+            * Gather fruit-like items
+            * Fight enemies
+            * Find your way through unfamiliar environment
+            * Overcome obstacles to get to mate (ie "rescue the princess")
+        * **Lens #65: Lens of Primality** #lens 
+            * What parts of my game are so primal an animal could play?
+            * What parts of the game could be more primal?
+    * Channels of information
+        * Steps to figure out how to present info to player:
+            * Step 1: List and prioritise info
+                * What do you need to know every moment? Eg surrounding
+                * What do you need to know from time-to-time? Number of rubies, keys, health, distant surrounding etc
+                * What do you need to know occassionally?
+                    * Other inventory
+            * Step 2: List channels
+                * Top of screen, bottom of screen, my avatar, game sound effects, music, border of screen, chest of approaching enemy, word balloon over character?
+            * Step 3: Map info to channels
+                * Main display area: immediate surrounding
+                * Top dashboard: rubies, keys, health etc
+            * Step 4: Review use of dimensions
+                * Channels can have multiple dimensions.
+                * If you mapped numbers that fly out of enemy to damage, you could also encode information in font/colour/size of numbers.
+                * Good use of channels makes for elegant and juicy interface.
+            * **Lens #66: The Lens of Channels and Dimensions**
+                * What data should travel to/from player?
+                * What data is most important?
+                * What channels do I have? What should I use for certain data?
+                * What dimensions are on different channels?
+                * How should I use dimensions?
+    * Modes
+        * Change in mapping from input to output.
+        * Tips for modes:
+            * Use as few as possible
+            * Avoid overlapping modes
+            * Make modes look as distinct as possible
+                * Make changes large and visible: ie gun changes in 3d shooters
+                * Change action avatar is taking
+                * Change on screen data
+                * Change camera persective
+        * **Lens #67: Lens of Modes**
+            * What modes does my game need?
+            * Can modes be collapsed or combined?
+            * Are modes overlapping? Can they be put on different input channels
+            * Does player know the mode has changed in gameplay?
+    * Other tips
+        * Steal
+            * Take a known interface and modify it to change the things unique to your game
+        * Customise
+            * The opposite of the above approach. List info, channels and dimensions. You may find you invent a whole new way to play games
+        * Design around a physical interface
+            * Make core interaction of your game unique to what is unique to the physcial interface (see Angry Birds)
+        * Theme your interface
+            * Go over interface with Lens #11: Unification and make sure it ties into overarching theme
+        * Map sounds to touch
+        * Balance options and simplicity with options
+            * can achieve this by creating layers of interface through modes and submodes. 
+        * Use metaphors
+        * If it looks different, it should act different
+            * Don't make enemies appear differently if they behave the same
+            * Also, don't make things look at same if they have different behaviour: ie an X that represents close in one part of the game and delete in another
+        * Test
+            * Use prototypes virtual and physical to get interface in front of players
+        * Break rules to help players
+            * If a game only needs one click of the mouse, you could leave the right-click disabled or just map it to the left-click. Makes life easier for players, especially childen.
+    * Reading
+        *  The Design of Everyday Things by Donald Norman.
+        * Game Feel by Steve Swink.
+        * The Visual Display of Quantitative Information by Edward Tufte.
  
 ## Chapter 19: Stories and Games Take Place in Worlds
 
