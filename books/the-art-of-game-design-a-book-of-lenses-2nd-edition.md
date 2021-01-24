@@ -1296,10 +1296,70 @@ Topics: [[game design]]
             * Use prototypes virtual and physical to get interface in front of players
         * Break rules to help players
             * If a game only needs one click of the mouse, you could leave the right-click disabled or just map it to the left-click. Makes life easier for players, especially childen.
-    * Reading
-        *  The Design of Everyday Things by Donald Norman.
-        * Game Feel by Steve Swink.
-        * The Visual Display of Quantitative Information by Edward Tufte.
+* Reading
+    *  The Design of Everyday Things by Donald Norman.
+    * Game Feel by Steve Swink.
+    * The Visual Display of Quantitative Information by Edward Tufte.
+
+## Chapter 16: Interest Curves
+* An entertainment experience is a "series of moments"
+* **Lens #68: The Lens of Moments**
+    * What are the key moments in my game?
+    * How can I make each moment powerful?
+* The level of guests interest for each moment can be charted out as follows:
+    * ![[interest-curve-example.png]]
+    * At point A, guest will come into experience likely with some interest, otherwise they couldn't be there.
+    * We aim to make point B "the hook".
+    * Then the interest from then on continues to rise until the peak G.
+ * By making this chart about the expected interest of the experience, trouble spots can become clear and resolved.
+ * Interest curves can be fractal: experiences within the overall interest curve can have their own curve.
+     * Typical video game follow this pattern:
+         * Overall game: Intro move, then series of levels with rising challenges followed by climax before player beats the game.
+         * Each level: a new aesthetic or challenge greats the player while they work through challenges until boss battle at end of level.
+         * Each challenge: may have an interest curve itself: interesting into + stepped rising challenge.
+ * **Lens #69: The Lens of the Interest Curve**
+     * What is the shape of my interest curve?
+     * What's the hook?
+     * Does it rise gradually with periods of rest?
+     * Is the grand finale the most interesting thing?
+     * What challenges give a better curve?
+     * Is there a fractal structure to the curve?
+     * Do intuitions about the curve match the observed interest of players?
+ * What comprises interest?
+     * Factor 1: Inherent Interest
+         * Risk is more interesting than safety.
+         * Fancy more than plain
+         * Unusual more than ordinary
+         * Dramatic change or potential for dramatic change.
+         * **Lens #69: The Lens of Inherent Interest**
+             * What aspect captures players attention immediately?
+             * Does game let players do something they've never done before?
+             * What base instincts does game appeal to?
+             * Higher instincts?
+             * Does the game have dramatic change or anticipation of it?
+         * Events don't stand alone but build on each other ala a story arc.
+     * Factor 2: Poetry of Presentation
+         * The more beautiful the artistry, the more compelling players will find it.
+         * **Lens #71: The Lens of Beauty**
+             * Can the elements of the game be made more beautiful?
+             * Some elements are more beautiful in combination - can elements be combined to achieve this?
+             * What is beauty in the context of my game?
+     * Factor 3: Projection
+         * Extent to which you can use empathy and imagination to compell your guest to put themselves into an experiences.
+         * Events that happen to us, or that we imagine happening to us, are more interesting than events happening to others.
+         * Multiple ways to enter the world can provide extra immersion: toys and games based on characters within your world allows for players to spend more time in the world increasing the immersion.
+         * **Lens #72: The Lens of Projection**
+             * What can players relate to in my game? Can I add more?
+             * What in the game captures players imagination?
+             * Are there places in the game players have always wanted to visit? Or experiences they've always wanted to have?
+             * Does a player get to be a character they could imagine themselves to be?
+             * Is there an activity that once started is hard to stop?
+     * Interest Factor Examples 
+         * Chainsaw juggling street performer: inherent high-interest, usually low poetry, lots of projection (nervous cringing).
+         * Violin concerto: usually low inherent interest (with exception), high poetry, low projection.
+         * Tetris: low inherent interest and poetry but intense projection: success or failure entirely based on player's decisions.
+* Reading
+     * Magic and Showmanship by Henning Nelms
  
 ## Chapter 19: Stories and Games Take Place in Worlds
 
