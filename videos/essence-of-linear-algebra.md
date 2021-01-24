@@ -3,6 +3,7 @@ Title: [[Essence of linear algebra]]
 Author: [[3Blue1Brown]]
 Type: #videoseries
 Topics: [[maths]] [[linear algebra]]
+---
 
 # Essence of linear algebra
 ## 1. Vectors, what even are they?
