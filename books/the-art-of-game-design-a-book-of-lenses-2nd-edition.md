@@ -1473,6 +1473,11 @@ Tags: #GameDesign
     * Will players care about story?
     * Does story support other parts of design and vice versa?
     * Can story be better?
+* Reading
+    * Character Development and Storytelling for Games by Lee Sheldon
+    * Interactive Storytelling for Video Games by Josiah Liebowitz and Chris Klug
+    * Story by Robert McKee
+    * The Writer’s Journey: Mythic Structure for Writers by Christopher Vogler and Michele Montez
 
 ## Chapter 19: Stories and Games Take Place in Worlds
 
