@@ -1451,8 +1451,28 @@ Tags: #GameDesign
                 * How does it match structure of hero's journey/
                 * Would story be improved by including more archetypical elements?
                 * Does story match the form too closely so it feels hacky?
-        * Putting your story to work
-            * 
+    * Put your story to work
+        * Don't be afraid the mould the story to the best gameplay.
+            * The story is usually the most pliable of design tedrad.
+    * Keep the story world consistent
+        * If you have rules for the world, be consistent with them.
+    * Make your story world accessibile
+        * Truth and accuracy aren't always neccessary parts of a story: what the player will believe and enjoy is more important.
+        * Weird things in game can give meaning to unusal game mechanies but too many can alienate players.
+        * **Lens #77: The Lens of the Weirdest Thing**
+            * What's the weirdest thing in my story?
+            * How can it not confuse or alienate the player?
+            * Are there multiple weird things? Should they be merged or one removed?
+            * If there's nothing weird, is it still interesting?
+    * Use cliches judiciously
+        * Don't overuse cliches but don't avoid them completely: sometimes familiarily can be appealing to a player.
+    * A map can sometimes bring a story to life
+        * Stories often happen in worlds, by making a map of the place, it may compell you to think about who lives there and why.
+* **Lens #78: The Lens of Story**
+    * Does my game really need a story?
+    * Will players care about story?
+    * Does story support other parts of design and vice versa?
+    * Can story be better?
 
 ## Chapter 19: Stories and Games Take Place in Worlds
 
