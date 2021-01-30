@@ -1479,6 +1479,54 @@ Tags: #GameDesign
     * Story by Robert McKee
     * The Writer’s Journey: Mythic Structure for Writers by Christopher Vogler and Michele Montez
 
+## Chapter 18: Story and Game Structures Can Be Artfully Merged with Indirect Control
+* Games can give a player a sense of freedom unlike any other form of media.
+* Lens #79: The Lens of Freedom
+    * When do my players feel freedom of action?
+    * When are they constrained? Is it at all times?
+    * Can I let players be more free at any point?
+    * Is there anywhere they're overwhelmed with freedom?
+* Freedom does not have to come at the expense of interest curve.
+* Can exert "indirect control" to guide player through experience but still give feeling of freedom:
+    *  Indirect Control Method #1: Constraints
+        *  Giving player freedom to choose between limited selection of choices.
+    *  Goals
+        * Giving player clear goals gives palyers a reason to care about your game
+            * Once goals have been established, world can be built around goals.
+            * No need to build extra game content that doesn't relate to a players goals.
+    * Interface
+        * If you give your Rockband game players a plastic guitar, they probably arent going to wonder if it's an open-world free roam game.
+        * Choose of avatar also a factor: if you player looks like Terminator, there will be expectations about what they can do vs a dog.
+    * Visual design
+        * If you can control where someone will look, you control where they'll likely go.
+        * Key to good level design: player's eyes pull them through the level effortlessly.
+    * Characters
+        * If you can make the player empathise with your characters, you can use that to control your players.
+        * Animal Crossing example: by having islanders rate the inside of your house, gives players an incentive to improve their house.
+        * Part of human nature is wanting to be helpful.
+        * **Lens #80: The Lens of Help**
+            * In game, who is player helping?
+            * Can player feel more connected to characters they're helping
+            * Can I tell the story of how meeting goals helps players?
+            * Do helped characters show their appreciation?
+    * Music
+        * Music choose can have profound effect on players actions.
+        * See restaurant example: fast music is played during lunch rush to get patrons to each faster, slower during slower periods.
+        * What music will encourage players: look around, destroy everything, move careful, go as fast as they can etc
+* Care should be taken with indirect control as design can have unintended consequences on player expectations.
+* **Lens #81: The Lens of Indirect Control**
+    * What would I like the players to do?
+    * Can constraints, goals, visual interface; game character;  sound and music or some other method help?
+    * Is the design inducing behaviours I don't want?
+* Collusion
+    * Common technique is to have game character colluding with the designer to give player best possible experience.
+    * Pirate ship example: Enemies flee player to one of the islands to ensure players end up seeing the whole map.
+    * **Lens #82: The Lens of Collusion**
+        * What experience do I want for the player?
+        * Can characters help to fulfill this without comprising their role in the world?
+* Reading
+    *  Picture This: How Pictures Work by Molly Ban
+
 ## Chapter 19: Stories and Games Take Place in Worlds
 
 * Transmedia worlds
