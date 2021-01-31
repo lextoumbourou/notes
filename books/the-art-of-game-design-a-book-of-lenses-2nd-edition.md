@@ -1530,6 +1530,7 @@ Tags: #GameDesign
 ## Chapter 19: Stories and Games Take Place in Worlds
 
 * Transmedia worlds
+    * Term coined by Henry Jenkins: fantasy worlds that can be entered through many media:. coined the term transmedia worlds to refer to fantasy worlds that can be entered through many different media: print, video, animation, toys, games, and many others.
 	* Star Wars toys were popular because they provide "another gateway into that world": kids could write their own Star Wars stories.
 	* Pokemon another strong example: the TV show and card game reflected the intricate rules of the gameplay closely: "multiple media as gateways into a single, well-defined world"
 	* Can be long-lived: see James Bond, Disney etc.
@@ -1539,6 +1540,7 @@ Tags: #GameDesign
 * Properties of successful transmedia world's:
 	* Are rooted and strongest in one medium: Pokemon in the gameboy game, Sherlock Holmes in the novel etc.
 	* Intuitive: rules of the world are consistent.
+	* They have a creative individual at their core: usually not made by large teams.
 	* Can tell many stories.
 	* They make sense through any gateway.
 	* Fulfill a "deep and important" wish.
@@ -1549,8 +1551,6 @@ Tags: #GameDesign
 * Huge part of what makes them interesting is who lives there: the characters.
 
 ## Chapter 20: Worlds Contain Characters
-
-Topics: [[game characters]]
 * Great stories contain memorable characters.
 *  Patterns:
 	*  Mental -> Physical
