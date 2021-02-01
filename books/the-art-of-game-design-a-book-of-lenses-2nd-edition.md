@@ -1552,70 +1552,102 @@ Tags: #GameDesign
 
 ## Chapter 20: Worlds Contain Characters
 * Great stories contain memorable characters.
-*  Patterns:
+*  Patterns contrasting game characters to other media:
 	*  Mental -> Physical
 		* "Characters are defined by their media"
 			* Characters in movies are involved in emotional and physical struggles.
 			* Characters in games are entirely phyiscal, since the player does the thinking for them.
 		* Reality -> fantasy
-			* Novels are usually reality based, movies rooetd in reality with fantasy aspect and game entirely fantasy.
+			* Novels are usually reality based, movies rooted in reality with fantasy aspect and game entirely fantasy.
 		* Complex -> simple
 			* Complexity of plots and depth of charaters diminishes moving from novel to games.
-	* Avatars
-		* Used by a player to project themselves into the world.
-		* Avatar choice can be a player's ideal form: heroic warrior, beautfiul princess etc.
-		* Can be blank slate: a basic face that a person can project themselves onto: Mario, masked superheros etc.
-	* **Lens #85: Lens of the Avatar**
-		* Is my avatar an ideal form to resonate with player?
-		* Does avatar have iconic qualities that let player project themselves unto character?
-	* Tip #1 for compelling chars: List character functions:
-		* Hero: character who plays the game.
-		* Mentor: gives advice and useful items.
-		* Assistant: gives tips.
-		* Tutor: explains how to play game.
-		* Final boss: someone to have the last battle against.
-		* Minions: bad guys
-		* Three bosses: tough guys to battle against.
-		* Hostage: someone to resuce.
-		* Match characters to functions: useful to seperate functions from vision of characters.
-	* **Lens #86: Lens of Character Function**
-		* What are the roles characters need to fill?
-		* What characters have I already imagined?
-		* Which character map well to which roles?
-		* Can any characters fill more than one role?
-		* Do I need to change the characters to better fit the roles?
-		* Do I need any new characters?
-	* Tip #2: define and use character traits
-		* Create a "small, distilled list of traits that encapsulate the character".
-			* Sabu: trustworthy, short tempoered, valiant, a fiery lover.
-			* Lester: arrogant, sarcastic, spiritual, impulsive.
-		* If your character is sneaky, does it show in their jump animation?
-		* Should a depressed character walk and never run?
-	* **Lens #87: Lens of Character Traits**
-		* What traits define the character?
-		* How do traits manifest themselves in appearance, words and actions?
-	* Tip #3: Use interpersonal circumplex
-		* Graph to visualise the relationships between characers
-	 		![[_media/relationship-between-characters.png]]
-		* Example from Star Wars:
-			* With Han Solo in the middle, shows how characters relate to him
-			![[_media/relationship-to-character.png]]
-	* **Lens #88: Lens of the Interpersonal Circumplex**
-	* Put character in the middle, and plot hostile/friendly and dominant / submission toward character - help to understand interpersonal dynamics.
-	* Are there any extreme characters on the graph? Should there be?
-	* Are character's friends in the same quandrant or diff?
-	* Tip #4: Make character web
-		* **Very useful tip**
-		* What do characters think of all the other characters?
-		* Success of TV Shows like Lost and Simpsons come from deep character webs.
-	* **Len #87: Lens of Character Web**
-		* How do each characters feel about other characters?
-		* Are there other connections unaccounted for? Can I use them?
-		* Are there similiar connections? Can they be more different?
-	* Tip #5: Use status
-		* Low-status behaviour: fidgeting, avoiding eye contact, touch one's own face and being tense.
-		* High-status behaviour: relaxed and in control, making good eye contact, not moving your head while you spaek.
-		* Book recommendation [Improv by Keith Johnstone](https://www.amazon.com.au/Impro-Improvisation-Theatre-Keith-Johnstone-ebook/dp/B00AC26KUU)
-		* Because it's subconcious, character designers don't think to put status postures in.
-		* **Lens #88: Lens of Status**
-			* To do.
+* Avatars
+    * Used by a player to project themselves into the game world.
+    * Projection is more powerful if we relate to characters in someway.
+    * Avatar choice can be a player's ideal form: heroic warrior, beautfiul princess etc.
+    * Can be blank slate: a basic face that a person can project themselves onto: Mario, masked superheros etc.
+    * **Lens #85: Lens of the Avatar**
+        * Is my avatar an ideal form to resonate with player?
+        * Does avatar have iconic qualities that let player project themselves unto character?
+* Tips for creating compelling characters:
+    * List character functions
+        * Hero character who plays the game.
+        * Mentor: gives advice and useful items.
+        * Assistant: gives tips.
+        * Tutor: explains how to play game.
+        * Final boss: someone to have the last battle against.
+        * Minions: bad guys
+        * Three bosses: tough guys to battle against.
+        * Hostage: someone to resuce.
+        * Match characters to functions: useful to seperate functions from vision of characters.
+        * **Lens #86: Lens of Character Function**
+            * What are the roles characters need to fill?
+            * What characters have I already imagined?
+            * Which character map well to which roles?
+            * Can any characters fill more than one role?
+            * Do I need to change the characters to better fit the roles?
+            * Do I need any new characters?
+    * Define and use character traits
+        * Create a "small, distilled list of traits that encapsulate the character".
+            * Sabu: trustworthy, short tempoered, valiant, a fiery lover.
+            * Lester: arrogant, sarcastic, spiritual, impulsive.
+        * If your character is sneaky, does it show in their jump animation?
+        * Should a depressed character walk and never run?
+        * **Lens #87: Lens of Character Traits**
+            * What traits define the character?
+            * How do traits manifest themselves in appearance, words and actions?
+    * Use interpersonal circumplex
+        * Graph to visualise the relationships between characers
+            ![[_media/relationship-between-characters.png]]
+        * Example from Star Wars:
+            * With Han Solo in the middle, shows how characters relate to him
+            ![[_media/relationship-to-character.png]]
+        * **Lens #88: Lens of the Interpersonal Circumplex**
+            * Put character in the middle, and plot hostile/friendly and dominant / submission toward character - help to understand interpersonal dynamics.
+            * Are there any extreme characters on the graph? Should there be?
+            * Are character's friends in the same quandrant or diff?
+    * Make character web
+        * **Very useful tip**
+        * What do characters think of all the other characters?
+        * Success of TV Shows like Lost and Simpsons come from deep character webs.
+        * **Len #87: Lens of Character Web**
+            * How do each characters feel about other characters?
+            * Are there other connections unaccounted for? Can I use them?
+            * Are there similiar connections? Can they be more different?
+    * Use status
+        * Low-status behaviour: fidgeting, avoiding eye contact, touch one's own face and being tense.
+        * High-status behaviour: relaxed and in control, making good eye contact, not moving your head while you speak.
+        * Book recommendation [Improv by Keith Johnstone](https://www.amazon.com.au/Impro-Improvisation-Theatre-Keith-Johnstone-ebook/dp/B00AC26KUU)
+        * Because it's subconcious, character designers don't think to put status postures in.
+        * **Lens #88: Lens of Status**
+            * What are the relative status of each character?
+            * How should they show that status?
+            * Are my characters vying for status?
+            * Do changes of status happen?
+            * Does player get opportunity to express status?
+    * Use the power of voice
+        * Games have had trouble with voice acting in the past, but recent titles are improving on it.
+    *  Use the Power of the Face
+        * Investment in good facial animations can pay dividends.
+        * Eyes are a crucial part of it: can use to tell who's related, what's cute, evil etc.
+    * Powerful stories transform characters
+        * Character transformation chart can show changes to characters over time.
+        *  Look at each character over time, not just the story thread, helps us understand our characters.
+    *  **Lens #91: The Lens of Character Transformation**
+        *  How do each characters change throughout the game?
+        *  Can I communicate that more clearly?
+        *  Is there enough change?
+        *  Are changes surprising,  interesting and believable?
+    *  Let characters surprise us
+        * When characters surprise us with an unexpected emotional response, we pay attention.
+        * Sometimes characters have to act in surprising ways to maintain interest.
+    * Uncanny valley
+        * The more something resembles a human the more empathy we give it.
+        * However, just before something looks exactly human, we tend to get repulsed by it.
+* Reading
+    * Better Videogame Characters by Design by Katherine Isbister
+    * Impro by Keith Johnstone
+    * Understanding Comics by Scott McCloud
+
+## Chapter 21: Worlds Contain Spaces
+
