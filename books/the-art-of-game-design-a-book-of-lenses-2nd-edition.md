@@ -1651,3 +1651,51 @@ Tags: #GameDesign
 
 ## Chapter 21: Worlds Contain Spaces
 
+* Game designers and architectures share a common goal: to give person best possible experience.
+* 5 common ways designers organise game space:
+    * Linear: players can only move forwards or back. Monopoly, Candyland, Super Mario Brothers
+    * Grid: grid of squares, triangles etc. Chess, Settlers of Catan, Zelda (NES), Minecraft
+    * Web: points on map connected by paths. Used when you have a number of places for players to visit, but want a number of ways to get there. Fox and Geese, Trivial Pursuit, Puzzle Quest
+    * Points in space: used when we want to create something like walking through a desert. Animal Crossing, Final Fantasy
+    * Divided space: space is carved up in an irregular way. Common when you want to feel like a real map. Risk, Axis and Allies, Dark Tower
+* Some games are combinations of the two, usually in different modes.
+* Good game space has landmarks to help players find their way and to make the scenery interesting.
+* Design that is "free from inner contradictions" is important to a designer.
+    * If a device should be fun and it's boring and frustrating, then it has an contradiction
+    * **Lens #92: The Lens of Inner Contradiction**
+        * A good game shouldn't contain properties that defeat it's purpose
+        * What is the purpose of my game?
+        * What are the purposes of each subsystem?
+        * Are there things that contradict the purpose?
+* Christopher Alexander in his book The Phenomenon of Life details his 15 properties of living structures:
+    * Levels of scale: seen when short terms goals need to be met to each medium term, then eventually long term
+    * Strong centers: seen in visual layout but also in avatar being at centre of universe.
+    * Boundaries: all games have some form of boundaries, rules are another sort of boundary.
+    * Alternating repetition: pleasing shape of chessboard, in cycle of level / boss
+    * Positive space: " foreground and back- ground elements both have beautiful, complementary shape"
+    * Good shape: please shapes - a good level is solid and has a "good curve"
+    * Local symmetries: separate from overall symmetries. When you walk into a space it feels symmetrical but still connected to overall space.
+    * Deep interlock and ambiguity: when things are "so intertwined they define each other'
+    * Contrast: Contrast between opponents, between reward and punishment.
+    * Gradients: Things that change gradually and gracefully.
+    * Roughness: too perfect and game has no character.
+    * Echoes: pleasing, unifying repetition. When the boss has something in common with minion we experience this.
+    * The void: see large open spaces and large bosses.
+    * Simplicity and inner calm: small set of well balanced rules.
+    * Not-seperateness: something well connected to surroundings.
+* **Lens #93: The Lens of The Nameless Quality**
+    * Does my design feel alive or dead? Can I make it more alive?
+    * Which of the 15 qualities does my design have? Could it have more?
+    * Where does my design feel more like myself.
+* Levels in videos games often reflect architectures that make no sense in the real world. Luckily, it doesn't matter: our brain is bad at mapping 3d space to 2d. If it feels right, it's right.
+* Getting the scale right is important: decide on how your game measure units map to real measures and be consistent.
+    * Camera will influence perception of world - people will assume it's at eye height
+    * Doorways should be correct size.
+    * Textures like brick or tiles should be at correct size.
+* In third-person video games, the sense of proportion can get muddled and controlling a player in a normal-sized interior space can feel crowded.
+    * One solution is to scale up the room, scale up the furniture a bit and spread it around.
+* Reading
+    * The Timeless Way of Building by Christopher Alexander
+    * A Pattern Language by Christopher Alexander et al
+    * The Nature of Order, books 1–4
+    * Level Design for Games: Creating Compelling Game Experiences by Phil Co 
