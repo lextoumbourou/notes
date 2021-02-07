@@ -1717,3 +1717,24 @@ Tags: #GameDesign
     * The Art of Videogames: From Pac-Man to Mass Effect by Chris Melissinos and Patrick O’Rourke
     * Drawing Basics and Videogame Art by Brian Solarski
     * Drawing on the Right Side of the Brain by Betty Edwards
+
+## Chapter 23: Some Games are Played with Other Players
+
+* Humans are naturally social creatures.
+* Theory that the popularity of single player games will be considered "temporary abnormality" and multi will win.
+* 5 reasons why we play games with others:
+    * Competition: allows for a balanced game, gives a worthy opponent, gives interesting problems to solve, fulfills deep need to compare skill level with others.
+    *  Collaboration: allow us to play games that make no sense with others, let us enjoy pleasure from group problem solving. Team sports gives us both competition and collaboration at the same time.
+    *  Meeting up: we like to see our friends but it can be awkward without an activity. Games, like food and alcohol, provide that.
+    *  Exploring our friends: Plato quote: “You can learn more about a man in an hour of play than a year of conversation.”
+    * Exploring ourselves: playing games with others teaches us a lot about ourselves.
+* People love to spectate others playing too. It's worth thinking about whether your setting your game up for this.
+    * **Lens #95: The Lens of Spectation**
+        * Is my game interesting to watch?
+        * Can it be more interesting?
+* Multiplayer games are harder to create and debug - worth thinking about why your game should be multiplayer.
+* Reading
+    * Testosterone and Competitive Play by Dan Cook
+    * “Listen...” by Ogden Nash
+
+## Chapter 24:  Other Players Sometimes Form Communities
