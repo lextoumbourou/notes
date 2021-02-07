@@ -1699,3 +1699,21 @@ Tags: #GameDesign
     * A Pattern Language by Christopher Alexander et al
     * The Nature of Order, books 1–4
     * Level Design for Games: Creating Compelling Game Experiences by Phil Co 
+   
+## Chapter 22: The Look and Feel of a World Is Defined by Its Aesthetics
+
+* **Lens #94: The Lens of Atmosphere**
+    * How can I describe the atmosphere of the game without words?
+    * Can I deepen that atmosphere?
+* Deep seeing: not just seeing a thing but also its shapes, colours, proportions, shadows, reflections and textures
+* Artists should be involved early in the process: some art can guide the design of game.
+    * An illustration is another form of prototype.
+* High quality audio will improve people's perceptions about graphics
+* Choose a piece of music that feels the way you want your game to play - music / sound are very important decisions.
+* Don't let engineers guide aethetics alone; ensure the artist has full say in artistic decisions.
+* Consider a "technical artist"; someone who can interface between engineers and artists.
+* Reading
+    * The Art of the Videogame by Josh Jenisch
+    * The Art of Videogames: From Pac-Man to Mass Effect by Chris Melissinos and Patrick O’Rourke
+    * Drawing Basics and Videogame Art by Brian Solarski
+    * Drawing on the Right Side of the Brain by Betty Edwards
