@@ -1738,3 +1738,40 @@ Tags: #GameDesign
     * “Listen...” by Ogden Nash
 
 ## Chapter 24:  Other Players Sometimes Form Communities
+
+*  Communities that form around games can be a powerful force that can extend a game's life.
+*  Community has 4 primary elements:
+    *   A membership: something that shows you are a member of the group.
+    *   Influence: being part of the group gives you power over something.
+    *   Integration and fullfillment of needs: being part of this group gives you something.
+    *   Shared emotional connection
+*   3 main reasons to want a community to form around game:
+    *   Being part of a community fills a social need: people want to be a part of something
+    *   Longer "period of contagion": players who become part of the community more like to talk about and recommend the game for longer than they otherwise would.
+    *   More hours of play
+*   Ten tips for strong communities
+    *   #1. Foster friendships
+        *   Must have:
+            *   ability to talk
+            *   people worth talking to (do your players seek competitors? Collaborators? assistants? Quick chats or long-term relationships? If they can't find what they're looking for , they'll leave.)
+            *   something worth talking about.
+        *   Friendship has 3 distinct phases, and community must foster all:
+            *   Breaking the ice (game should make it easy to make initial connection)
+            *   Becoming friends (can have a friend-making ritual like adding player as friend)
+            *   Staying friends (ensure you have someway for people to find each other again)
+        *  **Lens #96: The Lens of Friendship**
+            *  What kind of relationships are players looking for?
+            *  How do players break ice?
+            *  Do player have enough to talk about? Enough opportunities?
+            *  What's the moment they become friends?
+            * What tools do they have to maintain friendships?
+        * #2. Put Conflict at The Heart
+            * A sports team becomes a strong community because of their conflict with others teams.
+            * Conflict can be with each other (competitive) or with game.
+            * Can combine them: collectables are about being the best player, but their strategies are so complex that players spend a lot of time sharing and discussing strategies.
+        * #3. Use Architecture to Shape Your Community 
+            * Neighbourhoods designed to be walkable with lots of dead-end streets, tend to be more conducive for getting to know neighbours.
+            * Game can be designed similarly: are there plenty of meeting places players can come to chat and congregate.
+        * #4. Create Community Property
+            * Create things in game that aren't owned by individuals but need to be owned collectively.
+        * #5. Let Players Express Themselves
