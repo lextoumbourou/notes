@@ -1775,3 +1775,55 @@ Tags: #GameDesign
         * #4. Create Community Property
             * Create things in game that aren't owned by individuals but need to be owned collectively.
         * #5. Let Players Express Themselves
+            * Self expression is an important part of multiplayer worlds.
+            * Purchase of "vanity items" a key form of monetisation in WOW etc.
+            * **Lens #97: The Lens of Expression**
+                * How am I letting players express themselves? Is there anything missing?
+                * Are they proud of their identity?
+        * #6. Support Three Levels
+            * You are really designing 3 separate games:
+                * #1. Level 1: the newbie
+                    * Newbs aren't yet challenged by the game itself but by learning it: make learning rewarding.
+                    * Consider having a mechanism for allowing experienced players to train newbs.
+                * #2. Level 2: the player
+                    * Understand and are immersed in the game.
+                    * Most game design is dedicated to these players
+                * #3. Level 3: the elder
+                    * Instead of losing players once they have found everything the game has to offer, some games offer an extra game for elders:
+                        * A more difficult game: ie pit the player against other players instead of the computer.
+                        * Governance privileges: admin privledges, judging etc.
+                        * Joy of creation: can they keep creating and become the most popular and respected designers.
+                        * Guild management: give a strong set of tools for guild management.
+                        * Chance to teach: experts in the real world get a chance to teach and the game world is no different.
+        * #7. Force players to depend on each other
+            * Don't feel that a multiplayer game must also be playable single player.
+            * Create situations where players must communicate and interact to succeed to give community real value.
+        * #8. Manage your community
+            * May need to hire professional community managers
+            * Want to strike right balance between "hand-on" and "hands-off"
+        * #9. Obligation to others is powerful
+            * Create situations where players make promises to meet each other, or feel obliged to return favours.
+            * WOW players report that their obligation to the guild partially to potentially increase their status but also mainly to avoid losing their status.
+        * #10. Create community events
+            * Successful communities are anchored by community events.
+        * **Lens #98: The Lens of Community**
+            * What conflict is at the heart of my community?
+            * What architecture shapes my community?
+            * Does the game support 3 levels of experience?
+            * Are there community events?j
+            * Why do players need each other?
+* Griefing
+    * For some players, the game itself isn’t as enjoyable as teasing, tricking, and torturing the other players: griefing.
+    * Gameplay mechanics suceptable to griefing:
+        * Player vs player combat: If you are making a game that doesn't depend on PVP combat as core mechanic, consider if you need it.
+        * Stealing
+        *  Obscenities: ghost filters that don't give the player feedback about whether their text was filtered is a good idea.
+        *  Blocking the way: consider whether you need player to player collisions, or if doorways should be wide enough for lots of people.
+        * Loopholes: exploits that annoy others or vandalise the area must be dealt promptly
+        * **Lens #99: The Lens of Griefing**
+            *  What systems are easy to grief?
+            * Can I make the game boring to griefers?
+            * Am I ignoring loop holes?
+    * 
+* Reading
+    * Community Building on the Web: Secret Strategies for Successful Online Communities by Amy Jo Kim
