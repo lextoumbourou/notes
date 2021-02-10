@@ -1827,3 +1827,71 @@ Tags: #GameDesign
     * 
 * Reading
     * Community Building on the Web: Secret Strategies for Successful Online Communities by Amy Jo Kim
+
+# Chapter 25: The Designer Usually Works with a Team
+
+* The key to successful teamwork is love: love for the game and love for the audience.
+    * 3 main problems with love for the game:
+        * Team members in capable of loving any game.
+            * Some people get into the industry without any passion for games or players.
+            * Solution: get them off the team as soon as possible.
+        * Team members in love with a different game than they're making
+            * Solution: can you find something about the current game that they can love?
+        * Team members in love with a different vision of the game
+            * The most common type of love problem.
+            * Key to avoiding is to get everyone on the same page about the design asap
+    * If you can't love the game, can you love the audience?
+        * Think of the pleasure the intended audience will get from your game.
+        * If all else fails: pretend to love it; pretending may lead to the real thing.
+    * **Lens #100: The Lens of Love**
+        *  Do I love the project? If not, can I find something to love?
+        *  Does everyone on the team love the project?
+*  Designing together
+    *  Team will have ideas for design and they should be heard.
+    *  The more inclusive the design process, the more ownership each member of the team will feel.
+    *  Consider leaving some ambiguity in parts of the design, to allow others to fill in the gaps.
+    *  Doesn't mean everyone needs to be at all design meetings. Typical flow:
+        * Do initial brainstorming with everyone.
+        * Core team thinks about ideas independantly.
+        * Core design team brings independant ideas together to try to come to a consensus.
+        * Core design team presents ideas to whole team for feedback and ideas. This can identify problems and ideas to kick off cycle again.
+    * Involving the whole team takes discipline but pays dividends provided your team has strong communication.
+* 10 keys to strong team communication
+    * Objectivitity
+        * Problem statement is an effective tool at dealing with conflicts of opinion.
+        * Instead of "I prefer B to A" use: "what if we did B instead of A?"
+        * Objective designers are more likely to foster openness.
+    * Clarity
+        * When you explain something, make sure others understand.
+        * Make sure you understand when other explain.
+        * Be concrete and specific with deliverables.
+    * Persistence
+        * Make sure all verbal communication is written down so it can be refered to later.
+    * Comfort
+        * When people are comfortable they are less distracted and can communicate more freely.
+        * Emotional comfort also important
+    * Respect
+        * Secret to being a good listener is to respect the person talking
+    *  Trust 
+        * Trust is built over time: quantity of communication more important than quality for building trust.
+        * Look at who has lunch together to see who trusts each other.
+    * Honesty
+        * If you have developed a reputation for dishonesty in one area, it will spill into all areas.
+    * Privacy
+        * Take time to speak to team members privately: they will tell you things they otherwise wouldn't.
+    * Unity
+        * "The goal of communication is unity"
+        * Team members can disagree on the right direction, but must agree on next steps (even if it's not their preference) - unity is essential
+    * Love
+        * Without all the above things, the team's love for the game will be jeopardised.
+    *  Lens #101: The Lens of the Team
+        *  Is this the right team for the project?
+        *  Is the team communicating objectively and clearly?
+        * Are team comfortable, trusting and treating each other with respect?
+        * Is team about to unify around decisions?
+* Reading:
+    * The Advantage by Patrick Lencioni
+    * The Cabal: Valve’s Process for Creating Half-Life by Ken Birdwell
+    * Information Flow: The Secret to Studio Structure by Jesse Schell
+
+# Chapter 26: The Team Sometimes Communicates through Documents
