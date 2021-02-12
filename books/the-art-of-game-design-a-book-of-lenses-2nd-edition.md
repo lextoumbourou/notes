@@ -1895,3 +1895,37 @@ Tags: #GameDesign
     * Information Flow: The Secret to Studio Structure by Jesse Schell
 
 # Chapter 26: The Team Sometimes Communicates through Documents
+
+* A game design document is not a spec or blueprint, it's a theory about what may be a fun game.
+* Game documents have 2 purposes: memory and communication.
+* Types of game documents:
+    * Design
+        * Game design overview
+            * High-level document
+                * Usually only a few pages
+                * Used to give big picture of game for management and team.
+                * Advice from Designer Stone Librande: "every game should be explainable in a diagram on a poster that explains how the whole game fits together."
+            * Detailed design document
+                    * Describes all the game mechanics and interfaces in detail
+                    * Used so designers remember all the details and so engineers who what they're coding
+                    * Often abandoned halfway through the project - detail there is in emails and small documents
+                * Story overview
+                    * Short document describing characters, settings and actions of game
+                    * Used for professional writers  to create dialog and narration for the game.
+                * Technical design document
+                    * Used for engineers to get on same page about project architecture.
+                    * Also often abandoned halfway through the project.
+                * Pipeline overview
+                    *  “do’s and don’ts” for designers making art assets for the game.
+                *  System limitations
+                    * Written by engineers for artists/designers to understand technical limits of system.
+                * Art bible
+                    *  Used to ensure artists are on the same page about game's aesthetics.
+                * Concept art overview
+                * Game budget
+                * Asset tracker
+                * Project schedule
+                * Story bible
+                * Script
+                * Game tutorial and manual
+                * Game walk-through
