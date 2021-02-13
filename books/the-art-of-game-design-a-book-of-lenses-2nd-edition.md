@@ -1909,23 +1909,48 @@ Tags: #GameDesign
                     * Describes all the game mechanics and interfaces in detail
                     * Used so designers remember all the details and so engineers who what they're coding
                     * Often abandoned halfway through the project - detail there is in emails and small documents
-                * Story overview
-                    * Short document describing characters, settings and actions of game
-                    * Used for professional writers  to create dialog and narration for the game.
-                * Technical design document
-                    * Used for engineers to get on same page about project architecture.
-                    * Also often abandoned halfway through the project.
-                * Pipeline overview
-                    *  “do’s and don’ts” for designers making art assets for the game.
-                *  System limitations
-                    * Written by engineers for artists/designers to understand technical limits of system.
-                * Art bible
-                    *  Used to ensure artists are on the same page about game's aesthetics.
-                * Concept art overview
-                * Game budget
-                * Asset tracker
-                * Project schedule
-                * Story bible
-                * Script
-                * Game tutorial and manual
-                * Game walk-through
+            * Story overview
+                * Short document describing characters, settings and actions of game
+                * Used for professional writers  to create dialog and narration for the game.
+        * Engineering
+            * Technical design document
+                * Used for engineers to get on same page about project architecture.
+                * Also often abandoned halfway through the project.
+            * Pipeline overview
+                *  “do’s and don’ts” for designers making art assets for the game.
+            *  System limitations
+                * Written by engineers for artists/designers to understand technical limits of system.
+    * Art 
+        * Art bible
+            *  Used to ensure artists are on the same page about game's aesthetics.
+        * Concept art overview
+            * Purpose is to allow people to understand what the game will look like before it's built
+            *  Early images end up in various other docs.
+    *  Production
+        * Game budget
+            * List of all tasks required to complete game with time estimates for budgetting.
+            * Project manager usually keeps doc up-to-date through out project.
+        * Asset tracker
+            * Spreadsheet or other ticket system
+            * Keep track of what assets are being worked on or are complete.
+        * Project schedule
+            * Keep track of tasks on a weekly basis
+            * On a medium to large game keeping this up-to-date is a full time job.
+    * Writing
+        * Story bible
+            * Details the law of the story so that artists and engineers can understand what parts of the story can be adjusted based on constraints on what can't
+        * Script
+            * Dialog from NPCs.
+            * Game designers should review this document to ensure the story is consistent with gameplay.
+        * Game tutorial and manual
+            * Details of game play will be constantly changing, so it's important to continually update it.
+    * Players
+        * Game walk-through
+            * If you game is a success, others may create walk throughs for it and post online.
+            * Usual for getting feedback about specific parts of the game.
+* **Lens #102: The Lens of Documentation**
+    * What do we need to remember when making the game?
+    * What needs to be communicated?
+* Reading
+    *  Game Design Logs by Daniel Cook
+    *  One Page Designs by Stone Librande
