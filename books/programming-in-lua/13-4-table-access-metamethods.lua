@@ -64,3 +64,74 @@ tab = {x=10, y=20}
 print(tab.x, tab.z)     --> 10   nil
 setDefault(tab, 1)
 print(tab.x, tab.z)     --> 10   1
+
+-- 13.4.4 - Tracking table accesses
+--
+-- _index and _newindex are only relevant when key doesn't exist on the table. To catch all access to a table, you have to keep an empty proxy table.
+--
+local t = {hello='World'}
+
+local _t = t
+
+-- Proxy table.
+t = {}
+
+-- Metatable
+local mt = {
+    __index = function(t, k)
+        print('Access to element ' .. tostring(k))
+	return _t[k]
+    end,
+    __newindex = function(t, k, v)
+        print('update of element '..tostring(k)..' to '..tostring(v))
+	_t[k] = v
+    end
+}
+setmetatable(t, mt)
+t[2] = 'hello'
+print(t[2])
+
+-- You cannot traverse the table with this approach - pairs function operates on the proxy not the original.
+
+-- Monitoring several tables can be done with different metatables for each one.
+local index = {}
+local mt = {
+    __index = function(t, k)
+        print('Access to element '..tostring(k))
+        return t[index][k]
+    end,
+    __newindex = function(t, k, v)
+        print('Update of element '..tostring(k)..' to '..tostring(v))
+	t[index][k] = v
+    end
+}
+function track(t)
+    local proxy = {}
+    proxy[index] = t
+    setmetatable(proxy, mt)
+    return proxy
+end
+
+local blah = {hello='Word'}
+blah = track(blah)
+blah[2] = 'Hello'
+
+-- 13.4.5 - Read-only tables
+--
+-- Can simply point __newindex to a function that will raise an error and __index to the original table. Note in the below example proxy stays empty in order for __newindex to do its thing.
+
+function readOnly(t)
+	local proxy = {}
+	local mt = {
+		__index = t,
+		__newindex = function(t, k, v)
+			error("attempt to update a read-only table", 2)
+		end
+	}
+	setmetatable(proxy, mt)
+	return proxy
+end
+
+days = readOnly{"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
+print(days[1])
+days[1] = "Blah"
