@@ -1954,3 +1954,80 @@ Tags: #GameDesign
 * Reading
     *  Game Design Logs by Daniel Cook
     *  One Page Designs by Stone Librande
+
+# Chapter 27: Good Games Are Created Through Playtesting
+
+* Playtesting ensures you focus on the "ugly problems"
+* Four types of testing:
+    * Focus groups
+        * Potential players are interviewed about likes and dislikes in attempt to determine if a game idea has legs
+        * Often misused by management to get rid of an idea they don't like
+    * QA testing
+        * To find bugs
+    * Usability testing
+        * For determining whether interface is intuitive and easy to use - not about how fun the game is.
+    * Playtesting
+        * About getting people to play your game to determine how fun it is.
+* Playtesting is hard as a game designer - having people hate your work sucks
+    * But play testing is completely neccessary and should be done as early as possible
+* Play test is defined by 5 questions:
+    * Why?
+        * A play test is a kind of prototype: it answers questions about game experience
+        * Should enter play test with questions to answer:
+            * Is my game fun? (obvious default question)
+            * Do genders play game differently?
+            * Do kids like game more than adults?
+            * Do players understand how to play?
+            * Do players want to play twice?
+            * Is game fair?
+            * Are players bored, confused etc?
+            * Are there dominant strategies and loopholes?
+            * Does game have hidden bugs?
+        * Use lenses to find good questions to answer.
+    * Who?
+        * Want to pick people who are common demographic
+        * Common playtesters:
+            * Developers
+                * Usually first to play test the game
+                * Downside is their closeness to game will distort there opinion - treat their opinons with grain of salt
+            * Friends and family
+                *  Highly available and usually 2nd to test game
+                *  Downside is they will usually avoid hurting your feelings and you'll mostly hear positive feedback
+            *  Expert gamers
+                *  They can give detailed and technical feedback about your game
+                *  Downside is they usually want more complex and difficult gameplay than average gamer
+            *  Tissue testers
+                * Aka "fresh meat" or "tissue testers" (can only be used once)
+                * People who have never seen your game before will see it with fresh ideas and can answer questions about initial appeal and usability
+                * Too much of this and you run the risk of making an accessible but boring game
+        * Where?
+            * In your studio
+                * Pros: All the stakeholders are there and it's most conveinient
+                * Cons: Play testers may not feel as comfortable there and may be afraid to have fun whilst others are working - aim to make as comfortable as possible
+            * In lab
+                * Pros: designed for play testing and has all the things you could want: cameras, one-way mirror etc
+                * Cons: can be expensive af
+            * Public venue (shopping mall, PAX etc)
+                * Pros: if you find the right venue, can find many suitable testers
+                * Cons: May be limited in who can be there to watch
+            * Online
+                * Pros: lots of people with lots of configurations
+                * Cons: may be harder to get right insights when you aren't in same room as testers
+        * What (to look for)?
+            * Things you know you're looking at
+                * When planning your test, make sure you have a way to way to get the answers you are seeking - consider a cut down version of the game to get straight to the answers
+            * Things you don't know you're looking for
+                * Listen to players and try to take advantage to learn the reality of your expectations
+        * How?
+            * If you're going to be there in person, then you need to avoid infecting the player's viewpoint by asking them to overlook flaws etc.
+            * Sometimes you don't want to tell players anything up front, but if the game is still in progress, you may need some explainations up front.
+                * The explainations can go on to become in game tutorials
+            * Looking at the players faces is a good idea, as it gives you a window into their emotional state
+            * With multiple cameras, you could be looking on screen, as well as at their faces and maybe even their fingers on the controls
+            * Data you may collect:
+                * How long did they spend on character creation?
+                * How many hits did it take to default the boss?
+                *  What was the average score?
+                *  Which weapons were used?
+            *  The more data you can collection, especially if building an MMO or free to play mobile game, the better. But be careful of it making the game dull by distrusting your instincts as a designer.
+        *  
