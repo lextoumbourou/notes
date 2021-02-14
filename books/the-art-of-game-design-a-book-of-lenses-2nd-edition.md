@@ -2030,4 +2030,42 @@ Tags: #GameDesign
                 *  What was the average score?
                 *  Which weapons were used?
             *  The more data you can collection, especially if building an MMO or free to play mobile game, the better. But be careful of it making the game dull by distrusting your instincts as a designer.
-        *  
+        * It's a difficult trade off of deciding whether to interrupt play tester to get immediate feedback or to avoid interrupting their natural playstate.
+            * Most designers prefer to interrupt only when they're doing something the designer doesn't understand.
+            * Think aloud technique: ask participants to verbalise their thought process. Some find it very difficult and can interfere with their testing. However, for others who can do it well, it can be enlightening
+*  What data to collect after the play session
+    * Surveys
+        * A great way to have players answer straightforward questions.
+        * Tips for getting the most out of play testing:
+            * Use pictures where possible
+            * Online surveys can save you time (SurveyMonkey or Google Forms)
+            * Use 5-point scale instead of 10: terrible, pretty bad, so so, good, excellent
+            * Avoid too many questions: participants will tune out
+            * Survey them right after play
+            * Be around to answer clarifying questions
+            * Note age and gender of each playtester surveyed.
+            * Don't take data as gospel - playtesters may make stuff up when they aren't sure.
+    * Interviews
+        * Good way to ask questions too complex for survey
+        * Also allows you to get a window into their emotions
+        * Tips:
+            * Have a script of questions with room to note answers and for surprises.
+            * Interview people privately initially, then in group if there is one.
+            * Playtesters will avoid hurting your feelings - tell them you need their help to find all the problems in the game
+            * Don't do memory tests - for specific questions ask them while they're playing
+            * Playtesters aren't game designers - don't ask what parts of the level should be harder, ask them where it got boring
+            * Ask for more than you need - don't ask for most boring spot, ask for 3
+            * Set your ego aside - you're trying to find everything that is wrong with the game, don't get caught up trying to explain how it's meant to work etc
+* Playtesting is starting to morph into online game tuning - it's all still playtesting
+* **Lens #103: The Lens of Playtesting**
+    * Why are we playtesting?
+    * Who should be there?
+    * Where do we hold it?
+    * What are we looking for?
+    * How will we get the info?
+* Reading
+    * The Design Evolution of Magic: The Gathering by Richard Garfield
+    * Game Usability: Advancing the Player Experience by Katherine Isbister and Noah Schaffer
+    * A Journey Across the Mainstream: Games for my Mother-in-Law by Dave Grossman
+    * Trying Very Hard to Make Games that Don’t Stink by Barbara Chamberlin
+    * Valve’s Approach to Playtesting: The Application of Empiricism by Mike Ambinder
