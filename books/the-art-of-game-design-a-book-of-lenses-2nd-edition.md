@@ -2069,3 +2069,39 @@ Tags: #GameDesign
     * A Journey Across the Mainstream: Games for my Mother-in-Law by Dave Grossman
     * Trying Very Hard to Make Games that Don’t Stink by Barbara Chamberlin
     * Valve’s Approach to Playtesting: The Application of Empiricism by Mike Ambinder
+
+# Chapter 28: The Team Builds a Game With Technology
+
+* To keep a sane perspective about technology understand the different between Foundational & Decorative.
+    * Cupcake analogy: cake part is foundation, icing is decorative.
+    * People remember Steamboat WIllie as the first Mickey Mouse cartoon even though it was the second. Why? It was one of the first applications of synchronised sound.
+        * Example of foundational technology: movie makes no sense silent
+    * Sonic on Sega utilised fast scrolling technology that Sega had as foundational technoloy
+    * Myst utilised the CD-Rom drive to create a beautiful game. They tested many different types of CD-Rom to ensure wide ranging support.
+* Question to ask when you see a technology: can I make this foundational to my game?
+* All new technology goes through a "hype cycle" (as described by Gartner):
+    * Technology trigger: tech is first invented
+    * Peak of inflated expectations: before anyone's actually used it, people all assume it will solve all their problems
+    * Trough of disillusionment: tech doesn't live up to initial enthusiasm and is discarded
+    * Slope of enlightenment: people figure out areas where tech is useful
+    * Plateau of productivity: benefits of tech are widely understood and accepted. The height of plateau depends on how useful tech is.
+* Game designers should know about the hype cycle because:
+    * 1. To be immune from it.
+    * 2. To help save your team from making a major mistake
+    * 3. Fund raising: use the hype cycle to make money from it.
+* The Innovator's Dilemma
+    * From book by Clayton Christensen.
+    * If you ask your customers what they think of new tech, they may think it's not ready.
+    * Eventually, it will be and all customers may jump ship for the new tech.
+    * Console gaming vs PC analogy: console gaming was behind PC gaming right up until it wasn't. Now the opposite.
+* Law of divergence
+    * People assume in future things will converge into one device, but that hasn't happened anywhere except the pocket ie smartphone, army knife
+* The singularity
+    * As pace of technological advance increases, it becomes harder to make long term predictions.
+    * Point at which it becomes impossible to predict any point into the short term future.= singularity (according to this definition).
+* **Lens #104: The Lens of Technology**
+    * What technology will support the experience I want to make?
+    * Are they being used foundationally or decoratively?
+    * If not using foundationally, should I use at all?
+    * It tech as cool as I think? Is there something else "disruptive" I should use instead?
+* Look at your crystal ball
