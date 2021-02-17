@@ -2105,3 +2105,21 @@ Tags: #GameDesign
     * If not using foundationally, should I use at all?
     * It tech as cool as I think? Is there something else "disruptive" I should use instead?
 * Look at your crystal ball
+    * Trying to predict the future of technology can lead to valueable insights and is a worthwhile exercise.
+    * **Lens #105: The Lens of the Crystal Ball**
+        * When looking at a certain game technology ask yourself:
+            * What will it be like two/four/ten years from now?
+* People get excited about technology because it offers the promise of "utopia"
+    * 5 technologies that could fulfill that dream:
+        * Magical interfaces - next gen iPhone touch interfaces for eample
+        * Fair payment - better ways to pay for games
+        * AI
+        * Games that can be played with family and friends
+        * Transformation: Wii fit, Luminoisty, Ring Fit etc
+    * **Lens #106: The Lens of Utopia**
+        * Am I creating something that feels "magical"
+        * Does hearing about what i'm making excite people?
+        * Does my game advance state of the art?
+        * Does my game make the world better?
+* Reading
+    * The Innovator’s Dilemma and The Innovator’s Solution by Clayton Christensen 
