@@ -2122,4 +2122,22 @@ Tags: #GameDesign
         * Does my game advance state of the art?
         * Does my game make the world better?
 * Reading
-    * The Innovator’s Dilemma and The Innovator’s Solution by Clayton Christensen 
+    * The Innovator’s Dilemma and The Innovator’s Solution by Clayton Christensen
+
+# Chapter 29: Your Game Will Probably Have A Client
+
+* Clients range from: game publishers, media companies to randos that thought they should make a game for some reasons.
+* Clients often have very strong opinions about game (and sometimes very wrong)
+* Ability to build bridges that delight players and clients is key to being a happy designer.
+* Coping with bad suggestions:
+    * Try to understand why a suggestion is being made: focus on the problem statement.
+    * Our brains work fast: we usually jump straight to a solution instead of considering the problem
+* Do your research about your client: what do they really care about?
+* Make sure your client feels like a creative partner on the project.
+    * Consider what they have to offer that your team does not have (aside from funding)
+* **Lens #107: The Lens of the Client**
+    * What does the client say they want?
+    * What do they think they want?
+    * What do they really want?
+* Reading
+    * The 48 Laws of Power by Robert Greene
