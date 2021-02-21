@@ -2141,3 +2141,76 @@ Tags: #GameDesign
     * What do they really want?
 * Reading
     * The 48 Laws of Power by Robert Greene
+
+# Chapter 30: The Designer Gives the Client a Pitch
+
+* Designers do lots of pitching: pitching for investment, pitching game changes, etc
+* Highest stakes pitching is to get funding for game.
+* Pitching your game, you are entering a "negotiation of power", you are trying to get what you want by convincing others the game will get them what they want.
+* When you pitch an idea, it will be judged based on how important it is to the receiver: it they aren't interested in your idea, find someone else.
+* 12 tips for successful pitch:
+    * #1: Get in the door
+        * Can be very hard to get an audience with the big publishers.
+        * Best bet is to use the back door: find someone who can vouch for you.
+    * #2: Show you are serious
+        * Show that you've done the work to prove that your game will be fun with working prototypes and detailed design docs.
+    * #3: Be organised
+        * Make sure your pitch is planned and you've thought through the details.
+        * Be on time
+    * #4: Be passionate
+        * Make sure you're excited about the game and it will shine through in your pitch.
+        * Passion about project represents drive and commitment to deliver a quality experience.
+    * #5: Assume their point of view
+        * Listen to the audience and do your research: make sure game is a good fit before you pitch.
+        * Don't watch the pitchees time - get straight to the point.
+        * They will likely have to pitch to someone else: make it easy for them:
+            * Get straight to the point: what's the platform, audience and genre - don't reveal halfway through - they're busy.
+            * Don't tell the story - tell the fantasy the game fulflls.
+            * Provide a "handle": a short phrase that summarises the idea: "it's a bowling RPG", "Pokemon for grownups" etc
+            * Show, don't tell: rich visuals, prototypes etc
+                * Create pitch materials that speak for themselves
+    * #6: Design the pitch
+        * Design your pitch as well as your game:
+            * Make it accessible
+            * Surprises
+            * Interest curves
+            * Consistent aesthetics
+        * Plan every minute of the pitch.
+    * #7: Know all the details
+        * Know all the design details inside out: how long is the game, how does multiplayer work etc
+        * Know the schedule: first alpha, second alpha, beta and so on
+        * Know the budget: know how much comparable titles made in revenue
+        * Know what the biggest risks are and be clear about them: technical, gameplay, aesthetics, legal risks etc
+        * If you can anticipate what questions are coming and give perfect answers, you will be very persuasive.
+    * #8: Exude confidence
+        * Being confidence means you are sure your game will be a great fit for the publisher
+        * Get the hand shake right.
+    * #9: Be flexible
+        * The person you're pitching to might suddenly reveal they hate your game, or your time is suddenly limited: handle with coolness and confidence.
+    * #10: Rehearse
+        * Practice your pitch and your demos.
+        * Don't pitch while you play - get a colleague to play it.
+    * #11: Get them to own it
+        * Want them to come away from the pitch thinking of it as "their game".
+        * Learn about their ideas and incorporate some of them.
+    * #12: Follow up
+        * You have to follow up, but not too aggressively.
+        * Make sure you follow up on any questions they had.
+* What about Kickstarter?
+    * It's a lot of work - sometimes a month is required for a successful crowdfunded campaign
+    * It's really a preorder system - it works best when you have a physical component or a fixed high-price. Don't use it for free to play mobile games
+    * Ask for as little as possible - set lowest targets you can manage.
+    * Shorter is better - most campaigns get most funding on the first week
+    * Keep rewards simple - tshirts and extra gimmicks are extra work, most people just want an early version of the game at the right price.
+    * Show, don't tell - show a taste of the game and not much more - it's a preorder system afterall
+    * Hustle - you have to push it all the time - find influential people to help.
+    * Have stretch goals - that can help with virality as people have a reason to share
+    * Be famous - most likely games to be funded are from people who already have a following
+* **Lens #108: Lens of the Pitch**
+    * What are you pitching this game?
+    * What do you consider a successful pitch?
+    * What's in it for the pitchees?
+    * What do the people need to know most about the game?
+* Reading
+    * GamePitches.com
+    *  How to Explain Your Game to an Asshole by Tom Francis
