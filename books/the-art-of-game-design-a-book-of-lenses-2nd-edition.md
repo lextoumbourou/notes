@@ -2214,3 +2214,104 @@ Tags: #GameDesign
 * Reading
     * GamePitches.com
     *  How to Explain Your Game to an Asshole by Tom Francis
+
+# Chapter 31: The Designer and Client Want to Make Profit
+
+* Game designers need to know enough about business to have "meaningful conversations" with business decision makers.
+* Decisions made about how the game will make money (in game ads, subscriptions vs micro transactions) will have big impact on game design and vice versa: game design will have impact on profitability.
+* Know your business model
+    * Retail:
+        * When a consumer buys a $50 title, here's how the money flows:
+            * ![Retail business](../_media/retail-business.png)
+            * Platform holder: Sony, Nintendo, Microsoft etc make money by "taxing" publishers for each title.
+            * Retailer takes so much: it's a low-margin business and they have to cut every corner to survive
+            * Publisher takes a big cut because they're taking on a lot of the risk. Titles that aren't sold have to be rebought off the publisher.
+            * Markdown reserve: when a title has to be marked down to sell, the publisher has to absorb some of this cost (around $3 a unit)
+    * Direct download
+        * Consumer buys game from distributor. Distrbutor takes clip and developer keeps the rest
+        * Deciding on how much to spend on marketing and advertising one of the most challenging aspects of self publishing
+    * Free to play
+        * Requires designing game to lure players into needing to make purchases.
+        * Average LTV refers to lifetime value (amount player pays over their entire play history)
+        * Customer acquisition costs: how much it costs to acquire players
+* Know your competition
+    * How does your game look compared to others?
+    * Are you best-in-breed or low cost alternative?
+    * Is your game filling a "gap"?
+        * Can help get funding with gap analysis
+* Know your audience
+    * Know how your audience pays
+        * What price point works?
+        * Is free to play better than a high cost title? 
+        * Knowing this can help you find strong features for games
+    * Hard core or casual gamer?
+        * Ie: does player self identify as gamer?
+* Learn the language
+    * If you can speak the language of business, business people will listen to you.
+    * General terms to know:
+        * SKU - "stock keeping unit", pronouced "skew"
+            * Unique inventory for a store
+            * Publishers are usually measured by how many SKUs they release
+        * COGS - cost of goods sold
+            * Cost per unit to make the game
+        * Burn rate
+            * Cost per month to keep studio open
+        * Sold in vs sold through
+            * Sold in == units sold to retailers
+            * Sold through == units sold to consumers
+                * Really only sold through matters
+        * Units sold
+            * How many times game has been purchased
+        * Breakeven
+            * How many units need to be sold for publishers to make money back
+    * Free to play ters:
+        * Churn
+            * % of players who leave each month
+        * Cost of acquisition
+            * How much you need to spend to get peeps to play your game
+        * DAU
+            * Daily active users - how many people play every day
+        * MAU
+            * Monthly active users
+                * MAU / DAU an important metric. Ideally MAU would be equal to DAU * 30
+        * ARPU
+            * average revenue per user
+        * ARPPU
+            * average revenue per paying user
+        * LTV
+            * lifetime value
+                * how much money do you make from player from start to finish.
+                * should be balanced with cost of acquisition
+        * K-factor
+            * how many players does the average player bring in
+        * Whale
+            * a person in a F2P game who is willing to spend a lot
+                * "One study found that 50% of game revenue comes from only 0.15% of players."
+* Know the top sellers
+    *  Any funder you pitch will know the top 10 titles on your platform: you should too.
+        *  Games are a hit-based business.
+    *  Special insights into why games made money will also help with investors.
+*  Barriers
+    *  Games that require no publisher only work when the market isn't crowded.
+    *  In a crowded market, the winners are the ones that can spend most on advertising: the big publisers.
+    * "Blue oceans" the opposite of red ocean: a market where there are relatively few competitiors.
+        * iOS market is a red ocean: 90% of games lose money
+        * Slot machines are a blue ocean: with regulations, tech required etc it's a hard market to enter.
+    * Types of barriers:
+        * Technical barriers: unique algorithms, server technology etc. Some games have success by accomplishing technical feats others can't
+        * Hardware barriers: new kind of hardware platform is hard to replicate.
+        * Expertise barriers: does your team have some special knowledge that is rare
+        * Sales and distribution barriers: you or a partner has a special relationship into a sales channel (eg selling software to government)
+        * Imagination barriers: your game has discovered something that others haven't
+        * Relationship barriers: similiar to Sales and Distribution
+        * Uncertainty barriers: your competitiors are too uncertain about a platform or technology you are building on
+    * Though hard to do, choosing to not follow the crowd can be profitable.
+* **Lens #109: The Lens of Profit**
+    *  Where does the money go in my game's business model?
+    * How much does it cost to produce, market, distribute and maintain game?
+    * How much will game make?
+    * What are barriers to entry for game?
+* Reading
+    * Gamers at Work by Morgan Ramsay
+    * The F2P Toolbox by Rob Fahey and Nicholas Lovell
+    * How I Made a Hundred Movies in Hollywood and Never Lost a Dime by Roger Corman 
