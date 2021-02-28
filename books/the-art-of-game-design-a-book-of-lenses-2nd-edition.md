@@ -2317,7 +2317,7 @@ Tags: #GameDesign
     * The F2P Toolbox by Rob Fahey and Nicholas Lovell
     * How I Made a Hundred Movies in Hollywood and Never Lost a Dime by Roger Corman 
 
-## Chapter 32: Game's Transform a Player
+## Chapter 32: Games Transform a Player
 
 * Can games be good for us?
     * Positive effects attributed to games:
