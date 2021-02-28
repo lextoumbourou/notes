@@ -7,7 +7,8 @@ Tags: #GameDesign
 ---
 # The Art of Game Design - A Book of Lenses (2nd Edition)
 
-## One: In the Beginning, There is the Designer
+## Chapter 1: In the Beginning, There is the Designer
+
 * You only become a game designer by designing games.
 * Skills a game designer may use: animation, antropology, architecture, brain storming, business, cinematography, communcation, creative writing, economics, engineering, games, history, management, mathematics, music, psychology, public speaking, sound design, technical writing, visual arts.
 	* Though no one can master all the skills, the more you can learn about each the better.
@@ -19,7 +20,7 @@ Tags: #GameDesign
 * Key takeaway
     * Anyone can become a game designer but it's a skill that requires a lot of diversity of knowledge and the ability to listen and empathise.
 
-## Two: The Designer Creates an Experience
+## Chapter 2: The Designer Creates an Experience
 * Goal of game designer is to create a compelling experience for the players.
 * "The game is not the experience. The game enables the experience, but it _is not the experience_".
 * Game designs have to deal with more interaction than designers of other mediums (ie movies).
@@ -83,7 +84,7 @@ Tags: #GameDesign
 * Key takeaway
     * A game provides the essences of an experience - not the experience itself. Find the experience your game should provide, then the essence of that experience.
 
-## Three: The Experience Takes Place In A Venue
+## Chapter 3: The Experience Takes Place In A Venue
 
 * Mediums come and go but the venues that we consume them in persist.
 * Private venues
@@ -137,7 +138,7 @@ Tags: #GameDesign
 * Takeaways
     * Understanding what venue your game is designed for, allows you to see past technology and trends to understand your games key properties.
 
-## Four: The Experience Rise Out of a Game
+## Chapter 4: The Experience Rise Out of a Game
 * We want to design experiences, but we cannot do it directly, it's done through a game.
 * How can we define "game"?
     * People have slightly different definitions of what a "game" is.
@@ -208,7 +209,7 @@ Tags: #GameDesign
 * Key takeaways
     * Though this chapter doesn't contain any practice wisdom, spending the time to clearly define things can help develop insights. Though personally, I didn't gain a lot from this chapter.
 
-## Five: The Game Comprises of Elements 
+## Chapter 5: The Game Comprises of Elements 
 * The Four Basic Elements of a Game
     1. **Mechanics**
         * Rules/goals/limitations etc of the game.
@@ -240,7 +241,7 @@ Tags: #GameDesign
 	* What elements detract?
 	* Can game elements be changed to improve the experience?
 
-## Six: The Elements Support a Theme
+## Chapter 6: The Elements Support a Theme
 * Use unifying theme strengthen game's experience.
 	* Choose theme then reinforce at every opportunity
 * **Lens #11: The Lens of Unification** #lens 
@@ -270,7 +271,7 @@ Tags: #GameDesign
 * Key takeaway:
     * Games with unified themes, that ideally deeply resonate with players, are the best kinds of games.
 
-## Seven: The Game Begins with an Idea
+## Chapter 7: The Game Begins with an Idea
 * Inspiration for games can come from anywhere - not just other games.
 * **Lens #13: The Lens of Infinite Inspiration** #lens 
     * What is an experience I've had that I'd like to share with others?
@@ -313,7 +314,7 @@ Tags: #GameDesign
     * Seek inspiration outside of games for the types of experiences you want to shar with your players.
     * Start with a clear problem statement for your game and expect to iterate on the problem statement as you learn more.
     
-## Eight: The Game Improves Through Iteration
+## Chapter 8: The Game Improves Through Iteration
 * Don't get stuck with decision paralysis, pick an idea and commit to it quickly.
 	* Through commiting to an idea, you start to give it full attention and discover weaknesses and strengths you could otherwise miss.
 * **Lens 15: Law of Eight Filters** #lens 
@@ -372,7 +373,7 @@ Tags: #GameDesign
       * Prototyping can help answer the question about the true problem you're trying to solve.
       * 50% rule: plan game development so that if 50% of your budget were removed, you'd still have a shippable game. Then use the rest to make it great.
 
-## Nine: The Game Is Made for a Player
+## Chapter 9: The Game Is Made for a Player
 * Good designs find way to project themselves into the minds of players.
 * When creating something aimed at large groups of players, we consider ways we can group people aka [[demographics]].
 * Game industry usually breaks players of ages down as follows:
@@ -486,7 +487,7 @@ Tags: #GameDesign
  * Key takeaway:
  	* Understanding the key demographics and their interests is important, but equally import is thinking about the types of things that give your players pleasure.
     
-## Ten: The Experience Is in the Player's Mind
+## Chapter 10: The Experience Is in the Player's Mind
 
 * The are 4 main mental abilities that are used when playing games: modelling, focus, imagination and empathy.
 * Modelling
@@ -530,7 +531,7 @@ Tags: #GameDesign
 * Reading
     * [[Flow: The Psychology of Optimal Experience]] by [[Mihaly Csikszentmihaly]]
     
-## Eleven: The Player's Mind is Driven By The Player's Motivation
+## Chapter 11: The Player's Mind is Driven By The Player's Motivation
  * All entertainment is the idea to make something unimportant seem important: they do this using motivation.
  * Maslow's Hierarchy of Needs
      * Represented as a pyramid.
@@ -583,7 +584,7 @@ Tags: #GameDesign
     * [[Punished by Rewards]] by [[Alfie Kohn]]. This book is an excellent overview of the vast body of research about the downsides of extrinsic rewards.
     * [[Understanding Motivation and Emotion]] by [[Johnmarshall Reeve]] -college-level textbook about the world of psychological research on the subject.
     
-## Twelve: Some Elements Are Game Mechanics
+## Chapter 12: Some Elements Are Game Mechanics
 
 * Skeleton of the game, when aesthetics have been stripped away is the Game Mechanics.
 * Though no universally agreed upon taxonomy for Game Mechanics exists, author breaks them down into seven main categories.
@@ -868,7 +869,7 @@ Tags: #GameDesign
         * [[Uncertainty in Games]] by [[Greg Costikyan]]
         * [[The Unfinished Game]] by [[Keith Devlin]]
      
-## Thirteen: Game Mechanics Must Be In Balance
+## Chapter 13: Game Mechanics Must Be In Balance
 
 * Balance: adjusting elements of game until you get the experience you want.
 * 12 most common types of game balance:
@@ -1828,7 +1829,7 @@ Tags: #GameDesign
 * Reading
     * Community Building on the Web: Secret Strategies for Successful Online Communities by Amy Jo Kim
 
-# Chapter 25: The Designer Usually Works with a Team
+## Chapter 25: The Designer Usually Works with a Team
 
 * The key to successful teamwork is love: love for the game and love for the audience.
     * 3 main problems with love for the game:
@@ -1894,7 +1895,7 @@ Tags: #GameDesign
     * The Cabal: Valve’s Process for Creating Half-Life by Ken Birdwell
     * Information Flow: The Secret to Studio Structure by Jesse Schell
 
-# Chapter 26: The Team Sometimes Communicates through Documents
+## Chapter 26: The Team Sometimes Communicates through Documents
 
 * A game design document is not a spec or blueprint, it's a theory about what may be a fun game.
 * Game documents have 2 purposes: memory and communication.
@@ -1955,7 +1956,7 @@ Tags: #GameDesign
     *  Game Design Logs by Daniel Cook
     *  One Page Designs by Stone Librande
 
-# Chapter 27: Good Games Are Created Through Playtesting
+## Chapter 27: Good Games Are Created Through Playtesting
 
 * Playtesting ensures you focus on the "ugly problems"
 * Four types of testing:
@@ -2070,7 +2071,7 @@ Tags: #GameDesign
     * Trying Very Hard to Make Games that Don’t Stink by Barbara Chamberlin
     * Valve’s Approach to Playtesting: The Application of Empiricism by Mike Ambinder
 
-# Chapter 28: The Team Builds a Game With Technology
+## Chapter 28: The Team Builds a Game With Technology
 
 * To keep a sane perspective about technology understand the different between Foundational & Decorative.
     * Cupcake analogy: cake part is foundation, icing is decorative.
@@ -2124,7 +2125,7 @@ Tags: #GameDesign
 * Reading
     * The Innovator’s Dilemma and The Innovator’s Solution by Clayton Christensen
 
-# Chapter 29: Your Game Will Probably Have A Client
+## Chapter 29: Your Game Will Probably Have A Client
 
 * Clients range from: game publishers, media companies to randos that thought they should make a game for some reasons.
 * Clients often have very strong opinions about game (and sometimes very wrong)
@@ -2142,7 +2143,7 @@ Tags: #GameDesign
 * Reading
     * The 48 Laws of Power by Robert Greene
 
-# Chapter 30: The Designer Gives the Client a Pitch
+## Chapter 30: The Designer Gives the Client a Pitch
 
 * Designers do lots of pitching: pitching for investment, pitching game changes, etc
 * Highest stakes pitching is to get funding for game.
@@ -2215,7 +2216,7 @@ Tags: #GameDesign
     * GamePitches.com
     *  How to Explain Your Game to an Asshole by Tom Francis
 
-# Chapter 31: The Designer and Client Want to Make Profit
+## Chapter 31: The Designer and Client Want to Make Profit
 
 * Game designers need to know enough about business to have "meaningful conversations" with business decision makers.
 * Decisions made about how the game will make money (in game ads, subscriptions vs micro transactions) will have big impact on game design and vice versa: game design will have impact on profitability.
@@ -2315,3 +2316,112 @@ Tags: #GameDesign
     * Gamers at Work by Morgan Ramsay
     * The F2P Toolbox by Rob Fahey and Nicholas Lovell
     * How I Made a Hundred Movies in Hollywood and Never Lost a Dime by Roger Corman 
+
+## Chapter 32: Game's Transform a Player
+
+* Can games be good for us?
+    * Positive effects attributed to games:
+        * Emotional maintenance
+            * Games are played by some to maintain and control emotional state. People play games to: vent anger and frustration, cheer up, gain persective, build confidence, relax etc.  
+        * Connecting 
+            * Games can act as a “social bridge,” giving us reasons to interact with each other, letting us see how others respond to a variety of situations, introducing topics of conversation, showing us what we have in common, and creating shared memories. This combination of factors makes games a great tool to help build and maintain relationships with the important people in our lives.
+        * Exercise
+            * Sports give us reason and motivation to exercise
+            * The problem solving aspect of games works well with mental and physical exercise.
+        * Education
+            * Education system is really a game: assignments are goals with time limits, feedback is provided through grades and challenge is increased until the final challenge (exams)
+            * Why doesn't school feel like a game? 
+                * Methods usually contains a lack of surprises
+                * Lack of community
+                * Poor interest curves
+            * Why haven't educational games worked in class?
+                * Time constraints: meaningful educational games take a long time to complete
+                * Variable pacing: games let people move at their own pace, classes require everyone moving at the same pace.
+                * 1965: people born before 1965 didn't grow up playing games, and lots of principals are > than that age.
+                * Educational games are hard to make: create something with a verifible assement that's fun is hard.
+            * Areas where educational games have advantage
+                * Games are great at keeping the whole brain involved by providing visible progress, make the abstract concrete and full engagement, full engagement of the brain (if every part of it is engaged, less likely to get restless and "itchy") and lots of little goals.
+                * Facts: Game can use visuals and context to help players learn and remember facts.
+                * Problem solving
+                    * Games have a big advantage here: problem solving is a core part of games.
+                * Systems of relationships
+                    * Normal lessons are usually taught linearly; complex systems of relationships can be better taught through play. For example:
+                        * Human circulatory system
+                        * Traffic patterns in a major city
+                        * Nuclear reactor
+                        * Workings of a cell
+                    * Huge difference between reading about a thing and actually playing with the thing
+                    * Simulations may never be able to be 100% true to reality but that may be advantagous: lots can be learned about questioning how things may be different in real life from the simulation.
+                * New insights
+                    * Representation can be an important part of the sorts of aspiration people have: games can provide representation that may not exist in real life.
+                * Curiosity
+                    * Curiosity is a key part of successful learning - the more curious you are about a thing, the more you will learn.
+                    * Curiosity is a key part of the definition of play: "manipulation that indulges curiosity"
+                        * Can games inspire curiosity?
+                * Create teachable moments
+                    * To absorb information, you have to be in a state of readiness.
+                        * Good teachers know how to invoke this. Can games?
+* Transformational Games
+    * Some games that help us exercise, connect with others, change habits are considered "serious games". Term suggests that they aren't fun and fun games can't be helpful.
+    * Instead: consider term "transformation game"
+    * Tips for transformational games:
+        * #1: Define Your Transformation
+            * How will your game transform the player?
+                * Consder Lens #14, Problem Statement.
+        * #2: Find subject matter experts
+            * Find the people who have dedicated there lifes to mastering the topic or teacher others the topic.
+        * #3: What does instructor need? 
+            * Lots of people think transformation games should replace the instructor, but consider making tools that help an instructor.
+        * #4: Don't do too much
+            * Pick a single transformation and focus on it.
+            * Don't expect to replace an entire school curriculum.
+        * #5: Assess transformation appropriately 
+            * Types of assessment in order of rigor:
+                * Feel right: designers and players feel like it's working. The lower level of rigour.
+                * Anecdotes: stories from players on how it changed them. Great for pitches but not very rigourous.
+                * SME approval: SME gives stamp of approval. Strong indicator.
+                * Informal surveys and assessments
+                * Scientific testing and assessment
+            * Meaningful scientific testing is expensive and time consuming - every situation is unique.
+        * #6: Choose the right venue
+            * Consider the venue where the game will be played. Classroom? Reading nook? Workbench?
+                * The context of where it will be played will guide the types of transformations.
+        * #7: Accept the realities of the market
+            * If a game is transformational but no one wants to buy it, then you aren't transforming anyone.
+                * Business savvy is just as important as game design here.
+    * Can games be bad for you?
+        * Traditional games have dangers well understood: sport injury, addiction (gambling) and obsession, but parents are often concern about video games because it wasn't something they grew up with.
+        * 2 major concerns: violence and addiction
+            * Violence: no major evidence violent videogames change us for the worst, but future technology could change this.
+            * Addiction: designers should be responsible for thinking about how game can fit into a well-balanced life.
+    * Experiences
+        * Games can change peoples communication habits for the better or worse.
+        * Violence in the real world is usually a form of last resort communication: I'm going to show you how much you're hurting me. Better communication could lead to less violence.
+    * **Lens #110: The Lens of Transformation**
+        * How can my game change people for the better?
+        * How can my game change people for the worse?
+    * Reading
+        * Reality Is Broken by Jane McGonigal
+        * What Videogames Have to Teach Us About Learning and Literacy by James Paul Gee
+        * New Traditional Games for Learning: A Case Book by Alex Moseley and Nicola Whitton
+        * Ten Steps to Complex Learning by Jeroen J.G. van Merriënboer and Paul A. Kirschner
+        * Digital Games and Learning: Research and Theory by Nicola Whitton
+
+## Chapter 33: Designers have Certain Responsibilities
+   
+  * As a designer, you are responsibile for ethical decisions, don't expect a publisher to be ethical.
+  * If you want to make games that improve people's lifes, you probably need to do it in secret: your publisher should know about the money they'll make from it
+  * **Lens #111: The Lens of Responsibility**
+      * Does my game help people?
+  * Reading
+      *  Killing Monsters by Gerard Jones
+     * Stop Teaching our Kids to Kill by Lt. Col. Dave Grossman and Gloria Degaetano
+     * Fred Rogers Testifies Before Congress
+
+## Chapter 34: Each Designer has a Purpose
+
+* It's important to listen as a game designer and that includes yourself.
+* **Lens #112: The Lens of the Raven**
+    * Is making this game worth my time?
+*  **Lens #∞: The Lens of Your Secret Purpose**
+    * Why am I doing this?
