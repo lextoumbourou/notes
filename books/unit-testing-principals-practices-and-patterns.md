@@ -69,7 +69,7 @@ aliases: ["# Unit Testing Principles, Practices, and Patterns"]
     * They shouldn't make use of any shared state (out-of-process dependancies): database, file system etc.
         * Use of mocks only to deal with shared dependancies.
 * Summary of schools of thought:
-    * ![[Pasted image 20210327110504.png]]
+    * ![[london-vs-classical-test-style.png]]
 * Shared dependency is something that is shared between tests and gives one test the ability to affect another test.
     * Database or dependancy with mutable field.
 * Out-of-process dependancy is something that runs outside execution process and provides a proxy to data not in memory: database etc
@@ -85,3 +85,80 @@ aliases: ["# Unit Testing Principles, Practices, and Patterns"]
     * Integration tests can verify multiple units of behaviour, if needed for performance reasons.
 * End-to-end tests are considered subsets of integration tests.
     * UI tests, GUI tests and functional tests are usually synonyms for e2e tests.
+
+## 3. The anatomy of a unit test
+
+* How to structure a unit test
+    * AAA pattern:
+        * Split tests into 3 parts: arrange, act and assert:
+            ```
+            class CalculatorTest:
+                def test_sum_of_two_numbers():
+                    // Arrange
+                    first = 10
+                    second = 20
+                    calc = Calculator()
+                    
+                    // Act
+                    result = calc.sum(first, second)
+                    
+                    // Assert
+                    asert result == 30
+            ```
+        * Arrange section: bring the system under test (SUT) to a desired state
+            * Usually largest
+        * Act section: call methods on the SUT, pass prepared dependencies capture output value.
+            * Usually just a single line of code.
+            * If more than one line of code is required, this may indicate an "invariant violation"" an invalid state which the program can get into based on poor encapsulation of the business domain.
+        * Assert section: verify the outcome.
+            * Sometimes need more than one assertions, but too many assertions may indicate a missing abstraction: perhaps you need to define equality between 2 objects and compare another object.
+        * This is similar to the Given-When-Then pattern, which may be more suitable for non-programmers.
+        * Want to avoid multiple act and assert sections in unit tests: leave them for integration tests. 
+        * Avoid branching in tests: no if statements.
+            * Usually a result of trying to test too many things.
+            * if statements make tests harder to read.
+        * Another teardown phase sometimes exists to clean up files etc. Though it's normally a method shared across multiple tests and actually not often required for unit tests.
+    * Always name system under test: `sut`, so it's always clear what you're testing.
+* Exploring the xUnit framework:
+    * .NET framework based on jUnit (UnitTests in Python etc)
+    * Tests don't have setup / teardown methods, but simply utilise a objects constructor before calling the method.
+* Reusing fixtures before tests:
+    * Since fixture arrangements can take up a lot space, it makes sense to reuse them but some ways of doing this are better than others.
+    * Test fixture refers to an object the test runs against. It needs to stay in a consistent state, hence name: "fixture"
+    * By adding fixtures to the constructor it has 2 downsides:
+        * you have suddenly created tests that are coupled to each other
+        * you have tests that are less readable: they don't tell the whole picture.
+    * Instead, utilise private factory methods that return fixture data:
+        ```
+        [Fact]
+        public void Purchase_fails_when_not_enough_inventory()
+        {
+            Store store = CreateStoreWithInventory(Product.Shampoo, 10); Customer sut = CreateCustomer();
+            bool success = sut.Purchase(store, Product.Shampoo, 15);
+            Assert.False(success);
+            Assert.Equal(10, store.GetInventory(Product.Shampoo));
+        }
+        private Store CreateStoreWithInventory(
+            Product product, int quantity)
+        {
+            Store store = new Store(); store.AddInventory(product, quantity); return store;
+        }
+        ```
+        * The one exception to the rule is integration tests: can reuse some state if it's used by all tests, like a database connection.
+* Naming unit tests:
+    * Prominent but not helpful style:
+    ```
+    [MethodUnderTest]_[Scenario]_[ExpectedResult]
+    ```
+    
+     * This style is unhelpful because you focus on implemention details, not functionality.
+     * Guidelines:
+         * Use simple English phrases.
+         * Don't follow strict naming policy: allow freedom of expresion.
+         * Name test as if describing scenario to non-programmer
+         * Seperate words with underscores.
+         * No need to use name of SUT method in test name, unless testing utility code.
+         * Using `should` in the test name is another anti pattern: a test is a statement of fact. Use `is`
+         * Use proper grammar in test names.
+ * Refactoring to parameterized tests 
+     * 
