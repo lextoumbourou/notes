@@ -161,4 +161,18 @@ aliases: ["# Unit Testing Principles, Practices, and Patterns"]
          * Using `should` in the test name is another anti pattern: a test is a statement of fact. Use `is`
          * Use proper grammar in test names.
  * Refactoring to parameterized tests 
-     * 
+     * Some tests that test related functionality can be grouped. The functionality that does that is called: parameterized tests
+     * Example from nose in Python:
+     ```
+     class Test(unittest.TestCase):
+ 
+         @params((1, 2), (2, 3), (4, 5))
+         def test_less_than(self, a, b):
+             assert a < b
+     ```
+     
+     * Parameterisation does impact readability.
+     * Rule of thumb:
+         * Only keep positive and negative cases together if it's clear from input params what cases stand for
+         * If it's too complicated, split into separate methods.
+ * Assert library can be used for even more readability.
