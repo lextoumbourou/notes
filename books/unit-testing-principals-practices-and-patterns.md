@@ -176,3 +176,33 @@ aliases: ["# Unit Testing Principles, Practices, and Patterns"]
          * Only keep positive and negative cases together if it's clear from input params what cases stand for
          * If it's too complicated, split into separate methods.
  * Assert library can be used for even more readability.
+
+## 4. The four pillars of a good unit test
+
+* Good unit tests has the following attributes:
+    * Protects against regressions
+        * The more code you add, the more chance that existing code will stop working as intended: "code isn't an asset, it's a liability"
+        * 2 main features of code helps this attribute:
+            * Amount of code executed in each test.
+            * Complexity of code tested.
+            * Code's domain significance.
+        * Trivial code is rarely worth testing
+        * Libraries and frameworks should be tested as part of your suite to verify your assumptions about their behaviour.
+    * Resistance to refactoring
+        * Tests are the main tool to provide resistance to refactoring with:
+            * early warnings you've broke functionality.
+            * confidence code won't lead to regressions
+        * False positive: when tests raise error but no feature is broken
+            * Degrades confidences in test suite and causes you to ignore positives
+            * Fewers of these the better: less false positives = more resistance to refactoring
+        * Test should not be coupled to implementation details, it should verify end results.
+            * The more coupled to implementation, the less resistant to refactoring.
+            * Uncoupled tests may still fail when you refactor, but the breakage should be picked up by the compile, not the tests.
+    * Fast feedback
+        * When tests fail quickly, you dramatically reduce feedback loop
+        * Slow tests can be run less often.
+    * Maintainability
+        * How hard is it to read tests?
+        * How hard is it to actually run tests - ie is setup fully automated etc.
+* To determine impact of individual test, rate it from 0 to 1 for each metric and multiple for final score.
+* Some of the metrics are mutually exclusive, so cannot expect to get perfect score: as you increase resistance to refactoring, you decrease fast feedback: ie using a database mock will increase the test speed but decrease resistance to refactoring.
