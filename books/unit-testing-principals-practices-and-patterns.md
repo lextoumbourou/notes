@@ -206,3 +206,17 @@ aliases: ["# Unit Testing Principles, Practices, and Patterns"]
         * How hard is it to actually run tests - ie is setup fully automated etc.
 * To determine impact of individual test, rate it from 0 to 1 for each metric and multiple for final score.
 * Some of the metrics are mutually exclusive, so cannot expect to get perfect score: as you increase resistance to refactoring, you decrease fast feedback: ie using a database mock will increase the test speed but decrease resistance to refactoring.
+* Writing the ideal test:
+    * The first 3 attributes of a good test: protects against regressions, resistant to refactoring and fast feedback are mutually exclusive.
+    * Maintainability is usually not mutually exclusive so should be maximised, though e2e tests usually require more code and thus score lower by default.
+    * Since all attributes cannot be maximised, write tests that result in no metric at 0.
+    * Resistance to refactoring is least negotiable because it either is or isn't, so trade off will tend to be between protection against regression or fast feedback.
+* Test Pyramid advocates for a ratio of tests where unit tests is greated, integration in middle and least e2e. It is also ordered so closeness to customer is at tip of pyramid, where e2e tests are.
+* Exceptions to Test Pyramid:
+    * CRUD applications that mainly interact with DB are usually best served with mostly integration tests.
+    * Other domains with low algorithmic or business complexity also requires less unit tests.
+    * APIs that exposure interactions with DB could be served entirely with e2e tests or a hybrid of e2e and integration.
+* Black box vs white box:
+    * Black box tests tests functionality with no knowledge of internal structure
+    * White box the opposite: test with knowledge of internals.
+    * Since aim is to maximise resistance to refactoring, pick black box by default. Use white box for test analysis: ie branch coverage metrics, and then write black box armed with that knowledge.
