@@ -1,11 +1,11 @@
 Link: https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab
 Title: [[Essence of linear algebra]]
 Author: [[3Blue1Brown]]
-Type: #videoseries
-Topics: [[maths]] [[linear algebra]]
+Type: #video
+Tags: #Maths #LinearAlgebra 
+
 ---
 
-# Essence of linear algebra
 ## 1. Vectors, what even are they?
 * Vectors the building block for all of linear algebra.
 * 3 distinct perspectives of vectors

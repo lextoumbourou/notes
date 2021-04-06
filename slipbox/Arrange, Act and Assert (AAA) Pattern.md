@@ -1,7 +1,3 @@
-Tags: #AutomatedTests 
-
----
-
 A pattern for structuring unit tests, where tests are broken up into 3 sections:
 
 * Arrange: where you prepare any fixtures and setup the test.
@@ -29,4 +25,7 @@ def test_datestring_is_formatted():
 
 Similar to the [[Given-When-Then]] pattern.
 
-Describe by Vladimir Khorikov in the book [[unit-testing-principals-practices-and-patterns|# Unit Testing Principles, Practices, and Patterns]] in Chapter 3: The anatomy of a unit test.
+---
+
+Tags: #AutomatedTests 
+Reference: [[Unit Testing Principles, Practices and Patterns|# Unit Testing Principles, Practices, and Patterns]] 

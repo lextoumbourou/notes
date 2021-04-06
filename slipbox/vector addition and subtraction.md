@@ -1,4 +1,4 @@
-Reference: [[essence-of-linear-algebra#1 Vectors what even are they]]
+Reference: [[Essence of Linear Algebra#1 Vectors what even are they]]
 Tags: #Maths #LinearAlgebra #Vectors #VectorAddition
 
 ---
@@ -13,4 +13,4 @@ Vector addition is represented visually by drawing the 1st vector, then drawing 
      ![vector addition visual](vector-addition-visual.jpg)
 
 
-Related: [[3 perspectives of vectors]]
+Related: [[3 Perspectives of Vectors]]

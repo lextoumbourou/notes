@@ -8,6 +8,5 @@
 
 ---
 
-Reference: [[essence-of-linear-algebra]]
 Tags: #Maths #LinearAlgebra #Vectors
-    
+Reference: [[Essence of Linear Algebra]]

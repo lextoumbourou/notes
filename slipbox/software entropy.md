@@ -1,8 +1,8 @@
-Reference: [[unit-testing-principals-practices-and-patterns|# Unit Testing Principles, Practices, and Patterns]]
+Reference: [[Unit Testing Principles, Practices and Patterns|# Unit Testing Principles, Practices, and Patterns]]
 Tags: #software
 
 ---
 
 # Software entropy
 
-Software [[entropy]], described by Vladimir Khorikov in [[unit-testing-principals-practices-and-patterns|# Unit Testing Principles, Practices, and Patterns]], refers to phenemona that as a project increases in size, abiity to add new features and progress decreases.
+Software [[Entropy]], described by Vladimir Khorikov in [[Unit Testing Principles, Practices and Patterns|# Unit Testing Principles, Practices, and Patterns]], refers to phenemona that as a project increases in size, abiity to add new features and progress decreases.

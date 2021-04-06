@@ -3,11 +3,8 @@ Link: https://www.amazon.com/Unit-Testing-Principles-Practices-Patterns/dp/16172
 Title: Unit Testing Principles, Practices, and Patterns
 Author: [[Vladimir Khorikov]]
 Type: #book
-tags: #GameDesign
-aliases: ["# Unit Testing Principles, Practices, and Patterns"]
+Tags: #GameDesign
 ---
-
-# Unit Testing Principles, Practices and Patterns
 
 ## 1. The goal of unit testing
 
