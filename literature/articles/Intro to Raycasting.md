@@ -1,10 +1,11 @@
 Link: https://developer.roblox.com/en-us/articles/Raycasting
-Title: [[Intro to Raycasting]]
+Title: Intro to Raycasting
 Author: [[Roblox]]
 Type: #article
-Topics: [[roblox]] [[raycasting in computer graphics]]
+Tags: #roblox 
 
-# Intro to Raycasting
+---
+
 * A tool used to send out invisible ray from a `Vector3` origin point to a specified direction, also represented as a `Vector3`
 * Example local script to send a ray from the humanoid root part 100 studs down on the y-axis:
 

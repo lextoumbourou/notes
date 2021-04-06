@@ -1,10 +1,10 @@
 Link: https://developer.roblox.com/en-us/articles/BodyMover
-Title: [[bodymovers]]
+Title: BodyMovers
 Author: [[Roblox]]
 Type: #article
-Topics: [[roblox]] [[bodymovers]] [[force]]
+Tags: #roblox
 
-# BodyMovers
+---
 
 * Notes about studio: X axis is represented as red, Y = green and Z = blue
     ![axis colours in Roblox](x-y-z-colours-in-roblox.png)

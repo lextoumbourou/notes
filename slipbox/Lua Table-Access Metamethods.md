@@ -1,10 +1,4 @@
-Tags: #Lua #Programming 
-
----
-
-# Table-Access Metamethods (Lua) 
-
-Described in Chapter 13 of Programming in Lua (1st edition), table access [[metamethods (Lua)]]  provide a mechanism for handling table lookup using the `__index` metamethod and writes to missing keys, using the `__newindex` metamethod. They are the foundation for object-oriented programming in Lua using [[Lua Prototypal Inheritance]] and are also useful for creating read-only tables, tables with default values and tracking tables access.
+Table access [[metamethods (Lua)]]  provide a mechanism for handling table lookup using the `__index` metamethod and writes to missing keys, using the `__newindex` metamethod. They are the foundation for object-oriented programming in Lua using [[Lua Prototypal Inheritance]] and are also useful for creating read-only tables, tables with default values and tracking tables access.
 
 The `__index` field in a metatable can either refer to a function that will be called each time a missing key is looked up or another table which will be looked up if the original table doesn't have the key.  
 
@@ -27,3 +21,8 @@ local constants = readOnly({"One", "Two", "Three"})
 print(constants[1])  -- return 1
 constants[1] = "Two"  -- should raise read-only error
 ```
+
+---
+
+Tags: #Lua #Programming 
+Reference: [Programming in Lua - Chapter 13](https://www.lua.org/pil/13.html)

@@ -1,4 +1,3 @@
----
 Link: https://www.amazon.com/Unit-Testing-Principles-Practices-Patterns/dp/1617296279
 Title: Unit Testing Principles, Practices, and Patterns
 Author: [[Vladimir Khorikov]]

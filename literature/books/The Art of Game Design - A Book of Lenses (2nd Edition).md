@@ -1,9 +1,9 @@
----
 Link: https://www.amazon.com.au/Art-Game-Design-book-lenses/dp/0123694965
 Title: The Art of Game Design - A Book Of Lenses (2nd Edition)
 Author: Jesse Schell
 Type: #book
-tags: #GameDesign
+Tags: #GameDesign
+
 ---
 
 ## Chapter 1: In the Beginning, There is the Designer
