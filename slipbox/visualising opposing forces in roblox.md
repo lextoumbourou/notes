@@ -7,9 +7,9 @@ If I add an opposing force of `Vector3.new(0, -5, 0)` we can see that the object
       $$\begin{bmatrix} 0 \\ 5 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ -5 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 + 0 \\ 5 + (-5) \\ 0 + 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix} $$
 ![y-axis bodyforce](bodyforce-yaxis-equal-net-forces.gif)
 
-Related to [[Newtons Laws Of Motion]] and [[vector addition and subtraction]]
+Related to [[Newtons Laws Of Motion]] and [[Vector Addition and Subtraction]]
 
 ---
 
 Tags: #roblox #Physics #BodyMovers #BodyForce
-References: [[bodymovers#BodyForce]]
+References: [[BodyMovers#BodyForce]]

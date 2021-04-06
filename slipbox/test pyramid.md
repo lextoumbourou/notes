@@ -1,9 +1,3 @@
-Tags: #AutomatedTests 
-
----
-
-# Test Pyramid
-
 The Test Pyramid advocates for a balance of automated tests where unit tests are most prevalent, followed by integration tests then end-to-end tests. Khorikov introduces a varient on the common diagram where the height refers to closeness to "emulating the end user's behaviour":
 
 ![Test Pyramid](automated-tests.png)
@@ -14,6 +8,9 @@ If one could construct e2e tests that were as fast as unit tests and were easy t
 
 Khorikov also provide an exception with respect to CRUD style apps and others that have little "algorithmic or business complexity". They are usually better served by more integration tests than unit tests. The Django framework serves as a good example of this: their default testing method is done via integrations with a real database.
 
-## References
+---
 
-Khorikov, V. (2020). In Unit testing principles, practices, and patterns (pp. 87–89). Manning.
+Tags: #AutomatedTests 
+Reference:
+- [[Unit Testing Principles, Practices and Patterns#4 The four pillars of a good unit test]]
+- [TestPyramid](https://martinfowler.com/bliki/TestPyramid.html)

@@ -2,9 +2,9 @@ Link: https://lodev.org/cgtutor/
 Title: [[Lode's Computer Graphics Tutorial]]
 Author: [[Lode Vandevenne]]
 Type: #article
-Topics: [[graphics]] [[old school]]
+Tags: #Graphics 
 
-# Lode's Computer Graphics Tutorial
+---
 
 ## Raycasting
 

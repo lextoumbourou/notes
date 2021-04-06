@@ -28,7 +28,7 @@ print(result['B'])  -- 150
 
 There are also relational metamethods for comparision: `__eq`, `__lt` and `__lte`
 
-Lastly, [[table-access metamethods (Lua)]] allow for defining behaviour when missing keys are looked up.
+Lastly, [[Lua Table-Access Metamethods]] allow for defining behaviour when missing keys are looked up.
 
 ---
 
