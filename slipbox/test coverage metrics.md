@@ -9,7 +9,7 @@ Test coverage metrics are a tool used to define how much of a code base is cover
   
      $$\text{Code coverage (text coverage)}=\frac{\text{Lines of code executed}}{\text{Total number of lines}}$$
      
-     Khorikov in his book [[unit-testing-principals-practices-and-patterns|# Unit Testing Principles, Practices, and Patterns]] says that the major downside is that code can simply be shuffled to trick the metric into increasing without increasing test coverage.
+     Khorikov in his book [[Unit Testing Principles, Practices and Patterns|# Unit Testing Principles, Practices, and Patterns]] says that the major downside is that code can simply be shuffled to trick the metric into increasing without increasing test coverage.
  * Branch coverage:
  
    $$\text{Branch coverage}=\frac{\text{Branches traversed}}{\text{Total number of branches}}$$

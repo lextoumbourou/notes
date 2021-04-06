@@ -2,9 +2,9 @@ Link: https://youtu.be/il0EJrY64qE
 Title: [[Basic geometry: language and labels]]
 Author: [[Salman Khan]]
 Type: #video
-Topics: [[maths]] [[geometry]]
+Tags: #Maths #Geometry
 
-# Basic geometry: language and labels
+---
 
 * Word geometry is made up of 2 components: "geo" and "metry":
     * "Geo" - earth
@@ -44,7 +44,7 @@ Topics: [[maths]] [[geometry]]
 
 ## Ray
 
-* A line that starts from one point that continues on infinitely in one direction is called a [[ray]]
+* A line that starts from one point that continues on infinitely in one direction is called a [[Ray]]
 
     ![ray example](ray.png)
 

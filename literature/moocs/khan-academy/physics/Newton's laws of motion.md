@@ -2,9 +2,10 @@ Link: https://www.khanacademy.org/science/physics/forces-newtons-laws
 Title: [[Unit: Forces and Newton's laws of motion]]
 Author: [[Salman Khan]]
 Type: #video
-Topics: [[physics]]
+Topics: #Physics 
 
-# Newton's laws of motion
+---
+
 * Newton's 1st law:
     * "An object at rest remains at rest, or if in motion, remains in motion at a constant velocity unless acted on by a net external force."
     * A "net external force" is required for change in velocity, magnitude or direction.

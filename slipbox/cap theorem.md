@@ -1,9 +1,3 @@
-Tags: #Database 
-
----
-
-# CAP Theorem
-
 Also known as [[Brewer's theorem]], after computer scientist Eric Brewer, is the theory that it's impossible for a distributed data store to provide 3 of the following capabilities simultaneously:
 
 * Consistency: every read gets the most recent write
@@ -22,6 +16,7 @@ Guarantees that each read will get the most recent write. However, if a region i
 
 PostGres in a leader/follower configuration provides availability but not consistency. The follower will often provide an out-of-date copy of data.
 
-## References
+---
 
-CAP theorem. (2021, February 26). In _Wikipedia_. https://en.wikipedia.org/wiki/CAP_theorem
+Tags: #Data
+Reference: [CAP theorem (Wikipedia)](https://en.wikipedia.org/wiki/CAP_theorem)

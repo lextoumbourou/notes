@@ -1,13 +1,10 @@
 ---
 Link: https://www.amazon.com.au/Art-Game-Design-book-lenses/dp/0123694965
 Title: The Art of Game Design - A Book Of Lenses (2nd Edition)
-Author: [[Jesse Schell]]
+Author: Jesse Schell
 Type: #book
 tags: #GameDesign
-aliases: ["The Art of Game Design - A Book of Lenses (2nd Edition)"]
 ---
-
-# The Art of Game Design - A Book of Lenses (2nd Edition)
 
 ## Chapter 1: In the Beginning, There is the Designer
 
@@ -999,7 +996,7 @@ aliases: ["The Art of Game Design - A Book of Lenses (2nd Edition)"]
         * Games usually opt to combine rewards.
         * Rules of thumb from psychology:
             * Players acclimate to rewards quickly. Simple solution is to increase the value of rewards as the game progresses.
-            * [[variable rewards]]: if every 1/3 monsters you defeat gives you bonus items, it's a lot more interesting than getting them consistently.
+            * [[Variable rewards]]: if every 1/3 monsters you defeat gives you bonus items, it's a lot more interesting than getting them consistently.
         * **Lens #46: Lens of Rewards**
             * What are the game's current rewards? Is there room for more?
             * Are players excited when they get rewards or bored?
