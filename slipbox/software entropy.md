@@ -1,5 +1,3 @@
-# Software entropy
-
 Refers to phenemona that as a project increases in size, abiity to add new features and progress decreases.
 
 ---
