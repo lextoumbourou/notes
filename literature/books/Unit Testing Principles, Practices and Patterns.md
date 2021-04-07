@@ -216,3 +216,28 @@ Tags: #GameDesign
     * Black box tests tests functionality with no knowledge of internal structure
     * White box the opposite: test with knowledge of internals.
     * Since aim is to maximise resistance to refactoring, pick black box by default. Use white box for test analysis: ie branch coverage metrics, and then write black box armed with that knowledge.
+
+## 5. Mocks and test fragility
+
+* Test double is overarching term for any non-prod fake dependacies in tests.
+* Gerard Meszaros in xUnit Test Patterns, claims there are 5 variations of test doubles:
+	* dummy
+	* stub
+	* spy
+	* mock
+	* fake
+* In reality, there are only 2 types: mock and stub. Each of the 5 variations are really just variants of the 2.
+	* Mocks are used for checking *outgoing interactions*
+	* Stubs are used for *incoming interactions*
+	 
+	```mermaid
+	graph TD;  
+		Double-->Mock("Mock: (mock, spy)");  
+		Double-->Stub("Stub (stub, dummy, fake)");
+	```
+
+	* Spies are the same as mocks but written manually. Also known as: handwritten mocks.
+	* Dummy is a simple hardcoded value, like a string or None used to satisfy an interface.
+	* Stub is a more sophisticated.
+	* Fake is a stub for a dependancy that doesn't exist.
+* Rule of thumb: you don't assert interactions with stubs.
