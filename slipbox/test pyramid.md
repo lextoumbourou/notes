@@ -10,7 +10,7 @@ Khorikov also provide an exception with respect to CRUD style apps and others th
 
 ---
 
-Tags: #AutomatedTests 
+Tags: #AutomatedTesting
 Reference:
 - [[Unit Testing Principles, Practices and Patterns#4 The four pillars of a good unit test]]
 - [TestPyramid](https://martinfowler.com/bliki/TestPyramid.html)

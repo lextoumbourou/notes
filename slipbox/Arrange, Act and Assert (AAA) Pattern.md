@@ -27,5 +27,5 @@ Similar to the [[Given-When-Then]] pattern.
 
 ---
 
-Tags: #AutomatedTests 
+Tags: #AutomatedTesting
 Reference: [[Unit Testing Principles, Practices and Patterns|# Unit Testing Principles, Practices, and Patterns]] 

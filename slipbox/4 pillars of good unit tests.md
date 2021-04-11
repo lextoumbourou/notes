@@ -13,5 +13,5 @@ An extreme example of this is an e2e test. It is extremely resistant to refactor
 
 ---
 
-Tags: #AutomatedTests #Programming 
+Tags: #AutomatedTesting #Programming 
 Reference: [[Unit Testing Principles, Practices and Patterns#4 The four pillars of a good unit test]] 
