@@ -12,4 +12,4 @@ Test coverage metrics are a tool used to define how much of a code base is cover
    
 ---
    
-Tags: #AutomatedTests #Coverage #UnitTests
+Tags: #AutomatedTesting #Coverage #UnitTests

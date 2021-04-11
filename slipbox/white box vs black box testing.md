@@ -6,5 +6,5 @@ Khorikov argues that since black box tests provide the best resistance to refact
 
 ---
 
-Tags: #AutomatedTests 
+Tags: #AutomatedTesting
 Reference: [[Unit Testing Principles, Practices and Patterns#4 The four pillars of a good unit test]]

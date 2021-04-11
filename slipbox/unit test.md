@@ -10,5 +10,5 @@ On the other hand, an [[integration test]] is simply any test which can't satisf
 
 ---
 
-Tags: #AutomatedTests #UnitTests 
+Tags: #AutomatedTesting #UnitTests 
 Reference: [[Unit Testing Principles, Practices and Patterns#2 What is a unit test]]
