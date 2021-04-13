@@ -265,3 +265,17 @@ Tags: #AutomatedTesting
 	* Good encapsulation protects against errors as the complexity of the code base increases: "You cannot trust yourself to do the right thing all the time - so, eliminate the very possibility of doing the wrong thing"
 		* Related to Martin Fowler's [Tell Don't Ask](https://www.martinfowler.com/bliki/TellDontAsk.html#:~:text=Tell%2DDon't%2DAsk,an%20object%20what%20to%20do) principal. 
 * Relationship between mocks and test fragility
+	* Hexagonal architecture (term introduced by Alistair Cockburn)
+		* Applications consist of 2 layers: domain and application services
+			* Domain layers == business logic.
+			* Application is for orchestrating communication to domain layer.
+		* Business logic is most important part of application and shouldn't mix with application.
+		*  Tests can have fractal structure: verify behavior that helps achieve same goals at different levels.
+	* Intra-system vs inter-system communication
+		* Intra-system == communication between classes within your app
+		* Inter-system == communication between other applications
+	* Intra-system are part of the implementation detail and shouldn't be mocked.
+	* Inter-system can sometimes be part of observable application behaviour: for example, sending email after adding user, adding a message to queue
+		* Use of mocks here is a good idea, to ensure contract is maintained.
+* Not all out-of-process dependancies should be mocked
+	* Although tests should be optimised for running in parallel, some out-of-process deps like databases are entirely implementation details and not important to the client achieveing their goals. They shouldn't be mocked (more on how to do this in upcoming chapter.)
