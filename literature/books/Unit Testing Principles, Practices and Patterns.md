@@ -279,3 +279,6 @@ Tags: #AutomatedTesting
 		* Use of mocks here is a good idea, to ensure contract is maintained.
 * Not all out-of-process dependancies should be mocked
 	* Although tests should be optimised for running in parallel, some out-of-process deps like databases are entirely implementation details and not important to the client achieveing their goals. They shouldn't be mocked (more on how to do this in upcoming chapter.)
+
+## 6. Styles of Unit Testing
+
