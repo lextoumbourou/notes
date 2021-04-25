@@ -52,4 +52,18 @@ Tags: #Writing
 
 ## 3. Everything You Need to Have
 
-* *
+* NASA made a gravity-independent pen in an effort to write in space, Russians simply used pencils.
+* The slip-box follows the Russian model: focus on essentials and don't overcomplicate things.
+* Students can end up with a lot of different learning and note-taking techniques, simple in isolation but complicated together.
+* None of the workflows have tools to help make connections between ideas.
+* Slipbox is not another techique but an overarching workflow stripped of everything that distracts from stuff that's important.
+* The Slipbox Tool Box:
+	* Something to write with and something to write on
+	* A reference management program
+	* The slip-box
+	* An editor
+* Workflow
+	* Any time you have an idea, add it to a notepad or some inbox that you will process later
+	* Use a reference management system like Zotero to handle citations, which can be linked to from your reference notes
+	* Create a slipbox: either using sheets of paper "about the size of a postcard (Luhmann used the DIN A6 size, 148 x 105 mm or 5.83 x 4.13 inches)" or a program like [Zettelkasten](https://zettelkasten.de/the-archive/)
+	* Use an editor, preferable that works with Zotero or your reference manager
