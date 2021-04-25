@@ -67,3 +67,8 @@ Tags: #Writing
 	* Use a reference management system like Zotero to handle citations, which can be linked to from your reference notes
 	* Create a slipbox: either using sheets of paper "about the size of a postcard (Luhmann used the DIN A6 size, 148 x 105 mm or 5.83 x 4.13 inches)" or a program like [Zettelkasten](https://zettelkasten.de/the-archive/)
 	* Use an editor, preferable that works with Zotero or your reference manager
+
+## 4. A Few Things to Keep in Mind
+
+* It's crucial to not just understand how it work, or how to work with it, but why it works. Only then can you modify it for your own needs.
+* Book aims to give all resources needed to use the slipbox in the best possible way for your goals.
