@@ -72,3 +72,42 @@ Tags: #Writing
 
 * It's crucial to not just understand how it work, or how to work with it, but why it works. Only then can you modify it for your own needs.
 * Book aims to give all resources needed to use the slipbox in the best possible way for your goals.
+
+## The Four Underlying Priniciples
+
+## 5. Writing Is the Only Thing That Matters
+* All your note taking should be taken with a focus on writing:
+	* Gives a tangible purpose when reading or attending lectures etc.
+	* Ensures you read in an engaged way: to paraphrase text you have to understand it.
+	* Helps to learn as efficiently as possible and get to the point where open questions arise. These are the things worth writing about.
+
+## 6. Simplicity Is Paramount
+
+* The common system for notetaking used by students and academic fails for the same reason the first iterations of shipping containers did: parts that appear to make sense in isolation can not be combined towards an optimal workflow.
+* In a standard note taking system, the question is: what topic do I store this note?
+* With Zettelkasten: what context will I want to stumble under this note again?
+* Like shipping container, Instead of having different storage for different ideas everything works towards one goal: generating insights that can be published.
+* Slipbox works at scale: when more notes are added more value can be derived. However, adding notes indiscriminately lowers value of slipbox.
+* To achieve "critical mass" for notes, you must differentiate between:
+	* fleeting notes
+	* permanent noets
+	* project notes
+* 3 common mistakes:
+	* treat everything as a permanent notes ie scientific journal
+		* good ideas get diluted by other ideas
+		* ideas order chronologically are difficult to search
+	* collect notes only relevant to project
+		* you start from scratch each project and cut off relevant lines of thought at the end
+		* exception ideas are created over multi-projects
+	* treat all notes as fleeting
+		* even small amounts of unprocessed notes can lead to sense of out of controlness
+	* All have one downside in common: the benefits of the system decreases as more notes are added.
+* Fleeting notes vs permanent
+	* Fleeting notes are collected if need extra step of understand or grasp an idea
+	* Fleeting notes must be processed later
+		* Good measure for assessing whether fleeting note was kept too long: if you no longer understand it or appears banal
+	* Permanent notes should be written in such a way that you can understand it even when you have long forgotten the original context
+* Finally: project notes that don't fit into the slipbox: todo lists, outlines, drafts etc should go in a project specific folder.
+	* You can pull relevant notes out of the slipbox into the project folder to experiment with arraguments.
+
+## 7. Nobody Ever Starts From Scratch
