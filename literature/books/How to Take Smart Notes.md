@@ -111,3 +111,8 @@ Tags: #Writing
 	* You can pull relevant notes out of the slipbox into the project folder to experiment with arraguments.
 
 ## 7. Nobody Ever Starts From Scratch
+
+* Study guides usually describe paper writing as a linear process: make decision on what to write about, plan, research, then write.
+* However, decision on what to write about has to be informed from reading you've already done on topic and other topics, to determine if it's a topic with merit.
+* Brainstorming is another technique that is often prescribed, but all the ideas that appear to originate in your brain, actual have sources that need to be traced
+* If you have a slip-box, you will see clusters of interest from your own reading and writing and can trust that by following your interests, interesting questions will arise.
