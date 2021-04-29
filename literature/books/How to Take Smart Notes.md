@@ -138,4 +138,23 @@ Tags: #Writing
 * Searching through slipbox for categorising notes another important benefit: 
 	* Shows related notes we may not have considered
 * Slipbox works in a similar fashion to our brains:
-	* the more we add, the more new ideas can be hung in out "network of ideas" or “latticework of mental models” (Munger, 1994),
+	* the more we add, the more new ideas can be hung in out "network of ideas" or “latticework of mental models” (Munger, 1994).
+
+## The Six Steps To Successful Writing
+
+## 9. Separate and Interlock Tasks
+
+* 9.1 Give each task your full attention:
+	* There's clearly a trend towards lower attention-span
+	* There's more distractions than ever and less opportunities to train our attetion span.
+* 9.2 Multitasking is not a good idea:
+	* According to study (often citied - need to find it), quality of work not only decreases with multitasking but the ability to multitask also decreases.
+		* Why?
+			* Multitasking isn't really doing 2 things at once, it's shifting our attention rapidly from one thing to another.
+			* The shifts is a drain in energy and decreases our energy to continue doing it.
+	* Writing paper requires reading, understanding, reflecting, getting ideas, making connections, finding words, organising etc: all require different types of attention
+		* Not only impossible to focus on more than one thing at a time, but also on different types of attention
+	* Focused attention is different from "sustained attention" which is needed to focus on one task for a longer period and is neccessary for learning, understanding and getting things done.
+		* With focused attention, we can focus on one thing only and only for a few seconds.	
+	* The slipbox not only gives a clear structure for working, but allows us to shift our attention conciously from one type of attention to another.
+* 9.3 Give each task the right kind of attnetion
