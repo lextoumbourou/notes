@@ -116,3 +116,26 @@ Tags: #Writing
 * However, decision on what to write about has to be informed from reading you've already done on topic and other topics, to determine if it's a topic with merit.
 * Brainstorming is another technique that is often prescribed, but all the ideas that appear to originate in your brain, actual have sources that need to be traced
 * If you have a slip-box, you will see clusters of interest from your own reading and writing and can trust that by following your interests, interesting questions will arise.
+
+## 8. Let the Work Carry You Forward
+
+* Having a good workflow can be a virtuous cycle: you have positive experiences that motivates you to keep going, thus creating more position experiences.
+	* Similar to endergonic reaction which releases energy, as opposed to an exergonic reaction, which requires energy.
+	* Trying to motivate yourself with rewards doomed to fail - eventually you'll take a shortcut to the rewards.
+* Feedback loops crucial part of learning: nothing motivates us more than getting better at what we do.
+* Most reliable predictor for long-term success: [[Growth Mindset]]
+	* Growth mindset = "getting pleasure out of changing for the better (inwardly rewarding) vs being praised (outwardly rewarding)"
+	* Gifted students are often praised which leads to a fixed mindset to focus on keeping the impression intact.
+* Feedback also a key part of development:
+	* Academia's linear approach to writing leaves little room for feedback: only once at end when project's finished.
+* Circular feedback loops gives us many chances to learn and correct mistakes:
+	* Writing what you've read in your own words forces a deep understanding.
+		* Can't fool yourself incomprehensible literature notes, as you'll be force to understand it when creating permanent notes.
+		* The more we do it, the better and faster we get, which allows for more learning - another positive feedback loop.
+* Writing permanent notes another positive feedback loop:
+	* Forces you to think your ideas through.
+	* Combining previously writen notes shows contradictions, inconsistencies and repeitiotns.
+* Searching through slipbox for categorising notes another important benefit: 
+	* Shows related notes we may not have considered
+* Slipbox works in a similar fashion to our brains:
+	* the more we add, the more new ideas can be hung in out "network of ideas" or “latticework of mental models” (Munger, 1994),
