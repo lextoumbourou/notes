@@ -157,4 +157,19 @@ Tags: #Writing
 	* Focused attention is different from "sustained attention" which is needed to focus on one task for a longer period and is neccessary for learning, understanding and getting things done.
 		* With focused attention, we can focus on one thing only and only for a few seconds.	
 	* The slipbox not only gives a clear structure for working, but allows us to shift our attention conciously from one type of attention to another.
-* 9.3 Give each task the right kind of attnetion
+* 9.3 Give each task the right kind of attention
+	* Mentioned earlier, writing requires many different types of attention
+		* Proofreading is very different from trying to find the write words.
+			* Critic must have distance from author: be concerned with what was said, not what was meant to be said.
+				* Requires focused attention.
+			* Author must have distance from critic: trying to write perfect first time will bring you to stand still.
+				* Requires "floating" attention
+		* Outline or changing outline requires a focus on the whole argument, not just one thought.
+	* Finding write words easier if we don't think about the outline
+		* Printed outline of manuscript should be in front of your eyes.
+	* Working with the slip-box requires a associate, playful and creative attention
+	* Reading another kind of attention
+		* Some texts can be skimmed
+		* Others studied in depth.
+	* To master writing, you need to apply whatever type of attention is needed.
+* 9.4 Become an Expert Instead of a Planner
