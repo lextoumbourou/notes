@@ -1,5 +1,3 @@
-# Week 5: Boosting
-
 ## Amazing idea of boosting a classifier
 
 ### The boosting question
@@ -51,12 +49,17 @@
 
 ### Computing coefficient of each ensemble component
 
-* Coefficient is calculated with the following formula: $$ \hat{w}_t = \frac{1}{2}ln (\frac{1-\text{weighted_error}(f_t)}{\text{weighted_error(f_t)}}) $$
+* Coefficient is calculated with the following formula:
+
+	$$\hat{w}_t = \frac{1}{2} ln( 
+		\frac{ 1 - \text{weighted_error}(f_t)}{\text{weighted_error(f_t)}})$$
+	
 * Interesting thing about the formula is poor classifiers, ones with values close to 1 are inverted to become good classifiers the other way. Average classifiers, eg random, end up with weights of 0.
 
 ### Reweighing data to focus on mistakes
 
-* $$ \alpha_i \leftarrow \begin{cases} \alpha_i\mathrm{e}^{-\hat{w}_t}, \mathrm{if}\space f_t(\mathbf{x}_i) = y_i \\ \alpha_i\mathrm{e}^{\hat{w}_t}, \mathrm{if}\space f_t(\mathbf{x}_i) \neq y_i \end{cases} $$
+$$ \alpha_i \leftarrow \begin{cases} \alpha_i\mathrm{e}^{-\hat{w}_t}, \mathrm{if}\space f_t(\mathbf{x}_i) = y_i \\ \alpha_i\mathrm{e}^{\hat{w}_t}, \mathrm{if}\space f_t(\mathbf{x}_i) \neq y_i \end{cases} $$
+
 * Results:
 	* When $$ f_t(\mathbf{x}_i) $$ is correct (and thus we have a high weight for it) we end up with a lower weight for the datapoint.
    * When the opposite, we have high weights for data point, this means that the data points that are wrong will be more important to future classifiers.

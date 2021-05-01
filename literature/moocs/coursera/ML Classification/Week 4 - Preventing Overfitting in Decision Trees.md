@@ -1,5 +1,3 @@
-# Week 4: Preventing Overfitting in Decision Trees
-
 ## Overfitting in Decision Trees
 
 ### Review of overfitting

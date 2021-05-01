@@ -1,5 +1,3 @@
-# Week 2: Learning Linear Classifiers
-
 ## Data likelihood
 
 * Quality metric for logistic regression

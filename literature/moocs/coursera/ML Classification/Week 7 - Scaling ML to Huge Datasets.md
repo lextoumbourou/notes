@@ -1,5 +1,3 @@
-# Week 7: Scaling ML to Huge Datasets
-
 ## Gradient ascent won't scale to today's huge datasets
 
 * Because gradient ascent requires scans over dataset while learning coefficients, it can be inefficient for large datasets.
