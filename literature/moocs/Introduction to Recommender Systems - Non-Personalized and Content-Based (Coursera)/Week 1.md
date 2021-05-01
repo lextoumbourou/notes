@@ -1,5 +1,3 @@
-# Week 1
-
 ## Intro to Course and Specialization
 
 * Broken into 4 courses:

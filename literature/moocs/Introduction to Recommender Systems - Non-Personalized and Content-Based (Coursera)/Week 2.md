@@ -1,5 +1,3 @@
-# Week 2
-
 ## Non-Personalized and Stereotype-based Recommenders
 
 * Why non-personalised?

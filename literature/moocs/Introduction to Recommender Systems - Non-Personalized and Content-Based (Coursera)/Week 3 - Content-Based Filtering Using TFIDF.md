@@ -1,5 +1,3 @@
-# Week 3 - Content-Based Filtering Using TFIDF
-
 ## Introduction to Content-Based Recommenders
 
 * Basic idea: there are "stable" preferences people that that can be measured by content attributes:

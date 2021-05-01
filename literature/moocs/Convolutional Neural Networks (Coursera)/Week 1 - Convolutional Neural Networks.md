@@ -1,5 +1,3 @@
-# Week 1: Convolutional Neural Networks
-
 ## Computer Vision
 
 * Ideas from computer vision are bleeding into other fields: speech recognition, NLP etc.

@@ -1,5 +1,3 @@
-# Week 3: Object Detection
-
 ## Object localization
 
 * Localization and detection:
