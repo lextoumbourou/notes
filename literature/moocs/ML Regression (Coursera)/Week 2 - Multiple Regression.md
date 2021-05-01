@@ -1,7 +1,4 @@
-## Week 2
-
 * Polynomial regression:
-
   * Even with only a single input variable, a linear equation model may not represent the relationship between the output variable.
   * Could use a higher-order function (quadratic, polynomial etc):
     * ``yᵢ = W₀ + W₁Xᵢ + W₂Xᵢ² ... + WpXᵢ^p + εi``
@@ -36,7 +33,7 @@
     * Eg: Number of bedrooms might have a negative coefficient if the square feet of the house is low.
   * If in a situation where you can't "fix" an input (eg if all features are a power of one input), then you can't interpret the coefficient.
 
-* [Linear Algebra Review](linear-algebra.md)
+* [Linear Algebra Review](Linear%20Algebra%20Refresher.md)
 
 * Stages for computing the least squares fit:
 

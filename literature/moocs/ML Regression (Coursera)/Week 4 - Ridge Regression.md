@@ -1,5 +1,3 @@
-# Week 4
-
 * Symptom of overfitting:
 	* When model is extremely overfit, magnitude of coefficients can be extremely large.
 

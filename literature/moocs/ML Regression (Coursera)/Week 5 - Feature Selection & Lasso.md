@@ -1,5 +1,3 @@
-# Week 5 - Feature Selection & Lasso
-
 ## Prerequisities
 
 Matrix n-norm: https://www.youtube.com/watch?v=tXCqr2UsbWQ

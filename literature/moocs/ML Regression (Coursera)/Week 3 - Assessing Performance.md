@@ -1,5 +1,3 @@
-## Week 3
-
 * Goal: figure out how much you are "losing" using your model compare to perfection.
 
 	* Example: low predictions causing house to be listed too cheap.
