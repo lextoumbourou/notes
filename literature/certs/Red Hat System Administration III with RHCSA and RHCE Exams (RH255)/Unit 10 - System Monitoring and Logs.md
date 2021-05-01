@@ -1,6 +1,3 @@
-Unit 10: System Monitoring and Logs
-==============================
-
 ## Usage Reports
 
 * ```df -h``` -- provides info about mounts

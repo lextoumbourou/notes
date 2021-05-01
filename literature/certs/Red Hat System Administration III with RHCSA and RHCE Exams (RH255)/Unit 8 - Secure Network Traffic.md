@@ -1,6 +1,3 @@
-Unit 8: Secure Network Traffic
-======================
-
 ## SSH Port Forwarding
 
 * ```ssh -L <local_port>:<remote_host>:<remote_port> <ssh_host>```

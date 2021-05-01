@@ -1,6 +1,3 @@
-Unit 14: Basic SMTP Configuration
-========================
-
 * MTA (Mail Transfer Agent) - relay mail from point to point until it's delivered.
 * MDA (Mail Delivery Agent) - deliver mail to recipients local message store. Postfix provised its own MDA to deliver to default local file-based message store: ```/usr/libexec/postfix/local```
 * MUA (Mail User Agent) - clients used to send email and read email in user's message.

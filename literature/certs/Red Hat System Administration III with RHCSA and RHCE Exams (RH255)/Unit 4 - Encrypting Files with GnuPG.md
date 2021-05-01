@@ -1,6 +1,3 @@
-Unit 4: Encrypting Files with GnuPG
-===================================
-
 ## Overview
 
 * Public-key encryption (aka asymmentric encryption)

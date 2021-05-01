@@ -1,6 +1,3 @@
-Unit 11: Centralized and Secure Storage
-=============================
-
 ## Recap of setting up local disks
 
 1. Create partitions:

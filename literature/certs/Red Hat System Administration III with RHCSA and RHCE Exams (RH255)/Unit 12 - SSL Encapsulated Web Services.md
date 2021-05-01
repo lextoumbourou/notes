@@ -1,6 +1,3 @@
-Unit 12: SSL Encapsulated Web Services
-============================
-
 * Need to install ```yum install mod_ssl``` or ```yum groupinstall web-server```
 
 * When installed ```mod_ssl``` you can find the key config under ```/etc/httpd/conf.d/ssl.conf```

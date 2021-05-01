@@ -1,6 +1,3 @@
-Unit 19: Troubleshooting the Boot Process
-================================
-
 ## The Boot Process and Rescue Mode
 
 * BIOS
