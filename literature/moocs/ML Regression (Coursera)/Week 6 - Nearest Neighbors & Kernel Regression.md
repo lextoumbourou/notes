@@ -1,5 +1,3 @@
-# Week 6: Nearest Neighbours & Kernel Regression
-
 ## Pre class notes:
 
 * Class is about using "nonparametric" methods to fit data.

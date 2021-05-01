@@ -1,5 +1,3 @@
-# Week 1
-
 * Course Outline:
 
   * Module 1: Simple regression
