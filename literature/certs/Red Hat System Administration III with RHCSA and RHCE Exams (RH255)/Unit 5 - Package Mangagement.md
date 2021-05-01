@@ -1,6 +1,3 @@
-Unit 5: Package Mangagement
-===================
-
 ## RPM
 
 * Metadata stored in RPM that describes changes made in new version

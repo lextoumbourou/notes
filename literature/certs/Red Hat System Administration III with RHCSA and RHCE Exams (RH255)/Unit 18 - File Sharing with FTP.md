@@ -1,6 +1,3 @@
-Unit 18: File Sharing with FTP
-====================
-
 * Config: ```/etc/vsftpd/vsftpd.comf```
 
 * Anonymous viewing 

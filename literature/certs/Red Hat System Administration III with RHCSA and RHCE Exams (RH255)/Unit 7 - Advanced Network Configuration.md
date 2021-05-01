@@ -1,6 +1,3 @@
-Unit 7: Advanced Network Configuration
-================================
-
 ## IP Aliasing
 
 * Assign more than one IP address to an interface

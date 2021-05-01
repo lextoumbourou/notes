@@ -1,6 +1,3 @@
-Unit 17: File Sharing with CIFS
-======================
-
 * Common Internet File Sysmte formerly known as SMB (Server Message Block)
 * Access a CIF share with  ```//hostname/share```
 

@@ -1,6 +1,3 @@
-Unit 15: Caching-Only DNS Server
-======================
-
 ## DNS General
 
 * Authoritative

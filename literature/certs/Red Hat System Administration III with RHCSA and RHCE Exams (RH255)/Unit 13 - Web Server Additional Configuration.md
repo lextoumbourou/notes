@@ -1,6 +1,3 @@
-Unit 13: Web Server Additional Configuration
-===================================
-
 * HTTP security context is ```httpd_content_t```
 
 * To create a new folder for httpd, you will need to ensure the ```httpd_sys_content_t``` directive has been setup on the directory

@@ -1,6 +1,3 @@
-Unit 16: File Sharing with NFS
-=====================
-
 * Port is 2049 (TCP)
 
 * NFS v4

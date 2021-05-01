@@ -1,6 +1,3 @@
-Unit 9: NTP Server Configuration
-==========================
-
 ## Client side
 
 * ```/etc/ntp.conf```

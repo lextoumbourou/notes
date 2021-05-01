@@ -1,13 +1,10 @@
-Unit 6: Network Monitoring
-=========================
-
 ## netstat
 
-* ```-l``` - Listening
-* ```-n``` - Numerical hosts
-* ```-t``` - TCP
-* ```-u``` - UDP
-* ```-p``` - Process that controls the port
+* `-l` - Listening
+* `-n` - Numerical hosts
+* `-t` - TCP
+* `-u` - UDP
+* `-p` - Process that controls the port
 
 ## nmap
 

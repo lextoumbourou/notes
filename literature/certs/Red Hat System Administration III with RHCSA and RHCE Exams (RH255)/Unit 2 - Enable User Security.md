@@ -1,6 +1,3 @@
-Unit 2: Enable User Security
-============================
-
 ## Configuring sudo
 
 ### Basic syntax
