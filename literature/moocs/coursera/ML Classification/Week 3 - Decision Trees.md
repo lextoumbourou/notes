@@ -1,5 +1,3 @@
-# Week 3: Decision Trees
-
 ## Intuition behind decision trees
 
 ### Predicting loan defaults with decision trees

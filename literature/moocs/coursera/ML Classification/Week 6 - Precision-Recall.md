@@ -1,5 +1,3 @@
-# Week 6: Precision-Recall
-
 ## Why use precision & recall as quality metrics
 
 ### What is good performance for a classifier?

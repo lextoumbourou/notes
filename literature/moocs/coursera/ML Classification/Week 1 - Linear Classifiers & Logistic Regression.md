@@ -1,5 +1,3 @@
-# Week 1: Linear Classifiers & Logistic Regression
-
 ## Assumed background
 
 * Course 1 & 2 in ML Specialisation.
