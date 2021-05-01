@@ -1,5 +1,3 @@
-# Week 2: Deep convolutional models: case studies
-
 ## Outline
 
 * Reading papers

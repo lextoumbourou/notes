@@ -1,5 +1,7 @@
 Link: https://www.coursera.org/learn/ml-classification
+Type: mooc
 Complete: 2016-07-04
+Tags: #MachineLearning #Classification
  
  ---
 

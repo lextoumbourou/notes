@@ -1,5 +1,3 @@
-# Week 4: Special applications: Face recognition & Neural style transfer
-
 ## Face Recognition
 
 ### What is face recognition
