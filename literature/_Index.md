@@ -1,10 +1,11 @@
-# Study Notes
+## In Progress
 
-A collection of notes from various courses, books and lectures either completed, in progress or abandoned.
+* [[How to Take Smart Notes]]
+* [[Unit Testing Principles, Practices and Patterns]]
 
-## Contents
+## Complete
 
-* [The Art of Game Design - A Book Of Lenses](The%20Art%20of%20Game%20Design%20-%20A%20Book%20of%20Lenses%20(2nd%20Edition).md)
+* [[The Art of Game Design - A Book of Lenses (2nd Edition)]]
 * [Deep Learning 2018 - Part 1 (fast.ai)](./moocs/fast.ai/deep-learning-2018)
 * [Sequence Models (Coursera - nlp-sequence-models)](./moocs/coursera/nlp-sequence-models)
 * [Convolutional Neural Networks (Coursera - convolutional-neural-networks)](./moocs/coursera/convolutional-neural-networks)
