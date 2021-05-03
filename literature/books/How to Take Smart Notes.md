@@ -173,3 +173,33 @@ Tags: #Writing
 		* Others studied in depth.
 	* To master writing, you need to apply whatever type of attention is needed.
 * 9.4 Become an Expert Instead of a Planner
+	* Experts do not rely on rigid plans, they rely on intuition or "embedded experience" .
+	* Study guides try to "spare" you from gaining experience by telling you how, what and when to write.
+	* To become expert, you need to make own decisions and learn from mistakes
+	* Workflow of slipbox ideal for developing experience:
+		* provides structure with clearly separable tasks that can be completed in reasonable amount of time
+		* gives instant feedback through interconnected writing tasks
+* 9.5 Get Closure
+	* Attention is not only limited resource: short term memory is very limited.
+		* We can hold 7 things plus or minus 2 (Miller 1956)
+	* Information in short term memory can't be saved: it floats around seeking attention until forgotten or replaced.
+		* Open tasks occupy our limited short term memory until they're done or, as  Zeigarnik found, written down, which is equally as effective for freeing short term memory.
+	* On the other hand, things can be added to long term memory when understood, as we understand by connecting to existing knowledge
+		* The slipbox seeks to reproduce this phenomena by allowing for interconnected long-term knowledge.
+		* Permanent  note creations should generate questions like:
+			* How does theory fit into idea of ... ?
+			* Can a phenonemon be explained by theory?
+			* Do 2 ideas contradict or compliment each other?
+			* Is argument similar to ... "
+	* Slipbox also allows us to take advantage of unconcious process of our brain
+		* We can write down unanswered questions and leave our brain to process them as we rest
+* 9.6 Reduce the Number of Decisions
+	* Willpower is another limited resource
+		* Slipbox allows us to "cheat": we can only work on what we feel like doing but that still moves the project forwards
+	* Decision-making another task that depletes willpower
+	* By having a system for doing all research, fewer decisions are required:
+		* have one notebook for quick note taking
+		* always extract ideas from text in one fashion
+		* always turn literature notes into permanent notes
+	* Taking breaks essential for long term memory
+		* The slipbox breaks tasks down into small, completable chunks that allows for breaking and easily picking up where we left.
