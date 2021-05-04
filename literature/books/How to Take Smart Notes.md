@@ -203,3 +203,33 @@ Tags: #Writing
 		* always turn literature notes into permanent notes
 	* Taking breaks essential for long term memory
 		* The slipbox breaks tasks down into small, completable chunks that allows for breaking and easily picking up where we left.
+
+## 10. Read for Understanding
+
+* 10.1 Read With a Pen in Hand
+	* By reading and converting into your own words, you will generate new ideas and content.
+	* It's 2-way:
+		* adding notes to slipbox turns in arguments, theories, ideas and models in your head.
+		* what's in the slipbox will shape what's in your head.
+	* Handwriting notes work particularly well in lectures because handwriting is slower, therefore the notetaker must write just the "gist" of what was heard
+		* In order to write the gist, you must understand it.
+	* Extensiveness of literature notes depends on the text.
+		* Text on topics you're very unfamiliar with will require more ntoes.
+	* What matters above all is the actual writing of slipbox notes.
+		* Sometimes reflection on what's not written is needed: frame, theortical background or author, methodological approach etc.
+* 10.2 Keep an Open Mind
+	* Ideally, given a hypthosis we would seek to find arguments and facts that challenge our way of thinking
+		* However, our brains do not tend to work that way by default
+			*  We are naturally drawn to stuff that confirms our belief: [[Confirmation Bias]]
+	* We tend to find ourselves drawn to people that think like us, and read and listen to publications that confirm our beliefs.
+	* Best scientists and thinkers are not free from it, but activately seek to counter it
+		* Charles Darwin would constantly force himself to understand  arguments that were critical of his theories.
+	* Standard approach of starting with a hypothesis, causes major problems with confirmation bias:
+		* we "fix" the present understanding of the outcome, instead of using as a starting point.
+		* we create a conflict of interest between getting it done, by finding support for your argument and generating insight.
+	* Slipbox changes incentives to finding confirmining facts to collect any information without care for the arguments it supports
+		* In fact, more connections can often be made in the Slipbox by adding "dis-confirming" notes, than ones that support our existing argument.
+	* Discussions around pros and cons also make for interesting papers
+* 10.3 Get the Gist
+	* The ability to find relevant details amongst less relevant details is a skill that improves with practice
+		* "Reading with pen in hand" and writing permanent notes provides deliberate practice at this.
