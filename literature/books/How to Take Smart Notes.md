@@ -232,4 +232,22 @@ Tags: #Writing
 	* Discussions around pros and cons also make for interesting papers
 * 10.3 Get the Gist
 	* The ability to find relevant details amongst less relevant details is a skill that improves with practice
-		* "Reading with pen in hand" and writing permanent notes provides deliberate practice at this.
+		* You can become better at spotting theories, concepts, typical mistakes, general categories, writing styles that indicate certain things and so on.
+	* Professional reading and writing only possible through the learned understanding: otherwise all text read as novels.
+	* "Reading with pen in hand" and writing permanent notes provides deliberate practice at this skill
+* 10.4 Learn to Read
+	* Feynman said that the only way to know if he'd understood a topic is to do an introductory lecture on it.
+	* You write notes for a audience in a similar way, only difference is: the audience is you after you've forgotten the material.
+	* Writing helps to truely check our understanding and confront ourselves if we don't understand as well as we thing
+		* Simply rereading is dangerous due to the exposure effect: as we become more familiar with something we wrongly assume that we understand it
+	* Having external system that systematically forces us to test our understanding consistently is key.
+* 10.5 Learn by Reading
+	* "The one who does the work does the learning" Doyle (2008, 63)
+	* Learning requires a lot of effort
+	* Teachers do students a disservice by sorting their material into topics, categories and themes
+		* Instead, though it may annoy students, they should change topics midway through a lesson, then jump back to it later.
+		* They should test student constantly, even on things they haven't learned yet.
+	* Answer a question before we know how to will allow us to remember the answer better (Arnold and McDermott 2013)
+	* Put in effort to retrieve information even if we fail will help us remember in the long run (Roediger and Karpicke 2006)
+	* Best-researched and most successful learning method is elaboration: thinking about what we read, how it could inform different questions and how it can be combined with other knowledge: slipbox is a form of this
+		* Writing, taking notes and thinking about how ideas connect is the kind of elaboration need to learn.
