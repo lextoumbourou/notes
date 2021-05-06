@@ -1,11 +1,11 @@
 ## In Progress
 
-* [[How to Take Smart Notes]]
-* [[Unit Testing Principles, Practices and Patterns]]
+* [How to Take Smart Notes](https://github.com/lextoumbourou/notes/blob/master/literature/books/How%20to%20Take%20Smart%20Notes.md)
+* [Unit Testing Principles, Practices and Patterns](https://github.com/lextoumbourou/notes/blob/master/literature/books/Unit%20Testing%20Principles%2C%20Practices%20and%20Patterns.md)
 
 ## Complete
 
-* [[The Art of Game Design - A Book of Lenses (2nd Edition)]]
+* [The Art of Game Design - A Book of Lenses (2nd Edition)](https://github.com/lextoumbourou/notes/blob/master/literature/books/The%20Art%20of%20Game%20Design%20-%20A%20Book%20of%20Lenses%20(2nd%20Edition).md)
 * [Deep Learning 2018 - Part 1 (fast.ai)](./moocs/fast.ai/deep-learning-2018)
 * [Sequence Models (Coursera - nlp-sequence-models)](./moocs/coursera/nlp-sequence-models)
 * [Convolutional Neural Networks (Coursera - convolutional-neural-networks)](./moocs/coursera/convolutional-neural-networks)
