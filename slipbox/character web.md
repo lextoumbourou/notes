@@ -1,3 +1,8 @@
+Title: Character Web
+Date: 2021-02-02
+Tags: #GameDesign 
+
+---
 
 A tool for creating strong characters within a story. You write down what each character thinks of others. Example:
 
@@ -12,5 +17,5 @@ Related to [[Interpersonal Circumplex]] as another tool for building rich charac
 
 ---
 
-Tags: #GameDesign 
-Reference: [[The Art of Game Design - A Book of Lenses (2nd Edition)#Chapter 20 Worlds Contain Characters]] 
+References:
+* [[The Art of Game Design - A Book of Lenses (2nd Edition)#Chapter 20 Worlds Contain Characters]] 

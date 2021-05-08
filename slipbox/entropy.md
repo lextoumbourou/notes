@@ -1,6 +1,12 @@
+Title: Entropy
+Date: 2021-04-06
+Tags: #Science
+
+---
+
 Entropy of a system, is also known as "disorder of a system", refers to the number of possible states of a system. Higher entropy refers to more possible states. 
 
 ---
 
-Tags: #Science
-Reference: https://www.khanacademy.org/science/ap-chemistry/thermodynamics-ap/entropy-tutorial-ap/v/introduction-to-entropy
+References:
+* https://www.khanacademy.org/science/ap-chemistry/thermodynamics-ap/entropy-tutorial-ap/v/introduction-to-entropy

@@ -1,6 +1,12 @@
-A well-designed API (application programming interface), is one in which [[Observabled Behaviours]] are entirely in the [[Public API]], and implementation details are part of the [[Private API]].
+Title: Well-Designed API
+Date: 2021-04-11
+Tags: #SoftwareEngineering
 
-According to Khorikov, the simplest way to tell if a class leaks a implementation detail into observable behaviour is if number of operations client needs to perform to achieve a goal is > 1.
+---
+
+According to Khorikov, a well-designed API (application programming interface), is one in which [[Observabled Behaviours]] are entirely in the [[Public API]], and implementation details are part of the [[Private API]].
+
+The simplest way to tell if a class leaks a implementation detail into observable behaviour is if number of operations client needs to perform to achieve a goal is > 1.
 
 Good [[Encapsulation]] protects against [[Invariant]] volations, especially as the complexity of the code base increases.
 
@@ -10,5 +16,5 @@ Related to Martin Fowler's [[Tell Don't Ask]] pattern.
 
 ---
 
-Tags: #SoftwareEngineering
-Reference: [[Unit Testing Principles, Practices and Patterns#5 Mocks and test fragility]]
+References:
+* [[Unit Testing Principles, Practices and Patterns#5 Mocks and test fragility]]

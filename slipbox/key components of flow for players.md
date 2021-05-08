@@ -1,3 +1,9 @@
+Title: Key Components of Flow For Players
+Date: 2020-11-15
+Tags: #GameDesign #Flow
+
+---
+
 Schell says that the key components that promote [[Flow State]] for players are:
  * clear goals
  * limited distractions
@@ -7,5 +13,5 @@ Schell says that the key components that promote [[Flow State]] for players are:
  
 ---
 
-Tags: #GameDesign #Flow
-Reference: [[The Art of Game Design - A Book of Lenses (2nd Edition)#Chapter 10 The Experience Is in the Player's Mind]]
+References:
+* [[The Art of Game Design - A Book of Lenses (2nd Edition)#Chapter 10 The Experience Is in the Player's Mind]]

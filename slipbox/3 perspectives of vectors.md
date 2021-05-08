@@ -1,3 +1,9 @@
+Title: 3 Perspectives of Vectors
+Date: 2020-11-08
+Tags: #Math #LinearAlgebra 
+
+---
+
 [[3Blue1Brown]] says that there are 3 different perspectives for understanding vectors:
 
 * **Physicist**: they consider a vector to be an arrow pointing in space defined by  its length (called magnitude) and direction. This is often how students are first introduced to vectors in math classes.
@@ -8,5 +14,5 @@
 
 ---
 
-Tags: #Maths #LinearAlgebra #Vectors
-Reference: [[Essence of Linear Algebra]]
+References:
+* [[Essence of Linear Algebra]]

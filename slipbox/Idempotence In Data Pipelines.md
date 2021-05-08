@@ -1,3 +1,9 @@
+Title: Idempotence In Data Pipelines
+Date: 2021-05-04
+Tags: #Data 
+
+---
+
 [[Idempotence]] in a data pipeline ensures that running the same task multiple times will generate the same final output.
 
 Usually this is achieved by ensuring each "record", or item processed, contains a unique identifier allowing for an [[Upsert]] style of record insertion.
@@ -10,5 +16,5 @@ Idempotence alone in a data pipeline does not guarantee a pipeline will not be r
 
 ---
 
-Tags: #Data 
-Reference: [[Idempotence Now Prevents Pain Later]]
+References:
+* [[Idempotence Now Prevents Pain Later]]

@@ -1,8 +1,14 @@
+Title: Emergent Complexity
+Date: 2021-01-16
+Tags: #GameDesign 
+
+---
+
 The opposite of [[innate complexity]] (in which complex rules need to be learned in order to play) and a desired property of a game. Arises when you have a simple ruleset from which complex interations can arise.
 
 Related to the idea of [[Emergent Gameplay]] in the context of strategy, another desired property of a game.
 
 ---
 
-Tags: #GameDesign 
-Reference: [[The Art of Game Design - A Book of Lenses (2nd Edition)#Chapter 13 Game Mechanics Must Be In Balance]]
+References:
+* [[The Art of Game Design - A Book of Lenses (2nd Edition)#Chapter 13 Game Mechanics Must Be In Balance]]

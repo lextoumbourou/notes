@@ -1,3 +1,9 @@
+Title: Confirmation Bias
+Date: 2021-05-04
+Tags: #Psychology #Research
+
+---
+
 Our brains are naturally drawn to information that agrees with our world view. We end up surrounded by people that think like us and consume information mostly from sources that support our beliefs.
 
 In writing, students often start with a hypothesis and find themselves drawn to material that supports it.
@@ -10,5 +16,5 @@ Related to [[Loss Adversion]], insofar as we seek to avoid situations which coul
 
 ---
 
-Tags: #Psychology #Research
-Reference: [[How to Take Smart Notes#10 Read for Understanding]]
+References:
+* [[How to Take Smart Notes#10 Read for Understanding]]

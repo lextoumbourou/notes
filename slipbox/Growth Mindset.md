@@ -1,3 +1,9 @@
+Title: Growth Mindset
+Date: 2021-04-29
+Tags: #Pyschology #Geometry
+
+---
+
 According to Carol Dweck, people are on a continuum between two ideas about acquiring skills: those with Fixed Mindset believe that all ability is fixed at birth and those with Growth Mindsets believe that they can master any skill.
 
 People closer to the growth mindset spectrum see adversity and challenge as a chance to grow.
@@ -8,5 +14,5 @@ She also claims that who're frequently praised for their natural talents develop
 
 ---
 
-Tags: #Pyschology #Geometry
-Reference: https://en.wikipedia.org/wiki/Mindset#Fixed_and_growth_mindset [[How to Take Smart Notes]]
+References:
+* https://en.wikipedia.org/wiki/Mindset#Fixed_and_growth_mindset [[How to Take Smart Notes]]

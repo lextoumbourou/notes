@@ -1,3 +1,9 @@
+Title: Unit tests
+Date: 2021-03-27
+Tags: #AutomatedTesting 
+
+---
+
 The definition of a unit test, according to Khorikov, is an automated test which meets the following criteria:
 
 * Verifies a single unit of behaviour
@@ -10,5 +16,5 @@ On the other hand, an [[integration test]] is simply any test which can't satisf
 
 ---
 
-Tags: #AutomatedTesting #UnitTests 
-Reference: [[Unit Testing Principles, Practices and Patterns#2 What is a unit test]]
+References:
+* [[Unit Testing Principles, Practices and Patterns#2 What is a unit test]]
