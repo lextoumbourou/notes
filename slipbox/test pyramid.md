@@ -1,3 +1,9 @@
+Title: Test Pyramid
+Date: 2021-04-04
+Tags: #AutomatedTesting
+
+---
+
 The Test Pyramid advocates for a balance of automated tests where unit tests are most prevalent, followed by integration tests then end-to-end tests. Khorikov introduces a varient on the common diagram where the height refers to closeness to "emulating the end user's behaviour":
 
 ![Test Pyramid](automated-tests.png)
@@ -10,7 +16,6 @@ Khorikov also provide an exception with respect to CRUD style apps and others th
 
 ---
 
-Tags: #AutomatedTesting
-Reference:
-- [[Unit Testing Principles, Practices and Patterns#4 The four pillars of a good unit test]]
-- [TestPyramid](https://martinfowler.com/bliki/TestPyramid.html)
+References:
+* [[Unit Testing Principles, Practices and Patterns#4 The four pillars of a good unit test]]
+* [TestPyramid](https://martinfowler.com/bliki/TestPyramid.html)

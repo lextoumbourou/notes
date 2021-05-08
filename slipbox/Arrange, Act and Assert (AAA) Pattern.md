@@ -1,3 +1,9 @@
+Title: Arrange, Act and Assert (AAA) Pattern
+Date: 2021-03-28
+Tags: #AutomatedTesting
+
+---
+
 A pattern for structuring unit tests, where tests are broken up into 3 sections:
 
 * Arrange: where you prepare any fixtures and setup the test.
@@ -27,5 +33,5 @@ Similar to the [[Given-When-Then]] pattern.
 
 ---
 
-Tags: #AutomatedTesting
-Reference: [[Unit Testing Principles, Practices and Patterns|# Unit Testing Principles, Practices, and Patterns]] 
+References:
+* [[Unit Testing Principles, Practices and Patterns|# Unit Testing Principles, Practices, and Patterns]] 

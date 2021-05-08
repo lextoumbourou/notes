@@ -1,3 +1,9 @@
+Title: 4 Pillars of Good Unit Tests
+Date: 2021-04-04
+Tags: #AutomatedTesting #Programming 
+
+---
+
 Khorikov describes 4 pillars of a good unit test:
 
 1. Protection against regressions (bugs)
@@ -13,5 +19,5 @@ An extreme example of this is an e2e test. It is extremely resistant to refactor
 
 ---
 
-Tags: #AutomatedTesting #Programming 
-Reference: [[Unit Testing Principles, Practices and Patterns#4 The four pillars of a good unit test]] 
+References:
+* [[Unit Testing Principles, Practices and Patterns#4 The four pillars of a good unit test]] 
