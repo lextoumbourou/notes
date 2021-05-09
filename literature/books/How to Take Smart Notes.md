@@ -4,6 +4,8 @@ Author: Sönke Ahrens
 Type: #book
 Tags: #Writing
 
+---
+
 ## Introduction
 
 * Lots of books about writing, but most on how to do citations or how to over come procrastination; few about note taking.
@@ -251,3 +253,57 @@ Tags: #Writing
 	* Put in effort to retrieve information even if we fail will help us remember in the long run (Roediger and Karpicke 2006)
 	* Best-researched and most successful learning method is elaboration: thinking about what we read, how it could inform different questions and how it can be combined with other knowledge: slipbox is a form of this
 		* Writing, taking notes and thinking about how ideas connect is the kind of elaboration need to learn.
+
+## 11. Take Smart Notes
+
+* Kirsti Lonka compared unsuccessful students with succesful and found that the difference is in their ability to think beyond frames of text (Lonka 2003, 155f).
+	* Those with experience read text with "questions in mind" and see what is not mentioned.
+* Even worse than not thinking beyond text: unable to interpret parts of information within wider argument of entire text.
+* Experience read text with questions in mind and look at what's not mentioned as much as what is.
+* When creating permanent notes, we always think about what they mean in the context of other ideas.
+* 11.1 Make a Career One Note at a Time
+	* Writing an entire thesis a long, time consuming and daunting task but writing a page a day manageable
+		* one page a day and you're have a thesis written in a year.
+	* However, pages per day isn't a good measure for research: reading, researching, thinking etc are important parts of the story.
+	* Adding to slipbox every day provides this feature but also gives "compound interest", supporting future projects.
+		* Measure your productivity in notes per day.
+* 11.2 Think Outside The Brain
+	* Putting effort into writing in our own words best way to test our understanding of a topic and whether we have sufficient supporting sources like references on hand.
+	* Writing gives us distance from argument and allows us to "scrutinise" our understanding.
+	* Author's example of collecting literature notes:
+		* Step 1. Take notes thinking about arguments in the context of the book:	
+			* Is it convincing?
+			* What methods do they use?
+			* Which references are familiar?
+		* Step 2. Then when writing permanent notes for slipbox:
+			* Think about how it fits within your interests:
+				* What does it mean for my own research?
+				* What aspects of it catch my interest?
+			* First note may start with a statement: "Any comprehensive analysis of social inequality must include the cognitive effects of scarcity. Cf. Mullainathan and Shafir 2013."
+			* Which leads to another note: "Why?"
+		* Step 3. Skim slipbox for related ideas
+			* Some ideas will require more research, but no reason not to note do possible connections to come back to
+				* This allows us to make clear distinctions between ideas.
+		* 11.3 Learn by not trying
+			* Elaboration increases likelihood that we'll remember long-term
+				* Literature notes are archived and would be otherwise lost in reference system if we didn't do something with them
+			* Transferring ideas to "external memory" allows us to forget, which paradoxically facilities long-term learning.
+				* Remembering everything is to know nothing. Consider [Solormon Shereshevsky](https://en.wikipedia.org/wiki/Solomon_Shereshevsky).
+			* Robert and Elizabeth Lison Bjork suggest that we can distinguish between 2 different measurements of memory: storage strength and retrieval strength (Bjork 2011)
+				* Storage strength becomes greater over life time
+				* Therefore, we should focus on retrieval.
+			* Connecting information to as many meaningful contexts may be the key to this.
+				* Aim to build "self-supporting" network of info in slipbox.
+			* Challenge of writing and learning is not to learn as much as to understand
+				* The meaning of somtehing not always obvious & needs exploration
+			* Teaching others a shortcut to learning as it requires understanding
+			* Writing and sorting notes in slipbox forces us to answer questions:
+				* What does it mean?
+				* How does it connect?
+				* What's the diff between ... ?
+				* What's it simliar to?
+			* Connecting and distinguishing ideas facilities learning much better than simply sorting topics.
+		* 11.4 Adding notes to slipbox
+			* Add note directly behind note you refer to, or if not follow up, then last note in the slipbox.
+			* Add links to other notes or links on other notes to new note
+			* Add entry to index or ensure it's linked from note in index
