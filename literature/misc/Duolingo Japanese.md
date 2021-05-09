@@ -13,6 +13,14 @@
 		* Vowels can appear by themselves
 		* Singular consonant ん or **n**
 	* Also, **ch** and **sh** are singular consonants even though they're spelled with 2 letters in English.
+* Japanese has 5 vowels.
+* Can group hiragana together based on starting consonant:
+	* **ka** - か
+	* **ki** - き
+	* **ku** - く
+	* **ke** - け
+	* **ko** - こ
+* Some exceptions like **shi** instead of **si** in s group.
 
 ## Numbers
 * 1 - ichi - いち
@@ -25,3 +33,4 @@
 * white - shiro -しろ
 * red - a ka - あか
 * blue - a o - あお
+
