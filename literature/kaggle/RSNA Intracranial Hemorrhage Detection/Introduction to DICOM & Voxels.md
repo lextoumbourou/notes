@@ -1,0 +1,32 @@
+Title: Introduction to DICOM
+Link: https://www.kaggle.com/dcstang/see-like-a-radiologist-with-systematic-windowing
+Author: [David Tang](dcstang)
+Type: #KaggleNotebook
+
+* What is DICOM:
+	* Digital Imaging and Communications in Medicine (DICOM)
+		* international standard for digital medical images
+	* Before this format, no standardised way to transfer medical images
+* Images are stored in a 3d-grid with radiologists examining various "slices" to expore scans.
+* The slices are 16-bit images with intensity values ranging from -32768 to 32767, which correlates to the [Hounsfield Scale](https://en.wikipedia.org/wiki/Hounsfield_scale).
+	* In contrast to grayscale images with intensity values between 0 - 255
+* Author says: "Each voxel can store a large amount of information."
+	* Presumably the voxel refers to a position within 3d space, where slices for a patient are combined.
+* Workflow of a Radiologist
+	* Workflow of Radiologist usually deals with 3d scale of brain, but this example just looks at 2d.
+		* Note: this was the key to the whole competition that a lot of us over looked: the dataset was actually 3d.
+	* A "window" is an instruction to highlight (basically 1 or 0 out other) voxels which fulfill a specific value:
+		* L = window level or centre
+		* W = window width or range
+	* Example: Brain Matter window L=40 W=80
+		* Voxels displayed range from 0 to 80
+			* (Lower lit = 40 - (80/2), upper limit = 40 + (80/2))
+			* Voxel values outside this range are completely black or white
+	* There are at least 5 windows that radiologist goes through for each scan:
+		* 1. Brain Matter window: W:80 L:40
+		* 2. Blood/subdural window: W:130-300 L:50-100
+		* 3. Soft tissue window: W:350-400 L:20-60
+		* 4. Bone window: W:2800 L:600
+		* 5. Grey-white differentiation window: W:8 L:32 or W:40 L:40
+	* Hematomes are usually right next to skull and longish in shape
+		* Subdural hematomas are hard to spot.
