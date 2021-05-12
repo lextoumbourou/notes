@@ -1,0 +1,10 @@
+An integer is a 32-bit (4-byte) data structure that represents a number.
+
+It can be signed, which means one byte keeps track of whether it's negative or positive, or unsigned.
+
+A signed integer's range is -2147483648 to 2147483648. Unsigned is 0 to 4294967295.
+
+[Two's compliment](https://en.wikipedia.org/wiki/Two%27s_complement) is used to represent negative numbers in binary.
+
+References:
+* https://www.ibm.com/docs/en/aix/7.2?topic=types-signed-unsigned-integers
