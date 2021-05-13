@@ -1,6 +1,6 @@
-An integer is a 32-bit (4-byte) data structure that represents a number.
+An integer is a 32-bit (4-byte) encoding of a number.
 
-It can be signed, which means one byte keeps track of whether it's negative or positive, or unsigned.
+It can be signed - which means one bit keeps track of whether it's negative or positive (the "sign") - or unsigned.
 
 A signed integer's range is -2147483648 to 2147483648. Unsigned is 0 to 4294967295.
 
