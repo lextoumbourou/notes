@@ -1,5 +1,5 @@
 Title: Vector Scaling
-Date: 2021-04-06
+Date: 2020-11-08
 Tags: #Math #Vectors 
 
 ---

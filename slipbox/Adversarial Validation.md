@@ -15,3 +15,5 @@ If the model performs well then there is likely a significant different between 
 Commonly used in Kaggle competitions to assess the possibility of a leaderboard shakeup.
 
 In [this example](https://www.kaggle.com/lextoumbourou/pp-2020-adversarial-validation), I compared the train and test set of the [Plant Pathology 2020 - FGVC7](https://www.kaggle.com/c/plant-pathology-2020-fgvc7) competition.
+
+In a way, this is a machine learning equivalent of [[Black-box testing]].

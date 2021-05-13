@@ -1,5 +1,5 @@
 Title: Expected Value
-Date: 2021-04-06
+Date: 2021-01-03
 Tags: #Math #GameBalancing
 
 ---
