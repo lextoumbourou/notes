@@ -307,3 +307,30 @@ Tags: #Writing
 			* Add note directly behind note you refer to, or if not follow up, then last note in the slipbox.
 			* Add links to other notes or links on other notes to new note
 			* Add entry to index or ensure it's linked from note in index
+
+## 12. Develop Ideas
+
+* New notes should be written with explicit references to other notes.
+	* Luhman would put a note behind another note and use an alternating number/letter sequence like: 1, 1a, 1a1 etc, in order to ensure that he could keep branching topics out.
+		* Digital can handle changing numbers much more easily.
+	* "Note sequences" the backbone of Zettlekasting.
+		* *Note: doing some reading, it seems most people [disagree with the importance of a sequence for digital notes.](https://zettelkasten.de/posts/luhmann-folgezettel-truth). Luhmann used sequences to compensate for lack of search in a physical slipbox. Just linking notes should be enough*
+		* Allow for topic-related order without locking self into topics up front - let them grow naturally over time.
+		* Not an encyclopedia - doesn't need completeness.
+			* Gaps can be examined when notes are used for manuscripts.
+* 12.1 Develop topics
+	* Luhmann used an index to help retrieve notes
+		* Created index cards using a typewriter
+		* Index defined entry points to ideas, which contain other links.
+	* Keywords were added to notes, but chosen sparsely and carefully:
+		* Not an archive for putting stuff in to pull out, but system to think with
+			* Can remind us of old ideas and trigger new ones.
+		* Links between articles more important.
+	* One can't get an overview of the whole slipbox (like the brain) but can for a topic
+		* System for ordering topics an ongoing project, so topic index is also written as note.
+	* Archiver vs writer
+		* Archiver: keywords are used to store notes
+		* Writer: where would I want to stumble on note after forgetting.
+	* You likely won't need all notes for a broad topic, like "experimental psychology"
+		* Instead, look to slipbox for questions and existing threads of ideas to see where a new note can contribute
+* 12.2 Make smart connections
