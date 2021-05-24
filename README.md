@@ -4,10 +4,16 @@ This repository contains a collection of literature notes I've been accumulating
 
 The notes are taken using [Obsidian](https://obsidian.md/) and a publish version of the notes can be found [here](https://publish.obsidian.md/lex).
 
-## Literature
+## Reference
 
-The [[./literature]] folder contains notes collected mostly from MOOCs but also books, papers and videos.
+The [literature](literature) folder contains notes collected mostly from MOOCs but also books, papers and videos.
 
 ## Slipbox
 
-The [[./slipbox]] folder contains permanent notes which I've collected from reading and thinking. The idea is that each note contains one idea and all ideas are interlinked.
+The [slipbox](slipbox) folder contains permanent notes which I've collected from reading and thinking. The idea is that each note contains one idea and all ideas are interlinked.
+
+## Generating HTML
+
+This project uses Pelican to generate a HTML version of the notes. You can generate the notes using the following command:
+
+
