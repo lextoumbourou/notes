@@ -1,8 +1,10 @@
+---
+Title: Convolutional Neural Network (Coursera) 
 Link: https://www.coursera.org/learn/convolutional-neural-networks
 Instructors: Andrew Ng, Younes Bensouda Mourri and Kian Katanforoosh
 Type: mooc
+Category: reference
 Tags: #DeepLearning
-
 ---
 
 # Convolutional Neural Networks

@@ -2,6 +2,7 @@ Link: https://www.ddls.com.au/courses/red-hat/red-hat/rh255-red-hat-system-admin
 Title: Red Hat System Administration III with RHCSA and RHCE Exams (RH255)
 Type: #course
 Tags: #Linux
+Date: 2013-08-10
 
 ---
 

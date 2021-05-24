@@ -5,7 +5,7 @@ Type: #article
 Tags: #roblox
 
 ---
-
+    
 * Notes about studio: X axis is represented as red, Y = green and Z = blue
     ![axis colours in Roblox](x-y-z-colours-in-roblox.png)
 * Used to move Parts against `gravity` and other forces.
