@@ -7,18 +7,17 @@ Tags: #Maths #LinearAlgebra
 ---
 
 ## 1. Vectors, what even are they?
-* Vectors the building block for all of linear algebra.
-* 3 distinct perspectives of vectors
-    * Physics student
-        * Arrows pointing in space defined by a length & direction.
-    * Computer scientist (or data scientist)
-        * An orderer list of numbers.
-        * Example, a house can be model as the vector: `[square footage, sale price]`
-    * Mathematician
-        * A vector can be anything that has a notion of adding 2 together and multiplying vector by a number.
-        
-* In Linear Algebra, the vector is nearly always rooted in the origin, which is the place that the x and y intersects on the coordinate system.
 
+* Vectors the building block for all of linear algebra.
+* 3 distinct perspectives of vectors:
+  * Physics student
+    * Arrows pointing in space defined by a length & direction.
+  * Computer scientist (or data scientist)
+    * An orderer list of numbers.
+      * Example, a house can be model as the vector: `[square footage, sale price]`
+  * Mathematician
+    * A vector can be anything that has a notion of adding 2 together and multiplying vector by a number.
+* In Linear Algebra, the vector is nearly always rooted in the origin, which is the place that the x and y intersects on the coordinate system.
     
 * 2d coordinate system refresher
     * Has a horizontal line called x-axis
