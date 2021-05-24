@@ -2,3 +2,7 @@
 .coverage
 .obsidian
 journal
+.env
+.vscode
+__pycache__
+output
