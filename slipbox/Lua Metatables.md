@@ -1,15 +1,16 @@
-Title: Lua Metatables
-Date: 2021-02-14
-Tags: #Lua #Programming 
-
+---
+title: Lua Metatables
+date: 2021-02-14 00:00
+tags:
+  - Lua
+  - Programming 
 ---
 
 In Lua, since everything is a tables, metatables are a paradigm that lets you change the behaviour of a table, using another table. For example, you can define the behaviour when 2 tables are added together using the `+` operator by defining a metatable with an  `__add` method. This is similar to the concept of [[magic methods (Python)]], though in Python magic methods are defined on instance's class.
 
 In this example, I'm defining addition as the sum of all keys in the left-most table
 
-```
-
+```lua
 local metatable = {
     __add = function(self, other)
         local output = {}
@@ -36,7 +37,6 @@ There are also relational metamethods for comparision: `__eq`, `__lt` and `__lte
 
 Lastly, [[Lua Table-Access Metamethods]] allow for defining behaviour when missing keys are looked up.
 
----
-
 References:
+
 * [Programming in Lua - Chapter 13 - Metatables and Metamethods](https://www.lua.org/pil/13.html)

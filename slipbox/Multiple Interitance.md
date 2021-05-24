@@ -1,12 +1,13 @@
-Titles: Multiple Interitance
-Date: 2021-02-21
-Tags: #Programming 
-
+---
+title: Multiple Interitance
+date: 2021-02-21 00:00
+tags:
+  - Programming 
 ---
 
 Multiple interitance refers to an object that inheritants from multiple parents. In Lua, this can be acheived by using [[Lua Metatables]] with a metamethod `__index` which can search multiple parent tables for an attribute or a method.
 
-```
+```lua
 function createClass(...)
     local arg = {...}
     local c = {}
@@ -40,7 +41,6 @@ NamedAccount:setname('Lex')
 print(NamedAccount:getname())
 ```
 
----
-
 References:
+
 * [Programming in Lua - Chapter 16](https://www.lua.org/pil/16.3.html)

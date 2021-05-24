@@ -1,7 +1,8 @@
-Title: Idempotence In Data Pipelines
-Date: 2021-05-04
-Tags: #Data 
-
+---
+title: Idempotence In Data Pipelines
+date: 2021-05-04 00:00
+tags:
+  - Data 
 ---
 
 [[Idempotence]] in a data pipeline ensures that running the same task multiple times will generate the same final output.
@@ -14,7 +15,6 @@ A similar sentiment was shared in [Eric Lathrop's](https://ericlathrop.com/) blo
 
 Idempotence alone in a data pipeline does not guarantee a pipeline will not be resumable, where if a job fails it can be rerun without reprocessing things that have already been processed.
 
----
-
 References:
+
 * [[Idempotence Now Prevents Pain Later]]

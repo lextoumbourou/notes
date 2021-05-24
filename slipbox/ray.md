@@ -1,13 +1,13 @@
-Title: Ray
-Date: 2020-11-04
-Tags: #Maths #Geometry
-
+---
+title: Ray
+date: 2020-11-04 00:00
+tags:
+  - Maths
+  - Geometry
 ---
 
-In geometry, a ray is a line-like figure that starts at some point - called the "endpoint" or "vertex" - and continues indefinitely in one direction. It is described in formal notation using 2 points with an arrow above it pointing in the direction of the ray, for example: $\overrightarrow{AB}$. The order of the endpoints describes the direction of the ray and cannot be inversed: $\overrightarrow{AB} \neq \overrightarrow{BA}$. As an example, this is the ray $\overrightarrow{AB}$ in Ascii art:
-           `A ---- B ->`
-		   
----
+In geometry, a ray is a line-like figure that starts at some point - called the "endpoint" or "vertex" - and continues indefinitely in one direction. It is described in formal notation using 2 points with an arrow above it pointing in the direction of the ray, for example: $\overrightarrow{AB}$. The order of the endpoints describes the direction of the ray and cannot be inversed: $\overrightarrow{AB} \neq \overrightarrow{BA}$. As an example, this is the ray $\overrightarrow{AB}$ in Ascii art: `A ---- B ->`
 
 References:
-* [[Basic geometry language and labels#Ray]]
+
+* [[Basic geometry language and labels]] (Ray)
