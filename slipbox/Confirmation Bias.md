@@ -1,7 +1,9 @@
-Title: Confirmation Bias
-Date: 2021-05-04
-Tags: #Psychology #Research
-
+---
+title: Confirmation Bias
+date: 2021-05-04 00:00
+tags:
+  - Psychology
+  - Research
 ---
 
 Our brains are naturally drawn to information that agrees with our world view. We end up surrounded by people that think like us and consume information mostly from sources that support our beliefs.
@@ -17,4 +19,5 @@ Related to [[Loss Adversion]], insofar as we seek to avoid situations which coul
 ---
 
 References:
-* [[How to Take Smart Notes#10 Read for Understanding]]
+
+* [[How to Take Smart Notes]] (10. Read for Understanding)

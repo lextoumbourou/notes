@@ -1,7 +1,8 @@
-Title: Arrange, Act and Assert (AAA) Pattern
-Date: 2021-03-28
-Tags: #AutomatedTesting
-
+---
+title: Arrange, Act and Assert (AAA) Pattern
+date: 2021-03-28 00:00
+tags:
+  - AutomatedTesting
 ---
 
 A pattern for structuring unit tests, where tests are broken up into 3 sections:
@@ -16,7 +17,7 @@ Khorikov writes, by conforming to a standard like this, anyone can easily read a
 
 Example:
 
-```
+```python
 def test_datestring_is_formatted():
     # Arrange
     date_time_instance = datetime.datetime(2008, 1, 2)
@@ -31,7 +32,6 @@ def test_datestring_is_formatted():
 
 Similar to the [[Given-When-Then]] pattern.
 
----
-
 References:
+
 * [[Unit Testing Principles, Practices and Patterns|# Unit Testing Principles, Practices, and Patterns]] 

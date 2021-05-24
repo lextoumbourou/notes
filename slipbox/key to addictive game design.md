@@ -1,7 +1,8 @@
-Title: Key to Addictive Game Design
-Date: 2021-01-11
-Tags: #GameDesign 
-
+---
+title: Key to Addictive Game Design
+date: 2021-01-11 00:00
+tags:
+  - GameDesign 
 ---
 
 Schell quotes Designer David Perry's key to addictive games: games should be designed so that players are doing 3 things at a time: exercising a skill, taking risks and working a strategy.
@@ -10,7 +11,6 @@ Supercell's Clash Royale is a great example of mastery of this: you exercise ski
 
 This is related to Schell's idea about [[Triangularity In Game Design]] importance of taking risks.
 
----
-
 References:
-* [[The Art of Game Design - A Book of Lenses (2nd Edition)#Chapter 13 Game Mechanics Must Be In Balance]]
+
+* [[The Art of Game Design - A Book of Lenses (2nd Edition)]] (Chapter 13. Game Mechanics Must Be In Balance)
