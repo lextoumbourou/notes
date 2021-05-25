@@ -11,6 +11,9 @@ THEME = "theme"
 PLUGIN_PATHS = ['pelican-plugins', 'pelican-cite/src']
 STATIC_PATHS = ['_media']
 
+DRAFT_URL = u'{slug}.html'
+DRAFT_SAVE_AS = u'{slug}.html'
+
 USE_FOLDER_AS_CATEGORY = True
 
 def build_url(label, base, end):
