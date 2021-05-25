@@ -2,7 +2,7 @@
 title: 📘 Unit Testing Principles, Practices, and Patterns - Vladimir Khorikov
 date: 2021-05-24 00:00
 type: book
-draft: true
+status: draft
 tags:
   - AutomatedTesting
 ---
