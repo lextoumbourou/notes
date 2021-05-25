@@ -1,3 +1,13 @@
+---
+title: Red Hat System Administration III - Unit 4 - Encrypting Files with GnuPG
+date: 2013-08-10 00:00
+type: course
+category: reference
+status: draft
+tags:
+  - Linux
+---
+
 ## Overview
 
 * Public-key encryption (aka asymmentric encryption)

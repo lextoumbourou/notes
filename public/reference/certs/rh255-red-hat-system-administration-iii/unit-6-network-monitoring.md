@@ -1,3 +1,13 @@
+---
+title: Red Hat System Administration III - Unit 6 - Network Monitoring
+date: 2013-08-10 00:00
+type: course
+category: reference
+status: draft
+tags:
+  - Linux
+---
+
 ## netstat
 
 * `-l` - Listening
@@ -11,7 +21,7 @@
 * ```-s``` - statistics
 * ```-T``` - stop trimming long addresses
 
-```
+```bash
 > nmap -sT demo.example.com
 
 Starting Nmap 5.51 ( http://nmap.org ) at 2013-08-06 12:12 EST
@@ -23,12 +33,11 @@ PORT    STATE SERVICE
 80/tcp  open  http
 111/tcp open  rpcbind
 MAC Address: 52:54:00:00:00:FA (QEMU Virtual NIC)
-
 ```
 
-```-P``` - ping scan
+* `-P` - ping scan
 
-```
+```bash
 > nmap -sP demo.example.com
 
 Starting Nmap 5.51 ( http://nmap.org ) at 2013-08-06 12:14 EST
@@ -36,12 +45,11 @@ Nmap scan report for demo.example.com (192.168.0.250)
 Host is up (0.00039s latency).
 MAC Address: 52:54:00:00:00:FA (QEMU Virtual NIC)
 Nmap done: 1 IP address (1 host up) scanned in 0.01 seconds
-
 ```
 
-```-p``` - port range
+* `-p` - port range
 
-```
+```bash
 > nmap -sT -p 100-200 demo.example.com
 
 Starting Nmap 5.51 ( http://nmap.org ) at 2013-08-06 12:14 EST
@@ -53,12 +61,11 @@ PORT    STATE SERVICE
 MAC Address: 52:54:00:00:00:FA (QEMU Virtual NIC)
 
 Nmap done: 1 IP address (1 host up) scanned in 0.03 seconds
-
 ```
 
-```-A``` - enable OS detection, version detection etc
+* ```-A``` - enable OS detection, version detection etc
 
-```
+```bash
 > nmap -A demo.example.com
 
 Starting Nmap 5.51 ( http://nmap.org ) at 2013-08-06 12:16 EST
@@ -96,7 +103,6 @@ HOP RTT     ADDRESS
 
 OS and Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 17.77 seconds
-
 ```
 
 ## Avahi
@@ -105,18 +111,17 @@ Nmap done: 1 IP address (1 host up) scanned in 17.77 seconds
 
 * Use ```netstat``` to see if it's running
 
-```
+```bash
 > netstat -lnptu | grep avahi
 udp        0      0 0.0.0.0:5353                0.0.0.0:*                               1660/avahi-daemon  
 udp        0      0 0.0.0.0:46630               0.0.0.0:*                               1660/avahi-daemon  
-
 ```
 
 ## Capture and Analyzing
 
 Get all listening interfaces
 
-```
+```bash
 > tcpdump -D
 1.eth0
 2.usbmon1 (USB bus number 1)
@@ -124,23 +129,23 @@ Get all listening interfaces
 4.lo
 ```
 
-Capture all ssh network traffic
+Capture all ssh network traffic:
 
-* ```-nn``` - everything (inc ports and protocols as numbers)
-* ```-l``` - do line buffering to file
-* ```-s``` - maximum no of bytes per packet
-* ```-i``` - interface to capture
-* ```filter``` - keywords and logical operators used to filter packets
+* `-nn` - everything (inc ports and protocols as numbers)
+* `-l` - do line buffering to file
+* `-s` - maximum no of bytes per packet
+* `-i` - interface to capture
+* `filter` - keywords and logical operators used to filter packets
 
 Example
 
-```
+```bash
 > tcpdump -nn -l -s 2000 -w packets -i eth0 'port 22'
 > # open packets file in Wireshark
 ```
 
 Analyse data with Wireshark
 
-```
+```bash
 > yum install wireshark-gnome
 ```

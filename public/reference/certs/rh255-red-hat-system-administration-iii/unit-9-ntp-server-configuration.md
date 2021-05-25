@@ -1,14 +1,24 @@
+---
+title: Red Hat System Administration III - Unit 9 - NTP Server Configuration
+date: 2013-08-10 00:00
+type: course
+category: reference
+status: draft
+tags:
+  - Linux
+---
+
 ## Client side
 
 * ```/etc/ntp.conf```
 
     * ```server <ntp-server> iburst``` mode allows for quick synchronisation to a server
-   
+
 * ```ntpdate -q instructor.example.com```
 
 * ```ntpd -c pe```
 
-```
+```bash
 > ntpq -c pe
 remote           refid      st t when poll reach   delay   offset  jitter
 ==============================================================================
@@ -25,9 +35,9 @@ remote           refid      st t when poll reach   delay   offset  jitter
 * Each server has a stratum classification - defines how close to reliable time it is (hardware clock is 0) - lower is more accurate
 * Clients have higher stratum value
 * ```restrict``` option is used to allow access to NTP server
-* ```server``` and ```peer``` option takes an NTP server and options argument
+* `server` and `peer` option takes an NTP server and options argument
 
-```
+```bash
 > vi /etc/ntp.conf
 + server  instructor.example.com  iburst
 + peer    desktop1.example.com
@@ -43,15 +53,15 @@ remote           refid      st t when poll reach   delay   offset  jitter
     * ```nopeer``` - self-explainatory
     * ```notrap``` - decline to provide mode 6 control message
 
-    ```
-    > vi /etc/ntp.conf
-    # Hosts on local network are less restricted.
-    restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap
-    ```
+```bash
+> vi /etc/ntp.conf
+# Hosts on local network are less restricted.
+restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap
+```
 
 ### Example ntp.conf
 
-```
+```bash
 #/etc/ntp.conf
 
 restrict default kod nomodify notrap nopeer noquery # Anyone with ipv4

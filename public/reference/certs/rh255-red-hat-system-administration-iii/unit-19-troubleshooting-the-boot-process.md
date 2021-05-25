@@ -1,3 +1,13 @@
+---
+title: Red Hat System Administration III - Unit 19 - Troubleshooting the Boot Process
+date: 2013-08-10 00:00
+type: course
+category: reference
+status: draft
+tags:
+  - Linux
+---
+
 ## The Boot Process and Rescue Mode
 
 * BIOS
@@ -18,7 +28,7 @@
         * Choose alternative preconfigured menu item
         * Choose 'e' or 'a' and edit kernel
         * Boot into single-user mode
-        * Boot with ```init=/bin/bash```
+        * Boot with `init=/bin/bash`
 
 * Kernel
     * Detects hardware devices
@@ -31,19 +41,17 @@
         * Corrupted root file system
 
 * init and Upstart
-    * The first userspace process started on the machine is ```/sbin/init```. The ```init``` process is responsible for completing the boot process by starting all other non-kernel processes.
+    * The first userspace process started on the machine is `/sbin/init`. The `init` process is responsible for completing the boot process by starting all other non-kernel processes.
     * Fixing a read only mount:
 
-    ```
-    > mount -o remount,rw /
-    ```
+            > mount -o remount,rw /
 
 * MBR (512 bytes)
     * First 446 bytes - initial boot loader
     * Next 64 bytes - parition table (where is the starting sector and ending sector)
 
 * The Rescue Shell
-    * Mount under ```/mnt/sysimage```
+    * Mount under `/mnt/sysimage`
     * Select rescue media
     * Select the type of network settings
     * Follow prompts

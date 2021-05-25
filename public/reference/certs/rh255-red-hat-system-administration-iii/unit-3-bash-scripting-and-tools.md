@@ -1,3 +1,13 @@
+---
+title: Red Hat System Administration III - Unit 3 - Bash Scripting and Tools
+date: 2013-08-10 00:00
+type: course
+category: reference
+status: draft
+tags:
+  - Linux
+---
+
 ## Bash Overview
 
 * Start scripts with `#!/bin/bash`
@@ -9,7 +19,7 @@
     * `~/bin` - for user's private programs
     * `/usr/local/bin` - locally developed scripts by other uses on the system
     * `/usr/local/sbin` - locally developed scripts used by root
-   
+
 * Variable syntax:
 
     * `$my_var`
@@ -42,14 +52,14 @@
         * `-a` - AND
         * `!` - NOT
     * `man test` to get info on Bash operators
-   
+
 * Use `env` to get list of environment variables
 
 * Positional params:
     * `script.sh TEST DEMO` - `$0 $1 $2`
     * `$@`- all positional params
     * `$#` - count of params
-	
+
 * Running commands on remote machine:
     * Save file locally:
        `ssh user@host 'command1; command2' > log.local`
@@ -62,37 +72,39 @@
 
 * Used to compare two files
 * Args:
-	* `-c` - display surrounding lines for context
-	* `-u` - unified output format
-	* `-r` - perform a recursive comparison of files
+    * `-c` - display surrounding lines for context
+    * `-u` - unified output format
+    * `-r` - perform a recursive comparison of files
 
 ### patch
 
 * Changes files from patches created with `diff -u`:
-	* `$ diff -u samsreport.sh samsreport-2.sh >> my_patch`
+    * `$ diff -u samsreport.sh samsreport-2.sh >> my_patch`
 * Patch file using the `patch` command
-	```
-	$ patch samsreport.sh < my_patch
-	patching file samsreport.sh
-	```
+
+```bash
+$ patch samsreport.sh < my_patch
+patching file samsreport.sh
+```
+
 * Use `-b` option to specify a backup before patching. Will create a file with an `.orig` suffix:
-	* `> samsreport.sh.orig`
+    * `> samsreport.sh.orig`
 
 ### grep
 
 * Search for patterns of text
 * Args:
-	* `-i` perform case-insensitive search
-	* `-n` precede return lines with line of numbers
-	* `-r` perform a recursive search of lines, starting with the named directory
-	* `-c` display a count of lines matching
-	* `v` return lines that don't match
-	* `-l` list names of files with one line containing the pattern
+    * `-i` perform case-insensitive search
+    * `-n` precede return lines with line of numbers
+    * `-r` perform a recursive search of lines, starting with the named directory
+    * `-c` display a count of lines matching
+    * `v` return lines that don't match
+    * `-l` list names of files with one line containing the pattern
 
 ### cut
 
 * Get first column delimitered by `:`:
-	* ```> cat /etc/passwd | cut -d : -f 1```
+    * ```> cat /etc/passwd | cut -d : -f 1```
 
 ### wc
 
@@ -110,8 +122,8 @@
 ### tr
 
 Translate command
-   
-```
+
+```bash
 > echo "HELLO" | tr 'A-Z' 'a-z'
 hello
 ```
@@ -120,14 +132,13 @@ hello
 
 * Edits a stream of textual data
 
-	* Use ```g``` to make it global, use ```d``` to delete lines
+    * Use ```g``` to make it global, use ```d``` to delete lines
 
-	```
-	> echo "dogs and cats" | sed '/ddogs/d'
-	dogs and cats
-	> echo "dogs and cats" | sed '/dogs/d'
-	>
-	```
+```bash
+> echo "dogs and cats" | sed '/ddogs/d'
+dogs and cats
+> echo "dogs and cats" | sed '/dogs/d'
+```
 
 ### Regular Expression
 
