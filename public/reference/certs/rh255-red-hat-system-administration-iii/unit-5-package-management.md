@@ -1,10 +1,20 @@
+---
+title: Red Hat System Administration III - Unit 5 - Package Management
+date: 2013-08-10 00:00
+type: course
+category: reference
+status: draft
+tags:
+  - Linux
+---
+
 ## RPM
 
 * Metadata stored in RPM that describes changes made in new version
 
 To get information about an RPM use ```rpm -q```
 
-```
+```bash
 rpm -q [select_options] [query_options]
 ```
 
@@ -15,7 +25,7 @@ rpm -q [select_options] [query_options]
 
 ### Examples
 
-```
+```bash
 > rpm -ql yum-plugin-verify
 /etc/yum/pluginconf.d/verify.conf
 /usr/lib/yum-plugins/verify.py
@@ -34,22 +44,22 @@ Yum plugins can be installed to extend functionality with ```yum-plugin-verify``
 
 * ```yum verify <plugin_name>``` (from ```yum-plugin-verifiy```) verifies integrity of installed plugin
 
-    ```
-    > rm /bin/mount
-    > yum verify util-linux-ng
-    ==================== Installed Packages ====================
-    util-linux-ng.x86_64 : A collection of basic system utilities
-        File: /bin/mount
-            Problem:  file is missing
-    verify done
-    ```
+```bash
+> rm /bin/mount
+> yum verify util-linux-ng
+==================== Installed Packages ====================
+util-linux-ng.x86_64 : A collection of basic system utilities
+    File: /bin/mount
+        Problem:  file is missing
+verify done
+```
 
 * ```yum-plugin-versionlock``` can lock a version to a certain version using config ```/etc/yum/pluginconf.d/version.conf```
        
-    ```
-    > vi /etc/yum/plugincofn.d/versionlock.list
-    + epoch:kernel-2.6.32-el6.x86_64
-    ```
+```bash
+> vi /etc/yum/plugincofn.d/versionlock.list
++ epoch:kernel-2.6.32-el6.x86_64
+```
 
 * ```yum whatprovides <filename>``` - used to check what package contains a file.
 
@@ -58,13 +68,13 @@ Yum plugins can be installed to extend functionality with ```yum-plugin-verify``
 
 ## RPM Package Design
 
-3 Basic Components
+* 3 Basic Components:
 
     * metadata - data about the package: name, version, release, builder, date, deps
     * files - archive of files provided by package (inc file attributes)
     * scripts - execute when package is installed, updated and/or removed
 
-```rpm2cpio <package_name> | cpio -id```  allows you to extract a rpm without installing them.
+* ```rpm2cpio <package_name> | cpio -id```  allows you to extract a rpm without installing them.
 
 ## RPM Package Specification
 
@@ -83,26 +93,26 @@ Yum plugins can be installed to extend functionality with ```yum-plugin-verify``
     4. Sign - use GPG key to sign the RPM package. Use ```rpmbuild -ba --sign demo.spec```. If package is already built, usse ``rpm --design``` to add or change GPG sig
     5. Test - test package on dev system
 
-* Creating a repo
+* Creating a repo:
 
-     * Use package ```yum install createrepo```
+    * Use package ```yum install createrepo```
 
-     * Create webdirectory:
+    * Create webdirectory:
 
-  ```
-  > mkdir -p /var/www/html/example/Packages
-  > cp package_name.rpm /var/www/html/example/Packages
-  > createrepo -v /var/www/html/example
-  ```
+```bash
+> mkdir -p /var/www/html/example/Packages
+> cp package_name.rpm /var/www/html/example/Packages
+> createrepo -v /var/www/html/example
+```
 
-     * On clients, update ```/etc/yum.repos.d/example.repo```
+    * On clients, update ```/etc/yum.repos.d/example.repo```
  
-  ```
-  > cat /etc/yum.repos.d/example.repo
-  [example]
-  name=example repo
-  baseurl=http://server2/example
-  enabled=1
-  gpgcheck=1
-  gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-demo
-  ```
+```bash
+> cat /etc/yum.repos.d/example.repo
+[example]
+name=example repo
+baseurl=http://server2/example
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-demo
+```
