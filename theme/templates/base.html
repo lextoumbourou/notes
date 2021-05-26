@@ -45,12 +45,17 @@
   <body>
 
     <div id="sidebar">
-      <a {% if page_name == "index" %}class="active"{% endif %} href="/">All</a>
-      <a {% if category and category == "permanent" %}class="active"{% endif %} href="/category/permanent.html">Permanent</a>
-      <a {% if page_name == "category/reference" %}class="active"{% endif %} href="/category/reference.html">Reference</a>
-      <a {% if page_name == "category/posts" %}class="active"{% endif %} href="/category/posts.html">Posts</a>
-
-      <a href="/about.html"> About</a>
+      <div class="home-menu">
+        <a {% if page_name == "index" %}class="active"{% endif %} href="/">All</a>
+      </div>
+      <div class="filter-menu">
+        <a {% if category and category == "permanent" %}class="active"{% endif %} href="/category/permanent.html">Permanent</a>
+        <a {% if category and 'reference' in category|string %}class="active"{% endif %} href="/category/reference.html">Reference</a>
+        <a {% if page_name == "category/posts" %}class="active"{% endif %} href="/category/posts.html">Posts</a>
+      </div>
+      <div class="extra-menu">
+        <a href="/about.html"> About</a>
+      </div>
     </div>
 
     <div id="content">
