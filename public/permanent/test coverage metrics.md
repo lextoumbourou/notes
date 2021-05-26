@@ -1,26 +1,30 @@
 ---
 title: Test Coverage Metrics
 date: 2021-03-24 00:00
+modified: 2021-05-27 00:00
 tags:
   - AutomatedTesting
+summary: How much of our code base is covered by our tests?
 ---
 
-Test coverage metrics are a tool used to define how much of a code base is covered by a unit test suite.
+How much of our code base is covered by our tests?
 
-2 main metrics used:
-
-* Code coverage:
+2 main metrics:
 
   $$\text{Code coverage (text coverage)}=\frac{\text{Lines of code executed}}{\text{Total number of lines}}$$
 
-  Khorikov says that the major downside is that code can simply be shuffled to trick the metric into increasing without increasing test coverage.
-
-* Branch coverage:
-
   $$\text{Branch coverage}=\frac{\text{Branches traversed}}{\text{Total number of branches}}$$
 
-  Improves upon code coverage, as branches will still be examined whether one line or multiple. The downside, according to Khorikov, which covers all code coverage metrics is that tests without assertions will be counted as branch traversal.
+## Code coverage
 
-References:
+The most commonly used metric.
 
-* [[Unit Testing Principles, Practices and Patterns]]
+The downside of using it that code can be "shuffled" to trick the metric into increasing. This can sometimes make code less readable.
+
+## Branch coverage
+
+Code can't be simplify shuffled without refactor, as branches will be examined whether one line or multiple.
+
+The downside, which covers all code coverage metrics, is that tests without assertions will be counted as branch traversal. 
+
+[@khorikovUnitTestingPrinciples2020] (pg. 8-15)
