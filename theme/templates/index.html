@@ -23,6 +23,10 @@
 </div>
 {% endif %}
 
+{% if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+{% endif %}
+
 <ul class="articles">
 {% for article in articles_page.object_list %}
 <li>
@@ -68,6 +72,10 @@
 </li>
 {% endfor %}
 </ul>
+
+{% if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+{% endif %}
 
 </section>
 {% endblock content %}
