@@ -389,3 +389,18 @@ div#content {
 #sidebar .filter-menu {
   border-bottom: 1px solid #b9b28a;
 }
+
+ul.pagination {
+  list-style-type: none;
+  font-weight: bold;
+  padding-left: 0;
+  padding-bottom: 10px;
+}
+
+ul.pagination li {
+  display: inline;
+}
+
+.article-content h2 {
+  font-size: 1.4em;
+}

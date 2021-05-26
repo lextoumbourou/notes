@@ -42,3 +42,5 @@ PUBLICATIONS_SRC = 'citations.bib'
 
 BIBLIOGRAPHY_START = '<section id="bib"><h4>References</h4>'
 BIBLIOGRAPHY_END = '</section>'
+
+DEFAULT_PAGINATION = 10
