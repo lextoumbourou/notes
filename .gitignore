@@ -6,3 +6,5 @@ journal
 .vscode
 __pycache__
 output
+pelican-cite/
+pelican-plugins/
