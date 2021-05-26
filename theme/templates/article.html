@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}LexToumbourou.com - {{ article.title }}{% endblock %}
+
+{% block content %}
+<section id="content">
+  <article class="post">
+      <div class="cover-image">
+        {% if article.cover %}
+        <img src="{{ article.cover }}" />
+        {% endif %}
+      </div>
+      <div class="article-content">
+        <h2>
+          <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+        </h2>
+
+        <div class="article-meta">
+          <span class="created">{{ article.date|strftime('%b %d, %Y') }}</span>
+
+          <span class="category">{{ article.category }}</span>
+
+          <span class="info">
+              {% if article.tags %}
+              &nbsp;
+              {% for t in article.tags %}
+              &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags{% if tag and tag.name == t.name %} selected{% endif %}">{{ t }}</a>
+              {% endfor %}
+              {% endif %}
+          </span>
+        </div>
+
+        <div class="article-summary">
+          {{ article.content }}
+        </div>
+
+        <div class="clear"></div>
+      </div>
+  </article>
+</section>
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="content">
+{% block content_title %}
+{% endblock %}
+
+{% if page_name == "index" %}
+<div class="intro">
+  This is the rendered collections of notes by Lex Toumbourou.
+  <br><br>
+
+  The notes are created loosesly following <a href="https://en.wikipedia.org/wiki/Zettelkasten">Zettelkasten</a> method for note taking.
+  <br><br>
+  
+  They are categorised as follows:
+
+  <ul>
+    <li><b>Permanent</b> - these are "atomic" notes that represent one idea, usually by one or more authors.</li>
+    <li><b>Reference</b> - these are collections of notes I've taken while reading books or attending courses.</li>
+    <li><b>Posts</b> - these are longer notes like tutorials and overviews, intended more for public audiences.</li>
+  </ul>
+</div>
+{% endif %}
+
+<ul class="articles">
+{% for article in articles_page.object_list %}
+<li>
+  <article class="post">
+    <div class="cover-image">
+      {% if article.cover %}
+      <img src="{{ article.cover }}" />
+      {% endif %}
+    </div>
+    <div class="article-content">
+      <h2>
+        <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+      </h2>
+
+      <div class="article-meta">
+        <span class="created">{{ article.date|strftime('%b %d, %Y') }}</span>
+
+        <span class="category">{{ article.category }}</span>
+
+        <span class="info">
+            {% if article.tags %}
+            &nbsp;
+            {% for t in article.tags %}
+            &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags{% if tag and tag.name == t.name %} selected{% endif %}">{{ t }}</a>
+            {% endfor %}
+            {% endif %}
+        </span>
+      </div>
+
+      <div class="article-summary">
+        {{ article.summary|striptags }}
+      </div>
+
+      <div class="article-link">
+        <a href="{{ article.url }}">Read More</a>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+  </article>
+</li>
+{% endfor %}
+</ul>
+
+</section>
+{% endblock content %}
