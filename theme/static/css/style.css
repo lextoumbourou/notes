@@ -368,7 +368,6 @@ div#content {
 }
 
 .cover-image img {
-  border-radius: 100px;
   width: 120px;
   margin-right: 20px;
 }
@@ -381,4 +380,12 @@ div#content {
 
 .article-content {
   width: 100%;
+}
+
+#sidebar .home-menu {
+  border-bottom: 1px solid #b9b28a;
+}
+
+#sidebar .filter-menu {
+  border-bottom: 1px solid #b9b28a;
 }

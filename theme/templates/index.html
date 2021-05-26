@@ -40,7 +40,9 @@
       <div class="article-meta">
         <span class="created">{{ article.date|strftime('%b %d, %Y') }}</span>
 
-        <span class="category">{{ article.category }}</span>
+        <span class="category">
+          <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category}}</a>{%- for cat in article.subcategories -%}/<a href="{{ SITEURL }}/{{cat.url}}">{{cat.shortname}}</a>{% endfor %}
+        </span>
 
         <span class="info">
             {% if article.tags %}

@@ -1,14 +1,17 @@
 ---
-title: 📘 The Art of Game Design - A Book Of Lenses (2nd Edition) by Jesse Schell
+title: The Art of Game Design - A Book Of Lenses (2nd Edition) by Jesse Schell
 date: 2021-02-28 00:00
-type: book
+category: reference/books
 tags:
   - GameDesign
+cover: /_media/the-art-of-game-design-cover.jpeg
 ---
 
-As a person who's recently found themselves leading a team building a game, I really got a lot out of this book. It balances nicely between theory and practical advice. Each chapter is interspersed with practical "lens", which are effectively summaries of the knowledge interspersed through the book.
+![The Art Of Game Design (2nd Edition) cover](../../_media/the-art-of-game-design-cover.jpeg)
 
-I tried to read this book really carefully and took a whole bunch of notes.
+As a person who's recently found themselves building a game, I really got a lot out of this book. It's a nice balance between theory and practical advice. Each chapter is interspersed with practical "lens", which are effectively summaries of the knowledge interspersed through the book.
+
+I tried to read this book really carefully and take a lot of notes.
 
 ## Notes
 
@@ -20,8 +23,8 @@ I tried to read this book really carefully and took a whole bunch of notes.
 * The most important skill: listening
 * 5 major categories: team, audience, game, client and self.
 * Reading:
-  * [[Cirque de Soleil: The Spark-Igniting the Creative Fire that Lives within Us All]] - book about finding your path.
-  * [[Challenges for Game Designers by Brenda Brathwaite and Ian Schreiber]] - a collection of exercises for stretching game design muscles.
+  * [Cirque de Soleil: The Spark-Igniting the Creative Fire that Lives within Us All](https://www.amazon.com.au/CIRQUE-DU-SOLEIL-SPARK-Igniting-ebook/dp/B000GCFBOC) - book about finding your path.
+  * [Challenges for Game Designers by Brenda Brathwaite and Ian Schreiber](https://www.amazon.com.au/Challenges-Game-Designers-Brenda-Brathwaite/dp/158450580X) - a collection of exercises for stretching game design muscles.
 * Key takeaway
   * Anyone can become a game designer but it's a skill that requires a lot of diversity of knowledge and the ability to listen and empathise.
 
@@ -59,7 +62,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
   * Dissect your feelings
     * Must be able to analyse how you feel when you play a game.
     * Practice analysing your experience will help find the experiences you want to create from your game.
-  * **Lens #1: the Lens of Emotion** #lens
+  * **Lens #1: the Lens of Emotion** 
     * What emotions should my players experince?
     * What emotions are they having now? Why?
     * How can I bridge the gap between emotions I want and what they're having?
@@ -82,7 +85,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
     * Essential experience
       * Games only need the "essence of an experience", not the actual experience.
         * Game designer goal to find the essential experiences.
-  * **Lens #2: The Lens of Essential Experience** #lens
+  * **Lens #2: The Lens of Essential Experience** 
     * What experience should the player have?
     * What's essential to it?
     * How can I capture it?
@@ -135,12 +138,12 @@ I tried to read this book really carefully and took a whole bunch of notes.
 * Venues Mixed and Matched
   * Lots of gaps and overlaps with venues: bowling alleys, pinball at a restaurant etc.
   * Important thing is to see past the games and platforms to the venues and their properties.
-* **Lens #3: Lens of the Venue** #lens
+* **Lens #3: Lens of the Venue** 
   * What venue best suits game i'm creating?
   * Does venue have special properties that will influence the game?
   * What elements are in harmony with game? What elements aren't?
 * Reading:
-  * [[A Pattern of Language]] by Christopher Alexander et al - book about relationships between humans and spaces.
+  * [A Pattern of Language by Christopher Alexander et al](https://www.amazon.com.au/Pattern-Language-Towns-Buildings-Construction/dp/0195019199) - book about relationships between humans and spaces.
 * Takeaways
   * Understanding what venue your game is designed for, allows you to see past technology and trends to understand your games key properties.
 
@@ -152,12 +155,12 @@ I tried to read this book really carefully and took a whole bunch of notes.
   * Academics view lack of standardised definitions around game design a crisis.
 * What Is A Game?
   * Surprise and fun are integral part of game experiences.
-  * **Lens #4: The Lens of Surprise** #lens
+  * **Lens #4: The Lens of Surprise** 
     * What will surprise players when they play the game?
     * Does the story have interesting surprises? Do the game rules? Does the artwork? The technology?
     * Do your rules give players way to surprise each other?
     * Do rules give players way to surprise themselves?
-  * **Lens #5: Lens of Fun** #lens
+  * **Lens #5: Lens of Fun** 
     * What parts of my game are fun?
     * What parts need to be more fun?
   * A possible definition for fun: "Fun is pleasure with surprises"
@@ -207,11 +210,11 @@ I tried to read this book really carefully and took a whole bunch of notes.
   * "A good toy is an object that is fun to play with."
   * "A game is a problem-solving activity, approached with a playful attitude."
 * Reading:
-  * [[Man, Play and Games]] by Roger Callois - 1961 that's a favorite of academics, containing insights about the nature of gameplay.
-  * [[Finish and Infinite Games]] by James P. Carse - philosophical statement about the relationship between games and life.
-  * [[Why We Play Games: Four Keys to Emotion without Story]] by Nicole Lazzaro - exploration of dimensions of fun.
-  * [[Rules of Play]] by Katie Salen and Eric Zimmerman, Chapters 7 and 8 contain some very thoughtful consideration of the definition of a game.
-  * [[The Grasshopper: Games, Life, and Utopia]] by Bernard Suits - thought-provoking philosophical examination of nature of games.
+  * [Man, Play and Games](https://www.amazon.com.au/Man-Play-Games-Roger-Caillois/dp/025207033X) by Roger Callois - 1961 that's a favorite of academics, containing insights about the nature of gameplay.
+  * [Finite and Infinite Games](https://www.amazon.com.au/Finite-Infinite-Games-James-Carse/dp/1476731713) by James P. Carse - philosophical statement about the relationship between games and life.
+  * [Why We Play Games: Four Keys to Emotion without Story](https://ubm-twvideo01.s3.amazonaws.com/o1/vault/gdc04/slides/why_we_play_games.pdf) by Nicole Lazzaro - exploration of dimensions of fun.
+  * [Rules of Play](https://www.amazon.com/Rules-Play-Design-Fundamentals-Press/dp/0262240459) by Katie Salen and Eric Zimmerman, Chapters 7 and 8 contain some very thoughtful consideration of the definition of a game.
+  * [The Grasshopper: Games, Life, and Utopia](https://www.amazon.com.au/Grasshopper-Bernard-Suits/dp/155111772X) by Bernard Suits - thought-provoking philosophical examination of nature of games.
 
 * Key takeaways
   * Though this chapter doesn't contain any practice wisdom, spending the time to clearly define things can help develop insights. Though personally, I didn't gain a lot from this chapter.
@@ -253,7 +256,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
 
 * Use unifying theme strengthen game's experience.
   * Choose theme then reinforce at every opportunity
-* **Lens #11: The Lens of Unification** #lens
+* **Lens #11: The Lens of Unification** 
   * What is my theme?
   * Am I using every possible means possible to reinforce that theme?
 * Choose themes that deeply resonate with players: freedom, love.
@@ -267,7 +270,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
     * Game mechanics change game permanently (modify board with irremovable stickers, write on board with permanent markers, destroy game cards), reinforces theme: “war changes a world.”
   * Toontown Online:
     * The battle of play vs work.
-* **Lens #12: The Lens of Resonance** #lens
+* **Lens #12: The Lens of Resonance** 
   * What is it about my game that feels powerful and special?
   * When I describe my game to people, what ideas get them excited?
   * If I had no constraints, what would the game be like?
@@ -283,7 +286,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
 ### Chapter 7: The Game Begins with an Idea
 
 * Inspiration for games can come from anywhere - not just other games.
-* **Lens #13: The Lens of Infinite Inspiration** #lens
+* **Lens #13: The Lens of Infinite Inspiration** 
   * What is an experience I've had that I'd like to share with others?
   * How can I capture that experience in a game?
 * Design is problem solving.
@@ -293,7 +296,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
     * You have a clear measurement of success.
     * It's easier to communicate your goals with the team.
   * Sometimes you learn more about the problem as you iterate - that's okay, go back and update the problem description.
-* **Lens #14: The Lens of the Problem Statement** #lens
+* **Lens #14: The Lens of the Problem Statement** 
   * Start by treating the game as a solution to a problem.
   * What is the problem I'm really trying to solve?
   * What assumptions have I made that don't have solve the problem?
@@ -328,7 +331,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
 
 * Don't get stuck with decision paralysis, pick an idea and commit to it quickly.
   * Through commiting to an idea, you start to give it full attention and discover weaknesses and strengths you could otherwise miss.
-* **Lens 15: Law of Eight Filters** #lens
+* **Lens 15: Law of Eight Filters** 
   * Game should pass through 8 filters:
     * Does it feel "right" to you and your team?
     * Are the intended audience likely to like it?
@@ -349,7 +352,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
   * Test prototypes.
   * Create more detailed dsesigns based on what you learn.
 * Agile Manifesto fleshed out the ideas in the spiral model: key part of it in risk management.
-**Lens #16: The Lens of Risk Management** #lens
+**Lens #16: The Lens of Risk Management** 
   * What could keep the game from being great and how can we stop that from happening?
     * We generally want to work on parts of the game we're confident in but you have to face up to the parts in danger.
 * Tips for Productive Prototyping:
@@ -362,14 +365,14 @@ I tried to read this book really carefully and took a whole bunch of notes.
   * Prototypes don't have to be interactive - sketches and animations can answer questions.
   * Choose a fast game engine for prototyping (and ideally building)
   * Build a toy first - make sure the core gameplay is fun.
-    * **Lens #17: The Lens of the Toy** #lens
+    * **Lens #17: The Lens of the Toy** 
       * If my game had no goals, would it still be fun?
       * When people see my game, do they instantly want to play and interact with it?
   * Always be looking for opportunities for more loops - porting to another platform could be opportunity to fix parts of game that didn't work.
 * "50% rule" for budgetting
   * Plan game development so that if 50% of budget were lost, the game was still in a releasable state. Once the game is working, spend the rest of the budget making it great.
     * Develops usually apply a 80/20 wrong, forgetting that things often go wrong, eating up the 20% time.
-* **Lens #18: The Lens of Passion** #lens
+* **Lens #18: The Lens of Passion** 
   * At the end of prototyping, as well as risk assessment, check how you feel about game
      * Am I passionate about how great game can be or can I be?
 * Reading:
@@ -440,7 +443,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
   * Nurturing
   * Dialog and verbal puzzles
   * Learning by example - prefer clear tutorials
-* **Lens #19: The Lens of The Players** #lens
+* **Lens #19: The Lens of The Players** 
   * Questions to ask about your players:
     * What do they like?
     * What don't they like?
@@ -488,7 +491,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
   * Thrill - "fear minus death equals fun"
   * Triumph over adversity - Italian word for it: "fiero"
   * Wonder - awe & amazement
-* **Lens #20: The Lens of Pleasure** #lens
+* **Lens #20: The Lens of Pleasure** 
   * Questions:
     * What pleasures does my game give to players? Can they be improved?
     * What pleasures are missing?
@@ -571,7 +574,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
 * Wanna vs Hafta
   * Many gameplaying motivations are about pleasure seeking: collecting stars, getting combos etc; many are centered on pain avoidance: avoiding enemies, trying not to die.
   * Free to play games often start out as pleasure seeking, then eventually pain avoidance: not keeping daily streak etc.
-* **Lens #24: The Lens of Motivation** #lens
+* **Lens #24: The Lens of Motivation** 
   * What motivations do players have to play my game?
   * What motivations are most internal? Which are external?
   * What are pleasure seeking? What are pain avoiding?
@@ -579,14 +582,14 @@ I tried to read this book really carefully and took a whole bunch of notes.
   * Which motivations are in conflict?
 * Novelty
   * Games are always keen for a "new" experience, but they won't hang around if there isn't substance as well as novelty.
-  * **Lens #25: The Lens of Novelty** #lens
+  * **Lens #25: The Lens of Novelty** 
     * What is novel about my game?
     * Does my game have novelties throughout or just at the beginning?
     * Do I have the right mix of novel and familiar?
     * When the novelty wears off, is my game still fun?
 * Judgement
   * We have a need to know how we stack up compared to others.
-  * **Lens #26: The Lens of Judgement** #lens
+  * **Lens #26: The Lens of Judgement** 
     * What does your game judge about your players?
     * How does it communicate this judgement?
     * Do players feel the judgement is fair?
@@ -658,7 +661,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
     * Rule of thumb: if things act the same, they should look the same.
   * Games have many states and attributes and it's easy for designer to get confused:
     * Useful to construct a state diagram for each attribute and to understand state changes and connections.
-  * **Lens #28: The Lens of The State Machine** #lens
+  * **Lens #28: The Lens of The State Machine** 
     * What are the objects in the game?
     * What are attributes of each object?
     * What are the possible states?
@@ -668,7 +671,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
     * In card games, hidden/private state is a key part of the game
     * In video games, there's also information that only the AI is aware of and also stuff that only game is aware of.
     * Small changes to who knows what information can radically change a game: great way to create drama is to make piece of private information suddenly public.
-    * **Lens #29: The Lens of Secrets** #lens  
+    * **Lens #29: The Lens of Secrets**   
       * What is known to the game only?
       * What is known by all players?
       * What is known by some or only one player?
@@ -770,7 +773,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
       * Can players decide on their own goals?
     * Good idea to pick up Lens of Toy, Lens of Curiosity and Lens of Goals at the same time.
   * Game is not just defined by it's rules, it is its rules.
-  * **Lens #33: The Lens of Rules** #lens
+  * **Lens #33: The Lens of Rules** 
     * What are the foundational rules of the game? How are they different from operational rules?
     * Are there "laws" or "house rules" that should be incorporated into formal rules.
     * Are there different modes? Would game be better with more modes? Fewer modes?
@@ -858,7 +861,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
         * Not only are people will to pay a price to avoid regret, they are willing to take risks.
         * "When it comes to taking risks for gains, people are conservative. They will make a sure gain over a problem gain. But we are also finding that when people are faced with a choice between a small, certain loss and a large probable loss, they will gamble."
       * Game designs must understand actual and perceived probablities when calculating expected values.
-    * **Lens #35: The Lens of Expected Value** #lens
+    * **Lens #35: The Lens of Expected Value** 
       * What is the actual chance of an event occuring?
       * What is the perceived chance?
       * What valeu of the outcome of that even have? Are there other aspects of the value not considered?
@@ -869,7 +872,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
       * Estimating an opponents skill is a skill
       * Predicting pure chance is an imagined skill.
       * Controlliung pure chance is an imagined skill (ie superstitious rituals)
-    * **Lens #36: The Lens of Chance** #lens
+    * **Lens #36: The Lens of Chance** 
       * What in my game is truly random? What parts feel random?
       * Does randomness give players positive feelings of excitment and challenge? Or negative feelings of hoplessness and lack of control?
       * Would changing my probability distribution curves improve my game?
@@ -905,7 +908,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
       * Making mathematical models like this requires careful playtesting.
         * Rule of thumb for game balancing: half of development should be spent balancing.
       * Make sure each thing in the game has something else that has an advantage over it: see rock, paper, scissors.
-    * **Lens #37: Lens of Fairness** #lens
+    * **Lens #37: Lens of Fairness** 
       * Should my game be symmetrical or asymetrical?
       * Is it more important that game is a reliable measure of who has most skill or should it provide an interesting challenge to all players?
       * If players with different skills player together, what do I use to make it more interesting and challenging for everyone?
@@ -920,7 +923,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
       * Give the losers a more opportunity to reclaim ground. Mario Kart would give better power ups to players further behind to level the playing field.
     * Toughest challenge in game balancing: deciding how the difficulty should progress over time.
       * Learning to play a game at all is a challenge - make sure first levels of game are simplistic while they try to understand controls and goals.
-    * **Lens #38: The Lens of Challenges** #lens
+    * **Lens #38: The Lens of Challenges** 
       * What are the challenges in my game?
       * Are they too easy, too hard, or just right?
       * Can my challenges accomodate a variety of skill levels?
@@ -937,7 +940,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
       * If choices < desires, player is frustrated.
       * If choices = desires, player feels free and fulfilled.
     * Some games call for smaller choices other endless.
-    * **Lens #39: The Lens of Meaningful Choices** #lens
+    * **Lens #39: The Lens of Meaningful Choices** 
       * What choices am I asking the player to make?
       * Are they meaningful? How?
       * Are they getting the right number of choices?
@@ -1051,7 +1054,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
         * Usually considered a bad thing - though some people do enjoy mastering complex rulesets.
       * Emergent complexity
         * The type of complexity that people praise: usually what people mean when they say "simple and complex"
-    * **Lens #48: The Lens of Simplicity/Complexity** #lens
+    * **Lens #48: The Lens of Simplicity/Complexity** 
       * What elements of innate complexity exist in my game?
       * Could innante complexity be turned into emergent complexity?
       * Do elements of emergent complexity arise from my game?
@@ -1095,7 +1098,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
         * At an Opera, people bring binoculars then mostly use at the beginning - once they have the details, their imagination can do the rest.
       * Add details that inspire imagination
         * Controlling members of a royal army may really inspire their imagination to fill in details.
-      * **Lens #51: The Lens of Imagination** #lens
+      * **Lens #51: The Lens of Imagination** 
         * What does the player need to understand to play?
         * Can an element of imagination help understand that better?
         * What high-quality, realistic detail should be provided?
@@ -1122,7 +1125,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
         * How will I earn and spend money?
       * Meaningful economy is the depth and meaning in those two choices.
         * Usually in a loop: players can spend money to make more money.
-      * **Lens #52: The Lens of Economy** #lens
+      * **Lens #52: The Lens of Economy** 
         * How can players earn money? Should their be more ways?
         * What can players buy?
         * Is money too easy to get? Too hard?
@@ -1152,7 +1155,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
       * Does the puzzle/game act like something they've seen before?
       * Does the puzzle/game draw people in?
   * #3: Give a sense of progress
-    * **Lens #55: The Lens of Visible Progress** #lens
+    * **Lens #55: The Lens of Visible Progress** 
       * What is progress in my game/puzzle?
       * Is there enough progress? Can I add interim steps?
       * What progress is visible and what is hidden? Can I find a way to reveal what is hidden?
@@ -1191,7 +1194,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
 ### Chapter 15: Players play games through an Interface
 
 * Goal of interface: make players feel in control of their experience.
-* **Lens #59: The Lens of Control** #lens
+* **Lens #59: The Lens of Control** 
   * When players use the interface, does it do what they expect?
   * Is interface easy or hard to master?
   * Do players feel they have a strong influence over outcome of game?
@@ -1223,7 +1226,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
   * Players project themselves into the game world: "I shot 10 rounds at the boss but couldn't beat him"
   * Players forget that the interface is there at all, until it becomes confusing.
   * "No matter how beautiful your interface is, it would be better if there were less of it." - Edward Tufte
-  * **Lens #62: The Lens of Transperancy** #lens  
+  * **Lens #62: The Lens of Transperancy**   
     * Does interface let players met their desires and be immersed?
     * Can players use the interface without thinking (given enough practise)?
     * Is it intuitive to new players?
@@ -1234,13 +1237,13 @@ I tried to read this book really carefully and took a whole bunch of notes.
     * Swiffer broom: shows feedback on sweeping with dirt on the cloth - makes cleaning pleasurable.
     * Crosswalks in UK: people press button to walk and it immediately lights up making people feel confident and in control.
   * The tenth of a second rule: response to button pushes should be within 1/10 of a second.
-  * **Lens #63: The Lens of Feedback** #lens  
+  * **Lens #63: The Lens of Feedback**   
     * What do players need to know now?
     * What do players want to know now?
     * How can you add feedback to allow players to feel what you want them to feel?
     * What is players goal? How can feedback help towards goal?
   * When a system has a lot of "second-order motion" (ie a little effort has a lot of  impact/power/rewards), it's considered: "juicy" (as opposed to little feedback and being dry)
-    * **Lens #64: The Lens of Juiciness** #lens
+    * **Lens #64: The Lens of Juiciness** 
       * Does interface give consistent feedback for actions?
       * Is there second-order motion created by player actions? Is it powerful and interesting?
       * When I give the player rewards, how many ways am I simultaneously rewarding them?
@@ -1252,7 +1255,7 @@ I tried to read this book really carefully and took a whole bunch of notes.
       * Fight enemies
       * Find your way through unfamiliar environment
       * Overcome obstacles to get to mate (ie "rescue the princess")
-    * **Lens #65: Lens of Primality** #lens
+    * **Lens #65: Lens of Primality** 
       * What parts of my game are so primal an animal could play?
       * What parts of the game could be more primal?
   * Channels of information

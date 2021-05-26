@@ -36,7 +36,7 @@ MARKDOWN = {
     "output_format": "html5",
 }
 
-PLUGINS = ['latex', 'pelican_cite', frontmark]
+PLUGINS = ['latex', 'pelican_cite', frontmark, 'subcategory']
 
 PUBLICATIONS_SRC = 'citations.bib'
 

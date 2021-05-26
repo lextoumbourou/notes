@@ -4,12 +4,8 @@
 
 {% block content %}
 <section id="content">
+  
   <article class="post">
-      <div class="cover-image">
-        {% if article.cover %}
-        <img src="{{ article.cover }}" />
-        {% endif %}
-      </div>
       <div class="article-content">
         <h2>
           <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
@@ -18,7 +14,13 @@
         <div class="article-meta">
           <span class="created">{{ article.date|strftime('%b %d, %Y') }}</span>
 
-          <span class="category">{{ article.category }}</span>
+          <span class="category">
+            {%- if article.parent -%}
+            ../<a href="{{ SITEURL }}/{{ article.parent }}.html">{{ article.parent }}</a>
+            {%- else -%}
+            <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category}}</a>{%- for subcategory in article.subcategories -%}/<a href="{{ SITEURL }}/{{subcategory.url}}">{{subcategory.shortname}}</a>{% endfor %}
+            {% endif %}
+          </span>
 
           <span class="info">
               {% if article.tags %}
