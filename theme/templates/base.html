@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>{% block title %}LexToumbourou.com - The story of a guy with a long last name{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//yandex.st/highlightjs/7.3/styles/github.min.css">
+    <link rel="alternate" type="application/atom+xml" title="LexToumbourou.com" href="http://lextoumbourou.github.io/atom.xml">
+    {% block head %}
+    {% endblock %}
+
+    {% block scripts %}
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      <!--[if lt IE 8]>
+        <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
+      <![endif]-->
+    {% endblock %}
+    <noscript>
+      <style>
+        div.article_body {
+          opacity: 1;
+        }
+        ul.articles {
+          opacity: 1;
+        }
+      </style>
+    </noscript>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-33772243-5', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+
+  <body>
+
+    <div id="sidebar">
+      <a {% if page_name == "index" %}class="active"{% endif %} href="/">All</a>
+      <a {% if category and category == "permanent" %}class="active"{% endif %} href="/category/permanent.html">Permanent</a>
+      <a {% if page_name == "category/reference" %}class="active"{% endif %} href="/category/reference.html">Reference</a>
+      <a {% if page_name == "category/posts" %}class="active"{% endif %} href="/category/posts.html">Posts</a>
+
+      <a href="/about.html"> About</a>
+    </div>
+
+    <div id="content">
+
+      <div id="header">
+        <h1><a href="/">Lex's notes</a></h1>
+      </div>
+
+      {% block content %}
+      {% endblock %}
+
+    </div>
+    <script src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
