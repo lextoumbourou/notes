@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pelican ./public/ --output=output/
+PYTHON_VERSION=3.7 pelican ./public/ --output=output/
