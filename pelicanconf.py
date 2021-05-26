@@ -6,6 +6,8 @@ DEFAULT_LANG = u'en'
 
 ARTICLE_URL = '{slug}.html'
 
+SITENAME = 'Notes by Lex'
+
 THEME = "theme"
 
 PLUGIN_PATHS = ['pelican-plugins', 'pelican-cite/src']
