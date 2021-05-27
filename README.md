@@ -16,4 +16,23 @@ The [slipbox](slipbox) folder contains permanent notes which I've collected from
 
 This project uses Pelican to generate a HTML version of the notes. You can generate the notes using the following command:
 
+### Create a virtualenv (optional)
 
+```
+python3 -m venv .env
+source .env/bin/activate
+```
+
+### Run setup script
+
+```
+./setup.sh
+```
+
+### Build
+
+To build the blog without running setup, use the `build.sh` script:
+
+```
+./build.sh
+```
