@@ -1,7 +1,9 @@
-Title: RSA Animate XBMC Plugin
-Tagline: Watch videos from RSA Animate on XBMC
-Slug: rsa-animate-xbmc-plugin
-Date: 2012-05-20
+---
+title: RSA Animate XBMC Plugin
+date: 2012-05-20 00:00
+slug: rsa-animate-xbmc-plugin
+summary: Watch videos from RSA Animate on XBMC
+---
 
 </p>
 

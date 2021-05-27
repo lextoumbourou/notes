@@ -1,7 +1,8 @@
-Title: Packet capturing in parallel with Ansible
-Tagline: And why Ansible continues to blow my mind
-Slug: packet-capturing-in-parallel-ansible
-Date: 2013-08-13
+---
+title: Packet capturing in parallel with Ansible
+date: 2013-08-13 00:00
+slug: packet-capturing-in-parallel-ansible
+---
 
 <a name="intro"></a>
 

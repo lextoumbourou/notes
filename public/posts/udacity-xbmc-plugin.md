@@ -1,7 +1,12 @@
-Title: Udacity on XBMC
-Tagline: MOOCs all up in your living room
-Date: 2014-01-16
-Tags: MOOCs, XBMC, Udacity
+---
+title: Udacity on XBMC
+summary: Complete Udacity courses on XBMC (now broken)
+date: 2014-01-16 00:00
+---
+
+<div class="intro">
+This project almost certainly no longer works. I no longer maintain it, but leaving the blog post up for posterity.
+</div>
 
 </p>
 
