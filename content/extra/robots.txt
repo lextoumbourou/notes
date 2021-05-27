@@ -1,2 +1,0 @@
-User-agent: Deckard
-Disallow: /Voight-Kampff_Test
