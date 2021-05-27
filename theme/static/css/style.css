@@ -45,6 +45,29 @@ body {
   background-color: #d9d7cb;
 }
 
+div#content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  #sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  #sidebar a {float: left;}
+  div#content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  #sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
 h1 {
   margin:0;
   padding:0;
@@ -314,29 +337,6 @@ pre.prettyprint {
 
 #bib h2 {
     font-size:1.4em;
-}
-
-div#content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-}
-
-@media screen and (max-width: 700px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .sidebar a {float: left;}
-  div#content {margin-left: 0;}
-}
-
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
 }
 
 .article-meta {
