@@ -1,8 +1,9 @@
-Title: What Are Zombie Processes?
-Tagline: Unix 101 again because I failed it the first time
-Slug: what-are-zombie-processes
-Category: Unix
-Date: 2013-06-08
+---
+title: What Are Zombie Processes?
+date: 2013-06-08 00:00
+slug: what-are-zombie-processes
+tags: unix
+---
 
 <a name="intro"></a>
 

@@ -1,6 +1,9 @@
-Title: Understanding recursive queries in PostgreSQL
-Date: 2016-05-08
-Tags: PostGres, SQL
+---
+title: Understanding recursive queries in PostgreSQL
+date: 2016-05-08 00:00
+tags:
+  - PostgreSQL
+---
 
 For some data relationships in Postgres (or any other relational database that speaks SQL), recursive queries are near inevitable. Let's say you have some top-level product categories, like Shoes, Hats, Wigs etc, and each of those has subcategories, like Sports, Casual, Formal etc, which can have their own subcategories and so on. Something like this:
 

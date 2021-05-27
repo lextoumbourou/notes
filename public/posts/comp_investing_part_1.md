@@ -1,6 +1,10 @@
-Title: Computational Investing, Part I (Coursera) Review
-Date: 2013-12-02
-Tags: MOOCs, Investing, Python
+---
+title: Computational Investing, Part I (Coursera) Review
+date: 2013-12-02 00:00
+tags:
+  - MOOC
+  - Python
+---
 
 * [About The Course](#about-the-course)
 * [My Background](#my-background)
