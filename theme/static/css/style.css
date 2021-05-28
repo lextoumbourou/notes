@@ -184,9 +184,14 @@ blockquote.pull_quote {
     float:left;
   }
 
+.post h1 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
 .post h2 {
   display: inline;
-  font-size: 1.5em;
+  font-size: 1.4em;
   margin-bottom: 0px;
 }
 
