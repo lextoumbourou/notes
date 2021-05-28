@@ -33,6 +33,12 @@
         </div>
 
         <div class="article-content">
+          <div class="cover-image">
+            {% if article.cover %}
+            <img src="{{ article.cover }}" />
+            {% endif %}
+          </div>
+
           {{ article.content }}
         </div>
 

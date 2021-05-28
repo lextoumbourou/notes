@@ -2,12 +2,17 @@
 title: Red Ocean
 date: 2021-02-24 00:00
 tags:
-  - Business
-  - GameDesign 
+  - Product Strategy
+summary: A market with a lot of competitiors fighting for dominance
+cover: /_media/red-ocean-cover.jpg
 ---
 
-A Red Ocean is a market in which there are a lot of competitors fighting for product dominance for example the App Store. A Blue Ocean is the opposite: a market with relatively few competitors.
+A Red Ocean is a market in which there are a lot of competitors fighting for product dominance, for example the App Store.
 
-References:
+A Blue Ocean is the opposite: a market with relatively few competitors.
 
-* [[The Art of Game Design - A Book of Lenses (2nd Edition)]] (Chapter 31. The Designer and Client Want to Make Profit)
+Being profitable in a Red Ocean requires a strong [[Barrier]].
+
+Image from [Papahānaumokuākea Marine National Monument on Flickr](https://www.flickr.com/photos/papahanaumokuakea/24175296337/).
+
+[@schellArtGameDesign2015a] *(pg. 495)*

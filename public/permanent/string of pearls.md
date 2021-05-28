@@ -2,7 +2,7 @@
 title: String of Pearls
 date: 2021-01-06 00:00
 tags:
-  - GameDesign 
+  - Game Design 
 ---
 
 One of the two methods of story telling in games. It involves a pre-scripted, linear story interupted by free play (challenges, puzzles etc). Notable examples are The Last of Us. Even games that have non-linear stories generally are just series of strings of pearls.

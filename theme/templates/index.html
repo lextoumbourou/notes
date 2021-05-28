@@ -28,11 +28,7 @@ The notes are collecting using my interpretation of the <a href="https://en.wiki
 {% for article in articles_page.object_list %}
 <li>
   <article class="post">
-    <div class="cover-image">
-      {% if article.cover %}
-      <img src="{{ article.cover }}" />
-      {% endif %}
-    </div>
+    
     <div class="article-content">
       <h2>
         <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
@@ -56,11 +52,16 @@ The notes are collecting using my interpretation of the <a href="https://en.wiki
       </div>
 
       <div class="article-summary">
-        {{ article.summary|striptags }}
+        <div class="cover-image">
+          {% if article.cover %}
+          <img src="{{ article.cover }}" />
+          {% endif %}
+        </div>
+        {{ article.summary }}
       </div>
 
       <div class="article-link">
-        <a href="{{ article.url }}">Read More</a>
+        <a href="{{ SITEURL}}/{{ article.url }}">Read More</a>
       </div>
 
       <div class="clear"></div>

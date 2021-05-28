@@ -2,14 +2,14 @@
 title: Test Pyramid
 date: 2021-04-04 00:00
 tags:
-  - AutomatedTesting
+  - Automated Testing
+cover: /_media/automated-tests.png
+summary: A prescripted balance of automated test types
 ---
 
 The Test Pyramid advocates for a balance of automated tests where unit tests are most prevalent, followed by integration tests then end-to-end (or UI) tests. [@fowlerTestPyramid2012]
 
-Khorikov introduces a varient on the common diagram where the height refers to closeness to "emulating the end user's behaviour: [@khorikovUnitTestingPrinciples2020] *(pg. 87)*
-
-![Test Pyramid](../_media/automated-tests.png)
+Khorikov introduces a varient on the common diagram where the height refers to closeness to "emulating the end user's behaviour (used as cover image) [@khorikovUnitTestingPrinciples2020] *(pg. 87)*.
 
 The Test Pyramid is a little misleading in that people interpret as unit tests are better, e2e tests are worse. But they are only better in the sense that they are faster and less prone to noise and false positives.
 

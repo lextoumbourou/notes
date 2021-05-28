@@ -2,7 +2,8 @@
 title: Unit tests
 date: 2021-03-27 00:00
 tags:
-  - AutomatedTesting 
+  - Automated Testing 
+summary: An automated test which verifies a single unit of behaviour, runs quickly and in isolation
 ---
 
 The definition of a unit test, according to Khorikov, is an automated test which meets the following criteria:
@@ -15,6 +16,4 @@ Two schools of thought on unit testing: [[London (mockist)]] and [[Classical (De
 
 On the other hand, an [[integration test]] is simply any test which can't satisfy this criteria.
 
-References:
-
-* [[Unit Testing Principles, Practices and Patterns]] (2. What is a unit test)
+[@khorikovUnitTestingPrinciples2020] *(chapter 2)*

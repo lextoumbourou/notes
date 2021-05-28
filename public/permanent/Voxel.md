@@ -13,11 +13,9 @@ The volume of a voxel and the data stored can be anything.
 
 For example, the Terrain system in Roblox allow creators to fill a grid of 3x3x3 voxels with different material each with different occupancy values (ie how full of the material they are).
 
-[This Roblox Script](https://gist.github.com/lextoumbourou/b1b29c27b69caf29cc2f9a2e04949734) creates a single voxel of water with 100% occupancy:
+[This Roblox Script](https://gist.github.com/lextoumbourou/b1b29c27b69caf29cc2f9a2e04949734) creates a single voxel of water with 100% occupancy (used as the cover image).
 
-![A Voxel of Water example in Roblox Studio](./_media/roblox-terrain-voxel-of-water.gif)
-
-References:
+## References
 
 * [Voxel](https://en.wikipedia.org/wiki/Voxel)
 * [Scripting With Terrain](https://developer.roblox.com/en-us/articles/Scripting-With-Terrain)

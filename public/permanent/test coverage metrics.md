@@ -3,11 +3,11 @@ title: Test Coverage Metrics
 date: 2021-03-24 00:00
 modified: 2021-05-27 00:00
 tags:
-  - AutomatedTesting
-summary: How much of our code base is covered by our tests?
+  - Automated Testing
+summary: "Metrics that answer the question : how much of our code is executed by our tests?"
 ---
 
-How much of our code base is covered by our tests?
+Test coverage metrics answer the question: how much of our code is executed by our tests?
 
 2 main metrics:
 

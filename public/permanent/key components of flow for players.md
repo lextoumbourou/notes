@@ -2,7 +2,7 @@
 title: Key Components of Flow For Players
 date: 2020-11-15 00:00
 tags:
-  - GameDesign
+  - Game Design
   - Flow
 ---
 
