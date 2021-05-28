@@ -2,6 +2,10 @@ from functools import partial
 
 import frontmark
 
+MARKUP = ('md', )
+
+from pelican_jupyter import liquid as nb_liquid
+
 AUTHOR = 'Lex Toumbourou'
 
 DEFAULT_LANG = u'en'
@@ -40,7 +44,7 @@ MARKDOWN = {
     "output_format": "html5",
 }
 
-PLUGINS = ['latex', 'pelican_cite', frontmark, 'subcategory']
+PLUGINS = ['latex', 'pelican_cite', frontmark, 'subcategory', nb_liquid]
 
 PUBLICATIONS_SRC = 'citations.bib'
 
@@ -49,7 +53,6 @@ BIBLIOGRAPHY_END = '</section>'
 
 DEFAULT_PAGINATION = 10
 
-
 JINJA_FILTERS = {
     'sort_by_article_count': partial(
         sorted,
@@ -57,3 +60,7 @@ JINJA_FILTERS = {
         reverse=True)} # reversed for descending order
 
 SUMMARY_MAX_LENGTH = 25
+
+IGNORE_FILE = ['.ipynb_checkpoints']
+
+LIQUID_CONFIGS = (("CONTENT_DIR", "notes", ""), )
