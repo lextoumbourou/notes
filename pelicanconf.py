@@ -1,3 +1,5 @@
+from functools import partial
+
 import frontmark
 
 AUTHOR = 'Lex Toumbourou'
@@ -46,3 +48,10 @@ BIBLIOGRAPHY_START = '<section id="bib"><h4>References</h4>'
 BIBLIOGRAPHY_END = '</section>'
 
 DEFAULT_PAGINATION = 10
+
+
+JINJA_FILTERS = {
+    'sort_by_article_count': partial(
+        sorted,
+        key=lambda tags: len(tags[1]),
+        reverse=True)} # reversed for descending order
