@@ -55,3 +55,5 @@ JINJA_FILTERS = {
         sorted,
         key=lambda tags: len(tags[1]),
         reverse=True)} # reversed for descending order
+
+SUMMARY_MAX_LENGTH = 25

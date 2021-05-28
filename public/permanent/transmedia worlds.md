@@ -2,7 +2,7 @@
 title: Transmedia Worlds
 date: 2021-01-31 00:00
 tags:
-  - GameDesign
+  - Game Design
 ---
 
 ![Pokemon Cards](../_media/pokemon-cards.jpeg)

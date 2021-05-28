@@ -388,11 +388,6 @@ pre.prettyprint {
   margin-bottom: 25px;
 }
 
-.cover-image img {
-  width: 120px;
-  margin-right: 20px;
-}
-
 .article-link {
   font-size: 1em;
   font-weight: bold;
@@ -416,4 +411,10 @@ ul.pagination li {
 
 .article-content h2 {
   font-size: 1.4em;
+}
+
+.cover-image img {
+  float: left;
+  margin: 0 15px 10px 0;
+  max-width: 300px;
 }

@@ -2,7 +2,8 @@
 title: Arrange, Act and Assert (AAA) Pattern
 date: 2021-03-28 00:00
 tags:
-  - AutomatedTesting
+  - Automated Testing
+summary: A pattern for structuring unit tests
 ---
 
 A pattern for structuring unit tests, where tests are broken up into 3 sections:
@@ -14,6 +15,8 @@ A pattern for structuring unit tests, where tests are broken up into 3 sections:
 The system under test is always stored in a variable called `sut` .
 
 Khorikov writes, by conforming to a standard like this, anyone can easily read and understand a test reducing maintenance cost.
+
+[@khorikovUnitTestingPrinciples2020] *(pg. 42-43)*
 
 Example:
 
@@ -30,8 +33,4 @@ def test_datestring_is_formatted():
     assert result == "2008-1-2"
 ```
 
-Similar to the [[Given-When-Then]] pattern.
-
-References:
-
-* [[Unit Testing Principles, Practices and Patterns|# Unit Testing Principles, Practices, and Patterns]] 
+Similar to the [Given-When-Then](https://martinfowler.com/bliki/GivenWhenThen.html) pattern.

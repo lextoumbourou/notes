@@ -2,7 +2,7 @@
 title: Goal Of A Game Interface
 date: 2021-01-23 00:00
 tags:
-  - GameDesign
+  - Game Design
   - InterfaceDesign 
 ---
 

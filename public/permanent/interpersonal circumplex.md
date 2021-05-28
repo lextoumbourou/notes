@@ -2,7 +2,7 @@
 title: Interpersonal Circumplex
 date: 2021-02-01 00:00
 tags:
-  - GameDesign 
+  - Game Design 
 ---
 
 A tool brought from the world of social psychology by Katherine Isbister, in which you draw a diagram with 2 axes: friendliness and dominance and place a character in the centre, then visualise their relationship to other characters. Useful for understanding character relationships within stories.
