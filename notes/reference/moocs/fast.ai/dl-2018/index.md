@@ -10,7 +10,7 @@ Course notes from fastai's Deep Learning 2018.
 
 ## Contents
 
-* [Lesson 1 - Pets]({filename}/reference/moocs/fast.ai/dl-2018/lesson01.md)
+* [Lesson 1]({filename}/reference/moocs/fast.ai/dl-2018/lesson01.md)
 * [Lesson 2]({filename}/reference/moocs/fast.ai/dl-2018/lesson02.md)
 * [Lesson 3]({filename}/reference/moocs/fast.ai/dl-2018/lesson03.md)
 * [Lesson 4]({filename}/reference/moocs/fast.ai/dl-2018/lesson04.md)
