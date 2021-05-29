@@ -2,8 +2,7 @@
 title: Lua Prototypal Inheritance
 date: 2021-02-15 00:00
 tags:
-  - Programming
-  - OO
+  - Lua
 ---
 
 In Lua, object-oriented programming is achieved using prototypal inheritance, since Lua does not have the concept of a [[class]]. Prototypal inheritance simply means that objects can refer to a "prototype" object which is looked up when any field doesn't exist in the first object. In Lua, this is achieved by using the `__index` [[Lua Table-Access Metamethods]]. In the example, I'm creating a `Person` table which will serve as a metatable for all instances of a `Person`:

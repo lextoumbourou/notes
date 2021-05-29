@@ -3,7 +3,6 @@ title: Lua Coroutines
 date: 2021-01-18 00:00
 tags:
   - Lua
-  - Programming
 ---
 
 Coroutines in Lua are related to [[Generators (Python)]]. They allow a function to be written to return intermittantly using the `yield()` function call on the `coroutine` table. The coroutine is created by passing a function to the `coroutine.create(f)` function. It returns a value of type `thread`, which can then be passed to   `coroutine.resume(t)`, which will run the code until the next `coroutine.yield` call or `return`.

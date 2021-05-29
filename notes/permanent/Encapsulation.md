@@ -9,4 +9,4 @@ Encapsulation is the act of protecting code against [[invariant]] violations and
 
 > "You cannot trust yourself to do the right thing all the time—so, eliminate the very possibility of doing the wrong thing." 
 
-[@khorikovUnitTestingPrinciples2020] (pg. 104)
+[@khorikovUnitTestingPrinciples2020] *(pg. 104)*
