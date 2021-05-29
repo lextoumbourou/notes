@@ -1,7 +1,10 @@
-Title: See like a Radiologist with Systematic Windowing
-Link: https://www.kaggle.com/dcstang/see-like-a-radiologist-with-systematic-windowing
-Author: [David Tang](dcstang)
-Type: #KaggleNotebook
+---
+title: See like a Radiologist with Systematic Windowing
+date: 2019-10-02 00:00
+link: https://www.kaggle.com/dcstang/see-like-a-radiologist-with-systematic-windowing
+status: draft
+category: reference/kaggle/rsna-intracranial-hemorrhage-detection
+---
 
 * What is DICOM:
 	* Digital Imaging and Communications in Medicine (DICOM)
