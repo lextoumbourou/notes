@@ -1,3 +1,13 @@
+---
+title: "Week 2 - Deep convolutional models: case studies"
+date: 2017-11-29 00:00
+category: reference/moocs
+parent: convolutional-neural-networks 
+status: draft
+tags:
+  - Deep Learning
+---
+
 ## Outline
 
 * Reading papers
@@ -34,4 +44,4 @@
 
 ## Networks in Networks and 1x1 Convolutions
 
-## Inception
+### Inception
