@@ -25,9 +25,9 @@ tags:
 
   ![Vertical Edge Detection](/_media/vertical-edge-detection.png)
 
-    * Basically place the filter over a 3x3 section of an input image and take the element-wise product every place you can.
-    * Research papers may call a filter a "kernel".
-    * Output of convolution for a 6x6 input, would be a 4x4 matrix. Output can be thought of as an image.
+* Basically place the filter over a 3x3 section of an input image and take the element-wise product every place you can.
+	* Research papers may call a filter a "kernel".
+	* Output of convolution for a 6x6 input, would be a 4x4 matrix. Output can be thought of as an image.
 * Most frameworks have functions for implementing convolution operations.
 
 ## More edge detection
