@@ -1,5 +1,5 @@
 ---
-title: Player dependance in multiplayer games
+title: Player Dependance in Multiplayer Games
 date: 2021-02-09 00:00
 tags:
   - Game Design 
