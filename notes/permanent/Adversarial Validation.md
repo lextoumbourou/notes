@@ -2,8 +2,7 @@
 title: Adversarial Validation
 date: 2021-05-12 00:00
 tags:
-  - MachineLearning
-  - KaggleTricks
+  - EDA
 ---
 
 A technique used to evalute how different the test set is to the training set, commonly used in Kaggle competitions to assess likelihood of a [[Leaderboard Shakeup]]. It's a form of [[Black-box testing]] for datasets.

@@ -13,6 +13,6 @@ A signed integer's range is -2147483648 to 2147483648. Unsigned is 0 to 42949672
 
 [Two's compliment](https://en.wikipedia.org/wiki/Two%27s_complement) is used to represent negative numbers in binary.
 
-References:
+#### References
 
 * [Signed and Unsigned Integers](https://www.ibm.com/docs/en/aix/7.2?topic=types-signed-unsigned-integers)
