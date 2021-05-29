@@ -355,5 +355,17 @@ Notes taken while reading [How To Take Smart Notes](https://www.amazon.com.au/Ho
 		* Making connections builds the internal structure of the slipbox, which in term shapes our thinking.
 			* Ideas become rooted in facts and thought-through ideas with verifiable references.
 	* 12.3 Compare, correct and differentiate
+		* As slipbox grows, you find yourself adding notes that are already in there.
+			* Sometimes even realising that an idea you had was someone elses.
+				* This is a common occurance but most don't have a system that confronts us with it.
+				* Doesn't feel good but it's how you push into new frontiers with ideas
+			* Can be useful for detecting differences, contradictions, oppositions that wouldn't otherwise be noticed
+			* Constant comparison of notes leads to new insights about old ideas
+				* Can highlights errors or incorrect citations in source material (indicating that I likely should be storing the original sources)
+				* Discover studies that conflict with each other 
+			* Leads to constant improvement of your work and can find weaknesses in others
+		* Also helps with "feature-positive" effect:
+			* our brains tend to overstate the importance of info that's easily available: favouring recently acquired facts over most relevant.
+			* Reminds us of info we've forgotten.
 
 [@ahrensHowTakeSmart2017]
