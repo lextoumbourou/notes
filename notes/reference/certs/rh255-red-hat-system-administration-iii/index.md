@@ -1,5 +1,5 @@
 ---
-title: 🏫 Red Hat System Administration III with RHCSA and RHCE Exams (RH255)
+title: Red Hat System Administration III with RHCSA and RHCE Exams (RH255)
 date: 2013-08-10 00:00
 type: course
 category: reference

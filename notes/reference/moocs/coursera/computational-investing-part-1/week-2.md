@@ -1,5 +1,5 @@
 ---
-title: 🏫 Computational Investing Part I (Coursera) - Week 2
+title: Computational Investing Part I (Coursera) - Week 2
 date: 2013-11-27 00:00
 status: draft
 category: reference/moocs
