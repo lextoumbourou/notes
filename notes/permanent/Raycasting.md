@@ -1,8 +1,8 @@
 ---
-title: Raycasting (computer graphics)
+title: Raycasting
 date: 2020-11-05 00:00
 tags:
-  - Graphics 
+  - Computer Graphics 
 ---
 
 Raycasting is a rendering technique that casts a series of [[Ray]]s for each vertical slice of the screen in the direction a player is facing. Any item that is "hit" by the ray is then rendered onto the player's screen with a size dependant on the distance to from the player. It is a computationally inexpensive method of 3d rendering that was popularised by Wolfenstein 3d.
