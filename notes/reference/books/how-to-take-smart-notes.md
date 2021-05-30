@@ -6,7 +6,7 @@ tags:
 status: draft
 ---
 
-Notes taken while reading [How To Take Smart Notes](https://www.amazon.com.au/How-Take-Smart-Notes-Nonfiction-ebook/dp/B06WVYW33Y)
+Structure of the [How To Take Smart Notes](https://www.amazon.com.au/How-Take-Smart-Notes-Nonfiction-ebook/dp/B06WVYW33Y) takes a [[Whole Game Learning]] approach. It starts with a step-by-step guide to setting up a slipbox and then dives deep into the why.
 
 ## Introduction
 
