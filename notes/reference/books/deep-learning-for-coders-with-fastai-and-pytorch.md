@@ -1,12 +1,9 @@
 ---
-title: Deep Learning for Coders with Fastai and Pytorch: AI Applications Without a PhD
-ISBN: 9781492045526
-url: https://books.google.no/books?id=xd6LxgEACAAJ
-year: 2020
-publisher: O'Reilly Media, Incorporated
-category: reference/books
+title: "Deep Learning for Coders with Fastai and Pytorch: AI Applications Without a PhD"
+date: 2021-05-30
+status: draft
 tags:
-  - DeepLearning 
+  - Deep Learning 
 ---
 
 ## Chapter 1. Your Deep Learning Journey
@@ -21,7 +18,7 @@ tags:
 	* Perhaps the most pivotal work in neural networks in the last 50 years was the multi-volume Parallel Distributed Processing (PDP) by David Rumelhart, James McClelland,
 		* PDP approach very similar to today's approach.
 	* Neural networks widely used in the 80s and 90s, but they weren't able to get very deep (adding more than 2 layers) without breaking or being too slow.
-		* Only recently we've learned the power of neural networks with more compute, bigger datasets and some tweans (like Dropout).
+		* Only recently we've learned the power of neural networks with more compute, bigger datasets and some tweaks (like Dropout).
 	* How to learn Deep Learning
 		* Harvard professor David Perkins, who wrote Making Learning Whole (Jossey-Bass), teach the "whole game"
 			* Baseball example: That means that if you’re teaching baseball, you first take people to a baseball game or get them to play it. You don’t teach them how to wind twine to make a baseball from scratch, the physics of a parabola, or the coefficient
