@@ -367,5 +367,26 @@ Notes taken while reading [How To Take Smart Notes](https://www.amazon.com.au/Ho
 		* Also helps with "feature-positive" effect:
 			* our brains tend to overstate the importance of info that's easily available: favouring recently acquired facts over most relevant.
 			* Reminds us of info we've forgotten.
+		* 12.4 Assemble toolbox for thinking
+			* Using the slipbox method will have you retrieving old facts on an irregular basis.
+			* This is a similiar idea to flashcards, however, with some advantages:
+				* In flash cards, surrounding context is not included.
+					* Ideas, for example scientific terms or concepts, are only meaningful within context: otherwise they're "just words"
+			* In science, as in life, we use our accumulation of knowledge and experience to interpret info and handle situations.
+			* Useful to build a [[Latticework of Mental Models]], a term coined by Charlie Munger.
+				* He advocates for a "broad theoretical toolbox"
+					* looks for powerful concepts across many disciplines
+					* having a range of mental models allows you to avoid getting attached to just a few
+			* When adding to slipbox, we focus on principals of ideas
+			* When we write, add and connect, we look for patterns and think outside obvious interpretations
+				* In doing this, we are building the latticework 
+			* We grow with the slipbox: as we connect ideas in slipbox, so do our ideas in our brain, making it easier to remember facts by having a connected network.
+			* We should aim to practice learning not to simply accumulate knowledge, but to build mental models
+				* This encourages a positive "vicious circle", when learning leads to more learning
+			* Helmut D. Sachs quotes talks about the pitfalls of not retaining the basics, which makes it harder to retain new ideas leading to a sense of reaching our brains capacity
+				* His recommendations sound a lot like slipbox:
+					* Pay attention to what you want to remember
+					* Encode info you want to keep
+					* Practice recall
 
 [@ahrensHowTakeSmart2017]
