@@ -46,7 +46,7 @@ MARKDOWN = {
 
 PLUGINS = ['latex', 'pelican_cite', frontmark, 'subcategory', nb_liquid]
 
-PUBLICATIONS_SRC = 'citations.bib'
+PUBLICATIONS_SRC = 'notes/citations.bib'
 
 BIBLIOGRAPHY_START = '<section id="bib"><h4>References</h4>'
 BIBLIOGRAPHY_END = '</section>'

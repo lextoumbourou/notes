@@ -17,4 +17,4 @@ Luhmann collected up to 25 notes on a single topic.
 
 [@ahrensHowTakeSmart2017] *(pg. 122-125)*
 
-An example of how Zettlekasten has [[Emergent Complexity]]. In that, it's a very simple methodology that can lead to very rich and complex topics.
+An example of how Zettlekasten has [[Emergent Complexity]]. In that, it's a simple methodology that can lead to rich and complex topics.
