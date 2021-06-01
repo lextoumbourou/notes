@@ -14,4 +14,6 @@ However, we failed to take into account the countless examples of where they had
 
 Every page about Survivor Bias has to include the story of Abraham Wald. During WW2, he was instructed to recommend which parts of the planes they should reinforce based on an assessment of their bullet holes. He recommended that they reinforce the parts that took no damage (cover image). The planes that had been hit in other areas presumably didn't make it back. This was at odds with the US military who had recommended targetting the most-hit (the *survivors*).
 
+Another error of thinking like [[Confirmation Bias]].
+
 [@ahrensHowTakeSmart2017] *(pg. 136)*
