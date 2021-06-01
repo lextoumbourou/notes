@@ -6,10 +6,12 @@ tags:
 cover: /_media/world-war-2-aircraft-survivorship-bias-abraham-wald-17.jpeg
 ---
 
-Survivorship Bias is a common error of thinking where we arrive at false conclusions by examining only things that survived some selection process and ignore stuff that didn't.
+Survivorship Bias is a common error of thinking where we arrive at false conclusions by only examining success cases.
 
-The story of Abraham Wald in WW2 is a great example of this. He was asked by the RAF to find areas of planes that had been most ravaged by bullets, so the areas could be reinforce. However, instead he recommended they reinforce the areas that hadn't been touched. All the planes that had been hit there in those areas presumably didn't make it back. [@ahrensHowTakeSmart2017] *(pg. 136)*
+For example, on one of my former teams, some of us had been keeping tabs on how well Microservices had worked at NetFlix and we didn't want to miss out. We made a collective decision to start a new project following a strict microservice architecture. 
 
-You also see this the sort of content that you find spammed on LinkedIn: "10 habits of billionaries". Claims are made that billionares read 10 books a week, or always get up at 4am. That may be true. It also may be true that the vast majority of people that do this are too tired to do anything but read.
+However, we failed to take into account the countless examples of where they hadn't worked out, discovering for ourselves how much unnecessary complexity they introduce for a small team. This was so common that Thoughtworks named it [Microservice Envy](https://www.thoughtworks.com/radar/techniques/microservice-envy) in their 2015 Radar.
 
-Another error of thinking like [[Confirmation Bias]].
+Every page about Survivor Bias has to include the story of Abraham Wald. During WW2, he was instructed to recommend which parts of the planes they should reinforce based on an assessment of their bullet holes. He recommended that they reinforce the parts that took no damage (cover image). The planes that had been hit in other areas presumably didn't make it back. This was at odds with the US military who had recommended targetting the most-hit (the *survivors*).
+
+[@ahrensHowTakeSmart2017] *(pg. 136)*
