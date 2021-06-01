@@ -2,8 +2,7 @@
 title: Confirmation Bias
 date: 2021-05-04 00:00
 tags:
-  - Psychology
-  - Research
+  - Errors of Thinking
 ---
 
 Our brains are naturally drawn to information that agrees with our world view. We end up surrounded by people that think like us and consume information mostly from sources that support our beliefs.
