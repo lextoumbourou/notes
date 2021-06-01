@@ -457,4 +457,22 @@ Structure of the [How To Take Smart Notes](https://www.amazon.com.au/How-Take-Sm
             * The system of the slipbox also offloads the fatigue of choice.
                 * In "The Paradox of Choice", Barry Schwartz has various examples that show less choice increases productivity: we waste less energy on making choices.
 
+## 13. Share Your Insight
+
+* After using a slipbox for a while, you will never have to find topics to write about: you are already aware of the clusters of topics that have caught you attention repeatably.
+    * Every time we read, making a decision about what to remember (reference), then what is relevant for our long term thinking 
+        * These visible clusters of ideas are self-reinforcing:
+            * Attracts more ideas and provides more connections while informing what to read and explore
+* To write manuscript, lay out your notes around topic and start constructing order of sections, chapters paragraphs
+    * This will add new questions, show gaps in your thinking etc
+    * This process is now about constructing a linear narrative: trying to narrow a perspective to a single topic
+* 13.1 From Brainstorming to Slipbox-storming
+    * Brainstorming has the downside that we tend to prioritise ideas that are easily available
+    * Does it work adding more people? No. Adding more people to brain storming session narrows the range of topics (Mullen, Johnson, and Salas 1991) (pg. 143)
+    * We tend to like our first ideas and can be reluctant to let them go
+        * Therefore, asking our brains what to work on, will limit us to recent ideas
+    * With slipbox, questions are generated through writing
+        * If we start with a question that doesn't turn out to be fruitful, there's many more. Not so if you start writing with a single question: you end up stuck with it, even if it's not right.
+* 13.2 From Top Down To Bottom Up
+
 [@ahrensHowTakeSmart2017]
