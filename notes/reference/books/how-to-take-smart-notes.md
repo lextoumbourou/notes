@@ -388,5 +388,73 @@ Structure of the [How To Take Smart Notes](https://www.amazon.com.au/How-Take-Sm
 					* Pay attention to what you want to remember
 					* Encode info you want to keep
 					* Practice recall
+        * 12.5 Use the slipbox as a creativity machine
+            * World-changing insights do not appear out of thin air: they're the product of hours spend immersed in a problem, trying every possible solution
+            * Even for purely theoretical work, intimate familarity with tools of the trade are required and a lot of experience
+                * "Intution" grows over time - you learn which ideas are more promising to follow than others
+            * Innovation is the result of incremental steps
+                * Searching for small difference is key
+                    * Important to see differences concepts that appear similar
+                * Having notes in front of our eyes allows for easy comparison
+        * 12.6 Think Inside The Box
+            * Comparing and connecting notes foundation of academia
+                * Great writing come from "tinkering" with ideas
+            * To truely play with ideas, we have to remove them from their original context: "abstraction and respecification"
+                * Though abstract has a bad name (does it now?), it is a neceassary step connecting diverse ideas
+                    * Example: Darwin abstracted observations of sparrows into general principle of evolution
+                * Abstraction not just for theortical work
+                    * In art: Romeo & Juliet is moving because we can abstract time and place to related to the tragedy
+                    * A correlation to successful engineers is ability to abstract concrete concepts
+                    * Also the key to analysing and comparing concepts
+                    * Only useful if we can put into practice ie put ideas into different contexts within slipbox and combine them creatively
+            * Real enemy of independant thinking is not some authority but our "bad habits of thinking" (pg. 134)
+                * Our brains love routines: before we think different about something, our brains try to fit the new into the know.
+                * We usually don't even see our brains changing "our surroundings to meet our perceptions" (pg. 134)
+                * In book "The 5 Elements of Effective Thinking" by Burger and Starbird they collect strategies to do it:
+                    * Add feedback loops and ways to confront ourselves with "errors, mistakes and misunderstandings" in thinking. Slipbox does this
+                    * Focus on main idea: "get the gist". Slipbox does this too.
+                    * Another key idea: "make sure you see what is really there"
+                        * Perception doesn't see first and interpret 2nd: it does it simulaneously
+                            * Why optical illusions are so effective on us
+                            * When we read, we don't see paper, then words, then understand, we immediately get to level of understanding
+                            * That means, to truely understand a text we have to practice constant revision of our first interpretation
+                                * We are lying to ourselves trying to "hold back" our first interpretation
+                                * Example of this in practice is Abraham Wald
+                 * Abraham Wald
+                    * In WW2 was tasked with finding areas in planes to reinforce. Instead of reinforcing the areas that had sustained hits, as intuition tells us, he reinforced areas that hadn't been hit. Key idea is that the planes that didn't make it back where hit in areas surviving planes weren't.
+                        * Called Survivorship Bias
+                * [[Survivorship Bias]] (Taleb 2005)
+                    * Product managers make mistake on regular basis
+                        * Don't consider that a product isn't in the market because it has already failed.
+                        * Some companies don't keep track of their own failures, leaving new generations of employees to make the same mistakes (McMath and Forbes 1999)
+                    * Manager biographies a great example of survivorship bias: successful managers write biographies, but we could likely learn more from failures.
+                        * Perhaps the things that were supposeably responsible for success, resulted in failure for the vast majority.
+                    * One way to deal with it is to ask "what if?" 
+                        * We can learn a lot about the problem money solves by asking the question of how society would function without money
+            * Some problems don't get solved directly. Instead, we redefine the problem to make it fit with an existing solution.
+                * Get in habit of asking questions about the questions itself:
+                    * What kind of answer can you get to a question asked like that? What's missing?
+            * Another habit of great thinkers: take simple ideas seriously
+                * Idea of buying high and selling low. It's easy to grasp but that's not understanding
+                * When purchasing stock, people often neglect the fact that you're buying part ownership in company.
+                    * The price is set by market: so supply and demand
+                        * That involves rationality of market participants and valuation
+                            * Should know someting about the business you're buying
+                * Simple is not necessarily easy - worst thing is to make a simple task complicated
+                * Breakthroughs in scentific process are sometimes simple principals behind complicated processes
+                    * Flying example: for a long time we tried to emulate birds, until we discovered that the key is a subtle bend of the wings (Burger and Starbird)
+            * Simple ideas can tied into theories to build complexity
+                * See [[Software Entropy]]
+            * Using slipbox trains these intellectual skills deliberately 
+                * Check we really understand a text by having our interpretation right in front of us
+                * Focus on gist (the abstraction) by restricting space
+                * When saving ideas, make a habit to ask: what's missing?
+                * We practice asking good questions when we sort and connect notes in the slipbox
+        * 12.7 Facilitate Creativity through Restrictions
+            * The limitations we place within the slipbox facilitate creativity
+                * We should treat digital note as if it were phyiscal with limited space: it forces us to be concise and get to the point
+                * As does restricting notes to one idea. It allows for creative combining later.
+            * The system of the slipbox also offloads the fatigue of choice.
+                * In "The Paradox of Choice", Barry Schwartz has various examples that show less choice increases productivity: we waste less energy on making choices.
 
 [@ahrensHowTakeSmart2017]
