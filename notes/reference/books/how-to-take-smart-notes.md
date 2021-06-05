@@ -1,12 +1,18 @@
 ---
-title: How to Take Smart Notes (notes)
-date: 2021-05-28
+title: How to Take Smart Notes
+date: 2021-06-05 00:00
 tags:
   - Note-taking
+  - Zettelkasten
+cover: /_media/how-to-take-smart-notes.jpeg
 status: draft
 ---
 
-Structure of the [How To Take Smart Notes](https://www.amazon.com.au/How-Take-Smart-Notes-Nonfiction-ebook/dp/B06WVYW33Y) takes a [[Whole Game Learning]] approach. It starts with a step-by-step guide to setting up a slipbox and then dives deep into the why.
+This is probably in my top 5 most useful books I've ever read. I read it once without taking any notes, I'm glad I circled back to read it again, taking details notes.
+
+The structure of the [How To Take Smart Notes](https://www.amazon.com.au/How-Take-Smart-Notes-Nonfiction-ebook/dp/B06WVYW33Y) takes a [[Whole Game Learning]] approach. It starts with a step-by-step guide, showing you the whole system, then later chapters go in depth with an explaination of why each part is so useful.
+
+Detail notes below.
 
 ## Introduction
 
@@ -79,6 +85,8 @@ Structure of the [How To Take Smart Notes](https://www.amazon.com.au/How-Take-Sm
 
 ## The Four Underlying Priniciples
 
+---
+
 ## 5. Writing Is the Only Thing That Matters
 
 * All your note taking should be taken with a focus on writing:
@@ -146,6 +154,8 @@ Structure of the [How To Take Smart Notes](https://www.amazon.com.au/How-Take-Sm
     * the more we add, the more new ideas can be hung in out "network of ideas" or “latticework of mental models” (Munger, 1994).
 
 ## The Six Steps To Successful Writing
+
+---
 
 ## 9. Separate and Interlock Tasks
 
@@ -474,5 +484,37 @@ Structure of the [How To Take Smart Notes](https://www.amazon.com.au/How-Take-Sm
     * With slipbox, questions are generated through writing
         * If we start with a question that doesn't turn out to be fruitful, there's many more. Not so if you start writing with a single question: you end up stuck with it, even if it's not right.
 * 13.2 From Top Down To Bottom Up
+    * Only when we become completely familiar with a topic, can we start to explore its limits: we don't have risk of repeating an idea thinking it's new.
+    * Even true in art: the great artists could take risks and explore the boundaries of an aesthetic by first being intimately acquanted with it.
+* 13.3 Getting Things Done By Following Our Interests
+    * Only 2nd to autonomy, motivation is the key factor in successful students.
+    * Even highly intelligent students fail because:
+        * they can't see the value in what they're learning ([[Whole Game Learning]] tries to solve this)
+        * unable to make connections to personal goals
+        * don't feel like they can control their education's direction
+    * Nothing is more motivating than feeling like your project is moving forward, nothing more demotivational than not
+        * If you realise the initial topic was wrong, a system that allows you to change course mitigates this risk
+    * We develop interests and remain motivated by asking, at every step of the journey: what's interesting and relevant about this?
+    * Breaking down task into manageable concrete steps allows us to continue moving forward, always in control - no longer relying on willpower
+* 13.4 Finishing and Review
+    * Key point to structuring a text is to allow ourselves flexibility
+    * We want to structure our drafts visibly by arranging out notes
+        * Eventually we will have the opposite of "blank screen problem": have to decide what to remove, not what to keep
+    * Another key point: try to work on multiple manuscripts at a time
+        * If you get stuck on one, you can make progress on the other: all the while accumulating useful knowledge
+* 13.5 Become an Expert by Giving up Planning
+    * Students are bad at planning and estimating their time: in fact, all people are
+    * Be skeptical of any planning that's outcome based, only plan the process
+* 13.6 The Actual Writing
+    * First draft is supposed to be revised
+        * It can be difficult to throw away ideas, but it's essential
+        * Tip: keep a separate document of the stuff that gets thrown out, to tell yourself you'll use it one day.
+
+## 14. Make a Habit
+
+* Don't rely on willpower
+* Instead, develop habits that actually have a chance to replace old ones
+* Tunnel effect (Mullainathan and Shafir)
+    * The more stress and pressure we feel, the more we stick to old habits: even if habits are the reason for the stress.
 
 [@ahrensHowTakeSmart2017]
