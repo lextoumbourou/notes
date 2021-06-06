@@ -12,4 +12,6 @@ They should be precise, brief, and clear but use full sentences. They should inc
 
 Each note has one or two keywords. Over time, visible "clustering" of your thinking begins to emerge and new questions naturally arise. Tools like Roam, Obsidian, and Bear have built-in tools for visualising these clusters.
 
+[@ahrensHowTakeSmart2017]
+
 Cover image from [Close up of a zero watt light bulb](https://commons.wikimedia.org/wiki/File:Close_up_of_a_zero_watt_light_bulb.JPG) from Wikimedia.
