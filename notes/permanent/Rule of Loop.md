@@ -21,3 +21,5 @@ The questions you should ask yourself during prototyping are:
 [@schellArtGameDesign2015a] *(pg. 94)*
 
 A close cousin to a [[Spike]] in Scrum and XP, which aims to make us more familiar with a problem or technology through a prototyping exercise.
+
+Cover image by [Colin and Sarah Northway on Flickr](https://www.flickr.com/photos/apes_abroad/8792523601/).
