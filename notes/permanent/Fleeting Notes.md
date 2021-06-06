@@ -18,4 +18,6 @@ Also, without a system for processing fleeting notes, they can quickly accumulat
 
 [@ahrensHowTakeSmart2017] *(pg. 49)*
 
+The system of converting Fleeting Notes into [[Literature Notes]] then into [[Permanent Notes]] is a loop that gives us opportunities to absorb, filter and elaborate on ideas. In that way, it's similiar to the [[Rule of Loop]] from Game Design.
+
 Cover image by [Jhayne on Flickr](https://www.flickr.com/photos/foxtongue/6753758113/).
