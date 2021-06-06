@@ -2,7 +2,6 @@
 title: How to Take Smart Notes
 date: 2021-06-05 00:00
 tags:
-  - Note-taking
   - Zettelkasten
 cover: /_media/how-to-take-smart-notes.jpeg
 status: draft
@@ -10,7 +9,7 @@ status: draft
 
 One of most useful books I've ever read. Initially I read it once without taking any notes, I'm glad I circled back to read it again, taking details notes.
 
-The structure of the [How To Take Smart Notes](https://www.amazon.com.au/How-Take-Smart-Notes-Nonfiction-ebook/dp/B06WVYW33Y) takes a [[Whole Game Learning]] approach. It starts with a step-by-step guide, showing you the whole system, then later chapters go in depth with an explaination of why each part is so useful.
+The structure of the [How To Take Smart Notes](https://www.amazon.com.au/How-Take-Smart-Notes-Nonfiction-ebook/dp/B06WVYW33Y) takes a [[Whole Game Learning]] approach. It starts with a step-by-step guide, showing you the whole system, then later chapters go in depth with an explaination of why each part is so useful. As Ahrens puts it: "It's crucial to not just understand how it work, or how to work with it, but why it works. Only then can you modify it for your own needs."
 
 Detail notes below.
 
@@ -233,7 +232,7 @@ Detail notes below.
         * what's in the slipbox will shape what's in your head.
     * Handwriting notes work particularly well in lectures because handwriting is slower, therefore the notetaker must write just the "gist" of what was heard
         * In order to write the gist, you must understand it.
-    * Extensiveness of literature notes depends on the text.
+    * Extensiveness of [[Literature Notes]] depends on the text (pg. 83).
         * Text on topics you're very unfamiliar with will require more ntoes.
     * What matters above all is the actual writing of slipbox notes.
         * Sometimes reflection on what's not written is needed: frame, theortical background or author, methodological approach etc.
@@ -258,7 +257,7 @@ Detail notes below.
 * 10.4 Learn to Read
     * Feynman said that the only way to know if he'd understood a topic is to do an introductory lecture on it.
     * You write notes for a audience in a similar way, only difference is: the audience is you after you've forgotten the material.
-    * Writing helps to truely check our understanding and confront ourselves if we don't understand as well as we thing
+    * Writing helps to truely check our understanding and confront ourselves if we don't understand as well as we thing (pg. 93)
         * Simply rereading is dangerous due to the exposure effect: as we become more familiar with something we wrongly assume that we understand it
     * Having external system that systematically forces us to test our understanding consistently is key.
 * 10.5 Learn by Reading
