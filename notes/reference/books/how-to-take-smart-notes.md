@@ -22,10 +22,13 @@ Detail notes below.
 ## 1. Everything You Need To Know
 
 * Having a structured workflow that you trust allows you to enter [[Flow State]]
-    * GTD a good example of workflow. However, it's geared towards work with clearly defined tasks.
-* Writing, however, needs to be more open-ended and consists of lots of small tasks, like rereading chapters and looking up footnotes, that cannot be defined as a linear to do list.
+    * GTD a good example of workflow when the tasks are clearly defined.
 
-* Niklas Luhmann, a prolific sociologist, described a system for taking notes called Zettelkasten (note box):
+* Writing does not work as a linear to-do list:
+    * the work needs to be open-ended
+    * consists of lots of small tasks like rereading chapters and looking up footnotes,
+
+* Profilic sociologist Niklas Luhmann system for taking notes:
     * 2 "slipboxes" consisting of index cards: one for taking bibliographical notes and another for collecting and generating ideas.
     * In the first, he would add cards with bibliographic info on one side and notes about the content on the other.
     * In the second, he would look at notes in the first box and think about their relevance for his own thinking and writing and use to add ideas to the 2nd.
@@ -36,7 +39,8 @@ Detail notes below.
 
 ## 2. Everything You Need To Do
 
-* The hardest part of the process of writing something meaningful is in the reading and thinking. The process of ordering notes, writing early drafts using notes and performing final edits is actually quite light work mentally.
+* The hardest part of the process of writing something meaningful is in the reading and thinking.
+* On the other hand: ordering notes, writing early drafts from notes and performing final edits is mentally light.
 * Writing is the best, perhaps the only, "facilitator" for reading, writing and any intellectual endeavour.
 * Writing a paper step by step:
     * Take [[Fleeting Notes]] when reading: temporary notes that you put in an inbox to process later.
@@ -47,7 +51,7 @@ Detail notes below.
     * Make [[Permanent notes]].
         * Go through notes in the previous steps and consider how they relate to interests.
         * Once you have a full slipbox, you can compare ideas to those already in slipbpx.
-        * Write one note for each idea
+        * Write one note for each idea.
         * Use full sentences, disclouse sources, make references and try to be precise, clear and brief as possible.
         * Add permanent notes to slipbox by:
             * Filing each note behind one or more related notes
@@ -66,9 +70,11 @@ Detail notes below.
 
 ## 3. Everything You Need to Have
 
-* NASA made a gravity-independent pen in an effort to write in space, Russians simply used pencils.
-* The slip-box follows the Russian model: focus on essentials and don't overcomplicate things.
-* Students can end up with a lot of different learning and note-taking techniques, simple in isolation but complicated together.
+* Slipbox follows the [[Russian Model]]: "Focus on the essentials, don’t complicate things unnecessarily."
+    * Named after the story by De Bono: NASA invested in research for find a gravity-independent pen which could write in space. Russian simply used pencils.
+        * Side note: the story is false: https://www.scientificamerican.com/article/fact-or-fiction-nasa-spen/
+        
+* Existing learning and note-taking techniques are simple in isolation but complicated together.
 * None of the workflows have tools to help make connections between ideas.
 * Slipbox is not another techique but an overarching workflow stripped of everything that distracts from stuff that's important.
 * The Slipbox Tool Box:
@@ -77,10 +83,10 @@ Detail notes below.
     * The slip-box
     * An editor
 * Workflow
-    * Any time you have an idea, add it to a notepad or some inbox that you will process later
-    * Use a reference management system like Zotero to handle citations, which can be linked to from your reference notes
-    * Create a slipbox: either using sheets of paper "about the size of a postcard (Luhmann used the DIN A6 size, 148 x 105 mm or 5.83 x 4.13 inches)" or a program like [Zettelkasten](https://zettelkasten.de/the-archive/)
-    * Use an editor, preferable that works with Zotero or your reference manager
+    * Any time you have an idea, add it to a notepad or some inbox that you will process later [[Fleeting Notes]].
+    * Use a reference management system like Zotero to handle citations, which can be linked to from your [[Reference Notes]].
+        * Create a slipbox: either using sheets of paper "about the size of a postcard (Luhmann used the DIN A6 size, 148 x 105 mm or 5.83 x 4.13 inches)" or a program like [Zettelkasten](https://zettelkasten.de/the-archive/)
+    * Use an editor, preferable that works with Zotero or your reference manager.
 
 ## 4. A Few Things to Keep in Mind
 
@@ -110,7 +116,7 @@ Detail notes below.
     * permanent noets
     * project notes
 * 3 common mistakes:
-    * treat everything as a permanent notes ie scientific journal
+    * treat everything as [[Permanent Notes]] ie scientific journal
         * good ideas get diluted by other ideas
         * ideas order chronologically are difficult to search
     * collect notes only relevant to project
@@ -119,7 +125,7 @@ Detail notes below.
     * treat all notes as fleeting
         * even small amounts of unprocessed notes can lead to sense of out of controlness
     * All have one downside in common: the benefits of the system decreases as more notes are added.
-* Fleeting notes vs permanent
+* Fleeting notes vs permanent:
     * Fleeting notes are collected if need extra step of understand or grasp an idea
     * Fleeting notes must be processed later
         * Good measure for assessing whether fleeting note was kept too long: if you no longer understand it or appears banal
@@ -131,12 +137,13 @@ Detail notes below.
 
 * Study guides usually describe paper writing as a linear process: make decision on what to write about, plan, research, then write.
 * However, decision on what to write about has to be informed from reading you've already done on topic and other topics, to determine if it's a topic with merit.
-* Brainstorming is another technique that is often prescribed, but all the ideas that appear to originate in your brain, actual have sources that need to be traced
-* If you have a slip-box, you will see clusters of interest from your own reading and writing and can trust that by following your interests, interesting questions will arise.
+* Brainstorming is another technique that is often prescribed, but all the ideas that appear to originate in your brain, actual have sources that need to be traced.
+* Using the Zettelkasten system, your [[Permanent Notes]] will develop clusters of your own interests.
+    * Additionally, nature questions will arise that lead you to more reading.
 
 ## 8. Let the Work Carry You Forward
 
-* Having a good workflow can be a virtuous cycle: you have positive experiences that motivates you to keep going, thus creating more position experiences.
+* Having a good workflow can be a virtuous cycle: you have positive experiences that motivates you to keep going, thus creating more positive experiences.
     * Similar to endergonic reaction which releases energy, as opposed to an exergonic reaction, which requires energy.
     * Trying to motivate yourself with rewards doomed to fail - eventually you'll take a shortcut to the rewards.
 * Feedback loops crucial part of learning: nothing motivates us more than getting better at what we do.
@@ -149,13 +156,13 @@ Detail notes below.
     * Writing what you've read in your own words forces a deep understanding.
         * Can't fool yourself incomprehensible literature notes, as you'll be force to understand it when creating permanent notes.
         * The more we do it, the better and faster we get, which allows for more learning - another positive feedback loop.
-* Writing permanent notes another positive feedback loop:
+* Writing [[Permanent Notes]] another positive feedback loop:
     * Forces you to think your ideas through.
-    * Combining previously writen notes shows contradictions, inconsistencies and repeitiotns.
+    * Combining previously writen notes shows contradictions, inconsistencies and repetitions.
 * Searching through slipbox for categorising notes another important benefit:
     * Shows related notes we may not have considered
 * Slipbox works in a similar fashion to our brains:
-    * the more we add, the more new ideas can be hung in out "network of ideas" or “latticework of mental models” (Munger, 1994).
+    * the more we add, the bigger our [[Latticework of Mental Models]]  (Munger 1994) grows.
 
 ## The Six Steps To Successful Writing
 
@@ -173,7 +180,7 @@ Detail notes below.
             * The shifts is a drain in energy and decreases our energy to continue doing it.
     * Writing paper requires reading, understanding, reflecting, getting ideas, making connections, finding words, organising etc: all require different types of attention
         * Not only impossible to focus on more than one thing at a time, but also on different types of attention
-    * Focused attention is different from "sustained attention" which is needed to focus on one task for a longer period and is neccessary for learning, understanding and getting things done.
+    * Focused attention is different from "sustained attention" which is needed to focus on one task for a longer period and is necessary for learning, understanding and getting things done.
         * With focused attention, we can focus on one thing only and only for a few seconds. 
     * The slipbox not only gives a clear structure for working, but allows us to shift our attention conciously from one type of attention to another.
 * 9.3 Give each task the right kind of attention
@@ -273,7 +280,7 @@ Detail notes below.
 
 ## 11. Take Smart Notes
 
-* Kirsti Lonka compared unsuccessful students with succesful and found that the difference is in their ability to think beyond frames of text (Lonka 2003, 155f).
+* Kirsti Lonka compared unsuccessful students with successful and found that the difference is in their ability to think beyond frames of text (Lonka 2003, 155f).
     * Those with experience read text with "questions in mind" and see what is not mentioned.
 * Even worse than not thinking beyond text: unable to interpret parts of information within wider argument of entire text.
 * Experience read text with questions in mind and look at what's not mentioned as much as what is.
@@ -287,7 +294,7 @@ Detail notes below.
 * 11.2 Think Outside The Brain
     * Putting effort into writing in our own words best way to test our understanding of a topic and whether we have sufficient supporting sources like references on hand.
     * Writing gives us distance from argument and allows us to "scrutinise" our understanding.
-    * Author's example of collecting literature notes:
+    * Author's example of collecting [[Literature Notes]]:
         * Step 1. Take notes thinking about arguments in the context of the book: 
             * Is it convincing?
             * What methods do they use?
@@ -303,7 +310,7 @@ Detail notes below.
                 * This allows us to make clear distinctions between ideas.
         * 11.3 Learn by not trying
             * Elaboration increases likelihood that we'll remember long-term
-                * Literature notes are archived and would be otherwise lost in reference system if we didn't do something with them
+                * [[Literature notes]] are archived and would be otherwise lost in reference system if we didn't do something with them
             * Transferring ideas to "external memory" allows us to forget, which paradoxically facilities long-term learning.
                 * Remembering everything is to know nothing. Consider [Solormon Shereshevsky](https://en.wikipedia.org/wiki/Solomon_Shereshevsky).
             * Robert and Elizabeth Lison Bjork suggest that we can distinguish between 2 different measurements of memory: storage strength and retrieval strength (Bjork 2011)
@@ -344,7 +351,7 @@ Detail notes below.
             * Can remind us of old ideas and trigger new ones.
         * Links between articles more important.
     * One can't get an overview of the whole slipbox (like the brain) but can for a topic
-        * System for ordering topics an ongoing project, so topic index is also written as note.
+        * System for ordering topics an ongoing project, so [[Topic Overview]] is also written as note.
     * Archiver vs writer
         * Archiver: keywords are used to store notes
         * Writer: where would I want to stumble on note after forgetting.
