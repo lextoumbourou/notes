@@ -338,7 +338,7 @@ I tried to read this book really carefully and take a lot of notes.
     * Can the game become profitable?
     * Does the game meet my community and social goals?
     * Do playtesters enjoy the game?
-* Rule of loop: the more times you test and improve, the better the game will be.
+* [[Rule of Loop]]: the more times you test and improve, the better the game will be.
   * Ideally game can be iterated on quickly, but if not, innovation is require to figure out how to prototype it.
    * How can I make every loop count?
     * How can I loop fast?
