@@ -3,6 +3,8 @@ title: Metrics are proxies
 date: 2021-06-12 15:00
 tags:
   - AI Ethics
+summary: Metrics are usually a proxy for what we really care about
+cover: /_media/boat-equipment.jpg
 ---
 
 Some of the time, it is difficult to measure exactly what we need to assess a problem objectively. Instead, we settle for metrics that are "a proxy for what we really care about".
@@ -23,3 +25,5 @@ Test quality is much more important than test coverage and cannot be measure by 
 This phenomenon is particularly a problem in Machine Learning, where metric optimisation is foundational.
 
 In Kaggle competitions, tricks that optimise the metrics in a way that doesn't align with the organiser's goals is called [[Metric hacking]].
+
+Cover image by [Mikail McVerry](https://unsplash.com/photos/-yBvef_mAaQ)
