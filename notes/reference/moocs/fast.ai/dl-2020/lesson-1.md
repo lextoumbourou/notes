@@ -107,7 +107,6 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
     * "Programming a computer for such computations is, at best, a difficult task, not primarily because of any inherent complexity in the comptuer itself but, rather, because of the need to spell out every minute step of the process in the most exasperating detail. Computers, as any programmer will tell you, are giant morons, not giant brains."
 * Idea was that instead of telling computer how to solve a problem, give computer examples of problem and have it figure it out
     * Create a weight assigment to test effectiveness of problem, and provide mechanism of altering weights to maximise performance
-        ![[Pasted image 20210610222903.png]]
 * After training "model" you have something like: inputs -> model -> results
 * When we use a model to do a task like playing checkers, we call it [[Inference]]
     * Jargon: Machine Learning
@@ -144,7 +143,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
         * predictive policing model predicts where arrests are likely to occur.
         * more police therefore go to the area, which leads to more arrests.
         * that is fed into model, which creates more arrests.
-    * Consider that predicting arrests is an example of where [[Metrics are Proxies]] for what they really care about: reducing crime.
+    * Consider that predicting arrests is an example of where [[Metrics Are Proxies]] for what you care about: reducing crime.
         * Sometimes the difference between proxy and what you are actually trying to do can be significant
 
 ## 01:04:14 Dogs and Cats Notebook review
@@ -189,4 +188,3 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
     * Natural language processing (for example, sentiment analysis)
     * Structured data
     * Collaborative filtering
-
