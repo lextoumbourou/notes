@@ -5,7 +5,7 @@ category: reference/moocs
 tags:
   - Deep Learning
 cover: /_media/fastai-2020-lesson-1-cover.png
-summary: "Notes taken from the Deep Learning for Coders (2020) - Lesson 1"
+summary: "Notes taken from the Deep Learning for Coders (2020) - Lesson 1 video"
 ---
 
 Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https://www.youtube.com/watch?v=_QUEXsHfsA0) video.
