@@ -7,7 +7,7 @@ category: reference/books
 cover: /_media/how-to-take-smart-notes.jpeg
 ---
 
-How to Take Smart Notes provides an overview of the Zettelkasten system, popularised by prolific sociologist Niklas Luhman. The book starts with an overview of the entire Zettelkasten method, then delves deeper into why it works. This "top down" approach quite reminisant of David Perkins [[Whole Game Learning]] approach to teaching.
+How to Take Smart Notes provides an overview of the Zettelkasten system, popularised by prolific sociologist Niklas Luhman. The book starts with an overview of the entire Zettelkasten method, then delves deeper into why it works. This "top down" approach quite reminisant of David Perkins [[Teaching the whole game]] approach to teaching.
 
 I tried to be quite comprehensive with the notes while reading, using it as an opportunity to practice the system and ensure I didn't miss anything.
 
@@ -498,7 +498,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 * 13.3 Getting Things Done By Following Our Interests
     * Only 2nd to autonomy, motivation is the key factor in successful students.
     * Even highly intelligent students fail because:
-        * they can't see the value in what they're learning ([[Whole Game Learning]] tries to solve this)
+        * they can't see the value in what they're learning ([[Teaching the whole game]] tries to solve this)
         * unable to make connections to personal goals
         * don't feel like they can control their education's direction
     * Nothing is more motivating than feeling like your project is moving forward, nothing more demotivational than not

@@ -1,12 +1,12 @@
 ---
-title: Whole Game Learning
+title: Teaching the whole game
 date: 2021-05-30 21:30
 cover: /_media/babe-ruth-and-others.jpeg
 tags:
   - Learning and Teaching
 ---
 
-"Whole game" learning uses the metaphor of baseball to highlight how common approaches to teaching are the equivalent of doing batting practice without ever playing an actual game.
+Teaching the "whole game" uses the metaphor of baseball to highlight how common approaches to teaching are the equivalent of doing batting practice without ever playing an actual game.
 
 Conventional teaching for topics like maths and science either follows an "elements-first" approach, where we learn the elements of a topic then learn how to put them together later. Or, a "learn about" approach, where we learn about a topic (for example, learning historic facts) before we learn how to do it. Both are fine as short-term strategies. But, without eventually being shown the big picture, students never get sufficiently motivated to understand the material.
 
