@@ -9,14 +9,33 @@ tags:
 ## Chapter 1. Your Deep Learning Journey
 
 * Deep learning is for everyone: doesn't require lots of maths, lots of data or lots of expensive compute, as people once had us believe.
-* It's a computer technique that extracts and transforms data using multiple layers of neural networks.
+* It's a computer technique to extract and transform data using multiple layers of neural networks.
+    * Each layer takes input from previous layers and refines them.
+    * Layers trained to minimise errors
+
+
 * Neural networks history:
-	* 1943 Warren McCulloch (neurophysiologist) and Walter Pitts (logician) developerd math models of artificial neuron with paper “A Logical Calculus of the Ideas Immanent in Nervous Activity,”
-		* They simplied a model of a real neuron with simple addition and thresholding.
-	* Work was taken up by Frank Rosenblatt who developed the Mark I Perceptron in “The Design of an Intelligent Automaton”
-	* Another book was later written about the invention called: Perceptrons (MIT Press) 
-	* Perhaps the most pivotal work in neural networks in the last 50 years was the multi-volume Parallel Distributed Processing (PDP) by David Rumelhart, James McClelland,
-		* PDP approach very similar to today's approach.
+	* 1943
+        * Mathematical model of artificial neuron is described in "A Logical Calculus of the Ideas Immanent in Nervous Activity" by Warren McCulloch (neurophysiologist) and Walter Pitts (logician)
+            * Simplified model of a brain's neuron could be represented with addition and thresholding.
+                * Thresholding example: `value = max(0, value)`
+            * Walter Pitts was self-taught and homeless most of his life.
+    * 1958 
+        * Work was later up by Frank Rosenblatt who developed the Mark 1 perceptron machine describe in “The Design of an Intelligent Automaton”
+    * 1969
+        * Perceptrons (MIT Press) by Marvin Minsky and Seymour Papert showed a single layer of neurons could not learn functions including XOR
+            * However, same book also showed 2 layers could but that was larger ignored
+    * 1986
+        * Pivotal work in neural networks was release: multi-volume Parallel Distributed Processing (PDP) by David Rumelhart, James McClelland.
+            * PDP approach very similar to today's approach with requirements:
+                * A set of processing units
+                * A state of activation
+                * An output function for each unit
+                * A pattern of connectivity among units
+                * A propagation rule for propagating patterns of actvities through the network of connectivities
+                * An activate rule for comping the inputs impinging on a unit with the current state of unit to product an output
+                * A learning rule where patterns of connectivity is modified by experience
+                * An environmnet within which system operates
 	* Neural networks widely used in the 80s and 90s, but they weren't able to get very deep (adding more than 2 layers) without breaking or being too slow.
 		* Only recently we've learned the power of neural networks with more compute, bigger datasets and some tweaks (like Dropout).
 	* How to learn Deep Learning

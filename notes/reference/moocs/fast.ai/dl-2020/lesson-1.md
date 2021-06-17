@@ -61,7 +61,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
   
 ## 16:00 Top-down learning
 * Unlike other ML courses, doesn't start with refresher on calculus, or lessons on Sigmoid function
-* Approached based on [[Whole Game Learning]] by Professor David Perkins and others from Harvard
+* Approached based on [[Teaching the whole game]] by Professor David Perkins and others from Harvard
 
 ## 23:09 Software stack
 * Software used:
