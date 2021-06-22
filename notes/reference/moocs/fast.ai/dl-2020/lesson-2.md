@@ -96,10 +96,14 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
     * Visualised 9 features from each layer, then found patches from specific examples of images that matched the filter
     * Layer 1
         * Finds lines, gradients etc
-            ![[Pasted image 20210615225600.png]]
+        
+            ![CNN Layer 1 visualisation](/_media/cnn-layer-1.png)
+            
     * Layer 2
         * Combines filters from layer 1 to start to learn shapes, textures etc
-            ![[Pasted image 20210615225620.png]]
+        
+            ![CNN Layer 2 visualisation](/_media/cnn-layer-2.png)
+            
     * Layer 3 and up
         * Learning more concrete things like petals, faces etc
     
