@@ -3,7 +3,7 @@ title: Teaching the whole game
 date: 2021-05-30 21:30
 cover: /_media/babe-ruth-and-others.jpeg
 tags:
-  - Learning and Teaching
+  - LearningAndTeaching
 ---
 
 Teaching the "whole game" uses the metaphor of baseball to highlight how common approaches to teaching are the equivalent of doing batting practice without ever playing an actual game.

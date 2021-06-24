@@ -3,7 +3,7 @@ title: "Deep Learning for Coders with Fastai and Pytorch: AI Applications Withou
 date: 2021-05-30
 status: draft
 tags:
-  - Deep Learning 
+  - DeepLearning 
 ---
 
 ## Chapter 1. Your Deep Learning Journey
@@ -50,3 +50,12 @@ tags:
 		* Results of models are predictions
 		* Measure of performance is loss
 		* Loss depends on predictions but also correct labels
+
+## Chapter 2
+
+* [[Out-of-domain data]] (pg. 104)
+    * Data that is given to a model that is different to the data it was trained on.
+    * No complete technical solution: have to carefully roll out model
+* [[Domain shift]] (pg. 104)
+    * Data that model performs inference on changes over time.
+    * Example: types of customers an insurance sees changes over time, making their earlier models less useful.

@@ -2,7 +2,8 @@
 title: The Story Machine
 date: 2021-01-26 00:00
 tags:
-  - Game Design 
+  - GameDesignPrinciples
+  - StoryWriting
 ---
 
 One of the two methods of story telling in games. The game isn't designed with a specific story, but a unique one is generated each game. The Sims and Minecraft are games that are specifically designed to be story machines. [@schellArtGameDesign2015a] (pg. 229-230)

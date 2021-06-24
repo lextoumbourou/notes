@@ -2,7 +2,7 @@
 title: Metrics are proxies
 date: 2021-06-12 15:00
 tags:
-  - Machine Learning Failure Modes
+  - MachineLearningFailureModes
 summary: Metrics are usually a proxy for what we really care about
 cover: /_media/boat-equipment.jpg
 ---

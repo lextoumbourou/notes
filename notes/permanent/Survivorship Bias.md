@@ -2,7 +2,7 @@
 title: Survivorship Bias
 date: 2021-06-01 00:00
 tags:
-  - Errors of Thinking
+  - ErrorsOfThinking
 cover: /_media/world-war-2-aircraft-survivorship-bias-abraham-wald-17.jpeg
 ---
 

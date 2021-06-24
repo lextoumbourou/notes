@@ -2,7 +2,6 @@
 title: Flow State
 date: 2020-11-15 00:00
 tags:
-  - Game Design
   - Psychology 
 ---
 

@@ -2,8 +2,8 @@
 title: Goal Of A Game Interface
 date: 2021-01-23 00:00
 tags:
-  - Game Design
-  - InterfaceDesign 
+  - GameInterfaces
+  - UI 
 ---
 
 Schell says that the goal of an game interface is to "make a player feel powerful". This can be achieved with immediate feedback from interface interactions, including [[Second-order Motions]], that make the player feel in control and will lead to a fun experience. 

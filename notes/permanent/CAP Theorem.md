@@ -3,7 +3,7 @@ title: CAP Theorem
 date: 2021-04-03 20:00
 tags: 
   - Databases
-  - Trade offs
+  - TradeOffs
 ---
 
 Also known as [[Brewer's theorem]], after computer scientist Eric Brewer, is the theory that it's impossible for a distributed data store to provide 3 of the following capabilities simultaneously:

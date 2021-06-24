@@ -2,7 +2,7 @@
 title: Unit tests
 date: 2021-03-27 00:00
 tags:
-  - Automated Testing 
+  - AutomatedTesting 
 summary: An automated test which verifies a single unit of behaviour, runs quickly and in isolation
 ---
 

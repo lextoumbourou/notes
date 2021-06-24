@@ -2,7 +2,7 @@
 title: Arrange, Act and Assert (AAA) Pattern
 date: 2021-03-28 00:00
 tags:
-  - Automated Testing
+  - AutomatedTesting
 summary: A pattern for structuring unit tests
 ---
 

@@ -3,7 +3,7 @@ title: Expected Value
 date: 2021-01-03 00:00
 summary: The sum of weighted outcomes divided by total outcomes
 tags:
-  - Game Math
+  - GameBalancing
   - Statistics
 ---
 

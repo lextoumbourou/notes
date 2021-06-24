@@ -3,7 +3,7 @@ title: 4 Pillars of Good Unit Tests
 date: 2021-04-04 20:00
 summary: Khorikov's 4 pillars of good unit tests
 tags:
-  - Automated Testing
+  - AutomatedTesting
 ---
 
 Khorikov describes 4 pillars of a good unit test:
