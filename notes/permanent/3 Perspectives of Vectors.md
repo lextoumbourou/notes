@@ -2,7 +2,7 @@
 title: 3 Perspectives of Vectors
 date: 2020-11-08 18:00
 tags: 
-  - Linear Algebra 
+  - LinearAlgebra 
 ---
 
 There are 3 different perspectives for understanding vectors:

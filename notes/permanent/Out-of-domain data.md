@@ -3,7 +3,7 @@ title: "Out-of-domain data"
 date: 2021-06-22 23:10
 cover: /_media/odd-one-out.png
 tags:
-  - "Machine Learning Failure Modes"
+  - MachineLearningFailureModes
 ---
 
 In Machine Learning, when data is provided to a model that is significantly different from what it was trained on, it's referred to as out-of-domain data.

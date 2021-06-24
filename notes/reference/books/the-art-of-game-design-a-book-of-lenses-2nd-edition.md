@@ -3,7 +3,7 @@ title: The Art of Game Design - A Book Of Lenses (2nd Edition) by Jesse Schell
 date: 2021-02-28 00:00
 category: reference/books
 tags:
-  - Game Design
+  - GameDesign
 cover: /_media/the-art-of-game-design-cover.jpeg
 ---
 

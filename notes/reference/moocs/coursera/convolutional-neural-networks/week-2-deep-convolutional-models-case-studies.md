@@ -5,7 +5,7 @@ category: reference/moocs
 parent: convolutional-neural-networks 
 status: draft
 tags:
-  - Deep Learning
+  - DeepLearning
 ---
 
 ## Outline

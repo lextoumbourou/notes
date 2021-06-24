@@ -2,7 +2,7 @@
 title: Voxel
 date: 2021-05-11 00:00
 tags:
-  - Computer Graphics 
+  - ComputerGraphics
 summary: A single datapoint in a 3d-grid, the word is a combination of "volume" and "pixel"
 cover: /_media/roblox-terrain-voxel-of-water.gif 
 ---

@@ -2,7 +2,7 @@
 title: Black-box testing
 date: 2021-04-04 00:00
 tags:
-  - Automated Testing
+  - AutomatedTesting
 summary: Tests written without knowledge of software's internal structure
 ---
 

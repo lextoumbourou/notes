@@ -4,8 +4,8 @@ date: 2020-11-08 00:00
 cover: /_media/vector-scaling-visual.png
 summary: Multiplying each value in a vector by the same value
 tags:
-  - Game Math
-  - Linear Algebra
+  - GameMath
+  - LinearAlgebra
 ---
 
 Vector scaling is the process of multiplying each value in the vector by some amount (hence "scalar").

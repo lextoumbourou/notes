@@ -3,7 +3,7 @@ title: Latticework of Mental Models
 date: 2021-05-30 00:00
 tags:
   - Zettelkasten
-  - Learning and Teaching
+  - LearningandTeaching
 cover: /_media/latticework-at-ceremonial-count.jpeg
 ---
 

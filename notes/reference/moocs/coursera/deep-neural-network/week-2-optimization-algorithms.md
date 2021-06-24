@@ -6,7 +6,7 @@ category: reference/moocs
 link: https://www.coursera.org/learn/deep-neural-network
 status: draft
 tags:
-    - Deep Learning
+    - DeepLearning
 ---
 
 # Week 2
