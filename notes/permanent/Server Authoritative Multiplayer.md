@@ -6,7 +6,7 @@ tags:
   - MultiplayerArchitecture
 ---
 
-Server Authoritative Multiplayer is a game architecture where the server has authority over the state of a game. The server keeps track of players' positions in the game world, the resources they own, scores, etc. The server validates any changes clients request to the game state.
+A typical multiplayer game architecture where the server has authority over the game state. The server keeps track of players' positions, the resources they own, scores, etc. The server validates any changes the clients request to the game.
  
 It's a design decision made over relayed multiplayer, or client authoritative, where one client has authority and reconciles all game messages.
  
