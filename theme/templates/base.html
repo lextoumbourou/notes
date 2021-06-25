@@ -45,7 +45,7 @@
           <h2><span>Category</span></h2>
         </span>
 
-        <a {% if category and category == "permanent" %}class="active"{% endif %} href="/category/permanent.html">Permanent</a>
+        <a {% if category and category == "permanent" %}class="active"{% endif %} href="/category/permanent.html">Notes</a>
         <a {% if category and 'reference' in category|string %}class="active"{% endif %} href="/category/reference.html">Reference</a>
         <a {% if page_name == "category/posts" %}class="active"{% endif %} href="/category/posts.html">Posts</a>
       </div>
