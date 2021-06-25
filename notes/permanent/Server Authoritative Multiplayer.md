@@ -12,11 +12,11 @@ It's a design decision made over relayed multiplayer, or [[Client Authoritative]
  
 The trade-off with this architecture is that it introduces a latency penalty for every game action, as clients must pass requests through the server. Game engines like the one in Roblox work around this by allowing clients to modify certain parts of the state without server permission, like their own character movement and movement of some game objects, etc.
 
-The diagram in a cover shows a hypothetic request to update a client's score.
- 
-In this architecture, the server act's as the games [[Rule Enforcer]].
+The diagram below shows a hypothetic request to update a client's score.
 
 ![Server Authoritative Multiplayer](/_media/server-auth.png)
+
+In this architecture, the server act's as the games [[Rule Enforcer]].
 
 #### Reference
   
