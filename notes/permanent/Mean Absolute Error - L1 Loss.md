@@ -6,7 +6,7 @@ tags:
   - LossFunctions
 ---
 
-Mean Absolute Difference (MAE) is a loss function for training [[Regression]] [[Model Architecture]]s . It's also as L1 Loss because it takes the [[L1 Norm]] of the errors.
+Mean Absolute Difference (MAE) is a function for assessing [[Regression]]. It's also as L1 Loss because it takes the [[L1 Norm]] of the error vector.
 
 ### Steps
 
