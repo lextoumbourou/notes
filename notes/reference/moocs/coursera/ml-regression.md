@@ -308,10 +308,10 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
 
 * Goal: figure out how much you are "losing" using your model compare to perfection.
 	* Example: low predictions causing house to be listed too cheap.
-* Loss can be measured with a *loss function*: $$ L(y, f_\hat{w}(\mathbf{x})) $$
+* Loss can be measured with a *loss function*: $$L(y, f_\hat{w}(\mathbf{x})) $$
 	* Examples:
-	   * Absolute error:  $$ L(y, f_\hat{w}(\mathbf{x})) = |y - f_\hat{w}(\mathbf{x})| $$ ([[Mean Absolute Error - L1 Loss]])
-	   * Squared error: $$ L(y, f_\hat{w}(\mathbf{x})) = (y - f_\hat{w}(\mathbf{x}))^2 $$ ([[Root mean-squared error - L2 Loss]] squared)
+	   * Absolute error:  $$L(y, f_\hat{w}(\mathbf{x})) = |y - f_\hat{w}(\mathbf{x})| $$([[Mean Absolute Error - L1 Loss]])
+	   * Squared error: $$L(y, f_\hat{w}(\mathbf{x})) = (y - f_\hat{w}(\mathbf{x}))^2 $$([[Root mean-squared error - L2 Loss]] squared)
 		   * Can have a very high cost if difference is large, compared to absolute error.
 
 * Compute training error:
@@ -320,9 +320,9 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
   2. Computing training error.
   
 	  * Example: Average loss on training set using squared error: 
-	      * = $$1/N \sum\limits_{i=1}^{N} L(y, f_\hat{w}(\mathbf{x}))$$ - average of loss function
-	      * = $$1/N \sum\limits_{i=1}^{N} (y - f_\hat{w}(\mathbf{x}))^2$$ - average of squared error
-	      * = $$\sqrt{1/N \sum\limits_{i=1}^{N} (y - f _\hat{w}(\mathbf{x}))^2}$$ (convert to root mean squared error (RMSE))
+	      * = $$1/N \sum\limits_{i=1}^{N} L(y, f_\hat{w}(\mathbf{x}))$$- average of loss function
+	      * = $$1/N \sum\limits_{i=1}^{N} (y - f_\hat{w}(\mathbf{x}))^2$$- average of squared error
+	      * = $$\sqrt{1/N \sum\limits_{i=1}^{N} (y - f _\hat{w}(\mathbf{x}))^2}$$(convert to root mean squared error (RMSE))
 		     *provides more intuitive format (dollars, instead of squared dollars)*
 
 * Training error vs model complexity:
@@ -341,12 +341,12 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
 * *Test error*: like generalisation error but actually computable.
 
 	* Basically, use *test error* to roughly approximate generation error.
-	* Average loss on houses in test set: $$ 1/Ntest \sum_\limits{i=1}^{Ntest} L(y, f_\hat{w}(\mathbf{x})) $$
-		* Note: $$ f_\hat{w}(\mathbf{x}) $$  was fit with training data.
+	* Average loss on houses in test set: $$1/Ntest \sum_\limits{i=1}^{Ntest} L(y, f_\hat{w}(\mathbf{x})) $$
+		* Note: $$f_\hat{w}(\mathbf{x}) $$ was fit with training data.
 
 * Defining overfitting:
 
-	* Overfitting if there exists a model with estimated params $$w'$$ such that:
+	* Overfitting if there exists a model with estimated params $$w'$$such that:
 		1. Training error ($$\hat{w}$$) < Training error ($$w'$$).
 		2. True  error ($$\hat{w}$$) > True error ($$w'$$)
 	* In other words: overfit if training error is low compared to another model but "true error" is high. Better to have high training error but low "true error".
@@ -369,7 +369,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
 * Bias:
 	* Difference between fit and "true function".
 		* "Is our model flexible enough to capture true relationship between data and model."
-	* $$ Bias(x) = f_{w(true)}(\mathbf{x}) - f_\hat{w}(\mathbf{x}) $$	 
+	* $$Bias(x) = f_{w(true)}(\mathbf{x}) - f_\hat{w}(\mathbf{x}) $$	 
 	* Bias is basically how good our fit is; more parameters generally means less bias.
 
 * Variance:
@@ -379,7 +379,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
 
 * Bias-variance tradeoff:
 	* As error decreases, bias decreases and variance increases.
-	* $$ MSE = bias^2 + variance $$ (mean-squared error)
+	* $$MSE = bias^2 + variance $$(mean-squared error)
 	* Want to find sweet spot in model where bias and variance are together as low as possible.
 	* We can't compute "true function" but there are ways to optimise an approximation a practical way.
 
@@ -388,15 +388,15 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
 	* Training error goes up as data points increase to same limit.
 
 * Validation set:
-	* Choosing tuning parameters, $$ \lambda $$ (eg degree of polynomial):
-		* Naive approach: For each model complexity $$ \lambda $$:
+	* Choosing tuning parameters, $$\lambda $$(eg degree of polynomial):
+		* Naive approach: For each model complexity $$\lambda $$:
 			1. Estimate params on training data.
 			2. Assess performance on test data.
-			3. Choose $$ \lambda $$ with lowest test
-			* Problem with this the test data was already used for selecting $$  \lambda $$ - will be overfit.
+			3. Choose $$\lambda $$with lowest test
+			* Problem with this the test data was already used for selecting $$ \lambda $$- will be overfit.
 		* Better approach: split data 3 ways: training, validation and test set
-			* Select $$ \lambda $$ that minimizes error on **validation set**.
-			* Get approximate generalisation error of $$  \hat{w}_{\lambda\star} $$   using **test set**.
+			* Select $$\lambda $$that minimizes error on **validation set**.
+			* Get approximate generalisation error of $$ \hat{w}_{\lambda\star} $$  using **test set**.
 			* Typical splits:
 				* 80% / 10% / 10%
 				* 50% / 25% / 25%
@@ -421,109 +421,109 @@ i* Symptom of overfitting:
 	* ``Total cost = measure of fit (RSS) + measure of coefficient magnitudes``.
 	* Want to find the ideal balance between the two.
 	* Ways to measure coefficient magnitude:
-		* Add coefficients: $$ \hat{w}_0 + \hat{w}_1 ... \hat{w}_d $$
+		* Add coefficients: $$\hat{w}_0 + \hat{w}_1 ... \hat{w}_d $$
 			* the negative coefficients would cancel out the others.
-		* Add the abs value of coefficients: $$ \sum\limits_{i=0}^{D} | \hat{w}_i | $$
+		* Add the abs value of coefficients: $$\sum\limits_{i=0}^{D} | \hat{w}_i | $$
 			* Aka "L1 norm"
-		* Sum squared values of coefficients: $$ \sum\limits_{i=0}^{D} (\hat{w}_i)^2 $$ (sum of squared values of coefficients)
+		* Sum squared values of coefficients: $$\sum\limits_{i=0}^{D} (\hat{w}_i)^2 $$(sum of squared values of coefficients)
 			* Aka "L2 norm"
 
 * Resulting ridge objective and its extreme solution.
-	* Can use an extra parameter to tune how much weight is applied to the measure of coefficient magnitude: $$ RSS(\mathbf{w}) + \lambda ||\mathbf{w}||_2^2 $$
+	* Can use an extra parameter to tune how much weight is applied to the measure of coefficient magnitude: $$RSS(\mathbf{w}) + \lambda ||\mathbf{w}||_2^2 $$
 	* Set the param to 0 = only RSS would weight in quality metric.
-	* Set the param to $$ \infty $$, $$\mathbf{w} = 0 $$ would be the solution.
-	* Need to find a balance between the two: enter "ridge regression" (aka $$ L_2 $$ regularisation.
+	* Set the param to $$\infty $$, $$\mathbf{w} = 0 $$would be the solution.
+	* Need to find a balance between the two: enter "ridge regression" (aka $$L_2 $$regularisation.
 
 * How ridge regression balances bias and variance.
-	* High $$ \lambda $$ = high bias, low variance.
-		* As $$ \lambda $$ get closer to infinitely, coefficients get smaller and less general.
-	* Low  $$ \lambda $$ = low bias, high variance.
-		* As $$ \lambda $$ get closer to 0, coefficients get larger (RSS takes over) and shit gets crazy.
+	* High $$\lambda $$= high bias, low variance.
+		* As $$\lambda $$get closer to infinitely, coefficients get smaller and less general.
+	* Low  $$\lambda $$= low bias, high variance.
+		* As $$\lambda $$get closer to 0, coefficients get larger (RSS takes over) and shit gets crazy.
 
 * Ridge regression demo
-	* "Leave one out" (LOO) cross validation can show approximate average mean squared error (MSE) and is a useful technique for choosing $$ \lambda $$.
+	* "Leave one out" (LOO) cross validation can show approximate average mean squared error (MSE) and is a useful technique for choosing $$\lambda $$.
 
 * The ridge coefficient path:
   * Graphical representation of how the value of lambda affects the coefficient:
 
     <img src="./images/coefficient-path.png"></png>
 
-    Again, at 0 it's just the RSS ($$ \hat{w}_{LS} $$), as it gets larger, they approach 0.
+    Again, at 0 it's just the RSS ($$\hat{w}_{LS} $$), as it gets larger, they approach 0.
 
   * Some sweet spot between smallish coefficients and a well fit model.
 
 * Computing the gradient of the ridge objective:
-  * Can rewrite the L2 norm ($$ || \mathbf{w} ||_2^2 $$) in vector notation as follows: $$ w^tw $$.
-  * Then, the entire ridge regression total cost can be rewritten like: $$ y - (\mathbf{H}\mathbf{w})^2(\mathbf{H}\mathbf{w}) + || \mathbf{w} ||_2^2 $$, which is just the RSS + the L2 norm.
-  * Can take the gradient of both terms and you get: $$ -2\mathbf{H}^T( y - (\mathbf{H}\mathbf{w})) + 2\mathbf{w} $$ .
-  * The gradient of the L2 norm is analygous to the 1d case: derivate of $$ w^2 $$ = $$ 2w $$
+  * Can rewrite the L2 norm ($$|| \mathbf{w} ||_2^2 $$) in vector notation as follows: $$w^tw $$.
+  * Then, the entire ridge regression total cost can be rewritten like: $$y - (\mathbf{H}\mathbf{w})^2(\mathbf{H}\mathbf{w}) + || \mathbf{w} ||_2^2 $$, which is just the RSS + the L2 norm.
+  * Can take the gradient of both terms and you get: $$-2\mathbf{H}^T( y - (\mathbf{H}\mathbf{w})) + 2\mathbf{w} $$.
+  * The gradient of the L2 norm is analygous to the 1d case: derivate of $$w^2 $$= $$2w $$
 
 * Approach 1: closed-form solution:
 
-	* Summary: set the gradient = 0 and solve for $$ \hat{w} $$.
+	* Summary: set the gradient = 0 and solve for $$\hat{w} $$.
 	* Steps:
-		1. Multiple the $$ \mathbf{w} $$ vector by the identity matrix to make the derivation easier.
+		1. Multiple the $$\mathbf{w} $$vector by the identity matrix to make the derivation easier.
 
-		  $$ \triangle cost(\mathbf{w})) = -2\mathbf{H}^T(\mathbf{y} - \mathbf{H}\mathbf{w}) + 2\lambda\mathbf{I}\mathbf{w} = 0 $$
+		  $$\triangle cost(\mathbf{w})) = -2\mathbf{H}^T(\mathbf{y} - \mathbf{H}\mathbf{w}) + 2\lambda\mathbf{I}\mathbf{w} = 0 $$
 
 		2. Divide both sides by 2.
 
-			$$  =-\mathbf{H}^T(\mathbf{y} - \mathbf{H}\mathbf{w}) + \lambda\mathbf{I}\mathbf{w} = 0 $$
+			$$ =-\mathbf{H}^T(\mathbf{y} - \mathbf{H}\mathbf{w}) + \lambda\mathbf{I}\mathbf{w} = 0 $$
 
 		3. Multiple out.
 
-			$$ -\mathbf{H}^T\mathbf{y} + \mathbf{H}^T \mathbf{H}\mathbf{w} + \lambda\mathbf{I}\mathbf{w} = 0 $$
+			$$-\mathbf{H}^T\mathbf{y} + \mathbf{H}^T \mathbf{H}\mathbf{w} + \lambda\mathbf{I}\mathbf{w} = 0 $$
 
-		4. Add $$ \mathbf{H}^T\mathbf{y} $$ to both sides.
+		4. Add $$\mathbf{H}^T\mathbf{y} $$to both sides.
 
-			$$ \mathbf{H}^T \mathbf{H}\mathbf{w} + \lambda\mathbf{I}\mathbf{w} = \mathbf{H}^T\mathbf{y}  $$
+			$$\mathbf{H}^T \mathbf{H}\mathbf{w} + \lambda\mathbf{I}\mathbf{w} = \mathbf{H}^T\mathbf{y}  $$
 
-		5. Since the $$  \hat{w} $$ appears in both expressions, can factor it out.
+		5. Since the $$ \hat{w} $$appears in both expressions, can factor it out.
 
-			$$ (\mathbf{H}^T \mathbf{H} + \lambda\mathbf{I})\mathbf{w} = \mathbf{H}^T\mathbf{y} $$
+			$$(\mathbf{H}^T \mathbf{H} + \lambda\mathbf{I})\mathbf{w} = \mathbf{H}^T\mathbf{y} $$
 
-		6. Multiple both sides by the inverse of $$ \mathbf{H}^T \mathbf{H} + \lambda\mathbf{I} $$.
+		6. Multiple both sides by the inverse of $$\mathbf{H}^T \mathbf{H} + \lambda\mathbf{I} $$.
 
-			$$ \mathbf{w} = (\mathbf{H}^T \mathbf{H} + \lambda\mathbf{I})^{-1}\mathbf{H}^T\mathbf{y} $$
+			$$\mathbf{w} = (\mathbf{H}^T \mathbf{H} + \lambda\mathbf{I})^{-1}\mathbf{H}^T\mathbf{y} $$
 
 * Discussing the closed-form solution
-        * Can prove the closed-form solution is congruent with the above notes, by setting $$ \lambda = 0 $$ and seeing that results are equal to the least squares closed form solution:
+        * Can prove the closed-form solution is congruent with the above notes, by setting $$\lambda = 0 $$and seeing that results are equal to the least squares closed form solution:
 
-	 	$$ \hat{w}^{ridge} = (\mathbf{H}^T\mathbf{H})^{-1}\mathbf{H}^T\mathbf{y} = \hat{w}^{LS} $$ -results 
+	 	$$\hat{w}^{ridge} = (\mathbf{H}^T\mathbf{H})^{-1}\mathbf{H}^T\mathbf{y} = \hat{w}^{LS} $$-results 
 
 	* Setting lambda to infinity results in 0 because the inverse of infinity matrix is like dividing by infinity.
-	* Recall previous solution for $$ \hat{w}^{LS} = (\mathbf{H}^T\mathbf{H})^{-1}\mathbf{H}^T\mathbf{y} $$ :
-		* Invertible if number of linear independant observations is more than number of features ($$  N > D $$) - an added bonus of using ridge regression.
-		* Complexity of the inverse: $$ O(D^3) $$
+	* Recall previous solution for $$\hat{w}^{LS} = (\mathbf{H}^T\mathbf{H})^{-1}\mathbf{H}^T\mathbf{y} $$:
+		* Invertible if number of linear independant observations is more than number of features ($$ N > D $$) - an added bonus of using ridge regression.
+		* Complexity of the inverse: $$O(D^3) $$
 	* Properties for ridge regression solution:
-		* Inverible always if $$ \lambda > 0 $$ even if $$ N < D $$.
+		* Inverible always if $$\lambda > 0 $$even if $$N < D $$.
 		* Complexity of inverse is the same. May be prohibitive to do this solution with lots of features.
-		* Called "regularised" because adding the $$ \lambda\mathbf{I} $$ is "regularising" the $$ \mathbf{H}^T \mathbf{H} $$, making it invertable ever with lots of features.
+		* Called "regularised" because adding the $$\lambda\mathbf{I} $$is "regularising" the $$\mathbf{H}^T \mathbf{H} $$, making it invertable ever with lots of features.
 
 * Approach 2: gradient descent
 	* Same as RSS gradient descent but factors in the L2 norm cost component gradient.
 
 * Selecting tuning parameters via cross validation.
-	* If you don't have enough data to build a validation set, for testing the performance of $$ \lambda $$, you can grab the validation set as a subset of the training data, but instead of grabbing a single slice, can grab all slices and average the results.
+	* If you don't have enough data to build a validation set, for testing the performance of $$\lambda $$, you can grab the validation set as a subset of the training data, but instead of grabbing a single slice, can grab all slices and average the results.
 
 * K-fold cross validation.
 	* Algorithm:
 		* For each lambda you're considering:
-			* For each data slice of size $$ N/K $$:
+			* For each data slice of size $$N/K $$:
 				* Go through each validation block on training data compute predictions.
-				* Compute error for predictions using the $$ \lambda $$ value.
-			* Calculate average error: $$ CV(\lambda) = 1/K \sum\limits_{k=1}^K error_K(\lambda) $$
+				* Compute error for predictions using the $$\lambda $$value.
+			* Calculate average error: $$CV(\lambda) = 1/K \sum\limits_{k=1}^K error_K(\lambda) $$
 	* Choosing ideal value of K:
 		* Best approximation occurs for validation sets of size 1 (K = N) aka "leave-one-out" (LOO) cross validation.
-		* Computationally intensive: requires computing N fits of model per $$ \lambda $$.
-		* Common to use $$ K=5 $$ (5-fold CV) or $$ K=10 $$ (10-fold CV) if $$ K=N $$ is computational infeasible to run.
+		* Computationally intensive: requires computing N fits of model per $$\lambda $$.
+		* Common to use $$K=5 $$(5-fold CV) or $$K=10 $$(10-fold CV) if $$K=N $$is computational infeasible to run.
 
 * How to handle intercept term.
-	* The goal of the ridge regression is to lower the coefficients values $ but that doesn't necessarily make sense for $$ \hat{w}_0 $$.
+	* The goal of the ridge regression is to lower the coefficients values $ but that doesn't necessarily make sense for $$\hat{w}_0 $$.
 	* Solutions:
-		* Option 1: leave out the $$ \hat{w}_0 $$ coefficient when computing the optimal fit.
+		* Option 1: leave out the $$\hat{w}_0 $$coefficient when computing the optimal fit.
 			* In closed-form solution, can use a modified identity matrix with the first position set to 0.
-			* In gradient descent, can just skip the ridge component when computing the j value for $$ \hat{w}_0 $$.
+			* In gradient descent, can just skip the ridge component when computing the j value for $$\hat{w}_0 $$.
 		* Option 2: transform data so the expected intercept value is around 0 (called "centring").
 
 
@@ -532,15 +532,15 @@ i* Symptom of overfitting:
 * Feature selection task motivation
 	* Efficiency
 		* when faced with large feature sets, predictions can get expensive.
-		* When $$ \hat{w} $$ is sparse (eg has a lot of 0s in the dataset) can eliminate all 0 features.
+		* When $$\hat{w} $$is sparse (eg has a lot of 0s in the dataset) can eliminate all 0 features.
 	* Interpretability
 		* which features are relevant to housing predictions?
 
 * All subsets algorithm
 	* Search over every combination of features computing the RSS: 
 		* Iterate through every N = 1 sized combination, then N = 2 and so on up to feature D.
-	* Slow to compute with a lot of features: complexity = $$ 2^{D} $$
-		* With 15 features $$ 2^{15} = 32768 $$ 
+	* Slow to compute with a lot of features: complexity = $$2^{D} $$
+		* With 15 features $$2^{15} = 32768 $$
  
 * Greedy algorithms 
 	* "Forward stepwise algorithm" 	
@@ -550,7 +550,7 @@ i* Symptom of overfitting:
 	* Quicker to compute than all subsets, but may not find optimal combination.  
 		* Complexity:
 			* 1st step: D models, 2nd step: D - 1 models, 3rd step: D - 2 models etc	
-			*  Worst case complexity: $$ D^2 $$
+			*  Worst case complexity: $$D^2 $$
 	* Other greedy algorithms
 		* Backward stepwise: start with full model and work backwards removing one.
 		* Combining forward and backward steps: add steps to remove features not considered relevant.
@@ -559,15 +559,15 @@ i* Symptom of overfitting:
 	* Ridge regression (L2 penalty) encourages small weights but not exactly 0.
 	* Core idea: can we use a similar idea but actually get weights to 0 and effectively remove them from the model?
 	* Potential method 1: Thresholding.
-		* Remove features that falls below some threshold for $$ w $$.
+		* Remove features that falls below some threshold for $$w $$.
 		* Problem: redundant features
 			* If you have bathroom and number of showers, the weights would be distributed over both features. If you remove one, the coefficient should double on the other.
 			* This means you could potentially end up discarding all redundant features. 
 		* 
 	* Potential method 2: use L1 norm for regularized regression aka "Lasso regression" aka "L1 regularised regression".
-		* $$  RSS(\mathbf{w}) + \lambda * ||\mathbf{w}||_1 $$ 
-			* When tuning param, $$ \lambda $$ is 0, $$ \hat{w}^{lasso} = \hat{w}^{LS} $$  (ie result is just least squares.
-			* When $$ \lambda = \infty $$, $$ \hat{w}^{lasso} = 0 $$  (ie coefficients shrink to 0).
+		* $$ RSS(\mathbf{w}) + \lambda * ||\mathbf{w}||_1 $$
+			* When tuning param, $$\lambda $$is 0, $$\hat{w}^{lasso} = \hat{w}^{LS} $$ (ie result is just least squares.
+			* When $$\lambda = \infty $$, $$\hat{w}^{lasso} = 0 $$ (ie coefficients shrink to 0).
 		* Coefficient path for Lasso:
 
 			![Coefficient path for Lasso](coefficient-path-for-lasso.png)
@@ -575,11 +575,11 @@ i* Symptom of overfitting:
 			* For certain lambda values, features jump out of the model and other fall to 0. Individual impact of features becomes clearer.
 
 * Optimising the lasso objective
-	* The derivate of $$ |w_j| $$ can't be calculated when $$ |w_j| = 0 $$. Therefore, can't calculate the derivate.
+	* The derivate of $$|w_j| $$can't be calculated when $$|w_j| = 0 $$. Therefore, can't calculate the derivate.
 	* Use "subgradients" over gradients. 
 
 * Coordinate descent
-	* Goal: minimise a function $$ g(w_0, w_1, ..., W_D) $$, a function with multivariables.
+	* Goal: minimise a function $$g(w_0, w_1, ..., W_D) $$, a function with multivariables.
 	* Hard to find minimum for all coordinates, be easy for a single coordinate with all the other fixed..
 	* Algorithm:
 		* While not converged:
@@ -596,16 +596,16 @@ i* Symptom of overfitting:
 	* Need to apply to training and test data.
 	* Formula:
 	
-		$$ \underline{h}_j(\mathbf{x}_k) = \frac{h_j(\mathbf{x}_k)}{ \sqrt{\sum\limits_{i=1}^{N} h_j(\mathbf{x}_i)^2}} $$ 
+		$$\underline{h}_j(\mathbf{x}_k) = \frac{h_j(\mathbf{x}_k)}{ \sqrt{\sum\limits_{i=1}^{N} h_j(\mathbf{x}_i)^2}} $$
 
 * Coordinate descent for least squares regression
-	* For each j feature, fix all other coordinates $$  \mathbf{w}_{-j} $$ and take the partial with respect to $$ \mathbf{w}_j $$
-	* Gradient derived to $$ -2P_j + 2w_j $$ ($$ P_j $$ == residual without jth feature)
-	* Setting to 0 and solving for $$ \hat{w}_j $$ results in $$ \hat{w}_j = P_j $$	
+	* For each j feature, fix all other coordinates $$ \mathbf{w}_{-j} $$and take the partial with respect to $$\mathbf{w}_j $$
+	* Gradient derived to $$-2P_j + 2w_j $$($$P_j $$== residual without jth feature)
+	* Setting to 0 and solving for $$\hat{w}_j $$results in $$\hat{w}_j = P_j $$	
 	* Intuition: if the residual between the predictions without j and the actual prediction is large, then the weight of j will be large and vice versa (to do: check this as your understanding improves).
 
 * Coordinate descent for lasso (for normalised features)
-	* Same as cord descent for least squares, except we set $$ \hat{w}_j $$ using a "thresholding" function (in code):
+	* Same as cord descent for least squares, except we set $$\hat{w}_j $$using a "thresholding" function (in code):
 
 		```
 		def set_w_j(p_j, lambda):
@@ -622,7 +622,7 @@ i* Symptom of overfitting:
 		![Soft thresholding]("./images/cord-descent-soft-thresholding.png")
 
 * Coordinate descent for lasso (for unnormalised features)
-	* Normalisation factor is used during the set $$ w_j $$ portion of the regression.
+	* Normalisation factor is used during the set $$w_j $$portion of the regression.
 
 * Choosing the penalty strength and other practical issues with lasso.
 	* Same as ridge regression:
@@ -637,7 +637,7 @@ i* Symptom of overfitting:
 	* Contrast greedy and optimal algorithms
 	* Describe geometrically why L1 penalty leads to sparsity
 	* Estimate lasso regression parameters using an iterative coordinate descent algorithm
-	* Implement K-fold cross validation to select lasso tuning parameter $$ \lambda $$    
+	* Implement K-fold cross validation to select lasso tuning parameter $$\lambda $$   
 
 * Note: be careful about interpreting features, need to consider in the context of the entire model.
 
@@ -654,16 +654,16 @@ i* Symptom of overfitting:
   * For some input, find the closest observation. That's it.
   * What people do naturally when predicting house prices.
   * Formally:
-	1. For some input, find closest $$ \mathbf{x}_i $$ using some distance metric.
-	2. Predict: $$ \hat{y}_q = y_{nn} $$
+	1. For some input, find closest $$\mathbf{x}_i $$using some distance metric.
+	2. Predict: $$\hat{y}_q = y_{nn} $$
 
 * Distance metrics
 	* 1D feature sets: Euclidian distance
-		* $$ distance(x_j, x_q) = |x_j - x_q| $$ 
+		* $$distance(x_j, x_q) = |x_j - x_q| $$
 	* Multi dimensions:
 		* Can use a weight on each feature to determine importance in computing distance ie sqft closeness is important, but year renovated may not be.
-		* $$  distance(\mathbf{x_j}, \mathbf{x_q}) = \sqrt{a_1(x_i[1] - x_q[1])^2) + .. a_D(x_i[D] - x_q[D])^2)} $$   
-			* Note: $$ a_D $$ is the "weight" in this equation.
+		* $$ distance(\mathbf{x_j}, \mathbf{x_q}) = \sqrt{a_1(x_i[1] - x_q[1])^2) + .. a_D(x_i[D] - x_q[D])^2)} $$  
+			* Note: $$a_D $$is the "weight" in this equation.
 
 * 1-Nearest Neighbour Algorithm
 	* Need to define your distance function.
@@ -693,23 +693,23 @@ i* Symptom of overfitting:
 
 * Weighted k-nearest neighbours
 	* Idea: weight neighbours by how close or far they are to data point.
-	* Formula (where $$ C_{qNN1} $$ refers to some weight for NN1:
-		$$ \hat{y}_q = \dfrac{C_{qNN1}Y_{qNN1} + C_{qNN2}Y_{qNN2} .. C_{qNNK}Y_{qNNK}}{\sum\limits_{j=1}^{K}C_{qNNj}} $$
+	* Formula (where $$C_{qNN1} $$refers to some weight for NN1:
+		$$\hat{y}_q = \dfrac{C_{qNN1}Y_{qNN1} + C_{qNN2}Y_{qNN2} .. C_{qNNK}Y_{qNNK}}{\sum\limits_{j=1}^{K}C_{qNNj}} $$
 	* Weighting data points:
-		* Could just use inverse of distance: $$ C_{qNN1} = \dfrac{1}{distance(\mathbf{X_j}, \mathbf{X_q})} $$
+		* Could just use inverse of distance: $$C_{qNN1} = \dfrac{1}{distance(\mathbf{X_j}, \mathbf{X_q})} $$
 		* Can use "kernel" functions:
 			* Gaussian kernel
 			* Uniform kernel etc
 
 * Kernel regression
 	* Instead of weighing n-neighbours, weigh all points with some "kernel":
-		$$ \hat{y}_q \frac{\sum\limits_{y=1}^{N} C_{qi}Y_{qi}}{\sum\limits_{y=1}^{N} C_{qi}} = \frac{\sum\limits_{y=1}^{N} kernel_{\lambda}(distance(\mathbf{x_i},\mathbf{x_q})) * y_i}{kernel_{\lambda}(distance(\mathbf{x_i},\mathbf{x_q}))} $$
+		$$\hat{y}_q \frac{\sum\limits_{y=1}^{N} C_{qi}Y_{qi}}{\sum\limits_{y=1}^{N} C_{qi}} = \frac{\sum\limits_{y=1}^{N} kernel_{\lambda}(distance(\mathbf{x_i},\mathbf{x_q})) * y_i}{kernel_{\lambda}(distance(\mathbf{x_i},\mathbf{x_q}))} $$
 	* In stats called "Nadaya-Watson" kernel weighted averages.
 	* Need to choice a good "bandwidth" (lambda value)
 		* Too high = over smoothing; low variance, high bias.
 		* Too low = over fitting; high variance, high bias.   
 	* Need to choose kernel but bandwidth more important.
-	* Use validation set (if enough data) or cross-validation to choose $$ \lambda $$ value.
+	* Use validation set (if enough data) or cross-validation to choose $$\lambda $$value.
 
 * Global fits of parametric models vs local fits of kernel regression
   * If you were to predict datapoint by averaging all observations, you'd end up with a constant fit.

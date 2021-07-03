@@ -15,7 +15,7 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
 
 * First, find prior probability that a doc i is from topic k:
 
-  $$ p(z_i = k) = \pi_k $$
+  $$p(z_i = k) = \pi_k $$
 
   * Basically, how prevalent is each topic across the corpus.
 
@@ -24,9 +24,9 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
 ## Components of latent Dirichlet allocation model
 
 * In LDA: every word is assigned to a document.
-  * One topic indicator $$ z_{iw} \text{ per word in doc i} $$
+  * One topic indicator $$z_{iw} \text{ per word in doc i} $$
 * Introduces a topic proportion at the document level: how much is this article about science compared to sport (for example).
-  * $$ \mathbf{\pi_i} = [\pi_{i1}, \pi_{i2}, ..., \pi_{ik}] $$
+  * $$\mathbf{\pi_i} = [\pi_{i1}, \pi_{i2}, ..., \pi_{ik}] $$
 
 ## Goal of LDA inference
 
@@ -44,7 +44,7 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
 * Introduces a thing call "Gibbs sampling" (though it is not mentioned again in this lecture).
 * Revision of K-means:
   * Assign observations to closest cluster centre.
-    * $$ z_i \text{ <- arg min } ||\mu_j - x_i||_2^2 $$
+    * $$z_i \text{ <- arg min } ||\mu_j - x_i||_2^2 $$
   * Revise cluster centres.
   * Can be viewed as "maximising a given objective function".
 * Revision of EM for MoG
@@ -52,7 +52,7 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
   * M-step: maximize likelihood over parameters.
 
 * When using bag of words over tf-idf, can still derive EM algorithm: instead of using gaussian likelihood of tf-idf vector, use multinomial likelihood of word counts.
-  * $$ m_w $$ successes of word w.
+  * $$m_w $$successes of word w.
   * Called a "mixture of multinomial model".
 * LDA model:
   * Could derive EM model, but due to high dimensional space over-fitting tends be a huge problem.
@@ -80,7 +80,7 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
 * Step 1: Randomly reassign all words in a document to some topic based on:  doc topic proportions and topic vocab distributions
   * firstly create a responsibility vector for each word as follows:
     * ```word_probability['EEP', 'topic_2'] = prior_probability('topic_2') * probability('EEP', given='topic_2') / sum(prior_probability(topic) * probability('EEP', given=topic) for topic in topics)```
-    * $$ r_{iw2} = \pi_{i2} * P(\text{"EEG"} \mid z_{iw} = 2) $$
+    * $$r_{iw2} = \pi_{i2} * P(\text{"EEG"} \mid z_{iw} = 2) $$
   * then picked out a topic at random for the word based on the probabilities just defined.
 * Step 2: Randomly reassign doc topic proportions based on assignments defined in the last step.
 * Step 3: Repeat for every doc.
@@ -88,11 +88,11 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
 
 ## Collapsed Gibbs sampling in LDA
 
-* Based on special structure of LDA model, can sample just indicator variable $$ z_iw $$
+* Based on special structure of LDA model, can sample just indicator variable $$z_iw $$
   * No need to sample corpus-wide topic vocab distributions
   * Per-doc topic proportions
 * Can lead to much better performance.
-* Randomly reassign $$ z_iw $$ based on current assignments $$ z_jv $$ of all other words in document and corpus.
+* Randomly reassign $$z_iw $$based on current assignments $$z_jv $$of all other words in document and corpus.
 
 ## A worked example for LDA: initial setup
 
@@ -113,16 +113,16 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
     ```
 5. Iterate through every word in the entire corpus and resample.
     * When resampling a word, need to remove it from the local counts and corpus wide tables first.
-     * Then, resample based on $$ p(z_iw \mid \text{every other } z_jw \text{ in corpus, words in the corpus}) $$
+     * Then, resample based on $$p(z_iw \mid \text{every other } z_jw \text{ in corpus, words in the corpus}) $$
 
 ## A worked example for LDA: deriving the resampling distribution
 
 * Figure out how much doc likes topic:
-  * $$ n_ik $$ = current assignments to topic k in doc i.
-  * $$ N_ik $$ = words in doc i.
-  * $$ \frac{n_ik + \alpha}{N_i - 1 + K\alpha} $$  
+  * $$n_ik $$= current assignments to topic k in doc i.
+  * $$N_ik $$= words in doc i.
+  * $$\frac{n_ik + \alpha}{N_i - 1 + K\alpha} $$ 
 * Figure out how much topic likes word:
-  * $$ \frac{m_{word,k} + \alpha}{\sum_{w \in V} m_{w,k} + V\alpha} $$ 
+  * $$\frac{m_{word,k} + \alpha}{\sum_{w \in V} m_{w,k} + V\alpha} $$
 * Then multiply the 2 probabilities "How much doc likes topic" * "how much topic likes word"
   * Then pick topic randomly using this probability
 * Update the 2 tables as per last section.

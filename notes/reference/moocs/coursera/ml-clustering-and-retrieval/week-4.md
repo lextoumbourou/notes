@@ -23,7 +23,7 @@
   * Aka normal distribution.
   * Fully specified by **mean** μ and **variance** σ^2 (or **standard deviation** σ).
   * Notated as follows:
-    $$ N(x | \mu, \sigma^2) $$
+    $$N(x | \mu, \sigma^2) $$
     * x represents the random variable the distribution is over (eg blue intensity)
     * μ and σ^2 represent the fixed "parameters" of the gaussian.
 
@@ -41,28 +41,28 @@
 
 * In 2D: gaussian fully specified by **mean** ***vector*** and **covariance** ***matrix***
 * Mean vector:
-   * $$ \mathbf{\mu} = [\mu_{\color{blue}{\text{blue}}}, \mu_{\color{green}{\text{green}}}] $$
+   * $$\mathbf{\mu} = [\mu_{\color{blue}{\text{blue}}}, \mu_{\color{green}{\text{green}}}] $$
    * Mean "centres the distribution in 2D"
        * The middle point between the 2 values means is the centre point of the contour plot.
 
 * Covariance matrix:
 
-   * $$ \Sigma = \begin{bmatrix}{\sigma_\color{blue}{blue}}^2 & \sigma_{\color{blue}{blue},\color{green}{green}} \\ \sigma_{\color{green}{green},\color{blue}{blue}} & {\sigma_\color{green}{green}}^2 \end{bmatrix} $$
+   * $$\Sigma = \begin{bmatrix}{\sigma_\color{blue}{blue}}^2 & \sigma_{\color{blue}{blue},\color{green}{green}} \\ \sigma_{\color{green}{green},\color{blue}{blue}} & {\sigma_\color{green}{green}}^2 \end{bmatrix} $$
    * determines orientation and spread aka correlation structure (don't quite get this yet). 
 * Covariance structure examples:
    * Diagonal covariance with equal elements over the diagonal 
-     * $$ \Sigma = \begin{bmatrix}\sigma^2 & 0 \\ 0 & \sigma^2 \end{bmatrix} $$ 
+     * $$\Sigma = \begin{bmatrix}\sigma^2 & 0 \\ 0 & \sigma^2 \end{bmatrix} $$
      * "There's no correlation between the random variables"
      * Get a circulate shape to the distribution because variables on both dimensions are the same.
    * Diagonal covariance with different variances over the diagonal 
-     * $$ \Sigma = \begin{bmatrix}{\sigma_\color{blue}{B}}^{2} & 0 \\ 0 & {\sigma_\color{green}{G}}^2 \end{bmatrix} $$ 
+     * $$\Sigma = \begin{bmatrix}{\sigma_\color{blue}{B}}^{2} & 0 \\ 0 & {\sigma_\color{green}{G}}^2 \end{bmatrix} $$
      * End up with axis aligned ellipses.
    * Full covariance allowing for correlation between variables.
-     * $$ \Sigma = \begin{bmatrix}{\sigma_\color{blue}{B}}^{2} & \sigma_{\color{blue}{B},\color{green}{G}} \\ \sigma_{\color{green}{G},\color{blue}{B}} & {\sigma_\color{green}{G}}^2 \end{bmatrix} $$ 
+     * $$\Sigma = \begin{bmatrix}{\sigma_\color{blue}{B}}^{2} & \sigma_{\color{blue}{B},\color{green}{G}} \\ \sigma_{\color{green}{G},\color{blue}{B}} & {\sigma_\color{green}{G}}^2 \end{bmatrix} $$
      * End up with non axis aligned axis.
 * Projects to help me understand this:
   * Write function to return 2 random variables with different mean vectors and covariance matrixes and build histogram of values.
-* Notation to describe Guassian: $$ N(\mathbf{x} \mid \mathbf{\mu}, \mathbf{\Sigma}) $$
+* Notation to describe Guassian: $$N(\mathbf{x} \mid \mathbf{\mu}, \mathbf{\Sigma}) $$
 
 ## Mixtures of Gaussians for clustering
 
@@ -75,21 +75,21 @@
     * Taking the category specific gaussians (but we don't know the labels yet???) and average them together.
 
 * Utilise a weighted average to account for larger numbers of datapoints for a certain category.
-  * Introduce cluster weights $$ \pi_k $$ where k represents a cluster of datapoints.
+  * Introduce cluster weights $$\pi_k $$where k represents a cluster of datapoints.
   * Each weight is between 0 and 1.
   * Sum of the weights always equals or integrates to 1.
   * Called a "convex combination".
-  * Example: $$ \mathbf{\pi} = [\stackrel{\pi_1}{0.47}, \stackrel{\pi_2}{0.26}, \stackrel{\pi_3}{0.27}] $$
-  * Each mixture component represents a unique cluster specified by $$ \{\pi_k, \mathbf{\mu_k}, \Sigma_k\} $$ 
+  * Example: $$\mathbf{\pi} = [\stackrel{\pi_1}{0.47}, \stackrel{\pi_2}{0.26}, \stackrel{\pi_3}{0.27}] $$
+  * Each mixture component represents a unique cluster specified by $$\{\pi_k, \mathbf{\mu_k}, \Sigma_k\} $$
 
 ### Interpreting the mixture of Gaussian terms
 
 * Prior term:
-    * $$ p(z_i = k) = \pi_k $$
+    * $$p(z_i = k) = \pi_k $$
     * Aka prior probability: if you have don't know what the datapoint is, how likely is it?
 * Likelihood term:
-    * Given $$ \mathbf{x}_i $$ is from cluster k, what's the likelihood of seeing $$ \mathbf{x}_i $$?
-    * $$ p(x_i | z_i = j, \mu_k, \Sigma_k) = N(x_i \mid \mu_k, \Sigma_k) $$ 
+    * Given $$\mathbf{x}_i $$is from cluster k, what's the likelihood of seeing $$\mathbf{x}_i $$?
+    * $$p(x_i | z_i = j, \mu_k, \Sigma_k) = N(x_i \mid \mu_k, \Sigma_k) $$
 
 ### Scaling mixtures of Gaussians for document clustering
 
@@ -108,24 +108,24 @@
   1. Start with unlabelled observed inputs.
   2. Output soft assignments per data point.
 
-* Part 1: What if we know the cluster params $$ \{\pi_k, \mu_k, \Sigma_k\} $$?
+* Part 1: What if we know the cluster params $$\{\pi_k, \mu_k, \Sigma_k\} $$?
     * Easy to compute when known: for each possible cluster, compute prior by likelihood to get responsibily and normalise vector so it sums to 1 over all clusters.
     * Soft assignments are identified by a thing called "responsibility vector":
 
-      $$ r_i = [r_i1, r_i2 ... r_ik] $$
+      $$r_i = [r_i1, r_i2 ... r_ik] $$
 
       (where k is the number of clusters in the model)
     
-    * $$ r_{ik} = \frac{\pi_k \space N(x_i \mid \mu_k, \Sigma_k)}{\sum_{j=1}^{K} \pi_j \space N(x_i \mid \mu_k, \Sigma_k)} $$ 
+    * $$r_{ik} = \frac{\pi_k \space N(x_i \mid \mu_k, \Sigma_k)}{\sum_{j=1}^{K} \pi_j \space N(x_i \mid \mu_k, \Sigma_k)} $$
 
   * When datapoint is closer to cluster centre, cluster is said to take "more responsibility" for datapoint.
 
 ### Estimating cluster parameters from known (hard) cluster assignments
 
 * Part 2: Imagine we knew the hard cluster assignments (eg datapoint is either in a cluster of isn't) and want to infer cluster params.
-    * Mean: average of all data points in the cluster: $$ 1/N_k \sum\limits_{\text{i in k}} x_i $$
-    * Covariance: average of the distance from the mean for all data points: $$ 1/N_k \sum\limits_{\text{i in k}} (x_i - \hat{\mu}_k)(x_i - \hat{\mu}_k)^T $$
-    * Cluster proportions: observations in cluster / total observations: $$ \hat{\pi}_k = \frac{N_k}{N} $$
+    * Mean: average of all data points in the cluster: $$1/N_k \sum\limits_{\text{i in k}} x_i $$
+    * Covariance: average of the distance from the mean for all data points: $$1/N_k \sum\limits_{\text{i in k}} (x_i - \hat{\mu}_k)(x_i - \hat{\mu}_k)^T $$
+    * Cluster proportions: observations in cluster / total observations: $$\hat{\pi}_k = \frac{N_k}{N} $$
 
 ### Estimating cluster parameters from soft assignments
 
@@ -138,11 +138,11 @@
 
 1. First step is to initialise iter counter.
 
-    $$ \{{\pi_k}^{(0)}, \hat{\mu_k}^{(0)}, \hat{\Sigma_k}^{(0)}\} $$
+    $$\{{\pi_k}^{(0)}, \hat{\mu_k}^{(0)}, \hat{\Sigma_k}^{(0)}\} $$
 
 2. Next, estimate cluster responsibilities given current parameter estimations (E-step)
 
-     $$ r_{ik} = \frac{\pi_k \space N(x_i \mid \mu_k, \Sigma_k)}{\sum_{j=1}^{K} \pi_j \space N(x_i \mid \mu_k, \Sigma_k)} $$
+     $$r_{ik} = \frac{\pi_k \space N(x_i \mid \mu_k, \Sigma_k)}{\sum_{j=1}^{K} \pi_j \space N(x_i \mid \mu_k, \Sigma_k)} $$
 
 3. Last, maximise likelihood over parameters given calculated responsibilities (M-step)
 
