@@ -37,7 +37,7 @@
   1. Basic scheme - Unpooled: treats each Tweet as a single document and trains LDA on all Tweets. Baseline for comparison to pooled schemes.
   2. Author-wise Pooling: pooling Tweets according to author. Standard way to aggregate Twitter data; superior to unpooled Tweets.
   3. Burst-score wise Pooling: find "bursts" of term frequencies aka trending topics and aggregate over them.
-      $$ \text{burst-score}(R, d) = \frac{|M(R, d) - Mean(R)|}{SD(R)} $$ 
+      $$\text{burst-score}(R, d) = \frac{|M(R, d) - Mean(R)|}{SD(R)} $$
   4. Temporal pooling: pool all tweets within the same hour of some major event.
   5. Hashtag-based pooling: pool based on hashtags. If contains multiple hashtags, the document gets added to multiple pools.
 

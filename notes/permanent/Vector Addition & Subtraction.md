@@ -10,7 +10,7 @@ tags:
 
 Adding or subtracting 2 vectors is as simple as adding or subtracting the corresponding parts from each vector. 
 
-$$ \begin{bmatrix} u_1 \\ u_2 \end{bmatrix} + \begin{bmatrix} y_1 \\ y_2 \end{bmatrix} = \begin{bmatrix} u_1 + y_1 \\ u_2 + y_2 \end{bmatrix} $$
+$$\begin{bmatrix} u_1 \\ u_2 \end{bmatrix} + \begin{bmatrix} y_1 \\ y_2 \end{bmatrix} = \begin{bmatrix} u_1 + y_1 \\ u_2 + y_2 \end{bmatrix} $$
 
 You can therefore only add 2 vectors that are the same size.
 

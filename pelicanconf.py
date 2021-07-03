@@ -44,7 +44,7 @@ MARKDOWN = {
     "output_format": "html5",
 }
 
-PLUGINS = ['latex', 'pelican_cite', frontmark, 'subcategory', nb_liquid]
+PLUGINS = ['pelican_katex', 'pelican_cite', frontmark, 'subcategory', nb_liquid]
 
 PUBLICATIONS_SRC = 'notes/citations.bib'
 
@@ -64,3 +64,5 @@ SUMMARY_MAX_LENGTH = 25
 IGNORE_FILE = ['.ipynb_checkpoints']
 
 LIQUID_CONFIGS = (("CONTENT_DIR", "notes", ""), )
+
+ARTICLE_EXCLUDES = ['journal']

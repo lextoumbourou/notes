@@ -44,11 +44,11 @@ Tags: #Maths #LinearAlgebra
 * The above definition of vector addition is an extension to how kids are taught to add numbers using the number line:
 ![vector addition analogy to number line addition](addition-along-number-line.png)
 * The same operation written from the computer scientist perspective:
-$$ \begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} 3 \\ -1 \end{bmatrix} = \begin{bmatrix} 1 + 3 \\ 2 + -1 \end{bmatrix} = \begin{bmatrix} 4 \\  1\end{bmatrix}$$
+$$\begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} 3 \\ -1 \end{bmatrix} = \begin{bmatrix} 1 + 3 \\ 2 + -1 \end{bmatrix} = \begin{bmatrix} 4 \\  1\end{bmatrix}$$
 
 * [[vector multiplication]] is when you multiply a vector by a number, either stretching or squishing the vector based on that number.
     ![vector scaling](../media/vector-scaling.png)
     * Often referred to as "scaling the vector"
     * Hence number in this context is called a "scalar"
     * Computer science perspective:
-    $$ 2 \begin{bmatrix} 1 \\ 2 \end{bmatrix} = \begin{bmatrix} 2 * 1 \\ 2 * 2 \end{bmatrix} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$$
+    $$2 \begin{bmatrix} 1 \\ 2 \end{bmatrix} = \begin{bmatrix} 2 * 1 \\ 2 * 2 \end{bmatrix} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$$

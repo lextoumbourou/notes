@@ -127,10 +127,10 @@
     * "Prison scene" may be more telling to preference than more common tags like "car chase" or "romance".
 
 * Formalisation:
-  * Each tag $$ t \in T $$ can be applied to an item or not.
-  * $$ T_i $$ is the set of tags applied to an item $$ i $$ or $$ t_i $$ is a 1/0 vector of tags.
-  * Have a case where user apply tags to items (each user could apply each tag 0 or 1 times to an item). $$ t_{ui} $$ is a tag application of a tag by a user to an item.
-  * Have a case where tags are multiply applied (by users or algorithms) and $$ \vec{t_i} $$ is a weighted vector of tags.
+  * Each tag $$t \in T $$can be applied to an item or not.
+  * $$T_i $$is the set of tags applied to an item $$i $$or $$t_i $$is a 1/0 vector of tags.
+  * Have a case where user apply tags to items (each user could apply each tag 0 or 1 times to an item). $$t_{ui} $$is a tag application of a tag by a user to an item.
+  * Have a case where tags are multiply applied (by users or algorithms) and $$\vec{t_i} $$is a weighted vector of tags.
 
 * From items to user profiles (1)
   * Vector space thinks liking is the same as importance:

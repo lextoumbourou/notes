@@ -75,7 +75,7 @@
   * Except in the case of binary classification (hot dog or not ☺).
   * Formula for `tanh`:
 
-    $$ \text{tanh}(z) = \frac{e^{z}-e^{-z}}{e^z+e^{-z}} $$
+    $$\text{tanh}(z) = \frac{e^{z}-e^{-z}}{e^z+e^{-z}} $$
 
 * Activation functions can be different for different layers.
 
@@ -85,13 +85,13 @@
 
 * `relu` activation function:
 
-  $$ \text{relu}(z) = max(0, z) $$
+  $$\text{relu}(z) = max(0, z) $$
 
   * If you don't know what to use, just use `relu`: most people use it.
 
 * One disadvantage to `relu` is the derivate is equal to 0 when z is negative. Alternative: leaky relu, which is the max between z and z * some very small number:
 
-  $$ \text{leaky_relu(z) = max(0.001 * z, z)}
+  $$\text{leaky_relu(z) = max(0.001 * z, z)}
 
 ## Why do you need non-linear activation functions?
 

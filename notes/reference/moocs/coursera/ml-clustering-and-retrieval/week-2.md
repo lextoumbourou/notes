@@ -65,7 +65,7 @@
     * Specify weights as function of feature spread
       * for feature j: ``1 / max_i(x_i[j]) - min_i(x_i[j])``
 * Scaled Euclidean distance:
-     $$ distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{a_1(\mathbf{x}_i[1] - \mathbf{x}_q[1])^2 + ... + a_d(\mathbf{x}_i[d] - \mathbf{x}_q[d])^2} $$
+     $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{a_1(\mathbf{x}_i[1] - \mathbf{x}_q[1])^2 + ... + a_d(\mathbf{x}_i[d] - \mathbf{x}_q[d])^2} $$
 	* Add up the distance for each scaled feature, between the query doc and some other doc and take the square root.
 	* Can turn off features by setting weight to 0.
 
@@ -73,27 +73,27 @@
 
 * Can rewrite the non-scaled Euclidean distance using linear algebra. Example:
     
-    * $$ distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i[1] - \mathbf{x}_q[1])^2 + ... + (\mathbf{x}_i[d] - \mathbf{x}_q[d])^2}  $$ can be rewritten as:
-	* $$ distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i - \mathbf{x}_q)^T(\mathbf{x}_i - \mathbf{x}_q)} $$ 
+    * $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i[1] - \mathbf{x}_q[1])^2 + ... + (\mathbf{x}_i[d] - \mathbf{x}_q[d])^2}  $$can be rewritten as:
+	* $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i - \mathbf{x}_q)^T(\mathbf{x}_i - \mathbf{x}_q)} $$
 	* Basically: taking the dot product of the two feature distance vectors is equivalent to squaring then adding the results.
 * To add the feature weights, you can add a diagonal matrix of features (note: not clear on the diagonal matrix part):
-	* $$ distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i - \mathbf{x}_q)^T\color{blue}{\mathbf{A}}(\mathbf{x}_i - \mathbf{x}_q)} $$
+	* $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i - \mathbf{x}_q)^T\color{blue}{\mathbf{A}}(\mathbf{x}_i - \mathbf{x}_q)} $$
 
 
 ### Distance metrics: Cosine similarity
 
 * Another inner product measure: multiple features in one document vs another then add up results:
 
-	* $$ \sum\limits_{j=1}^{d}\mathbf{x}_i[j]\mathbf{x}_q[j] $$
+	* $$\sum\limits_{j=1}^{d}\mathbf{x}_i[j]\mathbf{x}_q[j] $$
 	* Higher is better (map overlap). Lowest possible = 0.
 
 * Cosine similarity: same as above, however, you divide the result by the normalised vector of features:
-	* $$ \frac{\sum\limits_{j=1}^{d}\mathbf{x}_i[j]\mathbf{x}_q[j]}{\sqrt{\sum\limits_{j=1}^{d}(\mathbf{x}_i[j])}\sqrt{\sum\limits_{j=1}^{d}(\mathbf{x}_q[j])}} $$
-	* Can be rewritten like: $$ \frac{\mathbf{x}_i^T\mathbf{x}_q}{||\mathbf{x}_i|| ||\mathbf{x}_q|| } $$
+	* $$\frac{\sum\limits_{j=1}^{d}\mathbf{x}_i[j]\mathbf{x}_q[j]}{\sqrt{\sum\limits_{j=1}^{d}(\mathbf{x}_i[j])}\sqrt{\sum\limits_{j=1}^{d}(\mathbf{x}_q[j])}} $$
+	* Can be rewritten like: $$\frac{\mathbf{x}_i^T\mathbf{x}_q}{||\mathbf{x}_i|| ||\mathbf{x}_q|| } $$
 * Cosine distance = 1 - cosine similarity
 	* Not a proper distance metric because "the triangle equality doesn't hold".
 	* Efficient to compute for sparse vectors because you only need to compute non-zero elements.
-	* Very similar documents would result in a score close to 1. $$ cos(0) \approx 1 $$
+	* Very similar documents would result in a score close to 1. $$cos(0) \approx 1 $$
 	* With only positive features, similarity would be between 0 and 1.
 
 ### Normalise or not?

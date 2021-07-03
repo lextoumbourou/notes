@@ -10,10 +10,10 @@
 
 ## Logistic Regression
 
-* Given x, want $$ \hat{y} = P(y = 1 | x)$$
+* Given x, want $$\hat{y} = P(y = 1 | x)$$
   * "given some image, output a prediction"
-* Params: $$ x \in \Re^{n_x}, b \in \Re $$
-  * To get "probability" as output, use the sigmoid function: $$ \hat{y} = \sigma(w^{T}_{x} + b) $$
+* Params: $$x \in \Re^{n_x}, b \in \Re $$
+  * To get "probability" as output, use the sigmoid function: $$\hat{y} = \sigma(w^{T}_{x} + b) $$
     * Big inputs to sigmoid get close to 1, large negative numbers, get close to 0:
 
         ```
@@ -34,18 +34,18 @@
 ## Logistic Regression Cost Function
 
 * To train W and b (weights and bias/intercept), you need to define a cost function.
-* Typical loss function, squared error: $$ \frac{1}{2}(\hat{y} - y)^2 $$
+* Typical loss function, squared error: $$\frac{1}{2}(\hat{y} - y)^2 $$
   * Doesn't work well for gradient descent:  optimisation becomes non convex: has multiple local minima.
-* Another loss function: $$ -(y \log \hat{y} + (1 - y) \log (1-\hat{y})) $$
-  * If $$ y = 1 $$, want $$ \log \hat{y} $$ large, therefore, want $$ \hat{y} $$ large.
-  * If $$ y = 0 $$, want $$ \log 1 - \hat{y} $$ large, therefore, want $$ \hat{y} $$ *small*. 
+* Another loss function: $$-(y \log \hat{y} + (1 - y) \log (1-\hat{y})) $$
+  * If $$y = 1 $$, want $$\log \hat{y} $$large, therefore, want $$\hat{y} $$large.
+  * If $$y = 0 $$, want $$\log 1 - \hat{y} $$large, therefore, want $$\hat{y} $$*small*. 
 * Cost function: measures how well you're doing on the entire set:
-  * $$ J(w, b) = \frac{1}{m} \sum\limits^{m}_{i = 1} L(\hat{y}^{(i)}, y^{(i)}) $$
+  * $$J(w, b) = \frac{1}{m} \sum\limits^{m}_{i = 1} L(\hat{y}^{(i)}, y^{(i)}) $$
 * Logistic regression can be viewed as a "very small neural network".
 
 ## Gradient Descent
 
-* Partial derivate symbol: $$ \partial $$, just means you're calculating the derivate for a function with multiple inputs.
+* Partial derivate symbol: $$\partial $$, just means you're calculating the derivate for a function with multiple inputs.
 
 ## Derivatives
 
@@ -69,7 +69,7 @@
 ## Vectorization
 
 * "The art of getting rid of explicity for loops in your code."
-* Non-vectorized calculation of $$ z = {w^T}_x + b $$:
+* Non-vectorized calculation of $$z = {w^T}_x + b $$:
 
     ```
     z = 0
@@ -105,7 +105,7 @@
 ## Vectorizing Logistic Regression
 
 * Instead of iterating through all training examples and calculating y_hat, can calculate as:
-  $$ w^TX + B $$ (where B is a row vector containing just b and X contains all training examples).
+  $$w^TX + B $$(where B is a row vector containing just b and X contains all training examples).
 * Written in Numpy as: ```Z = np.dot(w.T, X) + b```
   * Broadcasting in Python = convert a matrix to fit an equation.
 
