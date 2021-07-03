@@ -1,3 +1,14 @@
+---
+title: Week 6 - Precision Recall
+date: 2016-07-04 00:00
+category: reference/moocs
+parent: ml-classification
+status: draft
+tags:
+    - MachineLearning
+    - Classification
+---
+
 ## Why use precision & recall as quality metrics
 
 ### What is good performance for a classifier?
@@ -36,9 +47,9 @@
 ### Precision-recall tradeoff
 
 * Introduces parameter ``t`` which is the probability above which things are considered positive.
-  * $$ if P(y = +1 | \mathbf{x}_i) > t: \mathbf{y} = +1 $$
-  * Optimistic: t set low: $$ t = 0.001 $$
-  * Pessimistic: t set high: $$ t = 0.999 $$
+  * $$if P(y = +1 | \mathbf{x}_i) > t: \mathbf{y} = +1 $$
+  * Optimistic: t set low: $$t = 0.001 $$
+  * Pessimistic: t set high: $$t = 0.999 $$
 
 ### Precision-recall curve
 

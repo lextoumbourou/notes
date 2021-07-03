@@ -1,3 +1,14 @@
+---
+title: Week 4 - Preventing Overfitting in Decision Trees
+date: 2016-07-04 00:00
+category: reference/moocs
+parent: ml-classification
+status: draft
+tags:
+    - MachineLearning
+    - Classification
+---
+
 ## Overfitting in Decision Trees
 
 ### Review of overfitting

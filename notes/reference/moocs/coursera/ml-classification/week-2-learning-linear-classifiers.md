@@ -1,46 +1,53 @@
+---
+title: Week 2 - Learning Linear Classifiers
+date: 2016-07-04 00:00
+category: reference/moocs
+parent: ml-classification
+status: draft
+tags:
+    - MachineLearning
+    - Classification
+---
+
 ## Data likelihood
 
 * Quality metric for logistic regression
-* Want probability to be close to correct classification for some $$ \hat{w} $$ and features.
+* Want probability to be close to correct classification for some $\hat{w}$ and features.
 * Data likelihood = Calculate probability that result equals the actual output for each data point in the training dataset then take product of results:
 
-	$$ l(w) = P(y_1 | \mathbf{x}_1,w) * P(y_2 | \mathbf{x}_2,w) ... * P(y_N | \mathbf{x}_N,w) $$
+	$$l(w) = P(y_1 | \mathbf{x}_1,w) * P(y_2 | \mathbf{x}_2,w) ... * P(y_N | \mathbf{x}_N,w)$$
 
-	$$ l(w) = \prod\limits_{i=1}^{N} P(y_i | \mathbf{x}_i, \mathbf{w}) $$
+	$$l(w) = \prod\limits_{i=1}^{N} P(y_i | \mathbf{x}_i, \mathbf{w})$$
 
 	* Note: you multiply the probabilities because you assume probabilities of each data point are independent.
 
 ## Review of gradient ascent
 
 * Algorithm for one-dimensional space:
-
-	while not converged:
-    $$ w^{(t+1)} < w^{(t)} + \eta \frac{dl}{d} $$
+	* while not converged: $w^{(t+1)} < w^{(t)} + \eta \frac{dl}{d}$
 
 * Rough intuition: step towards a maximum multiplying the derivative by a step size, until the derivate is basically 0, which means you have hit the maximum. If you over step, then you should be pulled in the opposite direction, meaning you should eventually converge.
 
 * When multi-dimension, replace derivative with a D-dimensional vector of partial derivatives:
 
-$$ \triangledown l(\mathbf{w}) =\begin{bmatrix}\frac{\partial l}{\partial w_0}\\\frac{\partial l}{\partial w_1}\\\frac{\partial l}{\partial w_D}\end{bmatrix} $$
+    $$\triangledown l(\mathbf{w}) =\begin{bmatrix}\frac{\partial l}{\partial w_0}\\\frac{\partial l}{\partial w_1}\\\frac{\partial l}{\partial w_D}\end{bmatrix}$$
 
 ## Learning algorithm for logistic regression
 
 Derivative of (log-)likelihood:
 
-$$ \frac{\partial l(\mathbf{w})}{\partial \mathbf{w}_j} = \sum\limits_{i=1}^{N} h_j(\mathbf{x}_i)(\mathbf{1}[y_i = +1] - P(y = +1 | \mathbf{x}_i, \mathbf{w})]]) $$
+    $$\frac{\partial l(\mathbf{w})}{\partial \mathbf{w}_j} = \sum\limits_{i=1}^{N} h_j(\mathbf{x}_i)(\mathbf{1}[y_i = +1] - P(y = +1 | \mathbf{x}_i, \mathbf{w})]]) $$
 
 Rough attempt at writing gradient ascent:
 
-```
-#...
-
-converged = False
-while not converged:
-   for j in range(len(weights)):
-       partial[j] = (d[j] * (get_indicator(data) - get_probability(data, coefficients)).sum()
-   coefficients = step_size * partial
-   converged = assess_convergence_somehow(partial)  # ??
-```
+    #...
+    
+    converged = False
+    while not converged:
+       for j in range(len(weights)):
+           partial[j] = (d[j] * (get_indicator(data) - get_probability(data, coefficients)).sum()
+       coefficients = step_size * partial
+       converged = assess_convergence_somehow(partial)  # ??
 
 ## Interpreting derivative for logistic regression
 
@@ -70,25 +77,19 @@ while not converged:
 * Figure out how many mistakes the model makes on the validation set.
 * Then classification error:
 
-  ```
-  error = num mistakes / total number of datapoints
-  ```
+      error = num mistakes / total number of datapoints
 
-  * Best possible value is 0: ```0 / # number of datapoints.```
+  * Best possible value is 0: `0 / # number of datapoints.`
 
 * Or classification accuracy:
 
-  ```
-  accuracy = num correct / total number of datapoints
-  ```
+      accuracy = num correct / total number of datapoints
 
 ## Review of overfitting in regression
 
 * Overfitting if there exists w*:
 
-  ```
-  training_error(w*) > training_error(ŵ) and true_error(w*) < true_error(ŵ)
-  ```
+      training_error(w*) > training_error(ŵ) and true_error(w*) < true_error(ŵ)
 
 * In other words, you've overfitted if you've got a model that works crazy well on your training data set but shit on validation set (representing true error), but there's another model that does less well on training data and better on validation set.
 * Can't expect to get 100% accuracy with your model: getting "everything right" should be a warning sign.
@@ -96,7 +97,7 @@ while not converged:
 
 ## Overfitting in classification
 
-* Use classification error (``# num mistakes / # num datapoints``) instead of RSS.
+* Use classification error (`# num mistakes / # num datapoints`) instead of RSS.
 * Same as regression, aim to weigh lower coefficients higher.
 * Can lead to extremely over confident predictions: high score, high sigmoid (close to 1) == 100% confidence in bullshite.
 
@@ -104,29 +105,28 @@ while not converged:
 
 * Idea similar to l2/l1 penalisation in regression course: need a way to penalise large coefficients in Quality Metric.
 * Firstly, measure of fit = log of the data likelihood function:
-    $$ l(\mathbf{w}) = ln \prod_\limits{i=1}^{N} P(y_i | \mathbf{x}_i, \mathbf{w}) $$
+
+    $$l(\mathbf{w}) = ln \prod_\limits{i=1}^{N} P(y_i | \mathbf{x}_i, \mathbf{w}) $$
 
 * L2 norm: sum of squares of coefficients:
 
-   $$ ||w||_2^2 = w_0^2 + w_1^2 + w_2^2 + ... w_D^2 $$
+   $$||w||_2^2 = w_0^2 + w_1^2 + w_2^2 + ... w_D^2 $$
 
 * L1 norm: sum of absolute value of coefficients:
 
-    $$ ||w||_1 = |w_0| + |w_1| + |w_2| + ... |w_D| $$
+    $$||w||_1 = |w_0| + |w_1| + |w_2| + ... |w_D| $$
 
 * Final quality metric:
 
-    ```
-    total_quality = measure_of_fit - measure_of_coefficient_magnitude
-    ```
+        total_quality = measure_of_fit - measure_of_coefficient_magnitude
 
 ## L2 regularised logistic regression
 
-* Want to choose a tuning parameter or $$ \lambda $$ value to balance fit and magnitude of coefficients
+* Want to choose a tuning parameter or $\lambda$ value to balance fit and magnitude of coefficients
 * Consider extreme choices:
-	* $$ \lambda = 0 $$: data likelihood function wins, no coefficient magnitude parameter
+	* $\lambda = 0$: data likelihood function wins, no coefficient magnitude parameter
 		* Low bias, high variance.
-	* $$ \lambda = \infty $$: coefficients are shrunk to 0.
+	* $\lambda = \infty$: coefficients are shrunk to 0.
 		* High bias, low variance.
 * Find best lambda with "L2 regularised logistic regression"
 	* Use validation set if you have enough data.
@@ -141,9 +141,7 @@ while not converged:
 ## Learning L2 regularised logistic regression with gradient ascent?
 
 * Standard gradient ascent but include the derivate of the L2 value in the equation.
-
-while not converged:
-$$ \mathbf{w^{(t+1)}} \leftarrow \mathbf{w^{(t)}} + \eta \triangledown l(\mathbf{w^{(t)}}) $$  
+    * while not converged: $\mathbf{w^{(t+1)}} \leftarrow \mathbf{w^{(t)}} + \eta \triangledown l(\mathbf{w^{(t)}})$ 
 
 ## Sparse logistic regression with L1 regularisation
 

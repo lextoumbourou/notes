@@ -1,3 +1,14 @@
+---
+title: Week 3 - Decision Trees
+date: 2016-07-04 00:00
+category: reference/moocs
+parent: ml-classification
+status: draft
+tags:
+    - MachineLearning
+    - Classification
+---
+
 ## Intuition behind decision trees
 
 ### Predicting loan defaults with decision trees
