@@ -6,6 +6,7 @@ slug: ml-classification
 tags:
     - MachineLearning
     - Classification
+cover: /_media/ml-classification-cover.png
 ---
 
 Part of the [Machine Learning Specialisation](https://www.coursera.org/specializations/machine-learning).
