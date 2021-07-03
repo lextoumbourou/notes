@@ -1,6 +1,6 @@
 ---
 title: Sigmoid Function
-date: 2016-07-01 00:00
+date: 2021-07-03 00:00
 cover: /_media/sigmoid-plot.png
 tags:
   - MachineLearning
