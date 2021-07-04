@@ -63,7 +63,7 @@ summary: "Notes taken from the Deep Learning for Coders (2020) - Lesson 3 video"
     * Extra: would have to be really careful about [[Type 2 Errors (False Negatives)]].
 * [[Out-of-domain data]]
     * Data that is given to a model that is different to the data it was trained on.
-* [[Domain shift]]
+* [[Domain Shift]]
     * Data that you models see changes over time.
     * Example: insurance company using deep learning model for pricing and risk.
         * Over time customers they serve change, and so would the risk profile
