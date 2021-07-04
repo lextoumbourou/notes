@@ -56,6 +56,6 @@ tags:
 * [[Out-of-domain data]] (pg. 104)
     * Data that is given to a model that is different to the data it was trained on.
     * No complete technical solution: have to carefully roll out model
-* [[Domain shift]] (pg. 104)
+* [[Domain Shift]] (pg. 104)
     * Data that model performs inference on changes over time.
     * Example: types of customers an insurance sees changes over time, making their earlier models less useful.
