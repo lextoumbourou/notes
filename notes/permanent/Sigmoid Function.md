@@ -7,7 +7,7 @@ tags:
   - MachineLearningMath
 ---
 
-The Sigmoid function squeezes numbers into a probability-like range between 0 and 1.[^1] Used in [[Classification]] model architectures to compute loss on discrete labels, that is, labels that are either 1 or 0 (hotdog or not hotdog). The equation is:
+The Sigmoid function squeezes numbers into a probability-like range between 0 and 1.[^1] Used in [[Binary Classification]] model architectures to compute loss on discrete labels, that is, labels that are either 1 or 0 (hotdog or not hotdog). The equation is:
 
 $$S(x) = \frac{1}{1 + e^{-x}}$$
 
