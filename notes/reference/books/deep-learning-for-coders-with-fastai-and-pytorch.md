@@ -59,3 +59,33 @@ tags:
 * [[Domain Shift]] (pg. 104)
     * Data that model performs inference on changes over time.
     * Example: types of customers an insurance sees changes over time, making their earlier models less useful.
+    
+    ## Chapter 4. Under the Hood: Training a Digit Classifier
+    
+    * [[Exponential Function]]
+        * Defined as $e^x$
+            * $e$ is a number about 2.718
+                * The inverse of natural logarithm
+        * Always positive and increases fast
+    * [[Softmax Function]]
+        * The multi-category equivalent of the [[Sigmoid Function]]
+            * Similarly "smooth and symmetric" properties
+        * Use if more than 2 categories and want probabilities add to 1.
+            * Can also use when there are just 2 categories to be consistent
+        * If one of the numbers is slightly bigger, exponential amplifies it
+        * Softmax "wants" to pick a single result.
+            * Use model with multiple binary columns to handle items model hasn't seen.
+        * One part of the [[Cross-Entropy Loss Function]]
+    * [[Log Likelihood]]
+        * For a vector of softmaxed predictions, take the prediction that corresponds with the correct label.
+        * Then apply `-log(prediction)`
+            * In PyTorch, log uses $e$ as the base.
+            * Note that because a log between 0 and 1, it has a negative log value. We invert it with negative.
+            * The closer to 1, the closer to 0 loss.
+        * In PyTorch, the `nll_loss` function doesn't take the log. It expects it to be already taken.
+    * [[Cross-Entropy Loss Function]]
+        * Defined as:  [[Softmax Function]] then negative [[Log Likelihood]]
+        * Consider gradient of `cross_entropy(a, b)` is `softmax(a)-b`
+        * When `softmax(a)` is final activation, gradient is the same as diff between prediction and target
+            * So it's the same a [[Root mean-squared error - L2 Loss]] in regression.
+            * Because gradient is linear, don't see sudden jumps or exponential increases in gradients
