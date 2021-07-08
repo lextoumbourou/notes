@@ -13,11 +13,11 @@ It is the multi-class extension of the [[Sigmoid Function]].
  
  The equation is:
  
- $$S(\vec{x})_i = \frac{e^{x_i}}{\sum\limits_{j=1}^{K}e^{x_j}}$$
+ $$\sigma(\vec{z})_{i} = \frac{e^{z_i}}{\sum\limits_{j=1}^{K}e^{z_j}}$$
  
  The intuition for it is that $e^{x_i}$ is always positive and increases fast, amplifying more significant numbers. Therefore, it tends to find a single result and is less useful for problems where you are unsure if inputs will always contain a label. For that, use multiple binary columns with the [[Sigmoid Function]].
  
- [@howardDeepLearningCoders2020]
+ [@howardDeepLearningCoders2020] *(pg. 223-227)*
  
  Code example:
  
