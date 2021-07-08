@@ -67,7 +67,7 @@ tags:
             * $e$ is a number about 2.718
                 * The inverse of natural logarithm
         * Always positive and increases fast
-    * [[Softmax Function]]
+    * [[Softmax Function]] (pg. 223-227)
         * The multi-category equivalent of the [[Sigmoid Function]]
             * Similarly "smooth and symmetric" properties
         * Use if more than 2 categories and want probabilities add to 1.
