@@ -5,3 +5,4 @@ git+git://github.com/lextoumbourou/pelican-frontmark.git
 git+git://github.com/lextoumbourou/pelican-jupyter.git
 nbconvert==5.6.0
 notebook==5.6.0
+pelican-katex==1.6.1
