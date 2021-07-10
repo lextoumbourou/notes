@@ -76,7 +76,7 @@ tags:
         * Softmax "wants" to pick a single result.
             * Use model with multiple binary columns to handle items model hasn't seen.
         * One part of the [[Cross-Entropy Loss Function]]
-    * [[Log Likelihood]]
+    * [[Log Likelihood]] (pg. 226-231)
         * For a vector of softmaxed predictions, take the prediction that corresponds with the correct label.
         * Then apply `-log(prediction)`
             * In PyTorch, log uses $e$ as the base.
