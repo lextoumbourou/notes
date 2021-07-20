@@ -83,7 +83,7 @@ tags:
             * Note that because a log between 0 and 1, it has a negative log value. We invert it with negative.
             * The closer to 1, the closer to 0 loss.
         * In PyTorch, the `nll_loss` function doesn't take the log. It expects it to be already taken.
-    * [[Cross-Entropy Loss Function]]
+    * [[Cross-Entropy Loss Function]] (pg. 222-231)
         * Defined as:  [[Softmax Function]] then negative [[Log Likelihood]]
         * Consider gradient of `cross_entropy(a, b)` is `softmax(a)-b`
         * When `softmax(a)` is final activation, gradient is the same as diff between prediction and target
