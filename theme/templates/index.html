@@ -25,7 +25,7 @@ The notes are collecting using my interpretation of the <a href="https://en.wiki
 {% endif %}
 
 <ul class="articles">
-{% for article in articles_page.object_list %}
+{% for article in articles_page.object_list if (page_name != 'index' or article.category.name != 'reference') %}
 <li>
   <article class="post">
     
