@@ -1,5 +1,5 @@
 ---
-title: Entropy (Information Theory)
+title: Information Entropy
 date: 2021-07-28 20:45
 tags:
   - InformationTheory
