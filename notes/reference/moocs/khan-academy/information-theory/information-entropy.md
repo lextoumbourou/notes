@@ -1,5 +1,5 @@
 ---
-title: Information Entropy
+title: Information Entropy (Information Theory)
 date: 2021-07-28 00:00
 status: draft
 ---
