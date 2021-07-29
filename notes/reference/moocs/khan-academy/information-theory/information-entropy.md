@@ -21,7 +21,7 @@ status: draft
  * Uncertainy of Machine 1 is 2 questions.
  * Uncertainy of Machine 2 is 1.75 questions on average. Since by asking is it A, 50% of the time it's only 1 question.
  * We say that Machine 2 is producing less information, because there's less "uncertainy" or surprise*
-* Claude Shannon calls this measure of average uncertainy: [[Entropy (Information Theory)]] and uses letter `H` to represent.
+* Claude Shannon calls this measure of average uncertainy: [[Information Entropy]] and uses letter `H` to represent.
 * Unit of entropy is based on uncertainty of fair coin flip.
     * Called the bit
 * Equation is $H=\sum\limits_{i=1}^{n} p_i \log_2 (1/p)$ which can be rewritten as $H=-\sum\limits_{i=1}^{n} p_i \log_2 (p)$
