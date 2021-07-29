@@ -67,8 +67,8 @@ tags:
             * $e$ is a number about 2.718
                 * The inverse of natural logarithm
         * Always positive and increases fast
-    * [[Softmax Function]] (pg. 223-227)
-        * The multi-category equivalent of the [[Sigmoid Function]]
+    * [[Softmax Activation Function]] (pg. 223-227)
+        * The multi-category equivalent of the [[Sigmoid Activation Function]]
             * Similarly "smooth and symmetric" properties
         * Use if more than 2 categories and want probabilities add to 1.
             * Can also use when there are just 2 categories to be consistent
@@ -84,7 +84,7 @@ tags:
             * The closer to 1, the closer to 0 loss.
         * In PyTorch, the `nll_loss` function doesn't take the log. It expects it to be already taken.
     * [[Cross-Entropy Loss Function]] (pg. 222-231)
-        * Defined as:  [[Softmax Function]] then negative [[Log Likelihood]]
+        * Defined as:  [[Softmax Activation Function]] then negative [[Log Likelihood]]
         * Consider gradient of `cross_entropy(a, b)` is `softmax(a)-b`
         * When `softmax(a)` is final activation, gradient is the same as diff between prediction and target
             * So it's the same a [[Root mean-squared error - L2 Loss]] in regression.
