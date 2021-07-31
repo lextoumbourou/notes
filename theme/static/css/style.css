@@ -450,3 +450,7 @@ ul.pagination li {
   margin: 0 15px 10px 0;
   max-width: 175px;
 }
+
+.katex-display>.katex {
+  text-align: left !important;
+}

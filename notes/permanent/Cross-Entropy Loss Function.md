@@ -6,16 +6,20 @@ tags:
   - LossFunctions
 ---
 
-Cross-entropy is a loss function used in multiclass classification model training. It applies the [[Softmax Activation Function]] to a model's logits before applying the [[Negative Log-Likelihood]] function.
+Cross-Entropy is a loss function used in multiclass classification model training. It applies the [[Softmax Activation Function]] to a model's output (logits) before applying the [[Negative Log-Likelihood]] function.
 
-Lower Cross-Entropy loss corresponds to results closer to ground truth.
+Lower loss means closer to the ground truth.
 
-In math, it's expressed as $$-\sum\limits_{i=1}^{N} Y_{i} \times log(P_{i})$$
+In math, expressed as
 
-$N$ is the number of classes, $Y$ is the ground truth labels, and $P$ is the softmax probabilities. Since $Y$ is one-hot encoded, the labels that don't correspond to the ground truth will be multiplied by 0, so we effectively take the log of only the prediction for the true label.
+$$-\sum\limits_{i=1}^{N} Y_{i} \times \log(\text{softmax}(P_{i}))$$
+
+where $N$ is the number of classes, $Y$ is the ground truth labels, and $P$ is the model outputs. Since $Y$ is one-hot encoded, the labels that don't correspond to the ground truth will be multiplied by 0, so we effectively take the log of only the prediction for the true label.
 
 ![Cross-entropy loss function](/_media/cross-entropy-loss-function.png)
 
-Based on [[Cross-Entropy]] in Information Theory, which measures the difference between 2 probability distributions.
+{% notebook permanent/notebooks/cross-entropy-pytorch.ipynb %}
+
+Based on [[Cross-Entropy]] in Information Theory, which is a measure of difference between 2 probability distributions.
 
 [@howardDeepLearningCoders2020] *(pg. 222-231)*
