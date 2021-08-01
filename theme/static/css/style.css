@@ -454,3 +454,23 @@ ul.pagination li {
 .katex-display>.katex {
   text-align: left !important;
 }
+
+div.input_area > div.highlight {
+  overflow: auto;
+}
+
+.prompt {
+  display: none;
+}
+
+div.input_prompt {
+  display: none;
+}
+
+div.output_prompt {
+  display: none;
+}
+
+div.output_subarea {
+  max-width: 100% !important;
+}
