@@ -62,42 +62,83 @@ tags:
     
     ## Chapter 5. Image Classifier
     
-    * [[Exponential Function]]
-        * Defined as $e^x$
-            * $e$ is a number about 2.718
-                * The inverse of natural logarithm
-        * Always positive and increases fast
-    * [[Softmax Activation Function]] (pg. 223-227)
-        * The multi-category equivalent of the [[Sigmoid Activation Function]]
-            * Similarly "smooth and symmetric" properties
-        * Use if more than 2 categories and want probabilities add to 1.
-            * Can also use when there are just 2 categories to be consistent
-        * If one of the numbers is slightly bigger, exponential amplifies it
-        * Softmax "wants" to pick a single result.
-            * Use model with multiple binary columns to handle items model hasn't seen.
-        * One part of the [[Cross-Entropy Loss Function]]
-    * [[Log Likelihood]] (pg. 226-231)
-        * For a vector of softmaxed predictions, take the prediction that corresponds with the correct label.
-        * Then apply `-log(prediction)`
-            * In PyTorch, log uses $e$ as the base.
-            * Note that because a log between 0 and 1, it has a negative log value. We invert it with negative.
-            * The closer to 1, the closer to 0 loss.
-        * In PyTorch, the `nll_loss` function doesn't take the log. It expects it to be already taken.
+    * The book is structured to teach all details of deep learning, but motivating each example with an actual problem.
+    *  Datasets tends to be structured in one of 2 ways (pg. 213-214):
+        *  Files either in folders or with metadata (like labels) in the filename.
+        *  A CSV (or similar) where each row is an item. In image classification, each row may include a filename.
+    *  [[L class]] (pg. 214-215)
+        * fastai enhancement to Python's list.
+    * [[Presizing]] (pg. 216-219)
+        * Images need to be same size to collate into tensors.
+        * Wants to reduce operations for augmentations down to the minimum and do on the GPU.
+        * If you're resizing before augmentations, it can degrade your image quality.
+            * Eg a 45 degree rotation having empty space on 2 sides.
+        * Steps:
+            * 1. Get them uniform size by resizing image using random crop on largest axis to larger sizes than you're planning to use in model to get them uniform size.
+                    * On training set it's a random crop. On validation, it's a centre crop.
+                    * By doing this, you leave "spare margin (for) transforms on ... inner regions without creating empty zones"
+            * 2. Combine all augmentation operations (include final resize) into one and do on GPU.
+                * On validation, only resize is done.
+    * Train a simple model early (pg. 221)
     * [[Cross-Entropy Loss Function]] (pg. 222-231)
         * Defined as:  [[Softmax Activation Function]] then negative [[Log Likelihood]]
+        * [[Exponential Function]]
+            * Defined as $e^x$
+                * $e$ is a number about 2.718
+                    * The inverse of natural logarithm
+            * Always positive and increases fast
+        * [[Softmax Activation Function]] (pg. 223-227)
+            * The multi-category equivalent of the [[Sigmoid Activation Function]]
+                * Similarly "smooth and symmetric" properties
+            * Use if more than 2 categories and want probabilities add to 1.
+                * Can also use when there are just 2 categories to be consistent
+            * If one of the numbers is slightly bigger, exponential amplifies it
+            * Softmax "wants" to pick a single result.
+                * Use model with multiple binary columns to handle items model hasn't seen.
+            * One part of the [[Cross-Entropy Loss Function]]
+        * [[Log Likelihood]] (pg. 226-231)
+            * For a vector of softmaxed predictions, take the prediction that corresponds with the correct label.
+            * Then apply `-log(prediction)`
+                * In PyTorch, log uses $e$ as the base.
+                * Note that because a log between 0 and 1, it has a negative log value. We invert it with negative.
+                * The closer to 1, the closer to 0 loss.
+            * In PyTorch, the `nll_loss` function doesn't take the log. It expects it to be already taken.
         * Consider gradient of `cross_entropy(a, b)` is `softmax(a)-b`
         * When `softmax(a)` is final activation, gradient is the same as diff between prediction and target
             * So it's the same a [[Root mean-squared error - L2 Loss]] in regression.
             * Because gradient is linear, don't see sudden jumps or exponential increases in gradients
     * Model Interpretation
-        * [[Confusion Matrix]] 
-        * `most_confused` method for showing he 
+        * [[Confusion Matrix]] (pg. 232) 
+        * `most_confused` method for showing the items with highest loss (pg. 232-233)
     * Improving the model
-        * [[Learning Rate Finder]]
-        * Unfreezing and Transfer Learning
-            * Discriminative Learning Rates
-        * Selecting number of epochs
-        * Deeper Architectures
+        * [[Learning Rate Finder]] (pg. 233-236)
+            * Created by researcher Leslie Smith in 2015
+            * Steps:
+                * Train a model starting with a very small learning rate
+                * Each batch, increase the learning rate by double (or some %)
+                * Track the loss each step
+                * When it doesn't get better, select learning rate order of magnitude less than min
+        * Unfreezing and Transfer Learning (pg. 236-239)
+            * CNN is many linear layers with non-linear activation function in between.
+            * At the end is a last linear layer with a final activation like the [[Softmax Activation Function]].
+            * In transfer learning, we start by replacing the last layer with one that has correct number of outputs for task.
+            * Since we don't want to lose the learned weights in the earlier layers, we start by freezing those layers to just train the last layer.
+        * Discriminative Learning Rates (pg. 239-241)
+            * Earlier layers should in theory need less training, since they've learned abstract concepts like edge and gradients.
+            * Set different (lower) learning rates for earlier layers.
+            * In fastai, you can pass a [[Python slice object]] anywhere that accepts a single learning rate.
+            * First value of slice is learning rate at start and last is final layer.
+                * Layers in between have values that are evenly distanced between the 2 learning rates.
+        * Selecting number of epochs (pg. 241-242)
+            * When using 1cycle training, it's not advised to use the model that has the best accuracy in the middle of training, as the best values usually come when at the end when learning rate is lower.
+            * If your model overfits, train model again with number of epochs equal to point of overfit.
+        * Deeper Architectures (pg. 243-245)
+            * Larger model (more layers) in theory should capture more complex relationships (though can also overfit).
+                * Architectures like Resnet have small number of common varients: `18`, `34`, `50`, `101` simply because these happen to be the numbers that have pretrained models available.
+            * Deeper architectures require more memory and therefore smaller batch sizes.
+            * Bigger models aren't always better: start small and scale up.
+            * Can use [[mixed precision training]] to reduce memory size.
+                * Use less-precise numbers (half-precision floating point, also called fp16) where possible during training.
 
 ## Chapter 6. Other Computer Vision Problems
 
