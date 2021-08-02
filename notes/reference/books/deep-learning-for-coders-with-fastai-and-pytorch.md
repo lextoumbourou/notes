@@ -60,7 +60,7 @@ tags:
     * Data that model performs inference on changes over time.
     * Example: types of customers an insurance sees changes over time, making their earlier models less useful.
     
-    ## Chapter 4. Under the Hood: Training a Digit Classifier
+    ## Chapter 5. Image Classifier
     
     * [[Exponential Function]]
         * Defined as $e^x$
@@ -89,3 +89,16 @@ tags:
         * When `softmax(a)` is final activation, gradient is the same as diff between prediction and target
             * So it's the same a [[Root mean-squared error - L2 Loss]] in regression.
             * Because gradient is linear, don't see sudden jumps or exponential increases in gradients
+    * Model Interpretation
+        * [[Confusion Matrix]] 
+        * `most_confused` method for showing he 
+    * Improving the model
+        * [[Learning Rate Finder]]
+        * Unfreezing and Transfer Learning
+            * Discriminative Learning Rates
+        * Selecting number of epochs
+        * Deeper Architectures
+
+## Chapter 6. Other Computer Vision Problems
+
+* [[Multi-label Classification]]
