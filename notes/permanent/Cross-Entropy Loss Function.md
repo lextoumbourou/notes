@@ -12,9 +12,10 @@ Lower loss means closer to the ground truth.
 
 In math, expressed as
 
-$$-\sum\limits_{i=1}^{N} Y_{i} \times \log(\text{softmax}(P_{i}))$$
+$$P = \text{softmax}(O)$$
+$$-\sum\limits_{i=1}^{N} Y_{i} \times \log(P_{i})$$
 
-where $N$ is the number of classes, $Y$ is the ground truth labels, and $P$ is the model outputs. Since $Y$ is one-hot encoded, the labels that don't correspond to the ground truth will be multiplied by 0, so we effectively take the log of only the prediction for the true label.
+where $N$ is the number of classes, $Y$ is the ground truth labels, and $O$ is the model outputs. Since $Y$ is one-hot encoded, the labels that don't correspond to the ground truth will be multiplied by 0, so we effectively take the log of only the prediction for the true label.
 
 ![Cross-entropy loss function](/_media/cross-entropy-loss-function.png)
 
