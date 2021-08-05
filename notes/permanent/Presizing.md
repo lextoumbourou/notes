@@ -7,12 +7,11 @@ tags:
 cover: /_media/presizing-cover.png
 ---
 
-Pre-sizing is a technique for preparing images for training a network.
+Pre-sizing is a technique for preparing images for training a neural network.
 
-In standard image pipelines, we resize images to a size suitable for our network (i.e., 224x224) and then perform augmentations. This process results in degraded data and "spurious empty zones."
+In standard image pipelines, images are resized to a size suitable for our network (i.e., 224x224) and then augmented. This process results in empty regions and degraded data.
 
-
-If we instead resize the images to some smaller size that is well above our target (i.e., 460x460), then perform augmentations and then finally resize to our target image size, we can maximize our image quality.
+If we instead resize the images to some smaller size that is well above our target (i.e., 460x460), then perform augmentations including a target-sized crop, this gives us "spare margin," allowing for transforms without empty regions.
 
 [@howardDeepLearningCoders2020] *(pg. 217-219)*
 
@@ -26,6 +25,6 @@ With presizing:
 
 ![Presizing](/_media/presizing-cover.png)
 
-The fastai library first combines augmentations into a single operation which minimizes the number of lossy operations performed. Additionally, fastai can perform augmentation operations on the GPU.
+The fastai library also combines augmentations into a single operation which minimizes the number of lossy operations performed. Additionally, fastai can perform augmentation operations on the GPU.
 
-The concept of resizing images before training is common practice, especially when dealing with large source image sizes. Especially when training in environments with smaller disk allocations like Google Collab. The smaller images afford faster experiments and more loops, which is as important in Machine Learning as in Game Design (see [[Rule of Loop]]).
+The concept of resizing images before training is common practice when dealing with large source image sizes. Especially when training in environments with smaller disk allocations like Google Collab. The smaller images afford faster experiments and more loops, which is as crucial in Machine Learning as in Game Design (see [[Rule of Loop]]).
