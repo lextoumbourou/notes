@@ -8,7 +8,9 @@ tags:
 
 Binary Cross-Entropy (BCE), also known as log loss, is a loss function used in binary or multi-label machine learning training.
 
-It's nearly identical to [[Negative Log-Likelihood]] except that we apply the [[Sigmoid Activation Function]] to each of the model's outputs for a single input (instead of passing them through [[Softmax Activation Function]]) before taking their `-log.`
+It's nearly identical to [[Negative Log-Likelihood]] except it supports any number of positive labels (including zero).
+
+For each value in a set of model outputs, we first apply the [[Sigmoid Activation Function]] before taking `-log(pred)` if the corresponding label is positive or `-log(1-pred)` if negative.
 
 For a single binary output, the function can be expressed as:
 
@@ -22,7 +24,7 @@ Where $p$ is the model's predictions and $y$ is the true label.
 
 Since $y$ will either be $1$ or $0$, $\text{Exp 1}$ or $\text{Exp 2}$ will be 0, ensuring we only keep one $\log$ value. That's equivalent to the `if` statement in code.
 
-For multi-label outputs, the function takes the mean of each of the log values:
+For multi-label outputs, the function takes the mean (or sometimes sum) of each of the log values:
 
 {% notebook permanent/notebooks/bce-loss-function.ipynb cells[2:4] %}
 
