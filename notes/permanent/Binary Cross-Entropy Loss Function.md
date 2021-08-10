@@ -18,11 +18,11 @@ For a single binary output, the function can be expressed as:
 
 Or in math:
 
-$$L(p, y) = −(\underbrace{y \times log(𝑝)}_{\text{Exp 1}} + \underbrace{(1−𝑦) \times log(1−𝑝)}_{\text{Exp 2}})$$ 
+$$L(p, y) = −(\underbrace{y \times log(𝑝)}_{\text{Expr 1}} + \underbrace{(1−𝑦) \times log(1−𝑝)}_{\text{Expr 2}})$$ 
 
 Where $p$ is the model's predictions and $y$ is the true label.
 
-Since $y$ will either be $1$ or $0$, $\text{Exp 1}$ or $\text{Exp 2}$ will be 0, ensuring we only keep one $\log$ value. That's equivalent to the `if` statement in code.
+Since $y$ will either be $1$ or $0$, $\text{Expr 1}$ or $\text{Expr 2}$ will be 0, ensuring we only keep one $\log$ value. That's equivalent to the `if` statement in code.
 
 For multi-label outputs, the function takes the mean (or sometimes sum) of each of the log values:
 
