@@ -18,7 +18,7 @@ B=\begin{bmatrix}b_1, ..., b_N\end{bmatrix}
 $$
 
 $$
-A \cdot B = \begin{bmatrix}a_1 \cdot b_1 + ... + a_N \cdot b_B\end{bmatrix}
+A \cdot B = a_1 \cdot b_1 + ... + a_N \cdot b_B
 $$
 
 Simple Python example:
