@@ -455,6 +455,10 @@ ul.pagination li {
   text-align: left !important;
 }
 
+.katex-display>.katex>.katex-html {
+  overflow: scroll;
+}
+
 div.input_area > div.highlight {
   overflow: auto;
 }
