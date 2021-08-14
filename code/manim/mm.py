@@ -9,7 +9,7 @@ from manim import (
 
 config.background_color = WHITE
 config.save_as_gif = True
-config.pixel_height = 450
+config.pixel_height = 400
 config.pixel_width = 800
 
 m1 = np.array([[2, 4], [1, 3]])
@@ -79,10 +79,10 @@ class MatrixExamples(Scene):
         m2_label[3].set_color(M2_COLOR)
         self.add(m2_label)
 
-        m3_label = MathTex(f"({m3.shape[0]}", " \\times ", f"{m3.shape[1]}", ")").next_to(g[3], DOWN * 2)
+        m3_label = MathTex("(", f"{m3.shape[0]}", " \\times ", f"{m3.shape[1]}", ")").next_to(g[3], DOWN * 2)
         m3_label.set_color(DEFAULT_COLOR)
-        m3_label[0].set_color(M1_COLOR)
-        m3_label[2].set_color(M2_COLOR)
+        m3_label[1].set_color(M1_COLOR)
+        m3_label[3].set_color(M2_COLOR)
         self.add(m3_label)
 
         i = 0
