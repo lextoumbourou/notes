@@ -215,15 +215,12 @@ blockquote.pull_quote {
 
 .post h2 {
   display: inline;
-  font-size: 1.4em;
   margin-bottom: 0px;
 }
 
 .post h2 a {
   font-color:#000;
-  letter-spacing:-0.5px;
 }
-
 
 .comment {
   margin-bottom:20px;
