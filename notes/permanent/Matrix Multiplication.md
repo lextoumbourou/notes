@@ -15,7 +15,7 @@ The size of the new matrix will be the row count from the first matrix by the co
 
 It is only defined when the number of columns from the first matrix equals the number of rows in the second.
 
-In Numpy the `@` operator is used for matrix multiplication, between 2 multi-dimensional arrays (matrices):
+In Numpy the `@` operator is used for matrix multiplication between 2 multi-dimensional arrays (matrices):
 
 {% notebook permanent/notebooks/matrix-multiplication.ipynb cells[0:1] %}
 
