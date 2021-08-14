@@ -10,6 +10,7 @@ from manim import (
 config.background_color = WHITE
 config.save_as_gif = True
 config.pixel_height = 450
+config.pixel_width = 800
 
 m1 = np.array([[2, 4], [1, 3]])
 m2 = np.array([[3, 1, 5], [-2, 1, 3]])
@@ -17,8 +18,8 @@ m2 = np.array([[3, 1, 5], [-2, 1, 3]])
 DEFAULT_COLOR = BLACK
 M1_COLOR = "#7187A2"
 M2_COLOR = RED_D
-CALCULATED_COLOR = "#b9b28b"
-RECT_COLOR = CALCULATED_COLOR
+CALCULATED_COLOR = "#655b28"
+RECT_COLOR = "#b9b28b"
 
 
 class MatrixExamples(Scene):
@@ -78,7 +79,7 @@ class MatrixExamples(Scene):
         m2_label[3].set_color(M2_COLOR)
         self.add(m2_label)
 
-        m3_label = MathTex(f"({m3.shape[0]}", " \\times ", f"{m3.shape[1]})").next_to(g[3], DOWN * 2)
+        m3_label = MathTex(f"({m3.shape[0]}", " \\times ", f"{m3.shape[1]}", ")").next_to(g[3], DOWN * 2)
         m3_label.set_color(DEFAULT_COLOR)
         m3_label[0].set_color(M1_COLOR)
         m3_label[2].set_color(M2_COLOR)

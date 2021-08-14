@@ -32,5 +32,5 @@ Numpy example:
 The length (or magnitude) of a vector is the square root of the dot product of itself (which is also the vector squared):
 
 $$
-\text{Length of a} = \sqrt{\textbf{a} \cdot \textbf{a}}}
+\text{Length of a} = \sqrt{\textbf{a} \cdot \textbf{a}}
 $$

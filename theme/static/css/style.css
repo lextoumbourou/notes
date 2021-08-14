@@ -36,7 +36,7 @@ img {
 #sidebar a {
   display: block;
   color: black;
-  padding: 16px;
+  padding: 12px;
   text-decoration: none;
 }
 
@@ -142,11 +142,8 @@ hr {
 
 #header h1 a {
   color: #3B4653;
-  font-size: 2.5em;
   text-decoration: none;
   margin-top: 0;
-  line-height:0.9em;
-  letter-spacing: -4px;
 }
 
 #article_list {
@@ -239,11 +236,6 @@ blockquote.pull_quote {
   margin-bottom: 0;
   padding-bottom: 4px;
 }
-
-.post .date {
-  font-size: 1.2em;
-}
-
 
 #side-header {
   clear: right;
@@ -410,8 +402,6 @@ pre.prettyprint {
 }
 
 .created {
-  font-weight: bold;
-  font-size: 1.2em;
   margin-right: 10px;
 }
 
