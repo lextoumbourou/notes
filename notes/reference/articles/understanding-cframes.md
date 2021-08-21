@@ -2,7 +2,12 @@
 title: Understanding CFrames
 date: 2021-08-10 19:30
 status: draft
+tags:
+  - Roblox
+  - LinearAlgebra
 ---
+
+Notes from [Understanding CFrames](https://developer.roblox.com/en-us/articles/Understanding-CFrame)
 
 * A CFrame, short for Coordinate Frame is what Roblox uses for rotating and positioning 3D objects.
 * CFrame contains global X, Y and Z coordinates + rotation data for each axis.
