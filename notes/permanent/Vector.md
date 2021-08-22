@@ -5,6 +5,7 @@ modified: 2021-08-22 16:00
 tags: 
   - LinearAlgebra 
   - GameMath
+cover: /_media/vector.png
 ---
 
 A vector is an ordered list of numbers.
