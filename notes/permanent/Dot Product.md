@@ -6,9 +6,9 @@ tags:
   - MachineLearningMath
 ---
 
-A dot product is an operation between 2 equal-sized vectors that returns a single number.
+A dot product is an operation between 2 equal-sized [[Vector]]s that returns a single number.
 
-It works like this: multiply each element in the first vector by the corresponding element in the 2nd vector, then take the sum of the results.
+It works like this: multiply each element in the first [[Vector]] by the corresponding element in the 2nd [[Vector]], then take the sum of the results.
 
 $$
 \textbf{a} = \begin{bmatrix}a_1, ..., a_N\end{bmatrix}

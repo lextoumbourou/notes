@@ -9,7 +9,7 @@ Notes from 3Blue1Brown video [Vectors](https://www.youtube.com/watch?v=fNk_zzaMo
 
 Vectors are the building block of linear algebra.
 
-[[3 Perspectives of Vectors]]:
+3 perspectives of vectors:
 
 * Physics student
     * Vectors are arrows pointing in space defined by length & direction.

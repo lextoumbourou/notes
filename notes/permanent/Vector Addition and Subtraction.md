@@ -8,7 +8,7 @@ tags:
   - LinearAlgebra
 ---
 
-Adding or subtracting 2 vectors is as simple as adding or subtracting the corresponding parts from each vector. 
+Adding or subtracting 2 [[Vector]]s is as simple as adding or subtracting the corresponding parts from each vector. 
 
 $$\begin{bmatrix} u_1 \\ u_2 \end{bmatrix} + \begin{bmatrix} y_1 \\ y_2 \end{bmatrix} = \begin{bmatrix} u_1 + y_1 \\ u_2 + y_2 \end{bmatrix} $$
 
@@ -20,8 +20,4 @@ Vector addition is represented visually as follows:
 * drawing the 2nd vector starting from the tip of the 1st vector
 * drawing a line from the tail of the 1st vector to the tip of the 2nd (see cover).
 
-See also the [[3 Perspectives of Vectors]].
-
-References:
-
-* [[Essence of Linear Algebra]] (1. Vectors what even are they)
+[@3blue1brownVectorsChapterEssence2016]

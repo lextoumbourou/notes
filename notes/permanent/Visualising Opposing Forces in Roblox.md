@@ -1,4 +1,4 @@
----
+	---
 title: Visualising Opposing Forces in Roblox
 date: 2021-01-06 00:00
 tags:
@@ -20,7 +20,7 @@ $$
 
 ![y-axis bodyforce](../_media/bodyforce-yaxis-equal-net-forces.gif)
 
-Related to [[Newtons Laws Of Motion]] and [[Vector Addition & Subtraction]]
+Related to [[Newtons Laws Of Motion]] and [[Vector Addition and Subtraction]]
 
 #### References
 
