@@ -1,5 +1,5 @@
 ---
-title: Vector Addition & Subtraction
+title: Vector Addition and Subtraction
 date: 2021-01-06 00:00
 cover: /_media/vector-addition-visual.jpg
 summary: Perform an operation on the corresponding parts from two vectors
