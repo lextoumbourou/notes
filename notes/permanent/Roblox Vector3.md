@@ -24,7 +24,7 @@ The `Rotation` property describes the amount of rotation along each axis in degr
 game.Workspace.Part.Rotation = Vector3.new(0, 90, 0)
 ```
 
-The `Size` property describes the size of each side of a rectangular prism:
+The `Size` property describes the size of each side of a rectangular prism.
 
 ![Set part Size](/_media/roblox-set-part-size-vector3.gif)
 
@@ -65,9 +65,9 @@ print(game.Workspace.Part.Position.Magnitude)
 
 Note: there is a slight difference due to the imprecision of floating-point numbers.
 
-A common use case for this is to calculate the distance between 2 vectors by subtracting them and calculating the magnitude of the returned vector.
+A use case for this is to calculate the distance between 2 vectors by subtracting them and calculating the magnitude of the returned vector.
 
-`vector.Unit` returns a [[Unit Vector]], which is a new vector with a Magnitude of 1 in the direction of the original vector
+The `Unit` property returns a [[Unit Vector]], which is a new vector with a Magnitude of 1 in the direction of the original vector
 
 Equivalent to:
 

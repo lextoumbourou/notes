@@ -21,6 +21,10 @@ img {
   width: auto\9; /* ie8 */
 }
 
+code {
+  overflow: scroll;
+}
+
 /* The side navigation menu */
 #sidebar {
   margin: 0;
