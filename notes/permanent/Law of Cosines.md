@@ -6,6 +6,7 @@ tags:
   - Trigonometry
   - PreLinearAlgebra
 cover: /_media/law-of-cosines-cover.png
+summary: The Law of Cosines expresses the relationship between the length of a triangle's sides and one of its angles.
 ---
 
 The Law of Cosines expresses the relationship between the length of a triangle's sides and one of its angles. For the cover triangle, the expression is:
