@@ -1,5 +1,5 @@
 ---
-title: Law of cosines
+title: Law of cosines (Khan Academy)
 date: 2021-09-04 13:30
 category: reference/videos
 summary: Notes from the Khan Academy video series on the Law of Cosines
