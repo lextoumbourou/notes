@@ -10,7 +10,7 @@ tags:
 
 We add two [[Vector]]s together by adding the corresponding components.
 
-$$\vec{a} + \vec{b} = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} + \begin{bmatrix} b_1 \\ b_2 \end{bmatrix} = \begin{bmatrix} b_1 + b_1 \\ b_2 + b_2 \end{bmatrix} $$
+$$\vec{a} + \vec{b} = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} + \begin{bmatrix} b_1 \\ b_2 \end{bmatrix} = \begin{bmatrix} a_1 + b_1 \\ a_2 + b_2 \end{bmatrix} $$
 
 Vector addition requires both vectors to have equal dimensions.
 
