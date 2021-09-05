@@ -1,4 +1,4 @@
----
+	---
 title: Roblox Vector3
 date: 2021-08-29 16:30
 tags:
@@ -32,10 +32,15 @@ The `Size` property describes the size of each side of a rectangular prism.
 game.Workspace.Part.Size = Vector3.new(0)
 ```
 
-We can perform [[Vector Addition and Subtraction]] by adding or subtracting two vectors.
+We can perform [[Vector Addition]] by adding two Vector3 instances.
 
 ```lua
 print(Vector3.new(1, 1, 1) + Vector3.new(2, 2, 2)) -- 3, 3 ,3
+```
+
+We can perform [[Vector Subtraction]] by subtracting two Vector3 instances.
+
+```lua
 print(Vector3.new(1, 1, 1) - Vector3.new(1, 1, 1)) -- 0, 0, 0
 ```
 
