@@ -1,5 +1,5 @@
-	---
-title: Visualising Opposing Forces in Roblox
+---
+title: Roblox Visualising Opposing Forces
 date: 2021-01-06 00:00
 tags:
   - Roblox
@@ -18,10 +18,10 @@ $$
 \begin{bmatrix} 0 \\ 5 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ -5 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 + 0 \\ 5 + (-5) \\ 0 + 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
 $$
 
+See [[Vector Addition]].
+
 ![y-axis bodyforce](../_media/bodyforce-yaxis-equal-net-forces.gif)
 
-Related to [[Newtons Laws Of Motion]] and [[Vector Addition and Subtraction]]
+Related to [[Newtons Laws Of Motion]].
 
-#### References
-
-[BodyMovers](https://developer.roblox.com/en-us/articles/BodyMover) (Roblox.com)
+[@robloxBodyMover]

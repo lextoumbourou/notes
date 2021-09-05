@@ -41,7 +41,8 @@ We can plot these numbers in a coordinate system to see how the flowers relate t
 
 ![Iris scatterplot](/_media/iris-scatterplot.png)
 
-* We can add or subtract vectors. See [[Vector Addition and Subtraction]].
+* We can add vector. See [[Vector Addition]].
+* We can subtract vectors. See [[Vector Subtraction]].
 * We can multiply vectors by a value. See [[Vector Scaling]].
 * We can combine vectors in various ways. See [[Dot Product]] or [[Element-wise product]].
 
