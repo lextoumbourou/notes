@@ -23,7 +23,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
 
 ### Arithmetic
 
-* Adding or subtract matrices: add or subtract each field. Must be the same size. (see [[Vector Addition and Subtraction]]).
+* Adding or subtract matrices: add or subtract each field. Must be the same size. (see [[Vector Addition]]).
 * Scalar multiplication: multiply each value in matrix by scalar (see [[Vector Scaling]]).
 * Matrix multiplication: `A x B`
     * A must have same number of columns as B does rows eg ``A(2 x 3) * B(3 x 2)`` is valid. The resulting size will be ``2 x 2``.
