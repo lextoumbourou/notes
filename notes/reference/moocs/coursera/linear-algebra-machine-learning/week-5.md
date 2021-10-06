@@ -45,3 +45,29 @@ tags:
 
     * In a pure sheer operation, only the horizontal vector is unchanged. So the transformation has 1 Eigenvector.
     * In a rotation, there are no Eigenvectors.
+
+## Getting into the detail of eigenproblems
+
+### Special eigen-cases
+
+* Recap (00:00-00:18):
+    * [[Eigenvectors]] lie along the same span before and after applying a linear transform to a space.
+    * [[Eigenvalues]] are the amount that each of those vectors has been stretched in the process.
+
+* 3 special Eigen-cases (00:18-02:15)
+    * Uniform scaling
+        * Scale by the same amount in each direction.
+        * All vectors are Eigenvectors.
+    * 180° rotation
+        * In normal rotation, there are no Eigenvectors. However, in 180° rotation, all vectors become [[Eigenvectors]] pointing in the opposite direction.
+            * Since the are pointing in the opposite direction we say they have [[Eigenvalues]] of -1.
+            ![180 degree rotation Eigenvectors](/_media/laml-180-rotation-eigenvectors.png)
+    * Combination of horizontal sheer and vertical scaling
+        * Has 2 [[Eigenvectors]]. The horizontal vector and a 2nd Eigenvector between the orange and pink vector.
+        
+            ![Eigenvectors after horizontal and vertical scaling](/_media/laml-horizontal-and-vertical-scaling.png)
+            
+* Eigenvalues can be calculated in much higher dimensions.
+    * In the 3d example, finding the Eigenvector also tells you the axis of rotation.
+    
+        ![3d Eigenvector example showing axis of rotation](/_media/laml-3d-eigenvector-example.png)
