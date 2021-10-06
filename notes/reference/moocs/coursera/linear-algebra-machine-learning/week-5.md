@@ -61,7 +61,9 @@ tags:
     * 180° rotation
         * In normal rotation, there are no Eigenvectors. However, in 180° rotation, all vectors become [[Eigenvectors]] pointing in the opposite direction.
             * Since the are pointing in the opposite direction we say they have [[Eigenvalues]] of -1.
-            ![180 degree rotation Eigenvectors](/_media/laml-180-rotation-eigenvectors.png)
+            
+                ![180 degree rotation Eigenvectors](/_media/laml-180-rotation-eigenvectors.png)
+            
     * Combination of horizontal sheer and vertical scaling
         * Has 2 [[Eigenvectors]]. The horizontal vector and a 2nd Eigenvector between the orange and pink vector.
         
