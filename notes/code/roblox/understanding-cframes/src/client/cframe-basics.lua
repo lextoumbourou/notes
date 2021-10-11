@@ -1,0 +1,1 @@
+game.Workspace.Part.CFrame = CFrame.new(0, 10, 0)
