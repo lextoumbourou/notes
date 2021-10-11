@@ -1,0 +1,1 @@
+JavaScript sort function sorts an array inplace.
