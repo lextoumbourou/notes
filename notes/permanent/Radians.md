@@ -1,5 +1,5 @@
 ---
-title: Radian
+title: Radians
 date: 2021-10-17 10:30
 tags:
   - GameMath
@@ -10,7 +10,9 @@ A radian is a measurement of an angle. It measures the number of radiuses that "
 
 It is an alternative to measuring angles in degrees.
 
-A full rotation, 360 in degrees, is the circumference of a circle so $2 \ \pi \ \textrm{radians} = 360°$. To calculate 180°, we can divide both sides by 2 which gives us $\pi \ \textrm{radians} = 180°$
+A full rotation, 360°, is the circumference of a circle therefore $2 \ \pi \ \textrm{radians} = 360°$.
+
+To calculate 180°, we can divide both sides by 2: $\frac{2 \ \pi \ \textrm{radians}}{2} = \frac{360°}{2}$ which gives us $\pi \ \textrm{radians} = 180°$
 
 We can then divide both sides by $\pi$ to find one radian: $\text{radian} = \frac{180}{\pi} = ~57.2958$
 
