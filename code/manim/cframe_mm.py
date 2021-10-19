@@ -72,14 +72,25 @@ class CFrameMatrixMult(Scene):
         g.set_color(DEFAULT_COLOR)
         self.add(g)
 
+        columns = matrix1.get_columns()
+        columns[0].set_color('#A92C21')
+        columns[1].set_color('#89CC4C')
+        columns[2].set_color('#1220CB')
+
+        columns = matrix2.get_columns()
+        columns[0].set_color('#A92C21')
+        columns[1].set_color('#89CC4C')
+        columns[2].set_color('#1220CB')
+
+
         i = 0
         for m1_row in matrix1.get_rows():
             for m2_column in matrix2.get_columns():
                 rect_1 = SurroundingRectangle(m1_row).set_stroke(color=RECT_COLOR)
                 rect_2 = SurroundingRectangle(m2_column).set_stroke(color=RECT_COLOR)
 
-                m1_row.set_color(M1_COLOR)
-                m2_column.set_color(M2_COLOR)
+                # m1_row.set_color(M1_COLOR)
+                # m2_column.set_color(M2_COLOR)
 
                 self.play(Create(rect_1))
                 self.wait()
