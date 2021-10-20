@@ -2,7 +2,7 @@
 title: Emergent Complexity
 date: 2021-01-16 00:00
 tags:
-  - GameDesignPrinciples
+  - GameDesign
 ---
 
 The opposite of [[innate complexity]] (in which complex rules need to be learned in order to play) and a desired property of a game. Arises when you have a simple ruleset from which complex interations can arise.

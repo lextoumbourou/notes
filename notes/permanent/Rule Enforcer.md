@@ -2,7 +2,7 @@
 title: Rule Enforcer
 date: 2021-06-24 19:30
 tags:
-  - GameDesignPrinciples
+  - GameDesign
 cover: /_media/enforcer.png
 ---
 
