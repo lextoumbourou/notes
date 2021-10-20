@@ -4,8 +4,6 @@ date: 2017-11-29 00:00
 category: reference/moocs
 parent: convolutional-neural-networks 
 status: draft
-tags:
-  - Deep Learning
 ---
 
 * Ideas from computer vision are bleeding into other fields: speech recognition, NLP etc.

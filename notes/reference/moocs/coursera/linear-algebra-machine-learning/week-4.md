@@ -4,10 +4,6 @@ date: 2021-09-23 08:30
 category: reference/moocs
 status: draft
 parent: linear-algebra-machine-learning
-tags:
-  - LinearAlgebra
-  - MachineLearningMath
-  - GameMath
 ---
 
 ## Matrices make linear mappings

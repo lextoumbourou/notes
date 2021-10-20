@@ -4,8 +4,6 @@ date: 2017-09-30 00:00
 link: 
 category: reference/moocs
 slug: machine-learning-projects
-tags:
-  - DeepLearning
 ---
 
 Notes from Coursera's [Structuring Machine Learning Projects](https://www.coursera.org/learn/machine-learning-projects) by Andrew Ng, Younes Bensouda Mourri and Kian Katanforoosh

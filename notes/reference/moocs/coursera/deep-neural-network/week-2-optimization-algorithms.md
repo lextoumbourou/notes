@@ -5,8 +5,6 @@ parent: deep-neural-network
 category: reference/moocs
 link: https://www.coursera.org/learn/deep-neural-network
 status: draft
-tags:
-    - DeepLearning
 ---
 
 # Week 2

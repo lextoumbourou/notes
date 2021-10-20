@@ -5,8 +5,6 @@ link: https://www.youtube.com/watch?v=9C06ZPF8Uuc
 category: reference/moocs
 parent: fast-ai-deep-learning-2018
 status: draft
-tags:
-  - DeepLearning
 ---
 
 {% notebook reference/moocs/fast.ai/dl-2018/lesson03.ipynb %}

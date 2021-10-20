@@ -4,8 +4,6 @@ date: 2017-11-29 00:00
 link: https://www.coursera.org/learn/convolutional-neural-networks
 category: reference/moocs
 slug: convolutional-neural-networks
-tags:
-  - DeepLearning
 ---
 
 Notes from Coursera's [Convolutional Neural Networks](https://www.coursera.org/learn/convolutional-neural-networks) by Andrew Ng, Younes Bensouda Mourri and Kian Katanforoosh

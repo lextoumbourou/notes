@@ -4,10 +4,6 @@ date: 2021-09-12 12:00
 category: reference/moocs
 slug: linear-algebra-machine-learning
 summary: "Notes from Coursera's Mathematics for Machine Learning: Linear Algebra by Imperial College London"
-tags:
-  - LinearAlgebra
-  - MachineLearningMath
-  - GameMath
 ---
 
 Notes from Coursera's [Mathematics for Machine Learning: Linear Algebra](https://www.coursera.org/learn/linear-algebra-machine-learning) by Imperial College London

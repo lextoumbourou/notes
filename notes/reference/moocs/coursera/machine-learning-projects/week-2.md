@@ -5,8 +5,6 @@ link:
 category: reference/moocs
 status: draft
 parent: machine-learning-projects
-tags:
-  - DeepLearning
 ---
 
 ## Error analysis
