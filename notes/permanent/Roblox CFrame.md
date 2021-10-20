@@ -74,7 +74,7 @@ That method is the equivalent of multiplying the left CFrame by the right  `char
 
 A CFrame is composed of 4 [[Vector]]s. 
 
-1. <strong>Position vector $(x, y, z)$</strong>
+1. <strong>Position vector $(\mathbf{x}, \mathbf{y}, \mathbf{z})$</strong>
 2. <font color="#A92C21">Right vector $(rX, rY, rZ)$</font>
 3. <font color="#89CC4C">Up vector $(uX, uY, uZ)$</font>
 4. <font color="#1220CB">Look (front) vector $(lX, lY, lZ)$</font>
