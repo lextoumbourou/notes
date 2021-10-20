@@ -2,7 +2,7 @@
 title: Key Components of Flow For Players
 date: 2020-11-15 00:00
 tags:
-  - GameDesignPrinciples
+  - GameDesign
 ---
 
 Schell says that the key components that promote [[Flow State]] for players are:

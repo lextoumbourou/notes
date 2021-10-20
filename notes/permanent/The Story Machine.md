@@ -2,7 +2,7 @@
 title: The Story Machine
 date: 2021-01-26 00:00
 tags:
-  - GameDesignPrinciples
+  - GameDesign
   - StoryWriting
 ---
 

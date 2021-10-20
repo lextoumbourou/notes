@@ -2,7 +2,7 @@
 title: Interest Curve
 date: 2021-01-24 00:00
 tags:
-  - GameDesignPrinciples
+  - GameDesign
   - Experiences
 ---
 
