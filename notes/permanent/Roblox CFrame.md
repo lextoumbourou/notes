@@ -2,7 +2,7 @@
 title: Roblox CFrame
 date: 2021-10-19 20:00
 cover: /_media/roblox-cframe-cover.png
-summary: A Roblox object that encodes position and rotation in 3D space.
+summary: In Roblox, a CFrame (coordinate frame) is an object that encodes position and rotation in 3D space.
 tags:
   - Roblox
   - LinearAlgebraApplications
