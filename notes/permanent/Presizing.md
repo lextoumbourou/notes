@@ -2,7 +2,7 @@
 title: Presizing
 date: 2021-08-05 18:00
 tags:
-  - DeepLearning
+  - MachineLearning
   - ImageClassification
 cover: /_media/presizing-cover.png
 ---

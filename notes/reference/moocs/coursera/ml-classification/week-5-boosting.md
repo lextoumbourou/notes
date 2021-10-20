@@ -4,9 +4,6 @@ date: 2016-07-04 00:00
 category: reference/moocs
 parent: ml-classification
 status: draft
-tags:
-    - MachineLearning
-    - Classification
 ---
 
 ## Amazing idea of boosting a classifier

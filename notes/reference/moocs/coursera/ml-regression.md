@@ -2,8 +2,6 @@
 title: ML Regression
 date: 2016-02-03 00:00
 category: reference/moocs
-tags:
-  - MachineLearning
 ---
 
 Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression) by Coursera.

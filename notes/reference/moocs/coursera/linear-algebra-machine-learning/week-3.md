@@ -4,10 +4,6 @@ date: 2021-09-22 09:25
 category: reference/moocs
 status: draft
 parent: linear-algebra-machine-learning
-tags:
-  - LinearAlgebra
-  - MachineLearningMath
-  - GameMath
 ---
 
 ## Introduction to matrices

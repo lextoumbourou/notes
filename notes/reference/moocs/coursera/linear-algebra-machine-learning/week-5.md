@@ -4,10 +4,6 @@ date: 2021-10-04 11:30
 category: reference/moocs
 status: draft
 parent: linear-algebra-machine-learning
-tags:
-  - LinearAlgebra
-  - MachineLearningMath
-  - GameMath
 ---
 
 ## What are eigen-things?

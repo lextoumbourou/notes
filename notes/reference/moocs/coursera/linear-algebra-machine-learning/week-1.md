@@ -4,9 +4,6 @@ date: 2018-04-10 00:00
 category: reference/moocs
 status: draft
 parent: linear-algebra-machine-learning
-tags:
-  - MachineLearning
-  - MachineLearningMath
 ---
 
 # Introduction to Linear Algebra and Mathematics for Machine Learning

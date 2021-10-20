@@ -1,8 +1,6 @@
 ---
 title: How to Take Smart Notes
 date: 2021-06-07 22:00
-tags:
-  - Zettelkasten
 category: reference/books
 cover: /_media/how-to-take-smart-notes.jpeg
 ---
