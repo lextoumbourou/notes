@@ -26,6 +26,11 @@ M2_COLOR = RED_D
 CALCULATED_COLOR = "#655b28"
 RECT_COLOR = "#b9b28b"
 
+RIGHT_VECTOR_COLOR = '#A92C21'
+UP_VECTOR_COLOR = '#89CC4C'
+LOOK_VECTOR_COLOR = '#1220CB'
+
+
 
 class CFrameMatrixMult(Scene):
     def construct(self):
@@ -72,16 +77,26 @@ class CFrameMatrixMult(Scene):
         g.set_color(DEFAULT_COLOR)
         self.add(g)
 
+        
         columns = matrix1.get_columns()
-        columns[0].set_color('#A92C21')
-        columns[1].set_color('#89CC4C')
-        columns[2].set_color('#1220CB')
+        columns[0].set_color(RIGHT_VECTOR_COLOR)
+        columns[0][-1].set_color(DEFAULT_COLOR)
+
+        columns[1].set_color(UP_VECTOR_COLOR)
+        columns[1][-1].set_color(DEFAULT_COLOR)
+
+        columns[2].set_color(LOOK_VECTOR_COLOR)
+        columns[2][-1].set_color(DEFAULT_COLOR)
 
         columns = matrix2.get_columns()
-        columns[0].set_color('#A92C21')
-        columns[1].set_color('#89CC4C')
-        columns[2].set_color('#1220CB')
+        columns[0].set_color(RIGHT_VECTOR_COLOR)
+        columns[0][-1].set_color(DEFAULT_COLOR)
 
+        columns[1].set_color(UP_VECTOR_COLOR)
+        columns[1][-1].set_color(DEFAULT_COLOR)
+
+        columns[2].set_color(LOOK_VECTOR_COLOR)
+        columns[2][-1].set_color(DEFAULT_COLOR)
 
         i = 0
         for m1_row in matrix1.get_rows():
@@ -119,18 +134,6 @@ class CFrameMatrixMult(Scene):
 
                 ds_m = MathTex(*math_strings)
                 ds_m.set_color(BLACK)
-
-                offset = 0
-                for j in range(m1.shape[0]):
-                    pos = j + offset
-                    ds_m[pos].set_color(M1_COLOR)
-                    ds_m[pos + 2].set_color(M2_COLOR)
-
-                    offset += 3
-
-                ds_m[-1].set_opacity(0)
-                ds_m[-1].set_color(CALCULATED_COLOR)
-
                 ds_m.shift(2 * DOWN)
 
                 self.play(ReplacementTransform(rect_1, rect_2), Write(ds_m))
@@ -149,9 +152,6 @@ class CFrameMatrixMult(Scene):
 
                 self.remove(ds_m)
                 self.remove(rect_3)
-
-                m1_row.set_color(BLACK)
-                m2_column.set_color(BLACK)
 
                 i += 1
         self.wait()
