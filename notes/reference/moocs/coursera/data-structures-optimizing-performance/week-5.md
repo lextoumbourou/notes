@@ -1,4 +1,10 @@
-# Week 5: Hash Maps and Edit Distance
+---
+title: "Week 5: Hash Maps and Edit Distance"
+date: 2016-10-04 00:00
+category: reference/moocs
+status: draft
+parent: data-structures-optimizing-performance
+---
 
 ## Core: Hash Tables
 

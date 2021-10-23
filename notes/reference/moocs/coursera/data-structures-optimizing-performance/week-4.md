@@ -1,4 +1,10 @@
-# Week 4: Trees! (including Binary Search Trees and Tries)
+---
+title: "Week 4: Trees! (including Binary Search Trees and Tries)"
+date: 2016-10-04 00:00
+category: reference/moocs
+status: draft
+parent: data-structures-optimizing-performance
+---
 
 ## Core Trees
 
@@ -25,30 +31,28 @@
 
 * Example code:
 
-  ```
-  public class BinaryTree<E> {
-    TreeNode<E> root;
-  }
+      public class BinaryTree<E> {
+        TreeNode<E> root;
+      }
 
-  private class TreeNode<E> {
-    private E value;
-    private TreeNode<E> parent;
-    private TreeNode<E> left;
-    private TreeNode<E> right;
+      private class TreeNode<E> {
+        private E value;
+        private TreeNode<E> parent;
+        private TreeNode<E> left;
+        private TreeNode<E> right;
 
-    public TreeNode(E val, TreeNode<E> par) {
-      this.value = val;
-      this.parent = par;
-      this.left = null;
-      this.right = null;
-    }
+        public TreeNode(E val, TreeNode<E> par) {
+          this.value = val;
+          this.parent = par;
+          this.left = null;
+          this.right = null;
+        }
 
-    public TreeNode<E> addLeftChild(E val) {
-      this.left = new TreeNode<E>(val, this);
-      return this.left;
-    }
-  }
-  ```
+        public TreeNode<E> addLeftChild(E val) {
+          this.left = new TreeNode<E>(val, this);
+          return this.left;
+        }
+      }
 
 ## Core: Pre-Order Traversals
 
@@ -57,18 +61,16 @@
   2. Visit all of your left subtree.
   3. Visit all of your right subtree.
 
-  ```
-  private void preOrder(TreeNode<E> node) {
-    if (node != null) {
-      node.visit();
-      preOrder(node.getLeftChild());
-      preOrder(node.getRightChild());
-    }
-  }
-  public void preOrder() {
-    preOrder(root);
-  }
-  ```
+          private void preOrder(TreeNode<E> node) {
+            if (node != null) {
+              node.visit();
+              preOrder(node.getLeftChild());
+              preOrder(node.getRightChild());
+            }
+          }
+          public void preOrder() {
+            preOrder(root);
+          }
 
 ## Core: Post-Order, In-Order and Level-Order Traversals
 
@@ -87,24 +89,22 @@
   2. When you visit a node, place its child on the list.
   3. Pull a node off the list, and place its child on the list and so on.
 
-  ```
-  public class BinaryTree<E> {
-    TreeNode<E> root;
+          public class BinaryTree<E> {
+            TreeNode<E> root;
 
-    public void levelOrder() {
-      Queue< TreeNode<E> > q = new LinkedList< TreeNode<E> >();
-      q.add(root);
-      while(!q.isEmpty()) {
-        TreeNode<E> curr = q.remove();
-        if (curr != null) {
-          curr.visit();
-          q.add(curr.getLeftChild());
-          q.add(curr.getRightChild());
-        }
-      }
-    }
-  }
-  ```
+            public void levelOrder() {
+              Queue< TreeNode<E> > q = new LinkedList< TreeNode<E> >();
+              q.add(root);
+              while(!q.isEmpty()) {
+                TreeNode<E> curr = q.remove();
+                if (curr != null) {
+                  curr.visit();
+                  q.add(curr.getLeftChild());
+                  q.add(curr.getRightChild());
+                }
+              }
+            }
+          }
 
 ## Core: Introduction to Binary Search Trees
 
@@ -170,13 +170,11 @@
 
 * Node keeps track of whether it stores a word and what the word is:
 
-  ```
-  class TrieNode {
-    boolean isWord;
-    HashMap<Character, TrieNode> children;
-    String text;
-  }
-  ```
+      class TrieNode {
+        boolean isWord;
+        HashMap<Character, TrieNode> children;
+        String text;
+      }
 
 * Actual Trie structure should store the root node and some methods to help with insertion, deletion etc.
 

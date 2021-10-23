@@ -1,4 +1,10 @@
-# Week 3: Interfaces, Linked Lists vs. Arrays, and Correctness
+---
+title: "Week 3: Interfaces, Linked Lists vs. Arrays, and Correctness"
+date: 2016-10-04 00:00
+category: reference/moocs
+status: draft
+parent: data-structures-optimizing-performance
+---
 
 ## Project Overview
 
@@ -33,12 +39,10 @@
 
 * Implementation of ``ListNode``:
 
-  ```
-  class ListNode<E> {  // not a public class.
-    ListNode<E> next;
-    ListNode<E> previ;
-    E data;  // E == parameterized types: makes ListNode "generic", replace with type when initing it.
-  ```
+          class ListNode<E> {  // not a public class.
+              ListNode<E> next;
+              ListNode<E> previ;
+              E data;  // E == parameterized types: makes ListNode "generic", replace with type when initing it.
 
   * ``E`` is a paramterized type.
   * Replace with an actual type then refer to type as ``E`` throughout class.
@@ -54,37 +58,33 @@
 
   * List node defined as follows:
 
-    ```
-    class ListNode<E> {
-        ListNode<E> next; // considered a "recursive class" - uses its own definition in it.
-        ListNode<E> prev;
-        E data;
+        class ListNode<E> {
+            ListNode<E> next; // considered a "recursive class" - uses its own definition in it.
+            ListNode<E> prev;
+            E data;
 
-          public ListNode(E theData)
-          {
-            this.data = theData;
-          }
-    }
-    ```
+              public ListNode(E theData)
+              {
+                this.data = theData;
+              }
+        }
 
   * Linked list class as follows:
 
-    ```
-    public class MyLinkedList<E>
-    {
-        private ListNode<E> head;
-        private ListNode<E> tail;
-        private int size;
+        public class MyLinkedList<E>
+        {
+            private ListNode<E> head;
+            private ListNode<E> tail;
+            private int size;
 
-        public MyLinkedList() {
-            size = 0;
-            head = new ListNode<E>(null);
-            tail = new ListNode<E>(null);
-            head.next = tail;
-            tail.prev = head;
+            public MyLinkedList() {
+                size = 0;
+                head = new ListNode<E>(null);
+                tail = new ListNode<E>(null);
+                head.next = tail;
+                tail.prev = head;
+            }
         }
-    }
-    ```
 
 ## Testing and Correctness
 
