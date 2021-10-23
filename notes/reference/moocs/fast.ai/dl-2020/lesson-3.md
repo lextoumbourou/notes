@@ -4,6 +4,8 @@ date: 2021-06-27 00:00
 category: reference/moocs
 cover: /_media/fastai-2020-lesson-3-cover.png
 summary: "Notes taken from the Deep Learning for Coders (2020) - Lesson 3 video"
+parent: fast-ai-2020
+status: draft
 ---
 
 Notes taken from watching the [Lesson 3 - Deep Learning for Coders (2020)](https://www.youtube.com/watch?v=5L3Ao5KuCC4) video.
