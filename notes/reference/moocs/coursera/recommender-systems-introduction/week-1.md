@@ -1,3 +1,11 @@
+---
+title: Week 1 - Introducing Recommender Systems
+date: 2017-03-04 00:00
+category: reference/moocs
+status: draft
+parent: recommender-systems-introduction
+---
+
 ## Intro to Course and Specialization
 
 * Broken into 4 courses:

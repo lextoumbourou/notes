@@ -1,3 +1,11 @@
+---
+title: Week 2 - Non-Personalized and Stereotype-Based Recommenders
+date: 2017-03-04 00:00
+category: reference/moocs
+status: draft
+parent: recommender-systems-introduction
+---
+
 ## Non-Personalized and Stereotype-based Recommenders
 
 * Why non-personalised?
@@ -37,10 +45,9 @@
 
 * Zagat formula:
 
-  ```
-  Rating = {0, 1, 2, 3}
-  Score = Round(Mean(ratings) * 10)
-  ```
+      Rating = {0, 1, 2, 3}
+      Score = Round(Mean(ratings) * 10)
+      
   * Don't include things like McDonalds where popularity would be a dominate factor.
   * In 2016, they switched from 0-3 and 0-30 to 5-stars (with halfs) and averaging to a tenth of a star.
 
@@ -140,18 +147,15 @@
   * Hacker News algorithm:
     * Slight damping effect for newer votes.
 
-    ```
-    numerator = (upvotes - downvotes - 1) ** DECAY)  # Net upvotes minus submitters upvote, with a slight decay (0.8) to damp later votes.
-    denomiator = (time_now - time_posts) ** GRAVITY  # Gravity is used to ensure newer posts are higher, and older posts are less weighed by time (1.8).
-    numerator / denomiator * PENALTY TERM  # Penalty is used to implement business logic to enforce certain community standards for HN.
-    ```
+            numerator = (upvotes - downvotes - 1) ** DECAY)  # Net upvotes minus submitters upvote, with a slight decay (0.8) to damp later votes.
+            denomiator = (time_now - time_posts) ** GRAVITY  # Gravity is used to ensure newer posts are higher, and older posts are less weighed by time (1.8).
+            numerator / denomiator * PENALTY TERM  # Penalty is used to implement business logic to enforce certain community standards for HN.
+
   * Reddit algorithm:
     * Strong damping effect: votes 11 through 100 have the same impact as the first 10 votes.
 
-    ```
-    net_upvotes = upvotes - downvotes
-    score = log(max(1, net_upvotes), 10) + sign * (net_upvotes) * t_posted / 45000
-    ```
+            net_upvotes = upvotes - downvotes
+            score = log(max(1, net_upvotes), 10) + sign * (net_upvotes) * t_posted / 45000
 
 * Ranking wrap:
   * Theorertically grounded approaches: confidence interval, damping.
@@ -218,40 +222,33 @@
 
   * Simple first cut: % of X-buyers who also bought Y:
 
-    ```
-    X and Y
-    -----
-      X
-    ```
+        X and Y
+        -----
+          X
+          
     * Intuitively right, what what if X is top hats and Y is toilet paper?
     * Y may just be a thing a lot of people buy.
 
   * Next attempt: use Bayes Law to factor in the popularity of Y.
 
-    ```
-    P(toilet paper|top hats) = P(top hats|toilet paper) P(top hats)
-                               ------------------------------------
-                               P(toilet paper)
-    ```
+        P(toilet paper|top hats) = P(top hats|toilet paper) P(top hats)
+                                   ------------------------------------
+                                   P(toilet paper)
 
     * Then look at how much more likely toilet paper is than before :
 
-      ```
-      P(toilet paper | top hats)
-      --------------------------
-      P(toilet paper)
-      ```
+          P(toilet paper | top hats)
+          --------------------------
+          P(toilet paper)
 
       * If ratio is close to 1, then top hats doesn't really change much.
 
   * Other solutions:
     * "Association rule mining" gives you lift metric:
 
-      ```
-      P(X and Y)
-      -----------
-      P(X) * P(Y)
-      ```
+          P(X and Y)
+          -----------
+          P(X) * P(Y)
 
       * Looks at non-directional association.
       * Looks at baskets of products, not just individual.

@@ -1,3 +1,11 @@
+---
+title: Week 3 - Content-Based Filtering -- Part I
+date: 2017-03-04 00:00
+category: reference/moocs
+status: draft
+parent: recommender-systems-introduction
+---
+
 ## Introduction to Content-Based Recommenders
 
 * Basic idea: there are "stable" preferences people that that can be measured by content attributes:
