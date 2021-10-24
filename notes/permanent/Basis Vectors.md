@@ -24,7 +24,7 @@ Basis vectors don't have to be orthogonal to each other, but transformations bec
 
 In applications that require visualizing 3d space, like a game studio or a 3d modeling program, it's common for the basis vectors of the space to be displayed prominently. They are typically colored $\color{red}{X}\color{green}{Y}\color{blue}{Z}$, the color order mapping each axis to a color in RGB according to [this](https://ux.stackexchange.com/questions/79561/why-are-x-y-and-z-axes-represented-by-red-green-and-blue) post.
 
-![Basis vectors in PlayCanvas](/_media/basis-vector-cover.png)
+![Basis vectors in PlayCanvas](/_media/basis-vectors-playcanvas.png)
 
 *Basis vectors in PlayCanvas*
 
