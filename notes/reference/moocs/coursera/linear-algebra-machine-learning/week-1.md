@@ -84,5 +84,5 @@ parent: linear-algebra-machine-learning
           * associative: doesn't matter what order you add 
               `vector_1 + vector_2 = vector_2 + vector_1`
           * Since subtraction is just the addition of the negative, i.e.` r - r = r + (-r)`, the same rules apply to subtraction as addition.
-      2. We can multiply vectors by a scalar (see [[Vector Scaling]]).
+      2. We can multiply vectors by a scalar (see [[Vector Scalar]]).
           * Multiples each value in the vector by some scalar: `2 * [1, 2] = [1 * 2, 2 * 2] = [2, 4]`
