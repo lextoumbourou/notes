@@ -2,15 +2,18 @@
 title: Radians
 date: 2021-10-17 10:30
 tags:
-  - GameMath
   - Trigonometry
+cover: /_media/radian-cover.png
+summary: A radian measures an angle in radiuses
 ---
 
-A radian is a measurement of an angle. It measures the number of radiuses that "subtends" the angle. In other words, the count of radiuses on the side opposite the angle.
+A radian is a measurement of an angle.
+
+It measures the number of radiuses that "subtends" the angle. In other words, the count of radiuses on the side opposite the angle.
 
 It is an alternative to measuring angles in degrees.
 
-A full rotation, 360°, is the circumference of a circle therefore $2 \ \pi \ \textrm{radians} = 360°$.
+A full rotation, 360°, is the circumference of a circle. Therefore, $2 \ \pi \ \textrm{radians} = 360°$.
 
 To calculate 180°, we can divide both sides by 2: $\frac{2 \ \pi \ \textrm{radians}}{2} = \frac{360°}{2}$ which gives us $\pi \ \textrm{radians} = 180°$
 
