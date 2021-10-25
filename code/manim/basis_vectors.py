@@ -7,8 +7,8 @@ from manim import *
 
 config.background_color = WHITE
 config.save_as_gif = True
-config.pixel_height = 300
-config.pixel_width = 300
+config.pixel_height = 200
+config.pixel_width = 200
 config.medium_quality = True
 config.output_file = Path(__file__).resolve().parent.parent.parent / Path('notes/_media/basis-vector-cover')
 
