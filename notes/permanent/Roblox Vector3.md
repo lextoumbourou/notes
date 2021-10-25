@@ -1,9 +1,8 @@
-	---
+---
 title: Roblox Vector3
 date: 2021-08-29 16:30
 tags:
   - Roblox
-  - LinearAlgebra
 ---
 
 In Roblox, a [Vector3](https://developer.roblox.com/en-us/api-reference/datatype/Vector3) defines a [[Vector]] with three components. We use it for setting the position, rotation, and size of elements.
@@ -44,7 +43,7 @@ We can perform [[Vector Subtraction]] by subtracting two Vector3 instances.
 print(Vector3.new(1, 1, 1) - Vector3.new(1, 1, 1)) -- 0, 0, 0
 ```
 
-We can do [[Vector Scaling]] by multiplying a vector by a scalar.
+We can scale a vector by multiplying it by a [[Vector Scalar]].
 
 ```
 print(Vector3.new(1, 1, 1) * 2) -- 2, 2, 2

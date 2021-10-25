@@ -1,5 +1,5 @@
 ---
-title: Vector Scaling
+title: Vector Scalar
 date: 2020-11-08 00:00
 cover: /_media/vector-scaling-visual.png
 summary: Multiplying each value in a vector by the same value
