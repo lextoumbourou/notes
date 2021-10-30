@@ -47,7 +47,7 @@ We can determine where vector $\vec{u} = \begin{bmatrix}a \\ b\end{bmatrix}$ lan
 
 Another example is a [[Shear]]. $\hat{i}$ remains fixed. $\hat{j}$ moves to the coordinates $\begin{bmatrix}1 \\ 1\end{bmatrix}$
 
-We get transformation matrix: $\begin{bmatrix}1 && 0 \\ 1 && 1\end{bmatrix}$
+We get transformation matrix: $\begin{bmatrix}1 && 1 \\ 0 && 1\end{bmatrix}$
 
 ![Shear transformation](/_media/linear-trans-shear-trans.png)
 
