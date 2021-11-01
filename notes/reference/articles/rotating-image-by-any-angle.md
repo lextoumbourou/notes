@@ -18,7 +18,7 @@ To understand what's happening with this transformation matrix, when the angle o
 $\cos(0°) = 1$
 $\sin(0°) = 0$
 
-So the [[Transformation Matrix]] simply contains the basis vectors:
+So the [[Matrix Transformation]] simply contains the basis vectors:
 
 $\begin{bmatrix}1 && 0 \\ 0 && 1\end{bmatrix}$
 

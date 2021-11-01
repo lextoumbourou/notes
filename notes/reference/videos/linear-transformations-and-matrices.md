@@ -29,7 +29,7 @@ So, after applying the transformation, the property: $\vec{v} = -1\hat{i} + 2\ha
 
 That means we can fully describe a 2d transformation with four numbers (2 vectors).
 
-We put these numbers into a 2x2 matrix, called a [[Transformation Matrix]]. Each column is one of the transformed [[Basis Vectors]].
+We put these numbers into a 2x2 matrix, called a [[Matrix Transformation]]. Each column is one of the transformed [[Basis Vectors]].
 
 ![Transformation matrix](/_media/linear-trans-transformation-matrix.png)
 
