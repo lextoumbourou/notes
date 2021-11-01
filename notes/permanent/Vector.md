@@ -1,5 +1,7 @@
 ---
 title: Vector
+aliases:
+  - Vectors
 date: 2020-11-08 18:00
 modified: 2021-08-22 16:00
 tags: 
