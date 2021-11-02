@@ -3,7 +3,7 @@ title: Matrix multiplication as composition
 date: 2021-11-02 00:00
 category: reference/videos
 summary: Notes from [Matrix multiplication as composition](https://www.youtube.com/watch?v=) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
-status: draft
+cover: /_media/matrix-mult-as-composition-cover.png
 ---
 
 Notes from [Matrix multiplication as composition](https://www.youtube.com/watch?v=kYB8IZa5AuE) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
