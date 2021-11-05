@@ -2,18 +2,19 @@
 title: The determinant
 date: 2021-11-04 19:00
 category: reference/videos
-status: draft
+summary: Notes from [The determinant](https://www.youtube.com/watch?v=Ip3X9LOh2dk) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.
+cover: /_media/3blue-determinant-cover.png
 ---
 
 These are notes from [The determinant](https://www.youtube.com/watch?v=Ip3X9LOh2dk) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.
 
-A measure of how much a [[Matrix Transformation]] stretches or squishes space.
+One way to measure a [[Matrix Transformation]] is how much it stretches or squishes space.
 
 Or: "the factor by which a given area increases or decreases after a transformation."
 
-For example, after this [[Matrix Transformation]] $\begin{bmatrix}3 && 0 \\ 0 && 2\end{bmatrix}$, $\hat{i}$ is scaled by a factor of 3, and $\hat{j}$ is scaled by a factor of 2. The rectangular area goes from an area of 1 (1x1) to 6 (3x2), we say the linear transformation has scaled area by 6.
+For example, after this [[Matrix Transformation]] $\begin{bmatrix}3 && 0 \\ 0 && 2\end{bmatrix}$, $\hat{i}$ is scaled by a factor of 3, and $\hat{j}$ is scaled by a factor of 2. The rectangular area goes from an area of 1 ($1 \ x \ 1$) to 6 ($3 \ x \ 2$), we say the linear transformation has scaled area by 6.
 
-On the other hand, a shear slants the area into a parallelogram, but the base and height remain 1x1. So the area is unchanged.
+On the other hand, a shear slants the area into a parallelogram, but the base and height remain $1 \ x \ 1$. So the area is unchanged.
 
 Once you know how the area of a single unit square changes, you understand how any given area changes since we know that linear transformations keep gridlines parallel and evenly spaced.
 
@@ -33,7 +34,7 @@ $\det(\begin{bmatrix}1 && 2 \\ 3 && 4\end{bmatrix}) = -2$
 
 What that means is that the transformation causes the orientation to flip.
 
-In 3d, a determinate tells us how much a volume gets scaled. The name for a parrellogram in 3d space is a parallelepiped. 
+In 3d, a determinate tells us how much a volume gets scaled. The name for a parallelogram in 3d space is a parallelepiped. 
 
 $\det(\begin{bmatrix}1.0 && 0.0 && 0.5 \\ 0.5 && 1.0 && 0.0 \\ 1.0 && 0.0 && 1.0\end{bmatrix})$
 
@@ -47,7 +48,7 @@ Point your fingers and thumbs on your right hand like this:
 
 Then if after the transformation, you can only do that with your left hand, you know the determinate is negative.
 
-We can calculate determinanst in 2d space, you can use formula: 
+To calculate determinant in 2d space, we use formula: 
 
 $\det(\begin{bmatrix}a && b \\ c && d\end{bmatrix}) = ad - bc$
 
@@ -65,7 +66,7 @@ Computing the determinants by hand can be done, and you get better with practice
 
 There is even a formula for the 3d determinants.
 
-However, computing the determinate doesn't fall within the "essense" of linear algebra, but understanding it visually does.
+However, computing the determinate doesn't fall within the "essence" of linear algebra, but understanding it visually does.
 
 Last note: If you take the product of 2 matrices, it's the same as the products of both of the two matrices:
 
