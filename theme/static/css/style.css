@@ -82,6 +82,12 @@ div#content {
   height: 1000px;
 }
 
+.cover-image img {
+  margin: 0 15px 10px 0;
+  max-width: 350px;
+  float: left;
+}
+
 @media screen and (max-width: 700px) {
   #sidebar {
     width: 100%;
@@ -97,6 +103,10 @@ div#content {
   }
 
   div#content {margin-left: 0;}
+
+  .cover-image img {
+    float: none;
+  }
 }
 
 h1 {
@@ -436,12 +446,6 @@ ul.pagination li {
   font-size: 1.4em;
 }
 
-.cover-image img {
-  float: left;
-  margin: 0 15px 10px 0;
-  max-width: 250px;
-}
-
 .katex-display>.katex {
   text-align: left !important;
 }
@@ -468,4 +472,4 @@ div.output_prompt {
 
 div.output_subarea {
   max-width: 100% !important;
-}
+
