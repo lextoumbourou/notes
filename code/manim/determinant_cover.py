@@ -15,7 +15,7 @@ class Determinant(Scene):
         )
 
         determinant = MathTex(
-            "\\det\\left( \\begin{bmatrix}a && b \\\\ c && d \\end{bmatrix}\\right) = ad - bc", font_size=80
+            "\\det\\left( \\begin{bmatrix}a && b \\\\ c && d \\end{bmatrix}\\right) = ad - bc", font_size=105
         ).set_color(text_color)
         determinant[0][5].set_color(vect1_color)
         determinant[0][6].set_color(vect2_color)
@@ -29,12 +29,12 @@ class Determinant(Scene):
         determinant[0][15].set_color(vect2_color)
         determinant[0][16].set_color(vect1_color)
 
-        determinant.move_to(ORIGIN + UP * 2.5)
+        determinant.move_to(ORIGIN + UP * 2.25)
 
         origin = np.array([-6, -3, 0])
 
         vect_1 = np.array([12, 0, 0])
-        vect_2 = np.array([0, 4, 0])
+        vect_2 = np.array([0, 3, 0])
 
         grid_1 = vect_1 + vect_2
         grid_2 = vect_2 + vect_1
