@@ -439,7 +439,7 @@ ul.pagination li {
 .cover-image img {
   float: left;
   margin: 0 15px 10px 0;
-  max-width: 175px;
+  max-width: 250px;
 }
 
 .katex-display>.katex {

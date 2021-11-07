@@ -229,7 +229,7 @@ parent: linear-algebra-machine-learning
   
 ### Determinates and inverses
   
-* [[Determinate of a Matrix]] (00:00-05:36)
+* [[Matrix Determinate]] (00:00-05:36)
 
   * A matrix like this scales space: $\begin{bmatrix}a & 0 \\ 0 & d\end{bmatrix}$ by a factor of $ad$.
   * $ab$ is called the "determinate" of the transformation matrix.
