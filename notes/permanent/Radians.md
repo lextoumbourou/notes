@@ -4,7 +4,7 @@ date: 2021-10-17 10:30
 tags:
   - Trigonometry
 cover: /_media/radian-cover.png
-summary: A radian measures an angle in radiuses
+summary: A measurement of an angle in radiuses
 ---
 
 A radian is a measurement of an angle.
