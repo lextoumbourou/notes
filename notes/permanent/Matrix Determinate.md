@@ -4,7 +4,7 @@ date: 2021-11-06 18:00
 tags:
   - LinearAlgebra
 cover: /_media/determinant.png
-summary: The determinate of a matrix is how  much it scales space.
+summary: A measure of how a matrix scales space.
 ---
 
 The determinate of a [[Matrix Transformation]] refers to how much it scales space.
