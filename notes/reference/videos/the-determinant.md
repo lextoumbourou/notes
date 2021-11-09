@@ -12,7 +12,7 @@ One way to measure a [[Matrix Transformation]] is how much it stretches or squis
 
 Or: "the factor by which a given area increases or decreases after a transformation."
 
-For example, after this [[Matrix Transformation]] $\begin{bmatrix}3 && 0 \\ 0 && 2\end{bmatrix}$, $\hat{i}$ is scaled by a factor of 3, and $\hat{j}$ is scaled by a factor of 2. The rectangular area goes from an area of 1 ($1 \ \times \ 1$) to 6 ($3 \ \times \ 2$), we say the linear transformation has scaled area by 6.
+For example, after this [[Matrix Transformation]] $\begin{bmatrix}3 && 0 \\ 0 && 2\end{bmatrix}$, $\hat{i}$ is scaled by a factor of 3, and $\hat{j}$ is scaled by a factor of 2. The rectangular area goes from an area of 1 ( $1 \ \times \ 1$ ) to 6 ( $3 \ \times \ 2$ ), we say the linear transformation has scaled area by 6.
 
 On the other hand, a shear slants the area into a parallelogram, but the base and height remain $1 \ x \ 1$. So the area is unchanged.
 
