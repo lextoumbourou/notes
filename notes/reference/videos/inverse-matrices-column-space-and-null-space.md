@@ -84,4 +84,4 @@ For matrices that aren't full rank, you can have many matrices that land on 0. I
 
 This set of vectors that land on the origin is called the [[Null Space]] or kernel of the vectors. The space of all vectors that become null (land on 0 vectors).
 
-With linear sysmtes of equations $A\vec{x} = \vec{v}$ when $\vec{v}$ happens to be $\begin{bmatrix}0 \\ 0\end{bmatrix}$, the null space gives you all possible solutions to the equation.
+With linear systems of equations $A\vec{x} = \vec{v}$ when $\vec{v}$ happens to be $\begin{bmatrix}0 \\ 0\end{bmatrix}$, the null space gives you all possible solutions to the equation.
