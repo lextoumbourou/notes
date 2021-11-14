@@ -5,20 +5,20 @@ aliases:
 date: 2020-11-08 18:00
 modified: 2021-08-22 16:00
 tags: 
-  - LinearAlgebra 
-  - GameMath
-cover: /_media/vector.png
+  - LinearAlgebra
+cover: /_media/vector-cover.png
+summary: An ordered list of numbers that describe an arrow in space.
 ---
 
-A vector is an ordered list of numbers.
+For most practical purposes, a vector is an ordered list of numbers.
 
-We typically introduce vectors to math students as arrows pointing in space, defined by a length (or magnitude) and direction. In this context, the numbers describe how far from the origin (in 2d space, that's usually the point `(0, 0)`) you travel in each axis to reach the tip of the vector.
+In linear algebra, the numbers describe an arrow pointing in space. If we create a grid to represent space, we will place the tip at the coordinate in the vector and the base on the origin of the grid system.  In 2d space, that origin is typically the point `(0, 0)`.
 
-For example, the vector in the cover image is $(1, 2)$ or 1 unit of "change" along the x-axis and two units of "change" along the y-axis.
+We can think of the vectors describing a unit of change along each axis. For example, the vector in the cover image is $(1, 2)$ or 1 unit of "change" along the x-axis and two units of "change" along the y-axis. That's why we commonly describe vectors as being defined by a length (or magnitude) and direction.
 
 We refer to each number in a vector as a component.
 
-A vector can be moved around in space (in other words, we can change its origin), and it remains the same vector.
+Theoretically, we can move the arrow around in space without changing the definition of the vector. In other words, if we decided that the origin of the grid was $(5, 5)$, then the same vector would be described as $(6, 7)$.
 
 Vectors are represented in math as a vertical list of numbers, or a matrix with one column, to differential from coordinates.
 
@@ -43,7 +43,7 @@ We can plot these numbers in a coordinate system to see how the flowers relate t
 
 ![Iris scatterplot](/_media/iris-scatterplot.png)
 
-* We can add vector. See [[Vector Addition]].
+* We can add a vector. See [[Vector Addition]].
 * We can subtract vectors. See [[Vector Subtraction]].
 * We can multiply vectors by a value. See [[Vector Scalar]].
 * We can combine vectors in various ways. See [[Dot Product]] or [[Element-wise product]].
