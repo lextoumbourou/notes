@@ -16,9 +16,13 @@ One major use case for linear algebra is solving *linear* systems of equations.
 
 One example:
 
-$2x + 5y + 3z = -3$
-$4x + 0y + 8z = 0$
-$1x + 3y + 0z = 2$
+$$
+\begin{gather}
+2x + 5y + 3z = -3 \\
+4x + 0y + 8z = 0 \\
+1x + 3y + 0z = 2 \\
+\end{gather}
+$$
 
 In them, we scale each variable by some value and add together each component. We organize by putting variables on the left and answers on the right. If a term isn't present, we add a 0 before the corresponding variable so everything lines up.
 
@@ -32,8 +36,12 @@ We can visualize a [[Matrix Transformation]] geometrically by finding a vector $
 
 In 2d example, with 2 equations and 2 unknowns:
 
-$2x + 3y = -4$
-$1x + 3y = -1$
+$$
+\begin{gather}
+2x + 3y = -4 \\
+1x + 3y = -1
+\end{gather}
+$$
 
 $\underbrace{\begin{bmatrix}2 & 2 \\ 1 & 3\end{bmatrix}}_A  \underbrace{\begin{bmatrix}x \\ y\end{bmatrix}}_{\vec{x}} = \underbrace{\begin{bmatrix}-4 \\ -1\end{bmatrix}}_{\vec{v}}$
 
@@ -49,8 +57,12 @@ The core property of the inverse is that when multipled by the original matrix, 
 
 When you find the inverse, you can solve for $\vec{x}$ by multiplying it by $\vec{v}$. Algebraically it works, because you can multiply both sides by the inverse.
 
-$A^{-1}A\vec{x} = A^{-1}\vec{v}$
-$\vec{x} = A^{-1}\vec{v}$
+$$
+\begin{align}
+A^{-1}A\vec{x} = A^{-1}\vec{v} \\
+$\vec{x} = A^{-1}\vec{v}
+\end{align}
+$$
 
 For a randomly generated matrix, the determinant is likely non-zero. That corresponds to the idea that two unknowns in a linear system of equations have a unique solution.
 
