@@ -1,16 +1,22 @@
 ---
 title: Matrix Inverse
 date: 2021-09-21 22:00
+modified: 2021-11-13 00:00
 tags:
   - LinearAlgebra
-cover: /_media/inverse-matrix-cover.png
+cover: /_media/matrix-inverse-cover.png
+summary: A matrix that reverses a transformation.
 ---
 
-When you multiply a matrix by its inverse, you get the [[Identity Matrix]] back.
+The inverse of a [[Matrix Transformation]] is a matrix that reverses the transformation.
+
+For example, if our matrix transform did a 90° anticlockwise rotation, the inverse matrix would do a 90° clockwise rotation.
+
+![Inverse transformation example](/_media/inverse-matrix-transformation.gif)
 
 We represent the inverse of a matrix $A$ as $A^{-1}$.
 
-$A \cdot A^{-1} = I$
+When you multiply a matrix by its inverse, you get the [[Identity Matrix]] back: $A \cdot A^{-1} = I$
 
 It's the equivalent of the reciprocal of a number in scalar math, ie $10 * \frac{1}{10} = 1$ or $10 \cdot 10^{-1} = 1$
 
