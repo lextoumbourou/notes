@@ -3,4 +3,5 @@ class Theme():
     COLOR_1 = '#b98b99'
     COLOR_2 = '#b9b28b'
     COLOR_3 = '#8ba7b9'
-    TEXT_COLOR = '#333333'
+    COLOR_4 = '#7A976B'
+    TEXT_COLOR = '#1B3D2F'
