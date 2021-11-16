@@ -12,7 +12,7 @@ It's possible to have [[Matrix Transformation]]s between dimensions, for example
 
 The transformation is linear as long as grid lines remain parallel and evenly spaced and the origin remains fixed.
 
-Encoding a transformation as a matrix is the same as before: look where the [[Basis Vector]]s land and record as columns of a matrix as a 3x2 matrix.
+Encoding a transformation as a matrix is the same as before: look where the [[Basis Vector]]s land and record as columns of a matrix as a $3 \ x \ 2$ matrix.
 
 $\begin{bmatrix}\textcolor{red}{2} && \textcolor{green}{0} \\ \textcolor{red}{-1} && \textcolor{green}{1} \\ \textcolor{red}{-2} && \textcolor{green}{1}\end{bmatrix}$
 
@@ -20,9 +20,9 @@ That transformation takes $\hat{i}$ to $\begin{bmatrix}\textcolor{red}{2} \\ \te
 
 The [[Column Space]] (the place where all vectors land) of this matrix is a 2d plane slicing through the origin. However, we consider the matrix to be "full rank" since the number of dimensions in column space equals those in the input space.
 
-So a 3x2 matrix maps 2d space to 3d space: 2 columns indicate you're starting in space with two basis vectors.
+So a $3 \ x \ 2$ matrix maps 2d space to 3d space: 2 columns indicate you're starting in space with two basis vectors.
 
-On the other hand, a 2x3 matrix maps 3d space to 3d space: 3 columns indicate you're starting in space with three basis vectors, two rows indicate that we describe the landing place with two coordinates.
+On the other hand, a $2 \ x \ 3$ matrix maps 3d space to 3d space: 3 columns indicate you're starting in space with three basis vectors, two rows indicate that we describe the landing place with two coordinates.
 
 We can also have a transformation from 2d to 1d (the number line). This transformation takes in vectors and returns numbers.
 
