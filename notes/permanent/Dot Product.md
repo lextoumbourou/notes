@@ -3,7 +3,7 @@ title: Dot Product
 date: 2021-08-11 21:30
 modified: 2021-12-02 19:00
 cover: /_media/dot-product-cover.png
-summary: An operation between 2 vectors that returns a number
+summary: An operation between 2 vectors that returns a number.
 tags:
   - LinearAlgebra
 ---
