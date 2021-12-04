@@ -3,7 +3,7 @@ title: Cross product introduction
 date: 2021-12-04 13:00
 category: reference/videos
 cover: /_media/khan-cross-product-intro.png
-summary: "Notes from [Cross product introduction](https://www.youtube.com/watch?v=pJzmiywagfY) by Khan Academy.""
+summary: "Notes from [Cross product introduction](https://www.youtube.com/watch?v=pJzmiywagfY) by Khan Academy."
 ---
 
 These are notes from [Cross product introduction | Vectors and spaces | Linear Algebra | Khan Academy](https://www.youtube.com/watch?v=pJzmiywagfY) by Khan Academy.
