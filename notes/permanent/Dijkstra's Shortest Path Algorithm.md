@@ -1,96 +1,39 @@
-Title: Understanding Dijkstra's Shortest Path Algorithm
-Tagline: How to find your way out of a maze like a robot
-Date: 2014-01-12
-Tags: Computer Science, Graphs
-Status: Draft
+---
+title: Dijkstra's Shortest Path Algorithm
+date: 2014-01-12 00:00
+tags:
+  - Algorithms
+summary: An algorithm for finding a path between nodes in a graph.
+status: draft
+---
 
-</p>
+Dijkstra's Shortest Path Algorithm provides a simple way for a computer to build a shortest path tree for a graph with non-negative path costs.
 
-<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.4.0/fabric.min.js"></script>
+Firstly, the intuition behind it. 
 
-## Overview
+Imagine a robot in a maze. The robot has no map of the maze. All it knows is that in each corner of the maze there are checkpoints, which we'll call **nodes**.  There are paths between checkpoints, which we'll call **edges**. Each edge has a cost. None of the edges have negative path costs.
 
-Dijkstra's Shortest Path Algorithm provides a simple way for a computer to build a shortest path tree for a graph with non-negative path costs. Don't worry if you don't know what the means yet, I'm going to explain the algorithm initially using no code, with the initution that helped me understand it. I hope that it does th esame for you.
+The robot is aiming to find the path through the maze with the lowest cost.
 
-<div class="img-annotated">
-    <img src="/images/hardware_robot.jpg" alt="Robot from movie Hardware (1990)">
-</div>
+At each node, the robot can find information about the node's neighbours, including cost to traverse the edge.
 
-## The scene
+The robot keeps track of which nodes it plans to visit next in a list called the **Frontier**.
 
-A robot finds itself in a maze. The robot has no map of the maze. All it knows is that in each corner of the maze there are checkpoints, which we'll call **nodes**.  There are paths between checkpoints, which we'll call **edges**. Each edge has a cost, literally a dollar amount that it needs to pay to traverse the edge. None of the edges have negative path costs, in other words, the robot can't earn money taking any of the edges.
+The robox keeps track of which nodes it's visited in a list called **Explored**.
 
-At each node, the robot can ask for information about the node's neighbours, including price to traverse the edge.
+Our robot begins at `Node A`.
 
-The maze looks like this:
-
-<canvas id="example1">
-
-    (A) <--->  (B)
-     ^          ^ 
-     |    |     |
-     |    |     |
-     |    |     |
-     |    |     |
-     ^          ^
-     (C) <---> (D)
-
-</canvas>
-
-<script>
-    var canvas = new fabric.Canvas('example1');
-    var nodeA = new fabric.Text('A', {
-        left: 5,
-        top: 5,
-        shadow: 'rgba(0,0,0,0.3) 5px 5px 5px',
-        fontSize: 20});
-    canvas.add(nodeA);
-    var nodeB = new fabric.Text('B', {
-        left: 200,
-        top: 5,
-        shadow: 'rgba(0,0,0,0.3) 5px 5px 5px',
-        fontSize: 20});
-    canvas.add(nodeB);
-    var nodeC = new fabric.Text('C', {
-        left: 5,
-        top: 100,
-        shadow: 'rgba(0,0,0,0.3) 5px 5px 5px',
-        fontSize: 20});
-    canvas.add(nodeC);
-    var nodeD = new fabric.Text('D', {
-        left: 200,
-        top: 100,
-        shadow: 'rgba(0,0,0,0.3) 5px 5px 5px',
-        fontSize: 20});
-    canvas.add(nodeD);
-
-    var pathA2pathB = new fabric.Rect({
-        left: 30,
-        top: 20,
-        width: 170,
-        height: 1,
-        fill: 'black',
-    });
-    canvas.add(pathA2pathB);
-</script>
-
-Our robot begins at ```Node A```.
-
-The robot is assigned to find the cheapest way to navigate the maze, from checkpoint to checkpoint. The robot can only store two tables of information:
-
-* The first is called the **Frontier**. This is where it stores information about what nodes it can travel to next.
-* The second is the **Explored** list. Once a node makes it to this list, the robot will never explore it again.
- 
-1\. The robot begins at node A. It adds it to the *Explored* list. Since we haven't spent a cent, the cost to this path is 0.
+It firstly adds this node to the **Explored** list, since it never needs to visit again. Since we haven't accrued a cost, the current path is 0.
 
     > Explored list <
 
     Node   Cost   Path
     A      0      A
+    
+It then finds information about A's neighbours:
 
-> Robot: "Node A, what are your neighbours?"
-
-> Node A: "There's B, with a cost of $5 and C with a cost of $3."
+* **B** with a cost of 5.
+* **C** with a cost of 3.
 
 Since neither of these nodes is on the **Explored** list, it puts them both on the **Frontier**. The robot adds the cost spent so far (current $0) to the price to get to these nodes.
 
@@ -100,9 +43,9 @@ Since neither of these nodes is on the **Explored** list, it puts them both on t
     B      $0 + $5 = $5   A -> B
     C      $0 + $3 = $3   A -> C
 
-2\. The Robot decides where to travel next. It searches the **Frontier** list for the cheapest path. It finds C.
+The Robot decides where to travel next by searching the **Frontier** list for the cheapest path. It finds C.
 
-3\. Now at C, the robot moves it from the **Frontier** to the **Explored** list. It is impossible for the robot to find a cheaper path to C, because if such a path existed, it would have found it already.
+Now at C, the robot moves it from the **Frontier** to the **Explored** list. It is impossible for the robot to find a cheaper path to C, because if such a path existed, it would have found it already.
 
     > Explored list <
 
@@ -115,9 +58,11 @@ Since neither of these nodes is on the **Explored** list, it puts them both on t
     Node    Cost       Path
     B       $5         A -> B
 
-The robot asks the node for its neighbours.
+The robot asks the node C for its neighbours.
 
-> Node C: "My neighbours are nodes A, E and B. A costs you $3 dollars to return, E costs you $2 and B will cost you $1."
+* **A** with a cost of 3.
+* **E** with a cost of 2.
+* **B** with a cost of 1.
 
 The Robot knows ```A``` is on the **Explored** list, so it doesn't need to explore that again. The robot hasn't explored ```E```, so it adds the **Frontier**, with the path and new cost. The robot goes to add ```B``` to the **Frontier**, but realises that it's already on it. However, the cost of path to B through ```A -> C -> B``` is only $4 ($0 + $3 + $1) which is less than the path it has stored. So, the robot removes the old path to B and adds the new.
 
@@ -129,7 +74,7 @@ The Robot knows ```A``` is on the **Explored** list, so it doesn't need to explo
 
 The robot scans the **Frontier** list for the next destination. Since B is the cheapest path so far, it follows it.
 
-4\. Now at B, the Robot takes B from the Frontier and adds it to Explored.
+Now at **B**, the Robot takes **B** from the Frontier and adds it to Explored.
 
     > Explored list <
 
@@ -142,19 +87,12 @@ The robot scans the **Frontier** list for the next destination. Since B is the c
 
     Node    Cost            Path
     D       $3 + $6 = $9    A -> C -> D
-
-> Robot: "Excuse me Node B, please tell me about your neighbours."
-
-> Node B: "Well Mr Robot. There's A, which will cost you $5 to visit."
-
-> Robot: "I know about A. What else you got?"
-
-> Node B: "Okay, there's C - "
-
-> Robot: "Yes, C's where I just came from. Anything else?"
-
-> Node B:  Well, then there's D for a cost of $2"
-
+    
+ It examines **B**'s neighbours:
+ 
+ * **A** with a cost of 5.
+ * **D** with a cost of 2.
+ 
 The Robot checks the Frontier. It's got a path to D, but the path to B + the path to D is cheaper than what's on the Frontier. So, it replaces the D path with the new one
 
     > Frontier list <
@@ -164,7 +102,7 @@ The Robot checks the Frontier. It's got a path to D, but the path to B + the pat
 
 The robot only has one node on the Frontier. It travels to D.
 
-5\.  The Robot adds D to the Explored list
+The Robot adds D to the Explored list
 
     > Explored list <
 
@@ -173,20 +111,10 @@ The robot only has one node on the Frontier. It travels to D.
     C       $3              A -> C
     B       $3 + $1 = $4    A -> C -> B
     D       $4 + $2 = $6    A -> B -> D
+    
+Each neighbour of D has been visited. So it has found the shortest path.
 
-> Robot: "D, tell you your neighbours."
-
-> Node D: "I have C and B."
-
-Both visited.
-
-The robot checks its Frontier list. Empty.
-
-The job is done. Queue the soundtrack.
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/YbmqfSo_zq4" frameborder="0" allowfullscreen></iframe>
-
-## In code
+---
 
 So, now let's see it as Python code. For the remainder of the blog post, the code with get built in the right-hand side as you scroll down.
 

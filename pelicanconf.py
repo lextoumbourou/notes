@@ -65,4 +65,4 @@ IGNORE_FILE = ['.ipynb_checkpoints']
 
 LIQUID_CONFIGS = (("CONTENT_DIR", "notes", ""), )
 
-ARTICLE_EXCLUDES = ['journal']
+ARTICLE_EXCLUDES = ['journal', 'posts']
