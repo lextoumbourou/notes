@@ -7,7 +7,7 @@ summary: An operation between two 3d vectors that returns a vector.
 cover: /_media/cross-product-cover.png
 ---
 
-The Cross Product between 2 vectors is an operation that returns a vector.
+The Cross Product is an operation between two vectors that returns a vector.
 
 $\vec{a} \times \vec{b} = \vec{c}$
 
