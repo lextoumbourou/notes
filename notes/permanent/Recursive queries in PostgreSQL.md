@@ -1,5 +1,5 @@
 ---
-title: Understanding recursive queries in PostgreSQL
+title: Recursive queries in PostgreSQL
 date: 2016-05-08 00:00
 tags:
   - PostgreSQL
@@ -14,8 +14,6 @@ Then, you wish to construct a query where for some child category, you want to f
 *Side note: in this contrived example, there are some techniques you could use to skip recursive queries completely, like denormalising your data by adding the parent id into each child category which would also bring significant performance gains, but I still think it's useful to have recursive queries in your toolkit...*
 
 As always, the [Postgres docs](http://www.postgresql.org/docs/current/static/queries-with.html) are very comprehensive, however, they can be a little daunting when you're getting started - especially if writing SQL isn't something you're doing every day. Since I was recently tasked with solving a similar problem,  the difficulties of understanding it are fresh on my mind. So I figured I'm in a good position to help others do the same.
-
-I highly, highly recommend typing out all the examples into a ``psql`` session of your own, if you want to get the most out of this article.
 
 ***
 
@@ -309,9 +307,3 @@ Results                         Working table                     Intermediate t
 ```
 
 Then we keep following this process until there is nothing to replace into our working table.
-
-And that's that!
-
-***
-
-Hopefully you now have a better understanding of Postgres recursive queries and how they work. Feel free to hit me up on [Twitter](https://twitter.com/lexandstuff) if you have questions or if I've gotten anything wrong.
