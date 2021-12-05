@@ -20,7 +20,7 @@ $$
 \mathbf{a} \cdot \mathbf{b} = a_1 \cdot b_1 + ... + a_N \cdot b_N
 $$
 
-Order doesn't matter: $\mathbf{a} \cdot \mathbf{b} = \mathbf{b} \cdot \mathbf{a}$, in other words, it's a commutative operation.
+Order doesn't matter: $\mathbf{a} \cdot \mathbf{b} = \mathbf{b} \cdot \mathbf{a}$, in other words, it's *Commutative*.
 
 The dot product is helpful because it tells you about the angle between 2 vectors.
 
@@ -38,13 +38,19 @@ $$
 
 We can find the angle in [[Radians]] between any 2 vectors if we first know the formula for the dot product:
 
-$\mathbf{a} \cdot \mathbf{b} = \|\mathbf{a}\| \|\mathbf{b}\| \cos\theta$
+$\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos\theta$
 
-That's the "length of $\mathbf{a}$"" times the "length of $\mathbf{b}$" times "the [[Cosine]] ($\cos$) of the angle ($\theta$) between them".
+That's the "length of $\mathbf{a}$" times the "length of $\mathbf{b}$" times "the [[Cosine]] ($\cos$) of the angle ($\theta$) between them".
 
-The cosine of an angle is a number between -1 and 1 where $cosine(180°) = -1$ and $cosine(0) = 1$ and in the middle $cosine(90°) = 0$. That explains why the dot product between perpedicular vectors is 0: $\|\mathbf{a}\| \|\mathbf{b}\| 0 = 0$
+The cosine of an angle is a continuous number between -1 and 1 where:
 
-So, to find the angle, we can rearrange to put $\theta$ on the left-hand side: $\theta = \cos^{-1}(\frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{a}\| \|\mathbf{b}\|})$.
+* $\cos(180°) = -1$ 
+* $\cos(90°) = 0°$
+* $\cos(0) = 1$
+
+$\cos(90°) = 0$ explains why the dot product between perpedicular vectors is 0: $|\mathbf{a}| |\mathbf{b}| 0 = 0$
+
+So, to find the angle, we can rearrange to put $\theta$ on the left-hand side: $\theta = \cos^{-1}(\frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}| |\mathbf{b}|})$.
 
 If we know $\mathbf{a}$ and $\mathbf{b}$ are unit vectors, their lengths will equal 1. So the expression is simply:   $\theta = \cos^{-1}(\mathbf{a} \cdot \mathbf{b})$.
 
