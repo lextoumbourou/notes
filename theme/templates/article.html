@@ -34,7 +34,7 @@
 
         <div class="article-content">
           <div class="cover-image">
-            {% if article.cover %}
+            {% if article.cover and not article.hide_cover_in_article %}
             <img src="{{ article.cover }}" />
             {% endif %}
           </div>

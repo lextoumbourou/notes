@@ -2,9 +2,15 @@ from pathlib import Path
 
 from manim import *
 
+from theme import Theme
+
 class CrossProductCover(Scene):
     def construct(self):
-        cross_product = MathTex(r"\vec{a} \times \vec{b} = \vec{c}", font_size=300).set_color("#333").move_to(ORIGIN)
+        cross_product = MathTex(r"\vec{c}", r" = ", r" \vec{a} ", r" \times ", r" \vec{b}", font_size=300).set_color(Theme.TEXT_COLOR)
+        cross_product.set_color_by_tex("{a}", Theme.COLOR_1)
+        cross_product.set_color_by_tex("{b}", Theme.COLOR_2)
+        cross_product.set_color_by_tex("{c}", Theme.COLOR_3)
+
         self.add(cross_product)
 
 
