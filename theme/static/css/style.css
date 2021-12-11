@@ -21,6 +21,12 @@ img {
   width: auto\9; /* ie8 */
 }
 
+video {
+  /* override other styles to make responsive */
+  max-width: 100%;
+  height: auto   !important;
+}
+
 code {
   overflow: scroll;
 }

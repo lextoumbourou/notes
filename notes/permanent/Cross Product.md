@@ -12,7 +12,7 @@ The Cross Product is an operation between two vectors that returns a vector: $\v
 
 The returned vector will be orthogonal to both input vectors and have a length equal to the area of the parallelogram the input vectors define.
 
-<video><source src="/_media/cross-product.mp4" type="video/mp4"></video>
+<video controls loop><source src="/_media/cross-product.mp4" type="video/mp4"></video>
  
 Though the Cross Product can be generalized to multiple dimensions by taking the product of $n - 1$ vectors, you usually calculate the Cross Product in 3d space.
 
