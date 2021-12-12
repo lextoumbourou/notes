@@ -37,7 +37,7 @@ part.Parent = game.Workspace
 
 The `Attachment` remains in the same place relative to the `Part` as the part moves.
 
-<video controls loop autoplay><source src="/_media/roblox-attachment.mp4" type="video/mp4"></video>
+<video controls loop autoplay><source src="/_media/roblox-attachment-low.mp4" type="video/mp4"></video>
 
 A new attachment can be created using `Instance.new('Attachment')`.
 
