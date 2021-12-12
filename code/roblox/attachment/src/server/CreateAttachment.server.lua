@@ -18,23 +18,15 @@ fire.Parent = attachment
 part.Parent = game.Workspace
 
 -- Code to move Part around below.
-task.wait(1)
 local TweenService = game:GetService('TweenService')
 
-while true do
-	local goal = {}
-	goal.Position = Vector3.new(
-		math.random(1, 5),
-		math.random(1, 5),
-		math.random(1, 5)
-	)
-	goal.Orientation = Vector3.new(
-		math.random(1, 360),
-		math.random(1, 360),
-		math.random(1, 360)
-	)
-	local tweenInfo = TweenInfo.new(5, Enum.EasingStyle.Linear)
-	local tween = TweenService:Create(part, tweenInfo, goal)
-	tween:Play()
-	task.wait(5)
-end
+local goal = {}
+goal.Orientation = Vector3.new(
+	part.Orientation.X,
+	360,
+	part.Orientation.Z
+)
+local tweenInfo = TweenInfo.new(5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, -1, false, 0)
+local tween = TweenService:Create(part, tweenInfo, goal)
+tween:Play()
+tween.Completed:Wait()
