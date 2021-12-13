@@ -8,9 +8,15 @@ cover: /_media/roblox-attachment-cover.png
 hide_cover_in_article: true
 ---
 
-An Attachment in Roblox is an object that describes a point and orientation in space relative to the [[Roblox CFrame]] of a BasePart.
+An `Attachment` in Roblox is an object that describes a point and orientation in space relative BasePart's [[Roblox CFrame]].
 
-Consider a fire that you want to burn from the back of a `Part`. If I attach a `Fire` instance to the `Part`, it will always burn from the `Part`'s center of the Part. Instead, I can create an attachment and position it -2 studs along the X-axis and one stud along the Y-axis from the Part's center, regardless of where the Part is facing. Then, I can parent `Fire` to the Attachment.
+Consider a `Fire` that you want to burn from the back of a `Part`. If I attach a `Fire` instance directly to a `Part`, it will always burn from the `Part`'s center of the Part. Instead, I can create an `Attachment` parented to the `Part` and position it -2 studs along the X-axis and one stud along the Y-axis from the Part's center.
+
+The `Attachment` remains in the same place relative to the `Part` as the part moves.
+
+<video controls loop autoplay><source src="/_media/roblox-attachment-low.mp4" type="video/mp4"></video>
+
+Here's how it looks in code:
 
 ```lua
 --!strict
@@ -34,10 +40,6 @@ part.Parent = game.Workspace
 
 -- Code to move Part around below.
 ```
-
-The `Attachment` remains in the same place relative to the `Part` as the part moves.
-
-<video controls loop autoplay><source src="/_media/roblox-attachment-low.mp4" type="video/mp4"></video>
 
 A new attachment can be created using `Instance.new('Attachment')`.
 
