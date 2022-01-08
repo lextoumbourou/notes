@@ -3,7 +3,7 @@ title: Changing Basis
 date: 2022-01-04 00:00
 tags:
   - LinearAlgebra
-summary: We can use any vectors to define a basis and translate between Basis
+summary: "Since any vectors can be Basis Vectors, it's useful to understand how to translate vectors between bases"
 cover: /_media/changing-basis-cover.png
 ---
 
