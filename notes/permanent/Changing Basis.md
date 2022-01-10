@@ -11,10 +11,6 @@ The use of coordinates to define vectors implies an agreement about which [[Basi
 
 $\hat{i}=\begin{bmatrix}1 \\ 0\end{bmatrix}$,  $\hat{j}=\begin{bmatrix}0 \\ 1\end{bmatrix}$.
 
-Any [[Vector]] that we describe in this basis we can think of as a linear combination of both basis vectors:
-
-$\begin{bmatrix}a \\ b\end{bmatrix} = a\begin{bmatrix}1 \\ 0\end{bmatrix} + b\begin{bmatrix}0 \\ 1\end{bmatrix}$
-
 However, we are technically not limited to just the standard basis vectors: we can use any set of vectors to describe a coordinate system. Perhaps we encounter an Alien whose coordinate system uses these basis vectors:
 
 $\hat{e}_{1} = \begin{bmatrix}2 \\ 4\end{bmatrix}$, $\hat{e}_{2} = \begin{bmatrix}1 \\ 1\end{bmatrix}$.
