@@ -4,6 +4,8 @@ date: 2021-10-23 18:00
 category: reference/videos
 summary: Notes from [Linear combinations, span, and basis vectors](https://www.youtube.com/watch?v=fNk_zzaMoSs) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
 cover: /_media/linear-comb-basis-vectors.png
+status: draft
+parent: essence-of-linear-algebra
 ---
 
 Notes from [Linear combinations, span, and basis vectors](https://www.youtube.com/watch?v=fNk_zzaMoSs) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.

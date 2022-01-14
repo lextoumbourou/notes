@@ -4,6 +4,8 @@ date: 2021-12-13 20:20
 category: reference/videos
 cover: /_media/3blue-change-of-basis-cover.png
 summary: "Notes from [Change of basis | Chapter 13, Essence of linear algebra](https://www.youtube.com/watch?v=P2LTAUO1TdA) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series."
+status: draft
+parent: essence-of-linear-algebra
 ---
 
 These are notes from [Change of basis | Chapter 13, Essence of linear algebra](https://www.youtube.com/watch?v=P2LTAUO1TdA) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.

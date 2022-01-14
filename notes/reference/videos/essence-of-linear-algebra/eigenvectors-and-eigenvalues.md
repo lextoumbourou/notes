@@ -5,6 +5,8 @@ category: reference/videos
 cover: /_media/3blue-eigen-cover.png
 summary: "Notes from [Eigenvectors and eigenvalues](https://www.youtube.com/watch?v=PFDu9oVAE-g) by Khan Academy."
 hide_cover_in_article: true
+status: draft
+parent: essence-of-linear-algebra
 ---
 
 These are notes from [Eigenvectors and eigenvalues | Chapter 14, Essence of linear algebra](https://www.youtube.com/watch?v=PFDu9oVAE-g) by Khan Academy.
