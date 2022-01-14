@@ -3,6 +3,8 @@ title: Vectors | Chapter 1, Essense of linear algebra
 date: 2021-04-06 22:00
 category: reference/videos
 cover: /_media/vectors-3blue1brown-cover.png
+status: draft
+parent: essence-of-linear-algebra
 ---
 
 Notes from 3Blue1Brown video [Vectors](https://www.youtube.com/watch?v=fNk_zzaMoSs) from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.
