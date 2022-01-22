@@ -74,7 +74,7 @@ Vectors are the building block of linear algebra.
 
     $$\begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} 3 \\ -1 \end{bmatrix} = \begin{bmatrix} 1 + 3 \\ 2 + -1 \end{bmatrix} = \begin{bmatrix} 4 \\  1\end{bmatrix}$$
 
-* Vector multiplication is when you multiply a vector by a number, called a [[Vector Scalar]], either stretching or squishing the vector by that amount.
+* Vector multiplication is when you multiply a vector by a number ([[Vector Scaling]]) either stretching or squishing the vector by that amount.
 
     ![Vector scaling](/_media/vector-scaling.png)
 

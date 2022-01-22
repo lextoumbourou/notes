@@ -17,7 +17,7 @@ In 2d space, basis vectors are commonly defined as $\hat{i} = \begin{bmatrix}1 \
 
 We can think of all other vectors in the space as [[Linear Combinations]] of the basis vectors.
 
-For example, if I have vector $\begin{bmatrix}10 \\ -7\end{bmatrix}$, we can treat each component as a [[Vector Scalar]] for the basis vectors: $10\begin{bmatrix}1 \\ 0\end{bmatrix} + (-7)\begin{bmatrix}0 \\ 1\end{bmatrix}$.
+For example, if I have vector $\begin{bmatrix}10 \\ -7\end{bmatrix}$, we can treat each component as scalar (see [[Vector Scaling]]) for the basis vectors: $10\begin{bmatrix}1 \\ 0\end{bmatrix} + (-7)\begin{bmatrix}0 \\ 1\end{bmatrix}$.
 
 We can choose any set of vectors as the basis vectors for space, giving us entirely new coordinate systems. However, they must meet the following criteria:
 

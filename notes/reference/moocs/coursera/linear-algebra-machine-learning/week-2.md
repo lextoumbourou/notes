@@ -11,7 +11,7 @@ parent: linear-algebra-machine-learning
 * The module covers the following topics:
   * Calculating the [[Vector Magnitude]] (aka Vector Modulus).
   * Combining vectors using the [[Dot Product]].
-  * [[Vector Scalar]] and Vector Projections
+  * [[Vector Scaling]] and Vector Projections
   * Looking at the [[Vector]] set we use to define space called the [[Basis Vectors]].
   * Understanding [[Linear Independence]] and [[Linear Combinations]].
 
