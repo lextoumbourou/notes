@@ -13,7 +13,7 @@ parent: linear-algebra-machine-learning
 * "Eigen" is translated from German as "characteristic."
 * "Eigenproblem" is about finding characteristic properties of something.
  
-* Geometric interpretation of [[Eigenvectors]] and [[Eigenvalues]] (00:45-04:22)
+* Geometric interpretation of [[Eigenvector]] and [[Eigenvalues]] (00:45-04:22)
     * Though we typically visualize linear transformations based on how they affect a single vector, we can also consider how they affect every vector in the space by drawing a square.
 
         ![Visualing all vectors in space as square](/_media/laml-all-vectors-in-space-square.png)
@@ -35,7 +35,7 @@ parent: linear-algebra-machine-learning
 
         ![Highlighted vectors after scaling](_media/laml-vectors-after-scaling.png)
 
-    * The vectors that point in the same direction we refer to as [[Eigenvectors]].
+    * The vectors that point in the same direction we refer to as [[Eigenvector]].
     * The vectors that point in the same direction and whose size does not change are said to have [[Eigenvalues]] 1.
         * In the above example, the vertical Eigenvector doubles in length, with an Eigenvalue of 2.
 
@@ -47,7 +47,7 @@ parent: linear-algebra-machine-learning
 ### Special eigen-cases
 
 * Recap (00:00-00:18):
-    * [[Eigenvectors]] lie along the same span before and after applying a linear transform to a space.
+    * [[Eigenvector]] lie along the same span before and after applying a linear transform to a space.
     * [[Eigenvalues]] are the amount we stretch each of those vectors in the process.
 
 * 3 special Eigen-cases (00:18-02:15)
@@ -55,13 +55,13 @@ parent: linear-algebra-machine-learning
         * Scale by the same amount in each direction.
         * All vectors are Eigenvectors.
     * 180° rotation
-        * In regular rotation, there are no Eigenvectors. However, in 180° rotation, all vectors become [[Eigenvectors]] pointing in the opposite direction.
+        * In regular rotation, there are no Eigenvectors. However, in 180° rotation, all vectors become [[Eigenvector]] pointing in the opposite direction.
             * Since they are pointing in the opposite direction, we say they have [[Eigenvalues]] of -1.
             
                 ![180 degree rotation Eigenvectors](/_media/laml-180-rotation-eigenvectors.png)
             
     * Combination of horizontal sheer and vertical scaling
-        * Has 2 [[Eigenvectors]]. The horizontal vector and a 2nd Eigenvector between the orange and pink vector.
+        * Has 2 [[Eigenvector]]. The horizontal vector and a 2nd Eigenvector between the orange and pink vector.
         
             ![Eigenvectors after horizontal and vertical scaling](/_media/laml-horizontal-and-vertical-scaling.png)
             
@@ -72,7 +72,7 @@ parent: linear-algebra-machine-learning
         
 ### Calculating eigenvectors
 
-* Calculating [[Eigenvectors]] in general case (00:24-04:36)
+* Calculating [[Eigenvector]] in general case (00:24-04:36)
     * Given transformation $A$, Eigenvectors stay on the same span after the transformation.
     * We can write the expression as $Ax = \lambda x$ where $\lambda$ is a scalar value, and $x$ is the Eigenvector.
     * Trying to find values of x that make the two sides equal.
@@ -96,7 +96,7 @@ parent: linear-algebra-machine-learning
     * We can sub these two values back in:
         * 1st case: $@\lambda = 1$: $\begin{bmatrix}1 & -1 & 0 \\ 0 & 2 & -1\end{bmatrix} \begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \begin{bmatrix}0 & 0 \\0 & 1 \end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix}0 \\ x_2\end{bmatrix} = 0$
         * 2nd case: $@\lambda = 2$: $\begin{bmatrix}1 & -2 & 0 \\ 0 & 2 & -2\end{bmatrix} \begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \begin{bmatrix}-1 & 0 \\0 & 0 \end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix}-x_1 \\ 0\end{bmatrix} = 0$
-    * We know that any vectors that point along the horizontal axis can be [[Eigenvectors]] of this system.
+    * We know that any vectors that point along the horizontal axis can be [[Eigenvector]] of this system.
         * $@\lambda = 1$: $x=\begin{bmatrix}t \\ 0\end{bmatrix}$
             * When $\lambda=1$, the Eigenvector can point anywhere along the horizontal axis.
         * $@\lambda = 2$: $x=\begin{bmatrix}0 \\ t\end{bmatrix}$

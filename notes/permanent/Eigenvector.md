@@ -1,12 +1,12 @@
 ---
-title: Eigenvectors
+title: Eigenvector
 date: 2022-01-21 00:00
 tags:
   - LinearAlgebra
 summary: "A set of vectors whose span doesn't change after a transformation."
 ---
 
-The Eigenvectors of a [[Matrix Transformation]] are any non-zero vector that remains on their [[Vector Span]] after being transformed.
+An Eigenvectors of a [[Matrix Transformation]] is any non-zero vector that remains on its [[Vector Span]] after being transformed.
 
 That means that performing the transformation is equivalent to scaling the vector by some amount. The amount it scales the Eigenvector is called the [[Eigenvalue]].
 

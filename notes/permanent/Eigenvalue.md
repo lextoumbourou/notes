@@ -1,0 +1,10 @@
+---
+title: Eigenvalue
+date: 2022-01-22 12:00
+tags:
+  - LinearAlgebra
+summary: "A value which describes how much a transformation scales an Eigenvector"
+---
+
+A scalar value that describes how much a transformation scales an [[Eigenvector]].
+
