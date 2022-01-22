@@ -45,7 +45,7 @@ We can plot these numbers in a coordinate system to see how the flowers relate t
 
 * We can add a vector. See [[Vector Addition]].
 * We can subtract vectors. See [[Vector Subtraction]].
-* We can multiply vectors by a value. See [[Vector Scalar]].
+* We can multiply vectors by a value. See [[Vector Scaling]].
 * We can combine vectors in various ways. See [[Dot Product]] or [[Element-wise product]].
 
 We describe a [[Ray]] with a similar notation to vectors. However, a Ray doesn't have a length. Only a direction to continue infinitely.
