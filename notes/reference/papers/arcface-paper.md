@@ -10,9 +10,9 @@ These are my notes from the paper [ArcFace: Additive Angular Margin Loss for Dee
 
 ## Abstract
 
-The main challenge for large-scale face recognition is designing a loss function with strong discriminative power.
+They key to face recognition is a loss function with strong discriminative power.
 
-[Centre loss](https://arxiv.org/abs/1707.07391) penalizes distance between features and corresponding class centers to achieve "compactness" within the class.
+[Centre loss](https://arxiv.org/abs/1707.07391) penalizes the distance between features and a set of learned class centers.
 
 [SphereFace](https://arxiv.org/abs/1704.08063) lets the linear transformation matrix in the last fully-connected layer represent class-center and penalizes the angle between deep features and their corresponding weights.
 
