@@ -1,5 +1,5 @@
 ---
-title: Binary Cross-Entropy Loss Function
+title: Binary Cross-Entropy Loss
 date: 2021-08-08 17:00
 tags:
   - MachineLearning
@@ -40,6 +40,6 @@ which is equivalent to this function:
 
 {% notebook permanent/notebooks/bce-loss-function.ipynb cells[5:7] %}
 
-Use [`nn.BCEWithLogitsLoss`](https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html) if your model architecture doesn't perform the [[Sigmoid Activation Function]] on the final layer. That's equivalent to [`nn.CrossEntropyLoss`](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) in PyTorch (see [[Cross-Entropy Loss Function]]).
+Use [`nn.BCEWithLogitsLoss`](https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html) if your model architecture doesn't perform the [[Sigmoid Activation Function]] on the final layer. That's equivalent to [`nn.CrossEntropyLoss`](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) in PyTorch (see [[Categorical Cross-Entropy Loss]]).
 
 [@howardDeepLearningCoders2020] *(pg. 256-257)*

@@ -25,4 +25,4 @@ Code example:
 
 {% notebook permanent/notebooks/negative-log-likelihood.ipynb %}
 
-Negative Log-Likelihood is the 2nd part of the [[Cross-Entropy Loss Function]].
+Negative Log-Likelihood is the 2nd part of the [[Categorical Cross-Entropy Loss]].
