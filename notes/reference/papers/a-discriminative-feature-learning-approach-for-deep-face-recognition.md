@@ -10,11 +10,9 @@ These are my notes from the paper [A Discriminative Feature Learning Approach fo
 
 ## Abstract
 
-We commonly train image classification models using [[Softmax Loss]].
+We commonly train image classification models using [[Categorical Cross-Entropy Loss|Softmax Loss]]. However, softmax loss does not learn sufficiently discriminative features for face recognition.
 
-However, softmax loss does not learn sufficiently discriminative features for face recognition. This paper proposes a new supervision signal called Center Loss.
-
-Center Loss simultaneously learns a center for each class and penalizes the distance between features and class centers, achieving discriminative objects of inter-class dispersion and intra-class compactness.
+This paper proposes a new supervision signal called [[Center Loss]]. Center Loss simultaneously learns a center for each class and penalizes the distance between features and class centers.
 
 Center Loss requires training with joint supervision of softmax loss for stability.
 
@@ -22,9 +20,9 @@ The paper improves on the state-of-the-art for face recognition and face verific
 
 ## 1. Introduction
 
-Modern image classification typically involves some backbone model to learn features from input images. The output of the last layer of the backbone model is usually fed into a classifier.
+Modern image classification typically involves some backbone model to learn features from input images. We usually feed those features into a final layer for classification.
 
-At the time of the paper, CNNs were the best performing model architecture for learning features.
+At the time of the paper, CNNs were the best-performing model architecture for learning features.
 
 Since image classification problems are typically [[Close-Set]] (all possible test classes well represented in the training set), [[Categorical Cross-Entropy Loss|Softmax Loss]] is a suitable loss function choice. In this case, the features learned by the backbone model only need to be separable enough so the classifier can distinguish between classes.
 
@@ -32,10 +30,10 @@ However, in facial recognition, you cannot pre-collect all possible test identit
 
 Discriminative features have two properties:
 
-* features from the same class should be close together: "inter-class dispensation" 
-* features from different classes should be far apart: "intra-class compactness"
+* features from the same class should be close together: "inter-class dispensation." 
+* features from different classes should be far apart: "intra-class compactness."
 
-Fig 1. Shows a typical image classification pipeline, comparing separable and discriminative features.
+In Fig 1. we see a typical image classification pipeline, comparing separable and discriminative features.
 
 ![Fig 1. Showing a typical image classification pipeline and the difference between separable and discriminative features](/_media/center-loss-fig-1.png)
 
@@ -47,7 +45,7 @@ Since [[Stochastic Gradient Descent (SGD)]] relies on mini-batches, you cannot r
 
 Alternatives proposed include [[Contrastive Loss]] (training using pairs) and [[Triplet Loss]] (training using triplets). However, they rely on Hard Negative Mining for efficiency, which adds complexity to the training pipeline.
 
-This paper proposes [[Center Loss]]. They add a center for each class, which is a vector of the same dimension as the input feature embedding.
+This paper proposes [[Center Loss]]. They add a center for each class, a vector of the same dimension as the input feature embedding.
 
 Then, they simultaneously learn center during training while minimizing the distance between features and their corresponding class center.
 
@@ -131,11 +129,11 @@ The method is superior to contrastive and triplet loss as it is efficient and ea
 
 ## 4. Experiments
 
-Filter sizes for conv and local conv layers are 3x3 with stride 1, followed by PReLU nonlinear units. Weights in 3 local convolutions are locally shared in region 4x4, 2x2, and 1x1.
+Filter sizes for conv and local conv layers are 3x3 with stride 1, followed by PReLU nonlinear units.
 
-The number of feature maps is 128 for conv layers and 256 for local conv layers. Max-pooling grid is 2x2, and stride is 2.
+The number of feature maps is 128 for conv layers and 256 for local conv layers. Max-pooling grid is 2x2, and the stride is 2.
 
-The output of 4th pooling layer and 3th local conv layer are concated as input of 1st fully connected layer. The output of the fully connected layer is 512.
+They concatenate the output of the 4th pooling layer and the 3rd local conv layer as input to the 1st fully connected layer. The output of the fully connected layer is 512.
 
 In Fig 4, we see this CNN architecture used for the experiments.
 
@@ -146,7 +144,7 @@ In Fig 4, we see this CNN architecture used for the experiments.
 * Use five landmarks (2 eyes, nose, and mouth corners) for similarity transformation.
 * When detection fails, discard the image in the training set, but use the provided landmarks if it is a testing image.
 * Faces are cropped to 112 x 96 RGB images.
-* Each pixel $[0, 255]$ is normalized by subtracting 127.5 and then dividing by 128.
+* Each pixel $[0, 255]$ is normalized by subtracting 127.5 and dividing by 128.
 
 Training data uses web-collected training data, including:
 
@@ -187,6 +185,7 @@ The results are shown in Fig 5, for 2 experiments:
 ![Fig 5. Experiments with different hyperparameters](/_media/center-loss-fig-5.png)
 
 From this they infer:
+
 * Softmax Loss alone is not a good choice. It leads to poor verification performance.
 * Properly choosing a value of $\lambda$ can improve verification accuracy.
 * Verification performance of model remains stable across a range of $\lambda$ and $\alpha$.
@@ -195,20 +194,25 @@ From this they infer:
 
 Evaluate single model on [[Labeled Faces in the Wild]] and [[YouTube Faces]].
 
-Fig 6. has some examples. In (a), the green frame is for positive pairs, and the red frame is for negative ones. In (b), the white bounding box is the face for testing.
+Fig 6. has some examples.
+
+In (a), the green frame is for positive pairs, and the red frame is for negative ones. In (b), the white bounding box is the face for testing.
 
 ![Examples from Labeled Faces in the Wild and YouTube Faces](/_media/center-loss-fig-6.png)
 
 They train model on only 0.7M outside data with no overlapping in LFW and YTF. Fix $\lambda = 0.003$ and $\alpha = 0.5$ for Model C.
 
-LFW dataset contains 13,233 web-collected images from 5749 different identities, with large variations in pose, expression and illuminations. Tehy test on 6,000 face pairs and report the experiment results.
+LFW dataset contains 13,233 web-collected images from 5749 identities, with variations in pose, expression, and illuminations. They test on 6,000 face pairs and report the experiment results.
 
 YTF dataset consists of 3,425 videos of 1,595 different people, with an
-average of 2.15 videos per person. The clip durations vary from 48 frames to 6,070 frames, with an average length of 181.3 frames. Report the results on 5,000 video pairs in Table 2.
+average of 2.15 videos per person. The clip durations vary from 48 to 6,070 frames, with an average length of 181.3 frames.
+
+Table 2 has the results on 5,000 video pairs.
 
 ![Table 2](/_media/center-loss-table-2.png)
 
 They observe the following:
+
 * Softmax Loss and Center Loss beats baseline one (Model A) by a large margin.
 * Joint supervision can notably enhance the discriminative power of deeply learned features, demonstrating the effectiveness of center loss over Softmax.
 * It also improves over Softmax and Contrastive Loss.
@@ -216,44 +220,37 @@ They observe the following:
 
 ### 4.4 Experiments on the Dataset of MegaFace Challenge
 
-MegaFace datasets aim to evaluate the performance of face recognition
-algorithms at the million scale of distractors (people who are not in the
-testing set).
+MegaFace datasets aim to evaluate the performance of face recognition algorithms with millions of distractors (people who are not in the testing set).
 
-MegaFace datasets include:
+MegaFace dataset has two parts:
 
-* gallery set
+* Gallery Set
     * 1 million images from 690K people. A subset of Flickr photos from Yahoo.
-* probe set
+* Probe Set
     * Facescrub
         * 100K photos of 530 unique people. (55,742 images of males and 52,076 images of females). Sufficient samples can reduce the possible bias in each identity. 
     * FGNet
         * Face Aging Dataset, with 1002 images from 82 identities. Each identity has multiple face images at different ages (ranging from 0 to 69).
 
-There are several testing scenarios (Identification, verification, and pose invariance) under two protocols (large or small training set).
+The paper has several testing scenarios: Identification, Verification, and Pose Invariance with two protocols: large or small training set.
 
-Consider the training set small if it contains less than 0.5M images and 20K subjects.
+The small training set is less than 0.5M images and 20K subjects.
 
-Following the protocol of a small training set, we reduce the size of training images to 0.49M but maintain the number of identities unchanged (i.e., 17,189 subjects). They discard any images overlapping with Facescrub dataset.
+The authors follow the protocol of a small training set, reducing the size of training images to 0.49M but keeping the number of identities unchanged at 17,189 subjects.
 
-They also train three kinds of CNN models on a small training set under different supervision signals for a fair comparison. The resulting models are called **Model A**, **Model B** and
-**Model C**, respectively.
+They discard any images overlapping with Facescrub dataset.
 
-They use the same settings as earlier the $\lambda$ is 0.003
-and the $\alpha$ is 0.5 in **Model C**.
+They train three models: Model A, Model B and Model C for comparison.
 
-We conduct the experiments with the provided code [23], which only tests our algorithm on one of the three gallery (Set 1).
+They use the same settings as earlier the $\lambda$ is 0.003 and the $\alpha$ is 0.5 in Model C.
+
+They test the algorithm on only one of the three galleries.
 
 **Face Identification**
 
-Face identification aims to match a given probe image to the ones with the same person in the gallery. In this task, we need to compute the
-the similarity between each given probe face image and the gallery, which includes at least one image with the same identity as the probe one. Besides, the gallery contains a different scale of distractors, from 10 to 1 million, leading to increasing challenge in testing. 
+Face identification aims to match a given probe image to those with the same person in the gallery. In this task, we need to compute the similarity between each given probe face image and the gallery, including at least one image with the same identity as the probe one. The gallery contains a different scale of distractors, from 10 to 1 million, leading to increasing testing challenges. 
 
-In face identification experiments, they present the results by Cumulative Match Characteristics (CMC) curves.
-
-It reveals the probability that a correct gallery image is ranked on top-K.
-
-Fig 8. Shows the Results
+In Fig 8, they show the results of face identification experiments. They measure performance using Cumulative Match Characteristics (CMC) curves, which is the probability that a correct gallery image is ranked in top-K.
 
 ![Fig 8. CMC Curves of different methods](/_media/center-loss-fig-8.png)
 
@@ -271,27 +268,32 @@ They compare our method against many existing ones:
 * JointBayes
     * (ii) our baseline deep models (model A- and model B-) and (iii) deep models submitted by other groups.
     
-As can be seen from Fig. 8 and Fig. 9, the hand-craft features and shallow model perform poorly. Their accuracies drop sharply with the increasing number of distractors. In addition, the methods based on deep learning perform better than the traditional ones. However, there is still much room for performance improvement. Finally, with the joint supervision of softmax loss and center loss, model C- achieves the best results, not only surpassing the model A- and model B- by a clear margin but also significantly outperforming the other published methods.
+As can be seen from Fig. 8 and Fig. 9, the hand-craft featured and shallow model perform poorly.
+
+Their accuracies drop sharply with the increasing number of distractors.
+
+As expected, methods based on deep learning do better than traditional.
+
+Model C performs the best out of A and B, and outperforms the other published methods.
 
 ![Table 3](/_media/center-loss-table-3.png)
 
 ![Table 4](/_media/center-loss-table-4.png)
 
-To meet the practical demand, face recognition models should achieve high
-performance against millions of distractors.
+To meet the practical demand, face recognition models should achieve high performance against millions of distractors.
 
 In this case, only Rank-1 identification rate with at least 1M distractors and verification rate at low false accept rate (e.g., 10−6) are very meaningful [23]. We report the experimental results of different methods in Tables 3 and 4.
 
-From these results we have the following observations.
+They make these observations from the results:
 
-* Model C is much better than Model A and Model B by a significant margin in both face identification and verification tasks, confirming the advantage of the designed loss function.
-* Second, under the evaluation protocol of small training set, the proposed Model C- achieves the best results in both face identification and verification tasks, outperforming the 2nd place by 5.97 % on face identification and 10.15 % on face verification, respectively.
-* Moreover, it is worth to note that model C- even surpasses some models trained with large training set (e.g., Beijing Facecall Co.).
-* Last, the models from Google and NTechLAB achieve the best performance under the protocol of large training set. Note that, their private training set (500M for Google and 18M for NTechLAB) are much larger than ours (0.49M).
+* Model C is much better than Model A and Model B for face identification and verification tasks, confirming Center Loss with Softmax works best.
+* Second, under the evaluation protocol of small training set, the proposed Model C- achieves the best results in both face identification and verification tasks, outperforming 2nd place by 5.97 % on face identification and 10.15 % on face verification, respectively.
+* Model C does better than some models trained with a large training set (e.g., Beijing Facecall Co.).
+*The models from Google and NTechLAB achieve the best performance thanks to the large training set (500M vs 0.49M).
 
 ## 5 Conclusions
 
-Paper proposes a new loss function called Center Loss.
+The paper proposes a new loss function called Center Loss.
 
 By combining Center Loss with [[Softmax Loss]] to jointly supervise the learning of CNNs, the authors show that they can enhance the discriminative power of features for face recognition problems.
 
