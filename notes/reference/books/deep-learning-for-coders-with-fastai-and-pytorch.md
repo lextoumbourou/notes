@@ -78,7 +78,7 @@ status: draft
         * 2. Combine all augmentation operations (include final resize) into one and do on GPU.
             * On validation, only resize is done.
 * Train a simple model early (pg. 221)
-* [[Cross-Entropy Loss Function]] (pg. 222-231)
+* [[Categorical Cross-Entropy Loss]] (pg. 222-231)
     * Defined as:  [[Softmax Activation Function]] then negative [[Log Likelihood]]
     * [[Exponential Function]]
         * Defined as $e^x$
@@ -93,7 +93,7 @@ status: draft
         * If one of the numbers is slightly bigger, exponential amplifies it
         * Softmax "wants" to pick a single result.
             * Use model with multiple binary columns to handle items model hasn't seen.
-        * One part of the [[Cross-Entropy Loss Function]]
+        * One part of the [[Categorical Cross-Entropy Loss]]
     * [[Log Likelihood]] (pg. 226-231)
         * For a vector of softmaxed predictions, take the prediction that corresponds with the correct label.
         * Then apply `-log(prediction)`
@@ -157,7 +157,7 @@ status: draft
 * When constructing a DataBlock, you can do a little bit at a time to ensure everything is working.
 * [[One-Hot Encoding]] (pg. 254-255)
     * A vector of 0s with a 1 in each location represented in data.
-* [[Binary Cross-Entropy Loss Function]] (pg. 256-257)
+* [[Binary Cross-Entropy Loss]] (pg. 256-257)
     * A multi-label classification loss function.
     * Nearly identical to Cross Entropy, except performs Sigmoid against each output logit.
     * Function:
