@@ -18,8 +18,6 @@ We can think of the vectors describing a unit of change along each axis. For exa
 
 We refer to each number in a vector as a component.
 
-Theoretically, we can move the arrow around in space without changing the definition of the vector. In other words, if we decided that the origin of the grid was $(5, 5)$, then the same vector would be described as $(6, 7)$.
-
 Vectors are represented in math as a vertical list of numbers, or a matrix with one column, to differential from coordinates.
 
 $$\vec{A} = \begin{bmatrix}1\\2\end{bmatrix}$$
