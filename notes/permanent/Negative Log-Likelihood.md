@@ -1,5 +1,6 @@
 ---
 title: Negative Log-Likelihood
+aliases: Log Loss
 date: 2021-07-10 15:00
 cover: /_media/negative-log-likelihood.png
 tags:
