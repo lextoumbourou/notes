@@ -13,13 +13,17 @@ Over time, as your product's complexity increases, so does your documentation's 
 
 For example, my team has most documents in Notion, some in the README.md of our product's repositories, some as comments in code, some pinned to Slack channels, and some in Google Docs.
 
-Having documentation in multiple places isn't necessarily a problem. However, having us use valuable brain cycles thinking about where a document should live and how to present it is a waste. We should instead direct that brain energy toward effective communication.
+Documentation in multiple places isn't necessarily a problem -  information lends itself to different mediums.
 
-The solution is to write a document that describes the different types of possible documentation and how and where we should present it. You can think of it as a code-style guide for your information.
+However, making decisions about where to store a document every time we try to share information is a waste of value brain cycles and increases [Decision Fatigue](https://en.wikipedia.org/wiki/Decision_fatigue). We should instead direct that brain energy towards effective communication.
 
-For each documentation decision, it's helpful to include *why* you have made that decision; that allows the future team to evaluate if the original logic that leads to that decision still holds up.
+The solution is to make decisions once for each type of possible document you can think of and explain how and where they should be stored. It doesn't matter if you don't cover all kinds of information initially or if the system isn't perfect; we can improve it over time.
 
-A well-understood documentation system also helps a lot with document retrieval.
+You can think of it as a code-style guide for your information.
+
+It's also helpful to include *why* you have made that decision; that allows you or the future team to evaluate if the original logic still holds up. Maybe there's a better way to communicate that information now - that's okay.
+
+A well-understood documentation system will help us to retrieve documents.
 
 Here's an example:
 
@@ -52,7 +56,5 @@ Here's an example:
 > 
 > If the document needs to become long-lived, add a link for it in Notion. Each project has a page called **Key Documents** to which we can link these.
 >
-
-It doesn't matter if your document isn't the perfect approach right the first time. We can continually refine this based on what makes sense for our team.
 
 The cover is by [Jon Tyson on Unsplash](https://unsplash.com/@jontyson)
