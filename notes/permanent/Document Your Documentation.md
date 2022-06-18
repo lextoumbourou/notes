@@ -18,7 +18,7 @@ Documentation in multiple places isn't necessarily a problem -  information requ
 
 However, having to make a decision every time we try to share information is a waste of valuable brain cycles and increases [Decision Fatigue](https://en.wikipedia.org/wiki/Decision_fatigue). I would prefer we utilize our brain energy for writing good documentation.
 
-We should instead make a decision once for each type of document, documenting how and where we store things as clearly as possible. It doesn't matter if we don't cover all kinds of information initially or if the system isn't perfect; we can improve it over time.
+We should instead make a decision once for each class of information (see example below), documenting how and where we store and retrieve as clearly as possible. It doesn't matter if we don't cover all kinds of information initially or if the system isn't perfect; we can improve it over time.
 
 You can think of it as a code-style guide for your information.
 
