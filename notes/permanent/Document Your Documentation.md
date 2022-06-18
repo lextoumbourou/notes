@@ -3,50 +3,52 @@ title: Document Your Documentation
 date: 2022-06-12 00:00
 tags:
   - TechLeadership
-summary: "A document that explains how your team's documentation works."
+  - KnowledgeManagement
+summary: "A short document that explains how your team documents things."
 cover: /_media/document-documentation-cover.png
 ---
 
-One simple thing that has helped every team I've been on: create a document that explains how your team's documentation works.
+One simple thing that can help a software team is to create a short document explaining how the team documents things.
 
-Over time, as your product's complexity increases, so does your documentation's complexity. It's common to find information scattered in many places.
+Over time, as your product's complexity increases, so does the complexity of knowledge required to support it. It's common to find information scattered in many places.
 
-For example, my team has most documents in Notion, some in the README.md of our product's repositories, some as comments in code, some pinned to Slack channels, and some in Google Docs.
+My team has most documents in Notion, some in the README.md files, some as comments in code, some pinned to Slack channels, and some in Google Docs.
 
-Documentation in multiple places isn't necessarily a problem -  information lends itself to different mediums.
+Documentation in multiple places isn't necessarily a problem -  information requires various mediums.
 
-However, making decisions about where to store a document every time we try to share information is a waste of value brain cycles and increases [Decision Fatigue](https://en.wikipedia.org/wiki/Decision_fatigue). We should instead direct that brain energy towards effective communication.
+However, having to make a decision every time we try to share information is a waste of valuable brain cycles and increases [Decision Fatigue](https://en.wikipedia.org/wiki/Decision_fatigue). I would prefer we utilize our brain energy for writing good documentation.
 
-The solution is to make decisions once for each type of possible document you can think of and explain how and where they should be stored. It doesn't matter if you don't cover all kinds of information initially or if the system isn't perfect; we can improve it over time.
+We should instead make a decision once for each type of document, explaining how and where we store things as clearly as possible. It doesn't matter if you don't cover all kinds of information initially or if the system isn't perfect; we can improve it over time.
 
 You can think of it as a code-style guide for your information.
 
-It's also helpful to include *why* you have made that decision; that allows you or the future team to evaluate if the original logic still holds up. Maybe there's a better way to communicate that information now - that's okay.
+It's also helpful to include *why* you have made decisions; that allows you or the future team to evaluate if the original logic still holds up. Maybe there's a better way to communicate that information now - that's okay.
 
-A well-understood documentation system will help us to retrieve documents.
+A well-understood knowledge system will also help us with document retrieval.
 
 Here's an example:
 
-> ## Documentation Overview
+> ## Documentation Guide
 >
 > ### Primary
 >
-> Notion should be the first choice for any documentation.
+> Notion should be the first choice for most documentation.
 > 
 > If it's product-specific, please put it in the folder under **Products > Product Name**.
 > 
-> Otherwise, please review the existing categories in the sidebar for the most relevant ones. You may add a new one if none fit.
+> Review the existing categories in the sidebar for the most relevant ones for company-wide sharing. You may add a new one if none fit.
 >
-> This ensures that our document is searchable and mostly in one place.
+>  Notion ensures our documentation is searchable and easily accessible.
 > 
-> The following exceptions apply:
+> Some exceptions apply:
 > 
-> ### Code base setup info
+> ### Repository setup information
 >
-> Put repository setup information and the code itself in a [README.md](http://readme.md) file . You should add a page in Notion that links to the project. See **Project A** for an example.
-> Using the README for repository setup is usually the shortest path to ensuring that the setup instructions remain up-to-date and allow for linking to files within the repro.
->
+> A `README.md` file should describe how to set up the project, including running the application and unit tests.
+> Add a page in Notion that links to each repository. See **Project A** for an example.
 > Use Notion if you need to expand on documentation beyond simply setting up the project.
+> 
+> Using the README for repository setup is usually the shortest path to ensuring that the setup instructions remain up-to-date and allow for linking to files within the repro. It is also the first place that most newer developers will look for documentation.
 >
 > ### Ephemeral Documents
 > 
