@@ -6,26 +6,38 @@ tags:
 status: draft
 ---
 
-Story-focused daily standups work like this: we work through each ticket in progress from right to left, with each assignee explaining the next steps required to move the story to the left.
+Story-focused standups work like this: every morning, we meet, and the host walks us through each ticket in progress from right to left, with assignees giving a brief update. We take turns hosting the meeting.
 
-In contrast, a person-focused standup will have each person answering three familiar questions: what did you work on today, what did you work on yesterday, and are there any blockers.
+We used to do it in front of a physical board, but nowadays, the host shares the board on their screen. 
 
-I make the case that a story-focused daily standup is almost always a better idea, having tried both at times throughout my career.
+In contrast, a person-focused standup, also known as Three Questions  [^1], works like this: every morning, we meet, and each person answers three questions: "what did you work on today?", "What did you work on yesterday?" and "Are there any blockers?". Each team picks some method for selecting who speaks next.
 
-1. Story-focused is a daily reminder of what we are trying to achieve.
+Either way, we aim to finish standup in 15 minutes or less. The host politely tries to keep updates brief and organizes follow-up discussions if more time is required.
 
-    We committed to a bunch of work in sprint planning; it seems like a good idea to remind ourselves daily of what that work was.
+For these three reasons, I think story-focused daily standups are almost always better, having tried both at times throughout my career.
 
-2. Story-focused standups are more inclusive.
+1. Story-focused reminds us every day of what we're trying to achieve
 
-    As developers, we may find ourselves deep in a feature's weeds. When you ask me what I worked on yesterday, it might be: refactored code into a shared module, refactored the database to support a one-to-many relationship between users and profiles, etc.
+    The goal of a standup is to review the work in progress. It is a daily reminder of our commitments and our best chance to adjust if it looks like we're heading into danger. If things have to change mid-sprint, it is a chance for everyone to know what's happening.
+    
+    On the other hand, the goal is not to review the details of each other's work days nor to justify our existence.
+    
+2. Story-focused standups are collaborative.
 
-    A team member lacking all the technical context might soon tune out, feeling that this status update isn't relevant to them. However, if the standup is story-focused, the context should be clear. Having clear context gives us a higher chance of collaboration. Maybe the Product Owner knows that particular feature detail is optional, and learning of the additional difficulties in implementation can make a call to leave it out.
+    Product development is a team sport. We all have different skills, and collectively, we seek to build something more significant than one of us could alone.
+    
+    Focusing on each other's updates in our overall plan gives us a better chance of collaboration.
+    
+    Maybe the Designer learns how difficult a particular detail is to implement and can suggest a simpler alternative. Perhaps another developer knows an expert in an area of struggle from another team who can help. 
+    
+    In contrast, in a person-focused standup, lacking the context of each other's updates, we may find ourselves tuning out some of the ones that aren't clear to us.
 
-3. Story-focused standups are more collaborative.
+3. Story-focused standups are more fun and less stressful.
 
-    I am not interested in the exact details of everyone's work day. As a leader, that is a form of micromanagement, which is at odds with trust and collaboration. I am interested in how we achieve our overall team objectives.
+    Since we're focusing on what we're collecting and achieving, not the details of each person's work days, we can all be more engaged and present. 
+    
+    A meeting where everyone is engaged and present is much more fun than we're not.
+    
+We do standups because the coordination effort is complex enough to require daily alignment. If it isn't sufficiently complex - i.e., if it's a small team - you may not need standup.
 
-With every ceremony, we must remind ourselves why we're doing things at regular intervals. For me, the why of the standup is to ensure the whole team remains aligned on the direction and to allow us to constantly shift when we drift in a different direction.
-
-A story-first standup does that; a person-first does not.
+[^1]: [It's Not Just Standing Up: Patterns for Daily Standup Meetings](https://martinfowler.com/articles/itsNotJustStandingUp.html)
