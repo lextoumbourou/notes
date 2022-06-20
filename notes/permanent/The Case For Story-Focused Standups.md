@@ -4,6 +4,7 @@ date: 2022-06-21 00:00
 tags:
   - TechLeadership
 cover: /_media/story-focused-standups-cover.png
+summary: Start the day by focusing on our goals
 ---
 
 Story-focused standups work like this: every morning, the host walks us through each in-progress story on the board (physical or digital) from right to left (closest to release first), with assignees giving a brief update. We take turns hosting the meeting.
@@ -20,7 +21,7 @@ The goal of a standup is to review the work in progress. Our status updates give
 
 On the other hand, a person-focused standup might have you believe the goal is to review the details of each other's work days or even for each of us to justify our existence. The person-focused updates can sometimes take the whole allotted standup time, at worse, causing us to get no ongoing feedback on our sprint commitments until our next Retro.
 
-**Story-focused standups are more colllaborative.**
+**Story-focused standups are more collaborative.**
 
 Product development is a team sport. We all have different skills, and collectively, we seek to build something more significant than one of us could alone.
 
@@ -42,7 +43,7 @@ The day's first meeting should not sap the team's energy.
     
 The downside to story-focused standups is that some individuals who are less comfortable contributing to the group may not get a chance to speak. Maybe they are working on something we aren't covering on our board, or perhaps we haven't assigned them anything, and they're not sure when to ask.
 
-To combat this, we end standups by giving the floor to anyone who hasn't yet contributed. It allows us to write stories for what they're working on or to ensure tasks are assigned.
+To combat this, we end standups by giving the floor to anyone who hasn't yet contributed. It allows us to write tickets for their work or to ensure tasks are assigned.
 
 It's vital to remember why we do daily standups: we do them because the coordination effort is complex enough to require daily alignment. If it isn't sufficiently complex - i.e., if it's a small team - you may not need standup.
 
