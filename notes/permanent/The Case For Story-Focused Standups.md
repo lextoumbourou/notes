@@ -4,12 +4,12 @@ date: 2022-06-21 00:00
 tags:
   - TechLeadership
 cover: /_media/story-focused-standups-cover.png
-summary: Start the day by focusing on our goals
+summary: Start the day by focusing on the work.
 ---
 
 Story-focused standups work like this: every morning, the host walks us through each in-progress story on the board (physical or digital) from right to left (closest to release first), with assignees giving a brief update. We take turns hosting the meeting.
 
-In contrast, a person-focused standup, also known as Three Questions  [^1], works like this: every morning, each team member answers three questions: "What did you work on today?", "What did you work on yesterday?" and "Are there any blockers?". The host selects who speaks next (or creates a system for it).
+In contrast, a person-focused standup, also known as Three Questions  [^1], has each team member answering three questions: "What did you work on today?", "What did you work on yesterday?" and "Are there any blockers?". The host selects who speaks next (or creates a system for it).
 
 Either way, we aim to finish standup in 15 minutes or less. The host politely tries to wrap up long-winded status updates and organizes follow-up discussions.
 
