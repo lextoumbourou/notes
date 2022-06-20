@@ -7,7 +7,7 @@ cover: /_media/story-focused-standups-cover.png
 summary: Start the day by focusing on the work.
 ---
 
-Story-by-story standups work like this: every morning, the host walks us through each in-progress story on the board (physical or digital) from right to left (closest to release first), with assignees giving a brief update. We take turns hosting the meeting.
+Story-by-story (or story-focused) standups work like this: every morning, the host walks us through each in-progress story on the board (physical or digital) from right to left (closest to release first), with assignees giving a brief update. We take turns hosting the meeting.
 
 In contrast, a person-by-person standup, also known as Three Questions  [^1], has each team member answering three questions: "What did you work on today?", "What did you work on yesterday?" and "Are there any blockers?". The host selects who speaks next (or creates a system for it).
 
