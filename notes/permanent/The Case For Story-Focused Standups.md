@@ -29,7 +29,7 @@ Giving our updates in the context of our overall plan gives us a better chance o
 
 Maybe a designer learns how difficult a particular detail is to implement and can propose a simpler alternative. Perhaps another developer knows an expert in an area of struggle from another team who can help. 
 
-In contrast, in a person-focused standup, lacking the context of each other's updates, we may find ourselves tuning out some of the ones where updates aren't clear to us how they fit into our overall goals.
+In comparison, in a person-focused standup, lacking the context of each other's updates, we may find ourselves tuning out some of the ones where updates aren't clear to us how they fit into our overall goals.
 
 **Story-focused standups are fun and less stressful**
 
