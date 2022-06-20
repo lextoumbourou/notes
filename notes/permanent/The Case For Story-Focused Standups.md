@@ -1,14 +1,12 @@
 ---
-title: Story-Focused Standups Are Better
+title: The Case For Story-Focused Standups
 date: 2022-06-19 00:00
 tags:
   - TechLeadership
 status: draft
 ---
 
-Story-focused standups work like this: every morning, we meet, and the host walks us through each ticket in progress from right to left, with assignees giving a brief update. We take turns hosting the meeting.
-
-We used to do it in front of a physical board, but nowadays, the host shares the board on their screen. 
+Story-focused standups work like this: every morning, we meet, and the host walks us through each ticket on the board (physical or digital) in progress from right to left, with assignees giving a brief update. We take turns hosting the meeting.
 
 In contrast, a person-focused standup, also known as Three Questions  [^1], works like this: every morning, we meet, and each person answers three questions: "what did you work on today?", "What did you work on yesterday?" and "Are there any blockers?". Each team picks some method for selecting who speaks next.
 
