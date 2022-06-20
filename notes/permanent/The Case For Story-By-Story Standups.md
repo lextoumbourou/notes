@@ -1,5 +1,5 @@
 ---
-title: The Case For Story-Focused Standups
+title: The Case For Story-By-Story Standups
 date: 2022-06-21 00:00
 tags:
   - TechLeadership
@@ -7,9 +7,9 @@ cover: /_media/story-focused-standups-cover.png
 summary: Start the day by focusing on the work.
 ---
 
-Story-focused standups work like this: every morning, the host walks us through each in-progress story on the board (physical or digital) from right to left (closest to release first), with assignees giving a brief update. We take turns hosting the meeting.
+Story-by-story standups work like this: every morning, the host walks us through each in-progress story on the board (physical or digital) from right to left (closest to release first), with assignees giving a brief update. We take turns hosting the meeting.
 
-In contrast, a person-focused standup, also known as Three Questions  [^1], has each team member answering three questions: "What did you work on today?", "What did you work on yesterday?" and "Are there any blockers?". The host selects who speaks next (or creates a system for it).
+In contrast, a person-by-person standup, also known as Three Questions  [^1], has each team member answering three questions: "What did you work on today?", "What did you work on yesterday?" and "Are there any blockers?". The host selects who speaks next (or creates a system for it).
 
 Either way, we aim to finish standup in 15 minutes or less. The host politely tries to wrap up long-winded status updates and organizes follow-up discussions.
 
@@ -17,7 +17,7 @@ For these three reasons, I think story-focused daily standups are almost always 
 
 **Story-focused reminds us every day of what we're trying to achieve**
 
-The goal of a standup is to review the work in progress. Our status updates give us our best chance to adjust if it looks like our commitments are in danger. A daily review also means that if we change course mid-sprint, everyone knows what direction we're now heading in.
+The goal of a standup is to review the work in progress. Our story-focused status updates give us our best chance to adjust if it looks like our commitments are in danger. A daily review also means that if we change course mid-sprint, everyone knows what direction we're now heading in.
 
 On the other hand, a person-focused standup might have you believe the goal is to review the details of each other's work days or even for each of us to justify our existence. The person-focused updates can sometimes take the whole allotted standup time, at worse, causing us to get no ongoing feedback on our sprint commitments until our next Retro.
 
