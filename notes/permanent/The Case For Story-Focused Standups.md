@@ -7,13 +7,11 @@ cover: /_media/story-focused-standups-cover.png
 summary: Start the day by focusing on the work.
 ---
 
-Story-focused (or story-by-story) standups work like this: every morning, the host walks us through each in-progress story on the board (physical or digital) from right to left (closest to release first), with assignees giving a brief update. We take turns hosting the meeting.
+Story-focused (or story-by-story) standups work like this: every morning, the host walks us through each in-progress story on the board from right to left (closest to release first), with assignees giving a brief update. We take turns hosting the meeting.
 
-In contrast, a person-focused standup, also known as person-by-person or Three Questions  [^1], has each team member answering three questions: "What did you work on today?", "What did you work on yesterday?" and "Are there any blockers?". The host selects who speaks next (or creates a system for it).
+In contrast, a person-focused standup, also known as person-by-person or Three Questions  [^1], has each team member answering three questions: "What did you work on today?", "What did you work on yesterday?" and "Are there any blockers?". The host selects who speaks next or creates a system for it.
 
-In either case, we aim to finish standup in 15 minutes or less. The host politely tries to wrap up long-winded status updates and organizes follow-up discussions.
-
-I think story-focused daily standups are almost always better, having tried both at times throughout my career, for three reasons:
+I think story-focused daily standups are almost always better, having tried both at times throughout my career, for three key reasons.
 
 **Story-focused reminds us every day of what we're trying to achieve**
 
@@ -29,15 +27,17 @@ Giving our updates in the context of our overall plan gives us a better chance o
 
 Maybe a designer learns how difficult a particular detail is to implement and can propose a simpler alternative. Perhaps another developer knows an expert in an area of struggle from another team who can help. 
 
-In comparison, in a person-focused standup, lacking the context of each other's updates, we may find ourselves tuning out some of the ones where updates aren't clear to us how they fit into our overall goals.
+In comparison, in a person-by-person standup, lacking the context of each other's updates, we may find ourselves tuning out some of the ones where updates aren't clear to us how they fit into our overall goals.
 
 **Story-focused standups are fun and less stressful**
 
 Since we're focusing on what we're collecting and achieving, not interrogating the details of each person's work days, we can relax and be more engaged and present. The overall work we are trying to accomplish is much more interesting than the minutiae of each other's work days.
 
-A meeting where everyone is engaged and present is much more fun than we're not.
+A meeting where everyone is engaged and present is much more fun.
 
 The day's first meeting should not sap the team's energy.
+
+In either case, we aim to finish standup in 15 minutes or less. The host politely tries to wrap up long-winded status updates and organizes follow-up discussions.
 
 ---
     
