@@ -2,7 +2,7 @@
 title: Document Your Documentation
 date: 2022-06-18 00:00
 tags:
-  - TechLeadership
+  - SoftwareEngineering
   - KnowledgeManagement
 summary: "A short document that explains how your team documents things."
 cover: /_media/document-documentation-cover.png

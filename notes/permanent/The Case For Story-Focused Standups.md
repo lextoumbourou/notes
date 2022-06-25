@@ -2,7 +2,7 @@
 title: The Case For Story-Focused Standups
 date: 2022-06-21 00:00
 tags:
-  - TechLeadership
+  - SoftwareEngineering
 cover: /_media/story-focused-standups-cover.png
 summary: Start the day by focusing on the work.
 ---
