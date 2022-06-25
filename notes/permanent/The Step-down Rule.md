@@ -5,6 +5,7 @@ tags:
   - SoftwareEngineering
 cover: /_media/story-focused-standups-cover.png
 summary: Start the day by focusing on the work.
+status: draft
 ---
 
 A simple thing that helped us reduce decisions and made our code more readable was to add the Step-down Rule to our code style guide.
