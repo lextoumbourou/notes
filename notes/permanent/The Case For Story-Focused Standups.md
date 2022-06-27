@@ -4,7 +4,7 @@ date: 2022-06-21 00:00
 tags:
   - SoftwareEngineering
 cover: /_media/story-focused-standups-cover.png
-summary: Start the day by focusing on the work.
+summary: Start the day by focusing on the work
 ---
 
 Story-focused (or story-by-story) standups work like this: every morning, the host walks us through each in-progress story on the board from right to left (closest to release first), with assignees giving a brief update. We take turns hosting the meeting.
