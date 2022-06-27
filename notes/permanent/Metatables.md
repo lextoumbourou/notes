@@ -1,5 +1,5 @@
 ---
-title: Lua Metatables
+title: Metatables
 date: 2021-02-14 00:00
 tags:
   - Lua
