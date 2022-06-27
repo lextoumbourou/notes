@@ -7,11 +7,11 @@ cover: /_media/ordering-methods-cover.png
 summary: Order your methods so your code reads like a newspaper.
 ---
 
-One simple thing that made our code more readable was to add a rule for ordering methods to our code style guide.
+One simple thing that made our code more readable was to add a code style guide rule for ordering methods
 
 In Clean Code by Robert C. Martin, he describes The Newspaper Metaphor for vertically formatting code:
 
-> "Think of a well-written newspaper article. You read it vertically. At the top, you see a headline that will tell you what the story is about and allow you to decide if you want to read it. The first paragraph gives you a synopsis of the whole story, which hides all the details while giving you the broad-brush concepts. As you continue downward, the details increase until you have all the dates, names, quotes, claims, and other minutia."
+> "Think of a well-written newspaper article. You read it vertically. At the top, you see a headline that will tell you what the story is about and allow you to decide if you want to read it. The first paragraph gives you a synopsis of the whole story, which hides all the details while giving you the broad-brush concepts. As you continue downward, the details increase until you have all the dates, names, quotes, claims, and other minutia." [^1]
 
 For our project, where Lua is the primary language, our rule reads:
 
@@ -49,3 +49,5 @@ return MyThing
 I think we intuitively follow this rule anyway, but it is easy to overlook.
 
 Cover by [Rishabh Sharma](https://unsplash.com/@rishabhben) on Unsplash.
+
+[^1]: MLA (7th ed.) Martin, Robert C. Clean Code: A Handbook of Agile Software Craftsmanship. Upper Saddle River, NJ: Prentice Hall, 2009. (Pg. 77)
