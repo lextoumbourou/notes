@@ -15,11 +15,9 @@ We based this rule on The Stepdown Rule from Clean Code in the chapter on functi
 
 > "We want the code to read like a top-down narrative. We want every function to be followed by those at the next level of abstraction so that we can read the program descending one level of abstraction at a time as we read down the list of functions."
 
-Most intuitively follow this anyway, but it is easy to overlook.
+Public methods first, preferably only a few, ensure the module's key functionality is immediately apparent. Most intuitively follow this anyway, but it is easy to overlook.
 
-Public methods first, preferably only a few, ensure the module's key functionality is immediately apparent.
-
-The exact order you prefer matters less than being consistent. The cost of searching through arbitrarily ordered modules accumulates over time.
+The exact order you prefer matters less than being consistent. The cost of searching through arbitrarily ordered modules accumulates over time. Plus, it's one less inconsequential decision a developer has to make.
 
 Below is an example of a typical module we'd write in Lua ordered with our style guide rule in mind.
 
@@ -30,7 +28,7 @@ local UsefulThing = {}
 -- Lua Metatable thing.
 UsefulThing.__index = UsefulThing
 
--- Constructor
+-- Constructor first.
 function UsefulThing.new()
     local self = {}
     -- Another Lua Metatable thing.
@@ -38,14 +36,14 @@ function UsefulThing.new()
     return self
 end
 
--- The key public method
+-- The key public method(s) (often just one).
 function UsefulThing:use()
     self:_prepare()
     self:_doBehaviour()
     self:_cleanUp()
 end
 
--- All the implementation details are below
+-- All the implementation details.
 function UsefulThing:_prepare()
 end
 
@@ -59,7 +57,6 @@ return UsefulThing
 ```
 
 Like the Python convention, we prefix private methods with underscores to further distinguish.
-
 
 Photo by <a href="https://unsplash.com/@andrew23brandy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Brandy</a> on <a href="https://unsplash.com/s/photos/complexity-step?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
