@@ -1,5 +1,5 @@
 ---
-title: Lua Prototypal Inheritance
+title: Object Prototypes
 date: 2021-02-15 00:00
 tags:
   - Lua
