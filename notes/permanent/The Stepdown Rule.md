@@ -49,13 +49,13 @@ end
 function UsefulThing:_doBehaviour()
 end
 
-function UsefulThing:_teardown()
+function UsefulThing:_cleanUp()
 end
 
 return UsefulThing
 ```
 
-Note that Lua uses [[Metatables]] to emulate classes using [[Object Prototypes]] like Javascript. The details are unimportant for this example.
+Note that Lua uses [[Metatables]] to emulate classes using [[Object Prototypes]] like Javascript. The details are unimportant, included for completeness.
 
 Photo by <a href="https://unsplash.com/@andrew23brandy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Brandy</a> on <a href="https://unsplash.com/s/photos/complexity-step?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
