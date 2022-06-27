@@ -4,7 +4,7 @@ date: 2022-06-27 00:00
 tags:
   - SoftwareEngineering
 cover: /_media/the-stepdown-rule-cover.png
-summary: Order your methods so your code reads like a newspaper article.
+summary: A rule for ordering methods
 ---
 
 One simple thing that made our code more readable was to add a code style guide rule for ordering methods.
