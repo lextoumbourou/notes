@@ -17,9 +17,13 @@ We based this rule on The Stepdown Rule from Clean Code in the chapter on functi
 
 Most intuitively follow this anyway, but it is easy to overlook.
 
-Public methods first, preferably only a few, ensure the module's key functionality is immediately apparent. It might seem unimportant, but the pain of searching through unordered methods accumulates over time.
+Public methods first, preferably only a few, ensure the module's key functionality is immediately apparent.
 
-Below is an example of a typical module we'd write in Lua formatted with this rule in mind.
+The exact order you prefer matters less than being consistent. The cost of searching through arbitrarily ordered modules accumulates over time.
+
+Below is an example of a typical module we'd write in Lua ordered with our style guide rule in mind.
+
+*Note that Lua uses [[Metatables]] modules to emulate classes using [[Object Prototypes]] like Javascript. The details are unimportant, included for completeness.*
 
 ```lua
 local UsefulThing = {}
@@ -56,7 +60,6 @@ return UsefulThing
 
 Like the Python convention, we prefix private methods with underscores to further distinguish.
 
-Note that Lua uses [[Metatables]] modules to emulate classes using [[Object Prototypes]] like Javascript. The details are unimportant, included for completeness.
 
 Photo by <a href="https://unsplash.com/@andrew23brandy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Brandy</a> on <a href="https://unsplash.com/s/photos/complexity-step?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
