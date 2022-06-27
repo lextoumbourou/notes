@@ -11,38 +11,37 @@ One simple thing that made our code more readable was to add a code style guide 
 
 > Order your methods so that the module starts with the constructor (if required), followed by the key public methods, then any private implementation details.
 
-We based this rule on The Stepdown Rule in the chapter on functions, Clean Code by Robert C. Martin [^1]:
+We based this rule on The Stepdown Rule from Clean Code in the chapter on functions [^1]:
 
-> "We want the code to read like a top-down narrative. We want every function to be followed by those at the next level of abstraction so that we can read the program descending one level of abstraction at a time as we read down the list of functions. I call this The Stepdown Rule."
+> "We want the code to read like a top-down narrative. We want every function to be followed by those at the next level of abstraction so that we can read the program descending one level of abstraction at a time as we read down the list of functions."
 
 Most intuitively follow this anyway, but it is easy to overlook.
 
-It means you can, at a glance, see how to get an instance of it and interact with it.
-
-It might seem unimportant, but the pain of dealing with lots of unordered modules accumulates over time.
+Public methods first, preferably only a few, ensure the module's key functionality is immediately apparent. It might seem unimportant, but the pain of searching through unordered methods accumulates over time.
 
 Below is an example of a typical module we'd write in Lua formatted with this rule in mind.
 
 ```lua
 local UsefulThing = {}
--- Metatable implementation detail for create objects..
+-- Lua Metatable thing.
 UsefulThing.__index = UsefulThing
 
 -- Constructor
 function UsefulThing.new()
     local self = {}
+    -- Another Lua Metatable thing.
     setmetatable(UsefulThing, self)
     return self
 end
 
--- The key public methods
+-- The key public method
 function UsefulThing:use()
     self:_prepare()
     self:_doBehaviour()
     self:_cleanUp()
 end
 
--- All the implementation details are below.
+-- All the implementation details are below
 function UsefulThing:_prepare()
 end
 
@@ -55,7 +54,9 @@ end
 return UsefulThing
 ```
 
-Note that Lua uses [[Metatables]] to emulate classes using [[Object Prototypes]] like Javascript. The details are unimportant, included for completeness.
+Like the Python convention, we prefix private methods with underscores to further distinguish.
+
+Note that Lua uses [[Metatables]] modules to emulate classes using [[Object Prototypes]] like Javascript. The details are unimportant, included for completeness.
 
 Photo by <a href="https://unsplash.com/@andrew23brandy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Brandy</a> on <a href="https://unsplash.com/s/photos/complexity-step?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
