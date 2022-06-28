@@ -7,7 +7,7 @@ cover: /_media/the-stepdown-rule-cover.png
 summary: Apply the Stepdown Rule to the ordering of methods
 ---
 
-One simple thing that made our code more readable was to add a code style guide rule for ordering methods.
+One simple thing that made our code more readable and consistent was to add a code style guide rule for ordering methods.
 
 > Order your methods so that the object starts with the constructor (if required), followed by the key public methods, then any private implementation details.
 
