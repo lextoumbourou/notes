@@ -66,3 +66,5 @@ IGNORE_FILE = ['.ipynb_checkpoints']
 LIQUID_CONFIGS = (("CONTENT_DIR", "notes", ""), )
 
 ARTICLE_EXCLUDES = ['journal', 'posts']
+
+SITEURL = "https://notesbylex.com"
