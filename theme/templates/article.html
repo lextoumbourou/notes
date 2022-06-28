@@ -2,18 +2,6 @@
 
 {% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
 
-{% block head %}
-
-{% if article is defined %}
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
-  <meta property="og:title" content="{{ article.title | replace("\"", "&quot;") }}" />
-  <meta property="og:description" content="{{ article.content | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
-  <meta property="og:image" content="{{ SITEURL }}{{ article.cover }}" />
-{% endif %}
-
-{% endblock %}
-
 {% block content %}
 <section id="content">
   

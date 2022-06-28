@@ -14,6 +14,19 @@
     {% block head %}
     {% endblock %}
 
+    {% if article is defined %}
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+    <meta property="og:title" content="{{ article.title | replace("\"", "&quot;") }}" />
+    <meta property="og:description" content="{{ article.content | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
+    <meta property="og:image" content="{{ SITEURL }}{{ article.cover }}" />
+    {% else %}
+    <meta property="og:type" content="page" />
+    <meta property="og:url" content="{{ SITEURL }}" />
+    <meta property="og:title" content="{{ SITENAME }}" />
+    <meta property="og:description" content="A collection of notes by Lex Toumbourou." />
+    {% endif %}
+
     {% block scripts %}
       <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
       <!--[if lt IE 8]>
