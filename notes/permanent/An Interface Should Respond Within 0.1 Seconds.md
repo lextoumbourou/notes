@@ -5,6 +5,7 @@ tags:
   - UserInterface
 cover: /_media/loading-state-cover.png
 summary: Developers should be vigilant of slow returning user interactions.
+status: draft
 ---
 
 One area where developers can significantly impact the design of an interface is to highlight interactions that will likely be slow to respond.
