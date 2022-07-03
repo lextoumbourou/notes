@@ -1,21 +1,21 @@
 ---
 title: An Interface Should Respond Within A Tenth Of A Second
-date: 2022-07-02 00:00
+date: 2022-07-03 00:00
 tags:
     - UserInterface
 cover: /_media/loading-state-cover.png
 hide_cover_in_article: true
-summary: Developers must be vigilant of delayed user interactions"
+summary: Developers must be vigilant of slow user interfaces
 ---
 
 > "if your interface does not respond within a tenth of a second, the player will feel like something is wrong with the interface." 
 \- James Schell,  The Art of Game Design: A Book of Lenses [^1]
 
-According to [studies](https://www.nngroup.com/articles/response-times-3-important-limits), 0.1 seconds is roughly the interface response time limit for a user to feel like they are in control.
+According to [studies](https://www.nngroup.com/articles/response-times-3-important-limits) [^2], 0.1 seconds is roughly the interface response time limit for a user to feel like they are in control.
 
-Up to 1 second is the limit for a user's flow to remain uninterrupted, though the user will notice a delay.
+Up to 1 second is the cut-off for a user's flow to remain uninterrupted, though they will notice the delay.
 
-Ten seconds is the hard limit for keeping a user's attention focused. After that, they will want to do other things while waiting for the computer to finish. [^2]
+Ten seconds is the hard limit for keeping a user's attention focused. After that, they will want to do other things while waiting for the interface to respond.
 
 You can try it yourself. Each button here will change color when clicked and respond in the time shown in the button text.
 
@@ -99,15 +99,17 @@ function changeColor(delay, id) {
 
 Which of them makes you feel in control of the button color? Which of them feels like the computer is in control? Which of them makes you want to rage quit?
 
-There are [many solutions](https://www.nngroup.com/articles/progress-indicators/) to make an interface feel responsive, even when a delay is required to return results: loading states, progression indicators and background tasks. This is the domain of the designer.
+---
 
-However, understanding which parts of an interface require a delayed response is the domain of a developer.
+There are [many solutions](https://www.nngroup.com/articles/progress-indicators/) to make an interface feel responsive, even when a delay is required to return results: loading states, progression indicators, and background tasks. These solutions are the domain of the designer.
 
-Only we know which interactions can return results straight from the client, which need to fetch results from servers, which requests are produced quickly from a cache or which will require expensive processing.
+However, understanding which parts of an interface are likely to have a delayed response is the developer's responsibility.
 
-It is up to us to review designs and give feedback on where the interface when is likely to be delayed.
+Only we know which interactions can return results straight from the client, which need to fetch results from servers, which requests are produced quickly from a cache or will require expensive processing.
 
-For development of the Splash game, since the response time for any call to a server is difficult to estimate, we follow a simple rule:
+It is up to us to review designs and give feedback on where the interface is likely to be slow.
+
+For the development of the Splash game, since the response time for any call to a server is difficult to estimate, we follow a simple rule:
 
 > any button press that triggers a server invocation must first be acknowledged on the client via a loading state.
 
