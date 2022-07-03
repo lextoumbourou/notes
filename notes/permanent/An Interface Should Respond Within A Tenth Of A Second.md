@@ -103,7 +103,7 @@ Which of them makes you feel in control of the button color? Which of them feels
 
 ---
 
-There are [many solutions](https://www.nngroup.com/articles/progress-indicators/) to make an interface feel responsive, even when a delay is required to return results: loading states, progression indicators, and background tasks. These solutions are the domain of the designer.
+There are [many solutions](https://www.nngroup.com/articles/progress-indicators/) to make an interface feel responsive, even when a delay is required to return results: animations, loading states, progression indicators, and background tasks. These solutions are the domain of the designer.
 
 However, a developer's responsibility is to understand which parts of an interface are likely to need these solutions.
 
