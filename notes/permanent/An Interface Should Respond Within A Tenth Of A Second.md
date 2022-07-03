@@ -11,7 +11,7 @@ summary: Developers must be vigilant of slow user interfaces
 > "if your interface does not respond within a tenth of a second, the player will feel like something is wrong with the interface." 
 \- James Schell,  The Art of Game Design: A Book of Lenses [^1]
 
-According to [studies](https://www.nngroup.com/articles/response-times-3-important-limits) [^2], 0.1 seconds is roughly the interface response time limit for a user to feel like they are in control.
+According to [studies](https://www.nngroup.com/articles/response-times-3-important-limits) [^2], 0.1 seconds is roughly the response time limit for a user to feel like they are in control of an interface.
 
 Up to 1 second is the cut-off for a user's flow to remain uninterrupted, though they will not feel in control.
 
