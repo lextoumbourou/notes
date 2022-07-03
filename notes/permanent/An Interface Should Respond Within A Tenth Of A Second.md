@@ -41,7 +41,8 @@ a.btn {
     cursor: pointer;
     vertical-align: middle;
     outline: none;
-    touch-action: none;
+    touch-action: none !important;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 </style>
 
