@@ -41,6 +41,7 @@ a.btn {
     cursor: pointer;
     vertical-align: middle;
     outline: none;
+    touch-action: none;
 }
 </style>
 
