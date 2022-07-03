@@ -103,17 +103,17 @@ Which of them makes you feel in control of the button color? Which of them feels
 
 There are [many solutions](https://www.nngroup.com/articles/progress-indicators/) to make an interface feel responsive, even when a delay is required to return results: loading states, progression indicators, and background tasks. These solutions are the domain of the designer.
 
-However, understanding which parts of an interface are likely to have a delayed response is the developer's responsibility.
+However, a developer's responsibility is to understand which parts of an interface are likely to have a delayed response.
 
-Only we know which interactions can return results straight from the client, which need to fetch results from servers, which requests are produced quickly from a cache or will require expensive processing.
+Only we know which interactions can return results straight from the client, which need to request results from servers, which requests are produced quickly from a cache or will require expensive processing.
 
 It is up to us to review designs and give feedback on where the interface is likely to be slow.
 
 For the development of the Splash game, since the response time for any call to a server is difficult to estimate, we follow a simple rule:
 
-> any button press that triggers a server invocation must first be acknowledged on the client via a loading state.
+> **Any button press that triggers a server invocation we must first acknowledge on the client.**
 
-In code terms, we're doing this:
+Usually we do this via a loading state. In code terms, we're doing this:
 
 ```lua
 interface.onClick = function()
@@ -126,7 +126,7 @@ end
 
 For some particularly long-running requests, we aim to do them in the background to allow the player to continue to enjoy the game while they wait.
 
-Suppose the [[Goal Of A Game Interface]] is to make a player feel in control. An interface where interaction response times are at the mercy of a remote server is the opposite of control.
+Suppose the [[Goal Of A Game Interface]] is to make a player feel in control. An interface where interaction response times are at the mercy of a remote server is the opposite of in control.
 
 [^1]: Schell, Jesse. The Art of Game Design: A Book of Lenses. Amsterdam, Boston; Elsevier/Morgan Kaufmann, 2008. (pg. 910)
 [^2]: Nah, Fiona, "A Study on Tolerable Waiting Time: How Long Are Web Users Willing to Wait?" (2003). AMCIS 2003 Proceedings. 285.
