@@ -109,7 +109,7 @@ However, a developer's responsibility is to understand which parts of an interfa
 
 Only we know which interactions can return results straight from the client, which need to request results from servers, which requests are produced quickly from a cache or will require expensive processing.
 
-It is up to us to review designs and give feedback on  problem areas.
+It is up to us to review designs and give feedback on these interface problem areas.
 
 For the development of the Splash game, since the response time for any call to a server is difficult to estimate, we follow a simple rule:
 
