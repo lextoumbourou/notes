@@ -136,7 +136,7 @@ Which of them makes you feel in control of the button color? Which of them feels
 
 There are [many solutions](https://www.nngroup.com/articles/progress-indicators/) to make an interface feel responsive, even when a delay is required to return results: animations, loading spinners, progression indicators, and background tasks.
 
-Here's one idea to make the buttons from earlier less annoying using a fun pulsing animation I found [here](https://www.florin-pop.com/blog/2019/03/css-pulse-effect/).
+Here's one idea to make the buttons respond immediately using a fun pulsing animation I found [here](https://www.florin-pop.com/blog/2019/03/css-pulse-effect/).
 
 <div class="buttons">
     <a onclick="changeColor(50, this.id, true)" id="btn-8" class="btn"><span>0.05 secs</span></a>
@@ -147,8 +147,6 @@ Here's one idea to make the buttons from earlier less annoying using a fun pulsi
     <a onclick="changeColor(10000, this.id, true)" id="btn-13" class="btn"><span>10 secs</span></a>
     <a onclick="changeColor(15000, this.id, true)" id="btn-14" class="btn"><span>15 secs</span></a>
 </div>
-
-Suddenly, the interface feels a lot less painful. Now it's just a matter of how long the user is willing to wait for results.
 
 Though the exact solution you choose will likely come from a designer (if you're lucky enough to work with one), a developer's responsibility is to understand which parts of an interface are likely to need these solutions.
 
