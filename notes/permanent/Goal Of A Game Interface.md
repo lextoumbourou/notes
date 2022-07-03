@@ -7,7 +7,7 @@ tags:
 
 Schell says that the goal of a game interface is to "make players feel in control of their experience." [^1]
 
-We achieve this with immediate feedback from interface interactions, including [[Second-order Motions]]. These make the player feel in control and lead to a fun experience. 
+We achieve this with immediate feedback from interface interactions, including [[Second-order Motions]]. These make the player feel powerful and in control, leading to a fun experience. 
 
 Related [[Flow State]] and is one of the [[Key Components of Flow For Players]].
 
