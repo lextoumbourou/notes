@@ -44,6 +44,23 @@ a.btn {
     touch-action: none !important;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+    
+    @keyframes pulse {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        }
+
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        }
+
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        }
+    }
 </style>
 
 <script>
@@ -77,14 +94,30 @@ function rgbMatches(sText, tText) {
   }
   return true;
 }
+    
+function toggleLoading(el, isOn) {
+    if (isOn) {
+        el.style.animation = "pulse 2s linear infinite"
+    }
+    else {
+        el.style.removeProperty("animation");
+    }
+}
 
-function changeColor(delay, id) {
+function changeColor(delay, id, loading) {
+  var el = document.getElementById(id);
+
+  if (loading) {
+      toggleLoading(el, true)
+  }
+    
   setTimeout(() => {
-    let color = window.getComputedStyle(document.getElementById(id)).getPropertyValue('background-color');
+    let color = window.getComputedStyle(el).getPropertyValue('background-color');
     var colorIndex = colors.findIndex(candidateColor => rgbMatches(candidateColor, color));
     var nextIndex = (colorIndex + 1) % colors.length;
     var nextColor = colors[nextIndex];
-    document.getElementById(id).style.backgroundColor = nextColor;
+    el.style.backgroundColor = nextColor;
+    toggleLoading(el, false)
   }, delay);
 }
 </script>
@@ -101,11 +134,23 @@ function changeColor(delay, id) {
 
 Which of them makes you feel in control of the button color? Which of them feels like the computer is in control? Which of them makes you want to rage quit?
 
----
+There are [many solutions](https://www.nngroup.com/articles/progress-indicators/) to make an interface feel responsive, even when a delay is required to return results: animations, loading spinners, progression indicators, and background tasks.
 
-There are [many solutions](https://www.nngroup.com/articles/progress-indicators/) to make an interface feel responsive, even when a delay is required to return results: animations, loading states, progression indicators, and background tasks. These solutions are the domain of the designer.
+Here's one idea to make the buttons from earlier less annoying using a fun pulsing animation I found [here](https://www.florin-pop.com/blog/2019/03/css-pulse-effect/).
 
-However, a developer's responsibility is to understand which parts of an interface are likely to need these solutions.
+<div class="buttons">
+    <a onclick="changeColor(50, this.id, true)" id="btn-8" class="btn"><span>0.05 secs</span></a>
+    <a onclick="changeColor(100, this.id, true)" id="btn-9" class="btn"><span>0.1 secs</span></a>
+    <a onclick="changeColor(500, this.id, true)" id="btn-10" class="btn"><span>0.5 secs</span></a>
+    <a onclick="changeColor(1000, this.id, true)" id="btn-11" class="btn"><span>1 sec</span></a>
+    <a onclick="changeColor(5000, this.id, true)" id="btn-12" class="btn"><span>5 secs</span></a>
+    <a onclick="changeColor(10000, this.id, true)" id="btn-13" class="btn"><span>10 secs</span></a>
+    <a onclick="changeColor(15000, this.id, true)" id="btn-14" class="btn"><span>15 secs</span></a>
+</div>
+
+Suddenly, the interface feels a lot less painful. Now it's just a matter of how long the user is willing to wait for results.
+
+Though the exact solution you choose will likely come from a designer (if you're lucky enough to work with one), a developer's responsibility is to understand which parts of an interface are likely to need these solutions.
 
 Only we know which interactions can return results straight from the client, which need to request results from servers, which requests are produced quickly from a cache or will require expensive processing.
 
