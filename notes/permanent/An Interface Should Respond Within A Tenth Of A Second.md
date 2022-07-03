@@ -45,26 +45,26 @@ a.btn {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
     
-    @keyframes pulse {
-        0% {
-            transform: scale(0.95);
-            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-        }
-
-        70% {
-            transform: scale(1);
-            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-        }
-
-        100% {
-            transform: scale(0.95);
-            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-        }
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
 </style>
 
 <script>
-const colors = ["rgb(255, 105, 180)", "rgb(255, 0, 0)", "rgb(255, 142, 0)", "rgb(255, 209, 0)", "rgb(0, 142, 0)", "rgb(0, 192, 192)", "rgb(64, 0, 152)", "rgb(142, 0, 142)"];
+const colors = ["rgb(113, 135, 162)", "rgb(255, 105, 180)", "rgb(255, 0, 0)", "rgb(255, 142, 0)", "rgb(255, 209, 0)", "rgb(0, 142, 0)", "rgb(0, 192, 192)", "rgb(64, 0, 152)", "rgb(142, 0, 142)"];
 
 // Thanks to https://stackoverflow.com/questions/34458815/comparing-rgb-colors-in-javascript
 function rgbExtract(s) {
@@ -134,7 +134,7 @@ function changeColor(delay, id, loading) {
 
 Which of them makes you feel in control of the button color? Which of them feels like the computer is in control? Which of them makes you want to rage quit?
 
-There are [many solutions](https://www.nngroup.com/articles/progress-indicators/) to make an interface feel responsive, even when a delay is required to return results: animations, loading spinners, progression indicators, and background tasks.
+There are [many solutions](https://www.nngroup.com/articles/progress-indicators/) to make an interface feel responsive, even when a delay is required to return results: animations, loading spinners, progression indicators, skeleton objects, etc.
 
 Here's one idea to make the buttons respond immediately using a fun pulsing animation I found [here](https://www.florin-pop.com/blog/2019/03/css-pulse-effect/).
 
@@ -147,6 +147,8 @@ Here's one idea to make the buttons respond immediately using a fun pulsing anim
     <a onclick="changeColor(10000, this.id, true)" id="btn-13" class="btn"><span>10 secs</span></a>
     <a onclick="changeColor(15000, this.id, true)" id="btn-14" class="btn"><span>15 secs</span></a>
 </div>
+
+Notice how you still feel in control even at the longest wait time for a change.
 
 Though the exact solution you choose will likely come from a designer (if you're lucky enough to work with one), a developer's responsibility is to understand which parts of an interface are likely to need these solutions.
 
@@ -171,7 +173,7 @@ end
 
 For some particularly long-running requests, we aim to do them in the background to allow the player to continue to enjoy the game while they wait.
 
-Suppose the [[Goal Of A Game Interface]] is to make a player feel in control. An interface where interaction response times are at the mercy of a remote server is the opposite of in control.
+See also the [[Goal Of A Game Interface]].
 
 [^1]: Schell, Jesse. The Art of Game Design: A Book of Lenses. Amsterdam, Boston; Elsevier/Morgan Kaufmann, 2008. (pg. 910)
 [^2]: Nah, Fiona, "A Study on Tolerable Waiting Time: How Long Are Web Users Willing to Wait?" (2003). AMCIS 2003 Proceedings. 285.
