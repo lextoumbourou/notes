@@ -2,7 +2,7 @@
 title: Goal Of A Game Interface
 date: 2021-01-23 00:00
 tags:
-  - UserInterfaces
+  - UserInterface
 ---
 
 Schell says that the goal of a game interface is to "make players feel in control of their experience." [^1]
