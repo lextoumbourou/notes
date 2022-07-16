@@ -1,38 +1,29 @@
 ---
 title: Idempotent Data Pipelines
-date: 2022-07-10 00:00
+date: 2022-07-16 00:00
 tags:
   - DataEngineering
 cover: /_media/idempotence.png
-status: draft
 ---
 
-One of the best bits of advice I'd give someone operating a data pipeline from simple to extreme complexity is to plan for idempotence.
+Idempotence is a feature I prioritize above others when building a data pipeline.
 
-If a function is idempotent, it means we can run it multiple times against input, and it will only transform it once:
+When an operation is idempotent, we can run it multiple times, and the effects will be the same as if we ran it once. In math, we express an idempotent function as: $f(f(x)) = f(x)$.
 
-```
-f(f(x)) = f(x)
-```
+Consider a simple data pipeline task that loads and transforms source records into batches, then stores the result in a relational database.
 
-For a data pipeline that loads source data, transforms it, and stores it in a database, if we intend to generate N records, we should only have N records if we rerun it multiple times.
+If the pipeline did not have idempotence, running the job twice would generate 2x as many records as running it once. In this scenario, we have to be very careful only to run it once. If the pipeline fails halfway through, we must ensure that we resume it from where it broke. However, if it failed midway through a batch (especially one that partially succeeded in writing to the database), it may become difficult or near impossible to resume. Our only action is to clear the destination database and run the pipeline from the start or manually correct the destination database by hand.
 
-Pipelines will eventually, for reasons within and outside your control.
+On the other hand, an idempotent data pipeline would have each record first checked to see if the destination record exists. It would then either update, delete or perform a no-op on the destination record. In this configuration, we can safely resume the job from somewhere before the failed batch or, worst case, restart the entire pipeline from scratch. We can even have our tasks automatically rerun on error.
 
-If each failure requires manual intervention to clear and rerun the entire pipeline from scratch, you may soon find all your time consumed maintaining the pipeline.
+To achieve idempotence in a data pipeline, we need to figure out how to unique identify our transformed records. Sometimes this is as simple as taking a primary key already provided in the source data and checking for its existence in our destination database before writing. Other times we need to concatenate metadata together to identify a record uniquely. Sometimes the entire body of a source record must be hashed to identify it uniquely.
 
-Instead, we want to fix the issue and rerun the last step.
+A side benefit of doing this is that you will have a richer understanding of your source data and transformations. It will force you to think about what makes each record unique.
 
-In practice, this means using an `UPSERT` style query (or `DELETE` then `INSERT` if there are no other options) instead of `INSERT`.
+Though adding checks for destination records will add performance overhead to the pipeline, the savings in operational complexity far outweigh the penalty in my experience. If you can just rerun parts of your system on errors, or when you find that your transforms need to be updated, you will spend far less time babysitting them.
 
-But for this, we will need to think hard about how to identify the inputs and outputs of our data pipeline uniquely.
+It's not just pipelines that benefit from idempotence. [Eric Lathrop describes a customer billing operation that he makes dramatically simpler to operate after introducing idempotence](https://ericlathrop.com/2021/04/idempotence-now-prevents-pain-later/).
 
-Sometimes we thought the source data with a unique primary key. But when we try to make our pipeline idempotent, we learn that what we thought was a unique record identifier was not so.
+It's much easier to build idempotence from the start than bolting it on later.
 
-At times we will need to concatenate metadata to identify records.
-
-Sometimes the entire contents of the source record are the identifier.
-
-If you don't have idempotence now, it's time to think about how you can get it.
-
-Unfortunately, this is a lesson many learn the hard way.
+Unfortunately, this is a lesson many of us have to learn the hard way.
