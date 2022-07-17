@@ -28,7 +28,7 @@ A side benefit of doing this is that you will have a richer understanding of you
 
 Now our pipeline can use the unique identifier to check if the destination record exists, performing either an update, delete or perform a no-op, depending on what makes sense for our problem. Another advantage of doing it this way means if our transformations need adjustments, we can make them and rerun the pipeline when needed.
 
-Performing an initial query to check for existing records will add performance overhead to the pipeline; however, the savings in operational complexity far outweigh the penalty in my experience. If you can just rerun parts of your system on errors, or when you find that your transforms need to be updated, you will spend far less time babysitting them.
+Performing a query to check for existing records will add performance overhead to the pipeline; however, the savings in operational complexity far outweigh the penalty in my experience. If you can just rerun parts of your system on errors, or when you find that your transforms need to be updated, you will spend far less time babysitting them.
 
 It's not just pipelines that benefit from idempotence. In [a blog post](https://ericlathrop.com/2021/04/idempotence-now-prevents-pain-later/), Eric Lathrop describes a customer billing operation that he makes dramatically easier to operate after introducing idempotence.
 
