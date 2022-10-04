@@ -109,3 +109,54 @@ parent: attention-models-in-nlp
     * Diagram:
      ![Attention layer overview](_media/seq2seq-attention-layer-in-more-depth.png)
 
+## Background on seq2seq
+
+* Recurrent models take a sequence in order and use that to output a sequence.
+* Each element in the sequence has an associated computation step $t$. For example, the third element will be computed at step $t_3$.
+* These models generate a sequence of hidden states $h_t$, as a function of the previous hidden state $h_{t-1}$ and the input for position $t$.
+* Because of their sequential nature, you cannot do parallelization within training examples. That becomes an issue at longer sequence lengths, as memory constraints limit batching across examples.
+* Attention mechanisms have become critical for sequence modelling in various tasks, allowing modelling of dependencies without caring about their distance in input or output sequences.
+
+## Queries, Keys, Values and Attention
+
+* Attention was first described in 2014, since then it has been improved.
+* Conceptually queries, keys and values can be thought of as a lookup table, where the query is mapped to a key which returns a value.
+* In this example, when translating between French and English, "l'heure" matches "time", so we want to get the value for time.
+
+![Queries, Keys and Values](/_media/seq2seq-queries-keys-values.png)
+* Queries, keys and vectors are represented by learned embedding vectors.
+* Similarity between words is called *alignment*.
+    * Similarity is used for the weighted sum.
+* The alignment scores are measures of how well query and keys match.
+* These alignment scores are turned into weights used for weighted sum of the value vectors.
+    * The weighted sum is returned as the attention vector.
+* Scale dot-product attention:
+    * Pack queries into matrix $Q$.
+    * Pack keys and values in matricies $K$ and $V$.
+    * Perform matrix multiplication between Q and K transposed: $QK^T$. That gives you a matrix of alignments scores.
+    * Then scale using the square root of the key-value dimension $d_k$: $\frac{QK^T}{\sqrt{d_k}}$
+        * A regularisation step that improves performance of larger models
+    * Apply Softmax to scaled scores so that the weights of each query sum to 1.
+    * Finally, the weights and value matrices are multiplied to get the Attention vectors for each query.
+* Total operations of scaled dot-product attention: 2 matrix multiplications and a Softmax.
+* When the attention mechanism assigns a higher attention score to a word in the sequence, it means the next word in decoder's output will be strongly influenced.
+
+![Scaled-dot product](/_media/seq2seq-scaled-dot-product.png)
+
+* Alignment between source and target languages must be learnt elsewhere.
+* Typically, alignment is used in other input embeddings before attention layer.
+* The alignments weights form a matrix with source words (queries) as the rows, and targets (keys) as the columns.
+    ![Alignment weights](/_media/attention-alignment-weights.png)
+
+* Similar words will have larger weights.
+* Through training, the model learns which words have similar information and encodes it into vectors.
+* It's particularly useful for languages with different grammatical structures.
+
+![Flexible Attention](/_media/seq2seq-flexible-attention.png)
+
+* This flexibility allows the model to focus on different input words, despite the word order.
+* Summary:
+    * The Attention layer let's the model figure out which words are most important for the decoder.
+    * Attention models use Queries, Keys and Values for creating Attention vectors.
+    * Allows the model to translate on languages with different grammatical structure.
+
