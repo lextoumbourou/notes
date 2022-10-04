@@ -160,3 +160,33 @@ parent: attention-models-in-nlp
     * Attention models use Queries, Keys and Values for creating Attention vectors.
     * Allows the model to translate on languages with different grammatical structure.
 
+## Setup for Machine Translation
+
+* Example of input data for assignment:
+
+| English                    | French                              |
+| -------------------------- | ----------------------------------- |
+| I am hungy!                | J'ai faim!                          |
+| ...                        | ...                                 |
+| I watched the soccer game. | J'ai regardé le match de football. | 
+
+* Note: the dataset used isn't entirely clean.
+
+* Machine translation setup:
+    * Usually would use pre-trained vector embeddings.
+    * However, for assignment will use one-hot vectors to represent words.
+    * Keep track of index mapping with `word2ind` and `ind2word` dictionaries.
+    * Add end of sequence tokens: `<EOS>` then pad token vectors with zeros to ensure batches are the same length.
+
+## Teacher Forcing
+
+* seq2seq models work by feeding output of decoder of previous step as input.
+    * This means, there's no set length for the output sequence.
+* When training the model, you compare the decoder output sequence with the output sequence.
+    * Calculating [[Cross-Entropy]] loss for each step, then summing the steps together for the total loss.
+* In practice, this is an issue in the early stages of training, as model will make many wrong predictions.
+* The problem compounds as model keeps making wrong predictions, making target sequence very far from translated sequence.
+* To avoid this problem, you can use ground-truth words as inputs to the decoder.
+    * This means, even if the model makes a wrong prediction, it pretends as if the model has made a correct one.
+* It's common to slowly start using decoder outputs over time, so that you are eventually no longer feeding in the target words.
+    * This is called: [[Curriculum Learning]].
