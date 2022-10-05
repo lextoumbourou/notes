@@ -190,3 +190,217 @@ parent: attention-models-in-nlp
     * This means, even if the model makes a wrong prediction, it pretends as if the model has made a correct one.
 * It's common to slowly start using decoder outputs over time, so that you are eventually no longer feeding in the target words.
     * This is called: [[Curriculum Learning]].
+
+## NMT Model with Attention
+
+* Training from scratch
+    * Pass input sequence through encoder.
+    * The decoder passes its hidden state to the Attention Mechanism. Since it's difficult to implement, we use 2 decoders, one pre attention and one after attention.
+    
+    ![[Pasted image 20221005180041.png]]
+
+* First step: create 2 copies of the input tokens and target topics.
+    * First copy of input goes into Encoder.
+    * First copy of target, goes into Pre-attention Decoder. These are shifted right and we add a start of sentence token.
+* Input encoder embedding is fed into LSTM, outputting Queries and Keys
+* Pre-attention is also fed into LSTM, outputting Values.
+* We use these to generate Attention Context Vectors.
+* Then Decoder takes copy of target tokens, and is fed them with context vectors, to generate log probabilities.
+
+## BLEU Score
+
+* Evaluates quality of machine translated text by comparing a candidate translation to one or more references, which are often human translations.
+* 1 is best, 0 is worst.
+* Calculated by computing the precision of candidates by comparing it n-grams with a reference translation.
+* Example:
+
+| Sample Type | Sample                   |
+| ----------- | ------------------------ |
+| Candidate   | I, I am I                |
+| Reference 1 | Younces said I am hungry |
+| Reference 2 | He said I am hungry      |
+
+* If using unigrams, you would count how many words from candidate appears in any of the referneces, and divide by count of total number of words in the candidate translation.
+* You can view as a precision metric.
+* That means that in this example, each word in the candidate would have a value of 1, and the total number of words in candidate is 4.
+* So it would have a perfect BLEU score, which obviously isn't right.
+* A modified version is that you remove the word from the reference after matching in the candidate.
+* So you match `I`, then remove it from both references. Then the next time you match `I`, it won't be in the reference, so it's not a match and so on. That would give you a Bleu score of 0.5. 
+* The most widely used loss function for machine translations.
+* Main drawback is that it doesn't consider semantic meaning.
+
+## ROUGE-N Score
+
+* A performance metric for assessing the performance of Machine Translation models.
+* Comes from a family of metrics called ROUGE, which stands for: *Recall-Oriented Understudy for Gisting Evaluation*.
+* From the name we can infer that it's a recall-oriented metric (as opposed to the precision oriented BLEU). Which means, it's concerned with how many of the reference translations appear in the candidate.
+* Compares candidates n-grams with reference (human) translations.
+
+| Sample Type | Sample                   |
+| ----------- | ------------------------ |
+| Candidate   | I, I am I                |
+| Reference 1 | Younces said I am hungry |
+| Reference 2 | He said I am hungry      |
+
+* Since there is 2 references, you would end up with 2 ROUGE-N scores.
+* Unigram example:
+
+    Count 1: Younces=0, said=0, I=1, am=1, hungry=0,
+        Total: 2/5 = 0.4
+    Count 2: He=0, said=0, I=1, am=1, hungry=0
+        Total: 2/5 = 0.4
+
+* You can calculate the F1 score if you want to combine both metrics:
+
+$$
+F1 = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precicision} + \text{Recall}} \Rightarrow 
+F1 = 2 \times \frac{\text{BLEU} \times \text{ROUGE-N}}{\text{BLEU} + \text{ROUGE-N}}
+$$
+
+* In the examples we've used, the result would be:
+
+$$
+F1 = 2 \times \frac{0.5 \times 0.4}{0.5 + 0.4} = \frac{4}{9} \approx 0.44
+$$
+
+* All evaluations metrics so far don't consider sentence structure and semantics.
+
+## Sampling and Decoding
+
+2 ways to construct a sentence from model outputs:
+1. Greedy decoding.
+2. Random sampling.
+
+Seq2seq refresher:
+1. Output of a seq2seq model is the output of the model's Dense layer fed into Softmax or Log Softmax.
+2. You now have a probability distribution over all words and symbols in target vocabulary.
+3. The final output of the model depends on how you choose the words from the distribution.
+
+Simplest approach is [[Greedy Decoding]]: select the most probable word at each step.
+
+The downsides to this approach is that the greedy decoder can give you repeated tokens for the most common words. Though it works for shorter sequences in practice.
+
+Another approach is [[Random sampling]] from the distribution. However, it can return results that are too random. You can mitigate this a bit by assigining higher weights to more probable words.
+
+[[Temperature]] that can be tuned if you want more or less randomness in predictions.
+
+A lower temperature setting will give you a more confident yet conservative set of outputs. Higher temperature gives you a more "excited", random network.
+
+Here's the setting from the GPT3 playground:
+
+![[Pasted image 20220829083950.png]]
+
+Both of these methods don't always produce the most convincing outputs, compared to those coming up in future lessons.
+
+## Beam Search
+
+* Beam Search finds the best sequences over a fixed window size known as [[Beam Width]].
+* The methods covered earlier only consider single word probabilities at a time. However, the most probable translation given an input usually isn't the one that selects the most probable word at each step. Especially at the start of a sequence, choosing the most probable word can lead to an overall worse translation.
+* Given infinite compute power, you could calculate probabilities of each possible output sequence and choose the best. In practice, you can use [[Beam Search]].
+* Beam search finds the most likely output sentence by chooing a number of best sequences based on conditional probabilities at each step.
+* Step by step:
+    1. At each step, calculate the probability of multiple possible sequences.
+    2. Beam width B determines number of sequences you keep.
+    3. Continue until all B most probable sequences end with <EOS>.
+    4. Greedy decoding is just Beam search with B=1.
+
+* Problems with Beam Search:
+    1. It penalises long sequences, so you have to normalise by length.
+    2. Computationally expensive and uses lots of memory.
+
+## Minimum Bayes Risk
+
+Step-by-step:
+1. Generate candidate translations.
+2. Assign a similarity to every pair using a similarity score (like ROUGE)
+3. Select sample with the highest average similarity.
+
+If using Rouge, MBR would be summarised like this:
+
+![MBR with Rouge](_media/attention-mbr-rouge.png)
+
+This method gives better performance than random sampling and greedy decoding.
+
+## Stack Semantics in Trax
+
+### `t1.Serial` combinator is stack oriented.
+
+* Recall that a stack is a data structure that follows Last In, First Out (LIFO) principle.
+    * Whatever element is pushed onto the stack will be the first one popped out.
+
+Creating an addition and multiplication layer:
+
+```python
+from trax import layers as tl
+
+def Addition():
+    layer_name = 'Addition'
+
+    def func(x, y):
+        return x + y
+
+    return tl.Fn(layer_name, func)
+
+def Multiplication():
+    layer_name = 'Multiplication'
+
+    def func(x, y):
+        return x * y
+
+    return fl.Fn(layer_name, func)
+```
+
+Implement the computations using Serial combinator:
+
+```python
+serial = tl.Serial(
+    Addition(), Multiplication(), Addition()
+)
+
+# Add 3 + 4, multiply result by 15 and add 3
+x = (np.array([3]), np.array([4]), np.array([15]), np.array([3]))
+serial.init(shapes.signature(x))
+```
+
+### `tl.Select` combinator in context of serial combinator
+
+If we wanted to make a calculate ```(3 + 4) * 3  + 4```, we can use `Select` to perform the calculation like:
+
+1. 4
+2. 3
+3. tl.Select([0, 1, 0, 1])
+4. add
+5. mul
+6. add
+
+The `tl.Select` requires a list or tuple of 0-based indices to select elements relative to the top of the stack. Since the top of the stack is 3 (at index 0) and 4 (at inde 1), after the select operation the stack has: 3, 4, 3, 4.
+
+Then, the add operation pops the first 2 selects off the stack and replaces with 3+4=7, then multiplies that by 3 to give 21. Finally adds 4 to that to give us 25.
+
+The `n_in` argument to `tl.Select` tells us how many things to pop off the stack and replace with the index.
+
+```
+tl.Select([0], n_in=2)
+```
+
+takes 2 elements off the stack and replaces them with just the first.
+
+```tl.Residual``` creates a skip connection around `Addition` in this example:
+
+```
+serial = tl.Serial(
+    tl.Select([0, 1, 0, 1]),
+    tl.Residual(Addition())
+)
+```
+
+## Papers to read
+
+* [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer (Raffel et al, 2019)](https://arxiv.org/abs/1910.10683)
+* [Reformer: The Efficient Transformer (Kitaev et al, 2020)](https://arxiv.org/abs/2001.04451)
+* [Attention Is All You Need (Vaswani et al, 2017)](https://arxiv.org/abs/1706.03762)
+* [Deep contextualized word representations (Peters et al, 2018)](https://arxiv.org/pdf/1802.05365.pdf)
+* [The Illustrated Transformer (Alammar, 2018)](http://jalammar.github.io/illustrated-transformer/)
+* [The Illustrated GPT-2 (Visualizing Transformer Language Models) (Alammar, 2019)](http://jalammar.github.io/illustrated-gpt2/)
+* [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (Devlin et al, 2018)](https://arxiv.org/abs/1810.04805)
+* [How GPT3 Works - Visualizations and Animations (Alammar, 2020)](http://jalammar.github.io/how-gpt3-works-visualizations-animations/)
