@@ -1,3 +1,3 @@
 #!/bin/bash
 
-PYTHON_VERSION=3.7 python3 -m pelican ./notes/ --output=output/
+PYTHON_VERSION=3.9 python3 -m pelican ./notes/ --output=output/
