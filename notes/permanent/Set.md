@@ -2,6 +2,10 @@
 title: Set
 aliases: Set Theory, Sets
 date: 2022-10-16 00:00
+tags:
+  - SetTheory
+  - DiscreteMath
+summary: Set is a unique collection of well-defined things
 ---
 
 A set is a unique collection of things.
@@ -25,8 +29,9 @@ On the other hand, if I had a Djembe drum $d$, I could express that it's not par
 ![Not in drum set](/_media/sets-notindrumset.png)
 
 The symbols in Latex are:
-* $\in$: `\in`
-* $\notin$: `\notin`
+
+- $\in$: `\in`
+- $\notin$: `\notin`
 
 A set can be a member of another set. This fact means that the definition of a "set" is circular, making it technically an undefined term.
 
@@ -115,7 +120,7 @@ For example, the power set of $A = \{1, 2\}$:
 
 $P(A) = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\}$
 
-### Infinite and finite sets
+## Infinite and finite sets
 
 If a set has an infinite number of elements, we call it an infinite set.
 
@@ -129,4 +134,3 @@ Some special infinite sets come up all the time in math:
 * $\mathbb{R}$ = set of real numbers
 * $\mathbb{R^{+}}$ = set of positive real numbers = $\{x ∈ R|x > 0\}$
 * $\mathbb{R}−$ = set of negative real numbers = $\{x ∈ R|x < 0\}$
-
