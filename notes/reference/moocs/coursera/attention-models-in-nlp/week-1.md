@@ -196,9 +196,8 @@ parent: attention-models-in-nlp
 * Training from scratch
     * Pass input sequence through encoder.
     * The decoder passes its hidden state to the Attention Mechanism. Since it's difficult to implement, we use 2 decoders, one pre attention and one after attention.
-    
-    ![[Pasted image 20221005180041.png]]
 
+    ![NMT Model](/_media/nmt-model.png)
 * First step: create 2 copies of the input tokens and target topics.
     * First copy of input goes into Encoder.
     * First copy of target, goes into Pre-attention Decoder. These are shifted right and we add a start of sentence token.
@@ -288,7 +287,7 @@ A lower temperature setting will give you a more confident yet conservative set 
 
 Here's the setting from the GPT3 playground:
 
-![[Pasted image 20220829083950.png]]
+![GPT Temperature](/_media/gpt-temperature.png)
 
 Both of these methods don't always produce the most convincing outputs, compared to those coming up in future lessons.
 
