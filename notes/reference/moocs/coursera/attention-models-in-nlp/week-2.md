@@ -171,3 +171,95 @@ $$
 * We put this mechanism in decoder. It ensures that all predictions only depend on known outputs.
 ![Masked Self-Attention](/_media/attention-masked-self-attention.png)
 
+## Multi-head Attention
+
+* One improve that can be made on the attention mechanisms discussed so far is [[Multi-Head Attention]].
+    * Apply multiple versions of Scaled-Dot Product Attention in parallel.
+    * Then apply a transformations many times.
+    * Different sets of representation, allows model to return multiple relationships betweens words in query and key matrice.
+    ![Plot embeddings in Scaled-Dot Product Attention](/_media/attention-plot-embeddings.png)
+
+    ![Multi-head attention](/_media/attention-multi-head.png)
+
+* How it works:
+    * Inputs are multiple sets of values, keys and queries matrices.
+    * Applied Scaled Dot-Product Attention to each set.
+    * Concat results from each head into a single matrix.
+    * Transform concat results into single result using Linear layer.
+
+* In the original paper, the author sets the size of the query, key and value matrices to be `d_model / num_heads`.
+    * This means that the computation costs aren't much more significant than a single head.
+
+## Multi-head Attention (Reading)
+
+* Intution behind multi-head attention:
+    * Each head has a different linear transformer to represent words.
+    * That means, different heads can learn different relationships between words.
+* The context vector is concatenated for each head to create a final vector for each word.
+
+## Transformer Decoder
+
+* Decoder gets input sequence of a tokenised sentence as input.
+* For each token, an embedding is fetched.
+* Add these word embeddings to positional embeddings.
+* Pass these word embeddings to multi-head attention.
+* Then feed to Attention Layer which processes each position independently.
+* Pass to residual connection with layer normalization.
+* Repeat Attention and Feed Forward N times depending on model size.
+
+![Transformer Decoder](/_media/attention-transformer-decoder.png)
+
+
+* More detail:
+    * Model has 3 layers at the beginning: inputs, word embedding and positional embedding.
+        * The word embedding and positional embeddings are learned.
+    * Shift right introduced start token `<start>`, so model can predict first word.
+    * After word embedding, shape goes from `(batch, length)` to `(batch, length, d_model)`.
+        * `d_model` refers to embedding size which is usually 512, 1024 and sometimes 10k+.
+    * After word and position embeddings, you pass to N Decoder Blocks.
+    * Next a fully connected layer that outputs tensors: `(batch, length, vocab size)`.
+    * And a Log Softmax for cross-entropy loss.
+    * How the Decoder Blocks are built:
+        * Set of word + position embeddings are passed in multi-head attention model.
+        * Attention searches position in sequence to identify relationships.
+        * Each words on sequence is weighted.
+        * Then residual connection.
+        * Followed by layer normalisation step to speed up training.
+        * Each word is passed through feed forward layer: ie embeddings are fed into neural network.
+        * Dropout at the end for regularisation.
+        * Layer norm step is repeated capital N times.
+        * Finally, encoder layer output is obtained.
+        * After the attention mechanism and the normalization step, some non-linear transformations are introduced by including fully connected feed forward layers, with Relu activations for each inputs.
+            * Uses shared parameters for efficiency.
+        * The feed forward output vectors are like the hidden states of the original RN encoder.
+
+## Transformer Summarizer
+
+* This week's assignment:
+    * Input: entire news articles.
+    * Output: Summary of the article: a few sentences that mention the most important ideas.
+* Setup for summarisation problem:
+    * Concat the input, ie the article, with summary.
+    * Separate with `<EOS>` tokens.
+    * Example: 
+    
+    ```
+    ARTICLE TEXT <EOS> ARTICLE SUMAMRY <EOS> <pad>
+    ```
+
+    * Input is tokenised as a sequence of integers:
+
+    ```
+    [2, 3, 5, 2, 1, 3 ... 0]
+    ```
+
+    * In this example 0 denotes padding, and 1 EOS token.
+    * We are not concerned with predicting input sequence, so use weighted loss:
+        * Loss is weighted 0 until the first EOS tag, then start 1 for the summary tokens.
+        * Weighted loss: $J = -\frac{1}{m} \sum\limits^{m}_i \sum\limits^{K}_{j} y^{i}_{j} \log \hat{y}^{i}_{j}$
+        * In other words, cross-entropy loss over just the summary sentence.
+        * Note: if there's low information in the summary, you can weigh the loss tokens with something other than 1s, like 0.1, 0.2, 0.5 etc.
+* Inference with a language model:
+    * At inference time, you will input the article with the `EOS` word and keep asking for words until you get the final `EOS` token.
+    * You get a probability distribution for each word, so you can pick the word by random sampling.
+        * You will get a different summary each time you run inference.
