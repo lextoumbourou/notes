@@ -6,16 +6,15 @@ summary: A use case for ChatGPT
 hide_cover_in_article: true
 ---
 
+This article covers a use case for [ChatGPT](https://chat.openai.com/), an exciting new product by [OpenAI](https://chat.openai.com/).
+
+---
 <style>
 img {
     border: 1px solid #000;
    border-radius: 8px;
 }
 </style>
-
-This article covers a use case for [ChatGPT](https://chat.openai.com/), an exciting new product by [OpenAI](https://chat.openai.com/).
-
----
 
 Recently, on holidays in Far North Queensland, my wife and I parked our rental car in a paid parking lot to visit a restaurant.
 
@@ -35,7 +34,7 @@ We had already been experimenting with ChatGPT, and the letter seemed a good tes
 
 ![This is the first response I first put into ChatGPT](/_media/chatgpt1-response1.png)
 
-The first response was close, but it was longer than I would like. Plus, I didn't tell it that I was planning to attach a photo of the fine and proof of payment.
+The first response was close but longer than I would like. Plus, I didn't tell it that I was planning to attach a photo of the fine and proof of payment.
 
 ![The 2nd prompt passed to ChatGPT](/_media/chatgpt1-prompt2-response2.png)
 
@@ -59,5 +58,5 @@ So you can dispute a parking fine with ChatGPT.
 ChatGPT is incredible -  I cannot believe how well this technology works. It's like having a talented personal assistant (who is often wrong - need to read their work thoroughly) at your fingertips.
 
 <small>
-* The email I sent was different from what I've got here. It would work equally as well.
+* I used ChatGPT from my phone and didn't screenshot the prompt, so I had to generate a new prompt/response for this blog post. It's similar enough that I'm sure it would work too.
 </small>
