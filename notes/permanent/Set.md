@@ -6,6 +6,7 @@ tags:
   - SetTheory
   - DiscreteMath
 summary: Set is a unique collection of well-defined things
+status: draft
 ---
 
 A set is a unique collection of things.
