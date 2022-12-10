@@ -35,9 +35,7 @@ We had already been experimenting with ChatGPT, and the letter seemed a good tes
 
 ![This is the first response I first put into ChatGPT](/_media/chatgpt1-response1.png)
 
-The first response was close.
-
-But it was longer than I would like, plus I forgot to tell it that I was planning to attach a photo of the fine and proof of payment.
+The first response was close, but it was longer than I would like. Plus, I didn't tell it that I was planning to attach a photo of the fine and proof of payment.
 
 ![The 2nd prompt passed to ChatGPT](/_media/chatgpt1-prompt2-response2.png)
 
@@ -48,7 +46,7 @@ That works. Now for a title.
 
 ![Title request](/_media/chatgpt1-title.png)
 
-I emailed that* from my phone and a day later received this response.
+I emailed that<small>*</small> from my phone and a day later received this response.
 
 ![Response from Council](_media/chatgpt1-response-email.png)
 
