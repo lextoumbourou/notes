@@ -57,6 +57,10 @@ So you can dispute a parking fine with ChatGPT.
 
 ChatGPT is incredible -  I cannot believe how well this technology works. It's like having a talented personal assistant (who is often wrong - need to read their work thoroughly) at your fingertips.
 
+This article is currently on the front page of Hacker News. Follow the discussion [here](https://news.ycombinator.com/item?id=33937753).
+
+---
+
 <small>
 * I used ChatGPT from my phone and didn't screenshot the prompt, so I had to generate a new prompt/response for this blog post. It's similar enough that I'm sure it would work too.
 </small>
