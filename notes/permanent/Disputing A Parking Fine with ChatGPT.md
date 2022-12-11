@@ -8,7 +8,7 @@ hide_cover_in_article: true
 
 This article covers a use case for [ChatGPT](https://chat.openai.com/), an exciting new product by [OpenAI](https://chat.openai.com/).
 
-At the time of writing, it's currently on the front page of Hacker News. Follow the discussion [here](https://news.ycombinator.com/item?id=33937753).
+At the time of writing, it's on the front page of Hacker News. Follow the discussion [here](https://news.ycombinator.com/item?id=33937753).
 
 ---
 <style>
