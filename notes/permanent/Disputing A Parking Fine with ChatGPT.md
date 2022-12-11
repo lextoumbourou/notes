@@ -30,7 +30,7 @@ I double-checked what I had entered into the app. I mistyped the number plate by
 
 Since we have never received a parking fine before, and I had proof of payment, I knew there was a good chance the council would let me off if I sent a letter of explanation.
 
-We had already been experimenting with ChatGPT, and the letter seemed a good test run.
+We had already been experimenting with ChatGPT, and the letter seemed a good test case.
 
 ![This is the prompt I first put into ChatGPT](/_media/chatgpt1-prompt1.png)
 
