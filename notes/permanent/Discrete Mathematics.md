@@ -1,5 +1,5 @@
 ---
-title: Discrete Mathematics (Topic Overview)
+title: Discrete Mathematics
 date: 2022-10-16 00:00
 status: draft
 ---
@@ -7,17 +7,36 @@ status: draft
 This is my [[Topic Overview]] for the Discrete Mathematics topic.
 
 This is a work in progress and occasionally wrong. Check back in March 2023.
- 
-* [[Set|Sets]]
+
+## Set Theory
+
+* [[Set]]
+    * [[De Morgan's Laws]]
+
+## Functions
+
 * [[Functions]]
     * [[Injective Function]]
     * [[Surjective Function]]
     * [[Bijective Function]]
     * [[Floor Function]]
     * [[Ceiling Function]]
-* [[Proposition|Propositions]]
+
+## Propositional Logic
+
+* [[Proposition]]
     * [[Boolean Expression]]
     * [[Negation]]
     * [[Implication|Logical Implication]]
     * [[Disjunction]]
-* [[Predicates]]
+
+## Predicate Logic
+
+* [[Predicate]]
+
+## Boolean Algebra
+
+* [[Boolean Algebra]]
+
+
+
