@@ -1,5 +1,5 @@
 ---
-title: Proposition (Logic)
+title: Proposition
 date: 2022-11-23 00:00
 aliases: Propositions, Statement
 tags:
