@@ -8,7 +8,7 @@ hide_cover_in_article: true
 
 This article covers a use case for [ChatGPT](https://chat.openai.com/), an exciting new product by [OpenAI](https://chat.openai.com/).
 
-At the time of writing, it's on the front page of Hacker News. Follow the discussion [here](https://news.ycombinator.com/item?id=33937753).
+This post made it to the front page of Hacker News. See the discussion [here](https://news.ycombinator.com/item?id=33937753). Sydney Morning Herald also mentioned the story in an [article on chatbots](https://www.smh.com.au/technology/will-ai-rescue-us-from-the-yoke-of-futile-jobs-20221213-p5c5zj.html).
 
 ---
 <style>
