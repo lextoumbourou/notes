@@ -1,0 +1,5 @@
+## Modus Pones
+
+Modus tollens
+
+
