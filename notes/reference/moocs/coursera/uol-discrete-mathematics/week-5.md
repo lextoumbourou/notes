@@ -1,0 +1,152 @@
+---
+title: Week 5 - Topic 03 A. Proppositional Logic
+date: 2022-11-08 00:00
+category: reference/moocs
+status: draft
+parent: uol-discrete-mathematics
+---
+
+## 3.101 Introduction to propositional logic
+
+Outlines
+    * Definition
+    * Propositional logic
+    * Applicaiton of propositional logic
+    
+* Definition
+    * A branch of logic that is interested in studying mathematical statements.
+        * The basis of reasoning and the rules used to consrcut mathematical theories.
+* Original purpose of propositional logic dates back to Aristotle. Used to model reasoning.
+* Effectively an algebra of propositions.
+* Variables are unknown propositions not unknown real numbers
+* The operators used are:
+    * and
+    * or
+    * not
+    * implies 
+    * if and only if
+* rather than +, -, * and divide.
+* Used in:
+    * computer circuit design.
+    * programming languages and systems, such as language Prolog.
+    * logic-based programming languages:
+        * languages use "predicate logic", a more powerful form of logic that extends the capabilites of propositional logic
+
+### 3.103 Propositions
+
+* Outlines:
+    * definition of a proposition.
+    * propositional variables.
+* [[Proposition]]
+    * A declarative sentence that is either true or false but not both
+    * The most basic element of logic.
+    * Examples
+        * London is the capital of the United Kingdom
+            * A true proposition.
+        * 1 + 1 = 2
+            * Another true proposition.
+        * 2 < 3
+        * Madrid is the capitial of France.
+            * A false proposition.
+        * 10 is an odd number
+            * Another false proposition.
+    * Examples that aren't propositions
+        * x + 1 = 2
+            * Since we don't know the value of x, we don't know if it's true or false.
+        * x + y = z
+        * What time is it?
+            * Not a declarative sentence, so not a proposition.
+        * Read this carefully.
+        * This coffee is strong
+            * Subjective meaning: not true or false.
+* [[Propositional variables]]
+    * Use variables for propositional shorthand.
+    * Typically uses letter like: p, q, r
+    * Examples
+        * p: London is the capital of United Kingdon
+        * q : 1 + 1 = 2
+        * r : 2 < 3
+
+### 3.105 Truth tables and truth sets
+
+* Outlines
+    * Definition of a truth table
+    * Constructing a truth table.
+    * Definition of a truth set.
+* [[Truth Table]]
+    * A tabular reprenetation of possible combinations of constituent variables.
+    * To construct the truth table for n propositions:
+        * Create table with 2^n rows and n columns.
+        * Fill the first n columns with all the possible combinations.
+    * Example
+        * Two popositional variables p and q:
+| p     | q     |
+| ----- | ----- |
+| FALSE | FALSE |
+| FALSE | TRUE  |
+| TRUE  | FALSE |
+| TRUE  | TRUE  |
+* [[Truth Set]]
+    * Let $p$ be a proposition of set $S$.
+    * The truth set of $p$ is the set of elements of $S$ for which $p$ is true.
+    * We use the capital letter to refer to truth set of a proposition.
+        * Truth set of $p$ is $P$
+    * Example
+        * Let $S = \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\}$
+        * Let $p$ and $q$ be 2 propositions concerning an integer n in S, defined as follows:
+            * $p$: $n$ is even
+            * $q$: $n$ is odd
+        * The truth set of $p$ written as $P$ is:
+            * $P = {2, 4, 5, 8, 10}$
+        * The truth of set q is:
+            * Q = {1, 3, 5, 7, 9}
+
+### 3.107 Compound propositions
+
+* Outlines
+    * Definition of compound statements
+    * negation
+    * conjunction
+    * disjunction
+    * exclusive-or
+    * precedence of logical operations
+* [[Compound Statements]]
+    * Statements build by combining multiple propositions using certain rules.
+* Negation
+    * Not $p$: Defined by $\neg p$
+    * "It is not the case that $p$"
+    * The truth value of the negation of $p$,  $\neg p$, is the opposite of truth value of $p$.
+    * Example
+        * $p$: John's program is written in Python
+        * $\not p$: John's program is not written in Python
+* Conjunction ($\land$)
+    * $p$ and $q$
+    * Let $p$ and $q$ be propositions.
+    * Conjunction of $p$ and $q$ are denoted by $p \land q$
+    * Conjunction is only true when both $p$ and $q$ are true. False if it isn't the case.
+    * Example:
+        * $p$: John's program is written in Python
+        * $q$: John's program has less than 20 lines of code.
+        * $p \land q$: John's program is written in Python and has < 20 lines of code.
+* Disjunction $\lor$
+    * $p$ or $q$
+    * Let $p$ and $q$ be propositions.
+    * The disjunction of $p$ and $q$ denoted by $p \lor q$ is only false when both $p$ and $q$ are false, otherwise true.
+    * Example:
+        * $p$: John's program is written in Python.
+        * $q$: John's program is < 20 lines of code.
+        * $p \lor q$: John's prgram is written in Python or has less than 20 lines of code.
+* Exclusive-or $\oplus$
+    * $p$ or $q$ (but not both)
+* Precendence of logical operations
+    * To build complex compound propositions, we need to use parentheses.
+    * Example
+        * $(p \lor q) \land (\neg r)$ is different from $p \lor (q \land \neg r)$
+    * To reduce the number of parentheses, we can use order of precedence.
+| Operator | Precedence |
+| -------- | ---------- |
+| $\neg$   | 1          |
+| $\land$  | 2          |
+| $\lor$   | 3          |
+
+### 3.108 Compound propositions
