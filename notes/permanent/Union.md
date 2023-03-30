@@ -1,5 +1,5 @@
 ---
-title: Union
+title: Union (Sets)
 date: 2022-12-22 00:00
 status: draft
 ---
