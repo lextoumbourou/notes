@@ -8,29 +8,24 @@ parent: uol-discrete-mathematics
 
 ## 3.101 Introduction to propositional logic
 
-Outlines
-    * Definition
-    * Propositional logic
-    * Applicaiton of propositional logic
-    
-* Definition
+* [[Propositional Logic]]
     * A branch of logic that is interested in studying mathematical statements.
-        * The basis of reasoning and the rules used to consrcut mathematical theories.
-* Original purpose of propositional logic dates back to Aristotle. Used to model reasoning.
-* Effectively an algebra of propositions.
-* Variables are unknown propositions not unknown real numbers
-* The operators used are:
-    * and
-    * or
-    * not
-    * implies 
-    * if and only if
-* rather than +, -, * and divide.
-* Used in:
-    * computer circuit design.
-    * programming languages and systems, such as language Prolog.
-    * logic-based programming languages:
-        * languages use "predicate logic", a more powerful form of logic that extends the capabilites of propositional logic
+    * The basis of reasoning and the rules used to construct mathematical theories.
+    * Original purpose of propositional logic dates back to Aristotle. Used to model reasoning.
+    * "An algebra of propositions".
+        * Variables are unknown propositions not unknown real numbers.
+        * Instead of `+`, `-`, `x`, `%`, the operators used are:
+            * `and`
+            * `or`
+            * `not`
+            * `implies` 
+            * `if`
+            * `if and only if`
+    * Used in:
+        * computer circuit design.
+        * programming languages and systems, such as language Prolog.
+        * logic-based programming languages:
+            * languages use "predicate logic", a more powerful form of logic that extends the capabilites of propositional logic
 
 ### 3.103 Propositions
 
