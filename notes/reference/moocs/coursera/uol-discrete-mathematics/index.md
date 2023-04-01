@@ -5,6 +5,7 @@ category: reference/moocs
 slug: uol-discrete-mathematics
 cover: /_media/discrete-maths.png
 summary: "Notes from [Discrete Mathematics by University of London](https://www.coursera.org/learn/uol-discrete-mathematics)"
+hide_cover_in_article: true
 ---
 
 Notes from [Discrete Mathematics by University of London](https://www.coursera.org/learn/uol-discrete-mathematics/), part of the BSc Computer Science degree.
@@ -20,32 +21,10 @@ Notes from [Discrete Mathematics by University of London](https://www.coursera.o
     * Increasingly applied to practical fields of math and science
     * Improves reasoning and problem-solving
     
-* This module covers:
-    * [[Sets]]
-    * [[Functions]]
-    * [[Logic]]
-    * [[Graphs]]
-    * [[Trees]]
-    * [[Relations]]
-    * [[Combinatorics]]
-    * [[Mathematical Induction]]
-    * [[Recursive Relations]]
-
 * Books required:
     * [Kenneth, H, Rosen. Discrete Mathematics and its Applications. (2012) Global Edition](https://www.amazon.com.au/Discrete-Mathematics-Applications-Kenneth-Rosen/dp/0072899050)
     * [David Mackinson, Sets, Logic and Maths for Computing, Springer Verlag. 2012](https://www.amazon.com/Computing-Undergraduate-Topics-Computer-Science/dp/1447124995)
     
-* Topic 1: Sets
-* Topic 2: Functions
-* Topic 3: Propositional Logic
-* Topic 4: Predicate logic
-* Topic 5: Boolean algebra
-* Topic 6: Induction & Recursion
-* Topic 7: Graphs
-* Topic 8: Trees
-* Topic 9: Relations
-* Top 10: Combinatorics
-
 ## Contents
 
 * [Week 1 - Topic 01 A. Sets]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-1.md)
@@ -55,11 +34,11 @@ Notes from [Discrete Mathematics by University of London](https://www.coursera.o
 * [Week 5 - Topic 03 A. Propositional logic]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-5.md)
 * [Week 6 - Topic 03 B. Propositional Logic]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-6.md)
 * [Week 7 - Topic 04 A. Predicate logic]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-6.md)
-* [Week 8 - Topic 04 B. Predicate logic](({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-8.md)
-* [Week 9 - Topic 05 A. Boolean algebra](({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-9.md)
-* [Week 10 - Topic 05 B. Boolean algebra](({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-10.md)
+* [Week 8 - Topic 04 B. Predicate logic]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-8.md)
+* [Week 9 - Topic 05 A. Boolean algebra]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-9.md)
+* [Week 10 - Topic 05 B. Boolean algebra]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-10.md)
 * [Mid-Term Assessment]({filename}/reference/moocs/coursera/uol-discrete-mathematics/mid-term-assessment.md)
-* [Week 11 - Topic 06 A. Mathematical Induction](({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-11.md)
+* [Week 11 - Topic 06 A. Mathematical Induction]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-11.md)
 * [Week 12 - Topic 06 B. Recursion]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-12.md)
 * [Week 13 - Topic 07 A. Graphs]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-13.md)
 * [Week 14 - Topic 07 B. Graphs]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-14.md)
