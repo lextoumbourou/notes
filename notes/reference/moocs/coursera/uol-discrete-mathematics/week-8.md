@@ -635,3 +635,33 @@ $\therefore \exists x (C(x) \rightarrow \neg B(x))$
 
 This is valid (not sure why).
 
+
+#  4.209 Predicate logic - Peer-graded
+
+## Question
+
+ Use the following rules of inference: existential instantiation, universal instantiation, disjunctive syllogism, modus tollens and existential generalisation to show that:
+
+**if**:
+
+Hypothesis 1: $\forall x (P (x) \lor Q(x))$
+Hypothesis 2: $\forall x (¬Q(x) ∨ S(x))$
+Hypothesis 3: $\forall x(R(x) \rightarrow \neg S(x))$
+Hypothesis 4 : $\exists x \neg P(x)$ are true   
+
+**then**: 
+
+Conclusion: $\exists x¬R(x)∃x¬R(x)$ is true.
+
+## Answer
+
+We can use the following steps:
+
+1. Existential instantiation: Since $\exists x \ \neg P(x)$ is true, there exists some specific object $a$ such that $\neg P(a)$.
+2. Universal instantiation: Since $\forall x (P(x) \lor Q(x))$ is true, we can instantiate this to $P(a) \lor Q(a)$
+3. Disjunctive syllogism: Since we know that $\neg P(a)$ from step 1, and $P(a) \lor Q(a)$ from step 2, we can conclude that $Q(a)$ must be true.
+4. Universal instantiation: Since $\forall x \ (\neg Q(x) \lor S(x))$, we can instantiate this to $\neg Q(a) \lor S(a)$.
+5. Disjunctive syllogism: since we know that $Q(a)$ is true from step 3, and $\neg Q(a) \lor S(a)$ is true, we can conclude that $S(a)$ must be true.
+6. Universal instantiation: since $\forall x (R(x) \rightarrow \neg S(x)))$ is true, we can instantiate this to $R(a) \rightarrow \neg S(a)$
+7. Modus tollens: since we know that $S(a)$ is true from step 5, and $R(a) \rightarrow \neg S(a)$ from step 6, we can conclude that $\neg R(a)$ must be true.
+8. Existential generalisation: Since $\neg R(a)$ is true for a specific object $a$, we can conclude that $\exists x \neg R(x)$ is true.

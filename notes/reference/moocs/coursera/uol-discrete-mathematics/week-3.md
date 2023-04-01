@@ -179,3 +179,120 @@ parent: uol-discrete-mathematics
     * Not a valid function
       ![[not-valid-function.png]]
       * Input a has 2 outputs. In a function, an input can only have a single output.
+
+# Peer-graded Assignment: 2.109 Functions
+
+## Part 1
+
+* *$f_1 : \mathbb{R} \rightarrow \mathbb{R}$ where $f(x) = x^{2} + 1$
+    * Claim: This function is not injective.
+    * Proof:
+        * Let $a = 2$, $b = -2$
+        * $f(2) = (2)^2 + 1 = 5$
+        * $f(-2) = (-2)^2 + 1 = 5$
+        * $f(2) = f(-2)$ therefore the function is not injective.
+
+    * Claim: This function is not surjective.
+    * Proof:
+        * $f(x) = y$
+        * $x^2 + 1 = y$
+        * $x^2 = y - 1$
+        * $x = \sqrt{(y - 1)}$
+        * $R \sqrt{(y - 1)}  = [1, + \infty [$
+        * $[1, + \infty [ \ \ne \mathbb{R}$ therefore, this function is not surjective.
+
+* *$f_2 : \mathbb{R} \rightarrow [1, + \infty [ \text{ where } f(x) = x^{2} + 1$
+    * Claim: This function is not injective.
+    * Proof:
+        * Let $a = 2$, $b = -2$
+        * $f(2) = (2)^2 + 1 = 5$
+        * $f(-2) = (-2)^2 + 1 = 5$
+        * $f(2) = f(-2)$ therefore the function is not injective.
+        
+    * Claim: This function is surjective.
+    * Proof:
+        * $f(x) = y$
+        * $x^2 + 1 = y$
+        * $x^2 = y - 1$
+        * $x = \sqrt{(y - 1)}$
+        * $R _{\sqrt{(y - 1)}}  = [1, + \infty [$ therefore, this function is surjective.
+        
+* $f_3: \mathbb{R} \rightarrow \mathbb{R} \text{ where } f(x) = x^3$
+    * Claim: This function is injective.
+    * Proof:
+        * $f(a) = f(b)$
+        * $f(a) = a^3$ 
+        * $f(b) = b^3$ 
+        * $a^3 = b^3$
+        * $(a^3)^{1/3} = (b^3)^{1/3}$
+        * $a = b$ for all $a, b \in \mathbb{R}$ there the function is injective.
+   
+    * Claim: This function is surjective
+    * Proof:
+        * $f(x) = y$
+        * $x^3 = y$
+        * $x = \sqrt[3]{y}$
+        * $\sqrt[3]{y} \in \mathbb{R}$ therefore, the function is surjective.
+
+* $f_4 : \mathbb{R} \rightarrow \mathbb{R} \text{ where } f(x) = 2x + 3$
+    * Claim: This function is injective.
+    * Proof:
+        * $f(a) = f(b)$
+        * $2a + 3 = 2b + 3$
+        * $2a = 2b$
+        * $a = b$ therefore f is injective.
+        
+    * Claim: This function is surjective.
+    * Proof:
+        * $f(x) = y$
+        * $2x + 3 = y$
+        * $2x = y - 3$
+        * $x = \frac{y-3}{2} \in \mathbb{R}$ therefore the function is surjective.
+      
+* $f_5: \mathbb{Z} \rightarrow \mathbb{Z} \text{ where } f(x) = 2x + 3$
+    * Claim: This function is injective.
+    * Proof:
+        *  $f(a) = f(b)$
+        * $2a + 3 = 2b + 3$
+        * $2a = 2b$
+        * $a = b$ therefore $f$ is injective.
+        
+    * Claim: This function is not surjective
+    * Proof:
+        * $f(a) = 2a + 3$
+        *  $f(x) = y$
+        * $2x + 3 = y$
+        * $2x = y - 3$
+        * $x = \frac{y-3}{2} \notin \mathbb{Z}$ for all $x$ therefore this function is not surjective.
+
+## Part 2
+
+Let $f : \mathbb{R} \rightarrow ]1, +\infty[$ with $f(x) = e^{x} + 1$
+
+1. Show that $f(x)$ is bijection.
+    * Claim: $f(x)$ is a bijective as it is both injective and surjective.
+    
+    * Proof of injective: 
+        * $f(a) = f(b)$
+        * $f(a) = e^a + 1$
+        * $f(b) = e^b + 1$
+        * $e^a = e^b$
+        * $a = b$ therefore the function is injective.
+
+    * Proof of surjective:
+        * $R \ {e^x} =  [1, +\infty[$
+        * $\text{Co-D } e_x = [1, +\infty[$ 
+        * $R \ {e^x} = \text{Co-D } e_x$ therefore the function is surjective.
+    
+2. Find the inverse function $f^{-1}$.
+    * $f(x) = y$
+    * $e^x + 1 = y$
+    * $e^x = y - 1$
+    * $x = \log_e(y - 1)$
+    * $f^{-1}(x) = log_e(x - 1)$
+  
+3. Plot the curve of $f$ and $f^{-1}$ in the same graph.
+     ![[plot-f-and-f-inverse.png]]
+4. What can you say about these two curves?
+
+The curves are symmetric with respect to the line $y = x$.

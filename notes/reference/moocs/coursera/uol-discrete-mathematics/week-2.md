@@ -123,6 +123,48 @@ It's used for many things including data analytics.
         * $A = A_1 \cup A_2 \cup A_3 \cup A_4 \cup A_5$
         * $\{A_1, A_2, A_3, A_4, A_5\}$ is a partition on $A$
 
+# Peer-graded Assignment: 1.209 Sets
+
+## Part 1
+
+**Question**
+
+Given three sets A, B and C, prove that:  $|A \cup B \cup C| =  |A| + |B| + |C| - |A \cap B| - | A \cap C| - |B \cap C|+ |A\cap B\cap C|$
+
+**Proof**
+
+$$
+\begin{align}
+|A \cup B \cup C| &= |A \cup (B \cup C)| \\ 
+& = |A| + |B \cup C| - | A \cap (B \cup C)|  \text{ --- IEP} \\
+& = |A| + |B \cup C| - |(A \cap B) \cup (A \cap C)| \text{ \ \ \ --- distributive law} \\
+& = |A| + (|B| + |C| - |B \cap C|) - (|A \cap B| + |A \cap C| - |(A \cap B) \cap (A \cap C)|) \\
+& = |A| + |B| + |C| - |B \cap C| - |A \cap B| - |A \cap C| + |(A \cap B) \cap (A \cap C)|  \\ 
+& = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|  \\ \\
+
+\text{ since } |(A \cap B) \cap (A \cap C)| &= |A \cap B \cap C|
+\end{align}
+$$
+
+## Part 2
+
+**Question**
+
+Let A and B two subsets of the universal set $U = \{ x: x \in \mathbb{Z} \text{ and } 0 \leq x<20\}$. $A$ is the set of even numbers in $U$, where $B$ is the set of odd numbers in $U$. 
+
+Use the listing method to list the elements of the following sets: $A \cap \overline{B}$,  $\overline{A\cap B}$ , $\overline{A\cup B}$ and $\overline{A\oplus B}$
+
+**Answer**
+
+$A \cap \overline{B}$ = $\{0, 2, 4, 6, 8, 10, 12, 14, 16, 18\}$
+
+$\overline{A \cap B}$ = $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19\}$
+
+$\overline{A \cup B}$ = $\{\}$
+
+$\overline{A \oplus B}$ = $\{\}$
+
+
 ## Sets Problem Sheet
 
 ### Question 1
