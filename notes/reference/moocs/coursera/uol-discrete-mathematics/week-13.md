@@ -6,9 +6,7 @@ status: draft
 parent: uol-discrete-mathematics
 ---
 
-# Week 13 - Topic 07 A. Graphs
-
-## Lesson 7.1 - Introduction to graph theory: basic concepts
+## 7.1 - Introduction to graph theory: basic concepts
 
 * Definition of a graph.
     * Introduction

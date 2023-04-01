@@ -6,9 +6,7 @@ status: draft
 parent: uol-discrete-mathematics
 ---
 
-## Lesson 6.2 Recursion
-
-### Video 6.201 Recursive definitions
+## 6.201 Recursive definitions
 
 * [[Recursion]]
     * When you must define a math object (set, func, sequence) in terms of object itself.
@@ -60,7 +58,7 @@ parent: uol-discrete-mathematics
     }
     ```
 
-### Lesson 6.204 Recurrence relations
+## Lesson 6.204 Recurrence relations
 
 * Definitions
     * [[Recurrence Relation]]

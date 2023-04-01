@@ -180,9 +180,9 @@ parent: uol-discrete-mathematics
       ![[not-valid-function.png]]
       * Input a has 2 outputs. In a function, an input can only have a single output.
 
-# Peer-graded Assignment: 2.109 Functions
+## 2.109 Functions (Peer-graded Assignment)
 
-## Part 1
+### Part 1
 
 * *$f_1 : \mathbb{R} \rightarrow \mathbb{R}$ where $f(x) = x^{2} + 1$
     * Claim: This function is not injective.
@@ -265,7 +265,7 @@ parent: uol-discrete-mathematics
         * $2x = y - 3$
         * $x = \frac{y-3}{2} \notin \mathbb{Z}$ for all $x$ therefore this function is not surjective.
 
-## Part 2
+### Part 2
 
 Let $f : \mathbb{R} \rightarrow ]1, +\infty[$ with $f(x) = e^{x} + 1$
 

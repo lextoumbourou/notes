@@ -6,9 +6,7 @@ status: draft
 parent: uol-discrete-mathematics
 ---
 
-# Week 20
-
-## Video: 10.201 Binomial coefficients and identities
+## 10.201 Binomial coefficients and identities
 
 * Binomial theorem
     * An expression consisting of 2 terms, connected by a + or - sign.

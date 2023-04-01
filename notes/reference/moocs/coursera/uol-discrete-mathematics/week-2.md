@@ -10,20 +10,17 @@ parent: uol-discrete-mathematics
 
 ### 1.201 The representation of a set using Venn diagrams
 
-* Outlines:
-    * Notion of universal set.
-    * The complement of a set.
-    * Set representations using Venn diagrams.
-* Universal set
+* [[Universal Set]]
     * A set containing everything.
     * Represented by letter $U$.
-* Complement of set:
+* [[Complement of Set]]
     * Represented as: $\bar{A}$
     * All the elements in the universal set $U$ but not in $A$.
         * $\bar{A} = U - A$
     * The union of a set and its compliment, is equal to universal set:
         * $\bar{A} \bigcup A = U$
-* Venn diagram is used to visuale the possible relations among a collection of sets.
+* [[Venn Diagram]]
+    * Used to visualise the possible relations among a collection of sets.
     * In this example, the red area represents the union of A and B:
     ![[venn-union.png]]
     * In this example, the red area represents the intersection of A and B:
@@ -37,8 +34,8 @@ parent: uol-discrete-mathematics
 
 ### 1.203 De Morgan's laws
 
-* [[De Morgan's Law]]
-    * By Augustus De Morgan (1806 - 1871), a British mathematician.
+* [[De Morgan's Laws]]
+    * Augustus De Morgan (1806 - 1871), a British mathematician.
     * De Morgan's laws describe how mathematical statements and concepts are related through opposites.
         * In set theory, De Morgan's laws relate to the intersection and union of sets through their complements.
     * The structure of De Morgan's laws, whether applied to sets, propositions or logic gates is always the same.
@@ -56,8 +53,6 @@ parent: uol-discrete-mathematics
 
 ### 1.205 Laws of sets: Commutative, associative and distributives
 
-* Outline:
-    * Set identities including Commutativity, Associativeity and Distributivity
 * [[Commutative Operation]]
     * An operation where order does not affect the results.
         * Additional is commutative: 2 + 3 = 3 + 2
@@ -165,7 +160,7 @@ $\overline{A \cup B}$ = $\{\}$
 $\overline{A \oplus B}$ = $\{\}$
 
 
-## Sets Problem Sheet
+## Set problem sheet
 
 ### Question 1
 
@@ -224,7 +219,7 @@ Let $X = \{f, g, h, i, k\}$ and $Y = \{d, g, h, k\}$ be subsets of a universal s
 
     $\{d, e, f, i, j, l\}$
 
-## Question 5
+### Question 5
 
 Let $A = \{2, \frac{1}{2}, \sqrt{2}\}$ and $B = \{x \in \mathbb{Q} : x \notin \mathbb{Z}\}$.
 
@@ -237,7 +232,7 @@ List the following sets:
 * $A \cap \mathbb{R}$: (A intersected with the infinite set of real numbers): $\{2, \frac{1}{2}, \sqrt{2}\}$
 * $A \cap \mathbb{Z}$: $\{2\}$
 
-## Question 6
+### Question 6
 
 Let $X$ and $Y$ be two sets with X = {f, g, h, j, k} and Y = {f, g}
 
@@ -250,7 +245,7 @@ Let $X$ and $Y$ be two sets with X = {f, g, h, j, k} and Y = {f, g}
     4. $\emptyset \subset X$
     5. $h \notin Y$
 
-## Question 7
+### Question 7
 
 Let $X$ and $Y$ be two sets of the universal set $U$.
 
@@ -260,7 +255,6 @@ Let $X$ and $Y$ be two sets of the universal set $U$.
 
 2. Use membership tables to prove that $\overline{X \cap Y}$ = $\overline{X} \cup \overline{Y}$
 
-
 | X   | Y   | $\bar{X}$ | $\bar{Y}$ | $X \cap Y$ | $\overline{X \cap Y}$ | $\overline{X} \cup \overline{Y}$ |
 | --- | --- | --------- | --------- | ---------- | --------------------- | -------------------------------- |
 | 1   | 1   | 0         | 0         | 1          | 0                     | 0                                |
@@ -268,7 +262,7 @@ Let $X$ and $Y$ be two sets of the universal set $U$.
 | 1   | 0   | 0         | 1         | 0          | 1                     | 1                                |
 | 0   | 0   | 1         | 1         | 0          | 1                     | 1                                |
 
-## Question 8
+### Question 8
 
 Let $A$ and $B$ and $C$ be subsets of universal set $U$
 
@@ -301,7 +295,7 @@ Describe the set Y using the set notation.
 
 ![[q-8-p3.png]]
 
-## Question 9.
+### Question 9.
 
 Given three sets A, B and C, subsets of universal set U. For each of the Venn diagram write, in terms of A, B and C, the set representing the area coloured in yellow:
 
@@ -313,9 +307,9 @@ $\overline{A \cup B \cup C}$
 
 $(A \cup B \cup C) - (A \cap B) + (B \cap C)$
 
-## Question 10
+### Question 10
 
-## Question 11
+### Question 11
 
 Let A = {1, 2} and let B = {2, 3}
 

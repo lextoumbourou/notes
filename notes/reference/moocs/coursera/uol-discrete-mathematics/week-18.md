@@ -6,9 +6,7 @@ status: draft
 parent: uol-discrete-mathematics
 ---
 
-## Topic 09 B. Relations
-
-### 9.201 Equivalence relations and equivalence classes
+## 9.201 Equivalence relations and equivalence classes
 
 * Definition of [[Equivalence Relation]]
     * Let R be a relation of elements on a set S. R is an equivalence relation if and only if R is reflexive, syymetric and transitive.

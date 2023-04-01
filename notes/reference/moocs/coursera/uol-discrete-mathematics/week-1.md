@@ -6,8 +6,6 @@ status: draft
 parent: uol-discrete-mathematics
 ---
 
-# Week 1 - Sets A
-
 ## 1.104 The definition of a set
 
 * [[Set Theory]]
@@ -127,13 +125,13 @@ parent: uol-discrete-mathematics
 
 * [[Union Operation]]
     * The union of two sets are all element in *either* A or B.
-    * Notion: $A \bigcup B$
-    * Latex operator `\bigcup`
+    * Notion: $A \cup B$
+    * Latex operator `\cup`
         * "The U thing"
     * Set builder: $A \bigcup B = \{ x | x \in A \text{ or } x \in B \}$
     * Python example:
     
-    ```python
+    ```
     A = {1, 2}
     B = {2, 3}
     A.union(B)
@@ -199,7 +197,6 @@ parent: uol-discrete-mathematics
 
 ## 1.112 Essential reading
 
-* Koshy, Thomas.  Discrete Mathematics with Applications. (Academic Press, 2004), pp. 67-70 and pp. 72- 75
-    * These pages will cover the following topics: the definition of a set; elements of a set; cardinality of a set; listing method; set builder method; subsets of a set; and powersets.
-    * Complete the following questions from exercises 2.1:
-        * pp.76: exercises 1–8, 13-27, 30-32 and 41-44.
+* Koshy, Thomas.  Discrete Mathematics with Applications.
+    * pp. 67-70 and pp. 72- 75
+    * pp.76: Exercises: 1–8, 13-27, 30-32 and 41-44.
