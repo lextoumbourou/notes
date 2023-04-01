@@ -179,7 +179,7 @@ parent: uol-discrete-mathematics
                         * k + 2 is not a prime number, in which case $\exists m$ dividing $k + 2$
                         * as $2 \le m \le k + 1$, $\exists p$ is a prime number dividing m. p also divides k+2
                         * Which verifies P(k + 2) is true and proves the strong induction.
-* Well-ordering property
+* [[Well-ordering property]]
     * The well-ordering property is an axiom about $\mathbb{N}$ that we assume to be true. The axioms about $\mathbb{N}$ are the following:
         * 1. The number 1 is a positive integer.
         * 2. If $n \in \mathbb{N}$ then $n + 1$, the successor of n, is also a positive integer.

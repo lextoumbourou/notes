@@ -6,8 +6,6 @@ status: draft
 parent: uol-discrete-mathematics
 ---
 
-# Week 19
-
 ## Lesson 10.1 The basics of Combinatorics
 
 * Combinatorics
