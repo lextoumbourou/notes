@@ -143,6 +143,7 @@ parent: uol-discrete-mathematics
         * Show all combinations of sets an element can belong to.
             * Put 1 if element belongs to set.
             * Put 0 if it doesn't
+
  | $A$   | $B$    | $A \bigcup B$    |
  | --- | ---  | ---    |
  | 0   | 0    | 0       |
@@ -182,7 +183,7 @@ parent: uol-discrete-mathematics
         * $A \oplus B = \{ x | (x \in A \text{ or } x \in B) \text{ and } x \notin A \cap B \}$
     * Latex: ```\oplus```
     * Can think of it as union of A and B, with all the common elements of A and B removed.
-        * $A \oplus B = (A \bigcup B) - (A \cap B)$
+        * $A \oplus B = (A \cup B) - (A \cap B)$
     * Example:
         * A = {1, 2, 3} 
         * B = {3, 4, 5}

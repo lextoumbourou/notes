@@ -13,50 +13,60 @@ parent: uol-discrete-mathematics
 * [[Universal Set]]
     * A set containing everything.
     * Represented by letter $U$.
+    
 * [[Complement of Set]]
     * Represented as: $\bar{A}$
-    * All the elements in the universal set $U$ but not in $A$.
-        * $\bar{A} = U - A$
-    * The union of a set and its compliment, is equal to universal set:
-        * $\bar{A} \bigcup A = U$
+    * All the elements in the universal set $U$ but not in $A$: $\bar{A} = U - A$
+    * The union of a set and its compliment, is equal to universal set:  $\bar{A} \cup A = U$
+
 * [[Venn Diagram]]
     * Used to visualise the possible relations among a collection of sets.
     * In this example, the red area represents the union of A and B:
-    ![[venn-union.png]]
+    
+        ![Venn Diagram example](_media/venn-union.png)
+
     * In this example, the red area represents the intersection of A and B:
-        * ![[venn-intersection.png]]
+    
+        ![Venn Intersection](/_media/venn-intersection.png)
+
     * In this example, the set difference:
-        * ![[venn-set-diff.png]]
+    
+        ![Venn Set Difference](/_media/venn-set-diff.png)
+
     * In this example, it shows the symmetric difference between A and B
-        * ![[venn-symmetric-diff.png]]
-    * CAn use a Venn Diagram to show that each sets are the same.
-        *![[venn-show-sets-same.png]] 
+    
+        ![Venn Symmetric Difference](/_media/venn-symmetric-diff.png)
+
+    * Can use a Venn Diagram to show that each sets are the same.
+    
+        ![Venn Show Sets Same](/_media/venn-show-sets-same.png)
 
 ### 1.203 De Morgan's laws
 
 * [[De Morgan's Laws]]
     * Augustus De Morgan (1806 - 1871), a British mathematician.
-    * De Morgan's laws describe how mathematical statements and concepts are related through opposites.
-        * In set theory, De Morgan's laws relate to the intersection and union of sets through their complements.
+    * Describe how statements and concepts are related through opposites.
+    * Example from set theory:
+        * De Morgan's laws relate to the intersection and union of sets through their complements.
     * The structure of De Morgan's laws, whether applied to sets, propositions or logic gates is always the same.
-    * Law #1: Compliment of union of 2 sets A and B is equal to intersection of complements
-        * $\overline{A \bigcup B} = \bar{A} \cap \bar{B}$
-            * A = {a, b}, B = {b ,c, d}
-            * $\overline{A \bigcup B}$ = $\overline{\{a, b, c, d}\}$ = $\{\}$
+    * Law #1: Compliment of the union of 2 sets, $A$ and $B$ is equal to intersection of complements:
+        * $\overline{A \cup B} = \bar{A} \cap \bar{B}$
+            * $A = \{a, b\}, B = \{b ,c, d\}$
+            * $\overline{A \cup B}$ = $\overline{\{a, b, c, d}\}$ = $\{\}$
             * $\overline{A} = \{c, d\}$, $\overline{B} = \{a\}$,
                 * $\overline{A} \cap  \overline{B} = \{\}$, 
     * Law #2: Complement of the intersection of 2 sets A and B, is equal to union of their complements.
-        * $\overline{A \cap B} = \bar{A} \bigcup \bar{B}$
-            * A = {a, b}, B = {b, c, d}
+        * $\overline{A \cap B} = \bar{A} \cup \bar{B}$
+            * $A = \{a, b\}, B = \{b, c, d\}$
             * $\overline{A \cap B} = \{a, c, d\}$
-            * $\bar{A} \bigcup \bar{B} = \{a, c, d\}$
+            * $\bar{A} \cup \bar{B} = \{a, c, d\}$
 
 ### 1.205 Laws of sets: Commutative, associative and distributives
 
 * [[Commutative Operation]]
     * An operation where order does not affect the results.
-        * Additional is commutative: 2 + 3 = 3 + 2
-        * Multiplication is commutative: 2 * 3  = 3 * 2
+        * Additional is commutative: $2 + 3 = 3 + 2$
+        * Multiplication is commutative: $2 x 3  = 3 x 2$
         * Subtraction is not commutative: $2 - 3 \neq 3 - 2$
     * Set union is commutative:
         * $A \cup B = B \cup A$
@@ -66,6 +76,7 @@ parent: uol-discrete-mathematics
         * $A \oplus B = B \oplus A$
     * Set difference is not commutative:
         * $A - B \neq B - A$
+        
 * [[Associativity Operation]]
     * Concerns grouping of elements in an operation.
         * An example from algebra, the additional of numbers is associative:
@@ -79,6 +90,7 @@ parent: uol-discrete-mathematics
         * $(A \oplus B) \oplus C = A \oplus (B \oplus C)$
     * Set difference is not associate:
         * $(A - B) - C \ne A - (B - C)$
+
 * [[Distributivity]]
     * Sometimes called the distributive law of multiplication and division.
         * Example in algebra: Given 3 numbers a, b, c: $a(b + c) = ab + ac$
@@ -86,8 +98,11 @@ parent: uol-discrete-mathematics
         * $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
     * Set intersection is distributive over set union
         * $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+ 
 * [[Set Identities]]
-    * ![[set-identities-table.png]]
+
+    ![Set identities table](/_media/set-identities-table.png)
+    
     * Set identities can be used to simplify set expressions.
         * Example:
             * Show that $\overline{(A \cap B) \cup \overline{B}} = B \cap \overline{A}$
@@ -101,26 +116,26 @@ parent: uol-discrete-mathematics
 
 ## 1.207 Partition of a set
 
-To partition an object is to separate it into parts so each parts are separate from each other, but together make up the whole object.
-
-It's used for many things including data analytics.
-
-* [[Disjoint Sets]]
-    * Two sets are considered disjointed if and only if their intersection is an empty set.
-        * $A \cap B = \emptyset$
 * [[Partition]]
+    * To partition an object is to separate it into parts so each parts are separate from each other, but together make up the whole object.
     * A partition of a set $A$ is a set of subsets of $A$ such that:
         * all the subsets of A are disjointed.
         * the union of all subsets $A_i$ is equal to $A$.
-* Example:
- ![[week-2-partition-example.png]]
+    * Example:
+    
+         ![Partition Example](/_media/week-2-partition-example.png)
+         
         * $A_1 \cap A_2 = A_2 \cap A_3 = .... A_4 \cap A_5 = \emptyset$
         * $A = A_1 \cup A_2 \cup A_3 \cup A_4 \cup A_5$
         * $\{A_1, A_2, A_3, A_4, A_5\}$ is a partition on $A$
+        
+* [[Disjoint Sets]]
+    * Two sets are considered disjointed if and only if their intersection is an empty set.
+        * $A \cap B = \emptyset$
 
-# Peer-graded Assignment: 1.209 Sets
+## Peer-graded Assignment: 1.209 Sets
 
-## Part 1
+### Part 1
 
 **Question**
 
@@ -141,7 +156,7 @@ $$
 \end{align}
 $$
 
-## Part 2
+### Part 2
 
 **Question**
 
@@ -251,7 +266,7 @@ Let $X$ and $Y$ be two sets of the universal set $U$.
 
 1. Use Venn diagram to show that $\overline{X \cap Y}$ = $\overline{X} \cup \overline{Y}$
 
-![[q-7-venn-diagram.png]]
+![Question 7. Venn Diagram](/_media/q-7-venn-diagram.png)
 
 2. Use membership tables to prove that $\overline{X \cap Y}$ = $\overline{X} \cup \overline{Y}$
 
