@@ -8,22 +8,20 @@ parent: uol-discrete-mathematics
 
 ## 2.201 Function composition
 
-* Outlines
-    * Composition of two functions ($f$ o $g$).
-    * Function composition is not commutative.
-*  Given two functions f and g:
-    * $(f \text{ o } g)(x) = f(g(x))$
-    * Firstly we pass $x$ into $g$ to get $g(x)$
-    * Then we pass the function output into $f$ to get $f(g(x))$
-* Example of function composition:
-    ![[function-composition-1.png]]
-* Function composition is not commutative
-    * $f \text{ o } g \ne g \text{ o } f$
-    * Examplea:
-    * $f(x) = 2x$ and $g(x) = x^2$
-    * $(f \text{ o } g)(x) = f(g(x)) = 2x^2$
-    * $(g \text{ o } f)(x) = g(f(x)) = 4x^2$
-    * Therefore, $f(g(x)) \ne g(f(x))$
+* [[Function Composition]]
+    *  Given two functions f and g:
+        * $(f \text{ o } g)(x) = f(g(x))$
+        * Firstly we pass $x$ into $g$ to get $g(x)$
+        * Then we pass the function output into $f$ to get $f(g(x))$
+    * Example of function composition:
+        ![[function-composition-1.png]]
+    * Function composition is not commutative
+        * $f \text{ o } g \ne g \text{ o } f$
+        * Examplea:
+        * $f(x) = 2x$ and $g(x) = x^2$
+        * $(f \text{ o } g)(x) = f(g(x)) = 2x^2$
+        * $(g \text{ o } f)(x) = g(f(x)) = 4x^2$
+        * Therefore, $f(g(x)) \ne g(f(x))$
 
 ## 2.203 Bijective function
 
