@@ -8,74 +8,67 @@ parent: uol-discrete-mathematics
 
 ## 2.202 Logical implication
 
-* Outlines
-    * Definition of implication
-    * truth table for implication
-    * different expressions of implication
-    * converse, contraposition and inverse
-
-* Definition of [[Logical Implication]]
+* [[Logical Implication]]
     * Let $p$ and $q$ be propositions.
     * The [[Conditional Statement]], or "implication $p \rightarrow q$" is the [[Proposition]] "if $p$ then $q$".
         * We call $p$ the hypothesis (or antecedent or premise)
         * We call $q$ the conclusion (or consequence)
+    * Example:
+        * Let $p$ and $q$ be the following statements:
+            * $p$: "John did well in Discrete Mathematics."
+            * $q$: "John will do well in the programming course."
+        * The conditional statement $p \rightarrow q$ can be written as:
+            * "If John did well in Discrete Maths then John will do well in programming."
+        * Truth table for condition statement
+            * If reasoning is correct (implication is true):
+                * If the hypothesis is true then the conclusion is true
+            * If reasoning is incorrect (implication is false):
+                * if the hypothesis is true, the conclusion is false
+            * it's always true that:
+                * from a false hypothesis any conclusion can be implied (true or false)
 
-* Example [[Implication]]
-    * Let $p$ and $q$ be the following statements:
-        * $p$: "John did well in Discrete Mathematics."
-        * $q$: "John will do well in the programming course."
-    * The conditional statement $p \rightarrow q$ can be written as:
-        * "If John did well in Discrete Maths then John will do well in programming."
-    * Truth table for condition statement
-        * If reasoning is correct (implication is true):
-            * If the hypothesis is true then the conclusion is true
-        * If reasoning is incorrect (implication is false):
-            * if the hypothesis is true, the conclusion is false
-        * it's always true that:
-            * from a false hypothesis any conclusion can be implied (true or false)
+            | p   | q   | p -> q |
+            | --- | --- | ------ |
+            | F   | F   | T      |
+            | F   | T   | T      |
+            | T   | F   | F      |
+            | T   | T   | T      |
 
-| p   | q   | p -> q |
-| --- | --- | ------ |
-| F   | F   | T      |
-| F   | T   | T      |
-| T   | F   | F      |
-| T   | T   | T      |
-
-* Different expressions for $p$
-    * Let $p$ and $q$ be the following statements:
-        * $p$: it's sunny
-        * $q$: John goes to the park
-    * $p \rightarrow q$
-        * if $p$ then $q$
-        * if $p$, $q$
-        * $p$ implies $q$
-        * $p$ only if $q$
-        * $p$ follows from $q$
-        * $p$ is sufficient for $q$
-        * $q$ unless $\neg p$
-        * $q$ is necessary for $p$
-    * Converse, contrapositive and inverse
-        * Let $p$ and $q$ be propositions and $A$ the conditional statement $p \rightarrow q$
-        * The proposition $q \rightarrow p$ is the converse of $A$.
-        * The proposition $\neg p \rightarrow \neg q$ is the contrapositive of $A$
-    Example 1
-    * Let $p$ and $q$ be the following statements:
-        * $p$: It's sunny.
-        * $q$: John goes to the park.
-        * And $A$ the statement $p \rightarrow q$: "If it's sunny then John goes to the park"
-    * The **converse** of A is: If John goes to the park then it's sunny.
-    * The **contrapositive** of A is: If John doesn't go to the park, then it's not sunny.
-    
-    Example 2
-    * Let p and q be two propositions concerning an integer n
-        * $p$: n has one digit
-        * $q$: n is less than 10
-    * Writing the statement using symbolic logic expression:
-        * If the integer n has one digit then it is less than 10.
-            * $p \rightarrow q$
-    * Now write its contrapositive using both symbolic logic expression and English:
-        * $\neg q \rightarrow \neg p$
-        * If n is greater than or equal to 10, then n has more than one digit.
+    * Different expressions for $p$
+        * Let $p$ and $q$ be the following statements:
+            * $p$: it's sunny
+            * $q$: John goes to the park
+        * $p \rightarrow q$
+            * if $p$ then $q$
+            * if $p$, $q$
+            * $p$ implies $q$
+            * $p$ only if $q$
+            * $p$ follows from $q$
+            * $p$ is sufficient for $q$
+            * $q$ unless $\neg p$
+            * $q$ is necessary for $p$
+     
+* [[Converse, contrapositive and inverse]]
+    * Let $p$ and $q$ be propositions and $A$ the conditional statement $p \rightarrow q$
+    * The proposition $q \rightarrow p$ is the converse of $A$.
+    * The proposition $\neg p \rightarrow \neg q$ is the contrapositive of $A$
+    * Example 1
+        * Let $p$ and $q$ be the following statements:
+            * $p$: It's sunny.
+            * $q$: John goes to the park.
+            * And $A$ the statement $p \rightarrow q$: "If it's sunny then John goes to the park"
+        * The **converse** of A is: If John goes to the park then it's sunny.
+        * The **contrapositive** of A is: If John doesn't go to the park, then it's not sunny.
+    * Example 2
+        * Let p and q be two propositions concerning an integer n
+            * $p$: n has one digit
+            * $q$: n is less than 10
+        * Writing the statement using symbolic logic expression:
+            * If the integer n has one digit then it is less than 10.
+                * $p \rightarrow q$
+        * Now write its contrapositive using both symbolic logic expression and English:
+            * $\neg q \rightarrow \neg p$
+            * If n is greater than or equal to 10, then n has more than one digit.
 
 ## 3.204 Logical equivalence
 
@@ -187,7 +180,9 @@ parent: uol-discrete-mathematics
 
 ## Problem Sheet
 
-**Question 1. Which of the following statements are propositions:**
+### Question 1.
+
+Which of the following statements are propositions?
 
 * *$2 + 2 = 4$ - is proposition
 * 2 + 2 = 5 is proposition

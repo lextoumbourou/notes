@@ -17,44 +17,40 @@ parent: uol-discrete-mathematics
         ![[function-composition-1.png]]
     * Function composition is not commutative
         * $f \text{ o } g \ne g \text{ o } f$
-        * Examplea:
-        * $f(x) = 2x$ and $g(x) = x^2$
-        * $(f \text{ o } g)(x) = f(g(x)) = 2x^2$
-        * $(g \text{ o } f)(x) = g(f(x)) = 4x^2$
-        * Therefore, $f(g(x)) \ne g(f(x))$
+        * Example:
+            * $f(x) = 2x$ and $g(x) = x^2$
+            * $(f \text{ o } g)(x) = f(g(x)) = 2x^2$
+            * $(g \text{ o } f)(x) = g(f(x)) = 4x^2$
+            * Therefore, $f(g(x)) \ne g(f(x))$
 
 ## 2.203 Bijective function
 
-* Outlines
-    * Definition of a bijective (invertible) function.
-    * Finding the inverse function.
-    * Graph of the inverse function.
-* Definition
+* [[Bijective Function]]
     * A function is said to be bijective or invertible if and only if it is both injective and surjective.
-* Examples
-    * $f$ is bijective as it is both injective and surjective.
-        ![[bijective-f.png]]
-    * $g$ is bijective as it isn't surjective
-      ![[not-bijective-due-to-surjective.png]]
-* $h$ isn't bijective as it isn't injective.
-  ![[not-bijective-due-to-not-injective.png]]
-* Show that the function: $f: R \rightarrow R$ with $f(x) = 2x + 3$ is a bijective (invertible) function.
-    * Show that f is injective (one-to-one)
-        * Proof:
-            * Let $a, b \in R$, show that if $a \ne b$ then $f(a) \ne f(b)$
-                * $a \ne b \Rightarrow 2a \ne 2b \Rightarrow 2a + 3 \ne 2b + 3 \Rightarrow f(a) \ne f(b)$
-    * Show that f is surjective (onto)
-        * Proof:
-            * Let $y \in R$ show that there exists $y \in R$ such that $f(x) = y$
-                * $f(x) = y \Rightarrow 2x + 3 = y \Rightarrow 2x = y - 3 \Rightarrow x = \frac{y-3}{2} \in R$
-                    * Therefore, for every element $y$ in $R$ there exists $x$ which is $\frac{y - 3}{2}$ such that $y = f(x)$
-    * Since we have shown that $f(x) = 2x + 3$ is both injective and surjective, we can infer that it is a bijective function.
-* Inverse function
+    * Examples:
+        * $f$ is bijective as it is both injective and surjective.
+            ![Bijective function](/_media/bijective-f.png)
+        * $g$ is bijective as it isn't surjective
+            ![Not bijective - surjective](/_media/not-bijective-due-to-surjective.png)
+    * $h$ isn't bijective as it isn't injective.
+        ![Not bijective - not injective](/_media/not-bijective-due-to-not-injective.png)
+    * Show that the function: $f: R \rightarrow R$ with $f(x) = 2x + 3$ is a bijective (invertible) function.
+        * Show that f is injective (one-to-one)
+            * Proof:
+                * Let $a, b \in R$, show that if $a \ne b$ then $f(a) \ne f(b)$
+                    * $a \ne b \Rightarrow 2a \ne 2b \Rightarrow 2a + 3 \ne 2b + 3 \Rightarrow f(a) \ne f(b)$
+        * Show that f is surjective (onto)
+            * Proof:
+                * Let $y \in R$ show that there exists $y \in R$ such that $f(x) = y$
+                    * $f(x) = y \Rightarrow 2x + 3 = y \Rightarrow 2x = y - 3 \Rightarrow x = \frac{y-3}{2} \in R$
+                        * Therefore, for every element $y$ in $R$ there exists $x$ which is $\frac{y - 3}{2}$ such that $y = f(x)$
+        * Since we have shown that $f(x) = 2x + 3$ is both injective and surjective, we can infer that it is a bijective function.
+* [[Inverse Function]]
     * Let $f: A \rightarrow B$
         * If $f$ is bijective (invertible) then the inverse function, $f^{-1}$, exists and is defined as follows: $f^{-1}: B \rightarrow A$
           * What the inverse function really does is reverse the function $f(x)$.
     * Example 1
-      ![[inverse-function.png]] 
+      ![Inverse Function](/_media/inverse-function.png)
   * Example 2: Let $f(x) = 2x$
     ![[inverse-example-2.png]]
     * Exercise: The following function $f: R \rightarrow R \text{ with } f(x) = 2x + 3$ find the inverse function, $f^{-1}$
@@ -73,44 +69,41 @@ parent: uol-discrete-mathematics
         * $(f^{-1} \text{ o } f)(x) = f^{-1}(f(x)) = f^{-1}(2x) = \frac{2x}{2} = x$
     * Plotting on a graph
         * The curves of $f$ and $f^{1}$ are symmetric with respect to the straight line $y = x$.
-            ![[plot-inverse.png]]
+            ![Plot inverse](/_media/plot-inverse.png)
 ## 2.205 Logarithmic functions
 
-* Outlines:
-    * Exponential functions
-    * Logarithmic functions
 * [[Exponential Function]]
     * $f(x) = b^x$
-    * The variable $b$ is called the "base".
+    * The variable $b$ is called the **base**.
     * Defined by $f : R \rightarrow R^{+}$ and $f(x) = b^{x}$ where $b > 0$ and $b \ne 1$.
     * Graphs:
         * First graph shows exponential growth where base > 1.
-             ![[exponential-growth.png]]
+            ![Exponential growth](/_media/exponential-growth.png)
     * 2nd graphs exponential decay where b < 1.
-        ![[exponential-decay.png]]
-* Properties of exponential function:
-    * $y = f(x) = b^x$ where ($b > 0$ and $b \ne 1$).
-    * Domain is set all real numbers: $\mathbb{R}$;  $(-\infty, \infty)$
-    * Range is all positive real numbers: $(0, \infty)$
-    * The graph always passes through the point with coords $(0, 1)$
-    * if base is > 1, then function is increasing
-        * called "exponential growth"
-    * if base < 1, then function is decreasing
-        * called "exponential decay"
-    * it is injective and surjective, hence, it has an inverse function.
+        ![Exponential decay](/_media/exponential-decay.png)
+    * Properties of exponential function:
+        * $y = f(x) = b^x$ where ($b > 0$ and $b \ne 1$).
+        * Domain is set all real numbers: $\mathbb{R}$;  $(-\infty, \infty)$
+        * Range is all positive real numbers: $(0, \infty)$
+        * The graph always passes through the point with coords $(0, 1)$
+        * if base is > 1, then function is increasing
+            * called "exponential growth"
+        * if base < 1, then function is decreasing
+            * called "exponential decay"
+        * it is [[Injective]] and [[Surjective]], hence, it has an inverse function.
 * [[Logarithmic Functions]]
     * Logarithmic function with base b where b > 0 and $b \ne 1$ is defined as follows:
-        * $log_bx = y$ if and only if $x = b^y$
-        * $log_bx$ is inverse of exponential function $b^x$.
+        * $\log_bx = y$ if and only if $x = b^y$
+        * $\log_bx$ is inverse of exponential function $b^x$.
             * The exponent in the exponential becomes what the log is equal to.
     * [[Laws of Logarithms]]
-        * $log_b m * n = log_bm + log_bn$
-        * $log_b\frac{m}{n} = log_b m -log_bn$
-        * $log_b m^n = n \ log_b \ m$
-        * $log_b1 = 0$
-        * $log_bb = 1$
+        * $\log_b m * n = log_bm + log_bn$
+        * $\log_b\frac{m}{n} = log_b m -log_bn$
+        * $\log_b m^n = n \ log_b \ m$
+        * $\log_b1 = 0$
+        * $\log_bb = 1$
     * Examples
-        * $log_381$
+        * $\log_381$
             * $81 = 3^4$, so $\log_3 \ 81 = \log_3 \ 3^4$
             * $\log_3 \ 3^4 = 4 \ \log_3 \ 3$
             * Since $log_33$ = 1, $log_381 = 4 * 1 = 4$
