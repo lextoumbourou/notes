@@ -4,21 +4,16 @@ date: 2022-12-12 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## 5.201 Logic gates
 
-* Outlines
-    * Definition of a gate
-    * Basic gates
-    * Other gates
-    * Multiple input gates
-    * Representing De Morgan's laws
 * Definition of a gate
     * [[Logic Gate]]
         * Implementation of a [[Boolean Operation]].
         * Basic element of a implementation of a Circuit.
-* Basic Gates
+* [[Basic Gates]]
     * Most basic logic circuits:
         * **OR** gates
         * **AND** gates
@@ -50,14 +45,14 @@ parent: uol-discrete-mathematics
           * [[AND Gate]] followed by an inverter.
           ![[nand-gate.png]]
           * Equivalent to not AND
-      * [[NOR Gate]] 
+      * [[NOR Gate]]
           * Equivalent to "not OR"
           * [[OR Gate]] followed by an inverter.
             ![[nor-gate.png]]
-    *  [[XNOR Gate]]
+    * [[XNOR Gate]]
         * Equivalent to not XOR.
         ![[xnor-gate.png]]
-*  Multiple input gates
+* Multiple input gates
     * AND, OR, XOR and XNOR operations are all **commutative** and **associative**
     * They can be extended to more than 2 inputs.
     * For example:
@@ -127,10 +122,11 @@ parent: uol-discrete-mathematics
     * sum = x $\oplus$ y $\oplus$ carry in
     * carry out = xy + carry in. (x $\oplus$ y)
     ![[full-adder-truth-table.png]]
-    * 2 Boolean expression can be designed in as follows: 
+    * 2 Boolean expression can be designed in as follows:
       ![[full-adder-circuit.png]]
           * We can hide some of the comlexity of a circuit by using a **box diagram** as a simple abstraction representing just the inputs and outputs.
-          
+
+
 ## 5.205 Simplification of circuits
 
 * Outline
@@ -155,16 +151,19 @@ parent: uol-discrete-mathematics
         * Consider this Boolean expression: $E = ((xy)'z)'((x'+ z)(y' + z'))'$
         * Using De Morgan's laws and involution:
             * $$
+
         \begin{align}
         E &= (xy)'' + z')((x' + =z)'+(y' + z')') \\
         &= (xy + z')((x'' . z') +y'' . z'') \\
         &= (xy + z')(xz' + yz)
         \end{align}
+
         $$
         * Can be further simplified using **distributive** laws: $E = xyxz' + xyyz + z'xz' + z'yz$
        * Using **commutative**, **idempotent** and **complement** laws: $E = xyz' + xyz + xz' + 0$
        * Using **absorption** law: $E = xyz + xz'$
-    * Example 2
+
+ * Example 2
        * Consider **full adder** circuit from last week.
        * Using truth table, we can build a sum-of-products form for the 2 functions:
        * ![[full-adder-circuit-simplification.png]]
@@ -191,13 +190,13 @@ parent: uol-discrete-mathematics
 * It is difficult to visualise this rpcoess in computers as the info they get is in electrical signals. The signal can either be on or off. It depends on the voltage registered.
 * Can break down complex system using dominoes.
 * The info is dicated by whether a chain of dominoes is falling or not, representing high voltage and low voltage respectively.
-* The next exercise wil simulate different types of logic 
+* The next exercise wil simulate different types of logic
 
 ## 5.208 Summative quiz
 
 Questions I did not understand
 
-Which of the following expressions is a sum-of-products form of the Boolean expression:  $F(x, y, z) = (x+\overline{y}).z$
+Which of the following expressions is a sum-of-products form of the Boolean expression: $F(x, y, z) = (x+\overline{y}).z$
 
 $F(x, y, z) = x.y.\overline{z} + x.\overline{y}.\overline{z} + x.y.\overline{z}$
 $F(x, y, z) = xyz+x\overline{y}z+\overline{x}.\overline{y}$
@@ -289,13 +288,14 @@ Looks like my initial answer was correct, I just didn't include the NOT part of 
 | 0   | 1   | 1     | 1                   |
 | 1   | 0   | 1     | 1                   |
 | 1   | 1   | 1     | 1                   |
+
     3. Simplified circuit is just $a + b$
 5. What is the output of the following logical circuit?
     1. ![[week-10-problem-sheet-q5.png]]
         $p . q . r + p.  \overline{q} r + p . q . \overline{r}$
     2. $p.p.p + r . r . \overline{r} + q . \overline{q} .q$
         1. $p(q + r)$
-6. Use the truth table to prove De Morgan's laws: 
+6. Use the truth table to prove De Morgan's laws:
 
 $\overline{ab} = \overline{a} + \overline{b}$
 
@@ -306,7 +306,7 @@ $\overline{ab} = \overline{a} + \overline{b}$
 | 1   | 0   | 0   | 1               | 0              | 1              | 1                             |
 | 1   | 1   | 1   | 0               | 0              | 0              | 0                              |
 
-$\overline{a + b} = \overline{a} . \overline{b}$  
+$\overline{a + b} = \overline{a} . \overline{b}$
 
 | a   | b   | a + b | $\overline{a + b}$ | $\overline{a}$ | $\overline{b}$ | $\overline{a} . \overline{b}$ |
 | --- | --- | ----- | ------------------ | -------------- | -------------- | ----------------------------- |
@@ -390,7 +390,7 @@ $((((a + b) . c) . d) . e)$
 | 0   | 0   | 1   | 0   |
 | 0   | 1   | 0   | 0   |
 | 0   | 1   | 1   | 1   |
-| 1   | 0   | 0   | 0   | 
+| 1   | 0   | 0   | 0   |
 | 1   | 0   | 1   | 0   |
 | 1   | 1   | 0   | 1   |
 | 1   | 1   | 1   | 0   |

@@ -4,6 +4,7 @@ date: 2022-12-19 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## 7.1 - Introduction to graph theory: basic concepts
@@ -52,7 +53,7 @@ parent: uol-discrete-mathematics
     * Drawn as a line connecting two vertices.
     * A set of edges in a graph $G$ is usually denoted by $E(G)$ or $E$.
     ![[week-13-edges-denoted.png]]
-    
+
 * Definitions of graphs, vertices, edges and adjacency
 * Definition: [[Adjacency]]
     * Two verticies are said to be adjacent if they are endpoints of the same edge.
@@ -115,7 +116,7 @@ parent: uol-discrete-mathematics
     * A Hamilton cycle is a cycle that visits each vertex exactly once (except for the starting vertex, which is visited once at the start and once again at end).
       ![[week-13-hamiltonian-cycle.png]]
     * Connectivity
-        * An undirect graph is connected if 
+        * An undirect graph is connected if
               * You can get from any node to any other by following a sequence of edges OR
               * any two nodes are connected by a path.
         * Example of connected graph:
@@ -159,7 +160,7 @@ parent: uol-discrete-mathematics
               ![[week-13-degree-sequence-property-2.png]]
     * Exercise: which of the 2 degree sequences below is it possible to construct a graph with?
         * 3, 2, 2, 1
-            * Sum of sequence = 3 + 2 + 2  =1 = 8
+            * Sum of sequence = 3 + 2 + 2 =1 = 8
             * Can build a graph with this.
             * Number of edges = 8/2 = 4
         * 3, 3, 2, 1
@@ -190,7 +191,7 @@ parent: uol-discrete-mathematics
       ![[week-13-regular-graph-examples.png]]
     * Given a r-regular G with n vertices, then the following is true:
         * Degree sequence of $G = r, r, r, ..., r (\text{n times})$
-        *  Sum of degree sequence of $G = r \ x \ n$
+        * Sum of degree sequence of $G = r \ x \ n$
         * Number of edges in $G = \frac{r \ x \ n}{2}$
         ![[week-13-3-regular-example.png]]
 * Special regular graphs: cycles
@@ -198,7 +199,7 @@ parent: uol-discrete-mathematics
 * Exercise
     * Can we construct a 3-regular graph with 4 vertices?
     * Can we construct a 4-regular graph with 5 vertices?
-        * 3x5 = 15 
+        * 3x5 = 15
         * Sum is odd, so cannot great a regular graph.
 * [[Complete Graph]]
     * A [[Simple Graph]] where every pair of vertices are adjacent (linked with an edge).

@@ -4,6 +4,7 @@ date: 2022-01-21 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## 8.101 Introduction
@@ -21,7 +22,7 @@ parent: uol-discrete-mathematics
 
 ## 8.103 Definition of a tree
 
-*  [[Acyclic Graph]]
+* [[Acyclic Graph]]
     * A graph G is called an acyclic graph if and only if G has **no cycles**.
         * No loops and no parallel edges.
     * $G_1$ contains a cycle B, C, D, E
@@ -59,7 +60,7 @@ parent: uol-discrete-mathematics
       * Examples of spanning trees
         ![[week-15-spanning-tree-examples.png]]
 * Two spanning trees are said to be isomorphic if there is a bijection preserving adjaceny between the two trees.
-* Some spanning trees of a graph might be isomorphic to each other: ie they're the same. 
+* Some spanning trees of a graph might be isomorphic to each other: ie they're the same.
   ![[week-15-isomorphic-spanning-trees.png]]
       * In this example, we would only draw $T_1$ and $T_2$, or $T_3$ and $T_2$ or $T_4$ and $T_2$ if we were asked for non-isomorphic trees.
 

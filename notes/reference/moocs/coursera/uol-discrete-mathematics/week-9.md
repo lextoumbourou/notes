@@ -4,6 +4,7 @@ date: 2022-12-05 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## Lesson 5.1 The basics
@@ -15,7 +16,7 @@ parent: uol-discrete-mathematics
     * 1854: George Boole published *An investigation of the laws of thought*
     * 1904: H.E. Huntington wrote *Sets of independent postulates for the algebra of logic*.
     * 1938: Claude Shannon wrote a thesis: *A symbolic analysis of relay switching*
-* Boolean algebra is the foundation of computer circuit analysis. 
+* Boolean algebra is the foundation of computer circuit analysis.
     * Basic building block for designing transistors, basic elements in processors.
     * Consider IoT fire system: when high heat is detected, spray water.
 * [[Two-valued Boolean Algebra]]
@@ -38,6 +39,7 @@ parent: uol-discrete-mathematics
 * Operations of Boolean algebra
     * The truth tables for the 3 operations can be represented as follows:
      ![[boolean-algebra-truth-table.png]]
+
 ### 5.103 Postulates of Boolean algebra
 
 * Outlines
@@ -112,7 +114,7 @@ parent: uol-discrete-mathematics
                 * $e1: (a . 1) . (0 + \overline{a}) = 0$
                 * e2: $a + \overline{a} . b = a + b$
             * Dual equations of e1 and e2:
-                * Dual of e1: $(a + 0) + (1 . \overline{a}) = 1$ 
+                * Dual of e1: $(a + 0) + (1 . \overline{a}) = 1$
                 * Dual of e2: $a . (\overline{a} + b) = a . b$
 * Ways of proving theorems
     * 4 ways in general to prove equivalence of Boolean relations:
@@ -125,6 +127,7 @@ parent: uol-discrete-mathematics
             * The absorption theorem can be proved using perfect induction, by writing a truth table.
               ![[prove-absorption-with-truth-table.png]]
             * It can also be proved directly:
+
 $$
 \begin{align}
 x + (x . y) &= (x . 1) + (x . y) \text{ by } x .1 = x \\

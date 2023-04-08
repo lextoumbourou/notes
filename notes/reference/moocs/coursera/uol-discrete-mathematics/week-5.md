@@ -4,6 +4,7 @@ date: 2022-11-08 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## 3.101 Introduction to propositional logic
@@ -18,7 +19,7 @@ parent: uol-discrete-mathematics
             * `and`
             * `or`
             * `not`
-            * `implies` 
+            * `implies`
             * `if`
             * `if and only if`
     * Used in:
@@ -51,7 +52,6 @@ parent: uol-discrete-mathematics
         * Read this carefully.
         * This coffee is strong
             * Subjective meaning: not true or false.
-
 * [[Propositional variables]]
     * Use variables for propositional shorthand.
     * Typically uses letter like: $p$, $q$, $r$
@@ -69,13 +69,13 @@ parent: uol-discrete-mathematics
         * Fill the first n columns with all the possible combinations.
     * Example
         * Two propositional variables p and q:
-        
-            | p     | q     |
+
+            | p | q |
             | ----- | ----- |
             | FALSE | FALSE |
-            | FALSE | TRUE  |
-            | TRUE  | FALSE |
-            | TRUE  | TRUE  |
+            | FALSE | TRUE |
+            | TRUE | FALSE |
+            | TRUE | TRUE |
 
 * [[Truth Set]]
     * Let $p$ be a proposition of set $S$.
@@ -96,15 +96,14 @@ parent: uol-discrete-mathematics
 
 * [[Compound Statements]]
     * Statements build by combining multiple propositions using certain rules.
-
 * [[Negation]]
     * Not $p$: Defined by $\neg p$
     * "It is not the case that $p$"
-    * The truth value of the negation of $p$,  $\neg p$, is the opposite of truth value of $p$.
+    * The truth value of the negation of $p$, $\neg p$, is the opposite of truth value of $p$.
     * Example
         * $p$: John's program is written in Python
         * $\neg p$: John's program is not written in Python
- 
+
 * [[Conjunction]]
     * Symbol: $\land$
     * $p$ and $q$
@@ -115,7 +114,7 @@ parent: uol-discrete-mathematics
         * $p$: John's program is written in Python
         * $q$: John's program has less than 20 lines of code.
         * $p \land q$: John's program is written in Python and has < 20 lines of code.
- 
+
 * [[Disjunction]]
     * Symbol: $\lor$
     * $p$ or $q$
@@ -125,19 +124,19 @@ parent: uol-discrete-mathematics
         * $p$: John's program is written in Python.
         * $q$: John's program is < 20 lines of code.
         * $p \lor q$: John's prgram is written in Python or has less than 20 lines of code.
-        
+
 * [[Exclusive Or]]
     * Symbol: $\oplus$
     * $p$ or $q$ (but not both)
-    
+
 * [[Precendence of logical operations]]
     * To build complex compound propositions, we need to use parentheses.
     * Example:
         * $(p \lor q) \land (\neg r)$ is different from $p \lor (q \land \neg r)$
     * To reduce the number of parentheses, we can use order of precedence.
-    
+
         | Operator | Precedence |
         | -------- | ---------- |
-        | $\neg$   | 1          |
-        | $\land$  | 2          |
-        | $\lor$   | 3          |
+        | $\neg$ | 1 |
+        | $\land$ | 2 |
+        | $\lor$ | 3 |

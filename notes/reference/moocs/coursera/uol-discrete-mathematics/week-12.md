@@ -4,6 +4,7 @@ date: 2022-01-07 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## 6.201 Recursive definitions
@@ -49,7 +50,7 @@ parent: uol-discrete-mathematics
                 * BASIS STEP: $0! = 1$
                 * RECURSIVE STEP: $n! = n (n - 1)!$ where $n$ is a positive integer.
             * The pseudocode of the algo can be formalised as:
-            
+
     ```
     procedure factorial(n: nonnegative integer) {
         if n = 0 then return 1
@@ -137,10 +138,10 @@ parent: uol-discrete-mathematics
 
 * Solving linear recurrence
     * Let $a_n = c_1 \ \mathbf{a_{n-1}} + c_2 \ \mathbf{a_{n-2}}  + ... + c_k \ \mathbf{a_{n-k}}$ be a linear homogeneous recurrence.
-    * If a combination of the geometric sequence $a_n = r^{n}$ is a solution to this recurrence, it satifies $r^n = c_1 \ r^{n-1} + c_2 \ r^{n-2} ... c_k \ r^{n-k}$ 
+    * If a combination of the geometric sequence $a_n = r^{n}$ is a solution to this recurrence, it satifies $r^n = c_1 \ r^{n-1} + c_2 \ r^{n-2} ... c_k \ r^{n-k}$
     * By dividing both sides by $r^{n-k}$, we get: $\mathbb{r^{k}} = c_1 \ \mathbb{r^{k-1}} + c_2 \ \mathbb{r^{k-2}} ... c_k$
     * We call this equation the [[Characteristic Equation]].
-        *  Solving this equation is first step towards finding a solution to linear homogeneous recurrence:
+        * Solving this equation is first step towards finding a solution to linear homogeneous recurrence:
             * If $r$ is a solution equation with multiplicity p, then the combination $(\lambda +\beta n + yn^2 + ... + \mu n^{p-1})\mathbf{r^{n}}$ satisifes the recurrence.
 * Solving Fibonacci recurrence
     * Let's consider solving the Fibonacci recurrence relation: $f_n = f_{n-1} + f_{n-2}$, with $f_0 = 0$ and $f_1 = 1$
@@ -178,13 +179,13 @@ parent: uol-discrete-mathematics
             * P(n): the sequence f_n = 1/\sqrt{5}(r_1^{n} -r_2^{n}) verifies the Fibonacci recurrence, where:
                 * $r_1 = (1 + \sqrt{5}) / 2$
                 * $r_2 = (1 - \sqrt{5}) / 2$ are the roots of $r^2 - r - 1 = 0$$
-            *  First, verify for P(2):
+            * First, verify for P(2):
                 * $f_1 + f_0 = 1 / \sqrt{5}(r_1 - r_2) = 1/\sqrt{5} (\sqrt{5}) = 1 = f_2$
                 * because $f_2 = 1/\sqrt{5}(r_1^2 - r_2^2) = 1$
                 * which verifies the initial condition.
             * Let $k \in \mathbb{N}$, where P(2), P(3) ... P(k) are all true.
             * Let's verify $P(k+1)$:
-                * $f_n + f_{n-1} = \frac{r_1^n - r_2^2}{\sqrt{5}} + \frac{r_1^{n-1}-r_2^{n-2}}{\sqrt{5}} = r_1^{n-1}(r_1 + 1) / \sqrt{5} + r_2^{n-2}(r_2 + 1) / \sqrt{5} = r_1^{n-1} * r_1^{2} + r_2^{n-1}* r_2^{2} = r_1^{n+1} + r_2^{n+1}$ which equals $f_{n + 1}$ 
+                * $f_n + f_{n-1} = \frac{r_1^n - r_2^2}{\sqrt{5}} + \frac{r_1^{n-1}-r_2^{n-2}}{\sqrt{5}} = r_1^{n-1}(r_1 + 1) / \sqrt{5} + r_2^{n-2}(r_2 + 1) / \sqrt{5} = r_1^{n-1} * r_1^{2} + r_2^{n-1}* r_2^{2} = r_1^{n+1} + r_2^{n+1}$ which equals $f_{n + 1}$
             * We can conclude that $P(k+1)$ is true and the strong induction is verified.
 
 ## Assignment 6.209 - Induction and Recursion
@@ -201,7 +202,7 @@ The basis step $P(1)$ is true because:
 
 $1 * 2 * 3 = \frac{1(1 + 1)(1 + 2)(1 + 3)}{4}$
 
-2. INDUCTION STEP 
+2. INDUCTION STEP
 
 Let $k$ be an arbitrary element, where $P(k)$ is true.
 
@@ -216,7 +217,7 @@ Which means that $P(k + 1)$ is true and the induction step is verified.
 
 ## Problem Sheet
 
-## Question 1.
+## Question 1
 
 Prove that the sum of any even integers is even. In an other way show that:
 
@@ -230,7 +231,7 @@ n and m are two even integers, it follows by definition of even numbers that the
 Thus, $n + m = 2i + 2j = 2(i + j)$.
 Hence, there exists an integer $k = i + j$ such that $n + m = 2k$, it follows by definition of even numbers that n + m is even.
 
-## Question 2.
+## Question 2
 
 Use direct proof to show that: $\forall n, m \in \mathbf{Z}$, if $n$ is an even number and m is an odd number, then 3n + 2m is also an even number.
 
@@ -246,7 +247,7 @@ Hence, there exists an integer k = (3i + 2j + 1) such that 3n + 2m = 2k.
 
 By the definition of even numbers, we can see 3n + 2m number is even.
 
-## Question 3.
+## Question 3
 
 Prove that the sum of any 2 odd integers is odd. In an other way show that: $\forall n, m \in \mathbb{Z}$ if $n$ and $m$ are odd numbers then $n + m$ is an even number.
 
@@ -260,7 +261,7 @@ Thus, $n + m = 2i + 1 + 2j + 1 = 2i + 2j + 2 = 2(n + m + 1)$
 
 Hence, there is an integer $k = (n + m + 1)$ such that $n + m = 2k$, which proves $n + m$ is even by the definition of even numbers.
 
-### Question 4.
+### Question 4
 
 Show that for any odd number integer $n$, $n^2$ is also odd.
 

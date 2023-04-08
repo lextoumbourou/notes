@@ -4,6 +4,7 @@ date: 2022-02-18 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## Lesson 10.1 The basics of Combinatorics
@@ -12,7 +13,8 @@ parent: uol-discrete-mathematics
     * The math topic that studies "finitate" countable discrete structures: collections or arragements of objects.
     * Involves counting objects and studying the mathematical properties of different arrangement of objects.
     * Applications include programming, physics, economics and other fields like prob theory.
-    
+
+
 ## Lesson 10.103 The basics of counting
 
 * [[Product Rule]]
@@ -53,7 +55,7 @@ parent: uol-discrete-mathematics
     * Example
         * The computing department must choose etiher a student or a member of academic staff as a representative for university committee.
         * How many ways of choose this representative are there if there are 10 acedemic staff and 77 math students, and no one is both a member of academic staff and a student?
-    *  Solution
+    * Solution
         * By the addition rule, there are 10 + 77 ways of choosing this representative.
 * The sum rule in terms of sets
     * Let A be the set of ways to do task 1 and B the set of ways to do task 2, where A and B are disjoint sets.
