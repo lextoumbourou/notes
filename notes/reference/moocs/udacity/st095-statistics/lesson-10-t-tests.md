@@ -1,3 +1,11 @@
+---
+title: "Lesson 10: T-Tests"
+date: 2013-08-30 00:00
+parent: st095-statistics
+status: draft
+modified: 2023-04-08 00:00
+---
+
 # Lesson 10: T-Tests
 
 ## First half
@@ -6,9 +14,11 @@
     1. Get the sample mean to compare to the population mean (or alternate sample)
     2. Find the sample standard deviation
     3. Use it to calculate t value
+
     ```
     t = (mu - sample_mu) / (std_dev / sqrt(n))
     ```
+
     4. Look up [t-table](https://s3.amazonaws.com/udacity-hosted-downloads/t-table.jpg) to find critical p-value for your alpha level.
         * Degrees of freedom = sample_size - 1
         * If it's a two-tailed test, then: ```alpha level / 2```
@@ -33,7 +43,7 @@
     * Scientists map a trait of the birds like beak width
     * Average beak width = 6.07mm
     * Do Finches today have different-sized beak widths than before?
-    * Null = beak width == 6.07mm 
+    * Null = beak width == 6.07mm
     * Alternate = beak width != 6.08mm
     * Sample size = 500, df = 499
     * x-bar = average_of_sample = 6.4696
@@ -64,7 +74,7 @@
         * standardized differences
             * Cohen's d
         * correlation measures
-            * r2 
+            * r2
                 * "proportion (%) of variation in one variable that is related to ('explained by') another variable"
 * Statistical significance
     * Rejected the null
@@ -80,4 +90,6 @@
     * r^2 = ```t^2 / (t^2 + df)``` Note: t-score is not t-critical value
         * Example:
            * ```t = 2, df = 24 == 4 / (24 + 4) == 0.167
+
+
 * Results section

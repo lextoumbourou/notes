@@ -1,3 +1,11 @@
+---
+title: "Lesson 5: Standardizing"
+date: 2013-08-30 00:00
+parent: st095-statistics
+status: draft
+modified: 2023-04-08 00:00
+---
+
 # Lesson 5: Standardizing
 
 * If concerned with proportion less than or greater than a certain value, we should use relative frequencies
@@ -10,9 +18,11 @@
     * number of standard deviations away from the mean on the x-axis
     <img src="./images/z-value.png"></img>
     * Formula:
+
     ```
     z = (x - mu) / std_dev
     ```
+
     * Negative z-scores are to the left of the mean (less than the mean)
 * Standardize distribution
     * converting the mean to 0 - shift the distribution left or right

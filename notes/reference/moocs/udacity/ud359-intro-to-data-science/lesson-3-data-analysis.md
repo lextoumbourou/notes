@@ -1,3 +1,8 @@
+---
+title: Lesson 3 - Data Analysis
+date: 2021-10-30 00:00
+modified: 2023-04-08 00:00
+---
 # Lesson 3 - Data Analysis
 
 * Statistical Rigor
@@ -19,10 +24,11 @@
 * Welch's T-test
     * Used for comparing two samples which don't necessarily have the same sample size
     * Formula:
-        
+
     <img src="./images/welch-formula.png"></img>
 
     * In code:
+
     ```
     import math
 
@@ -32,11 +38,12 @@
             (var_1 / n1) + (var_2 / n2))
     ```
 
-    * Calculate degrees of freedom (aka nu) 
+    * Calculate degrees of freedom (aka nu)
 
     <img src="./images/calculate-degrees-of-freedom.png"></img>
 
     * In code:
+
     ```
     import math
 
@@ -46,6 +53,7 @@
             (var_1*2) / n1**2*(n-1) + (var_2*2) / n2**2*(n-1)
         )
     ```
+
     * Once you have t and nu, you can calculate p-value
         * "p == probability of obtaining the t-statistic as extreme as the one observed, if null was true"
 * ttests in Python
@@ -56,21 +64,27 @@
     * To get one-sided p_value, divide by half and ensure greater or less than 0 (depending on whether you're looking for positive or negative results)
 * Pandas refresher
     * read dataframe from CSV
+
     ```
     import pandas
     df = pandas.read_csv('~/filename')
     ```
+
     * filter dataframe
+
     ```
     middleweights = df[df.weightclass == 'middle']
     ```
+
 * Non-parametric tests
     * a test that doesn't assume data is drawn from any underlying prob distribution
     * Mann-Whitney U Test
         * Tests null hypothesis that two populations are the same
+
         ```
         u, p = scipy.stats.mannwhitneyu(x, y)
         ```
+
 * Non-normal data
     * Shapiro-wilk test
         * ```w_test_stat, prob = scipy.stats.shapiro(data)```
@@ -89,9 +103,9 @@
 * How to minimize cost function
     1. Start with some Theta value
     2. For each Theta, update Theta values according to this equation
-        
+
     <img src="./images/theta-equation.png"></img>
-        
+
         theta - alpha / m * numpy.dot((predicted_values) - values), features)
 * Need to understand what the hell ```numpy.dot``` does. It's never explained.
 * Coefficients of determination (R-squared)
@@ -99,11 +113,13 @@
     2. Have a bunch of predictions ```f[i] through to f[n]```
     3. Average value for the data ```y_bar```
     * R^2 is:
+
     ```
     1 - (
       sum(y[i] - f[i])^2) / sum((y[i] - y_bar)^2)
     )
     ```
+
     * Point of it is to determine how effective your coefficients you've gotten from linear regression
 * Additional considerations
     * Other types of linear regression

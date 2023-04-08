@@ -1,3 +1,11 @@
+---
+title: "Lesson 7: Sampling Distributions"
+date: 2013-08-30 00:00
+parent: st095-statistics
+status: draft
+modified: 2023-04-08 00:00
+---
+
 # Lesson 7: Sampling Distributions
 
 * Overview:
@@ -15,4 +23,3 @@
     * given any population shape, if you take a sample from it and calculate the mean enough times, you'll get a normal distribution
 
 <img src="./images/central_limit_theorum.png"></img>
-

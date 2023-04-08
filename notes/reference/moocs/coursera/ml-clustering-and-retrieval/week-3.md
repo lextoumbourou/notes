@@ -1,3 +1,9 @@
+---
+title: Clustering with k-means
+date: 2021-10-30 00:00:00
+modified: 2023-04-08 00:00:00
+---
+
 # Clustering with k-means
 
 ## Intro to clustering
@@ -36,11 +42,14 @@
 * Algorithm:
   1. Initial cluster centres somehow (guess that info is coming later?).
   2. Figure out distance from each datapoint and assign to its closest centre (the centre with the closest distance).
+
     $$z_i \leftarrow \text{arg min} ||\mu_j - \mathbf{x}_i||_2^2  $$
+
   3. Update position of cluster centre, based on data points assigned to it.
       * Basically, sum over all data points assigned to cluster and take the average.
 
       $$\mu_j = \frac{1}{n_j} \sum\limits_{i:z_i=j} \mathbf{x}_i $$
+
   4. Repeat step 2 and 3 until convergence.
 
 ### k-means as coordinate descent
@@ -53,8 +62,11 @@
 
 * Algo:
   1. Choose first cluster centre uniformly at random data points.
-  2. For each observation $$\mathbf{x} $$, compute distance $$d(\mathbf{x}) $$to nearest cluster centre.
+  2. For each observation $$\mathbf{x} $$, compute distance $$d(\mathbf{x}) $$
+to nearest cluster centre.
+
   3. Choose cluster centre from data points, with probability $$\mathbf{x} $$being chosen proportional to $$d(\mathbf{x})^2 $$
+
      * In other words: find the next cluster centre that's far away from chosen cluster centre.	 
   4. Repeat Steps 2 and 3 until k centres have been chosen.
 
@@ -64,7 +76,9 @@
 ### Assessing the quality and choosing the number of clusters
 
 * k-means objective: minimise the sum of squared distances in clusters across all clusters. Minimise this:
+
   $$\sum\limits_{j=1}^{k}\sum\limits_{i:z_i=j}||\mu_j - \mathbf{x}_i||^2_2 $$
+
   * Aka want low "cluster heterogeneity".
 * As k increases, can end up with lower heterogeneity but also at risk of something akin to overfitting.
   * Extreme case thought experiment: k=N
@@ -87,6 +101,7 @@
         for word in d:
              count[word] += 1
     ```
+
 * MapReduce: distribute data and each word does a subset of them, then they're combined together.
 * All counts for subset of words should go to the same machine.
 * Map words to machines with a hash function:
@@ -111,7 +126,7 @@
 * Reduce:
   * Aggregate values for each key.
   * Order of operations cannot matter (must be commutative-associative).
-  
+
   ```
   def reduce(word, counts_list):
     c = 0
@@ -120,6 +135,7 @@
 
     emit(word, c)
   ```
+
   * Also emits key value pairs.
 
 ### MapReduce - Execution overview
@@ -127,11 +143,9 @@
 * Map phrase: emits key, values pairs across all data.
 * Shuffle phrase: sort data and assign to machines for reducing.
 * Reduce phrase: prepare data for output.
-
 * Can use combiners to reduce data locally before the reduce step.
   * Word count example: do word count locally instead of emit ``word, 1`` for all data.
   * Works because reduce is "commutative-associatative"
-
 
 ### MapReducing 1 iteration of k-means
 
@@ -145,7 +159,6 @@
 
 * Then revise data points as mean of assigned observations (reduce step).
   * Count each data point and emit the average for each cluster.
-
 * k-means is an iterative version of MapReduce.
   * Needs a bit more work than the standard MR approach.
 

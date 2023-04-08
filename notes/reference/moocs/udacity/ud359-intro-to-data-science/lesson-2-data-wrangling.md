@@ -1,3 +1,9 @@
+---
+title: Lesson 2 - Data Wrangling
+date: 2021-10-30 00:00
+modified: 2023-04-08 00:00
+---
+
 # Lesson 2 - Data Wrangling
 
 * Data wrangling overview
@@ -10,6 +16,7 @@
     * xml
     * json
 * pandas syntax overview
+
 ```
 import pandas
 
@@ -18,6 +25,7 @@ print baseball_data['nameFirst']
 baseball_data['height_plus_weight'] = baseball_data['height'] + baseball_data['weight']
 baseball_data.to_csv('new_file.csv')
 ```
+
 * Relational databases
     * Database schema - ya'll know the drill
 * Simple queries
@@ -40,6 +48,7 @@ baseball_data.to_csv('new_file.csv')
     * Eg, put mean into missing data
     * May over or under emphasis certain values and trends
 * Example of imputation with pandas
+
 ```
 from pandas import *
 import numpy

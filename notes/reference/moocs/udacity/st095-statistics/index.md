@@ -1,10 +1,12 @@
+---
+title: Statistics (Udacity - st095)
+date: 2013-08-30 00:00
+category: reference/moocs
+slug: st095-statistics
+modified: 2023-04-08 00:00
+---
+
 # Statistics (Udacity - st095)
-
-## Status
-
-Complete - 2013-08-30
-
-<img src="./images/cert_of_completion.jpg"></img>
 
 ## Contents
 
@@ -18,4 +20,3 @@ Complete - 2013-08-30
 * [Lesson 8: Estimation](lesson-8-estimation.md)
 * [Lesson 9: Hypothesis Testing](lesson-9-hypothesis-testing.md)
 * [Lesson 10: t-Tests](lesson-10-t-tests.md)
-

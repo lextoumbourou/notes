@@ -1,3 +1,9 @@
+---
+title: "Week 6: Recap"
+date: 2021-10-30 00:00:00
+modified: 2023-04-08 00:00:00
+---
+
 # Week 6: Recap
 
 ## Module 1: recap
@@ -6,43 +12,34 @@
   * search over all articles to find closest article to query article.
 * k-NN
   * same as 1-NN but return multiple articles.
-
 * 2 critical elements to performance of NN:
   * how do you represent your docs?
   * how do you measure distance between two docs?
-
 * TF-IDF doc representation
   * Emphasises words important locally but rare globally.
   * Term frequency = word count in doc.
   * Inverse doc frequency = ```log(# docs / (1 + # docs using word))```
-
 * Scaled Euclidean distance
   * Allows for weighing certain features: eg weight words in title over body.
-
 * Cosine similarity
   * Common metric for text data.
   * Inner product of 2 normalised vectors for each doc.
-
 * Normalise or not?
   * Cosine similarity can ignore length of document.
   * Common comprimise: cap maximum word counts.
-
 * Complexity of brute-force search
   * For each query point, need to iterate through entire dataset.
   * O(N) per 1-NN query.
   * O(N log k) per k-NN.
-
 * KD-trees
   * Efficient data structure for NN.
   * Recursively partition the feature space.
   * Works by ensuring the distance to the points in your node is smaller than the distance to a lot of the other nodes.
   * Can prune more aggresively trading off speed for query accuracy by adding an alpha component to the prune condition:
     * Instead of pruning bounding box when > r, do it when > r / alpha.
-
 * Limitations of KD-trees
   * Hard to implement.
   * Don't do well in high dimensions.
-
 * Locality sensitive hashing
   * Throw down lines to partition feature space to create a series of "bin index" buckets..
   * Then store datapoints using binary represenation of query into a bucket.
@@ -69,12 +66,10 @@
     * You have clusters of different sizes.
     * You have cluster overlap.
     * You have different shaped or oriented clusters.
-
 * EM algorithm
   * E-step: estimate cluster responsibilities given params.
   * M-step: maximise likelihood over parameters given responsibility.
   * iterates between each step, with each improving the other.
-
 * Relationship to k-means:
   * Gaussian mixture model basically becomes k-means when you have spherically symmetric clusters and variance parameter is 0 because datapoints get hard assigned to clusters.
 
@@ -83,13 +78,11 @@
 * Before presenting LDA, presented an alternate document clustering model using topic specific word distributions.
   * Docs are represented as BOW.
   * All words in document are assigned to cluster to determine overall document topics.
-
 * LDA:
   * Every word scored under associated topic.
   * Determine distributions on topics in doc.
   * Has a topic proportion vector for each document.
   * Side note: can't remember how LDA is different from the initial alternate approach?
-
 * Gibbs sampling
   1. Randomly assign topics for every word in document based doc topic proportions and topic vocab distributions (initially this would be assigned random or through some other means -- like k-means :) ).
   2. Randomly reassign topic proportions based on assignments in current doc.
@@ -109,7 +102,6 @@
 * Example given:
   * Break up Wikipedia article into athletes and non-athletes.
   * Break up those articles into the different sports for athletes and other types for non-athletes.
-
 * Choices you need to make:
   * Algorithm to recurse?
   * How many clusters per split?
@@ -139,18 +131,15 @@
   * What distance metric?
   * What linkage function?
   * Where and how to cut dendrogram?
-
 * Cutting dendrogram
   * For visualization, small # clusters is prefered.
   * Outlier detection, can cut based on:
     * Distance threshold.
     * Inconsistency coefficient (don't get it - does it matter?).
-
 * Computational considerations
   * Compute distances between all points: brute force is ``O(N^2 * log(N))``
   * Smart implementations use triangle inequality to rule out candidate pairs.
   * Best known algo is ``O(N^2)``.
-
 * Statistical issues
   * Chaining: distance points can be very small but with a lot of points, you can eventually have a big disparity between two extremes of distance in a cluster.
   * Other linkage functions can be more robust but restrict the shape of clusters:
@@ -167,7 +156,6 @@
   * Every observation is associated with cluster.
   * Each cluster has a distribution over observed values.
   * Difference: probability of cluster assignment depends on previous cluster assignment.
-
 * Inference in HMMs
   * Learn MLE of HMM parameters using EM algorithm: Baum Welch.
   * Infer MLE of state sequence given fixed model parameters using dynamic programming: Viterbi algorithm.

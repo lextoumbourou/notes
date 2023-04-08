@@ -1,9 +1,16 @@
+---
+title: "Lesson 3: Central Tendency"
+date: 2013-08-30 00:00
+parent: st095-statistics
+status: draft
+modified: 2023-04-08 00:00
+---
+
 # Lesson 3: Central Tendency
 
 * Mode - most common value
 * Median - value in the middle
 * Mean - average
-
 * Uniform distribution
     * Flat line
     * No mode / multiple modes

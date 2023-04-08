@@ -1,3 +1,11 @@
+---
+title: "Lesson 9: Hypothesis Testing"
+date: 2013-08-30 00:00
+parent: st095-statistics
+status: draft
+modified: 2023-04-08 00:00
+---
+
 # Lesson 9: Hypothesis Testing
 
 * Levels of likelihood

@@ -1,3 +1,8 @@
+---
+title: Intro to Data Science (Udacity - ud359)
+date: 2014-04-16 00:00
+---
+
 # Intro to Data Science (Udacity - ud359)
 
 ## Status
