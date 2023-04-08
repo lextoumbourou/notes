@@ -4,6 +4,7 @@ date: 2022-11-15 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## 2.202 Logical implication
@@ -27,12 +28,12 @@ parent: uol-discrete-mathematics
             * it's always true that:
                 * from a false hypothesis any conclusion can be implied (true or false)
 
-            | p   | q   | p -> q |
+            | p | q | p -> q |
             | --- | --- | ------ |
-            | F   | F   | T      |
-            | F   | T   | T      |
-            | T   | F   | F      |
-            | T   | T   | T      |
+            | F | F | T |
+            | F | T | T |
+            | T | F | F |
+            | T | T | T |
 
     * Different expressions for $p$
         * Let $p$ and $q$ be the following statements:
@@ -47,7 +48,7 @@ parent: uol-discrete-mathematics
             * $p$ is sufficient for $q$
             * $q$ unless $\neg p$
             * $q$ is necessary for $p$
-     
+
 * [[Converse, contrapositive and inverse]]
     * Let $p$ and $q$ be propositions and $A$ the conditional statement $p \rightarrow q$
     * The proposition $q \rightarrow p$ is the converse of $A$.
@@ -85,7 +86,7 @@ parent: uol-discrete-mathematics
     * Biconditional statements are also called bi-implications.
     * $p \leftrightarrow q$ can be read as "p if and only if q"
     * The biconditional statements is true when p and q have the same truth values, and is false otherwise.
-    
+
 | $p$   | $q$   | $p \rightarrow q$ | $q \rightarrow p$ | $(p \rightarrow q \land q \rightarrow p)$ equivalent |
 | --- | --- | ------ | ------ | ---------------------------- |
 | F   | F   | T      | T      | T                            |
@@ -100,9 +101,10 @@ parent: uol-discrete-mathematics
     * The symbol $\equiv$ is not a logical operator, and $p \equiv q$ is not a compound proposition, but rather saying the statemnet that $p \leftrightarrow q$ is always true.
 * Proving equivalence
     * To determine equivalence, we can use truth tables
-    * Examples 
+    * Examples
         * Compare two propositions $p \rightarrow q$ and $\neg p \lor q$
-        * The truth tables shows that $\neg p \lor q$  is equivalent to $p \rightarrow q$ as they have the same truth values.
+        * The truth tables shows that $\neg p \lor q$ is equivalent to $p \rightarrow q$ as they have the same truth values.
+
 | $p$ | $q$ | $p \rightarrow q$ | $\neg p$ | $\neg p \lor q$ |
 | --- | --- | ----------------- | -------- | --------------- |
 | F   | F   | T                 | T        | T               |
@@ -114,13 +116,14 @@ parent: uol-discrete-mathematics
     * To determine equivalence, we can use truth tables and find at least one row where values differ.
     * Example
         * Let's examine whether the converse or the inverse of an implication is equivalent to the original implication.
-        
+
  | $p$ | $q$ | $\neg p$ | $\neg q$ | $p \rightarrow q$ | $\neg p \rightarrow \neg q$ | $q \rightarrow p$ |
  | --- | --- | -------- | -------- | ----------------- | --------------------------- | ----------------- |
  | F   | F   | T        | T        | T                 | T                           | T                 |
  | F   | T   | T        | F        | T                 | F                           | F                 |
  | T   | F   | F        | T        | F                 | T                           | T                 |
  | T   | T   | F        | F        | T                 | T                           | T                 |
+
 
 * Example
     * Let $p$, $q$ and $r$ be the following propositions concerning an integer n:
@@ -159,11 +162,11 @@ parent: uol-discrete-mathematics
 | associative laws  | $(p \lor q) \land r \equiv p \lor (q \lor r)$           | $(p \land q) \land r \equiv p \land ( q \land r)$       |
 | distributive laws | $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ | $p \lor (q \lor r) \equiv (p \land q) \lor (p \land r)$ |
 | identity laws     | $p \lor \mathbf{F} \equiv p$                            | $p \land \mathbf{T} \equiv p$                           |
-| domination laws   | $p \lor \mathbf{T} \equiv \mathbf{T}$                    | $p \land \mathbf{F} \equiv \mathbf{F}$                   | 
+| domination laws   | $p \lor \mathbf{T} \equiv \mathbf{T}$                    | $p \land \mathbf{F} \equiv \mathbf{F}$                   |
 
 * Example
 ![[distributative-law-truth-table.png]]
-*  Laws of propositional logic 2
+* Laws of propositional logic 2
  ![[equivalence-table.png]]
  * Equivalence proof
      * Example the equivalence between $\neg (p \land (\neg p \lor q))$ and $(\neg p \lor \neg q)$
@@ -177,10 +180,9 @@ parent: uol-discrete-mathematics
     * laws of propositional logic.
     * equivalence proof.
 
-
 ## Problem Sheet
 
-### Question 1.
+### Question 1
 
 Which of the following statements are propositions?
 
@@ -343,7 +345,7 @@ Complete the following table by showing the truth value of each: $p$, $q$, $p \r
 | 0   | 0   | 1                 | 1                 | 1                     |
 | 0   | 1   | 1                 | 0                 | 0                     |
 | 1   | 0   | 0                 | 1                 | 0                     |
-| 1   | 1   | 1                 | 1                 | 1                     | 
+| 1   | 1   | 1                 | 1                 | 1                     |
 
 **Question 11.**
 

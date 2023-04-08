@@ -4,6 +4,7 @@ date: 2022-11-22 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## 4.101 Introduction to predicate logic
@@ -45,7 +46,7 @@ parent: uol-discrete-mathematics
             * $P(2, 4)$ = $4(2^2 >4) \text{ is } \mathbf{False}$
     * Let Q(x, y, z) denote x + y < z
         * Q(2, 4, 5) = (6 < 5) is F
-        * Q(2, 4, z)  is not a proposition
+        * Q(2, 4, z) is not a proposition
 * Logical operations from propositional logic carry over to predicate logic
     * If $P(x)$ denotes $x^2 < 16$, then:
         * $P(1) \lor P(-5) \equiv (1 < 16) \lor (25 < 16) \equiv T \lor F \equiv T$
@@ -80,7 +81,7 @@ parent: uol-discrete-mathematics
         * $\forall x P(x) \Leftrightarrow P(n_{1}) \land P(n_{2}) \land \ldots \land P(n_k)$
     * Example 1:
         * $P(x)$: "x must take a Discrete Mathematics course"
-        * $Q(x)$: "x is a Computer Science student." 
+        * $Q(x)$: "x is a Computer Science student."
         * Where, the university of discourse for both $P(x)$ and $Q(x)$ is all university students.
     * Let's express the following statements:
         * Every CS student must take a discrete math course
@@ -116,7 +117,7 @@ parent: uol-discrete-mathematics
         * Let's evaluate the truth value of S:
             * When $b^2 >= 4ac, S \text{ is true , as } P(-b \mp \sqrt(b^2 - 4ac)) / 2a = 0$
             * When $b^2 < 4ac, S\text{ is false }$ as there is no real number x that can satisfy the predicate.
-*  [[Uniqueness quantifier]]
+* [[Uniqueness quantifier]]
     * Special case of "existential quantifier".
     * The uniqueness quantifier of prediction P of x is the proposition:
         * There exists a unique value of x in the universe such that P of x is true.
@@ -137,7 +138,7 @@ parent: uol-discrete-mathematics
         * $\exists x \ \exists y \ P(x,  y)$ - There is a pair x, y for which P(x, y) is true.
         * $\forall x \ \exists y \ P(x, y)$ - For every x, there is a y for whih P(x, y) i true.
         * $\exists x \ \forall y \ P(x, y)$ - there is an x for which P(x, y) is true for every y.
-*  Binding variables
+* Binding variables
     * A variable is said to be **bound** if it is within the scope of a quantifier.
     * A variable is **free** if it is not bound by a quantifier or particular values.
     * Example
@@ -146,11 +147,11 @@ parent: uol-discrete-mathematics
         * We can say that:
             * x is bound
             * y is free
-*  Logical operations
+* Logical operations
     * Logical operations can be applied to quantified statements
     * Example
         * If P(x) denotes "x > 3" and Q(x) denotes "x squared is even" then
-            * $\exists \ x \ (P(x) \lor Q(x)) \equiv T (ex. x = 4)$ 
+            * $\exists \ x \ (P(x) \lor Q(x)) \equiv T (ex. x = 4)$
             * $\forall \ x \ (P(x) \rightarrow Q(x) \equiv F (ex. x = 5))$
 * Order of operations
     * When nested quantifiers are of the same type, the order does not matter.
@@ -159,8 +160,8 @@ parent: uol-discrete-mathematics
         * $\forall x \ \forall y P(x, y) \equiv \forall y \ \forall x \ P(x, y)$
         * $\exists x \ \exists y \ P(x, y) \equiv \exists y \ \exists x \ P(x, y)$
         * $\forall x \ \exists y \ P(x, y)$ is different from $\exists y \ \forall x \ P(x,  y)$
-*  Precendence of quantifiers
+* Precendence of quantifiers
     * The quantifiers \forall and \exists have a higher precendence than all logical operators
     * Example
         * P(x) and Q(x) denote two propositional functions.
-        * $\forall x \ P(x) \lor Q(x)$ is the disjunction of $\forall x \ P(x) \text{ and } Q(x)$ rather than $\forall x \ (P(x) \text{ and } Q(x))$ 
+        * $\forall x \ P(x) \lor Q(x)$ is the disjunction of $\forall x \ P(x) \text{ and } Q(x)$ rather than $\forall x \ (P(x) \text{ and } Q(x))$

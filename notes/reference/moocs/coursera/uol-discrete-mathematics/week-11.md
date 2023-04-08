@@ -4,6 +4,7 @@ date: 2022-12-19 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## 6.101 Introduction to proofs
@@ -21,7 +22,7 @@ parent: uol-discrete-mathematics
         * a statement we assume to be true to serve as a premise for further arguments.
     * [[Lemma]]
         * a proven statement used as a step to a larger result rather than as a statement of interest by itself.
-*  Formalising a theorem
+* Formalising a theorem
     * Consider statement S: "There exists a real number between any two not equal real numbers"
     * S can be formalised as: $\forall x, y \in \mathbb{R}$ if $x < y$ then $\exists z \in \mathbb{R}$ where $x < z < y$.
     * S is an example of a theorem.
@@ -36,7 +37,7 @@ parent: uol-discrete-mathematics
             * Let $z = (x + y) / 2$
             * $z \in \mathbb{R}$, satisfying $x < z < y$
         * Therefore, using the universal generalised rule, we can conclude that: $\forall x, y \in \mathbb{R}$ if $x < y$ then $\exists z \in \mathbb{R}$ where $x < z < y$.
-* [[Proof by contrapositive]] 
+* [[Proof by contrapositive]]
     * A **proof by contrapositive** is based on the fact that proving the conditional statement $p \rightarrow q$ is equivalent to providing its contrapositive $\neg q \rightarrow \neg p$
         * We start by assuming that $\neg q$ is true and then use axioms, definitions and theorems, together with **rules of inference**, to show that $\neg p$ must be true.
     * Example
@@ -75,7 +76,7 @@ parent: uol-discrete-mathematics
     * Structure of induction
     * Some uses of induction
 * Definition
-    * [[Mathematical Induction]] 
+    * [[Mathematical Induction]]
         * Can be used to prove that a propositional function $P(n)$ is true for all positive integers.
     * The rule of inference:
         $P(1) \text{ is true}$
@@ -105,12 +106,12 @@ parent: uol-discrete-mathematics
 
 * [[Proof By Induction]]
 * Proving formulas
-    * Proving a simple formula formalised as the propositional function, $P(n): 1 + 2 + 3 + ... + n = n (n + 1) / 2$ 
-        *  The sum of 1 to n is equal to n multipled by n plus 1 divided by 2, for all n in N.
+    * Proving a simple formula formalised as the propositional function, $P(n): 1 + 2 + 3 + ... + n = n (n + 1) / 2$
+        * The sum of 1 to n is equal to n multipled by n plus 1 divided by 2, for all n in N.
     * In order to prove that a propositional function $P(n)$ is true for all N, we need to verify 2 step:
         * 1. BASIS STEP: where we show that P(1) is true.
         * 2. INDUCTIVE STEP: where we show that for $\forall k \in \mathbb{N}$: if $P(k)$ is true, called **inductive hypothesis**, then P(k + 1) is true.
-    * 1. BASIS STEP: The basis step, P(1) reduces to 1 = $P(1) = 1 (2) / 2 = 1$ 
+    * 1. BASIS STEP: The basis step, P(1) reduces to 1 = $P(1) = 1 (2) / 2 = 1$
     * 2. INDUCTIVE STEP:
         * Let $\forall k \in \mathbb{N}$
         * If the inductive hypothesis P(k) is true:
@@ -133,7 +134,7 @@ parent: uol-discrete-mathematics
     * Consider proving the prop function $P(n): \forall n \in \mathbb{N} \ 6^{n} + 4$ is divisible by 5.
     * Example
         * 1. BASIS STEP: The basis step, P(0), reduces to $6^{0} + 4$ is divisible by 5, because $6^{0} + 4 = 5$
-        *  2. INDUCTION STEP:
+        * 2. INDUCTION STEP:
             * Let $k \in \mathbb{N}$
             * If inductive hypothesis P(k) is true:
                 * then, $6^{k} + 4 = 5p$ where $p \in \mathbb{N}$

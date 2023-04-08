@@ -8,7 +8,7 @@ parent: uol-discrete-mathematics
 
 ## 10.201 Binomial coefficients and identities
 
-* Binomial theorem
+* [[Binomial Theorem]]
     * An expression consisting of 2 terms, connected by a + or - sign.
     * Examples:
         * $x + a$
@@ -54,7 +54,7 @@ parent: uol-discrete-mathematics
             * $\binom{n}{k}$ subsets of k elements of T that don't contain a
         * Hence, $\binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}$
     * It's the basis for geometic arrangements of the binomial coefficients in a triangle. This is called [[Pascal's Triangle]].
-    *  Pascal's triangle is a number triangle with numbers arranged in staggered rows such that $a_{n,r}$ is the binomial coefficients of $\binom{n}{r}$
+    * Pascal's triangle is a number triangle with numbers arranged in staggered rows such that $a_{n,r}$ is the binomial coefficients of $\binom{n}{r}$
       ![[week-20-pascals-triangle.png]]
       Using Pascal's identity, we can show the result of adding 2 adjacent coefficients in the triangle is equal to the binomial coefficient in the next row between these 2 coefficients.
 
@@ -105,29 +105,29 @@ parent: uol-discrete-mathematics
         * the order in which choices are made may or may not matter.
         * repetition may or may not be alloed.
     * This table summarises the formula in each case:
+
 |                             | Order matters       | Order does not matter         |
 | --------------------------- | ------------------- | ----------------------------- |
 | Repetition is not permitted | $\frac{n!}{n - k!}$ | $\frac{n!}{k!(n-k)!}$         |
 | Repetition is permitted     | $n^{k}$               | $\frac{(k + n - 1)!}{k!(n-1)!}$ |
 
 * Example
-    * John is a chair of a committee. In how many ways can a committee of 3 be chosen from 10 people, given that John must be one of the people selected? 
+    * John is a chair of a committee. In how many ways can a committee of 3 be chosen from 10 people, given that John must be one of the people selected?
     * Solution:
         * Since John is already chosen, we need to choose another 2 out of 9 people
         * In choosing a committee, the order doesn't matter, so we need to apply the combination without repetition formula: $C(9, 2) = \frac{9!}{2!(9-2)!} = 36$ ways.
 
 ## Video: 10.206 Distinguishable objects and boxes
 
-
 * Many counting problems can be reduced into finding the number of ways objects can be placed into boxes.
 * Distributing objects into boxes.
-    *  We can phrase counting problems in terms of distributing k objects into n boxes, under various conditions:
+    * We can phrase counting problems in terms of distributing k objects into n boxes, under various conditions:
         * The objects can be distinguishable or indistinguishable.
         * The boxes can be either distinguishable or indistinguishable.
         * The distribution can be done either with exclusion or without exclusion.
     * Distinguishable means they are marked in someway that allows you to distinguish from each other.
         * Indistinguishable means objects or boxes are identical so you can't tell them apart.
-        * When placing indistinguishable objects into distinguishable boxes, it makes no difference which object is placed into which box. 
+        * When placing indistinguishable objects into distinguishable boxes, it makes no difference which object is placed into which box.
     * The term "with exclusion" means no box can contain more than one object.
         * "without exclusion" means box can contain more than one object.
 * Distinguishable objects into distinguishable boxes **with exclusion**
@@ -190,7 +190,7 @@ $|A| = 2310$
 
 Let $A_1$ be the set of all positive integers that are a perfect square and not exceeding 2310.
 
-$A_1 = \{1, 4, 9 ... 2304\}$ 
+$A_1 = \{1, 4, 9 ... 2304\}$
 $|A_1| = 48$
 
 Let $A_2$ be the set of all positiev integers that are a perfect cube and not exceeding 2310.

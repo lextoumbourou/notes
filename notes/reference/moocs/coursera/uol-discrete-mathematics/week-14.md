@@ -4,6 +4,7 @@ date: 2022-01-14 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## 7.201 Isomorphic Graphs
@@ -18,6 +19,7 @@ parent: uol-discrete-mathematics
       ![[week-14-not-isomorphic.png]]
     * 2 graphs with the same degree sequence may not be isomorphic.
       ![[week-14-not-isomorphic-2.png]]
+
 ## 7.203 Bipartite graphs
 
 * [[Bipartite Graph]]
@@ -33,7 +35,7 @@ parent: uol-discrete-mathematics
     * A vertex is matched (or saturated) if it is an endpoint of one of the edges in the matching.
         * Otherwise the vertex is unmatched.
         ![[week-14-matching.png]]
-*  Maximum matching
+* Maximum matching
     * A maximum matching is a matching of maximum size so that if any edge is added, it's no longer matching.
     * In a bitpartite graph, there can be multiple maximum matching.
 * [[The Hopcroft-Kaft Algorithm]]
@@ -67,7 +69,7 @@ parent: uol-discrete-mathematics
     * So we can multiply the diagonal by 2 to represent loops consistently.
 * Properties of the adjaceny matrix.
     * Adjaceny matrix of an undirected graph is symmetric.
-    * Number of edges in undirected graph equals half the sum of all elements ($\mathbf{m_ij}$)  of its corresponding adjaceny matrix.
+    * Number of edges in undirected graph equals half the sum of all elements ($\mathbf{m_ij}$) of its corresponding adjaceny matrix.
       ![[week-14-sum-of-degree-sequence.png]]
     * In a directed graph, the adjaceny matrix only counts an edge pointing in a certain direction once.
 
@@ -88,10 +90,11 @@ parent: uol-discrete-mathematics
 ![[week-14-dijkstra-2-1.png]]
 
 ![[week-14-dijkstra-3-1.png]]
-    
+
 * Algorithm's pseudocode.
     * Let G be a graph and s a source vertex.
     * The following pseudocode calculates the shortest distance and previous vertex from s to every other node in the graph.
+
 ```
 Unvisited = {}
 for each vertex v in G:
@@ -110,10 +113,9 @@ while Unvisited is not empty:
     return shortest_distance, previous_vertex
 ```
 
-
 ## Problem Sheet
 
-## Question 1.
+## Question 1
 
 Given the following graph $G := (V, E)$
 
@@ -140,7 +142,7 @@ v2, v4, v3, v5
 
 v2, v4, v3, v5, v2
 
-## Question 2.
+## Question 2
 
 Given the following graph:
 
@@ -151,7 +153,7 @@ Determine which of the walks are trails, paths or circuits.
 
 * Is a trail as no edge is repeated.
 * Is NOT a path as v3 is repeated.
-* Is NOT a circuit as it is not closed. 
+* Is NOT a circuit as it is not closed.
 
 2. e1 e3 e5 e5 e6
 
@@ -177,7 +179,7 @@ v2 e3 v3 e5 v4 e10 v5 e9 v6 e8 v2
 
 * Not a trail as e1 is repeated.
 
-## Question 3.
+## Question 3
 
 Which of the following undirected graphs have a Euler circuit? Which of those that do not have an Euler circuit have a Euler path?
 
@@ -194,18 +196,16 @@ Which of the following undirected graphs have a Euler circuit? Which of those th
 ab, bd, dc, ce, ea
 
 2. G2 does not have Euler Circuit. It does not have a Euler path.
-
 3. G3 does not have a Euler Circuit. However, it does have a Euler path.
 
 ab, bd, da, ac, cd, de, eb
 
-## Question 4.
+## Question 4
 
 Which of the following directed graphs has an Euler circuit? Which of those that do not have a Euler path?
 
 ![[week-14-problem-sheet-q4.png]]
 1. Does not have a Euler circuit, or path.
-
 2. Does have a Euler circuit
 
 ag, gc, cb, bg, ge, ed, df, fa
@@ -214,7 +214,7 @@ ag, gc, cb, bg, ge, ed, df, fa
 
 ca, ab, bc, cd, db
 
-## Question 5.
+## Question 5
 
 In each of the following either construct a graph with the specified properties or say why it is not possible to do it.
 
@@ -229,13 +229,13 @@ The degree sequence here adds to 11. The sum of a degree sequence must be even.
 
 ![[week-14-problem-sheet-3-regular.png]]A
 
-## Question 6.
+## Question 6
 
 In a group of 25 people, is it possible to each shake hands with exacty 3 other people.
 
 I think it's not, as in order to have a degree sequence of 3 with 25 vertices, you would end up with an odd sum.
 
-## Question 7.
+## Question 7
 
 Find a Hamiltonian circuit in the following graph:
 
@@ -243,7 +243,7 @@ Find a Hamiltonian circuit in the following graph:
 
 ![[week-14-problem-sheet-q7-hamiltonian.png]]
 
-## Question 8.
+## Question 8
 
 Given the following directed graph:
 
@@ -258,7 +258,7 @@ To find the [[Transitive Closure]] of G, we need to add missing edges if there a
 3. Then add a direct path if it's not already in the graph.
 ![[week-14-problem-sheet-q8-1.png]]
 
-## Question 9.
+## Question 9
 
 Suppose that 7 sites are connected in a network. The number of other sites to which each site has a direct connection is given by the following sequence:
 
@@ -270,12 +270,12 @@ Suppose that 7 sites are connected in a network. The number of other sites to wh
 4. It is impossible to construct a [[Simple Graph]], as there are n vertices and for a simple graph, the degree of each vertices is at most n-1 or 6. We have a vertice with 7 connections.
 5. It is impossible to construct a network with 9 sites, with 5 connections as that would result in $9 \ x \ 5 = 45$ which is an odd number. A degree sequence must be even.
 
-## Question 10.
+## Question 10
 
 1. What is a [[Complete Graph]]?
-   
+
    A graph where each vertice is adjacent (linked with an edge)
-   
+
 2. What is the degree of each vertex of the complete graph $K_8$? Calculate the number of edges in $K_8$. Draw $K_8$
 
 Degree of each vertex = n - 1 = 7
@@ -284,12 +284,6 @@ Number of edges = 8 * 7 / 2 = 28
 
 3. The degree of each vertex of complete graph K_n = n -1. It will have n(n-1) / 2 edges.
 
-## Question 11.
+## Question 11
 
 Construct 3 non isomorphic graphs with 5 vertices and 5 edges. Give one property for each graph that neither of the others has, which makes it non-isomorphic.
-
-
-
-
-
-

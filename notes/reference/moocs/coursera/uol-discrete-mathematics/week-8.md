@@ -4,14 +4,11 @@ date: 2022-11-29 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## 4.201 De Morgan's law for quantifiers
 
-* Outlines
-    * The intuition of De Morgan's Laws
-    * De Morgan's laws
-    * Negating nested quantifiers
 * Intuition of [[De Morgan's Law]]
     * Often we must consider the negation of a quantified expression.
     * Example
@@ -21,7 +18,7 @@ parent: uol-discrete-mathematics
         * The negation of S can be verified **if there is at least one** computer not connected to the network.
         * The negation of P can be verified **if all university computers** are not operating on Linux.
     * De Morgan's laws formalise these intuitions.
-* De Morgan's Law
+* [[De Morgan's Law for Quantifiers]]
     * The rules for negating quantifiers can be summarised as:
         * $\neg \forall x \ P(x) \equiv \exists x \ \neg P(x)$
         * $\neg \exists x \ P(x) \equiv \forall x \ \neg P(x)$
@@ -36,14 +33,14 @@ parent: uol-discrete-mathematics
             * This implies that: "There is at least one student who has not taken a course in Neural Networks."
     * Example 2:
         * Let R denote: "There is a student in CS who didn't take a course in ML"
-            * R can be expressed as: $\exists x \ Q(x)$ 
+            * R can be expressed as: $\exists x \ Q(x)$
             * U = {students in CS}
             * Q(x) = "x didn't take course in ML"
         * The **Negation** of R:
             * It is not the case that there is a student in CS who didn't take a course in ML
             * $\neg (\exists x \ Q(x)) \equiv \forall x \ \neg Q(x)$
             * This implies that: "every student in CS has taken a ML course."
-* Negating nested quantifiers
+* [[Negating Nested Quantifiers]]
     * For nested quantifiers: apply De Morgan's laws from left to right.
     * Example
         * Let $P(x, y, z)$ denote propositional function of variables: x, y and z.
@@ -52,30 +49,14 @@ parent: uol-discrete-mathematics
                 * $\equiv \exists x \ \forall y \ \neg \forall z \ P(x, y, z)$
                 * $\equiv \exists x \ \forall y \ \exists z \ \neg P(x, y, z)$
         * $\neg \forall x \ \exists y \ \forall z \ P(x, y, z)$ is built by moving the negation of the right through all quantifiers and replacing each $\forall$ with $\exists$ and vice versa.
-* Summary
-    * The intution of De Morgan's laws
-    * De Morgan's laws
-    * Negating nested quantifiers
 
 ## 4.203 Rules of inference
 
-* Outlines
-    * Valid arguments
-    * Rules of inference:
-        * Modus ponens
-        * Modus tollens
-        * Conjunction
-        * Simplification
-        * Addition
-        * Hypothetical syllogism
-        * Disjunctive syllogism
-        * Resolution
-    * Building valid arguments
-    * Fallacies
 * [[Argument (Logic)]]
     * An argument in Propositional Logic is a sequence of [[Proposition]]s.
     * The final proposition is called the conclusion
-    * The  other propositions in the argument are called premises or hypotheses.
+    * The other propositions in the argument are called premises or hypotheses.
+    
 * [[Valid argument]]
     * An argument is valid if the truth of all its premises implies the truth of the conclusion.
     * Example 1
@@ -84,15 +65,14 @@ parent: uol-discrete-mathematics
         * Therefore: "You can order a book on ML"
         * The argument is valid:
             * All premises are true, so the conclusion must be true.
-            
-| Access to internet | Order a book on ML | If you have access to the internet, order a book on ML |
-| ----------------- | ------------------ | ------------------------------------------------------ |
-| 0                 | 0                  | 1                                                      |
-| 0                 | 1                  | 1                                                      |
-| 1                 | 0                  | 0                                                      |
-| 1                 | 1                  | 1                                                       |
 
-* 
+                | Access to internet | Order a book on ML | If you have access to the internet, order a book on ML |
+                | ----------------- | ------------------ | ------------------------------------------------------ |
+                | 0 | 0 | 1 |
+                | 0 | 1 | 1 |
+                | 1 | 0 | 0 |
+                | 1 | 1 | 1 |
+
     * The only time that statment is true in row 4, it the time order a book on ML is true.
     * Example 2
         * "If you have acces to the internet, you can order a book on ML"
@@ -100,13 +80,13 @@ parent: uol-discrete-mathematics
         * Therefore: "You have access to the internet"
         * The argument is not valid:
             * there are situations where premises are true and conclusion is false.
-            
-| Access to internet | Order a book on ML | If you have access to the internet, order a book on ML |
-| ----------------- | ------------------ | ------------------------------------------------------ |
-| 0                 | 0                  | 1                                                      |
-| 0                 | 1                  | 1                                                      |
-| 1                 | 0                  | 0                                                      |
-| 1                 | 1                  | 1                                                       |
+
+            | Access to internet | Order a book on ML | If you have access to the internet, order a book on ML |
+            | ----------------- | ------------------ | ------------------------------------------------------ |
+            | 0 | 0 | 1 |
+            | 0 | 1 | 1 |
+            | 1 | 0 | 0 |
+            | 1 | 1 | 1 |
 
 * In row 2, the premise is true, but the conclusion is false.
 
@@ -120,7 +100,7 @@ parent: uol-discrete-mathematics
     * Tautology: $(p \land (p \rightarrow q)) \rightarrow q$
     * The rule of inference:
         * $p \rightarrow q$ (if the conditional statement p implies q is true)
-        * $p$ (and the conditional statement  is true)
+        * $p$ (and the conditional statement is true)
         * Then: $q$ (then the conclusion q is also true)
         * Example:
             * p: "It is snowing"
@@ -128,6 +108,7 @@ parent: uol-discrete-mathematics
             * "If it is snowing, I will study D.M."
             * "It is snowing"
             * Therefore: "I will study Discrete Maths"
+
 * [[Modus tollens]]
     * Tautology: $(\neg q \land (p \rightarrow q)) \rightarrow \neg p$
     * The rule of inference:
@@ -140,6 +121,7 @@ parent: uol-discrete-mathematics
             * "If it is snowing, I will study Discrete Maths"
             * "I will not study Discrete Maths"
             * Therefore: "It is not snowing"
+
 * [[Conjunction]]
     * Tautology: $((p) \land (q)) \rightarrow (p \land q)$
     * The rule of inference:
@@ -152,6 +134,7 @@ parent: uol-discrete-mathematics
             * "I will study Programming."
             * "I will study Discrete Maths"
             * Therefore: "I will study Programming and Discrete Maths"
+
 * [[Simplification]]
     * Tautology: $(p \land q) \rightarrow p$
     * The rule of inference:
@@ -162,6 +145,7 @@ parent: uol-discrete-mathematics
             * $q$: I will study Programming.
             * I will study Discrete Math and programming.
             * Therefore: "I will study Discrete Math"
+
 * [[Addition]]
     * Tautology: $p \rightarrow (p \lor q)$
     * The rule of inference:
@@ -172,6 +156,7 @@ parent: uol-discrete-mathematics
             * $q$: "I will study Discrete Math"
             * "I will visit Paris"
             * Therefore: "I will visit Paris or I will study Discrete Math"
+
 * [[Hypothetical syllogism]]
     * Tautology: $((p \rightarrow q) \land (q \rightarrow r)) \rightarrow (p \rightarrow r)$
     * The rule of inference:
@@ -184,7 +169,8 @@ parent: uol-discrete-mathematics
             * If it is snowing, I will study Discrete Math.
             * If I study Discrete Math, I will pass the quizzes.
             * Therefore: if it is snowing, I will pass the quizzes.
-* [[Disjunctive syllogism]] 
+
+* [[Disjunctive syllogism]]
     * Tautology: $((p \lor q) \land \neg p) \rightarrow q$
     * The rule of inference:
         * $p \lor q$
@@ -196,6 +182,7 @@ parent: uol-discrete-mathematics
         * "I will study Discrete Maths or I will study Art"
         * "I will not study Discrete Maths"
         * Therefore: "I will study art"
+
 * [[Resolution]]
     * Tautology: $((p \lor q) \land (\neg p \lor r)) \rightarrow (q \lor r)$
     * The rule of inference:
@@ -209,7 +196,7 @@ parent: uol-discrete-mathematics
         * "It is raining or it is snowing."
         * "It is not raining or it is cold."
         * Therefore: "It is snowing or it is cold."
-* Building valid arguments
+* [[Building Valid Arguments]]
     * To build a valid argument, we need to follow these steps:
         * If initially written as English, transform into argument form by choosing a variable for each simple proposition.
         * Start with the hypothesis of the argument
@@ -241,7 +228,7 @@ parent: uol-discrete-mathematics
         * 6. $r \rightarrow s$ - Hypothesis.
         * 7. $\therefore s$ - Modus ponens 5, 6
         * Conclusion: we will need to make popcorn.
-* Fallacies
+* [[Logical Fallacies]]
     * A fallacy is the use of incorrect argument when reasoning
     * Formal fallacies can be expressed in propositional logic and proved to be incorrect.
     * Some of the widely use formal fallacies are:
@@ -265,21 +252,10 @@ parent: uol-discrete-mathematics
 
 ## 4.205 Rules of inference with quantifiers
 
-* Outlines
-    * Rules of inference with quantifiers
-        * universal instantiation
-        * universal generalisation
-        * existential instantiation
-        * existential generalisation
-        * universal modus ponens
-        * universal modus tollens
-    * Expressing complex statements
-    
-* Rules of inference with quantifiers:
+* [[Rules of Inference with Quantifiers]]
     * Previously introduced rules of inference for propositions.
     * Now describe important rules of inference for statements involving quantifiers.
     * These rules of inference remove or reintroduce quantifiers within a statement.
-    
 * [[Universal Instantiation (UI)]]
     * The rule of inference:
         * $\forall P(x)$
@@ -287,7 +263,8 @@ parent: uol-discrete-mathematics
     * Example:
         * All comp science students study discrete maths.
         * $\therefore$ Therefore, John, who is a computer science student, studies discrete math.
-* [[Universal Generalization (UG)]] 
+
+* [[Universal Generalization (UG)]]
     * The rule of inference:
         * $P(c)$ for an arbitrary element of the domain.
         * $\forall x P(x)$
@@ -295,7 +272,8 @@ parent: uol-discrete-mathematics
             * DS = {all data science students}
             * Let c be an arbitrary element in DS.
             * c studies ML.
-            * $\therefore$ Therefore $\forall x \in  \text{DS}$, $x$ studies ML. 
+            * $\therefore$ Therefore $\forall x \in  \text{DS}$, $x$ studies ML.
+
 * [[Existential Instantiation (EI)]]
     * The rule of inference:
         * $\exists x \ P(x)$
@@ -304,6 +282,7 @@ parent: uol-discrete-mathematics
         * DS = {all data science students}
         * There exists a student of data science who uses Python Pandas Library.
         * Therefore, there is a student $c$ who is using Pandas.
+
 * [[Existential Generalization (EG)]]
     * The rule of inference:
             * $P(c)$ for some element of the domain.
@@ -312,6 +291,7 @@ parent: uol-discrete-mathematics
         * DS = {all data science students}
         * John, a student of data science, got a A in ML.
         * Therefore, there exists someone in DS who got an A in ML.
+
 * [[Universal Modus Ponens]]
     * The rule of inference:
         * $\forall x P(x) \rightarrow Q(x)$
@@ -322,6 +302,7 @@ parent: uol-discrete-mathematics
         * Every computer science student studying data science will study ML.
         * John is a computer science student studying data sciecnce.
         * Therefore, John will study ML.
+
 * [[Universal Modus Tollens]]
     * The rule of inference:
         * $\forall x P(x) \rightarrow Q(x)$
@@ -405,20 +386,20 @@ $x = \frac{1}{2}$ $\frac{1}{2}^2 = \frac{1}{4}$, $\frac{1}{4} >= \frac{1}{2} = F
 1. Consider the following statement:
 
     $\exists n \in \mathbb{Z}^{+}$ such that $n^2 = n$
-    
+
     Write one way to read this statement, and show that is it true.
-    
+
     $n = 1$, $n^2 = 1$, $1 = 1$ therefore, the statement is true.
-    
+
 2. Let $E = \{5, 6, 7, 8\}$ and consider the following statement: $\exists n \in E, n^2 = n$
-   
+
    $5^2 = 25$, $25 \ne 5$
    $6^2 = 36$, $36 \ne 6$
    $7^2 = 49$, $49 \ne 7$
    $8^2 = 64$, $64 \ne 8$
-    
+
    Therefore, the statement $\exists n \in E, n^2 = n$ is false.
-   
+
 **Question 5.**
 
 Rewrite each of the statements formally, using quantifiers and variables.
@@ -459,7 +440,7 @@ Consider the following predicate Prime(n): n is prime and Even(n): n is even.
 
 Use the notation Prime(n) and Even(n) to rewrite the following statement: "There is an integer that is both prime and even"
 
-$\exists n$ such that  $\mathbf{Prime}(n) \land \mathbf{Even}(n)$ 
+$\exists n$ such that $\mathbf{Prime}(n) \land \mathbf{Even}(n)$
 
 **Question 8.**
 
@@ -635,8 +616,7 @@ $\therefore \exists x (C(x) \rightarrow \neg B(x))$
 
 This is valid (not sure why).
 
-
-#  4.209 Predicate logic - Peer-graded
+# 4.209 Predicate logic - Peer-graded
 
 ## Question
 
@@ -647,9 +627,9 @@ This is valid (not sure why).
 Hypothesis 1: $\forall x (P (x) \lor Q(x))$
 Hypothesis 2: $\forall x (¬Q(x) ∨ S(x))$
 Hypothesis 3: $\forall x(R(x) \rightarrow \neg S(x))$
-Hypothesis 4 : $\exists x \neg P(x)$ are true   
+Hypothesis 4 : $\exists x \neg P(x)$ are true
 
-**then**: 
+**then**:
 
 Conclusion: $\exists x¬R(x)∃x¬R(x)$ is true.
 

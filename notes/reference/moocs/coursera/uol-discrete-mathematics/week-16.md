@@ -4,6 +4,7 @@ date: 2022-01-28 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## 8.201 Rooted trees
@@ -39,10 +40,10 @@ parent: uol-discrete-mathematics
       ![[week-16-regular-binary.png]]
       * Properties
           * m-ary tree has at most $m^h$ vertices as level h.
-            ![[week-16-max-nodes-per-level.png]] 
-* Isomorphic trees 
+            ![[week-16-max-nodes-per-level.png]]
+* Isomorphic trees
     * 2 trees $T_1$ and $T_2$ are isomorphic if there is a bijection: $f: V(T_1) \rightarrow V(T_2)$ which preserves adjacency and non-adjacency.
-    * That is, if uv is an edge in $E(T_1)$ and $f(u)f(v)$ is in $E(T_2)$ 
+    * That is, if uv is an edge in $E(T_1)$ and $f(u)f(v)$ is in $E(T_2)$
     * Notation
         * $T_1 \cong T_2$ means that $T_1$ and $T_2$ are isomorphic.
     * Example
@@ -54,7 +55,8 @@ parent: uol-discrete-mathematics
 * Isomorphic rooted trees
     * Two isomorphic trees are isomorphic as rooted trees if and only if there is a bijection that maps the root of one tree to the root of the other.
     ![[week-16-isomorphic-graph-not-tree.png]]
-      
+
+
 ## 8.203 Binary search trees
 
 * A binary search tree with labels where they're larger on the right-hand side of the subtree and smaller on the left-hand side.
@@ -70,7 +72,7 @@ parent: uol-discrete-mathematics
               * Method #1
                   $2^{h-1} < 1 + N \leq 2^h$
                   $\equiv$
-                  $h-1 < log2(1 + N) \leq h$ 
+                  $h-1 < log2(1 + N) \leq h$
               * Method #2
                   $h = [log_2 (N + 1)]$
  * Binary search algorithm
@@ -80,13 +82,13 @@ parent: uol-discrete-mathematics
 
 ## Peer Review
 
-## Question 1.
+## Question 1
 
 Consider the following graph, G, with 4 vertices, $x$, $y$, $z$ and $w$.
 
 ![[week-16-peer-graded-graph-G.png]]
 
-1. Find the degree sequence of the graph $G$.  
+1. Find the degree sequence of the graph $G$.
 
 4, 3, 3, 2
 
@@ -111,7 +113,7 @@ $$
 The sum of elements is: $1 + 1 + 2 + 1 + 1 + 1 + 1 + 1 + 2 + 1 = 12$
 From that information, we know that the numbers of edges is 12 / 2 = 6
 
-## Question 2.
+## Question 2
 
 1. Draw a binary search tree to store 14 records.
 
@@ -119,6 +121,6 @@ From that information, we know that the numbers of edges is 12 / 2 = 6
 
 2. Find the maximum number of comparison needed to find any existing record.
 
-The maximum number of comparison is equal to the height of the tree. Since the height of the tree is  $h = ceil(\log_2 (N + 1))$, then $h = 4$
+The maximum number of comparison is equal to the height of the tree. Since the height of the tree is $h = ceil(\log_2 (N + 1))$, then $h = 4$
 
 Therefore, the max comparisons is 4.

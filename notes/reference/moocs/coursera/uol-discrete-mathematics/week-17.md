@@ -4,6 +4,7 @@ date: 2022-02-04 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00
 ---
 
 ## Lesson 9.1 Understanding the concept of relations
@@ -82,7 +83,7 @@ parent: uol-discrete-mathematics
         * The following is a relation defined from A to B:
             * $R = \{(a, 1), (b, 2), (c, 3)\}$
             * This means that: $a\ R \ 1$, $b \ R \ 2$ and $c \ R \ 3$
-*  Relations on a set
+* Relations on a set
     * When A = B
     * A relation R on the set A is a relation from A to A
         * $R \subseteq A \ x \ A$
@@ -93,8 +94,9 @@ parent: uol-discrete-mathematics
             * $x, y \in A$, $x \ R \ y$ **if and only if** $x < y$
         * We have 1 R 2, 1 R 3, 1 R 4, 2 R 3, 2 R4, 3 R 4
         * $R = \{(1,2), (1,3),(1,4), (2, 3), (2, 4), (3, 4)\}$
-        
-### 9.105 Matrix and graph representatins of a relation.
+
+
+### 9.105 Matrix and graph representatins of a relation
 
 * Relations using matrices
     * Given a relation R from a set A to set B.
@@ -107,8 +109,8 @@ parent: uol-discrete-mathematics
     * Let A = {Sofia, Samir, Sarah}
     * Let B = {CS100, CS101, CS102, CS103}
     * Consider the relation of who is enrolled in which class
-    * R =  { (a,b) | person a is enrolled in course b }
-    
+    * R = { (a,b) | person a is enrolled in course b }
+
 |       | CS100 | CS101 | CS102 |
 | ----- | ----- | ----- | ----- |
 | Sofia | x     | x     |       |
@@ -122,11 +124,14 @@ M_r = \begin{bmatrix}
 1 & 0 & 1
 \end{bmatrix}
 $$
+
 * Example 2
     * Let A = { 1, 2, 3, 4, 5 }
     * Consider a relation: $< (x, y) \in R \text{ if and only if } x < y$
     * Every element is not related to itself (hence the diagonal 0s).
+
     $$
+
 M_r = \begin{bmatrix}
 0 & 1 & 1 & 1 & 1 \\
 0 & 0 & 1 & 1 & 1 \\
@@ -134,6 +139,7 @@ M_r = \begin{bmatrix}
 0 & 0 & 0 & 0 & 1 \\
 0 & 0 & 0 & 0 & 0 \\
 \end{bmatrix}
+
 $$
 * Example 3
     * Let A = { 1, 2, 3, 4, 5 }
@@ -187,12 +193,11 @@ $$
             * 5 is greater than all elements except itself.
             * So on.
 
-
 ### 9.107 The properties of a relation: reflexive, symmetric and anti-symmetric
 
 * Definition of [[Reflexivity]]
     * A relation R in a set S is said to be reflexive if and only if $x \ R \ x$, $\forall x \in S$
-        * Or, for all x in the set, if the pairs (x, x) is in the relation, then it's reflexive. 
+        * Or, for all x in the set, if the pairs (x, x) is in the relation, then it's reflexive.
     * Example 1 (reflexive example)
         * Let R be a relation of elements in Z:
             * $R = \{ (a, b) \in Z^2 | a \leq b \}$
@@ -232,7 +237,7 @@ $$
     * Examples
         * Let R be a relation on elements in Z:
             * $R = \{ (a, b) \in Z^2 | a \leq b \}$
-        * Let $a, b \in Z$, $a \ R \ b$ and $b \ R \ a$ 
+        * Let $a, b \in Z$, $a \ R \ b$ and $b \ R \ a$
             * $a \leq b$ and $b \leq a$
             * $a = b$
         * R is anti-symmetric
@@ -261,7 +266,7 @@ $$
     * $R = \{ (x , y) \in N^{2} | x \leq y \}$
         * It is transitive as $\forall x, y, z \in \mathbf{N}$ if $x \leq y$ and $y \leq z$ then $x \leq z$
     * R = { (a, b) | a is an ancestor of b }
-        *  It is transitive because if a is an acestory of b and b is an ancestor of c, then a is an ancestor of c.
+        * It is transitive because if a is an acestory of b and b is an ancestor of c, then a is an ancestor of c.
 * Example of non-transitive relations
     * R = { (2, 3), (3, 2), (2, 2) }
         * It is not transitive because 3 R 2 and 2 R 3 but 3 \not R 3
