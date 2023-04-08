@@ -29,34 +29,32 @@ parent: uol-discrete-mathematics
 
 ### 3.103 Propositions
 
-* Outlines:
-    * definition of a proposition.
-    * propositional variables.
 * [[Proposition]]
     * A declarative sentence that is either true or false but not both
     * The most basic element of logic.
     * Examples
         * London is the capital of the United Kingdom
             * A true proposition.
-        * 1 + 1 = 2
+        * $1 + 1 = 2$
             * Another true proposition.
-        * 2 < 3
+        * $2 < 3$
         * Madrid is the capitial of France.
             * A false proposition.
         * 10 is an odd number
             * Another false proposition.
     * Examples that aren't propositions
-        * x + 1 = 2
+        * $x + 1 = 2$
             * Since we don't know the value of x, we don't know if it's true or false.
-        * x + y = z
+        * $x + y = z$
         * What time is it?
             * Not a declarative sentence, so not a proposition.
         * Read this carefully.
         * This coffee is strong
             * Subjective meaning: not true or false.
+
 * [[Propositional variables]]
     * Use variables for propositional shorthand.
-    * Typically uses letter like: p, q, r
+    * Typically uses letter like: $p$, $q$, $r$
     * Examples
         * p: London is the capital of United Kingdon
         * q : 1 + 1 = 2
@@ -64,23 +62,21 @@ parent: uol-discrete-mathematics
 
 ### 3.105 Truth tables and truth sets
 
-* Outlines
-    * Definition of a truth table
-    * Constructing a truth table.
-    * Definition of a truth set.
 * [[Truth Table]]
     * A tabular reprenetation of possible combinations of constituent variables.
     * To construct the truth table for n propositions:
-        * Create table with 2^n rows and n columns.
+        * Create table with $2^n$ rows and n columns.
         * Fill the first n columns with all the possible combinations.
     * Example
-        * Two popositional variables p and q:
-| p     | q     |
-| ----- | ----- |
-| FALSE | FALSE |
-| FALSE | TRUE  |
-| TRUE  | FALSE |
-| TRUE  | TRUE  |
+        * Two propositional variables p and q:
+        
+            | p     | q     |
+            | ----- | ----- |
+            | FALSE | FALSE |
+            | FALSE | TRUE  |
+            | TRUE  | FALSE |
+            | TRUE  | TRUE  |
+
 * [[Truth Set]]
     * Let $p$ be a proposition of set $S$.
     * The truth set of $p$ is the set of elements of $S$ for which $p$ is true.
@@ -98,23 +94,19 @@ parent: uol-discrete-mathematics
 
 ### 3.107 Compound propositions
 
-* Outlines
-    * Definition of compound statements
-    * negation
-    * conjunction
-    * disjunction
-    * exclusive-or
-    * precedence of logical operations
 * [[Compound Statements]]
     * Statements build by combining multiple propositions using certain rules.
-* Negation
+
+* [[Negation]]
     * Not $p$: Defined by $\neg p$
     * "It is not the case that $p$"
     * The truth value of the negation of $p$,  $\neg p$, is the opposite of truth value of $p$.
     * Example
         * $p$: John's program is written in Python
-        * $\not p$: John's program is not written in Python
-* Conjunction ($\land$)
+        * $\neg p$: John's program is not written in Python
+ 
+* [[Conjunction]]
+    * Symbol: $\land$
     * $p$ and $q$
     * Let $p$ and $q$ be propositions.
     * Conjunction of $p$ and $q$ are denoted by $p \land q$
@@ -123,7 +115,9 @@ parent: uol-discrete-mathematics
         * $p$: John's program is written in Python
         * $q$: John's program has less than 20 lines of code.
         * $p \land q$: John's program is written in Python and has < 20 lines of code.
-* Disjunction $\lor$
+ 
+* [[Disjunction]]
+    * Symbol: $\lor$
     * $p$ or $q$
     * Let $p$ and $q$ be propositions.
     * The disjunction of $p$ and $q$ denoted by $p \lor q$ is only false when both $p$ and $q$ are false, otherwise true.
@@ -131,17 +125,19 @@ parent: uol-discrete-mathematics
         * $p$: John's program is written in Python.
         * $q$: John's program is < 20 lines of code.
         * $p \lor q$: John's prgram is written in Python or has less than 20 lines of code.
-* Exclusive-or $\oplus$
+        
+* [[Exclusive Or]]
+    * Symbol: $\oplus$
     * $p$ or $q$ (but not both)
-* Precendence of logical operations
+    
+* [[Precendence of logical operations]]
     * To build complex compound propositions, we need to use parentheses.
-    * Example
+    * Example:
         * $(p \lor q) \land (\neg r)$ is different from $p \lor (q \land \neg r)$
     * To reduce the number of parentheses, we can use order of precedence.
-| Operator | Precedence |
-| -------- | ---------- |
-| $\neg$   | 1          |
-| $\land$  | 2          |
-| $\lor$   | 3          |
-
-### 3.108 Compound propositions
+    
+        | Operator | Precedence |
+        | -------- | ---------- |
+        | $\neg$   | 1          |
+        | $\land$  | 2          |
+        | $\lor$   | 3          |
