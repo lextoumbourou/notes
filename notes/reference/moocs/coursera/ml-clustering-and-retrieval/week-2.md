@@ -1,3 +1,9 @@
+---
+title: "Week 2: Nearest Neighbour Search"
+date: 2021-10-30 00:00:00
+modified: 2023-04-08 00:00:00
+---
+
 # Week 2: Nearest Neighbour Search
 
 ## Introduction to nearest neighbor search and algorithms
@@ -65,28 +71,28 @@
     * Specify weights as function of feature spread
       * for feature j: ``1 / max_i(x_i[j]) - min_i(x_i[j])``
 * Scaled Euclidean distance:
+
      $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{a_1(\mathbf{x}_i[1] - \mathbf{x}_q[1])^2 + ... + a_d(\mathbf{x}_i[d] - \mathbf{x}_q[d])^2} $$
+
 	* Add up the distance for each scaled feature, between the query doc and some other doc and take the square root.
 	* Can turn off features by setting weight to 0.
 
 ### Writing (scaled) Euclidean distance using (weighted) inner products
 
 * Can rewrite the non-scaled Euclidean distance using linear algebra. Example:
-    
-    * $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i[1] - \mathbf{x}_q[1])^2 + ... + (\mathbf{x}_i[d] - \mathbf{x}_q[d])^2}  $$can be rewritten as:
+    * $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i[1] - \mathbf{x}_q[1])^2 + ... + (\mathbf{x}_i[d] - \mathbf{x}_q[d])^2}  $$
+can be rewritten as:
+
 	* $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i - \mathbf{x}_q)^T(\mathbf{x}_i - \mathbf{x}_q)} $$
 	* Basically: taking the dot product of the two feature distance vectors is equivalent to squaring then adding the results.
 * To add the feature weights, you can add a diagonal matrix of features (note: not clear on the diagonal matrix part):
 	* $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i - \mathbf{x}_q)^T\color{blue}{\mathbf{A}}(\mathbf{x}_i - \mathbf{x}_q)} $$
 
-
 ### Distance metrics: Cosine similarity
 
 * Another inner product measure: multiple features in one document vs another then add up results:
-
 	* $$\sum\limits_{j=1}^{d}\mathbf{x}_i[j]\mathbf{x}_q[j] $$
 	* Higher is better (map overlap). Lowest possible = 0.
-
 * Cosine similarity: same as above, however, you divide the result by the normalised vector of features:
 	* $$\frac{\sum\limits_{j=1}^{d}\mathbf{x}_i[j]\mathbf{x}_q[j]}{\sqrt{\sum\limits_{j=1}^{d}(\mathbf{x}_i[j])}\sqrt{\sum\limits_{j=1}^{d}(\mathbf{x}_q[j])}} $$
 	* Can be rewritten like: $$\frac{\mathbf{x}_i^T\mathbf{x}_q}{||\mathbf{x}_i|| ||\mathbf{x}_q|| } $$
@@ -159,13 +165,11 @@
 ### Approximate k-NN search using KD-trees
 
 * Idea: the best nearest neighbor is not always necessary, near-enough can suffice.
-
 * Before: prune tree when distance to bounding box is > ``distance found so far``.
 * Now: prune when distance to bounding box > r / alpha.
   * Alpha = some number greater than 1.
   * Produces a smaller bounding box to prune more aggressively.
   * Could potentially prune closer neighbors, but saves a lot of searching.
-
 * Lots of variants of kd-trees
 * High-dimension spaces can be hard to put into KD-trees.
 
@@ -176,13 +180,11 @@
 * Limitations:
   * Not simple to implement.
   * Problems with high-dimensional data.
-
 * KD-trees in high dimensions
   * Low chance of having data points close to query point.
     * With many dimensions, the splits could be all over the place.
   * Once you find your nearby point, the search radius has to intersect many hypercubes.
   * Hard to prune a lot of nodes.
-
 * Moving away from exact NN search
   * Don't find exact neighbour; okay for many applications.
   * Fous on method that provide probabilibites of NN.
@@ -192,7 +194,7 @@
 * LSH = locality-sensitive hashing
   * Partion data into bins by calculating sign of score then putting -1 into ``0`` bin and +1 into ``1`` binthen putting -1 into ``0`` bin and +1 into ``1`` bin.
   * Then use hash table with bin index as key and list of query points in bin as value.
-  
+
     ```
     {
       0: {1, 5, 6, 9},

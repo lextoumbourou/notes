@@ -1,3 +1,8 @@
+---
+title: Lesson 1 - Introduction
+date: 2021-10-30 00:00
+modified: 2023-04-08 00:00
+---
 # Lesson 1 - Introduction
 
 * Things a data scientist may do
@@ -39,7 +44,7 @@
 
 ### Complex Heuristic
 
-* Again, fairly straight forward at first glance. 
+* Again, fairly straight forward at first glance.
     * Push all important data into variables so I know what I'm playing with
     * Then just follow logic in comments
 * Starting to understand heuristic. How accurate was my predictions compared to who actually survived.
@@ -53,7 +58,8 @@
         * I tried brute forcing the problem for a while before reading the forum for help.
         * A bit annoying that consulting the forums for help usually results in seeing the answer.
         * At this point, I'm going to assume I'm missing a prerequiste. Though I did the statistics course, I think I should go back and brush up on it.
-    
+
+
 ## Opinions
 
 * Light introduction

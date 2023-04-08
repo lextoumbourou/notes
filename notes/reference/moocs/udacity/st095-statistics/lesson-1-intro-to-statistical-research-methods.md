@@ -1,3 +1,11 @@
+---
+title: "Lesson 1: Intro to Statistical Research Methods"
+date: 2013-08-30 00:00
+parent: st095-statistics
+status: draft
+modified: 2023-04-08 00:00
+---
+
 # Lesson 1: Intro to Statistical Research Methods
 
 * To have some level of confidence in survey results, you would need to know, at least:
@@ -41,8 +49,3 @@
         * Researchers observing results shouldn't know who's in control or experimental to prevent judgement bias
 * Independant variable = variable that is changed to test effect on dependant variables
 * Dependant variable = variable being tested
-
-## Opinion
-
-* Excellent introduction. Engaging, not too difficult. Very little prerequisite knowledge assumed.
-* One of the best Udacity courses.

@@ -1,3 +1,9 @@
+---
+title: Mixed membership models for documents
+date: 2021-10-30 00:00:00
+modified: 2023-04-08 00:00:00
+---
+
 # Mixed membership models for documents
 
 Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clusters at once.
@@ -12,13 +18,11 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
 * Builds up to LDA.
 * Data representation bag of words instead of TF-IDF.
 * Words stored as "multi set": set with dupes.
-
 * First, find prior probability that a doc i is from topic k:
 
   $$p(z_i = k) = \pi_k $$
 
   * Basically, how prevalent is each topic across the corpus.
-
 * Then, determine probability of each word within topic and use to compute likelihood for each topic based on word count.
 
 ## Components of latent Dirichlet allocation model
@@ -50,9 +54,9 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
 * Revision of EM for MoG
   * E-step: estimate cluster responsibilities.
   * M-step: maximize likelihood over parameters.
-
 * When using bag of words over tf-idf, can still derive EM algorithm: instead of using gaussian likelihood of tf-idf vector, use multinomial likelihood of word counts.
-  * $$m_w $$successes of word w.
+  * $$m_w $$
+successes of word w.
   * Called a "mixture of multinomial model".
 * LDA model:
   * Could derive EM model, but due to high dimensional space over-fitting tends be a huge problem.
@@ -77,7 +81,7 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
 
 ## A standard implementation of Gibbs sampling
 
-* Step 1: Randomly reassign all words in a document to some topic based on:  doc topic proportions and topic vocab distributions
+* Step 1: Randomly reassign all words in a document to some topic based on: doc topic proportions and topic vocab distributions
   * firstly create a responsibility vector for each word as follows:
     * ```word_probability['EEP', 'topic_2'] = prior_probability('topic_2') * probability('EEP', given='topic_2') / sum(prior_probability(topic) * probability('EEP', given=topic) for topic in topics)```
     * $$r_{iw2} = \pi_{i2} * P(\text{"EEG"} \mid z_{iw} = 2) $$
@@ -92,7 +96,8 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
   * No need to sample corpus-wide topic vocab distributions
   * Per-doc topic proportions
 * Can lead to much better performance.
-* Randomly reassign $$z_iw $$based on current assignments $$z_jv $$of all other words in document and corpus.
+* Randomly reassign $$z_iw $$based on current assignments $$z_jv $$
+of all other words in document and corpus.
 
 ## A worked example for LDA: initial setup
 
@@ -104,13 +109,15 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
            | Topic 1 | Topic 2 | Topic 3
     Doc i  |       1 |       2 |       1
     ```
+
 4. Build corpus wide statistics.
-   
+
     ```
             | Topic 1 | Topic 2 | Topic 3
     Install |      20 |       0 |       4
     Windows |      1  |      12 |       10
     ```
+
 5. Iterate through every word in the entire corpus and resample.
     * When resampling a word, need to remove it from the local counts and corpus wide tables first.
      * Then, resample based on $$p(z_iw \mid \text{every other } z_jw \text{ in corpus, words in the corpus}) $$
@@ -118,9 +125,14 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
 ## A worked example for LDA: deriving the resampling distribution
 
 * Figure out how much doc likes topic:
-  * $$n_ik $$= current assignments to topic k in doc i.
-  * $$N_ik $$= words in doc i.
-  * $$\frac{n_ik + \alpha}{N_i - 1 + K\alpha} $$ 
+  * $$n_ik $$
+= current assignments to topic k in doc i.
+
+  * $$N_ik $$
+= words in doc i.
+
+  * $$\frac{n_ik + \alpha}{N_i - 1 + K\alpha} $$
+ 
 * Figure out how much topic likes word:
   * $$\frac{m_{word,k} + \alpha}{\sum_{w \in V} m_{w,k} + V\alpha} $$
 * Then multiply the 2 probabilities "How much doc likes topic" * "how much topic likes word"

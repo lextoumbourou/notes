@@ -1,3 +1,11 @@
+---
+title: "Lesson 4: Variability"
+date: 2013-08-30 00:00
+parent: st095-statistics
+status: draft
+modified: 2023-04-08 00:00
+---
+
 # Lesson 4: Variability
 
 * Quanify spread == work out "spreadoutness" of distribution
@@ -16,9 +24,11 @@
     <img src="./images/boxplots.png"></img>
 * Variance:
     * Mean of squared deviations
+
 ```
 sum(each deviation_from_the_mean**2) / sample_count
 ```
+
 * Standard deviation (lower-case sigma)
     * ```sqrt(variance)```
 <img src="./images/std_dev.png"></img>

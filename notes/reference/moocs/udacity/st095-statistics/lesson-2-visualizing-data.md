@@ -1,3 +1,11 @@
+---
+title: "Lesson 2: Visualizing Data"
+date: 2013-08-30 00:00
+parent: st095-statistics
+status: draft
+modified: 2023-04-08 00:00
+---
+
 # Lesson 2: Visualizing Data
 
 * Frequency table
@@ -11,7 +19,7 @@ England   | 100
 
 * Relative frequency == proportion
     * Defined as: frequency / total
-    * India = 10 / 124 == 0.08 
+    * India = 10 / 124 == 0.08
     * Always >= 0 and <= 1
 * Percent = proportion * 100
 * Histogram

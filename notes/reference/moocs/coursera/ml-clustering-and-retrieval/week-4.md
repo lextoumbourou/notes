@@ -1,3 +1,9 @@
+---
+title: Mixture Models
+date: 2021-10-30 00:00:00
+modified: 2023-04-08 00:00:00
+---
+
 # Mixture Models
 
 ## Motivating probabilistic clustering models
@@ -6,7 +12,6 @@
   * Rarely in situation with clear cut cluster differences which k-means implies.
   * Often have overlapping clusters, yep k-means does hard assignment.
   * Cluster centers may not be most important point: may want to take into account shape of cluster.
-
 * Mixture model:
   * Can provide "soft assignment" of observations to clusters.
     * Example: 54% fashion, 30% beauty, 16% travel etc.
@@ -23,7 +28,9 @@
   * Aka normal distribution.
   * Fully specified by **mean** μ and **variance** σ^2 (or **standard deviation** σ).
   * Notated as follows:
+
     $$N(x | \mu, \sigma^2) $$
+
     * x represents the random variable the distribution is over (eg blue intensity)
     * μ and σ^2 represent the fixed "parameters" of the gaussian.
 
@@ -31,22 +38,17 @@
 
 * Gaussian in 2 or more dimensions aka distribution of multiple random variables.
   * Examples: word count of "I" and "we" in social media bios to determine person or people.
-
 * When 2 dimensions is drawn as a 3d mesh plot:
   * Most probable region at tip of peak.
   * Least probable towards the bottom.
-
 * Contour plot:
   * "Birds eye view" of 3d mesh plot.
-
 * In 2D: gaussian fully specified by **mean** ***vector*** and **covariance** ***matrix***
 * Mean vector:
    * $$\mathbf{\mu} = [\mu_{\color{blue}{\text{blue}}}, \mu_{\color{green}{\text{green}}}] $$
    * Mean "centres the distribution in 2D"
        * The middle point between the 2 values means is the centre point of the contour plot.
-
 * Covariance matrix:
-
    * $$\Sigma = \begin{bmatrix}{\sigma_\color{blue}{blue}}^2 & \sigma_{\color{blue}{blue},\color{green}{green}} \\ \sigma_{\color{green}{green},\color{blue}{blue}} & {\sigma_\color{green}{green}}^2 \end{bmatrix} $$
    * determines orientation and spread aka correlation structure (don't quite get this yet). 
 * Covariance structure examples:
@@ -73,9 +75,9 @@
 * Since we initially don't know the image classes, we just have a bunch of gaussians over the entire dataset space.
 * Question: how are you going to model the colour distribution across the entire dataset?
     * Taking the category specific gaussians (but we don't know the labels yet???) and average them together.
-
 * Utilise a weighted average to account for larger numbers of datapoints for a certain category.
-  * Introduce cluster weights $$\pi_k $$where k represents a cluster of datapoints.
+  * Introduce cluster weights $$\pi_k $$
+where k represents a cluster of datapoints.
   * Each weight is between 0 and 1.
   * Sum of the weights always equals or integrates to 1.
   * Called a "convex combination".
@@ -88,7 +90,9 @@
     * $$p(z_i = k) = \pi_k $$
     * Aka prior probability: if you have don't know what the datapoint is, how likely is it?
 * Likelihood term:
-    * Given $$\mathbf{x}_i $$is from cluster k, what's the likelihood of seeing $$\mathbf{x}_i $$?
+    * Given $$\mathbf{x}_i $$is from cluster k, what's the likelihood of seeing $$\mathbf{x}_i $$
+?
+
     * $$p(x_i | z_i = j, \mu_k, \Sigma_k) = N(x_i \mid \mu_k, \Sigma_k) $$
 
 ### Scaling mixtures of Gaussians for document clustering
@@ -103,21 +107,20 @@
 ### Computing soft assignments from known cluster parameters
 
 * Finally here: algorithm to infer cluster parameters is called "Expectation Maximisation" aka EM.
-
 * Steps to infer soft assignments with expectation maximisation (EM):
   1. Start with unlabelled observed inputs.
   2. Output soft assignments per data point.
 
-* Part 1: What if we know the cluster params $$\{\pi_k, \mu_k, \Sigma_k\} $$?
+* Part 1: What if we know the cluster params $$\{\pi_k, \mu_k, \Sigma_k\} $$
+?
     * Easy to compute when known: for each possible cluster, compute prior by likelihood to get responsibily and normalise vector so it sums to 1 over all clusters.
     * Soft assignments are identified by a thing called "responsibility vector":
 
       $$r_i = [r_i1, r_i2 ... r_ik] $$
 
       (where k is the number of clusters in the model)
-    
-    * $$r_{ik} = \frac{\pi_k \space N(x_i \mid \mu_k, \Sigma_k)}{\sum_{j=1}^{K} \pi_j \space N(x_i \mid \mu_k, \Sigma_k)} $$
 
+    * $$r_{ik} = \frac{\pi_k \space N(x_i \mid \mu_k, \Sigma_k)}{\sum_{j=1}^{K} \pi_j \space N(x_i \mid \mu_k, \Sigma_k)} $$
   * When datapoint is closer to cluster centre, cluster is said to take "more responsibility" for datapoint.
 
 ### Estimating cluster parameters from known (hard) cluster assignments
@@ -151,7 +154,6 @@
 * EM is a coordinate-ascent algorithm
   * E and M steps same as alternating maximisations of an objective function.
 * Converges to a local mode.
-
 * Initialisation:
   * Many way to init.
   * Important for convergence rates and quality of local mode.
@@ -159,22 +161,18 @@
     * Choose observations at random to be centres.
     * Choose centres sequentially ala k-means++.
     * Run K-means and use those centres.
-
 * Overfitting of MLE:
   * Maximising likelihood can overfit data.
   * A cluster that has only one value assigned to it would have an infinite likelihood function which would dominate overall likelihood function.
-
 * Overfitting high dimensions:
   * Imagine only 1 doc assigned to cluster k has word w (or all docs in cluster agree on count of word w).
   * Likelihood of any other doc with different count on word w being in cluster k is 0.
-
 * Simple fix: don't let variances get to 0. Add small amount to diagonal of covariance estimate.
   * Alternatively: take Bayesian approach and place prior's on parameters.
 
 ### Relationship to k-means
 
 * Summary: gaussian mixture models becomes near identical to k-means when variance parameter is set to 0.
-
 * If you consider a gaussian mixture model with spherically symmetric clusters (sigma squared is identical along covariance matrix diagonal) and set variance to 0:
   * Clusters have equal variance so relative likelihood is just function of cluster centre.
   * As variance goes to 0, likelihood ratio becomes 0 or 1.
@@ -204,8 +202,8 @@ Out[7]: 0.0006722100227011
 
              Cluster A            | Cluster B          | Cluster C          | Sum
 
-Likelihood   4.2506655934e-06    | 0.000630854709005  | 3.71046481027e-05  | 0.0006722100227011
-L / sum      0.007               | 0.938              | 0.055
+Likelihood 4.2506655934e-06 | 0.000630854709005 | 3.71046481027e-05 | 0.0006722100227011
+L / sum 0.007 | 0.938 | 0.055
 
 ##### Datapoint 1
 
@@ -234,8 +232,8 @@ Out[17]: 0.034234912888197425
 
              Cluster A           | Cluster B           | Cluster C          | Sum
 
-Likelihood   0.00334005398012    | 0.000630854709005   | 0.000140762712251  | 0.004111671401376
-L / sum      0.8123348521971447  | 0.15343023491465782 | 0.034234912888197
+Likelihood 0.00334005398012 | 0.000630854709005 | 0.000140762712251 | 0.004111671401376
+L / sum 0.8123348521971447 | 0.15343023491465782 | 0.034234912888197
 
 ##### Datapoint 2
 
@@ -264,8 +262,8 @@ Out[24]: 0.7501647016792996
 
              Cluster A           | Cluster B           | Cluster C          | Sum
 
-Likelihood   0.00394580754895    | 0.000274168326362   | 0.0126710555509    | 0.016891031426212
-L / sum      0.23360370656979415 | 0.01623159175090619 | 0.7501647016792996
+Likelihood 0.00394580754895 | 0.000274168326362 | 0.0126710555509 | 0.016891031426212
+L / sum 0.23360370656979415 | 0.01623159175090619 | 0.7501647016792996
 
 ##### Full responsibility matrix
 

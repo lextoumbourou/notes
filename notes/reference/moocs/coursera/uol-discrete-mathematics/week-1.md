@@ -4,6 +4,7 @@ date: 2022-10-10 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
+modified: 2023-04-08 00:00:00
 ---
 
 ## 1.104 The definition of a set
@@ -16,15 +17,14 @@ parent: uol-discrete-mathematics
         * relations
         * graph theory
         * finite state machines
-
 * [[Sets]]
     * Collection of any kind of "well-defined" objects: people, ideas or numbers, for example.
     * Set is *unordered* and contains *unique* objects.
     * Examples and notation:
-        * E  = {2, 6, 4, 8}   # Set of positive, even integers < 10.
-        * V = {a, e, i, o, u}  # Set of vowels in English alphabet.
-        * C = {red, green, blue}  # Set of colours.
-        * EmptySet = {}  # Set containing nothing.
+        * E = {2, 6, 4, 8} # Set of positive, even integers < 10.
+        * V = {a, e, i, o, u} # Set of vowels in English alphabet.
+        * C = {red, green, blue} # Set of colours.
+        * EmptySet = {} # Set containing nothing.
     * Math notation
         * Use notation $\in$ to represent that something is element of set: $2 \in E$.
         * Use $\notin$ to present not element of set: $3 \notin E$.
@@ -95,7 +95,6 @@ parent: uol-discrete-mathematics
     * A set can have another set as its element.
         * $\{5, 6\} \in \{\{5, 6\}, \{7, 8\}\}$
         * $\{5,6\} \subseteq \{5, 6, 7\}$
-
 * [[Powerset of a set]]
     * A set containing all subsets of another set.
     * The powerset of $S$ is $P(S)$ which is the set containing all subsets of $S$.
@@ -115,7 +114,6 @@ parent: uol-discrete-mathematics
         * Empty set is the only subset of the empty set: $\emptyset \subseteq \emptyset$
         * Empty set is a set subset of the power set of empty set: $\emptyset \subseteq P(\emptyset)$
         * $P(P(\emptyset)) = \{ \emptyset, \{ \emptyset \} \}$
-
 * [[Cardinality of a powerset]]
     * $|P(S)| = 2^{|S|}$
         * $S = \{1, 2, 3\}$, $|S| = 3$, $|P(S)| = 2^3 = 6$
@@ -130,14 +128,14 @@ parent: uol-discrete-mathematics
         * "The U thing"
     * Set builder: $A \bigcup B = \{ x | x \in A \text{ or } x \in B \}$
     * Python example:
-    
+
     ```
     A = {1, 2}
     B = {2, 3}
     A.union(B)
     # {1, 2, 3}
     ```
-    
+
     * Think of a union between people: it's when people come together to make up a larger set.
     * Membership table
         * Show all combinations of sets an element can belong to.
@@ -150,6 +148,7 @@ parent: uol-discrete-mathematics
  | 0   | 1    | 1       |
  | 1   | 0    | 1       |
  | 1   | 1    | 1       |
+
  
 * [[Intersection]]
      * Set containing elements in both in set A **and** B.
@@ -158,12 +157,14 @@ parent: uol-discrete-mathematics
          * Looks like a horse shoe. The kind you'd take to a dirt road intersection.
      * Think of an intersection between roads: it's the part of road that both of them share.
      * Membership table
+
  | $A$   | $B$    | $A \bigcup B$    |
  | --- | ---  | ---    |
  | 0   | 0    | 0       |
  | 0   | 1    | 0       |
  | 1   | 0    | 0       |
  | 1   | 1    | 1       |
+
  
 * [[Set difference]]
     * Elements in $A$, but not $B$.
@@ -171,12 +172,14 @@ parent: uol-discrete-mathematics
     * Example:
         * {1, 2} - {2, 3} = {1}
     * Membership table:
+
  | $A$   | $B$    | $A \bigcup B$    |
  | --- | ---  | ---    |
  | 0   | 0    | 0       |
  | 0   | 1    | 0       |
  | 1   | 0    | 1       |
  | 1   | 1    | 0       |
+
  
 * [[Symmetric Difference]]
     * Elements in $A$ or in $B$ but not in both.
@@ -189,6 +192,7 @@ parent: uol-discrete-mathematics
         * B = {3, 4, 5}
         * $A \oplus B = \{ 1, 2, 4, 5 \}$
     * Membership table
+
 | $A$ | $B$ | $A \bigcup B$ |
 | --- | --- | ------------- |
 | 0   | 0   | 0             |
@@ -198,6 +202,6 @@ parent: uol-discrete-mathematics
 
 ## 1.112 Essential reading
 
-* Koshy, Thomas.  Discrete Mathematics with Applications.
+* Koshy, Thomas. Discrete Mathematics with Applications.
     * pp. 67-70 and pp. 72- 75
     * pp.76: Exercises: 1–8, 13-27, 30-32 and 41-44.

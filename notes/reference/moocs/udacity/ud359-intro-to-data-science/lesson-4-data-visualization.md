@@ -1,3 +1,9 @@
+---
+title: Lesson 4 - Data Visualization
+date: 2021-10-30 00:00
+modified: 2023-04-08 00:00
+---
+
 # Lesson 4 - Data Visualization
 
 * Information Visulization
@@ -12,7 +18,7 @@
         1. "Craft a narrative"
         2. Know your audience
             * Technically minded?
-            * People you want to recruit 
+            * People you want to recruit
             * Customers
     * Rishi's advice
         * Make is easily understandable but have math/stat rigour
@@ -35,10 +41,11 @@
     * Colour
         * hue
             * categorical data
-        * saturation 
+        * saturation
             * intensity of colour for a hue
 * Plotting with ```ggplot```
     1. Create plot
+
     ```
     > ggplot(data, aes(x_var, y_var))
     ```
@@ -52,9 +59,11 @@
         *```ggtitle('Title')``` - to title plot
         * ```xlab('X Label')``` - label x
     * Example:
+
     ```
     >> print ggplot(df, aes(x="yearID", y="HR")) + geom_point(colour="red") + geom_line()
     ```
+
 * Data types
     * Numeric data
         * A measurement (height, weight) or count (HR or hits)
