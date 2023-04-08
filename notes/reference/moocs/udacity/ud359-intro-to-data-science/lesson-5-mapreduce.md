@@ -1,8 +1,9 @@
 ---
-title: Lesson 5: Map Reduce
+title: "Lesson 5: Map Reduce"
 date: 2021-10-30 00:00
 modified: 2023-04-08 00:00
 ---
+
 # Lesson 5: MapReduce
 
 * Only suitable for reaaaaally big data
