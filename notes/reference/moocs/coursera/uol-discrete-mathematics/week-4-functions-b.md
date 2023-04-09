@@ -1,5 +1,5 @@
 ---
-title: Week 4 - Topic 02 B. Functions
+title: Week 4 - Functions B
 date: 2022-11-02 00:00
 category: reference/moocs
 status: draft
