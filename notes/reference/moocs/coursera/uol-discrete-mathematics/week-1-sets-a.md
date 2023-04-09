@@ -9,7 +9,7 @@ modified: 2023-04-08 00:00:00
 
 ## 1.104 The definition of a set
 
-* [Set Theory](permanent/set-theory.md)
+* [Set Theory](../../../../permanent/set-theory.md)
     * a branch of maths dealing with properties of well-defined collections of objects.
     * Concept of sets by G. Cantor, a German mathematician.
     * Forms the basis of other fields of study:
@@ -33,12 +33,12 @@ modified: 2023-04-08 00:00:00
         * Use $\notin$ to present not element of set:
             * $3 \notin E$.
  
-* [Cardinality of a Set](permanent/set-cardinality.md)
+* [Cardinality of a Set](../../../../permanent/set-cardinality.md)
     * Given set $S$, the cardinality of $S$ is the number of elements contained in $S$.
     * Write cardinality as $|S|$
     * Example: $|C| = 3$
     
-* [Subset](permanent/set-subset.md)
+* [Subset](../../../../permanent/set-subset.md)
     * Express as: $\subseteq$ 
         * Latex: `\subseteq`
     * $A$ is a subset of $B$ if and only if every element of $A$ is also in $B$.
@@ -47,11 +47,11 @@ modified: 2023-04-08 00:00:00
         * $A \subseteq B \iff x \in A \text{ then } x \in B \text{(for all x)}$
     * Any set is a subset of itself: $S \subseteq S$
  
-* [Empty Set](permanent/empty-set.md)
+* [Empty Set](../../../../journal/permanent/empty-set.md)
     * is a subset of any set $\emptyset \subseteq S$
     * empty set is a subset of itself: $\emptyset \subseteq \emptyset$
 
-* [Special Sets](permanent/special-sets.md)
+* [Special Sets](../../../../permanent/special-sets.md)
     * $\mathbf{N}$ = set of natural numbers = {1, 2, 3, 4, ...}
     * $\mathbf{Z}$ = set of integers = {..., -3, -2, -1, 0, 1, ...}
     * $\mathbf{Q}$ = set of rational numbers (of form a/b where a and b are elements of Z and b $\ne$ 0)
@@ -60,11 +60,11 @@ modified: 2023-04-08 00:00:00
 
 ## 1.106 The listing method and rule of inclusion
 
-* [Set Representation Methods](permanent/set-representation-methods.md)
-    * [Set Listing Method](permanent/set-listing-method.md)
-    * [Set Builder Notation](permanent/set-builder-notation.md)
+* [Set Representation Methods](../../../../permanent/set-representation-methods.md)
+    * [Set Listing Method](../../../../permanent/set-listing-method.md)
+    * [Set Builder Notation](../../../../permanent/set-builder-notation.md)
     
-* [Set Listing Method](permanent/set-listing-method.md)
+* [Set Listing Method](../../../../permanent/set-listing-method.md)
     * Represent a set $S$ using all elements of set $S$.
     * Examples:
         * Set of all vowels in English alphabet.
@@ -72,7 +72,7 @@ modified: 2023-04-08 00:00:00
         * Set of all positive integers less than 10.
             * S2 = {1, 2, 3, 4, 5, 6, 7, 8, 9}
             
-* [Set Builder Notation](permanent/set-builder-notation.md)
+* [Set Builder Notation](../../../../permanent/set-builder-notation.md)
     * Examples:
         * Set of all even integers: { ..., -6, -4, -2, 0, 2, 4, 6 ... }
             * $\text{Even} = \{2n | n \in Z \}$
@@ -99,7 +99,7 @@ modified: 2023-04-08 00:00:00
     * A set can have another set as its element.
         * $\{5, 6\} \in \{\{5, 6\}, \{7, 8\}\}$
         * $\{5,6\} \subseteq \{5, 6, 7\}$
-* [Powerset](permanent/set-powerset.md)
+* [Powerset](../../../../permanent/set-powerset.md)
     * A set containing all subsets of another set.
     * The powerset of $S$ is $P(S)$ which is the set containing all subsets of $S$.
     * Example
@@ -125,7 +125,7 @@ modified: 2023-04-08 00:00:00
 
 ## 1.110 Set operations
 
-* [Union Operation](permanent/union.md)
+* [Union](../../../../permanent/union.md)
     * The union of two sets are all element in *either* A or B.
     * Notion: $A \cup B$
     * Latex operator `\cup`
@@ -169,7 +169,7 @@ modified: 2023-04-08 00:00:00
  | 1   | 1    | 1       |
 
  
-* [Set Difference](permanent/set-difference.md)
+* [Set Difference](../../../../permanent/set-difference.md)
     * Elements in $A$, but not $B$.
         * $A - B = \{ x | x \in A \text{ and } x \notin B \}$
     * Example:
@@ -184,7 +184,7 @@ modified: 2023-04-08 00:00:00
  | 1   | 1    | 0       |
 
  
-* [Symmetric Difference](permanent/set-symmetric-difference.md)
+* [Symmetric Difference](../../../../permanent/set-symmetric-difference.md)
     * Elements in $A$ or in $B$ but not in both.
         * $A \oplus B = \{ x | (x \in A \text{ or } x \in B) \text{ and } x \notin A \cap B \}$
     * Latex: `\oplus`

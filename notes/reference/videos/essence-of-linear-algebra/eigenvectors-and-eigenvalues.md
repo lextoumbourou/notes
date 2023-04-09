@@ -62,7 +62,7 @@ Then factor out the $\vec{v}$: $(A - \lambda I)\vec{v} = \vec{0}$
 
 If $\vec{v}$ is 0, that will satisfy the answer, but you want a non-zero $\vec{v}$ as an Eigenvector.
 
-From the lesson on [Matrix Determinate](permanent/matrix-determinate.md), we know that the only way the transformation of a matrix with a non-zero vector is if transformation associated with that matrix squishes space onto a lower dimension. That corresponds to a 0 determinate for the matrix.
+From the lesson on [Determinate of a Matrix](permanent/matrix-determinate.md), we know that the only way the transformation of a matrix with a non-zero vector is if transformation associated with that matrix squishes space onto a lower dimension. That corresponds to a 0 determinate for the matrix.
 
 You can think about the determinate of this matrix: $\det\left(\begin{bmatrix}2 && 2 \\ 1 && 3\end{bmatrix}\right) = 4$
 
@@ -100,7 +100,7 @@ $\det\left(\begin{bmatrix}2 - 1 && 2 \\ 1 && 3 - 1\end{bmatrix}\right) = 0$
  
 What happens if both basis vectors are Eigenvectors? One example is $\begin{bmatrix}-1 && 0 \\0 && 2\end{bmatrix}$.
  
- Notice how there's a positive value on the diagonal and 0s everywhere else? That's a [Diagonal Matrix](permanent/diagonal-matrix.md).
+ Notice how there's a positive value on the diagonal and 0s everywhere else? That's a [Diagonal Matrix](../../../permanent/diagonal-matrix.md).
  
  The way to interpret it is that all the basis vectors are Eigenvectors, with the diagonal entry being Eigenvalues.
  

@@ -10,16 +10,16 @@ parent: uol-discrete-mathematics
 
 ### 1.201 The representation of a set using Venn diagrams
 
-* [Universal Set](permanent/sets-universal-set.md)
+* [Universal Set](../../../../permanent/sets-universal-set.md)
     * A set containing everything.
     * Represented by letter $U$.
     
-* [Complement](permanent/set-complement.md)
+* [Complement](../../../../permanent/set-complement.md)
     * Represented as: $\bar{A}$
     * All the elements in the universal set $U$ but not in $A$: $\bar{A} = U - A$
     * The union of a set and its compliment, is equal to universal set:  $\bar{A} \cup A = U$
 
-* [Venn Diagram](permanent/venn-diagram.md)
+* [Venn Diagram](../../../../permanent/venn-diagram.md)
     * Used to visualise the possible relations among a collection of sets.
     * In this example, the red area represents the union of A and B:
     
@@ -43,7 +43,7 @@ parent: uol-discrete-mathematics
 
 ### 1.203 De Morgan's laws
 
-* [](permanent/de-morgans-laws.md)
+* [De Morgan's Laws](../../../../permanent/de-morgans-laws.md)
     * Augustus De Morgan (1806 - 1871), a British mathematician.
     * Describe how statements and concepts are related through opposites.
     * Example from set theory:
@@ -63,7 +63,7 @@ parent: uol-discrete-mathematics
 
 ### 1.205 Laws of sets: Commutative, associative and distributives
 
-* [Commutative Operation](permanent/commutative-operation.md)
+* [Commutative Operation](../../../../permanent/commutative-operation.md)
     * An operation where order does not affect the results.
         * Additional is commutative: $2 + 3 = 3 + 2$
         * Multiplication is commutative: $2 x 3  = 3 x 2$
@@ -77,7 +77,7 @@ parent: uol-discrete-mathematics
     * Set difference is not commutative:
         * $A - B \neq B - A$
         
-* [Associativity Operation](permanent/associativity-operation.md)
+* [Associativity Operation](../../../../permanent/associativity-operation.md)
     * Concerns grouping of elements in an operation.
         * An example from algebra, the additional of numbers is associative:
             * $(a + b) + c = a + (b + c)$
@@ -91,7 +91,7 @@ parent: uol-discrete-mathematics
     * Set difference is not associate:
         * $(A - B) - C \ne A - (B - C)$
 
-* [Distributivity](permanent/distributivity.md)
+* [Distributivity](../../../../permanent/distributivity.md)
     * Sometimes called the distributive law of multiplication and division.
         * Example in algebra: Given 3 numbers a, b, c: $a(b + c) = ab + ac$
     * Set union is distributive over set intersection:
@@ -99,7 +99,7 @@ parent: uol-discrete-mathematics
     * Set intersection is distributive over set union
         * $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
  
-* [Set Identities](permanent/set-identities.md)
+* [Set Identities](../../../../permanent/set-identities.md)
 
     ![Set identities table](/_media/set-identities-table.png)
     
@@ -116,7 +116,7 @@ parent: uol-discrete-mathematics
 
 ## 1.207 Partition of a set
 
-* [Partition](permanent/set-partition.md)
+* [Partition](../../../../permanent/set-partition.md)
     * To partition an object is to separate it into parts so each parts are separate from each other, but together make up the whole object.
     * A partition of a set $A$ is a set of subsets of $A$ such that:
         * all the subsets of A are disjointed.
@@ -129,7 +129,7 @@ parent: uol-discrete-mathematics
         * $A = A_1 \cup A_2 \cup A_3 \cup A_4 \cup A_5$
         * $\{A_1, A_2, A_3, A_4, A_5\}$ is a partition on $A$
         
-* [Disjoint Sets](permanent/set-disjoint-sets.md)
+* [Disjoint Sets](../../../../permanent/set-disjoint-sets.md)
     * Two sets are considered disjointed if and only if their intersection is an empty set.
         * $A \cap B = \emptyset$
 

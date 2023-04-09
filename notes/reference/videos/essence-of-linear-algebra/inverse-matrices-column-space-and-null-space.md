@@ -10,7 +10,7 @@ parent: essence-of-linear-algebra
 
 These are notes from [Inverse matrices, column space, and null space](https://www.youtube.com/watch?v=uQhTuRlWMxw) video by 3Blue1Brown.
 
-The video provides a view of [Matrix Inverse](permanent/matrix-inverse.md) and [Column Space](permanent/column-space.md) through the lens of linear transformations.
+The video provides a view of [Matrix Inverse](../../../permanent/matrix-inverse.md) and [Column Space](../../../permanent/column-space.md) through the lens of linear transformations.
 
 It's focused on intuition and therefore doesn't cover their computation: there are plenty of resources for that online.
 
@@ -28,11 +28,11 @@ $$
 
 In them, we scale each variable by some value and add together each component. We organize by putting variables on the left and answers on the right. If a term isn't present, we add a 0 before the corresponding variable so everything lines up.
 
-Can put the same information into a [Matrix Multiplication](permanent/matrix-multiplication.md)
+Can put the same information into a [Matrix Multiplication](../../../permanent/matrix-multiplication.md)
 
 $\begin{bmatrix}2 && 5 && 3 \\ 4 && 0 && 8 \\ 1 && 3 && 0\end{bmatrix} \begin{bmatrix}x \\ y \\ z\end{bmatrix} = \begin{bmatrix}-3 \\ 0 \\ 2\end{bmatrix}$
 
-We can visualize a [Matrix Transformation](permanent/matrix-transformation.md) geometrically by finding a vector $\vec{x}$ that, when transformed by $A$, lands on $\vec{v}$.
+We can visualize a [Matrix Transformation](../../../permanent/matrix-transformation.md) geometrically by finding a vector $\vec{x}$ that, when transformed by $A$, lands on $\vec{v}$.
 
 ![Linear system transformation visualisation](/_media/linear-system-trans-visual.png)
 
@@ -72,9 +72,9 @@ The same intuition carries over into higher dimensions.
 
 When the [Determinate of a Matrix](permanent/matrix-determinate.md) is 0 - it squishes space onto a single line or a point - a [Matrix Transformation](permanent/matrix-transformation.md) has no inverse: you can't un-squish a line to transform it onto a plane.
 
-When the output of a transformation is a line, we say it has [Rank](permanent/matrix-rank.md) of 1. 
+When the output of a transformation is a line, we say it has [Rank](../../../permanent/matrix-rank.md) of 1. 
 
-If all the vectors land on a 2d plane, the transformation [Rank](permanent/matrix-rank.md) of 2.
+If all the vectors land on a 2d plane, the transformation [Rank](../../../permanent/matrix-rank.md) of 2.
 
 "Rank" refers to the number of dimensions in the output of a transformation.
 
@@ -82,7 +82,7 @@ In a 2d transformation, a rank 2 means that the [Determinate of a Matrix](perman
 
 For a 3d transformation, a rank 2 means that the transformation is collapsing space.
 
-The set of all possible outputs is called [Column Space](permanent/column-space.md) of a matrix. We call it this because the columns of a matrix say where the [Basis Vectors](permanent/Basis Vectors.md) land and the [Span](permanent/vector-span.md) of basis vectors give all possible outputs.
+The set of all possible outputs is called [Column Space](../../../permanent/column-space.md) of a matrix. We call it this because the columns of a matrix say where the [Basis Vectors](permanent/Basis Vectors.md) land and the [Span](../../../permanent/vector-span.md) of basis vectors give all possible outputs.
 
 So,  column space is equal to the span of columns in your matrix.
 
@@ -96,6 +96,6 @@ For a full rank transformation, the only vector that lands at origin will be the
 
 For matrices that aren't full rank, you can have many matrices that land on 0. If a 2d transformation puts vectors on a line, a line full of vectors will land on the origin.
 
-This set of vectors that land on the origin is called the [Null Space](permanent/null-space.md) or kernel of the vectors. The space of all vectors that become null (land on 0 vectors).
+This set of vectors that land on the origin is called the [Null Space](../../../permanent/null-space.md) or kernel of the vectors. The space of all vectors that become null (land on 0 vectors).
 
 With linear systems of equations $A\vec{x} = \vec{v}$ when $\vec{v}$ happens to be $\begin{bmatrix}0 \\ 0\end{bmatrix}$, the null space gives you all possible solutions to the equation.

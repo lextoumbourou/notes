@@ -54,5 +54,5 @@ $\begin{bmatrix}1 && -\tan(\theta/2) \\ 0 && 1\end{bmatrix} \begin{bmatrix}1 && 
 
 1.  The three matrices are all shear matrices.
 2.  The first and last matrices are the same.
-3. [Matrix Determinate](permanent/matrix-determinate.md) of each matrix is the same.
+3. [Determinate of a Matrix](permanent/matrix-determinate.md) of each matrix is the same.
 4. Since the shear happens in just one plane, and each stage is *conformal* in the area, no aliasing gaps appear.

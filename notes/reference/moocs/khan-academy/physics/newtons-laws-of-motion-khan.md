@@ -4,7 +4,7 @@ date: 2020-06-01 00:00
 status: draft
 ---
 
-* [Newton's Law of Motion](permanent/newtons-laws-of-motion.md)
+* [Newton's Law of Motion](../../../../permanent/newtons-laws-of-motion.md)
     * Newton's 1st law:
         * "An object at rest remains at rest, or if in motion, remains in motion at a constant velocity unless acted on by a net external force."
         * A "net external force" is required for change in velocity, magnitude or direction.
