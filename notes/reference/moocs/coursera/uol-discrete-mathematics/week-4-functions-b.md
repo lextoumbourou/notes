@@ -9,7 +9,7 @@ modified: 2023-04-09 00:00
 
 ## 2.201 Function composition
 
-* [Function Composition](permanent/function-composition.md)
+* [Function Composition](../../../../permanent/function-composition.md)
     * Given two functions f and g:
         * $(f \text{ o } g)(x) = f(g(x))$
         * Firstly we pass $x$ into $g$ to get $g(x)$
@@ -29,7 +29,7 @@ modified: 2023-04-09 00:00
 
 ## 2.203 Bijective function
 
-* [Bijective Function](permanent/bijective-function.md)
+* [Bijective Function](../../../../permanent/bijective-function.md)
     * A function is said to be bijective or invertible if and only if it is both injective and surjective.
     * Examples:
         * $f$ is bijective as it is both injective and surjective.
@@ -49,7 +49,7 @@ modified: 2023-04-09 00:00
                     * $f(x) = y \Rightarrow 2x + 3 = y \Rightarrow 2x = y - 3 \Rightarrow x = \frac{y-3}{2} \in R$
                         * Therefore, for every element $y$ in $R$ there exists $x$ which is $\frac{y - 3}{2}$ such that $y = f(x)$
         * Since we have shown that $f(x) = 2x + 3$ is both injective and surjective, we can infer that it is a bijective function.
-* [Inverse Function](permanent/inverse-function.md)
+* [Inverse Function](../../../../permanent/inverse-function.md)
     * Let $f: A \rightarrow B$
         * If $f$ is bijective (invertible) then the inverse function, $f^{-1}$, exists and is defined as follows: $f^{-1}: B \rightarrow A$
           * What the inverse function really does is reverse the function $f(x)$.
@@ -78,7 +78,7 @@ modified: 2023-04-09 00:00
 
 ## 2.205 Logarithmic functions
 
-* [Exponential Function](permanent/exponential-function.md)
+* [Exponential Function](../../../../permanent/exponential-function.md)
     * $f(x) = b^x$
     * The variable $b$ is called the **base**.
     * Defined by $f : R \rightarrow R^{+}$ and $f(x) = b^{x}$ where $b > 0$ and $b \ne 1$.
@@ -150,7 +150,7 @@ modified: 2023-04-09 00:00
                     * x-intercept: $(1, 0)$
                     * decreasing on: $(0, \infty)$
 
-* [Natural Logarithm](permanent/natural-logarithm.md)
+* [Natural Logarithm](../../../../permanent/natural-logarithm.md)
     * Written as $\ln \ x$
     * $\ln \ x = \log_e x$ where $e = 2.71828$
     * $\ln e = log_e e = 1$
@@ -262,7 +262,7 @@ Let $f$ from $A$ to $B$ defined by the following arrow diagram:
 
 ### Question 3
 
-The [Hamming Distance Function](permanent/hamming-distance-function.md) is important in coding theory.
+The [Hamming Distance Function](../../../../permanent/hamming-distance-function.md) is important in coding theory.
 
 It gives the measure of distance between 2 strings of 0's and 1's that have the same length.
 

@@ -8,14 +8,14 @@ parent: uol-discrete-mathematics
 
 ## 2.101 Introduction
 
-* [Variable](permanent/variable.md)
+* [Variable](../../../../permanent/variable.md)
     * In everyday life, many quantities depend on change in variables:
         * Plant's growth depends on sunlight and rainfall.
         * A runner's speed == how long it takes to run a distance.
 
 ## 2.102 The definition of a function
 
-* [Function](permanent/function.md) 
+* [Function](../../../../permanent/function.md) 
     * A function is a rule that related how one quantity depends on another.
     * It's a central concept in programming.
     * A function is a relationship between a set of inputs and a set of outputs, so inputs map to exactly one output.
@@ -27,11 +27,11 @@ parent: uol-discrete-mathematics
         * We can read this as f maps A to B:
             * $x \in A: \ \ x \rightarrow f(x) = y \ \ \ (y \in B)$
 
-* [Domain of a Function](permanent/function-domain.md)
+* [Domain of a Function](../../../../permanent/function-domain.md)
     * Given the function above, $A$ is the set of all inputs and called the "domain" of $f$.
         * Written as $D_f = A$ 
 
-* [Co-Domain of Function](permanent/function-codomain.md)
+* [Co-Domain of Function](../../../../permanent/function-codomain.md)
     * $B$ is the set containing the outputs and called the co-domain of $f$.
         * Written as $\text{co-}D_f = B$ 
     * The set of all outputs is called the range of f and is written as $R_f$.
@@ -66,7 +66,7 @@ parent: uol-discrete-mathematics
 
 ## 2.104 Plotting functions
 
-* [Linear Function](permanent/linear-function.md)
+* [Linear Function](../../../../permanent/linear-function.md)
     * Linear function is of form: $f(x) = ax + b$
         * Where $a$ and $b$ are real numbers.
         * Straight-line function that passes through point (0, b).
@@ -85,7 +85,7 @@ parent: uol-discrete-mathematics
             
                 ![Linear Decreasing Function](/_media/linear-decreasing.png)
  
-* [Quadratric Functions](permanent/quadatric-functions.md)
+* [Quadratric Functions](../../../../permanent/quadatric-functions.md)
     * Quadratic functions: $f(x) = ax^2 + bx + c$
         *  Where $a$, $b$ and $c$ are real numbers and $a \ne 0$.
         
@@ -107,7 +107,7 @@ parent: uol-discrete-mathematics
         
         * Domain and range are the same as previous function.
         
-* [Laws Of Exponential Functions](permanent/laws-of-exponential-functions.md)
+* [Laws Of Exponential Functions](../../../../permanent/laws-of-exponential-functions.md)
     * $b^xb^y = b^{x + y}$
     * $\frac{b^x}{b^y} = b^{x-y}$
     * $(b^x)^y = b^{xy}$
@@ -117,7 +117,7 @@ parent: uol-discrete-mathematics
 
 ## 2.106 Injective and surjective functions
 
-* [Injective Function](permanent/injective-function.md)
+* [Injective Function](../../../../permanent/injective-function.md)
     * A function is considered *injective* or *one-to-one* if and only if:
         * any 2 distinct inputs will lead to 2 distinct outputs.
         * In other words:
@@ -149,7 +149,7 @@ parent: uol-discrete-mathematics
                 * Let $a, b \in R^{+}$ show that if $a \ne b$ then $f(a) \ne f(b)$
                 * $a \ne b => a^2 \ne b^2$ as $a, b \in R+ => f(a) \ne f(b) => f$ is injective.
                 
-* [Surjective Function](permanent/surjective-function.md)
+* [Surjective Function](../../../../permanent/surjective-function.md)
     * A function is said to be a *surjective* (onto) function if and only if every element of the co-domain of $f$, $B$, has at least one pre-image in the domain of $f, A$.
         * In other words, every element in the output domain has some input that will return it.
     * for all $y \in B$ there exists $x \in A$ such that $y = f(x)$
@@ -159,7 +159,7 @@ parent: uol-discrete-mathematics
         
             ![Surjective Example](/_media/surjective-example.png)
             
-    * An example [Linear Function](permanent/linear-function.md)
+    * An example [Linear Function](../../../../permanent/linear-function.md)
         * Show that the function $f: R -> R$ with $f(x) = 2x+3$ is a surjective (onto) function.
         * Need to show that for any element $y \in R$, there exists $x \in \mathbb{R}$ such that $f(x) = y$
     * Proof:
