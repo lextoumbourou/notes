@@ -28,17 +28,8 @@ USE_FOLDER_AS_CATEGORY = True
 
 ENV = os.environ.get('ENV', 'prod')
 
-def build_url(label, base, end):
-    label_parts = label.split()
-    return base + '-'.join([l.lower() for l in label_parts]) + end
-
 MARKDOWN = {
     "extension_configs": {
-        "wikilinks": {
-            "base_url": "/",
-            "end_url": ".html",
-            "build_url": build_url
-        },
         "markdown.extensions.codehilite": {
             "css_class": "highlight",
         },
@@ -70,6 +61,8 @@ IGNORE_FILE = ['.ipynb_checkpoints']
 LIQUID_CONFIGS = (("CONTENT_DIR", "notes", ""), )
 
 ARTICLE_EXCLUDES = ['journal', 'posts']
+
+RELATIVE_URLS = True
 
 SITEURL = "https://notesbylex.com"
 if ENV == "local":
