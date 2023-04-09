@@ -84,7 +84,7 @@
      np.dot(w, x)
      ```
 
-* [Speed examples](Vectorization.ipynb)
+* [Speed examples](notebooks/Vectorization.ipynb)
 
 ## More examples of vectorization
 

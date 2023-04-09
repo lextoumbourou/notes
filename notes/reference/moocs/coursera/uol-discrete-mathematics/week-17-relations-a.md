@@ -1,5 +1,5 @@
 ---
-title: Week 17 - Topic 09 A. Relations 
+title: Week 17 - Relations A
 date: 2022-02-04 00:00
 category: reference/moocs
 status: draft
@@ -24,8 +24,8 @@ modified: 2023-04-08 00:00
     * relation between a computer language and a valid statement
     * relation between a real number x and the value f(x) where f is a function, and so on.
 * Relations in maths
-    * We can define relationship between elements of 2 [[Set|Sets]].
-    * We can also define the relationship between 2 elements of a [[Set]].
+    * We can define relationship between elements of 2 sets
+    * We can also define the relationship between 2 elements of a set.
 
 ### 9.103 Definition of a relation: relation versus function
 
@@ -130,8 +130,7 @@ $$
     * Consider a relation: $< (x, y) \in R \text{ if and only if } x < y$
     * Every element is not related to itself (hence the diagonal 0s).
 
-    $$
-
+$$
 M_r = \begin{bmatrix}
 0 & 1 & 1 & 1 & 1 \\
 0 & 0 & 1 & 1 & 1 \\
@@ -139,14 +138,14 @@ M_r = \begin{bmatrix}
 0 & 0 & 0 & 0 & 1 \\
 0 & 0 & 0 & 0 & 0 \\
 \end{bmatrix}
-
 $$
+
 * Example 3
     * Let A = { 1, 2, 3, 4, 5 }
     * Consider a relation : $\leq (x, y) \in R$ if and only if $x \leq y$
     * Note the diagonal is all 1s.
     
-    $$
+$$
 M_r = \begin{bmatrix}
 1 & 1 & 1 & 1 & 1 \\
 0 & 1 & 1 & 1 & 1 \\
@@ -158,7 +157,7 @@ $$
 
 * Combining relations
     * Union
-        * The [[Union]] of 2 relations is a new set that contains all of the pairs of elements that are in at least one of the two relations.
+        * The [Union](../../../../permanent/union.md) of 2 relations is a new set that contains all of the pairs of elements that are in at least one of the two relations.
         * The union is written as $R \ U \ S$ or "R or S".
         * $R \ U \ S$ = { $(a, b): (a, b) \in R$ or $(a, b) \in S$ }
     * Intersection
@@ -179,7 +178,7 @@ $$
         * Let R be relation on A defined as follows:
             * R = { $(x, y)$ | x divides y}
             * R can be represented by this digraph
-            * ![[week-17-digraph-relation.png]]
+            * ![week-17-digraph-relation](../../../../_media/week-17-digraph-relation.png)
                 * Each value divides itself, hence the loop at each vertex.
                 * One divides all other elements, so it has a link to each elements.
                 * 2 only divides into 4
@@ -187,7 +186,7 @@ $$
     * Example 2
         * Let A = { 1, 2, 3, 4, 5 }
         * Consider relation: $\leq (x, y) \in R$ if and only if $x \leq y$
-        * ![[week-17-digraph-relation-example-2.png]]
+        * ![week-17-digraph-relation-example-2](../../../../_media/week-17-digraph-relation-example-2.png)
             * Each element is equal to itself.
             * One is less than or equal to all elements.
             * 5 is greater than all elements except itself.
@@ -195,7 +194,7 @@ $$
 
 ### 9.107 The properties of a relation: reflexive, symmetric and anti-symmetric
 
-* Definition of [[Reflexivity]]
+* Reflexivity
     * A relation R in a set S is said to be reflexive if and only if $x \ R \ x$, $\forall x \in S$
         * Or, for all x in the set, if the pairs (x, x) is in the relation, then it's reflexive.
     * Example 1 (reflexive example)
@@ -208,12 +207,12 @@ $$
     * Digraph of reflexive relation
         * Every element will have a loop.
         * In this example, S = {1, 2, 3, 4} and R is a relation of elements S $R = \{ (a, b) \in S^2 | a \leq b \}$
-          ![[week-17-digraph-reflexive.png]]
+          ![week-17-digraph-reflexive](../../../../_media/week-17-digraph-reflexive.png)
     * Matrix of reflexive relation
         * Same example as above.
         * Note that all the values in the diagonal are 1.
-          ![[week-17-reflexive-matrix.png]]
-* Definition of [[Symmetry]]
+          ![week-17-reflexive-matrix](../../../../_media/week-17-reflexive-matrix.png)
+* Definition of [Symmetry](Symmetry)
     * A relation is said to be symmetric if and only if:
         * $\forall a, b \in S$, if $a \ R \ b$ then $b \ R \ a$.
     * Proof: let $a, b \in Z$ with $a \ R \ b$:
@@ -225,7 +224,7 @@ $$
 * Example
     * Let S = {1, 2, 3, 4} and R be relation of elements in S
         * R = { (a,b) \in S^2 | a mod 2 = b mod 2 }
-         ![[week-17-symmetric-relation-example.png]]
+         ![week-17-symmetric-relation-example](../../../../_media/week-17-symmetric-relation-example.png)
 * Matrix of symmetric relation
     * Example
         * Let S = {1, 2, 3, 4} and let R be relation of elements in S
@@ -246,9 +245,9 @@ $$
     * Example
         * Let S = {1, 2, 3, 4} and R be relation on elements in S
             * $R = \{ (a, b) \in S^2 | \text{ a divides b } \}$
-        ![[week-17-anti-symmetric-graph.png]]
+        ![week-17-anti-symmetric-graph](../../../../_media/week-17-anti-symmetric-graph.png)
 * Matrix of an anti-symmetric relation
- ![[week-17-matrix-of-anti-symmetric.png]]
+ ![week-17-matrix-of-anti-symmetric](../../../../_media/week-17-matrix-of-anti-symmetric.png)
 * Exercise
 * Let R be the relation defined by the Matrix M_r
     * $M_r = \begin{bmatrix} 0 & 0 & 1 \\ 1 & 1 & 1 \\ 0 & 0 & 1 \end{bmatrix}$
@@ -270,10 +269,10 @@ $$
 * Example of non-transitive relations
     * R = { (2, 3), (3, 2), (2, 2) }
         * It is not transitive because 3 R 2 and 2 R 3 but 3 \not R 3
-    * ![[week-17-non-transitive-example.png]]
+    * ![week-17-non-transitive-example](../../../../_media/week-17-non-transitive-example.png)
         * Not transitive as:
             * $a \ R \ c$ and $b \ R \ c$, however $a \ \not R \ c$
             * Also: $b \ R \ c$ and $c \ R \ d$ however $b \ \not R \ d$
     * What edges need to be added to make it transitive?
-        * ![[week-17-enhanced-digraph-for-transitive.png]]
+        * ![week-17-enhanced-digraph-for-transitive](../../../../_media/week-17-enhanced-digraph-for-transitive.png)
             * The result enhanced relation is called the "transitive closure of the original relation"
