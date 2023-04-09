@@ -1,5 +1,5 @@
 ---
-title: Week 9 - Topic 05 A. Boolean algebra
+title: Week 9 - Boolean Algebra A
 date: 2022-12-05 00:00
 category: reference/moocs
 status: draft
@@ -11,20 +11,21 @@ modified: 2023-04-08 00:00
 
 ### Video: 5.101 Introduction to Boolean algebra
 
-* History
-    * 384-322 BC: Aristotle develops the foundations of logic.
-    * 1854: George Boole published *An investigation of the laws of thought*
-    * 1904: H.E. Huntington wrote *Sets of independent postulates for the algebra of logic*.
-    * 1938: Claude Shannon wrote a thesis: *A symbolic analysis of relay switching*
-* Boolean algebra is the foundation of computer circuit analysis.
-    * Basic building block for designing transistors, basic elements in processors.
-    * Consider IoT fire system: when high heat is detected, spray water.
-* [[Two-valued Boolean Algebra]]
-    * Most well-known form of Boolean algebra is 2 valued system:
-        * variables take value in set `{0, 1}`
-        * operators `+` and `.` correspond to `OR` and `AND`.
-    * Used to describe and design digital circuits.
-* [[Operations of Boolean Algebra]]
+* [Boolean Algebra](permanent/boolean-algebra.md)
+    * History
+        * 384-322 BC: Aristotle develops the foundations of logic.
+        * 1854: George Boole published *An investigation of the laws of thought*
+        * 1904: H.E. Huntington wrote *Sets of independent postulates for the algebra of logic*.
+        * 1938: Claude Shannon wrote a thesis: *A symbolic analysis of relay switching*
+    * Boolean algebra is the foundation of computer circuit analysis.
+        * Basic building block for designing transistors, basic elements in processors.
+        * Consider IoT fire system: when high heat is detected, spray water.
+    * Two-valued Boolean Algebra
+        * Most well-known form of Boolean algebra is 2 valued system:
+            * variables take value in set `{0, 1}`
+            * operators `+` and `.` correspond to `OR` and `AND`.
+        * Used to describe and design digital circuits.
+* [Operations of Boolean Algebra](permanent/operations-of-boolean-algebra.md)
     * Based on 3 fundamental operations:
         * AND
             * logical product, intersection or conjunction
@@ -38,18 +39,11 @@ modified: 2023-04-08 00:00
     * When parentheses are not used, orperators have order of prefs: NOT > AND > OR.
 * Operations of Boolean algebra
     * The truth tables for the 3 operations can be represented as follows:
-     ![[boolean-algebra-truth-table.png]]
+     ![boolean-algebra-truth-table](../../../../_media/boolean-algebra-truth-table.png)
 
 ### 5.103 Postulates of Boolean algebra
 
-* Outlines
-    * Huntington's postulates
-    * Basic theorems
-    * De Morgan's theorems
-    * Proof of Distributivity of + over .
-    * Priniciple of duality
-    * Ways of proving theorems
-* Huntington's postulates
+* [Huntington's Postulates](journal/permanent/huntingtons-postulates.md)
     * Huntington's posulates define 6 axioms that must be satisfied by any Boolean algebra:
         * closure with respect to the operators:
             * any result of logical operation belongs to the set {0, 1}
@@ -73,7 +67,7 @@ modified: 2023-04-08 00:00
             * $x . x' = 0$
         * distinct elements
             * $0 \ne 1$
-* Basic theorems
+* [Basic Theorems of Boolean Algebra](permanent/basic-theorems-of-boolean-algebra)
     * Using the 6 axioms of Boolean algebra, we can find these useful theorems for analysing and designing circuits
         * theorem 1: idempotent laws
             * $x + x = x$
@@ -93,15 +87,17 @@ modified: 2023-04-08 00:00
             * if $y + x = 1$ and $y . x = 0$ then $x = y'$
         * theorem 7: inversion law
             * $0' = 1$, $1' = 0$
-    * De Morgan's theorems
+    * De Morgan's Theorems
         * **Theorem 1**
             * The complement of a product of variables is equal to the sum of the complements of the variables: $\overline{x. y} = \overline{x} + \overline{y}$
         * **Theorem 2**
             * The complement of a sum of variables is equal to the product of the complements of the variables: $\overline{x + y} = \overline{x} . \overline{y}$
-        ![[de-morgans-boolean-algebra.png]]
+            
+            ![de-morgans-boolean-algebra](../../../../_media/de-morgans-boolean-algebra.png)
+            
     * Proof of distributivity of + over .
         * A truth table to prove the distributivity of + over . using truth tables.
-          ![[proof-of-distributivity-for-.-and-+.png]]
+          ![proof-of-distributivity-for-.-and-+](../../../../journal/_media/proof-of-distributivity-for-.-and-+.png)
     * Principle of duality
         * Starting with a Boolean relation, we can build another equivalent Boolean relation by:
             * changing each **OR (+)** sign to an **AND (.)** sign
@@ -125,9 +121,9 @@ modified: 2023-04-08 00:00
     * Examples
         * Proving **absorption** theorem
             * The absorption theorem can be proved using perfect induction, by writing a truth table.
-              ![[prove-absorption-with-truth-table.png]]
+              ![prove-absorption-with-truth-table](../../../../_media/prove-absorption-with-truth-table.png)
             * It can also be proved directly:
-
+                 * From $x + (x . y) = x$, if we apply the duality principle, we can deduce: $x . (x + y) = x$
 $$
 \begin{align}
 x + (x . y) &= (x . 1) + (x . y) \text{ by } x .1 = x \\
@@ -138,38 +134,30 @@ x + (x . y) &= (x . 1) + (x . y) \text{ by } x .1 = x \\
 \end{align}
 $$
 
-            * From $x + (x . y) = x$, if we apply the duality principle, we can deduce: $x . (x + y) = x$
-
 ### 5.105 Boolean functions
 
-* Outlines
-    * Definition
-    * Algebraic forms
-    * Standardised forms of a function
-    * Building a sum-of-products form
-    * Useful functions
-* [[Boolean Function]]
+* [Boolean Function](permanent/boolean-function.md)
     * A boolean function defines a mapping from one or multiple Boolean input values to a Boolean output value.
     * For $n$ Boolean input values, there are $2^n$ possible combinations.
         * For example, a 3-input function $f$ can be completely defined with an 8-row truth table.
-* Algebraic forms
-    * There is only one way to represent a Boolean function in a truth table.
-    ![[boolean-function-truth-table.png]]
-    * In algebraic form, a function can be expressed in a variety of ways:
-        * For example these are both algebraic representations of the same truth table:
-            * $f(x) = x + x' . y$
-            * $f(x) = x + y$
-* Standardised forms of a function
-    * The two most common standardised forms:
-        * sum-of-products form
-        * product-of-sums form
-        * [[Sum-of-Products Form]]:
-            * Variables built using the `AND` operator, are summed together using the `OR` operator.
-            * Example: $f(x, y, z) = xy + xz + yz$
-        * [[Product-of-Sums Form]]
-            * Variables built using the `OR` operator, are multiplied together using the `AND` operator.
-            * Example: $f(x, y, z) = (x + y)(x + z)(y + z)$
-        * The sum-of-products form is easier to use so it's used by the course.
+    * Algebraic forms
+        * There is only one way to represent a Boolean function in a truth table.
+        ![boolean-function-truth-table](../../../../journal/_media/boolean-function-truth-table.png)
+        * In algebraic form, a function can be expressed in a variety of ways:
+            * For example these are both algebraic representations of the same truth table:
+                * $f(x) = x + x' . y$
+                * $f(x) = x + y$
+    * Standardised forms of a function
+        * The two most common standardised forms:
+            * sum-of-products form
+            * product-of-sums form
+            * [Sum-of-Products Form](permanent/sum-of-products-formm.md):
+                * Variables built using the `AND` operator, are summed together using the `OR` operator.
+                * Example: $f(x, y, z) = xy + xz + yz$
+            * [Product-of-Sums Form](permanent/product-of-sums-form.md)
+                * Variables built using the `OR` operator, are multiplied together using the `AND` operator.
+                * Example: $f(x, y, z) = (x + y)(x + z)(y + z)$
+            * The sum-of-products form is easier to use so it's used by the course.
 * Building a sum-of-products form
     * 1. Focus on the values of the variable that make the function equal to $1$.
     * 2. If an input equals $1$, it appear *uncomplemented* in the expression.
@@ -183,12 +171,12 @@ $$
     * The "exclusive-or" function: $x \oplus y$:
         * defined as "true if either x or y is true, but not both"
         * represented by this truth table:
-                      ![[excluse-or-function-truth-table.png]]
+                      ![excluse-or-function-truth-table](../../../../_media/excluse-or-function-truth-table.png)
         * can be expressed as:
             * $x \oplus y = x ' y + xy'$
     * The "implies" function: $x \rightarrow y$:
         * defined as "if x then y"
         * represented by this truth table:
-                      ![[implies-function-truth-table.png]]
+                      ![implies-function-truth-table](../../../../_media/implies-function-truth-table.png)
         * can be expressed as:
             * $x \rightarrow y = x' + y$
