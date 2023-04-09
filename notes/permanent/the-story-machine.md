@@ -10,4 +10,4 @@ One of the two methods of story telling in games. The game isn't designed with a
 
 Sports are another example of this, where a story can be told about the battle between participants. 
 
-The opposite of [String of Pearls](permanent/string-of-pearls.md) in which a linear, non-interactive story is followed by a player interspersed with periods of free play.
+The opposite of [String of Pearls](string-of-pearls.md) in which a linear, non-interactive story is followed by a player interspersed with periods of free play.

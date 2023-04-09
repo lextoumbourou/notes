@@ -16,7 +16,7 @@ The diagram below shows a hypothetic request to update a client's score.
 
 ![Server Authoritative Multiplayer](/_media/server-auth.png)
 
-In this architecture, the server act's as the games [Rule Enforcer](permanent/rule-enforcer.md).
+In this architecture, the server act's as the games [Rule Enforcer](rule-enforcer.md).
 
 #### Reference
   

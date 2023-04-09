@@ -12,7 +12,7 @@ Notes from [Linear combinations, span, and basis vectors](https://www.youtube.co
 
 In the xy coordinate system there are 2 special vectors. One pointing to the right called $\hat{i}$: $\begin{bmatrix}1 \\ 0\end{bmatrix}$  or *"the unit vector in the x direction"* and one pointing up called $\hat{j}$: $\begin{bmatrix}1 \\ 0\end{bmatrix}$ or *"the unit vector in the y direction"*.
 
-We consider these the [Basis Vectors](permanent/basis-vectors.md) of the XY coordinate system.
+We consider these the [Basis Vectors](../../../permanent/basis-vectors.md) of the XY coordinate system.
 
 If you have a vector like $\begin{bmatrix}3 \\ -2\end{bmatrix}$, we can think of each component as a scalar that scales the Basis Vectors. The 3 scales the vector in the x-direction $\rightarrow$ and -2 in the y-direction $\uparrow$.
 

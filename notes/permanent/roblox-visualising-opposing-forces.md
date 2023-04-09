@@ -18,7 +18,7 @@ $$
 \begin{bmatrix} 0 \\ 5 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ -5 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 + 0 \\ 5 + (-5) \\ 0 + 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 0 \end{bmatrix}
 $$
 
-See [Vector Addition](permanent/vector-addition.md).
+See [Vector Addition](vector-addition.md).
 
 ![y-axis bodyforce](../_media/bodyforce-yaxis-equal-net-forces.gif)
 

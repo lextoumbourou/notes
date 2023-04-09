@@ -20,7 +20,7 @@ Like 2d space, linear transformations in 3d keep the grid lines evenly spaced an
 
 In 3d space, we have basis vectors that describe the space. However, in 3d space we have 3 standard basis vectors: $\hat{i} = \begin{bmatrix}1 \\ 0 \\ 0\end{bmatrix}$, $\hat{j} = \begin{bmatrix}0 \\ 1 \\ 0\end{bmatrix}$ and $\hat{k} = \begin{bmatrix}0 \\ 0 \\ 1\end{bmatrix}$
 
-We can record where the basis vectors land after a transformation as columns of a 3x3 matrix. That represents a [Matrix Transformation](permanent/matrix-transformation.md)
+We can record where the basis vectors land after a transformation as columns of a 3x3 matrix. That represents a [Matrix Transformation](../../../permanent/matrix-transformation.md)
 To find where a 3d vector lands after a transformation, we can use identical reasoning to 2d dimensional space.
 
 We can think of each component of a vector as instructions for how to scale each basis vector.

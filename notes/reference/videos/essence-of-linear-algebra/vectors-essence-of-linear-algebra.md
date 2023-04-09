@@ -1,5 +1,5 @@
 ---
-title: Vectors | Chapter 1, Essense of linear algebra
+title: Essense of linear algebra
 date: 2021-04-06 22:00
 category: reference/videos
 cover: /_media/vectors-3blue1brown-cover.png
@@ -74,7 +74,7 @@ Vectors are the building block of linear algebra.
 
     $$\begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} 3 \\ -1 \end{bmatrix} = \begin{bmatrix} 1 + 3 \\ 2 + -1 \end{bmatrix} = \begin{bmatrix} 4 \\  1\end{bmatrix}$$
 
-* Vector multiplication is when you multiply a vector by a number ([Vector Scaling](permanent/vector-scaling.md)) either stretching or squishing the vector by that amount.
+* Vector multiplication is when you multiply a vector by a number ([Vector Scaling](../../../permanent/vector-scaling.md)) either stretching or squishing the vector by that amount.
 
     ![Vector scaling](/_media/vector-scaling.png)
 

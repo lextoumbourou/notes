@@ -21,7 +21,7 @@ We can set the offset through other properties like `WorldCFrame`.
 
 Attachments are used by some [Roblox Constraints](../../permanent/roblox-constraint.md) and are valid parents for some objects:
 
-* `ParticleEmitter` and `Fire` if you want to emit from an attachment instead of a part's [Roblox CFrame](permanent/roblox-cframe.md).
+* `ParticleEmitter` and `Fire` if you want to emit from an attachment instead of a part's [Roblox CFrame](../../permanent/roblox-cframe.md).
 * `PointLight` and `SpotLight` to shine from attachment.
 * `Sound` to change the focal point of sound.
 
@@ -31,5 +31,5 @@ Key properties:
 * `CFrame` - CFrame offset of the attachment.
 * `Orientation` - represents orientation relative to parent.
 * `Position` - positional offset, relative to parent.
-* `SecondaryAxis` - represents direction of Y-Axis relative to `Rotation` as unit [Roblox Vector3](permanent/roblox-vector3.md).
+* `SecondaryAxis` - represents direction of Y-Axis relative to `Rotation` as unit [Roblox Vector3](../../permanent/roblox-vector3.md).
 * `Visible` - toggle visibility of the Attachment.

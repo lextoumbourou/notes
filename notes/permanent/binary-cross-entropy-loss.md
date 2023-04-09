@@ -40,6 +40,6 @@ which is equivalent to this function:
 
 {% notebook permanent/notebooks/bce-loss-function.ipynb cells[5:7] %}
 
-Use [`nn.BCEWithLogitsLoss`](https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html) if your model architecture doesn't perform the [Sigmoid Activation Function](Sigmoid Activation Function.md) on the final layer. That's equivalent to [`nn.CrossEntropyLoss`](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) in PyTorch (see [Categorical Cross-Entropy Loss](permanent/categorical-cross-entropy-loss.md)).
+Use [`nn.BCEWithLogitsLoss`](https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html) if your model architecture doesn't perform the [Sigmoid Activation Function](Sigmoid Activation Function.md) on the final layer. That's equivalent to [`nn.CrossEntropyLoss`](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) in PyTorch (see [Categorical Cross-Entropy Loss](categorical-cross-entropy-loss.md)).
 
 [@howardDeepLearningCoders2020] *(pg. 256-257)*

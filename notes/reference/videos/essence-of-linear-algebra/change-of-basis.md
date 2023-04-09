@@ -48,7 +48,7 @@ You can think of the process as first describing the vector that we "thought she
 
 What about going the other way? How do you convert a vector in our basis to an alternate basis?
 
-You start with the transformation metric for the alternate grid, then take [Matrix Inverse](permanent/matrix-inverse.md). The inverse of a transformation takes a transform and plays it backward.
+You start with the transformation metric for the alternate grid, then take [Matrix Inverse](../../../permanent/matrix-inverse.md). The inverse of a transformation takes a transform and plays it backward.
 
 In summary, a matrix that describes an alternate coordinate system can transform from our basis into an alternate basis.
 
@@ -56,7 +56,7 @@ The inverse does the opposite.
 
 ---
 
-Vectors aren't the only things we describe using coordinates. When we use a [Matrix Transformation](permanent/matrix-transformation.md) to transform a matrix, the matrix represents where our basis vectors land after the transformation.
+Vectors aren't the only things we describe using coordinates. When we use a [Matrix Transformation](../../../permanent/matrix-transformation.md) to transform a matrix, the matrix represents where our basis vectors land after the transformation.
 
 How would we translate that matrix to another basis?
 

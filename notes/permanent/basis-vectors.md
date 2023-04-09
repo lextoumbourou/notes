@@ -7,7 +7,7 @@ cover: /_media/basis-vector-cover.png
 summary: The set of vectors that defines space.
 ---
 
-The set of [Vector](permanent/vector.md)s that defines space is called the *basis*.
+The set of [Vector](vector.md)s that defines space is called the *basis*.
 
  We refer to these vectors as *basis vectors*.
 
@@ -21,7 +21,7 @@ For example, if I have vector $\begin{bmatrix}10 \\ -7\end{bmatrix}$, we can tre
 
 We can choose any set of vectors as the basis vectors for space, giving us entirely new coordinate systems. However, they must meet the following criteria:
 
-* They're linear independent. That means you cannot get one [Vector](permanent/vector.md) by just scaling the other.
+* They're linear independent. That means you cannot get one [Vector](vector.md) by just scaling the other.
 * They span the space. That means, by taking a linear combination of the two scaled vectors, you can return any vector.
 
 Basis vectors don't have to be orthogonal to each other, but transformations become more challenging with a non-orthogonal basis.

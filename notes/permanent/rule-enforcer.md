@@ -12,7 +12,7 @@ To prevent cheating, a game needs a rule enforcer.
 
 In traditional games, players themselves enforce the rules. Or, if the stakes are high enough, a referee is assigned. In video games enforcing can be performed by the computer by just being constraints of the game world. This allows for more complex, subtle, and rich rule sets since players no longer have to keep them all in their heads.
 
-In multiplayer games, a single computer is not enough to enforce rules. Game architecture like [Server Authoritative Multiplayer](permanent/server-authoritative-multiplayer.md) allows the server to perform as an enforcer for many potentially untrustworthy clients.
+In multiplayer games, a single computer is not enough to enforce rules. Game architecture like [Server Authoritative Multiplayer](server-authoritative-multiplayer.md) allows the server to perform as an enforcer for many potentially untrustworthy clients.
 
 [@schellArtGameDesign2015a] *(pg 177-178)*
 

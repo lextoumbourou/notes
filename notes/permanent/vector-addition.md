@@ -8,7 +8,7 @@ tags:
   - LinearAlgebra
 ---
 
-We add two [Vector](permanent/vector.md)s together by adding the corresponding components.
+We add two [Vector](vector.md)s together by adding the corresponding components.
 
 $$\vec{a} + \vec{b} = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} + \begin{bmatrix} b_1 \\ b_2 \end{bmatrix} = \begin{bmatrix} a_1 + b_1 \\ a_2 + b_2 \end{bmatrix} $$
 
@@ -16,8 +16,8 @@ Vector addition requires both vectors to have equal dimensions.
 
 We can visualize Vector addition as follows:
 
-1. draw the 1st [Vector](permanent/vector.md)
-2. draw the 2nd [Vector](permanent/vector.md) starting from the tip of the 1st [Vector](permanent/vector.md)
+1. draw the 1st [Vector](vector.md)
+2. draw the 2nd [Vector](vector.md) starting from the tip of the 1st [Vector](vector.md)
 3. Draw a line from the tail of the 1st Vector to the tip of the 2nd.
 
 ![Vector addition visual example](/_media/vector-add-example.gif)

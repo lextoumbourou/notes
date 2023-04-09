@@ -7,7 +7,7 @@ tags:
   - LinearAlgebra
 ---
 
-We subtract one [Vector](permanent/vector.md) from another by subtracting the corresponding components.
+We subtract one [Vector](vector.md) from another by subtracting the corresponding components.
 
 $$\vec{a} - \vec{b} = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} - \begin{bmatrix} b_1 \\ b_2 \end{bmatrix} = \begin{bmatrix} a_1 - b_1 \\ a_2 - b_2 \end{bmatrix} $$
 
@@ -15,9 +15,9 @@ Another way to think of vector subtraction, is [Vector Addition](Vector Addition
 
 We can visualize Vector subtraction as follows:
 
-1. draw the 1st [Vector](permanent/vector.md)
-2. draw the 2nd negative [Vector](permanent/vector.md) as a vector pointing in the opposite direction
-3. Draw a line from the tail of the 1st [Vector](permanent/vector.md) to the tip of the negative 2nd [Vector](permanent/vector.md).
+1. draw the 1st [Vector](vector.md)
+2. draw the 2nd negative [Vector](vector.md) as a vector pointing in the opposite direction
+3. Draw a line from the tail of the 1st [Vector](vector.md) to the tip of the negative 2nd [Vector](vector.md).
 
 ![Vector subtraction visual example](/_media/vector-subtract-example.gif)
 

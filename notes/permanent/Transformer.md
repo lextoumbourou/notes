@@ -6,7 +6,7 @@ status: draft
 
 A Transformer is a sequence-to-sequence [Model Architecture](Model Architecture).
 
-It takes an input sequence, performs an [Embeddings](Embeddings) operation to convert to a [Vector](permanent/vector.md) of length 512
+It takes an input sequence, performs an [Embeddings](Embeddings) operation to convert to a [Vector](vector.md) of length 512
 
 We pass our sequence batch through [Self-Attention](Self-Attention) layer. We'll talk about that next.
 
