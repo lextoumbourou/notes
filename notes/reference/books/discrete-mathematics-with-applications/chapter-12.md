@@ -7,11 +7,11 @@ status: draft
 
 ## Chapter 12. Boolean Algebra and Combinatorial Circuits
 
-* 1854: [[George Boole]]'s book [[An Investigation of the Laws of Thought]]
+* 1854: [George Boole](George Boole)'s book [An Investigation of the Laws of Thought](An Investigation of the Laws of Thought)
     * Was the foundation for Symoblic Logic and Boolean Algebra.
     * Didn't have much application until...
-* 1938: [[Claude E. Shannon]] used boolean algebra to analyze electrical circuits.
-* [[Boolean Algebra]]
+* 1938: [Claude E. Shannon](Claude E. Shannon) used boolean algebra to analyze electrical circuits.
+* [Boolean Algebra](../../../permanent/boolean-algebra.md)
     * Mathematical system
     * *"it consists of a nonempty set S with one or more operations defined on S, and a set of axioms that the elements of S satisfy."*
     * Think of it like a skeleton. Though people's exterior differs, under it all we are just a walking skeleton.

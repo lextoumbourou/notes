@@ -21,10 +21,10 @@ parent: linear-algebra-machine-learning
     
         $\begin{bmatrix}2 & 3 \\ 10 & 1 \end{bmatrix}\begin{bmatrix}a \\ b\end{bmatrix} = \begin{bmatrix}8 \\ 13\end{bmatrix}$
     
-   * A matrix product multiplies each row in A by each column in B (see [[Matrix Multiplication]]).
+   * A matrix product multiplies each row in A by each column in B (see [Matrix Multiplication](../../../../permanent/matrix-multiplication.md)
    * So we could rephrase the question as which vector transforms to give you the answer?
 
-* What happens when you multiply the matrix by the [[Basis Vectors]]:
+* What happens when you multiply the matrix by the [Basis Vectors](../../../../permanent/basis-vectors.md):
 
     $\begin{bmatrix}2 & 3 \\ 10 & 1 \end{bmatrix} \begin{bmatrix}1 \\ 0\end{bmatrix} = \begin{bmatrix}2 \\ 10\end{bmatrix}$
 
@@ -78,7 +78,7 @@ parent: linear-algebra-machine-learning
  
 ### Types of matrix transformation
 
-* [[Identity Matrix]] (00:00-00:53)
+* [Identity Matrix](../../../../permanent/identity-matrix.md) (00:00-00:53)
     * A matrix that doesn't change any vector/matrix it multiplies. Like 1 in scalar math.
     
         $\begin{bmatrix}1 & 0 \\ 0 & 1\end{bmatrix} \begin{bmatrix}a \\ b\end{bmatrix} =  \begin{bmatrix}a \\ b\end{bmatrix}$
@@ -150,7 +150,7 @@ parent: linear-algebra-machine-learning
     
     We can call the matrix $A$, vector $r$ and output $s$: $A r = s$
     
-* [[Inverse Matrix]] (00:59-02:04)
+* [Inverse Matrix](permanent/inverse-matrix.md) (00:59-02:04)
 
     * Can we find another matrix that, when multiplied by A, gives us the identity matrix? $A^{-1} A = I$
         * We consider the "inverse" of $A$ since it reverses A and gives you the identity matrix.
@@ -159,7 +159,7 @@ parent: linear-algebra-machine-learning
     * Since we know that $A^{-1} A$ is simply the identity matrix, we can simplify:  $r = A^{-1} s$
     * So, if we can find the inverse of $A^{-1}$, we can solve the apples and bananas problem.
          
- * Solving matrix problems with [[Elimination]] and [[Back Substitution]] (02:15-08:00)
+ * Solving matrix problems with Elimination and Back Substitution (02:15-08:00)
     *  We can also solve the apples / bananas problem with just substitution.
 
         $\begin{bmatrix}1 & 1 & 3\\ 1 & 2 & 4 \\ 1 & 1 & 2\end{bmatrix}\begin{bmatrix}a \\ b \\ c\end{bmatrix} = \begin{bmatrix}15 \\ 21 \\ 13 \end{bmatrix}$
@@ -172,7 +172,7 @@ parent: linear-algebra-machine-learning
 
         $\begin{bmatrix}1 & 1 & 3\\ 0 & 1 & 1 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}a \\ b \\ c\end{bmatrix} = \begin{bmatrix}15 \\ 6 \\ 2 \end{bmatrix}$
 
-        We know we have what's called a [[Triangular Matrix]], which is a matrix where everything below the "body diagonal" is 0. We have reduced the matrix to [[Row Echelon Form]].
+        We know we have what's called a [Triangular Matrix](Triangular Matrix), which is a matrix where everything below the "body diagonal" is 0. We have reduced the matrix to [Row Echelon Form](Row Echelon Form).
 
         We can take c from each of the rows.
 
@@ -184,14 +184,14 @@ parent: linear-algebra-machine-learning
 
         $\begin{bmatrix}1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}a \\ b \\ c\end{bmatrix} = \begin{bmatrix}5 \\ 4 \\ 2 \end{bmatrix}$
 
-    * So we've first done [[Elimination]] to get to triangular form.
-    * Then do [[Back Substitution]] to get a solution to the problem.
+    * So we've first done [Elimination](Elimination) to get to triangular form.
+    * Then do [Back Substitution](Back Substitution) to get a solution to the problem.
     * This is one of the most computationally efficient ways to solve the problem.
     * However, we have solved the problem, but we haven't solved it in a general way.
 
 ### Going from Gaussian Elimination to finding the inverse matrix
 
-* Using [[Elimination]] to find the [[Inverse Matrix]] (00:00-07:26)
+* Using [Elimination](Elimination) to find the [Inverse Matrix](Inverse Matrix) (00:00-07:26)
     * Here, we have a 3x3 matrix $A$ multiplied by its inverse $B$, which equals the identity matrix.
     
         $A \cdot B = I$
@@ -229,7 +229,7 @@ parent: linear-algebra-machine-learning
   
 ### Determinates and inverses
   
-* [[Matrix Determinate]] (00:00-05:36)
+* [Matrix Determinate](../../../../permanent/Matrix Determinate.md) (00:00-05:36)
 
   * A matrix like this scales space: $\begin{bmatrix}a & 0 \\ 0 & d\end{bmatrix}$ by a factor of $ad$.
   * $ab$ is called the "determinate" of the transformation matrix.
@@ -238,11 +238,11 @@ parent: linear-algebra-machine-learning
 
   * If you have matrix $\begin{bmatrix}a & b \\ 0 & d\end{bmatrix}$ you create a parallelogram, but the area is still $ad$
 
-       ![Determinate of a Matrix that transforms space to Parallelogram](/_media/laml-determinate-of-a-matrix-parallelogram.png)
+       ![Determinate of a Matrix that transforms space to Parallelogram](../_media/laml-determinate-of-a-matrix-parallelogram.png)
 
   * If you have a general matrix $\begin{bmatrix}a & b \\ c & d\end{bmatrix}$, the area creating by transforming the basis vectors is $ad-bc$
 
-       ![Maths for finding determinate of a matrix](/_media/laml-maths-for-finding-determinate.png)
+       ![Maths for finding determinate of a matrix](../_media/laml-maths-for-finding-determinate.png)
 
   * We denote finding the determinate as $|A|$.
 
@@ -252,12 +252,12 @@ parent: linear-algebra-machine-learning
 
   * Knowing how to find the determinate in the general case is generally not a valuable skill. We can ask our computer to do it:  $\det(A)$.
 
-* When a matrix doesn't have a [[Matrix Inverse]] (05:38-09:19)
+* When a matrix doesn't have a [Matrix Inverse](../../../../permanent/matrix-inverse.md) (05:38-09:19)
 
   * Consider this matrix: $A=\begin{bmatrix}1 & 2\\1 & 2\end{bmatrix}$
       * It transforms $\hat{e}_1$ and $\hat{e}_2$ to be on the same line.
       * The determinate of A is 0: $|A|=0$
-      * If you had a 3x3 matrix, where one of the [[Basis Vectors]] was just a multiple of the other 2, ie it isn't linearly independent, the new space would be a plane, which also has a determinate of 0.
+      * If you had a 3x3 matrix, where one of the [Basis Vectors](../../../../permanent/basis-vectors.md) was just a multiple of the other 2, ie it isn't linearly independent, the new space would be a plane, which also has a determinate of 0.
 
   * Consider another matrix. This one doesn't describe a new 3d space. It collapses into a 2d space.
 
@@ -271,6 +271,6 @@ parent: linear-algebra-machine-learning
       $\begin{bmatrix}1 & 1 & 3 \\ 0 & 1 & 1 \\ 0 & 0 & 0\end{bmatrix} \begin{bmatrix}a \\ b \\ c\end{bmatrix} = \begin{bmatrix}12 \\ 5 \\0 \end{bmatrix}$
 
 
-      So, where the [[Basis Vectors]] that describe the matrix aren't linear independent, which means the determinate is 0, you cannot find the inverse matrix.
+      So, where the [Basis Vectors](../../../../permanent/basis-vectors.md) that describe the matrix aren't linear independent, which means the determinate is 0, you cannot find the inverse matrix.
 
 * Another way to think of inverse matrix is something that undoes a transformation and returns the original matrix.

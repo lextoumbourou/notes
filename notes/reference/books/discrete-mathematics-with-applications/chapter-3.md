@@ -3,6 +3,7 @@ title: Discrete Mathematics with Applications
 date: 2022-10-11 00:00
 category: reference/books
 status: draft
+modified: 2023-04-09 00:00
 ---
 
 Notes from [Discrete Mathematics with Applications] by Susanna Epp.
@@ -20,10 +21,10 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
 * Concept of a set fundamental: "revolutionised mathematical thinking"
 * Foundation of set theory laid by German mathematician Georg Cantor in latter part of 19th century.
 * Problems looked at:
-    • Find the number of positive integers ≤ N and divisible by a, b, or c.
-    • How many subsets does a finite set with n elements have?
-    • How would you define the set of legally paired parentheses?
-    • How many sequences of legally paired parentheses can be formed using n pairs of left and right parentheses?
+    * Find the number of positive integers ≤ N and divisible by a, b, or c.
+    * How many subsets does a finite set with n elements have?
+    * How would you define the set of legally paired parentheses?
+    * How many sequences of legally paired parentheses can be formed using n pairs of left and right parentheses?
 
 ### 2.1 The Concept of a Set
 
@@ -44,7 +45,7 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
         * Reads as: "set consisting o all objects x such that x has the property P(x)"
         * Let B bet the set of all months of the year with exactly 30 days. Then
             * $B = \{x | x \text{ is a month of the year with exactly 30 days }\}$
-            *    = $\{\text{September, April, June, November}\}$
+            * = $\{\text{September, April, June, November}\}$
 * Russell's Paradox
     * $S = \{ X | X \notin X \}$
         * $S$ consists of all sets that do not belong to themselves as elements.
@@ -80,9 +81,9 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
         * In a Venn diagram, universal set U is represented by points inside a rectangle and sets by the points enclodes by simple close.
     * No overlap:
     ![Venn diagram no overlap](/_media/venn-no-overlap.png)
-    *  A subset of B
+    * A subset of B
     ![Venn diagram subset](/_media/venn-subset.png)
-    
+
     * A and B has common elements.
     ![Venn common elements](/_media/venn-common-elements.png)
 * Power Set
@@ -109,7 +110,7 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
     * open–closed interval - `(a, b] = {x ∈ R|a < x ≤ b}`
     * open interval `(a, b) = {x ∈ R|a < x < b}`
         * A bracket at the end point means it is included in set, where parenthesis indicates it is not included.
-        * Set $\{ x \in R|x \geq a \}$ is denoted by $[a, \infty)$. 
+        * Set $\{ x \in R|x \geq a \}$ is denoted by $[a, \infty)$.
 * The Hilbert Hotel Paradoxes
     * Paradox one:
         * A major hotel has infinite rooms.
@@ -150,21 +151,21 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
             * {Jan, March, May, July, September, November }
         * 4. The set of solutions of the equation x^2 - 5x + 6 = 0
             * {2, 3} (had to use Wolfram Alpha for this. Forgetten how to do solution sets).
-    *  Rewrite each using set-builder notation.
+    * Rewrite each using set-builder notation.
         * 5. The set of integers between 0 and 5:
-            *  $S = \{x \in \mathbf{R} | 0 < x < 5 \}$
+            * $S = \{x \in \mathbf{R} | 0 < x < 5 \}$
         * 6. Set of January, February, May and July :
-            *  $B = \{x | x \text{ is a month of the year in January ,February, May and July }\}$
+            * $B = \{x | x \text{ is a month of the year in January ,February, May and July }\}$
         * 7. Set of all members of United Nations
-            *  $B = \{x | x \text{ is a country that is member of UN }\}$
+            * $B = \{x | x \text{ is a country that is member of UN }\}$
         * 8. $\{ \text{Asia}, \text{Australia}, \text{Antartica}\}$
-            *  $B = \{x | x \text{ is a continent in Asia, Australia, Antartica }\}$
+            * $B = \{x | x \text{ is a continent in Asia, Australia, Antartica }\}$
     * Determine if 2 sets are equals:
         * 9. {x, y, z}, {x, z, y}
             * These are equal as they contain same elements.
         * 10. {x | x^2 = 1}, {x|x^2 = x}
             * These are not equal. The first is: $\{1\}$, the second is $\{0, 1\}$
-        *  11. {x | x^2 = x}, {0, 1}
+        * 11. {x | x^2 = x}, {0, 1}
             * Equal.
         * 12. $\{x, \{y\}\}, \{\{x\}, y\}$
             * Not equal.
@@ -187,7 +188,7 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
             * False. The empty set is not in an empty set.
         * 21. $\emptyset \in \{ \emptyset \}$
             * True. The empty set is in this set.
-        * 22. $\{ x | x \neq x \} = \emptyset$ 
+        * 22. $\{ x | x \neq x \} = \emptyset$
             * True. There is no x that isn't equal to x.
         * 23. {x, y} = {y, x}
             * True. Order of elements does not matter.
@@ -204,10 +205,10 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
         * 29. The set of words in the dictionary is infinite
             * False. There are a finite set of words in the dictionary.
     * Find the power set of each set
-        * 30. $P(\emptyset)$ = $\{ \emptyset \}$ 
+        * 30. $P(\emptyset)$ = $\{ \emptyset \}$
         * 31. $P( \{ a \})$ = $\{ \emptyset, \{ a \} \}$
         * 32. $P(\{a,b,c \}) = \{ \emptyset, \{ a \}, \{ b \}, \{ c \}, \{ a, b \}, \{ b, c\}, \{a, c \}, \{ a, b, c \} \}$
-        * 33.  Number of subsets with n elements = $2^{|n|}$
+        * 33. Number of subsets with n elements = $2^{|n|}$
 
 ### 2.2 Operations with Sets
 
@@ -218,7 +219,9 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
 * Intersection
     * The **intersection** of 2 sets $A$ and $B$ denoted by $A \cap B$ is the set of elements common to A and B.
     * $A \cap B = \{ | (x \in A) \land (x \in B)\}$
-    * ![[sets-fig-2.4.png]]
+
+    * ![sets-fig-2.4](../../../_media/sets-fig-2.4.png)
+
     * 2 sets are considered disjointed if their intersection is the empy set.
 * Difference
     * The difference of two set $A$ and $B$ (or **relative complement** of B in A) denoted by $A - B$.
@@ -231,25 +234,27 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
     * In $A$ or $B$ but not both.
 * Set and Logic Operations
     * Set and Logic operations are closely related:
+
 | Set operation  | Logic operation |
 | -------------- | --------------- |
 | $A \cup B$     | $p \lor q$      |
 | $A \cap B$     | $p \land q$     |
 | $\overline{A}$ | $\neg p$        |
 | $A \oplus B$   | p XOR q         |
-        * 
-* [[Inclusion-Exclusion Principal]]
+
+* [Inclusion-Exclusion Principal](../../../permanent/inclusion-exclusion-principal.md)
     * Let A and B be two finite sets.
     * $|A \cup B| = |A| + |B| - |A \cap B|$
     * Proof
-        * Suppose $|A \cup B| = k$ 
+        * Suppose $|A \cup B| = k$
         * Since $A \cap B \subseteq A$ and $A \cap B \subseteq B$
         * We can assume $|A| = k + m$ and $|B| = k + n$ for some nonnegative integers m and n
         * Then:
             * $|A \cup B| = m + k + n$
             * $= (m + k) + (n + k) - k$
             * $= |A| + |B| - |A \cap B|$
-    ![[discrete-mathematics-with-applications-fig-2-22.png]]
+
+    ![discrete-mathematics-with-applications-fig-2-22](../../../_media/discrete-mathematics-with-applications-fig-2-22.png)
 
 ### Recursively Defined Sets
 
@@ -299,5 +304,4 @@ If f is a function from X to Y, we write f : X -> Y. The set X is the domain of 
 
 If X = Y, then f is said to be a function on X.
 
-pp.123-124, exercises 1-4 and 25, 26, 41, 43. 
-
+pp.123-124, exercises 1-4 and 25, 26, 41, 43.

@@ -39,12 +39,12 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 * On the other hand: ordering notes, writing early drafts from notes and performing final edits is mentally light.
 * Writing is the best, perhaps the only, "facilitator" for reading, writing and any intellectual endeavour.
 * Writing a paper step by step:
-    * Take [[Fleeting Notes]] when reading: temporary notes that you put in an inbox to process later.
-    * Convert fleeting notes to [[Literature Notes]].
+    * Take [Fleeting Notes](../../permanent/fleeting-notes.md) when reading: temporary notes that you put in an inbox to process later.
+    * Convert fleeting notes to [Literature Notes](../../permanent/literature-notes.md).
         * Be very selective and use your own words.
         * Be careful of using quotes in place of actual understanding.
         * Keep bibliographic reference with your lit notes.
-    * Make [[Permanent notes]].
+    * Make [Permanent Notes](../../permanent/permanent-notes.md).
         * Go through notes in the previous steps and consider how they relate to interests.
         * Once you have a full slipbox, you can compare ideas to those already in slipbpx.
         * Write one note for each idea.
@@ -66,7 +66,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 
 ## 3. Everything You Need to Have
 
-* Slipbox follows the [[Russian Model]]: "Focus on the essentials, don’t complicate things unnecessarily."
+* Slipbox follows the Russian Model: "Focus on the essentials, don’t complicate things unnecessarily."
     * Named after the story by De Bono: NASA invested in research for find a gravity-independent pen which could write in space. Russian simply used pencils.
         * Side note: the story is false: https://www.scientificamerican.com/article/fact-or-fiction-nasa-spen/
         
@@ -79,8 +79,8 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
     * The slip-box
     * An editor
 * Workflow
-    * Any time you have an idea, add it to a notepad or some inbox that you will process later [[Fleeting Notes]].
-    * Use a reference management system like Zotero to handle citations, which can be linked to from your [[Reference Notes]].
+    * Any time you have an idea, add it to a notepad or some inbox that you will process later [Fleeting Notes](../../permanent/fleeting-notes.md).
+    * Use a reference management system like Zotero to handle citations, which can be linked to from your [Literature Notes](../../permanent/literature-notes.md).
         * Create a slipbox: either using sheets of paper "about the size of a postcard (Luhmann used the DIN A6 size, 148 x 105 mm or 5.83 x 4.13 inches)" or a program like [Zettelkasten](https://zettelkasten.de/the-archive/)
     * Use an editor, preferable that works with Zotero or your reference manager.
 
@@ -112,7 +112,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
     * permanent noets
     * project notes
 * 3 common mistakes:
-    * treat everything as [[Permanent Notes]] ie scientific journal
+    * treat everything as [Permanent Notes](../../permanent/permanent-notes.md) ie scientific journal
         * good ideas get diluted by other ideas
         * ideas order chronologically are difficult to search
     * collect notes only relevant to project
@@ -134,7 +134,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 * Study guides usually describe paper writing as a linear process: make decision on what to write about, plan, research, then write.
 * However, decision on what to write about has to be informed from reading you've already done on topic and other topics, to determine if it's a topic with merit.
 * Brainstorming is another technique that is often prescribed, but all the ideas that appear to originate in your brain, actual have sources that need to be traced.
-* Using the Zettelkasten system, your [[Permanent Notes]] will develop clusters of your own interests.
+* Using the Zettelkasten system, your [Permanent Notes](../../permanent/permanent-notes.md) will develop clusters of your own interests.
     * Additionally, nature questions will arise that lead you to more reading.
 
 ## 8. Let the Work Carry You Forward
@@ -143,7 +143,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
     * Similar to endergonic reaction which releases energy, as opposed to an exergonic reaction, which requires energy.
     * Trying to motivate yourself with rewards doomed to fail - eventually you'll take a shortcut to the rewards.
 * Feedback loops crucial part of learning: nothing motivates us more than getting better at what we do.
-* Most reliable predictor for long-term success: [[Growth Mindset]]
+* Most reliable predictor for long-term success: [Growth Mindset](../../permanent/growth-mindset.md)
     * Growth mindset = "getting pleasure out of changing for the better (inwardly rewarding) vs being praised (outwardly rewarding)"
     * Gifted students are often praised which leads to a fixed mindset to focus on keeping the impression intact.
 * Feedback also a key part of development:
@@ -152,13 +152,13 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
     * Writing what you've read in your own words forces a deep understanding.
         * Can't fool yourself incomprehensible literature notes, as you'll be force to understand it when creating permanent notes.
         * The more we do it, the better and faster we get, which allows for more learning - another positive feedback loop.
-* Writing [[Permanent Notes]] another positive feedback loop:
+* Writing [Permanent Notes](../../permanent/permanent-notes.md) another positive feedback loop:
     * Forces you to think your ideas through.
     * Combining previously writen notes shows contradictions, inconsistencies and repetitions.
 * Searching through slipbox for categorising notes another important benefit:
     * Shows related notes we may not have considered
 * Slipbox works in a similar fashion to our brains:
-    * the more we add, the bigger our [[Latticework of Mental Models]]  (Munger 1994) grows.
+    * the more we add, the bigger our [Latticework of Mental Models](../../permanent/latticework-of-mental-models.md)  (Munger 1994) grows.
 
 ## The Six Steps To Successful Writing
 
@@ -235,14 +235,14 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
         * what's in the slipbox will shape what's in your head.
     * Handwriting notes work particularly well in lectures because handwriting is slower, therefore the notetaker must write just the "gist" of what was heard
         * In order to write the gist, you must understand it.
-    * Extensiveness of [[Literature Notes]] depends on the text (pg. 83).
+    * Extensiveness of [Literature Notes](../../permanent/literature-notes.md) depends on the text (pg. 83).
         * Text on topics you're very unfamiliar with will require more ntoes.
     * What matters above all is the actual writing of slipbox notes.
         * Sometimes reflection on what's not written is needed: frame, theortical background or author, methodological approach etc.
 * 10.2 Keep an Open Mind
     * Ideally, given a hypthosis we would seek to find arguments and facts that challenge our way of thinking
         * However, our brains do not tend to work that way by default
-            * We are naturally drawn to stuff that confirms our belief: [[Confirmation Bias]]
+            * We are naturally drawn to stuff that confirms our belief: [Confirmation Bias](../../permanent/confirmation-bias.md)
     * We tend to find ourselves drawn to people that think like us, and read and listen to publications that confirm our beliefs.
     * Best scientists and thinkers are not free from it, but activately seek to counter it
         * Charles Darwin would constantly force himself to understand  arguments that were critical of his theories.
@@ -290,7 +290,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 * 11.2 Think Outside The Brain
     * Putting effort into writing in our own words best way to test our understanding of a topic and whether we have sufficient supporting sources like references on hand.
     * Writing gives us distance from argument and allows us to "scrutinise" our understanding.
-    * Author's example of collecting [[Literature Notes]]:
+    * Author's example of collecting [Literature Notes](../../permanent/literature-notes.md):
         * Step 1. Take notes thinking about arguments in the context of the book: 
             * Is it convincing?
             * What methods do they use?
@@ -306,7 +306,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
                 * This allows us to make clear distinctions between ideas.
         * 11.3 Learn by not trying
             * Elaboration increases likelihood that we'll remember long-term
-                * [[Literature notes]] are archived and would be otherwise lost in reference system if we didn't do something with them
+                * [Literature Notes](../../permanent/literature-notes.md) are archived and would be otherwise lost in reference system if we didn't do something with them
             * Transferring ideas to "external memory" allows us to forget, which paradoxically facilities long-term learning.
                 * Remembering everything is to know nothing. Consider [Solormon Shereshevsky](https://en.wikipedia.org/wiki/Solomon_Shereshevsky).
             * Robert and Elizabeth Lison Bjork suggest that we can distinguish between 2 different measurements of memory: storage strength and retrieval strength (Bjork 2011)
@@ -347,7 +347,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
             * Can remind us of old ideas and trigger new ones.
         * Links between articles more important.
     * One can't get an overview of the whole slipbox (like the brain) but can for a topic
-        * System for ordering topics an ongoing project, so [[Topic Overview]] is also written as note.
+        * System for ordering topics an ongoing project, so [Topic Overview](../../permanent/topic-overview.md) is also written as note.
     * Archiver vs writer
         * Archiver: keywords are used to store notes
         * Writer: where would I want to stumble on note after forgetting.
@@ -356,7 +356,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 * 12.2 Make smart connections
 	* Cross-referencing a crucial part of developing thoughts within slipbox
 	* Luhmann had 4 types of cross-references that he used. Only the 1st and 4th relevant for digital slipboxes, the other to compensate for short comings of the physical boxes:
-		* Links on the [[Topic Overview]].
+		* Links on the [Topic Overview](../../permanent/topic-overview.md).
 			* The topic overview is referenced directly from the index, as entry point into topic.
 			* Used on topic fleshed out enough that this is required.
 			* Considered an inbetween step for writing manuscript.
@@ -390,7 +390,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 				* In flash cards, surrounding context is not included.
 					* Ideas, for example scientific terms or concepts, are only meaningful within context: otherwise they're "just words"
 			* In science, as in life, we use our accumulation of knowledge and experience to interpret info and handle situations.
-			* Useful to build a [[Latticework of Mental Models]], a term coined by Charlie Munger.
+			* Useful to build a [Latticework of Mental Models](../../permanent/latticework-of-mental-models.md), a term coined by Charlie Munger.
 				* He advocates for a "broad theoretical toolbox"
 					* looks for powerful concepts across many disciplines
 					* having a range of mental models allows you to avoid getting attached to just a few
@@ -440,7 +440,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
                  * Abraham Wald
                     * In WW2 was tasked with finding areas in planes to reinforce. Instead of reinforcing the areas that had sustained hits, as intuition tells us, he reinforced areas that hadn't been hit. Key idea is that the planes that didn't make it back where hit in areas surviving planes weren't.
                         * Called Survivorship Bias
-                * [[Survivorship Bias]] (Taleb 2005)
+                * [Survivorship Bias](../../permanent/survivorship-bias.md) (Taleb 2005)
                     * Product managers make mistake on regular basis
                         * Don't consider that a product isn't in the market because it has already failed.
                         * Some companies don't keep track of their own failures, leaving new generations of employees to make the same mistakes (McMath and Forbes 1999)
@@ -461,7 +461,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
                 * Breakthroughs in scentific process are sometimes simple principals behind complicated processes
                     * Flying example: for a long time we tried to emulate birds, until we discovered that the key is a subtle bend of the wings (Burger and Starbird)
             * Simple ideas can tied into theories to build complexity
-                * See [[Software Entropy]]
+                * See [Software Entropy](../../permanent/software-entropy.md)
             * Using slipbox trains these intellectual skills deliberately 
                 * Check we really understand a text by having our interpretation right in front of us
                 * Focus on gist (the abstraction) by restricting space
@@ -496,7 +496,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 * 13.3 Getting Things Done By Following Our Interests
     * Only 2nd to autonomy, motivation is the key factor in successful students.
     * Even highly intelligent students fail because:
-        * they can't see the value in what they're learning ([[Teaching the whole game]] tries to solve this)
+        * they can't see the value in what they're learning ([Teaching the whole game](../../permanent/teaching-the-whole-game.md) tries to solve this)
         * unable to make connections to personal goals
         * don't feel like they can control their education's direction
     * Nothing is more motivating than feeling like your project is moving forward, nothing more demotivational than not

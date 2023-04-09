@@ -104,7 +104,7 @@ parent: attention-models-in-nlp
 
 ## Scaled and Dot-Product Attention
 
-* The main operation in a transformer is [[Scaled-Dot Product Attention]].
+* The main operation in a transformer is [Scaled-Dot Product Attention](Scaled-Dot Product Attention).
 * Recall that it has queries, keys and values.
 * The attention layer outputs context vectors for each query.
     * These are weighted sums of the value $V$.
@@ -118,7 +118,7 @@ $$
 \text{softmax}( \frac{QK^{T}}{\sqrt{d_k}}) V
 $$
 
-* This mechanism is efficient: relies on only matrix multiplications and [[Softmax Activation Function]].
+* This mechanism is efficient: relies on only matrix multiplications and [Softmax Activation Function](../../../../permanent/Softmax Activation Function.md).
 * Usually run on GPUs or TPUs to speed up the training.
 
 ### Queries, Keys and Values
@@ -133,7 +133,7 @@ $$
     * The number of vectors for key and values will usually be the same.
     ![Key and values](/_media/attention-key-and-values.png)
 
-* Now compute the product using [[Matrix Multiplication]] between $Q$ and the transposed $K$
+* Now compute the product using [Matrix Multiplication](../../../../permanent/matrix-multiplication.md) between $Q$ and the transposed $K$
 * Then scale by inverse of square of dimension of key vectors: $\sqrt{d_k}$
     * The computation, will give you a matrix with weights for each key per query.
     * Weight matrix will have total number of elements equal to: `(num_queries X num_keys)`.
@@ -173,7 +173,7 @@ $$
 
 ## Multi-head Attention
 
-* One improve that can be made on the attention mechanisms discussed so far is [[Multi-Head Attention]].
+* One improve that can be made on the attention mechanisms discussed so far is [Multi-Head Attention](Multi-Head Attention).
     * Apply multiple versions of Scaled-Dot Product Attention in parallel.
     * Then apply a transformations many times.
     * Different sets of representation, allows model to return multiple relationships betweens words in query and key matrice.

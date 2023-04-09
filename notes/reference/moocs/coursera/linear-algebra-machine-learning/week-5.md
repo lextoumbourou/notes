@@ -13,7 +13,7 @@ parent: linear-algebra-machine-learning
 * "Eigen" is translated from German as "characteristic."
 * "Eigenproblem" is about finding characteristic properties of something.
  
-* Geometric interpretation of [[Eigenvector]] and [[Eigenvalues]] (00:45-04:22)
+* Geometric interpretation of [Eigenvector](../../../../permanent/eigenvector.md) and [Eigenvalue](../../../../permanent/eigenvalue.md) (00:45-04:22)
     * Though we typically visualize linear transformations based on how they affect a single vector, we can also consider how they affect every vector in the space by drawing a square.
 
         ![Visualing all vectors in space as square](/_media/laml-all-vectors-in-space-square.png)
@@ -35,8 +35,8 @@ parent: linear-algebra-machine-learning
 
         ![Highlighted vectors after scaling](_media/laml-vectors-after-scaling.png)
 
-    * The vectors that point in the same direction we refer to as [[Eigenvector]].
-    * The vectors that point in the same direction and whose size does not change are said to have [[Eigenvalues]] 1.
+    * The vectors that point in the same direction we refer to as [Eigenvector](../../../../permanent/eigenvector.md).
+    * The vectors that point in the same direction and whose size does not change are said to have [Eigenvalues](Eigenvalues) 1.
         * In the above example, the vertical Eigenvector doubles in length, with an Eigenvalue of 2.
 
     * In a pure sheer operation, only the horizontal vector is unchanged. So the transformation has 1 Eigenvector.
@@ -47,21 +47,21 @@ parent: linear-algebra-machine-learning
 ### Special eigen-cases
 
 * Recap (00:00-00:18):
-    * [[Eigenvector]] lie along the same span before and after applying a linear transform to a space.
-    * [[Eigenvalues]] are the amount we stretch each of those vectors in the process.
+    * [Eigenvector](../../../../permanent/eigenvector.md) lie along the same span before and after applying a linear transform to a space.
+    * [Eigenvalues](Eigenvalues) are the amount we stretch each of those vectors in the process.
 
 * 3 special Eigen-cases (00:18-02:15)
     * Uniform scaling
         * Scale by the same amount in each direction.
         * All vectors are Eigenvectors.
     * 180° rotation
-        * In regular rotation, there are no Eigenvectors. However, in 180° rotation, all vectors become [[Eigenvector]] pointing in the opposite direction.
-            * Since they are pointing in the opposite direction, we say they have [[Eigenvalues]] of -1.
+        * In regular rotation, there are no Eigenvectors. However, in 180° rotation, all vectors become [Eigenvector](../../../../permanent/eigenvector.md) pointing in the opposite direction.
+            * Since they are pointing in the opposite direction, we say they have [Eigenvalues](Eigenvalues) of -1.
             
                 ![180 degree rotation Eigenvectors](/_media/laml-180-rotation-eigenvectors.png)
             
     * Combination of horizontal sheer and vertical scaling
-        * Has 2 [[Eigenvector]]. The horizontal vector and a 2nd Eigenvector between the orange and pink vector.
+        * Has 2 [Eigenvector](../../../../permanent/eigenvector.md). The horizontal vector and a 2nd Eigenvector between the orange and pink vector.
         
             ![Eigenvectors after horizontal and vertical scaling](/_media/laml-horizontal-and-vertical-scaling.png)
             
@@ -72,7 +72,7 @@ parent: linear-algebra-machine-learning
         
 ### Calculating eigenvectors
 
-* Calculating [[Eigenvector]] in general case (00:24-04:36)
+* Calculating [Eigenvector](../../../../permanent/eigenvector.md) in general case (00:24-04:36)
     * Given transformation $A$, Eigenvectors stay on the same span after the transformation.
     * We can write the expression as $Ax = \lambda x$ where $\lambda$ is a scalar value, and $x$ is the Eigenvector.
     * Trying to find values of x that make the two sides equal.
@@ -80,15 +80,15 @@ parent: linear-algebra-machine-learning
     * A is an n-dimensional transform.
     * To find the solution of the express, we can rewrite:
         * $(A - \lambda I)x = 0$
-            * The $I$ is an $n \times n$ [[Identity Matrix]] that allows us to subtract a matrix by a scalar, which would otherwise not be defined.
+            * The $I$ is an $n \times n$ [Identity Matrix](permanent/Identity Matrix.md) that allows us to subtract a matrix by a scalar, which would otherwise not be defined.
         * For the left-hand side to be 0, either:
             * Contents of the bracket are 0.
             * x is 0
         * We are not interested in the 2nd case as it means it has no length or direction. We call it a "trivial solution."
-        * We can test if a matrix operation results in 0 output by calculating its [[Matrix Determinate]]: $det(A - \lambda I) = 0$
+        * We can test if a matrix operation results in 0 output by calculating its [Matrix Determinate](permanent/Matrix Determinate.md): $det(A - \lambda I) = 0$
         * We can apply it to an arbitrary 2x2 matrix: $A = \begin{bmatrix}a & b \\ c & d \end{bmatrix}$ as follows: $det(\begin{bmatrix}a & b \\ c & d \end{bmatrix} - \begin{bmatrix}\lambda & 0 \\ 0 & \lambda \end{bmatrix}) = 0$
-        * Evaluating that gives us the [[Characteristic Polynomial]]: $\lambda^{2} - (a+d) \lambda + ad - bc = 0$
-        * Our [[Eigenvalues]] are the solution to this equation. We can then plug the solutions into the original expression.
+        * Evaluating that gives us the [Characteristic Polynomial](Characteristic Polynomial): $\lambda^{2} - (a+d) \lambda + ad - bc = 0$
+        * Our [Eigenvalues](Eigenvalues) are the solution to this equation. We can then plug the solutions into the original expression.
 * Applying to a simple vertical scaling transformation (04:36-07:53):
     * Give vertical scaling matrix: $A = \begin{bmatrix}1 & 0 \\ 0 & 2\end{bmatrix}$
     * We calculate the determinate of $A - I\lambda$: $det \left( \begin{bmatrix}1 - \lambda & 0 \\ 0 & 2 - \lambda \end{bmatrix} \right)$ as $(1-\lambda)(2-\lambda)$ which equals $0$
@@ -96,7 +96,7 @@ parent: linear-algebra-machine-learning
     * We can sub these two values back in:
         * 1st case: $@\lambda = 1$: $\begin{bmatrix}1 & -1 & 0 \\ 0 & 2 & -1\end{bmatrix} \begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \begin{bmatrix}0 & 0 \\0 & 1 \end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix}0 \\ x_2\end{bmatrix} = 0$
         * 2nd case: $@\lambda = 2$: $\begin{bmatrix}1 & -2 & 0 \\ 0 & 2 & -2\end{bmatrix} \begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \begin{bmatrix}-1 & 0 \\0 & 0 \end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix}-x_1 \\ 0\end{bmatrix} = 0$
-    * We know that any vectors that point along the horizontal axis can be [[Eigenvector]] of this system.
+    * We know that any vectors that point along the horizontal axis can be [Eigenvector](../../../../permanent/eigenvector.md) of this system.
         * $@\lambda = 1$: $x=\begin{bmatrix}t \\ 0\end{bmatrix}$
             * When $\lambda=1$, the Eigenvector can point anywhere along the horizontal axis.
         * $@\lambda = 2$: $x=\begin{bmatrix}0 \\ t\end{bmatrix}$
@@ -123,10 +123,10 @@ parent: linear-algebra-machine-learning
             
         * If you wanted to apply it millions of times, the operation could be expensive.
     * Can instead square $T$ to get the same result: $v_2 = {T^2} v_0$ or to the power of any $n$: $v_n = {T^n} v_0$
-    * If T was is a [[Diagonal Matrices]], where all terms along the leading diagonal are 0, you can simply square the non-zero values as: $T^{n} = \begin{bmatrix}a^n & 0 & 0 \\ 0 & b^n & 0 \\ 0 & 0 & c^n\end{bmatrix}$
+    * If T was is a [Diagonal Matrices](Diagonal Matrices), where all terms along the leading diagonal are 0, you can simply square the non-zero values as: $T^{n} = \begin{bmatrix}a^n & 0 & 0 \\ 0 & b^n & 0 \\ 0 & 0 & c^n\end{bmatrix}$
     * When all terms except those along diagonal are 0.
-    * If the matrix isn't diagonal, you can construct a Diagonal Matrix using [[Eigenanalysis]].
-* Constructing a [[Diagonal Matrix]]
+    * If the matrix isn't diagonal, you can construct a Diagonal Matrix using [Eigenanalysis](Eigenanalysis).
+* Constructing a [Diagonal Matrix](Diagonal Matrix)
     * Plug in Eigenvectors as columns: $C = \begin{bmatrix}x_1 & x_2 & x_3 \\ . & . & . \\ . & . & . \\ . & . & .\end{bmatrix}$
     * Create a diagonal matrix from that: $D = \begin{bmatrix} \lambda_1 & 0 & 0 \\ 0 & \lambda_2 & 0 \\ 0 & 0 & \lambda_3 \end{bmatrix}$
     * We then want to convert back to the original transformation, which we can use the inverse.
@@ -161,7 +161,7 @@ parent: linear-algebra-machine-learning
 
 ### Introduction to PageRank
 
-* [[PageRank]] (00:00-07:20)
+* [PageRank](PageRank) (00:00-07:20)
     * Ranks websites by importance based on the importance of pages that link to them.
         * Central assumption: "the importance of a website is related it links to and from other websites."
     
@@ -188,9 +188,9 @@ parent: linear-algebra-machine-learning
     * Applying repeated means, we are solving iteratively until $r$ stops changing.
     * This means that $r$ is an Eigenvector of matrix $L$, with an Eigenvalue of 1.
         * We might assume that we could apply the Diagonalisation method, but we would first need to know all the Eigenvalues, which is what we're trying to find.
-    * Though there are many approaches for efficiently calculating Eigenvectors, randomly multiplying a randomly selected initial guest vector by a matrix, called the [[Power Method]], is still very effective.
+    * Though there are many approaches for efficiently calculating Eigenvectors, randomly multiplying a randomly selected initial guest vector by a matrix, called the [Power Method](Power Method), is still very effective.
         * The power method will only give you one Eigenvector for an n by n webpage system, the vector you get will be the one you're looking for with an Eigenvalue of 1.
-        * The graph for the whole internet will be very [[Sparse Matrix]]. Algorithms exist that allow us to perform efficient matrix multiplication.
+        * The graph for the whole internet will be very [Sparse Matrix](Sparse Matrix). Algorithms exist that allow us to perform efficient matrix multiplication.
 * The damping factor $D$ (07:20-08:24)
     * Adds an additional term to formula: $r^{i+1}=d\left( {L_r}^{i} \right) + \frac{1-d}{n}$
     * It's the probability that a random web surfer will type a URL instead of clicking

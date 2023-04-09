@@ -20,6 +20,6 @@ We can visualize Vector addition as follows:
 2. draw the 2nd [Vector](vector.md) starting from the tip of the 1st [Vector](vector.md)
 3. Draw a line from the tail of the 1st Vector to the tip of the 2nd.
 
-![Vector addition visual example](/_media/vector-add-example.gif)
+![Vector addition visual example](../_media/vector-add-example.gif)
 
 [@3blue1brownVectorsChapterEssence2016]
