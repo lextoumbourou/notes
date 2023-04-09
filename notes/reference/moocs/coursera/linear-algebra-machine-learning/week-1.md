@@ -69,7 +69,7 @@ parent: linear-algebra-machine-learning
 * Vectors don't  just to describe objects in geometric space, they can describe directions along any sort of axis
     * Can think of them as just lists.
     * Space of all possible cars: `[cost_in_euros, emissions, top_speed, ...]`
-        * Computer science view of vectors. See [Vector](permanent/vector.md).
+        * Computer science view of vectors. See [Vector](../../../../permanent/vector.md).
     * Spatial view is more familiar for physics.
     * Einstein conceived of time being another dimension. Space-time is a 4-dimensional vector.
 
@@ -80,9 +80,9 @@ parent: linear-algebra-machine-learning
   * Example vector might include properties of a house: 120 sqm^2, 2 bedrooms, one bathroom, $150k: `[120, 2, 1, 150]`
 
 * Vector should obey two rules:
-      1. We can add vectors (see [[Vector Addition]]).
+      1. We can add vectors (see [Vector Addition](../../../../permanent/vector-addition.md)).
           * associative: doesn't matter what order you add 
               `vector_1 + vector_2 = vector_2 + vector_1`
           * Since subtraction is just the addition of the negative, i.e.` r - r = r + (-r)`, the same rules apply to subtraction as addition.
-      2. We can multiply vectors by a scalar (see [[Vector Scaling]]).
+      2. We can multiply vectors by a scalar (see [Vector Scaling](../../../../permanent/vector-scaling.md)).
           * Multiples each value in the vector by some scalar: `2 * [1, 2] = [1 * 2, 2 * 2] = [2, 4]`

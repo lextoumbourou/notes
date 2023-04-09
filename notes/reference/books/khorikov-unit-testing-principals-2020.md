@@ -251,7 +251,7 @@ status: draft
 * Rule of thumb: you don't assert interactions with stubs as it leads to test fragility.
   * Another term for verifying implementation details instead of end result = overspecification
 * Sometimes same double will be mock and stub. If different methods are used, then haven't violated the rule.
-* Mocks and stubs are related to the [[Command Query Separation (CQS) Pattern]]
+* Mocks and stubs are related to the Command Query Separation (CQS) Pattern.
   * Command are methods with side effects - generally they should not return a value (some exceptions to this like `array.pop()` methods that return the popped item)
   * Query is the opposite - it has no side effects and is used to return a value to client.
 * Observable behaviour vs implementation details
@@ -263,11 +263,11 @@ status: draft
     * Exposes an operation (calculation or side effect) that lets client do something.
     * Exposes a state (condition of a system) that lets client do something
   * If neither traits, then it's an implementation detail
-* When observable behaviours coincides with public API and all implementation details are private, we consider it a [[Well-Designed API]]
+* When observable behaviours coincides with public API and all implementation details are private, we consider it a [Well-Designed API](../../permanent/well-designed-api.md)
   * Simple way to tell if class leaks implementation detail, if the number of operations client has to invoke to achieve goal is greater than 1.
   * A well designed API automatically improves unit tests.
-* [[Encapsulation]]
-  * Act of protecting against [[Invariant]] violations
+* [Encapsulation](../../permanent/encapsulation.md)
+  * Act of protecting against invariant violations
     * By leaking implementation details you run the risk of exposing invariant violations (ie allowing data to get into incorrect state)
   * Good encapsulation protects against errors as the complexity of the code base increases: "You cannot trust yourself to do the right thing all the time - so, eliminate the very possibility of doing the wrong thing"
     * Related to Martin Fowler's [Tell Don't Ask](https://www.martinfowler.com/bliki/TellDontAsk.html#:~:text=Tell%2DDon't%2DAsk,an%20object%20what%20to%20do) principal.

@@ -49,10 +49,10 @@ status: draft
 
 ## Chapter 2
 
-* [Out-of-domain data](permanent/out-of-domain-data.md) (pg. 104)
+* [Out-of-domain data](../../permanent/out-of-domain-data.md) (pg. 104)
     * Data that is given to a model that is different to the data it was trained on.
     * No complete technical solution: have to carefully roll out model
-* [Domain Shift](permanent/domain-shift.md) (pg. 104)
+* [Domain Shift](../../permanent/domain-shift.md) (pg. 104)
     * Data that model performs inference on changes over time.
     * Example: types of customers an insurance sees changes over time, making their earlier models less useful.
     
@@ -76,23 +76,23 @@ status: draft
         * 2. Combine all augmentation operations (include final resize) into one and do on GPU.
             * On validation, only resize is done.
 * Train a simple model early (pg. 221)
-* [[Categorical Cross-Entropy Loss]] (pg. 222-231)
-    * Defined as:  [[Softmax Activation Function]] then negative [[Log Likelihood]]
-    * [[Exponential Function]]
+* [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md) (pg. 222-231)
+    * Defined as:  [Softmax Activation Function](../../permanent/softmax-activation-function.md) then [Negative log-likelihood](../../permanent/negative-log-likelihood.md)
+    * [Exponential Function](../../permanent/exponential-function.md)
         * Defined as $e^x$
             * $e$ is a number about 2.718
                 * The inverse of natural logarithm
         * Always positive and increases fast
-    * [[Softmax Activation Function]] (pg. 223-227)
-        * The multi-category equivalent of the [[Sigmoid Activation Function]]
+    * [Softmax Activation Function](../../permanent/softmax-activation-function.md) (pg. 223-227)
+        * The multi-category equivalent of the [Sigmoid Activation Function](../../permanent/sigmoid-activation-function.md)
             * Similarly "smooth and symmetric" properties
         * Use if more than 2 categories and want probabilities add to 1.
             * Can also use when there are just 2 categories to be consistent
         * If one of the numbers is slightly bigger, exponential amplifies it
         * Softmax "wants" to pick a single result.
             * Use model with multiple binary columns to handle items model hasn't seen.
-        * One part of the [[Categorical Cross-Entropy Loss]]
-    * [[Log Likelihood]] (pg. 226-231)
+        * One part of the [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md)
+    * Log Likelihood (pg. 226-231)
         * For a vector of softmaxed predictions, take the prediction that corresponds with the correct label.
         * Then apply `-log(prediction)`
             * In PyTorch, log uses $e$ as the base.
@@ -101,13 +101,13 @@ status: draft
         * In PyTorch, the `nll_loss` function doesn't take the log. It expects it to be already taken.
     * Consider gradient of `cross_entropy(a, b)` is `softmax(a)-b`
     * When `softmax(a)` is final activation, gradient is the same as diff between prediction and target
-        * So it's the same a [[Root mean-squared error - L2 Loss]] in regression.
+        * So it's the same a [Root mean-squared error - L2 Loss](../../permanent/Root mean-squared error - L2 Loss.md) in regression.
         * Because gradient is linear, don't see sudden jumps or exponential increases in gradients
 * Model Interpretation
-    * [[Confusion Matrix]] (pg. 232) 
+    * [Confusion Matrix](Confusion Matrix) (pg. 232) 
     * `most_confused` method for showing the items with highest loss (pg. 232-233)
 * Improving the model
-    * [[Learning Rate Finder]] (pg. 233-236)
+    * [Learning Rate Finder](Learning Rate Finder) (pg. 233-236)
         * Created by researcher Leslie Smith in 2015
         * Steps:
             * Train a model starting with a very small learning rate
@@ -116,13 +116,13 @@ status: draft
             * When it doesn't get better, select learning rate order of magnitude less than min
     * Unfreezing and Transfer Learning (pg. 236-239)
         * CNN is many linear layers with non-linear activation function in between.
-        * At the end is a last linear layer with a final activation like the [[Softmax Activation Function]].
+        * At the end is a last linear layer with a final activation like the [Softmax Activation Function](../../permanent/Softmax Activation Function.md).
         * In transfer learning, we start by replacing the last layer with one that has correct number of outputs for task.
         * Since we don't want to lose the learned weights in the earlier layers, we start by freezing those layers to just train the last layer.
     * Discriminative Learning Rates (pg. 239-241)
         * Earlier layers should in theory need less training, since they've learned abstract concepts like edge and gradients.
         * Set different (lower) learning rates for earlier layers.
-        * In fastai, you can pass a [[Python slice object]] anywhere that accepts a single learning rate.
+        * In fastai, you can pass a [Python slice object](Python slice object) anywhere that accepts a single learning rate.
         * First value of slice is learning rate at start and last is final layer.
             * Layers in between have values that are evenly distanced between the 2 learning rates.
     * Selecting number of epochs (pg. 241-242)
@@ -133,12 +133,12 @@ status: draft
             * Architectures like Resnet have small number of common varients: `18`, `34`, `50`, `101` simply because these happen to be the numbers that have pretrained models available.
         * Deeper architectures require more memory and therefore smaller batch sizes.
         * Bigger models aren't always better: start small and scale up.
-        * Can use [[mixed precision training]] to reduce memory size.
+        * Can use [mixed precision training](mixed precision training) to reduce memory size.
             * Use less-precise numbers (half-precision floating point, also called fp16) where possible during training.
 
 ## Chapter 6. Other Computer Vision Problems
 
-* [[Multi-label Classification]] *(pg. 248-249)*
+* [Multi-label Classification](Multi-label Classification) *(pg. 248-249)*
     * Use when you dataset can include a number of true labels (or even none).
     * Can also be useful when you expect to see images that have none of your target classes.
         * A commonly reported problem with a simple solution that isn't widely applied.
@@ -153,9 +153,9 @@ status: draft
     * DataLoaders
         * Object that contains training and val DataLoader.
 * When constructing a DataBlock, you can do a little bit at a time to ensure everything is working.
-* [[One-Hot Encoding]] (pg. 254-255)
+* [One-Hot Encoding](../../permanent/one-hot-encoding.md) (pg. 254-255)
     * A vector of 0s with a 1 in each location represented in data.
-* [[Binary Cross-Entropy Loss]] (pg. 256-257)
+* [Binary Cross-Entropy Loss](../../permanent/binary-cross-entropy-loss.md) (pg. 256-257)
     * A multi-label classification loss function.
     * Nearly identical to Cross Entropy, except performs Sigmoid against each output logit.
     * Function:
@@ -179,4 +179,3 @@ status: draft
                 return ((inp>thresh)==targ.bool()).float().mean()
     * Finding the optimal threshold can be performed with a simple search over linear space on the validation set.
     * Some may fear overfitting, but if the curve appears smooth, it's likely something you can trust.
-* [[Regression]] (pg. 261)

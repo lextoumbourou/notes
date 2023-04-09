@@ -36,7 +36,7 @@ parent: ml-foundations
         * Computing norm of vector: add square of every entry in the vector and take square root.
         
 * Problem: Common words "dominate" rare words in similarity score and usually rare words are important to doc context..
-    * Solution: prioritize important words with [[TF-IDF]].
+    * Solution: prioritize important words with [TF-IDF](../../../../permanent/tf-idf.md)
         * tf-idf (term frequency - inverse document frequency).
         * Don't want to emphasis only rare words; want "important words".
             * "Common locally": appear frequently in document.

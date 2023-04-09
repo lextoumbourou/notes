@@ -98,7 +98,7 @@ At the time of taking the course, I had previously learned all the concepts, how
             * 1 AND 1 = 1
             * 1 AND 0 = 0
             * 0 AND 0 = 0
-    * A subnet mask is a way for a computer to use [[AND (Boolean Operation)]] operators to determine if an IP address exists on the same network.
+    * A subnet mask is a way for a computer to use [[../../../../journal/permanent/AND (Boolean Operation).md]] operators to determine if an IP address exists on the same network.
     * Example:
         * 00001001 . 0110 0100 . 01100100 . 01100100
         * AND

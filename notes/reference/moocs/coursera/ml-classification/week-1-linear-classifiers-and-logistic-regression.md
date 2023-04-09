@@ -41,7 +41,7 @@ status: draft
 
     The line between a positive and negative sentiment would sit at: `1 * #good - 2 * #bad`. Anything above the line is positive and below is negative.
 
-* [[Decision Boundary]] types:
+* Decision Boundary types:
     * When 2 coefficients are non-zero: line
     * When 3 coefficients are non-zero: plane
     * When many coefficients are non-zero: hyperplane
@@ -59,15 +59,15 @@ status: draft
 
 ---
 
-* Course notation is the same as used in [Regression course](../ml-regression).
+* Course notation is the same as used in [ML Regression](../ml-regression.md).
 * Can rewrite expression using course notation like:
 
     $$Score(\mathbf{x_i}) = w_0 + w_1 \mathbf{x_i}[1] + .. + W_d \mathbf{x_i}[d] = \mathbf{w}^T\mathbf{x}_i $$
 
 ### Effect of coefficient values on decision boundaries
 
-* Increasing intercept value, shifts [[Decision Boundary]] up.
-* Increase value of coefficients can change the [[Decision Boundary]] curve.
+* Increasing intercept value, shifts Decision Boundary up.
+* Increase value of coefficients can change the Decision Boundary curve.
 
 ### Using features
 
@@ -134,7 +134,7 @@ $$Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i}) = \ma
 
 ### The sigmoid (or logistic) link function
 
-* For logistic regression, the link function is called "logistic function" or [[Sigmoid Activation Function]]:
+* For logistic regression, the link function is called "logistic function" or [Sigmoid Activation Function](../../../../permanent/sigmoid-activation-function.md):
 
 	$$sigmoid(Score) = \dfrac{1}{1 + e^{-Score}}$$
  

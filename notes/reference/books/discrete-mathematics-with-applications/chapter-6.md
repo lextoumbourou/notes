@@ -9,16 +9,16 @@ status: draft
 
 pg. 365
 
-* [[Combination]]
-    * We know that a [[Permutation]] is an ordered arrangement of elements in a set.
-    * Sometimes, the order of elements is unimportant, only the membership metters. These are considered [[Combination]]s.
+* [Combination](Combination)
+    * We know that a [Permutation](Permutation) is an ordered arrangement of elements in a set.
+    * Sometimes, the order of elements is unimportant, only the membership metters. These are considered [Combination](Combination)s.
     * For example, a committe like $A = \{Costa, Shea, Weiss, Hall, Chen\}$ is just a set - the order of names doesn't matter.
     * If you would like to form a subcommittee of 3 members: {Costa, Shea, Weiss}, {Costa, Shea, Hall}, and {Costa, Shea, Chen}.
         * Each is a combination of the five elements taken three at a time, or a **3-combination**
     * Formal definition:
         * An **r-combination** of a set of n elements, where $0 \leq r \leq n$, is a subset containing r elements.
         * The number of r-combinations of a set with n elements is denoted by $C(n, r)$ or $\binom{n}{r}$
-        * The number of combinations is also called [[Binomial Coefficient]].
+        * The number of combinations is also called [Binomial Coefficient](Binomial%20Coefficient).
     * Example:
         * Find the number of r-combinations of the set {a,b,c}, when r = 0, 1, 2, or 3.
         * Solution:
@@ -57,7 +57,7 @@ pg. 365
         * For example, the subset {2, 4, 5} is denotes by A_11
         * Determine if each subset of A can be identifies by a unique name A_s. In other words, does every sum i + j + j, have a unique value s, where $1 \leq i < j < k < 15$?
         * Solution:
-            * We can use the [[Pigeonhold Principal]]
+            * We can use the [Pigeonhold Principal](Pigeonhold%20Principal)
                 * The least value of s is 1 + 2 + 3 = 6 and largest value is 13 + 14 + 15 = 42.
                 * Therefore, there are $6 \leq s \leq 42$, at most 37 possible values of $s$.
                 * There are C(10, 3) = 120 three-element subsets (pigeons) of A and only 37 possible sums.
@@ -84,7 +84,7 @@ pg. 365
 
 pg. 376
 
-* [[Permutations with Repetitions]]
+* [Permutations with Repetitions](Permutations%20with%20Repetitions)
     * Take the word REFERENCE.
     * If you swap an E with another E, the word does not change.
     * How can you compute permutations?
@@ -102,7 +102,7 @@ pg. 376
             * Let $A_1, ... A_{n_1}$ denote items of first type... $Z_1 ... Z_{n_k}$ items of kth type.
             * If all items where distinct, total would be n_! permutations.
             * If items $A_1, ... A_{n_1}$ are distinct, they can be arranged in $n_1!$ ways and so on.
-            * By [[Multiplication Principal]], if all items are distinct, there would be $(n_1!, n_2!, ... n_k!)N$ permutations:
+            * By [Multiplication Principal](Multiplication%20Principal), if all items are distinct, there would be $(n_1!, n_2!, ... n_k!)N$ permutations:
                 * $N = \frac{n!}{n_1!n_2! ... n_k!}$
         * Problem
             * Find the number of bytes containing exactly 3 0's.
@@ -334,17 +334,17 @@ The binomial coefficients satisfy a vast array of properties.
 
 * [Pascal's Triangle]
     * The various binomial coefficients $\binom{n}{r}$ where $0 \leq r \leq n$, can be arranged in the form of a triangle called Pascal's Triangle.
-    * ![[chapter-6-pascals-triangle.png]]
+    * ![chapter-6-pascals-triangle](../../../_media/chapter-6-pascals-triangle.png)
     * It has interesting properties:
         * Every row begins with and ends in 1.
             * This happens because $C(n, 0) = 1 = C(n, n)$
         * It is symmetric about a vertical line through the middle.
             * This is because $C(n, r) = C(n, n - r)$
         * Any interior nubmer in each row is the sum of the numbers immediately to its left and right in preceding row.
-            * By virtue of [[Pascal's Identity]]
+            * By virtue of [Pascal's Identity](Pascal's%20Identity)
         * From Example 6.22, the maxium number of places $f_n$ into which a pizza can be divided with n distinct cuts is given by $f_n = C(n, 0) + C(n, 1) + C(n, 2)$
             * This is the sum of the 1st 3 numbers of row n of Pascal's triange.
-            * ![[chapter-6-pascal-triangle-pizza-problem.png]]
+            * ![chapter-6-pascal-triangle-pizza-problem](../../../_media/chapter-6-pascal-triangle-pizza-problem.png)
 
 ### Exercises 6.6
 
