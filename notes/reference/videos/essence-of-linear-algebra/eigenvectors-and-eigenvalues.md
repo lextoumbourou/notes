@@ -25,9 +25,9 @@ Another vector $\begin{bmatrix}-1 \\ 1\end{bmatrix}$ also stays on its span duri
 
 ![Eigenvectors stay on the same span](/_media/3blue-eigenvectors.png)
 
-These vectors are called the [[Eigenvector]]s.
+These vectors are called the [Eigenvector](permanent/eigenvector.md)s.
 
-Each Eigenvector has an associated [[Eigenvalue]]. The Eigenvalue refers to how it stretches or squishes the Eigenvector during the transformation.
+Each Eigenvector has an associated [Eigenvalue](permanent/eigenvalue.md). The Eigenvalue refers to how it stretches or squishes the Eigenvector during the transformation.
 
 The Eigenvalues can be negative and fractional.
 
@@ -62,7 +62,7 @@ Then factor out the $\vec{v}$: $(A - \lambda I)\vec{v} = \vec{0}$
 
 If $\vec{v}$ is 0, that will satisfy the answer, but you want a non-zero $\vec{v}$ as an Eigenvector.
 
-From the lesson on [[Matrix Determinate]], we know that the only way the transformation of a matrix with a non-zero vector is if transformation associated with that matrix squishes space onto a lower dimension. That corresponds to a 0 determinate for the matrix.
+From the lesson on [Matrix Determinate](permanent/matrix-determinate.md), we know that the only way the transformation of a matrix with a non-zero vector is if transformation associated with that matrix squishes space onto a lower dimension. That corresponds to a 0 determinate for the matrix.
 
 You can think about the determinate of this matrix: $\det\left(\begin{bmatrix}2 && 2 \\ 1 && 3\end{bmatrix}\right) = 4$
 
@@ -100,7 +100,7 @@ $\det\left(\begin{bmatrix}2 - 1 && 2 \\ 1 && 3 - 1\end{bmatrix}\right) = 0$
  
 What happens if both basis vectors are Eigenvectors? One example is $\begin{bmatrix}-1 && 0 \\0 && 2\end{bmatrix}$.
  
- Notice how there's a positive value on the diagonal and 0s everywhere else? That's a [[Diagonal Matrix]].
+ Notice how there's a positive value on the diagonal and 0s everywhere else? That's a [Diagonal Matrix](permanent/diagonal-matrix.md).
  
  The way to interpret it is that all the basis vectors are Eigenvectors, with the diagonal entry being Eigenvalues.
  
@@ -108,7 +108,7 @@ What happens if both basis vectors are Eigenvectors? One example is $\begin{bmat
  
  Contrast that with normal matrix multiplication. It quickly gets complicated.
  
- The basis vectors are rarely Eigenvectors. But if your transformation has at least 2 Eigenvectors that span space, you can change your coordinate system so that your Eigenvectors are your basis vectors by [[Changing Basis]]. The composed matrix will be Diagonal Matrix.
+ The basis vectors are rarely Eigenvectors. But if your transformation has at least 2 Eigenvectors that span space, you can change your coordinate system so that your Eigenvectors are your basis vectors by [Changing Basis](permanent/changing-basis.md). The composed matrix will be Diagonal Matrix.
  
  So, if you need to compute the 100th power of a matrix, it's easier to first convert to an Eigenbasis. Perform the computation. Then convert back to the original basis.
  

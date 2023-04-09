@@ -4,19 +4,19 @@ date: 2022-12-22 00:00
 status: draft
 ---
 
-A merge operation between between 2 [[Set]]s.
+A merge operation between between 2 [Set](permanent/set.md)s.
 
-Represented by the $\cup$ symbol (`\cup` in [[LaTeX]]).
+Represented by the $\cup$ symbol (`\cup` in [LaTeX](LaTeX.md)).
 
-Example (using [[Listing Method]]):
+Example (using [Listing Method](Listing Method)):
 
 $A = \{a, b, c\}$
 $B = \{c, d, e\}$
 $A \cup B = \{a, b, c, d, e\}$
 
-* It's a [[Commutative Operation]]: $A \cup B = B \cup A$
-* It's an [[Associativity Operation]]: $A \cup (B \cup C) = (A \cup B) \cup C$
+* It's a [Commutative Operation](Commutative Operation): $A \cup B = B \cup A$
+* It's an [Associativity Operation](Associativity Operation): $A \cup (B \cup C) = (A \cup B) \cup C$
 * Identity Properties: $A \cup \emptyset = A$
 * Complement Properties: $A \cup A'$
 
-See also [[Intersection]].
+See also [intersection](intersection.md)md).

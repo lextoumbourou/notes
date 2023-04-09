@@ -19,7 +19,7 @@ Breaking down "Linear Transformation":
     * Origin remains fixed in place.
 * This keeps the grid lines parallel and evenly spaced.
 
-To record a transformation numerically, you only need to store where the [[Basis Vectors]], $\hat{i}$ and $\hat{j}$ land.
+To record a transformation numerically, you only need to store where the [Basis Vectors](permanent/basis-vectors.md), $\hat{i}$ and $\hat{j}$ land.
 
 Consider vector $\vec{v} = \begin{bmatrix}-1 \\ 2\end{bmatrix}$
 
@@ -31,9 +31,7 @@ So, after applying the transformation, the property: $\vec{v} = -1\hat{i} + 2\ha
 
 That means we can fully describe a 2d transformation with four numbers (2 vectors).
 
-We put these numbers into a 2x2 matrix, called a [[Matrix Transformation]]. Each column is one of the transformed [[Basis Vectors]].
-
-![Transformation matrix](/_media/linear-trans-transformation-matrix.png)
+We put these numbers into a 2x2 matrix, called a [Matrix Transformation](permanent/matrix-transformation.md). Each column is one of the transformed [Basis Vectors](permanent/basis-vectors.md)[Transformation matrix](/_media/linear-trans-transformation-matrix.png)
 
 So for any vector, we can multiply each coordinate by the corresponding column of the transformation matrix to get the result:
 
@@ -47,7 +45,7 @@ We get transformation matrix: $\begin{bmatrix}0 && -1 \\ 1 && 0\end{bmatrix}$
 
 We can determine where vector $\vec{u} = \begin{bmatrix}a \\ b\end{bmatrix}$ lands as $a\begin{bmatrix}0 \\ 1\end{bmatrix} + b\begin{bmatrix}-1 \\ 1\end{bmatrix}$
 
-Another example is a [[Shear]]. $\hat{i}$ remains fixed. $\hat{j}$ moves to the coordinates $\begin{bmatrix}1 \\ 1\end{bmatrix}$
+Another example is a [Sheer Transformation](permanent/lintrans-shear.md). $\hat{i}$ remains fixed. $\hat{j}$ moves to the coordinates $\begin{bmatrix}1 \\ 1\end{bmatrix}$
 
 We get transformation matrix: $\begin{bmatrix}1 && 1 \\ 0 && 1\end{bmatrix}$
 

@@ -29,7 +29,7 @@ Notes from [CFrame Math Operations](https://developer.roblox.com/en-us/articles/
       [0, 0, 0, 1]
     ]
     ```
-    * 2 CFrames can be multiplicated with [[Matrix Multiplication]]
+    * 2 CFrames can be multiplicated with [Matrix Multiplication](permanent/matrix-multiplication.md)
 * CFrame * Vector3
     * Results in Vector3.
     * The first value multiplies and adds the rightVector, 2nd upVector and 3rd rightVector

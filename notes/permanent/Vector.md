@@ -41,11 +41,11 @@ We can plot these numbers in a coordinate system to see how the flowers relate t
 
 ![Iris scatterplot](/_media/iris-scatterplot.png)
 
-* We can add a vector. See [[Vector Addition]].
-* We can subtract vectors. See [[Vector Subtraction]].
-* We can multiply vectors by a value. See [[Vector Scaling]].
-* We can combine vectors in various ways. See [[Dot Product]] or [[Element-wise product]].
+* We can add a vector. See [Vector Addition](Vector Addition.md).
+* We can subtract vectors. See [Vector Subtraction](permanent/vector-subtraction.md).
+* We can multiply vectors by a value. See [Vector Scaling](Vector Scaling.md).
+* We can combine vectors in various ways. See [Dot Product](Dot Product.md) or [Element-wise product](Element-wise product).
 
-We describe a [[Ray]] with a similar notation to vectors. However, a Ray doesn't have a length. Only a direction to continue infinitely.
+We describe a [ray](ray.md) with a similar notation to vectors. However, a Ray doesn't have a length. Only a direction to continue infinitely.
 
 [@3blue1brownVectorsChapterEssence2016]
