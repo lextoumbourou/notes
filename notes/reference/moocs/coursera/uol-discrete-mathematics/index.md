@@ -29,7 +29,7 @@ Notes from [Discrete Mathematics by University of London](https://www.coursera.o
 
 * [Week 1 - Sets A](reference/moocs/coursera/uol-discrete-mathematics/week-1-sets-a.md)
 * [Week 2 - Sets B](reference/moocs/coursera/uol-discrete-mathematics/week-2-sets-b.md)
-* [Week 3 - Topic 02 A. Functions]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-3.md)
+* [Week 3 - Functions A](reference/moocs/coursera/uol-discrete-mathematics/week-3-function-a.md)
 * [Week 4 - Topic 02 B. Functions]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-4.md)
 * [Week 5 - Topic 03 A. Propositional logic]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-5.md)
 * [Week 6 - Topic 03 B. Propositional Logic]({filename}/reference/moocs/coursera/uol-discrete-mathematics/week-6.md)

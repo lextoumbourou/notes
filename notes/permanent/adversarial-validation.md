@@ -5,7 +5,7 @@ tags:
   - EDA
 ---
 
-A technique used to evalute how different the test set is to the training set, commonly used in Kaggle competitions to assess likelihood of a [Leaderboard Shakeup](permanent/leaderboard-shakeup.md). It's a form of [Black-box Testing](permanent/black-box-testing.md) for datasets.
+A technique used to evalute how different the test set is to the training set, commonly used in Kaggle competitions to assess likelihood of a [Leaderboard Shakeup](leaderboard-shakeup.md). It's a form of [Black-box Testing](black-box-testing.md) for datasets.
 
 Steps:
 

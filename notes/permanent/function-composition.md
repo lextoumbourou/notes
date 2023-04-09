@@ -1,5 +1,5 @@
 ---
-title: Quadratric Functions
+title: Function Composition
 date: 2023-04-09 00:00
 status: draft
 ---

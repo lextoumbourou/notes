@@ -19,4 +19,4 @@ Example:
 It can help raise questions about character interactions you may not have otherwise considered.
 
 
-Related to [Interpersonal Circumplex](permanent/interpersonal-circumplex.md) as it's another tool for building rich character relationships within a story.
+Related to [Interpersonal Circumplex](interpersonal-circumplex.md) as it's another tool for building rich character relationships within a story.

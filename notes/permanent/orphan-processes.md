@@ -10,7 +10,7 @@ processes are said to become orphan processes.
 
 When this happens, the init process - the first process executed by the kernel at boot, with a PID of 1 - adopts the child. The init process then waits for the child process to finish.
 
-In this code example, I have a script that calls [fork System Call](permanent/fork-system-call.md) to create a child process. Then, we sleep for a second 3 times after printing its parent's PID in the child process. The parent will exit on the first iteration, thus orphaning its child.
+In this code example, I have a script that calls [fork System Call](fork-system-call.md) to create a child process. Then, we sleep for a second 3 times after printing its parent's PID in the child process. The parent will exit on the first iteration, thus orphaning its child.
 
 ```python
 from os import fork, getppid

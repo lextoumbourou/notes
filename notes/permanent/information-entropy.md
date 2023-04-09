@@ -22,7 +22,7 @@ In code:
 
 {% notebook permanent/notebooks/entropy.ipynb %}
 
-Claude Shannon borrowed the term [Entropy](permanent/entropy.md) from thermodynamics as part of his theory of communication.
+Claude Shannon borrowed the term [Entropy](entropy.md) from thermodynamics as part of his theory of communication.
 
 [@khanacademylabsInformationEntropyJourney]
 

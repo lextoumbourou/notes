@@ -14,6 +14,6 @@ Conventional teaching for topics like maths and science either follows an "eleme
 
 I first learned about the concept through the [Practical Deep Learning for Coders](https://course.fast.ai/) course by Jeremy Howard et all. The course follows a top-down, whole game style of teaching. Students first are shown how to train an image classifier, then slowly unpack the layers until they reach the underlying theory. By that time, the student is sufficiently motivated: they need the theory to train a better model.
 
-Related to the notion of an [Interest Curve](permanent/interest-curve.md), where an experience starts with an initial peak followed by a gradual increase to the final climax.
+Related to the notion of an [Interest Curve](interest-curve.md), where an experience starts with an initial peak followed by a gradual increase to the final climax.
 
 The cover image is [Jimmie Foxx, Babe Ruth, Lou Gehrig, Al Simmons](https://commons.wikimedia.org/wiki/File:Jimmie_Foxx,_Babe_Ruth,_Lou_Gehrig,_Al_Simmons.jpg) from Wikimedia.
