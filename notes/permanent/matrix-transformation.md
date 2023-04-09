@@ -13,7 +13,7 @@ When we take the product of a matrix and a vector, we are *transforming* the vec
 
 A transformation is another word for a function: it takes in some inputs (a vector) and returns some output (a transformed vector).
 
-For example, we can rotate a vector $\begin{bmatrix}x \\ y\end{bmatrix}$ some angle $\theta$ about the origin using a [Rotational Matrix](permanent/rotational-matrix.md).
+For example, we can rotate a vector $\begin{bmatrix}x \\ y\end{bmatrix}$ some angle $\theta$ about the origin using a [Rotational Matrix](rotational-matrix.md).
 
 $\begin{bmatrix}\text{x*} \\ \text{y*} \end{bmatrix} = \begin{bmatrix}\cos\theta && \sin\theta \\ -\sin\theta && \cos\theta\end{bmatrix} \begin{bmatrix}x \\ y\end{bmatrix}$
 

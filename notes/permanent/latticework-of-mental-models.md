@@ -27,6 +27,6 @@ What's more, we actively practice recall of older ideas each time we make search
  
  [@schellArtGameDesign2015a] *(pg. 3)*
  
- Setting out to build a cross-discipline latticework like this is a great example of practicing [Growth Mindset](permanent/growth-mindset.md).
+ Setting out to build a cross-discipline latticework like this is a great example of practicing [Growth Mindset](growth-mindset.md).
  
  Cover image from [Latticework at Ceremonial Court in Education City](https://commons.wikimedia.org/wiki/File:Latticework_at_Ceremonial_Court_in_Education_City.jpg) on Wikimedia.

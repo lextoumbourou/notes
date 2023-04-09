@@ -19,7 +19,7 @@ print(attachment.CFrame)
 
 We can set the offset through other properties like `WorldCFrame`.
 
-Attachments are used by some [Roblox Constraints](permanent/roblox-constraint.md) and are valid parents for some objects:
+Attachments are used by some [Roblox Constraints](../../permanent/roblox-constraint.md) and are valid parents for some objects:
 
 * `ParticleEmitter` and `Fire` if you want to emit from an attachment instead of a part's [Roblox CFrame](permanent/roblox-cframe.md).
 * `PointLight` and `SpotLight` to shine from attachment.

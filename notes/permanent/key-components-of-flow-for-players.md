@@ -5,7 +5,7 @@ tags:
   - GameDesign
 ---
 
-Schell says that the key components that promote [Flow State](permanent/flow-state.md) for players are:
+Schell says that the key components that promote [Flow State](flow-state.md) for players are:
 
 * clear goals
 * limited distractions

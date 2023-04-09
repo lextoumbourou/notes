@@ -9,4 +9,4 @@ A [game balancing](game balancing) trick that Schell attributes to design Brian 
 
 [@schellArtGameDesign2015a] *(pg. 233)*
 
-Since it a technique for problem solving game balance issues, it's related to [Game Design is Problem Solving](permanent/game-design-is-problem-solving.md).
+Since it a technique for problem solving game balance issues, it's related to [Game Design is Problem Solving](game-design-is-problem-solving.md).

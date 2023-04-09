@@ -66,7 +66,7 @@ parent: uol-discrete-mathematics
 
 ## 2.104 Plotting functions
 
-* [Linear Functions](permanent/linear-functions.md)
+* [Linear Function](permanent/linear-function.md)
     * Linear function is of form: $f(x) = ax + b$
         * Where $a$ and $b$ are real numbers.
         * Straight-line function that passes through point (0, b).

@@ -7,7 +7,7 @@ tags:
 status: draft"
 ---
 
-Given two [Proposition](permanent/proposition.md) $p$ and $q$, their conjunction is the proposition $p$ *and* $q$.
+Given two [Proposition](proposition.md) $p$ and $q$, their conjunction is the proposition $p$ *and* $q$.
 
 It math it's denoted as: $p \land q$.
 
