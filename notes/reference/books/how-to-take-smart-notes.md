@@ -5,7 +5,7 @@ category: reference/books
 cover: /_media/how-to-take-smart-notes.jpeg
 ---
 
-How to Take Smart Notes provides an overview of the Zettelkasten system, popularised by prolific sociologist Niklas Luhman. The book starts with an overview of the entire Zettelkasten method, then delves deeper into why it works. This "top down" approach quite reminisant of David Perkins [[Teaching the whole game]] approach to teaching.
+How to Take Smart Notes provides an overview of the Zettelkasten system, popularised by prolific sociologist Niklas Luhman. The book starts with an overview of the entire Zettelkasten method, then delves deeper into why it works. This "top down" approach quite reminisant of David Perkins [Teaching the whole game](../../permanent/teaching-the-whole-game.md) approach to teaching.
 
 I tried to be quite comprehensive with the notes while reading, using it as an opportunity to practice the system and ensure I didn't miss anything.
 
@@ -17,7 +17,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 
 ## 1. Everything You Need To Know
 
-* Having a structured workflow that you trust allows you to enter [[Flow State]]
+* Having a structured workflow that you trust allows you to enter [Flow State](../../permanent/Flow State.md)
     * [GTD](https://www.amazon.com.au/Getting-Things-Done-David-Allen/dp/0143573195) a good example of workflow when the tasks are clearly defined.
 
 * Writing does not work as a linear to-do list:

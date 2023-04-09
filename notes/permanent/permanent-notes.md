@@ -6,7 +6,7 @@ tags:
 cover: /_media/light-bulb.jpeg
 ---
 
-Permanent notes (also known as [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes)) capture a single "atomic" idea. They also include links to related ideas. In the Zettelkasten system, they're created from [Literature Notes](Literature Notes.md), or [Fleeting Notes](permanent/fleeting-notes.md) if reference isn't required.
+Permanent notes (also known as [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes)) capture a single "atomic" idea. They also include links to related ideas. In the Zettelkasten system, they're created from [Literature Notes](Literature Notes.md), or [Fleeting Notes](fleeting-notes.md) if reference isn't required.
 
 They should be precise, brief, and clear but use full sentences. They should include enough context for future-you to trigger a memory. It should also contain links to relevant reference notes (though I prefer to include the sources).
 

@@ -69,7 +69,7 @@ parent: linear-algebra-machine-learning
 * Vectors don't  just to describe objects in geometric space, they can describe directions along any sort of axis
     * Can think of them as just lists.
     * Space of all possible cars: `[cost_in_euros, emissions, top_speed, ...]`
-        * Computer science view of vectors. See [[Vector]].
+        * Computer science view of vectors. See [Vector](permanent/vector.md).
     * Spatial view is more familiar for physics.
     * Einstein conceived of time being another dimension. Space-time is a 4-dimensional vector.
 

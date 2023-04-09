@@ -1,5 +1,5 @@
 ---
-title: Week 10 - Topic 05 B. Boolean algebra
+title: Week 10 - Boolean Algebra B
 date: 2022-12-12 00:00
 category: reference/moocs
 status: draft
@@ -9,55 +9,65 @@ modified: 2023-04-08 00:00
 
 ## 5.201 Logic gates
 
-* Definition of a gate
-    * [[Logic Gate]]
-        * Implementation of a [[Boolean Operation]].
-        * Basic element of a implementation of a Circuit.
-* [[Basic Gates]]
+* [Logic Gate](permanent/logic-gate.md)
+    * Implementation of a boolean operation.
+    * Basic element of an implementation of a Circuit.
+    
+* [Basic Gates](permanent/basic-gates.md)
     * Most basic logic circuits:
         * **OR** gates
         * **AND** gates
         * **NOT** gates
     * All Boolean functions can be written in terms of these 3 logic operations.
-    * [[AND Gate]]
+    
+    * [AND Gate](permanent/and-gate.md)
         * Produces HIGH output (value 1) when all inputs are HIGH otherwise, output is LOW (value 0).
         * For a 2-input gate, AND gate is represented by electrical notation and truth table:
-          ![[and-gate-with-truth-table.png]]
+        
+          ![and-gate-with-truth-table](../../../../_media/and-gate-with-truth-table.png)
+          
         * The AND operations is written as $f = x . y$ or $f = xy$
-    * [[OR Gate]]
+   
+    * [OR Gate](permanent/or-gate.md)
         * Produces HIGH output (value 1) when any of 2 inputs if HIGH, otherwise, output is LOW (value 0).
         * For a 2-input gate, OR gate is represented by electrical notation and truth table:
-          ![[or-gate-and-truth-table.png]]
+
+          ![or-gate-and-truth-table](../../../../journal/_media/or-gate-and-truth-table.png)
+          
         * The OR operation is written as $f = x + y$
-    * [[Inverter Gate]]
+  
+    * [Inverter Gate](permanent/inverter-gate.md)
         * Produces opposite of the input.
         * Also known as NOT gate.
         * When input is LOW (0), output is HIGH (1) and vice versa.
         * The **inverter** gate is represented by the following electrical notation and truth table:
-          ![[not-operation-and-truth-table.png]]
+        
+          ![not-operation-and-truth-table](../../../../journal/_media/not-operation-and-truth-table.png)
+          
           * Not operation is written as $f = \overline{x}$
+
 * Other gates:
   * You can combine the basic gates to create 4 additional gates:
-      * [[XOR Gate]]
+      * [XOR Gate](XOR Gate)
           * True only when values of inputs differ
-            ![[xor-gate.png]]
-      * [[NAND Gate]]
-          * [[AND Gate]] followed by an inverter.
-          ![[nand-gate.png]]
+            ![xor-gate.png](xor-gate.png)
+      * [NAND Gate](NAND Gate)
+          * [AND Gate](AND Gate) followed by an inverter.
+          ![nand-gate](../../../../journal/_media/nand-gate.png)
           * Equivalent to not AND
-      * [[NOR Gate]]
+      * [NOR Gate](NOR Gate)
           * Equivalent to "not OR"
-          * [[OR Gate]] followed by an inverter.
-            ![[nor-gate.png]]
-    * [[XNOR Gate]]
+          * [OR Gate](OR Gate) followed by an inverter.
+            ![nor-gate](../../../../journal/_media/nor-gate.png)
+    * [XNOR Gate](XNOR Gate)
         * Equivalent to not XOR.
-        ![[xnor-gate.png]]
+        ![xnor-gate](../../../../journal/_media/xnor-gate.png)
 * Multiple input gates
     * AND, OR, XOR and XNOR operations are all **commutative** and **associative**
     * They can be extended to more than 2 inputs.
     * For example:
-        * The [[XNOR Gate]] can be applied to 3 inputs:
-            ![[xnor-gate-1.png]]
+        * The [XNOR Gate](XNOR Gate) can be applied to 3 inputs:
+            ![xnor-gate-1.png](xnor-gate-1.png)
         * NAND and NOR operations are both commutative but not associative.
         * Extending number of inputs is less obvious here.
         * When writing cascaded NAND and NOR operations, must use correct parentheses.
@@ -65,11 +75,11 @@ modified: 2023-04-08 00:00
     * Theorem 1
         * Complement of the product of variables, is equal to the sum of the complements of variables.
         * $\overline{x . y} = \overline{x} + \overline{y}$
-        ![[de-morgan-theorem-1.png]]
+        ![de-morgan-theorem-1](../../../../journal/_media/de-morgan-theorem-1.png)
     * Theorem 2
         * Complment of the sum of variables, is equal to the product of the compliment of variables
         * $\overline{x + y} = \overline{x} . \overline{y}$
-        ![[de-morgans-theorem-2.png]]
+        ![de-morgans-theorem-2](../../../../journal/_media/de-morgans-theorem-2.png)
 
 ## 5.203 Combinational circuits
 
@@ -79,8 +89,8 @@ modified: 2023-04-08 00:00
     * Writing Boolean expressions from a circuit
     * Building a circuit to model a problem
 * Definition of a circuit
-    * [[Combination Circuits]] (aka logic networks)
-        * combination of [[Logic Gate]]s designed to model Boolean functions.
+    * [Combination Circuits](Combination Circuits) (aka logic networks)
+        * combination of [Logic Gate](Logic Gate)s designed to model Boolean functions.
         * circuit that implements a Boolean function.
         * logic values assigned to output signals is a Boolean function of current config of input signals.
 * Building a circuit from a function
@@ -90,7 +100,7 @@ modified: 2023-04-08 00:00
     * Consider Boolean function $f$:
         * $f(x, y, z) = x + y' z$
         * $f$ can be represented by this circuit:
-          ![[f-circuit.png]]
+          ![f-circuit](../../../../journal/_media/f-circuit.png)
 * Writing a Boolean expression from a circuit
     * Given a logic network, we can work out its corresponding Boolean function:
         * 1. label all gate outputs that are a function of the input variables.
@@ -111,9 +121,9 @@ modified: 2023-04-08 00:00
     * From the truth table of this Boolean function, we know that:
         * $sum = xy' + x'y = x \oplus y$
         * $carry = xy$
-        * ![[circuit-adder-truth-table-with-carry.png]]
+        * ![circuit-adder-truth-table-with-carry](../../../../journal/_media/circuit-adder-truth-table-with-carry.png)
     * Can be designed as a **half adder**
-      ![[sum-and-carry.png]]
+      ![sum-and-carry](../../../../journal/_media/sum-and-carry.png)
   * Half adder has limitations:
       * no provision for carry input.
       * circuit is not useful for multi-bit additions.
@@ -121,9 +131,9 @@ modified: 2023-04-08 00:00
     * To overcome its limitations, transform half adder into a full adder by including gates for processing the carry bit.
     * sum = x $\oplus$ y $\oplus$ carry in
     * carry out = xy + carry in. (x $\oplus$ y)
-    ![[full-adder-truth-table.png]]
+    ![full-adder-truth-table](../../../../journal/_media/full-adder-truth-table.png)
     * 2 Boolean expression can be designed in as follows:
-      ![[full-adder-circuit.png]]
+      ![full-adder-circuit](../../../../journal/_media/full-adder-circuit.png)
           * We can hide some of the comlexity of a circuit by using a **box diagram** as a simple abstraction representing just the inputs and outputs.
 
 
@@ -132,16 +142,16 @@ modified: 2023-04-08 00:00
 * Outline
     * Benefits of simplification and Algebraic simplification
         * Show how Boolean Algebra Theorem or rules can be used to represent and simplify Boolean functions.
-    * Introduce [[Karnaugh Map]] (or K-map) which is a graphical representation of Boolean functions.
+    * Introduce [Karnaugh Map](permanent/karna[karnaugh-map](../../../../permanent/karnaugh-map.md)ion of Boolean functions.
 * Benefits of simplification
-    * We know that every function can be written in [[Sum-of-Products Form]]
+    * We know that every function can be written in [Sum-of-Products Form](Sum-of-Products Form)
         * Not necessarily optimal in terms of number of gates and depth of circuit.
     * Why circuits must be simplified:
         * Reduces global cost of circuits, by reducing number of logic gates used
         * Might reduce time computation cost of circuits
         * Allows more circuits to be fitted on same chip
 * Algebraic simplification
-    * Based on the use of Boolean algebra theorems to represent and simplify the behaviour of [[Boolean Function]]s.
+    * Based on the use of Boolean algebra theorems to represent and simplify the behaviour of [Boolean Function](Boolean Function)s.
     * To produce a sum-of-product expression, need to use one or all of following theorems:
         * De Morgan's laws and involution
         * Distributive laws
@@ -166,21 +176,21 @@ modified: 2023-04-08 00:00
  * Example 2
        * Consider **full adder** circuit from last week.
        * Using truth table, we can build a sum-of-products form for the 2 functions:
-       * ![[full-adder-circuit-simplification.png]]
+       * ![full-adder-circuit-simplification](../../../../journal/_media/full-adder-circuit-simplification.png)
 * Karnaugh Maps
     * A Karnaugh map (or K-Map) is a graphic representation of a Boolean function and differs from a truth table.
         * It can be used for expressions with 2, 3, 4 or 5 variables.
     * A K-Map is shown in an **array of cells** and cells differing by only one variable are adjacent.
     * The number of cells in a K-Map is the total number of possible input variable combinations which is $2^k$.
-    ![[kmap-vs-truth-table.png]]
+    ![kmap-vs-truth-table](../../../../journal/_media/kmap-vs-truth-table.png)
     * Example
         * Consider the Boolean function described in the truth table shown here:
             * We have 3 variables, we need a 3-input K-Map for which we identify all the 1's first.
             * Group each 1 value with the maximum possible number of adjacent 1's to form a rectangle, power of 2 long (1, 2, 4, 8)
             * Then, write a term for this rectangle.
             * In this case, it's the minimised expression of $f$ is: $x + yz$
-              ![[truth-table-adjacent-k-map.png]]
-              ![[kmap-adjacent-truth-table.png]]
+              ![truth-table-adjacent-k-map](../../../../journal/_media/truth-table-adjacent-k-map.png)
+              ![kmap-adjacent-truth-table](../../../../journal/_media/kmap-adjacent-truth-table.png)
 
 ## 5.211 Domino logic gates simulation
 
@@ -211,7 +221,7 @@ By idempotent law: $xyz+x\overline{y}z+x\overline{y}z+\overline{x}.\overline{y}z
 
 Find the simplification of the expression represented by the following K-map.
 
-![[week-10-summative-q10.png]]
+![week-10-summative-q10](../../../../journal/_media/week-10-summative-q10.png)
 
 I accidentally got it right.
 
@@ -235,7 +245,7 @@ Given the Boolean function $F(x, y, z) = (x + \overline{y}) . z$, write the sum-
 
 1. What is the output for each of the logic circuits?
 
-![[week-10-problem-sheet-q1.png]]
+![week-10-problem-sheet-q1](../../../../journal/_media/week-10-problem-sheet-q1.png)
 
 1. $\overline{A} + B$
 2. $\overline{A . \overline{(B . C)}}$
@@ -246,7 +256,7 @@ Looks like my initial answer was correct, I just didn't include the NOT part of 
 
 2. Write down the truth table for the output Q of the following circuit.
 
-![[week-10-problem-sheet-q2.png]]
+![week-10-problem-sheet-q2](../../../../journal/_media/week-10-problem-sheet-q2.png)
 
 | A   | B   | (A + B) | $\neg$ (A + B) | $\neg$ (A + B) + B | $\neg$ ( $\neg$ (A + B) + B) |
 | --- | --- | ------- | -------------- | ------------------ | ---------------------------- |
@@ -291,7 +301,7 @@ Looks like my initial answer was correct, I just didn't include the NOT part of 
 
     3. Simplified circuit is just $a + b$
 5. What is the output of the following logical circuit?
-    1. ![[week-10-problem-sheet-q5.png]]
+    1. ![week-10-problem-sheet-q5](../../../../journal/_media/week-10-problem-sheet-q5.png)
         $p . q . r + p.  \overline{q} r + p . q . \overline{r}$
     2. $p.p.p + r . r . \overline{r} + q . \overline{q} .q$
         1. $p(q + r)$
@@ -363,7 +373,7 @@ $$
 
 10. The following diagram shows a circuit with three inputs and two outputs, $u$ and $v$
 
-![[week-10-problem-sheet-q10.png]]
+![week-10-problem-sheet-q10](../../../../journal/_media/week-10-problem-sheet-q10.png)
 
 1. List the logic gates used
 
@@ -378,7 +388,7 @@ $v = zx + zy + xy$
 
 11. Derive the Boolean expression for the following logic circuit shown below
 
-![[week-10-problem-sheet-q11.png]]
+![week-10-problem-sheet-q11](../../../../journal/_media/week-10-problem-sheet-q11.png)
 
 $((((a + b) . c) . d) . e)$
 

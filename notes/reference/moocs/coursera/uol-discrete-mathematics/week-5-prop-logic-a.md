@@ -1,5 +1,5 @@
 ---
-title: Week 5 - Topic 03 A. Propositional Logic
+title: Week 5 - Propositional Logic A
 date: 2022-11-08 00:00
 category: reference/moocs
 status: draft
