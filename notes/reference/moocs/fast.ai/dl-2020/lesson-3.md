@@ -15,12 +15,12 @@ Notes taken from watching the [Lesson 3 - Deep Learning for Coders (2020)](https
 * Last lesson about getting model into production
 * Today's lesson:
     * Learn foundations of what happens when training a neural network
-    * Learn about [[Stochastic Gradient Descent (SGD)]]
+    * Learn about [Stochastic Gradient Descent](../../../../permanent/stochastic-gradient-descent.md)
 * Order different from book. This lesson is Chapter 4 and will do Chapter 3 later.
 
 ## 00:01:10 - Resizing images with Datablock
 
-* Images in a batch [[Minibatch]],  should be converted to same size.
+* Images in a batch  should be converted to same size.
     * Making them squares is most common approach.
     * To resize each image to 128x128: `item_tfms=Resize(128)`
         * By default it crops the largest side and resizes.
@@ -63,10 +63,10 @@ Notes taken from watching the [Lesson 3 - Deep Learning for Coders (2020)](https
     * Low-res images
     * Bears will be in positions no one would bother uploading to the net
     * Would need to be really fast returning results
-    * Extra: would have to be really careful about [[Type 2 Errors (False Negatives)]].
-* [[Out-of-domain data]]
+    * Extra: would have to be really careful about [Type 2 Errors (False Negatives)](permanent/type-2-errors.md).
+* [Out-of-domain data](../../../../permanent/out-of-domain-data.md)
     * Data that is given to a model that is different to the data it was trained on.
-* [[Domain Shift]]
+* [Domain Shift](../../../../permanent/domain-shift.md)
     * Data that you models see changes over time.
     * Example: insurance company using deep learning model for pricing and risk.
         * Over time customers they serve change, and so would the risk profile
@@ -103,7 +103,7 @@ Notes taken from watching the [Lesson 3 - Deep Learning for Coders (2020)](https
     * Predictive policing example:
         * Predicts crime in certain areas, causing police to go there
         * More police means more arrest, which in turns makes model more confident in predictions
-        * An example of where [[Metrics Are Proxies]] - you want to reduce crime, but use arrests as a proxy for crime
+        * An example of where [Metrics Are Proxies](../../../../permanent/metrics-are-proxies.md) - you want to reduce crime, but use arrests as a proxy for crime
     * Issue is particularly a problem in the prescence of bias
     * Risk of having a feedback loop is anytime your model controls what your future data looks like
     * Consider human's in the loop: appeals process, monitoring etc

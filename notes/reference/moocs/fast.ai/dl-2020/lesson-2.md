@@ -25,15 +25,15 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
 
 ## 00:02:55 - Classification vs Regression
 
-* If predicting class (ie which breed of dog, whether a user is likely to default or not), it's called: [[Classification]]
+* If predicting class (ie which breed of dog, whether a user is likely to default or not), it's called: [Classification](permanent/classification.md)
     * Value is discrete
-* If prediction continuous value (ie age of person), it's called: [[Regression]]
+* If prediction continuous value (ie age of person), it's called: [Regression](permanent/regression.md)
 * Sometimes people use regression as short-hand for linear regression model, but that's incorrect
 
 ## 00:04:50 - valid_pct
 
 * `valid_pct`
-    * Get 20% of data and put aside for validation (test whether [[Overfitting]])
+    * Get 20% of data and put aside for validation (test whether [Overfitting](permanent/overfitting.md))
 
 ## 00:05:44 - Learner
 
@@ -71,8 +71,8 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
 
 ## 00:15:56 - Transfer learning
 
-* [[Transfer learning]] is about taking a pretrained model and repurposing it on a different dataset
-* [[Fine tuning]] is what we do to enable transfer learning
+* [Transfer learning](permanent/transfer-learning.md) is about taking a pretrained model and repurposing it on a different dataset
+* [Fine Tuning](permanent/fine-tuning.md) is what we do to enable transfer learning
 * Intuition is that concepts about images are already learned by models and therefore can be reused:
     * It's a key focus for fastai library
 
@@ -143,7 +143,7 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
 
 * Do models get worse at their original job when fine tuned?
     * Yes. It will no longer be good at original job when fine tuned. To keep it good at new and old task, have to include data from both sets.
-    * Known in literature as [[Catastrophic Forgetting]]
+    * Known in literature as catastrophic forgetting.
 * What's the difference between params and hyperparams?
     * Params are things that model learns
     * Hyperparams are config values you set
@@ -180,7 +180,7 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
         * Since the dataset is small, could just be a random chance. 
             * To be more confident, you'd need to look at more cities
                 * One way to measure "confidence" with p-value
-* [[p-value]]
+* p-value
     * High-level overview:
         * Start out with null hypothesis: for example, no relationship between temperature and R
         * Get data of independent (temperature) and dependent (R)
@@ -197,8 +197,8 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
         * see p-value not < 0.05 and conclude no relationship exists
             * Could simply be that you don't have enough data
             * How to check: use opposite null hypothesis (there is relationship between R and temp) and see if you have enough data. If not, then you don't have enough data full stop
-    * Turns out, the graph in the paper shows a [[Univariate Relationship]] relationship between temp and R, since it's easier to visualise
-        * However, in the paper they did a [[Multivariate Relationship]] model including Temperature, Relative Humidity, GDP per Capita, Population Density in the model
+    * Turns out, the graph in the paper shows a [Univariate Relationship](Univariate%20Relationship) relationship between temp and R, since it's easier to visualise
+        * However, in the paper they did a [Multivariate Relationship](Multivariate%20Relationship) model including Temperature, Relative Humidity, GDP per Capita, Population Density in the model
             * Therefore can be more confident in your results
                 * Intuition: if all those values were the different but temp was the same, there still would be relationship
     * p-value does not tell if practically important, however, the model does seem to be important: 2 cities with different climates but is the same in every other way, would have very different R results:
@@ -206,7 +206,7 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
 ## 01:02:48 - How do you make predictive model useful? Drivetrain approach
 
 * Jeremy's paper with Margit Zwemer and Mike Loukides: [Designing Great Data Products](https://www.oreilly.com/radar/drivetrain-approach-data-products/)
-    * In it, developed an approach to taking actions to model called [[Drivetrain Approach]]
+    * In it, developed an approach to taking actions to model called Drivetrain Approach.
         * Example:
             * Objective: how do I maximise 5 year profit?
             * Lever: what inputs can we control?

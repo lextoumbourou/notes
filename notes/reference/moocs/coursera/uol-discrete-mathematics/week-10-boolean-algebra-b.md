@@ -9,7 +9,7 @@ modified: 2023-04-08 00:00
 
 ## 5.201 Logic gates
 
-* [Logic Gate](permanent/logic-gate.md)
+* [Logic Gate](../../../../permanent/logic-gate.md)
     * Implementation of a boolean operation.
     * Basic element of an implementation of a Circuit.
     
@@ -51,14 +51,17 @@ modified: 2023-04-08 00:00
       * [XOR Gate](XOR Gate)
           * True only when values of inputs differ
             ![xor-gate.png](xor-gate.png)
+            
       * [NAND Gate](NAND Gate)
           * [AND Gate](AND Gate) followed by an inverter.
           ![nand-gate](../../../../journal/_media/nand-gate.png)
           * Equivalent to not AND
+          
       * [NOR Gate](NOR Gate)
           * Equivalent to "not OR"
           * [OR Gate](OR Gate) followed by an inverter.
             ![nor-gate](../../../../journal/_media/nor-gate.png)
+            
     * [XNOR Gate](XNOR Gate)
         * Equivalent to not XOR.
         ![xnor-gate](../../../../journal/_media/xnor-gate.png)

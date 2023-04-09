@@ -1,5 +1,5 @@
 ---
-title: Week 11 - Topic 06 A. Mathematical Induction
+title: Week 11 - Mathematical Induction A
 date: 2022-12-19 00:00
 category: reference/moocs
 status: draft
@@ -9,26 +9,27 @@ modified: 2023-04-08 00:00
 
 ## 6.101 Introduction to proofs
 
-* A proof is a valid argument, that is used to prove the truth of a statement.
-* To build a proof, we need to use things previously introduced:
-    * variables and predicates.
-    * quantifiers.
-    * laws of logic.
-    * rules of inference.
-* Some terminology used:
-    * [[Theorem]]
-        * formal statement that can be shown to be true.
-    * [[Axiom]]
-        * a statement we assume to be true to serve as a premise for further arguments.
-    * [[Lemma]]
-        * a proven statement used as a step to a larger result rather than as a statement of interest by itself.
+* [Proof](../../../../permanent/proof.md)
+    * A proof is a valid argument, that is used to prove the truth of a statement.
+    * To build a proof, we need to use things previously introduced:
+        * variables and predicates.
+        * quantifiers.
+        * laws of logic.
+        * rules of inference.
+    * Some terminology used:
+        * Theorem
+            * formal statement that can be shown to be true.
+        * Axiom
+            * a statement we assume to be true to serve as a premise for further arguments.
+        * Lemma
+            * a proven statement used as a step to a larger result rather than as a statement of interest by itself.
 * Formalising a theorem
     * Consider statement S: "There exists a real number between any two not equal real numbers"
     * S can be formalised as: $\forall x, y \in \mathbb{R}$ if $x < y$ then $\exists z \in \mathbb{R}$ where $x < z < y$.
     * S is an example of a theorem.
-* [[Direct proof]]
+* Direct proof
     * A direct proof is based on showing that a conditional statement: $p \rightarrow q$ is true.
-    * We start by assuming that p is true and then use: [[Axiom]]s, **definitions** and [[Theorem]]s, together with **rules of inference** to show that q must also be true.
+    * We start by assuming that p is true and then use: Axioms, **definitions** and Theorems, together with **rules of inference** to show that q must also be true.
     * Example
         * "There exists a real number between any two not equal real numbers"
         * Proof:
@@ -37,7 +38,7 @@ modified: 2023-04-08 00:00
             * Let $z = (x + y) / 2$
             * $z \in \mathbb{R}$, satisfying $x < z < y$
         * Therefore, using the universal generalised rule, we can conclude that: $\forall x, y \in \mathbb{R}$ if $x < y$ then $\exists z \in \mathbb{R}$ where $x < z < y$.
-* [[Proof by contrapositive]]
+* Proof by Contrapositive
     * A **proof by contrapositive** is based on the fact that proving the conditional statement $p \rightarrow q$ is equivalent to providing its contrapositive $\neg q \rightarrow \neg p$
         * We start by assuming that $\neg q$ is true and then use axioms, definitions and theorems, together with **rules of inference**, to show that $\neg p$ must be true.
     * Example
@@ -53,9 +54,9 @@ modified: 2023-04-08 00:00
                 * Then $\exists k \in Z$, $n^2 = (2k + 1)^2 = 2(2k^2 + 2k) + 1$
                 * Then $n^2$ is also odd.
                 * We have succeeded in providing the contrapositive: if n is odd then $n^2$ is odd.
-* [[Proof by contradiction]]
+* Proof by contradiction
     * A proof by contradiction is based on assuming that the statement we want to prove is false, and then showing that this assumption leads to a false proposition.
-    * We start by assuming that $\neg p$ is true and then use: [[Axiom]]s, definitions and [[Theorem]]s, together with **rules of inference** to show that $\neg p$ is also false. We can conclude that it was wrong to assume that p is false, so it must be true.
+    * We start by assuming that $\neg p$ is true and then use: [Axiom](Axiom)s, definitions and [Theorem](Theorem)s, together with **rules of inference** to show that $\neg p$ is also false. We can conclude that it was wrong to assume that p is false, so it must be true.
     * Example
         * Let's give a direct proof of the theorem: "There are infinitely many prime numbers"
         * Proof
@@ -70,43 +71,37 @@ modified: 2023-04-08 00:00
 
 ## 6.103 The principle of mathematical induction
 
-* Outline
-    * Definition
-    * The intuition behind induction
-    * Structure of induction
-    * Some uses of induction
-* Definition
-    * [[Mathematical Induction]]
-        * Can be used to prove that a propositional function $P(n)$ is true for all positive integers.
+* [Mathematical Induction](../../../../permanent/induction.md)
+    * Can be used to prove that a propositional function $P(n)$ is true for all positive integers.
     * The rule of inference:
         $P(1) \text{ is true}$
         $\forall k (P(k) \rightarrow P(k + 1))$
         $\therefore \forall n P(n)$
-    * Intution:
-        * P is true for 1.
-        * Since P is true for 1, it's true for 2.
-        * Since P is true for 2, it's true for 3.
-        * And so on...
-        * Since P is true for n-1, it's true for n ...
-    * In other words:
-        * The base case shows that the property initially holds true.
-        * The induction step shows how each iteration influences the next one.
-* Structure of induction
-    * In order to prove that a propositional function P(n) is true for all, we need to verify 2 steps:
-        * 1. **BASIS STEP**: where we show that P(1) is true.
-        * 2. **INDUCTION STEP**: where we show that for $\forall k \in \mathbb{N}$: if $P(k)$ is true called **inductive hypothesis**, then $P(k + 1)$ is true.
-* Some uses of induction
-    * Mathematical induction can be used to prove P(n) is true for all integers greater than a particular integer, where P(n) is a propositional function. Might cover multiple cases like:
-        * Proving formulas
-        * Proving inequalities
-        * Proving divisibility
-        * Providing properties of subsets and their cardinality.
+        * Intuition:
+            * P is true for 1.
+            * Since P is true for 1, it's true for 2.
+            * Since P is true for 2, it's true for 3.
+            * And so on...
+            * Since P is true for n-1, it's true for n ...
+        * In other words:
+            * The base case shows that the property initially holds true.
+            * The induction step shows how each iteration influences the next one.
+    * Structure of induction
+        * In order to prove that a propositional function P(n) is true for all, we need to verify 2 steps:
+            * 1. **BASIS STEP**: where we show that P(1) is true.
+            * 2. **INDUCTION STEP**: where we show that for $\forall k \in \mathbb{N}$: if $P(k)$ is true called **inductive hypothesis**, then $P(k + 1)$ is true.
+    * Some uses of induction
+        * Mathematical induction can be used to prove P(n) is true for all integers greater than a particular integer, where P(n) is a propositional function. Might cover multiple cases like:
+            * Proving formulas
+            * Proving inequalities
+            * Proving divisibility
+            * Providing properties of subsets and their cardinality.
 
 ## 6.106 Proof by induction
 
-* [[Proof By Induction]]
-* Proving formulas
-    * Proving a simple formula formalised as the propositional function, $P(n): 1 + 2 + 3 + ... + n = n (n + 1) / 2$
+* [Proof By Induction](../../../../permanent/proof-by-induction.md)
+    * Proving formulas
+        * Proving a simple formula formalised as the propositional function, $P(n): 1 + 2 + 3 + ... + n = n (n + 1) / 2$
         * The sum of 1 to n is equal to n multipled by n plus 1 divided by 2, for all n in N.
     * In order to prove that a propositional function $P(n)$ is true for all N, we need to verify 2 step:
         * 1. BASIS STEP: where we show that P(1) is true.
@@ -155,11 +150,7 @@ modified: 2023-04-08 00:00
 
 ## 6.108 Strong induction
 
-* Outline
-    * Strong induction
-    * Well-ordering property
-    * Equivalence of the three concepts
-* [[Strong induction]]
+* [Strong Induction](../../../../permanent/strong-induction.md)
     * Can be formalised with rule of inference:
         * $P(1)$ is true.
         * $\forall k \in \mathbb{N} \ P(1), P(2) ... P(k) \rightarrow P(k+1)$
@@ -180,7 +171,7 @@ modified: 2023-04-08 00:00
                         * k + 2 is not a prime number, in which case $\exists m$ dividing $k + 2$
                         * as $2 \le m \le k + 1$, $\exists p$ is a prime number dividing m. p also divides k+2
                         * Which verifies P(k + 2) is true and proves the strong induction.
-* [[Well-ordering property]]
+* [Well-Ordering Property](../../../../permanent/well-ordering-property.md)
     * The well-ordering property is an axiom about $\mathbb{N}$ that we assume to be true. The axioms about $\mathbb{N}$ are the following:
         * 1. The number 1 is a positive integer.
         * 2. If $n \in \mathbb{N}$ then $n + 1$, the successor of n, is also a positive integer.
