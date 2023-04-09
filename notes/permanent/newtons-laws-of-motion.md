@@ -10,7 +10,3 @@ In 1686, Newton presented his 3 laws of motion in "Principia Mathematica Philoso
 * 1st law: an object remains at rest or in motion a constant velocity unless acted upon by a net external force. In other words, an object will move at a constant speed unless a force is applied to it pushing it in another direction (gravity is one example of a force).
 * 2nd law: the acceleration of an object is equal to the sum of forces / the object's mass (`acceleration = sum of forces / object's mass`). Sometimes expressed as `sum of forces = mass * acceleration` , however, the former is preferred as it shows the positive relationship between acceleration and the force and the negative relationship between its mass.
 * 3rd law: if an object A exerts force on another object B, an equal force will be applied to object A. This can be seen when a swimmer pushed against a wall to propel themselves in the opposite direction across a pool.
-
-References:
-
-* [Newton's laws of motion](../reference/moocs/khan-academy/physics/Newton's%20laws%20of%20motion.md)

@@ -41,7 +41,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 * Note: Deep Learning a type of neural network learning (a deep one)
 * In 1943, neurophysiologist, Warren McCulloch, and logician, Walter Pitts created model of artificial neuron
 * Declared that since brain activity had an "all-or-nothing" characteristic, they could be treated as "propositional logic"
-* In 1950s, Frank Rosenblatt made some subtle changes to model and oversaw the creation of the [[Mark 1 Perceptron]]
+* In 1950s, Frank Rosenblatt made some subtle changes to model and oversaw the creation of the [Mark 1 Perceptron](permanent/mark-1-perceptron.md)
 
     ![Mark 1 Perceptron](/_media/mark-1-perceptron.jpeg)
 
@@ -52,6 +52,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 
 ## 12:14 Parallel Distributed Processing (PDP)
 * Released in 1986, described the foundations of modern deep learning:
+
     ![PDP](/_media/pdp.png)
     
 ## 13:38 The Age of Deep Learning
@@ -61,7 +62,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
   
 ## 16:00 Top-down learning
 * Unlike other ML courses, doesn't start with refresher on calculus, or lessons on Sigmoid function
-* Approached based on [[Teaching the whole game]] by Professor David Perkins and others from Harvard
+* Approached based on [Teaching the whole game](permanent/teaching-the-whole-game.md) by Professor David Perkins and others from Harvard.
 
 ## 23:09 Software stack
 * Software used:
@@ -108,24 +109,24 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 * Idea was that instead of telling computer how to solve a problem, give computer examples of problem and have it figure it out
     * Create a weight assigment to test effectiveness of problem, and provide mechanism of altering weights to maximise performance
 * After training "model" you have something like: inputs -> model -> results
-* When we use a model to do a task like playing checkers, we call it [[Inference]]
+* When we use a model to do a task like playing checkers, we call it [Inference](permanent/inference.md)
     * Jargon: Machine Learning
         * Training of programs developed by allowing computer to learn from experience, rather than manually coding the steps
   
  ## 53:45 Neural networks & image classification
  
  * Is there is a function so flexibilty that the weights can do anything? Yes, a neural network.
- * Mathematical proof called [[Universal Approximation Theory]]
+ * Mathematical proof called [Universal Approximation Theory](permanent/universal-approximation-theory.md)
      * Function can solve any problem to any level of accuracy if you just find the right set of weights (in theory)
-* [[Stochasic Gradient Descent (SGD)]]
+* [Stochasic Gradient Descent](permanent/stochasic-gradient-descent.md)
     * The "mechanism of altering weights to maximise performance" that Arthur Samuel referred to.
     * Course will look at exactly how it works.
 * Terminology used nowadays as compared to Samuel's:
-    * Functional form of model is [[Architecture]]
-    * Weights are called [[Parameters]]
-    * Predictions calculated from [[Independant Variable]], which is the data that doesn't include the labels
-    * Results of model are called [[Predictions]]
-    * Loss depends on having [[Predictions]] and correct [[Labels]]
+    * Functional form of model is [Architecture](Architecture)
+    * Weights are called [Parameters](Parameters)
+    * Predictions calculated from [Independant Variable](Independant Variable), which is the data that doesn't include the labels
+    * Results of model are called [Predictions](Predictions)
+    * Loss depends on having [Predictions](Predictions) and correct [Labels](Labels)
 
 ## 58:57 Limitations of Machine Learning
 * Model can't be created without data.
@@ -143,7 +144,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
         * predictive policing model predicts where arrests are likely to occur.
         * more police therefore go to the area, which leads to more arrests.
         * that is fed into model, which creates more arrests.
-    * Consider that predicting arrests is an example of where [[Metrics Are Proxies]] for what you care about: reducing crime.
+    * Consider that predicting arrests is an example of where [Metrics Are Proxies](permanent/Metrics Are Proxies.md) for what you care about: reducing crime.
         * Sometimes the difference between proxy and what you are actually trying to do can be significant
 
 ## 01:04:14 Dogs and Cats Notebook review
