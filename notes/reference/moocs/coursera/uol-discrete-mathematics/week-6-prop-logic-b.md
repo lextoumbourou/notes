@@ -1,17 +1,17 @@
 ---
-title: Week 6 - Topic 03 B. Proppositional Logic
+title: Week 6 - Topic 03 B. Propositional Logic
 date: 2022-11-15 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00
+modified: 2023-04-09 00:00
 ---
 
 ## 2.202 Logical implication
 
-* [[Logical Implication]]
+* Logical [Implication](../../../../permanent/implication.md)
     * Let $p$ and $q$ be propositions.
-    * The [[Conditional Statement]], or "implication $p \rightarrow q$" is the [[Proposition]] "if $p$ then $q$".
+    * The conditional statement, or "implication $p \rightarrow q$" is the [Proposition](../../../../permanent/proposition.md) "if $p$ then $q$".
         * We call $p$ the hypothesis (or antecedent or premise)
         * We call $q$ the conclusion (or consequence)
     * Example:
@@ -48,8 +48,7 @@ modified: 2023-04-08 00:00
             * $p$ is sufficient for $q$
             * $q$ unless $\neg p$
             * $q$ is necessary for $p$
-
-* [[Converse, contrapositive and inverse]]
+* Converse, contrapositive and inverse
     * Let $p$ and $q$ be propositions and $A$ the conditional statement $p \rightarrow q$
     * The proposition $q \rightarrow p$ is the converse of $A$.
     * The proposition $\neg p \rightarrow \neg q$ is the contrapositive of $A$
@@ -73,14 +72,7 @@ modified: 2023-04-08 00:00
 
 ## 3.204 Logical equivalence
 
-* Outlines
-    * Definition of equivalence
-    * Equivalence properties
-    * Equivalent propositions
-    * Proving equivalence
-    * Proving non-equivalence
-    * Precedence of logical operations
-* Definition of [[Logical Equivalence]]
+* [Logical Equivalence](../../../../permanent/logical-equivalence.md)
     * The biconditional or equivalence statement $p \leftrightarrow q$ is the proposition: $p \rightarrow q$ and $q \rightarrow p$
 * Equivalence properties ($\leftrightarrow$)
     * Biconditional statements are also called bi-implications.
@@ -150,35 +142,34 @@ modified: 2023-04-08 00:00
 
 ## 3.206 Laws of prospositional logic
 
-* Outlines
-    * laws of propositional logic
-    * equivalence proof
-* Propositional logic is an algebra involving multiple laws. These are some of the laws:
+* [Laws of Propositional Logic](permanent/laws-of-propositional-logic.md)
+    * Propositional logic is an algebra involving multiple laws. These are some of the laws:
 
-|                   | Disjunction                                             | Conjunction                                             |
-| ----------------- | ------------------------------------------------------- | ------------------------------------------------------- |
-| idempotent laws   | $p \lor p \equiv p$                                     | $p \land p \equiv p$                                    |
-| commutative laws  | $p \lor q \equiv q \lor p$                              | $p \land q \equiv q \land p$                            |
-| associative laws  | $(p \lor q) \land r \equiv p \lor (q \lor r)$           | $(p \land q) \land r \equiv p \land ( q \land r)$       |
-| distributive laws | $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ | $p \lor (q \lor r) \equiv (p \land q) \lor (p \land r)$ |
-| identity laws     | $p \lor \mathbf{F} \equiv p$                            | $p \land \mathbf{T} \equiv p$                           |
-| domination laws   | $p \lor \mathbf{T} \equiv \mathbf{T}$                    | $p \land \mathbf{F} \equiv \mathbf{F}$                   |
+    | | Disjunction | Conjunction |
+    | ----------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+    | idempotent laws | $p \lor p \equiv p$ | $p \land p \equiv p$ |
+    | commutative laws | $p \lor q \equiv q \lor p$ | $p \land q \equiv q \land p$ |
+    | associative laws | $(p \lor q) \land r \equiv p \lor (q \lor r)$ | $(p \land q) \land r \equiv p \land ( q \land r)$ |
+    | distributive laws | $p \lor (q \land r) \equiv (p \lor q) \land (p \lor r)$ | $p \lor (q \lor r) \equiv (p \land q) \lor (p \land r)$ |
+    | identity laws | $p \lor \mathbf{F} \equiv p$ | $p \land \mathbf{T} \equiv p$ |
+    | domination laws | $p \lor \mathbf{T} \equiv \mathbf{T}$ | $p \land \mathbf{F} \equiv \mathbf{F}$ |
 
-* Example
-![[distributative-law-truth-table.png]]
-* Laws of propositional logic 2
- ![[equivalence-table.png]]
- * Equivalence proof
-     * Example the equivalence between $\neg (p \land (\neg p \lor q))$ and $(\neg p \lor \neg q)$
-         * $\neg (p \land (\neg p \lor q))$ - given proposition
-         * $\neg p \lor \neg (\neg p \lor q)$ - De Morgan's law
-         * $\neg p \lor ((\neg \neg p) \land \neg q)$ - De Morgan's law
-         * $\neg p \lor (p \land \neg q)$ - double negation law
-         * $(\neg p \lor p) \land (\neg p \lor \neg q)$ - distributive laws
-         * $T \land (\neg p \lor \neg q)$ - complement laws
-* Summary
-    * laws of propositional logic.
-    * equivalence proof.
+    * Example
+    
+        ![distributive-law-truth-table](/_media/distributative-law-truth-table.png)
+        
+    * Laws of propositional logic 2
+    
+         ![equivalence-table](../../../../journal/_media/equivalence-table.png)
+         
+* Equivalence Proof
+    * Example the equivalence between $\neg (p \land (\neg p \lor q))$ and $(\neg p \lor \neg q)$
+     * $\neg (p \land (\neg p \lor q))$ - given proposition
+     * $\neg p \lor \neg (\neg p \lor q)$ - De Morgan's law
+     * $\neg p \lor ((\neg \neg p) \land \neg q)$ - De Morgan's law
+     * $\neg p \lor (p \land \neg q)$ - double negation law
+     * $(\neg p \lor p) \land (\neg p \lor \neg q)$ - distributive laws
+     * $T \land (\neg p \lor \neg q)$ - complement laws
 
 ## Problem Sheet
 
@@ -412,4 +403,4 @@ If n is not divisble by either 3 or 5 then n is not divisible by 15.
 
 Let p and q be two propositions. Show by constructing the truth table or otherwise that the following statements are equivalent:
 
-$p \lor q$ and $\neg
+$p \lor q$ and $\neg$

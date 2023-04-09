@@ -173,7 +173,7 @@ end
 
 For some particularly long-running requests, we aim to do them in the background to allow the player to continue to enjoy the game while they wait.
 
-See also the [Goal Of A Game Interface](permanent/goal-of-a-game-interface.md).
+See also the [Goal Of A Game Interface](goal-of-a-game-interface.md).
 
 [^1]: Schell, Jesse. The Art of Game Design: A Book of Lenses. Amsterdam, Boston; Elsevier/Morgan Kaufmann, 2008. (pg. 910)
 [^2]: Nah, Fiona, "A Study on Tolerable Waiting Time: How Long Are Web Users Willing to Wait?" (2003). AMCIS 2003 Proceedings. 285.

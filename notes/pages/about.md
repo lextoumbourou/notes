@@ -9,7 +9,7 @@ You can find the source on the [GitHub project](https://github.com/lextoumbourou
 
 The notes are collecting using my interpretation of the [Zettelkasten](https://en.wikipedia.org/wiki/Zettelkasten) method.
 
-[Permanent Notes](permanent/permanent-notes.md) explore a single idea and its connections to other ideas. Reference notes (based on [Literature Notes](permanent/literature-notes.md) are taken while consuming the media as a means of helping me process information. The idea is that reference notes lead to additions or updates to the permanent note collection.
+[Permanent Notes](../permanent/permanent-notes.md) explore a single idea and its connections to other ideas. Reference notes (based on [Literature Notes](../permanent/literature-notes.md) are taken while consuming the media as a means of helping me process information. The idea is that reference notes lead to additions or updates to the permanent note collection.
 
 I've been accumulated reference notes since 2012, but permanent note collection started in 2020.
 

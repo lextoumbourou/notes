@@ -14,6 +14,6 @@ However, we failed to take into account the stories of where Microservices hadn'
 
 Every page about Survivorship Bias has to include the story of [Abraham Wald](https://en.wikipedia.org/wiki/Survivorship_bias#In_the_military). During WW2, he and his team were instructed to recommend which parts of fighter planes they should reinforce based on an assessment of the damage they took during battle. At odds with recomendations from the US military, he recommended that they reinforce the parts of the plane that took no damage. The planes that had been hit in those areas never made it back.
 
-Another error of thinking like [Confirmation Bias](permanent/confirmation-bias.md).
+Another error of thinking like [Confirmation Bias](confirmation-bias.md).
 
 [@ahrensHowTakeSmart2017] *(pg. 136)*

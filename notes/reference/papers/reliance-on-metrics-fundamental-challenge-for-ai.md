@@ -19,7 +19,7 @@ summary: Notes from paper Reliance on Metrics is a Fundamental Challenge for AI 
     > "When a measure becomes a target, it ceases to be a good measure"
     
 * Paper finds supporting principles:
-    * [Metrics Are Proxies](permanent/metrics-are-proxies.md) what you really care about
+    * [Metrics Are Proxies](../../permanent/metrics-are-proxies.md) what you really care about
     * Metrics can and will be gamed: aka [Metric hacking](Metric hacking)
     * Metrics tend to overemphasis short-term concerns
     * Many online metrics are gathered in highly addictive environment

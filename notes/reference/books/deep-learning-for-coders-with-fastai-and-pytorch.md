@@ -10,8 +10,6 @@ status: draft
 * It's a computer technique to extract and transform data using multiple layers of neural networks.
     * Each layer takes input from previous layers and refines them.
     * Layers trained to minimise errors
-
-
 * Neural networks history:
 	* 1943
         * Mathematical model of artificial neuron is described in "A Logical Calculus of the Ideas Immanent in Nervous Activity" by Warren McCulloch (neurophysiologist) and Walter Pitts (logician)
@@ -51,10 +49,10 @@ status: draft
 
 ## Chapter 2
 
-* [[Out-of-domain data]] (pg. 104)
+* [Out-of-domain data](permanent/out-of-domain-data.md) (pg. 104)
     * Data that is given to a model that is different to the data it was trained on.
     * No complete technical solution: have to carefully roll out model
-* [[Domain Shift]] (pg. 104)
+* [Domain Shift](permanent/domain-shift.md) (pg. 104)
     * Data that model performs inference on changes over time.
     * Example: types of customers an insurance sees changes over time, making their earlier models less useful.
     
@@ -64,9 +62,9 @@ status: draft
 *  Datasets tends to be structured in one of 2 ways (pg. 213-214):
     *  Files either in folders or with metadata (like labels) in the filename.
     *  A CSV (or similar) where each row is an item. In image classification, each row may include a filename.
-*  [[L class]] (pg. 214-215)
+*  L class (pg. 214-215)
     * fastai enhancement to Python's list.
-* [[Presizing]] (pg. 216-219)
+* [Presizing](../../permanent/presizing.md) (pg. 216-219)
     * Images need to be same size to collate into tensors.
     * Wants to reduce operations for augmentations down to the minimum and do on the GPU.
     * If you're resizing before augmentations, it can degrade your image quality.
