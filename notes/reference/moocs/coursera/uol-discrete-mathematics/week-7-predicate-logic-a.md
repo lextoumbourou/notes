@@ -4,76 +4,69 @@ date: 2022-11-22 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00
+modified: 2023-04-09 00:00
 ---
 
 ## 4.101 Introduction to predicate logic
 
-* Propositional logic has some limitations:
-    * Cannot precisely express meaning of complex math statements.
-    * Only studies propositions, which are statements with known truth values.
-* Predicate logic overcomes the limitations and can be used to build more complex reasoning.
-* Example 1:
-    * Given statements:
-        * "All men are mortal."
-        * "Socrates is a man."
-    * Naturally, it follows that: "Socrates is mortal"
-    * Propositional logic can't express this reasoning, but predicate logic can enable us to formalise it.
-* Example 2:
-    * "x squared is equal to 4."
-    * It's not a proposition, as its truth value is a function depending on x.
-    * We need predicate logic.
+* [Predicate Logic](../../../../permanent/predicate-logic)
+    * Propositional logic has some limitations:
+        * Cannot precisely express meaning of complex math statements.
+        * Only studies propositions, which are statements with known truth values.
+    * Predicate logic overcomes the limitations and can be used to build more complex reasoning.
+    * Example 1:
+        * Given statements:
+            * "All men are mortal."
+            * "Socrates is a man."
+        * Naturally, it follows that: "Socrates is mortal"
+        * Propositional logic can't express this reasoning, but predicate logic can enable us to formalise it.
+    * Example 2:
+        * "x squared is equal to 4."
+        * It's not a proposition, as its truth value is a function depending on x.
+        * We need predicate logic.
 
-## 4.103 What are predictates?
+## 4.103 What are Predictates?
 
 * Consider statement $x^2 = 4$
     * It's not a proposition as its true value depends on $x$
     * Therefore, it can't be expressed using propositional logic.
     * Can be expressed using predicate logic.
-* [[Predicates]]
+* [Predicate](../../../../permanent/predicate.md)
     * Predicates behave as functions whose values $T$ or $F$ depend on their variables.
     * Predicates become propositions when their variables are given actual values.
 * The statement above has 2 parts:
-    * The **variable** x: the subject of the statement.
-    * The **predicate** "squared is equal to 4": the property the subject of the statement can have.
+* The **variable** x: the subject of the statement.
+* The **predicate** "squared is equal to 4": the property the subject of the statement can have.
 * The statement can be formalised as $P(x)$ where P is the predicate "squared is equal to 4" and x is the variable.
-    * Evaluate for certain values of x:
-        * P(2) is True
-        * P(3) is False
-    * A predictate can depend on multiple values:
-        * Let $P(x, y)$ denote "$x^2 > y$":
-            * $P(-2, 3)$ = $(4 > 3) \text{ is } \mathbf{ True}$
-            * $P(2, 4)$ = $4(2^2 >4) \text{ is } \mathbf{False}$
-    * Let Q(x, y, z) denote x + y < z
-        * Q(2, 4, 5) = (6 < 5) is F
-        * Q(2, 4, z) is not a proposition
+* Evaluate for certain values of x:
+    * P(2) is True
+    * P(3) is False
+* A predictate can depend on multiple values:
+    * Let $P(x, y)$ denote "$x^2 > y$":
+        * $P(-2, 3)$ = $(4 > 3) \text{ is } \mathbf{ True}$
+        * $P(2, 4)$ = $4(2^2 >4) \text{ is } \mathbf{False}$
+* Let Q(x, y, z) denote x + y < z
+    * Q(2, 4, 5) = (6 < 5) is F
+    * Q(2, 4, z) is not a proposition
 * Logical operations from propositional logic carry over to predicate logic
     * If $P(x)$ denotes $x^2 < 16$, then:
         * $P(1) \lor P(-5) \equiv (1 < 16) \lor (25 < 16) \equiv T \lor F \equiv T$
         * $P(1) \land P(-5) \equiv T \land F \equiv F$
         * $P(3) \land P(y)$ is not a proposition. It becomes a proposition when y is assigned a value.
-* Summary
-    * Predicates
-    * Predicates with multiple variables
-    * Logical operations
 
 ## 4.105 Quantification
 
-* Outlines
-    * Definition of quantifier
-    * Universal quantifier
-    * Existential quantifier
-    * Uniqueness quantifier
-* Quantification expresses the extent to which a predicate is true over a range of elements
-* They express the meaning of the words **all** and **some**.
-* Two most important ones:
-    * Universal quantifier
-    * Existential quantifier
-    * Example
-        * "All men are mortal"
-        * "Some computers are not connected to the network"
-* A third quantifier called "uniqueness quantifier".
-* [[Universal quantifier]]
+* [Quantification](permanent/quantification.md)
+    * Quantification expresses the extent to which a predicate is true over a range of elements
+    * They express the meaning of the words **all** and **some**.
+    * Two most important ones:
+        * Universal quantifier
+        * Existential quantifier
+        * Example
+            * "All men are mortal"
+            * "Some computers are not connected to the network"
+    * A third quantifier called "uniqueness quantifier".
+* [Universal Quantifier](permanent/universal-quantifier.md)
     * The universal quantifier of predictate P(x) is proposition:
         * P(x) is true for all values of x in the universe of discourse.
     * We use the notation: $\forall x P(x)$, which is read "for all x"
@@ -96,7 +89,8 @@ modified: 2023-04-08 00:00
         * Let $P(x, y)$ by the statement x + y > 10, where the universe of discourse for x, y is the set of all integers.
         * The statement S is: $\forall x \forall y P(x, y)$
         * Can also be written as: $\forall x, y \ \ P(x, y)$
-* [[Existential quantifier]]
+
+* [Existential quantifier](permanent/existential-quantifier.md)
     * The existential quantification of a predicate $P(x)$is the proposition:
         * "There exists a value x in the universe of discourse such that P(x) is true."
     * We use the notation: $\exists \ x \ P(x)$, which reads "there exists x".
@@ -117,7 +111,7 @@ modified: 2023-04-08 00:00
         * Let's evaluate the truth value of S:
             * When $b^2 >= 4ac, S \text{ is true , as } P(-b \mp \sqrt(b^2 - 4ac)) / 2a = 0$
             * When $b^2 < 4ac, S\text{ is false }$ as there is no real number x that can satisfy the predicate.
-* [[Uniqueness quantifier]]
+* [Uniqueness quantifier](permanent/uniqueness-quantifier.md)
     * Special case of "existential quantifier".
     * The uniqueness quantifier of prediction P of x is the proposition:
         * There exists a unique value of x in the universe such that P of x is true.
@@ -138,6 +132,7 @@ modified: 2023-04-08 00:00
         * $\exists x \ \exists y \ P(x,  y)$ - There is a pair x, y for which P(x, y) is true.
         * $\forall x \ \exists y \ P(x, y)$ - For every x, there is a y for whih P(x, y) i true.
         * $\exists x \ \forall y \ P(x, y)$ - there is an x for which P(x, y) is true for every y.
+
 * Binding variables
     * A variable is said to be **bound** if it is within the scope of a quantifier.
     * A variable is **free** if it is not bound by a quantifier or particular values.
@@ -147,12 +142,14 @@ modified: 2023-04-08 00:00
         * We can say that:
             * x is bound
             * y is free
+
 * Logical operations
     * Logical operations can be applied to quantified statements
     * Example
         * If P(x) denotes "x > 3" and Q(x) denotes "x squared is even" then
             * $\exists \ x \ (P(x) \lor Q(x)) \equiv T (ex. x = 4)$
             * $\forall \ x \ (P(x) \rightarrow Q(x) \equiv F (ex. x = 5))$
+
 * Order of operations
     * When nested quantifiers are of the same type, the order does not matter.
     * With quantifiers of different types, the order does matter.
@@ -160,8 +157,9 @@ modified: 2023-04-08 00:00
         * $\forall x \ \forall y P(x, y) \equiv \forall y \ \forall x \ P(x, y)$
         * $\exists x \ \exists y \ P(x, y) \equiv \exists y \ \exists x \ P(x, y)$
         * $\forall x \ \exists y \ P(x, y)$ is different from $\exists y \ \forall x \ P(x,  y)$
+
 * Precendence of quantifiers
-    * The quantifiers \forall and \exists have a higher precendence than all logical operators
+    * The quantifiers $\forall$ and $\exists$ have a higher precendence than all logical operators
     * Example
         * P(x) and Q(x) denote two propositional functions.
         * $\forall x \ P(x) \lor Q(x)$ is the disjunction of $\forall x \ P(x) \text{ and } Q(x)$ rather than $\forall x \ (P(x) \text{ and } Q(x))$
