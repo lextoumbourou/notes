@@ -186,7 +186,7 @@ It would only be correct when $B = A$
 
 This venn diagram shows that $(A \cap B) \cup (A \cap B) \neq A$
 
-![[final-exam-part-b-venn1.png]]
+![final-exam-part-b-venn1](../../../../_media/final-exam-part-b-venn1.png)
 
 ii. $(A - B) - C \subseteq A - \overline{C}$
 
@@ -194,13 +194,13 @@ This statement is FALSE.
 
 This Venn Diagram shows that $(A - B) - C \not \subseteq A - \overline{C}$
 
-![[final-exam-part-b-venn2.png]]
+![final-exam-part-b-venn2](../../../../_media/final-exam-part-b-venn2.png)
 
 iii. $(A - C) \cap (C - B) = \emptyset$
 
 This Venn Diagram proves that this set identity is TRUE.
 
-![[final-exam-part-b-venn3.png]]
+![final-exam-part-b-venn3](../../../../_media/final-exam-part-b-venn3.png)
 
 d. Let $p$, $q$ and $r$ be three propositions for which $p$ and $q$ are T and $r$ is false. Determine the truth value for each of the following.
 
@@ -445,7 +445,7 @@ $\forall x, y \in S$, if $x \ R \ y$ then x mod 2 = y mod 2
 
 i. Draw the digraph of R
 
-![[final-exam-part-b-digraph.png]]
+![final-exam-part-b-digraph](../../../../_media/final-exam-part-b-digraph.png)
 
 ii. Show that R is an equivalence relation.
 

@@ -1,5 +1,5 @@
 ---
-title: Week 18 - Topic 09 B. Relations 
+title: Week 18 - Relations B
 date: 2022-03-01 00:00
 category: reference/moocs
 status: draft
@@ -9,13 +9,13 @@ modified: 2023-04-08 00:00
 
 ## 9.201 Equivalence relations and equivalence classes
 
-* Definition of [[Equivalence Relation]]
-    * Let R be a relation of elements on a set S. R is an equivalence relation if and only if R is reflexive, syymetric and transitive.
+* Definition of [Equivalence Relation](permanent/equivalence-relation.md)
+    * Let R be a relation of elements on a set S. R is an equivalence relation if and only if R is reflexive, symmetric and transitive.
 * Example 1
     * Let R be relation of elements in Z:
         * $R = \{ (a, b) \in Z^2 | a \mod 2 = b \mod 2 \}$
     * We have already proved that this relation is:
-        * Reflexive as a R a, \in a \forall Z
+        * Reflexive as a $R a, \in a \forall Z$
         * Symmetric as if a R b then b R a, \forall a, b \in Z
         * Transitive as if a R b and b R c then a R c, \forall a, b, c \in Z
         * This is an equivalence relationship.
@@ -27,7 +27,7 @@ modified: 2023-04-08 00:00
             * Transitive as if $a \ R \ b$ and $b \ R \ c$ then $a \ R \ c$, $\forall a, b, c \in Z$
             * Not symmetric as $2 \leq 3$ but $3 \not \lt 2, \forall a, b \in Z$
         * This is not equivalence.
-* Definition of [[Equivalence Class]]
+* Definition of [Equivalence Class](permanent/equivalence-class.md)
     * Let R be an equivalence relation on a set S. Then, the equivalence class of a \in S is:
         * a subset of S containing all the elements related to a through R.
         * $|a| = \{x: x \in S \text { and } x \ R \ a\}$
@@ -48,7 +48,7 @@ modified: 2023-04-08 00:00
 
 ### 9.203 Partial and total order
 
-* Definition of a [[Partial Order]].
+* Definition of a [Partial Order](permanent/partial-order.md).
     * Let $R$ be a relation on elements in set $S$. $R$ is a partial order if and only if $R$ is:
         * reflexive
         * anti-symmetric
@@ -69,7 +69,7 @@ modified: 2023-04-08 00:00
             * transitive as if $a \text{ divides } b$ and $b \text{ divides } c$ then $a \text{ divides } c$, $\forall a, b ,c \in Z+$
             * anti-symmetric as if $a \text{ divides } b$ and $b \text{ divides } a$ then $a = b$, $\forall a, b \in Z+$
         * Therefore, R is a partial order.
-* Definition of a [[Total Order]]
+* Definition of a [Total Order](permanent/total-order.md)
     * Let R be a relation on elements in a set S.
     * R is a total order if and only if:
         * R is a partial order
@@ -346,7 +346,7 @@ X is related to Y whenever $X \subseteq Y$
 
 1. Draw the relationship digraph.
 
-![[week-18-problem-sheet-relationship-bigraph.png]]
+![week-18-problem-sheet-relationship-bigraph](../../../../journal/_media/week-18-problem-sheet-relationship-bigraph.png)
 
 2. Determine whether or not $R$ is reflexive, symmetric, antisymmetric or transitive. Give a brief justification for each of your answers.
 
@@ -373,7 +373,7 @@ $x$ is related to $y$ whenever $(x, y) \in A$
 
 1. Draw the relationship digraph
 
-![[week-18-problem-sheet-q9-digraph.png]]
+![week-18-problem-sheet-q9-digraph](../../../../journal/_media/week-18-problem-sheet-q9-digraph.png)
 
 2. Determine whether or not $R$ is reflexive, symmetric, antisymmetric or transitive. Give brief justification of each answer.
 

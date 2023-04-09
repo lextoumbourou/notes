@@ -1,5 +1,5 @@
 ---
-title: Week 20 - Topic 10 B. Combinatorics
+title: Week 20 - Combinatorics B
 date: 2022-02-25 00:00
 category: reference/moocs
 status: draft
@@ -8,7 +8,7 @@ parent: uol-discrete-mathematics
 
 ## 10.201 Binomial coefficients and identities
 
-* [[Binomial Theorem]]
+* [Binomial Theorem](permanent/binomial-theorem.md)
     * An expression consisting of 2 terms, connected by a + or - sign.
     * Examples:
         * $x + a$
@@ -53,9 +53,11 @@ parent: uol-discrete-mathematics
             * $\binom{n}{k-1}$ subsets of k elements that contain a
             * $\binom{n}{k}$ subsets of k elements of T that don't contain a
         * Hence, $\binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}$
-    * It's the basis for geometic arrangements of the binomial coefficients in a triangle. This is called [[Pascal's Triangle]].
+    * It's the basis for geometic arrangements of the binomial coefficients in a triangle. This is called [Pascal's Triangle](permanent/pascals-triangle.md).
     * Pascal's triangle is a number triangle with numbers arranged in staggered rows such that $a_{n,r}$ is the binomial coefficients of $\binom{n}{r}$
-      ![[week-20-pascals-triangle.png]]
+    
+      ![week-20-pascals-triangle](../../../../_media/week-20-pascals-triangle.png)
+      
       Using Pascal's identity, we can show the result of adding 2 adjacent coefficients in the triangle is equal to the binomial coefficient in the next row between these 2 coefficients.
 
 ## Video: 10.204 Generalised permutations and combinations

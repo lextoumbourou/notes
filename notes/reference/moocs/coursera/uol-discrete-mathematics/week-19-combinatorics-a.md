@@ -1,5 +1,5 @@
 ---
-title: Week 19 - A. Combinatorics
+title: Week 19 - Combinatorics A
 date: 2022-02-18 00:00
 category: reference/moocs
 status: draft
@@ -9,7 +9,7 @@ modified: 2023-04-08 00:00
 
 ## Lesson 10.1 The basics of Combinatorics
 
-* Combinatorics
+* [Combinatorics](permanent/combinatorics.md)
     * The math topic that studies "finitate" countable discrete structures: collections or arragements of objects.
     * Involves counting objects and studying the mathematical properties of different arrangement of objects.
     * Applications include programming, physics, economics and other fields like prob theory.
@@ -17,7 +17,7 @@ modified: 2023-04-08 00:00
 
 ## Lesson 10.103 The basics of counting
 
-* [[Product Rule]]
+* [Product Rule](permanent/product-rule.md)
     * To determine the number of different possibile outcomes in a complex process, we can break the problem into a sequence of two independent tasks:
         * if there are n ways of doing the first task
         * for each of these ways of doing the first task, there are $m$ ways of doing the 2nd task.
@@ -48,7 +48,7 @@ modified: 2023-04-08 00:00
         * The number ways to do both task 1 and 2 can be represented as: $|AxB| = |A| \cdot |B|$
             * The cardinality of the cross product of A and B.
         * In other words: the num elements in the Cartesian product of these sets is the product of number of elements in each set.
-* [[Addition Rule]]
+* [Addition Rule](permanent/addition-rule.md)
     * Suppose a task 1 can be done n ways and a task 2 can be done in m ways.
     * Assume that both tasks are independent, that is, performing task 1 doesn't mean performing task 2 and vice versa.
     * In this case, the number of ways of executing task 1 or task 2 is equal to n + m.
@@ -70,7 +70,7 @@ modified: 2023-04-08 00:00
         * The number of labels with one letter only is 26
         * Using the product rule the number of labels with a letter folowed by 2 digits is 26 x 10 x10
         * Using the sum rule the total number of labels is 26 + 26>10.10 = 2,626.
-* [[Subtraction Rule]]
+* [Subtraction Rule](permanent/subtraction-rule.md)
     * Suppose a task can be done either in one of n_1 ways or in one of n_2 ways.
     * Then the total number of ways to do the task is n_1 + n_2 minus the number of ways common to the two different ways.
     * Also known as the principle of inclusion-exclusion.
@@ -83,7 +83,7 @@ modified: 2023-04-08 00:00
             * Number of bit trings of length 8 that start with a 1 bit and end with bits 00 is 2^5 = 32
             * Using substraction rule:
                 * the number of bit strings either starting with a 1 or ending with 00 is 128 + 64 - 32 = 160.
-* [[Division Rule]]
+* [Division Rule](permanent/division-rule.md)
     * Suppose a tak can be done using a procedure that can be carried out in n ways, for every way w, exactly d of the n ways correspond to w.
         * Then this task can be done $n/d$ ways
     * In terms of sets: if the finite set A is the union of n pair-wise disjoint subsets each with d elements, the $n = |A| / d$
@@ -134,7 +134,7 @@ modified: 2023-04-08 00:00
 
 * Many counting problems can be solved by finding the number of ways to arrange a specified number of distinct elements of a set of particular size, where the order of this element matters, and in some cases doesn't.
 * This lecture discusses permutations and combinations, which are used to solve this counting problem.
-* Definition of a [[Permutation]]
+* Definition of a [Permutation](permanent/permutation.md)
     * A permutation of a set of distinct objects is an **ordered arrangement** of these objects.
     * An ordered arragement of r elements of a set is called an r-permutation.
     * The number of r-permutations of a set with n elements is denoted by $P(n,r)$
@@ -160,7 +160,7 @@ modified: 2023-04-08 00:00
             * How many possible ways are there of selecting a first prize winner, a 2nd price winner and third-prize winner from 50 different people?
             * Solution:
                 * P(50, 3) = 50 * 49 * 48 = 117,600
-* Definition of [[Combinations]]
+* Definition of [Combinations](permanent/combinations.md)
     * An r-combination of elements of a set is an unordered selection of r elements from the set.
     * An r-combination is a subset of the set with r elements.
     * The number of r-combinations of a set with n distinct elements is denoted by $C(n, r) = \binom{n}{r}$
