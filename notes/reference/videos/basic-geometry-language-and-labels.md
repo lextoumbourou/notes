@@ -18,11 +18,11 @@ Notes from Khan Academy video [Basic geometry: language and labels | Introductio
 ## Plane
 
 
-* A [Plane](permanent/geometry-plane.md) is a flat surface that has 2 dimensions: width and height and goes on infinity in either direction.
+* A [Plane](../../permanent/geometry-plane.md) is a flat surface that has 2 dimensions: width and height and goes on infinity in either direction.
 
 ## Point
 
-* A [Point](permanent/geometry-point.md) refers to a dot on that plane and is the most basic geometric idea.
+* A [Point](../../permanent/geometry-point.md) refers to a dot on that plane and is the most basic geometric idea.
 
     ![points on a plane](/_media/bg-points.png)
 
@@ -32,7 +32,7 @@ Notes from Khan Academy video [Basic geometry: language and labels | Introductio
 
 ## Line Segment
 
-* A line that connects 2 points, is referred to as a [Line Segment](permanent/geometry-line-segment.md)
+* A line that connects 2 points, is referred to as a [Line Segment](../../permanent/geometry-line-segment.md)
 
     ![line segment examples](/_media/bg-line-segment.png)
 
@@ -49,7 +49,7 @@ Notes from Khan Academy video [Basic geometry: language and labels | Introductio
 
 ## Ray
 
-* A line that starts from one point that continues on infinitely in one direction is called a [Ray](permanent/ray.md)
+* A line that starts from one point that continues on infinitely in one direction is called a [Ray](../../permanent/ray.md)
 
     ![ray example](/_media/bg-ray.png)
 
@@ -61,7 +61,7 @@ Notes from Khan Academy video [Basic geometry: language and labels | Introductio
 
 ## Line
 
- * A line that continues infinitely in either direction is formally called a [Line](permanent/line.md).
+ * A line that continues infinitely in either direction is formally called a [Line](../../permanent/line.md).
 
      ![line example](/_media/bg-line.png)
 
@@ -71,7 +71,7 @@ Notes from Khan Academy video [Basic geometry: language and labels | Introductio
 
 ## Collinear points
 
-* If you have a line segment and introduce a point in the middle, you could describe all 3 points as "[Colinear](permanent/geometry-colinear.md)" - they sit on the same line.
+* If you have a line segment and introduce a point in the middle, you could describe all 3 points as "[Colinear](../../permanent/geometry-colinear.md)" - they sit on the same line.
 
     ![colinear points example](/_media/bg-colinear-points.png)
 

@@ -9,7 +9,7 @@ Zombie processes are "dead" processes. That is, processes that have finished exe
 
 You cannot kill a zombie process because they are already dead. To get rid of a zombie process, kill its parent.
 
-Zombie processes are, in some ways, the opposite of [Orphan Processes](permanent/orphan-processes.md). When a child process finishes running, its state (PID and return code) sits in the process table, waiting for the parent to collect it by calling `wait(2)`. In this state, we say a child is a *defunct* or *zombie* process.
+Zombie processes are, in some ways, the opposite of [Orphan Processes](orphan-processes.md). When a child process finishes running, its state (PID and return code) sits in the process table, waiting for the parent to collect it by calling `wait(2)`. In this state, we say a child is a *defunct* or *zombie* process.
 
 Therefore, zombie processes have completed execution and thus take up almost no system resources.
 

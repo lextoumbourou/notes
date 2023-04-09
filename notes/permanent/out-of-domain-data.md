@@ -17,6 +17,6 @@ The solution was first to filter the data fed into the model through a language 
 
 What's more, a model trained to classify the content of blogs performs very poorly on shorter form style of posts like those on Instagram. The dataset needs to be carefully balanced to include all types of data the model sees in production.
 
-Classifying datasets is the idea behind [Adversarial Validation](permanent/adversarial-validation.md), which uses models to classify the closeness of domains between 2 datasets.
+Classifying datasets is the idea behind [Adversarial Validation](adversarial-validation.md), which uses models to classify the closeness of domains between 2 datasets.
 
 Cover image by [rawdonfox on Flickr](https://www.flickr.com/photos/34739556@N04/6802867364).

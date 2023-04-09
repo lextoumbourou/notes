@@ -4,7 +4,7 @@ date: 2022-12-22 00:00
 status: draft
 ---
 
-A merge operation between between 2 [Set](permanent/set.md)s.
+A merge operation between between 2 [Set](set.md)s.
 
 Represented by the $\cup$ symbol (`\cup` in [LaTeX](LaTeX.md)).
 

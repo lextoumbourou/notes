@@ -13,4 +13,4 @@ Sönke says that even the best thinkers are equally prone to this, though they a
 
 In this sense, seeking to conquer confirmation bias is part of a [Growth Mindset](Growth Mindset.md).
 
-Also related to [Loss Adversion](permanent/loss-adversion.md), insofar as we seek to avoid situations which could result in loss, even at the expense of situations where we would more likely would win (learn).
+Also related to [Loss Adversion](loss-adversion.md), insofar as we seek to avoid situations which could result in loss, even at the expense of situations where we would more likely would win (learn).

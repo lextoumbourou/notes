@@ -6,7 +6,7 @@ tags:
 cover: /_media/slipbox-index-card.png
 ---
 
-In Zettelkasten, the topic overview is a note that links to key [Permanent Notes](permanent/permanent-notes.md)ithin a topic. It is linked to via the index and serves as an entry point for a topic.
+In Zettelkasten, the topic overview is a note that links to key [Permanent Notes](permanent-notes.md)ithin a topic. It is linked to via the index and serves as an entry point for a topic.
 
 It is added when you have accumulated a large enough collections of topic notes that it becomes necessary. 
 

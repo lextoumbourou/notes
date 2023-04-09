@@ -18,7 +18,7 @@ modified: 2023-04-08 00:00:00
         * graph theory
         * finite state machines
 
-* [Set](permanent/set.md)
+* [Set](../../../../permanent/set.md)
     * Collection of any kind of "well-defined" objects:
         * people, ideas, numbers etc.
     * Set is *unordered* and contains *unique* objects.
