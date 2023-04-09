@@ -4,7 +4,7 @@ date: 2022-10-01 00:00
 status: draft
 ---
 
-The negation of a [[Proposition]] $p$ is "It is not the case the $p$". Denoted by $\neg p$.
+The negation of a [Proposition](permanent/proposition.md)sition.md) $p$ is "It is not the case the $p$". Denoted by $\neg p$.
 
 Not $p$
 

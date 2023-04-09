@@ -1,15 +1,16 @@
 ---
 title: Transformer
-date: 2022-07-31
+date: 2022-07-31 00:00
+status: draft
 ---
 
-A Transformer is a sequence-to-sequence [[Model Architecture]].
+A Transformer is a sequence-to-sequence [Model Architecture](Model Architecture).
 
-It takes an input sequence, performs an [[Embeddings]] operation to convert to a [[Vector]] of length 512
+It takes an input sequence, performs an [Embeddings](Embeddings) operation to convert to a [Vector](permanent/vector.md) of length 512
 
-We pass our sequence batch through [[Self-Attention]] layer. We'll talk about that next.
+We pass our sequence batch through [Self-Attention](Self-Attention) layer. We'll talk about that next.
 
-Then the output of that into a "feed forward" layer, with which we concat with the original input. That's a process known as [[Residual Layers]].
+Then the output of that into a "feed forward" layer, with which we concat with the original input. That's a process known as [Residual Layers](Residual Layers).
 
 ```
 # This returns a batch of vectors

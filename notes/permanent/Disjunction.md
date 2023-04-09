@@ -7,7 +7,7 @@ tags:
 status: draft
 ---
 
-Another way to combine two [[Propositions]] using the connective "or".
+Another way to combine two [Propositions](Propositions) using the connective "or".
 
 The proposition $p$ or $q$ is true if $p$ or $q$ is true.
 

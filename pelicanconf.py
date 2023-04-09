@@ -1,3 +1,5 @@
+import os
+
 from functools import partial
 
 import frontmark
@@ -23,6 +25,8 @@ DRAFT_URL = u'{slug}.html'
 DRAFT_SAVE_AS = u'{slug}.html'
 
 USE_FOLDER_AS_CATEGORY = True
+
+ENV = os.environ.get('ENV', 'prod')
 
 def build_url(label, base, end):
     label_parts = label.split()
@@ -68,3 +72,5 @@ LIQUID_CONFIGS = (("CONTENT_DIR", "notes", ""), )
 ARTICLE_EXCLUDES = ['journal', 'posts']
 
 SITEURL = "https://notesbylex.com"
+if ENV == "local":
+    SITEURL = "http://localhost:8000"

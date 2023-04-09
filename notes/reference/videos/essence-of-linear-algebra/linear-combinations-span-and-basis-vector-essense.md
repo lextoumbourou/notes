@@ -12,7 +12,7 @@ Notes from [Linear combinations, span, and basis vectors](https://www.youtube.co
 
 In the xy coordinate system there are 2 special vectors. One pointing to the right called $\hat{i}$: $\begin{bmatrix}1 \\ 0\end{bmatrix}$  or *"the unit vector in the x direction"* and one pointing up called $\hat{j}$: $\begin{bmatrix}1 \\ 0\end{bmatrix}$ or *"the unit vector in the y direction"*.
 
-We consider these the [[Basic Vectors]] of the xy coordinate system.
+We consider these the [Basic Vectors](permanent/basis-vectors.md) of the XY coordinate system.
 
 If you have a vector like $\begin{bmatrix}3 \\ -2\end{bmatrix}$, we can think of each component as a scalar that scales the Basis Vectors. The 3 scales the vector in the x-direction $\rightarrow$ and -2 in the y-direction $\uparrow$.
 
@@ -28,9 +28,9 @@ If both vectors are on the same line, the result vector will all be limited to t
 
 Also, any set of vectors to consider is both vectors have a magnitude of 0, which means they're stuck at the origin.
 
-Anytime we're scaling two vectors and adding them, we call it a [[Linear Combinations]] of vectors.
+Anytime we're scaling two vectors and adding them, we call it a [Linear Combination](permanent/linear-combination.md) of vectors.
 
-The [[Span]] of vectors $\vec{v}$ and $\vec{w}$ is the set of all possible linear combinations in this expression $a\vec{v} + b\vec{w}$ where $a$ and $b$ are real numbers.
+The [Span](Span) of vectors $\vec{v}$ and $\vec{w}$ is the set of all possible linear combinations in this expression $a\vec{v} + b\vec{w}$ where $a$ and $b$ are real numbers.
 
 When dealing with collections of vectors, we commonly represent them as points in space. Where the point sits at the tip of the vector.
 
@@ -46,7 +46,7 @@ If you have three vectors, the span is the entire 3d space unless one vector sha
 
 Can think of the 3rd vector as moving the sheet created by the first 2 to move the rest of space.
 
-We consider vectors [[Linearly Dependent]] when you have two vectors, and you can move one without changing the span. In other words, we can specify one of the vectors as a linear combination of the others.
+We consider vectors [Linearly Dependent](permanent/linearly-dependent.md) when you have two vectors, and you can move one without changing the span. In other words, we can specify one of the vectors as a linear combination of the others.
 
 Linear dependance: $\vec{u} = a\vec{v} + b\vec{w}$ for some values of a and b.
 Linear independance: $\vec{w} \neq a\vec{v}$ for all values of $a$

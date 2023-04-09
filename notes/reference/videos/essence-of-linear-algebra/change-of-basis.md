@@ -42,13 +42,13 @@ The natural question to ask is: how do you translate between coordinate systems?
 
 If we had vector $\begin{bmatrix}-1 \\ 2\end{bmatrix}$ in our friends basis vectors, we could translate to ours by scaling each by her basis vectors: $-1\vec{b}_1 + 2\vec{b}_2$ or $-1\begin{bmatrix}2 \\ 1\end{bmatrix} + 2\begin{bmatrix}-1 \\ 1\end{bmatrix}$.
 
-Note that this is identical to performing [[Matrix Vector Multiplication]]: $\begin{bmatrix}2 && -1 \\ 1 && 1\end{bmatrix}\begin{bmatrix}-1 \\ 2\end{bmatrix}$, since we know that a matrix whose columns represent the basis vectors can be thought of as a transformation that moves the standard basis vectors to another set of basis vectors.
+Note that this is identical to performing [Matrix-vector Multiplication](permanent/matrix-vector-multiplication.md): $\begin{bmatrix}2 && -1 \\ 1 && 1\end{bmatrix}\begin{bmatrix}-1 \\ 2\end{bmatrix}$, since we know that a matrix whose columns represent the basis vectors can be thought of as a transformation that moves the standard basis vectors to another set of basis vectors.
 
 You can think of the process as first describing the vector that we "thought she meant," in other words, the vector that would express in our coordinate system, and then moving it into her coordinate system.
 
 What about going the other way? How do you convert a vector in our basis to an alternate basis?
 
-You start with the transformation metric for the alternate grid, then take [[Matrix Inverse]]. The inverse of a transformation takes a transform and plays it backward.
+You start with the transformation metric for the alternate grid, then take [Matrix Inverse](permanent/matrix-inverse.md). The inverse of a transformation takes a transform and plays it backward.
 
 In summary, a matrix that describes an alternate coordinate system can transform from our basis into an alternate basis.
 
@@ -56,7 +56,7 @@ The inverse does the opposite.
 
 ---
 
-Vectors aren't the only things we describe using coordinates. When we use a [[Matrix Transformation]] to transform a matrix, the matrix represents where our basis vectors land after the transformation.
+Vectors aren't the only things we describe using coordinates. When we use a [Matrix Transformation](permanent/matrix-transformation.md) to transform a matrix, the matrix represents where our basis vectors land after the transformation.
 
 How would we translate that matrix to another basis?
 

@@ -10,7 +10,7 @@ Revisiting question: what are vectors?
 
 On the one hand, the list of numbers makes things unambiguous. It makes it easier to work with larger dimensions compared to requiring visualisations.
 
-On the other hand, for people who're actually working with linear algebra, you are often dealing with spaces independant from the coordinate system. The coordinates are arbitrary and dependant on what you choose as [[Basis Vectors]].
+On the other hand, for people who're actually working with linear algebra, you are often dealing with spaces independant from the coordinate system. The coordinates are arbitrary and dependant on what you choose as [Basis Vectors](permanent/basis-vectors.md).
 
 Core topics in linear algebra are indifferent to the choice of basis. The determinate is how much a transofmration scales areas, Eigenvectors are the ones that stay on their span during a transformation. You can freely change the coordinate system without changing the underlying values of each.
 

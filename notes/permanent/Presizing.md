@@ -27,4 +27,4 @@ These examples use an image from the [Plant Pathology 2020 - FGVC7](https://www.
 
 The [fastai library](https://docs.fast.ai) also combines augmentations into a single operation, minimizing the number of lossy operations performed. Additionally, fastai can perform augmentation operations on the GPU.
 
-The concept of resizing images before training is common practice when dealing with large source image sizes. Especially when training in environments with smaller disk allocations like Google Collab. The smaller images afford faster experiments and more loops, which is as crucial in Machine Learning as in Game Design (see [[Rule of Loop]]).
+The concept of resizing images before training is common practice when dealing with large source image sizes. Especially when training in environments with smaller disk allocations like Google Collab. The smaller images afford faster experiments and more loops, which is as crucial in Machine Learning as in Game Design (see [Rule of Loop](permanent/rule-of-loop.md)op.md)).

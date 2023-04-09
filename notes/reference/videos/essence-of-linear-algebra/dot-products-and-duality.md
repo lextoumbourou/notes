@@ -12,9 +12,9 @@ These are notes from [Dot products and duality | Chapter 9, Essence of linear al
 
 We usually teach Dot Product in an introduction to Linear Algebra course.
 
-However, we can fully understand the Dot Product's role if we first understand [[Matrix Transformation]]s.
+However, we can fully understand the Dot Product's role if we first understand [Matrix Transformation](permanent/matrix-transformation.md)s.
 
-The typical way we introduce the [[Dot Product]] is to line up components in 2 vectors with the exact dimensions and multiple the values, then add the results.
+The typical way we introduce the [Dot Product](permanent/Dot Product.md) is to line up components in 2 vectors with the exact dimensions and multiple the values, then add the results.
 
 This computation has a geometric interpretation.
 

@@ -10,7 +10,7 @@ parent: essence-of-linear-algebra
 
 These are notes from [The determinant](https://www.youtube.com/watch?v=Ip3X9LOh2dk) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.
 
-One way to measure a [[Matrix Transformation]] is how much it stretches or squishes space.
+One way to measure a [Matrix Transformation](permanent/matrix-transformation.md) is how much it stretches or squishes space.
 
 Or: "the factor by which a given area increases or decreases after a transformation."
 

@@ -8,9 +8,9 @@ summary: "Notes from [Cross product introduction](https://www.youtube.com/watch?
 
 These are notes from [Cross product introduction | Vectors and spaces | Linear Algebra | Khan Academy](https://www.youtube.com/watch?v=pJzmiywagfY) by Khan Academy.
 
-The [[Cross Product]] is much more limited than [[Dot Product]]. Where the dot product is defined in any dimension ( $R_N$ ), the cross product is only defined in 3d ( $R_{3}$ ).
+The [Cross Product](permanent/cross-product.md) is much more limited than [Dot Product](permanent/dot-product.md). Where the dot product is defined in any dimension ( $R_N$ ), the cross product is only defined in 3d ( $R_{3}$ ).
 
-The dot product returns a scalar; the cross product a [[Vector]].
+The dot product returns a scalar; the cross product a [Vector](permanent/vector.md).
 
 Definition of the dot product:
 

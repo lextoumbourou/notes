@@ -23,7 +23,7 @@ $\vec{v} \times \vec{w} = -\vec{w} \times \vec{v}$
 
 The way to remember is, if you cross $\hat{i}$ and $\hat{j}$ in order, the result will be positive. If not, it will be negative. For any vector first in the cross product, if it's on the right of the other vector, the result will be positive on the left, negative.
 
-You can compute the area using the [[Matrix Determinate]] of the matrix created by putting the coordinates of $\vec{v}$ as the first column and $\vec{w}$ as the second column. That's because a [[Matrix Transformation]] equivalent of moving the [[Basis Vectors]] to $\vec{v}$ and $\vec{w}$ is this matrix!
+You can compute the area using the [Matrix Determinate](permanent/matrix-determinate.md) of the matrix created by putting the coordinates of $\vec{v}$ as the first column and $\vec{w}$ as the second column. That's because a [Matrix Transformation](permanent/matrix-transformation.md) equivalent of moving the [Basis Vectors](permanent/basis-vectors.md) to $\vec{v}$ and $\vec{w}$ is this matrix!
 
 If the vectors are perpendicular, the area will be greater than if the vectors are closer together.
 

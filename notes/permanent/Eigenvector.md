@@ -7,9 +7,9 @@ summary: "A set of vectors whose span doesn't change after a transformation."
 cover: /_media/eigenvector-cover.png
 ---
 
-An Eigenvectors of a [[Matrix Transformation]] is any non-zero vector that remains on its [[Vector Span]] after being transformed.
+An Eigenvectors of a [Matrix Transformation](permanent/matrix-transformation.md) is any non-zero vector that remains on its [Vector Span](Vector Span.md) after being transformed.
 
-That means that performing the transformation is equivalent to scaling the vector by some amount. The amount it scales the Eigenvector is called the [[Eigenvalue]].
+That means that performing the transformation is equivalent to scaling the vector by some amount. The amount it scales the Eigenvector is called the [Eigenvalue](permanent/eigenvalue.md).
 
 For example, if we transform the basis vectors with matrix $\begin{bmatrix}2 && 1 \\ 0 && 2\end{bmatrix}$, we can see that $\hat{j}$ is knocked off its span, where $\hat{i}$ is simply scaled by 2.
 

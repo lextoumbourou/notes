@@ -20,4 +20,4 @@ These sentences would be considered propositions:
 * I am 14 years old.
 * 1 + 1 = 3
 
-The truthfulnes or falsity of a proposition is called its [[Truth Value]]. Denoted by $T$ or $F$, or 1 and 0 in computer science.
+The truthfulnes or falsity of a proposition is called its [Truth Value](Truth%20Value). Denoted by $T$ or $F$, or 1 and 0 in computer science.
