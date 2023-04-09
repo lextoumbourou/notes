@@ -7,7 +7,7 @@ tags:
 
 The opposite of [innate complexity](innate complexity) (in which complex rules need to be learned in order to play) and a desired property of a game. Arises when you have a simple ruleset from which complex interations can arise.
 
-Related to the idea of [Emergent Gameplay](permanent/emergent-gameplay.md) in the context of strategy, another desired property of a game.
+Related to the idea of [Emergent Gameplay](emergent-gameplay.md) in the context of strategy, another desired property of a game.
 
 References:
 

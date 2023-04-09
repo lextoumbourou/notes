@@ -10,9 +10,9 @@ These are my notes from the paper [A Discriminative Feature Learning Approach fo
 
 ## Abstract
 
-We commonly train image classification models using [[Categorical Cross-Entropy Loss|Softmax Loss]]. However, softmax loss does not learn sufficiently discriminative features for face recognition.
+We commonly train image classification models using [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md)wever, softmax loss does not learn sufficiently discriminative features for face recognition.
 
-This paper proposes a new supervision signal called [[Center Loss]]. Center Loss simultaneously learns a center for each class and penalizes the distance between features and their class centers.
+This paper proposes a new supervision signal called [Center Loss](../../journal/permanent/Center Loss.md). Center Loss simultaneously learns a center for each class and penalizes the distance between features and their class centers.
 
 Center Loss requires training with joint supervision of softmax loss for stability.
 
@@ -24,9 +24,9 @@ Modern image classification typically involves some backbone model to learn feat
 
 At the time of the paper, CNNs were the best-performing model architecture for learning features.
 
-Since image classification problems are typically [[Close-Set]] (all possible test classes well represented in the training set), [[Categorical Cross-Entropy Loss|Softmax Loss]] is a suitable loss function choice. In this case, the features learned by the backbone model only need to be separable enough so the classifier can distinguish between classes.
+Since image classification problems are typically [Close-Set](Close-Set) (all possible test classes well represented in the training set), [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md)itable loss function choice. In this case, the features learned by the backbone model only need to be separable enough so the classifier can distinguish between classes.
 
-However, in facial recognition, you cannot pre-collect all possible test identities in the training set for face recognition. We call these problems [[Open-Set Classification]]. Therefore, for facial recognition, we need to learn discriminative features.
+However, in facial recognition, you cannot pre-collect all possible test identities in the training set for face recognition. We call these problems [Open-Set Classification](Open-Set Classification). Therefore, for facial recognition, we need to learn discriminative features.
 
 Discriminative features have two properties:
 
@@ -41,15 +41,15 @@ Typically recognition pipelines use a Nearest Neighbours or K Nearest Neighbours
 
 Constructing a loss function for discriminative feature learning is challenging.
 
-Since [[Stochastic Gradient Descent (SGD)]] relies on mini-batches, you cannot represent the global distribution in every step.
+Since [Stochastic Gradient Descent (SGD)](Stochastic Gradient Descent (SGD)) relies on mini-batches, you cannot represent the global distribution in every step.
 
-Alternatives proposed include [[Contrastive Loss]] (training using pairs) and [[Triplet Loss]] (training using triplets). However, they rely on Hard Negative Mining for efficiency, which adds complexity to the training pipeline.
+Alternatives proposed include [Contrastive Loss](Contrastive Loss) (training using pairs) and [Triplet Loss](Triplet Loss) (training using triplets). However, they rely on Hard Negative Mining for efficiency, which adds complexity to the training pipeline.
 
-This paper proposes [[Center Loss]]. They add a center for each class, a vector of the same dimension as the input feature embedding.
+This paper proposes [Center Loss](../../journal/permanent/Center Loss.md). They add a center for each class, a vector of the same dimension as the input feature embedding.
 
 They simultaneously learn center during training while minimizing the distance between features and their corresponding class center.
 
-The backbone requires trained using joint supervision of [[Categorical Cross-Entropy Loss|Softmax Loss]] and Center Loss, with a new hyperparameter to balance each component.
+The backbone requires trained using joint supervision of [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md)Loss, with a new hyperparameter to balance each component.
 
 The center loss pulls deep features of the same class toward their centers, accomplishing the goal of inter-class compactness and intra-class dispersion.
 
@@ -95,7 +95,7 @@ Paper runs experiments on:
 
 The authors use a toy example to intuitively show the distribution of deeply learned features. Inspired by this distribution, they propose center loss to improve the discriminative power of the learned features.
 
-The toy example is trained on [[MNIST]]. They modify LeNet (a standard convolutional architecture) to include an extra conv layer (making up three conv layers in total) and additional conv filters in each layer. Then they reduce the output of the last hidden layer to 2, so they can visualize features in 2d space.
+The toy example is trained on [MNIST](MNIST). They modify LeNet (a standard convolutional architecture) to include an extra conv layer (making up three conv layers in total) and additional conv filters in each layer. Then they reduce the output of the last hidden layer to 2, so they can visualize features in 2d space.
 
 Fig 2. shows the results of plotting the 2-dimension hidden layer output on the training set (a) and the test set (b).
 
@@ -171,11 +171,11 @@ They extract features for each image and the horizontally flipped one and concat
 
 They compute the score as Cosine Distance of 2 features after PCA.
 
-They use Nearest neighbor and threshold comparison for [[Face Identification]] and [[Face Verification]] tasks.
+They use Nearest neighbor and threshold comparison for [Face Identification](Face Identification) and [Face Verification](Face Verification) tasks.
 
 ### 4.2 Experiments on the Parameter $\lambda$ and $\alpha$
 
-They conducted experiments to investigate the sensitivity of the params on [[Labeled Faces in the Wild]] dataset.
+They conducted experiments to investigate the sensitivity of the params on [Labeled Faces in the Wild](Labeled Faces in the Wild) dataset.
 
 The results are shown in Fig 5, for 2 experiments:
 
@@ -199,7 +199,7 @@ From this they infer:
 
 ### 4.3 Experiments on the LFW and YTF Datasets
 
-Evaluate single model on [[Labeled Faces in the Wild]] and [[YouTube Faces]].
+Evaluate single model on [Labeled Faces in the Wild](Labeled Faces in the Wild) and [YouTube Faces](YouTube Faces).
 
 Fig 6. has some examples.
 
@@ -295,6 +295,6 @@ They make these observations from the results:
 
 The paper proposes a new loss function called Center Loss.
 
-By combining Center Loss with [[Softmax Loss]] to jointly supervise the learning of CNNs, the authors show that they can enhance the discriminative power of features for face recognition problems.
+By combining Center Loss with [Softmax Loss](Softmax Loss) to jointly supervise the learning of CNNs, the authors show that they can enhance the discriminative power of features for face recognition problems.
 
 The paper runs extensive experiments on large-scale face benchmarks to demonstrate its effectiveness.

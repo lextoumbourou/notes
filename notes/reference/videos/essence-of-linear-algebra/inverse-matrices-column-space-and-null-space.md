@@ -47,15 +47,15 @@ $$
 
 $\underbrace{\begin{bmatrix}2 & 2 \\ 1 & 3\end{bmatrix}}_A  \underbrace{\begin{bmatrix}x \\ y\end{bmatrix}}_{\vec{x}} = \underbrace{\begin{bmatrix}-4 \\ -1\end{bmatrix}}_{\vec{v}}$
 
-An important distinction is whether the transformation squishes space onto a single line (has a [Determinate of a Matrix](permanent/matrix-determinate.md) of 0) or keeps things in 2d.
+An important distinction is whether the transformation squishes space onto a single line (has a [Determinate of a Matrix](../../../permanent/matrix-determinate.md) of 0) or keeps things in 2d.
 
-In the case, $\det \ne 0$, if you reversed the transformation that led to $\vec{v}$, you end up with $\vec{x}$. We can record the reverse transformation in a matrix that we call [Matrix Inverse](permanent/matrix-inverse.md) of $A$, represented as $A^{-1}$.
+In the case, $\det \ne 0$, if you reversed the transformation that led to $\vec{v}$, you end up with $\vec{x}$. We can record the reverse transformation in a matrix that we call [Matrix Inverse](../../../permanent/matrix-inverse.md) of $A$, represented as $A^{-1}$.
 
 If $A$ is a counter-clockwise rotation $\begin{bmatrix}0 && -1 \\ 1 && 1\end{bmatrix}$, then the inverse is a clockwise rotation $\begin{bmatrix}0 && 1 \\ -1 && 0\end{bmatrix}$
 
 If $A$ is a rightward shear that pushes space to the right $\begin{bmatrix}1 && 1 \\ 0 && 1\end{bmatrix}$ then the inverse is a leftward shear $\begin{bmatrix}1 && -1 \\ 0 && 1\end{bmatrix}$.
 
-The core property of the inverse is that when multipled by the original matrix, the [Identity Matrix](permanent/identity-matrix.md) is returned: $\underbrace{A^{-1}}_{\text{Inverse}}\underbrace{A}_{\text{Transform}} = \underbrace{I}_{Identity}$
+The core property of the inverse is that when multipled by the original matrix, the [Identity Matrix](../../../permanent/identity-matrix.md) is returned: $\underbrace{A^{-1}}_{\text{Inverse}}\underbrace{A}_{\text{Transform}} = \underbrace{I}_{Identity}$
 
 When you find the inverse, you can solve for $\vec{x}$ by multiplying it by $\vec{v}$. Algebraically it works, because you can multiply both sides by the inverse.
 
@@ -70,7 +70,7 @@ For a randomly generated matrix, the determinant is likely non-zero. That corres
 
 The same intuition carries over into higher dimensions.
 
-When the [Determinate of a Matrix](permanent/matrix-determinate.md) is 0 - it squishes space onto a single line or a point - a [Matrix Transformation](permanent/matrix-transformation.md) has no inverse: you can't un-squish a line to transform it onto a plane.
+When the [Determinate of a Matrix](../../../permanent/matrix-determinate.md) is 0 - it squishes space onto a single line or a point - a [Matrix Transformation](../../../permanent/matrix-transformation.md) has no inverse: you can't un-squish a line to transform it onto a plane.
 
 When the output of a transformation is a line, we say it has [Rank](../../../permanent/matrix-rank.md) of 1. 
 
@@ -78,7 +78,7 @@ If all the vectors land on a 2d plane, the transformation [Rank](../../../perman
 
 "Rank" refers to the number of dimensions in the output of a transformation.
 
-In a 2d transformation, a rank 2 means that the [Determinate of a Matrix](permanent/matrix-determinate.md) is non-zero, and the output spans all possible space.
+In a 2d transformation, a rank 2 means that the [Determinate of a Matrix](../../../permanent/matrix-determinate.md) is non-zero, and the output spans all possible space.
 
 For a 3d transformation, a rank 2 means that the transformation is collapsing space.
 

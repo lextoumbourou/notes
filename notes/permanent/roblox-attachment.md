@@ -8,7 +8,7 @@ cover: /_media/roblox-attachment-cover.png
 hide_cover_in_article: true
 ---
 
-An `Attachment` in Roblox is an object that describes a point and orientation in space relative BasePart's [Roblox CFrame](permanent/roblox-cframe.md).
+An `Attachment` in Roblox is an object that describes a point and orientation in space relative BasePart's [Roblox CFrame](roblox-cframe.md).
 
 Consider a `Fire` that you want to burn from the back of a `Part`. If I attach a `Fire` instance directly to a `Part`, it will always burn from the `Part`'s center of the Part. Instead, I can create an `Attachment` parented to the `Part` and position it -2 studs along the X-axis and one stud along the Y-axis from the Part's center.
 

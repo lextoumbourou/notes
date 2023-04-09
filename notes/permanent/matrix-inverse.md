@@ -8,7 +8,7 @@ cover: /_media/matrix-inverse-cover.png
 summary: A matrix that reverses a transformation.
 ---
 
-The inverse of a [Matrix Transformation](permanent/matrix-transformation.md) is a matrix that reverses the transformation.
+The inverse of a [Matrix Transformation](matrix-transformation.md) is a matrix that reverses the transformation.
 
 For example, if our matrix transform did a 90° anticlockwise rotation, the inverse matrix would do a 90° clockwise rotation.
 

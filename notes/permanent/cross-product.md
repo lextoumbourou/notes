@@ -18,7 +18,7 @@ Though the Cross Product can be generalized to multiple dimensions by taking the
 
 The Cross Product operation works as follows:
 
-1. Line up the vectors, as you would when taking the [Dot Product](permanent/dot-product.md).
+1. Line up the vectors, as you would when taking the [Dot Product](dot-product.md).
 
     $\begin{bmatrix}a_1 \\ a_2 \\ a_3\end{bmatrix} \times \begin{bmatrix}b_1 \\ b_2 \\ b_3\end{bmatrix} = \begin{bmatrix} ? \\ ? \\ ? \end{bmatrix}$
 

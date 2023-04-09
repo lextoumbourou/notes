@@ -93,7 +93,7 @@ If A is **not a subset** of B, we write $A \nsubseteq B$. In Latex, it's: `\subs
 
 We write the size of a set $S$ as $|A|$ and refer to as the **Cardinality** of a set.
 
-Notice that we use the same notation to refer to the absolute value of numbers, which we can consider the size of a number in a positive direction. For those familiar with Linear Algebra, we use the same notation for [Determinate of a Matrix](permanent/matrix-determinate.md), which also refers to the amount a matrix scales space.
+Notice that we use the same notation to refer to the absolute value of numbers, which we can consider the size of a number in a positive direction. For those familiar with Linear Algebra, we use the same notation for [Determinate of a Matrix](matrix-determinate.md), which also refers to the amount a matrix scales space.
 
 ## Equal Sets
 

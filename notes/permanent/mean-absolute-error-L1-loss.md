@@ -14,7 +14,7 @@ Mean Absolute Difference (MAE) is a function for assessing [Regression](Regressi
 2. Take the absolute values of the errors
 3. Take the mean of all values.
 
-An alternative to [Root mean-squared error - L2 Loss](permanent/root-mean-squared-error-L2-loss.md).
+An alternative to [Root mean-squared error - L2 Loss](root-mean-squared-error-L2-loss.md).
 
 #### References
 

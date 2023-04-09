@@ -19,4 +19,4 @@ $A \cup B = \{a, b, c, d, e\}$
 * Identity Properties: $A \cup \emptyset = A$
 * Complement Properties: $A \cup A'$
 
-See also [Intersection](permanent/intersection.md)
+See also [Intersection](intersection.md)

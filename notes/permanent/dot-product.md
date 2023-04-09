@@ -10,7 +10,7 @@ tags:
 
 A dot product is an operation between 2 vectors with equal dimensions that returns a number.
 
-The operation is to multiply each element in the first [Vector](permanent/vector.md) by the corresponding component of the 2nd [Vector](permanent/vector.md), then take the sum of the results.
+The operation is to multiply each element in the first [Vector](vector.md) by the corresponding component of the 2nd [Vector](vector.md), then take the sum of the results.
 
 $$
 \mathbf{a} = \begin{bmatrix}a_1 \\ ... \\ a_N\end{bmatrix},  \ \  \mathbf{b} = \begin{bmatrix}b_1 \\ ... \\ b_N\end{bmatrix}

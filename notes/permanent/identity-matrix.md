@@ -20,7 +20,7 @@ In notation, we represent an Identity Matrix with $I$ and the number of dimensio
 
 $I_3 = \begin{bmatrix}\color{olive}{1} & 0 & 0 \\ 0 & \color{olive}{1} & 0 \\ 0 & 0 & \color{olive}{1} \end{bmatrix}$
 
-If we are doing [Matrix Multiplication](permanent/matrix-multiplication.md) with the Identity Matrix and another square matrix, the Identity Matrix should have dimensions equal to the other matrix. The multiplication is commutive in this case: $I_n \cdot A_{(n \times n)} = A_{(n \times n)} \cdot I_n$
+If we are doing [Matrix Multiplication](matrix-multiplication.md) with the Identity Matrix and another square matrix, the Identity Matrix should have dimensions equal to the other matrix. The multiplication is commutive in this case: $I_n \cdot A_{(n \times n)} = A_{(n \times n)} \cdot I_n$
 
 $\begin{bmatrix}2 & 4 \\ 1 & 3\end{bmatrix} \begin{bmatrix}\color{olive}{1} & 0 \\ 0 & \color{olive}{1}\end{bmatrix} = \begin{bmatrix}\color{olive}{1} & 0 \\ 0 & \color{olive}{1}\end{bmatrix} \begin{bmatrix}2 & 4 \\ 1 & 3\end{bmatrix}$
 
@@ -28,7 +28,7 @@ If the original matrix is rectangular and has dimensions $m \times n$, the size 
 
 $\begin{bmatrix}\color{olive}{1} & 0 \\ 0 & \color{olive}{1}\end{bmatrix} \begin{bmatrix}2 & 4 & 5 \\ 1 & 3 & -2\end{bmatrix}  = \begin{bmatrix}2 & 4 & 5 \\ 1 & 3 & -2\end{bmatrix} \begin{bmatrix}\color{olive}{1} & 0 & 0 \\ 0 & \color{olive}{1} & 0 \\ 0 & 0 & \color{olive}{1}\end{bmatrix}$
 
-In this [Matrix Multiplication](permanent/matrix-multiplication.md) example, we can see how the main diagonal of 1s returns the original matrix.
+In this [Matrix Multiplication](matrix-multiplication.md) example, we can see how the main diagonal of 1s returns the original matrix.
 
 ![Identity matrix example 1](/_media/identity-matrix-1.gif)
 

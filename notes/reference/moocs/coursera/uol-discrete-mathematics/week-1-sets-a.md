@@ -154,7 +154,7 @@ modified: 2023-04-08 00:00:00
  | 1   | 1    | 1       |
 
  
-* [Intersection](permanent/intersection.md)
+* [Intersection](../../../../permanent/intersection.md)
      * Notion: $A \cap B$
      * Set builder: $A \cap B = \{ x | x \in A \text{ and } x \in B \}$
      * Looks like a horse shoe. The kind you'd take to a dirt road intersection.

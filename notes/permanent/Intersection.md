@@ -14,4 +14,4 @@ $A = \{a, b, c\}$
 $B = \{c, d, e\}$
 $A \cap B = \{c\}$
 
-See also [Union](permanent/union.md)
+See also [Union](union.md)

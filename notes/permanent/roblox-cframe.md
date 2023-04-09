@@ -72,7 +72,7 @@ part.CFrame = character.Head.CFrame:ToWorldSpace(relativePositionOfNewPart)
 
 That method is the equivalent of multiplying the left CFrame by the right  `character.Head.CFrame * relativePositionOfNewPart` (note that CFrame multiplication is not communitive - the order matters). 
 
-A CFrame is composed of 4 [Vector](permanent/vector.md)s. 
+A CFrame is composed of 4 [Vector](vector.md)s. 
 
 1. <strong>Position vector $(\mathbf{x}, \mathbf{y}, \mathbf{z})$</strong>
 2. <font color="#A92C21">Right vector $(rX, rY, rZ)$</font>

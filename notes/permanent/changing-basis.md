@@ -21,9 +21,9 @@ We can translate back into our system by creating a matrix which uses the Alien 
 
 $\begin{bmatrix}2 && 1 \\ 4 && 1\end{bmatrix}\begin{bmatrix}3 \\ 1\end{bmatrix} = \begin{bmatrix}7 \\ 13\end{bmatrix}$
 
-We can think of that as a [Matrix Transformation](permanent/matrix-transformation.md) that scales basis vector $\hat{e}_1$ by $3$ and $\hat{e}_2$ by $1$.
+We can think of that as a [Matrix Transformation](matrix-transformation.md) that scales basis vector $\hat{e}_1$ by $3$ and $\hat{e}_2$ by $1$.
 
-We can convert a vector described in our coordinate system to the Alien using the [Matrix Inverse](permanent/matrix-inverse.md) of our Alien's basis vector matrix:
+We can convert a vector described in our coordinate system to the Alien using the [Matrix Inverse](matrix-inverse.md) of our Alien's basis vector matrix:
 
 $\begin{bmatrix}2 && 1 \\ 4 && 1\end{bmatrix}^{-1}\begin{bmatrix}7 \\ 13\end{bmatrix} = \begin{bmatrix}3 \\ 1\end{bmatrix}$
 

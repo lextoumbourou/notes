@@ -23,4 +23,4 @@ It is the multi-class extension of the [Sigmoid Activation Function](Sigmoid Act
  
  {% notebook permanent/notebooks/softmax-function.ipynb %}
 
-Softmax is part of the [Categorical Cross-Entropy Loss](permanent/categorical-cross-entropy-loss.md), applied before passing results to [Negative Log-Likelihood](permanent/Negative Log-Likelihood.md) function.
+Softmax is part of the [Categorical Cross-Entropy Loss](categorical-cross-entropy-loss.md), applied before passing results to [Negative Log-Likelihood](permanent/Negative Log-Likelihood.md) function.

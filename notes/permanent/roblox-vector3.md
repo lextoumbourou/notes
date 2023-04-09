@@ -5,7 +5,7 @@ tags:
   - Roblox
 ---
 
-In Roblox, a [Vector3](https://developer.roblox.com/en-us/api-reference/datatype/Vector3) defines a [Vector](permanent/vector.md) with three components. We use it for setting the position, rotation, and size of elements.
+In Roblox, a [Vector3](https://developer.roblox.com/en-us/api-reference/datatype/Vector3) defines a [Vector](vector.md) with three components. We use it for setting the position, rotation, and size of elements.
 
 For example, a Part's `Position` property is a Vector3 that sets its center position.
 
@@ -37,7 +37,7 @@ We can perform [Vector Addition](Vector Addition.md) by adding two Vector3 insta
 print(Vector3.new(1, 1, 1) + Vector3.new(2, 2, 2)) -- 3, 3 ,3
 ```
 
-We can perform [Vector Subtraction](permanent/vector-subtraction.md) by subtracting two Vector3 instances.
+We can perform [Vector Subtraction](vector-subtraction.md) by subtracting two Vector3 instances.
 
 ```lua
 print(Vector3.new(1, 1, 1) - Vector3.new(1, 1, 1)) -- 0, 0, 0

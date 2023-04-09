@@ -10,11 +10,11 @@ parent: essence-of-linear-algebra
 
 Notes from [Nonsquare matrices as transformations between dimensions](https://www.youtube.com/watch?v=v8VSDg_WQlA) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.
 
-It's possible to have [Matrix Transformation](permanent/matrix-transformation.md)s between dimensions, for example, one that takes 2d vectors as input and returns 3d vectors.
+It's possible to have [Matrix Transformation](../../../permanent/matrix-transformation.md)s between dimensions, for example, one that takes 2d vectors as input and returns 3d vectors.
 
 The transformation is linear as long as grid lines remain parallel and evenly spaced and the origin remains fixed.
 
-Encoding a transformation as a matrix is the same as before: look where the [Basis Vectors](permanent/basis-vectors.md)s land and record as columns of a matrix as a $3 \ x \ 2$ matrix.
+Encoding a transformation as a matrix is the same as before: look where the [Basis Vectors](../../../permanent/basis-vectors.md)s land and record as columns of a matrix as a $3 \ x \ 2$ matrix.
 
 $\begin{bmatrix}\textcolor{red}{2} && \textcolor{green}{0} \\ \textcolor{red}{-1} && \textcolor{green}{1} \\ \textcolor{red}{-2} && \textcolor{green}{1}\end{bmatrix}$
 

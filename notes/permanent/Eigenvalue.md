@@ -7,5 +7,5 @@ summary: "A value which describes how much a transformation scales an Eigenvecto
 cover: /_media/eigenvalue-cover.png
 ---
 
-A scalar value that describes how much a transformation scales an [Eigenvector](permanent/eigenvector.md).
+A scalar value that describes how much a transformation scales an [Eigenvector](eigenvector.md).
 

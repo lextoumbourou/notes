@@ -7,7 +7,7 @@ tags:
 
 Matrix multiplication is a mathematical operation between 2 matrices that returns a matrix.
 
-For each row in the first matrix, take the [Dot Product](permanent/dot-product.md)f each column in the second matrix. Place the results onto the corresponding row in a new matrix.
+For each row in the first matrix, take the [Dot Product](dot-product.md)f each column in the second matrix. Place the results onto the corresponding row in a new matrix.
 
 ![Matrix Multiplication example](/_media/matrix-multiplication.gif)
 

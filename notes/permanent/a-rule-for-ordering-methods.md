@@ -21,7 +21,7 @@ The exact order you prefer matters less than being consistent. The cost of searc
 
 Below is an example of a typical object we'd write in Lua ordered with our style guide rule in mind.
 
-*Note that Lua uses [Metatables](permanent/metatables.md) modules to emulate classes using [Object Prototypes](permanent/object-prototypes.md) like Javascript. The details are unimportant, included for completeness.*
+*Note that Lua uses [Metatables](metatables.md) modules to emulate classes using [Object Prototypes](object-prototypes.md) like Javascript. The details are unimportant, included for completeness.*
 
 ```lua
 local UsefulThing = {}

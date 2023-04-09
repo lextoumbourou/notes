@@ -7,7 +7,7 @@ cover: /_media/transformation-matrix-cover.png
 summary: A matrix as a transformation of a space.
 ---
 
-We can think of a matrix as a transformation of a [Vector](permanent/vector.md) or all vectors in space.
+We can think of a matrix as a transformation of a [Vector](vector.md) or all vectors in space.
 
 When we take the product of a matrix and a vector, we are *transforming* the vector.
 
