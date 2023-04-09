@@ -9,32 +9,36 @@ modified: 2023-04-08 00:00:00
 
 ## 1.104 The definition of a set
 
-* [[Set Theory]]
-    * a branch of maths dealing with properies of well-defined collections of objects.
+* [Set Theory](permanent/set-theory.md)
+    * a branch of maths dealing with properties of well-defined collections of objects.
     * Concept of sets by G. Cantor, a German mathematician.
     * Forms the basis of other fields of study:
         * counting theory
         * relations
         * graph theory
         * finite state machines
-* [[Sets]]
-    * Collection of any kind of "well-defined" objects: people, ideas or numbers, for example.
+
+* [Set](permanent/set.md)
+    * Collection of any kind of "well-defined" objects:
+        * people, ideas, numbers etc.
     * Set is *unordered* and contains *unique* objects.
     * Examples and notation:
-        * E = {2, 6, 4, 8} # Set of positive, even integers < 10.
-        * V = {a, e, i, o, u} # Set of vowels in English alphabet.
-        * C = {red, green, blue} # Set of colours.
-        * EmptySet = {} # Set containing nothing.
+        * Set of positive, even integers < 10: $E = \{2, 6, 4, 8\}$
+        * Set of vowels in English alphabet: $V = \{a, e, i, o, u\}$
+        * Set of colours: $C = \{red, green, blue\}$
+        * Empty set (a set containing nothing): $\{\}$ = $\emptyset$
     * Math notation
-        * Use notation $\in$ to represent that something is element of set: $2 \in E$.
-        * Use $\notin$ to present not element of set: $3 \notin E$.
+        * Use notation $\in$ to represent that something is element of set:
+            * $2 \in E$.
+        * Use $\notin$ to present not element of set:
+            * $3 \notin E$.
  
-* [[Cardinality of a Set]]
+* [Cardinality of a Set](permanent/set-cardinality.md)
     * Given set $S$, the cardinality of $S$ is the number of elements contained in $S$.
     * Write cardinality as $|S|$
     * Example: $|C| = 3$
     
-* [[Subset of a Set]]
+* [Subset](permanent/set-subset.md)
     * Express as: $\subseteq$ 
         * Latex: `\subseteq`
     * $A$ is a subset of $B$ if and only if every element of $A$ is also in $B$.
@@ -43,11 +47,11 @@ modified: 2023-04-08 00:00:00
         * $A \subseteq B \iff x \in A \text{ then } x \in B \text{(for all x)}$
     * Any set is a subset of itself: $S \subseteq S$
  
-* [[Empty Set]]
+* [Empty Set](permanent/empty-set.md)
     * is a subset of any set $\emptyset \subseteq S$
     * empty set is a subset of itself: $\emptyset \subseteq \emptyset$
 
-* [[Special sets]]
+* [Special Sets](permanent/special-sets.md)
     * $\mathbf{N}$ = set of natural numbers = {1, 2, 3, 4, ...}
     * $\mathbf{Z}$ = set of integers = {..., -3, -2, -1, 0, 1, ...}
     * $\mathbf{Q}$ = set of rational numbers (of form a/b where a and b are elements of Z and b $\ne$ 0)
@@ -56,11 +60,11 @@ modified: 2023-04-08 00:00:00
 
 ## 1.106 The listing method and rule of inclusion
 
-* [[Set Representation Methods]]
-    * Listing method
-    * Set builder notation (rules of inclusion)
+* [Set Representation Methods](permanent/set-representation-methods.md)
+    * [Set Listing Method](permanent/set-listing-method.md)
+    * [Set Builder Notation](permanent/set-builder-notation.md)
     
-* [[Listing method]]
+* [Set Listing Method](permanent/set-listing-method.md)
     * Represent a set $S$ using all elements of set $S$.
     * Examples:
         * Set of all vowels in English alphabet.
@@ -68,7 +72,7 @@ modified: 2023-04-08 00:00:00
         * Set of all positive integers less than 10.
             * S2 = {1, 2, 3, 4, 5, 6, 7, 8, 9}
             
-* [[Set builder notation]]
+* [Set Builder Notation](permanent/set-builder-notation.md)
     * Examples:
         * Set of all even integers: { ..., -6, -4, -2, 0, 2, 4, 6 ... }
             * $\text{Even} = \{2n | n \in Z \}$
@@ -95,7 +99,7 @@ modified: 2023-04-08 00:00:00
     * A set can have another set as its element.
         * $\{5, 6\} \in \{\{5, 6\}, \{7, 8\}\}$
         * $\{5,6\} \subseteq \{5, 6, 7\}$
-* [[Powerset of a set]]
+* [Powerset](permanent/set-powerset.md)
     * A set containing all subsets of another set.
     * The powerset of $S$ is $P(S)$ which is the set containing all subsets of $S$.
     * Example
@@ -114,14 +118,14 @@ modified: 2023-04-08 00:00:00
         * Empty set is the only subset of the empty set: $\emptyset \subseteq \emptyset$
         * Empty set is a set subset of the power set of empty set: $\emptyset \subseteq P(\emptyset)$
         * $P(P(\emptyset)) = \{ \emptyset, \{ \emptyset \} \}$
-* [[Cardinality of a powerset]]
-    * $|P(S)| = 2^{|S|}$
-        * $S = \{1, 2, 3\}$, $|S| = 3$, $|P(S)| = 2^3 = 6$
-        * $P(S) = \{ \emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{2, 3\} \}$
+    * Cardinality of a powerset
+        * $|P(S)| = 2^{|S|}$
+            * $S = \{1, 2, 3\}$, $|S| = 3$, $|P(S)| = 2^3 = 6$
+            * $P(S) = \{ \emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{2, 3\} \}$
 
 ## 1.110 Set operations
 
-* [[Union Operation]]
+* [Union Operation](permanent/union.md)
     * The union of two sets are all element in *either* A or B.
     * Notion: $A \cup B$
     * Latex operator `\cup`
@@ -150,11 +154,10 @@ modified: 2023-04-08 00:00:00
  | 1   | 1    | 1       |
 
  
-* [[Intersection]]
-     * Set containing elements in both in set A **and** B.
+* [Intersection](permanent/intersection.md)
      * Notion: $A \cap B$
-         * Set builder: $A \cap B = \{ x | x \in A \text{ and } x \in B \}$
-         * Looks like a horse shoe. The kind you'd take to a dirt road intersection.
+     * Set builder: $A \cap B = \{ x | x \in A \text{ and } x \in B \}$
+     * Looks like a horse shoe. The kind you'd take to a dirt road intersection.
      * Think of an intersection between roads: it's the part of road that both of them share.
      * Membership table
 
@@ -166,7 +169,7 @@ modified: 2023-04-08 00:00:00
  | 1   | 1    | 1       |
 
  
-* [[Set difference]]
+* [Set Difference](permanent/set-difference.md)
     * Elements in $A$, but not $B$.
         * $A - B = \{ x | x \in A \text{ and } x \notin B \}$
     * Example:
@@ -181,10 +184,10 @@ modified: 2023-04-08 00:00:00
  | 1   | 1    | 0       |
 
  
-* [[Symmetric Difference]]
+* [Symmetric Difference](permanent/set-symmetric-difference.md)
     * Elements in $A$ or in $B$ but not in both.
         * $A \oplus B = \{ x | (x \in A \text{ or } x \in B) \text{ and } x \notin A \cap B \}$
-    * Latex: ```\oplus```
+    * Latex: `\oplus`
     * Can think of it as union of A and B, with all the common elements of A and B removed.
         * $A \oplus B = (A \cup B) - (A \cap B)$
     * Example:
@@ -202,6 +205,6 @@ modified: 2023-04-08 00:00:00
 
 ## 1.112 Essential reading
 
-* Koshy, Thomas. Discrete Mathematics with Applications.
+* Koshy, Thomas. Discrete Mathematics with Applications:
     * pp. 67-70 and pp. 72- 75
     * pp.76: Exercises: 1–8, 13-27, 30-32 and 41-44.

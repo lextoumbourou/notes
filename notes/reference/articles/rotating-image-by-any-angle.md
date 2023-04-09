@@ -18,7 +18,7 @@ To understand what's happening with this transformation matrix, when the angle o
 $\cos(0°) = 1$
 $\sin(0°) = 0$
 
-So the [[Matrix Transformation]] simply contains the basis vectors:
+So the [Matrix Transformation](permanent/matrix-transformation.md) simply contains the basis vectors:
 
 $\begin{bmatrix}1 && 0 \\ 0 && 1\end{bmatrix}$
 
@@ -54,5 +54,5 @@ $\begin{bmatrix}1 && -\tan(\theta/2) \\ 0 && 1\end{bmatrix} \begin{bmatrix}1 && 
 
 1.  The three matrices are all shear matrices.
 2.  The first and last matrices are the same.
-3. [[Matrix Determinate]] of each matrix is the same.
+3. [Matrix Determinate](permanent/matrix-determinate.md) of each matrix is the same.
 4. Since the shear happens in just one plane, and each stage is *conformal* in the area, no aliasing gaps appear.

@@ -10,16 +10,16 @@ parent: uol-discrete-mathematics
 
 ### 1.201 The representation of a set using Venn diagrams
 
-* [[Universal Set]]
+* [Universal Set](permanent/sets-universal-set.md)
     * A set containing everything.
     * Represented by letter $U$.
     
-* [[Complement of Set]]
+* [Complement](permanent/set-complement.md)
     * Represented as: $\bar{A}$
     * All the elements in the universal set $U$ but not in $A$: $\bar{A} = U - A$
     * The union of a set and its compliment, is equal to universal set:  $\bar{A} \cup A = U$
 
-* [[Venn Diagram]]
+* [Venn Diagram](permanent/venn-diagram.md)
     * Used to visualise the possible relations among a collection of sets.
     * In this example, the red area represents the union of A and B:
     
@@ -43,7 +43,7 @@ parent: uol-discrete-mathematics
 
 ### 1.203 De Morgan's laws
 
-* [[De Morgan's Laws]]
+* [](permanent/de-morgans-laws.md)
     * Augustus De Morgan (1806 - 1871), a British mathematician.
     * Describe how statements and concepts are related through opposites.
     * Example from set theory:
@@ -63,7 +63,7 @@ parent: uol-discrete-mathematics
 
 ### 1.205 Laws of sets: Commutative, associative and distributives
 
-* [[Commutative Operation]]
+* [Commutative Operation](permanent/commutative-operation.md)
     * An operation where order does not affect the results.
         * Additional is commutative: $2 + 3 = 3 + 2$
         * Multiplication is commutative: $2 x 3  = 3 x 2$
@@ -77,7 +77,7 @@ parent: uol-discrete-mathematics
     * Set difference is not commutative:
         * $A - B \neq B - A$
         
-* [[Associativity Operation]]
+* [Associativity Operation](permanent/associativity-operation.md)
     * Concerns grouping of elements in an operation.
         * An example from algebra, the additional of numbers is associative:
             * $(a + b) + c = a + (b + c)$
@@ -91,7 +91,7 @@ parent: uol-discrete-mathematics
     * Set difference is not associate:
         * $(A - B) - C \ne A - (B - C)$
 
-* [[Distributivity]]
+* [Distributivity](permanent/distributivity.md)
     * Sometimes called the distributive law of multiplication and division.
         * Example in algebra: Given 3 numbers a, b, c: $a(b + c) = ab + ac$
     * Set union is distributive over set intersection:
@@ -99,7 +99,7 @@ parent: uol-discrete-mathematics
     * Set intersection is distributive over set union
         * $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
  
-* [[Set Identities]]
+* [Set Identities](permanent/set-identities.md)
 
     ![Set identities table](/_media/set-identities-table.png)
     
@@ -116,7 +116,7 @@ parent: uol-discrete-mathematics
 
 ## 1.207 Partition of a set
 
-* [[Partition]]
+* [Partition](permanent/set-partition.md)
     * To partition an object is to separate it into parts so each parts are separate from each other, but together make up the whole object.
     * A partition of a set $A$ is a set of subsets of $A$ such that:
         * all the subsets of A are disjointed.
@@ -129,7 +129,7 @@ parent: uol-discrete-mathematics
         * $A = A_1 \cup A_2 \cup A_3 \cup A_4 \cup A_5$
         * $\{A_1, A_2, A_3, A_4, A_5\}$ is a partition on $A$
         
-* [[Disjoint Sets]]
+* [Disjoint Sets](permanent/set-disjoint-sets.md)
     * Two sets are considered disjointed if and only if their intersection is an empty set.
         * $A \cap B = \emptyset$
 
@@ -285,7 +285,7 @@ Let $A$ and $B$ and $C$ be subsets of universal set $U$
 
     Hint: if the first digit is 1, let it be in set A, if the 2nd digit is 1 let it be in set B and if the 3rd digit is 1, let is be in set C.
 
-![[q-8-3-binary.png]]
+![q-8-3-binary](../../../../journal/bachelors-degree-2022/uol-discrete-mathematics/_media/q-8-3-binary.png)
 
 2. The subset $X \subset U$ is defined by membership table:
 
@@ -302,23 +302,23 @@ Let $A$ and $B$ and $C$ be subsets of universal set $U$
 
 Identify the region X on your diagram. Describe the region identified in simplest set notation
 
-![[q-8-p2.png]]
+![q-8-p2](../../../../journal/bachelors-degree-2022/uol-discrete-mathematics/_media/q-8-p2.png)
 
 3. Let Y be the set represented by the region 000, 011, 101, 110 and 111.
 
 Describe the set Y using the set notation.
 
-![[q-8-p3.png]]
+![q-8-p3](../../../../journal/bachelors-degree-2022/uol-discrete-mathematics/_media/q-8-p3.png)
 
 ### Question 9.
 
 Given three sets A, B and C, subsets of universal set U. For each of the Venn diagram write, in terms of A, B and C, the set representing the area coloured in yellow:
 
-![[set-q1.png]]
+![set-q1](../../../../journal/_media/set-q1.png)
 
 $\overline{A \cup B \cup C}$
 
-![[set-q2.png]]
+![set-q2](../../../../journal/_media/set-q2.png)
 
 $(A \cup B \cup C) - (A \cap B) + (B \cap C)$
 
