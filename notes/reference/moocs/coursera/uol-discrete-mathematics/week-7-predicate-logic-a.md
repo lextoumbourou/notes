@@ -9,7 +9,7 @@ modified: 2023-04-09 00:00
 
 ## 4.101 Introduction to predicate logic
 
-* [Predicate Logic](../../../../permanent/predicate-logic)
+* [Predicate Logic](../../../../permanent/predicate-logic.md)
     * Propositional logic has some limitations:
         * Cannot precisely express meaning of complex math statements.
         * Only studies propositions, which are statements with known truth values.
@@ -66,7 +66,7 @@ modified: 2023-04-09 00:00
             * "All men are mortal"
             * "Some computers are not connected to the network"
     * A third quantifier called "uniqueness quantifier".
-* [Universal Quantifier](permanent/universal-quantifier.md)
+* [Universal Quantifier](../../../../permanent/universal-quantifier.md)
     * The universal quantifier of predictate P(x) is proposition:
         * P(x) is true for all values of x in the universe of discourse.
     * We use the notation: $\forall x P(x)$, which is read "for all x"

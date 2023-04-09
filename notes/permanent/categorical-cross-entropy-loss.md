@@ -22,6 +22,6 @@ where $N$ is the number of classes, $Y$ is the ground truth labels, and $O$ is t
 
 {% notebook permanent/notebooks/cross-entropy-pytorch.ipynb %}
 
-Based on [Cross-Entropy](permanent/cross-entropy.md) in Information Theory, which is a measure of difference between 2 probability distributions.
+Based on [Cross-Entropy](cross-entropy.md) in Information Theory, which is a measure of difference between 2 probability distributions.
 
 [@howardDeepLearningCoders2020] *(pg. 222-231)*

@@ -229,7 +229,7 @@ I tried to read this book really carefully and take a lot of notes.
         * Choose of technology enables and prohibits certain things.
   * Each element supports the other: none are more important than the other.
 
-    ![[elemental-tetrad.png]]
+    ![elemental-tetrad](../_media/elemental-tetrad.png)
 
 * **Lens #9: The Lens of Elemental Tetrad
   * Is my game design using all four elements?

@@ -11,7 +11,7 @@ modified: 2023-04-08 00:00
 
 ### Video: 5.101 Introduction to Boolean algebra
 
-* [Boolean Algebra](permanent/boolean-algebra.md)
+* [Boolean Algebra](../../../../permanent/boolean-algebra.md)
     * History
         * 384-322 BC: Aristotle develops the foundations of logic.
         * 1854: George Boole published *An investigation of the laws of thought*
@@ -25,7 +25,7 @@ modified: 2023-04-08 00:00
             * variables take value in set `{0, 1}`
             * operators `+` and `.` correspond to `OR` and `AND`.
         * Used to describe and design digital circuits.
-* [Operations of Boolean Algebra](permanent/operations-of-boolean-algebra.md)
+* [Operations of Boolean Algebra](../../../../permanent/operations-of-boolean-algebra.md)
     * Based on 3 fundamental operations:
         * AND
             * logical product, intersection or conjunction
@@ -43,7 +43,7 @@ modified: 2023-04-08 00:00
 
 ### 5.103 Postulates of Boolean algebra
 
-* [Huntington's Postulates](journal/permanent/huntingtons-postulates.md)
+* [Huntington's Postulates](../../../../permanent/huntingtons-postulates.md)
     * Huntington's posulates define 6 axioms that must be satisfied by any Boolean algebra:
         * closure with respect to the operators:
             * any result of logical operation belongs to the set {0, 1}

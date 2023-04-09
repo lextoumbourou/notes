@@ -1,5 +1,5 @@
 ---
-title: Huntington's Postulates
+title: Logic Gate
 date: 2023-04-09 00:00
 modified: 2023-04-09 00:00
 status: draft
