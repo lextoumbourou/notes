@@ -62,7 +62,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
   
 ## 16:00 Top-down learning
 * Unlike other ML courses, doesn't start with refresher on calculus, or lessons on Sigmoid function
-* Approached based on [Teaching the whole game](permanent/teaching-the-whole-game.md) by Professor David Perkins and others from Harvard.
+* Approached based on [Teaching the whole game](../../../../permanent/teaching-the-whole-game.md) by Professor David Perkins and others from Harvard.
 
 ## 23:09 Software stack
 * Software used:
@@ -109,7 +109,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 * Idea was that instead of telling computer how to solve a problem, give computer examples of problem and have it figure it out
     * Create a weight assigment to test effectiveness of problem, and provide mechanism of altering weights to maximise performance
 * After training "model" you have something like: inputs -> model -> results
-* When we use a model to do a task like playing checkers, we call it [Inference](permanent/inference.md)
+* When we use a model to do a task like playing checkers, we call it [Inference](../../../../permanent/inference.md)
     * Jargon: Machine Learning
         * Training of programs developed by allowing computer to learn from experience, rather than manually coding the steps
   
@@ -118,7 +118,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
  * Is there is a function so flexibilty that the weights can do anything? Yes, a neural network.
  * Mathematical proof called [Universal Approximation Theory](permanent/universal-approximation-theory.md)
      * Function can solve any problem to any level of accuracy if you just find the right set of weights (in theory)
-* [Stochasic Gradient Descent](permanent/stochasic-gradient-descent.md)
+* [Stochasic Gradient Descent](../../../../permanent/stochasic-gradient-descent.md)
     * The "mechanism of altering weights to maximise performance" that Arthur Samuel referred to.
     * Course will look at exactly how it works.
 * Terminology used nowadays as compared to Samuel's:

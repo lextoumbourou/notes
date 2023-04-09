@@ -1,5 +1,5 @@
 ---
-title: Week 12 - Topic 06 B. Recursion
+title: Week 12 - Recursion B
 date: 2022-01-07 00:00
 category: reference/moocs
 status: draft
@@ -9,7 +9,7 @@ modified: 2023-04-08 00:00
 
 ## 6.201 Recursive definitions
 
-* [[Recursion]]
+* [Recursion](../../../../permanent/recursion.md)
     * When you must define a math object (set, func, sequence) in terms of object itself.
 * Recursively defined functions
     * Recursively defined function f with domain $\mathbb{N}$ is defined by:
@@ -41,7 +41,7 @@ modified: 2023-04-08 00:00
             * 2. RECURSIVE STEP: if $x \in S$ and $y \in S$ then $x + y \in S$
         * We will be shown later how we can prove that set S is the set of all positive integers that are multiples of 4.
 * Recursive algorithms
-    * [[Algorithm]]
+    * Algorithm
         * A finite sequence of precise instructions for performing a computation or solving a problem.
         * An algorithm is considered recursive if it solves a problem by reducing to an instance of the same problem with smaller input.
     * Example
@@ -51,24 +51,23 @@ modified: 2023-04-08 00:00
                 * RECURSIVE STEP: $n! = n (n - 1)!$ where $n$ is a positive integer.
             * The pseudocode of the algo can be formalised as:
 
-    ```
-    procedure factorial(n: nonnegative integer) {
-        if n = 0 then return 1
-        else
-        return n factorial (n - 1)
-    }
-    ```
+        ```
+        procedure factorial(n: nonnegative integer) {
+            if n = 0 then return 1
+            else
+            return n factorial (n - 1)
+        }
+        ```
 
 ## Lesson 6.204 Recurrence relations
 
-* Definitions
-    * [[Recurrence Relation]]
-        * An equation that defines a sequence based on a rule which gives the next term as a function of the previous term.
-    * [[Infinite Sequence]]
-        * Function from the set of positive integers to set of real numbers.
-    * It can be useful to formalise the problem as sequence before solving it.
-* Example: [[Towers of Hanoi]]
-      ![[week-12-hanoi-tower.png]]
+* Recurrence Relation
+    * An equation that defines a sequence based on a rule which gives the next term as a function of the previous term.
+* Infinite Sequence
+    * Function from the set of positive integers to set of real numbers.
+* It can be useful to formalise the problem as sequence before solving it.
+*  Example: [[Towers of Hanoi]]
+    * ![[week-12-hanoi-tower.png]]
       * Want to get discs from spoke A to C.
       * Can only move one disk at a time.
       * You cannot place a larger disc on a smaller one.
@@ -79,7 +78,7 @@ modified: 2023-04-08 00:00
           * Then, move last (and largest) disc from A to C by 1 move.
           * Then, remove the n-1 discs again from B to C by $a_{n-1}$ moves.
           * Thus, total moves is $a_n = 2a_{n-1} + 1$
-* [[Linear Recurrence]]
+* [Linear Recurrence](permanent/linear-recurrence.md)
     * In which each term of a sequence is a linear function of earlier terms in the sequence.
     * Two types of linear recurrence:
         * Linear homogeneous recurrence:
@@ -140,7 +139,7 @@ modified: 2023-04-08 00:00
     * Let $a_n = c_1 \ \mathbf{a_{n-1}} + c_2 \ \mathbf{a_{n-2}}  + ... + c_k \ \mathbf{a_{n-k}}$ be a linear homogeneous recurrence.
     * If a combination of the geometric sequence $a_n = r^{n}$ is a solution to this recurrence, it satifies $r^n = c_1 \ r^{n-1} + c_2 \ r^{n-2} ... c_k \ r^{n-k}$
     * By dividing both sides by $r^{n-k}$, we get: $\mathbb{r^{k}} = c_1 \ \mathbb{r^{k-1}} + c_2 \ \mathbb{r^{k-2}} ... c_k$
-    * We call this equation the [[Characteristic Equation]].
+    * We call this equation the Characteristic Equation.
         * Solving this equation is first step towards finding a solution to linear homogeneous recurrence:
             * If $r$ is a solution equation with multiplicity p, then the combination $(\lambda +\beta n + yn^2 + ... + \mu n^{p-1})\mathbf{r^{n}}$ satisifes the recurrence.
 * Solving Fibonacci recurrence
