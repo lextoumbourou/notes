@@ -1,5 +1,5 @@
 ---
-title: Week 7 - Topic 04 A. Predicate logic
+title: Week 7 - Predicate Logic A
 date: 2022-11-22 00:00
 category: reference/moocs
 status: draft

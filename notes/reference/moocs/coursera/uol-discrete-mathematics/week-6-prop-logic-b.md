@@ -1,5 +1,5 @@
 ---
-title: Week 6 - Topic 03 B. Propositional Logic
+title: Week 6 - Propositional Logic B
 date: 2022-11-15 00:00
 category: reference/moocs
 status: draft

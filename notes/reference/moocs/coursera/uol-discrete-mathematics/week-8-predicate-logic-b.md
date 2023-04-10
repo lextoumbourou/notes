@@ -1,5 +1,5 @@
 ---
-title: Week 8 - Predicate logic B
+title: Week 8 - Predicate Logic B
 date: 2022-11-29 00:00
 category: reference/moocs
 status: draft
