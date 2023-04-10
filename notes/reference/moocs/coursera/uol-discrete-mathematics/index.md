@@ -26,10 +26,10 @@ hide_cover_in_article: true
 
 * [Week 1 - Sets A](week-1-sets-a.md)
 * [Week 2 - Sets B](week-2-sets-b.md)
-* [Week 3 - Functions A](week-3-function-a.md)
+* [Week 3 - Functions A](week-3-functions-a.md)
 * [Week 4 - Functions B](week-4-functions-b.md)
-* [Week 5 - Propositional Logic A](week-5-prop-logic-a.md)
-* [Week 6 - Propositional Logic B](week-6-prop-logic-b.md)
+* [Week 5 - Propositional Logic A](week-5-propositional-logic-a.md)
+* [Week 6 - Propositional Logic B](week-6-propositional-logic-b.md)
 * [Week 7 - Predicate Logic A](week-7-predicate-logic-a.md)
 * [Week 8 - Predicate Logic B](week-8-predicate-logic-b.md)
 * [Week 9 - Boolean Algebra A](week-9-boolean-algebra-a.md)
