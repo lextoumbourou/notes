@@ -9,8 +9,8 @@ Notes from Coursera's [Data Structures and Performance](https://www.coursera.org
 
 ## Contents
 
-* [Week 1]({filename}/reference/moocs/coursera/data-structures-optimizing-performance/week-1.md)
-* [Week 2]({filename}/reference/moocs/coursera/data-structures-optimizing-performance/week-2.md)
-* [Week 3]({filename}/reference/moocs/coursera/data-structures-optimizing-performance/week-3.md)
-* [Week 4]({filename}/reference/moocs/coursera/data-structures-optimizing-performance/week-4.md)
-* [Week 5]({filename}/reference/moocs/coursera/data-structures-optimizing-performance/week-5.md)
+* [Week 1](week-1.md)
+* [Week 2](week-2.md)
+* [Week 3](week-3.md)
+* [Week 4](week-4.md)
+* [Week 5](week-5.md)

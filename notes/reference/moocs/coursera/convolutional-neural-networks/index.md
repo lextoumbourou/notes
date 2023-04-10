@@ -10,7 +10,7 @@ Notes from Coursera's [Convolutional Neural Networks](https://www.coursera.org/l
 
 ## Contents
 
-* [Week 1 - Foundations of Convolutional Neural Networks]({filename}/reference/moocs/coursera/convolutional-neural-networks/week-1-convolutional-neural-networks.md)
-* [Week 2 - Deep Convolutional Models: Case Studies]({filename}/reference/moocs/coursera/convolutional-neural-networks/week-2-deep-convolutional-models-case-studies.md)
-* [Week 3 - Object Detection]({filename}/reference/moocs/coursera/convolutional-neural-networks/week-3-object-detection.md)
-* [Week 4 - Special applications - Face recognition & Neural style transfer]({filename}/reference/moocs/coursera/convolutional-neural-networks/week-4-special-applications-face-recognition-and-neural-style-transfer.md)
+* [Week 1 - Foundations of Convolutional Neural Networks](week-1-convolutional-neural-networks.md)
+* [Week 2 - Deep Convolutional Models: Case Studies](week-2-deep-convolutional-models-case-studies.md)
+* [Week 3 - Object Detection](week-3-object-detection.md)
+* [Week 4 - Special applications - Face recognition & Neural style transfer](week-4-special-applications-face-recognition-and-neural-style-transfer.md)
