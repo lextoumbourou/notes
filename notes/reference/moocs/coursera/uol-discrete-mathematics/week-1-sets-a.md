@@ -47,7 +47,7 @@ modified: 2023-04-08 00:00:00
         * $A \subseteq B \iff x \in A \text{ then } x \in B \text{(for all x)}$
     * Any set is a subset of itself: $S \subseteq S$
  
-* [Empty Set](../../../../journal/permanent/empty-set.md)
+* [Empty Set](../../../../permanent/empty-set.md)
     * is a subset of any set $\emptyset \subseteq S$
     * empty set is a subset of itself: $\emptyset \subseteq \emptyset$
 

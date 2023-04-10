@@ -9,7 +9,7 @@ Boolean algebra is the foundation of computer circuit analysis.
 
 It's based on 3 fundamental operations: AND, OR and NOT.
 
-[AND (Boolean Operation)](../journal/permanent/AND%20(Boolean%20Operation).md)
+[AND (Boolean Operation)](boolean-operation-and.md)
 * Also known as logical product.
 * Represented as $x . y$ or $xy$ (hence logical product)
       * logical product, intersection or conjunction
