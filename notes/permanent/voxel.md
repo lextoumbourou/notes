@@ -7,7 +7,7 @@ summary: A single datapoint in a 3d-grid, the word is a combination of "volume" 
 cover: /_media/roblox-terrain-voxel-of-water.gif 
 ---
 
-A voxel refers to a single datapoint in a 3d-grid, in the same way a [Pixel](Pixel) refers to a datapoint on a 2d-grid. The word is a combination of "volume" and "pixel". 
+A voxel refers to a single datapoint in a 3d-grid, in the same way a [Pixel](pixel.md) refers to a datapoint on a 2d-grid. The word is a combination of "volume" and "pixel". 
 
 The volume of a voxel and the data stored can be anything.
 

@@ -118,7 +118,7 @@ modified: 2023-04-09 00:00
     * ${A^{T}}_{ij} = A_{ji}$
     * $\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}^{T} = \begin{bmatrix}1 & 3 \\ 2 & 4\end{bmatrix}$
 
-* [Orthonormal Basis Set](../../../../journal/permanent/orthonormal-basis-set.md) (01:09-06:35)
+* [Orthonormal Basis Set](../../../../permanent/orthonormal-basis-set.md) (01:09-06:35)
     * If you have a square matrix with vectors that are basis vectors in new space, with the condition that the vectors are orthogonal to each other and they're unit length (1)
         * In math:
             $a_i \cdot a_j = 0, i \neq j$
