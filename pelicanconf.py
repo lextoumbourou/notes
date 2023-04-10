@@ -18,7 +18,7 @@ SITENAME = 'Notes by Lex'
 
 THEME = "theme"
 
-PLUGIN_PATHS = ['pelican-plugins', 'pelican-cite/src']
+PLUGIN_PATHS = ['pelican-plugins', 'pelican-cite/src', 'my-plugins']
 STATIC_PATHS = ['_media']
 
 DRAFT_URL = u'{slug}.html'
@@ -39,7 +39,7 @@ MARKDOWN = {
     "output_format": "html5",
 }
 
-PLUGINS = ['pelican_katex', 'pelican_cite', frontmark, 'subcategory', nb_liquid]
+PLUGINS = ['pelican_katex', 'pelican_cite', frontmark, 'subcategory', nb_liquid, "md_link_converter", "path_to_slug"]
 
 PUBLICATIONS_SRC = 'notes/citations.bib'
 
@@ -63,6 +63,8 @@ LIQUID_CONFIGS = (("CONTENT_DIR", "notes", ""), )
 ARTICLE_EXCLUDES = ['journal', 'posts']
 
 RELATIVE_URLS = True
+
+TIMEZONE = "Australia/Brisbane"
 
 SITEURL = "https://notesbylex.com"
 if ENV == "local":
