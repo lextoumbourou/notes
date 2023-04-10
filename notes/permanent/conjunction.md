@@ -4,7 +4,7 @@ date: 2022-11-23 00:00
 tags:
   - Logic
   - DiscreteMath
-status: draft"
+status: draft
 ---
 
 Given two [Proposition](proposition.md) $p$ and $q$, their conjunction is the proposition $p$ *and* $q$.
