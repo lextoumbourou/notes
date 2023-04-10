@@ -1,5 +1,5 @@
 ---
-title: Discrete Mathematics
+title: Discrete Mathematics Course Notes
 date: 2023-03-06 00:00
 category: reference/moocs
 slug: uol-discrete-mathematics

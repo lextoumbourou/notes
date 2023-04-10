@@ -1,3 +1,11 @@
+---
+title: "Lesson 2: Coverage Testing"
+date: 2014-12-14 00:00
+category: reference/moocs
+parent: uol-discrete-mathematics
+status: draft
+---
+
 # Lesson 2: Coverage Testing
 
 * Partioning the Input Domain

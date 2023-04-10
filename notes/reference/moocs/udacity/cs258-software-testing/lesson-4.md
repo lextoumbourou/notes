@@ -1,3 +1,11 @@
+---
+title: "Lesson 4: Random Testing in Practice"
+date: 2014-12-14 00:00
+category: reference/moocs
+parent: uol-discrete-mathematics
+status: draft
+---
+
 # Lesson 4: Random Testing in Practice
 
 * Random Testing in the Bigger Picture
