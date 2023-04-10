@@ -4,7 +4,6 @@ date: 2022-10-10 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00:00
 ---
 
 ## 1.104 The definition of a set

@@ -8,23 +8,20 @@ summary: "Notes from [Discrete Mathematics by University of London](https://www.
 hide_cover_in_article: true
 ---
 
-Notes from [Discrete Mathematics by University of London](https://www.coursera.org/learn/uol-discrete-mathematics/), part of the BSc Computer Science degree.
+* Notes from [Discrete Mathematics by University of London](https://www.coursera.org/learn/uol-discrete-mathematics/), part of the BSc Computer Science degree.
+* Instructor: Dr Lahcen Ouarbya
 
-* Instructors:
-    *  Dr Lahcen Ouarbya
-        * Research area: data analytics
+* Books required:
+    * [Kenneth, H, Rosen. Discrete Mathematics and its Applications. (2012) Global Edition](https://www.amazon.com.au/Discrete-Mathematics-Applications-Kenneth-Rosen/dp/0072899050)
+    * [David Mackinson, Sets, Logic and Maths for Computing, Springer Verlag. 2012](https://www.amazon.com/Computing-Undergraduate-Topics-Computer-Science/dp/1447124995)
     
-* [[Discrete Mathematics]]
+* [Discrete Mathematics](permanent/discrete-maths.md)
     * the study of discrete objects, which are different from "connected objects".
         * separated and distance from each other
         * examples: integer, positions, set, relationships, functions
     * Increasingly applied to practical fields of math and science
     * Improves reasoning and problem-solving
-    
-* Books required:
-    * [Kenneth, H, Rosen. Discrete Mathematics and its Applications. (2012) Global Edition](https://www.amazon.com.au/Discrete-Mathematics-Applications-Kenneth-Rosen/dp/0072899050)
-    * [David Mackinson, Sets, Logic and Maths for Computing, Springer Verlag. 2012](https://www.amazon.com/Computing-Undergraduate-Topics-Computer-Science/dp/1447124995)
-    
+ 
 ## Contents
 
 * [Week 1 - Sets A](week-1-sets-a.md)
@@ -32,13 +29,13 @@ Notes from [Discrete Mathematics by University of London](https://www.coursera.o
 * [Week 3 - Functions A](week-3-function-a.md)
 * [Week 4 - Functions B](week-4-functions-b.md)
 * [Week 5 - Propositional Logic A](week-5-prop-logic-a.md)
-* [Week 6 - Topic 03 B. Propositional Logic](week-6-prop-logic-b.md)
-* [Week 7 - Topic 04 A. Predicate logic](week-7-predicate-logic-a.md)
-* [Week 8 - Predicate logic B](week-8-predicate-logic-b.md)
+* [Week 6 - Propositional Logic B](week-6-prop-logic-b.md)
+* [Week 7 - Predicate Logic A](week-7-predicate-logic-a.md)
+* [Week 8 - Predicate Logic B](week-8-predicate-logic-b.md)
 * [Week 9 - Boolean Algebra A](week-9-boolean-algebra-a.md)
 * [Week 10 - Boolean Algebra B](week-10-boolean-algebra-b.md)
 * [Mid-Term Assessment](mid-term-assessment.md)
-* [Week 11 - Topic 06 A. Mathematical Induction](week-11-mathematical-induction-a.md)
+* [Week 11 - Mathematical Induction A](week-11-mathematical-induction-a.md)
 * [Week 12 - Recursion B](week-12-recursion-b.md)
 * [Week 13 - Topic 07 A. Graphs](week-13-graph-a.md)
 * [Week 14 - Topic 07 B. Graphs](week-14-graphs-b.md)
