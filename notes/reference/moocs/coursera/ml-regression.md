@@ -202,7 +202,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
 * When you have functions in higher dimensions, don't talk about "derivates" talk about "gradients".
 * Notation example:
 
-  ![](/reference/_media/gradient-notation.png)
+  ![Gradient Notation](/reference/_media/gradient-notation.png)
 
 * Gradient definition:
   * A vector (array) with partial derivatives.
@@ -210,7 +210,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
   * Same as derivate but involves other derivates. Treats them like constants.
 * Worked example:
 
-  ![](/reference/_media/gradient-example.png)
+  ![Gradient Example](/reference/_media/gradient-example.png)
 
 * Gradient descent == hill descent but compute the gradient instead of derivate for each iteration.
 
