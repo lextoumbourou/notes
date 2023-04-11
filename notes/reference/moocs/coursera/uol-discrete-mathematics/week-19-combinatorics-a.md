@@ -9,8 +9,8 @@ modified: 2023-04-08 00:00
 
 ## Lesson 10.1 The basics of Combinatorics
 
-* [Combinatorics](permanent/combinatorics.md)
-    * The math topic that studies "finitate" countable discrete structures: collections or arragements of objects.
+* [Combinatorics](../../../../permanent/combinatorics.md)
+    * The math topic that studies "finite" countable discrete structures: collections or arrangements of objects.
     * Involves counting objects and studying the mathematical properties of different arrangement of objects.
     * Applications include programming, physics, economics and other fields like prob theory.
 
@@ -18,8 +18,8 @@ modified: 2023-04-08 00:00
 ## Lesson 10.103 The basics of counting
 
 * [Product Rule](permanent/product-rule.md)
-    * To determine the number of different possibile outcomes in a complex process, we can break the problem into a sequence of two independent tasks:
-        * if there are n ways of doing the first task
+    * To determine the number of different possible outcomes in a complex process, we can break the problem into a sequence of two independent tasks:
+        * if there are $n$ ways of doing the first task
         * for each of these ways of doing the first task, there are $m$ ways of doing the 2nd task.
         * then there are n * m different ways of doing the whole process.
     * Example
@@ -42,19 +42,19 @@ modified: 2023-04-08 00:00
                 * 4 for the third event
                 * 3 for the fourth event
             * Thus, there are 2 * 3 * 4 * 3 = 72 combination meals.
-* Product rule in terms of sets
-    * Let A be the set of ways to do the first task and B the set of ways to do 2nd task.
-    * If A and B are disjoint, then:
-        * The number ways to do both task 1 and 2 can be represented as: $|AxB| = |A| \cdot |B|$
-            * The cardinality of the cross product of A and B.
-        * In other words: the num elements in the Cartesian product of these sets is the product of number of elements in each set.
+    * Product rule in terms of sets
+        * Let A be the set of ways to do the first task and B the set of ways to do 2nd task.
+        * If A and B are disjoint, then:
+            * The number ways to do both task 1 and 2 can be represented as: $|AxB| = |A| \cdot |B|$
+                * The cardinality of the cross product of A and B.
+            * In other words: the num elements in the Cartesian product of these sets is the product of number of elements in each set.
 * [Addition Rule](permanent/addition-rule.md)
     * Suppose a task 1 can be done n ways and a task 2 can be done in m ways.
     * Assume that both tasks are independent, that is, performing task 1 doesn't mean performing task 2 and vice versa.
     * In this case, the number of ways of executing task 1 or task 2 is equal to n + m.
     * Example
-        * The computing department must choose etiher a student or a member of academic staff as a representative for university committee.
-        * How many ways of choose this representative are there if there are 10 acedemic staff and 77 math students, and no one is both a member of academic staff and a student?
+        * The computing department must choose either a student or a member of academic staff as a representative for university committee.
+        * How many ways of choose this representative are there if there are 10 academic staff and 77 math students, and no one is both a member of academic staff and a student?
     * Solution
         * By the addition rule, there are 10 + 77 ways of choosing this representative.
 * The sum rule in terms of sets
@@ -71,8 +71,8 @@ modified: 2023-04-08 00:00
         * Using the product rule the number of labels with a letter folowed by 2 digits is 26 x 10 x10
         * Using the sum rule the total number of labels is 26 + 26>10.10 = 2,626.
 * [Subtraction Rule](permanent/subtraction-rule.md)
-    * Suppose a task can be done either in one of n_1 ways or in one of n_2 ways.
-    * Then the total number of ways to do the task is n_1 + n_2 minus the number of ways common to the two different ways.
+    * Suppose a task can be done either in one of $n_1$ ways or in one of $n_2$ ways.
+    * Then the total number of ways to do the task is $n_1 + n_2$ minus the number of ways common to the two different ways.
     * Also known as the principle of inclusion-exclusion.
         * $|A \cup B| = |A| + |B| - |A \cap B|$
     * Example
@@ -134,33 +134,33 @@ modified: 2023-04-08 00:00
 
 * Many counting problems can be solved by finding the number of ways to arrange a specified number of distinct elements of a set of particular size, where the order of this element matters, and in some cases doesn't.
 * This lecture discusses permutations and combinations, which are used to solve this counting problem.
-* Definition of a [Permutation](permanent/permutation.md)
+* [Permutation](../../../../permanent/permutation.md)
     * A permutation of a set of distinct objects is an **ordered arrangement** of these objects.
-    * An ordered arragement of r elements of a set is called an r-permutation.
+    * An ordered arrangement of r elements of a set is called an r-permutation.
     * The number of r-permutations of a set with n elements is denoted by $P(n,r)$
-    * Example
-        * Let S = {1, 2, 3}
+    * Example:
+        * Let $S = \{1, 2, 3\}$
         * The ordered arrangement 3,1,2 is a 3-permutation of S.
-        * The ordered arragenment 3,2 is a 2-permutation of S
+        * The ordered arrangement 3,2 is a 2-permutation of S
         * The 2-permutations of S = {1, 2, 3} are 1,2; 1,3; 2,1; 2,3; 3,1 and 3,2
         * Hence, P(3,2) = 6
-* Number of permutations
-    * If n is a positive integer and r is an integer with $r \leq n$, then there are $P(n, r) = n(n - 1)(n - 2) ... (n - (r-1))$ r-permutations of a set with n distinct elements.
-    * We can formulate this as:
-        * $P(n, r) = \frac{n!}{(n - r)!}$
-    * Proof:
-        * By product rule:
-            * there are n different ways for choosing the 1st element.
-            * n-1 ways for choosing the 2nd element.
-            * n -3 ways for choosing the 3rd element, etc.
-            * there are $(n - (r - 1))$ ways to choose the last element.
-            * hence, $P(n, r) = n(n - 1)(n - 2) ... (n - (r - 1))$
-            * $P(n, 0) = 1$, since there is only one way to order zero.
-        * Example
-            * How many possible ways are there of selecting a first prize winner, a 2nd price winner and third-prize winner from 50 different people?
-            * Solution:
-                * P(50, 3) = 50 * 49 * 48 = 117,600
-* Definition of [Combinations](permanent/combinations.md)
+    * Number of permutations
+        * If n is a positive integer and r is an integer with $r \leq n$, then there are $P(n, r) = n(n - 1)(n - 2) ... (n - (r-1))$ r-permutations of a set with n distinct elements.
+        * We can formulate this as:
+            * $P(n, r) = \frac{n!}{(n - r)!}$
+        * Proof:
+            * By product rule:
+                * there are n different ways for choosing the 1st element.
+                * n-1 ways for choosing the 2nd element.
+                * n -3 ways for choosing the 3rd element, etc.
+                * there are $(n - (r - 1))$ ways to choose the last element.
+                * hence, $P(n, r) = n(n - 1)(n - 2) ... (n - (r - 1))$
+                * $P(n, 0) = 1$, since there is only one way to order zero.
+            * Example
+                * How many possible ways are there of selecting a first prize winner, a 2nd price winner and third-prize winner from 50 different people?
+                * Solution:
+                    * P(50, 3) = 50 * 49 * 48 = 117,600
+* [Combinations](../../../../permanent/combination.md)
     * An r-combination of elements of a set is an unordered selection of r elements from the set.
     * An r-combination is a subset of the set with r elements.
     * The number of r-combinations of a set with n distinct elements is denoted by $C(n, r) = \binom{n}{r}$
