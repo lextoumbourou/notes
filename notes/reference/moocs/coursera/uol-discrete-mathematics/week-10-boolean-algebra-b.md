@@ -13,14 +13,14 @@ modified: 2023-04-08 00:00
     * Implementation of a boolean operation.
     * Basic element of an implementation of a Circuit.
     
-* [Basic Gates](permanent/basic-gates.md)
+* [Basic Gates](../../../../permanent/basic-gates.md)
     * Most basic logic circuits:
         * **OR** gates
         * **AND** gates
         * **NOT** gates
     * All Boolean functions can be written in terms of these 3 logic operations.
     
-    * [AND Gate](permanent/and-gate.md)
+    * [AND Gate](../../../../permanent/and-gate.md)
         * Produces HIGH output (value 1) when all inputs are HIGH otherwise, output is LOW (value 0).
         * For a 2-input gate, AND gate is represented by electrical notation and truth table:
         
@@ -28,7 +28,7 @@ modified: 2023-04-08 00:00
           
         * The AND operations is written as $f = x . y$ or $f = xy$
    
-    * [OR Gate](permanent/or-gate.md)
+    * [OR Gate](../../../../permanent/or-gate.md)
         * Produces HIGH output (value 1) when any of 2 inputs if HIGH, otherwise, output is LOW (value 0).
         * For a 2-input gate, OR gate is represented by electrical notation and truth table:
 
@@ -36,7 +36,7 @@ modified: 2023-04-08 00:00
           
         * The OR operation is written as $f = x + y$
   
-    * [Inverter Gate](permanent/inverter-gate.md)
+    * [Inverter Gate](../../../../permanent/inverter-gate.md)
         * Produces opposite of the input.
         * Also known as NOT gate.
         * When input is LOW (0), output is HIGH (1) and vice versa.
