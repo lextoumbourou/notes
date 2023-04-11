@@ -38,7 +38,7 @@ modified: 2023-04-09 00:00
 
 ### Cosign and dot product
 
-* Cosign rule from algebra ([Law of Cosines](../../../../permanent/law-of-cosines.md)):
+* Cosign rule from algebra ([Law Of Cosines](../../../../permanent/law-of-cosines.md)):
     * If you have a triangle with sides a, b and c and angle between a and b $\theta$ then: $c^2 = a^2 + b^2 - 2ab \cos \theta$
 
         ![Cosine rule example](/_media/laml-cosine-rule.png)

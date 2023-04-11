@@ -10,4 +10,4 @@ An Interest Curve refers to the guest's interest over time during an experience 
 
 [@schellArtGameDesign2015a] *(chapter. 16)*
 
-This is related to [triangularity-in-game-design](triangularity-in-game-design.md) in the sense that high-risk, high-reward options add interest to the game. Also, [Game Design is Problem Solving](Game Design is Problem Solving.md) as interest curves are a useful problem solving technique.
+This is related to [Triangularity In Game Design](triangularity-in-game-design.md) in the sense that high-risk, high-reward options add interest to the game. Also, [Game Design is Problem Solving](Game Design is Problem Solving.md) as interest curves are a useful problem solving technique.

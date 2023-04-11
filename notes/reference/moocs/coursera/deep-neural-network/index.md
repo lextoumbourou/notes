@@ -10,6 +10,6 @@ Notes from Coursera's [Improving Deep Neural Networks: Hyperparameter tuning, Re
 
 ## Contents
 
-* [Week 1 - Practical aspects of Deep Learning](week-1-practical-aspects-of-deep-learning.md)
-* [Week 2 - Optimization algorithms](week-2-optimization-algorithms.md)
-* [Week 3 - Hyperparameter tuning, Batch Normalization and Programming Frameworks](week-3-hyperparameter-tuning-batch-norm.md)
+* [Improving Deep Neural Networks - Week 1](week-1-practical-aspects-of-deep-learning.md)
+* [Improving Deep Neural Networks: - Week 2](week-2-optimization-algorithms.md)
+* [Improving Deep Neural Networks: - Week 3](week-3-hyperparameter-tuning-batch-norm.md)

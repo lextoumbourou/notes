@@ -145,7 +145,7 @@ modified: 2023-04-08 00:00
 * Outline
     * Benefits of simplification and Algebraic simplification
         * Show how Boolean Algebra Theorem or rules can be used to represent and simplify Boolean functions.
-    * Introduce [Karnaugh Map](permanent/karna[karnaugh-map](../../../../permanent/karnaugh-map.md)ion of Boolean functions.
+    * Introduce [Karnaugh Map](../../../../permanent/karnaugh-map.md) of Boolean functions.
 * Benefits of simplification
     * We know that every function can be written in [Sum-of-Products Form](Sum-of-Products Form)
         * Not necessarily optimal in terms of number of gates and depth of circuit.

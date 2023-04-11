@@ -77,7 +77,7 @@ status: draft
             * On validation, only resize is done.
 * Train a simple model early (pg. 221)
 * [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md) (pg. 222-231)
-    * Defined as:  [Softmax Activation Function](../../permanent/softmax-activation-function.md) then [Negative log-likelihood](../../permanent/negative-log-likelihood.md)
+    * Defined as:  [Softmax Activation Function](../../permanent/softmax-activation-function.md) then [Negative Log-Likelihood](../../permanent/negative-log-likelihood.md)
     * [Exponential Function](../../permanent/exponential-function.md)
         * Defined as $e^x$
             * $e$ is a number about 2.718
@@ -153,7 +153,7 @@ status: draft
     * DataLoaders
         * Object that contains training and val DataLoader.
 * When constructing a DataBlock, you can do a little bit at a time to ensure everything is working.
-* [One-Hot Encoding](../../permanent/one-hot-encoding.md) (pg. 254-255)
+* [One hot-encoding](../../permanent/one-hot-encoding.md) (pg. 254-255)
     * A vector of 0s with a 1 in each location represented in data.
 * [Binary Cross-Entropy Loss](../../permanent/binary-cross-entropy-loss.md) (pg. 256-257)
     * A multi-label classification loss function.

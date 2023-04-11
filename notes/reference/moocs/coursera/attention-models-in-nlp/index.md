@@ -10,5 +10,5 @@ Notes from Coursera's [Natural Language Processing with Attention Models](https:
 
 ## Contents
 
-* [Week 1](week-1.md)
-* [Week 2](week-2.md)
+* [Natural Language Processing with NLP - Week 1](week-1.md)
+* [Natural Language Processing with NLP - Week 2](week-2.md)

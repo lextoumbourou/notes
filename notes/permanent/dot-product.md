@@ -36,7 +36,7 @@ $$
 \begin{bmatrix}1 \\ 0\end{bmatrix} \cdot \begin{bmatrix}-1 \\ 0\end{bmatrix} = -1 \cdot 1 + 0 \cdot 0 = -1
 $$
 
-We can find the angle in [radians](radians.md) between any 2 vectors if we first know the formula for the dot product:
+We can find the angle in [Radians](radians.md) between any 2 vectors if we first know the formula for the dot product:
 
 $\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos\theta$
 

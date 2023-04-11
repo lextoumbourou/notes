@@ -10,5 +10,5 @@ Notes from Coursera's [Structuring Machine Learning Projects](https://www.course
 
 ## Contents
 
-* [Week 1 - ML Strategy (1)](week-1.md)
-* [Week 2 - ML Strategy (2)](week-2.md)
+* [Structuring Machine Learning Projects (Coursera) - Week 1](week-1.md)
+* [Structuring Machine Learning Projects (Coursera) - Week 2](week-2.md)

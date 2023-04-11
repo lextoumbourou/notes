@@ -31,7 +31,7 @@ part.Position = Vector3.new(0, 10, 0)
 
 However, CFrame can also include information about a Part's rotation.
 
-You can also construct a rotated `CFrame` using the Angles constructor. It takes the rotation around each axis in [radians](radians.md)adians.md):
+You can also construct a rotated `CFrame` using the Angles constructor. It takes the rotation around each axis in [Radians](radians.md):
 
 ```lua
 part.CFrame = CFrame.Angles(0, math.rad(90), 0)

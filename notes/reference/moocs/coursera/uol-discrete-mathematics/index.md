@@ -15,7 +15,7 @@ hide_cover_in_article: true
     * [Kenneth, H, Rosen. Discrete Mathematics and its Applications. (2012) Global Edition](https://www.amazon.com.au/Discrete-Mathematics-Applications-Kenneth-Rosen/dp/0072899050)
     * [David Mackinson, Sets, Logic and Maths for Computing, Springer Verlag. 2012](https://www.amazon.com/Computing-Undergraduate-Topics-Computer-Science/dp/1447124995)
     
-* [Discrete Mathematics](../../../../permanent/discrete-maths.md)
+* [Discrete Maths](../../../../permanent/discrete-maths.md)
     * the study of discrete objects, which are different from "connected objects".
         * separated and distance from each other
         * examples: integer, positions, set, relationships, functions
