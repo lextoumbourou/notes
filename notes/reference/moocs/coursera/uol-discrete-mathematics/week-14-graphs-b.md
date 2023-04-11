@@ -9,7 +9,7 @@ modified: 2023-04-08 00:00
 
 ## 7.201 Isomorphic Graphs
 
-* [lsomorphism](../../../../permanent/graph-isomorphism.md)
+* [Isomorphism](../../../../permanent/graph-isomorphism.md)
     * Two graphs $G_1$ and $G_2$ are isomorphic if there is a bijection (invertible function) $f: G_1 \rightarrow G_2$ that preserves adjacency and non-adjacency.
         * if $uv$ is in $E(G_1)$ then $f(u)f(v)$ is in $E(G_2)$
         

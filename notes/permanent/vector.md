@@ -46,6 +46,6 @@ We can plot these numbers in a coordinate system to see how the flowers relate t
 * We can multiply vectors by a value. See [Vector Scaling](Vector Scaling.md).
 * We can combine vectors in various ways. See [Dot Product](Dot Product.md) or [Element-wise product](Element-wise product).
 
-We describe a [ray](ray.md) with a similar notation to vectors. However, a Ray doesn't have a length. Only a direction to continue infinitely.
+We describe a [Ray](ray.md) with a similar notation to vectors. However, a Ray doesn't have a length. Only a direction to continue infinitely.
 
 [@3blue1brownVectorsChapterEssence2016]

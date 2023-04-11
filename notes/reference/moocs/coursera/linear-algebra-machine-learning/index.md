@@ -14,4 +14,4 @@ Notes from Coursera's [Mathematics for Machine Learning: Linear Algebra](https:/
 * [Week 2 - Vectors are objects that move around space](week-2.md)
 * [Week 3 - Matrices in Linear Algebra: Objects that operate on Vectors](week-3.md)
 * [Week 4 - Matrices make linear mappings](week-4.md)
-* [Week 5 - Eigenvalues and Eigenvectors: Application to Data Problems](week-5.md)
+* [Week 5 - What are eigenvalues and eigenvectors?](week-5.md)

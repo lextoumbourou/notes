@@ -16,6 +16,6 @@ Notes from the [Deep Learning for Coders (2020)](https://course.fast.ai) video s
 * [Lesson 3](lesson-3.md)
 * [Lesson 4](lesson-4.md)
 * Lesson 5 missing.
-* [Lesson 6](lesson-6.md)
-* [Lesson 7](lesson-7.md)
-* [Lesson 8](lesson-8.md)
+* [fastai - Lesson 6 - Deep Learning for Coders (2020)](lesson-6.md)
+* [fastai - Lesson 7 - Deep Learning for Coders (2020)](lesson-7.md)
+* [fastai - Lesson 8 - Deep Learning for Coders (2020)](lesson-8.md)

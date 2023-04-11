@@ -11,7 +11,7 @@ Some of the time, it is difficult to measure exactly what we need to assess a pr
 
 [@thomasProblemMetricsFundamental2020].
 
-For example, well-meaning technology decision-makers realise that unit tests are important for sustainable growth of software projects. Therefore, to ensure that tests are used liberally they introduce [test-coverage-metrics](test-coverage-metrics.md)cs.md). And sometimes even go as far as failing to promote builds where coverage metrics have fallen below some threshold. However, test coverage metrics can be gamed in 2 ways:
+For example, well-meaning technology decision-makers realise that unit tests are important for sustainable growth of software projects. Therefore, to ensure that tests are used liberally they introduce [Test Coverage Metrics](test-coverage-metrics.md). And sometimes even go as far as failing to promote builds where coverage metrics have fallen below some threshold. However, test coverage metrics can be gamed in 2 ways:
 
 -   code be reshuffled to reduce the number of lines and therefore increase % of lines covered by the test. This reshuffling can sometimes make the code less readable
 -   tests can be written to assert nothing of value to simply increase branch or line coverage. This can unneccessarily increase complexity of the code.

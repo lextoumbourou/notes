@@ -347,7 +347,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
             * Can remind us of old ideas and trigger new ones.
         * Links between articles more important.
     * One can't get an overview of the whole slipbox (like the brain) but can for a topic
-        * System for ordering topics an ongoing project, so [Topic Overview](../../permanent/topic-overview.md) is also written as note.
+        * System for ordering topics an ongoing project, so [Topic Overview (Zettlekasten)](../../permanent/topic-overview.md) is also written as note.
     * Archiver vs writer
         * Archiver: keywords are used to store notes
         * Writer: where would I want to stumble on note after forgetting.
@@ -356,7 +356,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 * 12.2 Make smart connections
 	* Cross-referencing a crucial part of developing thoughts within slipbox
 	* Luhmann had 4 types of cross-references that he used. Only the 1st and 4th relevant for digital slipboxes, the other to compensate for short comings of the physical boxes:
-		* Links on the [Topic Overview](../../permanent/topic-overview.md).
+		* Links on the [Topic Overview (Zettlekasten)](../../permanent/topic-overview.md).
 			* The topic overview is referenced directly from the index, as entry point into topic.
 			* Used on topic fleshed out enough that this is required.
 			* Considered an inbetween step for writing manuscript.

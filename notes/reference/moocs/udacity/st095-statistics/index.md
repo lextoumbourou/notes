@@ -19,4 +19,4 @@ modified: 2023-04-08 00:00
 * [Lesson 7: Sampling Distributions](lesson-7-sampling-distributions.md)
 * [Lesson 8: Estimation](lesson-8-estimation.md)
 * [Lesson 9: Hypothesis Testing](lesson-9-hypothesis-testing.md)
-* [Lesson 10: t-Tests](lesson-10-t-tests.md)
+* [Lesson 10: T-Tests](lesson-10-t-tests.md)

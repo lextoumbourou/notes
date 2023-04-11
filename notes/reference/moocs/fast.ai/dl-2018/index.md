@@ -17,10 +17,10 @@ Course notes from fastai's Deep Learning 2018.
 * [Lesson 5](lesson05.md)
 * [Lesson 6](lesson06.md)
 * [Lesson 7](lesson07.md)
-* [Lesson 8](lesson08.md)
-* [Lesson 9](lesson09.md)
-* [Lesson 10](lesson10.md)
-* [Lesson 11](lesson11.md)
+* [Fast.ai: Deep Learning 2018 - Lesson 8](lesson08.md)
+* [Fast.ai: Deep Learning 2018 - Lesson 9](lesson09.md)
+* [Fast.ai: Deep Learning 2018 - Lesson 10](lesson10.md)
+* [Fast.ai: Deep Learning 2018 - Lesson 11](lesson11.md)
 
 ## Extra Examples
 

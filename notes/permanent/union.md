@@ -8,7 +8,7 @@ A merge operation between between 2 [Set](set.md)s.
 
 Represented by the $\cup$ symbol (`\cup` in [LaTeX](LaTeX.md)).
 
-Example (using [Listing Method](set-listing-method.md):
+Example (using [Set Listing Method](set-listing-method.md):
 
 $A = \{a, b, c\}$
 $B = \{c, d, e\}$

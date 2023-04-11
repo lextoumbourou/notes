@@ -82,7 +82,7 @@ In a 2d transformation, a rank 2 means that the [Determinate of a Matrix](../../
 
 For a 3d transformation, a rank 2 means that the transformation is collapsing space.
 
-The set of all possible outputs is called [Column Space](../../../permanent/column-space.md) of a matrix. We call it this because the columns of a matrix say where the [Basis Vectors](permanent/Basis Vectors.md) land and the [Span](../../../permanent/vector-span.md) of basis vectors give all possible outputs.
+The set of all possible outputs is called [Column Space](../../../permanent/column-space.md) of a matrix. We call it this because the columns of a matrix say where the [Basis Vectors](permanent/Basis Vectors.md) land and the [Vector Span](../../../permanent/vector-span.md) of basis vectors give all possible outputs.
 
 So,  column space is equal to the span of columns in your matrix.
 

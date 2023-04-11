@@ -160,7 +160,7 @@ modified: 2023-04-08 00:00
                 * How many possible ways are there of selecting a first prize winner, a 2nd price winner and third-prize winner from 50 different people?
                 * Solution:
                     * P(50, 3) = 50 * 49 * 48 = 117,600
-* [Combinations](../../../../permanent/combination.md)
+* [Combination](../../../../permanent/combination.md)
     * An r-combination of elements of a set is an unordered selection of r elements from the set.
     * An r-combination is a subset of the set with r elements.
     * The number of r-combinations of a set with n distinct elements is denoted by $C(n, r) = \binom{n}{r}$
