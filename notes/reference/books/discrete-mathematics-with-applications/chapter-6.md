@@ -10,9 +10,9 @@ status: draft
 pg. 365
 
 * [Combination](Combination)
-    * We know that a [Permutation](Permutation) is an ordered arrangement of elements in a set.
-    * Sometimes, the order of elements is unimportant, only the membership metters. These are considered [Combination](Combination)s.
-    * For example, a committe like $A = \{Costa, Shea, Weiss, Hall, Chen\}$ is just a set - the order of names doesn't matter.
+    * We know that a [Permutation](../../../permanent/permutation.md) is an ordered arrangement of elements in a set.
+    * Sometimes, the order of elements is unimportant, only the membership matters. These are considered [Combination](permanent/combination.md)s.
+    * For example, a committee like $A = \{Costa, Shea, Weiss, Hall, Chen\}$ is just a set - the order of names doesn't matter.
     * If you would like to form a subcommittee of 3 members: {Costa, Shea, Weiss}, {Costa, Shea, Hall}, and {Costa, Shea, Chen}.
         * Each is a combination of the five elements taken three at a time, or a **3-combination**
     * Formal definition:
