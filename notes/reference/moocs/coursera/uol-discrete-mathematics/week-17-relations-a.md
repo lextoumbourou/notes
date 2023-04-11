@@ -29,7 +29,7 @@ modified: 2023-04-08 00:00
 
 ### 9.103 Definition of a relation: relation versus function
 
-* What is a relation?
+* [Relation](../../../../permanent/relation.md)
     * A relation can be defined between elements of set A and elements of another set B.
     * Can also be defined between elements of the same set.
     * We use the letter $R$ to refer to relation.
