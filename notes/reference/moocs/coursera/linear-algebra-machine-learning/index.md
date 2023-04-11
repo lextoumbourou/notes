@@ -10,7 +10,7 @@ Notes from Coursera's [Mathematics for Machine Learning: Linear Algebra](https:/
 
 ## Contents
 
-* [Week 1 - Introduction](week-1.md)
+* [Introduction to Linear Algebra and to Mathematics for Machine Learning](week-1.md)
 * [Week 2 - Vectors are objects that move around space](week-2.md)
 * [Week 3 - Matrices in Linear Algebra: Objects that operate on Vectors](week-3.md)
 * [Week 4 - Matrices make linear mappings](week-4.md)

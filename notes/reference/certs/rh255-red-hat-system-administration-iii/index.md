@@ -15,11 +15,11 @@ These notes were taken from the [in-person course](https://www.ddls.com.au/cours
 ## Contents
 
 * [Unit 1 - RCHSA Review](unit-1-rcsha-review.md)
-* [Unit 2 - Enable User Security](unit-2-enable-user-security.md)
-* [Unit 3 -  Bash Scripting and Tools](unit-3-bash-scripting-and-tools.md)
-* [Unit 4 - Encrypting Files with GnuPG](unit-4-encrypting-files-with-gnupg.md)
-* [Unit 5 - Package Mangagement](unit-5-package-management.md)
-* [Unit 6 - Network Monitoring](unit-6-network-monitoring.md)
+* [Red Hat System Administration III - Unit 2 - Enable User Security](unit-2-enable-user-security.md)
+* [Red Hat System Administration III - Unit 3 - Bash Scripting and Tools](unit-3-bash-scripting-and-tools.md)
+* [Red Hat System Administration III - Unit 4 - Encrypting Files with GnuPG](unit-4-encrypting-files-with-gnupg.md)
+* [Red Hat System Administration III - Unit 5 - Package Management](unit-5-package-management.md)
+* [Red Hat System Administration III - Unit 6 - Network Monitoring](unit-6-network-monitoring.md)
 * [Red Hat System Administration III - Unit 7 - Advanced Network Configuration](unit-7-advanced-network-configuration.md)
 * [Red Hat System Administration III - Unit 8 - Secure Network Traffic](unit-8-secure-network-traffic.md)
 * [Red Hat System Administration III - Unit 9 - NTP Server Configuration](unit-9-ntp-server-configuration.md)
