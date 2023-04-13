@@ -37,17 +37,16 @@ parent: uol-discrete-mathematics
     
         ![Venn Symmetric Difference](/_media/venn-symmetric-diff.png)
 
-    * Can use a Venn Diagram to show that each sets are the same.
-    
+    * Can use a Venn Diagram to show that each sets are equivalent.
         ![Venn Show Sets Same](/_media/venn-show-sets-same.png)
 
 ### 1.203 De Morgan's laws
 
 * [De Morgan's Laws](../../../../permanent/de-morgans-laws.md)
-    * Augustus De Morgan (1806 - 1871), a British mathematician.
+    * By Augustus De Morgan (1806 - 1871), a British mathematician.
     * Describe how statements and concepts are related through opposites.
     * Example from set theory:
-        * De Morgan's laws relate to the intersection and union of sets through their complements.
+        * De Morgan's laws relate to the [intersection](../../../../permanent/intersection.md) and [union](../../../../permanent/union.md) of sets through their complements.
     * The structure of De Morgan's laws, whether applied to sets, propositions or logic gates is always the same.
     * Law #1: Compliment of the union of 2 sets, $A$ and $B$ is equal to intersection of complements:
         * $\overline{A \cup B} = \bar{A} \cap \bar{B}$
@@ -173,173 +172,3 @@ $\overline{A \cap B}$ = $\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
 $\overline{A \cup B}$ = $\{\}$
 
 $\overline{A \oplus B}$ = $\{\}$
-
-
-## Set problem sheet
-
-### Question 1
-
-1. $\{5, 6, 7\}$
-2. $\{15, 18, 21\}$
-3. $\{32, 64, 128\}$
-
-### Question 2
-
-1. $L_1 = \{\emptyset, x, y, xx, yy, xxx, yyy, xyx, yxy, xxxx, yyyy, xyyx, yxxy\}$
-2. $L_2 = \{\emptyset, x, y, xx, xy, yy, xxx, xxy, xyy, yyy\}$
-
-### Question 3
-
-1. $\{4, 8, 12, 16, 20\}$
-
-    $\{4n : n \in \mathbb{Z} \text{ and } 1 \le n \le 6 \}$
-    
-2. $\{0, 2, −2, 4, −4, \ldots \}$
-
-?
-
-3. $\{2, 4, 8, 16,  32\}$
-
-    $\{2^n : n \in \mathbb{Z} \text{ and } 1 \leq n \leq  5\}$
-
-4. $\{1, \frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16}, \frac{1}{32}\}$
-
-    $\{2^{-n} : n \in \mathbb{Z} \text{ and } 1 \le n  \leq  5\}$
-    
-### Question 4
-
-Let $X = \{f, g, h, i, k\}$ and $Y = \{d, g, h, k\}$ be subsets of a universal set $U = \{d, e, f, g, h, i, j, k, l\}$
-
-1. $\overline{X}$
-
-    $\{d, e, j, l\}$
-    
-2. $X \cap Y$
-
-    $\{ g, h, k \}$
-
-3. $X \cup \overline{Y}$
-
-    $\{ e, f, g, h, i, j, l, k \}$
-
-4. $X - Y$
-
-    $\{f, i\}$
-
-5. $X \oplus Y$
-
-    $\{f, i, d\}$
-
-6. $\overline{(X \cap Y)}$
-
-    $\{d, e, f, i, j, l\}$
-
-### Question 5
-
-Let $A = \{2, \frac{1}{2}, \sqrt{2}\}$ and $B = \{x \in \mathbb{Q} : x \notin \mathbb{Z}\}$.
-
-B in English: set of all rational number that aren't integers. A rational number is made by dividing an integer by an integer. $1/2$ is rational, $2$ is rational, $\sqrt{2}$ is not rational.
-
-List the following sets:
-
-* $A \cap B$: $\{ \frac{1}{2} \}$
-* $A - B$: $\{2,  \sqrt{2} \}$
-* $A \cap \mathbb{R}$: (A intersected with the infinite set of real numbers): $\{2, \frac{1}{2}, \sqrt{2}\}$
-* $A \cap \mathbb{Z}$: $\{2\}$
-
-### Question 6
-
-Let $X$ and $Y$ be two sets with X = {f, g, h, j, k} and Y = {f, g}
-
-1. What is the cardinality of X? 5
-2. What is the total number of subsets of X? 2^5 = 32
-3. Put the correct sign between these pairs:
-    1. $f \in X$
-    2. $Y \subset X$
-    3. $X \subseteq X$
-    4. $\emptyset \subset X$
-    5. $h \notin Y$
-
-### Question 7
-
-Let $X$ and $Y$ be two sets of the universal set $U$.
-
-1. Use Venn diagram to show that $\overline{X \cap Y}$ = $\overline{X} \cup \overline{Y}$
-
-![Question 7. Venn Diagram](/_media/q-7-venn-diagram.png)
-
-2. Use membership tables to prove that $\overline{X \cap Y}$ = $\overline{X} \cup \overline{Y}$
-
-| X   | Y   | $\bar{X}$ | $\bar{Y}$ | $X \cap Y$ | $\overline{X \cap Y}$ | $\overline{X} \cup \overline{Y}$ |
-| --- | --- | --------- | --------- | ---------- | --------------------- | -------------------------------- |
-| 1   | 1   | 0         | 0         | 1          | 0                     | 0                                |
-| 0   | 1   | 1         | 0         | 0          | 1                     | 1                                |
-| 1   | 0   | 0         | 1         | 0          | 1                     | 1                                |
-| 0   | 0   | 1         | 1         | 0          | 1                     | 1                                |
-
-### Question 8
-
-Let $A$ and $B$ and $C$ be subsets of universal set $U$
-
-1. Draw a three binary digit labelled Venn diagram depicting A, B, C in such a way that they divide U into 8 disjoint regions
-
-    Hint: if the first digit is 1, let it be in set A, if the 2nd digit is 1 let it be in set B and if the 3rd digit is 1, let is be in set C.
-
-![q-8-3-binary](../../../../journal/bachelors-degree-2022/uol-discrete-mathematics/_media/q-8-3-binary.png)
-
-2. The subset $X \subset U$ is defined by membership table:
-
-| A   | B   | C   | D   |
-| --- | --- | --- | --- |
-| 0   | 0   | 0   | 0   |
-| 0   | 0   | 1   | 1   |
-| 0   | 1   | 0   | 0   |
-| 0   | 1   | 1   | 0   |
-| 1   | 0   | 0   | 1   |
-| 1   | 0   | 1   | 1   |
-| 1   | 1   | 0   | 1   |
-| 1   | 1   | 1   | 0    |
-
-Identify the region X on your diagram. Describe the region identified in simplest set notation
-
-![q-8-p2](../../../../journal/bachelors-degree-2022/uol-discrete-mathematics/_media/q-8-p2.png)
-
-3. Let Y be the set represented by the region 000, 011, 101, 110 and 111.
-
-Describe the set Y using the set notation.
-
-![q-8-p3](../../../../journal/bachelors-degree-2022/uol-discrete-mathematics/_media/q-8-p3.png)
-
-### Question 9.
-
-Given three sets A, B and C, subsets of universal set U. For each of the Venn diagram write, in terms of A, B and C, the set representing the area coloured in yellow:
-
-![set-q1](../../../../journal/_media/set-q1.png)
-
-$\overline{A \cup B \cup C}$
-
-![set-q2](../../../../journal/_media/set-q2.png)
-
-$(A \cup B \cup C) - (A \cap B) + (B \cap C)$
-
-### Question 10
-
-### Question 11
-
-Let A = {1, 2} and let B = {2, 3}
-
-A. $P(A \cap B)$
-
-$\{\emptyset, \{2\}\}$
-
-B. $P(A \cup B)$
-
-$\{\emptyset, \{1\}, \{2\}, \{3\}, \{1, 2\}, \{2, 3\}, \{1, 2, 3\}, \{1, 3\}\}$
-
-C. $P(A \text{ X } B)$
-
-Cartesian product of two sets is given by (x, y), where x is from A and y is from B.
-
-$A X B = \{(1, 2), (1, 3), (2, 2), (2, 3)\}$ 
-
-
