@@ -31,7 +31,7 @@ parent: uol-discrete-mathematics
     * Use $\notin$ if not an element of set:
         * $3 \notin E$.
  
-* [Cardinality](../../../../permanent/set-cardinality.md)
+* [Cardinality](../../../../permanent/cardinality.md)
     * Given set $S$, the cardinality of $S$ is the number of elements contained in $S$.
     * Write cardinality as $|S|$
     * Example: $|C| = 3$

@@ -62,7 +62,7 @@ If A is **not a subset** of B, we write $A \nsubseteq B$. In Latex, it's: `\subs
 
 ## Cardinality
 
-[Cardinality](set-cardinality.md)
+[Cardinality](cardinality.md)
 
 ## Equal Sets
 
