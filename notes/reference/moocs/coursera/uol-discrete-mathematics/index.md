@@ -13,8 +13,9 @@ These are my notes from [Discrete Mathematics](https://www.coursera.org/learn/uo
 I took it as part of the BSc Computer Science degree from Oct 2022 - March 2023.
 
 The books required:
-    * [Kenneth, H, Rosen. Discrete Mathematics and its Applications. (2012) Global Edition](https://www.amazon.com.au/Discrete-Mathematics-Applications-Kenneth-Rosen/dp/0072899050)
-    * [David Mackinson, Sets, Logic and Maths for Computing, Springer Verlag. 2012](https://www.amazon.com/Computing-Undergraduate-Topics-Computer-Science/dp/1447124995)
+
+- [Kenneth, H, Rosen. Discrete Mathematics and its Applications. (2012) Global Edition](https://www.amazon.com.au/Discrete-Mathematics-Applications-Kenneth-Rosen/dp/0072899050)
+- [David Mackinson, Sets, Logic and Maths for Computing, Springer Verlag. 2012](https://www.amazon.com/Computing-Undergraduate-Topics-Computer-Science/dp/1447124995)
 
 ## Discrete Maths
 
