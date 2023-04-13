@@ -50,8 +50,8 @@ parent: uol-discrete-mathematics
     * empty set is a subset of itself: $\emptyset \subseteq \emptyset$
 
 * [Special Sets](../../../../permanent/special-sets.md)
-    * $\mathbf{N}$ = set of natural numbers = {1, 2, 3, 4, ...}
-    * $\mathbf{Z}$ = set of integers = {..., -3, -2, -1, 0, 1, ...}
+    * $\mathbf{N}$ = set of natural numbers = $\{1, 2, 3, 4, ...\}$
+    * $\mathbf{Z}$ = set of integers = $\{..., -3, -2, -1, 0, 1, ...\}$
     * $\mathbf{Q}$ = set of rational numbers (of form a/b where a and b are elements of Z and b $\ne$ 0)
     * $\mathbf{R}$ = set of real numbers
     * $\mathbf{N} \subseteq \mathbf{Z} \subseteq \mathbf{Q} \subseteq \mathbf{R}$
@@ -66,9 +66,9 @@ parent: uol-discrete-mathematics
     * Represent a set $S$ using all elements of set $S$.
     * Examples:
         * Set of all vowels in English alphabet.
-            * S1 = {a, e, i, o, u}
+            * $S1 = \{a, e, i, o, u\}$
         * Set of all positive integers less than 10.
-            * S2 = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+            * $S2 = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}$
             
 * [Set Builder Notation](../../../../permanent/set-builder-notation.md)
     * Examples:

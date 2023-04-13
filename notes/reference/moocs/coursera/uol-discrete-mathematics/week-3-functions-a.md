@@ -16,12 +16,11 @@ parent: uol-discrete-mathematics
 ## 2.102 The definition of a function
 
 * [Function](../../../../permanent/function.md) 
-    * A function is a rule that related how one quantity depends on another.
-    * It's a central concept in programming.
-    * A function is a relationship between a set of inputs and a set of outputs, so inputs map to exactly one output.
-    * Important concept in Computer Science.
+    * A function is a rule that relates how one quantity depends on another.
+    * It's central to programming and Computer Science.
+    * It's a relationship between a set of inputs and a set of outputs, where inputs map to exactly one output.
     * Function is a "well-behaved relation"
-        * Given a starting point, we know exactly where to go.
+        * Given a starting point, we have just one ending point.
     * A function $f$ from a set of $A$ to a set of $B$ is an assignment of exactly one element of $B$ to each element of $A$.
         * If $f$ is the function from A to B, we write: $f: A \rightarrow B$
         * We can read this as f maps A to B:
@@ -61,7 +60,7 @@ parent: uol-discrete-mathematics
     * Given the following function: $g: R \rightarrow R$ with $g(x) = x^2 + 1$
         * Domain: R
         * Co-domain: R
-        * Range: {1, 5, 9 ...}
+        * Range: $\{1, 5, 9 ...\}$
         * Pre-images(5) = {-2, 2}
 
 ## 2.104 Plotting functions
