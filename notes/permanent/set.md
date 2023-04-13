@@ -109,4 +109,6 @@ Some special infinite sets come up all the time in math:
 * $\mathbb{R^{+}}$ = set of positive real numbers = $\{x ∈ R|x > 0\}$
 * $\mathbb{R}−$ = set of negative real numbers = $\{x ∈ R|x < 0\}$
 
+<hr>
+
 Cover by <a href="https://unsplash.com/ko/@ahlianyq?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ahlianyq</a> on <a href="https://unsplash.com/photos/Cu80T4bZ0rI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>.
