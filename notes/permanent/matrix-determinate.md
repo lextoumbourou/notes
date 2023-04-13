@@ -1,5 +1,5 @@
 ---
-title: Determinate of a Matrix
+title: Matrix Determinate
 date: 2021-11-06 18:00
 tags:
   - LinearAlgebra

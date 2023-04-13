@@ -15,19 +15,21 @@ Things in a set are called **elements** or **members** of the set.
 
 We talk about sets in everyday English: you may have heard of a kitchen set, a drum set, a set of action figurines, etc. These refer to a particular collection of objects. It is clear which objects in our house are members of that set and which are not.
 
-## Membership
+Sets are commonly notated using brackets as follows:
+
+A set of numbers ranged 1-3: $\{1, 2, 3\}$
+A set of words: {hello, world}
+
+## Set Membership
 
 The elements of a set must be well-defined, and there should be no ambiguity about whether something is a set member or not.
 
 We use the $\in$ notation to describe if something is a set member.
 
-If we had a snare drum $s$, and a Yamaha Drumset called $D$, we can express that the snare is in the drum set as $s \in D$.
+$a \in A$
+$1 \in B$
 
-![s in D drumset example](_media/sets-indrumset.png)
-
-On the other hand, if I had a Djembe drum $d$, I could express that it's not part of the Yamaha drumset D as $d \notin D$.
- 
-![Not in drum set](/_media/sets-notindrumset.png)
+We use the $\notin$ notation to describe if something is a set member.
 
 The symbols in Latex are:
 
@@ -35,37 +37,6 @@ The symbols in Latex are:
 - $\notin$: `\notin`
 
 A set can be a member of another set. This fact means that the definition of a "set" is circular, making it technically an undefined term.
-
-## Listing Method
-
-If we want to denote a set, we list the members of the set in between curly brackets.
-
-For example, the set of days in the week is:
-
-$\text{Set of days in the week} = \{\text{Sunday}, \text{Monday}, \text{Tuesday}, \text{Wednesday}, \text{Thursday}, \text{Friday}, \text{Saturday}\}$
-
-Whereas the set $B$ of days on the weekend is:
-
-$\text{Set of days in the weekend} = \{\text{Sunday}, \text{Saturday}\}$
-
-The set $P$ of positive integers < 10:
-
-$P = \{1,2,3,4,5,6,7,8,9\}$
-
-We call this method of notation the **Listing Method**.
-
-## Set-Builder Notation
-
-When a set has too many elements to list, we can use the **Set-Builder Notation**, which looks like this:
-
-$$
-\begin{align}
-A = \{X | x \in \text{ days of the weekend }\} \\
-= \{ \text{Sunday, Saturday} \}
-\end{align}
-$$
-
-The $|$ operator here means "such that", i.e., $x$ for all $x$ such that $x$ is a day of the weekend.
 
 ## Uniqueness
 
@@ -91,9 +62,7 @@ If A is **not a subset** of B, we write $A \nsubseteq B$. In Latex, it's: `\subs
 
 ## Cardinality
 
-We write the size of a set $S$ as $|A|$ and refer to as the **Cardinality** of a set.
-
-Notice that we use the same notation to refer to the absolute value of numbers, which we can consider the size of a number in a positive direction. For those familiar with Linear Algebra, we use the same notation for [Determinate of a Matrix](matrix-determinate.md), which also refers to the amount a matrix scales space.
+[Cardinality](set-cardinality.md)
 
 ## Equal Sets
 
