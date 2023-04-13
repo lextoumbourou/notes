@@ -9,30 +9,29 @@ parent: uol-discrete-mathematics
 ## 1.104 The definition of a set
 
 * [Set Theory](../../../../permanent/set-theory.md)
-    * a branch of maths dealing with properties of well-defined collections of objects.
-    * Concept of sets by G. Cantor, a German mathematician.
-    * Forms the basis of other fields of study:
+    * a branch of maths about well-defined collections of objects.
+    * concept of sets by [Georg Cantor](https://en.wikipedia.org/wiki/Georg_Cantor), a German mathematician.
+    * forms the basis of other fields:
         * counting theory
         * relations
         * graph theory
         * finite state machines
 
 * [Set](../../../../permanent/set.md)
-    * Collection of any kind of "well-defined" objects:
+    * a collection of any kind of "well-defined" objects:
         * people, ideas, numbers etc.
     * Set is *unordered* and contains *unique* objects.
     * Examples and notation:
-        * Set of positive, even integers < 10: $E = \{2, 6, 4, 8\}$
+        * Set of positive even integers < 10: $E = \{2, 6, 4, 8\}$
         * Set of vowels in English alphabet: $V = \{a, e, i, o, u\}$
         * Set of colours: $C = \{red, green, blue\}$
         * Empty set (a set containing nothing): $\{\}$ = $\emptyset$
-    * Math notation
-        * Use notation $\in$ to represent that something is element of set:
+    * In math notation, use $\in$ to represent that something is element of set:
             * $2 \in E$.
-        * Use $\notin$ to present not element of set:
-            * $3 \notin E$.
+    * Use $\notin$ if not an element of set:
+        * $3 \notin E$.
  
-* [Cardinality of a Set](../../../../permanent/set-cardinality.md)
+* [Cardinality](../../../../permanent/set-cardinality.md)
     * Given set $S$, the cardinality of $S$ is the number of elements contained in $S$.
     * Write cardinality as $|S|$
     * Example: $|C| = 3$
@@ -60,10 +59,10 @@ parent: uol-discrete-mathematics
 ## 1.106 The listing method and rule of inclusion
 
 * [Set Representation Methods](../../../../permanent/set-representation-methods.md)
-    * [Set Listing Method](../../../../permanent/set-listing-method.md)
+    * [Listing Method](../../../../permanent/set-listing-method.md)
     * [Set Builder Notation](../../../../permanent/set-builder-notation.md)
     
-* [Set Listing Method](../../../../permanent/set-listing-method.md)
+* [Listing Method](../../../../permanent/set-listing-method.md)
     * Represent a set $S$ using all elements of set $S$.
     * Examples:
         * Set of all vowels in English alphabet.
@@ -92,17 +91,16 @@ parent: uol-discrete-mathematics
             * $S_1 = \{ \frac{1}{2}, \frac{1}{4}, \frac{1}{6}, \frac{1}{8}, ... \}$
                 * $S_1 = {\frac{1}{2n} | n \in \text{Z and } 0 < n \leq 5}$
 
-## 1.108 The powerset of a set
+## 1.108 The Powerset of a set
 
-* Subset (recap)
-    * A set can have another set as its element.
-        * $\{5, 6\} \in \{\{5, 6\}, \{7, 8\}\}$
-        * $\{5,6\} \subseteq \{5, 6, 7\}$
 * [Powerset](../../../../permanent/set-powerset.md)
+    * A set can have another set as its element.
+            * $\{5, 6\} \in \{\{5, 6\}, \{7, 8\}\}$
+            * $\{5,6\} \subseteq \{5, 6, 7\}$
     * A set containing all subsets of another set.
     * The powerset of $S$ is $P(S)$ which is the set containing all subsets of $S$.
     * Example
-        * $S = {1, 2, 3}$
+        * $S = \{1, 2, 3\}$
         * $P(S) = \{ \emptyset, \{1\}, \{2\},\{3\},\{1, 2\},\{1, 3\}, \{2, 3\}, \{1, 2, 3\} \}$
     * Exercise 1
         * $S = \{ a, b \}$
@@ -145,7 +143,7 @@ parent: uol-discrete-mathematics
             * Put 1 if element belongs to set.
             * Put 0 if it doesn't
 
- | $A$   | $B$    | $A \bigcup B$    |
+ | $A$   | $B$    | $A \cup B$    |
  | --- | ---  | ---    |
  | 0   | 0    | 0       |
  | 0   | 1    | 1       |
@@ -160,7 +158,7 @@ parent: uol-discrete-mathematics
      * Think of an intersection between roads: it's the part of road that both of them share.
      * Membership table
 
- | $A$   | $B$    | $A \bigcup B$    |
+ | $A$   | $B$    | $A \cup B$    |
  | --- | ---  | ---    |
  | 0   | 0    | 0       |
  | 0   | 1    | 0       |
@@ -172,10 +170,10 @@ parent: uol-discrete-mathematics
     * Elements in $A$, but not $B$.
         * $A - B = \{ x | x \in A \text{ and } x \notin B \}$
     * Example:
-        * {1, 2} - {2, 3} = {1}
+        * $\{1, 2\} - \{2, 3\} = \{1\}$
     * Membership table:
 
- | $A$   | $B$    | $A \bigcup B$    |
+ | $A$   | $B$    | $A \cup B$    |
  | --- | ---  | ---    |
  | 0   | 0    | 0       |
  | 0   | 1    | 0       |
@@ -195,7 +193,7 @@ parent: uol-discrete-mathematics
         * $A \oplus B = \{ 1, 2, 4, 5 \}$
     * Membership table
 
-| $A$ | $B$ | $A \bigcup B$ |
+| $A$ | $B$ | $A \cup B$ |
 | --- | --- | ------------- |
 | 0   | 0   | 0             |
 | 0   | 1   | 1             |

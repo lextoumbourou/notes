@@ -8,7 +8,7 @@ The set of elements that common to 2 sets.
 
 Represented by the $\cap$ symbol (`\cap` in [LaTeX](LaTeX.md)).
 
-Example (using [Set Listing Method](set-listing-method.md)):
+Example (using [Listing Method](set-listing-method.md)):
 
 $A = \{a, b, c\}$
 $B = \{c, d, e\}$

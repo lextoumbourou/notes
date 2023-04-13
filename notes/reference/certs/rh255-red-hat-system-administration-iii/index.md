@@ -31,5 +31,5 @@ These notes were taken from the [in-person course](https://www.ddls.com.au/cours
 * [Unit 15 - Caching-Only DNS Server](unit-15-caching-only-dns-server.md)
 * [Unit 16 - File Sharing with NFS](unit-16-file-sharing-with-nfs.md)
 * [Unit 17 - File Sharing with CIFS](unit-17-file-sharing-with-cifs.md)
-* [Unit 18 - File Sharing with FTP](unit-18-file-sharing-with-ftp.md)
-* [Unit 19 - Troubleshooting the Boot Process](unit-19-troubleshooting-the-boot-process.md)
+* [Red Hat System Administration III - Unit 18 - File Sharing With FTP](unit-18-file-sharing-with-ftp.md)
+* [Red Hat System Administration III - Unit 19 - Troubleshooting the Boot Process](unit-19-troubleshooting-the-boot-process.md)
