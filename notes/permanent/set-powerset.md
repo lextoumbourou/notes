@@ -18,7 +18,7 @@ $\{a\} \in P(S)$
 
 Powerset of the empty set is set containing empty set: $P(\emptyset) = \{ \emptyset \}$ 
 
-[Cardinality](set-cardinality.md) of a powerset of S is $2^|S|$
+[Cardinality](cardinality.md) of a powerset of S is $2^|S|$
 
 $|P(S)| = 2^{|S|}$
 *$S = \{1, 2, 3\}$, $|S| = 3$, $|P(S)| = 2^3 = 6$
