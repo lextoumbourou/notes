@@ -8,19 +8,22 @@ summary: "Notes from [Discrete Mathematics by University of London](https://www.
 hide_cover_in_article: true
 ---
 
-* Notes from [Discrete Mathematics by University of London](https://www.coursera.org/learn/uol-discrete-mathematics/), part of the BSc Computer Science degree.
-* Instructor: Dr Lahcen Ouarbya
+These are my notes from [Discrete Mathematics](https://www.coursera.org/learn/uol-discrete-mathematics/) by the University of London.
 
-* Books required:
+I took it as part of the BSc Computer Science degree from Oct 2022 - March 2023.
+
+The books required:
     * [Kenneth, H, Rosen. Discrete Mathematics and its Applications. (2012) Global Edition](https://www.amazon.com.au/Discrete-Mathematics-Applications-Kenneth-Rosen/dp/0072899050)
     * [David Mackinson, Sets, Logic and Maths for Computing, Springer Verlag. 2012](https://www.amazon.com/Computing-Undergraduate-Topics-Computer-Science/dp/1447124995)
-    
-* [Discrete Maths](../../../../permanent/discrete-maths.md)
-    * the study of discrete objects, which are different from "connected objects".
+
+## Discrete Maths
+
+* The study of discrete objects.
+* Discrete objects are different from "connected objects".
         * separated and distance from each other
         * examples: integer, positions, set, relationships, functions
-    * Increasingly applied to practical fields of math and science
-    * Improves reasoning and problem-solving
+    * Increasingly applied to practical fields of math and science.
+    * Improves reasoning and problem-solving.
  
 ## Contents
 
