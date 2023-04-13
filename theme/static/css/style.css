@@ -94,8 +94,12 @@ div#content {
   float: left;
 }
 
-ul {
+ul li {
   list-style-position: inside;
+}
+
+ul li p {
+  display: inline-block;
 }
 
 @media screen and (max-width: 700px) {
