@@ -2,8 +2,8 @@
 title: Cardinality
 date: 2023-04-09 00:00
 tags:
-  - Set Theory
-  - Machine Learning
+  - SetTheory
+  - MachineLearning
 summary: Cardinality refers to the number of elements a set contains.
 cover: /_media/cardinality-cover.png
 modified: 2023-04-13 00:00

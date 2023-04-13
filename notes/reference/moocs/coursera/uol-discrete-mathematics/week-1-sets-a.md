@@ -130,12 +130,10 @@ parent: uol-discrete-mathematics
     * Set builder: $A \bigcup B = \{ x | x \in A \text{ or } x \in B \}$
     * Python example:
 
-    ```
-    A = {1, 2}
-    B = {2, 3}
-    A.union(B)
-    # {1, 2, 3}
-    ```
+            A = {1, 2}
+            B = {2, 3}
+            A.union(B)
+            # {1, 2, 3}
 
     * Think of a union between people: it's when people come together to make up a larger set.
     * Membership table
