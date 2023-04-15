@@ -39,7 +39,7 @@ MARKDOWN = {
     "output_format": "html5",
 }
 
-PLUGINS = ['pelican_katex', 'pelican_cite', frontmark, 'subcategory', nb_liquid, "md_link_converter"]
+PLUGINS = ['pelican_katex', 'pelican_cite', frontmark, 'subcategory', nb_liquid, "md_link_converter", "linked_mentions"]
 
 PUBLICATIONS_SRC = 'notes/citations.bib'
 

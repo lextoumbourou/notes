@@ -10,7 +10,7 @@ cover: /_media/function-cover.png
 
 In Math, a function is a rule that associates inputs with outputs.
 
-For example, the function f(x) inputs a number and outputs its square:
+For example, the function $f$ inputs a number, $x$, and outputs its square:
 
 $$
 f(x) = x^2
