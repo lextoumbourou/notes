@@ -14,7 +14,7 @@ A set is a unique collection of well-defined objects.
 
 Objects in a set are called **elements** or **members** of the set.
 
-We often refer to sets in everyday language: you may have heard of a tea set, a drum set, a set of action figurines, etc. These terms refer to specific collections of objects. It is clear which objects in our house are members of that set and which are not.
+We often refer to sets in everyday language: you may have heard of a tea set, a drum set, a set of action figurines, etc. These terms refer to specific collections of objects. It is clear which objects in are members of each set and which are not.
 
 Sets are commonly notated using curly braces. For example:
 
