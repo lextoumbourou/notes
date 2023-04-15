@@ -1,7 +1,7 @@
 ---
 title: Implication
 aliases: Logical Implication
-date: 2022-11-23
+date: 2022-11-23 00:00
 tags:
   - Logic
   - DiscreteMath
