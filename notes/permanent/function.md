@@ -38,21 +38,19 @@ Functions are considered a "well-behaved relation". That means that for each inp
 
 ---
 
-Functions also show a relationship between an input variable and its output. For example, the function to convert Fahrenheit to Celsius would be expressed in terms of a single Fahrenheit value $x$, like this:
+Functions also show a relationship between an input variable and its output. For example, the function to convert Fahrenheit to Celsius would be defined in terms of a single Fahrenheit value $x$, like this:
 
 ${f(\text{x}) = (x - 32) \times \frac{5}{9}}$
 
-The Fahrenheit and Celsius are real numbers, so we would describe the function using the [Special Infinite Set](special-infinite-sets.md) $\mathbb{R}$.
+The complete definition of a function includes its **domain** and **codomain**. The Fahrenheit and Celsius are real numbers, so we would define the function using the [Special Infinite Set](special-infinite-sets.md) $\mathbb{R}$.
 
 $f : \mathbb{R} \rightarrow \mathbb{R}$
 
-Commonly, you would see it described and expressed in one statement:
+The two parts combined give the complete definition of the function:
 
-Let $f : \mathbb{R} \rightarrow \mathbb{R}$, ${f(\text{x}) = (x - 32) \times \frac{5}{9}}$
+Let $f: \mathbb{R} \to \mathbb{R}$, $f(x) = (x - 32) \times \frac{5}{9}$
 
-In programming languages, it's common to express a functions' input and output values using a type system.
-
-Below is an example of the function $f$ in Python. It takes an input $x$ as a `float` and returns a `float`, described using the notation `-> float`.
+In programming languages, it's common to mix the type declaration with the implementation. Below is an example of the function $f$ in Python. It takes an input $x$ as a `float` and returns a `float`, described using the notation `-> float`.
 
 ```python
 def f(x: float) -> float:
