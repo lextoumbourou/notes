@@ -107,10 +107,8 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
 
     * Layer 3 and up
         * Learning more concrete things like petals, faces etc
-
 * The insights in this paper help understand how transfer learning works:
     * Earlier layer learn much more abstract features, so it makes sense they can be repurposed.
-
 
 ## 00:28:48 - Other applications for vision techniques
 

@@ -28,7 +28,6 @@ The books required:
     * Improves reasoning and problem-solving.
 * Course instructor is [Dr Lahcen Ouarbya](https://www.gold.ac.uk/computing/people/l-ouarbya/).
 
-
 ## Contents
 
 * [Week 1 - Sets A](week-1-sets-a.md)

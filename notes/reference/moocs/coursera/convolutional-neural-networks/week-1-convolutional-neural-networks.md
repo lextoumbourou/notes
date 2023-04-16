@@ -129,7 +129,6 @@ status: draft
     * $p^{[l]} = \text{padding}$
     * $s^{[l]} = \text{stride}$
     * $\text{Input}: n_H^{[l-1]} * n_W{[l-1]} * n_c^{[l-1]}$
-
     * $\text{Output}: n_H^{[l]} * n_W^{[l]} * n_C^{[l]}$
     * $N^H{[l]} = \frac{n_H^{[l-1]} + 2p^{[l]} - f^{[l]}}{s^{[l]}} + 1$
 

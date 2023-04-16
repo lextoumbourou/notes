@@ -56,7 +56,6 @@ status: draft
     * Data that model performs inference on changes over time.
     * Example: types of customers an insurance sees changes over time, making their earlier models less useful.
 
-
 ## Chapter 5. Image Classifier
 
 * The book is structured to teach all details of deep learning, but motivating each example with an actual problem.

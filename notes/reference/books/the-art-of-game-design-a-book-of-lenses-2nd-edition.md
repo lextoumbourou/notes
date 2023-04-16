@@ -1375,7 +1375,6 @@ I tried to read this book really carefully and take a lot of notes.
 * Reading
   * Magic and Showmanship by Henning Nelms
 
-
 ### Chapter 17: One Kind of Experience Is the Story
 
 * Game as a new medium for stories introduces new challenges for story tellers: they must deal in probabilities, not absolutes.

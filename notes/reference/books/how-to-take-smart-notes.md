@@ -67,7 +67,6 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 * Slipbox follows the Russian Model: "Focus on the essentials, don’t complicate things unnecessarily."
     * Named after the story by De Bono: NASA invested in research for find a gravity-independent pen which could write in space. Russian simply used pencils.
         * Side note: the story is false: https://www.scientificamerican.com/article/fact-or-fiction-nasa-spen/
-
 * Existing learning and note-taking techniques are simple in isolation but complicated together.
 * None of the workflows have tools to help make connections between ideas.
 * Slipbox is not another techique but an overarching workflow stripped of everything that distracts from stuff that's important.

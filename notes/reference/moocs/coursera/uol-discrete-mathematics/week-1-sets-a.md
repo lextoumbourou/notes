@@ -29,12 +29,10 @@ parent: uol-discrete-mathematics
             * $2 \in E$.
     * Use $\notin$ if not an element of set:
         * $3 \notin E$.
-
 * [Cardinality](../../../../permanent/cardinality.md)
     * Given set $S$, the cardinality of $S$ is the number of elements contained in $S$.
     * Write cardinality as $|S|$
     * Example: $|C| = 3$
-
 * [Subset](../../../../permanent/set-subset.md)
     * Express as: $\subseteq$
         * Latex: `\subseteq`
@@ -43,7 +41,6 @@ parent: uol-discrete-mathematics
     * This gives us equivalence:
         * $A \subseteq B \iff x \in A \text{ then } x \in B \text{(for all x)}$
     * Any set is a subset of itself: $S \subseteq S$
-
 * [Empty Set](../../../../permanent/empty-set.md)
     * is a subset of any set $\emptyset \subseteq S$
     * empty set is a subset of itself: $\emptyset \subseteq \emptyset$
@@ -59,7 +56,6 @@ parent: uol-discrete-mathematics
 * [Set Representation Methods](../../../../permanent/set-representation-methods.md)
     * [Listing Method](../../../../permanent/set-listing-method.md)
     * [Set Builder Notation](../../../../permanent/set-builder-notation.md)
-
 * [Listing Method](../../../../permanent/set-listing-method.md)
     * Represent a set $S$ using all elements of set $S$.
     * Examples:
@@ -67,7 +63,6 @@ parent: uol-discrete-mathematics
             * $S1 = \{a, e, i, o, u\}$
         * Set of all positive integers less than 10.
             * $S2 = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}$
-
 * [Set Builder Notation](../../../../permanent/set-builder-notation.md)
     * Examples:
         * Set of all even integers: { ..., -6, -4, -2, 0, 2, 4, 6 ... }

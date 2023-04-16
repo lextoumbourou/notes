@@ -161,7 +161,6 @@ parent: recommender-systems-introduction
     * Simplified model, doesn't handle interdependencies:
         * I like horror movies about supernatural but not supernatural documentaries.
         * "Breaking things down into attributes doesn't always work".
-
 * Summary
     * Can do content-based filtering based on assessing the content profile of each item.
     * Build user profiles by aggregating the item profiles of things they've bought or rated or consumed etc.
@@ -218,7 +217,6 @@ parent: recommender-systems-introduction
 * Hot topics in case-based recommendation:
     * "Opinion mining"
         * Look at reviews and see the sentiment towards particular features eg MacBook Air battery life etc.
-
 
 ### Dialog-based Recommenders - Interview with Pearl Pu
 

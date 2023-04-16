@@ -68,6 +68,7 @@ status: draft
 to nearest cluster centre.
 
   3. Choose cluster centre from data points, with probability $$\mathbf{x} $$
+
 being chosen proportional to $$d(\mathbf{x})^2 $$
 
      * In other words: find the next cluster centre that's far away from chosen cluster centre.

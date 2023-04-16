@@ -20,10 +20,14 @@ status: draft
 	    * ``+1 if income > 200k else -1``
   	    * Represented as $$f_1(\mathbf{x}_i) = +1 $$
     * Then the second credit history $$f_2(\mathbf{x}_i) = -1 $$
+
 and so on.
     * Then you combine all the classifiers with there weights as follows:
+
         * $$F(\mathbf{x}_i) = sign(w_1f_1(\mathbf{x}_i) + w_2f_2(\mathbf{x}_i) + w_3f_3(\mathbf{x}_i)) $$
+
 		* Or more succinctly: $$F(\mathbf{x}_i) = sign(\sum\limits_{i=1}^{T} \hat{w}_tf_t(\mathbf{x})) $$
+
        * Then the weighted features can be used to make predicts.
 * Used very frequently in practise.
 
@@ -49,12 +53,14 @@ and so on.
 
 * Problems:
     * How do much do you trust the results of the function $$f_t $$
+
 ?
     * How do you weigh mistakes more?
 
 ### Weighted error
 
 * Basic idea: if one classifier, $$f_t(\mathbf{x}) $$
+
 , is good, you want a large coefficient, if not, small.
 	* "Good" = low training error
 * Calculate training error as follows:
@@ -69,6 +75,7 @@ and so on.
 		\frac{ 1 - \text{weighted_error}(f_t)}{\text{weighted_error(f_t)}})$$
 	
 
+
 * Interesting thing about the formula is poor classifiers, ones with values close to 1 are inverted to become good classifiers the other way. Average classifiers, eg random, end up with weights of 0.
 
 ### Reweighing data to focus on mistakes
@@ -77,6 +84,7 @@ $$\alpha_i \leftarrow \begin{cases} \alpha_i\mathrm{e}^{-\hat{w}_t}, \mathrm{if}
 
 * Results:
 	* When $$f_t(\mathbf{x}_i) $$
+
 is correct (and thus we have a high weight for it) we end up with a lower weight for the datapoint.
    * When the opposite, we have high weights for data point, this means that the data points that are wrong will be more important to future classifiers.
    * When results are average, we keep the data point the same (weight of 1).
@@ -84,7 +92,9 @@ is correct (and thus we have a high weight for it) we end up with a lower weight
 ### Normalising weights
 
 * If $$\mathbf{x}_i $$
+
 often mistakes, weight $$\alpha_i $$
+
 gets large and vice versa.
 * Can cause numerical instability.
 * Solution: normalise each data point by ensuring all weights add up to 1 after each iteration:

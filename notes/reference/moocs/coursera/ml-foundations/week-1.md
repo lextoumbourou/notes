@@ -50,7 +50,6 @@ parent: ml-foundations
 
 ## 3. Classification
 
-
 * Models
     * Linear classifiers
     * Kernels

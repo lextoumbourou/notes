@@ -34,16 +34,15 @@ parent: uol-discrete-mathematics
         * The set of all outputs is called the range of f and is written as $R_f$.
         * $y$ is called the image of $x$.
         * $x$ is called the pre-image of $y$.
-    
+
             ![Domain Codomain Range](/_media/domain-codomain-range.png)
-    
+
         * Example: a set mapping characters to a length.
             * $f(\text{Sea}) \rightarrow 3$ (contains 3 characters)
             * $f(Land) \rightarrow 4$ (contains 4 characters)
             * $f(on) \rightarrow 2$
                 * 2 is the image of "on"
                 * "on" is the pre-image of 2.
-
 * Conditions under which a relation is not a function:
     * Some inputs do not have an image.
     * Some inputs have more than one image.
@@ -72,7 +71,6 @@ parent: uol-discrete-mathematics
           ![Linear Increasing Function](/_media/linear-increasing.png)
 
         * When the gradient is < 0, the function is decreasing.
-
     * $f: R \rightarrow R$
         * $f(x) = ax +b$
             * If $a > 0$ then function is increasing.
@@ -88,12 +86,11 @@ parent: uol-discrete-mathematics
 
         * Domain of function f(x) is set of real numbers.
         * Range of function is set of positive numbers.
-
 * [Exponential Functions](permanent/exponential-functions.md)
     * If base $b$ in $f(x) = b^x$, $b > 1$ then function is increasing and represents growth shown in this graph:
-    
+
       ![exponential-growth-function](../../../../_media/exponential-growth-function.png)
-          
+
         * Graph also shows that the point $(0,1)$ is a "common point".
         * Domain is equal to set of all real numbers.
         * Range is equal to set of all real positive numbers.
@@ -103,7 +100,6 @@ parent: uol-discrete-mathematics
         ![Exponential Decay Function](/_media/exponential-decay-function.png)
 
         * Domain and range are the same as previous function.
-
 * [Laws Of Exponential Functions](../../../../permanent/laws-of-exponential-functions.md)
     * $b^xb^y = b^{x + y}$
     * $\frac{b^x}{b^y} = b^{x-y}$
@@ -145,7 +141,6 @@ parent: uol-discrete-mathematics
             * Proof 2:
                 * Let $a, b \in R^{+}$ show that if $a \ne b$ then $f(a) \ne f(b)$
                 * $a \ne b => a^2 \ne b^2$ as $a, b \in R+ => f(a) \ne f(b) => f$ is injective.
-
 * [Surjective Function](../../../../permanent/surjective-function.md)
     * A function is said to be a *surjective* (onto) function if and only if every element of the co-domain of $f$, $B$, has at least one pre-image in the domain of $f, A$.
         * In other words, every element in the output domain has some input that will return it.
@@ -214,7 +209,6 @@ parent: uol-discrete-mathematics
         * $f(2) = (2)^2 + 1 = 5$
         * $f(-2) = (-2)^2 + 1 = 5$
         * $f(2) = f(-2)$ therefore the function is not injective.
-
     * Claim: This function is surjective.
     * Proof:
         * $f(x) = y$
@@ -222,7 +216,6 @@ parent: uol-discrete-mathematics
         * $x^2 = y - 1$
         * $x = \sqrt{(y - 1)}$
         * $R _{\sqrt{(y - 1)}}  = [1, + \infty [$ therefore, this function is surjective.
-
 * $f_3: \mathbb{R} \rightarrow \mathbb{R} \text{ where } f(x) = x^3$
     * Claim: This function is injective.
     * Proof:
@@ -232,7 +225,6 @@ parent: uol-discrete-mathematics
         * $a^3 = b^3$
         * $(a^3)^{1/3} = (b^3)^{1/3}$
         * $a = b$ for all $a, b \in \mathbb{R}$ there the function is injective.
-
     * Claim: This function is surjective
     * Proof:
         * $f(x) = y$
@@ -246,14 +238,12 @@ parent: uol-discrete-mathematics
         * $2a + 3 = 2b + 3$
         * $2a = 2b$
         * $a = b$ therefore f is injective.
-
     * Claim: This function is surjective.
     * Proof:
         * $f(x) = y$
         * $2x + 3 = y$
         * $2x = y - 3$
         * $x = \frac{y-3}{2} \in \mathbb{R}$ therefore the function is surjective.
-
 * $f_5: \mathbb{Z} \rightarrow \mathbb{Z} \text{ where } f(x) = 2x + 3$
     * Claim: This function is injective.
     * Proof:
@@ -261,7 +251,6 @@ parent: uol-discrete-mathematics
         * $2a + 3 = 2b + 3$
         * $2a = 2b$
         * $a = b$ therefore $f$ is injective.
-
     * Claim: This function is not surjective
     * Proof:
         * $f(a) = 2a + 3$
@@ -276,7 +265,6 @@ Let $f : \mathbb{R} \rightarrow ]1, +\infty[$ with $f(x) = e^{x} + 1$
 
 1. Show that $f(x)$ is bijection.
     * Claim: $f(x)$ is a bijective as it is both injective and surjective.
-
     * Proof of injective:
         * $f(a) = f(b)$
         * $f(a) = e^a + 1$

@@ -31,7 +31,6 @@ parent: ml-foundations
 * Problem: bias against larger documents.
     * Solution: *normalised count vector*.
         * Computing norm of vector: add square of every entry in the vector and take square root.
-
 * Problem: Common words "dominate" rare words in similarity score and usually rare words are important to doc context..
     * Solution: prioritize important words with [TF-IDF](../../../../permanent/tf-idf.md)
         * tf-idf (term frequency - inverse document frequency).

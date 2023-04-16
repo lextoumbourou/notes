@@ -22,7 +22,6 @@ $C^2 = B^2 + A^2 - 2AB \cdot \cos(\theta)$
 
 This expression makes sense because $\cos(90°) = 0$ . For a right-angle triangle, you can simply ignore the $-2AB \cdot \cos(\theta)$ component.
 
-
 ## Solving for an angle with the law of cosines
 
 If the angle is unknown, we can rewrite the expression as follows:
@@ -32,7 +31,6 @@ $cos(C) = \frac{a^2 + b^2 - c^2}{2ab}$
 or
 
 $C = acos(\frac{a^2 + b^2 - c^2}{2ab})$
-
 
 ## Proof of the law of cosines
 

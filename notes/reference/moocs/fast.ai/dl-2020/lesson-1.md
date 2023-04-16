@@ -24,9 +24,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
     * Sylvain Gugger coauthor of book
     * Rachael Thomas cofounder of fastai
 
-
 ## 06:31 - Misconceptions about requirements for Deep Learning
-
 
 * What you don't need for DL:
     * Don't need a lot of math: high school level is enough
@@ -35,7 +33,6 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 * Course requires coding ability, preferably in Python (though can be picked up during the course)
 
 ## 08:38 - Deep learning best known approach in a number of areas
-
 
 * Image classification, image segmentation, NLP, some structured data problems
 * In some areas, equal or better than human performance
@@ -61,13 +58,11 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 
     ![PDP](/_media/pdp.png)
 
-
 ## 13:38 The Age of Deep Learning
 
 * 2nd layer of neurons added
     * Shown that extra layer of neurons could approximate any function
         * In practice, more layers are usually required
-
 
 ## 16:00 Top-down learning
 
@@ -110,9 +105,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 
 ## 42:20 Running the first notebook
 
-
 {% notebook reference/moocs/fast.ai/dl-2020/lesson-1-1.ipynb %}
-
 
 ## 48:00 Machine Learning
 
@@ -171,7 +164,6 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 
 ### 01:04:30 Use of import *
 
-
 * In Python, you have to import everything you need.
 * Python provides a convenience tool called `import *`
     * Usually not recommended as it adds a whole bunch of stuff to your namespace
@@ -201,7 +193,6 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 * May show you a style of coding (especially in Python) you're unfamiliar with
 * Lots of times fastai doesn't follow traditional approach to Python
     * If you use Python at work, likely want to follow a different style guide to fastai's
-
 
 ## 01:06:23 Fastai applications
 

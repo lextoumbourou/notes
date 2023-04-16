@@ -218,7 +218,6 @@ Use face verification datasets (LFW, CFP-FP, and AgeDB-30) to check improvements
     3. Get gradient on Centre ($dW$). Transpose the feature matrix on each GPU and multiply the transposed feature matrix by the gradient sub-matrix of the similarity score.
     4. Get the gradient on the feature ($x$) by concurrently multiplying the gradient sub-matrix of similarity score by the transposed center sub-matrix and sum up the outputs from 8 GPU cards to get the gradient on feature x.
 
-
 ### 5.2 Feature Space Analysis
 
 * 512-d hypersphere space should be theoretically large enough for large-scale identities.

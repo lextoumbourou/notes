@@ -34,7 +34,6 @@ parent: ml-foundations
 * Model-based approach
     * "Understand relationship between square footage and house price"
     * Put a line through the data.
-
 * Line definition:
     * ``f(x) = W0 + W1 * x`` (reversed from usual slope intercept definitions)
     * ``W1`` == slope (weight on feature or coefficient of independant variable)
@@ -54,7 +53,6 @@ parent: ml-foundations
 * Adding higher order effects
     * Firstly, "higher-order" in this context refers to using exponents in equations
     * Second order equation: ``x**2 + 3x + 1`` (aka quadratic).
-
     * Data might not have a linear relationship, could be quadratic.
     * Even with quadratic best fit lines, still considered "linear regression" because the squaring in the model is just considered another feature.
     * Could even be a 13th order polynomial, which might be best fit for data but returns results we now intuitively are not correct.

@@ -741,7 +741,6 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Wireless networking works by sending a radio signal between two antennas
         * Might be printed on a circuit board or it might have a wire or ribbon that runs through your device
 
-
 ## Week 6
 
 ### Introduction to Troubleshooting and the Future of Networking
@@ -863,7 +862,6 @@ At the time of taking the course, I had previously learned all the concepts, how
         * 4.2.2.6 is also common.
         * 8.8.8.8 is a DNS server provided by Google and officially documented.
     * Always do your research: a bad DNS server can hijack outbound DNS requests.
-
 * [[DNS Registrar]]
         * A company that has an agreement with [[ICANN]] to sell domains.
         * Was originally just one company: [Network Solutions Inc](https://en.wikipedia.org/wiki/Network_Solutions) that operated entire .com space.

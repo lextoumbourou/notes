@@ -50,28 +50,19 @@ parent: linear-algebra-machine-learning
 * We know that we can make any vector out of a sum of scaled versions of $\hat{e}_1$ and $\hat{e}_2$
 * A consequence of the scalar addition and multiplication rules for vectors, we know that the grid lines of our space don't change.
 * If we have matrix $A=\begin{bmatrix}2 & 3 \\ 10 & 1\end{bmatrix}$ and a matrix $r= \begin{bmatrix}a \\ b\end{bmatrix}$ and a result $r' = \begin{bmatrix}8 \\ 13\end{bmatrix}$ with relationship: $A r = r'$
-
 * If we multiply $r$ by a number $n$, then apply to $Ar$, we get the result by n: $A (nr) = nr'$
-
 * If we multiple $A$ by the vector $r+s$, we get $Ar+As$: $A(r+s)=Ar+As$
 * If we think of $r$ and $s$ as the original basis vectors:
 
     $A (n\hat{e}_i +m\hat{e}_2) = A n\hat{e}_1  + A m\hat{e}_2$
 
  * An example:
-
     * Given this expression: $\begin{bmatrix}2 & 3 \\ 10 & 1\end{bmatrix} \begin{bmatrix}3 \\ 2\end{bmatrix} = \begin{bmatrix}12 \\ 32\end{bmatrix}$
-
     * We can rewrite as: $\begin{bmatrix}2 & 3 \\ 10 & 1\end{bmatrix} \left(3 \begin{bmatrix}1 \\ 0\end{bmatrix} + 2 \begin{bmatrix}0 \\ 1\end{bmatrix} \right) = \begin{bmatrix}12 \\ 32\end{bmatrix}$
-
      * Which is the same as: $3 \left( \begin{bmatrix}2 & 3 \\ 10 & 1\end{bmatrix} \begin{bmatrix}1 \\ 0\end{bmatrix} \right) + 2 \left( \begin{bmatrix}2 & 3 \\ 10 & 1\end{bmatrix} \begin{bmatrix}0 \\ 1\end{bmatrix} \right)$
-
      * Simplified to: $3 \begin{bmatrix}2 \\ 10\end{bmatrix} + 2 \begin{bmatrix}3 \\ 1\end{bmatrix}$
-
      * Which we can simplify to: $\begin{bmatrix}12 \\ 32\end{bmatrix}$
-
 * "We can think of a matrix multiplication as just being the multiplication of the vector sum of the transformed basis vectors."
-
 
 ### Types of matrix transformation
 
@@ -120,7 +111,6 @@ parent: linear-algebra-machine-learning
 
 * We store a digital image as a collection of colored pixels at their particular coordinates on a grid. If we apply a matrix transformation to the coordinates of each pixel in an image, we transform the picture as a whole.
 
-
 ### Composition or combination of matrix transforms
 
 * You can make a shape change for a vector out of any combination of rotations, shears, structures, and inverses.
@@ -129,10 +119,8 @@ parent: linear-algebra-machine-learning
     $A_2(A_1 r)$
 
     * Alternatively, you can first apply $A_2$ to $A_i$ to get the same result.
-
 * Note that $A_1$ applied to $A_2$ isn't the same as $A_2$ to $A_1$: the order matters.
     * Therefore, Matrix multiplication isn't commutative.
-
 * Matrix multiplication is associative: $A_3 \cdot (A_2 \cdot A_1) = (A_3 \cdot A_2) \cdot A_1$
 
 ## Matrix inverses
@@ -150,11 +138,9 @@ parent: linear-algebra-machine-learning
 * [Inverse Matrix](permanent/inverse-matrix.md) (00:59-02:04)
     * Can we find another matrix that, when multiplied by A, gives us the identity matrix? $A^{-1} A = I$
         * We consider the "inverse" of $A$ since it reverses A and gives you the identity matrix.
-
     * We can then add the inverse to both sides of the expression: $A^{-1} A r = A^{-1}s$.
     * Since we know that $A^{-1} A$ is simply the identity matrix, we can simplify: $r = A^{-1} s$
     * So, if we can find the inverse of $A^{-1}$, we can solve the apples and bananas problem.
-
  * Solving matrix problems with Elimination and Back Substitution (02:15-08:00)
     * We can also solve the apples / bananas problem with just substitution.
 
@@ -222,10 +208,7 @@ parent: linear-algebra-machine-learning
 
 ## Special matrices and Coding up some matrix operations
 
-
-
 ### Determinates and inverses
-
 
 * [Matrix Determinate](../../../../permanent/Matrix Determinate.md) (00:00-05:36)
   * A matrix like this scales space: $\begin{bmatrix}a & 0 \\ 0 & d\end{bmatrix}$ by a factor of $ad$.
