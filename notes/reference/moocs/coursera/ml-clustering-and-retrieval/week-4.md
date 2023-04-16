@@ -1,7 +1,8 @@
 ---
 title: Mixture Models
-date: 2021-10-30 00:00:00
-modified: 2023-04-08 00:00:00
+date: 2021-10-30 00:00
+modified: 2023-04-08 00:00
+status: draft
 ---
 
 # Mixture Models

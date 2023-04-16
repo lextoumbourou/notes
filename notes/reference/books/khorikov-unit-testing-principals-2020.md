@@ -66,7 +66,7 @@ status: draft
     * Use of mocks only to deal with shared dependancies.
 * Summary of schools of thought:
 
-  ![](../_media/london-vs-classical-test-style.png)
+  ![London vs Classical Test Style](../_media/london-vs-classical-test-style.png)
 
 * Shared dependency is something that is shared between tests and gives one test the ability to affect another test.
   * Database or dependancy with mutable field.

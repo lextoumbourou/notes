@@ -1,6 +1,6 @@
 ---
 title: "Deep Learning for Coders with Fastai and Pytorch: AI Applications Without a PhD"
-date: 2021-05-30
+date: 2021-05-30 00:00
 status: draft
 ---
 
