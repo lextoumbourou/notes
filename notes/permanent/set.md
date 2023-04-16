@@ -98,7 +98,7 @@ $P(A) = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\}$
 
 If a set has an infinite number of elements, we call it an infinite set.
 
-Some [Special Infinite Sets](special-infinite-sets.md) come up frequently in Math.
+Some [Special Infinite Set](special-infinite-sets.md) come up frequently in Math.
 
 <hr>
 
