@@ -1,6 +1,6 @@
 ---
 title: Roblox Attachment
-date: 2021-12-12 14:00
+date: 2021-12-12 00:00
 summary: An object that describes a point and orientation relative to a BasePart
 tags:
   - Roblox

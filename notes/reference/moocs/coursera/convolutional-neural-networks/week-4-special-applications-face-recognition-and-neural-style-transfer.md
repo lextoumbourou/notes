@@ -14,7 +14,6 @@ status: draft
     * Input image, name/ID
     * Output whether the input image is the actual person.
     * Difficult because need to solve a "one shot learning" problem.
-
 * Face recognition
     * Has a database of K people.
     * Take input image
@@ -37,7 +36,7 @@ status: draft
     * Instead of creating a standard CNN with conv layers, FC layers and a softmax, remove the final softmax layer and output a vector of 128 numbers.
     * Then, for another image, get another vector of 128 numbers.
     * Difference between the images is the norm of the difference:
-  
+
       $d(x^{(1)}, x^{(2)}) = ||f(x^{(1)}) - f(x^{(2)})||^2_2$
     * Learn parameters so that: if person 1 and person 2 are the same, different should be small and vice versa.
 
@@ -48,11 +47,9 @@ status: draft
   * Can rewrite as: $||f(A)-f(P)||^2 - ||f(A)-f(N)||^2 \le 0$
   * Since a trivial solution to the problem is to just set all values to 0, giving you `0 - 0 <= 0`, you can subtract an alpha param from 0, giving you: $||f(A)-f(P)||^2 - ||f(A)-f(N)||^2 \le 0 - \alpha$ or $||f(A)-f(P)||^2 - ||f(A)-f(N)||^2 + \alpha \le 0$
 * Refer to the $\alpha$ param as the "margin" param.
-
 * Loss function is defined for triplets of images:
   $L(A,P,N)=max(||f(A)-f(P)||^2-||f(A)-f(N)||^2 + \alpha, 0)$
 	* The max function ensures the loss always aims to be below 0.
-
 * Loss for the entire set is: $J=\sum\limits^m_{i=1} L(A^{(i)}, P^{(i)}, N^{(i)})$
 * Need a training set with multiple images of the same person.
 * If you choose A,P,N at random, the constraint should be easy to satisfy. Therefore, want to choose A,P,N that are hard to train on (maybe choose similar images that aren't the same person).
@@ -77,7 +74,6 @@ status: draft
 * Visualising what a deep network is learning:
     * Pick a hidden unit in layer 1, go through your training set find image patches that maximise a unit's activation.
     * Do it for other units.
-
 * Can then visualise other layers:
     * Layer 1: textures.
     * Layer 2: more complex textures.
@@ -97,10 +93,10 @@ status: draft
     $(G) = \text{J\_content} (C, G) + \text{J\_style} (S, G)$
 
 * Add two hyper params for weight of content and style:
- 
+
 	$\text{J(G)} = \alpha \text{ J\_content}(C, G) + \beta \text{ J\_style}(S, G)$
-  
-* Initialise the generated image G randomly:  G: 100x100x3
+
+* Initialise the generated image G randomly: G: 100x100x3
 * Use gradient descent to minimise $J(G)$:
 
 	$G := G - \frac{du}{dJ}J(G)$
@@ -122,18 +118,13 @@ status: draft
 
 * What does it mean for two activation to be correlated?
   * Example: when a certain texture occurs, a tone or colour also occurs.
-
 * Style matrix:
-
   * let $a^{[l]}_{i,j,k} = \text{activation at (i,j,k)}$
   * $G^{[l]}$ is $n^{[l]}_c \text{ x }  n^{[l]}_c$ (square matrix)
-
   * $G^{[l]}_{kk^{1}} = \sum\limits_{i=1}^{n_H^{[l]}} \sum\limits_{j=1}^{n_W^{[l]}} a_{ijk}^{[l]} a_{ijk^{1}}^{[l]}$ - measures how correlated activation in $K$ are to $K^1$.
     * K ranges from 1 to $n_c^{[l]}$.
-
   * Compute the same thing for the generated image, then calculate the different to get the style cost.
   * May also use a normalisation constant: `1 / (2 * n_H * n_W * n_C)`
-
 * Style cost function:
 	* Sum the style function over all different layers, using a weighting for each layer.
 

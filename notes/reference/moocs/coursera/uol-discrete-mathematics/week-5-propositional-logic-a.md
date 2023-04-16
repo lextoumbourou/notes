@@ -96,7 +96,6 @@ modified: 2023-04-08 00:00
 
 * [Compound Statements](../../../../permanent/compound-statements.md)
     * Statements build by combining multiple propositions using certain rules.
-
 * [Negation](../../../../permanent/logic-negation.md)
     * Not $p$: Defined by $\neg p$
     * "It is not the case that $p$"
@@ -104,7 +103,6 @@ modified: 2023-04-08 00:00
     * Example
         * $p$: John's program is written in Python
         * $\neg p$: John's program is not written in Python
-
 * [Conjunction](../../../../permanent/conjunction.md)
     * Symbol: $\land$
     * $p$ and $q$
@@ -115,7 +113,6 @@ modified: 2023-04-08 00:00
         * $p$: John's program is written in Python
         * $q$: John's program has less than 20 lines of code.
         * $p \land q$: John's program is written in Python and has < 20 lines of code.
-
 * [Disjunction (Logic)](../../../../permanent/disjunction.md) * Symbol: $\lor$
     * $p$ or $q$
     * Let $p$ and $q$ be propositions.
@@ -124,11 +121,9 @@ modified: 2023-04-08 00:00
         * $p$: John's program is written in Python.
         * $q$: John's program is < 20 lines of code.
         * $p \lor q$: John's prgram is written in Python or has less than 20 lines of code.
-
 * [Exclusive-Or](../../../../permanent/exclusive-or.md)
     * Symbol: $\oplus$
     * $p$ or $q$ (but not both)
-
 * Precedence of logical operations
     * To build complex compound propositions, we need to use parentheses.
     * Example:

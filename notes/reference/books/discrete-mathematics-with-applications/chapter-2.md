@@ -219,9 +219,7 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
 * Intersection
     * The **intersection** of 2 sets $A$ and $B$ denoted by $A \cap B$ is the set of elements common to A and B.
     * $A \cap B = \{ | (x \in A) \land (x \in B)\}$
-
     * ![sets-fig-2.4](../../../_media/sets-fig-2.4.png)
-
     * 2 sets are considered disjointed if their intersection is the empy set.
 * Difference
     * The difference of two set $A$ and $B$ (or **relative complement** of B in A) denoted by $A - B$.
@@ -293,4 +291,3 @@ Choose $2 \in S$ by the basis clauses.
 Apply the recursive clause, $4 \in S$
 Now choose x = 4 and apply recurive clause again, so $16 \in S$.
 Continuing like this, we get $S = \{2, 4, 16, 256, 65536, ...\}$
-

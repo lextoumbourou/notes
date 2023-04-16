@@ -6,7 +6,7 @@ status: draft
 parent: uol-discrete-mathematics
 ---
 
-## Question 1.
+## Question 1
 
 ### a
 
@@ -33,7 +33,7 @@ $|A| = 73$
 $|B| = 43$
 $|A \cup B| = 100$
 
-#### i.
+#### i
 
 How many can speak both English and Spanish?
 
@@ -48,8 +48,7 @@ $$
 \end{align}
 $$
 
-
-#### ii.
+#### ii
 
 How many can speak English only?
 
@@ -63,7 +62,7 @@ $$
 \end{align}
 $$
 
-#### iii.
+#### iii
 
 How many can speak Spanish only?
 
@@ -77,12 +76,11 @@ $$
 \end{align}
 $$
 
-#### iv.
+#### iv
 
 Draw a Venn Diagram to show this information.
 
 ![discrete-midterm-2022.drawio (2)](../../../../_media/discrete-midterm-2022.drawio%20(2).png)
-
 
 ---
 
@@ -90,7 +88,7 @@ Draw a Venn Diagram to show this information.
 
 Let $A$ and $B$ be two sets. Determine which of the following statements are true and which are false. Prove each statement is true and give a counter example.
 
-#### i.
+#### i
 
 $P(A \cap B) = P(A) \cap P(B)$
 
@@ -116,7 +114,7 @@ Which means, $P(A) \cap P(B) \subseteq P(A \cap B)$
 
 This concludes the proof.
 
-#### ii.
+#### ii
 
 $P(A \cup B) = P(A) \cup P(B)$
 
@@ -137,11 +135,11 @@ $P(B) = \{\emptyset, \{2\}\}$
 $P(A \cup B) = \{\emptyset, \{1\}, \{2\}, \{1, 2\}\}$
 $P(A) \cup P(B) = \{\emptyset, \{1\}, \{2\}\}$
 
-Therefore, $P(A \cup B) \ne P(A) \cup P(B)$ 
+Therefore, $P(A \cup B) \ne P(A) \cup P(B)$
 
 This concludes the proof.
 
-#### iii.
+#### iii
 
 $P(A) \cup P(B) \subseteq P(A \cup B)$
 
@@ -156,19 +154,19 @@ Therefore, $X \in P(A)$ or $X \in P(B)$
 Therefore, $X \subseteq A$ or $X \subseteq B$
 Therefore, $X \subseteq P(A \cup B)$
 
-This means that  $X \in P(A) \cup P(B) \rightarrow X \in P(A \cup B)$
+This means that $X \in P(A) \cup P(B) \rightarrow X \in P(A \cup B)$
 
 This concludes the proof.
 
 ---
 
-## Question 2.
+## Question 2
 
-### a.
+### a
 
 Which of the following are functions? If f is not a function explain why.
 
-#### i.
+#### i
 
 $f : \mathbb{R} \rightarrow \mathbb{R} \text { with } f(x) = \frac{1}{1−x^2}$
 
@@ -183,7 +181,7 @@ $f(-1) = \frac{1}{1-(-1)^2} = \text{ Undefined due to divide by 0 }$
 
 Therefore, this is **not a function**.
 
-#### ii.
+#### ii
 
 $f : \mathbb{Z} \rightarrow \mathbb{Z} \text { with } f(x) = \frac{x}{2}$
 
@@ -195,7 +193,7 @@ $1.5 \notin \mathbb{Z}$
 
 3 and all other odd numbers don't have an image. Therefore, this is **not a function**.
 
-#### iii.
+#### iii
 
 $f : \mathbb{R} \rightarrow \mathbb{R}$ with $f(x) = ln(x)$
 
@@ -210,7 +208,7 @@ Therefore, this is **not a function**.
 
 ### b
 
-Let $f : \mathbb{R} \rightarrow \mathbb{R}$ and $g : \mathbb{R} \rightarrow \mathbb{R}$ with $f(x) = x + 2$ and $g(x) = -x$. Find $g \ o \ f$, $(g \ o \ f)^{-1}$, $f^{-1}$, $g^{-1}$ 
+Let $f : \mathbb{R} \rightarrow \mathbb{R}$ and $g : \mathbb{R} \rightarrow \mathbb{R}$ with $f(x) = x + 2$ and $g(x) = -x$. Find $g \ o \ f$, $(g \ o \ f)^{-1}$, $f^{-1}$, $g^{-1}$
 
 * $g \ o \ f = g(f(x)) = g(x + 2) = -(x + 2) = -x - 2$
 * $(g \ o \ f)^{-1} = -x - 2$
@@ -228,11 +226,11 @@ Let $f : \mathbb{R} \rightarrow \mathbb{R}$ and $g : \mathbb{R} \rightarrow \mat
 
 ---
 
-### c 
+### c
 
-Let $f : \mathbb{R}^{*} \rightarrow \mathbb{R}$ with $f(x) = \frac{x + 1}{x}$ where $\mathbb{R}^{*}$ is the set of all real numbers different from 0. 
+Let $f : \mathbb{R}^{*} \rightarrow \mathbb{R}$ with $f(x) = \frac{x + 1}{x}$ where $\mathbb{R}^{*}$ is the set of all real numbers different from 0.
 
-#### i.
+#### i
 
 Determine whether or not f is a one to one function
 
@@ -255,7 +253,7 @@ Therefore, this function is one to one.
 
 This concludes the proof.
 
-#### ii.
+#### ii
 
 Determine whether or not $f$ is an onto function.
 
@@ -277,7 +275,7 @@ This concludes the proof.
 
 Given a function $F : P(\{a, b, c\}) \rightarrow \mathbb{Z}$ is defined by $F(A) = |A|$ for all $A \in P(\{a, b, c\})$
 
-#### i.
+#### i
 
 Is F a one-to-one function? Prove or give counter-example.
 
@@ -289,14 +287,14 @@ In other words, $f(a) = f(b)$ does not imply $a = b$
 
 I show proof by counterexample.
 
-$A = \{a, b\}$,  $B =\{b, c\}$
+$A = \{a, b\}$, $B =\{b, c\}$
 $A, B \in P(\{a, b, c\})$
 
 $F(A) = 2, F(B) = 2$
 
 $F(A) = F(B), A \ne B$, therefore, this function is not one-to-one.
 
-#### ii.
+#### ii
 
 Is F an onto function? Prove or give a counter-example.
 
@@ -311,7 +309,7 @@ There is no $X$ in the set of $P(\{a, b, c\})$ such that $|X| = 100$. Therefore,
 
 ---
 
-### e.
+### e
 
 Let $f : A \rightarrow B$ and $g : B \rightarrow C$ by functions. Prove that if $g \ o \ f$ is one-to-one then $f$ is also one-to-one.
 
@@ -327,15 +325,15 @@ This means that $f(a) \ne f(b)$, which implies $f$ is a one to one function.
 
 ---
 
-##  Question 3.
+## Question 3
 
-### a.
+### a
 
 Let $p, q, r, s$ be four propositions.
 
 Assuming that $p$ and $r$ are false and that $q$ and $s$ are true, find the truth value of each of the following propositions:
 
-#### i.
+#### i
 
 $((p \land \neg q) \rightarrow (q \land r)) \rightarrow (s \lor \neg q)$
 
@@ -348,7 +346,7 @@ $T \rightarrow (s \lor \neg q)$
 $T \rightarrow T$
 **True**
 
-#### ii.
+#### ii
 
 $((p \lor q) \land (q \lor s)) \rightarrow ((\neg r \lor p) \land (q \lor s))$
 
@@ -363,7 +361,7 @@ $T \rightarrow T$
 
 ---
 
-### b.
+### b
 
 Let $p$, $q$ and $r$ be 3 propositions defined as follows:
 * $p$ means "Sofia is happy"
@@ -372,19 +370,19 @@ Let $p$, $q$ and $r$ be 3 propositions defined as follows:
 
 Express each of the 3 following compound propositions symbolically by using $p$, $q$ and $r$ and appropriate logical symbols.
 
-#### i.
+#### i
 
 If Sofia is happy and paints a picture then Samir isn't happy.
 
 $(p \land q) \rightarrow \neg r$
 
-#### ii.
+#### ii
 
 Sofia is happy only if she paints a picture.
 
 $p \rightarrow q$
 
-#### iii.
+#### iii
 
 Sofia either paints a picture or she is not happy.
 
@@ -392,11 +390,11 @@ $q \lor \neg p$
 
 ---
 
-### c.
+### c
 
 Give the contrapositive, the converse and the inverse of each of the following statements:
 
-#### i.
+#### i
 
 $\forall x \in \mathbb{R}$ if $x > 3$ then $x^{2} > 9$
 
@@ -418,7 +416,7 @@ Inverse form
 $\forall x \in \mathbb{R}$, if $\neg P(x)$ then $\neg Q(x)$
 $\forall x \in \mathbb{R}$ if $x \le 3$ then $x^{2} \le 9$
 
-#### ii.
+#### ii
 
 $\forall x \in \mathbb{R}$ if $x(x + 1) > 0$ then $x > 0$ or $x < -1$
 
@@ -442,7 +440,7 @@ $\forall x \in \mathbb{R}$ if $(x(x + 1) \le 0)$ then $(x \le 0$ and $x \ge -1)$
 
 ---
 
-### d.
+### d
 
 A tautology is a proposition that is always is always true. Let $p, q, r$ be three propositions, show that $(p \rightarrow (q \lor r)) \Leftrightarrow ((p \land \neg q) \rightarrow r)$ is a tautology.
 
@@ -461,21 +459,21 @@ As you can see from the truth table, $(p \rightarrow (q \lor r)) \Leftrightarrow
 
 ---
 
-## Question 4.
+## Question 4
 
-### a.
+### a
 
 Let P(x, y) by a boolean function. Assume that $\exists x \ \forall y \ P(x, y)$ is True and the domain of discourse is nonempty. Which of the following must also be true? If the statement is true, explain your answer; otherwise, give a counter-example.
 
-#### i.
+#### i
 
 $\forall x \ \exists y \ \neg P(x, y)$
 
 **False**
 
-We know the negation of $\forall x \exists y \neg P(x, y)$, which is  $\exists x \ \forall y \ P(x, y)$ is true, therefore the statement must be false.
+We know the negation of $\forall x \exists y \neg P(x, y)$, which is $\exists x \ \forall y \ P(x, y)$ is true, therefore the statement must be false.
 
-#### ii.
+#### ii
 
 $\forall x \ \forall y \ P(x, y)$
 
@@ -489,7 +487,7 @@ $\exists x \ \forall y \ P(x, y)$ is True when $x = 1$ since $1 \le y$ for all $
 
 However, $\forall x \ \forall y \ P(x, y)$ is False as we can find a counter-example like $x = 3, y = 1$ ($3 \le 1$) which is false.
 
-#### iii.
+#### iii
 
 $\exists x \ \exists y \ P(x, y)$
 
@@ -503,7 +501,7 @@ Therefore, $\exists x \exists y P(x, y)$ is true.
 
 ---
 
-### b.
+### b
 
 Given the following argument:
 
@@ -512,7 +510,7 @@ Given the following argument:
 
 Assume $p$ means "it rains" whereas $q$ means "football game cancelled"
 
-#### i.
+#### i
 
 Translate this argument to symbolic form.
 
@@ -520,7 +518,7 @@ $q \rightarrow p$
 $p$
 $\therefore q$
 
-#### ii.
+#### ii
 
 Construct the truth table.
 
@@ -528,10 +526,10 @@ Construct the truth table.
 | --- | --- | ----------------- | --------------------------- | ------------------------------------------- |
 | 0   | 0   | 1                 | 0                           | 1                                           |
 | 0   | 1   | 1                 | 1                           | 0                                           |
-| 1   | 0   | 0                 | 0                           | 1                                            | 
+| 1   | 0   | 0                 | 0                           | 1                                            |
 | 1   | 1   | 1                 | 1                           | 1                                            |
 
-#### iii.
+#### iii
 
 Determine if this argument is a valid argument or not.
 
@@ -543,7 +541,7 @@ This is an incorrect argument using the fallacy of affirming the consequent.
 
 ---
 
-### c.
+### c
 
 Say whether or not the following argument is a valid argument. Explain your answer.
 
@@ -559,7 +557,7 @@ r: means the candidate has five years of work experience.
 $p \rightarrow (q \lor r)$
 $q$
 $p$
-- - - 
+- - -
 $\therefore \neg r$
 
 We can represent as a true table:
@@ -581,13 +579,13 @@ There is an example where the premise is true but the conclusion is false.
 
 ---
 
-### d.
+### d
 
 Let $P(x)$ and $Q(x)$ be two predicates and suppose $D$ is the domain of $x$.
 
 For the statement forms in each pair, determine whether the have the same truth value for every choice of $P(x)$, $Q(x)$, $D$ or not.
 
-#### i.
+#### i
 
 $\forall x \in D, (P(x) \land Q(x))$, and $(\forall x \in D, P(x)) \land (\forall x \in D, Q(x))$
 
@@ -597,11 +595,11 @@ $\forall x \in D, (P(x) \land Q(x))$, and $(\forall x \in D, P(x)) \land (\foral
 
 In the first statement, we see that for all $x \in D$, $P(x) \land Q(x)$ is true.
 This means for all $x \in D$, $P(x)$ is true. It also means for all $x \in D$, $Q(x)$ is true.
-This means $(\forall x \in D, P(x)) \land (\forall x \in D, Q(x))$  
+This means $(\forall x \in D, P(x)) \land (\forall x \in D, Q(x))$
 
 Therefore, these statements have the same truth value.
 
-#### ii.
+#### ii
 
 $\forall x \in D, (P(x) \lor Q(x))$, and $(\forall x \in D, P(x)) \lor (\forall x \in D, Q(x))$
 
@@ -621,17 +619,17 @@ $Q(2) = T$
 The statement $P(x) \lor Q(x)$ is true for all $x \in D$: $P(1) \lor Q(1)$, $P(2) \lor Q(2)$
 
 However, it is not true that $\forall x \in D, P(x)$, as $P(2) = F$. It is also not true that $\forall x \in D, Q(x)$ as $Q(1) = F$.
-This means that  $(\forall x \in D, P(x)) \lor (\forall x \in D, Q(x))$ is false.
+This means that $(\forall x \in D, P(x)) \lor (\forall x \in D, Q(x))$ is false.
 
 Therefore, these statements do not have the same truth value.
 
-## Question 5.
+## Question 5
 
-### a.
+### a
 
 Use rules of boolean algebra to simplify the following boolean expressions:
 
-#### i.
+#### i
 
 $\overline{ab}(\overline{a} + b)(\overline{b} + b)$
 
@@ -652,7 +650,7 @@ $$
 
 ---
 
-#### ii.
+#### ii
 
 $\overline{a}(a + b) + (b + aa)(a + \overline{b})$
 
@@ -669,10 +667,9 @@ $$
 \end{align}
 $$
 
-
 ---
 
-### b.
+### b
 
 Use the duality principle to find out the dual of the following equation:
 
@@ -690,7 +687,7 @@ $(a + b) . (c + \overline{d}) = (a . c) + (a . \overline{d}) + (b . c) + (b . \o
 
 ---
 
-### c.
+### c
 
 The lights in a classroom are controlled by two switches: one at the back and one at the front of the room.
 
@@ -715,12 +712,11 @@ Circuit:
 
 ![mid-term-assessment-circuit-q5](../../../../_media/mid-term-assessment-circuit-q5.png)
 
-
 ---
 
-### d.
+### d
 
-#### i.
+#### i
 
 Fill in the K-map for the Boolean function
 
@@ -734,7 +730,7 @@ $F(x, y, z) = \overline{x}.\overline{y}.\overline{z} + \overline{x} . \overline{
 
 ---
 
-#### ii.
+#### ii
 
 Use the previous K-map and find a minimisation, as the sum of three terms, of the expression.
 

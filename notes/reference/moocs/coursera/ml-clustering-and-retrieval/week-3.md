@@ -64,11 +64,13 @@ status: draft
 * Algo:
   1. Choose first cluster centre uniformly at random data points.
   2. For each observation $$\mathbf{x} $$, compute distance $$d(\mathbf{x}) $$
+
 to nearest cluster centre.
 
-  3. Choose cluster centre from data points, with probability $$\mathbf{x} $$being chosen proportional to $$d(\mathbf{x})^2 $$
+  3. Choose cluster centre from data points, with probability $$\mathbf{x} $$
+being chosen proportional to $$d(\mathbf{x})^2 $$
 
-     * In other words: find the next cluster centre that's far away from chosen cluster centre.	 
+     * In other words: find the next cluster centre that's far away from chosen cluster centre.
   4. Repeat Steps 2 and 3 until k centres have been chosen.
 
 * Pros: high computational cost compared to randomly selecting.
@@ -150,7 +152,7 @@ to nearest cluster centre.
 
 ### MapReducing 1 iteration of k-means
 
-* Once you have initialised the cluster centre, for each data point you can figure out the distance to it (map step). 
+* Once you have initialised the cluster centre, for each data point you can figure out the distance to it (map step).
   * Map takes in set of cluster centers and a data point.
   * Emits the cluster assigned to and the data point.
 

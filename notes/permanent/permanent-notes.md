@@ -1,6 +1,6 @@
 ---
 title: Permanent Notes
-date: 2021-06-06 17:30
+date: 2021-06-06 00:00
 tags:
   - Zettelkasten
 cover: /_media/light-bulb.jpeg

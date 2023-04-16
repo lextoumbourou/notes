@@ -72,7 +72,6 @@ modified: 2023-04-09 00:00
 
     * $v_2$ and $v_5$ are linked with 2 edged: (e_6 and e_8). e_6 and e_8 are considered [Parallel Edges](permanent/parallel-edges.md).
     * $v_1$ is linked by $e_9$. We call the edge $e_9$ a [Loop](permanent/graph-loop.md).
-
 * [Directed Graphs](../../../../permanent/directed-graphs.md)
     * Aka digraph.
     * Graph where edges have a direction.
@@ -89,7 +88,6 @@ modified: 2023-04-09 00:00
         * Vertices and edges can be repeated.
     * A walk of length k in a graph is a succession of $k$ (not necessarily different) edges of form:
         * $uv$, $vw$, $wx$, ..., $yz$
-
     * Example
 
       ![week-13-graph-walk-example](../../../../_media/week-13-graph-walk-example.png)
@@ -121,7 +119,6 @@ modified: 2023-04-09 00:00
     * Is there a walk that passes each of the 7 bridges once.
     * He made a network linked with lines that shows:
         * No walk that uses each edge exactly once (even if we allow the walk to start and finish in diff places)
-
 * [Euler's Path](permanent/eulers-path.md)
     * A Eulerian path in a graph is a path that uses each edge precisely once.
         * If the path exists, the graph is called traversable.
@@ -161,7 +158,6 @@ modified: 2023-04-09 00:00
       ![week-13-not-strongly-connected](../../../../_media/week-13-not-strongly-connected.png)
 
       * No direct path from v_4 to any of the other 3 vertices.
-
 * [Transitive Closure](permanent/transitive-closure)
     * Given a digraph G, the transitive closure of G is the digraph G* such that: G* has the same verticies as G
     * If G has a directed path from $u$ to $v$ ($u \ge v$), G* has a directed edge from $u$ to $v$.

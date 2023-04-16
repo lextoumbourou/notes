@@ -14,7 +14,7 @@ Then, you wish to construct a query where for some child category, you want to f
 
 *Side note: in this contrived example, there are some techniques you could use to skip recursive queries completely, like denormalising your data by adding the parent id into each child category which would also bring significant performance gains, but I still think it's useful to have recursive queries in your toolkit...*
 
-As always, the [Postgres docs](http://www.postgresql.org/docs/current/static/queries-with.html) are very comprehensive, however, they can be a little daunting when you're getting started - especially if writing SQL isn't something you're doing every day. Since I was recently tasked with solving a similar problem,  the difficulties of understanding it are fresh on my mind. So I figured I'm in a good position to help others do the same.
+As always, the [Postgres docs](http://www.postgresql.org/docs/current/static/queries-with.html) are very comprehensive, however, they can be a little daunting when you're getting started - especially if writing SQL isn't something you're doing every day. Since I was recently tasked with solving a similar problem, the difficulties of understanding it are fresh on my mind. So I figured I'm in a good position to help others do the same.
 
 ***
 
@@ -219,7 +219,6 @@ Now what would happen if someone goofed up and created a top-level category with
 
 This is where it'd help for us too...
 
-
 ## Understand the ``UNION`` statement
 
 As already covered, the ``UNION`` statement basically tells Postgres what to do with duplicate rows. ``UNION ALL`` is basically saying: don't discard dupes eg union all the things, where ``UNION`` discards dupes (if you are familiar with set theory at all, then you are probably familiar with [union](https://en.wikipedia.org/wiki/Union_(set_theory)) already).
@@ -288,14 +287,12 @@ Results                         Working table
 
 Next, we evaluate the recursive term against the working table, which in this case is ``SELECT category.id, category.name, category.parent_id FROM category JOIN top_category ON (category.id = top_category.parent_id)``. Effectively we're saying "get a thing from ``category`` which can be joined against our working table". So, we fetch the sports category. This time we add the results to a table called the "intermediate table". Okay, so now we have 3 structure that look like this:
 
-
 ```
 Results                         Working table                     Intermediate table
 -----------------------------   --------------------------------  --------------------
                               
 3   Reebok Pumps   2            3   Reebok Pumps   2              2   Sports   1
 ```
-
 
 Then the contents of the intermediate table replace the working table and are appended to our results. So our tables look like this:
 

@@ -11,13 +11,11 @@ parent: recommender-systems-introduction
 * Basic idea: there are "stable" preferences people that that can be measured by content attributes:
     * News - politics, sports, fashion etc.
     * Clothing - bright, dull etc.
-    * Movies  - horror, drama etc.
-
+    * Movies - horror, drama etc.
 * Core ideas:
     * Use attributes to model items.
     * Figure out user prefs with said attributes.
     * Recommend stuff based on user prefs finding other items with attributes.
-
 * Building a vector of attributes or keyword preferences.
     1. User could build their own profile.
         * Maybe a bit awkward to make them create the whole profile, but allowing to edit can work.
@@ -26,25 +24,21 @@ parent: recommender-systems-introduction
     3. Infer user profile from explicit user ratings.
         * Map item preference to attribute preference.
     4. Merge actions/explicit into infer from rating (explicit and implicit).
-    
+
 * How to use preferences:
   * Given a vector of keyword preferences:
       * Can we just add likes and dislikes?
       * Can we figure out which keywords are more and less relevant?
           * TF/IDF.
-
 * Case-based recommendation
     * Build DB of "cases" to attributes (camera price, zoom, pixels).
     * Query based on attributes to get a relevant case.
     * Open issue: many ways to structure interactions.
-
 * Ask Ada example:
     * Interview process to determine purchase preferences.
-
 * Knowledge-based recommender.
     * Case-based example with navigation interface.
     * FindMe systems (eg Entree).
-
 * Content-based techniques challenges and drawbacks:
     * Needs well-structure attributes that align with preference.
         * Painting example: hard to reduce paintings to list or attributes, don't want more blue more oil etc.
@@ -54,7 +48,6 @@ parent: recommender-systems-introduction
     * Doesn't find surprising connections
         * Lemon goes well with chocolate but doesn't work if you just say "what's like chocolate".
     * Harder to find complements than substitutes.
-
 * Take-away lessons
     * Many ways to recommend based on content (product attributes):
         * Over time, can build up a profile of user's content preferences.
@@ -84,7 +77,6 @@ parent: recommender-systems-introduction
     * Can be used to profile doc/object.
         * Movie can be weighted vector of tags.
     * TFIDF profiles can be combined with rating the create future user profiles and match against docs.
-
 * Variants and alternates to TFIDF:
     * 0/1 bool frequency (occurs above threshold).
     * Logarithmic frequency (log (tf + 1)).
@@ -93,7 +85,6 @@ parent: recommender-systems-introduction
     * BM25 (aka Okapi BM25) is ranking function used by search engines:
         * Include frequency in query, document, num documents.
         * Variants with different weights: BM11, BM25.
-
 * Other considerations:
     * Phrases + n-grams:
         * "Computer science" != "computer" and "science".
@@ -115,63 +106,53 @@ parent: recommender-systems-introduction
     * Recommendations take items that are closest to user vectors.
     * Can reduce size of keyword space using stemming and stop words etc.
     * Vector space model: https://en.wikipedia.org/wiki/Vector_space_model
-
 * Represent an item through a k/w vector:
     * Could be simple 0/1 (keyword applies or not).
     * Simple occurence count.
     * Use TFIDF?
     * Consider document length?
     * Usually want to normalise vector, so it's human understandable.
-
 * Consider the movie/tag case
-    * Do w  consider tags yes or no?
+    * Do w consider tags yes or no?
         * Actor tags only really need to be tagged once: it either has Arnold S or it doesn't.
         * Other tags may use frequency for description.
     * Do we care about IDF?
         * Less common actors more significant than stars?
         * "Prison scene" may be more telling to preference than more common tags like "car chase" or "romance".
-
 * Formalisation:
     * Each tag $t \in T$ can be applied to an item or not.
     * $T_i$ is the set of tags applied to an item $i$ or $t_i$ is a 1/0 vector of tags.
     * Have a case where user apply tags to items (each user could apply each tag 0 or 1 times to an item). $t_{ui}$ is a tag application of a tag by a user to an item.
     * Have a case where tags are multiply applied (by users or algorithms) and $\vec{t_i}$ is a weighted vector of tags.
-
 * From items to user profiles (1)
     * Vector space thinks liking is the same as importance:
         * Good for some use cases like movies but not for other use cases.
-
 * How do we "accumulate" profiles?
     * Add together the item vectors?
         * Normalise first?
         * Weigh vectors somehow?
-
 * Factoring in ratings:
     * Unary: add item vectors of items we rate.
     * Binary: add positives, subtract negatives.
     * Unary with threshold: just put items above a certain rating (aka above 7) in preferences.
     * Weigh only positives: give higher weight to positive things.
     * Weigh including negatives: negative weight for low ratings.
-
 * How do we update profiles (new ratings)?
     * Don't: recompute each time (could be wasteful).
     * Weight new/old similarly.
-        * Special case for changed rating; subtract old. 
+        * Special case for changed rating; subtract old.
     * Decay old profile and mix in new (maybe have profile dominated by most recent movies).
-
 * Computing predictions:
     * Predictions is cosine of angle between 2 vectors: profile and item.
-        * Cosine starts at its maximum, +1, when 2 things have same angle and grows negatively as angle grows. 
+        * Cosine starts at its maximum, +1, when 2 things have same angle and grows negatively as angle grows.
     * Computed as dot product of normalised vectors.
     * Cosine ranges between -1 and 1 (0 and 1 if all positive values in vectors) - closer to 1 is better.
     * Top-n or scale for rating-scale predictions.
-
 * Strengths of this approach
     * Entirely content-based
     * Understandable profile
     * Easy computation
     * Flexible: can integrate with queries and case-based approaches.
-
 * Challenges:
     * Figure out the right weights and factors
         * Is more *more* or just reiteration of same.
@@ -180,15 +161,15 @@ parent: recommender-systems-introduction
     * Simplified model, doesn't handle interdependencies:
         * I like horror movies about supernatural but not supernatural documentaries.
         * "Breaking things down into attributes doesn't always work".
-  
+
 * Summary
     * Can do content-based filtering based on assessing the content profile of each item.
-    * Build user profiles by aggregating the item profiles of things they've bought or rated or consumed etc. 
+    * Build user profiles by aggregating the item profiles of things they've bought or rated or consumed etc.
     * Then, you can evaluate unrated items using the user profiles by taking the vector cosign.
 
 ## Advanced Content-Based Techniques and Interfaces
 
-### Entree Style Recommenders - Robin Burke Interview:
+### Entree Style Recommenders - Robin Burke Interview
 
 * Problem Entree Style Recommenders were solving:
     1. Look at navigating in spaces with lots of choices of restaurants.
@@ -204,7 +185,7 @@ parent: recommender-systems-introduction
         * Quality of experience.
     * Restaurant similaries are "asymetric".
         * Restaurant A may be similar to restautant B because it's cheaper but not vice versa.
-            * People don't want to be recommended a more expensive restaurant. 
+            * People don't want to be recommended a more expensive restaurant.
     * Built a symantic network for cuisines: for any 2 cuisines, find the different between them.
     * Data scraped off the web.
         * Data got old pretty fast: restaurants come and go.
@@ -225,7 +206,7 @@ parent: recommender-systems-introduction
     * Try to use past problems and solutions to solve new problems.
 * When faced with solving a new problem, tries to find a similar case and reuse its solution.
 * Useful in domains without strong problem solving domains.
-* Case-based reasoning is similar to content-based recommendations: rely on characteristics of the items. 
+* Case-based reasoning is similar to content-based recommendations: rely on characteristics of the items.
     * Difference is that case-based reasoning is that items are described with well structure descriptions.
 * Case-based reasoning represents items as structured, feature-based representations.
 * Example of item feature values:
@@ -237,7 +218,8 @@ parent: recommender-systems-introduction
 * Hot topics in case-based recommendation:
     * "Opinion mining"
         * Look at reviews and see the sentiment towards particular features eg MacBook Air battery life etc.
-  
+
+
 ### Dialog-based Recommenders - Interview with Pearl Pu
 
 * Users provide feedback, called "critiques" on recommended items.

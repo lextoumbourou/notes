@@ -5,7 +5,7 @@ category: reference/moocs
 slug: recommender-systems-introduction
 ---
 
-Notes from Coursera's [Introduction to Recommender Systems: Non-Personalized and Content-Based](https://www.coursera.org/learn/recommender-systems-introduction)  by Joseph A Konstan and Michael D. Ekstrand.
+Notes from Coursera's [Introduction to Recommender Systems: Non-Personalized and Content-Based](https://www.coursera.org/learn/recommender-systems-introduction) by Joseph A Konstan and Michael D. Ekstrand.
 
 # Contents
 

@@ -14,9 +14,7 @@ Notes from Khan Academy video [Basic geometry: language and labels | Introductio
     * "metry" - measurement
     * Therefore, geometery is about how shapes and space (things we see) related to each other.
 
-
 ## Plane
-
 
 * A [Plane](../../permanent/geometry-plane.md) is a flat surface that has 2 dimensions: width and height and goes on infinity in either direction.
 
@@ -28,7 +26,6 @@ Notes from Khan Academy video [Basic geometry: language and labels | Introductio
 
     * Points are commonly labelled using upper case letters: A, B, C, D etc
     * Point is said to be 0-dimension: it doesn't provide any direction information.
-
 
 ## Line Segment
 

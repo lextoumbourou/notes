@@ -95,7 +95,6 @@ modified: 2023-04-08 00:00
         * We have 1 R 2, 1 R 3, 1 R 4, 2 R 3, 2 R4, 3 R 4
         * $R = \{(1,2), (1,3),(1,4), (2, 3), (2, 4), (3, 4)\}$
 
-
 ### 9.105 Matrix and graph representatins of a relation
 
 * Relations using matrices
@@ -144,7 +143,7 @@ $$
     * Let A = { 1, 2, 3, 4, 5 }
     * Consider a relation : $\leq (x, y) \in R$ if and only if $x \leq y$
     * Note the diagonal is all 1s.
-    
+
 $$
 M_r = \begin{bmatrix}
 1 & 1 & 1 & 1 & 1 \\

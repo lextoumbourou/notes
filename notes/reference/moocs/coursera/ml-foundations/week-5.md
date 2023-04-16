@@ -12,7 +12,6 @@ parent: ml-foundations
     * Pandora
     * Facebook friend recommendations
     * Drug-target interactions
-
 * Building recommender with classification
     * Popularity
         * What are people viewing now?
@@ -20,7 +19,6 @@ parent: ml-foundations
             * Rudimentary solution to the "cold-start problem": what to show the user when you know nothing about them.
         * Limitations:
             * No personalization
-
     * Classification model (like sentiment analysis)
         * Considered supervised learning (?).
         * Potential features:
@@ -37,24 +35,22 @@ parent: ml-foundations
             * Quality of information may be low.
             * Features may not be available (might not know age etc).
             * Doesn't work as well as "collaborative filtering"
-
 * Collaborative filtering
     * "People who bought x also bought y."
     * Requires co-occurrence matrix:
         * Store # users who bought both items i & j
         * In code:
-   
+
                   purchased_items_pos                  =  ['Nike Air', 'Reebook Pump', 'Mercedes Pumas']
                   purchases_also_made['Nike Air']      =  [53,         2,               3] 
                   purchases_also_made['Reebook Pump']  =  [2,          22,              6]
                   purchases_also_made['Mercedes Pumas] =  [3,          6,               100] 
 
         * Considered a "symmetric" matrix because
-  
-                    matrix['Nike Air']['Mercedes Pumas'] == matrix['Mercedes Pumas']['Nike Air']
-  
-            * "Number of users who bought Nike Airs and Mercedes Pumas is the same as users who bought a Mercedes Pumas and Nike Airs."
 
+                    matrix['Nike Air']['Mercedes Pumas'] == matrix['Mercedes Pumas']['Nike Air']
+
+            * "Number of users who bought Nike Airs and Mercedes Pumas is the same as users who bought a Mercedes Pumas and Nike Airs."
     * How it would be used:
 
         1. User buys Nike Airs.
@@ -65,9 +61,8 @@ parent: ml-foundations
     * Need to normalize co-occurrence matrix
         * Very popular items "drowns out" other items.
         * One strategy: "Jaccard similarity"
-
     * "Jaccard similarity"
-    
+
         ![Normalise by Popularity](/_media/ml-foundations-normalize-by-popularity.png)
 
       * Normalize by popularity.
@@ -78,17 +73,14 @@ parent: ml-foundations
           3. Divide 1 by 2
 
       * In code:
-      
+
                 purchased_i.union(purchased_j) / purchased_i.intersection(purchased_j)
 
     * Limitations:
         * Doesn't factor in purchase history, only looks at current item.
             * Solution: "weighed average of purchased items".
-
   * Weighted average of purchased items
-
     * For all potential recommendable products, go through and calculate similarity score based on each of user's purchase history (maybe weigh recent purchases higher).
-
     * In code:
 
             user_inventory = {'book', 'hat', 'shoe'}
@@ -98,13 +90,10 @@ parent: ml-foundations
             highest_j = sort(score)
 
     * Limitations:
-
       * Doesn't use a variety of available features:
-
         * Context
         * User features
         * Product features
-
       * "Cold start problem" - dealing with user's with no purchase history.
 
   3. Discovering hidden structure by matrix factorization
@@ -120,8 +109,8 @@ parent: ml-foundations
       * Point: guess the rating a user would give to movies they haven't seen.
     * Overview:
 
-      1.  Describe movie ``v`` with topics ``R(v)``: how much action, romance, drama:
-      
+      1. Describe movie ``v`` with topics ``R(v)``: how much action, romance, drama:
+
                movie_genres                       = ['action', 'romance', 'drama']
                movie_genres_amount['Taxi Driver'] = [0.3,      0.1,        0.5]  # R(v)
                movie_genres_amount['Goodfellas']  = [0.2,      0.1,        0.7]  # R(v)
@@ -138,44 +127,42 @@ parent: ml-foundations
       4. Sort movies by ```Rating(u, v)```
 
 * Predictions in matrix form
-  
+
     * Looking at score for ```Rating(u, v)``` == ```<Lu, Rv>``` < element-wise product and sum.
     * Can get the ```u```th from the ```L``` matrix row and multiple by the ```v```th row from the ``R`` matrix column.
-    
-        ![Predictions in matrix form](/_media/ml-foundations-predictions-in-matrix-form.png)
-      
-* Discovering hidden structure by matrix factorization 
 
-    * Using only observed rating (black squares), we want to estimate L and R matrices. 
+        ![Predictions in matrix form](/_media/ml-foundations-predictions-in-matrix-form.png)
+
+* Discovering hidden structure by matrix factorization
+    * Using only observed rating (black squares), we want to estimate L and R matrices.
     * Look at predictions compared to actual observed rating (similar to Regression):
-    
+
               RSS(L, R) = (Rating(u, v) - <Lu, Rv>) ** 2 + sum([(u_prime, v_prime) for pairs if Rating(u_prime, v_prime)
-  
+
     * Reason called a "Matrix Factorization Model" because taking matrix and approximating with factorization.
     * Many efficient algorithms for factorization.
     * Limitations:
         * Cold start problem: new user or new movies (no ratings).
-
 * Featurized matrix factorization
     * Features capture context
         * Time of day
         * What I just saw
         * User info
         * Past purchases
-  
+
     * Discovered topics from matrix factorization capture "groups of users" who behave similarly.
          * Women from Seattle who teach and have a baby.
-        
+
     * Combine to mitigate cold-start problem
         * Ratings for a new user from features only.
         * As more information about user is discovered, matrix factorization *topics* become more relevant.
-  
+
     * "Blending models"
         * Winning team of Netflix prize blended over 100 models.
-  
-*  Performance metric for recommender systems
+
+* Performance metric for recommender systems
       * Classification accurary
-    
+
           * Problems:
               * Major class: recommend no items.
               * Can only get a limited subset of correctly classified items, since user has limited attention.
@@ -199,29 +186,28 @@ parent: ml-foundations
                   precision = len(items_recommended.intersection(items_liked)) / len(items_recommended)  # 2 / 4
 
   * Optimal recommenders
-  
+
       * "How do you maximise recall?" - just recommend everything.
           * Small precision.
       * What is optimal recommender:
           * Recall = 1 (everything liked was recommended).
           * Precision = 1 (everything recommended was liked).
-
 * Precision-recall curve
     * Input: a specific recommender system
     * Output: Algorithm-specific precision-recall curve
     * Optimal recommender precision / recall curve:
-    
+
         ![Perfect Precision Recall Curve](/_media/ml-foundations-perfect-precision-recall-curve.png)
-  
+
     * Realistic recommender:
-    
+
         ![Realistic Precision Recall Curve](/_media/ml-foundations-realistic-precision-recall-curve.png)
-  
+
     * Comparing algorithms:
       * Largest "area under the curve" (AUC).
       * Set desired recall and maximise precision (precision at k).
-  
-*   Recommender systems ML block diagram
+
+* Recommender systems ML block diagram
     * Training data: user, products, ratings table
     * Feature extraction:
         * (user_id, product_id).

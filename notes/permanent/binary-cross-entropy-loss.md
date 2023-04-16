@@ -1,6 +1,6 @@
 ---
 title: Binary Cross-Entropy Loss
-date: 2021-08-08 17:00
+date: 2021-08-08 00:00
 tags:
   - MachineLearning
   - LossFunctions
@@ -18,7 +18,7 @@ For a single binary output, the function can be expressed as:
 
 Or in math:
 
-$$L(p, y) = −(\underbrace{y \times log(𝑝)}_{\text{Expr 1}} + \underbrace{(1−𝑦) \times log(1−𝑝)}_{\text{Expr 2}})$$ 
+$$L(p, y) = −(\underbrace{y \times log(𝑝)}_{\text{Expr 1}} + \underbrace{(1−𝑦) \times log(1−𝑝)}_{\text{Expr 2}})$$
 
 Where $p$ is the model's predictions and $y$ is the true label.
 

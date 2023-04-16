@@ -1,6 +1,6 @@
 ---
 title: CFrame Math Operations
-date: 2021-08-21 11:00
+date: 2021-08-21 00:00
 status: draft
 tags:
   - Roblox
@@ -18,9 +18,9 @@ Notes from [CFrame Math Operations](https://developer.roblox.com/en-us/articles/
 * Next 3 is `cf.rightVector`
 * Next 3 after that is `cf.upVector`
 * Next 3 after that is `cf.lookVector`
-
 * CFrame * CFrame
     * CFrames are 4x4 matrices of this form:
+
     ```
     [
       [m11, m12, m13, x],
@@ -29,6 +29,7 @@ Notes from [CFrame Math Operations](https://developer.roblox.com/en-us/articles/
       [0, 0, 0, 1]
     ]
     ```
+
     * 2 CFrames can be multiplicated with [Matrix Multiplication](../../permanent/matrix-multiplication.md)
 * CFrame * Vector3
     * Results in Vector3.
@@ -38,6 +39,7 @@ Notes from [CFrame Math Operations](https://developer.roblox.com/en-us/articles/
 * Inverse of a CFrame
     * Matrices are generally not commutative (with the exception of identity and some matrices)
         * If you multiply a matrix by its inverse, either pre or post, it was always return the identity CFrame
+
         ```
         local cf = CFrame.new(1, 2, 3) * CFrame.Angles(math.pi/2, 0, 0)
         
@@ -45,13 +47,15 @@ Notes from [CFrame Math Operations](https://developer.roblox.com/en-us/articles/
 
         print(cf:inverse()*cf)
         ```
+
 * Reverting to original values
     * If you had, `local cf = cf1 * cf2`, and were only given `cf` and `cf1`, could you find `cf2`?
         * `cf1:inverse() * cf = cf1:inverse() * cf1 * cf2`
         * `cf1:inverse() * cf = CFrame.new() * cf2` since `cf:inverse() * cf = identityCFrame`
         * `cf1:inverse() * cf = cf2` since identityCFrame * cf = cf`
 * Rotating a door
-    * If you used `CFrame.Angles` on a part, it would spin from the center. 
+    * If you used `CFrame.Angles` on a part, it would spin from the center.
+
     ```
     local door = game.Workspace.Door
 
@@ -59,7 +63,9 @@ Notes from [CFrame Math Operations](https://developer.roblox.com/en-us/articles/
         door.CFrame = door.CFrame * CFrame.Angles(0, math.rad(1)*dt*60, 0)
     end)
     ```
+
     * But we can rotate a hinge. Then to calculate the offset of the door from the un-rotated hinge
+
     ```
     local door = game.Workspace.Door
     local hinge = game.Workspace.Hinge
@@ -70,7 +76,7 @@ Notes from [CFrame Math Operations](https://developer.roblox.com/en-us/articles/
         door.CFrame = hinge.CFrame * offset -- apply offset to rotated hinge
     end)
     ```
-    
+
 * CFrame methods
     * `CFrame:ToObjectSpace()`
         * Equivalent to `CFrame:inverse() * cf`
@@ -89,4 +95,4 @@ Notes from [CFrame Math Operations](https://developer.roblox.com/en-us/articles/
         * Equivalent to `(CFrame - CFrame.p):inverse() * v3`
         * Does not make `v3` relative to `CFrame.p`. Assumes input `v3` already relative.
     * `CFrame:VectorToWorldSpace()`
-        * Equivalent to `(CFrame - CFrame.p) * v3*` 
+        * Equivalent to `(CFrame - CFrame.p) * v3*`

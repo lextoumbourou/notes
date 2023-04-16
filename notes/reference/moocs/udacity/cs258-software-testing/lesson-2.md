@@ -9,7 +9,7 @@ status: draft
 # Lesson 2: Coverage Testing
 
 * Partioning the Input Domain
-  * Create a class of inputs that proves some output is correct 
+  * Create a class of inputs that proves some output is correct
 * Test coverage
   * "Measure of proportion of program exercised during testing"
   * Pros
@@ -26,7 +26,7 @@ status: draft
 * Branch coverage
   * You get 100% branch coverage if call ```if``` statements both ways.
   * Example
-    *  ```if x == 0: print 'Hello'``` would need
+    * ```if x == 0: print 'Hello'``` would need
     * You get 100% coverage if your test runs when x is 0 and when it isn't.
 * 8-Bit Address (exercise)
   * How it works:
@@ -50,11 +50,11 @@ status: draft
   * Large amount of work: only for certain industries.
 * Path coverage
   * "Cares how you get somewhere"
-  * Can't test all but but you'd like to test majority cases. 
+  * Can't test all but but you'd like to test majority cases.
   * Can cause exponential sized tests
 
   <img src="./images/path-coverage-example.png"></img>
- 
+
 * Boundary value coverage
   * No tight technical definition
   * Test values close to some number boundary, where behaviour changes based on values
@@ -91,6 +91,7 @@ status: draft
   * Has methods: ```insert(key)```, ```delete(key)```, ```lookup(key)```
   * Left child - always has a key ordered before the parent node.
   * Right child - always has a key after
+
   ```
     5
    |  |
@@ -98,6 +99,7 @@ status: draft
   | |  |
   2 4  7
   ```
+
   * As you add elements, it balances tree.
   * When you access node, it moves to the root.
     * Frequently accessed elements become faster to access.

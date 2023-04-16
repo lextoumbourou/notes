@@ -12,7 +12,6 @@ tags:
 
 * Assign more than one IP address to an interface
     * Unsupported by DHCP
-
 * Can add with `ip addr` command:
 
         > ip addr show
@@ -52,13 +51,10 @@ tags:
 ## Bonding
 
 * To use it, make sure ```NetworkManager``` is off.
-
 * Bonding modes:
-
     * Mode 0 (balance-rr) - round robin policy; all interfaces are used. Any slave can receive
     * Mode 1 (active-backup) - fault tolerant. Only one slave interface can be used at a time
     * Mode 3 (broadcast) - fault tolerant. All packets are broadcast from the slave interfaces
-
 * Bonding config is stored in: ```/etc/sysconfig/network-scripts/ifcfg-bond0```
 
         DEVICE=bond0
@@ -89,11 +85,9 @@ tags:
 ## Tuning Kernel Network Parameters
 
 * ```sysctl``` options are as follows:
-
     * ```-a``` - list all available params
     * ```-w``` - change a sysctl setting
     * ```-p``` - load in sysctl settings from file
-
 * To setup kernel for packet forwarding:
 
         > vi /etc/sysctl.conf
@@ -114,7 +108,6 @@ tags:
         default via 192.168.0.254 dev br0
 
 * Add routes with ```ip route add network/netmask via router_ip [dev <interface>]```
-
 * Edit route file with ```/etc/sysconfig/network-scripts/route-iface``` with these 3 lines:
 
         ADDRESSX=network

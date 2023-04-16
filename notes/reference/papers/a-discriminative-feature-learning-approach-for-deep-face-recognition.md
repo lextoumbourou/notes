@@ -30,7 +30,7 @@ However, in facial recognition, you cannot pre-collect all possible test identit
 
 Discriminative features have two properties:
 
-* features from the same class should be close together, aka "inter-class dispensation." 
+* features from the same class should be close together, aka "inter-class dispensation."
 * features from different classes should be far apart, aka "intra-class compactness."
 
 In Fig 1. we see a typical image classification pipeline, comparing separable and discriminative features.
@@ -68,25 +68,21 @@ Paper runs experiments on:
     * Sun, Y., Wang, X., Tang, X.: Hybrid deep learning for face verification. In: Proceedings of the IEEE International Conference on Computer Vision, pp. 1489–1496 (2013)
     * Taigman, Y., Yang, M., Ranzato, M., Wolf, L.: Deepface: closing the gap to human level performance in face verification. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1701–1708 (2014)
     * Wen, Y., Li, Z., Qiao, Y.: Latent factor guided convolutional neural networks for age-invariant face recognition. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 4893–4901 (2016)
-
 * Mapping pair of face images to distance
     * Chopra, S., Hadsell, R., LeCun, Y.: Learning a similarity metric discriminatively, with application to face verification. In: 2005 IEEE Computer Society Conference on Computer Vision and Pattern Recognition, CVPR 2005, vol. 1, pp. 539–546. IEEE (2005).
         * They train siamese networks to drive the similarity metric to be small for positive and large for negative pairs.
     * 13. Hu, J., Lu, J., Tan, Y.P.: Discriminative deep metric learning for face verification in the wild. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1875–1882 (2014)
         * Introduce a margin between positive and negative face image pairs.
-
 * Softmax modifications
     * Sun, Y., Wang, X., Tang, X.: Deep learning face representation from predicting 10,000 classes. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1891–1898 (2014)
     * Taigman, Y., Yang, M., Ranzato, M., Wolf, L.: Deepface: closing the gap to human level performance in face verification. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 1701–1708 (2014)
-
 * Joint Identification Verification Supervision Signal
     * Sun, Y., Chen, Y., Wang, X., Tang, X.: Deep learning face representation by joint identification-verification. In: Advances in Neural Information Processing Systems, pp. 1988–1996 (2014)
     * Wen, Y., Li, Z., Qiao, Y.: Latent factor guided convolutional neural networks for age-invariant face recognition. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 4893–4901 (2016)
     * Sun, Y., Wang, X., Tang, X.: Deeply learned face representations are sparse, selective, and robust. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 2892–2900 (2015)
         * Add fully connected layer and loss functions to each conv layer.
-
 * Triplet Loss
-    *  Liu, J., Deng, Y., Huang, C.: Targeting ultimate accuracy: Face recognition via deep embedding. arXiv preprint (2015). arXiv:1506.07310
+    * Liu, J., Deng, Y., Huang, C.: Targeting ultimate accuracy: Face recognition via deep embedding. arXiv preprint (2015). arXiv:1506.07310
     * Parkhi, O.M., Vedaldi, A., Zisserman, A.: Deep face recognition. In: Proceedings of the British Machine Vision, vol. 1, no. 3, p. 6 (2015)
     * Schroff, F., Kalenichenko, D., Philbin, J.: Facenet: a unified embedding for face recognition and clustering. In: Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 815–823 (2015)
         * In this paper, they minimise the distance between an anchor and a positive, while maximising the distance between an anchor and a negative until the margin is met.
@@ -156,7 +152,7 @@ Training data uses web-collected training data, including:
 * CASIA-WebFace
 * CACD2000
 * Celebrity
- 
+
 They remove images with identities appearing in testing datasets, which goes to 0.7M images of 17,189 unique persons.
 
 The authors horizontally flip images for augmentation.
@@ -166,7 +162,7 @@ They train three types of models for comparison:
 * Model A: Softmax loss
 * Model B: Softmax and contrastive loss
 * Model C: Softmax and center loss
-    
+
 They extract features for each image and the horizontally flipped one and concatenate them as representation.
 
 They compute the score as Cosine Distance of 2 features after PCA.
@@ -252,7 +248,7 @@ They test the algorithm on only one of the three galleries.
 
 **Face Identification**
 
-Face identification aims to match a given probe image to those with the same person in the gallery. This task computes the similarity between each given probe face image and the gallery, including at least one image with the same identity as the probe one. The gallery contains a different scale of distractors, from 10 to 1 million, leading to increasing testing challenges. 
+Face identification aims to match a given probe image to those with the same person in the gallery. This task computes the similarity between each given probe face image and the gallery, including at least one image with the same identity as the probe one. The gallery contains a different scale of distractors, from 10 to 1 million, leading to increasing testing challenges.
 
 In Fig 8, they show the results of face identification experiments. They measure performance using Cumulative Match Characteristics (CMC) curves, which is the probability that a correct gallery image is in top-K.
 
@@ -269,7 +265,7 @@ They compute the True Accept Rate (TAR) and False Accept Rate (FAR) and plot the
 ![Fig 9. ROC Curves of different verification methods](/_media/center-loss-fig-9.png)
 
 Some of the methods they compare against include methods that require hand-crafted features, including LBP (Local Binary Pattern) and shallow models like JointBayes.
- 
+
 From Fig. 8 and Fig. 9, we can see that these modes perform poorly: their accuracies drop as the number of distractors increases.
 
 Model C performs the best out of A and B and outperforms the other published methods.

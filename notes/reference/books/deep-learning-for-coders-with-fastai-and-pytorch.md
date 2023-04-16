@@ -16,7 +16,7 @@ status: draft
             * Simplified model of a brain's neuron could be represented with addition and thresholding.
                 * Thresholding example: `value = max(0, value)`
             * Walter Pitts was self-taught and homeless most of his life.
-    * 1958 
+    * 1958
         * Work was later up by Frank Rosenblatt who developed the Mark 1 perceptron machine describe in “The Design of an Intelligent Automaton”
     * 1969
         * Perceptrons (MIT Press) by Marvin Minsky and Seymour Papert showed a single layer of neurons could not learn functions including XOR
@@ -37,7 +37,7 @@ status: draft
 	* How to learn Deep Learning
 		* Harvard professor David Perkins, who wrote Making Learning Whole (Jossey-Bass), teach the "whole game"
 			* Baseball example: That means that if you’re teaching baseball, you first take people to a baseball game or get them to play it. You don’t teach them how to wind twine to make a baseball from scratch, the physics of a parabola, or the coefficient
-			* In Deep Learning: helps if you have the motivation to fix model 
+			* In Deep Learning: helps if you have the motivation to fix model
 		* Hardest part of DL is "artisanal": learning if your model is training properly, have you got enough data etc
 	* Modern deep learning terminology
 		* "Functional form" of model is architecture (people use model to mean architecture confusing)
@@ -55,14 +55,15 @@ status: draft
 * [Domain Shift](../../permanent/domain-shift.md) (pg. 104)
     * Data that model performs inference on changes over time.
     * Example: types of customers an insurance sees changes over time, making their earlier models less useful.
-    
+
+
 ## Chapter 5. Image Classifier
 
 * The book is structured to teach all details of deep learning, but motivating each example with an actual problem.
-*  Datasets tends to be structured in one of 2 ways (pg. 213-214):
-    *  Files either in folders or with metadata (like labels) in the filename.
-    *  A CSV (or similar) where each row is an item. In image classification, each row may include a filename.
-*  L class (pg. 214-215)
+* Datasets tends to be structured in one of 2 ways (pg. 213-214):
+    * Files either in folders or with metadata (like labels) in the filename.
+    * A CSV (or similar) where each row is an item. In image classification, each row may include a filename.
+* L class (pg. 214-215)
     * fastai enhancement to Python's list.
 * [Presizing](../../permanent/presizing.md) (pg. 216-219)
     * Images need to be same size to collate into tensors.
@@ -77,7 +78,7 @@ status: draft
             * On validation, only resize is done.
 * Train a simple model early (pg. 221)
 * [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md) (pg. 222-231)
-    * Defined as:  [Softmax Activation Function](../../permanent/softmax-activation-function.md) then [Negative Log-Likelihood](../../permanent/negative-log-likelihood.md)
+    * Defined as: [Softmax Activation Function](../../permanent/softmax-activation-function.md) then [Negative Log-Likelihood](../../permanent/negative-log-likelihood.md)
     * [Exponential Function](../../permanent/exponential-function.md)
         * Defined as $e^x$
             * $e$ is a number about 2.718
@@ -104,7 +105,7 @@ status: draft
         * So it's the same a [Root mean-squared error - L2 Loss](../../permanent/Root mean-squared error - L2 Loss.md) in regression.
         * Because gradient is linear, don't see sudden jumps or exponential increases in gradients
 * Model Interpretation
-    * [Confusion Matrix](Confusion Matrix) (pg. 232) 
+    * [Confusion Matrix](Confusion Matrix) (pg. 232)
     * `most_confused` method for showing the items with highest loss (pg. 232-233)
 * Improving the model
     * [Learning Rate Finder](Learning Rate Finder) (pg. 233-236)

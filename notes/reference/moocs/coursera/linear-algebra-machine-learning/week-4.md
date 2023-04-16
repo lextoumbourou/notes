@@ -43,7 +43,6 @@ modified: 2023-04-09 00:00
 
 * [Dot Product](../../../../permanent/dot-product.md) revisited using Einstein's Summation Convention (05:55-07:14)
     * The dot product between vectors $\vec{u}$ and $\vec{v}$ in the summation convention is: $u_{i}v_{i}$
-
     * We can also consider a dot product a matrix product of a row vector and a column vector:
 
         ![Dot product as matrix multiplication](/_media/laml-dot-product-as-matrix-mult.png)
@@ -62,7 +61,6 @@ modified: 2023-04-09 00:00
             * The two triangles on either side are the same size, proving that the projection is the same length in either direction. So that proves the [Dot Product](../../../../permanent/dot-product.md) is symmetrical and also that projection is the [Dot Product](../../../../permanent/dot-product.md).
                 * That explains why matrix multiplication with a vector is considered a projection onto the vectors composing the matrix (the matrix columns).
 
-
 ## Matrics transform into the new basis vector set
 
 ### Matrics changing basis
@@ -75,11 +73,9 @@ modified: 2023-04-09 00:00
         ![Pandas basis vectors](/_media/laml-pandas-basis-vectors.png)
 
         * In Panda's world, those basis vectors are $\begin{bmatrix}1 \\ 0\end{bmatrix}$ and $\begin{bmatrix}0 \\ 1\end{bmatrix}$
-
     * If we have a vector described in Panda's world as $\frac{1}{2} \begin{bmatrix}3 \\ 1\end{bmatrix}$, we can get it in our frame, by multiplying with Panda's basis vectors:
         $\begin{bmatrix}3 & 1 \\ 1 & 1\end{bmatrix} \begin{bmatrix}\frac{3}{2} \\ \frac{1}{2} \end{bmatrix} = \begin{bmatrix}5 \\ 2 \end{bmatrix}$
         * Which begs the question: how can we translate between Panda's world into our world?
-
     * Using the [Matrix Inverse](../../../../permanent/matrix-inverse.md) of Panda's basis vector matrix we can get our basis in Bear's world:
 
         $B^{-1} = \frac{1}{2} \begin{bmatrix}1 & -1 \\ -1 & 3\end{bmatrix}$
@@ -117,7 +113,6 @@ modified: 2023-04-09 00:00
     * An operation where we interchange the rows and columns of a matrix.
     * ${A^{T}}_{ij} = A_{ji}$
     * $\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}^{T} = \begin{bmatrix}1 & 3 \\ 2 & 4\end{bmatrix}$
-
 * [Orthonormal Basis Set](../../../../permanent/orthonormal-basis-set.md) (01:09-06:35)
     * If you have a square matrix with vectors that are basis vectors in new space, with the condition that the vectors are orthogonal to each other and they're unit length (1)
         * In math:
@@ -129,7 +124,6 @@ modified: 2023-04-09 00:00
         * The transpose of these matrices is another orthogonal matrix.
         * The determinant of these is 1 or -1.
         * In Data Science, we want an orthonormal basis set where ever possible.
-
 
 ## Recognising mapping matrices and applying these to data
 
@@ -175,5 +169,4 @@ modified: 2023-04-09 00:00
             ![Reflecting in a plane](/_media/laml-reflecting-in-a-plane.png)
 
             * $E T_{E} E^{-1} r = r'$
-
     * Because $e$ is orthonormal, we know the transpose is the inverse.

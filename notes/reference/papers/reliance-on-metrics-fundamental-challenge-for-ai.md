@@ -1,6 +1,6 @@
 ---
 title: Reliance on Metrics is a Fundamental Challenge for AI
-date: 2021-06-12 15:00
+date: 2021-06-12 00:00
 tags:
   - ML Ethics
 category: reference/papers
@@ -17,7 +17,7 @@ summary: Notes from paper Reliance on Metrics is a Fundamental Challenge for AI 
 * Goodhart's Law, generalised by Marilyn Strathern in 1997, describes the fundamental problem with metrics:
 
     > "When a measure becomes a target, it ceases to be a good measure"
-    
+
 * Paper finds supporting principles:
     * [Metrics Are Proxies](../../permanent/metrics-are-proxies.md) what you really care about
     * Metrics can and will be gamed: aka [Metric hacking](Metric hacking)

@@ -1,6 +1,6 @@
 ---
 title: Fleeting Notes
-date: 2021-06-06 10:00
+date: 2021-06-06 00:00
 tags:
   - Zettelkasten
 cover: /_media/fleeting-notes.jpg

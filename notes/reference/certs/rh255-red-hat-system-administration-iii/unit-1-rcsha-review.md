@@ -69,7 +69,6 @@ yum groupinstall "directory-client"
             * Used to search for LDAP entries (user, group info)
     * CA Cert
     * Config LDAP with system-config-authentication
-
 * Use `getent` to query LDAP:
 
 ```bash
@@ -78,15 +77,12 @@ ldapuser1:x:1701:1701:LDAP Test User 1:/home/guests/ldapuser1:/bin/bash
 ```
 
 * autofs is used to automount shares for LDAP users
-
     * auto.master -> master config file for `autofs`
         * 3 things needed:
             * server name
             * exported share
             * local mount point
-
 * mount options:
-
     * `showmount` is used to query NFS servers for shares:
 
 ```bash
@@ -104,9 +100,7 @@ Export list for instructor.example.com:
 
 * `ssh -X user@servername`
     * `-X` sets X-forwarding enabled
-
 * Public key of remote machine stored locally under `~/.ssh/known_hosts`
-
 * `/etc/ssh/sshd_config` commands:
     * Set `PermitRootLogin = no` to deny root login
     * Set `PasswordAuthentication = no` to deny password authentication

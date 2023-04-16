@@ -1,6 +1,6 @@
 ---
 title: The determinant
-date: 2021-11-04 19:00
+date: 2021-11-04 00:00
 category: reference/videos
 summary: Notes from [The determinant](https://www.youtube.com/watch?v=Ip3X9LOh2dk) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.
 cover: /_media/3blue-determinant-cover.png
@@ -36,7 +36,7 @@ $\det(\begin{bmatrix}1 && 2 \\ 3 && 4\end{bmatrix}) = -2$
 
 What that means is that the transformation causes the orientation to flip.
 
-In 3d, a determinate tells us how much a volume gets scaled. The name for a parallelogram in 3d space is a parallelepiped. 
+In 3d, a determinate tells us how much a volume gets scaled. The name for a parallelogram in 3d space is a parallelepiped.
 
 $\det(\begin{bmatrix}1.0 && 0.0 && 0.5 \\ 0.5 && 1.0 && 0.0 \\ 1.0 && 0.0 && 1.0\end{bmatrix})$
 
@@ -50,7 +50,7 @@ Point your fingers and thumbs on your right hand like this:
 
 Then if after the transformation, you can only do that with your left hand, you know the determinate is negative.
 
-To calculate determinant in 2d space, we use formula: 
+To calculate determinant in 2d space, we use formula:
 
 $\det(\begin{bmatrix}a && b \\ c && d\end{bmatrix}) = ad - bc$
 
@@ -62,7 +62,7 @@ The intuition for it:
 
 * Even if either b or c = 0, the area would turn into a parallelogram and remain the same area.
 
-![Determinate when b or c =  0](/_media/determinate-when-bc-0.png)
+![Determinate when b or c = 0](/_media/determinate-when-bc-0.png)
 
 Computing the determinants by hand can be done, and you get better with practice.
 

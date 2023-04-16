@@ -1,6 +1,6 @@
 ---
 title: Essense of linear algebra
-date: 2021-04-06 22:00
+date: 2021-04-06 00:00
 category: reference/videos
 cover: /_media/vectors-3blue1brown-cover.png
 status: draft
@@ -25,7 +25,6 @@ Vectors are the building block of linear algebra.
 * In Linear Algebra, the vector is nearly always rooted at the Origin, which is the place where x and y intersect on the coordinate system.
     * Note how it differs from physics student's perspective that can consider a vector at any point in space.
 * The "back and forth" between the physics and computer science student understanding of vectors is that we represent coordinates for a line as lists of numbers.
-
 * 2d coordinate system refresher
     * Has a horizontal line called the x-axis
     * Have a vertical line called the y-axis
@@ -34,7 +33,6 @@ Vectors are the building block of linear algebra.
          ![origin in coordinate system](/_media/origin-in-coordinate-system.png)
 
         * Can be thought of as the center of space and root of all vectors.
-
     * An arbitrary length is chosen to represent one, then tick marks are created on each axis spaced at this distance
 
         ![Tick marks in the coordinate system](/_media/tick-marks-in-coordinate-system.png)
@@ -47,7 +45,6 @@ Vectors are the building block of linear algebra.
     2. The second number describes how far along the y-axis.
 
 * We distinguish vectors from points by writing them vertically using square bracket notation.
-
 * In 3d, an additional axis is drawn that's perpendicular to the other axes, adding a 3rd coordinate
 
     ![Vector in 3d space](/_media/vector-in-3d-space.png)
@@ -79,7 +76,6 @@ Vectors are the building block of linear algebra.
     ![Vector scaling](/_media/vector-scaling.png)
 
     * Referred to as "scaling the vector," hence the number in this context is called a "scalar."
-
     * Computer science perspective:
 
         $$2 \begin{bmatrix} 1 \\ 2 \end{bmatrix} = \begin{bmatrix} 2 * 1 \\ 2 * 2 \end{bmatrix} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$$

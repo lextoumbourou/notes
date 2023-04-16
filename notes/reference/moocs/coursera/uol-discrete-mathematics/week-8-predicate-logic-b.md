@@ -55,7 +55,7 @@ modified: 2023-04-08 00:00
 * [Argument (Logic)](../../../../permanent/Argument (Logic).md)
     * An argument in Propositional Logic is a sequence of [Proposition](../../../../permanent/proposition.md)lled the conclusion
     * The other propositions in the argument are called premises or hypotheses.
-    
+
 * [Valid Argument](../../../../permanent/Valid Argument.md)
     * An argument is valid if the truth of all its premises implies the truth of the conclusion.
     * Example 1
@@ -88,7 +88,6 @@ modified: 2023-04-08 00:00
             | 1 | 1 | 1 |
 
 * In row 2, the premise is true, but the conclusion is false.
-
 * [Rules of Inference](../../../../permanent/Rules of Inference.md)
     * Building blocks in constructing incrementally complex valid arguments.
     * We can use truth table to figure out if argument is True or False but it's too laborious when you have lots of vars.
@@ -107,7 +106,6 @@ modified: 2023-04-08 00:00
             * "If it is snowing, I will study D.M."
             * "It is snowing"
             * Therefore: "I will study Discrete Maths"
-
 * [Modus tollens](Modus tollens)
     * Tautology: $(\neg q \land (p \rightarrow q)) \rightarrow \neg p$
     * The rule of inference:
@@ -120,7 +118,6 @@ modified: 2023-04-08 00:00
             * "If it is snowing, I will study Discrete Maths"
             * "I will not study Discrete Maths"
             * Therefore: "It is not snowing"
-
 * [Conjunction](../../../../permanent/conjunction.md)
     * Tautology: $((p) \land (q)) \rightarrow (p \land q)$
     * The rule of inference:
@@ -133,7 +130,6 @@ modified: 2023-04-08 00:00
             * "I will study Programming."
             * "I will study Discrete Maths"
             * Therefore: "I will study Programming and Discrete Maths"
-
 * [Simplification](Simplification)
     * Tautology: $(p \land q) \rightarrow p$
     * The rule of inference:
@@ -144,7 +140,6 @@ modified: 2023-04-08 00:00
             * $q$: I will study Programming.
             * I will study Discrete Math and programming.
             * Therefore: "I will study Discrete Math"
-
 * [Addition](Addition)
     * Tautology: $p \rightarrow (p \lor q)$
     * The rule of inference:
@@ -155,7 +150,6 @@ modified: 2023-04-08 00:00
             * $q$: "I will study Discrete Math"
             * "I will visit Paris"
             * Therefore: "I will visit Paris or I will study Discrete Math"
-
 * [Hypothetical syllogism](Hypothetical syllogism)
     * Tautology: $((p \rightarrow q) \land (q \rightarrow r)) \rightarrow (p \rightarrow r)$
     * The rule of inference:
@@ -168,7 +162,6 @@ modified: 2023-04-08 00:00
             * If it is snowing, I will study Discrete Math.
             * If I study Discrete Math, I will pass the quizzes.
             * Therefore: if it is snowing, I will pass the quizzes.
-
 * [Disjunctive syllogism](Disjunctive syllogism)
     * Tautology: $((p \lor q) \land \neg p) \rightarrow q$
     * The rule of inference:
@@ -181,7 +174,6 @@ modified: 2023-04-08 00:00
         * "I will study Discrete Maths or I will study Art"
         * "I will not study Discrete Maths"
         * Therefore: "I will study art"
-
 * [Resolution](Resolution)
     * Tautology: $((p \lor q) \land (\neg p \lor r)) \rightarrow (q \lor r)$
     * The rule of inference:
@@ -262,7 +254,6 @@ modified: 2023-04-08 00:00
     * Example:
         * All comp science students study discrete maths.
         * $\therefore$ Therefore, John, who is a computer science student, studies discrete math.
-
 * [Universal Generalization (UG)](Universal Generalization (UG))
     * The rule of inference:
         * $P(c)$ for an arbitrary element of the domain.
@@ -272,7 +263,6 @@ modified: 2023-04-08 00:00
             * Let c be an arbitrary element in DS.
             * c studies ML.
             * $\therefore$ Therefore $\forall x \in  \text{DS}$, $x$ studies ML.
-
 * [Existential Instantiation (EI)](Existential Instantiation (EI))
     * The rule of inference:
         * $\exists x \ P(x)$
@@ -281,7 +271,6 @@ modified: 2023-04-08 00:00
         * DS = {all data science students}
         * There exists a student of data science who uses Python Pandas Library.
         * Therefore, there is a student $c$ who is using Pandas.
-
 * [Existential Generalization (EG)](Existential Generalization (EG))
     * The rule of inference:
             * $P(c)$ for some element of the domain.
@@ -290,7 +279,6 @@ modified: 2023-04-08 00:00
         * DS = {all data science students}
         * John, a student of data science, got a A in ML.
         * Therefore, there exists someone in DS who got an A in ML.
-
 * [Universal Modus Ponens](Universal Modus Ponens)
     * The rule of inference:
         * $\forall x P(x) \rightarrow Q(x)$
@@ -301,7 +289,6 @@ modified: 2023-04-08 00:00
         * Every computer science student studying data science will study ML.
         * John is a computer science student studying data sciecnce.
         * Therefore, John will study ML.
-
 * [Universal Modus Tollens](Universal Modus Tollens)
     * The rule of inference:
         * $\forall x P(x) \rightarrow Q(x)$

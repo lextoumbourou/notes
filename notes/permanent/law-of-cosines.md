@@ -1,6 +1,6 @@
 ---
 title: Law Of Cosines
-date: 2021-09-04 17:00
+date: 2021-09-04 00:00
 tags:
   - Maths
   - Trigonometry
@@ -21,7 +21,7 @@ We can also use it to find the angle, given the length of the triangle's sides.
 
 $\cos \theta = \frac{a^2 + b^2 - c^2}{2ab}$
 
-or 
+or
 
 $\theta = \arccos(\frac{a^2 + b^2 - c^2}{2ab})$
 

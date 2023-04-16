@@ -13,7 +13,7 @@ It math it's denoted as: $p \land q$.
 
 Latex symbol: `\land`.
 
-In programming,  it would be the statement `condition AND condition2`.
+In programming, it would be the statement `condition AND condition2`.
 
 Example:
 

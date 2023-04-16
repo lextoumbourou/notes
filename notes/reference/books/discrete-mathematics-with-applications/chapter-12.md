@@ -29,7 +29,7 @@ status: draft
             * $A \cap (B \cup C) = (A \cap B) \cup (A \cap B)$
             * $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
         * Identity properties
-            *  $A \cup \emptyset = A$
+            * $A \cup \emptyset = A$
             * $A \cap U = A$
         * Complement properties
             * $A \cup A' = U$
@@ -65,7 +65,7 @@ Distributive laws
 
 Identity laws
 
-| +         | .         | 
+| +         | .         |
 | --------- | --------- |
 | x + 0 = x | x . 1 = x |
 

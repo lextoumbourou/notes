@@ -13,23 +13,19 @@ parent: ml-foundations
         * prices of other houses.
         * other features of houses (number of bedrooms etc).
     * ML method: Regression
-
 * Case Study 2: Sentiment analysis
     * Data:
         * look at other reviews.
         * "decision boundary" -on
     * ML method: Classification
-
 * Case Study 3: Document retrieval
     * Data:
         * collection of articles.
     * ML Method: Clustering
-
 * Case Study 4: Product recommendation
     * Data:
         * past purchases
     * ML Method: Matrix Factorization
-
 * Case Study 5: Visual product recommender
     * Data:
         * input images (shoes)
@@ -53,7 +49,8 @@ parent: ml-foundations
     * Model selection
 
 ## 3. Classification
-  
+
+
 * Models
     * Linear classifiers
     * Kernels
@@ -111,12 +108,10 @@ parent: ml-foundations
 ## Goals of course
 
 * Minimum prereqs required to understand the concepts
-
 * Target audience
     * Software engs
     * Data enthusiast
     * Scientist
-
 * Math background
     * Basic calculus (lol)
         * Concept of derivatives
@@ -124,7 +119,6 @@ parent: ml-foundations
         * Vectors
         * Matrices
         * Matrix multiplies
-
 * Programming experience
     * Basic Python
 

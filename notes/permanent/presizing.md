@@ -1,6 +1,6 @@
 ---
 title: Presizing
-date: 2021-08-05 18:00
+date: 2021-08-05 00:00
 tags:
   - MachineLearning
   - ImageClassification

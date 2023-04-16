@@ -296,7 +296,6 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
         * Squared error: $$L(y, f_\hat{w}(\mathbf{x})) = (y - f_\hat{w}(\mathbf{x}))^2 $$
             * [Root mean-squared error - L2 Loss](../../../permanent/root-mean-squared-error-L2-loss.md) squared.
                 * Can have a very high cost if difference is large, compared to absolute error.
-
 * Compute training error:
   1. Define some loss function (as above).
   2. Computing training error.
@@ -334,11 +333,13 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
 such that:
 
 		1. Training error ($$\hat{w}$$
+
 ) < Training error ($$w'$$
 
 ).
 
 		2. True error ($$\hat{w}$$
+
 ) > True error ($$w'$$
 
 )
@@ -486,6 +487,7 @@ get closer to 0, coefficients get larger (RSS takes over) and shit gets crazy.
 .
 
   * The gradient of the L2 norm is analygous to the 1d case: derivate of $$w^2 $$
+
 = $$2w $$
 
 * Approach 1: closed-form solution:
@@ -581,7 +583,9 @@ value.
 .
 
 		* Common to use $$K=5 $$
+
 (5-fold CV) or $$K=10 $$
+
 (10-fold CV) if $$K=N $$
 
 is computational infeasible to run.
@@ -648,6 +652,7 @@ is sparse (eg has a lot of 0s in the dataset) can eliminate all 0 features.
  (ie result is just least squares.
 
 			* When $$\lambda = \infty $$
+
 , $$\hat{w}^{lasso} = 0 $$
 
  (ie coefficients shrink to 0).
@@ -689,6 +694,7 @@ is sparse (eg has a lot of 0s in the dataset) can eliminate all 0 features.
 == residual without jth feature)
 
 	* Setting to 0 and solving for $$\hat{w}_j $$
+
 results in $$\hat{w}_j = P_j $$
 
 	* Intuition: if the residual between the predictions without j and the actual prediction is large, then the weight of j will be large and vice versa (to do: check this as your understanding improves).

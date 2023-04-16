@@ -155,13 +155,13 @@ modified: 2023-04-09 00:00
     | domination laws | $p \lor \mathbf{T} \equiv \mathbf{T}$ | $p \land \mathbf{F} \equiv \mathbf{F}$ |
 
     * Example
-    
+
         ![distributive-law-truth-table](/_media/distributative-law-truth-table.png)
-        
+
     * Laws of propositional logic 2
-    
+
          ![equivalence-table](../../../../journal/_media/equivalence-table.png)
-         
+
 * Equivalence Proof
     * Example the equivalence between $\neg (p \land (\neg p \lor q))$ and $(\neg p \lor \neg q)$
      * $\neg (p \land (\neg p \lor q))$ - given proposition

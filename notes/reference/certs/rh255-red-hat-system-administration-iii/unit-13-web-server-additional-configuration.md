@@ -9,7 +9,6 @@ tags:
 ---
 
 * HTTP security context is ```httpd_content_t```
-
 * To create a new folder for httpd, you will need to ensure the ```httpd_sys_content_t``` directive has been setup on the directory
 
         > semanage fcontext -a -t httpd_sys_content_t '/wwwx(/.*)?
@@ -23,9 +22,7 @@ tags:
         > restorecon -vvFR /wwwx
 
 * Main config file: ```/etc/httpd/conf/httpd.conf```
-
     * `NameVirtualHost`
-
         * use name-based virtual hosting
 
                 NameVirtualHost 192.168.0.102:80
@@ -50,9 +47,7 @@ tags:
         </VirtualHost>
 
 * Put script in bash with cgi extension
-
 * Make sure apache owns it. Give it r-x perms.
-
 * Set SELinux security context:
 
         > semanage fcontent -a -t http_sys_script_exec_t 'www(/.*)?'

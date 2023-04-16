@@ -5,7 +5,7 @@ tags:
   - StoryWriting 
 ---
 
-A Character Web [@schellArtGameDesign2015a] *(pg. 356-357)* is a story writing tool for creating strong character relationships. You simply write down what each character thinks of each other. 
+A Character Web [@schellArtGameDesign2015a] *(pg. 356-357)* is a story writing tool for creating strong character relationships. You simply write down what each character thinks of each other.
 
 Example:
 
@@ -17,6 +17,5 @@ Example:
 * Jughead: archie’s best friend. What they have in common is that they are both underdog
 
 It can help raise questions about character interactions you may not have otherwise considered.
-
 
 Related to [Interpersonal Circumplex](interpersonal-circumplex.md) as it's another tool for building rich character relationships within a story.

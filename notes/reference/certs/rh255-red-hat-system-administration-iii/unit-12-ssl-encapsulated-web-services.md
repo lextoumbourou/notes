@@ -9,13 +9,9 @@ tags:
 ---
 
 * Need to install ```yum install mod_ssl``` or ```yum groupinstall web-server```
-
 * When installed ```mod_ssl``` you can find the key config under ```/etc/httpd/conf.d/ssl.conf```
-
 * When server first connects, it will complain that it doesn't have the public key
-
 * Self-signed certificates have same subject and issuer
-
 * openssl command examples to get public key cert info:
 
     ```openssl x509 -in example-ca.crt --text``` gets data on a certificate
@@ -63,5 +59,4 @@ tags:
 ## Generating a Certificate Signing Requests
 
 * Use ```--genreq``` option when running ```genkey```
-
 * The cls will be stored in: ```/etc/pki/tls/tls/certs```, send that to Verisign or whatevs and they'll return you a key

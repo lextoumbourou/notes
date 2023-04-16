@@ -15,7 +15,6 @@ tags:
         * Incorrect BIOS settings
     * Troubleshooting
         * Vendor specific
-
 * GRUB
     * Loads initial ram file system ("initramfs")
     * Loads and executes kernel
@@ -29,7 +28,6 @@ tags:
         * Choose 'e' or 'a' and edit kernel
         * Boot into single-user mode
         * Boot with `init=/bin/bash`
-
 * Kernel
     * Detects hardware devices
     * Loads device drivers
@@ -39,7 +37,6 @@ tags:
         * Bad initial RAM file system image
         * Badly identified root file system
         * Corrupted root file system
-
 * init and Upstart
     * The first userspace process started on the machine is `/sbin/init`. The `init` process is responsible for completing the boot process by starting all other non-kernel processes.
     * Fixing a read only mount:
@@ -49,7 +46,6 @@ tags:
 * MBR (512 bytes)
     * First 446 bytes - initial boot loader
     * Next 64 bytes - parition table (where is the starting sector and ending sector)
-
 * The Rescue Shell
     * Mount under `/mnt/sysimage`
     * Select rescue media

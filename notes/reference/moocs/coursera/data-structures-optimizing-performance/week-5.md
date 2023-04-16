@@ -24,7 +24,6 @@ parent: data-structures-optimizing-performance
   * Random probing: randomly place element somewhere on collision.
 * Separate chaining: keep a list of elements at index locations. Just add elements to list on collision.
   * Has own drawbacks.
-
 * Downsides to hash tables:
   1. Resizing cost:
     * When hash table gets too full (usually 70%), need to resize it.
@@ -47,7 +46,7 @@ parent: data-structures-optimizing-performance
   * Start with ``speel``
   * Close == altered as little as possible.
   * Possible transformations:
-    * 1 step away (single character transformation)  
+    * 1 step away (single character transformation)
       * Substitution (change a single char): ``speel`` -> ``apeel``, ``sbeel``, ``spell``, ``speek``
       * Insertion (add a single char): ``speel`` -> ``bspeel``, ``sipeel``, ``speeel``.
       * Deletion (remove one char): ``speel`` -> ``seel`` -> ``spee``
@@ -74,7 +73,7 @@ parent: data-structures-optimizing-performance
   * Problem: tree can get extremely large.
     * How many strings are "1 away" from initial word, where k is the length of the word?
         * Substitutions: 25 * k
-        * Insertions: 25 * (k + 1)  (+1 because you can put an element at the end of the list.
+        * Insertions: 25 * (k + 1) (+1 because you can put an element at the end of the list.
         * Deletions: k
         * Add all together: 52k + 26 new strings
         * Do that for every element of the tree and daaaymn it's a big tree.

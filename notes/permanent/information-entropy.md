@@ -1,6 +1,6 @@
 ---
 title: Information Entropy
-date: 2021-07-28 20:45
+date: 2021-07-28 00:00
 tags:
   - InformationTheory
 cover: /_media/claude-shannon-entropy.jpeg

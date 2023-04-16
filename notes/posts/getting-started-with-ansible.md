@@ -12,7 +12,7 @@ This weekend I decided to fix the mess that was my side-project
 production environment. I had 3 Linode VMs running 3 or 4 production
 websites and a couple of websites in development scattered haphazardly.
 There was a Postgres instance wasting cycles on each and no unity across
-configs. 
+configs.
 
 So, I decided I was going to implement some form of automated
 configuration management. Tools like Puppet or Chef seemed like
@@ -23,14 +23,14 @@ good opportunity.
 
 </p>
 
-* [Why Ansible?][]  
-* [My Requirements][]  
-* [Part 1: Preparing my Inventory][]  
-* [Part 2: Configuring Users and Groups with Modules][]  
-* [Part 3: Automating Tasks Using Playbooks][]  
-* [Part 4: Using Templates To Setup Privileges and SSH Security][]  
-* [Part 5: Source Control][]  
-* [Summary][]  
+* [Why Ansible?][]
+* [My Requirements][]
+* [Part 1: Preparing my Inventory][]
+* [Part 2: Configuring Users and Groups with Modules][]
+* [Part 3: Automating Tasks Using Playbooks][]
+* [Part 4: Using Templates To Setup Privileges and SSH Security][]
+* [Part 5: Source Control][]
+* [Summary][]
 
 * * * * *
 
@@ -54,13 +54,13 @@ biggest draw card, the source code is written in Python.
 Before beginning my Ansible journey, I set aside some goals to guide the
 process:
 
-1.  I should never, *ever* have to log into a production server to
+1. I should never, *ever* have to log into a production server to
     configure it. That means everything down to the first user account
     should be handled by Ansible.
-2.  Everything configured should be completely self documenting. If I
+2. Everything configured should be completely self documenting. If I
     come back to them after a year, it should be very clear what
     everything does.
-3.  The entire system should be extremely portable. Any time I need to
+3. The entire system should be extremely portable. Any time I need to
     rebuild my development server, the configs should just be a
     `git pull` away.
 
@@ -428,7 +428,6 @@ And we're done.
 ### [Part 5: Source Control](#part-5)
 
 Lastly, I put my entire repo in source control.
-
 
     :::bash
     lex@desktop:/etc/ansible/lexandstuff> git init

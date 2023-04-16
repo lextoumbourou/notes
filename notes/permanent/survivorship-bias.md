@@ -8,7 +8,7 @@ cover: /_media/world-war-2-aircraft-survivorship-bias-abraham-wald-17.jpeg
 
 Survivorship Bias is a common error of thinking where we arrive at false conclusions by only examining success cases.
 
-For example, on one of my former teams, some of us had been keeping tabs on how well Microservices had worked at NetFlix and we didn't want to miss out. We made a collective decision to start a new project following a strict Microservice architecture. 
+For example, on one of my former teams, some of us had been keeping tabs on how well Microservices had worked at NetFlix and we didn't want to miss out. We made a collective decision to start a new project following a strict Microservice architecture.
 
 However, we failed to take into account the stories of where Microservices hadn't worked out, discovering for ourselves how much unnecessary complexity they introduce for a small team. This was so common in tech that Thoughtworks named it [Microservice Envy](https://www.thoughtworks.com/radar/techniques/microservice-envy) in their 2015 Radar.
 

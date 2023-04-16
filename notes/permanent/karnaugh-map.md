@@ -25,7 +25,7 @@ You would represent it in a K-Map as follows:
 |     |              | $\mathbf{0}$ | $\mathbf{1}$ |
 | x'  | $\mathbf{0}$ | 0            | 0            |
 | x   | $\mathbf{1}$ | 1            | 1             |
- 
+
 It can be used for expressions with 2, 3, 4 or 5 variables.
 
 If we have a 3 variable truth table, in this example the function is $f(x, y, z) = (x + y) . z$

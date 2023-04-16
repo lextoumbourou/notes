@@ -1,6 +1,6 @@
 ---
 title: Literature Notes
-date: 2021-06-06 13:00
+date: 2021-06-06 00:00
 tags:
   - Zettelkasten
 cover: /_media/reference-notes.jpg
@@ -13,5 +13,5 @@ Luhmann, a key proponent of Zettelkasten, stored his reference notes in a separa
 The goal is to capture the "gist" of what the author is saying, by rewriting the key ideas in our own words. Be careful of capturing quotes in place of actual understanding. Writing helps to check our understanding and forces us to confront ourselves when we don't understand as well as we think. [@ahrensHowTakeSmart2017] *(pg. 93)*
 
  The extensiveness of what we capture in literature notes depends on the text and our level of familiarity. The ability to find key information improves with practice, which the system of Zettelkasten provides everytime we use it. [@ahrensHowTakeSmart2017] *(pg. 83)*
- 
+
  Cover image source is [Forte Labs](https://fortelabs.co/blog/how-to-take-smart-notes/).

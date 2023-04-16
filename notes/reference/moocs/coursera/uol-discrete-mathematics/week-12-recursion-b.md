@@ -66,7 +66,7 @@ modified: 2023-04-08 00:00
 * Infinite Sequence
     * Function from the set of positive integers to set of real numbers.
 * It can be useful to formalise the problem as sequence before solving it.
-*  Example: [[Towers of Hanoi]]
+* Example: [[Towers of Hanoi]]
     * ![[week-12-hanoi-tower.png]]
       * Want to get discs from spoke A to C.
       * Can only move one disk at a time.

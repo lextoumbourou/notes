@@ -10,10 +10,9 @@ parent: recommender-systems-introduction
 
 * Broken into 4 courses:
     * Non-personalized and content-based.
-    * Nearest-neighbor collaborativ  filtering.
+    * Nearest-neighbor collaborativ filtering.
     * Evaluation and metrics.
     * Matrix factorization and advanced techniques.
-
 * Capstone project:
     * Case study analysis - design best recommender for a business use case.
 
@@ -35,32 +34,26 @@ parent: recommender-systems-introduction
     * Products
     * Matchmaking
     * Sequences (musical playlists)
-
 * Interesting property:
     * Is it new items (movies, books)?
     * Re-recommend old ones (groceries, music)?
-
 * Examples of recommenders:
     * Google search results.
-
 * Purposes of recommdations
     * Sales.
     * Education of user/customer.
         * Tip of the day in Office products.
     * Building community around products or content.
-
 * Recommendation context
     * What's the user doing when making recommendation?
         * Shopping
         * Listening to music
     * How does the context constrain the recommender?
         * Groups, automatic consumption, level of attention?
-
 * Whose opinion?
     * Recommenders are usually based on somebodies opinion:
         * Experts, other users, etc.
     * "Phoaks" (People helping one another know stuff)
-
 * Personalization level
     * Generic / non-personalized
         * Same recs for all.
@@ -70,7 +63,6 @@ parent: recommender-systems-introduction
         * Match what you're currently doing.
     * Persistent
         * Interests over time.
-
 * Privacy and trustworthiness
     * Who knows what about me?
         * Personal info reveal.
@@ -81,7 +73,6 @@ parent: recommender-systems-introduction
         * Vulnerability to external manupulation
             * Example: higher scores for new movies. Are movie studies "hacking" the results?
         * Transparency of "recommenders": reputation
-
 * Interfaces
     * Types of output
         * Predictions
@@ -93,7 +84,6 @@ parent: recommender-systems-introduction
             * Being asked to review things.
         * Implicity
             * How often have you looked at a certain page?
-
 * Recommendation algorithms
     * Non-personalized summary stats
     * Content-based filtering
@@ -115,7 +105,6 @@ parent: recommender-systems-introduction
   * Items
   * Ratings
       * Users make rating on items somehow (implicity and explicit).
-
 * Non-personalized summary stats:
     * External community data:
         * Best selling, most popular, trending stuff.
@@ -126,7 +115,6 @@ parent: recommender-systems-introduction
         * Zagat restaurant ratings
         * Billbard music rankings.
         * TripAdvisor hotel ratings.
-
 * Content-based filtering:
     * User ratings x item attributes => model
     * Model applied to new items via attributes
@@ -139,7 +127,6 @@ parent: recommender-systems-introduction
     * Examples:
         * Personalized news feeds.
         * Artist or genre music feeds.
-
 * Personalized Collaborative Filtering
     * Use opinions of others to predict/recommend.
     * User model - set of ratings
@@ -148,7 +135,6 @@ parent: recommender-systems-introduction
         * Fill in missing values (predict)
         * Select promising cells (recommend)
     * Several different techniques.
-
 * Collaborative Filtering Techniques
     * User-user
         * Get "neighbourhood" of people with similar tasts.
@@ -159,7 +145,6 @@ parent: recommender-systems-introduction
     * Dimensionality reduction
         * Intuition: taste yields a lower-dim matrix.
         * Compress and use taste representation.
-
 * Note on evalution:
     * Will spend time on evaulation:
         * Accuracy of predictions.
@@ -204,7 +189,7 @@ parent: recommender-systems-introduction
         * Temporal recommendations: "what should you consume next?"
         * Recs for education.
         * Low-frequency, high-stakes recs: can we help you find a house or other things you don't have rating for?
-    * Recognized speciality that brings ML, business + marketing, human-computer interaction etc. 
+    * Recognized speciality that brings ML, business + marketing, human-computer interaction etc.
 * Promising directions:
     * Context.
     * Sequences: music, education etc.

@@ -37,7 +37,7 @@ So for any vector, we can multiply each coordinate by the corresponding column o
 
 $\begin{bmatrix}3 && 2 \\ -2 && 1\end{bmatrix} \begin{bmatrix}5 \\ 7\end{bmatrix} = 5\begin{bmatrix}3 \\ -2\end{bmatrix} + 7\begin{bmatrix}2 \\ 1\end{bmatrix}$
 
-Another example is a 90 degree rotation of space. $\hat{i}$ ends up at $\begin{bmatrix}0 \\ 1\end{bmatrix}$,  $\hat{j}$ ends up at $\begin{bmatrix}-1 \\ 0\end{bmatrix}$
+Another example is a 90 degree rotation of space. $\hat{i}$ ends up at $\begin{bmatrix}0 \\ 1\end{bmatrix}$, $\hat{j}$ ends up at $\begin{bmatrix}-1 \\ 0\end{bmatrix}$
 
 We get transformation matrix: $\begin{bmatrix}0 && -1 \\ 1 && 0\end{bmatrix}$
 

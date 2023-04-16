@@ -45,7 +45,6 @@ modified: 2023-04-08 00:00
         * `[1] = [3] = [5] = {1, 3, 5}`
         * `[2] = [4] = {2, 4}`
 
-
 ### 9.203 Partial and total order
 
 * Definition of a [Partial Order](permanent/partial-order.md).
@@ -85,7 +84,6 @@ modified: 2023-04-08 00:00
         * We proved R is a partial order
         * However, Z* contains elements that are incomparable, such as 5 and 7.
         * R is not totally ordered.
-
 
 # Peer-graded Assignment: 9.207 Relations
 
@@ -175,7 +173,6 @@ Let $S = \{a, b, c\}$ and $A = \{(c, c), (a, b), (b, b), (b, c), (c, b)\}$
 Define a relation $R$ on $S$ by "$x$ is related to $y$ whenever $(x, y) \in A$"
 
 1. Draw the relationship digraph
-
 2. The relationship $R$ is not reflexive. What pair (x, y) should be added to $A$ to make $R$ refexive?
 
 (a, a)

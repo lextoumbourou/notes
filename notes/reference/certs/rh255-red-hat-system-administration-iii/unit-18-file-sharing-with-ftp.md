@@ -9,15 +9,11 @@ tags:
 ---
 
 * Config: `/etc/vsftpd/vsftpd.comf`
-
-* Anonymous viewing 
-
+* Anonymous viewing
     * `anonymous_enable = YES`
     * `write_enable` = NO`
     * `local_enable` = NO`
-
 * Dropbox
-
     * `mkdir /var/ftp/incoming`
     * `chgrp ftp /var/ftp/incoming`
     * `chmod 730 /var/ftp/incoming`
@@ -26,7 +22,6 @@ tags:
             drwx-wx---. 2 root ftp 4096 Aug  8 15:26 /var/ftp/incoming/
 
     * Security context for public ftp directory: t_content_rw_t
-
     * Adjust boolean:
 
             > getsebool -a | grep ftpd | grep write

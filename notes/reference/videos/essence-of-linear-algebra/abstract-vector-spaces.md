@@ -30,7 +30,7 @@ Additivity: $L(\vec{v} + \vec{w}) = L(\vec{v}) + L(\vec{w})$
     * If you add 2 vectors, then apply transform to sum, it's the same as adding the transform of $\vec{v}$ and $\vec{w}$
 Scaling: $L(c\vec{v}) = cL(\vec{v})$
     * If you scale a vector $\vec{v}$ then apply transform, it's the same as scaling transformed $\vec{v}$
-    
+
 You hear it described as "preserving" addition and scalar multiplication.
 
 The idea of grid lines remaining parallel and evenly spaced is really to just illustration of what these 2 properties mean with points in 2d space.

@@ -14,7 +14,6 @@ modified: 2023-04-08 00:00
     * Involves counting objects and studying the mathematical properties of different arrangement of objects.
     * Applications include programming, physics, economics and other fields like prob theory.
 
-
 ## Lesson 10.103 The basics of counting
 
 * [Product Rule](permanent/product-rule.md)

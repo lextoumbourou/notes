@@ -1,6 +1,6 @@
 ---
 title: Nonsquare matrices as transformations between dimensions
-date: 2021-11-16 20:00
+date: 2021-11-16 00:00
 category: reference/videos
 summary: Notes from [Nonsquare matrices as transformations between dimensions](https://www.youtube.com/watch?v=v8VSDg_WQlA) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
 cover: /_media/nonsquare-matrices-cover.png
@@ -18,7 +18,7 @@ Encoding a transformation as a matrix is the same as before: look where the [Bas
 
 $\begin{bmatrix}\textcolor{red}{2} && \textcolor{green}{0} \\ \textcolor{red}{-1} && \textcolor{green}{1} \\ \textcolor{red}{-2} && \textcolor{green}{1}\end{bmatrix}$
 
-That transformation takes $\hat{i}$ to $\begin{bmatrix}\textcolor{red}{2} \\ \textcolor{red}{-1} \\ \textcolor{red}{-2}\end{bmatrix}$ and $\hat{j}$ to $\begin{bmatrix}\textcolor{green}{0} \\ \textcolor{green}{1} \\ \textcolor{green}{1}\end{bmatrix}$ 
+That transformation takes $\hat{i}$ to $\begin{bmatrix}\textcolor{red}{2} \\ \textcolor{red}{-1} \\ \textcolor{red}{-2}\end{bmatrix}$ and $\hat{j}$ to $\begin{bmatrix}\textcolor{green}{0} \\ \textcolor{green}{1} \\ \textcolor{green}{1}\end{bmatrix}$
 
 The [Column Space](../../../permanent/column-space.md) (the place where all vectors land) of this matrix is a 2d plane slicing through the origin. However, we consider the matrix to be "full rank" since the number of dimensions in column space equals those in the input space.
 

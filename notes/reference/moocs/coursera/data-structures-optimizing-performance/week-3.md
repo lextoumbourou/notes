@@ -36,7 +36,6 @@ parent: data-structures-optimizing-performance
       * Have dummy nodes at start and end of list, which are buffers to keep you running off start and end of the list.
     * O(1) insertion time.
 * Core: Generics and Exceptions
-
 * Implementation of ``ListNode``:
 
           class ListNode<E> {  // not a public class.
@@ -47,15 +46,12 @@ parent: data-structures-optimizing-performance
   * ``E`` is a paramterized type.
   * Replace with an actual type then refer to type as ``E`` throughout class.
     * Refered to a "generics"
-
 * Handling bad input
   * Since we don't know about type, can't return -1 on bad input.
   * Returning null is a bit yick.
   * Raise an exception: ``throw new NullPointerException("Cannot store null pointers, yo")``
   * If exception is a "checked exception" then we will to declare in method header that it throws the exception.
-
 * Core: Java Code for a Linked List
-
   * List node defined as follows:
 
         class ListNode<E> {
@@ -90,11 +86,9 @@ parent: data-structures-optimizing-performance
 
 * Core: Testing and Confidence
   * Risk assessment of problem domain should be considered when decided on degrees of confidence for code (self-driving car vs blog).
-
 * Core: Testing Practises
   * Standard Cycle: write code, write tests and test code.
   * Test-Driven Development: write tests, write code and test code.
-
 * Testing types: black box testing and clear box testing.
   * Black box
     * more representative of how users use the code.

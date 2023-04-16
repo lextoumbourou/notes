@@ -40,7 +40,6 @@ status: draft
     $L(\hat{y},y) = (\hat{y}_1-y_1)^2 + (\hat{y}_2-y_2)^2 ... + (\hat{y}_8-y_8)$
 
     * (noting that there are 8 output labels)
-
 * When Pc = 0:
 
     $(\hat{y}_1-{y}_1)^2 \text{ if }y_1=0$
@@ -74,9 +73,7 @@ status: draft
 ![Turning Convolution Layers to FC](/_media/conv-to-fc.png)
 
 * This conversion lets you implement a convolutional implementation of sliding windows detection.
-
 * Instead of running forward prop on a bunch of different sections of the image, can run it just once with the filters sharing a lot of data.
-
 * Bounding boxes are generally not that accurate.
 
 ## Bounding Box Predictions
@@ -130,7 +127,6 @@ status: draft
 
 * Run a "segmentation algorithm" to find "blobs" that you can potentially run your classifier on.
 	* Should reduce the amount of positions you have to run your convnet on.
-
 * R-CNN:
 	1. Propose regions.
 	2. Classify proposed regions outputting label + bounding box.
@@ -141,5 +137,4 @@ status: draft
 
 * Faster R-CNN:
 	* Use conv network to propose regions.
-
 * Andrew thinks region proposal is interesting, but believes YOLO is a more promising direction for computer vision.

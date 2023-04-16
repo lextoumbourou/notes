@@ -25,6 +25,6 @@ The downside of using it that code can be "shuffled" to trick the metric into in
 
 Code can't be simplify shuffled without refactor, as branches will be examined whether one line or multiple.
 
-The downside, which covers all code coverage metrics, is that tests without assertions will be counted as branch traversal. 
+The downside, which covers all code coverage metrics, is that tests without assertions will be counted as branch traversal.
 
 [@khorikovUnitTestingPrinciples2020] (pg. 8-15)

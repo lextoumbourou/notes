@@ -38,7 +38,7 @@ status: draft
   * enqueue(7); enqueue(8)
   * dequeue gets 7 then 8
 * Equivalent tests
-  * Basic idea: Single test maps single input to an output 
+  * Basic idea: Single test maps single input to an output
   * Big idea: need to find ways to ensure input represents a mapping of as big an output as possible.
     * Input should represent a "class of inputs"
       * If code executes correct for the one input, it should work for all in the class.
@@ -57,22 +57,28 @@ status: draft
   * Assertions!
 * Assertions
   * Check for a property that must be true
+
   ```
   def sqrt(arg):
       ... compute result
       assert result >= 0
       return result
   ```
+
   * Rule 1: Assertions are not for error handling
-  * Rule 2: No side effects! 
+  * Rule 2: No side effects!
+
   ```
   assert change_some_global_var() == 0
   ```
+
     * Optimisations in Python will drop all assertions
   * Rule 3: No silly assertions
+
   ```
   assert (1 + 1) == 2
   ```
+
 * Check rep, the exercise
   * Add additional assertion to ```checkRep()``` to ensure:
     * Catches bug in ```enqueue()``` before it can misbehave
@@ -97,7 +103,7 @@ status: draft
     * We should tests programs with values sampled from their domain
   * Range == set of possible outputs
 * Good test cases
-  * "Interfaces that span trust boundaries are apecial and must be tested on the full range of representable values" 
+  * "Interfaces that span trust boundaries are apecial and must be tested on the full range of representable values"
 * Testing a GUI
   * Domain == set of all possible GUI actinos
   * Range == set of possible GUI application states
@@ -108,7 +114,7 @@ status: draft
     * Race condition:
       * As operators became better with machine, they got faster with tests and started triggering a race condition bug
 * Non-functional inputs
-  * Context switches 
+  * Context switches
     * Switches between different threads of execution
 * Kinds of testing (a survey)
   * White box

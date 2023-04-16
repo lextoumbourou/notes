@@ -28,7 +28,7 @@ $f : \mathbb{R} \rightarrow \mathbb{R}_{\geq 0}$
 
 Note that $\mathbb{R}$ is one of the [Special Infinite Sets](special-infinite-sets.md).
 
-* The [Domain of a Function](function-domain.md)  is the input set that the function maps from, expressed as $D_f = A$.
+* The [Domain of a Function](function-domain.md) is the input set that the function maps from, expressed as $D_f = A$.
 * the [Co-Domain of Function](function-codomain.md) is the output set of a function, expressed as $co-Df = \mathbb{R}_{\geq 0}$.
 * The range of a function, $R_f$, is the set of all possible outputs.
 
@@ -45,7 +45,7 @@ def f(y: int) -> int:
 
 ## Plotting Functions
 
-We can visualise functions by plotting the inputs on the x-axis and the outputs on the y-axis. 
+We can visualise functions by plotting the inputs on the x-axis and the outputs on the y-axis.
 
 ## Common Functions
 

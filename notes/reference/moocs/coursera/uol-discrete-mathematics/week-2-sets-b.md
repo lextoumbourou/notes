@@ -13,28 +13,27 @@ parent: uol-discrete-mathematics
 * [Universal Set](../../../../permanent/sets-universal-set.md)
     * A set containing everything.
     * Represented by letter $U$.
-    
+
 * [Complement](../../../../permanent/set-complement.md)
     * Represented as: $\bar{A}$
     * All the elements in the universal set $U$ but not in $A$: $\bar{A} = U - A$
-    * The union of a set and its compliment, is equal to universal set:  $\bar{A} \cup A = U$
-
+    * The union of a set and its compliment, is equal to universal set: $\bar{A} \cup A = U$
 * [Venn Diagram](../../../../permanent/venn-diagram.md)
     * Used to visualise the possible relations among a collection of sets.
     * In this example, the red area represents the union of A and B:
-    
+
         ![Venn Diagram example](_media/venn-union.png)
 
     * In this example, the red area represents the intersection of A and B:
-    
+
         ![Venn Intersection](/_media/venn-intersection.png)
 
     * In this example, the set difference:
-    
+
         ![Venn Set Difference](/_media/venn-set-diff.png)
 
     * In this example, it shows the symmetric difference between A and B
-    
+
         ![Venn Symmetric Difference](/_media/venn-symmetric-diff.png)
 
     * Can use a Venn Diagram to show that each sets are equivalent.
@@ -46,14 +45,14 @@ parent: uol-discrete-mathematics
     * By Augustus De Morgan (1806 - 1871), a British mathematician.
     * Describe how statements and concepts are related through opposites.
     * Example from set theory:
-        * De Morgan's laws relate to the [intersection](../../../../permanent/intersection.md) and [union](../../../../permanent/union.md) of sets through their complements.
+        * De Morgan's laws relate to the [Intersection](../../../../permanent/intersection.md) and [Union](../../../../permanent/union.md) of sets through their complements.
     * The structure of De Morgan's laws, whether applied to sets, propositions or logic gates is always the same.
     * Law #1: Compliment of the union of 2 sets, $A$ and $B$ is equal to intersection of complements:
         * $\overline{A \cup B} = \bar{A} \cap \bar{B}$
             * $A = \{a, b\}, B = \{b ,c, d\}$
             * $\overline{A \cup B}$ = $\overline{\{a, b, c, d}\}$ = $\{\}$
             * $\overline{A} = \{c, d\}$, $\overline{B} = \{a\}$,
-                * $\overline{A} \cap  \overline{B} = \{\}$, 
+                * $\overline{A} \cap  \overline{B} = \{\}$,
     * Law #2: Complement of the intersection of 2 sets A and B, is equal to union of their complements.
         * $\overline{A \cap B} = \bar{A} \cup \bar{B}$
             * $A = \{a, b\}, B = \{b, c, d\}$
@@ -75,7 +74,7 @@ parent: uol-discrete-mathematics
         * $A \oplus B = B \oplus A$
     * Set difference is not commutative:
         * $A - B \neq B - A$
-        
+
 * [Associativity Operation](../../../../permanent/associativity-operation.md)
     * Concerns grouping of elements in an operation.
         * An example from algebra, the additional of numbers is associative:
@@ -89,7 +88,6 @@ parent: uol-discrete-mathematics
         * $(A \oplus B) \oplus C = A \oplus (B \oplus C)$
     * Set difference is not associate:
         * $(A - B) - C \ne A - (B - C)$
-
 * [Distributivity](../../../../permanent/distributivity.md)
     * Sometimes called the distributive law of multiplication and division.
         * Example in algebra: Given 3 numbers a, b, c: $a(b + c) = ab + ac$
@@ -97,20 +95,20 @@ parent: uol-discrete-mathematics
         * $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
     * Set intersection is distributive over set union
         * $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
- 
+
 * [Set Identities](../../../../permanent/set-identities.md)
 
     ![Set identities table](/_media/set-identities-table.png)
-    
+
     * Set identities can be used to simplify set expressions.
         * Example:
             * Show that $\overline{(A \cap B) \cup \overline{B}} = B \cap \overline{A}$
-            * $= \overline{(A \cap B) \cup \overline{B}} = \overline{(A \cap B)} \cap \overline{\overline{B}}$  -- De Morgan's law.
+            * $= \overline{(A \cap B) \cup \overline{B}} = \overline{(A \cap B)} \cap \overline{\overline{B}}$ -- De Morgan's law.
             * $=\overline{(A \cap B)} \cap B$ -- double complement
-            * $=(\overline{A} \cup \overline{B}) \cap B$  -- De Morgan's law.
+            * $=(\overline{A} \cup \overline{B}) \cap B$ -- De Morgan's law.
             * $=B \cap (\overline{A} \cup \overline{B})$ -- commutative.
             * $=(B \cap \overline{A}) \cup (B \cap \overline{B})$ -- distributive.
-            * $= (B \cap \overline{A}) \cup \emptyset$ --  identity
+            * $= (B \cap \overline{A}) \cup \emptyset$ -- identity
             * $= B \cap \overline{A}$ -- complement
 
 ## 1.207 Partition of a set
@@ -121,13 +119,13 @@ parent: uol-discrete-mathematics
         * all the subsets of A are disjointed.
         * the union of all subsets $A_i$ is equal to $A$.
     * Example:
-    
+
          ![Partition Example](/_media/week-2-partition-example.png)
-         
+
         * $A_1 \cap A_2 = A_2 \cap A_3 = .... A_4 \cap A_5 = \emptyset$
         * $A = A_1 \cup A_2 \cup A_3 \cup A_4 \cup A_5$
         * $\{A_1, A_2, A_3, A_4, A_5\}$ is a partition on $A$
-        
+
 * [Disjoint Sets](../../../../permanent/set-disjoint-sets.md)
     * Two sets are considered disjointed if and only if their intersection is an empty set.
         * $A \cap B = \emptyset$
@@ -138,7 +136,7 @@ parent: uol-discrete-mathematics
 
 **Question**
 
-Given three sets A, B and C, prove that:  $|A \cup B \cup C| =  |A| + |B| + |C| - |A \cap B| - | A \cap C| - |B \cap C|+ |A\cap B\cap C|$
+Given three sets A, B and C, prove that: $|A \cup B \cup C| =  |A| + |B| + |C| - |A \cap B| - | A \cap C| - |B \cap C|+ |A\cap B\cap C|$
 
 **Proof**
 
@@ -159,9 +157,9 @@ $$
 
 **Question**
 
-Let A and B two subsets of the universal set $U = \{ x: x \in \mathbb{Z} \text{ and } 0 \leq x<20\}$. $A$ is the set of even numbers in $U$, where $B$ is the set of odd numbers in $U$. 
+Let A and B two subsets of the universal set $U = \{ x: x \in \mathbb{Z} \text{ and } 0 \leq x<20\}$. $A$ is the set of even numbers in $U$, where $B$ is the set of odd numbers in $U$.
 
-Use the listing method to list the elements of the following sets: $A \cap \overline{B}$,  $\overline{A\cap B}$ , $\overline{A\cup B}$ and $\overline{A\oplus B}$
+Use the listing method to list the elements of the following sets: $A \cap \overline{B}$, $\overline{A\cap B}$ , $\overline{A\cup B}$ and $\overline{A\oplus B}$
 
 **Answer**
 

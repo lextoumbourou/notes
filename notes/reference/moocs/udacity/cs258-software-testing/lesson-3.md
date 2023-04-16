@@ -34,7 +34,7 @@ status: draft
 * Luhn's Algorithm exercise
   * Generate takes two params
     * ```prefix``` - issuer identifier
-    * ```length``` - 
+    * ```length``` -
 * Problems with Random Tests
   * Think about which areas you want to be stressing
   * Stressing programs input validity testing unnecessarily
@@ -47,7 +47,7 @@ status: draft
 * Random Testing vs Fuzzing
   * Fuzzing originally referred to random testing
     * Original fuzzing paper (1990)
-      * They found random testing allowed them to crash 1/4 to 1/3 of utilities without doing any input validity checking. 
+      * They found random testing allowed them to crash 1/4 to 1/3 of utilities without doing any input validity checking.
     * Fuzz revisited (1995)
       * Extended to:
         * Network apps
@@ -65,7 +65,7 @@ status: draft
   * Ensure that enqueues fails when queue is full and succeeds when not
   * Ensure that dequeue fails when queue is empty and succeed when not
   * Keep track of values that come out of dequeue operations
-* Generating Random Input 
+* Generating Random Input
   * "Generative random testing"
     * "inputs are created from scratch"
   * "Mutation-based random testing"

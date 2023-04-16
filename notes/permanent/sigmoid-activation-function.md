@@ -11,13 +11,13 @@ The Sigmoid function squeezes numbers into a probability-like range between 0 an
 
 $$S(x) = \frac{1}{1 + e^{-x}}$$
 
-Intuitively, when `x` is infinity ($e^{-\infty}=0$), the Sigmoid becomes $\frac{1}{1}$ and when `x` is -infinity ($e^{\infty} = \infty$) the Sigmoid becomes $\frac{1}{inf}$. That means the model is incentivised to output values as high as possible in a positive case, and low for the negative case. 
+Intuitively, when `x` is infinity ($e^{-\infty}=0$), the Sigmoid becomes $\frac{1}{1}$ and when `x` is -infinity ($e^{\infty} = \infty$) the Sigmoid becomes $\frac{1}{inf}$. That means the model is incentivised to output values as high as possible in a positive case, and low for the negative case.
 
 [@foxMachineLearningClassification]
 
 It is named Sigmoid because of its S-like [Function Shape](Function%20Shape). Its name combines the lowercase sigma character and the suffix *[-oid](https://www.dictionary.com/browse/-oid)*, which means *similar to*.
 
-It can be described and plotted in Python, as follows: 
+It can be described and plotted in Python, as follows:
 
 {% notebook permanent/notebooks/sigmoid-function.ipynb %}
 

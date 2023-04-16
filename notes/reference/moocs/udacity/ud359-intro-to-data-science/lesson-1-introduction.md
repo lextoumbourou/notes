@@ -3,6 +3,7 @@ title: Lesson 1 - Introduction
 date: 2014-04-16 00:00
 status: draft
 ---
+
 # Lesson 1 - Introduction
 
 * Things a data scientist may do
@@ -58,7 +59,6 @@ status: draft
         * I tried brute forcing the problem for a while before reading the forum for help.
         * A bit annoying that consulting the forums for help usually results in seeing the answer.
         * At this point, I'm going to assume I'm missing a prerequiste. Though I did the statistics course, I think I should go back and brush up on it.
-
 
 ## Opinions
 

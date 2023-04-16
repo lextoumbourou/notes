@@ -1,6 +1,6 @@
 ---
 title: "Out-of-domain data"
-date: 2021-06-22 23:10
+date: 2021-06-22 00:00
 cover: /_media/odd-one-out.png
 tags:
   - MachineLearning

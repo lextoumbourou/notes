@@ -1,3 +1,6 @@
+---
+date: 2023-04-16 00:00
+---
 Title: Migrating TB HBase datasets across datacenters
 Date: 2016-06-19
 Tags: HBase, Migration
@@ -23,7 +26,7 @@ There are a few options for copying data across HBase clusters. [This Cloudera a
 
 Definitely seems like a solid approach. However, at the time of writing, snapshots have a huge limitation in that there's no incremental capability. Since copying the entire dataset with a transfer rate of, say, 100MB/s (round about the best I could get in my tests) that would take about 11 hours to complete the entire dataset. Since we're constantly writing and changing that dataset, it wasn't feasible to have an outage that long.
 
-However, if it is feasible for you to have an outage that long, this is probably the approach I'd take. You need to ensure that your source cluster can communicate with the remote Hadoop cluster, though if that's not possible, you could also consider shipping the tables to S3 as an intermidiate step. 
+However, if it is feasible for you to have an outage that long, this is probably the approach I'd take. You need to ensure that your source cluster can communicate with the remote Hadoop cluster, though if that's not possible, you could also consider shipping the tables to S3 as an intermidiate step.
 
 ### Replication
 
@@ -41,7 +44,7 @@ Anyway, CopyTable seems to fit the task requirements. So let's talk about it in 
 
 Okay, so now we know we're going to use CopyTable, let's get setup for using it over a internet.
 
-### Ensure task nodes are configured correctly.
+### Ensure task nodes are configured correctly
 
 Since CopyTable is simply a MapReduce job, you are required to run an instance of resource manager and an instance of a node manager. These can be started on a node as follows:
 
@@ -59,7 +62,7 @@ At Scrunch, we aren't really running MapReduce jobs yet, so there was a little b
 
 To do: list the steps here.
 
-### Ensure source cluster can communicate with destination cluster.
+### Ensure source cluster can communicate with destination cluster
 
 Since CopyTable performs standard puts on the destination cluster, the MR task machines must be able to access both ZooKeeper and the RegionServers. If you aren't familiar with how the HBase client works, it's something like this:
 
@@ -87,7 +90,7 @@ Here's a screenshot of the security group configuration for the destination clus
 
 To do: add me.
 
-## Preparing the destination cluster 
+## Preparing the destination cluster
 
 This article assumes you have already configured HBase on your destination cluster.
 

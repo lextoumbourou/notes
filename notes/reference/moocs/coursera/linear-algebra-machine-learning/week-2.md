@@ -71,9 +71,7 @@ modified: 2023-04-09 00:00
                which we can rearrange to $\text{adj} = |\vec{s}|\cos\theta$
 
     * We note that the dot product is $|r| * \text{adj}$:
-
          * $r.s = |r| \underbrace{|s| \cos\theta}_{\text{adj}}$
-
     * So the dot product is: "the projection of s onto r" * "size of r": $|r| \times \text{projection}$
     * You can rearrange the expression to: $\frac{r.s}{|r|} = |s|\cos\theta$, to get the scalar projection.
     * That explains why the [Dot Product](../../../../permanent/dot-product.md) is also called the "Projection Product".
@@ -97,7 +95,6 @@ modified: 2023-04-09 00:00
     * If we defined another set of basis vectors $b_1$ and $b_2$, we could describe $\vec{r}$ in terms of those vectors. The numbers in $\vec{r}$ would be different.
         $r_b = \begin{bmatrix} ? \\ ? \end{bmatrix}$
     * We can note that the vector r exists in a different space with another set of numbers.
-
 * [Changing Basis](../../../../permanent/changing-basis.md) (03:36-10:32)
     * We can use the dot product to find the numbers for a [Vector](../../../../permanent/vector.md) in a different space if you know the new basis vectors in terms of the original.
         * In this example, $b_2 = \begin{bmatrix} -2 \\ 4 \end{bmatrix}$ (or `-2, 4` $e_2$s) and $b_1 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$ (or `2, 1` $e_1$s)

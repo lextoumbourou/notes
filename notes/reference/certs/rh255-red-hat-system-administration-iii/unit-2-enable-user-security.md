@@ -15,17 +15,11 @@ tags:
         USER MACHINE = (RUN_AS) COMMANDS
 
 * Examples:
-
     * `%group ALL = (root) /sbin/ifconfig`
-
     * `%wheel ALL=(ALL) ALL`
-
     * `%admins ALL=(ALL) NOPASSWD: ALL`
-
     * Grant use access to commands in NETWORKING group
-
         * `joseph ALL=NETWORKING`
-
 * Use `User_Alias` to grant access to list of users:
 
     User_Alias ADMINS = lex, john
@@ -35,7 +29,6 @@ tags:
     Cmnd_Alias NETWORKING = /sbin/ruote, /sbin/ifconfig
 
 * Aliases are "string of uppercase letters, numbers, and the underscore characters"
-
 * Groups are denoted with %group, username, #uid:
 
         # man sudoers
@@ -45,27 +38,19 @@ tags:
                             '!'* +netgroup |
                             '!'* Runas_Alias
 
-
 ## Kerberos Authentication
 
 * Kerberos more secure than LDAP as it doesn't pass passwords over network
-
 * How it works:
-
     * KDC - key distribution center
         * grants tickets
-
     * KAdmin Server
         * used to update passwords
-
     * Realm
         * set of systems which use the same KDCs
-
 * Configuring auth:
-
     * Via GUI: ```system-config-authentication```
     * Via command-line: ```authconfig```
-
     * Question: Which command line tool can be used for configuring Kerberos?
     * Answer: authconfig
 
@@ -76,13 +61,10 @@ tags:
                 --krb5realm=EXAMPLE.COM --enablesssdauth --update
 
 * Packages required:
-
     * ```yum groupinstall directory-client```
     * ```yum install openldap-clients```
     * ```yum install krb5-workstation```
-
 * Kerberos commands:
-
     * ```klist``` - list tickets
     * ```kdestroy``` - delete tickets
     * ```kinit``` - get new tickets
@@ -108,11 +90,9 @@ tags:
             08/05/13 12:35:46  08/06/13 12:35:44
 
 * Offline LDAP and Kerberos servers can prevent login, but sssd can cache credentials allowing offline login:
-
     * Edit the ```/etc/sssd/sssd.conf``` to configure SSSD
     * Use ```authconfig``` to edit it via the command-line
     * Service could be cached hiding a downed server
     * Logging:
         * `/var/log/sssd`
         * Increase verbosity in `/etc/sssd/sssd.conf` by adding `debug_level=10` under `[domain/default]` (0 - 10)
-

@@ -36,7 +36,7 @@ status: draft
     * small code +
     * strong assertions +
     * mature, tuned random tester +
-    * good coverage results - 
+    * good coverage results -
     * confidence
   * Otherwise, you should also use other testing methods.
 * Tradeoffs in spending time on random testing

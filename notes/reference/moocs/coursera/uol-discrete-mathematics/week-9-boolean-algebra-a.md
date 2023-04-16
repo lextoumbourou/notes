@@ -92,9 +92,9 @@ modified: 2023-04-08 00:00
             * The complement of a product of variables is equal to the sum of the complements of the variables: $\overline{x. y} = \overline{x} + \overline{y}$
         * **Theorem 2**
             * The complement of a sum of variables is equal to the product of the complements of the variables: $\overline{x + y} = \overline{x} . \overline{y}$
-            
+
             ![de-morgans-boolean-algebra](../../../../_media/de-morgans-boolean-algebra.png)
-            
+
     * Proof of distributivity of + over .
         * A truth table to prove the distributivity of + over . using truth tables.
           ![proof-of-distributivity-for-.-and-+](../../../../journal/_media/proof-of-distributivity-for-.-and-+.png)
@@ -124,6 +124,7 @@ modified: 2023-04-08 00:00
               ![prove-absorption-with-truth-table](../../../../_media/prove-absorption-with-truth-table.png)
             * It can also be proved directly:
                  * From $x + (x . y) = x$, if we apply the duality principle, we can deduce: $x . (x + y) = x$
+
 $$
 \begin{align}
 x + (x . y) &= (x . 1) + (x . y) \text{ by } x .1 = x \\

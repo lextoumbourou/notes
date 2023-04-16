@@ -1,6 +1,6 @@
 ---
 title: Dot Products and Duality
-date: 2021-11-28 13:45
+date: 2021-11-28 00:00
 category: reference/videos
 summary: Notes from [Dot products and duality | Chapter 9, Essence of linear algebra](https://www.youtube.com/watch?v=LyGKycYT2v0)) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
 cover: /_media/dot-product-geometry.png
@@ -55,7 +55,7 @@ Like other linear transformations, we can fully describe a linear transformation
 
 $\begin{bmatrix}1 \\ -2\end{bmatrix}$
 
-Now, to follow where a vector like $\begin{bmatrix}4 \\ 3\end{bmatrix}$ would land, find the vector that's $4 \times \hat{i}$ and $3 \times \hat{j}$: $4 \times (1) + 3 \times -2 = -2$ 
+Now, to follow where a vector like $\begin{bmatrix}4 \\ 3\end{bmatrix}$ would land, find the vector that's $4 \times \hat{i}$ and $3 \times \hat{j}$: $4 \times (1) + 3 \times -2 = -2$
 
 ![Dot product 1d transform example](/_media/dot-product-1d-transform.png)
 
@@ -78,7 +78,7 @@ Since it's a linear transformation that takes 2d vectors to numbers, you should 
 The 1st element represents where $\hat{i}$ lands and the 2nd where $\hat{j}$ land.
 
 To find the 2d matrix, we need to think about where $\hat{i}$ and $\hat{j}$ land.
- 
+
 Since $\hat{i}$ and $\hat{u}$ are unit vectors, when you project $\hat{i}$ onto the line passing through $\hat{u}$, it's symmetric. So the answer is the same, asking what $\hat{i}$ lands on or what $\hat{u}$ lands on when projected onto the x-axis.
 
 But, by projecting $\hat{u}$ onto $\hat{i}$, it should be the same as just taking the $x$ coordinate of $\hat{u}$.
@@ -95,8 +95,8 @@ What about non-unit vectors?
 
 Take a non-unit vector and scale it up by 3. Numerically, each component gets multiplied by 3. So the matrix associated takes $\hat{i}$ and $\hat{j}$ 3x the value of where the vectors were landing before. Since it's linear, it implies that we can think of the new matrix as projecting any vector onto the number line copy and multiplying where it lands by 3. This fact explains why we can think of a dot product with a non-unit vector as first projecting onto a vector, then scaling up the length by the length of that vector.
 
-Duality shows up in many different places in math. It refers to situations where you have a "natural-but-surprising correspondence between 2 types of mathematical thing". 
+Duality shows up in many different places in math. It refers to situations where you have a "natural-but-surprising correspondence between 2 types of mathematical thing".
 
-In linear algebra,  the "dual" of a vector is the linear transformation that it encodes. The dual of a linear transformation from 2d space to 1d is a particular vector in that space.
+In linear algebra, the "dual" of a vector is the linear transformation that it encodes. The dual of a linear transformation from 2d space to 1d is a particular vector in that space.
 
 The most important thing to remember about the dot product is that it's a useful geometric tool for projections and testing whether vectors point in the same direction.

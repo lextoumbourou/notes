@@ -5,7 +5,7 @@ tags:
   - Science
 ---
 
-Entropy of a system, is also known as "disorder of a system", refers to the number of possible states of a system. Higher entropy refers to more possible states. 
+Entropy of a system, is also known as "disorder of a system", refers to the number of possible states of a system. Higher entropy refers to more possible states.
 
 #### References
 

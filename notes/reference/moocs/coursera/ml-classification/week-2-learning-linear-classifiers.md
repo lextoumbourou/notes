@@ -22,9 +22,7 @@ status: draft
 
 * Algorithm for one-dimensional space:
 	* while not converged: $w^{(t+1)} < w^{(t)} + \eta \frac{dl}{d}$
-
 * Rough intuition: step towards a maximum multiplying the derivative by a step size, until the derivate is basically 0, which means you have hit the maximum. If you over step, then you should be pulled in the opposite direction, meaning you should eventually converge.
-
 * When multi-dimension, replace derivative with a D-dimensional vector of partial derivatives:
 
     $$\triangledown l(\mathbf{w}) =\begin{bmatrix}\frac{\partial l}{\partial w_0}\\\frac{\partial l}{\partial w_1}\\\frac{\partial l}{\partial w_D}\end{bmatrix}$$
@@ -77,7 +75,6 @@ Rough attempt at writing gradient ascent:
       error = num mistakes / total number of datapoints
 
   * Best possible value is 0: `0 / # number of datapoints.`
-
 * Or classification accuracy:
 
       accuracy = num correct / total number of datapoints
@@ -138,10 +135,10 @@ Rough attempt at writing gradient ascent:
 ## Learning L2 regularised logistic regression with gradient ascent?
 
 * Standard gradient ascent but include the derivate of the L2 value in the equation.
-    * while not converged: $\mathbf{w^{(t+1)}} \leftarrow \mathbf{w^{(t)}} + \eta \triangledown l(\mathbf{w^{(t)}})$ 
+    * while not converged: $\mathbf{w^{(t+1)}} \leftarrow \mathbf{w^{(t)}} + \eta \triangledown l(\mathbf{w^{(t)}})$
 
 ## Sparse logistic regression with L1 regularisation
 
 * Useful for efficient: forces some coefficients to 0, allowing your predictions to ignore the majority of coefficients (useful when you have large feature sets).
 * Total quality:
-*   measure of fit - l1 penalty of coefficients
+* measure of fit - l1 penalty of coefficients

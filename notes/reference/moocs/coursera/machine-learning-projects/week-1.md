@@ -21,7 +21,6 @@ parent: machine-learning-projects
 * May need to introduce a penalty for certain outcomes if it fits a business need.
 * Example: 5% accuracy vs 3% accuracy with a > of seeing porn.
   * Develop an evaluation metric that incorporates a penalty for seeing porn.
-
 * Have 2 distinct steps when building model:
     1. Place target - decide on a error metrics.
     2. Shot at target - choose algorithms, regularisation, normalisation etc.
@@ -64,12 +63,10 @@ parent: machine-learning-projects
 
 * When your algorithm surpasses human-level accuracy, it becomes harder to figure out how to improve algorithm: options become less clear.
 * Problems where ML has surpassed human-level accuracy:
-
     * Online advertising (predicting if a user will click).
     * Product recommendations.
     * Logistics (predicting transit time).
     * Loan approvals.
-
 * All examples require a big database of information.
 	* Not natural perception tasks which humans tend to excel at.
 

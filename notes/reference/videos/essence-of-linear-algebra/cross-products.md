@@ -1,6 +1,6 @@
 ---
 title: Cross Products
-date: 2021-12-05 11:30
+date: 2021-12-05 00:00
 category: reference/videos
 summary: Notes from [Cross products | Chapter 10, Essence of linear algebra](https://www.youtube.com/watch?v=eu6i7WJeinw)) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.
 status: draft
@@ -36,7 +36,7 @@ $\vec{v} \times \vec{w} = \vec{p}$
 The new 3d vector's length will be the area of the parallelogram defined by the 2d vectors. The direction of the new vector will be perpendicular to the parallelogram.
 
 Using the "right-hand rule," we can determine which direction the new vector will be facing.
- 
+
 Point your index finger in the direction of $\vec{v}$ and middle finger in the direction of $\vec{w}$. When you stick out your thumb, that's the direction of the cross product.
 
 ![Right-hand rule](/_media/3blue-right-hand-rule.png)

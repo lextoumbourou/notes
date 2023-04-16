@@ -59,5 +59,5 @@ return UsefulThing
 Like the Python convention, we prefix private methods with underscores to further distinguish.
 
 Photo by <a href="https://unsplash.com/@andrew23brandy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Andrew Brandy</a> on <a href="https://unsplash.com/s/photos/complexity-step?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+
 [^1]: MLA (7th ed.) Martin, Robert C. Clean Code: A Handbook of Agile Software Craftsmanship. Upper Saddle River, NJ: Prentice Hall, 2009. (Pg. 37)
