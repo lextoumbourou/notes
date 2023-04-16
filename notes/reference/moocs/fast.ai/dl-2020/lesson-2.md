@@ -1,6 +1,6 @@
 ---
 title: "fastai - Lesson 2 - Deep Learning for Coders (2020)"
-date: 2021-06-17 23:30
+date: 2021-06-17 00:00
 category: reference/moocs
 cover: /_media/fastai-2020-lesson-2-cover.png
 summary: "Notes taken from the Deep Learning for Coders (2020) - Lesson 2 video"
@@ -50,6 +50,7 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
 * Loss func = function the model uses during optimisation
 
 ## 00:09:07 - Overfitting revisited
+
 * Overfitting = key thing ML is about
     * How well does model do on data it hasn't seen?
     * Or is model simply "cheating" and memorising the training set.
@@ -96,20 +97,21 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
     * Visualised 9 features from each layer, then found patches from specific examples of images that matched the filter
     * Layer 1
         * Finds lines, gradients etc
-        
+
             ![CNN Layer 1 visualisation](/_media/cnn-layer-1.png)
-            
+
     * Layer 2
         * Combines filters from layer 1 to start to learn shapes, textures etc
-        
+
             ![CNN Layer 2 visualisation](/_media/cnn-layer-2.png)
-            
+
     * Layer 3 and up
         * Learning more concrete things like petals, faces etc
-    
+
 * The insights in this paper help understand how transfer learning works:
     * Earlier layer learn much more abstract features, so it makes sense they can be repurposed.
-    
+
+
 ## 00:28:48 - Other applications for vision techniques
 
 * Sounds can be turned into pictures using [Mel spectograms](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum)
@@ -117,6 +119,7 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
 * Malware binary file can be represented as image, see Malware Classification with Deep Convolutional Neural Networks by Mahmoud Kalash et al.
 
 ## 00:31:20 - Terms to know
+
 * Label - Dependant variables - the thing that says what each datapoint is
 * Architecture - the function that makes predictions, whose parameters can be trained
 * Model - the combination of architecture and params
@@ -174,10 +177,10 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
     * Paper used a random sample of 100 cities in China for modelling the relationship between humidity and R
         * R is measure of transmissibility: R < 1 = won't spread, R > 1 = spread quickly
         * They included this chart, which plots a best-fit line to claim relationship: `R = 1.99 - 0.023 * Temperature`
-        
+
             ![Humidity vs r0 chart][/_media/humidity-vs-r0-fastai.png]
-        
-        * Since the dataset is small, could just be a random chance. 
+
+        * Since the dataset is small, could just be a random chance.
             * To be more confident, you'd need to look at more cities
                 * One way to measure "confidence" with p-value
 * p-value
@@ -185,9 +188,9 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
         * Start out with null hypothesis: for example, no relationship between temperature and R
         * Get data of independent (temperature) and dependent (R)
         * Ask: what % of time would we see relationship by chance under null hypothesis?
-        
+
             ![p-value](/_media/p-value-null-hypothesis.png)
-            
+
             * Example from paper: null hypothesis is line of best-fit has a slope of 0
         * Most papers report on p-value
             * American Statistical Association includes lots of caveats for p-value

@@ -52,8 +52,6 @@ class TransformerBlock(nn.Module):
 
 Self-Attention works like this:
 
-
-
 ```
 class Transformer(nn.Module):
     def forward(self):
@@ -61,4 +59,3 @@ class Transformer(nn.Module):
         for i in range(6):
             tblocks.append(TransformerBlock())
 ```
-

@@ -19,7 +19,7 @@ rpm -q [select_options] [query_options]
 ```
 
 1. ```-d``` or ```--docfiles```
-2. ```-c``` or  ```-configfiles```
+2. ```-c``` or ```-configfiles```
 3. ```-l``` or ```-list```
 4. ```--scripts```
 
@@ -55,26 +55,22 @@ verify done
 ```
 
 * ```yum-plugin-versionlock``` can lock a version to a certain version using config ```/etc/yum/pluginconf.d/version.conf```
-       
+
 ```bash
 > vi /etc/yum/plugincofn.d/versionlock.list
 + epoch:kernel-2.6.32-el6.x86_64
 ```
 
 * ```yum whatprovides <filename>``` - used to check what package contains a file.
-
-
 * ```yum reinstall <packagename>``` - reinstalls a package
 
 ## RPM Package Design
 
 * 3 Basic Components:
-
     * metadata - data about the package: name, version, release, builder, date, deps
     * files - archive of files provided by package (inc file attributes)
     * scripts - execute when package is installed, updated and/or removed
-
-* ```rpm2cpio <package_name> | cpio -id```  allows you to extract a rpm without installing them.
+* ```rpm2cpio <package_name> | cpio -id``` allows you to extract a rpm without installing them.
 
 ## RPM Package Specification
 
@@ -86,7 +82,7 @@ verify done
     4. Clean
 
 * Five steps for building and signing an RPM package:
-   
+
     1. Tarball - get tar file containing source. By default, rpmbuild assumes the top-level of the archive is %{name}-%{version}. Place in ```~/rpmbuild/SOURCES``` directory
     2. Spec file - create spec file and populate required fields. Place in ```~/rpmbuild/SPECS```
     3. rpmbuild - use the rpmbuild command to build the packages ```rpmbuild -ba demo.spec```
@@ -94,9 +90,7 @@ verify done
     5. Test - test package on dev system
 
 * Creating a repo:
-
     * Use package ```yum install createrepo```
-
     * Create webdirectory:
 
 ```bash
@@ -106,7 +100,7 @@ verify done
 ```
 
     * On clients, update ```/etc/yum.repos.d/example.repo```
- 
+
 ```bash
 > cat /etc/yum.repos.d/example.repo
 [example]

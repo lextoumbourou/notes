@@ -1,6 +1,6 @@
 ---
 title: How to Take Smart Notes
-date: 2021-06-07 22:00
+date: 2021-06-07 00:00
 category: reference/books
 cover: /_media/how-to-take-smart-notes.jpeg
 ---
@@ -19,11 +19,9 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 
 * Having a structured workflow that you trust allows you to enter [Flow State](../../permanent/Flow State.md)
     * [GTD](https://www.amazon.com.au/Getting-Things-Done-David-Allen/dp/0143573195) a good example of workflow when the tasks are clearly defined.
-
 * Writing does not work as a linear to-do list:
     * the work needs to be open-ended
     * consists of lots of small tasks like rereading chapters and looking up footnotes,
-
 * Profilic sociologist Niklas Luhmann system for taking notes:
     * 2 "slipboxes" consisting of index cards: one for taking bibliographical notes and another for collecting and generating ideas.
     * In the first, he would add cards with bibliographic info on one side and notes about the content on the other.
@@ -69,7 +67,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 * Slipbox follows the Russian Model: "Focus on the essentials, don’t complicate things unnecessarily."
     * Named after the story by De Bono: NASA invested in research for find a gravity-independent pen which could write in space. Russian simply used pencils.
         * Side note: the story is false: https://www.scientificamerican.com/article/fact-or-fiction-nasa-spen/
-        
+
 * Existing learning and note-taking techniques are simple in isolation but complicated together.
 * None of the workflows have tools to help make connections between ideas.
 * Slipbox is not another techique but an overarching workflow stripped of everything that distracts from stuff that's important.
@@ -158,7 +156,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 * Searching through slipbox for categorising notes another important benefit:
     * Shows related notes we may not have considered
 * Slipbox works in a similar fashion to our brains:
-    * the more we add, the bigger our [Latticework of Mental Models](../../permanent/latticework-of-mental-models.md)  (Munger 1994) grows.
+    * the more we add, the bigger our [Latticework of Mental Models](../../permanent/latticework-of-mental-models.md) (Munger 1994) grows.
 
 ## The Six Steps To Successful Writing
 
@@ -177,7 +175,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
     * Writing paper requires reading, understanding, reflecting, getting ideas, making connections, finding words, organising etc: all require different types of attention
         * Not only impossible to focus on more than one thing at a time, but also on different types of attention
     * Focused attention is different from "sustained attention" which is needed to focus on one task for a longer period and is necessary for learning, understanding and getting things done.
-        * With focused attention, we can focus on one thing only and only for a few seconds. 
+        * With focused attention, we can focus on one thing only and only for a few seconds.
     * The slipbox not only gives a clear structure for working, but allows us to shift our attention conciously from one type of attention to another.
 * 9.3 Give each task the right kind of attention
     * Mentioned earlier, writing requires many different types of attention
@@ -205,10 +203,10 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
     * Attention is not only limited resource: short term memory is very limited.
         * We can hold 7 things plus or minus 2 (Miller 1956)
     * Information in short term memory can't be saved: it floats around seeking attention until forgotten or replaced.
-        * Open tasks occupy our limited short term memory until they're done or, as  Zeigarnik found, written down, which is equally as effective for freeing short term memory.
+        * Open tasks occupy our limited short term memory until they're done or, as Zeigarnik found, written down, which is equally as effective for freeing short term memory.
     * On the other hand, things can be added to long term memory when understood, as we understand by connecting to existing knowledge
         * The slipbox seeks to reproduce this phenomena by allowing for interconnected long-term knowledge.
-        * Permanent  note creations should generate questions like:
+        * Permanent note creations should generate questions like:
             * How does theory fit into idea of ... ?
             * Can a phenonemon be explained by theory?
             * Do 2 ideas contradict or compliment each other?
@@ -245,7 +243,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
             * We are naturally drawn to stuff that confirms our belief: [Confirmation Bias](../../permanent/confirmation-bias.md)
     * We tend to find ourselves drawn to people that think like us, and read and listen to publications that confirm our beliefs.
     * Best scientists and thinkers are not free from it, but activately seek to counter it
-        * Charles Darwin would constantly force himself to understand  arguments that were critical of his theories.
+        * Charles Darwin would constantly force himself to understand arguments that were critical of his theories.
     * Standard approach of starting with a hypothesis, causes major problems with confirmation bias:
         * we "fix" the present understanding of the outcome, instead of using as a starting point.
         * we create a conflict of interest between getting it done, by finding support for your argument and generating insight.
@@ -291,7 +289,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
     * Putting effort into writing in our own words best way to test our understanding of a topic and whether we have sufficient supporting sources like references on hand.
     * Writing gives us distance from argument and allows us to "scrutinise" our understanding.
     * Author's example of collecting [Literature Notes](../../permanent/literature-notes.md):
-        * Step 1. Take notes thinking about arguments in the context of the book: 
+        * Step 1. Take notes thinking about arguments in the context of the book:
             * Is it convincing?
             * What methods do they use?
             * Which references are familiar?
@@ -379,7 +377,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 			* Can be useful for detecting differences, contradictions, oppositions that wouldn't otherwise be noticed
 			* Constant comparison of notes leads to new insights about old ideas
 				* Can highlights errors or incorrect citations in source material (indicating that I likely should be storing the original sources)
-				* Discover studies that conflict with each other 
+				* Discover studies that conflict with each other
 			* Leads to constant improvement of your work and can find weaknesses in others
 		* Also helps with "feature-positive" effect:
 			* our brains tend to overstate the importance of info that's easily available: favouring recently acquired facts over most relevant.
@@ -396,7 +394,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 					* having a range of mental models allows you to avoid getting attached to just a few
 			* When adding to slipbox, we focus on principals of ideas
 			* When we write, add and connect, we look for patterns and think outside obvious interpretations
-				* In doing this, we are building the latticework 
+				* In doing this, we are building the latticework
 			* We grow with the slipbox: as we connect ideas in slipbox, so do our ideas in our brain, making it easier to remember facts by having a connected network.
 			* We should aim to practice learning not to simply accumulate knowledge, but to build mental models
 				* This encourages a positive "vicious circle", when learning leads to more learning
@@ -446,7 +444,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
                         * Some companies don't keep track of their own failures, leaving new generations of employees to make the same mistakes (McMath and Forbes 1999)
                     * Manager biographies a great example of survivorship bias: successful managers write biographies, but we could likely learn more from failures.
                         * Perhaps the things that were supposeably responsible for success, resulted in failure for the vast majority.
-                    * One way to deal with it is to ask "what if?" 
+                    * One way to deal with it is to ask "what if?"
                         * We can learn a lot about the problem money solves by asking the question of how society would function without money
             * Some problems don't get solved directly. Instead, we redefine the problem to make it fit with an existing solution.
                 * Get in habit of asking questions about the questions itself:
@@ -462,7 +460,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
                     * Flying example: for a long time we tried to emulate birds, until we discovered that the key is a subtle bend of the wings (Burger and Starbird)
             * Simple ideas can tied into theories to build complexity
                 * See [Software Entropy](../../permanent/software-entropy.md)
-            * Using slipbox trains these intellectual skills deliberately 
+            * Using slipbox trains these intellectual skills deliberately
                 * Check we really understand a text by having our interpretation right in front of us
                 * Focus on gist (the abstraction) by restricting space
                 * When saving ideas, make a habit to ask: what's missing?
@@ -477,7 +475,7 @@ I tried to be quite comprehensive with the notes while reading, using it as an o
 ## 13. Share Your Insight
 
 * After using a slipbox for a while, you will never have to find topics to write about: you are already aware of the clusters of topics that have caught you attention repeatably.
-    * Every time we read, making a decision about what to remember (reference), then what is relevant for our long term thinking 
+    * Every time we read, making a decision about what to remember (reference), then what is relevant for our long term thinking
         * These visible clusters of ideas are self-reinforcing:
             * Attracts more ideas and provides more connections while informing what to read and explore
 * To write manuscript, lay out your notes around topic and start constructing order of sections, chapters paragraphs

@@ -28,7 +28,6 @@ parent: data-structures-optimizing-performance
 * Generic Tree: a parent can have any number of children.
 * Binary Tree: a parent can have at most 2 children.
   * Each nodes need: a value, a parent, a left child (could be null) and a right child (could be null).
-
 * Example code:
 
       public class BinaryTree<E> {
@@ -112,14 +111,12 @@ parent: data-structures-optimizing-performance
   * Requires sorted array of items.
   * Start at middle, if middle is more than what you want, go for right-half, otherwise left.
   * Slow to insert into array.
-
 * Binary search tree
   * Get ``O(log n)`` search
   * Get ``(O(1))`` insertion.
   * Max 2 children per node (same as binary tree).
   * Left subtrees must be less than parent.
   * Right subtree must be greater than parent.
-
 * Searching in a BST: start at root. Are you at the node? If not, throw away one half of the tree and start again.
 
 # Run Time Analysis of BSTs
@@ -177,7 +174,6 @@ parent: data-structures-optimizing-performance
       }
 
 * Actual Trie structure should store the root node and some methods to help with insertion, deletion etc.
-
 * Autocomplete algorithm:
   1. Start at root node.
   2. Perform a level-order (aka breadth first search) tree traversal down tree until you find node or not.

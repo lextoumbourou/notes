@@ -20,7 +20,7 @@ Notes taken from watching the [Lesson 3 - Deep Learning for Coders (2020)](https
 
 ## 00:01:10 - Resizing images with Datablock
 
-* Images in a batch  should be converted to same size.
+* Images in a batch should be converted to same size.
     * Making them squares is most common approach.
     * To resize each image to 128x128: `item_tfms=Resize(128)`
         * By default it crops the largest side and resizes.

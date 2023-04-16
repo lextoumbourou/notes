@@ -40,7 +40,6 @@ The first response was close but longer than I would like. Plus, I didn't tell i
 
 ![The 2nd prompt passed to ChatGPT](/_media/chatgpt1-prompt2-response2.png)
 
-
 ![ChatGPT 2nd Response](_media/chatgpt1-response2.png)
 
 That works. Now for a title.
@@ -57,7 +56,7 @@ So you can dispute a parking fine with ChatGPT.
 
 ---
 
-ChatGPT is incredible -  I cannot believe how well this technology works. It's like having a talented personal assistant (who is often wrong - need to read their work thoroughly) at your fingertips.
+ChatGPT is incredible - I cannot believe how well this technology works. It's like having a talented personal assistant (who is often wrong - need to read their work thoroughly) at your fingertips.
 
 ---
 

@@ -11,7 +11,7 @@ The Rule of Loop can be summarised in one quote:
 
 > "The more times you test and improve your design, the better your game will be."
 
-For games that can be iterated on quickly, like a card or board game, then you should test it and change it until it's fun. However, for a modern videogame, that isn't going to be possible. Therefore, the team needs to get creative with how they prototype and "loop". For example, can we prototype parts of the gameplay on a simpler engine or even on paper? Can we run experiments to test the graphics engine limit with simple scripts? 
+For games that can be iterated on quickly, like a card or board game, then you should test it and change it until it's fun. However, for a modern videogame, that isn't going to be possible. Therefore, the team needs to get creative with how they prototype and "loop". For example, can we prototype parts of the gameplay on a simpler engine or even on paper? Can we run experiments to test the graphics engine limit with simple scripts?
 
 The questions you should ask yourself during prototyping are:
 

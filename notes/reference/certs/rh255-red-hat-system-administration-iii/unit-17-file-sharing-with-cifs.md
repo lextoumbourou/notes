@@ -9,16 +9,13 @@ tags:
 ---
 
 * Common Internet File Sysmte formerly known as SMB (Server Message Block)
-* Access a CIF share with  `//hostname/share`
-
+* Access a CIF share with `//hostname/share`
 * Mount via the GUI with **Applications** > **System Tools** > **File Browser**
-
 * Via the command-line:
 
         > smbclient //instructor/ftp -U guest2002%optional_password
 
     * `-L` - options lists
-
 * Via `mount` command:
 
         > mount -t cifs -o user=guest20012,pass=password //instructor.example.com/ftp /mnt/place
@@ -50,13 +47,11 @@ tags:
         > chkconfig smb on
 
 * Security types
-
     * ```security = user``` - use local passwd file
     * ```security = share``` - open to all
     * ```security = domain``` - needs to be in NT domain
     * ```security = server``` - pass to another SAMBA server for auth
     * ```security = ads``` - Active Directory
-
 * Share definitions
 
         [homes]
@@ -64,7 +59,6 @@ tags:
         name = 
 
 * Add user
-
     * Add user to password file
 
      ```useradd -s /sbin/nologin blahuser```
@@ -81,7 +75,6 @@ tags:
         > setsebool -P samba_enable_home_dirs on
 
     * Set firewall rules
-
         * UDP: 137 : 138
         * TCP: 139, 445
 
@@ -118,14 +111,13 @@ tags:
         printer name = ${printername}
 
 * `semanage fcontent -a -t samba_share_t '/shared/school(/.*)?'`
-
 * `restorecon -VFR /testing@wheel`
 
-## Examples:
+## Examples
 
-* Share the directory /command via SAMBA. Your SAMBA server must be a member of the SAMBAGRP workgroup. 
+* Share the directory /command via SAMBA. Your SAMBA server must be a member of the SAMBAGRP workgroup.
 * The share name must be "comment".
-* The shared must be available to example.com clients only. 
+* The shared must be available to example.com clients only.
 * The user "natasha" should have read access to the share with the SAMBA password "redhat".
 
         > yum -y samba samba samba-client samba-doc samba-config

@@ -33,7 +33,7 @@ PersonWithMiddleName.middleName = ''
 local me = PersonWithMiddleName(firstName='Lex', lastName='T', age=34, middleName='D')
 ```
 
-In that example, the `me` object will be consulted for fields. If they aren't found, `PersonWithMiddleName` will be looked up. If not found, since it uses `Person` as the `__index` metatable,  `Person` will then be consulted.
+In that example, the `me` object will be consulted for fields. If they aren't found, `PersonWithMiddleName` will be looked up. If not found, since it uses `Person` as the `__index` metatable, `Person` will then be consulted.
 
 Javascript also uses prototypal inheritance at the core of its object-oriented paradigm.
 

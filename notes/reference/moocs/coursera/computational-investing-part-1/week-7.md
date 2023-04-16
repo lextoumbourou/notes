@@ -17,7 +17,7 @@ tags:
 
 * Information feeds -- for event studies
   * Thomson Reuters Machine Readable News
-    * Machine readable news feeds  
+    * Machine readable news feeds
   * StarMine
   * InsiderInsights
 * What to look for

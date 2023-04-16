@@ -14,9 +14,9 @@ today's problem and solution.
 
 ### The Problem
 
--   Run Tcpdump for a short window in parallel across a massive test
+* Run Tcpdump for a short window in parallel across a massive test
     environment while front-end tests are performed
--   Gzip and tar each generated pcap and copy to a remote share for
+* Gzip and tar each generated pcap and copy to a remote share for
     distribution
 
 After getting my environment setup right, the solution took me a total
@@ -34,7 +34,6 @@ name for each server.
       sudo: yes
       vars:
           cap_file: packet_capture_{{ ansible_hostname }}_{{ ansible_date_time['epoch'] }}.cap
-
 
 2\. Then I kicked off a Tcpdump on each server in parallel. Ansible
 runs 5 parallel processes by default, this can be increased by passing
@@ -85,7 +84,6 @@ too.
     :::yaml
         - name: remove files from server
           file: path=/tmp/${cap_file}.gz state=absent
-
 
 6\. Now I run it from the command line...
 

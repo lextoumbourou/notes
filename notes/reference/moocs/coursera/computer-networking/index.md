@@ -16,10 +16,8 @@ At the time of taking the course, I had previously learned all the concepts, how
 * [[TCP / IP]]
     * Transmission Control Protocol
     * Internet Protocol
-
 * [[NAT]]
     * Network Address Translation.
-
 * [[TCP/IP Five-Layer Network Model]]
     * [[Physical Layer]]
         * Physical devices like network cables, ports, cards etc
@@ -37,11 +35,9 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Figures out which client or server programs should get the data.
     * [[Application Layer]]
         * HTTP / SMTP etc
-
 * Internetwork
     * A collection of networks.
     * Most famous: the internet.
-
 * Border Gateway Protocol (BGP)
     * Routers share data with each other via this protocol.
     * Let's them find optimal paths to forward traffic.
@@ -51,7 +47,6 @@ At the time of taking the course, I had previously learned all the concepts, how
 * [[Subnetting]]
     * Address classes let us break total space of global IP addresses into smaller subnetworks.
     * The individual subnets have own gateway router's serving as ingress and egreess point.
-
 * [[Subnet Masks]]
     * 32-bit numbers written out as four octets in decimal.
     * Without subnets, we could use some of those four bytes of ip to identify the network, and the others to identify the host.
@@ -74,7 +69,6 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Submask in binary: 11111111 11111111 11111111 11100000
         * That leaves us with 5 0s for host ids and 27 for the network (32 all up)
         * Another way to write the subnet is: 9.100.100.100/27
-
 * [[Basic Binary Math]]
     * Normal numbering system is base 10.
     * Binary is considered base 2.
@@ -102,11 +96,10 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Example:
         * 00001001 . 0110 0100 . 01100100 . 01100100
         * AND
-        * 1111 1111 . 1111 1111  1111 1111 . 0000 0000
+        * 1111 1111 . 1111 1111 1111 1111 . 0000 0000
         * =
         * 00001001 . 0110 0100 . 01100100 . 0000 0000
         * Result: 9.100.100.0
-
 * [[CIDR]]
     * **Classless** Inter-Domain Routing
         * In other words, removes the Class A/B/C system.
@@ -122,7 +115,6 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Describes a ip address: 9.100.100.100
         * Also the netmask: 255.255.255.0
     * Allows for arbitrary network sizes, can use /23 or /22.
-
 * Routing
     * [[Router]]
         * Network device that forwards traffic depending on destination address.
@@ -184,7 +176,7 @@ At the time of taking the course, I had previously learned all the concepts, how
                 * 192.168.0.0/16
         * This is not NAT - that comes later.
 
-##  Week 3
+## Week 3
 
 ### The Transport Layer
 
@@ -199,7 +191,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Taking traffic aimed at the same node and delivering to proper receiving service.
     * [[Port]]
         * 16-bit number used to direct traffic to specific services on a networked device.
-        * Ports allow a single server to host many networked applications. 
+        * Ports allow a single server to host many networked applications.
         * Common ports:
             * 80 - HTTP
             * 443 - HTTPS
@@ -418,8 +410,8 @@ At the time of taking the course, I had previously learned all the concepts, how
     * [[IP Masquerading]]
         * Router rewrites IP address field when passing through internal network, masking the true IP.
 * NAT and the Transport Layer
-    * When considering return traffic, one way that a 
-    * With one-to-many NAT, we've talked about how hundreds, even thousands of computers can all have their outbound traffic translated via NAT to a single IP. 
+    * When considering return traffic, one way that a
+    * With one-to-many NAT, we've talked about how hundreds, even thousands of computers can all have their outbound traffic translated via NAT to a single IP.
     * NAT rewrites the IPs of internal nodes to a single IP.
     * But how does it deal with return traffic to the IPs?
         * [[Port Preservation]]
@@ -507,7 +499,7 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Core of internet uses fibre for connections for a long time.
         * Allows for faster speeds without degredation.
     * Maximum distance an electrical signal can travel across a copper cable before it degrades too much and requires a repeater is thousands of feet.
-        * Fiber connections can travel many miles before signal degrades. 
+        * Fiber connections can travel many miles before signal degrades.
     * More expensive than using copper cables
     * [[FTTX ]]
         * Stands for fiber to the x
@@ -532,8 +524,8 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Error detection - includes Frame Check Sequence (FCS) and looped link detection.
             * Frame Check Sequence (FCS)
             * Looped link detection
-    * Sub-protocols for PPP 
-        * Network Control Protocol (NCP) 
+    * Sub-protocols for PPP
+        * Network Control Protocol (NCP)
         * Link Control Protocol (LCP)
     * Data is sent in [[PPP Frame]].
         * File format has the following fields:
@@ -542,7 +534,7 @@ At the time of taking the course, I had previously learned all the concepts, how
             * Control is a single byte required for various purposes but also allows a connectionless data link.
             * Protocol varies from one to three bytes which identify the network protocol of the datagram.
             * Data is where the information you need to transmit is stored and has a limit of 1500 bytes per frame.
-            * Frame check sequence (FCS) is 2 or 4 bytes and is used to verify data is intact upon receipt at the endpoint. 
+            * Frame check sequence (FCS) is 2 or 4 bytes and is used to verify data is intact upon receipt at the endpoint.
     * Encapsulation
         * Process by which each layer takes data from previous layer and adds headers and trailers for next layer to interpret.
         * When sent to endpoint, process is reversed de-encapsulation.
@@ -550,7 +542,7 @@ At the time of taking the course, I had previously learned all the concepts, how
     * [[Point to Point Protocol over Ethernet (PPPoE)]]
         * A method for encapsulating PPP frames inside an ethernet frame.
             * Tunnels packets over the DSL connection service provider's IP network and from there to the rest of the Internet
-        * A common use case is PPPoE using DSL services where a PPPoE modem-router connects to the DSL service or when a PPPoE DSL modem is connected to a PPPoE-only router using an Ethernet cable. 
+        * A common use case is PPPoE using DSL services where a PPPoE modem-router connects to the DSL service or when a PPPoE DSL modem is connected to a PPPoE-only router using an Ethernet cable.
         * PPP is strictly point-to-point, so frames can only go to the intended destination.
         * PPPoE requires a new step because ethernet connections are multi-access enabled (every node connects to another).
             * Adds extra step called the discovery stage.
@@ -559,7 +551,7 @@ At the time of taking the course, I had previously learned all the concepts, how
 * [[Wide Area Network Technologies]]
     * Used when you need office to office communication over the internet.
     * Area between each demarcation point and the ISP's actual core network is called a [[Local Loop]]
-    * Physical versus software-based WANs 
+    * Physical versus software-based WANs
         * [[WAN router]]
             * Aka [[Border Routers]] or [[Edge Routers]].
             * Hardware devices that act as intermediate systems to route data amongst the LAN member groups of a WAN (also called WAN endpoints) using a private connection.
@@ -570,7 +562,7 @@ At the time of taking the course, I had previously learned all the concepts, how
             * SD-WANs can be used alone or in conjunction with a traditional WAN.
             * SD-WANs simplify how WANs are implemented, managed, and maintained.
             * An organization’s overall cost to operate a cloud-based SD-WAN is significantly less than the overall cost of equipping and maintaining a traditional WAN.
-            * One of the ways that SD-WANs help reduce operational costs is by replacing the need for expensive lines leased from an ISP by linking regional LANs together to build a WAN. 
+            * One of the ways that SD-WANs help reduce operational costs is by replacing the need for expensive lines leased from an ISP by linking regional LANs together to build a WAN.
         * WAN optimisation
             * Compression
                 * Reducing file size to improve network efficiency.
@@ -581,7 +573,7 @@ At the time of taking the course, I had previously learned all the concepts, how
             * Local caching
                 * Store local copeies of network and internet files.
             * Traffic shaping
-                * Optimizing network performance by controlling the flow of network traffic. Three techniques are commonly used in traffic shaping: 
+                * Optimizing network performance by controlling the flow of network traffic. Three techniques are commonly used in traffic shaping:
                     * bandwidth throttling - controlling network traffic volume during peak use times
                     * rate limiting - capping maximum data rates/speeds
                     * use of complex algorithms - classifying and prioritizing data to give preference to traffic.P
@@ -628,7 +620,7 @@ At the time of taking the course, I had previously learned all the concepts, how
             * Source address field
             * Intended destination
             * Receiving address
-                *  The MAC address of the access point that should receive the frame.
+                * The MAC address of the access point that should receive the frame.
             * Trasmitter address
                 * The MAC address of whatever has just transmitted the frame.
         * Sequence control field
@@ -656,15 +648,15 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Orthogonal Frequency Division Mutltiple Access (OFDMA)
         * Transmit beamforming.
             * Allow for more efficient higher data rates by targeting each connected device.
-    * Wi-Fi 6E extends Wi-Fi 6 into 6 GHz 
+    * Wi-Fi 6E extends Wi-Fi 6 into 6 GHz
         * Additional certification for Wi-Fi 6 that adds a 3rd 6 Ghz band.
         * Wi-Fi 6E has more channels to use to broadcast: includes 14 more 80MHz channels and 7 more 160Mhz channels.
 * [[Wi-Fi Standards]]
-    * Many wireless tech that uses various frequencies: Wi-Fi, Z-Wave, ZigBee, Thread, Bluetooth, and Near Field Communication (NFC). 
+    * Many wireless tech that uses various frequencies: Wi-Fi, Z-Wave, ZigBee, Thread, Bluetooth, and Near Field Communication (NFC).
     * Radio and microwave frequency bands each have specific ranges that are divided into channels.
     * Wi-Fi uses 2.4 GHz and 5 GHz microwave radio frequency band ranges.
     * Some Wi-Fi routers use multiple channels within each range to avoid signal interference and to load-balance network traffic.
-    * Wi-Fi is commonly used for wireless local area networks (WLANs). 
+    * Wi-Fi is commonly used for wireless local area networks (WLANs).
     * 2.4 GHz
         * Has longest signal range at 150 feet (45m) indoors to 300 feet (92m) outdoors.
             * Risk of being intercepted by crims.
@@ -692,7 +684,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * channels
     * Countries can impose different regulations on channel usage, power limitations, and Wi-Fi ranges.
     * [[Dynamic Frequency Selection (DFS)]]
-        * A technology required to prevent 5 GHz Wi-Fi signals from interfering with local radar and satellite communications. 
+        * A technology required to prevent 5 GHz Wi-Fi signals from interfering with local radar and satellite communications.
 * Wireless Network Configurations
     * Ad-hoc networks
         * Simplest possible network.
@@ -748,7 +740,8 @@ At the time of taking the course, I had previously learned all the concepts, how
 * Mobile Device Networks
     * Wireless networking works by sending a radio signal between two antennas
         * Might be printed on a circuit board or it might have a wire or ribbon that runs through your device
-        
+
+
 ## Week 6
 
 ### Introduction to Troubleshooting and the Future of Networking
@@ -792,13 +785,13 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Output:
         * Host (if resolvable) and IP at each hop.
         * Time in ms it took.
-    * By default, Windows traceroute uses ICMP echo request. 
+    * By default, Windows traceroute uses ICMP echo request.
     * Linux and macOS use UDP packets to very high port numbers.
     * Similar tools:
         * mtr on Linux
         * pathping on Window
 * [[Netcat]]
-    * At the command-line: `nc` 
+    * At the command-line: `nc`
     * 2 mandatory arguments: host and port.
     * -v flag gives verbose info.
     * `-z` zero output mode.
@@ -810,7 +803,7 @@ At the time of taking the course, I had previously learned all the concepts, how
 * [[nslookup]]
     * Most common tool for troubleshooting name resolution issues.
     * Basic example: `nslookup google.com`:
-    
+
     ```
     nslookup google.com
     Server:		192.168.86.1
@@ -820,9 +813,9 @@ At the time of taking the course, I had previously learned all the concepts, how
     Name:	google.com
     Address: 142.250.204.14
     ```
-    
+
     * Includes interactive mode:
-    
+
     ```
     nslookup
     > google.com
@@ -833,9 +826,9 @@ At the time of taking the course, I had previously learned all the concepts, how
     Name:	google.com
     Address: 142.251.221.78
     ```
-    
+
     * `set debug` command can be used to increase verbosity:
-    
+
     ```
     > set debug
     > google.com
@@ -856,12 +849,11 @@ At the time of taking the course, I had previously learned all the concepts, how
     Name:	google.com
     Address: 142.251.221.78
     ```
-    
+
     * Contain details like:
         * the TTL left, if it's a cached response
         * the serial number of the zone file the request was made against.
     * Returns `A` records by default, but can be configured to return other types of records.
-
 * [[Public DNS Servers]]
     * ISP will nearly always give you acess to a recursive name server, and for most people this is all they're need for internet access.
     * Most business run their own DNS sserver for resolving internal hosts.
@@ -871,7 +863,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * 4.2.2.6 is also common.
         * 8.8.8.8 is a DNS server provided by Google and officially documented.
     * Always do your research: a bad DNS server can hijack outbound DNS requests.
-    
+
 * [[DNS Registrar]]
         * A company that has an agreement with [[ICANN]] to sell domains.
         * Was originally just one company: [Network Solutions Inc](https://en.wikipedia.org/wiki/Network_Solutions) that operated entire .com space.
@@ -900,10 +892,10 @@ At the time of taking the course, I had previously learned all the concepts, how
             * Can remove any leading 0s from a group.
                 * 2001:0db8:0000:0000:0000:ff00:0012:3456 -> 2001:db8:0:0:0:ff00:12:3456
             * Any consecutive group of 0s can be replaced with 2 colons.
-                * 2001:db8:0:0:0:ff00:12:3456 ->  2001:db8::ff00:12:3456
+                * 2001:db8:0:0:0:ff00:12:3456 -> 2001:db8::ff00:12:3456
     * Loopback address is 31 0s with a 1 at the end.
         * 0000:0000:0000:0000:0000:0000:0000:0001 -> ::1
-    *  Any address that begins with ff00 is for [[Multicast]]
+    * Any address that begins with ff00 is for [[Multicast]]
         * A way of addressing groups of hosts at once.
     * Addresses beginning with FE80:: are used for [[Link Local unicast address]]
         * Allow for local network segment communication
@@ -929,7 +921,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * 8-bit field identical in purpose to TTL field in IPv4 header.
     * 6. Source Address
     * 7. Destination Address.
-    *  If the next header field specified another header, it would follow. If not, a data payload, the same length as specified in the payload length field is next.
+    * If the next header field specified another header, it would follow. If not, a data payload, the same length as specified in the payload length field is next.
 * IPv6 and IPv4 together
     * IPv6 needs to work alongside IPv4 to allow for gradual migration.
     * [[IPv4 Mapped Address Space]]

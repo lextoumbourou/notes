@@ -1,6 +1,6 @@
 ---
 title: Matrix Inverse
-date: 2021-09-21 22:00
+date: 2021-09-21 00:00
 modified: 2021-11-13 00:00
 tags:
   - LinearAlgebra

@@ -11,29 +11,19 @@ tags:
 ## Bash Overview
 
 * Start scripts with `#!/bin/bash`
-
 * Make it executable with `chmod`
-
 * Put it in a directory in `$PATH`
-
     * `~/bin` - for user's private programs
     * `/usr/local/bin` - locally developed scripts by other uses on the system
     * `/usr/local/sbin` - locally developed scripts used by root
-
 * Variable syntax:
-
     * `$my_var`
     * `${my_var}`
-
 * Command substitution:
-
     * `today=$(date +%Y-%m-%d); echo $today`
-
 * Quoting & escaping:
-
     * `echo "Today is $X"` - interpolate
     * `echo 'Today is $X'` - literal
-
 * Repetition can be achieved with: `for var in commands; do command; done`
 
     `for i in {1..9}; do echo "This is $i"; done`
@@ -52,14 +42,11 @@ tags:
         * `-a` - AND
         * `!` - NOT
     * `man test` to get info on Bash operators
-
 * Use `env` to get list of environment variables
-
 * Positional params:
     * `script.sh TEST DEMO` - `$0 $1 $2`
     * `$@`- all positional params
     * `$#` - count of params
-
 * Running commands on remote machine:
     * Save file locally:
        `ssh user@host 'command1; command2' > log.local`
@@ -131,7 +118,6 @@ hello
 ### sed
 
 * Edits a stream of textual data
-
     * Use ```g``` to make it global, use ```d``` to delete lines
 
 ```bash

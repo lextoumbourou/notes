@@ -12,56 +12,55 @@ modified: 2023-04-08 00:00
 * [Logic Gate](../../../../permanent/logic-gate.md)
     * Implementation of a boolean operation.
     * Basic element of an implementation of a Circuit.
-    
+
 * [Basic Gates](../../../../permanent/basic-gates.md)
     * Most basic logic circuits:
         * **OR** gates
         * **AND** gates
         * **NOT** gates
     * All Boolean functions can be written in terms of these 3 logic operations.
-    
+
     * [AND Gate](../../../../permanent/and-gate.md)
         * Produces HIGH output (value 1) when all inputs are HIGH otherwise, output is LOW (value 0).
         * For a 2-input gate, AND gate is represented by electrical notation and truth table:
-        
+
           ![and-gate-with-truth-table](../../../../_media/and-gate-with-truth-table.png)
-          
+
         * The AND operations is written as $f = x . y$ or $f = xy$
-   
+
     * [OR Gate](../../../../permanent/or-gate.md)
         * Produces HIGH output (value 1) when any of 2 inputs if HIGH, otherwise, output is LOW (value 0).
         * For a 2-input gate, OR gate is represented by electrical notation and truth table:
 
           ![or-gate-and-truth-table](../../../../journal/_media/or-gate-and-truth-table.png)
-          
+
         * The OR operation is written as $f = x + y$
-  
+
     * [Inverter Gate](../../../../permanent/inverter-gate.md)
         * Produces opposite of the input.
         * Also known as NOT gate.
         * When input is LOW (0), output is HIGH (1) and vice versa.
         * The **inverter** gate is represented by the following electrical notation and truth table:
-        
-          ![not-operation-and-truth-table](../../../../journal/_media/not-operation-and-truth-table.png)
-          
-          * Not operation is written as $f = \overline{x}$
 
+          ![not-operation-and-truth-table](../../../../journal/_media/not-operation-and-truth-table.png)
+
+          * Not operation is written as $f = \overline{x}$
 * Other gates:
   * You can combine the basic gates to create 4 additional gates:
       * [XOR Gate](XOR Gate)
           * True only when values of inputs differ
             ![xor-gate.png](xor-gate.png)
-            
+
       * [NAND Gate](NAND Gate)
           * [AND Gate](AND Gate) followed by an inverter.
           ![nand-gate](../../../../journal/_media/nand-gate.png)
           * Equivalent to not AND
-          
+
       * [NOR Gate](NOR Gate)
           * Equivalent to "not OR"
           * [OR Gate](OR Gate) followed by an inverter.
             ![nor-gate](../../../../journal/_media/nor-gate.png)
-            
+
     * [XNOR Gate](XNOR Gate)
         * Equivalent to not XOR.
         ![xnor-gate](../../../../journal/_media/xnor-gate.png)
@@ -139,7 +138,6 @@ modified: 2023-04-08 00:00
       ![full-adder-circuit](../../../../journal/_media/full-adder-circuit.png)
           * We can hide some of the comlexity of a circuit by using a **box diagram** as a simple abstraction representing just the inputs and outputs.
 
-
 ## 5.205 Simplification of circuits
 
 * Outline
@@ -165,6 +163,7 @@ modified: 2023-04-08 00:00
         * Using De Morgan's laws and involution:
             * $$
 
+
         \begin{align}
         E &= (xy)'' + z')((x' + =z)'+(y' + z')') \\
         &= (xy + z')((x'' . z') +y'' . z'') \\
@@ -175,6 +174,7 @@ modified: 2023-04-08 00:00
         * Can be further simplified using **distributive** laws: $E = xyxz' + xyyz + z'xz' + z'yz$
        * Using **commutative**, **idempotent** and **complement** laws: $E = xyz' + xyz + xz' + 0$
        * Using **absorption** law: $E = xyz + xz'$
+
 
  * Example 2
        * Consider **full adder** circuit from last week.

@@ -89,7 +89,6 @@ modified: 2023-04-09 00:00
         * Let $P(x, y)$ by the statement x + y > 10, where the universe of discourse for x, y is the set of all integers.
         * The statement S is: $\forall x \forall y P(x, y)$
         * Can also be written as: $\forall x, y \ \ P(x, y)$
-
 * [Existential quantifier](permanent/existential-quantifier.md)
     * The existential quantification of a predicate $P(x)$is the proposition:
         * "There exists a value x in the universe of discourse such that P(x) is true."
@@ -132,7 +131,6 @@ modified: 2023-04-09 00:00
         * $\exists x \ \exists y \ P(x,  y)$ - There is a pair x, y for which P(x, y) is true.
         * $\forall x \ \exists y \ P(x, y)$ - For every x, there is a y for whih P(x, y) i true.
         * $\exists x \ \forall y \ P(x, y)$ - there is an x for which P(x, y) is true for every y.
-
 * Binding variables
     * A variable is said to be **bound** if it is within the scope of a quantifier.
     * A variable is **free** if it is not bound by a quantifier or particular values.
@@ -142,14 +140,12 @@ modified: 2023-04-09 00:00
         * We can say that:
             * x is bound
             * y is free
-
 * Logical operations
     * Logical operations can be applied to quantified statements
     * Example
         * If P(x) denotes "x > 3" and Q(x) denotes "x squared is even" then
             * $\exists \ x \ (P(x) \lor Q(x)) \equiv T (ex. x = 4)$
             * $\forall \ x \ (P(x) \rightarrow Q(x) \equiv F (ex. x = 5))$
-
 * Order of operations
     * When nested quantifiers are of the same type, the order does not matter.
     * With quantifiers of different types, the order does matter.
@@ -157,7 +153,6 @@ modified: 2023-04-09 00:00
         * $\forall x \ \forall y P(x, y) \equiv \forall y \ \forall x \ P(x, y)$
         * $\exists x \ \exists y \ P(x, y) \equiv \exists y \ \exists x \ P(x, y)$
         * $\forall x \ \exists y \ P(x, y)$ is different from $\exists y \ \forall x \ P(x,  y)$
-
 * Precendence of quantifiers
     * The quantifiers $\forall$ and $\exists$ have a higher precendence than all logical operators
     * Example

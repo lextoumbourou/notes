@@ -1,6 +1,6 @@
 ---
 title: Three-Dimensional Linear Transformations
-date: 2021-11-03 21:30
+date: 2021-11-03 00:00
 category: reference/videos
 summary: Notes from [Three-dimensional linear transformations](https://www.youtube.com/watch?v=rHLEWRxRGiM) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
 cover: /_media/3d-lin-3d-trans.png
@@ -12,7 +12,7 @@ Notes from [Three-dimensional linear transformations](https://www.youtube.com/wa
 
 The core ideas in 2d linear algebra carry over into higher dimensions.
 
-We can represent a linear transformation with 3d vectors as inputs and 3d vectors as outputs as a 3d grid. 
+We can represent a linear transformation with 3d vectors as inputs and 3d vectors as outputs as a 3d grid.
 
 ![3d grid](/_media/3d-lin-3d-grid.png)
 

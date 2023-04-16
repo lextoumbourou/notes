@@ -14,7 +14,6 @@ modified: 2023-04-09 00:00
         * $(f \text{ o } g)(x) = f(g(x))$
         * Firstly we pass $x$ into $g$ to get $g(x)$
         * Then we pass the function output into $f$ to get $f(g(x))$
-
     * Example of function composition:
 
         ![function-composition-1](/_media/function-composition-1.png)
@@ -74,7 +73,6 @@ modified: 2023-04-09 00:00
     * Plotting on a graph
         * The curves of $f$ and $f^{1}$ are symmetric with respect to the straight line $y = x$.
             ![Plot inverse](/_media/plot-inverse.png)
-
 
 ## 2.205 Logarithmic functions
 
@@ -149,14 +147,12 @@ modified: 2023-04-09 00:00
                     * Range: ($-\infty, \infty$)
                     * x-intercept: $(1, 0)$
                     * decreasing on: $(0, \infty)$
-
 * [Natural Logarithm](../../../../permanent/natural-logarithm.md)
     * Written as $\ln \ x$
     * $\ln \ x = \log_e x$ where $e = 2.71828$
     * $\ln e = log_e e = 1$
     * Graph shows it is an increasing function:
         * ![log_e_x](/_media/log_e_x.png)
-
 
 ## The floor function and ceiling functions
 
@@ -165,16 +161,13 @@ modified: 2023-04-09 00:00
     * Function domain and range: $\mathbb{R} \rightarrow \mathbb{Z}$.
     * Denoted as $|\_x\_|$
       * Graph of floor function:
-
           * ![floor-function](/_media/floor-function.png)
-
       * Examples:
           * floor(10) = 10
           * floor(1.1) = 1
           * floor(1.99) = 1
           * floor(-1.1) = -2
           * floor(-1.99) = -2
-
 * [Ceiling function](permanent/ceiling-function.md)
     * The opposite of the floor function.
     * A function $R \rightarrow Z$

@@ -106,7 +106,6 @@ modified: 2023-04-09 00:00
     * There are 2 algorithms for finding minimum-cost spanning trees, and both are greedy algorithms:
         * Kruskal's Algorithm
         * Prim's Algorithm
-
 * [Kruskal's Algorithm](permanent/kruskals-algorithm.md)
     * Start with cheapest edge in spanning tree.
     * Repeatedly: keep adding cheapest edge that does not create a cycle.
@@ -119,7 +118,6 @@ modified: 2023-04-09 00:00
       ![week-15-kruskal's-step2](../../../../_media/week-15-kruskal's-step2.png)
 
     * And so on...
-
 * [Prim's Algorithm](permanent/prims-algorithm.md)
     * Start with any node in spanning tree.
     * Repeatedly add the cheapest edge, and the node it leads to, for which the node is not already in that spanning tree.

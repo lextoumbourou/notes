@@ -17,6 +17,7 @@ status: draft
     * Logarithms
 
 ## Linear classifiers
+
 * Motivating example: Capturing sentiment of restaurant reviews
 
 ### Intuition behind linear classifiers
@@ -81,7 +82,7 @@ $$Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i}) = \ma
 	2. Extract features (word counts, td-idf etc).
 	3. Generate a model with said features (create coefficients).
 	4. Validate model (test data etc).
-	5. Make predicts using model. 
+	5. Make predicts using model.
 
 ## Class probabilities
 
@@ -90,7 +91,7 @@ $$Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i}) = \ma
 
 ### Basics of probability
 
-* Probability a review is positive is 0.7	
+* Probability a review is positive is 0.7
     * Interpretation: 70% of rows have y = +1
 * Can interpret probabilities as "degrees of belief" or "degrees of sureness".
 * Fundamental properties:
@@ -102,12 +103,11 @@ $$Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i}) = \ma
 ###	Basics of conditional probability
 
 * Probability y is one given input can be represented as: $P(y=+1|\mathbf{x}_i)$ where $\mathbf{x}_i$ is some sentence.
-
 * Conditional probability should always be between 0 & 1.
 * Classes of conditional probabilities sum up to 1 over y:
 
   $$P(y=+1|\mathbf{x}_i) + P(y=-1|\mathbf{x}_i) = 1 $$
-  
+
    However, they don't add up to 1 for all $\mathbf{x}$:
 
     $$\sum\limits_{X}^{i=1} P(y=+1|\mathbf{x}_i) \neq 1$$
@@ -137,7 +137,7 @@ $$Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i}) = \ma
 * For logistic regression, the link function is called "logistic function" or [Sigmoid Activation Function](../../../../permanent/sigmoid-activation-function.md):
 
 	$$sigmoid(Score) = \dfrac{1}{1 + e^{-Score}}$$
- 
+
 	Code examples:
 
         >>> import math
@@ -178,7 +178,7 @@ $$Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i}) = \ma
 
 ### Encoding categorical inputs
 
-* Numeric inputs usually make sense to multiply via coefficient directly: age, number of bedrooms etc  
+* Numeric inputs usually make sense to multiply via coefficient directly: age, number of bedrooms etc
 * Categorical inputs (gender, country of birth, postcode) need to be encoded in order to be multiplied via coefficient.
 * One way to encode categorical inputs: 1-hot encoding. Basically, for a table of features, all are 0 except 1 (hence 1-hot):
 
@@ -191,6 +191,6 @@ $$Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i}) = \ma
 
 ### Multi class classification with 1-verse-all
 
-* To classify more than 2 classes, can use "1 versus all" 
+* To classify more than 2 classes, can use "1 versus all"
   * Train a classifier for each category, comparing one class to the others.
   * Figure out which $\hat{P}$ value has the highest probability.

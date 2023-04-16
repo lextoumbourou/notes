@@ -1,6 +1,6 @@
 ---
 title: Identity Matrix
-date: 2021-09-18 17:30
+date: 2021-09-18 00:00
 tags:
   - LinearAlgebra
 cover: /_media/identity-matrix.png

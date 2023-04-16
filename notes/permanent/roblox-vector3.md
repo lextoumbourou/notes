@@ -1,6 +1,6 @@
 ---
 title: Roblox Vector3
-date: 2021-08-29 16:30
+date: 2021-08-29 00:00
 tags:
   - Roblox
 ---
@@ -49,7 +49,7 @@ We can scale a vector by multiplying it by a scalar ([Vector Scaling](Vector Sca
 print(Vector3.new(1, 1, 1) * 2) -- 2, 2, 2
 ```
 
-The [Vector Magnitude](Vector Magnitude) is available via the `Magnitude` property.  It's equivalent to the function:
+The [Vector Magnitude](Vector Magnitude) is available via the `Magnitude` property. It's equivalent to the function:
 
 ```lua
 function vectorMagnitude(vector)

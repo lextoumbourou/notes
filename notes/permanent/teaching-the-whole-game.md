@@ -1,6 +1,6 @@
 ---
 title: Teaching the whole game
-date: 2021-05-30 21:30
+date: 2021-05-30 00:00
 cover: /_media/babe-ruth-and-others.jpeg
 tags:
   - LearningAndTeaching

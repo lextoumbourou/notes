@@ -37,7 +37,7 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
 
 * LDA inputs: words per doc for each doc in corpus.
 * LDA outputs:
-  * Corpus-wide topic vocab distributions 
+  * Corpus-wide topic vocab distributions
   * Topic assignments per word.
   * Topic proportions per word.
 * Allows you to examine coherence of learned topics:
@@ -57,13 +57,14 @@ Covers Latent Dirichlet Allocation: assigning documents to multiple topics/clust
   * M-step: maximize likelihood over parameters.
 * When using bag of words over tf-idf, can still derive EM algorithm: instead of using gaussian likelihood of tf-idf vector, use multinomial likelihood of word counts.
   * $$m_w $$
+
 successes of word w.
   * Called a "mixture of multinomial model".
 * LDA model:
   * Could derive EM model, but due to high dimensional space over-fitting tends be a huge problem.
   * Instead: specified as a Bayesian model (when it is, it's usually called "probabilistic latent semantic analysis/indexing").
     * Account of uncertainty in parameters when making predictions.
-    * Naturally regularizes parameter estimates in contrast to MLE.  
+    * Naturally regularizes parameter estimates in contrast to MLE.
     * Variation on EM used called "variation EM" which introduces an approximation to handle the "intractable expectation" (eh?)
 
 ## Gibbs sampling
@@ -98,6 +99,7 @@ successes of word w.
   * Per-doc topic proportions
 * Can lead to much better performance.
 * Randomly reassign $$z_iw $$based on current assignments $$z_jv $$
+
 of all other words in document and corpus.
 
 ## A worked example for LDA: initial setup
@@ -127,13 +129,14 @@ of all other words in document and corpus.
 
 * Figure out how much doc likes topic:
   * $$n_ik $$
+
 = current assignments to topic k in doc i.
 
   * $$N_ik $$
+
 = words in doc i.
 
   * $$\frac{n_ik + \alpha}{N_i - 1 + K\alpha} $$
- 
 * Figure out how much topic likes word:
   * $$\frac{m_{word,k} + \alpha}{\sum_{w \in V} m_{w,k} + V\alpha} $$
 * Then multiply the 2 probabilities "How much doc likes topic" * "how much topic likes word"
@@ -145,4 +148,4 @@ of all other words in document and corpus.
 * Not really sure what this lecture is saying?
 * Look at best sample of {z_iw} can infer:
   * Topics from conditional distribution
-  * Document "embedding": form topic proportion vector for document. 
+  * Document "embedding": form topic proportion vector for document.

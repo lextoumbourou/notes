@@ -15,7 +15,6 @@ tags:
         > fdisk -cu <device_name>
 
     * Always reboot after creating parition
-
 * Create a filesystem:
 
         > mkfs.ext4 /dev/sdb1
@@ -36,8 +35,7 @@ tags:
 ## Accessing iSCSI Storage
 
 * Targets == Servers
-* Initators == Clients 
-
+* Initators == Clients
 * iSCSI Qualified Name (IQN) identifies initiators and targets
 
         ign.yyyy-mm.{reverse domain}:label
@@ -83,7 +81,7 @@ tags:
         > mkdir /mnt/iscsi
         > mount /mnt/iscsi
 
-### To remove 
+### To remove
 
 * Log out of iSCSI target
 

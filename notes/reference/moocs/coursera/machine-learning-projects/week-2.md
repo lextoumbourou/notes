@@ -19,7 +19,6 @@ parent: machine-learning-projects
     * If it's 5%, you could improve error from 10% to 9.5%
     * May not be best use of your time, but at least provides a "ceiling on performance".
     * If it's 50%, then you can be sure this is the best use of your time.
-
 * Can evaluate ideas in parallel:
     * Create a spreadsheet with different examples and why they were miscategorised to start to figure out patterns and where you get the best bang for buck with improvements.
 

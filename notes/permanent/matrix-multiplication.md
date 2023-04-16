@@ -1,6 +1,6 @@
 ---
 title: Matrix Multiplication
-date: 2021-08-14 17:00
+date: 2021-08-14 00:00
 tags: 
   - LinearAlgebra 
 ---

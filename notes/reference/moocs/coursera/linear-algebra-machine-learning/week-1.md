@@ -30,7 +30,6 @@ parent: linear-algebra-machine-learning
   $$
 
 * Example of linear algebra problem: have constant linear coefficients 2, 3, 10, 1, that relate the input variables $a$ and $b$ to the output values 8 and 13.
-
 * If you had a vector that describes the price of apples and bananas:
 
     $\begin{bmatrix} a \\ b \end{bmatrix}$
@@ -51,8 +50,8 @@ parent: linear-algebra-machine-learning
     8\\
     13\end{bmatrix}
     $$
-    
-* In this course, we'll learn how to solve this problem in the general case. 
+
+* In this course, we'll learn how to solve this problem in the general case.
 * Fitting an equation to some data:
     * Useful for describing a population without requiring data.
 
@@ -65,8 +64,8 @@ parent: linear-algebra-machine-learning
 * How do you find a function that finds the optimal $\mu$ and $\sigma$?
   * Determine some function that tells you how far off you are: eg sum of squared differences.
   * Then, use calculus to walk toward the most optimal solution.
-  
-* Vectors don't  just to describe objects in geometric space, they can describe directions along any sort of axis
+
+* Vectors don't just to describe objects in geometric space, they can describe directions along any sort of axis
     * Can think of them as just lists.
     * Space of all possible cars: `[cost_in_euros, emissions, top_speed, ...]`
         * Computer science view of vectors. See [Vector](../../../../permanent/vector.md).
@@ -78,10 +77,9 @@ parent: linear-algebra-machine-learning
 * Vector can be thought of as an object that moves about space.
   * Space = physical space or data space.
   * Example vector might include properties of a house: 120 sqm^2, 2 bedrooms, one bathroom, $150k: `[120, 2, 1, 150]`
-
 * Vector should obey two rules:
       1. We can add vectors (see [Vector Addition](../../../../permanent/vector-addition.md)).
-          * associative: doesn't matter what order you add 
+          * associative: doesn't matter what order you add
               `vector_1 + vector_2 = vector_2 + vector_1`
           * Since subtraction is just the addition of the negative, i.e.` r - r = r + (-r)`, the same rules apply to subtraction as addition.
       2. We can multiply vectors by a scalar (see [Vector Scaling](../../../../permanent/vector-scaling.md)).

@@ -7,7 +7,7 @@ status: draft
 
 This article contains notes from blog post [Rotating Image By Any Angle(Shear Transformation) Using Only NumPy](https://gautamnagrawal.medium.com/rotating-image-by-any-angle-shear-transformation-using-only-numpy-d28d16eb5076) by Gautam Agrawal.
 
-Each pixel in an image has a coordinate pair (x, y)  that describes its position.
+Each pixel in an image has a coordinate pair (x, y) that describes its position.
 
 We can obtain the new location by multiplying by the following transformation matrix:
 
@@ -52,7 +52,7 @@ Turn the rotation into 3 separate sheer operations:
 
 $\begin{bmatrix}1 && -\tan(\theta/2) \\ 0 && 1\end{bmatrix} \begin{bmatrix}1 && 1 \\ \sin\theta && 1\end{bmatrix} \begin{bmatrix}1 && -\tan(\theta/2) \\ 0 && 1\end{bmatrix}$
 
-1.  The three matrices are all shear matrices.
-2.  The first and last matrices are the same.
+1. The three matrices are all shear matrices.
+2. The first and last matrices are the same.
 3. [Matrix Determinate](../../permanent/matrix-determinate.md) of each matrix is the same.
 4. Since the shear happens in just one plane, and each stage is *conformal* in the area, no aliasing gaps appear.

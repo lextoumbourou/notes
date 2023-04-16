@@ -55,9 +55,9 @@ parent: uol-discrete-mathematics
         * Hence, $\binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}$
     * It's the basis for geometic arrangements of the binomial coefficients in a triangle. This is called [Pascal's Triangle](permanent/pascals-triangle.md).
     * Pascal's triangle is a number triangle with numbers arranged in staggered rows such that $a_{n,r}$ is the binomial coefficients of $\binom{n}{r}$
-    
+
       ![week-20-pascals-triangle](../../../../_media/week-20-pascals-triangle.png)
-      
+
       Using Pascal's identity, we can show the result of adding 2 adjacent coefficients in the triangle is equal to the binomial coefficient in the next row between these 2 coefficients.
 
 ## Video: 10.204 Generalised permutations and combinations

@@ -35,7 +35,7 @@ pg. 365
                 * $C(n, r) = \frac{n!}{r!(n-r)!}$
     * Example 6.21
         * Compute the number of subcommittees of three members each that can be formed from a committee of 25 members.
-        * $C(25, 3) = \frac{25 * 24 * 23}{3!} = 13800 / 6 =  2300$ 
+        * $C(25, 3) = \frac{25 * 24 * 23}{3!} = 13800 / 6 =  2300$
     * Example 6.22 - The pizza problem
         * Let $f_n$ denote the max number of places into which a pizza can be diided with n cuts. What's the formula for $f_n$
         * Clearly, the max number of regions can be relizaed when every 2 cuts, intersect and no 3 cuts are concurrent.
@@ -51,7 +51,7 @@ pg. 365
         * 3 blondes can be selected from 5 blondes in $C(5, 3) = 10$ different ways.
         * 4 brunettes from 6 brunettes in $C(6, 4) = 15$ different ways.
         * $10 * 15 = 150$
-    * Example 6.24 
+    * Example 6.24
         * Let A be a 10-element subset of the set {1, 2, ...., 15}
         * Let $A_s$ be a subset of A containing 3 elements, where the subscript s denotes the sum of elements in $A_s$.
         * For example, the subset {2, 4, 5} is denotes by A_11
@@ -78,7 +78,6 @@ pg. 365
     * But from Theorem 6.11 we can also think of it as number of groups containing at most 2 marbles:
         * Number of groups containing at most 2 marbles: C(7, 0) + C(7, 1) + C(7, 2) = 1 + 7 + 21 = 29
         * Number of groups containing 3: total possible groups - number of groups at most 2 = 2^7 - 29 = 99
-
 
 ## 6.5 Permutations and Combinations with Repetitions
 
@@ -172,7 +171,7 @@ pg. 379
 There are 8 letters in the word CALCULUS.
 
  Number of times each letter appears in the word:
- 
+
 * 2 C
 * 1 A
 * 2 L
@@ -181,11 +180,11 @@ There are 8 letters in the word CALCULUS.
 
 Apply formula for **distinct permutations of n objects, where some of the objects are identitical**. The formula is:
 
-$P = \frac{n!}{p_1!p_2!...p_k}$ 
+$P = \frac{n!}{p_1!p_2!...p_k}$
 
 Where $p_k$ is the frequency of k distinct objects.
 
-$P = \frac{8!}{2! \cdot 2! \cdot 2!} = 5040$ 
+$P = \frac{8!}{2! \cdot 2! \cdot 2!} = 5040$
 
 Hence 5040 words can be formed by scrambling the letters of the word CALCULUS.
 
@@ -251,13 +250,13 @@ Case 3: There are 0 0's: C(8, 0) = 1
 
 28 + 8 + 1 = 37
 
-### 19. There are 5 types of desserts available at a restaurant. Find the number of ways eight people can select them, if order does not matter.
+### 19. There are 5 types of desserts available at a restaurant. Find the number of ways eight people can select them, if order does not matter
 
 We know the number of r-combinations with repetitions from a set of n elements is $C(n + r - 1, r)$
 
 $C(5 + 8 - 1, 8) = \frac{(n + r - 1)!}{r!(n - 1)!} = \frac{12!}{8!4!} = 495$
 
-### 20. A restaurant offers six choices for the main dish. How many ways can a group of nine women select the maindish? Assume that order does not matter.
+### 20. A restaurant offers six choices for the main dish. How many ways can a group of nine women select the maindish? Assume that order does not matter
 
 n = 5
 r = 9
@@ -288,10 +287,10 @@ There are 3 cases for x2:
     * x1 + c = 7, total solution = 6
 * x2 = 3
     * Total solutions = 5
-    
+
 There, total ways to distribute is 7 + 6 + 5 = 18.
 
-### 36. Find the number of ways 11 raisins can be distributed among four children—Daisy, Emily, Francis, Gail—so that Daisy, Emily, and Francis get at least two raisins, Francis gets no more than four, and Gail gets at least three.
+### 36. Find the number of ways 11 raisins can be distributed among four children—Daisy, Emily, Francis, Gail—so that Daisy, Emily, and Francis get at least two raisins, Francis gets no more than four, and Gail gets at least three
 
 We know that $x_1 + x_2 + x_3 + x4 = 11$
 
@@ -309,9 +308,9 @@ Cases for $x_3$
     * $x_1 + x_2 + 3 + x_4 = 11$
     * $x_1 + x_2 + x_4 = 8$
     * 2 cases:
-        * $x_1 = 2, x_2 = 3, x_4 = 3$  
+        * $x_1 = 2, x_2 = 3, x_4 = 3$
             * 2 + 3 + 3 = 8
-        * $x_1 = 3, x_2 = 2, x_4 = 3$ 
+        * $x_1 = 3, x_2 = 2, x_4 = 3$
             * 3 + 2 + 3 = 8
 * $x_2 = 2$
     * $x_1 + x_2 + 2 + x_4 = 11$
@@ -319,13 +318,13 @@ Cases for $x_3$
     * 4 cases:
         * $x_1 = 2, x_2 = 2, x_4 = 5$
             * $2 + 2 + 5 = 9$
-        * $x_1 = 2, x_2 = 3, x_4 = 4$ 
+        * $x_1 = 2, x_2 = 3, x_4 = 4$
             * 2 + 3 +4 = 9
         * $x_1 = 3, x_2 = 2, x_4 = 4$
             * 3 + 2 + 4 = 9
         * $x_1 = 3, x_2 = 3, x_4 = 3$
             * 3 + 3 + 3 = 9
-            
+
 $1 + 2 + 4 = 7$ ?
 
 ## 6.6 The Binomial Theorem
@@ -365,4 +364,3 @@ Find the middle term in the binomial expansion of each:
 
 9. $(x + \frac{1}{x})^{4}$
 10. $(x - \frac{1}{x})^{6}$
-

@@ -13,16 +13,13 @@ tags:
 * Authoritative
     * Master - contains original zone data. A "primary" nameserver
     * Slave - backup server. Copy of zone data.
-
 * Non-authoritative / recursive nameservers
     * Caching-only - used for lookups, not authoritative for anything cept trivial data
-
 * Enable 53 for TCP and UDP for DNS
 
 ## Bind
 
 * Package `bind`
-
 * config = `/etc/named.conf`
 
         > vi /etc/named.conf
@@ -39,16 +36,13 @@ tags:
 ## DNS Lookups
 
 * Stub resolve sends query to client in ```/etc/resolv.conf```
-
 * If nameserver is authoritative, send authoritative answer to client
-
     * A - forward lookup (name to ipv4 address)
     * AAAA - forward lookup (name to ipv6 address)
     * PTR - reverse record
     * MX - mail exchange
     * SOA - start of authoritity
     * CNAME - alias (canonical name)
-
 * Use ```dig``` for troubleshooting
 
         > dig www.example.com

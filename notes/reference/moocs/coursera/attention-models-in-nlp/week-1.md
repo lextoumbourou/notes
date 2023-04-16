@@ -33,10 +33,8 @@ parent: attention-models-in-nlp
     * Intro to Neural Machine Translation
     * Show model that has typically been used for it: the Seq2Seq model.
     * Look at model's deficiencies and the improvements made by subsequent models.
-
 * Neural machine translation uses an encoder and decoder to translate languages.
     * English to German for this week's assignment.
-
 * [Seq2Seq model by Google in 2014](https://arxiv.org/abs/1409.3215).
     * Takes a sequence of words (or any sequence you can encode as tokens) and return another sequence.
     * Works by mapping variable length sequences to fixed length memory called [Embedding Space](Embedding Space).
@@ -69,13 +67,13 @@ parent: attention-models-in-nlp
     * Maybe model can learn what's important to focus on at each step?
     * More in next section.
     ![Seq 2 Seq attention idea](_media/s2s-attention.png)
+
 ## Seq2Seq Model with Attention
 
 * What we now call attention was introduced in paper: [Neural Machine Translation By Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473)
 * In the paper, they proved that Seq2Seq could be significantly improved with Attention by comparing BLEU scores against alternatives.
     * Note that the RNNsearch-50 model has no dropoff as the sequence length increases.
 ![Seq2Seq performance](_media/seq2seq-performance.png)
-
 
 * Attention motivation
     * We know traditional seq2seq models use final hidden state of encoder as input to decoder.
@@ -91,7 +89,6 @@ parent: attention-models-in-nlp
     * Maybe we can weight the encoder vectors before the addition. If the word will be more important to the decoder, we can weight it higher.
     ![Weighted sum](/_media/seq2seq-weighted-sum.png)
     * How do we learn these weights? Attention.
-
 * How attention weights are calculated
     * Decoders previous hidden states: $s_{i-1}$ has info about previous words in the output translation.
     * So, you can compare the decoder states with each encoder states to find most important inputs.
@@ -168,10 +165,9 @@ parent: attention-models-in-nlp
 | -------------------------- | ----------------------------------- |
 | I am hungy!                | J'ai faim!                          |
 | ...                        | ...                                 |
-| I watched the soccer game. | J'ai regardé le match de football. | 
+| I watched the soccer game. | J'ai regardé le match de football. |
 
 * Note: the dataset used isn't entirely clean.
-
 * Machine translation setup:
     * Usually would use pre-trained vector embeddings.
     * However, for assignment will use one-hot vectors to represent words.
@@ -224,7 +220,7 @@ parent: attention-models-in-nlp
 * That means that in this example, each word in the candidate would have a value of 1, and the total number of words in candidate is 4.
 * So it would have a perfect BLEU score, which obviously isn't right.
 * A modified version is that you remove the word from the reference after matching in the candidate.
-* So you match `I`, then remove it from both references. Then the next time you match `I`, it won't be in the reference, so it's not a match and so on. That would give you a Bleu score of 0.5. 
+* So you match `I`, then remove it from both references. Then the next time you match `I`, it won't be in the reference, so it's not a match and so on. That would give you a Bleu score of 0.5.
 * The most widely used loss function for machine translations.
 * Main drawback is that it doesn't consider semantic meaning.
 
@@ -322,7 +318,7 @@ This method gives better performance than random sampling and greedy decoding.
 
 ## Stack Semantics in Trax
 
-### `t1.Serial` combinator is stack oriented.
+### `t1.Serial` combinator is stack oriented
 
 * Recall that a stack is a data structure that follows Last In, First Out (LIFO) principle.
     * Whatever element is pushed onto the stack will be the first one popped out.

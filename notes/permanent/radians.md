@@ -1,6 +1,6 @@
 ---
 title: Radians
-date: 2021-10-17 10:30
+date: 2021-10-17 00:00
 tags:
   - Trigonometry
 cover: /_media/radian-cover.png

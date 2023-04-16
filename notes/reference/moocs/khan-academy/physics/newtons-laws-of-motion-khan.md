@@ -36,7 +36,7 @@ status: draft
         * When force increases so does acceleration. When mass increases, acceleration decreases.
         * Net force
             * Total sum of forces pushing or pulling on object.
-            * Forces are vectors so can be separated into horizontal and vertical forces and added separately. For example, if there's opposing vertical force $F_3$  and $F_1$ and opposing horizontal forces $F_2$ and $F_4$, you'd can calculate horizontal and vertical forces separately:
+            * Forces are vectors so can be separated into horizontal and vertical forces and added separately. For example, if there's opposing vertical force $F_3$ and $F_1$ and opposing horizontal forces $F_2$ and $F_4$, you'd can calculate horizontal and vertical forces separately:
                 * $a_x = \frac{\sum{F_x}}{m} = \frac{F_1- F_3}{m}$
                 * $a_y = \frac{\sum{F_y}}{m} = \frac{F_2- F_4}{m}$
             * For diagonal forces, you could calculate the horizontal and vertical components using pythagoreaon theory (or just look at the coordinates of the vector).

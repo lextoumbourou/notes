@@ -17,7 +17,7 @@ tags:
 * Example event
 	* Based on Bollinger Bands
 	* Price drops below -1.5 standard deviations of recent daily values
-	* SPY (S & P 500) is above 0.25 
+	* SPY (S & P 500) is above 0.25
 	* Look for examples where individual stock is doing 1 thing, but the market is doing something else
 	* Stocks goes from above $5 to below $5
 * Survivor bias -- if you only include companies that are alive, you get a better answer
@@ -40,14 +40,13 @@ tags:
 		* Fill forward. Go forwards. When data is missing, add it forwards.
 		* Always fill forward first. Then, fill backwards to add in data before stock existed.
 
-
 ##### 1.3
 
 * Data sanity and data scrubbing
 * Examples of Bad Data
 	* Failure to adjust for splits
 	* Orders of magnitude drops, followed by offsetting orders of magnitude climbs
-	* Database updates missing significant chunks of data/symbols 
+	* Database updates missing significant chunks of data/symbols
 * Why it's bad
 	* You may exploit bad data with automated strategies then fail with real data
 	* You think you've "discovered" something but haven't.
@@ -60,7 +59,6 @@ tags:
 	* Easier, more reliable to remove
 * Can repair if you have multiple sources
 
-
 ##### 2.1
 
 * Market simulator and event studies
@@ -68,5 +66,3 @@ tags:
 ##### 2.2
 
 * Create Python program that accepts orders
-
-

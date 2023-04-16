@@ -1,6 +1,6 @@
 ---
 title: Well-Designed API
-date: 2021-04-11 11:00
+date: 2021-04-11 00:00
 tags:
   - SoftwareEngineering
 ---

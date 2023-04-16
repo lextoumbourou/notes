@@ -8,8 +8,8 @@ hide_cover_in_article: true
 summary: Developers must be vigilant of slow user interfaces
 ---
 
-> "if your interface does not respond within a tenth of a second, the player will feel like something is wrong with the interface." 
-\- James Schell,  The Art of Game Design: A Book of Lenses [^1]
+> "if your interface does not respond within a tenth of a second, the player will feel like something is wrong with the interface."
+\- James Schell, The Art of Game Design: A Book of Lenses [^1]
 
 According to [studies](https://www.nngroup.com/articles/response-times-3-important-limits) [^2], 0.1 seconds is roughly the response time limit for a user to feel like they are in control of an interface.
 
@@ -44,7 +44,7 @@ a.btn {
     touch-action: none !important;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-    
+
 @keyframes pulse {
     0% {
         transform: scale(0.95);
@@ -94,7 +94,7 @@ function rgbMatches(sText, tText) {
   }
   return true;
 }
-    
+
 function toggleLoading(el, isOn) {
     if (isOn) {
         el.style.animation = "pulse 2s linear infinite"
@@ -110,7 +110,7 @@ function changeColor(delay, id, loading) {
   if (loading) {
       toggleLoading(el, true)
   }
-    
+
   setTimeout(() => {
     let color = window.getComputedStyle(el).getPropertyValue('background-color');
     var colorIndex = colors.findIndex(candidateColor => rgbMatches(candidateColor, color));

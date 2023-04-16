@@ -1,6 +1,6 @@
 ---
 title: Inverse matrices, column space, and null space
-date: 2021-11-12 17:50
+date: 2021-11-12 00:00
 category: reference/videos
 summary: Notes from [Inverse matrices, column space, and null space](https://www.youtube.com/watch?v=uQhTuRlWMxw) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
 cover: /_media/linear-system-cover.png
@@ -72,7 +72,7 @@ The same intuition carries over into higher dimensions.
 
 When the [Matrix Determinate](../../../permanent/matrix-determinate.md) is 0 - it squishes space onto a single line or a point - a [Matrix Transformation](../../../permanent/matrix-transformation.md) has no inverse: you can't un-squish a line to transform it onto a plane.
 
-When the output of a transformation is a line, we say it has [Rank](../../../permanent/matrix-rank.md) of 1. 
+When the output of a transformation is a line, we say it has [Rank](../../../permanent/matrix-rank.md) of 1.
 
 If all the vectors land on a 2d plane, the transformation [Rank](../../../permanent/matrix-rank.md) of 2.
 
@@ -84,7 +84,7 @@ For a 3d transformation, a rank 2 means that the transformation is collapsing sp
 
 The set of all possible outputs is called [Column Space](../../../permanent/column-space.md) of a matrix. We call it this because the columns of a matrix say where the [Basis Vectors](permanent/Basis Vectors.md) land and the [Vector Span](../../../permanent/vector-span.md) of basis vectors give all possible outputs.
 
-So,  column space is equal to the span of columns in your matrix.
+So, column space is equal to the span of columns in your matrix.
 
 And a more precise definition of rank is the number of dimensions in your column space.
 

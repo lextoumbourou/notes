@@ -9,9 +9,9 @@ status: draft
 
 Dijkstra's Shortest Path Algorithm provides a simple way for a computer to build a shortest path tree for a graph with non-negative path costs.
 
-Firstly, the intuition behind it. 
+Firstly, the intuition behind it.
 
-Imagine a robot in a maze. The robot has no map of the maze. All it knows is that in each corner of the maze there are checkpoints, which we'll call **nodes**.  There are paths between checkpoints, which we'll call **edges**. Each edge has a cost. None of the edges have negative path costs.
+Imagine a robot in a maze. The robot has no map of the maze. All it knows is that in each corner of the maze there are checkpoints, which we'll call **nodes**. There are paths between checkpoints, which we'll call **edges**. Each edge has a cost. None of the edges have negative path costs.
 
 The robot is aiming to find the path through the maze with the lowest cost.
 
@@ -89,10 +89,10 @@ Now at **B**, the Robot takes **B** from the Frontier and adds it to Explored.
     D       $3 + $6 = $9    A -> C -> D
     
  It examines **B**'s neighbours:
- 
+
  * **A** with a cost of 5.
  * **D** with a cost of 2.
- 
+
 The Robot checks the Frontier. It's got a path to D, but the path to B + the path to D is cheaper than what's on the Frontier. So, it replaces the D path with the new one
 
     > Frontier list <
@@ -172,7 +172,7 @@ Next, we ask the node for each of its neighbours
         for neighbour in maze[node]:
         
 
-Firstly, if the node is in ```explored``` we ignore it. 
+Firstly, if the node is in ```explored``` we ignore it.
 
             if neighbour in explored:
                 continue
@@ -197,9 +197,7 @@ One other thing we need to do, is update the ```frontier``` if we find a path th
                  frontier[neighbour] = (
                      total_path_cost, new_path)
 
-
 Let's see all that code together:
-
 
     def get_smallest_node(frontier):
         # Start off by setting the smallest value to infinity

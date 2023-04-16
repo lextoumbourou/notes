@@ -18,10 +18,10 @@ status: draft
     * Subtree at left child $v$ is the **left subtree** rooted in $v$
     * Subtree at right child $w$ is the **right subtree** rooted in $w$
     ![chapter-9-subtree-example](../../../journal/_media/chapter-9-subtree-example.png)
-###  9.6 Binary Search Trees
+
+### 9.6 Binary Search Trees
 
 * Binary trees that contain items of the same kind are called: "homogeneous trees"
-
 * [Binary Search Tree](Binary%20Search%20Tree)
     * A homogeneous binary tree where every item of the left subtree of each vertex $v$ is less than $v$, and every item on the right is greater than $v$.
     * ![chapter-9-binary-search-tree](../../../journal/_media/chapter-9-binary-search-tree.png)

@@ -16,7 +16,6 @@ parent: uol-discrete-mathematics
         * relations
         * graph theory
         * finite state machines
-
 * [Set](../../../../permanent/set.md)
     * a collection of any kind of "well-defined" objects:
         * people, ideas, numbers etc.
@@ -30,25 +29,24 @@ parent: uol-discrete-mathematics
             * $2 \in E$.
     * Use $\notin$ if not an element of set:
         * $3 \notin E$.
- 
+
 * [Cardinality](../../../../permanent/cardinality.md)
     * Given set $S$, the cardinality of $S$ is the number of elements contained in $S$.
     * Write cardinality as $|S|$
     * Example: $|C| = 3$
-    
+
 * [Subset](../../../../permanent/set-subset.md)
-    * Express as: $\subseteq$ 
+    * Express as: $\subseteq$
         * Latex: `\subseteq`
     * $A$ is a subset of $B$ if and only if every element of $A$ is also in $B$.
         * $A \subseteq B$.
     * This gives us equivalence:
         * $A \subseteq B \iff x \in A \text{ then } x \in B \text{(for all x)}$
     * Any set is a subset of itself: $S \subseteq S$
- 
+
 * [Empty Set](../../../../permanent/empty-set.md)
     * is a subset of any set $\emptyset \subseteq S$
     * empty set is a subset of itself: $\emptyset \subseteq \emptyset$
-
 * [Special Sets](../../../../permanent/special-sets.md)
     * $\mathbf{N}$ = set of natural numbers = $\{1, 2, 3, 4, ...\}$
     * $\mathbf{Z}$ = set of integers = $\{..., -3, -2, -1, 0, 1, ...\}$
@@ -61,7 +59,7 @@ parent: uol-discrete-mathematics
 * [Set Representation Methods](../../../../permanent/set-representation-methods.md)
     * [Listing Method](../../../../permanent/set-listing-method.md)
     * [Set Builder Notation](../../../../permanent/set-builder-notation.md)
-    
+
 * [Listing Method](../../../../permanent/set-listing-method.md)
     * Represent a set $S$ using all elements of set $S$.
     * Examples:
@@ -69,7 +67,7 @@ parent: uol-discrete-mathematics
             * $S1 = \{a, e, i, o, u\}$
         * Set of all positive integers less than 10.
             * $S2 = \{1, 2, 3, 4, 5, 6, 7, 8, 9\}$
-            
+
 * [Set Builder Notation](../../../../permanent/set-builder-notation.md)
     * Examples:
         * Set of all even integers: { ..., -6, -4, -2, 0, 2, 4, 6 ... }
@@ -111,7 +109,7 @@ parent: uol-discrete-mathematics
     * Exercise 2
         * $P(\emptyset) = ?$
         * $P(P(\emptyset)) = ?$
-        * Powerset of empty set is set containing empty set: $P(\emptyset) = \{ \emptyset \}$ 
+        * Powerset of empty set is set containing empty set: $P(\emptyset) = \{ \emptyset \}$
         * Empty set is the only subset of the empty set: $\emptyset \subseteq \emptyset$
         * Empty set is a set subset of the power set of empty set: $\emptyset \subseteq P(\emptyset)$
         * $P(P(\emptyset)) = \{ \emptyset, \{ \emptyset \} \}$
@@ -148,7 +146,7 @@ parent: uol-discrete-mathematics
  | 1   | 0    | 1       |
  | 1   | 1    | 1       |
 
- 
+
 * [Intersection](../../../../permanent/intersection.md)
      * Notion: $A \cap B$
      * Set builder: $A \cap B = \{ x | x \in A \text{ and } x \in B \}$
@@ -163,7 +161,7 @@ parent: uol-discrete-mathematics
  | 1   | 0    | 0       |
  | 1   | 1    | 1       |
 
- 
+
 * [Set Difference](../../../../permanent/set-difference.md)
     * Elements in $A$, but not $B$.
         * $A - B = \{ x | x \in A \text{ and } x \notin B \}$
@@ -178,7 +176,7 @@ parent: uol-discrete-mathematics
  | 1   | 0    | 1       |
  | 1   | 1    | 0       |
 
- 
+
 * [Symmetric Difference](../../../../permanent/set-symmetric-difference.md)
     * Elements in $A$ or in $B$ but not in both.
         * $A \oplus B = \{ x | (x \in A \text{ or } x \in B) \text{ and } x \notin A \cap B \}$
@@ -186,7 +184,7 @@ parent: uol-discrete-mathematics
     * Can think of it as union of A and B, with all the common elements of A and B removed.
         * $A \oplus B = (A \cup B) - (A \cap B)$
     * Example:
-        * A = {1, 2, 3} 
+        * A = {1, 2, 3}
         * B = {3, 4, 5}
         * $A \oplus B = \{ 1, 2, 4, 5 \}$
     * Membership table

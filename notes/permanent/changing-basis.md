@@ -7,9 +7,9 @@ summary: "Since any vectors can be Basis Vectors, it's useful to understand how 
 cover: /_media/changing-basis-cover.png
 ---
 
-The use of coordinates to define vectors implies an agreement about which [Basis Vectors](permanent/Basis Vectors.md) we use. In 2d space, we commonly use the standard basis vectors: 
+The use of coordinates to define vectors implies an agreement about which [Basis Vectors](permanent/Basis Vectors.md) we use. In 2d space, we commonly use the standard basis vectors:
 
-$\hat{i}=\begin{bmatrix}1 \\ 0\end{bmatrix}$,  $\hat{j}=\begin{bmatrix}0 \\ 1\end{bmatrix}$.
+$\hat{i}=\begin{bmatrix}1 \\ 0\end{bmatrix}$, $\hat{j}=\begin{bmatrix}0 \\ 1\end{bmatrix}$.
 
 However, we are technically not limited to just the standard basis vectors: we can use any set of vectors to describe a coordinate system. Perhaps we encounter an Alien whose coordinate system uses these basis vectors:
 

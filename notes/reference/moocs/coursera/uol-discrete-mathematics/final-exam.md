@@ -10,7 +10,7 @@ parent: uol-discrete-mathematics
 
 ## Part A
 
-## Question 1.
+## Question 1
 
 In Company, there are 55 members of staff. Each member posts a greeting card to all the members. How many greeting cards where posted by them?
 
@@ -18,7 +18,7 @@ Each person posts to 54 people. Therefore:
 
 55 * 54 = 2970
 
-## Question 2.
+## Question 2
 
 Which of the following represents the set:
 
@@ -26,8 +26,7 @@ $\{−1, \frac{1}{2}, \frac{−1}{3},\frac{1}{4},\frac{−1}{5},\frac{1}{6},\fra
 
 $\frac{(-1)^n}{n} : n \in Z \text{ and } 0 \leq n \leq 10 \}$
 
-
-## Question 3.
+## Question 3
 
 Let $R$ be a relation on the set of positive integers with $n \ R \ m \rightarrow n \text{ divides } m$
 
@@ -39,7 +38,7 @@ Which of the following statements is true about this relation $R$?
 
 Therefore the answer is reflexive, transitive and NOT symmetric.
 
-## Question 4.
+## Question 4
 
 Which of the following are not functions?
 
@@ -63,21 +62,21 @@ $f(x) = \frac{1}{1 - x^2}$
 
 This is NOT a function, as the range is invalid when $x = 1$, $\frac{1}{1-1} = \frac{1}{0}$
 
-d. 
+d.
 $f: Q \rightarrow Q$
 $f(x) = \frac{x}{2}$
 
 This is a function. There isn't any number in the set of rational numbers that can't be divided by 2.
 
-## Question 5.
+## Question 5
 
-Which degree sequence cannot represent a simple graph? 
+Which degree sequence cannot represent a simple graph?
 
 We know that for a simple graph, the degree of each vertex of G is at most equal to $n-1$.
 
 Therefore: $2, 4, 3, 3$ is not a simple graph.
 
-## Question 6.
+## Question 6
 
 Let $p$ and $q$ be two propositions. Which one of the following logical expression is equivalent to $\neg (p \rightarrow q)$
 
@@ -88,7 +87,7 @@ Let $p$ and $q$ be two propositions. Which one of the following logical expressi
 | 1   | 0   | 0        | 1        | 0                 | 1                        | 1               | 1                | 0                | 0                |
 | 1   | 1   | 0        | 0        | 1                 | 0                        | 1               | 0                | 0                | 1                |
 
-## Question 7.
+## Question 7
 
 What is the number of edges in a complete graph $K_{10}$?
 
@@ -102,7 +101,7 @@ $$
 \end{align}
 $$
 
-## Question 8.
+## Question 8
 
 In how many ways a committee of 5 members can be selected from 6 men and 5 women, consisting of 3 men and 2 woman?
 
@@ -117,13 +116,13 @@ $\frac{5!}{2!3!} = 10$
 
 Using the multiplication principle, we get 20 * 10 = 200
 
-## Question 9.
+## Question 9
 
 In how many ways can a football team of 11 be selected from a squad of 15 players?
 
 $\frac{15!}{11!4!} = 1365$
 
-## Question 10.
+## Question 10
 
 Consider the following predicate logic statement:
 
@@ -141,7 +140,7 @@ $(\exists x \in D$, $\forall y \in D$, $P(x) \land Q(x) \land \neg R(x)))$
 
 ## Part B
 
-### Question 1.
+### Question 1
 
 a. List the elements of the following sets
 
@@ -206,9 +205,9 @@ d. Let $p$, $q$ and $r$ be three propositions for which $p$ and $q$ are T and $r
 
 i. $p \rightarrow (r \rightarrow q)$
 
-$T \rightarrow (F \rightarrow T)$ 
-$T \rightarrow T$ 
-$T$ 
+$T \rightarrow (F \rightarrow T)$
+$T \rightarrow T$
+$T$
 
 ii. $(p \oplus r) \rightarrow \neg q$
 
@@ -277,7 +276,7 @@ Since $x \in B$, we have $x \in A \cap B$
 Therefore, we have $x \in A \cap B$ and $x \not \in C$, which contradicts the assumption that $A \cap B \subseteq C$
 
 Therefore, our assumption that $x \in A - C$ must be false.
-This proves that  $A \cap B \subseteq C$ and $x \in B$ then $x \not \in A - C$ 
+This proves that $A \cap B \subseteq C$ and $x \in B$ then $x \not \in A - C$
 
 ii. Suppose that I want to purchase a tablet computer. I can choose either a large or a small screen; a 64GB, 128GB or 256 GB storage capacity and black, while, gold or silve cover.
 
@@ -289,7 +288,7 @@ Total options = 2 * 3 * 4 = 24
 
 ---
 
-### Question 3.
+### Question 3
 
 a. Explain the difference between a Euler path and an Euler cycle
 
@@ -336,6 +335,7 @@ Unvisited = {D, E, C, F, G, H, I}
 Step 3.
 
 Visit E.
+
 | Node | Shortest path from A | Previous vertex |
 | ---- | -------------------- | --------------- |
 | A    | 0                    | A               |
@@ -435,7 +435,7 @@ Visit I
 
 Unvisited = {H}
 
-Shortest path: A -> B -> D ->  G ->  I
+Shortest path: A -> B -> D -> G -> I
 
 ----
 
@@ -475,6 +475,3 @@ $g \ o \ f$ is a one-to-one function. So, given $a, b \in A$ with $a \ne b$ then
 Therefore, $g(f(a)) \ne g(f(b))$.
 
 Therefore, $f(a) \ne f(b)$, which implies $f$ is a one to one function.
-
-
-

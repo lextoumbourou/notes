@@ -11,18 +11,12 @@ tags:
 ## Usage Reports
 
 * ```df -h``` -- provides info about mounts
-
 * ```du``` -- directory level analysis
-
     * ```--maxdepth``` -- how many subdirs to traverse
-
 * ```iostat``` -- get details on cpu usage and disk device statistics
-
     * ```iostat -N``` -- logical volume information
     * ```iostat -dNk <interval> <number_of_repetitions>``` -- logical volume information
-
 * ```vmstat``` -- get virtual memory stats
-
     * ```r``` -- ??
     * ```b``` -- ??
     * ```swpd``` -- ??
@@ -50,21 +44,17 @@ tags:
 ## Tuning tmpwatch and logrotate
 
 * `tmpwatch` is used to remove folders that haven't been modified in X days
-
 * `logrotate` is used to rotate logs daily
 
 ## Remote logging service
 
 * `/etc/rsyslog.conf` file
-
 * Go through man page of `rsyslogd` to get info on facilities levels
-
     * debug
     * info
     |
     |
     * panic
-
 * To send to remotehost
 
         > vi /etc/rsyslog.conf

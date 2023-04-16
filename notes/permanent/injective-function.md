@@ -10,5 +10,5 @@ In other words, every unique input to $f(x)$ must have a unique output.
 
 Formally, we can say either:
 
-*  for all, $a, b \in A, \text{ if } a \ne b \text{ then } f(a) \ne f(b)$
+* for all, $a, b \in A, \text{ if } a \ne b \text{ then } f(a) \ne f(b)$
 * or, for all $a, b \in A, \text{ if } a = b \text{ then } f(a) = f(b)$

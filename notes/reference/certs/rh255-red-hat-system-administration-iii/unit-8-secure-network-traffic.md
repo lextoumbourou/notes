@@ -11,15 +11,11 @@ tags:
 ## SSH Port Forwarding
 
 * ```ssh -L <local_port>:<remote_host>:<remote_port> <ssh_host>```
-
 * Example: ```ssh -L 1025:mailhost:25 sshhost```
-
     * Create a local port on port ```1025```
     * The ssh server on ```sshhost``` forwards traffic to mailhost on port 25
         * Note that the ```sshhost``` will resolve mailhost, not your client machine
-
 * ```ssh -D localport sshhost``` creates a socks proxy through ```sshhost```
-
     * ```ssh -D 8080 internet_server1```
 
 ### Options
@@ -60,7 +56,6 @@ tags:
         * default action to take when nothing passes
         * DROP -- should be default
         * If default is DROP, obviously you'll need to write policy to ACCEPT
-
     * Targets -- actions to take when packets match rule
         * ACCEPT
         * REJECT -- tell the client we don't want 'em
@@ -84,17 +79,13 @@ tags:
     pkts bytes target     prot opt in     out     source               destination        
 
 * here the default ```policy``` is ```ACCEPT```
-
 * To append a rule to the end, use ```-A``` flag.
 
         > iptables -A INPUT -j REJECT
 
 * To insert a rule at the start (or somewhere else), use ```-I``` flag
-
 * To delete a rule, use ```-D``` flag
-
 * To flush (delete all rules), use ```-F``` flag.
-
 * To accept all traffic from a network:
 
         > iptables -I INPUT -s 192.168.0.0./24 -j ACCEPT
@@ -116,32 +107,21 @@ tags:
 ### Connection tracking states
 
 * `NEW``
-
     * packets starts a new connection
     * adds a rule to connection tracking table
-
 * `ESTABLISHED`
-
     * any packet that matches a rule in the connection tracking table
     * two-way connection like ssh
-
 * `RELATED`
-
     * like ESTABLISHED but specific to certain services like FTP
-
 * `INVALID`
-
     * packet cannot be identified
     * normally these should be rejected or dropped
-
 * Another Example
-
 * ```iptables -I INPUT 2 -m state --state ESTABLISHED,RELATED -j ACCEPT```
-
     * Put into the INPUT chain at the 2nd place
     * For all connections that are ESTABLISHED, RELATED
     * ACCEPT
-
 * Watch packets see where blocked and accepted
 
 ```watch -d -n 1 'iptables -nVL --line'```
@@ -205,20 +185,16 @@ Complete firewall policy
 ## Network Address Translation
 
 * Masq causes source ip address to match ip it left firewall on
-
     * Source aquires public IP of the front-end machine
     * Client -> Firewall (client packet acquires ip of firewall) -> Google
     * Google -> Firewall (firewall knows how to get to client) -> Client
     * Firewall keeps connection in a tracking table
-
 * 3 chains:
-
     * PREROUTING - processed before routing table
         * DNAT (destination NAT) occurs here
     * OUTPUT
     * POSTROUTING - processed after the routing table
         * SNAT and MASQUERADE occur here
-
 * ```iptables``` rule would look like:
 
         > iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE

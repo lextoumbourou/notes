@@ -11,11 +11,8 @@ tags:
 ## Client side
 
 * ```/etc/ntp.conf```
-
     * ```server <ntp-server> iburst``` mode allows for quick synchronisation to a server
-
 * ```ntpdate -q instructor.example.com```
-
 * ```ntpd -c pe```
 
 ```bash
@@ -45,7 +42,6 @@ remote           refid      st t when poll reach   delay   offset  jitter
 ```
 
 * Common flags include:
-
     * ```ignore``` - deny packets of all kinds, including ntpd and ntpdc queries
     * ```kod``` - Kiss-of-death packets are sent which notifies the client it hit an access violation
     * ```nomodify``` - deny ```ntpq``` and ```ntpdc``` queries whcih attempt to modify the state of the server

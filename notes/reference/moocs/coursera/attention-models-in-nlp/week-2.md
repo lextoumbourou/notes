@@ -21,7 +21,7 @@ parent: attention-models-in-nlp
 
 * With RNNs, sequential steps are required to encode input.
     * This means each word is dependant on the previous and it cannot be easily parallellised.
-    * The longer the sequence, the slower the encoding. 
+    * The longer the sequence, the slower the encoding.
 * You also run more risk of vanishing gradient problems.
     * LSTMs and GRUs help a bit, but even they struggle with very long sequences.
 * Attention deals with vanishing gradients by using all inputs each step.
@@ -37,13 +37,12 @@ parent: attention-models-in-nlp
 
 * Very efficient as it's just matrix multiplication operations and a Softmax.
 * Model can grow larger and more complex while using less memory.
-
 * Transformer model uses "multi-head attention" layer:
     * has multiple linear transformations and dot-product attention running in parallel.
     * linear transations have parameters that are learned.
-    
+
     ![Multi-head attention](/_media/attention-multi-head.png)
-    
+
 * Encoder step-by-step:
     * Multi-head attention modules perform self-attention on input sequence.
         * Every item in input attends to every other item.
@@ -52,7 +51,7 @@ parent: attention-models-in-nlp
         * Then residual connection and normalization.
     * This layer is one block that is repeated N times.
     * Gives you contextual representation of inputs.
-    
+
     ![Encoder diagram](/_media/attention-encoder.png)
 * Decoder:
     ![Decoder](/_media/attention-decoder.png)
@@ -64,6 +63,7 @@ parent: attention-models-in-nlp
     * Positional encoding vectors are added to word embeddings for input embeddings.
     * Positional encoding can be learned or fixed.
     ![Positional Encoding](/_media/attention-pos-encoding.png)
+
 ## Transformer Applications
 
 * Transformers applications diverse: use in NLP and beyond.
@@ -152,7 +152,6 @@ $$
     * Queries from one sentence, keys and values from another.
     ![Encoder-Decoder Attention](/_media/attention-encoder-decoder-attention.png)
 
-
 * Used in translation task from last week.
 
 ### Self-Attention
@@ -186,7 +185,6 @@ $$
     * Applied Scaled Dot-Product Attention to each set.
     * Concat results from each head into a single matrix.
     * Transform concat results into single result using Linear layer.
-
 * In the original paper, the author sets the size of the query, key and value matrices to be `d_model / num_heads`.
     * This means that the computation costs aren't much more significant than a single head.
 
@@ -208,7 +206,6 @@ $$
 * Repeat Attention and Feed Forward N times depending on model size.
 
 ![Transformer Decoder](/_media/attention-transformer-decoder.png)
-
 
 * More detail:
     * Model has 3 layers at the beginning: inputs, word embedding and positional embedding.
@@ -241,8 +238,8 @@ $$
 * Setup for summarisation problem:
     * Concat the input, ie the article, with summary.
     * Separate with `<EOS>` tokens.
-    * Example: 
-    
+    * Example:
+
     ```
     ARTICLE TEXT <EOS> ARTICLE SUMAMRY <EOS> <pad>
     ```

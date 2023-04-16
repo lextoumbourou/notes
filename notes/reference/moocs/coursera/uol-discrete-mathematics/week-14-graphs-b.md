@@ -12,17 +12,17 @@ modified: 2023-04-08 00:00
 * [Isomorphism](../../../../permanent/graph-isomorphism.md)
     * Two graphs $G_1$ and $G_2$ are isomorphic if there is a bijection (invertible function) $f: G_1 \rightarrow G_2$ that preserves adjacency and non-adjacency.
         * if $uv$ is in $E(G_1)$ then $f(u)f(v)$ is in $E(G_2)$
-        
+
         ![week-14-isomorphic-graph](../../../../_media/week-14-isomorphic-graph.png)
-    
+
     * Two graphs with different degree sequences can't be ismorphic.
 * Properties of isomorphic graphs
     * 2 graphs with different degree sequence can't be isomorphic.
-    
+
       ![week-14-not-isomorphic](../../../../_media/week-14-not-isomorphic.png)
-          
+
     * 2 graphs with the same degree sequence may not be isomorphic.
-    
+
       ![week-14-not-isomorphic-2](../../../../_media/week-14-not-isomorphic-2.png)
 
 ## 7.203 Bipartite graphs
@@ -31,9 +31,9 @@ modified: 2023-04-08 00:00
     * A graph $G(V, E)$ is called a bi-partite graph.
     * If the set of vertices V can be partitioned in 2 no-empty disjoint sets $V_1$ and $V_2$ in such a way that each edge $e$ in $G$ has one endpoint in $V_1$ and another endpoint in $V_2$.
     * Example:
-    
+
       ![week-14-bipartite-graphs](../../../../_media/week-14-bipartite-graphs.png)
-      
+
       * Graph is 2-colourable.
       * No odd-length cycles.
 * Matching
@@ -41,9 +41,9 @@ modified: 2023-04-08 00:00
         * ie no 2 edges share a common endpoint.
     * A vertex is matched (or saturated) if it is an endpoint of one of the edges in the matching.
         * Otherwise the vertex is unmatched.
-        
+
         ![week-14-matching](../../../../_media/week-14-matching.png)
-        
+
 * Maximum matching
     * A maximum matching is a matching of maximum size so that if any edge is added, it's no longer matching.
     * In a bitpartite graph, there can be multiple maximum matching.
@@ -57,9 +57,9 @@ modified: 2023-04-08 00:00
         * Depth-first search:
             * Traverses graph all the way to a leaf before starting another path.
     * Example:
-    
+
       ![week-14-hopcroft-karp-example](../../../../_media/week-14-hopcroft-karp-example.png)
-      
+
     * Pseduo code:
         * Initialise M = {}
         * While there exists an Augmenting Path p
@@ -70,37 +70,34 @@ modified: 2023-04-08 00:00
 ## 7.205 The adjacency matrix of a graph
 
 * [Adjaceny List](permanent/adjaceny-list.md) of a graph.
-
     * So far a graph has been represented by a set of vertices and a set of edges.
     * Adjaceny list of a graph G is a list of all vertices in G and their corresponding individual adjacent vertices.
-    
-    ![week-14-adjaceny-matrix](../../../../_media/week-14-adjaceny-matrix.png)
-    
-* [Adjacent Matrix](permanent/adjacent-matrix.md) of a graph.
 
+    ![week-14-adjaceny-matrix](../../../../_media/week-14-adjaceny-matrix.png)
+
+* [Adjacent Matrix](permanent/adjacent-matrix.md) of a graph.
     * A graph can also be represented by its adjacency matrix.
-    
+
     ![week-14-adjaceny-matrix-1](../../../../_media/week-14-adjaceny-matrix-1.png)
-    
+
     * Apparent from the loops, ever other edge is represented twice (ie v1 -> v3 and v3->v1)
     * So we can multiply the diagonal by 2 to represent loops consistently.
-    
+
 * Properties of the adjaceny matrix.
     * Adjaceny matrix of an undirected graph is symmetric.
     * Number of edges in undirected graph equals half the sum of all elements ($\mathbf{m_ij}$) of its corresponding adjaceny matrix.
-    
+
       ![week-14-sum-of-degree-sequence](../../../../_media/week-14-sum-of-degree-sequence.png)
-      
+
     * In a directed graph, the adjaceny matrix only counts an edge pointing in a certain direction once.
 
 ## 7.207 Dijkstra's algorithm
 
 * [Weighted Graphs](permanent/weighted-graphs.md)
-
     * A weighted graph is a graph where each edge is assigned a numerical weight.
-    
+
       ![week-14-weighted-graph](../../../../_media/week-14-weighted-graph.png)
-      
+
       * Can be used to model:
           * Distance between cities.
           * Response time in communication network.

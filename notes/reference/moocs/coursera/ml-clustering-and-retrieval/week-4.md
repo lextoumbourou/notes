@@ -51,13 +51,13 @@ status: draft
        * The middle point between the 2 values means is the centre point of the contour plot.
 * Covariance matrix:
    * $$\Sigma = \begin{bmatrix}{\sigma_\color{blue}{blue}}^2 & \sigma_{\color{blue}{blue},\color{green}{green}} \\ \sigma_{\color{green}{green},\color{blue}{blue}} & {\sigma_\color{green}{green}}^2 \end{bmatrix} $$
-   * determines orientation and spread aka correlation structure (don't quite get this yet). 
+   * determines orientation and spread aka correlation structure (don't quite get this yet).
 * Covariance structure examples:
-   * Diagonal covariance with equal elements over the diagonal 
+   * Diagonal covariance with equal elements over the diagonal
      * $$\Sigma = \begin{bmatrix}\sigma^2 & 0 \\ 0 & \sigma^2 \end{bmatrix} $$
      * "There's no correlation between the random variables"
      * Get a circulate shape to the distribution because variables on both dimensions are the same.
-   * Diagonal covariance with different variances over the diagonal 
+   * Diagonal covariance with different variances over the diagonal
      * $$\Sigma = \begin{bmatrix}{\sigma_\color{blue}{B}}^{2} & 0 \\ 0 & {\sigma_\color{green}{G}}^2 \end{bmatrix} $$
      * End up with axis aligned ellipses.
    * Full covariance allowing for correlation between variables.
@@ -78,6 +78,7 @@ status: draft
     * Taking the category specific gaussians (but we don't know the labels yet???) and average them together.
 * Utilise a weighted average to account for larger numbers of datapoints for a certain category.
   * Introduce cluster weights $$\pi_k $$
+
 where k represents a cluster of datapoints.
   * Each weight is between 0 and 1.
   * Sum of the weights always equals or integrates to 1.
@@ -92,6 +93,7 @@ where k represents a cluster of datapoints.
     * Aka prior probability: if you have don't know what the datapoint is, how likely is it?
 * Likelihood term:
     * Given $$\mathbf{x}_i $$is from cluster k, what's the likelihood of seeing $$\mathbf{x}_i $$
+
 ?
 
     * $$p(x_i | z_i = j, \mu_k, \Sigma_k) = N(x_i \mid \mu_k, \Sigma_k) $$
@@ -101,7 +103,7 @@ where k represents a cluster of datapoints.
 * Allowing for a full covariance matrix would require over V(V + 1) / 2 unique parameters to learn.
 * Assume diagonal form to covariance matrix.
   * Means ellipses are constrained to axis aligned.
-  * Somewhat restrictive but mitigated by the fact you can learn weights of dimensions and can even learn them within clusters: may discover, for example, one word is more important in one cluster than another. 
+  * Somewhat restrictive but mitigated by the fact you can learn weights of dimensions and can even learn them within clusters: may discover, for example, one word is more important in one cluster than another.
 
 ## Expectation Maximization (EM) building blocks
 
@@ -113,6 +115,7 @@ where k represents a cluster of datapoints.
   2. Output soft assignments per data point.
 
 * Part 1: What if we know the cluster params $$\{\pi_k, \mu_k, \Sigma_k\} $$
+
 ?
     * Easy to compute when known: for each possible cluster, compute prior by likelihood to get responsibily and normalise vector so it sums to 1 over all clusters.
     * Soft assignments are identified by a thing called "responsibility vector":
@@ -122,6 +125,7 @@ where k represents a cluster of datapoints.
       (where k is the number of clusters in the model)
 
     * $$r_{ik} = \frac{\pi_k \space N(x_i \mid \mu_k, \Sigma_k)}{\sum_{j=1}^{K} \pi_j \space N(x_i \mid \mu_k, \Sigma_k)} $$
+
   * When datapoint is closer to cluster centre, cluster is said to take "more responsibility" for datapoint.
 
 ### Estimating cluster parameters from known (hard) cluster assignments
@@ -177,7 +181,7 @@ where k represents a cluster of datapoints.
 * If you consider a gaussian mixture model with spherically symmetric clusters (sigma squared is identical along covariance matrix diagonal) and set variance to 0:
   * Clusters have equal variance so relative likelihood is just function of cluster centre.
   * As variance goes to 0, likelihood ratio becomes 0 or 1.
-  * Responsibilities way in somewhat, but dominated by likelihood.   
+  * Responsibilities way in somewhat, but dominated by likelihood.
 
 ### Worked example for EM
 

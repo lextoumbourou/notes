@@ -1,6 +1,6 @@
 ---
 title: Matrix Determinate
-date: 2021-11-06 18:00
+date: 2021-11-06 00:00
 tags:
   - LinearAlgebra
 cover: /_media/determinant.png

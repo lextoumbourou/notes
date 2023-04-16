@@ -30,13 +30,13 @@ tags:
 
 * Efficient markets hypothesis
 	* Weak version
-		* future prices cannot be predicted by analysing prices from the past 
+		* future prices cannot be predicted by analysing prices from the past
 	* Semi-strong
 		* no room for arbitrage
 	* Strong
 		* market is efficient.
 		* Prices reflect *hidden* infroamtion
-* Some evidence that it's not true 
+* Some evidence that it's not true
 * Behaviour economies is an argument against EMH
 
 #### 1.3
@@ -89,10 +89,10 @@ tags:
 * How Optimizer Works
 	* Define variables
 		* Things optimiser can "tweak
-		* Vary how much to allocate to equities (weights) 
+		* Vary how much to allocate to equities (weights)
 	* Define constraints
 		* Sum of all weights must add up to 1
-		* No less than 10% in a certain equity	 
+		* No less than 10% in a certain equity
 	* Define optimization criteria
 * Optimizer algorithm
 	1. Tweak weights
@@ -100,7 +100,7 @@ tags:
 	3. OK?
 	4. Call function
 	5. Repeat
-* Could be a giant ```for``` loop that brute forces the thing. 
+* Could be a giant ```for``` loop that brute forces the thing.
 * QSTK uses an optimizer called CVXOPT
 
 ##### 3.1
@@ -118,5 +118,3 @@ tags:
 
 * Fairly easy
 * Most of the data was already provided
-
-

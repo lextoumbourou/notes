@@ -108,7 +108,6 @@ Nmap done: 1 IP address (1 host up) scanned in 17.77 seconds
 ## Avahi
 
 * Disable for security reasons
-
 * Use ```netstat``` to see if it's running
 
 ```bash

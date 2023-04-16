@@ -46,7 +46,7 @@ tags:
 * What's a company worth?
   * Why not ask the market?
   * value = # shares outstanding * price
-  * Efficient market hypothesis  
+  * Efficient market hypothesis
 
 ### Module 2
 
@@ -63,7 +63,6 @@ tags:
     * market return:
       * risk free rate of return +
       * excess return
-
 * Another way to understand CAPM is via this series of videos: <http://www.youtube.com/watch?v=LWsEJYPSw0k>‎
 
 #### 2.2

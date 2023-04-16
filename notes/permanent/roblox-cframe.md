@@ -1,6 +1,6 @@
 ---
 title: Roblox CFrame
-date: 2021-10-19 20:00
+date: 2021-10-19 00:00
 cover: /_media/roblox-cframe-cover.png
 summary: In Roblox, a CFrame (coordinate frame) is an object that encodes position and rotation in 3D space.
 tags:
@@ -70,9 +70,9 @@ local relativePositionOfNewPart = CFrame.new(0, 0, 10)
 part.CFrame = character.Head.CFrame:ToWorldSpace(relativePositionOfNewPart)
 ```
 
-That method is the equivalent of multiplying the left CFrame by the right  `character.Head.CFrame * relativePositionOfNewPart` (note that CFrame multiplication is not communitive - the order matters). 
+That method is the equivalent of multiplying the left CFrame by the right `character.Head.CFrame * relativePositionOfNewPart` (note that CFrame multiplication is not communitive - the order matters).
 
-A CFrame is composed of 4 [Vector](vector.md)s. 
+A CFrame is composed of 4 [Vector](vector.md)s.
 
 1. <strong>Position vector $(\mathbf{x}, \mathbf{y}, \mathbf{z})$</strong>
 2. <font color="#A92C21">Right vector $(rX, rY, rZ)$</font>
@@ -90,7 +90,7 @@ print(CFrame.UpVector)
 print(CFrame.Lookup)
 ```
 
-You can view the raw values using the `Components` method: 
+You can view the raw values using the `Components` method:
 
 ```lua
 local x, y, z, rightX, rightY, rightZ, upX, upY, upZ, lookX, lookY, lookZ = cf:Components()
@@ -98,11 +98,9 @@ local x, y, z, rightX, rightY, rightZ, upX, upY, upZ, lookX, lookY, lookZ = cf:C
 
 We can use the output of this function to serialize CFrames to a Datastore. When creating a furniture placement system, for example.
 
-
 Under the hood, Roblox multiplies CFrames by structuring into a Matrix like this:
 
 $\begin{bmatrix}\textcolor{red}{rX} & \textcolor{green}{uX} & \textcolor{blue}{lX} & \textbf{x} \\ \textcolor{red}{rY} & \textcolor{green}{uY} & \textcolor{blue}{lY} & \textbf{y} \\ \textcolor{red}{rZ} & \textcolor{green}{uZ} & \textcolor{blue}{lZ} & \textbf{z} \\ 0 & 0 & 0 & 1\end{bmatrix}$
-
 
 This example shows a simple matrix multiplication example. Multiplying a 90° rotated CFrame with a straight facing vector two up. Note how the result CFrame is two studs higher than the original CFrame. This is the equivalent of using `ToWorldSpace(cframe)`.
 

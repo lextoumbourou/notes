@@ -82,9 +82,11 @@ status: draft
 
 * Can rewrite the non-scaled Euclidean distance using linear algebra. Example:
     * $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i[1] - \mathbf{x}_q[1])^2 + ... + (\mathbf{x}_i[d] - \mathbf{x}_q[d])^2}  $$
+
 can be rewritten as:
 
 	* $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i - \mathbf{x}_q)^T(\mathbf{x}_i - \mathbf{x}_q)} $$
+
 	* Basically: taking the dot product of the two feature distance vectors is equivalent to squaring then adding the results.
 * To add the feature weights, you can add a diagonal matrix of features (note: not clear on the diagonal matrix part):
 	* $$distance(\mathbf{x}_i, \mathbf{x}_q) = \sqrt{(\mathbf{x}_i - \mathbf{x}_q)^T\color{blue}{\mathbf{A}}(\mathbf{x}_i - \mathbf{x}_q)} $$

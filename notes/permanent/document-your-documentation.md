@@ -14,7 +14,7 @@ Over time, as your product's complexity increases, so does the complexity of kno
 
 My team has most documents in Notion, some in the README.md files, some as comments in code, some pinned to Slack channels, and some in Google Docs.
 
-Documentation in multiple places isn't necessarily a problem -  information requires various mediums.
+Documentation in multiple places isn't necessarily a problem - information requires various mediums.
 
 However, having to make a decision every time we try to share information is a waste of valuable brain cycles and increases [Decision Fatigue](https://en.wikipedia.org/wiki/Decision_fatigue). I would prefer we utilize our brain energy for writing good documentation.
 
@@ -33,29 +33,29 @@ Here's an example:
 > ### Primary
 >
 > Notion should be the first choice for most documentation.
-> 
+>
 > If it's product-specific, please put it in the folder under **Products > Product Name**.
-> 
+>
 > Review the existing categories in the sidebar for the most relevant ones for company-wide sharing. You may add a new one if none fit.
 >
 >  Notion ensures our documentation is searchable and easily accessible.
-> 
+>
 > Some exceptions apply:
-> 
+>
 > ### Repository setup information
 >
 > A `README.md` file should describe how to set up the project, including running the application and unit tests.
 > Add a page in Notion that links to each repository. See **Project A** for an example.
 > Use Notion if you need to expand on documentation beyond simply setting up the project.
-> 
+>
 > Using the README for repository setup is usually the shortest path to ensuring that the setup instructions remain up-to-date and allow for linking to files within the repro. It is also the first place that most newer developers will look for documentation.
 >
 > ### Ephemeral Documents
-> 
+>
 > Some documents, for example, the project to-do lists, meeting summaries, balancing information, etc., make sense to live in a Google Document.
 >
-> Google Documents is generally better for these sorts of documents,  especially involving outside collaborators.
-> 
+> Google Documents is generally better for these sorts of documents, especially involving outside collaborators.
+>
 > If the document needs to become long-lived, add a link for it in Notion. Each project has a page called **Key Documents** to which we can link these.
 >
 

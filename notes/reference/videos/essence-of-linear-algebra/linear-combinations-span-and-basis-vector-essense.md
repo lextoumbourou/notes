@@ -1,6 +1,6 @@
 ---
 title: Linear combinations, span, and basis vectors
-date: 2021-10-23 18:00
+date: 2021-10-23 00:00
 category: reference/videos
 summary: Notes from [Linear combinations, span, and basis vectors](https://www.youtube.com/watch?v=fNk_zzaMoSs) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
 cover: /_media/linear-comb-basis-vectors.png
@@ -10,7 +10,7 @@ parent: essence-of-linear-algebra
 
 Notes from [Linear combinations, span, and basis vectors](https://www.youtube.com/watch?v=fNk_zzaMoSs) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.
 
-In the xy coordinate system there are 2 special vectors. One pointing to the right called $\hat{i}$: $\begin{bmatrix}1 \\ 0\end{bmatrix}$  or *"the unit vector in the x direction"* and one pointing up called $\hat{j}$: $\begin{bmatrix}1 \\ 0\end{bmatrix}$ or *"the unit vector in the y direction"*.
+In the xy coordinate system there are 2 special vectors. One pointing to the right called $\hat{i}$: $\begin{bmatrix}1 \\ 0\end{bmatrix}$ or *"the unit vector in the x direction"* and one pointing up called $\hat{j}$: $\begin{bmatrix}1 \\ 0\end{bmatrix}$ or *"the unit vector in the y direction"*.
 
 We consider these the [Basis Vectors](../../../permanent/basis-vectors.md) of the XY coordinate system.
 
@@ -22,7 +22,7 @@ Note that we aren't limited to vectors $\begin{bmatrix}1 \\ 0\end{bmatrix}$ and 
 
 For two vectors $\vec{v}$ and $\vec{w}$, we can imagine all the vectors you can reach by scaling each vector and adding the results. The answer is, in most cases, you can get to every possible vector.
 
-If both vectors are on the same line, the result vector will all be limited to the same line. 
+If both vectors are on the same line, the result vector will all be limited to the same line.
 
 ![Vector span same line](/_media/linear-vector-span-same-line.png)
 

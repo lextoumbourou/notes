@@ -22,21 +22,17 @@ tags:
 ## Postfix
 
 * Use `postconf` to see all the available Postfix options
-
 * To make Postfix available on all interfaces, set `inet_interfaces`
 
         > postconf -e inet_interfaces=all
 
 * `mutt` is a mail client for terminal
-
 * `postfix flush` can clear mail out of mail server for sending
-
 * `/var/spool/mail/$USER` is where a user's mail store is
 
 ## Intranet Configuration
 
 * Standard roles:
-
     * ```null client``` -- runs local MTA, so all email can be forwarded to a central mail server for delivery. Does not accept local delivery for any email messages. Most machines will be null clients.
     * ```inbound```
     * ```outbound```

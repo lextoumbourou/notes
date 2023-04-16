@@ -1,6 +1,6 @@
 ---
 title: Cross-Entropy
-date: 2021-07-29 19:30
+date: 2021-07-29 00:00
 tags:
   - InformationTheory
 cover: /_media/cross-entropy-cover.png

@@ -237,7 +237,7 @@ status: draft
 * In reality, there are only 2 types: mock **and** stub. Each of the 5 variations are really just variants of the 2.
   * Mocks are used for checking *outgoing interactions*
   * Stubs are used for *incoming interactions*
-  
+
  ```mermaid
  graph TD;  
   Double-->Mock("Mock: (mock, spy)");  

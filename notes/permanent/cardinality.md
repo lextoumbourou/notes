@@ -16,6 +16,7 @@ In math notation, we represent the cardinality of a set $S$ as $|S|$. For exampl
 In machine learning, the *"cardinality of a feature"* denotes the number of unique elements or categories within that feature. High-cardinality features may require feature engineering or be excluded entirely (for example, `user_id`).
 
 <div clear="both"></div>
+
 ## Use of the vertical bar `|A|` notation
 
 Initially it seemed confusing to me that mathematical notation employs the vertical bar symbol for different purposes.
@@ -24,6 +25,7 @@ For instance:
 
 * The absolute value of a number $a$ is expressed as $|a|$.
 * The [Matrix Determinate](matrix-determinate.md) of a matrix $\mathbf{M}$ is expressed as $|\mathbf{M}|$:
+
     $$
     \begin{aligned}
     \mathbf{M} = \begin{bmatrix}

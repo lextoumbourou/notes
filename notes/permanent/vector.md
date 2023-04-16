@@ -2,7 +2,7 @@
 title: Vector
 aliases:
   - Vectors
-date: 2020-11-08 18:00
+date: 2020-11-08 00:00
 modified: 2021-08-22 16:00
 tags: 
   - LinearAlgebra
@@ -12,7 +12,7 @@ summary: An ordered list of numbers that describe an arrow in space.
 
 For most practical purposes, a vector is an ordered list of numbers.
 
-In linear algebra, the numbers describe an arrow pointing in space. If we create a grid to represent space, we will place the tip at the coordinate in the vector and the base on the origin of the grid system.  In 2d space, that origin is typically the point `(0, 0)`.
+In linear algebra, the numbers describe an arrow pointing in space. If we create a grid to represent space, we will place the tip at the coordinate in the vector and the base on the origin of the grid system. In 2d space, that origin is typically the point `(0, 0)`.
 
 We can think of the vectors describing a unit of change along each axis. For example, the vector in the cover image is $(1, 2)$ or 1 unit of "change" along the x-axis and two units of "change" along the y-axis. That's why we commonly describe vectors as being defined by a length (or magnitude) and direction.
 

@@ -20,13 +20,13 @@ The slipbox helps us build this latticework. Firstly, through focusing on princi
 What's more, we actively practice recall of older ideas each time we make search for connections, allowing for greater retention and developing a positive "vicious circle" of learning.
 
  [@ahrensHowTakeSmart2017] *(pg. 126-129)*
- 
+
  I am reminded of a answer from The Art of Game Design to the question: what skills does a game designer need?
- 
+
  > In short, all of them. almost anything that you can be good at can become a useful skill for a game designer.
- 
+
  [@schellArtGameDesign2015a] *(pg. 3)*
- 
+
  Setting out to build a cross-discipline latticework like this is a great example of practicing [Growth Mindset](growth-mindset.md).
- 
+
  Cover image from [Latticework at Ceremonial Court in Education City](https://commons.wikimedia.org/wiki/File:Latticework_at_Ceremonial_Court_in_Education_City.jpg) on Wikimedia.

@@ -5,9 +5,9 @@ tags:
   - Lua
 ---
 
-Table access [metamethods (Lua)](metamethods (Lua))  provide a mechanism for handling table lookup using the `__index` metamethod and writes to missing keys, using the `__newindex` metamethod. They are the foundation for object-oriented programming in Lua using [Object Prototypes](object-prototypes.md)es.md) and are also useful for creating read-only tables, tables with default values and tracking tables access.
+Table access [metamethods (Lua)](metamethods (Lua)) provide a mechanism for handling table lookup using the `__index` metamethod and writes to missing keys, using the `__newindex` metamethod. They are the foundation for object-oriented programming in Lua using [Object Prototypes](object-prototypes.md)es.md) and are also useful for creating read-only tables, tables with default values and tracking tables access.
 
-The `__index` field in a metatable can either refer to a function that will be called each time a missing key is looked up or another table which will be looked up if the original table doesn't have the key.  
+The `__index` field in a metatable can either refer to a function that will be called each time a missing key is looked up or another table which will be looked up if the original table doesn't have the key.
 
 In this example, I'm creating a read-only table by pointing `__index` to the table with the data we're interested in and `__newindex` to a function that will raise an error. Note that the `proxy` table has to remain empty in order for `__newindex` to be called
 

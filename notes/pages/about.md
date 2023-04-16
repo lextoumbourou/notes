@@ -30,6 +30,6 @@ At the time of writing, all these are ported across from my original blog and ar
 
 I'm a generalist software developer currently living in Brisbane, Australia.
 
-I found writing bios  like this decay too quickly to bother with, but I keep my [LinkedIn profile](https://www.linkedin.com/in/lextoumbourou/) up-to-date.
+I found writing bios like this decay too quickly to bother with, but I keep my [LinkedIn profile](https://www.linkedin.com/in/lextoumbourou/) up-to-date.
 
 I sometimes [Tweet](https://twitter.com/lexandstuff) but not much.

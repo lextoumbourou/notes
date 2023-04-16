@@ -73,43 +73,43 @@ What lambda value would you need to get a 0 determinate? In this case, it happen
 $\det\left(\begin{bmatrix}2 - 1 && 2 \\ 1 && 3 - 1\end{bmatrix}\right) = 0$
 
  So there's some vector when multiplied by $(A - \lambda I)$ equals 0.
- 
+
  ---
- 
+
  Another example: to find out if a value is an Eigenvalue, subtract it from the diagonal and compute the determinate.
- 
+
  $\det\left(\begin{bmatrix}3 - \lambda && 1 \\ 0 && 2 - \lambda\end{bmatrix}\right)$
- 
+
  Doing that, gives you a quadratic polynomial in $\lambda$: $\left(3 - \lambda\right)\left(2 - \lambda\right) = 0$
- 
+
  We know that the $\lambda$ can only be an Eigenvalue if the determinate is 0; we can conclude that the only possible values for $\lambda$ are 3 and 2.
- 
+
  To find the *Eigenvectors* that have these values, plug in the value to the matrix and solve to find which vectors return 0.
- 
+
  $\begin{bmatrix}3 - 2 && 1 \\ 0 && 2 - 2\end{bmatrix} \begin{bmatrix}x \\ y\end{bmatrix} = \begin{bmatrix}0 \\ 0\end{bmatrix}$
- 
+
  Some 2d transformations have no Eigenvectors (what about 3d transformations?). For example, a rotation transformation $\begin{bmatrix}0 && -1 \\ 1 && 0\end{bmatrix}$ takes all vectors of their span.
- 
+
  If we try to calculate the determinate: $(-\lambda)(-\lambda) - (-1)(1)$, the only possible solution is for $\lambda$ to be imaginary number $i$ or $-i$. Having no real number solutions tells us there aren't any Eigenvectors.
- 
+
  A shear is another interesting example. It fixes $\hat{i}$ in place and makes $\hat{j} = \begin{bmatrix}1 \\ 1\end{bmatrix}$. All vectors on x-axis are Eigenvectors with Eigenvalues of 1.
- 
+
  When you calc the determinate, $(1-\lambda)(1-\lambda) - 1 \cdot 0$, you get $1 - \lambda^2$. The only root of the expression is $1$.
- 
+
  It's possible to have one Eigenvalue with multiple Eigenvectors. A matrix that scales everything by 2: $\begin{bmatrix}2 && 0 \\ 0 && 2\end{bmatrix}$ makes every vector in the plane an Eigenvector, with the only Eigenvalue being 2.
- 
+
 What happens if both basis vectors are Eigenvectors? One example is $\begin{bmatrix}-1 && 0 \\0 && 2\end{bmatrix}$.
- 
+
  Notice how there's a positive value on the diagonal and 0s everywhere else? That's a [Diagonal Matrix](../../../permanent/diagonal-matrix.md).
- 
+
  The way to interpret it is that all the basis vectors are Eigenvectors, with the diagonal entry being Eigenvalues.
- 
+
  There are a lot of things that make diagonal matrices much easier. One of them is that it's easy to reason about what happens when you apply the matrix multiple times. You are simply multiplying the diagonal values multiple times.
- 
+
  Contrast that with normal matrix multiplication. It quickly gets complicated.
- 
+
  The basis vectors are rarely Eigenvectors. But if your transformation has at least 2 Eigenvectors that span space, you can change your coordinate system so that your Eigenvectors are your basis vectors by [Changing Basis](../../../permanent/changing-basis.md). The composed matrix will be Diagonal Matrix.
- 
+
  So, if you need to compute the 100th power of a matrix, it's easier to first convert to an Eigenbasis. Perform the computation. Then convert back to the original basis.
- 
+
  Note that not all transformations will support this. Shear or rotation don't have enough Eigenvectors to support this, for example.

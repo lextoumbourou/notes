@@ -1,6 +1,6 @@
 ---
 title: Understanding CFrames
-date: 2021-08-10 19:30
+date: 2021-08-10 00:00
 status: draft
 tags:
   - Roblox
@@ -25,13 +25,15 @@ Notes from [Understanding CFrames](https://developer.roblox.com/en-us/articles/U
     * `CFrame.Angles()` to provide a rotational angle in radians for desired axes.
         * Rotating parts works by rotating around an axis.
         * You must pass radians instead of degrees (use `math.rad(degrees)` to convert).
-    *  Facing towards a point
+    * Facing towards a point
         * Can create a part then point its front surface by passing a second Vector3 argument (`Position` is a shortcut for the Position Vector3):
+
             ```
             game.Workspace.Block.CFrame = CFrame.new(
                 Vector3.new(0, 10, 0),
                 game.Players.lexandstuff.Character.HumanoidRootPart.Position)
             ```
+
     * Can also offset an object from position of another object:
         `CFrame.new(humanoidRootPart.Position) + Vector3.new(0, 2, 0)`
 * Dynamic CFrame Orientation

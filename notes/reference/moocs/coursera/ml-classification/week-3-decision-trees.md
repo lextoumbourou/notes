@@ -11,11 +11,9 @@ status: draft
 ### Predicting loan defaults with decision trees
 
 * Example of bank, looks at a bunch of factors when deciding whether to loan mony:
-
   * Credit history
   * Loan term
   * Income
-
 * Can be represented as a "decision tree".
 
 ### Intuition behind decision trees
@@ -95,7 +93,6 @@ status: draft
 ### Threshold splits for continuous inputs
 
 * With continuous inputs (eg income levels or age) you can't split on indiviual values of you'll get crazy overfitting (eg income at 30k is safe, but 34k is not etc), need to thresholding to come up with discreet "buckets" for your inputs.
-
   * Income buckets:
 
   ```
