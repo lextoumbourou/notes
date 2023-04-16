@@ -38,11 +38,11 @@ Functions are considered a "well-behaved relation". That means that for each inp
 
 ---
 
-Functions also show a relationship between an input variable and its output. For example, the function to convert Fahrenheit to Celsius would be defined in terms of a single Fahrenheit value $x$, like this:
+We can express functions as the relationship between an input variable and its output. For example, the function to convert temperature in Fahrenheit to Celsius is as follows:
 
 ${f(\text{x}) = (x - 32) \times \frac{5}{9}}$
 
-The complete definition of a function includes its **domain** and **codomain**. The Fahrenheit and Celsius are real numbers, so we would define the function using the [Special Infinite Set](special-infinite-sets.md) $\mathbb{R}$.
+The complete definition of a function should include its **domain** and **codomain**. Since Fahrenheit and Celsius are real numbers, so we would define the function using the [Special Infinite Set](special-infinite-sets.md) $\mathbb{R}$.
 
 $f : \mathbb{R} \rightarrow \mathbb{R}$
 
@@ -50,7 +50,7 @@ The two parts combined give the complete definition of the function:
 
 Let $f: \mathbb{R} \to \mathbb{R}$, $f(x) = (x - 32) \times \frac{5}{9}$
 
-In programming languages, it's common to mix the type declaration with the implementation. Below is an example of the function $f$ in Python. It takes an input $x$ as a `float` and returns a `float`, described using the notation `-> float`.
+In programming languages, mixing the type declaration with the implementation is common. Below is an example of the function $f$ in Python. It takes an input $x$ as a `float` and returns a `float`, described using the notation `-> float`.
 
 ```python
 def f(x: float) -> float:
@@ -70,7 +70,7 @@ When the graph is a straight line like this, it's called a **Linear Function**. 
 * Linear Function: A function where the output is proportional to the input.
 * Quadratic Function: A function where the output is proportional to the square of the input.
 * Exponential Function: A function where the output is proportional to a fixed base raised to the power of the input.
-* Polynomial Function: A function that can be represented as a sum of terms, each consisting of a constant multiplied by a variable raised to a non-negative integer power. Linear and quadratic functions are specific types of polynomial functions.
+* Polynomial Function: A function that we represent as a sum of terms, each consisting of a constant multiplied by a variable raised to a non-negative integer power. Linear and quadratic functions are specific types of polynomial functions.
 
 ---
 
