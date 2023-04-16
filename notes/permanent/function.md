@@ -17,19 +17,16 @@ The foundational explanation of functions comes from [Set Theory](set.md), where
 
 For example, we can have a function $f$ that maps from a set of people's names to ages.
 
-$$
-\begin{align*}
-A &= \{\text{Sarah}, \text{Geoff}, \text{Clyde}, \text{Betty}\} \\
-B &= \{0, 1, 2, \cdots, 120 \} \\ 
-f &: A \rightarrow B
-\end{align*}
-$$
+* $A = \{\text{Sarah}, \text{Geoff}, \text{Clyde}, \text{Betty}\}$
+* $B = \{0, 1, 2, \cdots, 120 \}$
+* $f : A \rightarrow B$
 
 ![An example of the above mapping](/_media/function-diagram.png)
+Here:
 
-* We call the set of possible inputs the <font style="color: lightblue"><b>domain</b></font> of a function ($D_f$). In this example, we would write $D_f = A$.
-* We call the set of possible outputs the <font color="orange"><b>co-domain</b></font> of the function ($coD_f)$, in this example, we would write: $coDf = B$.
-* Given the set $A$, the set of possible outputs are $\{11, 34, 98\}$. This set is called the <font style="color: darkred"><b>range</b></font> of the function ($R$). In this example, it would be $R = \{11, 34, 98\}$.
+* We call the set of possible inputs the <font style="color: lightblue"><b>domain</b></font> of a function ( $D_f$ ). In this example, we would write $D_f = A$.
+* We call the set of possible outputs the <font color="orange"><b>co-domain</b></font> of the function ( $coD_f$ ), in this example, we would write: $coDf = B$.
+* Given the set $A$, the set of possible outputs are $\{11, 34, 98\}$. This set is called the <font style="color: darkred"><b>range</b></font> of the function ( $R$ ). In this example, it would be $R = \{11, 34, 98\}$.
 
 To show a single input-output relationship, we could write:
 
@@ -53,7 +50,7 @@ Commonly, you would see it described and expressed in one statement:
 
 Let $f : \mathbb{R} \rightarrow \mathbb{R}$, ${f(\text{x}) = (x - 32) \times \frac{5}{9}}$
 
-In programming languages, it's common to express a functions' input and output values using a type system. Some languages do type-checking on the compilation, others at run time. Even the latter usually has a type-system to allow for documentation and linting.
+In programming languages, it's common to express a functions' input and output values using a type system.
 
 Below is an example of the function $f$ in Python. It takes an input $x$ as a `float` and returns a `float`, described using the notation `-> float`.
 
