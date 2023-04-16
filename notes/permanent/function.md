@@ -22,11 +22,19 @@ For example, we can have a function $f$ that maps from a set of people's names t
 * $f : A \rightarrow B$
 
 ![An example of the above mapping](/_media/function-diagram.png)
-Here:
+We call the set of possible inputs the <font style="color: lightblue"><b>domain</b></font> or Df of a function:
 
-* We call the set of possible inputs the <font style="color: lightblue"><b>domain</b></font> of a function ( $D_f$ ). In this example, we would write $D_f = A$.
-* We call the set of possible outputs the <font color="orange"><b>co-domain</b></font> of the function ( $coD_f$ ), in this example, we would write: $coDf = B$.
-* Given the set $A$, the set of possible outputs are $\{11, 34, 98\}$. This set is called the <font style="color: darkred"><b>range</b></font> of the function ( $R$ ). In this example, it would be $R = \{11, 34, 98\}$.
+$\color{lightblue}D_f = A$.
+
+The set of possible outputs is the <font color="orange"><b>co-domain</b></font> or $co-D_f$ of the function.
+
+$\color{orange}coD_f = B$
+
+Here the co-domain is every plausible age a human-being can be.
+
+Given the set $A$, the set of possible outputs are $\{11, 34, 98\}$. This set is called the <font style="color: darkred"><b>range</b></font> of the function ( $R$ )
+
+$\color{darkred}R = \{11, 34, 98\}$
 
 To show a single input-output relationship, we could write:
 
