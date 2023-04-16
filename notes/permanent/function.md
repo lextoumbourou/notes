@@ -26,11 +26,11 @@ We call the set of possible inputs the <font style="color: lightblue"><b>domain<
 
 $\color{lightblue}D_f = A$.
 
-The set of possible outputs is the <font color="orange"><b>co-domain</b></font> or $co-D_f$ of the function.
+The set of possible outputs is the <font color="orange"><b> co-domain </b></font> or $co-D_f$ of the function.
 
 $\color{orange}coD_f = B$
 
-Here the co-domain is every plausible age a human-being can be.
+Here the co-domain is every plausible age a human being can be.
 
 Given the set $A$, the set of possible outputs are $\{11, 34, 98\}$. This set is called the <font style="color: darkred"><b>range</b></font> of the function ( $R$ )
 
@@ -50,7 +50,7 @@ We can express functions as the relationship between an input variable and its o
 
 ${f(\text{x}) = (x - 32) \times \frac{5}{9}}$
 
-The complete definition of a function should include its **domain** and **codomain**. Since Fahrenheit and Celsius are real numbers, so we would define the function using the [Special Infinite Set](special-infinite-sets.md) $\mathbb{R}$.
+The complete definition of a function should include its **domain** and **co-domain**. Since Fahrenheit and Celsius are real numbers, so we would define the function using the [Special Infinite Set](special-infinite-sets.md) $\mathbb{R}$.
 
 $f : \mathbb{R} \rightarrow \mathbb{R}$
 
@@ -86,11 +86,11 @@ There are some other important properties of functions:
 
 ## One-to-one / Injective
 
-We consider a function "one-to-one" or "injective" if each output is associated with exactly one input and no two different inputs have the same output.
+We consider a function "one-to-one" or "injective" if each output is associated with exactly one input and no two different inputs have the same image.
 
 ## Onto / Surjective
 
-We consider a function "onto" or "surjective" every element in the **co-domain** is an output for at least one input in the **domain**.
+A function is "onto" or "surjective" if every element in the **co-domain** is output for at least one input in the **domain**.
 
 ## Bijective
 
