@@ -1,5 +1,5 @@
 ---
-title: Discrete Maths with Applications: Chapter 3
+title: "Discrete Maths with Applications: Chapter 3"
 date: 2023-04-15 00:00
 modified: 2023-04-15 00:00
 status: draft
