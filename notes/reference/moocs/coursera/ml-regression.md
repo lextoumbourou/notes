@@ -255,7 +255,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
   * Step 1: Rewrite regression model using linear algebra
     * Rewrite the regression model for a single observation in matrix notation:
 
-      ![](/reference/_media/rewrite-matrix-notation.png)
+      ![Rewrite Matrix Notation](/reference/_media/rewrite-matrix-notation.png)
 
       * Multiple two vectors:
 
@@ -265,21 +265,21 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
       * Then add the error term.
     * Rewrite model for all observations:
 
-      ![](/reference/_media/matrix-notation-all-observations.png)
+      ![Matrix Notation All Observations](/reference/_media/matrix-notation-all-observations.png)
 
         * Rows of middle matrix (matrix ``H``) = vector of features from previous section.
   * Step 2: Compute the cost
     * Algorithm = search all different fits to find the smallest cost (RSS).
     * RSS in matrix notation:
 
-      ![](/reference/_media/rss-matrix-notation.png)
+      ![RSS Matrix Notation](/reference/_media/rss-matrix-notation.png)
 
       * ``y - Hw`` is a residual vector.
       * Using vector multiplication of that vector times the transpose, you end up with a scalar of the residual sum of squares.
   * Step 3: Take the gradient of the RSS:
     * ``-2 * H_vector_transposed * (y_vector - H_vector * w_vector)``
 
-      ![](/reference/_media/gradient-of-RSS-notes.png)
+      ![Gradient of RSS Notes](/reference/_media/gradient-of-RSS-notes.png)
 
   * Step 4: Approach 1, closed-form solution: solve for W.
     * Set result to 0 and solve.
@@ -413,7 +413,7 @@ i* Symptom of overfitting:
 	* Few observations (N small) can cause model to be quickly overfit as complexity grows.
 	* Many observations (N very large) can be harder to overfit (but harder to find datasets).
 
-        ![number of observations](./images/number-of-observations.png)
+        ![Number of Observations](./images/number-of-observations.png)
 
 * The larger the inputs, the more change of data not including inputs for all data points causing overfitting.
 * Balancing fits and magnitude of coefficients:

@@ -4,29 +4,29 @@ from functools import partial
 
 import frontmark
 
-MARKUP = ('md', )
+MARKUP = ("md",)
 
 from pelican_jupyter import liquid as nb_liquid
 
-AUTHOR = 'Lex Toumbourou'
+AUTHOR = "Lex Toumbourou"
 
-DEFAULT_LANG = u'en'
+DEFAULT_LANG = "en"
 
-ARTICLE_URL = '{slug}.html'
+ARTICLE_URL = "{slug}.html"
 
-SITENAME = 'Notes by Lex'
+SITENAME = "Notes by Lex"
 
 THEME = "theme"
 
-PLUGIN_PATHS = ['pelican-plugins', 'pelican-cite/src', 'my-plugins']
-STATIC_PATHS = ['_media']
+PLUGIN_PATHS = ["pelican-plugins", "pelican-cite/src", "my-plugins"]
+STATIC_PATHS = ["_media"]
 
-DRAFT_URL = u'{slug}.html'
-DRAFT_SAVE_AS = u'{slug}.html'
+DRAFT_URL = "{slug}.html"
+DRAFT_SAVE_AS = "{slug}.html"
 
 USE_FOLDER_AS_CATEGORY = True
 
-ENV = os.environ.get('ENV', 'prod')
+ENV = os.environ.get("ENV", "prod")
 
 MARKDOWN = {
     "extension_configs": {
@@ -39,28 +39,36 @@ MARKDOWN = {
     "output_format": "html5",
 }
 
-PLUGINS = ['pelican_katex', 'pelican_cite', frontmark, 'subcategory', nb_liquid, "md_link_converter", "linked_mentions"]
+PLUGINS = [
+    "pelican_katex",
+    "pelican_cite",
+    frontmark,
+    "subcategory",
+    nb_liquid,
+    "md_link_converter",
+    "linked_mentions",
+]
 
-PUBLICATIONS_SRC = 'notes/citations.bib'
+PUBLICATIONS_SRC = "notes/citations.bib"
 
 BIBLIOGRAPHY_START = '<section id="bib"><h4>References</h4>'
-BIBLIOGRAPHY_END = '</section>'
+BIBLIOGRAPHY_END = "</section>"
 
 DEFAULT_PAGINATION = 10
 
 JINJA_FILTERS = {
-    'sort_by_article_count': partial(
-        sorted,
-        key=lambda tags: len(tags[1]),
-        reverse=True)} # reversed for descending order
+    "sort_by_article_count": partial(
+        sorted, key=lambda tags: len(tags[1]), reverse=True
+    )
+}  # reversed for descending order
 
 SUMMARY_MAX_LENGTH = 25
 
-IGNORE_FILE = ['.ipynb_checkpoints']
+IGNORE_FILE = [".ipynb_checkpoints"]
 
-LIQUID_CONFIGS = (("CONTENT_DIR", "notes", ""), )
+LIQUID_CONFIGS = (("CONTENT_DIR", "notes", ""),)
 
-ARTICLE_EXCLUDES = ['journal', 'posts']
+ARTICLE_EXCLUDES = ["journal", "posts"]
 
 RELATIVE_URLS = True
 
