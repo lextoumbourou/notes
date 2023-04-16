@@ -13,7 +13,7 @@ A function is a rule that associates inputs with outputs.
 
 They are the foundation of many parts of maths and many programming languages.
 
-The foundational explanation of functions comes from [Set Theory](set.md), where we think of a function as the mapping from one set, $A$, to another set, $B$. Functions are usually assigned using the letters $f$, $g$, $i$ or $j$  and are described with this notation: $f : A \rightarrow B$
+The foundational explanation of functions comes from [Set](set.md), where we think of a function as the mapping from one set, $A$, to another set, $B$. Functions are usually assigned using the letters $f$, $g$, $i$ or $j$ and are described with this notation: $f : A \rightarrow B$
 
 For example, we can have a function $f$ that maps from a set of people's names to ages.
 

@@ -20,6 +20,5 @@ In this architecture, the server act's as the games [Rule Enforcer](rule-enforce
 
 #### Reference
 
-
 * [Nakama Server - Authoritative Multiplayer](https://heroiclabs.com/docs/gameplay-multiplayer-server-multiplayer/)
 * [Roblox Client-Server Model](https://developer.roblox.com/en-us/articles/Roblox-Client-Server-Model)

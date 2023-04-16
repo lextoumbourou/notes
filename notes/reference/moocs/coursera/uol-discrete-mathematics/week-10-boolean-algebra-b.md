@@ -12,14 +12,12 @@ modified: 2023-04-08 00:00
 * [Logic Gate](../../../../permanent/logic-gate.md)
     * Implementation of a boolean operation.
     * Basic element of an implementation of a Circuit.
-
 * [Basic Gates](../../../../permanent/basic-gates.md)
     * Most basic logic circuits:
         * **OR** gates
         * **AND** gates
         * **NOT** gates
     * All Boolean functions can be written in terms of these 3 logic operations.
-
     * [AND Gate](../../../../permanent/and-gate.md)
         * Produces HIGH output (value 1) when all inputs are HIGH otherwise, output is LOW (value 0).
         * For a 2-input gate, AND gate is represented by electrical notation and truth table:
@@ -27,7 +25,6 @@ modified: 2023-04-08 00:00
           ![and-gate-with-truth-table](../../../../_media/and-gate-with-truth-table.png)
 
         * The AND operations is written as $f = x . y$ or $f = xy$
-
     * [OR Gate](../../../../permanent/or-gate.md)
         * Produces HIGH output (value 1) when any of 2 inputs if HIGH, otherwise, output is LOW (value 0).
         * For a 2-input gate, OR gate is represented by electrical notation and truth table:
@@ -35,7 +32,6 @@ modified: 2023-04-08 00:00
           ![or-gate-and-truth-table](../../../../journal/_media/or-gate-and-truth-table.png)
 
         * The OR operation is written as $f = x + y$
-
     * [Inverter Gate](../../../../permanent/inverter-gate.md)
         * Produces opposite of the input.
         * Also known as NOT gate.
@@ -55,7 +51,6 @@ modified: 2023-04-08 00:00
           * [AND Gate](AND Gate) followed by an inverter.
           ![nand-gate](../../../../journal/_media/nand-gate.png)
           * Equivalent to not AND
-
       * [NOR Gate](NOR Gate)
           * Equivalent to "not OR"
           * [OR Gate](OR Gate) followed by an inverter.
@@ -164,6 +159,7 @@ modified: 2023-04-08 00:00
             * $$
 
 
+
         \begin{align}
         E &= (xy)'' + z')((x' + =z)'+(y' + z')') \\
         &= (xy + z')((x'' . z') +y'' . z'') \\
@@ -174,6 +170,7 @@ modified: 2023-04-08 00:00
         * Can be further simplified using **distributive** laws: $E = xyxz' + xyyz + z'xz' + z'yz$
        * Using **commutative**, **idempotent** and **complement** laws: $E = xyz' + xyz + xz' + 0$
        * Using **absorption** law: $E = xyz + xz'$
+
 
 
  * Example 2

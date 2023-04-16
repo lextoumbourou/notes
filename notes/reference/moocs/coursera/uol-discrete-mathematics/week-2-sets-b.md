@@ -13,7 +13,6 @@ parent: uol-discrete-mathematics
 * [Universal Set](../../../../permanent/sets-universal-set.md)
     * A set containing everything.
     * Represented by letter $U$.
-
 * [Complement](../../../../permanent/set-complement.md)
     * Represented as: $\bar{A}$
     * All the elements in the universal set $U$ but not in $A$: $\bar{A} = U - A$
@@ -74,7 +73,6 @@ parent: uol-discrete-mathematics
         * $A \oplus B = B \oplus A$
     * Set difference is not commutative:
         * $A - B \neq B - A$
-
 * [Associativity Operation](../../../../permanent/associativity-operation.md)
     * Concerns grouping of elements in an operation.
         * An example from algebra, the additional of numbers is associative:
@@ -95,7 +93,6 @@ parent: uol-discrete-mathematics
         * $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
     * Set intersection is distributive over set union
         * $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
-
 * [Set Identities](../../../../permanent/set-identities.md)
 
     ![Set identities table](/_media/set-identities-table.png)
@@ -125,7 +122,6 @@ parent: uol-discrete-mathematics
         * $A_1 \cap A_2 = A_2 \cap A_3 = .... A_4 \cap A_5 = \emptyset$
         * $A = A_1 \cup A_2 \cup A_3 \cup A_4 \cup A_5$
         * $\{A_1, A_2, A_3, A_4, A_5\}$ is a partition on $A$
-
 * [Disjoint Sets](../../../../permanent/set-disjoint-sets.md)
     * Two sets are considered disjointed if and only if their intersection is an empty set.
         * $A \cap B = \emptyset$

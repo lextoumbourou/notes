@@ -16,7 +16,6 @@ modified: 2023-04-08 00:00
 
     * A directed tree is represented as a rooted tree if and only if one vertex has in-degree 0 whereas all other vertices have in-degree 1.
     * ![week-16-direct-tree-theorem](../../../../_media/week-16-direct-tree-theorem.png)
-
 * Terminology of rooted trees.
     * In the image above:
         * A is the root of the tree.
@@ -25,7 +24,6 @@ modified: 2023-04-08 00:00
         * B and A are ancestors of E and F (E and F are siblings)
         * B and D are called internal nodes.
         * C, E and F are called external nodes.
-
 * Depth and height in a tree
     * Depth or path length of a node in a tree is the number of edges from root to that node.
 
@@ -37,7 +35,6 @@ modified: 2023-04-08 00:00
 
     * The depth or the height of a tree is the maximum path length across all nodes.
     * The depth (height) of this tree is 4.
-
 * Special trees
     * [Binary tree](permanent/binary-tree.md) is a rooted tree in which every vertex has 2 or fewer children.
 

@@ -8,7 +8,6 @@ parent: ml-foundations
 
 * Neural networks
     * Represent classifiers using graphs.
-
         * Allows for complex, non-linear features.
 
             ![Basic neural networks](/_media/ml-foundations-basic-neural-network.png)

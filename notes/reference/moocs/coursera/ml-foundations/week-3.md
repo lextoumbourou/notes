@@ -9,7 +9,6 @@ parent: ml-foundations
 * Classification:
     * Spam
     * Tweet Sentiment
-
 * Restaurant review example
     * Need to understand the "aspects" of the review (eg where they saying parts of the restaurant experience was bad or the whole thing?)
     * Look at all reviews and break into sentences.

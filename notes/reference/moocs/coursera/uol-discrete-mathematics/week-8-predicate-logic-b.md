@@ -55,7 +55,6 @@ modified: 2023-04-08 00:00
 * [Argument (Logic)](../../../../permanent/Argument (Logic).md)
     * An argument in Propositional Logic is a sequence of [Proposition](../../../../permanent/proposition.md)lled the conclusion
     * The other propositions in the argument are called premises or hypotheses.
-
 * [Valid Argument](../../../../permanent/Valid Argument.md)
     * An argument is valid if the truth of all its premises implies the truth of the conclusion.
     * Example 1

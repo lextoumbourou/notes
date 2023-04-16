@@ -82,7 +82,6 @@ modified: 2023-04-08 00:00
 
     * Apparent from the loops, ever other edge is represented twice (ie v1 -> v3 and v3->v1)
     * So we can multiply the diagonal by 2 to represent loops consistently.
-
 * Properties of the adjaceny matrix.
     * Adjaceny matrix of an undirected graph is symmetric.
     * Number of edges in undirected graph equals half the sum of all elements ($\mathbf{m_ij}$) of its corresponding adjaceny matrix.

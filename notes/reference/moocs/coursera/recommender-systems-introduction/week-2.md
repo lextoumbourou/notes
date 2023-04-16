@@ -116,7 +116,6 @@ parent: recommender-systems-introduction
       ``(sum(all_ratings_available_for_items) + k * average_ratings_for_all_items) / (num_ratings + k)``
 
     * k controls strength of evidence required: the higher k, the more ratings required before the damping stops taking effect.
-
 * Confidence intervals:
     * (disclaimer: I *think* this is what is being said here) Based on the data you've got, with some margin of error, the rating would be between 3.5 and 4.2.
     * Choice of bound affects risk/confidence.
@@ -124,7 +123,6 @@ parent: recommender-systems-introduction
         * Upper is mor risky, but could result in some great results.
     * Reddit uses Wilson interval (for bionamial) to rank comments.
 * Domain consideration: time
-
     * Hacker News algorithm:
         * Slight damping effect for newer votes.
 
@@ -165,7 +163,6 @@ parent: recommender-systems-introduction
         * Predict items based on demographic stats.
             * Linear regression for mult-valued (rating) data
             * Logistic regression for 0/1 (purchase) data
-
 * Need to deal with unknown demographics:
     * Overall preferences.
     * Demographics of newcomers
@@ -201,7 +198,6 @@ parent: recommender-systems-introduction
             
         * Intuitively right, what what if X is top hats and Y is toilet paper?
         * Y may just be a thing a lot of people buy.
-
     * Next attempt: use Bayes Law to factor in the popularity of Y.
 
           P(toilet paper|top hats) = P(top hats|toilet paper) P(top hats)
@@ -215,7 +211,6 @@ parent: recommender-systems-introduction
             P(toilet paper)
 
         * If ratio is close to 1, then top hats doesn't really change much.
-
     * Other solutions:
         * "Association rule mining" gives you lift metric:
 
@@ -225,7 +220,6 @@ parent: recommender-systems-introduction
 
             * Looks at non-directional association.
             * Looks at baskets of products, not just individual.
-
 * Associate rules in practise:
     * Link recommendations: can I use the place someone came from to find recommendations.
     * Good recommender systems can make predicts the defy common sense (eg someone may be buying a product way less expensive than one recommended, and the recommended be a good idea).

@@ -12,7 +12,6 @@ parent: linear-algebra-machine-learning
 
 * "Eigen" is translated from German as "characteristic."
 * "Eigenproblem" is about finding characteristic properties of something.
-
 * Geometric interpretation of [Eigenvector](../../../../permanent/eigenvector.md) and [Eigenvalue](../../../../permanent/eigenvalue.md) (00:45-04:22)
     * Though we typically visualize linear transformations based on how they affect a single vector, we can also consider how they affect every vector in the space by drawing a square.
 
@@ -67,7 +66,6 @@ parent: linear-algebra-machine-learning
     * In the 3d example, finding the Eigenvector also tells you the axis of rotation.
 
         ![3d Eigenvector example showing the axis of rotation](/_media/laml-3d-eigenvector-example.png)
-
 
 ### Calculating eigenvectors
 
@@ -163,7 +161,6 @@ parent: linear-algebra-machine-learning
 * [PageRank](PageRank) (00:00-07:20)
     * Ranks websites by importance based on the importance of pages that link to them.
         * Central assumption: "the importance of a website is related it links to and from other websites."
-
     * Model represents a model mini internet:
 
         ![Mini internet graph](/_media/laml-mini-internet-graph.png)

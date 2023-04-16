@@ -127,7 +127,6 @@ parent: ml-foundations
       4. Sort movies by ```Rating(u, v)```
 
 * Predictions in matrix form
-
     * Looking at score for ```Rating(u, v)``` == ```<Lu, Rv>``` < element-wise product and sum.
     * Can get the ```u```th from the ```L``` matrix row and multiple by the ```v```th row from the ``R`` matrix column.
 
@@ -149,17 +148,13 @@ parent: ml-foundations
         * What I just saw
         * User info
         * Past purchases
-
     * Discovered topics from matrix factorization capture "groups of users" who behave similarly.
          * Women from Seattle who teach and have a baby.
-
     * Combine to mitigate cold-start problem
         * Ratings for a new user from features only.
         * As more information about user is discovered, matrix factorization *topics* become more relevant.
-
     * "Blending models"
         * Winning team of Netflix prize blended over 100 models.
-
 * Performance metric for recommender systems
       * Classification accurary
 
@@ -186,7 +181,6 @@ parent: ml-foundations
                   precision = len(items_recommended.intersection(items_liked)) / len(items_recommended)  # 2 / 4
 
   * Optimal recommenders
-
       * "How do you maximise recall?" - just recommend everything.
           * Small precision.
       * What is optimal recommender:
@@ -206,7 +200,6 @@ parent: ml-foundations
     * Comparing algorithms:
       * Largest "area under the curve" (AUC).
       * Set desired recall and maximise precision (precision at k).
-
 * Recommender systems ML block diagram
     * Training data: user, products, ratings table
     * Feature extraction:

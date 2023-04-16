@@ -64,7 +64,6 @@ parent: linear-algebra-machine-learning
 * How do you find a function that finds the optimal $\mu$ and $\sigma$?
   * Determine some function that tells you how far off you are: eg sum of squared differences.
   * Then, use calculus to walk toward the most optimal solution.
-
 * Vectors don't just to describe objects in geometric space, they can describe directions along any sort of axis
     * Can think of them as just lists.
     * Space of all possible cars: `[cost_in_euros, emissions, top_speed, ...]`
