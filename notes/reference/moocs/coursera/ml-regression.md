@@ -111,7 +111,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
   * Task 2: Estimate the specific fit from the data.
 * Block diagram for regression (diagram from memory)
 
-  ![](/reference/_media/regression-block-diagram.jpg)
+  ![Regression block diagram](/reference/_media/regression-block-diagram.jpg)
 
 ### ML Model
 
@@ -158,7 +158,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
     * Any two points will be above the curve of the function
     * Min is where derivative = 0
 
-      ![](/reference/_media/concave-convex.png)
+      ![Concave Convex](/reference/_media/concave-convex.png)
 
   * Other functions:
     * Can be multiple solutions to derivative = 0 or no solutions
@@ -244,7 +244,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
      * ``D``
 * Commonly used equation:
 
-  ![](/reference/_media/commonly-used-equation.png)
+  ![Commonly used equation](/reference/_media/commonly-used-equation.png)
 
 * Interpreting coefficients of fitted function
   * Co-efficient's should be considered in the context of the entire model.

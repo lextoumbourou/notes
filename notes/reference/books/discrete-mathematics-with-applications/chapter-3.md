@@ -17,7 +17,7 @@ Let $X$ a $Y$ by any 2 nonempty sets.
 
 A function $X$ to $Y$ is a rule that assigns each element $x \in X$ a unique element $y \in Y$.
 
-![](../../../journal/_media/chapter-3-function-mapping-example.png)
+![Function mapping example](../../../journal/_media/chapter-3-function-mapping-example.png)
 
 Usually denoted by letters $f$, $g$, $h$, $i$, if $f$ is a function $X$ to $Y$ we write $f : X \rightarrow Y$.
 

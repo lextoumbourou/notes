@@ -1,7 +1,8 @@
 ---
-title: Clustering with k-means
-date: 2021-10-30 00:00:00
-modified: 2023-04-08 00:00:00
+title: "Week 3: Clustering with K-Means"
+date: 2021-10-30 00:00
+modified: 2023-04-08 00:00
+status: draft
 ---
 
 # Clustering with k-means

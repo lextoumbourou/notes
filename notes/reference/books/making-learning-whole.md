@@ -1,6 +1,6 @@
 ---
 title: Making Learning Whole
-date: 2021-05-39 00:00
+date: 2021-05-31 00:00
 status: draft
 ---
 
