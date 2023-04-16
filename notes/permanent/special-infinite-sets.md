@@ -1,5 +1,5 @@
 ---
-title: Special Infinite Sets
+title: Special Infinite Set
 date: 2023-04-14 00:00
 modified: 2023-04-14 00:00
 status: draft

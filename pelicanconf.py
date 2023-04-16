@@ -68,7 +68,7 @@ IGNORE_FILE = [".ipynb_checkpoints"]
 
 LIQUID_CONFIGS = (("CONTENT_DIR", "notes", ""),)
 
-ARTICLE_EXCLUDES = ["journal", "posts"]
+ARTICLE_EXCLUDES = ["journal", "posts", "templates", "notebooks", ".env", "output"]
 
 RELATIVE_URLS = True
 

@@ -6,61 +6,89 @@ tags:
 summary: A rule that matches inputs with outputs.
 modified: 2023-04-14 00:00
 cover: /_media/function-cover.png
+hide_cover_in_article: true
 ---
 
-In Math, a function is a rule that associates inputs with outputs.
+A function is a rule that associates inputs with outputs.
 
-For example, the function $f$ inputs a number, $x$, and outputs its square:
+They are the foundation of many parts of maths and many programming languages.
+
+The foundational explanation of functions comes from [Set Theory](set.md), where we think of a function as the mapping from one set, $A$, to another set, $B$. Functions are usually assigned using the letters $f$, $g$, $i$ or $j$  and are described with this notation: $f : A \rightarrow B$
+
+For example, we can have a function $f$ that maps from a set of people's names to ages.
 
 $$
-f(x) = x^2
+\begin{align*}
+A &= \{\text{Sarah}, \text{Geoff}, \text{Clyde}, \text{Betty}\} \\
+B &= \{0, 1, 2, \cdots, 120 \} \\ 
+f &: A \rightarrow B
+\end{align*}
 $$
 
-Functions are a "well-behaved relation", which means that for each input, there is exactly one output.
+![An example of the above mapping](/_media/function-diagram.png)
 
-We can express functions as a mapping from one [Set](set.md) $A$ to another set $B$.
+* We call the set of possible inputs the <font style="color: lightblue"><b>domain</b></font> of a function ($D_f$). In this example, we would write $D_f = A$.
+* We call the set of possible outputs the <font color="orange"><b>co-domain</b></font> of the function ($coD_f)$, in this example, we would write: $coDf = B$.
+* Given the set $A$, the set of possible outputs are $\{11, 34, 98\}$. This set is called the <font style="color: darkred"><b>range</b></font> of the function ($R$). In this example, it would be $R = \{11, 34, 98\}$.
 
-$$f : A \rightarrow B$$
+To show a single input-output relationship, we could write:
 
-In the square function from earlier, the function maps from the set of real numbers to the set of non-negative real numbers number (as $-x^{2}$ is a non-negative number).
+$f(Sarah) = 34$
 
-$f : \mathbb{R} \rightarrow \mathbb{R}_{\geq 0}$
+The output 34 is the function's **image**, and the corresponding input, $Sarah$, is the **pre-image**.
 
-Note that $\mathbb{R}$ is one of the [Special Infinite Sets](special-infinite-sets.md).
+Functions are considered a "well-behaved relation". That means that for each input, there must be exactly one output. We know this example is a function as each person has a valid age and only has one.
 
-* The [Domain of a Function](function-domain.md) is the input set that the function maps from, expressed as $D_f = A$.
-* the [Co-Domain of Function](function-codomain.md) is the output set of a function, expressed as $co-Df = \mathbb{R}_{\geq 0}$.
-* The range of a function, $R_f$, is the set of all possible outputs.
+---
 
-Functions are a fundamental building block of most programming languages.
+Functions also show a relationship between an input variable and its output. For example, the function to convert Fahrenheit to Celsius would be expressed in terms of a single Fahrenheit value $x$, like this:
 
-In some languages, we can express functions by their input and output types.
+${f(\text{x}) = (x - 32) \times \frac{5}{9}}$
 
-For example, this is the Python-typed equivalent of the function from earlier:
+The Fahrenheit and Celsius are real numbers, so we would describe the function using the [Special Infinite Set](special-infinite-sets.md) $\mathbb{R}$.
+
+$f : \mathbb{R} \rightarrow \mathbb{R}$
+
+Commonly, you would see it described and expressed in one statement:
+
+Let $f : \mathbb{R} \rightarrow \mathbb{R}$, ${f(\text{x}) = (x - 32) \times \frac{5}{9}}$
+
+In programming languages, it's common to express a functions' input and output values using a type system. Some languages do type-checking on the compilation, others at run time. Even the latter usually has a type-system to allow for documentation and linting.
+
+Below is an example of the function $f$ in Python. It takes an input $x$ as a `float` and returns a `float`, described using the notation `-> float`.
 
 ```python
-def f(y: int) -> int:
-    return y ** 2
+def f(x: float) -> float:
+    return (x -  32) * (5/9)
 ```
 
 ## Plotting Functions
 
-We can visualise functions by plotting the inputs on the x-axis and the outputs on the y-axis.
+We can create a set of input values and their corresponding outputs, then visualise them geometrically by drawing the inputs and outputs on the x-axis and y-axis, respectively. This visualisation is called a **graph of a function**.
 
-## Common Functions
+Here is a plot of the Fahrenheit to Celsius function earlier, plotted across a range of inputs: from -100 to 100.
 
-* [Linear Function](linear-function.md).
-* [Quadratric Functions](quadatric-functions.md)
-* [Exponential Function](exponential-function.md)
+![Fahrenheit to celsisus function plot](/_media/fahrenheit-to-celsius.png)
 
-## One-to-one
+When the graph is a straight line like this, it's called a **Linear Function**. There are other names for common function types:
 
-We consider a function "one-to-one" or "injective" if there is exactly one output for every element in the input space and no two different inputs have the same output.
+* Linear Function: A function where the output is proportional to the input.
+* Quadratic Function: A function where the output is proportional to the square of the input.
+* Exponential Function: A function where the output is proportional to a fixed base raised to the power of the input.
+* Polynomial Function: A function that can be represented as a sum of terms, each consisting of a constant multiplied by a variable raised to a non-negative integer power. Linear and quadratic functions are specific types of polynomial functions.
 
-## Onto
+---
 
-We consider a function "onto" or "surjective" if every element of the [Co-Domain of Function](function-codomain.md) has a matching element of the input space or [Domain of a Function](function-domain.md).
+There are some other important properties of functions:
+
+## One-to-one / Injective
+
+We consider a function "one-to-one" or "injective" if each output is associated with exactly one input and no two different inputs have the same output.
+
+## Onto / Surjective
+
+We consider a function "onto" or "surjective" every element in the **co-domain** is an output for at least one input in the **domain**.
 
 ## Bijective
 
-We call a function Bijective if it is both One-to-one and Onto.
+We call a function Bijective if it is both injective and surjective.
