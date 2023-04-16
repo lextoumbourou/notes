@@ -25,24 +25,24 @@ parent: uol-discrete-mathematics
         * If $f$ is the function from A to B, we write: $f: A \rightarrow B$
         * We can read this as f maps A to B:
             * $x \in A: \ \ x \rightarrow f(x) = y \ \ \ (y \in B)$
-* [Domain of a Function](../../../../permanent/function-domain.md)
-    * Given the function above, $A$ is the set of all inputs and called the "domain" of $f$.
-        * Written as $D_f = A$
-* [Co-Domain of Function](../../../../permanent/function-codomain.md)
-    * $B$ is the set containing the outputs and called the co-domain of $f$.
-        * Written as $\text{co-}D_f = B$
-    * The set of all outputs is called the range of f and is written as $R_f$.
-    * $y$ is called the image of $x$.
-    * $x$ is called the pre-image of $y$.
-
-        ![Domain Codomain Range](/_media/domain-codomain-range.png)
-
-    * Example: a set mapping characters to a length.
-        * $f(\text{Sea}) \rightarrow 3$ (contains 3 characters)
-        * $f(Land) \rightarrow 4$ (contains 4 characters)
-        * $f(on) \rightarrow 2$
-            * 2 is the image of "on"
-            * "on" is the pre-image of 2.
+    * Domain of a Function
+        * Given the function above, $A$ is the set of all inputs and called the "domain" of $f$.
+            * Written as $D_f = A$
+    * Co-Domain of Function
+        * $B$ is the set containing the outputs and called the co-domain of $f$.
+            * Written as $\text{co-}D_f = B$
+        * The set of all outputs is called the range of f and is written as $R_f$.
+        * $y$ is called the image of $x$.
+        * $x$ is called the pre-image of $y$.
+    
+            ![Domain Codomain Range](/_media/domain-codomain-range.png)
+    
+        * Example: a set mapping characters to a length.
+            * $f(\text{Sea}) \rightarrow 3$ (contains 3 characters)
+            * $f(Land) \rightarrow 4$ (contains 4 characters)
+            * $f(on) \rightarrow 2$
+                * 2 is the image of "on"
+                * "on" is the pre-image of 2.
 
 * Conditions under which a relation is not a function:
     * Some inputs do not have an image.
