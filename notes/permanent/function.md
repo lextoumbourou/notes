@@ -11,28 +11,32 @@ hide_cover_in_article: true
 
 A function is a rule that associates inputs with outputs.
 
-They are the foundation of many parts of maths and many programming languages.
+They form the core of many aspects of mathematics and numerous programming languages.
 
-The foundational explanation of functions comes from [Set Theory](permanent/set-theory.md), where we think of a function as the mapping from one set, $A$, to another set, $B$. Functions are usually assigned using the letters $f$, $g$, $i$ or $j$ and are described with this notation: $f : A \rightarrow B$
+The fundamental explanation of functions comes from [Set Theory](permanent/set-theory.md), in which a function is regarded as the mapping from one set, $A$, to another set, $B$, expressed as:
 
-For example, we can have a function $f$ that maps from a set of people's names to ages.
+$f : A \rightarrow B$
+
+Functions are commonly denoted using the letters $f$, $g$, $i$, or $j$.
+
+Consider a function, $f$, that maps a set of people's names to their ages:
 
 * $A = \{\text{Sarah}, \text{Geoff}, \text{Clyde}, \text{Betty}\}$
 * $B = \{0, 1, 2, \cdots, 120 \}$
 * $f : A \rightarrow B$
 
 ![An example of the above mapping](/_media/function-diagram.png)
-We call the set of possible inputs the <font style="color: lightblue"><b>domain</b></font> or Df of a function:
+The set of possible inputs is called the <font style="color: lightblue"><b>domain</b></font> or $D_f$ of a function:
 
-$\color{lightblue}D_f = A$.
+$\color{lightblue}D_f = A = \{Clyde, Sarah, Geoff, Betty\}$
 
 The set of possible outputs is the <font color="orange"><b> co-domain </b></font> or $co-D_f$ of the function.
 
-$\color{orange}coD_f = B$
+$\color{orange}coD_f = B = \{0, 1 ... 120\}$
 
-Here the co-domain is every plausible age a human being can be.
+In this case, the co-domain includes all plausible human ages.
 
-Given the set $A$, the set of possible outputs are $\{11, 34, 98\}$. This set is called the <font style="color: darkred"><b>range</b></font> of the function ( $R$ )
+Given the input set $A$, the set of possible outputs is $\{11, 34, 98\}$. This set is known as the <font style="color: darkred"><b>range</b></font> of the function ( $R$ ).
 
 $\color{darkred}R = \{11, 34, 98\}$
 
@@ -42,7 +46,7 @@ $f(Sarah) = 34$
 
 The output 34 is the function's **image**, and the corresponding input, $Sarah$, is the **pre-image**.
 
-Functions are considered a "well-behaved relation". That means that for each input, there must be exactly one output. We know this example is a function as each person has a valid age and only has one.
+Functions are considered a "well-behaved relation". That means that for each input, there must be exactly one output. This example qualifies as a function because each person has a unique, valid age.
 
 ---
 
