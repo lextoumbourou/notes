@@ -26,6 +26,7 @@ Consider a function, $f$, that maps a set of people's names to their ages:
 * $f : A \rightarrow B$
 
 ![An example of the above mapping](/_media/function-diagram.png)
+
 The set of possible inputs is called the <font style="color: lightblue"><b>domain</b></font> or $D_f$ of a function:
 
 $\color{lightblue}D_f = A = \{Clyde, Sarah, Geoff, Betty\}$
