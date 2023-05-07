@@ -181,7 +181,7 @@ Then I added the stems and my new vocals into a Logic Pro project and applied th
 * compressor to flatten the peaks
 * reverb and delay, which masks imperfections.
 
-And here's the [finished song on YouTube](https://www.youtube.com/watch?v=JSSSa62LZZY).
+And here's the [finished song on YouTube](https://www.youtube.com/watch?v=KES3UPP6pqg).
 
 I also tried my voice on my wife's favourite Taiwanese band, Mayday, and [it worked well](https://www.youtube.com/watch?v=MrNbKMLbZ4E).
 
@@ -205,9 +205,11 @@ The songs made by unknown producers, using a famous person like Drake's vocal to
 
 Some artists are already starting to monetise their voice models. Grimes already set up [a tool](https://www.musicradar.com/news/grimes-ai-voice-model) to use her AI voice in exchange for a 50% proceeds split.
 
-The reality is that people will likely get sick of the deep fake music, and I imagine the fad will die off and be mostly forgetten as we enter the next phase of AI music, whatever that is.
+The reality is that people will likely get sick of the deep fake music, and I imagine the fad will die off and be mostly forgotten as we enter the next phase of AI music, whatever that is.
 
-The next question is: if anyone can sing in perfect pitch, does that invalidate natural talent? Again, probably not. There's more to music than the audio file; people want to connect to a person with a story. Human's will always have a role to play in music for other humans.
+The next question is: if anyone can sing in perfect pitch, does that invalidate natural talent?
+
+Again, probably not. There's more to music than the audio file; people want to connect to a person with a story. Human's will always have a role to play in music for other humans.
 
 [Chess is more popular than ever](https://qz.com/work/1329974/jobs-and-ai-if-you-are-worried-about-human-obsolescence-consider-chess); even though AI mastered it in the 80s.
 
