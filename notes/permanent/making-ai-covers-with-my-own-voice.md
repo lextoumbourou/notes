@@ -25,9 +25,9 @@ As the name suggests, singing voice conversion or SVC is about taking source aud
 
 The popularity of SVC has taken off in recent months, with Discord channels forming to allow people to share artist models and datasets, as well as tips for training models and inference. Social networks are full of sick AI covers, like [Biggie rapping the song N.Y. State of Mind](https://www.youtube.com/watch?v=IFb5DQHP05I) and [new bangers by Drake](https://www.youtube.com/watch?v=JSSSa62LZZY) that he had no involvement in (and are sure to be taken down).
 
-The most widely used implementation of SVC is from a repository called [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc), which is a portmanteau of the [SoftVC](https://github.com/bshall/soft-vc) encoder and [VITS](https://github.com/jaywalnut310/vits) Some alternative implements like [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/README.en.md) exist, which improves training speed and requires less training data.
+The most widely used implementation of SVC is from a repository called [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc), which is a portmanteau of [SoftVC](https://github.com/bshall/soft-vc) and [VITS](https://github.com/jaywalnut310/vits). Some alternative implements like [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/README.en.md) exist, which improves training speed and requires less training data.
 
-The core idea of the system at training time is to learn a representation of the speaker's voice, called an embedding, which captures the key details of the target's voice characteristics. Then at inference time, combine an embedding representation of the source speaker with the target embedding and decode it into a mel-spectrogram (a kind of image for sound) before vocoding into audio.
+The core idea of the system at training time is to learn a representation of the speaker's voice, called an embedding, which captures the key details of the target's voice characteristics. Then at inference time, combine an embedding representation of the source speaker with the target embedding and decode it into a mel spectrogram (a kind of image for sound) before [vocoding](https://en.wikipedia.org/wiki/Vocoder) into audio.
 
 Though the original [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc) project is now archived, many [forks](https://github.com/voicepaw/so-vits-svc-fork) have sprung up that add various functionality and simplify training and inference.
 
@@ -66,11 +66,9 @@ lex@lex-macbook-m1:~/datasets/lex> ls -l | wc -l
 113
 ```
 
-Let's get to training.
-
 ## Training the model
 
-The authors of the [so-vits-svc forks](https://github.com/voicepaw/so-vits-svc-fork) have simplified the training process. In [this Colab notebook](https://colab.research.google.com/github/34j/so-vits-svc-fork/blob/main/notebooks/so-vits-svc-fork-4.0.ipynb), you merely upload your dataset to your Google Drive and run all the cells and end up with a trained model.
+The authors of the [so-vits-svc forks](https://github.com/voicepaw/so-vits-svc-fork) have made the training process very easy. In [this Colab notebook](https://colab.research.google.com/github/34j/so-vits-svc-fork/blob/main/notebooks/so-vits-svc-fork-4.0.ipynb), you merely upload your dataset to your Google Drive and run all the cells and end up with a trained model.
 
 Here's a breakdown of what's going on in the notebook.
 
@@ -143,7 +141,7 @@ The inference script takes in a few parameters that are worth paying attention t
 * `--model-path` - the path to the trained weights (a `G_*.pth` file).
 * `--config-path`: the config used for training
 * `--transpose` allows you to transpose the source voice before inference. Usually, you would transpose `-12` for female-to-male or `+12` for male-to-female. Although, it is incredible to hear my voice in the range of Stevie Nicks.
-* `--auto-predict-f0` is an alternative to `--transpose, automatically adjusting the pitch to match the target speaker. It works amazingly for rap, but for singing, it can alter the pitch and make the vocals out of the key.
+* `--auto-predict-f0` is an alternative to `--transpose`, automatically adjusting the pitch to match the target speaker. It works amazingly for rap, but for singing, it can alter the pitch and make the vocals out of the key.
 * `--cluster-model-path` and `--cluster-infer-ratio` can choose an optional clustering scheme to make the trained sound more like the target's timbre. But it makes the results less clear sounding. A fusion method can control the balance between timbre and clarity, allowing an appropriate trade-off point to be manually adjusted. 0.5 is a good starting point.
 
 Now I have my converted vocals in the `results` folder.
