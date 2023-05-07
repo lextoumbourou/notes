@@ -9,7 +9,7 @@ Recently, there has been a lot of talk about so-called [AI music](https://www.np
 
 This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song and making it sound like someone else was singing it, I want to do the inverse: take some tunes and have my voice cover them.
 
-If you are eager to get straight to the point, [here is the finished product](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=3).
+If you are eager to get straight to the point, [here is the finished product](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=1).
 
 Note that I have no natural singing talent, as you will see later in the article.
 
@@ -142,24 +142,24 @@ svc infer \
 separated/htdemucs_ft/Dreams/vocals.wav
 ```
 The inference script takes in a few parameters that are worth paying attention to:
+
 * `--model-path` - the path to the trained weights (a `G_*.pth` file).
 * `--config-path`: the config used for training
- * `--transpose` allows you to transpose the source voice before inference. Usually, you would transpose `-12` for female-to-male or `+12` for male-to-female. Although, it is incredible to hear my voice in the range of Stevie Nicks.
-    * `--auto-predict-f0` is an alternative to `--transpose, automatically adjusting the pitch to match the target speaker. It works amazingly for rap, but for singing, it can alter the pitch and make the vocals out of the key.
-* `--cluster-model-path` and ``--cluster-infer-ratio`
-    * The model uses a clustering scheme to make the trained sound more like the target's timbre. But it makes the results less clear sounding. A fusion method can control the balance between timbre and clarity, allowing an appropriate trade-off point to be manually adjusted. 0.5 is a good starting point.
+* `--transpose` allows you to transpose the source voice before inference. Usually, you would transpose `-12` for female-to-male or `+12` for male-to-female. Although, it is incredible to hear my voice in the range of Stevie Nicks.
+* `--auto-predict-f0` is an alternative to `--transpose, automatically adjusting the pitch to match the target speaker. It works amazingly for rap, but for singing, it can alter the pitch and make the vocals out of the key.
+* `--cluster-model-path` and `--cluster-infer-ratio` can choose an optional clustering scheme to make the trained sound more like the target's timbre. But it makes the results less clear sounding. A fusion method can control the balance between timbre and clarity, allowing an appropriate trade-off point to be manually adjusted. 0.5 is a good starting point.
 
 Now I have my converted vocals in the `results` folder.
 
-Here's how they sound side-by-side against the source:
+Here's how they sound side-by-side against the source.
 
-Original:
+Original.
 
 <audio controls>
   <source src="/_media/lanie-gardner-dreams-part.mp3" type="audio/mpeg">
 </audio>
 
-Transferred vocals with transpose 0 (singing in Larie's/Stevie's pitch)
+Transferred vocals with transpose 0 (singing in Larie's/Stevie's pitch).
 
 <audio controls>
   <source src="/_media/lex-dreams-transpose0.mp3" type="audio/mpeg">
@@ -171,7 +171,7 @@ Transferred vocals with transpose -12 (probably closer to my range, if I could s
   <source src="/_media/lex-dreams-transpose-12.mp3" type="audio/mpeg">
 </audio>
 
-And just for good measure, here's me trying to sing it without any autotune (warning: it sounds terrible).
+And just for good measure, here's me trying to sing it without any autotune (warning: it is bad - I really did my best here).
 
 <audio controls>
   <source src="/_media/lex-singing-dreams-no-ai.mp3" type="audio/mpeg">
@@ -204,9 +204,9 @@ Will this effectively destroy the music industry as we know it? Probably not.
 
 Most uploaded AI covers are already tagged and monetised as per any streaming platform, so it's more streaming engagement for labels.
 
-The songs made by unknown producers, using a famous person like Drake's vocal to get publicity, will likely get taken down for now as they a) violate the artist [right to publicity] and b) trained on a corpus such that it violates [copyright law](https://edition.cnn.com/2023/04/18/tech/universal-music-group-artificial-intelligence/index.html). Eventually, I think social networks will automatically classify transferred vocals and offer to remove the offending material or compensate the label, and this will go back to BAU.
+The songs made by unknown producers, using a famous person like Drake's vocal to get publicity, will likely get taken down for now as they a) violate the artist [right to publicity](https://www.tiktok.com/@lawyerdrummer/video/7223492225462783238) and b) trained on a corpus such that it violates [copyright law](https://edition.cnn.com/2023/04/18/tech/universal-music-group-artificial-intelligence/index.html). Eventually, I think social networks will automatically classify transferred vocals and offer to remove the offending material or compensate the label, and this will go back to BAU monetisation system for working with streaming services.
 
-Some artists are already starting to monetise their voice models. Grimes already set up a tool to use her AI voice in exchange for a 50% proceeds split.
+Some artists are already starting to monetise their voice models. Grimes already set up [a tool](https://www.musicradar.com/news/grimes-ai-voice-model) to use her AI voice in exchange for a 50% proceeds split.
 
 The reality is that people will get sick of these creations quickly, and I imagine the fad will die off as we enter the next phase of AI music, whatever that may be. 
 
@@ -220,9 +220,9 @@ The true implication of this tech, and deep fakes in general, is that we can onl
 
 If you have a bank using voice recognition technology to authorise you, I recommend changing banks or turning off this feature immediately.
 
-Voice conversion isn't a technology of the future; it's technology of the present. As you can see from the simplicity of training a model, this technology is available to everyone, regardless of technical capability.
+Voice conversion isn't a technology of the future; it's a technology of the present. As you can see from the simplicity of training a model, this technology is available to everyone, regardless of technical capability.
 
-Perhaps, we should be wary of how much of our audio we public-ally release to the world. We should be wearing of trusting what we hear. 
+Perhaps, we should be wary of how much of our audio we public-ally release to the world. We have no choice but to become weary of what we hear without adequate verification of authenticity.
 
 Now that we know the potential for misuse of this technology, we must educate our family and friends about the potential for fakers to scam us. Verify and check everything you hear.
 
