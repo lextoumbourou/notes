@@ -7,7 +7,7 @@ summary: Training a singing voice conversion on my voice
 
 Recently, there has been a lot of talk about so-called [AI music](https://www.npr.org/2023/04/21/1171032649/ai-music-heart-on-my-sleeve-drake-the-weeknd), which in May 2023, likely refers to taking a song made by a person and applying a voice conversion model to the vocals to make it sound like Kanye, Drake, or any other artist singing the lyrics. Though if you're reading this in the future, AI music might be entirely different.
 
-This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song and making it sound like someone else was singing it, I want to do the inverse: take some tunes and have my voice cover them.
+This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song and making it sound like someone else was singing it, I want to take some tunes and hear my singing them.
 
 If you are eager to get straight to the point, [here is the finished product](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=1). Note that I have no natural singing talent, as you will see later in the article.
 
@@ -19,13 +19,13 @@ I want to share some thoughts about the implications for the music industry and 
 
 [Voice Conversion](https://paperswithcode.com/task/voice-conversion) is a technology that modifies speech audio to make it sound like a different person said it. This technology has legitimate applications in speech therapy, accessibility, and entertainment. However, it also has massive potential for misuse: identity theft, fraud, and starting world wars. I write a bit about the ethics of this technology later in the article.
 
-As the name suggests, singing voice conversion, or SVC, is about taking **vocals** and making them sound like an alternate speaker. It's just voice conversion + pitch.
+As the name suggests, singing voice conversion, or SVC, is about taking vocals and making them sound like an alternate singer. It's just voice conversion + pitch.
 
-The popularity of SVC has taken off in recent months, with Discord channels forming to allow people to share artist models and datasets, as well as tips for training models and inference. Social networks are full of sick AI covers, like [Biggie rapping the song N.Y. State of Mind](https://www.youtube.com/watch?v=IFb5DQHP05I) and [new bangers by Drake](https://www.youtube.com/watch?v=JSSSa62LZZY) that he had no involvement in (and are sure to be taken down).
+The popularity of SVC has taken off in recent months, with Discord channels forming to allow people to share artist models and datasets, as well as tips for training models and inference. Social networks are full of sick AI covers, like [Biggie rapping the song N.Y. State of Mind](https://www.youtube.com/watch?v=IFb5DQHP05I) and [new bangers by Drake](https://www.youtube.com/watch?v=JSSSa62LZZY) that the artists have no involvement in and are sure to be taken down.
 
 The most widely used implementation of SVC is from a repository called [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc), which is a portmanteau of [SoftVC](https://github.com/bshall/soft-vc) and [VITS](https://github.com/jaywalnut310/vits). Some alternative implements like [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/README.en.md) exist, which improves training speed and requires less training data.
 
-The core idea of the system at training time is to learn a representation of the speaker's voice, called an embedding, which captures details of the target's voice characteristics. Then at inference time, combine an embedding representation of the source speaker with the target embedding and decode it into a mel spectrogram (a kind of image for sound) before [vocoding](https://en.wikipedia.org/wiki/Vocoder) into audio.
+The core idea of the system at training time is to learn a representation of the singer's voice, called an embedding, which captures details of the voice's characteristics. Then at inference time, combine an embedding representation of the source speaker with the target embedding and decode it into a mel spectrogram (a kind of image for sound) before [vocoding](https://en.wikipedia.org/wiki/Vocoder) into audio.
 
 Though the original [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc) project is now archived, many [forks](https://github.com/voicepaw/so-vits-svc-fork) have sprung up that add various functionality and simplify training and inference.
 
