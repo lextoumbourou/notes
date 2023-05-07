@@ -7,9 +7,11 @@ summary: Training a singing voice conversion model on my voice
 
 Recently, there has been a lot of talk about so-called [AI music](https://www.npr.org/2023/04/21/1171032649/ai-music-heart-on-my-sleeve-drake-the-weeknd), which in May 2023, likely refers to taking a song made by a person and applying a voice conversion model to the vocals to make it sound like Kanye, Drake, or any other artist singing the lyrics. Though if you're reading this in the future, AI music might be entirely different.
 
-This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song and making it sound like someone else was singing it, I want to take some tunes and hear me singing them. Note that I have no natural singing talent *at all*, as you can hear in the example later in the article.
+This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song and making it sound like someone else was singing it, I wanted to take some tunes and hear me singing them. I have no natural singing talent *at all*, as you can listen to in the example later in the article.
 
-If you are eager to get straight to the point: [this](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=1) is the finished product and [SoVITS](https://github.com/svc-develop-team/so-vits-svc) is the technology I used.
+The results were amazing!
+
+If you are eager to get straight to the point: [this](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=1) is the finished product and [SoVITS](https://github.com/svc-develop-team/so-vits-svc) is the tool I used.
 
 This article aims to give a high-level look at SoVITS and shows how I trained my voice model.
 
@@ -23,7 +25,7 @@ As the name suggests, singing voice conversion, or SVC, is about taking vocals a
 
 The popularity of SVC has taken off in recent months, with Discord channels forming to allow people to share artist models and datasets, as well as tips for training models and inference. Social networks are full of AI covers, like [Biggie rapping the song N.Y. State of Mind](https://www.youtube.com/watch?v=IFb5DQHP05I) and [new bangers by Drake](https://www.youtube.com/watch?v=JSSSa62LZZY), which he has no involvement in and is sure to be taken down.
 
-The most widely used implementation of SVC is from a repository called [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc), whose name is blend of [SoftVC](https://github.com/bshall/soft-vc) and [VITS](https://github.com/jaywalnut310/vits). Some alternative implements like [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/README.en.md) exist, which improves training speed and requires less training data.
+The most widely used implementation of SVC is from a repository called [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc), whose name is a blend of [SoftVC](https://github.com/bshall/soft-vc) and [VITS](https://github.com/jaywalnut310/vits). Some alternative implements like [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/README.en.md) exist, which improves training speed and requires less training data.
 
 The core idea of the system at training time is to learn a representation of the singer's voice, called an embedding, which captures details of the voice's characteristics. Then at inference time, combine an embedding representation of the source speaker with the target embedding and decode it into a mel spectrogram (a kind of image for sound) before [vocoding](https://en.wikipedia.org/wiki/Vocoder) into audio.
 
@@ -37,7 +39,7 @@ You can train a new voice with around 100 clips of the target speaker's voice, e
 
 I recorded myself singing six songs across different genres, including rap. I picked songs whose lyrics I know very well. In future, I would choose additional pieces that capture a range of timbres and pitches to improve the model. I used an app called [Voloco](https://resonantcavity.com/) to record the vocals on my phone, which provides some tools for pitch correction and vocal cleaning. I recorded the songs in my closest facing towards my clothes to minimise unwanted noise (ChatGPT said it would help).
 
-![](../_media/svc-lex-closet.png)
+![Example of recording the audio in my closet](../_media/svc-lex-closet.png)
 
 You can listen to the audio clips [here](https://soundcloud.com/5-footnothing/sets/lex-ai-training-set?si=1ff35fef8db747b4ac5c50113ecbfcb9), though a warning, I am a terrible singer with an annoying, nasally voice.
 
@@ -207,17 +209,17 @@ Again, probably not. There's more to music than the audio file; people want to c
 
 [Chess is more popular than ever](https://qz.com/work/1329974/jobs-and-ai-if-you-are-worried-about-human-obsolescence-consider-chess), even though AI mastered it in the 80s.
 
-## The ethics of deep fakes
+## The implications of deep fakes in society
 
 The true implication of this tech, and deep fakes in general, is that we can only trust voice (and video) recordings with sufficient verification of authenticity.
 
-If you have a bank using voice recognition technology to authorise you, I recommend turning off this feature immediately or changing banks if you cannot.
+If you have a bank using *only* a voice recognition service to authorise you, I recommend turning off this feature immediately or changing banks if you cannot.
 
-Voice conversion isn't a technology of the future; it's a technology of the present. As you can see from the simplicity of training a model, this technology is available to everyone, regardless of technical capability.
+Voice conversion isn't a future technology; it works exceptionally well in the present. As you can see from the simplicity of training a model, it's a tool available to everyone, regardless of technical capability.
 
 Perhaps, we should be wary of how much of our audio we publicly release to the world.
 
-Now that we know the potential for misuse of this technology, we must educate our family and friends about the potential for fakers to scam us.
+Now that we know the potential for misuse and danger, we must educate our family and friends about the potential for fakers to scam us.
 
 Verify and check everything you hear.
 
