@@ -5,11 +5,11 @@ cover: /_media/svc-cover.png
 summary: Training a singing voice conversion model on my voice
 ---
 
-Recently, there has been a lot of talk about so-called [AI music](https://www.npr.org/2023/04/21/1171032649/ai-music-heart-on-my-sleeve-drake-the-weeknd), which in May 2023, likely refers to taking a song made by a person and applying a voice conversion model to the vocals to make it sound like Kanye, Drake, or any other artist singing the lyrics. Though if you're reading this in the future, AI music might be entirely different.
+Recently, there has been a lot of talk about so-called [AI music](https://www.npr.org/2023/04/21/1171032649/ai-music-heart-on-my-sleeve-drake-the-weeknd), which in May 2023, likely refers to taking a song made by a person and applying a voice conversion effect to the vocals to make it sound like Kanye, Drake, or any other artist singing the lyrics. Though if you're reading this in the future, AI music might mean something entirely different.
 
-This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song and making it sound like someone else was singing it, I wanted to take some tunes and hear me singing them. I have no natural singing talent *at all*, as you can listen to in the example later in the article.
+This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song's vocals and making them sound like Drake, I wanted to take some tunes and hear me singing them.
 
-The results were amazing!
+The results were amazing! I created a decent model with less than 20 minutes of voice data that sounded like I could sing with perfect pitch across multiple languages. I have no natural singing talent *at all*, as you can listen to in the example later in the article.
 
 If you are eager to get straight to the point: [this](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=1) is the finished product and [SoVITS](https://github.com/svc-develop-team/so-vits-svc) is the tool I used.
 
@@ -19,11 +19,11 @@ I want to share some thoughts about the implications for the music industry and 
 
 ## Singing Voice Conversion (SVC)
 
-The study of [Voice Conversion](https://paperswithcode.com/task/voice-conversion) aims to modify speech audio to make it sound like a different person is speaking. It has legitimate applications in speech therapy, accessibility, and entertainment. However, it also has massive potential for misuse: identity theft, fraud, and starting world wars.
+The study of [Voice Conversion](https://paperswithcode.com/task/voice-conversion) aims to modify speech audio to make it sound like a different person is speaking. It has legitimate applications in speech therapy, accessibility, entertainment and many other domains. It also has massive potential for misuse, like identity theft, fraud, and starting world wars.
 
 As the name suggests, singing voice conversion, or SVC, is about taking vocals and making them sound like a different singer. It's just voice conversion + pitch.
 
-The popularity of SVC has taken off in recent months, with Discord channels forming to allow people to share artist models and datasets, as well as tips for training models and inference. Social networks are full of AI covers, like [Biggie rapping the song N.Y. State of Mind](https://www.youtube.com/watch?v=IFb5DQHP05I) and [new bangers by Drake](https://www.youtube.com/watch?v=JSSSa62LZZY), which he has no involvement in and is sure to be taken down.
+The popularity of SVC has taken off in recent months, with Discord channels forming to allow people to share artist models and datasets, as well as tips for training models and inference. Social networks are full of AI covers, like [Biggie rapping the song N.Y. State of Mind](https://www.youtube.com/watch?v=IFb5DQHP05I) and [new bangers by Drake](https://www.youtube.com/watch?v=JSSSa62LZZY), which he has no involvement in and are sure to be taken down.
 
 The most widely used implementation of SVC is from a repository called [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc), whose name is a blend of [SoftVC](https://github.com/bshall/soft-vc) and [VITS](https://github.com/jaywalnut310/vits). Some alternative implements like [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/README.en.md) exist, which improves training speed and requires less training data.
 
@@ -195,11 +195,11 @@ In future, I'm planning to run some additional experiments:
 
 Will this effectively destroy the music industry as we know it? Probably not.
 
-Most uploaded AI covers are already tagged and monetised as per any streaming platform, so it's more streaming engagement for labels.
+Most uploaded AI covers are already tagged and monetised as per any streaming platform, so it's just more streaming engagement for labels.
 
-The songs made by unknown producers, using a famous person like Drake's vocal to get publicity, will likely get taken down for now as they a) violate the artist [right to publicity](https://www.tiktok.com/@lawyerdrummer/video/7223492225462783238) and b) trained on a corpus such that it violates [copyright law](https://edition.cnn.com/2023/04/18/tech/universal-music-group-artificial-intelligence/index.html). Eventually, I think social networks will automatically classify SVC vocals and offer to remove the offending material or compensate the label, and the labels will go back to the BAU monetisation system for working with streaming services.
+The songs made by unknown producers, using a famous voice like Drake's to get publicity, will likely get taken down for now as they a) violate the artist [right to publicity](https://www.tiktok.com/@lawyerdrummer/video/7223492225462783238) and b) trained on a corpus such that it violates [copyright law](https://edition.cnn.com/2023/04/18/tech/universal-music-group-artificial-intelligence/index.html). Eventually, I think social networks will automatically classify SVC vocals and offer to remove the offending material or compensate the label, and the labels will go back to the BAU monetisation system for working with streaming services.
 
-Some artists are already starting to monetise their voice models. Grimes already set up [a tool](https://www.musicradar.com/news/grimes-ai-voice-model) to use her AI voice in exchange for a 50% proceeds split.
+Some artists are already starting to monetise their voice models. [Grimes already set up a tool](https://www.musicradar.com/news/grimes-ai-voice-model) to use her AI voice in exchange for a 50% proceeds split.
 
 The reality is that people will likely get sick of the deep fake music, and I imagine the fad will die off as attention shifts to the next phase of AI music, whatever that is.
 
