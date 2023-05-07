@@ -70,21 +70,21 @@ The authors of the [so-vits-svc forks](https://github.com/voicepaw/so-vits-svc-f
 
 Here's a breakdown of what's going on in the notebook.
 
-1. Mount your Google Drive to access your training set.
+1\. Mount your Google Drive to access your training set.
 
 ```bash
 from google.colab import drive
 drive.mount('/content/drive')
 ```
 
-2. Unzip the dataset to a folder called `dataset_raw`.
+2\. Unzip the dataset to a folder called `dataset_raw`.
 
 ```bash
 !mkdir -p "dataset_raw"
 !unzip /content/drive/MyDrive/svc/LexDataset.zip -d dataset_raw/lex
 ```
 
-3. Run the preprocessing scripts. These resample the audio to 44khz, normalise the audio and prepare the data for training.
+3\. Run the preprocessing scripts. These resample the audio to 44khz, normalise the audio and prepare the data for training.
 
 ```bash
 svc pre-resample
@@ -92,7 +92,7 @@ svc pre-config
 svc pre-hubert -fm dio
 ```
 
-4. Train the model. You specify a path on Google Drive to dump the checkpoints for easy resume ability.
+4\. Train the model. You specify a path on Google Drive to dump the checkpoints for easy resume ability.
 
 ```bash
 svc train --model-path drive/MyDrive/svc/lex-20230506/logs/44k
@@ -190,8 +190,6 @@ In future, I'm planning to run some additional experiments:
 * trying non-human voices. I'm keen to hear how my dog sounds singing the classics.
 
 ## The implications for the music industry
-
-I want to finish the article by giving my two cents on the implications for the music industry as an uninformed layperson.
 
 Will this effectively destroy the music industry as we know it? Probably not.
 
