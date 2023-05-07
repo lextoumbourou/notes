@@ -37,9 +37,7 @@ Creating the dataset is the first step to training an SVC model on a new target 
 
 You can train a new voice with around 100 clips of the target speaker's voice, each between 5-15 seconds (people commonly recommend making them ~10 seconds). You should trim excessive silence and ensure the vocals have minimal audio layers and processing.
 
-I recorded myself singing six songs across different genres, including rap. I picked songs whose lyrics I know very well. In future, I would choose additional pieces that capture a range of timbres and pitches to improve the model.
-
-I used an app called [Voloco](https://resonantcavity.com/) to record the vocals on my phone, which provides some tools for pitch correction and vocal cleaning. I recorded the songs in my closest facing towards my close to minimise the echoes and unwanted noise (ChatGPT said it would help).
+I recorded myself singing six songs across different genres, including rap. I picked songs whose lyrics I know very well. In future, I would choose additional pieces that capture a range of timbres and pitches to improve the model. I used an app called [Voloco](https://resonantcavity.com/) record the vocals on my phone, which provides some tools for pitch correction and vocal cleaning. I recorded the songs in my closest facing towards my clothes to minimise unwanted noise (ChatGPT said it would help).
 
 ![](../_media/svc-lex-closet.png)
 
@@ -108,7 +106,7 @@ I trained it for a few hours to about 2k epochs, then downloaded the weights to 
 
 ## Transfer vocals to other songs
 
-This idea of an AI cover is possible thanks to Facebook's magical source separator tool called [Demucs](https://github.com/facebookresearch/demucs). It separates songs into their stems: drums, bass, other instruments and vocals. It works unbelievably well.
+This idea of an AI cover is possible thanks to SVC, but also Facebook's magical source separator tool called [Demucs](https://github.com/facebookresearch/demucs). It separates songs into their stems: drums, bass, other instruments and vocals. It works unbelievably well.
 
 In this inference example, I took a cover of Fleetwood Mac's Dreams from YouTube by a singer called [Lanie Gardney](https://www.youtube.com/watch?v=V1LhC1zGouc). The reason to use a cover version over the original is that the vocals have less layering and processing, but it still worked okay with the original song.
 
@@ -195,36 +193,38 @@ In future, I'm planning to run some additional experiments:
 * experiment with just speaking training data transferring to rap and singing.
 * trying non-human voices. I'm keen to hear how my dog sounds singing the classics.
 
-I want to finish the article by giving my two cents on the implications for the music industry and ethics.
-
 ## The implications of this for the music industry
+
+I want to finish the article by giving my two cents on the implications for the music industry, as an uninformed layperson.
 
 Will this effectively destroy the music industry as we know it? Probably not.
 
 Most uploaded AI covers are already tagged and monetised as per any streaming platform, so it's more streaming engagement for labels.
 
-The songs made by unknown producers, using a famous person like Drake's vocal to get publicity, will likely get taken down for now as they a) violate the artist [right to publicity](https://www.tiktok.com/@lawyerdrummer/video/7223492225462783238) and b) trained on a corpus such that it violates [copyright law](https://edition.cnn.com/2023/04/18/tech/universal-music-group-artificial-intelligence/index.html). Eventually, I think social networks will automatically classify transferred vocals and offer to remove the offending material or compensate the label, and this will go back to BAU monetisation system for working with streaming services.
+The songs made by unknown producers, using a famous person like Drake's vocal to get publicity, will likely get taken down for now as they a) violate the artist [right to publicity](https://www.tiktok.com/@lawyerdrummer/video/7223492225462783238) and b) trained on a corpus such that it violates [copyright law](https://edition.cnn.com/2023/04/18/tech/universal-music-group-artificial-intelligence/index.html). Eventually, I think social networks will automatically classify SVC vocals and offer to remove the offending material or compensate the label, and the labels will go back to the BAU monetisation system for working with streaming services.
 
 Some artists are already starting to monetise their voice models. Grimes already set up [a tool](https://www.musicradar.com/news/grimes-ai-voice-model) to use her AI voice in exchange for a 50% proceeds split.
 
-The reality is that people will get sick of these creations quickly, and I imagine the fad will die off as we enter the next phase of AI music, whatever that is.
+The reality is that people will likely get sick of the deep fake music, and I imagine the fad will die off and be mostly forgetten as we enter the next phase of AI music, whatever that is.
 
-The next question is: if anyone can sing in perfect pitch, does that invalidate natural talent? Again, probably not. There's more to music than the audio file; people want to connect to the artist and engage with other fans. The artist's story has a role to play.
+The next question is: if anyone can sing in perfect pitch, does that invalidate natural talent? Again, probably not. There's more to music than the audio file; people want to connect to a person with a story. Human's will always have a role to play in music for other humans.
 
-Also, there's a more considerable demand than [ever for chess](https://qz.com/work/1329974/jobs-and-ai-if-you-are-worried-about-human-obsolescence-consider-chess); even though AI mastered it in the 80s.
+[Chess is more popular than ever](https://qz.com/work/1329974/jobs-and-ai-if-you-are-worried-about-human-obsolescence-consider-chess); even though AI mastered it in the 80s.
 
 ## The ethics of deep fakes
 
-The true implication of this tech, and deep fakes in general, is that we can only trust voice (and video) recordings with some verification step.
+The true implication of this tech, and deep fakes in general, is that we can no longer trust voice (and video) recordings without sufficient verification of authenticity.
 
-If you have a bank using voice recognition technology to authorise you, I recommend changing banks or turning off this feature immediately.
+If you have a bank using voice recognition technology to authorise you, I recommend turning off this feature immediately or changing banks if you cannot.
 
 Voice conversion isn't a technology of the future; it's a technology of the present. As you can see from the simplicity of training a model, this technology is available to everyone, regardless of technical capability.
 
-Perhaps, we should be wary of how much of our audio we public-ally release to the world. We have no choice but to become weary of what we hear without adequate verification of authenticity.
+Perhaps, we should be wary of how much of our audio we publicly release to the world?
 
-Now that we know the potential for misuse of this technology, we must educate our family and friends about the potential for fakers to scam us. Verify and check everything you hear.
+Now that we know the potential for misuse of this technology, we must educate our family and friends about the potential for fakers to scam us.
+
+Verify and check everything you hear.
 
 ## Conclusion
 
-I created a decent model with minimal effort that sounded like I could sing with perfect pitch. This technology is super easy to use and will only get easier. The music industry will be fine - they will cash in on this technology, and the demand for human-made music will continue. Still, deep fakes will be an increasingly significant problem for society, and we should be aware of how capable the tools are right now.
+I created a decent model with minimal effort that sounded like I could sing across languages with perfect pitch. This technology is super easy to use and will only get easier. The music industry will be fine - they will cash in on this technology, and the demand for human-made music will continue. Still, deep fakes will be an increasingly significant problem for society, and we should be aware of how capable the tools are right now.
