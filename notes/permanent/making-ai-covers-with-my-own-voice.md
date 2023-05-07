@@ -1,6 +1,6 @@
 ---
 title: Making Song Covers With My AI Voice
-date: 2023-05-06 00:00
+date: 2023-05-07 00:00
 cover: /_media/svc-cover.png
 summary: Training a singing voice conversion on my voice
 ---
@@ -9,9 +9,7 @@ Recently, there has been a lot of talk about so-called [AI music](https://www.np
 
 This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song and making it sound like someone else was singing it, I want to do the inverse: take some tunes and have my voice cover them.
 
-If you are eager to get straight to the point, [here is the finished product](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=1).
-
-Note that I have no natural singing talent, as you will see later in the article.
+If you are eager to get straight to the point, [here is the finished product](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=1). Note that I have no natural singing talent, as you will see later in the article.
 
 This article aims to give a high-level look at the technology that makes this possible and shows how I trained my voice model.
 
@@ -23,21 +21,21 @@ Let's start by looking at the ML learning system used for this.
 
 [Voice Conversion](https://paperswithcode.com/task/voice-conversion) is a technology that modifies the speech of a target speaker to sound like someone else. It has legitimate use cases in speech therapy, accessibility, entertainment and other fields. It has illegitimate use cases such as identity theft, fraud and starting world wars. I write a bit about the ethics of this technology later in the article.
 
-As the name suggests, singing voice conversion or SVC is about taking a source *singing* audio and making it sound like someone else.
+As the name suggests, singing voice conversion or SVC is about taking source audio of a singing voice and making the voice sound like a different singer. It's just voice conversion + pitch.
 
 The popularity of SVC has taken off in recent months, with Discord channels forming to allow people to share artist models and datasets, as well as tips for training models and inference. Social networks are full of sick AI covers, like [Biggie rapping the song N.Y. State of Mind](https://www.youtube.com/watch?v=IFb5DQHP05I) and [new bangers by Drake](https://www.youtube.com/watch?v=JSSSa62LZZY) that he had no involvement in (and are sure to be taken down).
 
-The most popular implementation of SVC is from a repository called [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc), which is a portmanteau of the [SoftVC](https://github.com/bshall/soft-vc) encoder and [VITS](https://github.com/jaywalnut310/vits), though, the authors replaced SoftVC with ContentVec in the latest version, 4. Some alternative implements like [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/README.en.md) exist, which improves training speed and requires less training data.
+The most widely used implementation of SVC is from a repository called [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc), which is a portmanteau of the [SoftVC](https://github.com/bshall/soft-vc) encoder and [VITS](https://github.com/jaywalnut310/vits) Some alternative implements like [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/README.en.md) exist, which improves training speed and requires less training data.
 
-The core idea of the system at training time is to learn a speaker embedding, which captures the key details of the target speaker's voice characteristics. Then at inference time, combining an embedding representation of the source speaker, combining with the target embedding, which is then decoded into a mel spectogram (a kind of image for sound), which is converted into audio by a vocoder.
+The core idea of the system at training time is to learn a representation of the speaker's voice, called an embedding, which captures the key details of the target's voice characteristics. Then at inference time, combine an embedding representation of the source speaker with the target embedding and decode it into a mel-spectrogram (a kind of image for sound) before vocoding into audio.
 
 Though the original [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc) project is now archived, many [forks](https://github.com/voicepaw/so-vits-svc-fork) have sprung up that add various functionality and simplify training and inference.
 
+## Creating a dataset
+
 Creating the dataset is the first step to training an SVC model on a new target voice.
 
-## Create a dataset
-
-You can train a new voice with around 100 clips of the target speaker's voice, each between 5-15 seconds (people commonly recommend making them ~10 seconds). You should trim excessive silence and ensure the vocals have minimal audio layers and processing. 
+You can train a new voice with around 100 clips of the target speaker's voice, each between 5-15 seconds (people commonly recommend making them ~10 seconds). You should trim excessive silence and ensure the vocals have minimal audio layers and processing.
 
 I recorded myself singing six songs across different genres, including rap. I picked songs whose lyrics I know very well. In future, I would choose additional pieces that capture a range of timbres and pitches to improve the model.
 
@@ -100,7 +98,7 @@ svc pre-config
 svc pre-hubert -fm dio
 ```
 
-4. Train the model. You specify a path on Google Drive to dump the checks points for easy resume ability.
+4. Train the model. You specify a path on Google Drive to dump the check points for easy resume ability.
 
 ```bash
 svc train --model-path drive/MyDrive/svc/lex-20230506/logs/44k
@@ -116,7 +114,7 @@ In this inference example, I took a cover of Fleetwood Mac's Dreams from YouTube
 
 I split the stems using the `htdemucs_ft` model:
 
-```
+```bash
 > demucs --device cpu --name htdemucs_ft songs/Dreams.wav
 ```
 
@@ -124,23 +122,24 @@ It is slow on a CPU but okay on a GPU. The `htdemucs` split stems about 4x faste
 
 And now I have a folder that contains the song stems:
 
-```
+```bash
 > ls separated/htdemucs_ft/Dreams/
 bass.wav	drums.wav	other.wav	vocals.wav
 ```
 
 And can use the `svc infer` command to run inference using my voice model:
 
-```
+```bash
 svc infer \
 --model-path models/lex/G_2057.pth \
 --config-path models/lex/config.json \
 --transpose 0 \
---cluster-model-path "models/lex/kmeans.pt" \
+--cluster-model-path "models/lex/means.pt" \
 --cluster-infer-ratio 0.5 \
 --wav_format wav \
 separated/htdemucs_ft/Dreams/vocals.wav
 ```
+
 The inference script takes in a few parameters that are worth paying attention to:
 
 * `--model-path` - the path to the trained weights (a `G_*.pth` file).
@@ -153,25 +152,25 @@ Now I have my converted vocals in the `results` folder.
 
 Here's how they sound side-by-side against the source.
 
-Original.
+Original:
 
 <audio controls>
   <source src="/_media/lanie-gardner-dreams-part.mp3" type="audio/mpeg">
 </audio>
 
-Transferred vocals with transpose 0 (singing in Larie's/Stevie's pitch).
+Transferred vocals with transpose 0 (singing in Larie's/Stevie's pitch):
 
 <audio controls>
   <source src="/_media/lex-dreams-transpose0.mp3" type="audio/mpeg">
 </audio>
 
-Transferred vocals with transpose -12 (probably closer to my range, if I could sing).
+Transferred vocals with transpose -12 (probably closer to my range, if I could sing):
 
 <audio controls>
   <source src="/_media/lex-dreams-transpose-12.mp3" type="audio/mpeg">
 </audio>
 
-And just for good measure, here's me trying to sing it without any autotune (warning: it is bad - I really did my best here).
+And just for good measure, here's me trying to sing it without any autotune (warning: it is bad. I swear I did my best here):
 
 <audio controls>
   <source src="/_media/lex-singing-dreams-no-ai.mp3" type="audio/mpeg">
@@ -186,7 +185,7 @@ Then I added the stems and my new vocals into a Logic Pro project and applied th
 
 And here's the [finished song on YouTube](https://www.youtube.com/watch?v=JSSSa62LZZY).
 
-I also tried my voice on my wife's favourite Taiwanese band, Mayday, and [it worked well](https://www.youtube.com/watch?v=MrNbKMLbZ4E). 
+I also tried my voice on my wife's favourite Taiwanese band, Mayday, and [it worked well](https://www.youtube.com/watch?v=MrNbKMLbZ4E).
 
 I tried transferring to rap, and it had mixed results. I thought [Regulate](https://www.youtube.com/watch?v=QBj_feKDG-0) worked pretty well.
 
@@ -208,7 +207,7 @@ The songs made by unknown producers, using a famous person like Drake's vocal to
 
 Some artists are already starting to monetise their voice models. Grimes already set up [a tool](https://www.musicradar.com/news/grimes-ai-voice-model) to use her AI voice in exchange for a 50% proceeds split.
 
-The reality is that people will get sick of these creations quickly, and I imagine the fad will die off as we enter the next phase of AI music, whatever that may be. 
+The reality is that people will get sick of these creations quickly, and I imagine the fad will die off as we enter the next phase of AI music, whatever that is.
 
 The next question is: if anyone can sing in perfect pitch, does that invalidate natural talent? Again, probably not. There's more to music than the audio file; people want to connect to the artist and engage with other fans. The artist's story has a role to play.
 
