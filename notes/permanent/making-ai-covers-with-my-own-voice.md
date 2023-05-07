@@ -7,23 +7,23 @@ summary: Training a singing voice conversion on my voice
 
 Recently, there has been a lot of talk about so-called [AI music](https://www.npr.org/2023/04/21/1171032649/ai-music-heart-on-my-sleeve-drake-the-weeknd), which in May 2023, likely refers to taking a song made by a person and applying a voice conversion model to the vocals to make it sound like Kanye, Drake, or any other artist singing the lyrics. Though if you're reading this in the future, AI music might be entirely different.
 
-This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song and making it sound like someone else was singing it, I want to take some tunes and hear me singing them. Note that I have no natural singing talent *at all*, as you will hear later in the article.
+This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song and making it sound like someone else was singing it, I want to take some tunes and hear me singing them. Note that I have no natural singing talent *at all*, as you can hear in the example later in the article.
 
-If you are eager to get straight to the point: [this](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=1) is the finished product and [this](https://github.com/svc-develop-team/so-vits-svc) is the technology I used.
+If you are eager to get straight to the point: [this](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=1) is the finished product and [SoVITS](https://github.com/svc-develop-team/so-vits-svc) is the technology I used.
 
-This article aims to give a high-level look at the technology that makes this possible and shows how I trained my voice model.
+This article aims to give a high-level look at SoVITS and shows how I trained my voice model.
 
 I want to share some thoughts about the implications for the music industry and society.
 
 ## Singing Voice Conversion (SVC)
 
-[Voice Conversion](https://paperswithcode.com/task/voice-conversion) is a technology that modifies speech audio to make it sound like a different person said it. This technology has legitimate applications in speech therapy, accessibility, and entertainment. However, it also has massive potential for misuse: identity theft, fraud, and starting world wars. I write a bit about the ethics of this technology later in the article.
+The study of [Voice Conversion](https://paperswithcode.com/task/voice-conversion) aims to modify speech audio to make it sound like a different person is speaking. It has legitimate applications in speech therapy, accessibility, and entertainment. However, it also has massive potential for misuse: identity theft, fraud, and starting world wars.
 
-As the name suggests, singing voice conversion, or SVC, is about taking vocals and making them sound like an alternate singer. It's just voice conversion + pitch.
+As the name suggests, singing voice conversion, or SVC, is about taking vocals and making them sound like a different singer. It's just voice conversion + pitch.
 
-The popularity of SVC has taken off in recent months, with Discord channels forming to allow people to share artist models and datasets, as well as tips for training models and inference. Social networks are full of sick AI covers, like [Biggie rapping the song N.Y. State of Mind](https://www.youtube.com/watch?v=IFb5DQHP05I) and [new bangers by Drake](https://www.youtube.com/watch?v=JSSSa62LZZY) that the artists have no involvement in and are sure to be taken down.
+The popularity of SVC has taken off in recent months, with Discord channels forming to allow people to share artist models and datasets, as well as tips for training models and inference. Social networks are full of AI covers, like [Biggie rapping the song N.Y. State of Mind](https://www.youtube.com/watch?v=IFb5DQHP05I) and [new bangers by Drake](https://www.youtube.com/watch?v=JSSSa62LZZY), which he has no involvement in and is sure to be taken down.
 
-The most widely used implementation of SVC is from a repository called [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc), which is a portmanteau of [SoftVC](https://github.com/bshall/soft-vc) and [VITS](https://github.com/jaywalnut310/vits). Some alternative implements like [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/README.en.md) exist, which improves training speed and requires less training data.
+The most widely used implementation of SVC is from a repository called [so-vits-svc](https://github.com/svc-develop-team/so-vits-svc), whose name is blend of [SoftVC](https://github.com/bshall/soft-vc) and [VITS](https://github.com/jaywalnut310/vits). Some alternative implements like [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI/blob/main/docs/README.en.md) exist, which improves training speed and requires less training data.
 
 The core idea of the system at training time is to learn a representation of the singer's voice, called an embedding, which captures details of the voice's characteristics. Then at inference time, combine an embedding representation of the source speaker with the target embedding and decode it into a mel spectrogram (a kind of image for sound) before [vocoding](https://en.wikipedia.org/wiki/Vocoder) into audio.
 
@@ -102,7 +102,7 @@ I trained it for a few hours to about 2k epochs, then downloaded the weights to 
 
 ## Transfer vocals to other songs
 
-This idea of an AI cover is possible thanks to SVC and Facebook's magical source separator tool called [Demucs](https://github.com/facebookresearch/demucs). It separates songs into their stems: drums, bass, other instruments and vocals. It works unbelievably well.
+This idea of an AI cover is possible thanks to SVC and Meta's magical source separator tool called [Demucs](https://github.com/facebookresearch/demucs). It separates songs into their stems: drums, bass, other instruments and vocals. It works unbelievably well.
 
 In this inference example, I took a cover of Fleetwood Mac's Dreams from YouTube by a singer called [Lanie Gardney](https://www.youtube.com/watch?v=V1LhC1zGouc). The reason to use a cover version over the original is that the vocals have less layering and processing, but it still worked okay with the original song.
 
@@ -223,4 +223,4 @@ Verify and check everything you hear.
 
 ## Conclusion
 
-I created a decent model with minimal effort that sounded like I could sing across languages with perfect pitch. This technology is super easy to use and will only get easier. The music industry will be fine - they will cash in on this technology, and the demand for human-made music will continue. Still, deep fakes will be an increasingly significant problem for society, and we should be aware of how capable the tools are right now.
+I created a decent model with minimal effort that sounded like I could sing across languages with perfect pitch. This technology is super easy to use and will only get easier. The music industry will be fine - they will likely cash in on it, and the demand for human-made music will continue. Still, deep fakes will be an increasingly significant problem for society, and we should be aware of how capable the tools are right now.
