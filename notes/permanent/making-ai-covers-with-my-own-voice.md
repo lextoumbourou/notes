@@ -7,9 +7,9 @@ summary: Training a singing voice conversion on my voice
 
 Recently, there has been a lot of talk about so-called [AI music](https://www.npr.org/2023/04/21/1171032649/ai-music-heart-on-my-sleeve-drake-the-weeknd), which in May 2023, likely refers to taking a song made by a person and applying a voice conversion model to the vocals to make it sound like Kanye, Drake, or any other artist singing the lyrics. Though if you're reading this in the future, AI music might be entirely different.
 
-This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song and making it sound like someone else was singing it, I want to take some tunes and hear me singing them.
+This weekend I wanted to play with this voice conversion technology to make AI covers of my own. But, instead of taking a song and making it sound like someone else was singing it, I want to take some tunes and hear me singing them. Note that I have no natural singing talent *at all*, as you will hear later in the article.
 
-If you are eager to get straight to the point, [here is the finished product](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=1). Note that I have no natural singing talent, as you will see later in the article.
+If you are eager to get straight to the point: [this](https://www.youtube.com/watch?v=KES3UPP6pqg&list=PLYwKkLiwYbByrr1Mj4wpfMVrnTH9XeylO&index=1) is the finished product and [this](https://github.com/svc-develop-team/so-vits-svc) is the technology I used.
 
 This article aims to give a high-level look at the technology that makes this possible and shows how I trained my voice model.
 
