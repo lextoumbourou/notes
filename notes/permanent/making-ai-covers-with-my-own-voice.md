@@ -2,7 +2,7 @@
 title: Making Song Covers With My AI Voice
 date: 2023-05-07 00:00
 cover: /_media/svc-cover.png
-summary: Training a singing voice conversion on my voice
+summary: Training a singing voice conversion model on my voice
 ---
 
 Recently, there has been a lot of talk about so-called [AI music](https://www.npr.org/2023/04/21/1171032649/ai-music-heart-on-my-sleeve-drake-the-weeknd), which in May 2023, likely refers to taking a song made by a person and applying a voice conversion model to the vocals to make it sound like Kanye, Drake, or any other artist singing the lyrics. Though if you're reading this in the future, AI music might be entirely different.
