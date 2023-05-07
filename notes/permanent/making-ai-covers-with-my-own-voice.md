@@ -15,8 +15,6 @@ This article aims to give a high-level look at the technology that makes this po
 
 I want to share some thoughts about the implications for the music industry and society.
 
-Let's start by looking at the ML learning system used for this.
-
 ## Singing Voice Conversion (SVC)
 
 [Voice Conversion](https://paperswithcode.com/task/voice-conversion) is a technology that modifies speech audio to make it sound like a different person said it. This technology has legitimate applications in speech therapy, accessibility, and entertainment. However, it also has massive potential for misuse: identity theft, fraud, and starting world wars. I write a bit about the ethics of this technology later in the article.
@@ -191,7 +189,7 @@ In future, I'm planning to run some additional experiments:
 * experiment with just speaking training data transferring to rap and singing.
 * trying non-human voices. I'm keen to hear how my dog sounds singing the classics.
 
-## The implications of this for the music industry
+## The implications for the music industry
 
 I want to finish the article by giving my two cents on the implications for the music industry as an uninformed layperson.
 
