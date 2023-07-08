@@ -43,3 +43,5 @@ $= \mathbf{-a_1 a_3 b_2} + a_2 a_3 b_1 + \mathbf{a_3 a_1 b_2} - a_3 a_2 b_1$
 $= \mathbf{a_2 a_3 b_1} \mathbf{- a_3 a_2 b_1}$
 
 $= 0$
+
+#Maths/LinearAlgebra/CrossProduct 

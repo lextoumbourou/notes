@@ -32,3 +32,5 @@ To find where a vector lands after a transformation, we multiple the coordinates
 ![3d transformation](/_media/3d-lin-3d-trans.png)
 
 3d [Matrix Multiplication](../../../permanent/Matrix Multiplication.md) is fundamental for computer graphics and robotics.
+
+#Maths/LinearAlgebra/Matrix 

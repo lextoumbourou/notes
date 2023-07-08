@@ -27,7 +27,7 @@ Consider a function, $f$, that maps a set of people's names to their ages:
 
 ![An example of the above mapping](/_media/function-diagram.png)
 
-The set of possible inputs is called the <font style="color: lightblue"><b>domain</b></font> or $D_f$ of a function:
+The set of possible inputs is called the [Domain of a Function](function-domain.md) or $D_f$:
 
 $\color{lightblue}D_f = A = \{Clyde, Sarah, Geoff, Betty\}$
 

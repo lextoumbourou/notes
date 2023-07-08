@@ -29,7 +29,7 @@ tags:
     Cmnd_Alias NETWORKING = /sbin/ruote, /sbin/ifconfig
 
 * Aliases are "string of uppercase letters, numbers, and the underscore characters"
-* Groups are denoted with %group, username, #uid:
+* Groups are denoted with `%group, username, #uid`:
 
         # man sudoers
         Runas_Member ::= '!'* user name |

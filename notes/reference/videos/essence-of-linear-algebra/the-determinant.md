@@ -73,3 +73,5 @@ However, computing the determinate doesn't fall within the "essence" of linear a
 Last note: If you take the product of 2 matrices, it's the same as the products of both of the two matrices:
 
 $\det(M_1 \ M_2) =\det(M_1) \det(M_2)$
+
+#Maths/LinearAlgebra/Determinant 

@@ -17,16 +17,20 @@ parent: cm1015-computational-mathematics
         * Still used for angles, time and geographical coordinates.
     * Base 10
         * When you count after 9 you go back to 0 and add digit to left starting with 1.
-        * Largest number with 1 digit: 9, 2: 99, 3: 999
+        * Largest numbers:
+            * With 1 digit: 9
+            * With 2 digits: 99
+            * With 3 digits: 999
     * Base 2
         * Uses digits 0 and 1.
         * When > 0 and the right-most digit is 0, it's a power of 2.
             * 10 = 2, 100 = 4, 1000 = 8
-    * Generic base
-        * Use digits 0, 1, n - 1
+    * Generic base $n$
+        * Use digits $0, 1, n - 1$
+        * The maximum single number that can be used is `n - 1`
     * Decomposing number bases:
         * $127_{10} = 1 \times 10^2 + 2 \times 10^1 + 7 \times 10^0$
-    * Hexidecimal System
+    * Hexadecimal System
         * Base 16 system.
         * 16 digits: 0, 1, ..., 9, A, B, C, D, E, F
         * $1F = 1 \times 16^1 + 16 \times 16^0 = 31_{10}$
@@ -41,7 +45,7 @@ parent: cm1015-computational-mathematics
 * Repeated Division
     * Method for converting decimal to another base
     * Example: Convert $58_{10}$ in base 2.
-        * 58 / 2 = 29 r 0
+        * 58 / 2 = 29 r 0$
         * 29 / 2 = 14 r 1
         * 14 / 2 = 7 r 0
         * 7 / 2 = 3 r 1

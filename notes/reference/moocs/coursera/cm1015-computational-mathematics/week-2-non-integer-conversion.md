@@ -1,5 +1,5 @@
 ---
-title: Week 2: Non-Integer Numbers Conversion
+title: "Week 2 - Non-Integer Numbers Conversion"
 date: 2023-04-20 00:00
 modified: 2023-04-20 00:00
 status: draft

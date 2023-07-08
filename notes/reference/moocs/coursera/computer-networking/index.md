@@ -448,7 +448,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Sometimes referred to as plain-old telephone system (or POTS)
     * Students from Duke University figured out that you can exchange data over the telephone network.
         * They created a digital bulletin system Usenet.
-    * [[Models]]
+    * [[../../../../journal/ai-art/stable-diffusion/models]]
         * Stands for modulator demodulator
         * Take data and turn them into audible wavelengths to be transmitted over phone lines.
         * Similar to how line coding turns one and zeros into modulating electrial chages across Ethernet cables.
