@@ -12,7 +12,7 @@ tags:
 
 $$2 \begin{bmatrix} u_1 \\ u_2 \end{bmatrix} = \begin{bmatrix} 2 * u_1 \\ 2 * u_2 \end{bmatrix}$$
 
-The amount you scale the vector is often referred to as the scalar.
+The amount you scale the vector is often referred to as the [[Scalar]].
 
 It can be visualised as growing or shrinking the arrow that represents the vector (see cover image).
 

@@ -3,6 +3,8 @@ title: Number Base
 date: 2023-04-21 00:00
 modified: 2023-04-21 00:00
 status: draft
+tags:
+
 ---
 
 A Number Base represents how we represent numbers. The base number determines the number of unique symbols that it uses, and as how values of each digit position are calculated.
@@ -43,3 +45,15 @@ We can also represent it in a table format similar to the Base 10 example:
 8	4	2	1
 1	1	0	1
 Other number bases exist as well, such as Base 8 (Octal) and Base 16 (Hexadecimal). Each base system has its unique set of symbols and place values based on its base number. For example, the Hexadecimal system has 16 symbols (0-9 and A-F) and uses powers of 16 for its place values.
+
+## Converting to base 10
+
+## Converting from base 10
+
+## Base 2 addition
+
+## Base 2 subtraction
+
+## Base 2 multiplicatoin
+
+## Base 2 division

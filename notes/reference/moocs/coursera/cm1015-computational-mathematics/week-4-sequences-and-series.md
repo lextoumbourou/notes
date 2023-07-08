@@ -1,9 +1,8 @@
 ---
-title: Week 4 - Sequences and series
+title: Week 4 - Sequences and Series
 date: 2023-05-10 00:00
 status: draft
 ---
-
 
 * [[Series]]
     * A specific type of sequence.
@@ -28,8 +27,8 @@ status: draft
 * [Mathematical Induction](../../../../permanent/induction.md) example
     * $s(n) = 0 + 1 + 2 + ... + n$
     * This formula gives the correct value: $s(n) = n(n+1)/2$
-    * Proof
-        * First prove true if n = 0
+    * Proof:
+        * First prove true if $n = 0$
             * $s(0) = 0$
         * If for $n = k$ and true for $n = k + 1$, then true for any $n$.
             * If we assume $s(k) = k(k + 1) / 2$
@@ -39,42 +38,3 @@ status: draft
             * Can factor out to $(k+1)(\frac{k}{2} +1)$
             * If you take the lowest common multiple in 2nd factor: $\frac{(k+1)(k+2)}{2}$
             * Note it's just equal to above formula when $s(k+1)$: $\frac{(k+1)(k+2)}{2}$
-* Introduction to modular arithmetic
-    * Think of it as a way to "classify integers", an arithmetic over integers.
-    * Originally formulated by mathematician and physicist Carl F. Gauss, a system of arithmetic for integers.
-    * Numerous applications from number theory to library and bank classifications sysmtes to cryptography.
-        * Basic notion congruence between integers
-        * Two numbers a and b are congruent "mod 2" if they have the same remainder when divided by 2.
-        * Congruent symbol: $\equiv$
-        * In general, we say $a \equiv b$ (mod k) $\Leftrightarrow a = nk + R, b=mk + R$ 
-            * Or in other words, if you divide by n you get the same remainder.
-    * Clock arithmetic
-        * if it is 8AM after 7 hours it will be 15 or 3 PM as it is "mod 12".
-            * $\rightarrow 15 \equiv 3$ $(\mod 12)$
-        * since $15/12=1$ with $R=3$ $3/12=0$ with $R=3$
-    * Mod k is use to map by congruence all integers to the subset of non-negative integers smaller than k that is Min_k = {0, 1, 2, ... k-1}
-    * So in mod 12 we can map, by congruence, all integers to one of the integers in Min_12 = {0, 1, 2, 3, 4,5,6,7,8,9,10,11}
-    * With negative integers when we divide by k we need to get a non-negative remainder.
-        * Ex: -12 mod 12
-        * You cannot do -12/12 = -1 with R = -5 negative (wrong) but -12/12 = -2 with R=7 positive
-            * $\rightarrow -17 \equiv 7$ (mod 12)
-
-### Essential Reading
-            
-* Theory of Divisibility
-    * Basic concepts and properties of divisibility
-        * Let $a$ and $b$ be integers with $a \ne  0$
-            * We say a divides b, denoted by $a \mid b$, if there's an integer $c$ such that $b = ac$
-                * In this case, $a$ is a *divisor* 
-                * $b$ is a *multiple* of $a$.
-            * When a divides b, we say that a is a divisor (or factor) of b, and b is a multiple of a.
-            * If a does not divide b, we write $x\nmid y$
-            * If $a \mid b$ and $0 < a < b$, then a is called a proper divisor of $b$.
-        * We never use 0 as the left member of the pair of integers in a | b, however 0 may occur as the right member of the pair, thus a | 0 for every integer a not zero.
-        * Example: the integer 200 has the following positive divisors):
-            * 1, 2, 4, 5, 8, 10, 20, 25, 40, 50, 100, 200:
-                * 8 \mid 200
-                * 50 \mid 200
-                * 36 \nmid 200
-        * [[Trivial Divisor]]
-            * A trivial divisor of $n$ is $1$ or $n$ itself.

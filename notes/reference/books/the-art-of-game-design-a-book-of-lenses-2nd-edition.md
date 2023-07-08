@@ -2435,7 +2435,7 @@ I tried to read this book really carefully and take a lot of notes.
 * It's important to listen as a game designer and that includes yourself.
 * **Lens #112: The Lens of the Raven**
   * Is making this game worth my time?
-* **Lens #∞: The Lens of Your Secret Purpose**
+* **Lens ∞: The Lens of Your Secret Purpose**
   * Why am I doing this?
 
 [@schellArtGameDesign2015a]

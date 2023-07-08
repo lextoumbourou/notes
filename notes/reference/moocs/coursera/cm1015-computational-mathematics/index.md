@@ -4,6 +4,8 @@ date: 2023-04-18 00:00
 slug: cm1015-computational-mathematics
 summary: "Notes from [Computational Mathematics by University of London](https://www.coursera.org/learn/uol-cm1015-computational-mathematics)"
 status: draft
+tags:
+  - ComputationalMaths
 ---
 
 * Topics covered:
@@ -25,3 +27,13 @@ status: draft
 ## Contents
 
 * [Week 1 - Number Bases](week-1-number-bases.md)
+* [Week 2 - Non-Integer Numbers Conversion](week-2-non-integer-conversion.md) 
+* [Week 3 - Sequences and Series](week-3-sequences-and-series.md)
+* [Week 4 - Sequences and Series continued](week-4-sequences-and-series.md)
+* [Week 5 - Modular Arithmetic](week-5-modular-arithmetic.md)
+* [Week 6 - Modular Arithmetic Continued](week-6-modular-arithmetic-cont.md)
+* [Week 7 - Intro To Angles, Triangles and Trigomonetry](week-7-intro-to-angles-triangles-trig.md)
+* [week-8-applications-of-sine-and-cosine-rules](week-8-applications-of-sine-and-cosine-rules.md)
+
+
+#BscUoL/CM 

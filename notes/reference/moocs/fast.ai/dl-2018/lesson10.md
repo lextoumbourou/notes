@@ -6,7 +6,7 @@ category: reference/moocs
 parent: fast-ai-deep-learning-2018
 status: draft
 tags:
-  - Deep Learning
+  - DeepLearning
 ---
 
 {% notebook reference/moocs/fast.ai/dl-2018/lesson10.ipynb %}

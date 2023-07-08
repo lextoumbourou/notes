@@ -67,7 +67,7 @@ parent: recommender-systems-introduction
         * Usually simple count.
     * Inverse Doc Frequency:
         * How few docs contain this term.
-        * Typically: log (#docs / #docs with term).
+        * Typically: log (`#docs / #docs with term`).
             * Logarithm is the most effective to get a large number of documents into a useful scale.
     * Automatic demotion of common terms.
     * Promotes core over incidental.
