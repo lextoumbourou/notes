@@ -6,7 +6,7 @@ tags:
   - Trigonometry
   - PreLinearAlgebra
 cover: /_media/law-of-sines-cover.png
-summary: Tells us that the ratio between the sine of an angle and the side opposite it, will be constant
+summary: The ratio between the sine of an angle and the side opposite it, will be constant for all angles in a triangle
 ---
 
 The Law of Sines tells us that the ratio between the sine of an angle and the side opposite will be constant for any angle in a triangle.
