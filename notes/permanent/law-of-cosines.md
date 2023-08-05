@@ -31,6 +31,6 @@ $c^2 = a^2 + b^2$
 
 ...which is the [Pythogorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem).
 
-[@khanacademylabsLawCosinesSolving]
-
 #Maths/Trigonometry
+
+See also [Law of Sines](law-of-sines.md).
