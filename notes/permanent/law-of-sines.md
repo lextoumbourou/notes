@@ -6,7 +6,7 @@ tags:
   - Trigonometry
   - PreLinearAlgebra
 cover: /_media/law-of-sines-cover.png
-summary: The ratio between the sine of an angle and the side opposite it, will be constant for all angles in a triangle
+summary: Tells us the ratio between the sine of an angle and the side opposite it will be constant for all angles in a triangle
 ---
 
 The Law of Sines tells us that the ratio between the sine of an angle and the side opposite will be constant for any angle in a triangle.
@@ -40,11 +40,13 @@ $\sin B = 0.0446$
 Then use $\arcsin$ to find $B$
 
 $B = arcsin(0.0446)$
+
 $B = 2.557°$
 
 We can now find $A$ since we know that all the angles in a triangle add up to $180°$
 
 $A = 180° - 42° - 2.56°$
+
 $A = 135.44°$
 
 Now to find $a$, we can use the Law of Sines again:
@@ -58,6 +60,7 @@ $0.0446 = 0.702 / a$
 Multiply both sides by A:
 
 $a \times 0.0446 = 0.702$
+
 $a = \frac{0.702}{0.0446} = 15.74cm$
 
 Now that we have the missing values, we can use the Law of Sines to check that all ratios are equal:
@@ -71,10 +74,15 @@ $\frac{sin(42°)}{15} = 0.045$
 **Answer**
 
 $A = 135.44°$
+
 $B = 2.56°$
+
 $C = 42°$
 
 $a = 15.74cm$
+
 $b = 1cm$
+
 $c = 15cm$
 
+See also [Law Of Cosines](law-of-cosines.md).
