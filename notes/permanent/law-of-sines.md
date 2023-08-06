@@ -11,10 +11,9 @@ summary: Tells us the ratio between the sine of an angle and the side opposite i
 
 The Law of Sines tells us that the ratio between the sine of an angle and the side opposite will be constant for any angle in a triangle.
 
-$\frac{\sin C}{c} = \frac{\sin A}{a} = \frac{\sin B}{b}$
+$\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$
 
 If we have at least two sides and an angle or two angles and a side, we can use it to find the missing values.
-
 ## Example
 
 **Question**
