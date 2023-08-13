@@ -9,7 +9,7 @@ status: draft
 
 ## Kinematics
 
-* [[Kinematics]]
+* [Kinematics](../../../../journal/permanent/Kinematics.md)
     * A way of describing the position of particles that how constant accelartion: how their speed changes and the distance travelled.
         * Examples:
             * What happens if I drop a ball from the top of a cliff?
@@ -57,7 +57,7 @@ status: draft
 
 ## Uniform and uniformly accelerated motion, review and examples
 
-* [[Uniform Motion]]
+* [Uniform Motion](Uniform%20Motion)
     * So far, we have looked one-dimensional motion: motion along the line.
     * Have looked at 2 forms of motion:
         * Uniform motion
@@ -79,7 +79,7 @@ status: draft
           * So you know where an object started, and you know its constant speed, can figure out where it will be in time.
       * $S(t) = S_0 + {V_0}t$
       
-* [[Uniform Accelerating Motion]]
+* [Uniform Accelerating Motion](Uniform%20Accelerating%20Motion)
     * Here the velocity is no longer constant.
         * If acceleration is positive, velocity will increase in time.
         * If acceleration is negative, velocity will decrease in time.
@@ -117,12 +117,12 @@ status: draft
 
 ## Topic 5 live webinar: intervals and graphs
 
-* [[Closed Interval]]
+* [Closed Interval](Closed%20Interval)
     * $a \le x \le b$
     * Endpoints are included in the range
-* [[Open Interval]]
+* [Open Interval](Open%20Interval)
     * $a \lt x \lt b$
     * Endpoints are not included
-* [[Semiclosed Range]] 
+* [Semiclosed Range](Semiclosed%20Range) 
     * $a \le x \lt b$
 * 
