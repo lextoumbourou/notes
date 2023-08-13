@@ -40,7 +40,7 @@ We can find the angle in [Radians](radians.md) between any 2 vectors if we first
 
 $\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos\theta$
 
-That's the "length of $\mathbf{a}$" times the "length of $\mathbf{b}$" times "the [Cosine](Cosine) ($\cos$) of the angle ($\theta$) between them".
+That's the "length of $\mathbf{a}$" times the "length of $\mathbf{b}$" times "the [Cosine](permanent/cosine.md) ($\cos$) of the angle ($\theta$) between them".
 
 The cosine of an angle is a continuous number between -1 and 1 where:
 
