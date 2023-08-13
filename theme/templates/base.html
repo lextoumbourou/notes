@@ -68,7 +68,7 @@
           <h2><span>Tags</span></h2>
         </span>
 
-        {%- for tag, articles in (tags|sort_by_article_count)[:7] -%}
+        {%- for tag, articles in (tags|sort_by_article_count)[:10] -%}
           <a {% if page_name and page_name|string in tag.url|string %}class="active"{% endif %} href="{{ SITEURL}}/{{ tag.url }}">{{ tag }} ({{ articles|count }})</a> 
         
         {% endfor %}
