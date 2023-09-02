@@ -5,7 +5,7 @@ modified: 2023-08-14 00:00
 status: draft
 ---
 
-The [Kinematics](Kinematics) formulas are a set of equations that describe key properties of movement, under constant acceleration.
+The [Kinematics](Kinematics.md) formulas are a set of equations that describe key properties of movement, under constant acceleration.
 
 They are concerned with 5 key variables:
 

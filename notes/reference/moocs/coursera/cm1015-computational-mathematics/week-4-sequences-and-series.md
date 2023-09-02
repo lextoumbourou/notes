@@ -4,7 +4,7 @@ date: 2023-05-10 00:00
 status: draft
 ---
 
-* [[Series]]
+* [[../../../../permanent/series]]
     * A specific type of sequence.
         * Notation for sequences: $a_n$ with $n=0,1,2,...$
     * A sequence that is derived from another sequence.
