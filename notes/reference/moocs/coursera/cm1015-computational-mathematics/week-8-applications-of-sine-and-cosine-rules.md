@@ -16,7 +16,7 @@ status: draft
         * Which means $a = h / \sqrt(2)$
         * We know that the ratio of adjacent to hypotenuse is $sin(90 - \theta)$ so $a/h=1/\sqrt(2) = \sin(45°)$
         * $\sin(45°) = 1/\sqrt(2) = \sqrt(2) / 2$
-* Finding the length of right-hand side of larger triangle with [[Similar Triangles]]
+* Finding the length of right-hand side of larger triangle with [[../../../../permanent/similar-triangles]]
     * ![](../../../../journal/_media/week-8-applications-of-sine-and-cosine-rules-similar-tri.png)
         * We know that 1cm / X = 2.5 / 5cm
         * So X = 2cm.

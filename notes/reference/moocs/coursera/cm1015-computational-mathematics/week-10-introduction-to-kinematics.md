@@ -9,7 +9,7 @@ status: draft
 
 ## Kinematics
 
-* [Kinematics](../../../../journal/permanent/Kinematics.md)
+* [Kinematics](../../../../permanent/Kinematics.md)
     * A way of describing the position of particles that how constant accelartion: how their speed changes and the distance travelled.
         * Examples:
             * What happens if I drop a ball from the top of a cliff?

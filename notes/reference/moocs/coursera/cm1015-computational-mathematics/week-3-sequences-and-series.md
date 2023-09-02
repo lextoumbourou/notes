@@ -52,7 +52,7 @@ status: draft
 
 Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. Chapter 12 Sequences and series. 
 
-* Sequence
+* [Sequence](../../../../permanent/sequence.md)
     * A sequence is a set of numbers written down in a specific order:
         * 1, 3, 5, 7, 9
         * -1, -2, -3, -4
@@ -106,7 +106,7 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
     * Self assessment:
         * Arithmetic progress refers to a sequence that starts with a first term, and we progressively add a value called a **common difference**.
         * One sequence that is not an arithmetric progression: $4, 8, 9$
-* [[Geometric Progressions]] (pg. 130)
+* [[../../../../permanent/Geometric Progressions]] (pg. 130)
     * When you multiply the previous term by a fixed amount.
     * The first value of the sequence: **first term**
     * The fixed amount to multiply previous term: **common ratio**
@@ -202,7 +202,7 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
         * i) $x_k = \frac{k+1}{k}, k = 1, 2, 3, ...$ 
             * $\displaystyle{\lim_{k \to \infty}} (\frac{k + 1}{k}) = 1$
 * [[Series and Sigma Notation]]
-    * [[Series]]
+    * [[../../../../permanent/series]]
         * If the terms of a sequence are added, the result is called series.
         * For example, if you add the term: 1, 2, 3, 4, 5 you get: 1 + 2 + 3 + 4 + 5
         * Clearly a series is a sum: if the series contains a finite number of terms, we are able to add them all up and obtain the sum of the series.

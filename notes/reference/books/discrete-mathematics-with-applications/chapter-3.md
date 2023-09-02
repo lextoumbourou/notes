@@ -37,7 +37,7 @@ pg 120
 
 ---
 
-A [[Piecewise Function]] is a function defined in terms of multiple formulas, think if-else statements in programming.
+A [Piecewise Function](../../../permanent/piecewise-function.md) is a function defined in terms of multiple formulas, think if-else statements in programming.
 
 Example, let A = {0, 1..., 127}, a set of ordinal numbers in ASCII. Let f : A -> ASCII be defined b:
 
