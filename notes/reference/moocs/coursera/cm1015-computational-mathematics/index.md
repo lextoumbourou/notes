@@ -34,6 +34,7 @@ tags:
 * [Week 6 - Modular Arithmetic Continued](week-6-modular-arithmetic-cont.md)
 * [Week 7 - Intro To Angles, Triangles and Trigomonetry](week-7-intro-to-angles-triangles-trig.md)
 * [Week 8: Applications of Sine and Cosine Rules](week-8-applications-of-sine-and-cosine-rules.md)
+* [Week 15 - Definition of limit for a sequence](week-15-limits-and-differentiation.md)
 
 
 #BscUoL/CM 

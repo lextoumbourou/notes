@@ -299,6 +299,28 @@ When $\theta = 90°$:
 
 ## 5. Graph sketching and kinematics
 
+[SUVAT Equations](../journal/permanent/suvat-equations.md)
+
+$s$ = displacement in metres m
+$u$ = initial velocity in meters per seconds
+$v$ = final velocity in meters per second
+$a$ = acceleration in meters per second per second
+$t$ = time in seconds s
+
+1\. $s = \frac{u+v}{2} t$
+
+Displacement is average of initial velocity and final velcocity over time (assumes constant acceleration).
+
+2. $v = u + at$
+
+Final velocity is initial velocity plus acceleration times time.
+
+3. $s = ut + \frac{1}{2}at^2$
+
+Displacement refers to amount it would have travelled based on initial velocity + the area under the curve (to check).
+
+4. $v^2 = u^2 + 2as$
+
 ## 6. Trigonometric functions
 
 ## 7. Exponential and Logarithmic functions
@@ -312,13 +334,79 @@ Laws:
 $\log A + \log B = \log AB$ (given they are all the same base)
 $\log A  - \log B = \log (\frac{A}{B})$
     Note this means that $\log A - \log A = \log (\frac{A}{A}) = \log 1$
-$\log A^n = n \ \log A$
+Power rule: $\log A^n = n \ \log A$
 
 ## 8. Limits and differentiation
 
+* [Function](function.md#Continuity) Continuity
+
+A function is continuous at a point x = c under the following conditions:
+
+* f(c) is defined.
+* The limit of f(x) as x approaches c exists.
+* The limit of f(x) as x approaches c is equal to f(c).
+
+That is, $\lim_{x \rightarrow c} f(x) = f(c)$
+
+A function is discontinuous at a point x = c if any of the above conditions are not met.
+
+A function might only have discontinuatities specific internals
+
+Some special cases apply:
+
+* Polynomials are always continuous.
+* Rational functions: Continuous when the denominator is not zeo.
+* Trig functions: continuous on their domain.
+* Exponential and log functions: continuous when defined.
+
 ## 9. Algebra, Vectors and Matrices
+
+Quadratic formula:
+Given: $ax^2 + bx + c = 0$, $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+
+Calculating the [Matrix Determinate](matrix-determinate.md) of a 2d matrix.
+
+$A = \begin{bmatrix}a & b \\ c & d\end{bmatrix}$
+
+$\det(A) = ad - cb$
+
+Calculating the [Matrix Inverse](matrix-inverse.md) of a 2d matrix.
+
+$A^{-1} = \frac{1}{\det(A)} \begin{bmatrix}d & -b \\ -c & a\end{bmatrix}$
+
+"swap a and b", "negate -b and -c"
+
+[[Solving Systems of Equations using Inverse Matrix]]
+
+3x + 8y = 5
+4x + 11y = 7
+
+$\begin{bmatrix}3 & 8 \\ 4 & 11\end{bmatrix} \begin{bmatrix}x \\ y\end{bmatrix} = \begin{bmatrix}5 \\ 7\end{bmatrix}$
+
+$A\vec{x} = \vec{v}$
+$A^{-1}A\vec{x} = A^{-1}\vec{v}$
+$\vec{x} = A^{-1}\vec{v}$
+
+$A^{-1} = \frac{1}{det(A)} \begin{bmatrix}11 & -8 \\ -4 & 3\end{bmatrix}$
+$A^{-1} = \frac{1}{ad-bc} \begin{bmatrix}11 & -8 \\ -4 & 3\end{bmatrix}$
+$A^{-1} = \frac{1}{33-32} \begin{bmatrix}11 & -8 \\ -4 & 3\end{bmatrix}$
+$A^{-1} = \frac{1}{1} \begin{bmatrix}11 & -8 \\ -4 & 3\end{bmatrix}$
+$A^{-1} = \begin{bmatrix}11 & -8 \\ -4 & 3\end{bmatrix}$
+
+$\vec{v} = \begin{bmatrix}11 & -8 \\ -4 & 3\end{bmatrix} \begin{bmatrix}5 \\ 7\end{bmatrix} = \begin{bmatrix}(11 \times 5) + (-8 \times 7) \\ (-4 \times 5) + (3 \times 7)\end{bmatrix} = \begin{bmatrix}55 - 56 \\ -20 + 21 \end{bmatrix} = \begin{bmatrix}-1 \\ 1\end{bmatrix}$
+
+**Answer**
+
+$\begin{bmatrix}-1 \\ 1\end{bmatrix}$
 ## 10. Combinatorics and Probability
 
+Permutations = Position matters
+
+$P(n, r) = \frac{n!}{(n - r)!}$
+
+Combinations = Choose without concern for order
+
+$C(n, r) = \frac{n!}{(n-r)!r!} = \frac{P(n, r)}{r!}$
 ### Compound Probability of independent events
 
 The product of the individual events.
