@@ -2,6 +2,7 @@
 title: Piecewise Function
 date: 2023-04-15 00:00
 modified: 2023-04-16 00:00
+status: draft
 ---
 
 A function defined in terms of multiple formulas, think if-else statements in programming.

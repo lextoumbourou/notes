@@ -100,3 +100,25 @@ A function is "onto" or "surjective" if every element in the **co-domain** is ou
 ## Bijective
 
 We call a function Bijective if it is both injective and surjective.
+
+## Continuity
+
+A function is continuous at a point x = c under the following conditions:
+
+* f(c) is defined.
+* The limit of f(x) as x approaches c exists.
+* The limit of f(x) as x approaches c is equal to f(c).
+
+That is, $\lim_{x \rightarrow c} f(x) = f(c)$
+
+A function is discontinuous at a point x = c if any of the above conditions are not met.
+
+A function might only have discontinuatities specific internals
+
+Some special cases apply:
+
+* Polynomials are always continuous.
+* Rational functions: Continuous when the denominator is not zeo.
+* Trig functions: continuous on their domain.
+* Exponential and log functions: continuous when defined.
+
