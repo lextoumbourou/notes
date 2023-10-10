@@ -17,7 +17,7 @@ If we zoom into an audio file in Audacity to the higher resolutions, we can visu
 
 ![](../_media/sample-rate-1.png)
 
-Each sample is represented as a number, either an integer or float; the range will define the [Bit Depth](../journal/permanent/Bit%20Depth.md), of the audio file.
+Each sample is represented as a number, either an integer or float; the range will define the [Bit Depth](../journal/permanent/Bit%20Depth.md) of the audio file.
 
 Therefore, digital audio is represented as an array of numbers. The number of elements in the collection is $\text{ audio time (secs) } \times \text{ sample rate }$. Therefore, a higher sample rate will require more storage space. For stereo audio, it will be an array per channel.
 
@@ -39,7 +39,11 @@ How do we determine the optimal sample rate?
 
 ## Nyquist-Shannon sampling theorem
 
-According to the [Nyquist-Shannon Sampling Theorem](https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem), the frequency of sampling of a wave must be greater than twice the highest frequency in a wave. That's why a sample rate 44.1kHz was chosen as the standard for CD quality. 44.1kHz continues to be a sensible default for high-quality audio, although 48kHz is also a common choice.
+According to the [Nyquist-Shannon Sampling Theorem](https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem), the frequency of sampling of a wave must be greater than twice the highest frequency in a wave. Since the highest frequency the human ear can hear is around 20 kHz, anything about 40 kHz should perfectly reproduce what the human ear can perceive.
+
+The sample rate for CD audio is 44.1kHz, which is two times 22.05 kHz, which gives a bit of extra buffer for very high frequencies. 44.1kHz
+
+44.1kHz continues to be a sensible default for high-quality audio, although 48kHz is also a common choice.
 
 However, there are other standard sample rates for different types of audio.
 
@@ -52,10 +56,10 @@ However, there are other standard sample rates for different types of audio.
 
 ## Aliasing
 
-Since the true sound wave has to be inferred from digital samples, the sound will only be accurately captured if the rate is higher. In particular, the higher frequencies will be folded into lower frequencies, causing distortion called aliasing.
+Since the true sound wave has to be inferred from digital samples, the sound will only be accurately captured if the rate is higher. In particular, the higher frequencies will be folded into lower frequencies, causing distortion. This issue of under-sampling if referred to as aliasing.
 
-The figure below shows an example of a 15Hz sine wave over a minute. As you can see, we cannot accurately reconstruct the original sine wave if we do not sample enough points. However, after a certain number of samples, we can rebuild the sound wave perfectly; more samples do not help.
+The figure below shows an example of a 15Hz sine wave over a minute. As you can see, we can only accurately reconstruct the original sine wave if we sample enough points. However, after a certain number of samples, we can rebuild the sound wave perfectly and more samples do not help.
 
 ![](../_media/sample-rate-examples.png)
 
-Real sound waves are more complex than simple sine waves, so more samples are needed to capture that complexity. However, the important detail is that more samples are not necessarily better.
+Real sound waves are more complex than simple sine waves, so more samples are needed to capture that complexity. However, the important detail is that more samples are not necessarily better. We can accurately represent all audio we perceive at any sample rate above 40kHz.
