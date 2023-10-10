@@ -5,6 +5,8 @@ modified: 2023-10-08 00:00
 summary: A measure of how accurately the source signal was digitally represented
 cover: /_media/sample-rate-cover.png
 hide_cover_in_article: true
+tags:
+  - AudioEngineering
 ---
 
 The sample rate of audio indicates how frequently a [Sound Wave](sound-wave.md)'s amplitude is sampled to create a digital representation. It's measured in samples per second or [hertz](https://en.wikipedia.org/wiki/Hertz).
