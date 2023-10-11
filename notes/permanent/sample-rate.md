@@ -19,7 +19,7 @@ If we zoom into an audio file in Audacity to the higher resolutions, we can visu
 
 Each sample is represented as a number, either an integer or float; the range will define the [Bit Depth](../journal/permanent/Bit%20Depth.md) of the audio file.
 
-Therefore, digital audio is represented as an array of numbers. The number of elements in the collection is $\text{ audio time (secs) } \times \text{ sample rate }$. Therefore, a higher sample rate will require more storage space. For stereo audio, it will be an array per channel.
+An entire digital audio file is simply an array of numbers, usually with some information about the file in a header. The number of elements in the collection is $\text{ audio time (secs) } \times \text{ sample rate }$. Therefore, higher sample rates will require more storage space. For stereo audio, it will be an array per channel.
 
 In Python, the sound is typically represented using a Numpy multidimensional array. Here we can see an example of loading an audio file using the [scipy](https://scipy.org/) library:
 
@@ -56,7 +56,7 @@ However, there are other standard sample rates for different types of audio.
 
 ## Aliasing
 
-Since the true sound wave has to be inferred from digital samples, the sound will only be accurately captured if the rate is higher. In particular, the higher frequencies will be folded into lower frequencies, causing distortion. This issue of under-sampling if referred to as aliasing.
+Since the true sound wave has to be inferred from digital samples, the sound will only be accurately captured if the rate is higher. In particular, the higher frequencies will be folded into lower frequencies, causing distortion—this issue of under-sampling is referred to as aliasing.
 
 The figure below shows an example of a 15Hz sine wave over a minute. As you can see, we can only accurately reconstruct the original sine wave if we sample enough points. However, after a certain number of samples, we can rebuild the sound wave perfectly and more samples do not help.
 
