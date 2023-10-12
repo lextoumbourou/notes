@@ -113,7 +113,7 @@ modified: 2023-04-08 00:00
         * $p$: John's program is written in Python
         * $q$: John's program has less than 20 lines of code.
         * $p \land q$: John's program is written in Python and has < 20 lines of code.
-* [Disjunction (Logic)](../../../../permanent/disjunction.md) * Symbol: $\lor$
+* [Disjunction](../../../../permanent/disjunction.md) * Symbol: $\lor$
     * $p$ or $q$
     * Let $p$ and $q$ be propositions.
     * The disjunction of $p$ and $q$ denoted by $p \lor q$ is only false when both $p$ and $q$ are false, otherwise true.
