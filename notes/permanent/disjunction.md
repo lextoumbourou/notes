@@ -1,5 +1,5 @@
 ---
-title: Disjunction (Logic)
+title: Disjunction
 date: 2022-11-23 00:00
 tags:
   - Logic
