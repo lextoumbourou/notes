@@ -285,6 +285,8 @@ $\cos^2a = \frac{1}{2} (1 + \cos 2a)$
 
 $\sin(-c) = -\sin(c)$
 
+Domain of $\sin^{-1}(x)$: $−1 \le x \le 1$ because sin only returns between -1 and 1.
+
 #### Sine Reduction Identity
 
 $2\sin^2a + \cos 2a = 1$
@@ -320,6 +322,10 @@ Final velocity is initial velocity plus acceleration times time.
 Displacement refers to amount it would have travelled based on initial velocity + the area under the curve (to check).
 
 4. $v^2 = u^2 + 2as$
+
+---
+
+
 
 ## 6. Trigonometric functions
 
@@ -358,6 +364,42 @@ Some special cases apply:
 * Rational functions: Continuous when the denominator is not zeo.
 * Trig functions: continuous on their domain.
 * Exponential and log functions: continuous when defined.
+
+---
+
+[[Chain Rule]]
+
+$\frac{d}{dx}[f(g(x))] = f^{\prime}(g(x)) \cdot g^{\prime}(x)$
+
+Example:
+Differential $e^{-x}$
+
+1. Outer function with respect to inner function:
+
+$\frac{d}{du} [e^{u}] = e^{u}$
+
+Since a fundamental property of the exponential function $e^{u}$ is that its derivate to itself.
+
+2. Inner function $u = -x$ with respect to $x$:
+
+$\frac{du}{dx} = -x^{1} = 1 \cdot -x^{0} = -1$
+
+3. Multiply results together
+
+$\frac{d}{dx} [e^{-x}] = e^{-x} \cdot (-1) = -e^{-x}$
+
+Result:
+
+Derivate of $e^{-x}$ with respect to $x$ is $-e^{-x}$
+
+[Product Rule](Product%20Rule)
+
+$(fg)' = f'g + fg'$
+Example:
+$f(x) = x^2e^{-x}$
+$f(x) = (x^2)'e^{-x} + x^2(e^{-x})'$
+
+
 
 ## 9. Algebra, Vectors and Matrices
 
