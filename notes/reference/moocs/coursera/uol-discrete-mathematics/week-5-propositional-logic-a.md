@@ -96,7 +96,7 @@ modified: 2023-04-08 00:00
 
 * [Compound Statements](../../../../permanent/compound-statements.md)
     * Statements build by combining multiple propositions using certain rules.
-* [Negation](../../../../permanent/logic-negation.md)
+* [Negation](../../../../permanent/logical-negation.md)
     * Not $p$: Defined by $\neg p$
     * "It is not the case that $p$"
     * The truth value of the negation of $p$, $\neg p$, is the opposite of truth value of $p$.
