@@ -33,7 +33,7 @@ We can use connectives to change or combine the meaning of propositions.
 
 ## Connectives
 
-### [Logical NOT](../journal/permanent/logical-not.md)
+### [Negation](logical-negation.md)
 
 Symbol: $\neg p$
 
@@ -64,13 +64,13 @@ Symbol: $p \rightarrow q$
 
 If p is true, then q is true.
 
-Also called [implication](implication.md).
+Also called [Implication](logical-implication.md).
 
-## [Logical IF and only IF](logical-if-and-only-if.md): $\leftrightarrow$
+## [Bi-conditional](logical-biconditional.md): $\leftrightarrow$
 
 Symbol: $p \leftrightarrow q$
 
-Also called [implication](implication.md).
+Also called [Bi-conditional](logical-biconditional.md).
 
 ## [Exclusive-Or](exclusive-or.md)
 

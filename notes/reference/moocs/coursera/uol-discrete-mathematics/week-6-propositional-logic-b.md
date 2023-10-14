@@ -9,7 +9,7 @@ modified: 2023-04-09 00:00
 
 ## 2.202 Logical implication
 
-* Logical [Implication](../../../../permanent/implication.md)
+* Logical [Implication](../../../../permanent/logical-implication.md)
     * Let $p$ and $q$ be propositions.
     * The conditional statement, or "implication $p \rightarrow q$" is the [Proposition](../../../../permanent/proposition.md) "if $p$ then $q$".
         * We call $p$ the hypothesis (or antecedent or premise)

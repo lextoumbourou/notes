@@ -1,6 +1,8 @@
 ---
 title: Negation
 date: 2022-10-01 00:00
+aliases:
+  - "Logical NOT"
 status: draft
 ---
 
