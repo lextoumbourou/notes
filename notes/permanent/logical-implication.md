@@ -1,6 +1,8 @@
 ---
 title: Implication
-aliases: Logical Implication
+aliases:
+  - Logical Implication
+  - Logical If..Then
 date: 2022-11-23 00:00
 tags:
   - Logic
