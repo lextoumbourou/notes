@@ -1,13 +1,15 @@
 ---
 title: Disjunction
 date: 2022-11-23 00:00
+aliases:
+  - Logical OR
 tags:
   - Logic
   - DiscreteMath
 status: draft
 ---
 
-Another way to combine two [Propositions](Propositions) using the connective "or".
+Another way to combine two [Propositions](proposition.md) using the connective "or".
 
 The proposition $p$ or $q$ is true if $p$ or $q$ is true.
 
@@ -25,7 +27,7 @@ $p \lor q$: Harry likes pepperoni or mushroom pizza for lunch.
 
 Note that either could be try and the disjunction would still be true. It's not an exclusive or.
 
-| p   | q   | $p \lor q$ |
+| $p$   | $q$   | $p \lor q$ |
 | --- | --- | ---------- |
 | T   | T   | T          |
 | T   | F   | T          |
