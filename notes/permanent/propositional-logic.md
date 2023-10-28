@@ -27,11 +27,11 @@ Usually denoted using lowercase letters $p$, $q$, $r$, $s$ or $t$.
 p = It rained yesterday.
 q = I am happy.
 
-The truthfulness or falsity of a proposition is called its [Truth Value](Truth%20Value). Denoted by $T$ or $F$, or 1 and 0 in computer science.
+The truthfulness or falsity of a proposition is called its [Truth Table](truth-table.md). Denoted by $T$ or $F$, or 1 and 0 in computer science.
 
 We can use connectives to change or combine the meaning of propositions. For example, $\neg p$ negates the value of p. If it's true, it becomes false and vice versa.
 
-## [Truth Table](../journal/permanent/truth-table.md)
+## [Truth Table](truth-table.md)
 
 A truth table allows us to consider all possible combinations of proposition logic systems.
 
@@ -43,7 +43,7 @@ For example, consider $\neg p$:
 | 0   | 1         |
 
 We can use truth tables to help us understand the truth values of other connectives within propositional logic.
-## Connectives
+## [Connective](logical-connective.md)
 
 ### [Negation](logical-negation.md) (NOT)
 
@@ -154,3 +154,56 @@ Truth table is opposite of bi-conditional.
 3. $\lor$
 4. $\rightarrow$
 5. $\leftrightarrow$
+
+## Tautology
+
+A statement that is always true.
+
+For example: $p \lor \neg p$ is always true.
+
+| $p$   | $\neg p$   | $p \lor \neg p$ |
+| --- | --- | --------- |
+| 1   | 0   |    1       |
+| 0   | 1   |    1       |
+
+## [Consistent](logical-consistent.md)
+
+A formula that is true in at least one scenario.
+
+## [Contradiction](logical-contradiction.md)
+
+A formula that is never true.
+
+For example: $p \land \neg p$
+
+| $p$   | $\neg p$   | $p \land \neg p$ |
+| --- | --- | --------- |
+| 1   | 0   |    0       |
+| 0   | 1   |    0       |
+
+Also called "inconsistent".
+
+## Equivalence
+
+If two formula are equivalent if they have identical truth tables.
+
+Denoted by: $\equiv$
+
+$A \equiv B$ means A and B have the same [Truth Table](truth-table.md).
+
+Note: equivalence is relation, not connective.
+
+Can prove [De Morgan's Laws](de-morgans-laws.md) using a truth table.
+
+$\neg (p \land q) \equiv \neg p \lor \neg q$
+
+| $p$ | $q$ | $\neg (p \land q)$ | $\neg p$ | $\neg q$ | $\neg p \lor \neg q$ |
+| --- | --- | ---------------- |--| -- | -- |
+| 1   | 1   | 0                  | 0 | 0 | 0 |
+| 1   | 0   | 1                  | 0 | 1 | 1| 
+| 0   | 1   | 1                  | 1 |  0 | 1| 
+| 0   | 0   | 1                  | 1 | 1 |  1|
+
+$(p \rightarrow q) \equiv (\neg p \land q)$
+
+

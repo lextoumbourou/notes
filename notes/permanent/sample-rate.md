@@ -11,7 +11,7 @@ tags:
 
 Sample rate measures how accurately a sound wave is digitally represented.
 
-To create a digital audio recording of a [[Sound Wave]], we capture the signal's amplitude many times a second and store it as an array of numbers. Each of these numbers is called a sample. We measure audio quality by number of samples per second or [hertz](https://en.wikipedia.org/wiki/Hertz).
+To create a digital audio recording of a [Sound Wave](sound-wave.md), we capture the signal's amplitude many times a second and store it as an array of numbers. Each of these numbers is called a sample. We measure audio quality by number of samples per second or [hertz](https://en.wikipedia.org/wiki/Hertz).
 
 The number is generally stored as an int or float, whose range or precision is defined by the [[Bit Depth]]
 
