@@ -44,6 +44,6 @@ Let $p$ and $q$ be propositions and $A$ the conditional statement $p \rightarrow
 
 The proposition $q \rightarrow p$ is the **converse** of A
 
-The proposition $\neg q \rightarrow \neg p$ is the **contrapositive** of A.
+The proposition $\neg q \rightarrow \neg p$ is the [[contrapositive]] of A.
 
 The proposition $\neg p \rightarrow \neg q$ is the **inverse** of A

@@ -89,7 +89,7 @@ modified: 2023-04-09 00:00
         * Let $P(x, y)$ by the statement x + y > 10, where the universe of discourse for x, y is the set of all integers.
         * The statement S is: $\forall x \forall y P(x, y)$
         * Can also be written as: $\forall x, y \ \ P(x, y)$
-* [Existential quantifier](permanent/existential-quantifier.md)
+* [Existential Quantifier](permanent/existential-quantifier.md)
     * The existential quantification of a predicate $P(x)$is the proposition:
         * "There exists a value x in the universe of discourse such that P(x) is true."
     * We use the notation: $\exists \ x \ P(x)$, which reads "there exists x".
