@@ -9,7 +9,7 @@ modified: 2023-04-08 00:00
 
 ## 6.101 Introduction to proofs
 
-* [Proof](../../../../permanent/proof.md)
+* [Proof](../../../../permanent/mathematical-proof.md)
     * A proof is a valid argument, that is used to prove the truth of a statement.
     * To build a proof, we need to use things previously introduced:
         * variables and predicates.
