@@ -3,9 +3,12 @@ title: Sound Wave
 date: 2023-10-06 00:00
 modified: 2023-10-06 00:00
 cover: /_media/sound-wave-cover.png
+summary: Wave of pressure which our ears can perceive
 ---
 
-A sound wave is produced when a vibrating object exerts force or pressure, setting the molecules of the particular medium, like air, into motion. This pressure causes the molecules to  oscillate around their equilibrium position.
+A sound wave is a wave of pressure that travels through the air (or another medium like water or solids) that our ears can perceive.
+
+Sound waves are produced when when a vibrating object exerts force or pressure, setting the molecules to oscillate around their equilibrium position.
 
 The rate of oscillation of these molecules is what determines the frequency of the sound, while the maximum distance they move away from their equilibrium position defines the amplitude.
 
@@ -21,7 +24,7 @@ The amplitude largely determines the loudness of a sound.
 
 Individuals with typical hearing can perceive sounds as soft as 0 dB SPL and generally tolerate up to around 120 dB SPL.
 
-![Sound wave diagram](/_media/sound-wave-diagram.png)
+![Sound wave diagram](_media/sound-wave-diagram.png)
 
 Recommended videos:
 
