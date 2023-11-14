@@ -42,4 +42,4 @@ Means "There exists" or "Some".
 
 Example:
 
-$\exists x, P(x)$: "There exists an x such that x is a prime number" (True, since there are prime numbers)
+$\exists x, P(x)$: "There exists an x such that x is a prime number"
