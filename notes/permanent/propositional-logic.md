@@ -27,7 +27,7 @@ Usually denoted using lowercase letters $p$, $q$, $r$, $s$ or $t$.
 p = It rained yesterday.
 q = I am happy.
 
-The truthfulness or falsity of a proposition is called its [Truth Table](truth-table.md). Denoted by $T$ or $F$, or 1 and 0 in computer science.
+The truthfulness or falsity of a proposition is called its **truth value**. Denoted by $T$ or $F$, or 1 and 0 in computer science.
 
 We can use connectives to change or combine the meaning of propositions. For example, $\neg p$ negates the value of p. If it's true, it becomes false and vice versa.
 

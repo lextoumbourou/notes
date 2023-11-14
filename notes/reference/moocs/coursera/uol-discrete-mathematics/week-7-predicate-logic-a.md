@@ -9,7 +9,7 @@ modified: 2023-04-09 00:00
 
 ## 4.101 Introduction to predicate logic
 
-* [Predicate Logic](../../../../permanent/predicate-logic.md)
+* [Predicate](predicate.md)](../../../../permanent/predicate-logic.md)
     * Propositional logic has some limitations:
         * Cannot precisely express meaning of complex math statements.
         * Only studies propositions, which are statements with known truth values.
