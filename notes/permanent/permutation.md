@@ -5,14 +5,30 @@ modified: 2023-04-11 00:00
 status: draft
 ---
 
-A permutation is an **ordered** collection of objects, unlike a [Combination](combination.md) which is unordered.
+A permutation is an **ordered** collection of objects.
 
-A common mnemonic to remember the different is to think that the $P$ in Permutations stands for position:
+If I have 5 people and I want to know how many different ways they can be arranged in a team of 5:
 
-**P**ermutations: **P**osition mattters.
+1. I have 5 choices for the first slot.
+2. For the 2nd slot, only 4 choices, since I've chosen one in the first.
+3. For the 3rd, only 3 choices.
+4. For the 4th, only 2 choices.
+5. For the 5th, only 1 choice.
+
+So the total number of choices is: 5 x 4 x 3 x 2 x 1 = 5! = 120
+
+Order matters for permutation, which differentials it from a [Combination](combination.md), which is unordered collection of objects.
+
+A useful mnemonic to remember the difference is to think that the $P$ in Permutations stands for position:
+
+**P**ermutations: **P**osition matters.
 **C**ombinations: **C**hoose without concern for order.
 
-An ordered subset of $r$ objects is called an *r-permutation*.
+## [R-Permutation](r-permutation.md)
+
+An ordered subset of $r$ objects is called an r-permutation.
+
+For example, if I had 25 people to choose from but only 5 slots on the team.
 
 The set of r-permutation from a set of $n$ elements is written as:
 
@@ -36,14 +52,14 @@ The formula for counting permutations is:
 
 $P(n, r) = \frac{n!}{(n - r)!}$
 
-Given that n is positive, and r is an integer where r \leq n.
+Given that n is positive, and r is an integer where $r \leq n$.
 
-3! = 3 x 2 x 1 = 6
-3-2 = 1! = 1
+$3! = 3 x 2 x 1 = 6$
+$3-2 = 1! = 1$
 
-6/1 = 6
+$6/1 = 6$
 
-## Permutation with repetition
+## [Permutation with Repetition](../../../permanent/permutation-with-repetition.md)
 
 Consider this problem:
 
