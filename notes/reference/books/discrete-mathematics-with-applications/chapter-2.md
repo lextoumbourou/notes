@@ -13,7 +13,7 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
 ### 1.1. Propositions
 
 * A declarative sentence that is either true or false but not both.
-* Truth value
+* [Truth Value](../../../permanent/truth-value.md)
     * The truthfulness or falsity of a proposition is called its truth value, denoted by T(true) and F(false)
 
 ## Chapter 2. The Language of Sets

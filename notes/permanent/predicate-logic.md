@@ -9,10 +9,10 @@ tags:
 cover: /_media/predicate-logic-cover.png
 ---
 
-An extension of [Propositional Logic](propositional-logic.md) that uses variables and quantifiers to represent and analyse [Statements](../../../permanent/logical-statement.md).
+An extension of [Propositional Logic](propositional-logic.md) that uses variables and quantifiers to represent and analyse [Statement](logical-statement.md).
 ## [Predicate](predicate.md)
 
-Is a [Statement](../../../permanent/logical-statement.md) that includes a variable.
+Is a [Statement](logical-statement.md) that includes a variable.
 
 - $P(x)$: "x is a prime number"
 
