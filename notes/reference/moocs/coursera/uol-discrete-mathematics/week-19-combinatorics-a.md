@@ -16,7 +16,7 @@ modified: 2023-04-08 00:00
 
 ## Lesson 10.103 The basics of counting
 
-* [Product Rule](permanent/product-rule.md)
+* [Product Rule](../../../../permanent/product-rule.md)
     * To determine the number of different possible outcomes in a complex process, we can break the problem into a sequence of two independent tasks:
         * if there are $n$ ways of doing the first task
         * for each of these ways of doing the first task, there are $m$ ways of doing the 2nd task.

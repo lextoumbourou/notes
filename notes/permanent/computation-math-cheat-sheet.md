@@ -367,7 +367,7 @@ Some special cases apply:
 
 ---
 
-[[Chain Rule]]
+[Chain Rule](Chain%20Rule)
 
 $\frac{d}{dx}[f(g(x))] = f^{\prime}(g(x)) \cdot g^{\prime}(x)$
 
@@ -392,7 +392,7 @@ Result:
 
 Derivate of $e^{-x}$ with respect to $x$ is $-e^{-x}$
 
-[Product Rule](Product%20Rule)
+[product-rule](product-rule.md)
 
 $(fg)' = f'g + fg'$
 Example:
@@ -418,7 +418,7 @@ $A^{-1} = \frac{1}{\det(A)} \begin{bmatrix}d & -b \\ -c & a\end{bmatrix}$
 
 "swap a and b", "negate -b and -c"
 
-[[Solving Systems of Equations using Inverse Matrix]]
+[Solving Systems of Equations using Inverse Matrix](Solving%20Systems%20of%20Equations%20using%20Inverse%20Matrix)
 
 3x + 8y = 5
 4x + 11y = 7
