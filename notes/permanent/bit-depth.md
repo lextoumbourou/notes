@@ -4,6 +4,8 @@ date: 2023-10-10 00:00
 modified: 2023-10-10 00:00
 status: draft
 summary: A measure of how precise the amplitude of a sound wave was recorded
+tags:
+  - AudioEngineering
 ---
 
 Bit depth in digital audio is the 2nd key factor, next to [Sample Rate](sample-rate.md), that determines the quality of sound in a digital audio recording.
