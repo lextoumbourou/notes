@@ -29,7 +29,7 @@ parent: data-structures-optimizing-performance
     * Provides access to elements in constant time.
     * O(n) to add elements.
   * LinkedList
-    * Doubly linked list usually stores a pointer to the head and tail.
+    * Doubly [Linked List](../../../../permanent/compsci-linked-list.md) usually stores a pointer to the head and tail.
     * Each node has a next and prev references.
     * Each node in the list is a ``ListNode`` element.
     * Alternate implementation: Sentinal nodes.

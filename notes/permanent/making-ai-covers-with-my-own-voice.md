@@ -19,7 +19,7 @@ I want to share some thoughts about the implications for the music industry and 
 
 ## Singing Voice Conversion (SVC)
 
-The study of [Voice Conversion](https://paperswithcode.com/task/voice-conversion) aims to modify speech audio to make it sound like a different person is speaking. It has legitimate applications in speech therapy, accessibility, entertainment and many other domains. It also has massive potential for misuse, like identity theft, fraud, and starting world wars.
+The study of [Voice Conversion](../../voice-conversion.md) aims to modify speech audio to make it sound like a different person is speaking. It has legitimate applications in speech therapy, accessibility, entertainment and many other domains. It also has massive potential for misuse, like identity theft, fraud, and starting world wars.
 
 As the name suggests, singing voice conversion, or SVC, is about taking vocals and making them sound like a different singer. It's just voice conversion + pitch.
 

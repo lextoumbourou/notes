@@ -5,6 +5,8 @@ aliases:
   - Proofs
   - Mathematical Proof
 status: draft
+tags:
+  - MathematicalLogic
 ---
 
 A sequence of mathematically connected statements that prove or disprove a statement is true.

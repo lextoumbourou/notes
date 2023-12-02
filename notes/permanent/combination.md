@@ -2,6 +2,10 @@
 title: Combination
 date: 2023-04-11 00:00
 status: draft
+summary: an unordered collection of objects
+tags:
+    - DiscreteMath
+    - Combinatorics
 ---
 
 Unlike [Permutation](permutation.md), combinations are unordered set.

@@ -6,6 +6,7 @@ aliases:
   - First-Order Logic
 tags:
   - DiscreteMath
+  - MathematicalLogic
 cover: /_media/predicate-logic-cover.png
 ---
 
