@@ -6,6 +6,7 @@ cover: /_media/prop-logic-cover.png
 summary: A system that deals with statements that are either true or false
 tags:
     - DiscreteMath
+    - MathematicalLogic
 ---
 
 A system that deals with [Proposition](proposition.md) (statements).
