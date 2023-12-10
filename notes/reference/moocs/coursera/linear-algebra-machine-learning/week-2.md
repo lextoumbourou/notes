@@ -75,7 +75,7 @@ modified: 2023-04-09 00:00
     * So the dot product is: "the projection of s onto r" * "size of r": $|r| \times \text{projection}$
     * You can rearrange the expression to: $\frac{r.s}{|r|} = |s|\cos\theta$, to get the scalar projection.
     * That explains why the [Dot Product](../../../../permanent/dot-product.md) is also called the "Projection Product".
-* [Vector Projection](permanent/vector-projection.md) (04:04-05:52)
+* [vector-projection](permanent/vector-projection.md) (04:04-05:52)
     * Allows you to include the direction of $r$ into the scalar projection.
     * Defined to be $\vec{r} \frac{\vec{r} \cdot \vec{s}}{|r||r|}$
     * Or $\vec{r} \frac{\vec{r} \cdot \vec{s}}{\vec{r} \cdot \vec{r}}$

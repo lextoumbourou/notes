@@ -4,7 +4,7 @@ date: 2022-03-04 00:00
 status: draft
 ---
 
-A vector of numbers that effectively "summarises" something.
+A vector of numbers that provides a representation or, effectively a summary something.
 
 Imagine writing an algorithm to recommend movies.
 

@@ -4,7 +4,7 @@ date: 2022-07-31 00:00
 status: draft
 ---
 
-A Transformer is a sequence-to-sequence [Model Architecture](Model Architecture).
+A Transformer is a sequence-to-sequence [Model Architecture](Model Architecture) described in the paper [[Attention Is All You Need]].
 
 It takes an input sequence, performs an [Embeddings](Embeddings) operation to convert to a [Vector](vector.md) of length 512
 
