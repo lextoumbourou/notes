@@ -7,6 +7,7 @@ tags:
   - AudioEngineering
   - MachineLearning
 cover: /_media/cover-clap-paper.png
+hide_cover_in_article: true
 ---
 
 These are my notes from paper [Large-scale Contrastive Language-Audio Pretraining with Feature Fusion and Keyword-to-Caption Augmentation](https://arxiv.org/abs/2211.06687) by Yusong Wu, Ke Chen, Tianyu Zhang, Yuchen Hui, Taylor Berg-Kirkpatrick, Shlomo Dubnov
