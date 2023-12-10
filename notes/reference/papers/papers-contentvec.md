@@ -13,20 +13,20 @@ tag:
 These are my notes from the paper [ContentVec: An Improved Self-Supervised Speech Representation by Disentangling Speakers](https://arxiv.org/abs/2204.09224) by Kaizhi Qian, Yang Zhang, Heting Gao, Junrui Ni, Cheng-I Lai, David Cox, Mark Hasegawa-Johnson, Shiyu Chang
 ## Abstract
 
-ContentVec is a method for building an [Embedding](embedding.md) representation of speech, that "disentangles" content information from speech. This representation is useful for many downstream tasks like [Voice Conversion](../../voice-conversion.md).
+ContentVec is a method for building an [Embedding](../../permanent/embedding.md) representation of speech, that "disentangles" content information from speech. This representation is useful for many downstream tasks like [Voice Conversion](../../../voice-conversion.md).
 
-Typically [Speaker Disentanglement](../../../permanent/speaker-disentanglement.md) is hard because it causes content loss. ContentVec fixes this. They modify the [HuBERT](../../../permanent/hubert.md) framework, and incorporates disentangling mechanisms to regularise the teachers (masked prediction labels) and the student (learned representations).
+Typically [Speaker Disentanglement](../../../../permanent/speaker-disentanglement.md) is hard because it causes content loss. ContentVec fixes this. They modify the [HuBERT](../../permanent/hubert.md) framework, and incorporates disentangling mechanisms to regularise the teachers (masked prediction labels) and the student (learned representations).
 
-![](../_media/papers-contentvec-fig1.png)
+![](../../_media/papers-contentvec-fig1.png)
 ## Introduction
 
-State-of-the-art for many speech processing problems with low volume of data, is a [Self-Supervised Learning](../../../permanent/self-supervised-learning.md) pre-training.
+State-of-the-art for many speech processing problems with low volume of data, is a [Self-Supervised Learning](../../permanent/self-supervised-learning.md) pre-training.
 
 The SSL training aims to build a speech representation using a large-scale unannotated corpora to capture meaning information about speech structures. We can then take the representation and apply to training downstream tasks with a small amounts of data.
 
 The best representations are ones that can disentangle content info in speech, from other interference like speaker variations.
 
-The [HuBERT](../../../permanent/hubert.md) representation can achieve a speaker identification accuracy of up to 81.4% on the [SUPERB: Speech processing Universal PERformance Benchmark](papers-superb.md) benchmark. Therefore, it's assumed that the representation might do better if we disentangle speaker information.
+The [HuBERT](../../permanent/hubert.md) representation can achieve a speaker identification accuracy of up to 81.4% on the [SUPERB: Speech processing Universal PERformance Benchmark](papers-superb.md) benchmark. Therefore, it's assumed that the representation might do better if we disentangle speaker information.
 
 But disentangling speakers is hard.
 
@@ -71,7 +71,7 @@ more powerful content processing directly on speech.
 
 ### 2. Related Work
 
-[Voice Conversion](../../voice-conversion.md) is among the first research areas where speaker disentanglement is explored.
+[Voice Conversion](../../../voice-conversion.md) is among the first research areas where speaker disentanglement is explored.
 
 The general trend follows the analysis-synthesis framework, where the analysis stage learns a speaker-independent speech representation that only preserves the content, and the synthesis stage uses the speaker-independent speech representation and the speaker-related variations to synthesize the conversion results. 
 
@@ -227,7 +227,7 @@ downstream tasks.
 ### 3.4. Disentanglement in Students
 
 Disentanglement in students enforces speaker-invariant student representations, which can be achieved with SIMCLR
-(Chen et al., 2020), a [Contrastive Learning](../../../permanent/contrastive-learning.md) algorithm.
+(Chen et al., 2020), a [Contrastive Learning](../../permanent/contrastive-learning.md) algorithm.
 
 Specifically, as shown in Figure 1(a), each speech utterance,
 X, is passed into two random transformations that alter only
@@ -335,7 +335,7 @@ The final loss
 is the superposition of the prediction and contrastive losses:
 L = Lpred + λLcontr. 
 
-![](../_media/papers-contentvec-fig-2.png)
+![](../../_media/papers-contentvec-fig-2.png)
 
 As can be observed, although CONTENTVEC requires
 speaker labels to identify speaker information, speaker labels are only used in pre-training the speaker embedding
