@@ -7,4 +7,4 @@ tags:
   - Dataset
 ---
 
-A dataset described in paper [Large-scale Contrastive Language-Audio Pretraining with Feature Fusion and Keyword-to-Caption Augmentation](../reference/papers/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion.md).
+A dataset described in paper [Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation](../reference/papers/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion.md).
