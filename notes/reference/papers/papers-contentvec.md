@@ -227,7 +227,7 @@ downstream tasks.
 ### 3.4. Disentanglement in Students
 
 Disentanglement in students enforces speaker-invariant student representations, which can be achieved with SIMCLR
-(Chen et al., 2020), a [Contrastive Learning](../../permanent/contrastive-learning.md) algorithm.
+(Chen et al., 2020), a [Contrastive Loss](../../permanent/contrastive-loss.md) algorithm.
 
 Specifically, as shown in Figure 1(a), each speech utterance,
 X, is passed into two random transformations that alter only
