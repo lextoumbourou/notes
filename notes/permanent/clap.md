@@ -9,4 +9,4 @@ aliases:
 
 An architecture trained on text / audio pairs scraped from the internet using [Contrastive Loss](contrastive-loss.md).
 
-Described in paper [Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation](../reference/papers/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion.md).
+Described in paper [1. [Contrastive Language-Audio Pretraining](../../permanent/clap.md) (CLAP)](../reference/papers/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion.md).
