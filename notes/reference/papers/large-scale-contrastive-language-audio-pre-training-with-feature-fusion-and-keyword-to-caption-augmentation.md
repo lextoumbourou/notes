@@ -184,10 +184,11 @@ Use 2-layer MLPs with [ReLU](../../../../permanent/ReLU.md) activation, which ma
 
 ### Feature Fusion for Variable-Length Audio
 
-Problem: audio is a natural variable length, unlike image data, which we can resize to "unified resolution" (i.e. 224x224).
-Possible solution: average per-frame or per-chunk audio embeddings as output. However, it could be more computationally efficient on long audio.
+Audio is a natural variable length, unlike image data, which we can resize to "unified resolution" (i.e. 224x224).
 
-CLAP approach: Feature Fusion (see Fig. 1 above)
+A common approach is to average per-frame or per-chunk audio embeddings as output. However, it could be more computationally efficient on long audio.
+
+[Feature-Fusion](../../permanent/feature-fusion.md):
 
 Train on different lengths of audio inputs in constant computation time by combining coarsely global and randomly sampled local information.
 
@@ -238,27 +239,18 @@ Compared with the "slice & vote" method, the feature fusion also saves training 
 
 ### Keyword-to-Caption Augmentation
 
-[Keyword-to-Caption Augmentation](../../permanent/keyword-to-caption-augmentation.md)
-
-Some datasets contain only labels or tags of audio.
-
-They use a pre-trained language model to make captions on the keywords. The specific details of the captioning model aren't in the paper, but they do mention it in [this](https://github.com/LAION-AI/CLAP/issues/58#issuecomment-1377489927) GitHub issue.
-
- ![](../../_media/large-scale-contrastive-language-audio-retraining-with-feature-fusion-gt-issue.png)
-Also, do a [De-bias](De-bias) the output sentence in post-processing.
-
-Replace "woman" and "man" with "person" and others mentioned in the appendix.
+See Main Contributions section.
 
 ## Experiments
 
 Three experiments were conducted:
 
+The first two they evaluate using recall and mean average precision (mAP) on audio-to-text and text-to-audio.
+
 * Try different audio and text encoders to get the best baseline model.
 * Train model on various dataset sizes, with feature fusion and keyword-to-caption augmentation to verify the efficacy of proposed methods.
 
-These two were evaluated via recall and mean average precision (mAP) on audio-to-text and text-to-audio.
-
-Lastly, they do zero-shot and supervised audio classification experiments to evaluate the generalisation ability of the downstream tasks.
+The last, they do zero-shot and supervised audio classification experiments to evaluate the generalisation ability of the downstream tasks.
 
 ### Hyper-parameters and Training Details
 
@@ -305,8 +297,8 @@ Results:
 
 * Audio encoder: [HTS-AT](../../permanent/hts-at.md) better than [PANNs](../../../../permanent/PANNs.md) combined with RoBERTa or BERT.
 * Text encoder: RoBERTa beats BERT. CLIP transformer worst.
-    ![](../../_media/large-scale-contrastive-language-audio-retraining-with-feature-fusion-table-2.png)
 
+![](../../_media/large-scale-contrastive-language-audio-retraining-with-feature-fusion-table-2.png)
 #### Dataset Scale
 
 Now, they use the HTSAT-RoBERTa model to perform text-to-audio retrieval experiments across the datasets.
