@@ -1,12 +1,12 @@
 ---
-title: Contrastive Language-Audio Pretraining
+title: CLAP
 date: 2023-12-09 00:00
 modified: 2023-12-09 00:00
 status: draft
 aliases:
-  - CLAP
+  - Contrastive Language-Audio Pretraining
 ---
 
 An architecture trained on text / audio pairs scraped from the internet using [Contrastive Loss](contrastive-loss.md).
 
-Described in paper [1. [Contrastive Language-Audio Pretraining](../../permanent/clap.md) (CLAP)](../reference/papers/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion.md).
+Described in paper [Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation](../reference/papers/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation.md).
