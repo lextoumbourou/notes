@@ -26,7 +26,7 @@ They released the architecture, training code and series of weights trained on d
 
 ![](../../_media/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion-clap-overview.png)
 
-#### 2. [Feature-Fusion](../../permanent/feature-fusion.md)
+### 2. [Feature-Fusion](../../permanent/feature-fusion.md)
 
 They describe a system for dealing with variable-length, long audio (> 10 secs) called [Feature-Fusion](../../permanent/feature-fusion.md).
 
@@ -58,19 +58,11 @@ They also introduced Laion Audio 630k, a large text/audio dataset scraped from v
 
 ---
 
-### Tasks evaluated
+### Evaluation tasks
 
-#### Text-to-Audio Retrieval
-
-Achieves "superior performance."
-
-#### Zero-shot Audio Classification
-
-State-of-the-art performance.
-
-#### Supervised Audio Classification
-
-Comparable to performance.
+* Text-to-Audio Retrieval: achieves "superior performance."
+* Zero-shot Audio Classification: State-of-the-art performance.
+* Supervised Audio Classification: comparable performance.
 
 ---
 
@@ -78,37 +70,24 @@ Comparable to performance.
 
 Most audio tasks in ML require annotated data. Figuring out how to do unsupervised [Representation Learning](../../permanent/representation-learning.md) for audio is an ongoing challenge.
 
-[Contrastive Loss](../../permanent/contrastive-loss.md) is a widely used solution for training on noisy internet data.
+[Contrastive Loss](../../permanent/contrastive-loss.md) is a widely used solution for training on noisy internet data. For example, [CLIP](../../permanent/contrastive-language-image-pretraining.md) learns the relationship between text and image by projecting into a shared latent space. It uses a ground-truth image-text pair as a positive sample and "left" as a negative. It works well because it's not constrained by data annotation. The representation it learns are helpful for downstream tasks like text-to-image retrieval and text-guided captioning.
 
-A particular implementation: [CLIP](../../permanent/contrastive-language-image-pretraining.md) learns the relationship between text and image by projecting into a shared [Latent Space](../../../../permanent/latent-space.md). It uses a ground-truth image-text pair as a positive sample and "left" as a negative.
+Vision, audio, and language has overlapping info and text descriptions of events can be mapped to corresponding audio. Text descriptions share a similar meaning that could be learned with the related audio to form an audio representation of cross-modal information. Also, paired audio and text data is relatively easy to collect.
 
-It works because it's not constrained by data annotation and has robustness in out-of-domain tests using [ImageNet](../../../../permanent/ImageNet.md). These weights are helpful for downstream tasks like text-to-image retrieval and text-guided captioning.
+Contrastive language-audio pre-training has been covered before:
 
-Vision, audio, and language have overlapping info. Text descriptions of events can be mapped to corresponding audio.
+* [Text-to-audio retrieval via large-scale contrastive learning](Text-to-audio%20retrieval%20via%20large-scale%20contrastive%20learning)
+    * Pre-trained Audio Neural Network (PANN) as the audio encoder.
+    * BERT as text encoder.
+    * Various loss functions to evaluate text-to-audio retrieval.
+* [Audio Retrieval with WavText5K and CLAP Training](../../permanent/audio-retrieval-with-wavtext5k-and-clap-training.md)
+    * Adds [HTS-AT](../../permanent/htsat.md) and [RoBERTa](../../permanent/RoBERTa.md) into encoder list to enhance performance.
+    * Uses representation in the downstream task of audio classification.
+* Other studies focus on contrastive image-audio pre-training:
+    * [AudioCLIP: Extending CLIP to Image, Text and Audio](../../permanent/audioclip-extending-clip-to-image-text-and-audio.md)
+    * [Wav2CLIP: Learning Robust Audio Representations From CLIP](paper-wav2clip-learning-robust-audio-representations-from-clip.md)
 
-Text descriptions share a similar meaning that could be learned with the related audio to form an audio representation of cross-modal information.
-
-Paired audio and text data are easy to collect.
-
-Contrastive language-audio pre-training has been covered before.
-
-[Text-to-audio retrieval via large-scale contrastive learning](Text-to-audio%20retrieval%20via%20large-scale%20contrastive%20learning)
-
-- Pre-trained Audio Neural Network (PANN) as the audio encoder.
-- BERT as text encoder.
-- Various loss functions to evaluate text-to-audio retrieval.
-
-[Audio Retrieval with WavText5K and CLAP Training](../../permanent/audio-retrieval-with-wavtext5k-and-clap-training.md)
-
-* Adds [HTS-AT](../../permanent/htsat.md) and [RoBERTa](../../permanent/RoBERTa.md) into encoder list to enhance performance.
-* Uses representation in the downstream task of audio classification.
-
-Other studies focus on contrastive image-audio pre-training:
-
-* [AudioCLIP: Extending CLIP to Image, Text and Audio](../../permanent/audioclip-extending-clip-to-image-text-and-audio.md)
-* [Wav2CLIP: Learning Robust Audio Representations From CLIP](paper-wav2clip-learning-robust-audio-representations-from-clip.md)
-
-All these previous studies do not show the "full strength" of contrastive audio for language:
+However, all these previous studies do not show the "full strength" of contrastive audio for language. They have the following limitations:
 
 * Datasets "relatively small."
 * Prior work has yet to investigate selections and hyper-parameters thoroughly.
@@ -156,9 +135,9 @@ They also exclude overlapping data in evaluation sets.
 
 #### Dataset Format and Preprocessing
 
-- All audio is converted to mono.
-- 48kHz in FLAC format.
-- Data with only tags or labels, expand labels into captions using the template:
+* All audio is converted to mono.
+* 48kHz in FLAC format.
+* Data with only tags or labels, expand labels into captions using the template:
     * sound of `label-1`, `label-2`, ..., and `label-n`
 
 Ultimately, they end up with a total collection of 2.5 million audio samples.
@@ -171,19 +150,19 @@ See Fig 1 above for architecture diagram.
 
 Notation:
 
-- $X^{a}_i$ = audio example i
-- $X^{t}_{i}$ = text example i
-- $X^{a}_{i}, X^{t}_{i}$ = audio-text pair $i$.
+* $X^{a}_i$ = audio example i
+* $X^{t}_{i}$ = text example i
+* $X^{a}_{i}, X^{t}_{i}$ = audio-text pair $i$.
 
 Like [CLIP](../../permanent/contrastive-language-image-pretraining.md) has 2 encoders:
 
-- $E^{a}_{i}$ = audio [embedding](../../permanent/embedding.md) i, obtained using audio encoder: $faudio(.)$
-- $E^{t}_{i}$ = text [embedding](../../permanent/embedding.md) , obtained using text encoder: $ftext(.)$
+* $E^{a}_{i}$ = audio [embedding](../../permanent/embedding.md) i, obtained using audio encoder: $faudio(.)$
+* $E^{t}_{i}$ = text [embedding](../../permanent/embedding.md) , obtained using text encoder: $ftext(.)$
 
 Uses [Projection](Projection) layers:
 
-- $E^{a}_{t} = \text{MLPaudio}(\text{faudio}(X^{a}_{i}))$
-- $E^{t}_{i} = \text{MLPtext}(\text{ftext}(X^{t}_{i}))$
+* $E^{a}_{t} = \text{MLPaudio}(\text{faudio}(X^{a}_{i}))$
+* $E^{t}_{i} = \text{MLPtext}(\text{ftext}(X^{t}_{i}))$
 
 Where the audio/text projection layer is a 2-layer multilayer perceptron (MLP) with ReLU as an activation function to map encoder outputs into the exact dimensions.
 
@@ -218,8 +197,8 @@ After training the model, for a given audio $X^{a}_{p}$ its embeddings $E^{a}_{p
 
 Try two models for audio encoder:
 
-- [PANNs](../../../../permanent/PANNs.md) - a CNN-based audio classification model with seven downsampling CNN blocks and seven upsampling blocks.
-- [HTS-AT](../../permanent/htsat.md) - a transformer-based model with four Swintransformer blocks, achieving SOTAs on three audio classification datasets.
+* [PANNs](../../../../permanent/PANNs.md) - a CNN-based audio classification model with seven downsampling CNN blocks and seven upsampling blocks.
+* [HTS-AT](../../permanent/htsat.md) - a transformer-based model with four Swintransformer blocks, achieving SOTAs on three audio classification datasets.
 
 For both, they use the 2nd last layer's output. PANNs: 2048 sized embedding and HTSAT: a 768-sized embedding
 
@@ -246,11 +225,11 @@ $T < d$: repeat the input, then pad with zero values. For example, 3-second inpu
 
 $T > d$:
 
-- First, downsample the input from T to d-second (10 seconds) as global input. These are the global inputs.
-- Then, randomly slice three d-second clips: in front 1/3, then middle 1/3 and back 1/3 of the input. These are the local inputs.
-- Send these $4 \ x \ d$ inputs to the mel encoder to get the initial features.
-- Also, send the three local inputs to the 2D Conv layer with a 3-stride in the time axis to convert to one feature.
-- Now fuse the local feature $X^{a}_{local}$ and the global feature $X^{a}_{global}$: $X^{x}_{fusion} = \lambda X^{a}_{global}.+ (1 - \alpha)X^{a}_{local}$, where $α = fAF F (Xaglobal, Xa local)$ is a factor obtained by attention feature fusion (AFF) [21], a two-branch CNN model for learning the fusion factor of two inputs.
+* First, downsample the input from T to d-second (10 seconds) as global input. These are the global inputs.
+* Then, randomly slice three d-second clips: in front 1/3, then middle 1/3 and back 1/3 of the input. These are the local inputs.
+* Send these $4 \ x \ d$ inputs to the mel encoder to get the initial features.
+* Also, send the three local inputs to the 2D Conv layer with a 3-stride in the time axis to convert to one feature.
+* Now fuse the local feature $X^{a}_{local}$ and the global feature $X^{a}_{global}$: $X^{x}_{fusion} = \lambda X^{a}_{global}.+ (1 - \alpha)X^{a}_{local}$, where $α = fAF F (Xaglobal, Xa local)$ is a factor obtained by attention feature fusion (AFF) [21], a two-branch CNN model for learning the fusion factor of two inputs.
 
 Code from the repo:
 
