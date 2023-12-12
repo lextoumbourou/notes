@@ -1,5 +1,5 @@
 ---
-title: Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation
+title: "Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation"
 date: 2023-12-06 00:00
 modified: 2023-12-06 00:00
 category: reference/papers
@@ -14,13 +14,13 @@ These are my notes from the paper [Large-scale Contrastive Language-Audio Pre-tr
 
 The main contributions of this paper are:
 
-### 1. [Contrastive Language-Audio Pretraining](../../permanent/clap.md) (CLAP)
+### 1. Contrastive Language-Audio Pre-training (CLAP)
 
-CLAP is a pre-training system for learning a text/audio latent space given pairs of examples.
+[CLAP](../../permanent/clap.md) is a pre-training system for learning a text/audio latent space given pairs of examples.
 
 It is trained using [Contrastive Loss](../../permanent/contrastive-loss.md). Hence: <span style="color: red;">Contrastive</span> <span style="color: blue;">Language-Audio</span> <span style="color: green;">Pre-training</span>.
 
-They use a text-encoder and audio-encoder to generate respective representations, then feed into an MLP layer to learn a shared latent space. For the text-encoder, they use [RoBERTa](../../permanent/RoBERTa.md) and for the audio-encoder, they use [HTS-AT](../../permanent/htsat.md) and provide details of other models evaluated.
+They use a text-encoder and audio-encoder to generate respective representations, then feed into an MLP layer to learn a shared latent space. For the text-encoder, they use [RoBERTa](../../permanent/RoBERTa.md) and for the audio-encoder, they use [HTS-AT](../../permanent/hts-at.md) and provide details of other models evaluated.
 
 They released the architecture, training code and series of weights trained on different subsets of their datasets [here](https://github.com/LAION-AI/CLAP).
 
@@ -38,7 +38,7 @@ It combines the entire audio downsampled, alongside 10-second clips taken random
 
 They also use the [keytotext](https://github.com/gagan3012/keytotext) library to convert the keywords and labels in the [Audioset](Audioset) dataset to captions.
 
-### 4. [Laion Audio 630K](../../permanent/dataset-laion-audio-630K.md)
+### 4. [Laion Audio 630K](../../permanent/laion-audio-630K.md)
 
 They also introduced Laion Audio 630k, a large text/audio dataset scraped from various places.
 
@@ -81,7 +81,7 @@ Contrastive language-audio pre-training has been covered before:
     * BERT as text encoder.
     * Various loss functions to evaluate text-to-audio retrieval.
 * [Audio Retrieval with WavText5K and CLAP Training](../../permanent/audio-retrieval-with-wavtext5k-and-clap-training.md)
-    * Adds [HTS-AT](../../permanent/htsat.md) and [RoBERTa](../../permanent/RoBERTa.md) into encoder list to enhance performance.
+    * Adds [HTS-AT](../../permanent/hts-at.md) and [RoBERTa](../../permanent/RoBERTa.md) into encoder list to enhance performance.
     * Uses representation in the downstream task of audio classification.
 * Other studies focus on contrastive image-audio pre-training:
     * [AudioCLIP: Extending CLIP to Image, Text and Audio](../../permanent/audioclip-extending-clip-to-image-text-and-audio.md)
@@ -96,7 +96,7 @@ However, all these previous studies do not show the "full strength" of contrasti
 
 This paper makes the following contributions based on these concerns:
 
-* Release [Laion Audio 630K](../../permanent/dataset-laion-audio-630K.md): largest public audio caption dataset of 633,526 audio-text pairs.
+* Release [Laion Audio 630K](../../permanent/laion-audio-630K.md): largest public audio caption dataset of 633,526 audio-text pairs.
 * Use the keyword-to-caption model to augment the labels of AudioSet into corresponding captions.
 * Make a pipeline of contrastive language-audio pre-training:
     * Select two audio encoders and three text encoders for testing.
@@ -110,7 +110,7 @@ Achieve SOTA in text-to-audio retrieval and audio classification (even compared 
 
 ## 2. Laion-Audio-630K and Training Dataset
 
-#### [Laion Audio 630K](../../permanent/dataset-laion-audio-630K.md)
+#### [Laion Audio 630K](../../permanent/laion-audio-630K.md)
 
 They scraped data from 8 websites to collect 633 526 text/audio pairs for a total duration of 4,325.39 hours.
 
@@ -126,7 +126,7 @@ They use three different datasets to train, testing model performance on differe
 
 * [AudioCaps](AudioCaps) + [Clotho](Clotho) (AC+CL)
     * 55k audio-text pairs.
-* [Laion Audio 630K](../../permanent/dataset-laion-audio-630K.md)
+* [Laion Audio 630K](../../permanent/laion-audio-630K.md)
     * 630k audio-text pairs.
 * [Audioset](Audioset)
     * 1.9 million audio samples with only labels available for each sample.
@@ -172,10 +172,11 @@ $L = \frac{1}{2N} \Sigma^{N}_{i=1} \ ( \log  \frac{\exp{E^{a}_{i} \cdot E^{t}_{i
 
 Where:
 
-* *$r$ is a learnable temperature parameter for scaling the loss.
+* $r$ = learnable temperature parameter for scaling the loss.
 * 2 logarithmic terms consider either audio-to-text logits or text-to-audio logits.
-* N batch size.
-* After training, embeddings are useful for different tasks.
+* N = batch size.
+
+After training, embeddings are useful for different tasks.
 
 ### 3.2 Downstream Tasks in Inference Stage
 
@@ -198,7 +199,7 @@ After training the model, for a given audio $X^{a}_{p}$ its embeddings $E^{a}_{p
 Try two models for audio encoder:
 
 * [PANNs](../../../../permanent/PANNs.md) - a CNN-based audio classification model with seven downsampling CNN blocks and seven upsampling blocks.
-* [HTS-AT](../../permanent/htsat.md) - a transformer-based model with four Swintransformer blocks, achieving SOTAs on three audio classification datasets.
+* [HTS-AT](../../permanent/hts-at.md) - a transformer-based model with four Swintransformer blocks, achieving SOTAs on three audio classification datasets.
 
 For both, they use the 2nd last layer's output. PANNs: 2048 sized embedding and HTSAT: a 768-sized embedding
 
@@ -321,7 +322,7 @@ In this experiment, train on [AudioCaps](AudioCaps) and [Clotho](Clotho) dataset
 
 Results:
 
-* Audio encoder: [HTS-AT](../../permanent/htsat.md) better than [PANNs](../../../../permanent/PANNs.md) combined with RoBERTa or BERT.
+* Audio encoder: [HTS-AT](../../permanent/hts-at.md) better than [PANNs](../../../../permanent/PANNs.md) combined with RoBERTa or BERT.
 * Text encoder: RoBERTa beats BERT. CLIP transformer worst.
     ![](../../_media/large-scale-contrastive-language-audio-retraining-with-feature-fusion-table-2.png)
 
