@@ -22,9 +22,9 @@ It is trained using [Contrastive Loss](../../permanent/contrastive-loss.md). Hen
 
 They use a text-encoder and audio-encoder to generate respective representations, then feed into an MLP layer to learn a shared latent space. For the text-encoder, they use [RoBERTa](../../permanent/RoBERTa.md), and for the audio-encoder, they use [HTS-AT](../../permanent/hts-at.md) and provide details of other models evaluated.
 
-They released the architecture, training code and series of weights trained on different subsets of their datasets [here](https://github.com/LAION-AI/CLAP).
-
 ![](../../_media/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion-clap-overview.png)
+
+They released the architecture, training code and series of weights trained on different subsets of their datasets [here](https://github.com/LAION-AI/CLAP).
 
 ### 2. [Feature-Fusion](../../permanent/feature-fusion.md)
 
@@ -70,9 +70,10 @@ Contains:
 
 [Contrastive Language-Image Pre-training (CLIP)](../../permanent/contrastive-language-image-pretraining.md)
 
-Demonstrated how contrastive loss can be used to learn the relationship between text and image by projecting into a shared latent space, trained on data scraped from the internet.
+- Demonstrated how contrastive loss can be used to learn the relationship between text and image by projecting into a shared latent space
+- trained on large scale scrape from the internet.
 
-There have been other attempts to use contrastive pre-training on language-audio:
+Other attempts to use contrastive pre-training on language-audio:
 
 [Text-to-audio retrieval via large-scale contrastive learning](Text-to-audio%20retrieval%20via%20large-scale%20contrastive%20learning)
 
@@ -85,7 +86,7 @@ There have been other attempts to use contrastive pre-training on language-audio
 - Adds [HTS-AT](../../permanent/hts-at.md) and [RoBERTa](../../permanent/RoBERTa.md) into encoder list to enhance performance.
 - Uses representation in the downstream task of audio classification.
 
-There have also been other studies extending CLIP for audio:
+Other studies extending CLIP for audio:
 
 [AudioCLIP: Extending CLIP to Image, Text and Audio](../../permanent/audioclip-extending-clip-to-image-text-and-audio.md)
 [Wav2CLIP: Learning Robust Audio Representations From CLIP](paper-wav2clip-learning-robust-audio-representations-from-clip.md)
@@ -116,6 +117,7 @@ They exclude overlapping data in evaluation sets, resulting in 2.5 million audio
 ### Dataset Format and Preprocessing
 
 They performed the following audio preprocessing:
+
 - All audio is converted to mono.
 - 48kHz in FLAC format.
 - Expand data with only tags or labels using the template: *"the sound of `label-1`, `label-2`, ..., and `label-n`"*
@@ -138,9 +140,9 @@ And projection layers:
 * $E^{a}_{t} = \text{MLPaudio}(\text{faudio}(X^{a}_{i}))$
 * $E^{t}_{i} = \text{MLPtext}(\text{ftext}(X^{t}_{i}))$
 
-The audio/text projection layer is a 2-layer multilayer perceptron (MLP) with ReLU as an activation function to map encoder outputs into 512 dimensions for contrastive learning.
+The audio/text projection layer is a 2-layer multilayer perceptron (MLP) with ReLU as an activation function. It maps encoder outputs into consistent 512 dimensions for contrastive learning.
 
-They train with a contrastive learning paradigm between the audio and text embeddings in pairs, using this loss function:
+They train with a contrastive learning loss function between the audio and text embeddings in pairs, using this loss function:
 
 $L = \frac{1}{2N} \Sigma^{N}_{i=1} \ ( \log  \frac{\exp{E^{a}_{i} \cdot E^{t}_{i} / r}}{\Sigma^{N}_{j=1} \exp(E^{a}_{i} \cdot E^{t}_{j} / r)} + \log \frac{\exp{E^{t}_{i} \cdot E^{a}_{i} / r}}{\Sigma^{N}_{j=1} \exp(E^{t}_{i} \cdot E^{a}_{j} / r)} )$
 
@@ -193,7 +195,7 @@ $T > d$:
 * Then, randomly slice three d-second clips: in front 1/3, then middle 1/3 and back 1/3 of the input. These are the local inputs.
 * Send these $4 \ x \ d$ inputs to the mel encoder to get the initial features.
 * send the three local inputs to the 2D Conv layer with a 3-stride in the time axis to convert to one feature.
-* Now fuse the local feature $X^{a}_{local}$ and the global feature $X^{a}_{global}$: $X^{x}_{fusion} = \lambda X^{a}_{global}.+ (1 - \alpha)X^{a}_{local}$, where $α = fAF F (Xaglobal, Xa local)$ is a factor obtained by attention feature fusion (AFF) [21], a two-branch CNN model for learning the fusion factor of two inputs.
+* Now fuse the local feature $X^{a}_{local}$ and the global feature $X^{a}_{global}$: $X^{x}_{fusion} = \lambda X^{a}_{global}.+ (1 - \alpha)X^{a}_{local}$, where $α = fAF F (X^{a}_{global}, X^a_{local})$ is a factor obtained by [Attention Feature Fusion](../../permanent/attention-feature-fusion.md).
 
 Code from the repo:
 
