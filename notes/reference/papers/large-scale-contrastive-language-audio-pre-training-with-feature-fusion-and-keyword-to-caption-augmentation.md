@@ -90,8 +90,8 @@ Other attempts to use contrastive pre-training on language-audio:
 
 Other studies extending CLIP for audio:
 
-[AudioCLIP: Extending CLIP to Image, Text and Audio](../../permanent/audioclip-extending-clip-to-image-text-and-audio.md)
-[Wav2CLIP: Learning Robust Audio Representations From CLIP](paper-wav2clip-learning-robust-audio-representations-from-clip.md)
+- [AudioCLIP: Extending CLIP to Image, Text and Audio](https://arxiv.org/abs/2106.13043)
+- [Wav2CLIP: Learning Robust Audio Representations From CLIP](https://arxiv.org/abs/2110.11499)
 
 However, they all share limitations:
 
@@ -106,11 +106,11 @@ However, they all share limitations:
 
 - 630K+ audio-text pairs.
 
-[AudioCaps](AudioCaps) + [Clotho](Clotho) (AC+CL)
+[AudioCaps](https://audiocaps.github.io/) + [Clotho](https://zenodo.org/records/3490684)
 
 - 55k audio-text pairs.
 
-[Audioset](Audioset)
+[Audioset](https://research.google.com/audioset/)
 
 * 1.9 million audio samples with only labels available for each sample.
 
