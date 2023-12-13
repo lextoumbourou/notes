@@ -10,11 +10,9 @@ hide_cover_in_article: true
 
 These are my notes from the paper [Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation](https://arxiv.org/abs/2211.06687) by Yusong Wu, Ke Chen, Tianyu Zhang, Yuchen Hui, Taylor Berg-Kirkpatrick, Shlomo Dubnov
 
----
+## Overview
 
-## Main contributions
-
-The main contributions of this paper are:
+This paper concerns learning a text/audio latent space using constrastive learning. Like [CLIP](https://openai.com/research/clip) for audio. It has four main contributions:
 
 ### 1. Contrastive Language-Audio Pre-training (CLAP)
 
@@ -46,7 +44,7 @@ Here are some examples of the keywords and the generated captions, followed by t
 
 ### 4. [Laion Audio 630K](../../permanent/laion-audio-630K.md)
 
-Finally, Laion Audio 630k was released: a large text/audio dataset was scraped from the internet. They scraped data from 8 websites to collect 633 526 text/audio pairs amounting to 4,325.39 hours of audio.
+Finally, Laion Audio 630k was released: a large text/audio dataset scraped from the internet. They collect 633 526 text/audio pairs, amounting to 4,325.39 hours of audio.
 
 Contains:
 
@@ -62,7 +60,7 @@ Contains:
   <source src="/_media/the-sound-of-a-siren.mov" type="audio/mpeg">
 </audio>
 
-##### "the sounds of wrestling crowd, mezzanine level, huge crowd, p.a., and loop."
+##### "The sounds of wrestling crowd, mezzanine level, huge crowd, p.a., and loop."
 
 <audio controls>
   <source src="/_media/sound-of-wrestling-crowd.mov" type="audio/mpeg">
@@ -161,7 +159,7 @@ After training, embeddings are useful for different tasks, including:
     * Target audio embedding $E^{a}_{p}$ can find the nearest text embedding $E^{t}_{q}$ among $M$ texts $E^{t} = \{E^{t}_{1}, ...E^{t}_{M}\}$ using cosine similarity function.
 * Zero-shot audio classification
     * For M audio classes $C = {c_1, ..., C_m}$ we can construct M prompt texts $X^{t} = \{X^{t}_{1}, ...., X^{t}_{M}\}$ using a string like: "the sound of `class-name`".
-    * A key advantage of contrastive pre-training is that the categories can be anything, as long as the information is in training data.
+    * A key advantage of contrastive pre-training is that the categories can be anything as long as the information is in training data.
 * Supervised Audio Classification
     * Use a given audio $X^{a}_{p}$ embeddings $E^{a}_{p}$ and fine-tune on a classification task.
 
@@ -235,22 +233,22 @@ mel_shrink = torchvision.transforms.Resize(size=[chunk_frames, audio_cfg['mel_bi
 mel_fusion = torch.stack([mel_shrink, mel_chunk_front, mel_chunk_middle, mel_chunk_back], dim=0)
 ```
 
-Compared with the "slice & vote" method, the feature fusion also saves training time as we only process audio slices in the first few layers.
+Compared with the "slice & vote" method, the feature fusion saves training time as we only process audio slices in the first few layers.
 
 ### Keyword-to-Caption Augmentation
 
-See Main Contributions section.
+See the Main Contributions section.
 
 ## Experiments
 
 Three experiments were conducted:
 
-The first two they evaluate using recall and mean average precision (mAP) on audio-to-text and text-to-audio.
+They evaluated the first two using recall and mean average precision (mAP) on audio-to-text and text-to-audio.
 
 * Try different audio and text encoders to get the best baseline model.
 * Train model on various dataset sizes, with feature fusion and keyword-to-caption augmentation to verify the efficacy of proposed methods.
 
-The last, they do zero-shot and supervised audio classification experiments to evaluate the generalisation ability of the downstream tasks.
+Lastly, they do zero-shot and supervised audio classification experiments to evaluate the generalisation ability of the downstream tasks.
 
 ### Hyper-parameters and Training Details
 
