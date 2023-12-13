@@ -337,7 +337,7 @@ As shown in Table 4, the models achieve new SoTAs of zero-shot audio classificat
 Keyword-to-caption augmentation increases the performance of VGGsound and US8K by adding more text captions to "enrich" the text embedding space.
 
 ![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-table-4.png)
-#### Supervised Audio Classification
+### Supervised Audio Classification
 
 They perform supervised audio classification by fine-tuning the audio encoder on [FSD50K](FSD50K) and [VGGSound](VGGSound) datasets. They do not run experiments on [ESC50](ESC50) or [Urbansound8K](Urbansound8K) due to data leakage concerns. mAP is used as an evaluation metric.
 
