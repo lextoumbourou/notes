@@ -12,15 +12,15 @@ These are my notes from the paper [Large-scale Contrastive Language-Audio Pre-tr
 
 ## Overview
 
-This paper concerns learning a text/audio latent space using contrastive learning. Like [CLIP](https://openai.com/research/clip) for audio. It has four main contributions:
+This paper uses contrastive learning to learn a shared text/audio latent space. Like [CLIP](https://openai.com/research/clip) for audio. It has four main contributions:
 
 ### 1. Contrastive Language-Audio Pre-training (CLAP)
 
-[CLAP](../../permanent/clap.md) is a pre-training system for learning a text/audio latent space given pairs of examples.
+CLAP is a pre-training system for learning a shared text/audio latent space from pairs of examples. From this, we can learn representations that allow us to query audio using text or vice versa.
 
 It is trained using [Contrastive Loss](../../permanent/contrastive-loss.md). Hence: <span style="color: red;">Contrastive</span> <span style="color: blue;">Language-Audio</span> <span style="color: green;">Pre-training</span>.
 
-They use a text-encoder and audio-encoder to generate respective representations, then feed into an MLP layer to learn a shared latent space. For the text-encoder, they use [RoBERTa](../../permanent/RoBERTa.md), and for the audio-encoder, they use [HTS-AT](../../permanent/hts-at.md) and provide details of other models evaluated.
+The authors use a text-encoder and audio-encoder to generate respective representations, then feed into an MLP layer to learn a shared latent space. For the text-encoder, they use [RoBERTa](https://arxiv.org/abs/1907.11692), and for the audio-encoder, they use [HTS-AT](https://arxiv.org/abs/2202.00874). The authors also compared several alternatives.
 
 ![](../../_media/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion-clap-overview.png)
 
@@ -32,9 +32,11 @@ A technique for dealing with variable-length, long audio (> 10 secs). It combine
 
 ![Feature-fusion](../../_media/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion-feature-fusion.png)
 
+More information below.
+
 ### 3. [Keyword-to-Caption Augmentation](../../permanent/keyword-to-caption-augmentation.md)
 
-Since the [Audioset](Audioset) dataset only has keywords and labels paired with audio, they use a T5 model provided by the [keytotext](https://github.com/gagan3012/keytotext) library to create captions from these keywords.
+Since the [Audioset](https://research.google.com/audioset/) dataset only has keywords and labels paired with audio, they use a T5 model provided by the [keytotext](https://github.com/gagan3012/keytotext) library to create captions from these keywords.
 
 They also add a de-biasing step to convert references to "woman" or "man" to "person".
 
@@ -71,19 +73,19 @@ Contains:
 [Contrastive Language-Image Pre-training (CLIP)](../../permanent/contrastive-language-image-pretraining.md)
 
 - Demonstrated how contrastive loss can be used to learn the relationship between text and image by projecting into a shared latent space
-- trained on large scale scrape from the internet.
+- trained on a large-scale internet scrape
 
 Other attempts to use contrastive pre-training on language-audio:
 
-[Text-to-audio retrieval via large-scale contrastive learning](Text-to-audio%20retrieval%20via%20large-scale%20contrastive%20learning)
+[Text-to-audio retrieval via large-scale contrastive learning](https://dcase.community/documents/challenge2022/technical_reports/DCASE2022_Wu_100_t6b.pdf)
 
 * Pre-trained Audio Neural Network (PANN) as the audio encoder.
 * BERT as text encoder.
 * Various loss functions to evaluate text-to-audio retrieval.
 
-[Audio Retrieval with WavText5K and CLAP Training](../../permanent/audio-retrieval-with-wavtext5k-and-clap-training.md)
+[Audio Retrieval with WavText5K and CLAP Training](https://arxiv.org/abs/2209.14275)
 
-- Adds [HTS-AT](../../permanent/hts-at.md) and [RoBERTa](../../permanent/RoBERTa.md) into encoder list to enhance performance.
+- Also adds [HTS-AT](https://arxiv.org/abs/2202.00874) and [RoBERTa](https://arxiv.org/abs/1907.11692) into encoder list to enhance performance.
 - Uses representation in the downstream task of audio classification.
 
 Other studies extending CLIP for audio:
@@ -124,25 +126,18 @@ They performed the following audio preprocessing:
 
 ## Model Architecture
 
-Let:
+$X^{a}_i$ = audio example i
+$X^{t}_{i}$ = text example i
+$X^{a}_{i}, X^{t}_{i}$ = audio-text pair $i$.
 
-* $X^{a}_i$ = audio example i
-* $X^{t}_{i}$ = text example i
-* $X^{a}_{i}, X^{t}_{i}$ = audio-text pair $i$.
+The respective initial embeddings are obtained as: $\text{faudio}(X^{a}_{i})$ and $\text{ftext}(X^{t}_{i})$
 
-Like [CLIP](../../permanent/contrastive-language-image-pretraining.md) has 2 encoders:
+Then, a 2-layer multilayer perceptron (MLP) with ReLU as an activation function. It maps encoder outputs into consistent 512 dimensions for contrastive learning:
 
-* $E^{a}_{i}$ = audio [embedding](../../permanent/embedding.md) i, obtained using audio encoder: $faudio(.)$
-* $E^{t}_{i}$ = text [embedding](../../permanent/embedding.md) , obtained using text encoder: $ftext(.)$
+$E^{a}_{t} = \text{MLPaudio}(\text{faudio}(X^{a}_{i}))$
+$E^{t}_{i} = \text{MLPtext}(\text{ftext}(X^{t}_{i}))$
 
-And projection layers:
-
-* $E^{a}_{t} = \text{MLPaudio}(\text{faudio}(X^{a}_{i}))$
-* $E^{t}_{i} = \text{MLPtext}(\text{ftext}(X^{t}_{i}))$
-
-The audio/text projection layer is a 2-layer multilayer perceptron (MLP) with ReLU as an activation function. It maps encoder outputs into consistent 512 dimensions for contrastive learning.
-
-They train with a contrastive learning loss function between the audio and text embeddings in pairs, using this loss function:
+Then, they use this contrastive learning loss function to compare pairs and negative pairs,
 
 $L = \frac{1}{2N} \Sigma^{N}_{i=1} \ ( \log  \frac{\exp{E^{a}_{i} \cdot E^{t}_{i} / r}}{\Sigma^{N}_{j=1} \exp(E^{a}_{i} \cdot E^{t}_{j} / r)} + \log \frac{\exp{E^{t}_{i} \cdot E^{a}_{i} / r}}{\Sigma^{N}_{j=1} \exp(E^{t}_{i} \cdot E^{a}_{j} / r)} )$
 
@@ -195,7 +190,7 @@ $T > d$:
 * Then, randomly slice three d-second clips: in front 1/3, then middle 1/3 and back 1/3 of the input. These are the local inputs.
 * Send these $4 \ x \ d$ inputs to the mel encoder to get the initial features.
 * send the three local inputs to the 2D Conv layer with a 3-stride in the time axis to convert to one feature.
-* Now fuse the local feature $X^{a}_{local}$ and the global feature $X^{a}_{global}$: $X^{x}_{fusion} = \lambda X^{a}_{global}.+ (1 - \alpha)X^{a}_{local}$, where $α = fAF F (X^{a}_{global}, X^a_{local})$ is a factor obtained by [Attention Feature Fusion](../../permanent/attention-feature-fusion.md).
+* Now fuse the local feature $X^{a}_{local}$ and the global feature $X^{a}_{global}$: $X^{x}_{fusion} = \lambda X^{a}_{global}.+ (1 - \alpha)X^{a}_{local}$, where $α = fAF F (X^{a}_{global}, X^a_{local})$ is a factor obtained by [Attention Feature Fusion](https://arxiv.org/abs/2009.14082).
 
 Code from the repo:
 
@@ -280,11 +275,11 @@ They experiment to find the best audio and text encoder for retrieval tasks.
 
 Combine two audio encoders with three text encoders loaded from pre-trained checkpoints.
 
-In this experiment, train on [AudioCaps](AudioCaps) and [Clotho](Clotho) datasets, and report the best mAP@10 on audio-to-text (A→T) and text-to-audio (T→A) perspectives
+In this experiment, train on [AudioCaps](https://audiocaps.github.io/) and [Clotho](https://zenodo.org/records/3490684) datasets, and report the best mAP@10 on audio-to-text (A→T) and text-to-audio (T→A) perspectives
 
 Results:
 
-* Audio encoder: [HTS-AT](../../permanent/hts-at.md) better than [PANNs](../../../../permanent/PANNs.md) combined with RoBERTa or BERT.
+* Audio encoder: [HTS-AT](https://arxiv.org/abs/2202.00874) better than [PANNs](https://arxiv.org/abs/1912.10211) combined with RoBERTa or BERT.
 * Text encoder: RoBERTa beats BERT. CLIP transformer worst.
 
 ![](../../_media/large-scale-contrastive-language-audio-retraining-with-feature-fusion-table-2.png)
@@ -326,7 +321,7 @@ We show that training on large-scale datasets (LAION-Audio-630K and AudioSet wit
 
 To study the model generalisation and robustness, they conducted zero-shot audio classification experiments on three top-performing models in previous experiments.
 
-They evaluate models on three audio classification datasets: [ESC50](ESC50), [VGGSound](VGGSound), and [Urbansound8K](Urbansound8K). They use top-1 accuracy as the metric.
+They evaluate models on three audio classification datasets: [ESC50](https://www.cs.cmu.edu/~alnu/tlwled/esc50.htm), [VGGSound](https://arxiv.org/abs/2004.14368), and [Urbansound8K](https://urbansounddataset.weebly.com/urbansound8k.html). They use top-1 accuracy as the metric.
 
 They classify audio by performing audio-to-text retrieval with each text corresponding to the text prompt converted from class label via "This a sound of the *label*.".
 
@@ -341,13 +336,11 @@ Keyword-to-caption augmentation increases the performance of VGGsound and US8K b
 ![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-table-4.png)
 ### Supervised Audio Classification
 
-They perform supervised audio classification by fine-tuning the audio encoder on [FSD50K](FSD50K) and [VGGSound](VGGSound) datasets. They do not run experiments on [ESC50](ESC50) or [Urbansound8K](Urbansound8K) due to data leakage concerns. mAP is used as an evaluation metric.
+They perform supervised audio classification by fine-tuning the audio encoder on [FSD50K](https://paperswithcode.com/dataset/fsd50k) and [VGGSound](https://arxiv.org/abs/2004.14368) datasets. They do not run experiments on [ESC50](https://github.com/karolpiczak/ESC-50) or [Urbansound8K](https://urbansounddataset.weebly.com/urbansound8k.html) due to data leakage concerns. mAP is used as an evaluation metric.
 
 Feature-fusion enables the model to handle variable-length input and performs better than previous models.
 
 They outperform the current state-of-the-art on the VGGSound dataset, close to the state-of-the-art on the FSD50K dataset.
-
-Therefore, this tells us they've learned an effective audio representation.
 
 ![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-supervised.png)
 
@@ -355,4 +348,4 @@ Therefore, this tells us they've learned an effective audio representation.
 
 They want to collect an even larger dataset.
 
-Apply representations to more downstream tasks like audio synthesis and separation.
+Apply representations to other downstream tasks like audio synthesis and separation.

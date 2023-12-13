@@ -5,4 +5,4 @@ modified: 2023-12-06 00:00
 status: draft
 ---
 
-A dataset described in paper [1. [Contrastive Language-Audio Pretraining](../reference/papers/large-scale-contrastive-language-audio-retraining-with-feature-fusion.md (CLAP)](../reference/papers/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion.md).
+A dataset described in paper [Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation](../reference/papers/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation.md).
