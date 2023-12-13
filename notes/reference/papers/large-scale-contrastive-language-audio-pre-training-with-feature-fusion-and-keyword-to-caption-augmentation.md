@@ -12,7 +12,7 @@ These are my notes from the paper [Large-scale Contrastive Language-Audio Pre-tr
 
 ## Overview
 
-This paper concerns learning a text/audio latent space using constrastive learning. Like [CLIP](https://openai.com/research/clip) for audio. It has four main contributions:
+This paper concerns learning a text/audio latent space using contrastive learning. Like [CLIP](https://openai.com/research/clip) for audio. It has four main contributions:
 
 ### 1. Contrastive Language-Audio Pre-training (CLAP)
 
@@ -65,12 +65,6 @@ Contains:
 <audio controls>
   <source src="/_media/sound-of-wrestling-crowd.mov" type="audio/mpeg">
 </audio>
-
-## Evaluated Task Summary
-
-* Text-to-Audio Retrieval: achieves "superior performance."
-* Zero-shot Audio Classification: State-of-the-art performance.
-* Supervised Audio Classification: comparable performance.
 
 ## Related work
 
