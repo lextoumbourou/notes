@@ -35,7 +35,7 @@ A technique for dealing with variable-length, long audio (> 10 secs). It combine
 
 ![Feature-fusion](../../_media/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion-feature-fusion.png)
 
-More information below.
+More information is below.
 
 ### 3. [Keyword-to-Caption Augmentation](../../permanent/keyword-to-caption-augmentation.md)
 
@@ -129,16 +129,16 @@ They performed the following audio preprocessing:
 
 ## Model Architecture
 
-$X^{a}_i$ = audio example i
-$X^{t}_{i}$ = text example i
-$X^{a}_{i}, X^{t}_{i}$ = audio-text pair $i$.
+- $X^{a}_i$ = audio example i
+- $X^{t}_{i}$ = text example i
+- $X^{a}_{i}, X^{t}_{i}$ = audio-text pair $i$.
 
 The respective initial embeddings are obtained as: $\text{faudio}(X^{a}_{i})$ and $\text{ftext}(X^{t}_{i})$
 
 Then, a 2-layer multilayer perceptron (MLP) with ReLU as an activation function. It maps encoder outputs into consistent 512 dimensions for contrastive learning:
 
-$E^{a}_{t} = \text{MLPaudio}(\text{faudio}(X^{a}_{i}))$
-$E^{t}_{i} = \text{MLPtext}(\text{ftext}(X^{t}_{i}))$
+- $E^{a}_{t} = \text{MLPaudio}(\text{faudio}(X^{a}_{i}))$
+- $E^{t}_{i} = \text{MLPtext}(\text{ftext}(X^{t}_{i}))$
 
 Then, they use this contrastive learning loss function to compare pairs and negative pairs,
 
