@@ -1,7 +1,7 @@
 ---
 title: "Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation"
-date: 2023-12-06 00:00
-modified: 2023-12-06 00:00
+date: 2023-12-13 00:00
+modified: 2023-12-13 00:00
 category: reference/papers
 cover: /_media/cover-clap-paper.png
 summary: Notes from paper [Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation](https://arxiv.org/abs/2211.06687) by Yusong Wu, Ke Chen, Tianyu Zhang, Yuchen Hui, Taylor Berg-Kirkpatrick, Shlomo Dubnov
@@ -345,6 +345,8 @@ They classify audio by performing audio-to-text retrieval with each text corresp
 
 There's some dataset overlap between the training data and the zero-shot dataset. They excluded all the overlap samples and performed a zero-shot evaluation on the remaining dataset.
 
+![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-zeroshot.png)
+
 #### Supervised Audio Classification
 
 They perform supervised audio classification by finetuning the audio encoder on FSD50K [30] and VGGSound datasets. We do not conduct this experiment on ESC50 and Urbansound8K because the potential data leakage issue in that dataset will make the results incomparable with the previous methods. In particular, mAP is used as the metric to evaluate FSD50K.
@@ -354,6 +356,8 @@ As shown in Table 4, our models achieve new SoTAs of zero-shot audio classificat
 Feature-fusion enables the model to handle variable-length input and performs better than previous models.
 
 Supervised audio classification result: outperforms the current state-of-the-art on the VGGSound dataset close to the state-of-the-art on the FSD50K dataset. Therefore, this tells us they've learned an effective audio representation.
+
+![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-supervised.png)
 
 ![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-table-4.png)
 
