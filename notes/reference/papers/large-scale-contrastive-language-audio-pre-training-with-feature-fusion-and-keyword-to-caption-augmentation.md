@@ -121,47 +121,52 @@ They exclude overlapping data in evaluation sets, resulting in 2.5 million audio
 
 ### Dataset Format and Preprocessing
 
-They performed the following audio preprocessing:
+All audio is converted to mono.
 
-- All audio is converted to mono.
-- 48kHz in FLAC format.
-- Expand data with only tags or labels using the template: *"the sound of `label-1`, `label-2`, ..., and `label-n`"*
+48kHz in FLAC format.
+
+Expand data with only tags or labels using the template: *"the sound of `label-1`, `label-2`, ..., and `label-n`"*
 
 ## Model Architecture
 
 - $X^{a}_i$ = audio example i
 - $X^{t}_{i}$ = text example i
 - $X^{a}_{i}, X^{t}_{i}$ = audio-text pair $i$.
+- $\text{faudio}(X^{a}_{i})$ = audio encodings.
+* $\text{ftext}(X^{t}_{i})$ = text encodings
 
-The respective initial embeddings are obtained as: $\text{faudio}(X^{a}_{i})$ and $\text{ftext}(X^{t}_{i})$
+Pass the audio and text encodings into another neural network layer to get 512-dimension embeddings.
 
-Then, a 2-layer multilayer perceptron (MLP) with ReLU as an activation function. It maps encoder outputs into consistent 512 dimensions for contrastive learning:
-
-- $E^{a}_{t} = \text{MLPaudio}(\text{faudio}(X^{a}_{i}))$
+- $E^{a}_{t} = \text{MLPaudio}(\text{faudio}(X^{a}_{i}))$ 
 - $E^{t}_{i} = \text{MLPtext}(\text{ftext}(X^{t}_{i}))$
 
-Then, they use this contrastive learning loss function to compare pairs and negative pairs,
+Now, you can use the contrastive learning loss function to compare pairs and negative pairs in each batch.
 
 $L = \frac{1}{2N} \Sigma^{N}_{i=1} \ ( \log  \frac{\exp{E^{a}_{i} \cdot E^{t}_{i} / r}}{\Sigma^{N}_{j=1} \exp(E^{a}_{i} \cdot E^{t}_{j} / r)} + \log \frac{\exp{E^{t}_{i} \cdot E^{a}_{i} / r}}{\Sigma^{N}_{j=1} \exp(E^{t}_{i} \cdot E^{a}_{j} / r)} )$
 
 Where:
+- $r$ is a learnable temperature parameter for scaling the loss
+- N is the batch size.
 
-* $r$ = learnable temperature parameter for scaling the loss.
-* the two logarithmic terms consider either audio-to-text logits or text-to-audio logits.
-* N = batch size.
+Note: the two logarithmic terms consider audio-to-text or text-to-audio logits in each bath.
 
-After training, embeddings are then used for upstream tasks, including:
+After training, embeddings are then used for upstream tasks:
 
-- **Text-to-Audio Retrieval**: for an audio embedding, find the nearest text embedding.
-- **Zero-shot audio classification**: convert query for class name into a string like: *"the sound of `class name`"*. This classification style is useful because it allows you to use any category, provided it is in the training data.
+- **Text-to-Audio Retrieval**: given text, find the closest audio (or vice versa).
+- **Zero-shot audio classification**: construct text like: *"the sound of `class name`"*, and use to query your audio. This classification style is useful because it allows you to use any category, provided it is in the training data.
 - **Supervised Audio Classification**: take audio embeddings and fine-tune them on a classification task.
 
 ### Audio Encoders and Text Encoders
 
 They experiment with two models for audio encoders:
 
-* [PANNs](../../../../permanent/PANNs.md) - a CNN-based audio classification model with seven downsampling CNN blocks and seven upsampling blocks.
-* [HTS-AT](../../permanent/hts-at.md) - a transformer-based model with four Swintransformer blocks, achieving SOTAs on three audio classification datasets.
+[PANNs](../../../../permanent/PANNs.md)
+
+- a CNN-based audio classification model with seven downsampling CNN blocks and seven upsampling blocks.
+
+[HTS-AT](../../permanent/hts-at.md)
+
+* a transformer-based model with four Swintransformer blocks, achieving SOTAs on three audio classification datasets.
 
 For both, they use the 2nd last layer's output. For PANNs, it's a 2048-sized embedding, and for HTSAT, it's a 768-sized embedding.
 
