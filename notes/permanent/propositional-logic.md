@@ -207,4 +207,6 @@ $\neg (p \land q) \equiv \neg p \lor \neg q$
 
 $(p \rightarrow q) \equiv (\neg p \land q)$
 
+## Laws of logic
 
+See [Laws of Logic](../../../permanent/laws-of-logic.md).

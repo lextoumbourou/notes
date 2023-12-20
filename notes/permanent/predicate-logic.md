@@ -44,3 +44,8 @@ Means "There exists" or "Some".
 Example:
 
 $\exists x, P(x)$: "There exists an x such that x is a prime number"
+
+## DeMorgan's Laws for negating quantifiers
+
+ ∼[(∀x)P(x)] ≡ (∃ x)[∼P(x)]
+ ∼[(∀x)P(x)] ≡ (∀x)[∼P(x)] 
