@@ -40,7 +40,7 @@ As you can see, we can find the length of audio represented as a Numpy array by 
 How do we determine the optimal sample rate?
 ## Nyquist-Shannon sampling theorem
 
-According to the [Nyquist-Shannon Sampling Theorem](https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem), the frequency of sampling of a wave must be greater than twice the highest frequency in a wave. Since the highest frequency the human ear can hear is around 20 kHz, anything about 40 kHz should perfectly reproduce what the human ear can perceive.
+According to the [Nyquist-Shannon Sampling Theorem](nyquist-shannon-sampling-theorem.md) the frequency of sampling of a wave must be greater than twice the highest frequency in a wave. Since the highest frequency the human ear can hear is around 20 kHz, anything about 40 kHz should perfectly reproduce what the human ear can perceive.
 
 The sample rate for CD audio is 44.1kHz, which is two times 22.05 kHz - that gives a bit of extra buffer for very high frequencies.
 
