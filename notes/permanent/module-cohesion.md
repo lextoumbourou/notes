@@ -1,26 +1,26 @@
 ---
 title: Module Cohesion
-date: 2023-12-29 00:00
-modified: 2023-12-29 00:00
+date: 2023-12-29 10:00
+modified: 2023-12-29 10:00
 summary: how elements of a module relate to each other
 cover: /_media/module-cohesion.png
 tags:
   - SoftwareEngineering
 ---
 
-Module Cohesion refers to how elements of the module of code relate. For example, some functions may operate on the same data type; others perform functionality contributing to one core capability.
+In software engineering, module cohesion refers to the degree to which the elements of a [Module](module.md) are related. For example, functions that manage the same type of data or contribute to a singular, unified piece of capability.
 
-Some forms of cohesion are desirable, while others are not.
+Some forms of cohesion are considered good, while others are not.
 
-The [ISO/IEEE Systems and Software Engineering Vocabulary](https://www.iso.org/obp/ui/#iso:std:iso-iec-ieee:24765:en) describes seven types of module cohesion.
+The [ISO/IEEE Systems and Software Engineering Vocabulary](https://www.iso.org/obp/ui/#iso:std:iso-iec-ieee:24765:en) recognises seven types of module cohesion.
 
 ## [Functional Cohesion](functional-cohesion.md)
 
 Functional cohesion refers to when elements of a module are grouped because they contribute to the same purpose.
 
-For example, a module called `file_operations` has a set of functions like `read_file`, `write_file` and `delete_file`. Each function contributes to the overarching file-handling function - each task contributes to a well-defined thing.
+For example, a module called `file_operations` has a set of functions like `read_file`, `write_file` and `delete_file`. Each function contributes to the overarching file-handling capability.
 
-Functional cohesion is the ideal type and is almost always considered good.
+Functional cohesion is the ideal type and is universally considered good.
 
 ## [Communicational Cohesion](communicational-cohesion.md) 
 
@@ -36,21 +36,21 @@ Logical cohesion is when things are grouped because they relate in some way but 
 
 For example, a math module includes functions like `math.square_root`, `math.log`, `math.sine`.
 
-Generally considered bad practice - while they may be related logically, they don't share a relationship that warrants putting them in a single module.
+Sometimes considered a bad practice - while they may be related logically, they don't share a relationship that warrants putting them in a single module.
 
 ## [Procedural Cohesion](procedural-cohesion.md)
 
 Procedural cohesion is when things are grouped because they happen in sequence.
 
-For example, a process class contains a method for user authentication, followed by a technique to log the authentication, and finally, a method to redirect the user based on their role. These methods are part of a sequence (login process) but are quite different in functionality, illustrating procedural cohesion.
+For example, a process class contains a method for user authentication, followed by a technique to log the authentication, and finally, a method to redirect the user based on their role. These methods are part of a sequence (login process) but are quite different in functionality.
 
 Generally considered bad. Just because things happen sequentially doesn't mean they should be logically grouped.
 
 ## [Sequential Cohesion](sequential-cohesion.md)
 
-Type of Cohesion in which the output of one task performed by a software module serves as input to another task performed by the module.
+Sequential cohesion is where the output of one task performed by a software module serves as input to another task performed by the module.
 
-For example, in a data processing module, one function takes raw data and formats it, the following function performs some calculations on this formatted data, and a third function logs the results. Here, the output of one function becomes the input for the next, demonstrating sequential cohesion.
+For example, in a data processing module, one function takes raw data and formats it, the following function performs some calculations on this formatted data, and a third function logs the results. Here, the output of one function becomes the input for the next.
 
 Similar to procedural cohesion, it's considered bad.
 
@@ -60,16 +60,12 @@ Temporal cohesion refers to grouping based on things that happen at a similar ti
 
 An example is a startup module that initialises various components of an application - like setting up database connections, loading configuration files, and initialising logging. These tasks are all required during the startup phase but aren't functionally related, indicating temporal cohesion.
 
-Sometimes considered bad: just because things happen simultaneously doesn't mean they should be related.
+Mostly considered bad: just because things happen simultaneously doesn't mean they should be related.
 
 ## [Coincidental Cohesion](coincidental-cohesion.md)
 
-No functional relationship.
+Coincidental cohesion is where elements of a module share no functional relationship.
 
-Type of Cohesion in which tasks performed by a software module have no functional relationship to one another.
-
-Example: A utility module containing a random assortment of functions such as `calculate_age`, `generate_random_number`, and `format_date`. 
-
-These tasks have no functional relationship to each other and are grouped by coincidence, not because they logically belong together, exemplifying coincidental cohesion.
+For example, a module contains miscellaneous functions like `calculate_age`, `generate_random_number`, `format_date` etc. Here, these tasks have no functional relationship to each other and are grouped by coincidence, not because they logically belong together.
 
 Coincidental cohesion is universally considered bad.
