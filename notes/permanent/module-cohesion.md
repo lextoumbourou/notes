@@ -2,7 +2,7 @@
 title: Module Cohesion
 date: 2023-12-29 10:00
 modified: 2023-12-29 10:00
-summary: how elements of a module relate to each other
+summary: How elements of a module relate to each other
 cover: /_media/module-cohesion.png
 tags:
   - SoftwareEngineering
@@ -18,17 +18,17 @@ The [ISO/IEEE Systems and Software Engineering Vocabulary](https://www.iso.org/o
 
 Functional cohesion refers to when elements of a module are grouped because they contribute to the same purpose.
 
-For example, a module called `file_operations` has a set of functions like `read_file`, `write_file` and `delete_file`. Each function contributes to the overarching file-handling capability.
+For example, a module called `file_operations` has a set of functions like `read_file()`, `write_file()` and `delete_file()`. Each function contributes to the overarching file-handling capability of the program.
 
 Functional cohesion is the ideal type and is universally considered good.
 
-## [Communicational Cohesion](communicational-cohesion.md) 
+## [Communicational Cohesion](communicational-cohesion.md)
 
 Communicational cohesion occurs when code is grouped because it operates on the same data type.
 
 For example, an `Invoice` class might contain methods for adding items, calculating the total, applying discounts, etc. Each method operates on the same data structure, the items in an invoice.
 
-As the foundation of object-oriented programming, communicational cohesion is generally considered good.
+As the foundation of object-oriented programming, communicational cohesion is generally considered good. However, consider a complex `Customer` class, where we have methods for adding customers, updating details, generating customer-specific reports, etc. Though the module operates on the same data type, the functionality is quite different, and refactoring it into multiple modules might be better.
 
 ## [Logical Cohesion](logical-cohesion.md)
 
