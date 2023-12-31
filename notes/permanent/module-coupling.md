@@ -4,6 +4,7 @@ date: 2023-12-31 00:00
 modified: 2023-12-31 00:00
 summary: A measure of the interdependence between software modules
 cover: /_media/module-coupling.png
+hide_cover_in_article: true
 tags:
   - SoftwareEngineering
 ---
