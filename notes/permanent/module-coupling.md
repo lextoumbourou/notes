@@ -2,15 +2,15 @@
 title: Module Coupling
 date: 2023-12-31 00:00
 modified: 2023-12-31 00:00
-summary: a measure of the interdependence between software modules
+summary: A measure of the interdependence between software modules
 cover: /_media/module-coupling.png
 tags:
   - SoftwareEngineering
 ---
 
-Module coupling describes the idea of interdependence between software modules. How much do modules rely on each other?
+Module coupling is a measure of interdependence between software modules. How much do modules rely on each other?
 
-Useful software, beyond some complexity, cannot exist without module coupling. However, some forms of module coupling are desirable, and others are not.
+Useful software, beyond some level of complexity, cannot exist without module coupling. However, some forms of module coupling are desirable, and others are not.
 
 Like [Module Cohesion](module-cohesion.md), the [ISO/IEEE Systems and Software Engineering Vocabulary](https://www.iso.org/obp/ui/#iso:std:iso-iec-ieee:24765:en) recognises several subtypes of module cohesion.
 

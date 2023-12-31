@@ -12,7 +12,7 @@ In software engineering, module cohesion refers to the degree to which the eleme
 
 Some forms of cohesion are considered good, while others are not.
 
-The [ISO/IEEE Systems and Software Engineering Vocabulary](https://www.iso.org/obp/ui/#iso:std:iso-iec-ieee:24765:en) recognises seven types of module cohesion.
+Like [Module Coupling](module-coupling.md), the [ISO/IEEE Systems and Software Engineering Vocabulary](https://www.iso.org/obp/ui/#iso:std:iso-iec-ieee:24765:en) recognises seven types of module cohesion.
 
 ## [Functional Cohesion](functional-cohesion.md)
 
