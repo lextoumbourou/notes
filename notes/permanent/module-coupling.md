@@ -8,7 +8,7 @@ tags:
   - SoftwareEngineering
 ---
 
-Module coupling is a measure of interdependence between software modules. How much do modules rely on each other?
+Module coupling is a measure of interdependence between software [Module](module.md)s. How much do modules rely on each other?
 
 Useful software, beyond some level of complexity, cannot exist without module coupling. However, some forms of module coupling are desirable, and others are not.
 

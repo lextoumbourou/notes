@@ -4,7 +4,7 @@ date: 2023-12-29 00:00
 modified: 2023-12-29 00:00
 tags:
   - SoftwareEngineering
-summary: a distinct and identifiable unit of code
+summary: A distinct and identifiable unit of code
 cover: /_media/module-cover.png
 ---
 
