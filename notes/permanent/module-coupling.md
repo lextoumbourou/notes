@@ -4,7 +4,6 @@ date: 2023-12-31 00:00
 modified: 2023-12-31 00:00
 summary: A measure of the interdependence between software modules
 cover: /_media/module-coupling.png
-hide_cover_in_article: true
 tags:
   - SoftwareEngineering
 ---
@@ -29,7 +28,7 @@ Consider using a sub-environment, i.e. global states within specific classes or 
 
 **Content Coupling** is when a module is contained within another module.
 
-![A diagram of Content Couping](../_media/module-coupling-content-coupling.png)
+![A diagram of Control Coupling](../_media/module-coupling-content-coupling.png)
 
 One example of this type of coupling is an Image module that contains various sub-image implementations: `JpegImage`, `PngImage`, `GifImage`, etc. The user doesn't need to understand which submodule to call for their specific image type; they request to load an image, and the main module calls the required submodules.
 
@@ -39,7 +38,7 @@ Content Coupling is universally considered a good idea and property of Khorikov'
 
 **Control Coupling** is when a module communicates information to another to influence its execution—for example, passing flags from `ModuleA` to `ModuleB` to change a mathematical operation that `ModuleB` performs.
 
-![A diagram of Control Coupling](../_media/module-coupling-content-coupling.png)
+![A diagram of Control Coupling](../_media/module-coupling-control-coupling.png)
 
 Control coupling is mostly bad; in the example above, the issue is that `ModuleB` is hard to test and verify since it's dependent on control information from `ModuleA`, and the design is complex and hard to reason about.
 
