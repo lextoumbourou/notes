@@ -4,6 +4,8 @@ date: 2023-12-31 00:00
 modified: 2023-12-31 00:00
 summary: a measure of the interdependence between software modules
 cover: /_media/module-coupling.png
+tags:
+  - SoftwareEngineering
 ---
 
 Module coupling describes the idea of interdependence between software modules. How much do modules rely on each other?
