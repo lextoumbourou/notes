@@ -18,6 +18,8 @@ It can be useful to have names for the types of coupling that arise in software 
 
 Similar to [Module Cohesion](module-cohesion.md), the [ISO/IEEE Systems and Software Engineering Vocabulary](https://www.iso.org/obp/ui/#iso:std:iso-iec-ieee:24765:en) recognises several types of module coupling.
 
+---
+
 ## [Common-Environment Coupling](common-environment-coupling.md)
 
 **Common-environment coupling** is when multiple modules share the same global data.
