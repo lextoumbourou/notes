@@ -6,6 +6,8 @@ tags:
   - SoftwareEngineering
 summary: A distinct and identifiable unit of code
 cover: /_media/module-cover.png
+aliases:
+  - Modules
 ---
 
 A module is a distinct and identifiable unit of code designed to be part of a larger application.

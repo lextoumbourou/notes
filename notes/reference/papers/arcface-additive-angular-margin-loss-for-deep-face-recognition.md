@@ -20,7 +20,7 @@ The key to face recognition is a loss function with strong discriminative power.
 
 A recently popular idea is incorporating "margins" to maximise face class separability.
 
-This paper proposes [Additive Angular Margin Loss](../../../../permanent/additive-angular-margin-loss.md) (ArcFace), which creates "highly discriminative features" for face recognition.
+This paper proposes [Additive Angular Margin Loss](../../permanent/additive-angular-margin-loss.md) (ArcFace), which creates "highly discriminative features" for face recognition.
 
 ArcFace has a "clear geometric interpretation" due to its correspondence to "geodesic distance" (a curve representing the shortest path between 2 points) on the hypersphere.
 
