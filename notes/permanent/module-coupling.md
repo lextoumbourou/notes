@@ -37,6 +37,8 @@ image = Image.load("cat.jpg")
 
 Content Coupling is universally considered a good idea and property of Khorikov's [Well-Designed API](well-designed-api.md).
 
+---
+
 ## [Data Coupling](data-coupling.md)
 
 **Data Coupling**, also known as *input-output coupling*, is a type of coupling in which output from one software module is input to another.
@@ -55,6 +57,8 @@ output = transform.transform_data(my_data)
 
 Data coupling is also considered a good thing.
 
+---
+
 ## [Common-Environment Coupling](common-environment-coupling.md)
 
 **Common-environment coupling** is when multiple modules share the same global data.
@@ -69,6 +73,8 @@ Sometimes, a better idea is to use sub-environments: global states within specif
 
 If you must use a global environment, ideally, it would be immutable.
 
+---
+
 ## [Control Coupling](control-coupling.md)
 
 **Control Coupling** is when a module communicates information, perhaps via flags, to another to influence its execution.
@@ -81,6 +87,8 @@ Control coupling is mostly considered bad; in the example above, **Module B** is
 
 Data coupling is preferred over control coupling.
 
+---
+
 ## [Hybrid Coupling](hybrid-coupling.md)
 
 **Hybrid Coupling** occurs when different subsets of the range of values of a data item are used for separate and unrelated purposes.
@@ -88,6 +96,8 @@ Data coupling is preferred over control coupling.
 ![Diagram to represent Hybrid Coupling](../_media/hybrid-coupling%20(1).png)
 
 It is a rare type of coupling but sometimes the only option, especially in limited memory environments (microcontrollers). You should avoid it unless you know what you're doing.
+
+---
 
 ## [Pathological Coupling](pathological-coupling.md)
 
