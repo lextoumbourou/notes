@@ -4,13 +4,14 @@ date: 2023-12-31 00:00
 modified: 2023-12-31 00:00
 summary: A measure of the interdependence between software modules
 cover: /_media/module-coupling.png
+hide_cover_in_article: true
 tags:
   - SoftwareEngineering
 ---
 
 Module coupling concerns the interdependence between software [Modules](module.md). How much do modules rely on each other?
 
-Beyond some level of complexity, useful software cannot exist without module coupling. 
+Beyond some level of complexity, useful software cannot exist without module coupling.
 
 However, some forms of module coupling are considered desirable, and others are not.
 
@@ -20,27 +21,13 @@ Similar to [Module Cohesion](module-cohesion.md), the [ISO/IEEE Systems and Soft
 
 ---
 
-## [Common-Environment Coupling](common-environment-coupling.md)
-
-**Common-environment coupling** is when multiple modules share the same global data.
-
-![Diagram to represent Common-Environment Coupling](../_media/common-environment-coupling.png)
-
-Common environment refers to things like global variables, singleton state objects, system environment variables, etc.
-
-It is not necessarily a bad thing. However, using a mutable global state can lead to hard-to-find bugs.
-
-Sometimes, a better idea is to use sub-environments: global states within specific classes or modules, name-spaced environment variables, etc.
-
-If you must use a global environment, ideally, it would be immutable.
-
 ## [Content Coupling](content-coupling.md)
 
 **Content Coupling** is when a module is contained within another module.
 
 ![Diagram to represent Content Coupling](../_media/content-coupling.png)
 
-Consider an `Image` module that contains various sub-image implementations: `JpegImage`, `PngImage`, `GifImage`, etc.
+Consider an `Image` module that contains various image type loading implementations: `JpegImage`, `PngImage`, `GifImage`, etc.
 
 Given an image, a user doesn't need to know which submodule to call for their specific image type; they request to load an image, and the main module calls the required submodules.
 
@@ -49,6 +36,38 @@ image = Image.load("cat.jpg")
 ```
 
 Content Coupling is universally considered a good idea and property of Khorikov's [Well-Designed API](well-designed-api.md).
+
+## [Data Coupling](data-coupling.md)
+
+**Data Coupling**, also known as *input-output coupling*, is a type of coupling in which output from one software module is input to another.
+
+![Diagram to represent Data Coupling](../_media/data-coupling.png)
+
+For example, a data module that prepares data before running a transformation.
+
+```python
+import data
+import transform
+
+my_data = data.prepare_data()
+output = transform.transform_data(my_data)
+```
+
+Data coupling is also considered a good thing.
+
+## [Common-Environment Coupling](common-environment-coupling.md)
+
+**Common-environment coupling** is when multiple modules share the same global data.
+
+![Diagram to represent Common-Environment Coupling](../_media/common-environment-coupling.png)
+
+Common environment refers to global variables, singleton state objects, system environment variables, etc.
+
+It is not necessarily a bad thing. However, using a mutable global state can lead to hard-to-find bugs.
+
+Sometimes, a better idea is to use sub-environments: global states within specific classes or modules, name-spaced environment variables, etc.
+
+If you must use a global environment, ideally, it would be immutable.
 
 ## [Control Coupling](control-coupling.md)
 
@@ -62,31 +81,13 @@ Control coupling is mostly considered bad; in the example above, **Module B** is
 
 Data coupling is preferred over control coupling.
 
-## [Data Coupling](data-coupling.md)
-
-**Data Coupling**, also known as *input-output coupling*, is a type of coupling in which output from one software module is input to another.
-
-![Diagram to represent Data Coupling](../_media/data-coupling.png)
-
-For example, a prepare data module that prepares data before calling a transformation module.
-
-```python
-import data
-import transform
-
-my_data = data.prepare_data()
-output = transform.transform_data(my_data)
-```
-
-Data coupling is mostly considered a good thing.
-
 ## [Hybrid Coupling](hybrid-coupling.md)
 
 **Hybrid Coupling** occurs when different subsets of the range of values of a data item are used for separate and unrelated purposes.
 
 ![Diagram to represent Hybrid Coupling](../_media/hybrid-coupling%20(1).png)
 
-It's generally considered a bad thing, although sometimes it's the only option, especially in limited memory environments (microcontrollers).
+It is a rare type of coupling but sometimes the only option, especially in limited memory environments (microcontrollers). You should avoid it unless you know what you're doing.
 
 ## [Pathological Coupling](pathological-coupling.md)
 
