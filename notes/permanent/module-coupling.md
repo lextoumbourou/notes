@@ -8,73 +8,90 @@ tags:
   - SoftwareEngineering
 ---
 
-Module coupling is a measure of interdependence between software [Module](module.md)s. How much do modules rely on each other?
+Module coupling concerns the interdependence between software [Modules](module.md). How much do modules rely on each other?
 
-Useful software, beyond some level of complexity, cannot exist without module coupling. However, some forms of module coupling are desirable, and others are not.
+Beyond some level of complexity, useful software cannot exist without module coupling. 
 
-Like [Module Cohesion](module-cohesion.md), the [ISO/IEEE Systems and Software Engineering Vocabulary](https://www.iso.org/obp/ui/#iso:std:iso-iec-ieee:24765:en) recognises several subtypes of module cohesion.
+However, some forms of module coupling are considered desirable, and others are not.
 
-## [Common Environment Coupling](common-environment-coupling.md)
+It can be useful to have names for the types of coupling that arise in software engineering and a general idea if they're a good or bad idea.
 
-**Common Environment Coupling** occurs when multiple software modules share the same global state or environment, for example, global variables, singleton state objects, system environment variables, etc.
+Similar to [Module Cohesion](module-cohesion.md), the [ISO/IEEE Systems and Software Engineering Vocabulary](https://www.iso.org/obp/ui/#iso:std:iso-iec-ieee:24765:en) recognises several types of module coupling.
 
-![A diagram of Common Environment Coupling](../_media/module-coupling-common-environment.png)
+## [Common-Environment Coupling](common-environment-coupling.md)
 
-It is not necessarily a bad thing. However, it can lead to difficulty finding bugs as different modules mutate the global state haphazardly.
+**Common-environment coupling** is when multiple modules share the same global data.
 
-Consider using a sub-environment, i.e. global states within specific classes or modules, instead of having all modules share an environment. If you must use a global environment, ideally ensure it's read-only.
+![Diagram to represent Common-Environment Coupling](../_media/common-environment-coupling.png)
+
+Common environment refers to things like global variables, singleton state objects, system environment variables, etc.
+
+It is not necessarily a bad thing. However, using a mutable global state can lead to hard-to-find bugs.
+
+Sometimes, a better idea is to use sub-environments: global states within specific classes or modules, name-spaced environment variables, etc.
+
+If you must use a global environment, ideally, it would be immutable.
 
 ## [Content Coupling](content-coupling.md)
 
 **Content Coupling** is when a module is contained within another module.
 
-![A diagram of Control Coupling](../_media/module-coupling-content-coupling.png)
+![Diagram to represent Content Coupling](../_media/content-coupling.png)
 
-One example of this type of coupling is an Image module that contains various sub-image implementations: `JpegImage`, `PngImage`, `GifImage`, etc. The user doesn't need to understand which submodule to call for their specific image type; they request to load an image, and the main module calls the required submodules.
+Consider an `Image` module that contains various sub-image implementations: `JpegImage`, `PngImage`, `GifImage`, etc.
+
+Given an image, a user doesn't need to know which submodule to call for their specific image type; they request to load an image, and the main module calls the required submodules.
+
+```python
+image = Image.load("cat.jpg")
+```
 
 Content Coupling is universally considered a good idea and property of Khorikov's [Well-Designed API](well-designed-api.md).
 
 ## [Control Coupling](control-coupling.md)
 
-**Control Coupling** is when a module communicates information to another to influence its execution—for example, passing flags from `ModuleA` to `ModuleB` to change a mathematical operation that `ModuleB` performs.
+**Control Coupling** is when a module communicates information, perhaps via flags, to another to influence its execution.
 
-![A diagram of Control Coupling](../_media/module-coupling-control-coupling.png)
+![Diagram to represent Control Coupling](../_media/control-coupling%20(1).png)
 
-Control coupling is mostly bad; in the example above, the issue is that `ModuleB` is hard to test and verify since it's dependent on control information from `ModuleA`, and the design is complex and hard to reason about.
+For example, if **Module A** passes flags to **Module B** to change the mathematical operations that **Module B** performs.
+
+Control coupling is mostly considered bad; in the example above, **Module B** is hard to test and verify since it's dependent on control information from **Module A**, which can lead to complex and hard-to-reason designs.
+
+Data coupling is preferred over control coupling.
 
 ## [Data Coupling](data-coupling.md)
 
-**Data Coupling**, also known as input-output coupling, is a type of coupling in which output from one software module is input to another.
+**Data Coupling**, also known as *input-output coupling*, is a type of coupling in which output from one software module is input to another.
 
-![A diagram of Data Coupling](../_media/module-coupling-data-coupling.png)
+![Diagram to represent Data Coupling](../_media/data-coupling.png)
 
-Example, a prepare data module that prepares data before calling a function that utilises it.
+For example, a prepare data module that prepares data before calling a transformation module.
 
 ```python
-data = prepare_data()
-process_data(data)
+import data
+import transform
+
+my_data = data.prepare_data()
+output = transform.transform_data(my_data)
 ```
 
-Data coupling is mostly good—a better alternative than [Control Coupling](control-coupling.md).
+Data coupling is mostly considered a good thing.
 
 ## [Hybrid Coupling](hybrid-coupling.md)
 
 **Hybrid Coupling** occurs when different subsets of the range of values of a data item are used for separate and unrelated purposes.
 
-![A diagram of Hybrid Coupling](../_media/module-coupling-hybrid-coupling.png)
+![Diagram to represent Hybrid Coupling](../_media/hybrid-coupling%20(1).png)
 
 It's generally considered a bad thing, although sometimes it's the only option, especially in limited memory environments (microcontrollers).
 
 ## [Pathological Coupling](pathological-coupling.md)
 
-**Pathological Coupling** occurs when one module completely changes the behaviour of another module. For example, monkey patching or modifying private variables to change the behaviour.
+**Pathological Coupling** occurs when one module is used to change the behaviour of another module.
 
-![A diagram of Pathological Coupling](../_media/module-coupling-pathological-coupling.png)
+![Diagram to represent Pathological Coupling](../_media/pathological-coupling.png)
 
-Unsurprisingly, it's universally considered a bad thing. Unless you have a very good reason to do it, consider refactoring.
+I'm thinking of ideas like monkey patching or modifying private variables.
 
----
-
-Reference: [CM2010 Software Design and Development](https://www.coursera.org/learn/uol-cm2010-software-design-and-development) by the University of London. 
-
-The text is all my own, however, the diagrams are all screenshots from those lectures.
+It's mostly a bad thing. Usually, it occurs when a module is repurposed to support functionality it wasn't originally intended for, and it often calls for a refactor.
