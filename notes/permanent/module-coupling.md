@@ -9,15 +9,13 @@ tags:
   - SoftwareEngineering
 ---
 
-Module coupling concerns the interdependence between software [Modules](module.md). How much do modules rely on each other?
+Module coupling concerns the interdependence between software [Modules](module.md): how much do a group of modules rely on each other?
 
-Beyond some level of complexity, useful software cannot exist without module coupling.
+Coupling is certainly not a bad thing on its own; it's necessary to develop a sufficiently complex system. However, some types of coupling are preferred over others.
 
-However, some forms of module coupling are considered desirable, and others are not.
+Similar to [Module Cohesion](module-cohesion.md), the [ISO/IEEE Systems and Software Engineering Vocabulary](https://www.iso.org/obp/ui/#iso:std:iso-iec-ieee:24765:en) recognises six key types of module coupling.
 
-It can be useful to have names for the types of coupling that arise in software engineering and a general idea if they're a good or bad idea.
-
-Similar to [Module Cohesion](module-cohesion.md), the [ISO/IEEE Systems and Software Engineering Vocabulary](https://www.iso.org/obp/ui/#iso:std:iso-iec-ieee:24765:en) recognises several types of module coupling.
+Having names for these different coupling types is quite useful for identifying problem points in a code base and strategies for refactoring.
 
 ---
 
