@@ -4,10 +4,10 @@ date: 2021-07-08 00:00
 cover: /_media/softmax-table.png
 tags:
   - MachineLearning
-  - MachineLearningMath
+  - ActivationFunction
 ---
 
-The Softmax function converts a vector of numbers into a vector of probabilities that sum to 1. It's applied to a model's outputs (or [Logits](Logits)) in [Multi-class Classification](Multi-class Classification).
+The Softmax [Activation Function](activation-function.md) converts a vector of numbers into a vector of probabilities that sum to 1. It's applied to a model's outputs (or [Logits](Logits)) in [Multi-class Classification](Multi-class Classification).
 
 It is the multi-class extension of the [Sigmoid Activation Function](Sigmoid Activation Function.md).
 
