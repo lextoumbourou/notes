@@ -6,3 +6,5 @@ status: draft
 tags:
   - ComputerScience
 ---
+
+A machine that can express how computations are performed with limited memory space.
