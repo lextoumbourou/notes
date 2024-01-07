@@ -51,7 +51,7 @@ Rewrite
             - [Generative adversarial networks for conditional waveform synthesis](Generative%20adversarial%20networks%20for%20conditional%20waveform%20synthesis)
             - [Waveglow: A flow-based generative network for speech synthesis](Waveglow:%20A%20flow-based%20generative%20network%20for%20speech%20synthesis)
         - 2. predicting the intermediate representation given some conditioning information, such as text
-            - [Natural tts synthesis by conditioning wavenet on mel spectrogram predictions](Natural%20tts%20synthesis%20by%20conditioning%20wavenet%20on%20mel%20spectrogram%20predictions)
+            - [Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions](../../../../permanent/natural-tts-synthesis-by-conditioning-wavenet-on-mel-spectrogram-predictions.md)
             - [Fastspeech 2: Fast and high-quality end-to-end text to speech](Fastspeech%202:%20Fast%20and%20high-quality%20end-to-end%20text%20to%20speech)
     - Can be interpret this as a [Hierarchical Generative Model](../../../../permanent/hierarchical-generative-model.md) with observed intermediate variables.
 - Alternate formulation is to learn the intermediate variables using a [Variational Auto-Encoder (VAE)](Variational%20Auto-Encoder%20(VAE)) framework with a learned conditional prior to predict the latent variables given some conditioning.
@@ -127,7 +127,7 @@ Neural audio compression models: VQ-VAEs have been the dominant paradigm to trai
 
 First VQ-VAE based speech codec was proposed in [Low bit-rate speech coding with vq-vae and a wavenet decoder](Low%20bit-rate%20speech%20coding%20with%20vq-vae%20and%20a%20wavenet%20decoder) operating at 1.6 kbps
 
-This model used the original architecture from [Neural discrete representation learning](Neural%20discrete%20representation%20learning) with a convolutional encoder and an autoregressive [Wavenet](../../../../permanent/Wavenet.md) decoder.
+This model used the original architecture from [Neural discrete representation learning](Neural%20discrete%20representation%20learning) with a convolutional encoder and an autoregressive [Wavenet](../../permanent/wavenet.md) decoder.
 
 [SoundStream](../../../../permanent/SoundStream.md)
 - one of the first audio compression models that can handle diverse audio types with varying bitrates on a single model.
@@ -231,22 +231,21 @@ Defined as $\text{snake}(x) = x + \frac{1}{\alpha} \sin^2(\alpha)$
 
 #### Improved residual vector quantization
 
-While vector quantization (VQ) is a popular method to train discrete auto-encoder, there are many practical struggles when training them. 
+Vector quantisation (VQ) is commonly used to train discrete auto-encoders, but they have challenges.
 
-Vanilla VQ-VAEs struggle from low codebook usage due to poor initialization, leading to a significant portion of the codebook being unused.
+- Vanilla VQ-VAEs struggle from low codebook usage
+    - due to poor initialization, leading to a significant portion of the codebook being unused.
 
-This reduction in effective codebook size leads to an implicit reduction in target bitrate, which translates to poor reconstruction quality
+- This reduction in effective codebook size leads to an implicit reduction in target bitrate, which translates to poor reconstruction quality
 
-To mitigate this, recent audio codec methods use kmeans clustering to initialize the codebook vectors,
-and manually employ randomized restarts [9] when
-certain codebooks are unused for several batches.
-See [Jukebox: A generative model for music](Jukebox:%20A%20generative%20model%20for%20music)
+- To mitigate this, recent audio codec methods use kmeans clustering to initialize the codebook vectors, and manually employ randomized restarts [9] when certain codebooks are unused for several batches.
+    - See [Jukebox: A generative model for music](Jukebox:%20A%20generative%20model%20for%20music)
 
-However, we find that the EnCodec model trained at
-24kbps target bitrate, as well as our proposed model
-with the same codebook learning method (Proposed w/ EMA) still suffers from codebook under-utilization (Figure 1).
+However, they find that the EnCodec model trained at 24kbps target bitrate, as well as our proposed model with the same codebook learning method (Proposed w/ EMA) still suffers from codebook under-utilization (Figure 1).
 
-To address this issue, we use two key techniques introduced in the Improved VQGAN image model[44] to improve codebook usage: factorized codes and L2-normalized codes.
+To address this issue, use two key techniques to improve codebook usage:
+- factorized codes
+- L2-normalized codes.
 
  Factorization decouples code lookup and code embedding, by performing code lookup in a low-dimensional space (8d or 32d) whereas the code embedding resides in a high dimensional space (1024d).
 
@@ -259,11 +258,11 @@ These two tricks along with the overall model recipe significantly improve codeb
 
 Our model can be trained using the original VQ-VAE codebook and commitment losses. See [Neural discrete representation learning](Neural%20discrete%20representation%20learning)
 
-The equations for the modified codebook learning procedure are written in Appendix A
+The equations for the modified codebook learning procedure are written in Appendix A.
 
-### 3.3 Quantizer dropout rate
+### 3.3 Quantiser dropout rate
 
-Quantizer dropout was introduced in SoundStream [46] to train a single compression model with variable bitrate.
+Quantiser dropout was introduced in SoundStream [46] to train a single compression model with variable bitrate.
 
 The number of quantizers Nq determine the bitrate, so for each input example we randomly sample n ∼ {1, 2, . . . , Nq} and only use the first nq quantizers while training. 
 
@@ -528,3 +527,4 @@ has difficulty reconstructing some challenging audio. By slicing the results by 
 even though the proposed codec outperforms competing approaches across all of the domains, it
 performs best for speech and has more issues with environmental sounds. Finally, we notice that it
 does not model some musical instruments perfectly, such as glockenspeil, or synthesizer sounds.
+
