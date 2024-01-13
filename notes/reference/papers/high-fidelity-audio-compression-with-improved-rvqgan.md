@@ -2,6 +2,7 @@
 title: High-Fidelity Audio Compression with Improved RVQGAN
 date: 2023-12-18 00:00
 modified: 2023-12-18 00:00
+status: draft
 ---
 
 [High-Fidelity Audio Compression with Improved RVQGAN](https://arxiv.org/abs/2306.06546) with Rithesh Kumar, Prem Seetharaman, Alejandro Luebs, Ishaan Kumar, Kundan Kumar.
