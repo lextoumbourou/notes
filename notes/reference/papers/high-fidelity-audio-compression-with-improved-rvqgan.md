@@ -17,13 +17,13 @@ The author's make the weights and code available on GitHub [.dac](https://github
 
 ## Main Contributions
 
-Expanding upon the work of [Encodec](../../../../permanent/encodec.md) and it's predecessor [SoundStream](../../../../permanent/soundstream.md), they use a encoder/decoder convolution architecture with [Residual Vector Quantization](../../../../permanent/residual-vector-quantization.md).
+Expanding upon the work of [Encodec](../../../../permanent/encodec.md) and it's predecessor [SoundStream](../../../../permanent/soundstream.md), they use a encoder/decoder convolution architecture with [Residual Vector Quantization](../../permanent/residual-vector-quantization.md).
 
 They make these improvements to Encodec architecture:
 
 * Replace [Leaky ReLU](../../../../permanent/leaky-relu.md) with the [Snake Activation Function](../../permanent/snake-activation-function.md)
 * Improve codebook usage with factorised codes and normalised codes. Idea comes from [Improved VQGAN](../../../../permanent/improved-vqgan.md) image model.
-* Add dropout during the [Residual Vector Quantization](../../../../permanent/residual-vector-quantization.md) which allows it to operate at different target bitrates.
+* Add dropout during the [Residual Vector Quantization](../../permanent/residual-vector-quantization.md) which allows it to operate at different target bitrates.
 * For the discriminator they use a Multi-Scale Time-Frequency Spectrogram Discriminator
 * They continue to use multiple loss functions, but include multi-scale mel loss.
 
@@ -49,7 +49,7 @@ If the intermediate representation is some kind of discrete "codes" ie tokens, w
 
 The process of learrning discrete codes is really just no different to compression.
 
-The audio signal is compressed into a discrete latent space using [Residual Vector Quantization](../../../../permanent/residual-vector-quantization.md) vector-quantizing the representations of an autoencoder using a fixed length codebook.
+The audio signal is compressed into a discrete latent space using [Residual Vector Quantization](../../permanent/residual-vector-quantization.md) vector-quantizing the representations of an autoencoder using a fixed length codebook.
 
 * Generative modelling of high-resolution audio is difficult because:
     * high dimensionality (~44,100 samples per second of audio)
@@ -144,7 +144,7 @@ This model used the original architecture from [Neural discrete representation l
 
 [SoundStream](../../../../permanent/soundstream.md)
 * one of the first audio compression models that can handle diverse audio types with varying bitrates on a single model.
-* Use a fully causal convolutional encoder and decoder network, and perform [Residual Vector Quantization](../../../../permanent/residual-vector-quantization.md)
+* Use a fully causal convolutional encoder and decoder network, and perform [Residual Vector Quantization](../../permanent/residual-vector-quantization.md)
 * The model is trained using the VQ-GAN formulation by adding adversarial and feature matching losses along with the multi-scale spectral reconstruction loss
     * See [Taming Transformers for High-Resolution Image Synthesis](../../../../permanent/taming-transformers-for-high-resolution-image-synthesis.md)
 
@@ -155,7 +155,7 @@ This model used the original architecture from [Neural discrete representation l
 
 Propose method shares these ideas:
 * Use convolutional encoder-decoder architecture
-* [Residual Vector Quantization](../../../../permanent/residual-vector-quantization.md)
+* [Residual Vector Quantization](../../permanent/residual-vector-quantization.md)
 * Adversarial, perceptual losses.
 
 Has these differences:
