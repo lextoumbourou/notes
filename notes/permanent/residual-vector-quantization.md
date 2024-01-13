@@ -25,7 +25,7 @@ We can train a model like this, by performing the encode and decode audio many t
 
 This diagram illustrates the training and inference architecture, as described by the SoundStream paper (fig. 2):
 
-![](../_media/residual-vector-quantization-fig-2.png)
+![](../_media/residual-vector-quantization-fig-2%201.png)
 
 However, representing audio with a single code per frame will require an infinitely large codebook matrix. If we measure the difference between the encoded vector and the codebook vector, we get another vector that represents the difference or **Residual** between the two vectors. What if we used that vector to look up another codebook table? And, then, what if we repeated that process several times? We'd be sacrificing compression size for audio quality with each additional codebook.
 
