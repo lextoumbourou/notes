@@ -2,69 +2,35 @@
 title: Residual Vector Quantization
 date: 2024-01-13 00:00
 modified: 2024-01-13 00:00
-status: draft
 aliases:
 - Codebook
 cover: /_media/rvq-cover.png
 ---
 
-Residual Vector Quantization converts audio into discrete tokens called *codes*.
+Residual Vector Quantization encodes audio into discrete tokens called *codes*.
 
-That allows us to compress audio into small sizes - for example, DAC achieves a 90x compression rate. But even more usefully, the discrete representation will enable us to model audio using architectures that work on discrete representations, like Transformers.
-
-Now, we can make large language models for audio, speech or music. And that's exactly what AudioLM, MusicLM and MusicGen are.
+That allows us to compress audio into small sizes - up to a 90x compression rate. But even more usefully, the discrete representations enable us to model audio using architectures that work on discrete representations, like Transformers. It's a tokeniser for audio. Now, we can make large language models for audio, speech or music. And that's exactly what AudioLM, MusicLM and MusicGen are.
 
 RVQ was first described in the [Soundstream: An End-to-End Neural Audio Codec](../../../permanent/soundstream-an-end-to-end-neural-audio-codec.md) paper and has since been used in popular neural audio compression architectures like [SoundStream](../../../permanent/soundstream.md), [Encodec](../../../permanent/encodec.md) and [dac](../../../permanent/dac.md).
 
-RVQ is an extension to **Vector Quantization (VQ)**, which originally came from image modelling ([VQ-VAE](../../../permanent/vq-vae.md))
+If we ignore the residual part of RVQ, we have **Vector Quantization (VQ)**. If we ignore the **Vector** part, [Quantization](../../../permanent/quantization.md) converts continuous values into discrete finite values, and vector quantisation applies it to vectors. The VQ idea originally came from image modelling by way of the [VQ-VAE](../../../permanent/vq-vae.md) 
 
-The VQ approach to encoding audio would look like this.
+The VQ approach to encoding audio would look like this:
 
-At inference time, an encoder chunks an audio file into a list of vectors. The number of samples in a chunk is model-dependent. Then, the RVQ module takes each vector and finds the closest neighbour in a codebook matrix. We can now represent the audio as a set of codes, which is a very minimal representation.
+Before calling the VQ module, an encoder chunks an audio file into an array of vectors called a frame. The frame rate is model-dependent.
 
-At training time, we can encode, RVQ and decode a bunch of audio and take various forms of reconstruction loss to train a model to get good at it.
+Now, we perform vector quantization for each frame by finding each closest neighbour in a lookup matrix called the **Codebook Table**. The position in the codebook table is a number called the code. Now, we can represent audio as a series of codes, a very compact representation of an audio file. We can swap this number for its vector representation for modelling.
 
-This diagram illustrates the training and inference architecture that uses RVQ, which is from the SoundStream paper (fig. 2):
+We can train a model like this, by performing the encode and decode audio many times during training and calculate the reconstruction loss.
+
+This diagram illustrates the training and inference architecture, as described by the SoundStream paper (fig. 2):
 
 ![](../_media/residual-vector-quantization-fig-2.png)
 
-If we only have a single fixed codebook lookup table, it will need to be big to represent all audio effectively, and this is where the **Residual** part comes in.
+However, representing audio with a single code per frame will require an infinitely large codebook matrix. If we measure the difference between the encoded vector and the codebook vector, we get another vector that represents the difference or **Residual** between the two vectors. What if we used that vector to look up another codebook table? And, then, what if we repeated that process several times? We'd be sacrificing compression size for audio quality with each additional codebook.
 
-We can take the difference between the encoded vector and the closest vector, called the "residual error" or "residual", and use that to look up a 2nd codebook table. We can repeat that number of times, adding an extra stream of bits each time. We can do that at times. Now, we should have a reasonable representation of the audio in our codebooks of length N.
+So now we have <span style="color: red;">**Residual**</span> <span style="color: blue;">**Vector Quantization**</a>.
 
-[This article by AssemblyAI](---
-title: Residual Vector Quantization
-date: 2024-01-10 00:00
-modified: 2024-01-10 00:00
-status: draft
-aliases:
-- Codebook
-cover: /_media/rvq-cover.png
 ---
 
-Residual Vector Quantization converts audio into discrete tokens called *codes*.
-
-That allows us to compress audio into small sizes - for example, DAC achieves a 90x compression rate. But even more usefully, the discrete representation will enable us to model audio using architectures that work on discrete representations, like Transformers.
-
-Now, we can make large language models for audio, speech or music. And that's exactly what AudioLM, MusicLM and MusicGen are.
-
-RVQ was first described in the [Soundstream: An End-to-End Neural Audio Codec](../../../permanent/soundstream-an-end-to-end-neural-audio-codec.md) paper and has since been used in popular neural audio compression architectures like [SoundStream](../../../permanent/soundstream.md), [Encodec](../../../permanent/encodec.md) and [dac](../../../permanent/dac.md).
-
-RVQ is an extension to **Vector Quantization (VQ)**, which originally came from image modelling ([VQ-VAE](../../../permanent/vq-vae.md))
-
-The VQ approach to encoding audio would look like this.
-
-At inference time, an encoder chunks an audio file into a list of vectors. The number of samples in a chunk is model-dependent. Then, the RVQ module takes each vector and finds the closest neighbour in a codebook matrix. We can now represent the audio as a set of codes, which is a very minimal representation.
-
-At training time, we can encode, RVQ and decode a bunch of audio and take various forms of reconstruction loss to train a model to get good at it.
-
-This diagram illustrates the training and inference architecture that uses RVQ, which is from the SoundStream paper (fig. 2):
-
-![](../../../_media/residual-vector-quantization-fig-2.png)
-
-If we only have a single fixed codebook lookup table, it will need to be big to represent all audio effectively, and this is where the **Residual** part comes in.
-
-We can take the difference between the encoded vector and the closest vector, called the "residual error" or **Residual**, and use that to look up a 2nd codebook table. We can repeat that number of times, adding an extra stream of bits each time. We can do that at times. Now, we should have a reasonable representation of the audio in our codebooks of length N.
-
-References:
-[This article](https://www.assemblyai.com/blog/what-is-residual-vector-quantization) by AssemblyAI is my favourite on this topic.
+This article was heavily inspired by [What is Residual Vector Quanitzation](https://www.assemblyai.com/blog/what-is-residual-vector-quantization) by AssemblyAI.
