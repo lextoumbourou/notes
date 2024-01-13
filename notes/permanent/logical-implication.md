@@ -42,8 +42,14 @@ Note: only $p$ only if $q$ does not have the same mean ing as "p if q". "p if q"
 
 Let $p$ and $q$ be propositions and $A$ the conditional statement $p \rightarrow q$
 
+#### [Converse](Converse)
+
 The proposition $q \rightarrow p$ is the **converse** of A
 
-The proposition $\neg q \rightarrow \neg p$ is the [[contrapositive]] of A.
+#### [Contrapositive](../../../permanent/contrapositive.md)
+
+The proposition $\neg q \rightarrow \neg p$ is the [Contrapositive](../../../permanent/contrapositive.md) of A.
+
+#### [Inverse](Inverse)
 
 The proposition $\neg p \rightarrow \neg q$ is the **inverse** of A

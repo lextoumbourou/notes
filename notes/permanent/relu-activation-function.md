@@ -1,11 +1,17 @@
 ---
 title: ReLU
-date: 2023-12-10 00:00
-modified: 2023-12-10 00:00
+date: 2024-01-09 00:00
+modified: 2024-01-09 00:00
 status: draft
 tags:
   - Rectified linear unit
+summary: A simple approach to non-linearity in a neural network.
 ---
 
-A simple nonlinear [Activation Function](activation-function.md) used in neural networks, which literally just sets negative values to 0: `max(activations, 0)`
+A common and simple activation function used in a range of deep learning architectures.
 
+The simplest conceivable way to add non-linearity to a neural network. And it works!
+
+```
+x = max(x, 0)
+```
