@@ -16,17 +16,19 @@ summary: A tokeniser for audio
 
 RVQ was first applied to audio in the [Soundstream](https://blog.research.google/2021/08/soundstream-end-to-end-neural-audio.html) paper by Google Researchers and has since been used in popular neural audio compression architectures like [Encodec](https://github.com/facebookresearch/encodec) and [DAC](https://github.com/descriptinc/descript-audio-codec).
 
-To understand, RVQ. First, let's ignore the R part of RVQ, leaving us with **Vector Quantisation (VQ)**.
+To understand RVQ, let's start by ignoring the R part of RVQ to focus on **Vector Quantisation (VQ)**.
 
 ## Vector Quantisation
 
 Quantisation refers to converting infinite values into discrete finite values.
 
-In VQ, we can encode a signal by encoding it into [Vectors](vector.md), then querying each vector to find the closest neighbour in a lookup table called a **codebook**. Now, we can represent an entire chunk or *"frame"* of a signal with a single **code**.
+In VQ, we encode a signal into a series of [Vectors](vector.md), then query each vector to find the closest neighbour in a lookup table called a **codebook**. Now, we can represent an entire chunk or *"frame"* of a signal with a single **code**.
 
 ![Vector Quantisation](../../../_media/vector-quantisation%20(3).png)
 
-Vector quantisation comes originally from [signal processing](https://en.wikipedia.org/wiki/Vector_quantization) and has been exploited through image modelling architectures like [VQ-VAE](https://arxiv.org/abs/1711.00937) and [VQGAN](https://compvis.github.io/taming-transformers/).
+The codebook table is nothing more than an embedding matrix, where the table size is the codebook size, and the vector size is the codebook dimensions: `codebook = nn.Embedding(codebook_size, codebook_dim)`. Like an embedding table, the weights are learned alongside the rest of the network during training.
+
+Vector quantisation comes originally from [signal processing](https://en.wikipedia.org/wiki/Vector_quantization) and has been exploited throughout image modelling architectures like [VQ-VAE](https://arxiv.org/abs/1711.00937) and [VQGAN](https://compvis.github.io/taming-transformers/).
 
 ## Vector Quantisation for Audio
 
@@ -34,14 +36,16 @@ The direct VQ approach to encoding audio might look like this:
 
 1. **Audio Input**: an audio signal is represented as a multidimensional array of numbers with a known [Sample Rate](sample-rate.md) (usually 44.1kHz). A mono signal has one channel; stereo and others can have more.
 2. **Encoder**: An encoder converts the signal into a sequence of vectors, one per "frame". The frame rate will be dependent on the model architecture and sample rate.
-3. **Quantise**: Find the nearest neighbour in a lookup table called the codebook for each vector. The codebook table is learned alongside the encoder and decoder during training.
-4. **Output**: The position of the lookup vector in the matrix is the "code" and is all we need to reconstruct the audio, given the RVQ model. However, we want to use the vector representation of codes for any upstream modelling.
+3. **Quantise**: Find each vector's nearest neighbour in the codebook table. Again, the codebook table is learned alongside the encoder and decoder during training.
+4. **Output**: The index of the lookup vector in the matrix is the "code" and is all we need to reconstruct the audio, given a Decoder. Though not pictured in the diagram, the decoder is learned alongside the encoder and codebook table.
 
 ![Vector Quantisation for Audio](../../../_media/vector-quantization-for-audio.png)
 
-However, representing audio with a single code per frame will never allow us to accurately reconstruct audio from these codes unless we have an infinitely large codebook matrix.
+Note that for upstream modelling tasks, we will want to use the vector representation of each code.
 
-One clever technique is to take the difference between the encoded vector and the codebook vector, which we call the **Residual** vector. We can look that vector up in an additional codebook table. And we can repeat this process, each time adding a high capability for accurate reconstruction at the cost of compression size.
+One clear limitation of this approach is that representing audio with a single code per frame will never allow us to accurately reconstruct audio from these codes unless we have an infinitely large codebook.
+
+A clever technique to mitigate this is to take the difference between the encoded vector and the codebook vector for each encoded vector, which we call the **Residual** vector. We can look up the residual vector in a subsequent codebook table. And we can repeat this process, each time adding a high capability for accurate reconstruction at the cost of compression size.
 
 ## Residual VQ
 
