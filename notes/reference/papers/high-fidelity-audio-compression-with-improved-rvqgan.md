@@ -17,7 +17,7 @@ The author's make the weights and code available on GitHub [.dac](https://github
 
 ## Main Contributions
 
-The authors use a encoder/decoder convolution architecture with [Residual Vector Quantisation (RVQ)](../../permanent/residual-vector-quantization.md), which was originally used in [SoundStream](../../../../permanent/soundstream.md) and later [Encodec](../../../../permanent/encodec.md). The architecture is called Improved RVQGAN, although it's commonly referred to as DAC, based on the repository name.
+The authors use a encoder/decoder convolution architecture with [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md), which was originally used in [SoundStream](../../../../permanent/soundstream.md) and later [Encodec](../../../../permanent/encodec.md). The architecture is called Improved RVQGAN, although it's commonly referred to as DAC, based on the repository name.
 
 Improved RVQGAN makes these architectural and training improvements:
 
@@ -61,7 +61,7 @@ If the intermediate representation is some kind of discrete "codes" ie tokens, w
 
 The process of learrning discrete codes is really just to compression.
 
-The audio signal is compressed into a discrete latent space using [Residual Vector Quantisation (RVQ)](../../permanent/residual-vector-quantization.md) vector-quantizing the representations of an autoencoder using a fixed length codebook.
+The audio signal is compressed into a discrete latent space using [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md) vector-quantizing the representations of an autoencoder using a fixed length codebook.
 
 * Generative modelling of high-resolution audio is difficult because:
     * high dimensionality (~44,100 samples per second of audio)
@@ -156,7 +156,7 @@ This model used the original architecture from [Neural discrete representation l
 
 [SoundStream](../../../../permanent/soundstream.md)
 * one of the first audio compression models that can handle diverse audio types with varying bitrates on a single model.
-* Use a fully causal convolutional encoder and decoder network, and perform [Residual Vector Quantisation (RVQ)](../../permanent/residual-vector-quantization.md)
+* Use a fully causal convolutional encoder and decoder network, and perform [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md)
 * The model is trained using the VQ-GAN formulation by adding adversarial and feature matching losses along with the multi-scale spectral reconstruction loss
     * See [Taming Transformers for High-Resolution Image Synthesis](../../../../permanent/taming-transformers-for-high-resolution-image-synthesis.md)
 
@@ -167,7 +167,7 @@ This model used the original architecture from [Neural discrete representation l
 
 Propose method shares these ideas:
 * Use convolutional encoder-decoder architecture
-* [Residual Vector Quantisation (RVQ)](../../permanent/residual-vector-quantization.md)
+* [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md)
 * Adversarial, perceptual losses.
 
 Has these differences:
@@ -210,7 +210,7 @@ Like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../../
 - Architecture: Full Convolutional Encoder-Decoder like [SoundStream](../../../../permanent/soundstream.md)
 - Goal: time-based downscaling with a chosen striding factor
 - Special techniques:
-    * Quantise the encoding with [Residual Vector Quantisation (RVQ)](../../permanent/residual-vector-quantization.md)
+    * Quantise the encoding with [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md)
         * "recursively quantises residuals following an initial quantisation step with a distinct codebook"
 * Apply quantizer dropout, so that some of the later codebooks are not always used, which comes from SoundStream.
 - Loss: [Frequency Domain Reconstruction Loss](Frequency%20Domain%20Reconstruction%20Loss) and adversarial and perceptual losses.
