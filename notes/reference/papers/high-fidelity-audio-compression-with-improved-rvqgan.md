@@ -17,12 +17,24 @@ The author's make the weights and code available on GitHub [.dac](https://github
 
 ## Main Contributions
 
-The authors use a encoder/decoder convolution architecture with [Residual Vector Quantization](../../permanent/residual-vector-quantization.md), which was originally used in [SoundStream](../../../../permanent/soundstream.md) and later [Encodec](../../../../permanent/encodec.md). The architecture is called Improved RVQGAN, although it's commonly referred to as DAC, based on the repository name.
+The authors use a encoder/decoder convolution architecture with [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md), which was originally used in [SoundStream](../../../../permanent/soundstream.md) and later [Encodec](../../../../permanent/encodec.md). The architecture is called Improved RVQGAN, although it's commonly referred to as DAC, based on the repository name.
 
 Improved RVQGAN makes these architectural and training improvements:
 
-* Replace [Leaky ReLU](../../permanent/leaky-relu.md) with the [Snake Activation Function](../../permanent/snake-activation-function.md) throughout the network: ```nn.LeakyReLU(0.1)``` -> ```Snake1d()```.
-* Perform nearest neighbour lookup for codes in low-dimensional space by factorising vectors before performing query.  They also run codes and vector through L2 normalisation. These ideas come from [Improved VQGAN](../../../../permanent/improved-vqgan.md) image model.
+* Replace [Leaky ReLU](../../permanent/leaky-relu.md) with the [Snake Activation Function](../../permanent/snake-activation-function.md) which is helps to with the periodic nature of audio.
+* Two changes to Vector Quantisation operation based on ideas from [Improved VQGAN](../../../../permanent/improved-vqgan.md):
+    * Project the query embedding into low-dimensional space before performing the nearest neighbour lookup for codes (64d to 8d), this decouples code lookup and code embedding. We can think of it as using the principle components to do the lookup.
+    
+      ```python
+      input_dim = 64
+      codebook_dim = 8
+      in_proj = WNConv1d(input_dim, codebook_dim, kernel_size=1)
+      
+      # in forward pass:
+      z_e = self.in_proj(z)
+      ```
+      
+    * L2-normalisation of encoded and codebook vectors, converting lookup from euclidean distance to cosine similarity.
 * The original RVQ proposal includes codebook dropout, so the model is sometimes reconstructing audio using only some of the codebooks. They found this hurts the model performance when using all codebooks, so they only do this 50% of the time.
 * For the discriminator they use a Multi-Scale Time-Frequency Spectrogram Discriminator
 * They continue to use multiple loss functions, but include multi-scale mel loss.
@@ -49,7 +61,7 @@ If the intermediate representation is some kind of discrete "codes" ie tokens, w
 
 The process of learrning discrete codes is really just to compression.
 
-The audio signal is compressed into a discrete latent space using [Residual Vector Quantization](../../permanent/residual-vector-quantization.md) vector-quantizing the representations of an autoencoder using a fixed length codebook.
+The audio signal is compressed into a discrete latent space using [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md) vector-quantizing the representations of an autoencoder using a fixed length codebook.
 
 * Generative modelling of high-resolution audio is difficult because:
     * high dimensionality (~44,100 samples per second of audio)
@@ -144,7 +156,7 @@ This model used the original architecture from [Neural discrete representation l
 
 [SoundStream](../../../../permanent/soundstream.md)
 * one of the first audio compression models that can handle diverse audio types with varying bitrates on a single model.
-* Use a fully causal convolutional encoder and decoder network, and perform [Residual Vector Quantization](../../permanent/residual-vector-quantization.md)
+* Use a fully causal convolutional encoder and decoder network, and perform [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md)
 * The model is trained using the VQ-GAN formulation by adding adversarial and feature matching losses along with the multi-scale spectral reconstruction loss
     * See [Taming Transformers for High-Resolution Image Synthesis](../../../../permanent/taming-transformers-for-high-resolution-image-synthesis.md)
 
@@ -155,7 +167,7 @@ This model used the original architecture from [Neural discrete representation l
 
 Propose method shares these ideas:
 * Use convolutional encoder-decoder architecture
-* [Residual Vector Quantization](../../permanent/residual-vector-quantization.md)
+* [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md)
 * Adversarial, perceptual losses.
 
 Has these differences:
@@ -198,7 +210,7 @@ Like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../../
 - Architecture: Full Convolutional Encoder-Decoder like [SoundStream](../../../../permanent/soundstream.md)
 - Goal: time-based downscaling with a chosen striding factor
 - Special techniques:
-    * Quantise the encoding with [Residual Vector Quantization](../../permanent/residual-vector-quantization.md)
+    * Quantise the encoding with [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md)
         * "recursively quantises residuals following an initial quantisation step with a distinct codebook"
 * Apply quantizer dropout, so that some of the later codebooks are not always used, which comes from SoundStream.
 - Loss: [Frequency Domain Reconstruction Loss](Frequency%20Domain%20Reconstruction%20Loss) and adversarial and perceptual losses.
