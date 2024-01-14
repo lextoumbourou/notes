@@ -1,5 +1,5 @@
 ---
-title: Residual Vector Quantisation
+title: "Residual Vector Quantisation (RVQ)"
 date: 2024-01-13 00:00
 modified: 2024-01-13 00:00
 aliases:
