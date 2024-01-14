@@ -7,6 +7,7 @@ aliases:
 tags:
   - MachineLearning
 summary: An activation function that replaces negative values with zero
+cover: /_media/relu-activation-cover.png
 ---
 
 **Rectified Linear Unit (ReLU)** is the most common activation function in deep learning: it converts negative values to 0. ReLU is one of the simplest conceivable ways to add non-linearity to a neural network. And it works!
