@@ -24,7 +24,7 @@ Quantisation refers to converting infinite values into discrete finite values.
 
 In VQ, we encode a signal into a series of [Vectors](vector.md), then query each vector to find the closest neighbour in a lookup table called a **codebook**. Now, we can represent an entire chunk or *"frame"* of a signal with a single **code**.
 
-![Vector Quantisation](../../../_media/vector-quantisation%20(3).png)
+![Vector Quantisation](../_media/vq.png)
 
 The codebook table is nothing more than an embedding matrix, where the table size is the codebook size, and the vector size is the codebook dimensions: `codebook = nn.Embedding(codebook_size, codebook_dim)`. Like an embedding table, the weights are learned alongside the rest of the network during training.
 
@@ -39,7 +39,8 @@ The direct VQ approach to encoding audio might look like this:
 3. **Quantise**: Find each vector's nearest neighbour in the codebook table. Again, the codebook table is learned alongside the encoder and decoder during training.
 4. **Output**: The index of the lookup vector in the matrix is the "code" and is all we need to reconstruct the audio, given a Decoder. Though not pictured in the diagram, the decoder is learned alongside the encoder and codebook table.
 
-![Vector Quantisation for Audio](../../../_media/vector-quantization-for-audio.png)
+
+![Vector Quantisation for Audio](../_media/vq-for-audio.png)
 
 Note that for upstream modelling tasks, we will want to use the vector representation of each code.
 
