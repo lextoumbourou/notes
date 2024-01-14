@@ -15,8 +15,6 @@ summary: A tokeniser for audio
 
 RVQ applied to audio in the [Soundstream](https://blog.research.google/2021/08/soundstream-end-to-end-neural-audio.html) paper by Google Researchers and has since been used in popular neural audio compression architectures like [Encodec](https://github.com/facebookresearch/encodec) and [DAC](https://github.com/descriptinc/descript-audio-codec).
 
-## Vector Quantisation
-
 To understand, RVQ. First, let's ignore the R part of RVQ, leaving us with **Vector Quantisation (VQ)**.
 
 Quantisation refers to converting infinite values into discrete finite values, and vector quantisation applies it to [Vectors](vector.md). Vector quantisation comes originally from [signal processing](https://en.wikipedia.org/wiki/Vector_quantization) and has been exploited through image modelling architectures like [VQ-VAE](https://arxiv.org/abs/1711.00937) and [VQGAN](https://compvis.github.io/taming-transformers/).
