@@ -20,15 +20,17 @@ To understand, RVQ. First, let's ignore the R part of RVQ, leaving us with **Vec
 
 ## Vector Quantisation
 
-Quantisation refers to converting infinite values into discrete finite values, and vector quantisation applies it to [Vectors](vector.md). Vector quantisation comes originally from [signal processing](https://en.wikipedia.org/wiki/Vector_quantization) and has been exploited through image modelling architectures like [VQ-VAE](https://arxiv.org/abs/1711.00937) and [VQGAN](https://compvis.github.io/taming-transformers/).
+Quantisation refers to converting infinite values into discrete finite values.
 
-In VQ, we can encode a signal by encoding into vectors, then querying each vector to find the closest neighbour in a lookup table called a **codebook**. Now we can represent an entire "frame" of a signal, with a single number of **code**.
+In VQ, we can encode a signal by encoding it into [Vectors](vector.md), then querying each vector to find the closest neighbour in a lookup table called a **codebook**. Now, we can represent an entire chunk or *"frame"* of a signal with a single **code**.
 
 ![Vector Quantisation](../../../_media/vector-quantisation%20(3).png)
 
+Vector quantisation comes originally from [signal processing](https://en.wikipedia.org/wiki/Vector_quantization) and has been exploited through image modelling architectures like [VQ-VAE](https://arxiv.org/abs/1711.00937) and [VQGAN](https://compvis.github.io/taming-transformers/).
+
 ## Vector Quantisation for Audio
 
-The direct VQ approach to encoding audio would look like this:
+The direct VQ approach to encoding audio might look like this:
 
 1. **Audio Input**: an audio signal is represented as a multidimensional array of numbers with a known [Sample Rate](sample-rate.md) (usually 44.1kHz). A mono signal has one channel; stereo and others can have more.
 2. **Encoder**: An encoder converts the signal into a sequence of vectors, one per "frame". The frame rate will be dependent on the model architecture and sample rate.
@@ -61,4 +63,4 @@ We can train a model like this by performing the encode and decode audio during 
 
 ---
 
-This article was heavily inspired by [What is Residual Vector Quanitzation](https://www.assemblyai.com/blog/what-is-residual-vector-quantization) by AssemblyAI.
+This note was heavily inspired by [What is Residual Vector Quanitzation](https://www.assemblyai.com/blog/what-is-residual-vector-quantization) by AssemblyAI.
