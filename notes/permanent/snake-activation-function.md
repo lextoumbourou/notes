@@ -6,6 +6,7 @@ cover: /_media/snake-activation-function-cover.png
 tags:
 - MachineLearning
 - AudioEngineering
+summary: an activation function for modelling data with periodicity (repeating patterns)
 ---
 
 Snake is a neural network activation function useful for modelling problems with a "periodic induction bias" - in other words, problems with regular, repeating patterns - for example, time-series data, audio signals and so on. It was described in the paper [Neural networks fail to learn periodic functions and how to fix it](https://arxiv.org/abs/2006.08195).
