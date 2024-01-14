@@ -19,6 +19,8 @@ The $\alpha$ is parameter that controls the frequency of the periodic component 
 In code:
 
 ```python
+import numpy as np
+
 def snake_activation(x, alpha):
     return x + (1 / alpha) * np.sin(alpha * x) ** 2
 ```
