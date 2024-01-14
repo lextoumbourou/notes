@@ -18,7 +18,13 @@ RVQ applied to audio in the [Soundstream](https://blog.research.google/2021/08/s
 
 To understand, RVQ. First, let's ignore the R part of RVQ, leaving us with **Vector Quantisation (VQ)**.
 
+## Vector Quantisation
+
 Quantisation refers to converting infinite values into discrete finite values, and vector quantisation applies it to [Vectors](vector.md). Vector quantisation comes originally from [signal processing](https://en.wikipedia.org/wiki/Vector_quantization) and has been exploited through image modelling architectures like [VQ-VAE](https://arxiv.org/abs/1711.00937) and [VQGAN](https://compvis.github.io/taming-transformers/).
+
+In VQ, we can encode a signal by encoding into vectors, then querying each vector to find the closest neighbour in a lookup table called a **codebook**. Now we can represent an entire "frame" of a signal, with a single number of **code**.
+
+![Vector Quantisation](../../../_media/vector-quantisation%20(3).png)
 
 ## Vector Quantisation for Audio
 
@@ -29,7 +35,7 @@ The direct VQ approach to encoding audio would look like this:
 3. **Quantise**: Find the nearest neighbour in a lookup table called the codebook for each vector. The codebook table is learned alongside the encoder and decoder during training.
 4. **Output**: The position of the lookup vector in the matrix is the "code" and is all we need to reconstruct the audio, given the RVQ model. However, we want to use the vector representation of codes for any upstream modelling.
 
-![Vector Quantisation](../_media/vector-quanisation.png)
+![Vector Quantisation for Audio](../../../_media/vector-quantization-for-audio.png)
 
 However, representing audio with a single code per frame will never allow us to accurately reconstruct audio from these codes unless we have an infinitely large codebook matrix.
 
@@ -43,7 +49,7 @@ For Residual Vector Quantisation, we add these steps to the VQ operation:
 * **Repeat** - repeat this for $Nq$ codebook tables.
 * **Output** - at the end, we will have $Nq$ sequences of codes for modelling.
 
-![Residual Vector Quanisation](../_media/residual-vector-quantisation.png)
+![Residual Vector Quantisation](../../../_media/residual-vector-quantisation%20(2).png)
 
 So now we have: <span style="color: red;">**Residual**</span> <span style="color: blue;">**Vector Quantization**</a>.
 
