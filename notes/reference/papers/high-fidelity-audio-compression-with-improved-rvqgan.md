@@ -17,13 +17,13 @@ The author's make the weights and code available on GitHub [.dac](https://github
 
 ## Main Contributions
 
-Expanding upon the work of [Encodec](../../../../permanent/encodec.md) and it's predecessor [SoundStream](../../../../permanent/soundstream.md), they use a encoder/decoder convolution architecture with [Residual Vector Quantization](../../permanent/residual-vector-quantization.md).
+The authors use a encoder/decoder convolution architecture with [residual-vector-quantization](../../permanent/residual-vector-quantization.md), which was originally used in [SoundStream](../../../../permanent/soundstream.md) and later [Encodec](../../../../permanent/encodec.md). The architecture is called Improved RVQGAN, although it's commonly referred to as DAC, based on the repository name.
 
-They make these improvements to Encodec architecture:
+Improved RVQGAN makes these architectural and training improvements:
 
-* Replace [Leaky ReLU](../../../../permanent/leaky-relu.md) with the [Snake Activation Function](../../permanent/snake-activation-function.md)
-* Improve codebook usage with factorised codes and normalised codes. Idea comes from [Improved VQGAN](../../../../permanent/improved-vqgan.md) image model.
-* Add dropout during the [Residual Vector Quantization](../../permanent/residual-vector-quantization.md) which allows it to operate at different target bitrates.
+* Replace [Leaky ReLU](../../../../permanent/leaky-relu.md) with the [Snake Activation Function](../../permanent/snake-activation-function.md) throughout the network: ```nn.LeakyReLU(0.1)``` -> ```Snake1d()```.
+* Perform nearest neighbour lookup for codes in low-dimensional space by factorising vectors before performing query.  They also run codes and vector through L2 normalisation. These ideas come from [Improved VQGAN](../../../../permanent/improved-vqgan.md) image model.
+* The original RVQ proposal includes codebook dropout, so the model is sometimes reconstructing audio using only some of the codebooks. They found this hurts the model performance when using all codebooks, so they only do this 50% of the time.
 * For the discriminator they use a Multi-Scale Time-Frequency Spectrogram Discriminator
 * They continue to use multiple loss functions, but include multi-scale mel loss.
 
@@ -39,7 +39,7 @@ They use multiple loss functions:
 
 Generative modelling of audio is difficult for 2 key reasons:
 * audio is extremely high dimensionality data (~44,100 samples per second of audio)
-* audio has complicated structure that includes short and long term dependancies. For example, the pluck of a guitar at a point in time vs the arrangement of an entire composition that spans the duration of the audio.
+* audio has complicated structure that includes short and long term dependancies. For example, the pluck of a guitar happens in a fraction of a second, whereas the arrangement of an entire composition spans the duration of the song.
 
 A common solution is to divide audio generation in 2 stages:
 1. predict audio conditioned on an intermediate representation.
@@ -47,7 +47,7 @@ A common solution is to divide audio generation in 2 stages:
 
 If the intermediate representation is some kind of discrete "codes" ie tokens, we can use them for upstream modelling using architectures like transformers that work well in many other problems.
 
-The process of learrning discrete codes is really just no different to compression.
+The process of learrning discrete codes is really just to compression.
 
 The audio signal is compressed into a discrete latent space using [Residual Vector Quantization](../../permanent/residual-vector-quantization.md) vector-quantizing the representations of an autoencoder using a fixed length codebook.
 
@@ -193,29 +193,28 @@ DAC is a drop-in replacement for the audio tokenization model used in these meth
 
 ## The Improved RVQGAN Model
 
-Built on framework of [VQ-GAN](../../../../permanent/vq-gan.md) models
-* See [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../../../permanent/encodec.md).
+Like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../../../permanent/encodec.md), uses an RVQGAN architecture which is built on framework of [VQ-GAN](../../../../permanent/vq-gan.md) models
 
-Architecture: Full Convolutional Encoder-Decoder like [SoundStream](../../../../permanent/soundstream.md)
-Goal: time-based downscaling with a chosen striding factor
-Special techniques:
-* Quantise the encoding with Residual Vector Quantization (RVQ)
-    * "recursively quantises residuals following an initial quantisation step with a distinct codebook"
-* Apply [Quantiser Dropout](Quantiser%20Dropout) during training to allow single model that can operate at a few target bitrates.
-Loss: [Frequency Domain Reconstruction Loss](Frequency%20Domain%20Reconstruction%20Loss) and adversarial and perceptual losses.
-Inputs:
- * Audio signal with sampling rate $fs$ (Hz)
- * Encoding striding factor $M$
- * $Nq$ layers of $RVQ$
+- Architecture: Full Convolutional Encoder-Decoder like [SoundStream](../../../../permanent/soundstream.md)
+- Goal: time-based downscaling with a chosen striding factor
+- Special techniques:
+    * Quantise the encoding with [Residual Vector Quantization](../../permanent/residual-vector-quantization.md)
+        * "recursively quantises residuals following an initial quantisation step with a distinct codebook"
+* Apply quantizer dropout, so that some of the later codebooks are not always used, which comes from SoundStream.
+- Loss: [Frequency Domain Reconstruction Loss](Frequency%20Domain%20Reconstruction%20Loss) and adversarial and perceptual losses.
+- Inputs:
+     * Audio signal with sampling rate $fs$ (Hz)
+     * Encoding striding factor $M$
+     * $Nq$ layers of $RVQ$
 * Output:
-    * discrete code matrix of shape $S \ \times \ Nq$
+    * Discrete code matrix of shape $S \ \times \ Nq$
         * $S$ is the frame rate defined as $fs/M$
+
+Note: target bitrate is upper bound, since all models support variable bitrates.
 
 Table 1 shows [Improved RVQGAN](Improved%20RVQGAN) again baseline comparing compression factors and frame rate of latent codes.
 
 ![](../../../../_media/high-fidelity-audio-compression-with-improved-rvqgan-table1.png)
-
-Note: target bitrate is upper bound, since all models support variable bitrates.
 
 Model achieves:
 * higher compression factor
@@ -225,18 +224,11 @@ Lower frame rate is desirable when training a language model on the discrete cod
 
 ### Periodic activation function (Snake Activation Function)
 
-Audio waveforms have high [Periodicity](../../permanent/periodicity.md) (especially in voiced components, music, etc.)
+The authors note that audio waveforms have high "periodicity" (in other words, the waveform repeats itself a bunch). The most common neural network activation for generative models is [Leaky ReLU](../../../../permanent/leaky-relu.md) but it struggles to extrapolate periodic signals, causes poor generalisation.
 
-While current non-autoregressive audio generation architectures can make high fidelity audio, they have pitch and periodicity artifacts.
-* See [Chunked autoregressive gan for conditional waveform synthesis](Chunked%20autoregressive%20gan%20for%20conditional%20waveform%20synthesis)
+By replacing Leaky ReLU with the [Snake Activation Function](../../permanent/snake-activation-function.md), it  adds "periodic inductive bias" to the generator. The BigVGAN model introduced the Snake Activation function to the audio domain.
 
-Also common neural network activations (like Leaky ReLUs) struggle with extrapolating periodic signals, and exhibit poor out-of-distribution generalization for audio synthesis.
-* See [A universal neural vocoder with large-scale training](A%20universal%20neural%20vocoder%20with%20large-scale%20training)
-
-Use [Snake Activation Function](../../permanent/snake-activation-function.md) to add periodic inductive bias to the generator.
-* See [Neural networks fail to learn periodic functions and how to fix it](../../../../permanent/neural-networks-fail-to-learn-periodic-functions-and-how-to-fix-it.md).
-* And introduced to audio domain in BigVGAN neural vocoding model.
-    * See [Bigvgan: A universal neural vocoder with large-scale training](Bigvgan:%20A%20universal%20neural%20vocoder%20with%20large-scale%20training)
+In the ablation studies, snake activation function was an important change in improving audio fidelity.
 
 Defined as $\text{snake}(x) = x + \frac{1}{\alpha} \sin^2(\alpha)$
 * $\alpha$ controls the frequency of periodic component of the signal
@@ -275,19 +267,21 @@ The equations for the modified codebook learning procedure are written in Append
 
 ### 3.3 Quantiser dropout rate
 
-Quantiser dropout was introduced in SoundStream [46] to train a single compression model with variable bitrate.
+Quantiser dropout was introduced in SoundStream, which allows a single model to support variable bitrates, as the model learns to reconstruct audio using only some of the codebooks.
 
-The number of quantizers Nq determine the bitrate, so for each input example we randomly sample n ∼ {1, 2, . . . , Nq} and only use the first nq quantizers while training.
+The number of quantisers $Nq$ determine the bitrate, so for each input example we randomly sample $n ∼ {1, 2, . . . , nq}$ and only use the first $nq$ quantizers while training.
 
+However, the authors found that this causes the audio reconstruction to degrade when you have full bandwidth. See Fig 2 below.
+
+![](../../../../_media/high-fidelity-audio-compression-with-improved-rvqgan-fig2-1.png)
 However, we noticed that applying quantizer dropout degrades the audio reconstruction quality at full bandwidth (Figure 2)
 
-To address this problem, we instead apply quantizer dropout to each input example with some probability p. Interestingly, we find that dropout probability p = 0.5 closely matches the reconstruction quality of baseline at lower bitrates, while closing the gap to full-bandwidth quality of a model trained without quantizer dropout (p = 0.0).
+What they do is only apply the dropout operation 50% of the time.
 
-Moreover, we provide additional insight into the practical behavior of quantizer dropout and it’s interaction with RVQ
+Now they have the best of both worlds: at lower bitrates, the audio can be constructed well, but at maximum bitrates they get close to optimal reconstruction.
 
-Firstly, we find that these techniques put together lead the quantized codes to learn most-significant to least significant bits of information with each additional quantizer. When the codes are reconstructed with 1 . . . Nq codebooks, we can see each codebook adds increasing amounts of fine-scale detail.
-
-We believe this interaction is beneficial when training hierarchical generative models on top of these codes [5, 41, 1], for example to partition the codes into “coarse” tokens (denoting the most significant codes) and “fine” tokens.
+They found this techinque causes the quantized codes to learn most-significant to least significant bits of information with each additional quantizer. When the codes are reconstructed with $1 . . . Nq$ codebooks, we can see each codebook adds increasing amounts of fine-scale detail.
+This interaction is useful to understand when training hierarchical generative models, like [AudioLM](../../permanent/audiolm.md), [VALL-E](VALL-E) and [MusicLM](MusicLM). Could consider partitioning the codes into "coarse" tokens (most significant codes) and "fine" tokens (higher detail, but less significant).
 
 #### 3.4 Discriminator design
 
