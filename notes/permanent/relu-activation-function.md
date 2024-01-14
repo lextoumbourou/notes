@@ -1,17 +1,33 @@
 ---
 title: ReLU
-date: 2024-01-09 00:00
-modified: 2024-01-09 00:00
-status: draft
+date: 2024-01-02 00:00
+modified: 2024-01-02 00:00
+aliases:
+  - Rectified Linear Unit
 tags:
-  - Rectified linear unit
-summary: A simple approach to non-linearity in a neural network.
+  - MachineLearning
+summary: An activation function that replaces negative values with zero
 ---
 
-A common and simple activation function used in a range of deep learning architectures.
+**Rectified Linear Unit (ReLU)** is the most common activation function in deep learning: it converts negative values to 0. ReLU is one of the simplest conceivable ways to add non-linearity to a neural network. And it works!
 
-The simplest conceivable way to add non-linearity to a neural network. And it works!
+$f(x)= \max(0,x)$
 
+Code:
+
+```python
+import numpy as np
+
+def relu(x):
+    return np.maximum(0, x)
 ```
-x = max(x, 0)
-```
+
+The paper [Rectified Linear Units Improve Restricted Boltzmann Machines](https://www.cs.toronto.edu/~fritz/absps/reluICML.pdf) is commonly cited as the first usage of the ReLU activation function, though the first usage of the function dates back to the 1975 paper [Cognitron: A self-organizing multilayered neural network](https://link.springer.com/article/10.1007/BF00342633)
+
+ReLU helped to overcome the vanishing gradient problem prevalent in traditional activation functions like [Sigmoid](sigmoid-activation-function.md) or tanh. In these functions, gradients can become extremely small, stopping the network from learning further.
+ 
+However, since the function outputs zero for any negative input, neurons can sometimes become inactive and stop contributing to the learning process, referred to as *"dying ReLU",*, especially if the network is not properly initialized or if the learning rate is set too high.
+
+Variations like [Leaky ReLU](leaky-relu.md) and Parametric ReLU mitigate this by replacing 0 with a small value when the unit is inactive, providing a way to keep the neurons alive during the training process.
+
+![ReLU](../_media/relu-activation-plot.png)
