@@ -17,7 +17,7 @@ The author's make the weights and code available on GitHub [.dac](https://github
 
 ## Main Contributions
 
-The authors use a encoder/decoder convolution architecture with [residual-vector-quantization](../../permanent/residual-vector-quantization.md), which was originally used in [SoundStream](../../../../permanent/soundstream.md) and later [Encodec](../../../../permanent/encodec.md). The architecture is called Improved RVQGAN, although it's commonly referred to as DAC, based on the repository name.
+The authors use a encoder/decoder convolution architecture with [Residual Vector Quantization](../../permanent/residual-vector-quantization.md), which was originally used in [SoundStream](../../../../permanent/soundstream.md) and later [Encodec](../../../../permanent/encodec.md). The architecture is called Improved RVQGAN, although it's commonly referred to as DAC, based on the repository name.
 
 Improved RVQGAN makes these architectural and training improvements:
 

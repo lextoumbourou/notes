@@ -1,10 +1,11 @@
 ---
-title: Residual Vector Quantization
+title: "Residual Vector Quantization"
 date: 2024-01-13 00:00
 modified: 2024-01-13 00:00
 aliases:
 - Codebook
 cover: /_media/rvq-cover.png
+summary: A technique for encoding audio into discrete tokens called *codes*
 ---
 
 **Residual Vector Quantization** is a technique for encoding audio into discrete tokens called *codes*. That allows us to compress audio into small sizes - up to a 90x compression rate. But even more usefully, the discrete representations enable us to model audio using architectures that work on discrete representations, like Transformers; it's a tokeniser for audio. Now, we can make large language models for audio, speech or music. And that's exactly what AudioLM, MusicLM and MusicGen are.
