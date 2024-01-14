@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 DPI = 100
-fig_width = 400 / DPI
+fig_width = 600 / DPI
 fig_height = 4
 
 
@@ -16,7 +16,7 @@ x_values = np.linspace(-5, 5, 400)
 alphas = [0.5, 1, 2, 5]
 
 # Plotting
-plt.figure(figsize=(12, 8))
+plt.figure(figsize=(fig_width, fig_height))
 
 for alpha in alphas:
     plt.plot(x_values, snake_activation(x_values, alpha), label=f'α = {alpha}')

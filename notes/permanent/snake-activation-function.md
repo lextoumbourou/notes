@@ -14,7 +14,7 @@ In the DAC paper, [High-Fidelity Audio Compression with Improved RVQGAN](../refe
 
 $\text{snake}(x) = x + \frac{1}{\alpha} \sin^2(\alpha x)$
 
-The $\alpha$ is an important parameter that controls the frequency of the periodic component of the signal. 
+The $\alpha$ is parameter that controls the frequency of the periodic component of the signal. 
 
 In code:
 
@@ -23,6 +23,6 @@ def snake_activation(x, alpha):
     return x + (1 / alpha) * np.sin(alpha * x) ** 2
 ```
 
-Examples:
+Plot:
 
-![](../_media/snake-activate-examples.png)
+![Snake Activation Function diagram](../_media/snake-activate-examples.png)
