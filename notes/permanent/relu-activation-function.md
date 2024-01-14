@@ -27,8 +27,8 @@ The paper [Rectified Linear Units Improve Restricted Boltzmann Machines](https:/
 
 ReLU helped to overcome the vanishing gradient problem prevalent in traditional activation functions like [Sigmoid](sigmoid-activation-function.md) or tanh. In these functions, gradients can become extremely small, stopping the network from learning further.
  
-However, since the function outputs zero for any negative input, neurons can sometimes become inactive and stop contributing to the learning process, referred to as *"dying ReLU",*, especially if the network is not properly initialized or if the learning rate is set too high.
+However, since the function outputs zero for any negative input, neurons can sometimes become inactive and stop contributing to the learning process, referred to as *"dying ReLU"*, especially if the network is not properly initialized or the learning rate is too high.
 
 Variations like [Leaky ReLU](leaky-relu.md) and Parametric ReLU mitigate this by replacing 0 with a small value when the unit is inactive, providing a way to keep the neurons alive during the training process.
 
-![ReLU](../_media/relu-activation-plot.png)
+![ReLU plot](../_media/relu-activation-plot.png)
