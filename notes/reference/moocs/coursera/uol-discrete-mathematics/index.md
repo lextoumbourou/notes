@@ -6,6 +6,8 @@ slug: uol-discrete-mathematics
 cover: /_media/discrete-maths.png
 summary: "Notes from [Discrete Mathematics by University of London](https://www.coursera.org/learn/uol-discrete-mathematics)"
 hide_cover_in_article: true
+tags:
+  - DiscreteMath
 ---
 
 These are my notes from [Discrete Mathematics](https://www.coursera.org/learn/uol-discrete-mathematics/) by the University of London.
