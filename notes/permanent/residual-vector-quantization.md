@@ -7,13 +7,11 @@ aliases:
 cover: /_media/rvq-cover.png
 ---
 
-Residual Vector Quantization encodes audio into discrete tokens called *codes*.
-
-That allows us to compress audio into small sizes - up to a 90x compression rate. But even more usefully, the discrete representations enable us to model audio using architectures that work on discrete representations, like Transformers. It's a tokeniser for audio. Now, we can make large language models for audio, speech or music. And that's exactly what AudioLM, MusicLM and MusicGen are.
+**Residual Vector Quantization** is a technique for encoding audio into discrete tokens called *codes*. That allows us to compress audio into small sizes - up to a 90x compression rate. But even more usefully, the discrete representations enable us to model audio using architectures that work on discrete representations, like Transformers; it's a tokeniser for audio. Now, we can make large language models for audio, speech or music. And that's exactly what AudioLM, MusicLM and MusicGen are.
 
 RVQ was first described in the [Soundstream: An End-to-End Neural Audio Codec](../../../permanent/soundstream-an-end-to-end-neural-audio-codec.md) paper and has since been used in popular neural audio compression architectures like [SoundStream](../../../permanent/soundstream.md), [Encodec](../../../permanent/encodec.md) and [dac](../../../permanent/dac.md).
 
-If we ignore the residual part of RVQ, we have **Vector Quantization (VQ)**. If we ignore the **Vector** part, [Quantization](../../../permanent/quantization.md) converts continuous values into discrete finite values, and vector quantisation applies it to vectors. The VQ idea originally came from image modelling by way of the [VQ-VAE](../../../permanent/vq-vae.md) 
+If we ignore the R part of RVQ, we have **Vector Quantization (VQ)**. [Quantization](../../../permanent/quantization.md) is the process of converting continuous values into discrete finite values, and **vector** quantisation is it applied to vectors. The idea of a VQ idea originally came from image modelling, by way of the [VQ-VAE](../../../permanent/vq-vae.md), and has recently been adapted to audio.
 
 The VQ approach to encoding audio would look like this:
 

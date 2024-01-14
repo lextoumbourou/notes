@@ -2,13 +2,27 @@
 title: Snake Activation Function
 date: 2024-01-04 00:00
 modified: 2024-01-04 00:00
-status: draft
+cover: /_media/snake-activation-function-cover.png
+tags:
+- MachineLearning
+- ActivationFunctions
 ---
 
-An [Activation Function](activation-function.md) function from paper [Neural networks fail to learn periodic functions and how to fix it](../../../permanent/neural-networks-fail-to-learn-periodic-functions-and-how-to-fix-it.md).
+Snake is a neural network activation function that is useful for modelling problems with a "periodic induction bias" - in other words, problems with regular, repeating patterns - for example, time-series data, audio signals and so on. It was described in the paper [Neural networks fail to learn periodic functions and how to fix it](../../../permanent/neural-networks-fail-to-learn-periodic-functions-and-how-to-fix-it.md).
 
-Useful when a periodic induction bias is required, as described in [High-Fidelity Audio Compression with Improved RVQGAN](../reference/papers/high-fidelity-audio-compression-with-improved-rvqgan.md).
+In the DAC paper, [High-Fidelity Audio Compression with Improved RVQGAN](../reference/papers/high-fidelity-audio-compression-with-improved-rvqgan.md), they replace [Leaky ReLU](../../../permanent/leaky-relu.md) with Snake and significantly improve the reconstructed audio quality.
 
-Function:
+$\text{snake}(x) = x + \frac{1}{\alpha} \sin^2(\alpha x)$
 
-$\text{snake}(x) = x + \frac{1}{\alpha} \sin^2(\alpha)$
+The $\alpha$ is an important parameter that controls the frequency of the periodic component of the signal. 
+
+In code:
+
+```python
+def snake_activation(x, alpha):
+    return x + (1 / alpha) * np.sin(alpha * x) ** 2
+```
+
+Examples:
+
+![](../_media/snake-activate-examples.png)
