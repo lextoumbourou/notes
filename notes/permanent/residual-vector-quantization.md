@@ -11,11 +11,13 @@ cover: /_media/rvq-cover.png
 summary: A tokeniser for audio
 ---
 
-**Residual Vector Quantization (RVQ)** is a technique for encoding audio into discrete tokens called *codes*. It's a tokeniser for audio. Not only does that allow us to compress audio into absurdly small sizes - up to a 90x compression rate, but we can also use the tokens to model audio using the same architectures that work so well for text, like Transformers. Effectively, we can build large language models for audio, speech or music, and that's precisely what recent models like Google's [AudioLM](https://google-research.github.io/seanet/audiolm/examples/), Microsoft's [VALL-E (X)](https://www.microsoft.com/en-us/research/project/vall-e-x/) and Meta's [MusicGen](https://audiocraft.metademolab.com/musicgen.html) are.
+**Residual Vector Quantization (RVQ)** is a technique for encoding audio into discrete tokens called *codes*. It's like a tokeniser for audio. Not only does that allow us to compress audio into absurdly small sizes - up to a 90x compression rate, but we can also use the tokens to model audio using the same architectures that work so well for text, like Transformers. Effectively, we can build large language models for audio, speech or music, and that's precisely what recent models like Google's [AudioLM](https://google-research.github.io/seanet/audiolm/examples/), Microsoft's [VALL-E (X)](https://www.microsoft.com/en-us/research/project/vall-e-x/) and Meta's [MusicGen](https://audiocraft.metademolab.com/musicgen.html) are.
 
-RVQ applied to audio was first used to audio in the [Soundstream: An End-to-End Neural Audio Codec](../../../permanent/soundstream-an-end-to-end-neural-audio-codec.md) paper by Google Researchers and has since been used in popular neural audio compression architectures like [Encodec](../../../permanent/encodec.md) and [DAC](../../../permanent/dac.md).
+RVQ applied to audio in the [Soundstream](https://blog.research.google/2021/08/soundstream-end-to-end-neural-audio.html) paper by Google Researchers and has since been used in popular neural audio compression architectures like [Encodec](https://github.com/facebookresearch/encodec) and [DAC](https://github.com/descriptinc/descript-audio-codec).
 
-To understand, RVQ. First, let's ignore the R part of RVQ. That leaves us with **Vector Quantization (VQ)**. Quantisation refers to converting infinite continuous values into discrete finite values, and here, as is the case in most ML, our inputs are [Vectors](vector.md). The VQ idea originally came from image tokenisation via the [VQ-VAE](../..///permanent/vq-vae.md) auto-encoder architecture.
+To understand, RVQ. First, let's ignore the R part of RVQ, leaving **Vector Quantization (VQ)**.
+
+Quantisation refers to converting infinite values into discrete finite values, and vector quantisation applies it to [Vectors](vector.md). Vector quantisation comes originally from [signal processing](https://en.wikipedia.org/wiki/Vector_quantization) and has been exploited through image modelling architectures like [VQ-VAE](https://arxiv.org/abs/1711.00937) and [VQGAN](https://compvis.github.io/taming-transformers/).
 
 ## Vector Quantisation for Audio
 
@@ -30,13 +32,13 @@ The direct VQ approach to encoding audio would look like this:
 
 However, representing audio with a single code per frame will never allow us to accurately reconstruct audio from these codes unless we have an infinitely large codebook matrix.
 
-One clever technique is to take the difference between the encoded vector and the codebook vector, which we call the **Residual** vector. We can look that vector up in an additional codebook table. And we can repeat this process. Each time we do, we can reconstruct audio more accurately. However, it comes at the cost of poorer compression performance.
+One clever technique is to take the difference between the encoded vector and the codebook vector, which we call the **Residual** vector. We can look that vector up in an additional codebook table. And we can repeat this process, each time adding a high capability for accurate reconstruction at the cost of compression size.
 
 ## Residual VQ
 
-We add these steps to the VQ operation:
+For Residual Vector Quantisation, we add these steps to the VQ operation:
 
-* **Residual** - calculate a difference vector called the Residual for each codebook vector and the input vector. Use that to look at a subsequent codebook.
+* **Residual** - calculate a difference vector called the Residual for each codebook and input vector. Use that to look at a subsequent codebook.
 * **Repeat** - repeat this for $Nq$ codebook tables.
 * **Output** - at the end, we will have $Nq$ sequences of codes for modelling.
 
