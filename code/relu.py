@@ -10,7 +10,7 @@ x = np.linspace(-10, 10, 200)
 y = relu(x)
 
 # Plotting
-plt.figure(figsize=(8, 4))
+plt.figure(figsize=(6, 3))
 plt.plot(x, y, label='ReLU Function')
 plt.xlabel('Input')
 plt.ylabel('Output')

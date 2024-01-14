@@ -3,6 +3,8 @@ title: Leaky ReLU
 date: 2024-01-03 00:00
 modified: 2024-01-03 00:00
 summary: An activation function that outputs a small value for negative numbers
+tags:
+  - MachineLearning
 cover: /_media/leaky-relu-cover.png
 ---
 
