@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <title>{% block title %}Notes by Lex{% endblock %}</title>
+    <title>{% block title %}Notes by Lex Toumbourou{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
@@ -53,22 +53,12 @@
         <a href="/pages/about.html" {%- if output_file =='pages/about.html' -%}class="active"{% endif %}>About</a>
       </div>
 
-      <div class="filter-menu">
-
-        <span class="section-header sidebar-section">
-          <h2><span>Category</span></h2>
-        </span>
-
-        <a {% if category and category == "permanent" %}class="active"{% endif %} href="/category/permanent.html">Notes</a>
-        <a {% if category and 'reference' in category|string %}class="active"{% endif %} href="/category/reference.html">Reference</a>
-      </div>
-
       <div class="tags-menu sidebar-section">
         <span class="section-header">
           <h2><span>Tags</span></h2>
         </span>
 
-        {%- for tag, articles in (tags|sort_by_article_count)[:10] -%}
+        {%- for tag, articles in (tags|sort_by_article_count)[:12] -%}
           <a {% if page_name and page_name|string in tag.url|string %}class="active"{% endif %} href="{{ SITEURL}}/{{ tag.url }}">{{ tag }} ({{ articles|count }})</a> 
         
         {% endfor %}
@@ -81,7 +71,7 @@
     <div id="content">
 
       <div id="header">
-        <h1><a href="/">Notes by Lex</a></h1>
+        <h1><a href="/">Notes by Lex Toumbourou</a></h1>
       </div>
 
       {% block content %}
