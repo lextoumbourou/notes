@@ -12,9 +12,9 @@ cover: /_media/rvq-cover.png
 summary: A tokeniser for audio
 ---
 
-**Residual Vector Quantisation (RVQ)** is a technique for encoding audio into discrete tokens called *codes*. It's like a tokeniser for audio. Not only does that allow us to compress audio into absurdly small sizes - up to a 90x compression rate, but we can also use the tokens to model audio using the same architectures that work so well for text, like Transformers. Effectively, we can build large language models for audio, speech or music, and that's precisely what recent models like Google's [AudioLM](https://google-research.github.io/seanet/audiolm/examples/), Microsoft's [VALL-E (X)](https://www.microsoft.com/en-us/research/project/vall-e-x/) and Meta's [MusicGen](https://audiocraft.metademolab.com/musicgen.html) are.
+**Residual Vector Quantisation (RVQ)** is a technique for encoding audio into discrete tokens called *codes*. It's like a tokeniser for audio. Not only does that allow us to compress audio into absurdly small sizes - up to a 90x compression rate, but we can also use the tokens to model audio using the same architectures that work so well for text, like Transformers. Now we can build language models for audio, speech or music, and that's precisely what recent models like Google's [AudioLM](https://google-research.github.io/seanet/audiolm/examples/), Microsoft's [VALL-E (X)](https://www.microsoft.com/en-us/research/project/vall-e-x/) and Meta's [MusicGen](https://audiocraft.metademolab.com/musicgen.html) are.
 
-RVQ applied to audio in the [Soundstream](https://blog.research.google/2021/08/soundstream-end-to-end-neural-audio.html) paper by Google Researchers and has since been used in popular neural audio compression architectures like [Encodec](https://github.com/facebookresearch/encodec) and [DAC](https://github.com/descriptinc/descript-audio-codec).
+RVQ was first applied to audio in the [Soundstream](https://blog.research.google/2021/08/soundstream-end-to-end-neural-audio.html) paper by Google Researchers and has since been used in popular neural audio compression architectures like [Encodec](https://github.com/facebookresearch/encodec) and [DAC](https://github.com/descriptinc/descript-audio-codec).
 
 To understand, RVQ. First, let's ignore the R part of RVQ, leaving us with **Vector Quantisation (VQ)**.
 
@@ -51,7 +51,7 @@ For Residual Vector Quantisation, we add these steps to the VQ operation:
 * **Repeat** - repeat this for $Nq$ codebook tables.
 * **Output** - at the end, we will have $Nq$ sequences of codes for modelling.
 
-![Residual Vector Quantisation](../../../_media/residual-vector-quantisation%20(2).png)
+![Residual Vector Quantisation](../../../_media/rvq.png)
 
 So now we have: <span style="color: red;">**Residual**</span> <span style="color: blue;">**Vector Quantization**</a>.
 
