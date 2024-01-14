@@ -27,7 +27,6 @@ plt.ylabel('snake(x)')
 plt.legend()
 plt.grid(True)
 
-# Save the plot
 file_path = "notes/_media/snake-activate-examples.png"
 plt.savefig(file_path, dpi=DPI, bbox_inches='tight')
 plt.close()

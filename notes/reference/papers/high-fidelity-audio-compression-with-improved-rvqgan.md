@@ -21,7 +21,7 @@ The authors use a encoder/decoder convolution architecture with [residual-vector
 
 Improved RVQGAN makes these architectural and training improvements:
 
-* Replace [Leaky ReLU](../../../../permanent/leaky-relu.md) with the [Snake Activation Function](../../permanent/snake-activation-function.md) throughout the network: ```nn.LeakyReLU(0.1)``` -> ```Snake1d()```.
+* Replace [Leaky ReLU](../../permanent/leaky-relu.md) with the [Snake Activation Function](../../permanent/snake-activation-function.md) throughout the network: ```nn.LeakyReLU(0.1)``` -> ```Snake1d()```.
 * Perform nearest neighbour lookup for codes in low-dimensional space by factorising vectors before performing query.  They also run codes and vector through L2 normalisation. These ideas come from [Improved VQGAN](../../../../permanent/improved-vqgan.md) image model.
 * The original RVQ proposal includes codebook dropout, so the model is sometimes reconstructing audio using only some of the codebooks. They found this hurts the model performance when using all codebooks, so they only do this 50% of the time.
 * For the discriminator they use a Multi-Scale Time-Frequency Spectrogram Discriminator
@@ -224,7 +224,7 @@ Lower frame rate is desirable when training a language model on the discrete cod
 
 ### Periodic activation function (Snake Activation Function)
 
-The authors note that audio waveforms have high "periodicity" (in other words, the waveform repeats itself a bunch). The most common neural network activation for generative models is [Leaky ReLU](../../../../permanent/leaky-relu.md) but it struggles to extrapolate periodic signals, causes poor generalisation.
+The authors note that audio waveforms have high "periodicity" (in other words, the waveform repeats itself a bunch). The most common neural network activation for generative models is [Leaky ReLU](../../permanent/leaky-relu.md) but it struggles to extrapolate periodic signals, causes poor generalisation.
 
 By replacing Leaky ReLU with the [Snake Activation Function](../../permanent/snake-activation-function.md), it  adds "periodic inductive bias" to the generator. The BigVGAN model introduced the Snake Activation function to the audio domain.
 
