@@ -3,7 +3,10 @@ title: "Residual Vector Quantization"
 date: 2024-01-13 00:00
 modified: 2024-01-13 00:00
 aliases:
-- Codebook
+  - Codebook
+tags:
+  - MachineLearning
+  - AudioEngineering
 cover: /_media/rvq-cover.png
 summary: A technique for encoding audio into discrete tokens called *codes*
 ---
