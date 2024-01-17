@@ -17,7 +17,7 @@ class LinearFuncCover(Scene):
 if __name__ == '__main__':
     config.background_color = WHITE
     config.format = 'gif'
-    config.output_file = Path(__file__).resolve().parent.parent.parent / Path('notes/_media/linear-func-cover')
+    config.output_file = Path(__file__).resolve().parent.parent.parent / Path('notes/_media/linear-func-cover.png')
     config.pixel_width = 400
     config.pixel_height = 225
 
