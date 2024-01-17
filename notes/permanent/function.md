@@ -80,8 +80,8 @@ Here is a plot of the Fahrenheit to Celsius function earlier, plotted across a r
 
 When the graph is a straight line like this, it's called a [Linear Function](linear-function.md). There are other names for common function types:
 
-* Linear Function: A function where the output is proportional to the input.
-* Quadratic Function: A function where the output is proportional to the square of the input.
+* [Linear Function](linear-function.md): A function where the output is proportional to the input.
+* [Quadratic Function](quadratic-function.md): A function where the output is proportional to the square of the input.
 * Exponential Function: A function where the output is proportional to a fixed base raised to the power of the input.
 * Polynomial Function: A function that we represent as a sum of terms, each consisting of a constant multiplied by a variable raised to a non-negative integer power. Linear and quadratic functions are specific types of polynomial functions.
 

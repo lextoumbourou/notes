@@ -10,7 +10,7 @@ status: draft
 ## Lesson 5.1 Introduction to graph sketching and kinematics
 
 * Graph Sketching and Kinematics overview
-    * Define a [function](../../../../permanent/function.md).
+    * Define a [Function](../../../../permanent/function.md).
     * Show how to graphically represent a function.
 * [Function](../../../../permanent/function.md)
     * A function f(x) links elements x,y of two sets X and Y.
