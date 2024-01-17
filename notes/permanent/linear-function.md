@@ -4,7 +4,7 @@ date: 2023-04-09 00:00
 summary: a function represented by a straight line on a graph
 cover: /_media/linear-func-cover.png
 tags:
-- Math
+  - Maths
 ---
 
 **A linear function** is represented by a straight line on a graph. It indicates a linear relationship between two variables: when one changes, the other changes constantly. For example:
