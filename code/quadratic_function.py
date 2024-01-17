@@ -9,7 +9,7 @@ x = np.linspace(-10, 10, 400)
 
 y = a * x**2 + b * x + c
 
-plt.figure(figsize=(8, 6))
+plt.figure(figsize=(4, 3))
 plt.plot(x, y, label='f(x) = {}x² + {}x + {}'.format(a, b, c))
 plt.title('Quadratic Function')
 plt.xlabel('x')
