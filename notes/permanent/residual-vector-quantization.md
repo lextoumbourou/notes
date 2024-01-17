@@ -1,5 +1,5 @@
 ---
-title: "Residual Vector Quantisation"
+title: Residual Vector Quantisation
 date: 2024-01-13 00:00
 modified: 2024-01-13 00:00
 aliases:
@@ -20,13 +20,13 @@ To understand RVQ, let's start by ignoring the R part of RVQ to focus on **Vecto
 
 ## Vector Quantisation
 
-Quantisation refers to converting infinite values into discrete finite values.
+Quantisation is the process of converting continuous infinite values into discrete finite values.
 
 In VQ, we encode a signal into a series of [Vectors](vector.md), then query each vector to find the closest neighbour in a lookup table called a **codebook**. Now, we can represent an entire chunk or *"frame"* of a signal with a single **code**.
 
 ![Vector Quantisation](../_media/vq.png)
 
-The codebook table is nothing more than an embedding matrix, where the table size is the codebook size, and the vector size is the codebook dimensions: `codebook = nn.Embedding(codebook_size, codebook_dim)`. Like an embedding table, the weights are learned alongside the rest of the network during training.
+The codebook table is nothing more than an embedding table, where the table size is the codebook size, and the vector size is the codebook dimensions: `codebook = nn.Embedding(codebook_size, codebook_dim)`. Like an embedding table, the weights are learned alongside the rest of the network during training.
 
 Vector quantisation comes originally from [signal processing](https://en.wikipedia.org/wiki/Vector_quantization) and has been exploited throughout image modelling architectures like [VQ-VAE](https://arxiv.org/abs/1711.00937) and [VQGAN](https://compvis.github.io/taming-transformers/).
 

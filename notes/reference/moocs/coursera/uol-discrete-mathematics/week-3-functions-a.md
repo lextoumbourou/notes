@@ -119,7 +119,7 @@ parent: uol-discrete-mathematics
         * Example on the left is an injective function, as every element of $A$ has a unique image in B.
         * Example on the right is not injective. 2 or 4 in A have the same image 0. 1 and 3 have the same image 1.
 
-        ![Injective Function](/_media/injective-function.png)
+        ![Injective Function](_media/injective-function.png)
 
     * You can show a function is not injective by finding two different inputs $a$ and $b$ with the same [Function Image](permanent/function-image.md).
     * An example with a linear function:
@@ -149,7 +149,7 @@ parent: uol-discrete-mathematics
             * $\text{ CO}-D_f = R_f$
         * Examples:
 
-            ![Surjective Example](/_media/surjective-example.png)
+            ![Surjective Example](_media/surjective-example.png)
 
     * An example [Linear Function](../../../../permanent/linear-function.md)
         * Show that the function $f: R -> R$ with $f(x) = 2x+3$ is a surjective (onto) function.

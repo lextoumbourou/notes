@@ -76,9 +76,9 @@ We can create a set of input values and their corresponding outputs, then visual
 
 Here is a plot of the Fahrenheit to Celsius function earlier, plotted across a range of inputs: from -100 to 100.
 
-![Fahrenheit to celsisus function plot](/_media/fahrenheit-to-celsius.png)
+![Fahrenheit to celsisus function plot](../_media/fahrenheit-to-celsius.png)
 
-When the graph is a straight line like this, it's called a **Linear Function**. There are other names for common function types:
+When the graph is a straight line like this, it's called a [Linear Function](linear-function.md). There are other names for common function types:
 
 * Linear Function: A function where the output is proportional to the input.
 * Quadratic Function: A function where the output is proportional to the square of the input.
