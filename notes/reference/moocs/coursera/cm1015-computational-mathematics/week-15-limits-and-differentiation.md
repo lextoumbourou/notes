@@ -109,7 +109,7 @@ $\lim f(x) = 0 = \lim f(x) \neq f(0) = 1$
 
 Directly connected to the concept of slope or gradient of a function
 
-Consider the slope of a linear function.
+Consider the slope of a [Linear Function](../../../../permanent/linear-function.md).
 
 Straight line $y = f(x) = mx + k$, where $m = \tan \alpha$
 

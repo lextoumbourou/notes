@@ -10,7 +10,7 @@ status: draft
 ## Lesson 5.1 Introduction to graph sketching and kinematics
 
 * Graph Sketching and Kinematics overview
-    * Define a [[Function]].
+    * Define a [function](../../../../permanent/function.md).
     * Show how to graphically represent a function.
 * [Function](../../../../permanent/function.md)
     * A function f(x) links elements x,y of two sets X and Y.
@@ -36,10 +36,10 @@ status: draft
     * [Injective Function](../../../../permanent/injective-function.md)
         * to each $x \in X$ only one distinct $y \in Y$
           ![](../../../../_media/week-9-function-cartesian-coordinates-injective.png)
-    * [[Bijective Function]]
+    * [Bijective Function](Bijective%20Function)
         * Injective + Surjective (one-to-one)
           ![](../../../../_media/week-9-function-cartesian-coordinates-bijective.png)
-* [[Cartesian Coordinates]]
+* [Cartesian Coordinates](Cartesian%20Coordinates)
     * A of coordinates which is commonly used to graphically represent the range of a function.
     * Contains 2 perpendicular axes, $x, y$ to map and label points on the plane
       ![](../../../../_media/week-9-function-cartesian-coordinates-cartesian.png)
@@ -103,7 +103,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
 
 #### Motion 3.1 Distance and speed
 
-* [[Calculating Average Speed]]
+* [Calculating Average Speed](Calculating%20Average%20Speed)
     * The average speed $v$ of an object can be calculate from the distance x tranvelled and the time t taken using the equation:
         * $\text{ average speed } = \frac{\text{ distance travelled }}{\text{ time taken }}$
         * Can be written algebrically as: $v = \frac{\Delta x }{\Delta t}$
@@ -118,7 +118,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
                 * $v = \frac{2500}{82} = 30.49ms^{-1}$
                 * $v = 30ms^{-1}$ (2 s.f.)
             * Since 30ms > 22ms, the driver exceeded the average speed limit.
-* [[Distance-time Graphs]]
+* [Distance-time Graphs](Distance-time%20Graphs)
     * Graphs of distance against time are used to represent the motion of objects.
         * Distance is plotted on the y-axis (vertical axis).
         * Time is plotted on the x-axis (horizontal axis)
@@ -131,7 +131,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * Speed $v = \frac{\Delta x}{\Delta y} = \frac{1000}{50} = 20ms^{-1}$
         ![](../../../../_media/week-9-function-cartesian-coordinates-distance-time.png)
     * Tip: use at least half the length of the line to make the gradient.
-* [[Instantaneous Speed]]
+* [Instantaneous Speed](Instantaneous%20Speed)
     * One critism of checks on average speed: the vehicle can hit a top speed above the speed limit, and then travel slowly for part of it to meet average speed limits.
     * Instantaneous Speed is speed of car over short interval of time.
     * Insantaneous pseed is found by drawing the tangent to the distance-time graph, then determining the gradient of this tanger.
@@ -157,7 +157,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * Use Figure 3 to determine tM instantaneous speed of the object at time t = 80 s. 
 * 3.2 Displacement and velocity
     * Where a swimmer does one 2 laps, returning to their original position, their displacement is 0.
-    * A displacement $s$ is a [Vectors](../../../../permanent/vector.md) quantity, unlike distance, which is a [[Scalar]].
+    * A displacement $s$ is a [Vectors](../../../../permanent/vector.md) quantity, unlike distance, which is a [Scalar](Scalar).
     * Average velocity $v$ of an object can be calculated from the change in displacement and the time taken.
             * $\text{average velocity} = \frac{\text{ change in displacement }}{\text{ time taken }}$
             * We can write it in algebraic form as: $v = \frac{ \Delta s } { \Delta t }$
@@ -207,7 +207,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
 * Recap: Cartesian coordinates allow map and label points on the plane.
     * By associating a point a pair of numbers called Cartesian Coordinates.
 * For a function associated with value x, and another value f(x), we can interpret as coordinates on the plane.
-    * For example, a [[Linear Function]] when plotted is a straight line.
+    * For example, a [Linear Function](../../../../permanent/linear-function.md) when plotted is a straight line.
 * [Quadratric Functions](../../../../permanent/quadatric-functions.md)
     * A function where $x$ appears with a power equal or less than two.
     * For example, consider the function $f(x) = x^2 - 4x$, $D = \mathbb{R}$
@@ -231,7 +231,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * Intersection with y-axis: $\rightarrow x=0 \rightarrow y_0 = f(0) = a(0)^2 + (0) +c$
         * Intersection with x-axis: $\rightarrow y=0 \rightarrow f(x_0) = {ax_0}^2 + bx_0 + c = 0$
         * Solve ${ax_0}^2 + bx_0 + c = 0 \rightarrow x_0 = (-b \pm \sqrt(b^2 - 4ac) ) / (2a)$
-* [[Cubic Function]]
+* [Cubic Function](Cubic%20Function)
     * $f(x) = ax^3 + bx^2 + cx + d$
     * Ex: $x^3 - 4x$, $D=R$
     * Intersection with y-axis $\rightarrow x=0 \rightarrow = y_0 = f(0) = (0)^3 - 4(0) = 0$
@@ -242,7 +242,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
     * Higher order polynomials $f(x) = ax^n + bx^{n-1} + ... + cx + d$
         * Example in factorised form: $f(x) = (x+2)(x+1)(x-1)(x-2)(x-3) n =5 D = R$
             * We can set x to value to make the parenthesis equal to 0, to find the intersection points.
-* [[Fraction]]
+* [Fraction](Fraction)
     * $f(x) = P(x) / Q(x)$
     * $f(x) = x/(x^2-1)$
         * Domain: $R\{-1, 1\}$
