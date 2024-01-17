@@ -6,7 +6,7 @@ from theme import Theme
 
 class LinearFuncCover(Scene):
     def construct(self):
-        cross_product = MathTex(r"f(x)", r" = ", r" {m}", r"{x}", r" + ", r" {b}", font_size=200).set_color(Theme.TEXT_COLOR)
+        cross_product = MathTex(r"f(", r"\mathbf{x}", r")", r" = ", r" \mathbf{m}", r"\mathbf{x}", r" + ", r" \mathbf{b}", font_size=200).set_color(Theme.TEXT_COLOR)
         cross_product.set_color_by_tex("{m}", Theme.COLOR_1)
         cross_product.set_color_by_tex("{x}", Theme.COLOR_2)
         cross_product.set_color_by_tex("{b}", Theme.COLOR_3)
