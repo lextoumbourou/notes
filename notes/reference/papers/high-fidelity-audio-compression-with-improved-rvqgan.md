@@ -40,9 +40,9 @@ Improved RVQGAN makes these architectural and training improvements:
 * They continue to use multiple loss functions, but include multi-scale mel loss.
 
 They use multiple loss functions:
-* [[Frequency Domain Reconstruction Loss]]
-* [[Adversarial Loss]]
-* [[Codebook Learning]]
+* [Frequency Domain Reconstruction Loss](Frequency%20Domain%20Reconstruction%20Loss)
+* [Adversarial Loss](Adversarial%20Loss)
+* [Codebook Learning](Codebook%20Learning)
 * Weighting it 15, 2, 1, 1, 0.25, respectively.
 
 ---
@@ -102,7 +102,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
     * have audio artifacts such as tonal artifacts
         * See [Upsampling artifacts in neural audio synthesis](Upsampling%20artifacts%20in%20neural%20audio%20synthesis)
     * Pitch and periodicty artifacts
-        * See [Chunked autoregressive gan for conditional waveform synthesis](Chunked%20autoregressive%20gan%20for%20conditional%20waveform%20synthesis)
+        * See [Chunked Autoregressive GAN for Conditional Waveform Synthesis](../../../../permanent/chunked-autoregressive-gan-for-conditional-waveform-synthesis.md)
     * Not doing a good job of modelling high-frequencies
     * These models are often tailored to a specific type of audio signal, like speech or music and struggle to model generic sounds
 * They make the following contributions:
@@ -140,7 +140,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
     * Improve HifiGAN recipe by introducing a periodic inductive bias using the [Snake Activation Function](../../permanent/snake-activation-function.md)
         * [Neural networks fail to learn periodic functions and how to fix it](../../../../permanent/neural-networks-fail-to-learn-periodic-functions-and-how-to-fix-it.md)
     * Replaces the MSD in HifiGAN with the MRSD to improve audio quality and reduce pitch, periodicity artifacts
-        * See [Chunked autoregressive gan for conditional waveform synthesis](Chunked%20autoregressive%20gan%20for%20conditional%20waveform%20synthesis)
+        * See [Chunked Autoregressive GAN for Conditional Waveform Synthesis](../../../../permanent/chunked-autoregressive-gan-for-conditional-waveform-synthesis.md)
 
 The GAN-based learning techniques have been used for vocoding, but they also work for [Neural Audio Compression](Neural%20Audio%20Compression).
 

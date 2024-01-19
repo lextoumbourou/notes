@@ -157,7 +157,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * Use Figure 3 to determine tM instantaneous speed of the object at time t = 80 s. 
 * 3.2 Displacement and velocity
     * Where a swimmer does one 2 laps, returning to their original position, their displacement is 0.
-    * A displacement $s$ is a [Vectors](../../../../permanent/vector.md) quantity, unlike distance, which is a [Scalar](Scalar).
+    * A displacement $s$ is a [Vector](../../../../permanent/vector.md) quantity, unlike distance, which is a [Scalar](Scalar).
     * Average velocity $v$ of an object can be calculated from the change in displacement and the time taken.
             * $\text{average velocity} = \frac{\text{ change in displacement }}{\text{ time taken }}$
             * We can write it in algebraic form as: $v = \frac{ \Delta s } { \Delta t }$
