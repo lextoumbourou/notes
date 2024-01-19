@@ -9,7 +9,7 @@ Notes from [Lesson 2: Displacement, velocity, and time](https://www.khanacademy.
 
 ## Intro to vectors and scalars
 
-* [Vectors](../../../../permanent/vector.md) has a magnitude/size AND distance. A [Scalar](Scalar) only has a distance.
+* [Vector](../../../../permanent/vector.md) has a magnitude/size AND distance. A [Scalar](Scalar) only has a distance.
 * [Displacement](../../../../journal/permanent/displacement.md)
     * In physics, we call distance "displacement".
     * Displacement is a vector quantity.
