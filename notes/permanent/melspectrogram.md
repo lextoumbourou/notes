@@ -14,6 +14,7 @@ Mel Spectrogram is a graphic representation of a [Sound Wave](sound-wave.md), vi
 Here is a Mel Spectrogram of the audio of a Trumpet
 
 ![Melspectrogram example of a Trumpet](../_media/melspectrogram-example.png)
+
 <audio controls>
   <source src="/_media/trumpet_example.mp3" type="audio/mpeg">
 </audio>
