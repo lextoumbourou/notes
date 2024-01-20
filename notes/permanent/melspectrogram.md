@@ -1,37 +1,32 @@
 ---
-title: melspectrogram
+title: Mel Spectrogram
 date: 2023-10-09 00:00
 modified: 2023-10-09 00:00
-status: draft
+cover: /_media/melspectrogram-cover.png
+summary: A visualisation of pitch energy over time for a sound wave
+tags:
+  - AudioEngineering
 ---
 
-A visualisation technique for [[Sound Waves]].
+Mel Spectrogram is a graphic representation of a [Sound Wave](sound-wave.md), visualising pitch energy over time.
 
-Humans Perceive Frequency Logarthimically
+![Melspectrogram](../_media/melspectrogram-example.png)
+<audio controls>
+  <source src="/_media/trumpet_example.mp3" type="audio/mpeg">
+</audio>
 
-Ideal audio feature representation:
-* Time-frequency representation.
-* Perceptually-relevant amplitude representation.
-* Perceptually-relevant frequency representation.
+How they're generated:
 
-Mel spectrograms
-* Mel
-    * Melscale - percuptually informed scale for pitch
-![](../journal/_media/melspectrogram-melscale.png)
-* Equal distance on the scale, have the same "perceuptual distance"
-* 1000 Hz = 1000 Mel.
-* Arrived at it from imperical experiments. Nothing magical.
+1. Break the audio signal down into short frames
+2. Use a [Fourier Transform](../../../permanent/Fourier%20Transform.md) to convert the time signal into the frequency domain.
+3. Convert the frequency domain into the a [Mel Scale](../../../permanent/mel-scale.md) using a [Mel Filter Bank](../../../permanent/mel-filter-bank.md), which extracts energy information at each frequency band.
 
-$m = 2595 \cdot \log(1. +\frac{f}{500}$
-$f = 700(10^{m/2595}-1)$
+## Mel Scale
 
-* How to extract:
-    * Extract STFT
-    * Convery amplitue to DBs
-    * Convert frequnect to Mel scale
-        * 1. Choose number of mel bands
-        * Construct mel filter banks
-        * Apply mel filter banks to spectro gram
+The Mel Scale is a *perceptual scale* of audio frequencies, which is a scale of audio based on our perceived distance from each other.
 
-* How many mel bands?
-    * Depends on the problem.
+The Mel scale is a logarithmic formula where 1000Mel = 1kHz. You can convert Hz to Mel using this formula:
+
+$Mel(f) = 2595 \log_{10} (1 + \frac{f}{100})$
+
+![Mel Scale](../_media/mel-scale-plot.png)
