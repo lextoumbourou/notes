@@ -24,7 +24,7 @@ The process of generating a Mel Spectrogram works like this:
 1. Break the audio signal down into short frames
 2. Use a [Fourier Transform](fourier-transform.md) to convert the time signal into the frequency domain.
 3. Use a [Mel Filter Bank](mel-filter-bank.md) maps the frequency domain into the Mel Scale.
-4. Plot [Mel Scale](../../../permanent/mel-scale.md) over time.
+4. Plot [Mel Scale](mel-scale.md) over time.
 
 ## Mel Scale
 

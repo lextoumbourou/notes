@@ -293,7 +293,7 @@ What they do is only apply the dropout operation 50% of the time.
 Now they have the best of both worlds: at lower bitrates, the audio can be constructed well, but at maximum bitrates they get close to optimal reconstruction.
 
 They found this techinque causes the quantized codes to learn most-significant to least significant bits of information with each additional quantizer. When the codes are reconstructed with $1 . . . Nq$ codebooks, we can see each codebook adds increasing amounts of fine-scale detail.
-This interaction is useful to understand when training hierarchical generative models, like [AudioLM](../../permanent/audiolm.md), [VALL-E](VALL-E) and [MusicLM](MusicLM). Could consider partitioning the codes into "coarse" tokens (most significant codes) and "fine" tokens (higher detail, but less significant).
+This interaction is useful to understand when training hierarchical generative models, like [AudioLM](../../permanent/audiolm.md), [vall-e](../../permanent/vall-e.md) and [MusicLM](MusicLM). Could consider partitioning the codes into "coarse" tokens (most significant codes) and "fine" tokens (higher detail, but less significant).
 
 #### 3.4 Discriminator design
 
