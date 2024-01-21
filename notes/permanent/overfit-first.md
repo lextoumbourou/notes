@@ -2,7 +2,7 @@
 title: Overfit First
 date: 2024-01-21 00:00
 modified: 2024-01-21 00:00
-cover: /_media/overfit-first.png
+cover: /_media/overfit-first-3-steps.png
 summary: the first step to training a neural network successfully
 tags:
 - MachineLearning
