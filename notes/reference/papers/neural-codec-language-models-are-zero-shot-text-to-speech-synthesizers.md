@@ -187,7 +187,7 @@ A big topic is how to generate speech when you have no text. There are a few pap
 
 [AudioLM](../../permanent/audiolm.md) follows a similar way but uses audio codecs to synthesize speech, together with semantic codes.
 
-They note that AudioLM is able to synthesise speech based on audio codecs without training an additional vocoder such as [hifigan](../../../../permanent/hifigan.md).
+They note that AudioLM is able to synthesise speech based on audio codecs without training an additional vocoder such as [HiFi-GAN](../../permanent/hifigan.md).
 
 AudioLM is a speech-to-speech model, whereas VALL-E is a TTS model, which gives specific control over the contents.
 
@@ -310,7 +310,7 @@ We compute sinuous position embedding separately for prompt and input tokens.
 
 For the causal transformer model, each token $ct,1$ can attend to $(x, c≤t,1)$ as illustrated in the left part of Figure 3.
 
-![](../../../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-fig3.png)
+![](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-fig3.png)
 *Figure 3 from Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers*
 
 The model is optimised to maximise the probability of the next token in the first codebook.
@@ -352,7 +352,7 @@ To predict the acoustic tokens from the $i-th$ codebook, the transformer input i
 
 The positional embeddings are also computed separately for prompts and the acoustic sequence.
 
-The current stage $i$ is injected into the network with [Adaptive Layer Normalization](../../../../permanent/Adaptive%20Layer%20Normalization.md) operator, i.e., $\text{AdaLN}(h, i) = a_i \ \text{LayerNorm}(h) + b_i$, where h is the intermediate activations, $ai$ and $bi$ are obtained from a linear projection of the stage embedding. Unlike AR, the NAR model allows each token to attend to all the input tokens in the self-attention layer.
+The current stage $i$ is injected into the network with [adaptive-layer-normalization](../../permanent/adaptive-layer-normalization.md) operator, i.e., $\text{AdaLN}(h, i) = a_i \ \text{LayerNorm}(h) + b_i$, where h is the intermediate activations, $ai$ and $bi$ are obtained from a linear projection of the stage embedding. Unlike AR, the NAR model allows each token to attend to all the input tokens in the self-attention layer.
 
 We also share the parameters of the acoustic embedding layer and the output prediction layer.
 
