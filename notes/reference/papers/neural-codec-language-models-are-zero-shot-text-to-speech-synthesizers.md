@@ -19,7 +19,7 @@ Notes from the paper [Neural Codec Language Models are Zero-Shot Text to Speech 
 
 The main breakthrough of this paper is utilising the **neural audio codec** [Encodec](../../../../permanent/encodec.md), which uses [Residual Vector Quantisation](../public/notes/permanent/residual-vector-quantisation.md) to converts audio into a discrete tokens. This tokenisation approach, allows them to model the problem using language models, subsequently allowing them to train on larger, more noisy datasets than previous TTS solutions and seriously improving the ability to generate unseen speakers.
 
-Hence: <font color="blue">Neural Code</font> <font color="dark-yellow">Language Models</a> are <font color="orange">Zero-Shot</a> <font color="green">Text-to-Speech Synthesizes</font>.
+Hence: <font color="blue">Neural Code</font> <font color="dark-yellow">Language Models</font> are <font color="orange">Zero-Shot</font> <font color="green">Text-to-Speech Synthesizes</font>.
 
 ![](../../../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-fig-1.png)
 
