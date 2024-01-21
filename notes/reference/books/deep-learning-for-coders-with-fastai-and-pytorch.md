@@ -49,7 +49,7 @@ status: draft
 
 ## Chapter 2
 
-* [Out-of-domain data](../../permanent/out-of-domain-data.md) (pg. 104)
+* [Out-of-Domain](../../permanent/out-of-domain-data.md) data (pg. 104)
     * Data that is given to a model that is different to the data it was trained on.
     * No complete technical solution: have to carefully roll out model
 * [Domain Shift](../../permanent/domain-shift.md) (pg. 104)
