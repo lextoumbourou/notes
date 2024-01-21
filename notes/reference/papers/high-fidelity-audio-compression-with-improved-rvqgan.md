@@ -131,7 +131,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
             - [Multi-scale Waveform Discriminator](Multi-scale%20Waveform%20Discriminator) (MSD)
                 - penalize structure at different audio resolutions
             - feature matching loss that minimises L1 distance between discriminator feature maps of real and synthetic audio.
-* [HifiGAN](../../../../permanent/HifiGAN.md)
+* [hifigan](../../../../permanent/hifigan.md)
     * Introduce a multi-period waveform discriminator (MPD) for high fidelity synthesis
     * adding an auxiliary mel-reconstruction loss for fast training
 * [UnivNet](../../../../permanent/UnivNet.md)

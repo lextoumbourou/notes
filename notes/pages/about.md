@@ -7,7 +7,7 @@ Welcome to my rendered collections of notes.
 
 You can find the source on [GitHub](https://github.com/lextoumbourou/notes).
 
-The notes are collected using my interpretation of the [Zettelkasten](https://en.wikipedia.org/wiki/Zettelkasten) method. [Permanent Notes](/permanent-notes.html) explore a single idea and its connections to other ideas. Reference notes (based on [Literature Notes](/literature-notes.html) are taken while consuming the media as a means of helping me process information. The idea is that reference notes lead to additions or updates to the permanent note collection.
+The notes are collected using my interpretation of the [Zettelkasten](https://en.wikipedia.org/wiki/Zettelkasten) method. [Permanent Notes](/permanent-notes.html) explore a single idea and its connections to other ideas. Reference notes (based on [Literature Notes](/literature-notes.html)) are taken while consuming the media as a means of helping me process information. The idea is that reference notes lead to additions or updates to the permanent note collection.
 
 I've accumulated notes since 2012 but started using this methodology in 2020.
 
