@@ -1,10 +1,11 @@
 ---
 title: Iterative Development
-date: 2024-01-21 00:00
+date: 2021-01-04 00:00
 modified: 2024-01-21 00:00
 tags:
   - SoftwareEngineering
-status: draft
+summary: deliver working software frequently
+cover: /_media/iterative-development-cover.png
 ---
 
 Iterative development is the centrepiece of the [Principles of Agile Manifesto](https://agilemanifesto.org/principles.html):
