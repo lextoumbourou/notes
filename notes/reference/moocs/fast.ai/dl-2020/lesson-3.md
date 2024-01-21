@@ -64,7 +64,7 @@ Notes taken from watching the [Lesson 3 - Deep Learning for Coders (2020)](https
     * Bears will be in positions no one would bother uploading to the net
     * Would need to be really fast returning results
     * Extra: would have to be really careful about [Type 2 Errors (False Negatives)](permanent/type-2-errors.md).
-* [Out-of-domain data](../../../../permanent/out-of-domain-data.md)
+* [Out-of-Domain](../../../../permanent/out-of-domain-data.md) data
     * Data that is given to a model that is different to the data it was trained on.
 * [Domain Shift](../../../../permanent/domain-shift.md)
     * Data that you models see changes over time.
