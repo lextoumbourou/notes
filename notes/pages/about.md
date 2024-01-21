@@ -15,7 +15,7 @@ The notes are currently sorted by their creation date. However, the intention is
 
 I intend to be flexible with the topics this blog explores; it's what I'm interested in or learning about at the time. Right now, I'm most interested in Generative AI and Software Engineering. I'm also doing a Bachelor's Degree in Computer Science (I've been working for about 20 years without a degree), so some notes will be on computer science fundamentals.
 
-I'm not sure how useful the contents of notes will be to others. However, I've made them public because it helps me motivate the creation of these notes, and some of them will be useful to others.
+I don't know how useful the contents of notes will be to others. However, I've made them public because it helps me motivate the creation of these notes, and you never know.
 
 ### About me
 
