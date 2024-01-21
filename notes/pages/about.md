@@ -3,33 +3,32 @@ title: About
 date: 2021-05-27 00:00
 ---
 
-This is the rendered collections of notes by me, Lex Toumbourou.
+Welcome to my rendered collections of notes.
 
-You can find the source on the [GitHub project](https://github.com/lextoumbourou/notes).
+You can find the source on [GitHub](https://github.com/lextoumbourou/notes).
 
-The notes are collecting using my interpretation of the [Zettelkasten](https://en.wikipedia.org/wiki/Zettelkasten) method.
+The notes are collected using my interpretation of the [Zettelkasten](https://en.wikipedia.org/wiki/Zettelkasten) method. [Permanent Notes](permanent-notes.md) explore a single idea and its connections to other ideas. Reference notes (based on [Literature Notes](literature-notes.md) are taken while consuming the media as a means of helping me process information. The idea is that reference notes lead to additions or updates to the permanent note collection.
 
-[Permanent Notes](../permanent/permanent-notes.md) explore a single idea and its connections to other ideas. Reference notes (based on [Literature Notes](../permanent/literature-notes.md) are taken while consuming the media as a means of helping me process information. The idea is that reference notes lead to additions or updates to the permanent note collection.
+I've accumulated notes since 2012 but started using this methodology in 2020.
 
-I've been accumulated reference notes since 2012, but permanent note collection started in 2020.
+The notes are currently sorted by their creation date. However, the intention is that each note will be constantly updated and changed. I recommend using the tags to explore the notes.
 
-The notes are currently sorted by created date. However, the intention is that each note will be constantly updated and changed. I recommend using the tags to explore the notes.
+I intend to be flexible with the topics this blog explores; it's what I'm interested in or learning about at the time. Right now, I'm most interested in Generative AI and Software Engineering. I'm also doing a Bachelor's Degree in Computer Science (I've been working for about 20 years without a degree), so some notes will be on computer science fundamentals.
 
-I'm intended to be flexible with the topics that this blog explores, but right now I'm quite interested in **game development**, **machine learning**, **software engineering** and **writing**.
-
-To be honest, I'm not sure how useful the contents of notes will be to others. However, I've made them public because:
-
-1. the note taking approach may be of interest
-2. you never know
-
-I also have a collection of [posts](/category/posts.html). These are more like traditional blog posts like tutorials and project summaries.
-
-At the time of writing, all these are ported across from my original blog and are quite out-of-date. I may add more blogs at some point.
+I'm not sure how useful the contents of notes will be to others. However, I've made them public because it helps me motivate the creation of these notes, and some of them will be useful to others.
 
 ### About me
 
-I'm a generalist software developer currently living in Brisbane, Australia.
+I'm a generalist software developer currently living in Brisbane, Australia. At the time of writing, I'm the CTO of a Music startup called [Splash](https://www.splashmusic.com/).
 
-I found writing bios like this decay too quickly to bother with, but I keep my [LinkedIn profile](https://www.linkedin.com/in/lextoumbourou/) up-to-date.
+I'm a [Kaggle journeyman](https://www.kaggle.com/lextoumbourou), having achieved ten silver medals in a row with no golds. However, I am a Kaggle Notebook Master. I'm on a Kaggle hiatus now, but I hope to get back on the wagon soon.
 
-I sometimes [Tweet](https://twitter.com/lexandstuff) but not much.
+I don't post on social media much, but I'm sometimes on:
+
+[LinkedIn](https://www.linkedin.com/in/lextoumbourou/)
+[Threads](https://www.threads.net/@lexisoninsta)
+[Kaggle](https://www.kaggle.com/lextoumbourou)
+[YouTube](https://www.youtube.com/channel/UCWVXR9GEEAoNiEEfkJU3MpA)
+[Hacker News](https://news.ycombinator.com/user?id=lexandstuff)
+
+I used to [Tweet](https://twitter.com/lexandstuff), but much less so now.
