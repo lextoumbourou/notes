@@ -16,7 +16,7 @@ Notes from the paper [Neural Codec Language Models are Zero-Shot Text to Speech 
 
 The main breakthrough of this paper is utilising the **neural audio codec** [Encodec](../../../../permanent/encodec.md), which uses [Residual Vector Quantisation](../public/notes/permanent/residual-vector-quantisation.md) to converts audio into a discrete tokens. This tokenisation approach, allows them to model the problem using language models, subsequently allowing them to train on larger, more noisy datasets than previous TTS solutions and seriously improving the ability to generate unseen speakers.
 
-Hence: <font color="blue">Neural Code</font> <font color="dark-yellow">Language Models</a> are <font color="orange">Zero-Shot</a> <font color="green">Text-to-Speech Synthesizes</a>.
+Hence: <font color="blue">Neural Code</font> <font color="dark-yellow">Language Models</a> are <font color="orange">Zero-Shot</a> <font color="green">Text-to-Speech Synthesizes</font>.
 
 ![](../../../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-fig-1.png)
 
@@ -30,7 +30,7 @@ They do not release an open-source solution, though it is simple enough that man
 
 The TTS approach of VALL-E is Cascading TTS. That means, the model's encodes text into an intermediate representation, before being decoded into audio.
 
-Previous approaches have used a [Mel Spectrogram](../../permanent/melspectrogram.md) for intermediary relationship, and used a Vocoder to decode into audio.
+Previous approaches have used a [Mel Spectrogram](../../permanent/mel-spectrogram.md) for intermediary relationship, and used a Vocoder to decode into audio.
 
 VALL-E, like a lot of audio recent audio papers, uses the neural audio codec [Encodec](../../../../permanent/encodec.md) for intermediate representation, which tokenises audio into multiple streams of discrete codes, using [residual-vector-quantization](../../permanent/residual-vector-quantization.md).
 
@@ -79,12 +79,14 @@ But they all require additional fine-tuning, complex pre-designed features, or h
 Training a model with a large and diverse dataset has worked so well for modelling text, but speech has not yet been able to take advantage of these types of datasets.
 
 Related papers:
+
 * [Language Models are Few-Shot Learners](../../permanent/language-models-are-few-shot-learners.md)
 * [Palm: Scaling language modeling with pathways](Palm:%20Scaling%20language%20modeling%20with%20pathways)
 
 Text modelling research has seen clear data increase to performance improvements relationships when training on large datasets.
 
 For example:
+
 * 16GB [Bert: Pre-training of deep bidirectional transformers for language understanding](https://arxiv.org/abs/1810.04805)
 * 160GB [RoBERTa: A Robustly Optimized BERT Pretraining Approach](https://arxiv.org/abs/1907.11692)
 * 570GB [Language Models are Few-Shot Learners](../../permanent/language-models-are-few-shot-learners.md) (GPT-3)
@@ -106,7 +108,7 @@ The dataset has more noisy speech and inaccurate transcriptions than other TTS t
 
 Table 1 summarises the difference between VALL-E and previous TTS systems.
 
-![](../../../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-table-1.png)
+![](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-table-1.png)
 
 They evaluate VALL-E on datasets where all test speakers are unseen in training corpus, namely:
 - [LibriSpeech](https://ieeexplore.ieee.org/document/7178964)
@@ -132,7 +134,7 @@ VALL-E was also found to keep the emotion of the acoustic prompt, and the enviro
 
 There are two main categories of TTS solutions:
 
-1. Cascading TTS Systems - these leverage a pipeline with an itermediate representation, typically a [Mel Spectrogram](../../permanent/melspectrogram.md), which is later decoded by a Vocoder.
+1. Cascading TTS Systems - these leverage a pipeline with an itermediate representation, typically a [Mel Spectrogram](../../permanent/mel-spectrogram.md), which is later decoded by a Vocoder.
 2. End-to-End Methods - these model text directly to audio.
 
 VALL-E is a cascading solution, which utilises discrete codes instead of Mel Spectrograms as the intermediate representation.
@@ -154,6 +156,7 @@ This paper [Meta-tts: Metalearning for few-shot speaker adaptive text-to-speech]
 Also, speaker encoding-based methods achieved great progress in recent years.
 
 Speaker encoding based systems use a speaker encoder and a TTS component conditioned on that. A number of papers have show that a model can generate high-quality outputs with 3 seconds enrolled recordings for in-domain speakers:
+
 - [Transfer learning from speaker verification to multispeaker text-to-speech synthesis](Transfer%20learning%20from%20speaker%20verification%20to%20multispeaker%20text-to-speech%20synthesis)
 - [Neural voice cloning with a few samples](Neural%20voice%20cloning%20with%20a%20few%20samples)
 
@@ -171,16 +174,19 @@ It has [In-Context Learning](../../permanent/in-context-learning.md) capability,
 ### Spoken generative pre-trained models
 
 Self-supervised learning is widely used in speech understanding, for example:
+
 - [A framework for self-supervised learning of speech representations](A%20framework%20for%20self-supervised%20learning%20of%20speech%20representations)
 - [wav2vec 2.0: A framework for self-supervised learning of speech representations](wav2vec%202.0:%20A%20framework%20for%20self-supervised%20learning%20of%20speech%20representations)
 - [Self-supervised speech representation learning by masked prediction of hidden units](Self-supervised%20speech%20representation%20learning%20by%20masked%20prediction%20of%20hidden%20units)
 - [Wavlm: Large-scale self-supervised pre-training for full stack speech processing](Wavlm:%20Large-scale%20self-supervised%20pre-training%20for%20full%20stack%20speech%20processing)
 
 And speech-to-speech generation:
+
 * [Generative spoken language modeling from raw audio](Generative%20spoken%20language%20modeling%20from%20raw%20audio)
 * [Audiolm: a language modeling approach to audio generation](Audiolm:%20a%20language%20modeling%20approach%20to%20audio%20generation)
 
 A big topic is how to generate speech when you have no text. There are a few papers:
+
 - [GSLM](GSLM) proposes to synthesise speech based on HuBERT codes.
 * [Speech resynthesis from discrete disentangled self-supervised representations](Speech%20resynthesis%20from%20discrete%20disentangled%20self-supervised%20representations)
     - Improves the performance by combining HuBERT codes with codes of VQVAE and a speaker encoder.
@@ -214,10 +220,12 @@ Speech [Quantisation](../../../../permanent/quantisation.md) is required to comp
 One approach that's commonly used is [Mu-Law Algorithm](../../../../permanent/mu-law-algorithm.md), which can quantise each time step to 256 values and reconstruct high-quality audio. Used in models like [Wavenet](../../permanent/wavenet.md). It does not help much with inference speed as it doesn't reduce sequence length.
 
 Recently, [Vector Quantisation](../../../../permanent/vector-quantisation.md) has been used in self-supervised speech models for feature extraction, such as:
+
 * [vq-wav2vec: Self-supervised learning of discrete speech representations](https://arxiv.org/abs/1910.05453)
 * [HuBERT](../../permanent/hubert.md)
 
 These papers show the codes from these self-supervised models can be used to reconstruct audio much faster than Wavenet:
+
 * [Generative spoken language modeling from raw audio](https://arxiv.org/abs/2102.01192)
 * [VQTTS: high-fidelity text-to-speech synthesis with self-supervised VQ acoustic feature](https://arxiv.org/abs/2204.00768)
 
@@ -391,6 +399,7 @@ Finally, we use the neural codec decoder to generate the waveform conditioned on
 #### Dataset
 
 LibriLight
+
 - 60K hours of unlabelled speech from English audiobooks.
 - Number of distinct speakers is around 7k.
 - Annotations:
@@ -400,6 +409,7 @@ LibriLight
 #### Model
 
 Both the AR model and the NAR model have the same transformer architecture:
+
 - 12 layers
 - 16 attention heads
 - an embedding dimension of 1024
