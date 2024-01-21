@@ -1,9 +1,12 @@
 ---
 title: "Neural Codec Language Models are Zero-Shot Text-to-Speech Synthesizers"
-date: 2023-12-21 00:00
-modified: 2023-12-21 00:00
+date: 2023-01-22 00:00
 status: draft
 category: reference/papers
+tags:
+  - MachineLearning
+  - AudioEngineering
+summary: "Notes from the paper [Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers](https://arxiv.org/abs/2301.02111) by Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, Furu Wei"
 ---
 
 Notes from the paper [Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers](https://arxiv.org/abs/2301.02111) by Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, Furu Wei
