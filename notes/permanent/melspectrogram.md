@@ -3,13 +3,13 @@ title: Mel Spectrogram
 date: 2023-10-09 00:00
 modified: 2023-10-09 00:00
 cover: /_media/melspectrogram-cover.png
-summary: A visualisation of frequency over time for a sound wave
+summary: A sound wave visualisation of frequency over time
 tags:
   - AudioEngineering
 hide_cover_in_article: true
 ---
 
-Mel Spectrogram is a graphic representation of a [Sound Wave](sound-wave.md), visualising pitch energy over time.
+Mel Spectrogram is a graphic representation of a [Sound Wave](sound-wave.md), visualising frequency over time.
 
 Here is a Mel Spectrogram of the audio of a Trumpet
 
@@ -22,9 +22,9 @@ Here is a Mel Spectrogram of the audio of a Trumpet
 The process of generating a Mel Spectrogram works like this:
 
 1. Break the audio signal down into short frames
-2. Use a [Fourier Transform](fourier-transform.md) to convert the time signal into the frequency domain.
-3. Use a [Mel Filter Bank](mel-filter-bank.md) maps the frequency domain into the Mel Scale.
-4. Plot [Mel Scale](mel-scale.md) over time.
+2. Convert time signal into the frequency domain using a [Fourier Transform](fourier-transform.md)
+3. Convert frequencies into Mel scale, to more closely align with our intuition of frequencies. This operation is called [Mel Filter Bank](mel-filter-bank.md).
+4. Plot the Mel values over time.
 
 ## Mel Scale
 
