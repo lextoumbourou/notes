@@ -21,7 +21,7 @@ I'm not sure how useful the contents of notes will be to others. However, I've m
 
 I'm a generalist software developer currently living in Brisbane, Australia. At the time of writing, I'm the CTO of a Music startup called [Splash](https://www.splashmusic.com/).
 
-I'm a [Kaggle journeyman](https://www.kaggle.com/lextoumbourou), having achieved ten silver medals in a row with no golds. However, I am a Kaggle Notebook Master. I'm on a Kaggle hiatus now, but I hope to get back on the wagon soon.
+I'm a [Kaggle journeyman](https://www.kaggle.com/lextoumbourou), having achieved ten medals (9 silvers) in a row with no golds. However, I am a Kaggle Notebook Master. I'm on a Kaggle hiatus now, but I hope to get back on the wagon soon.
 
 I don't post on social media much, but I'm sometimes on:
 
