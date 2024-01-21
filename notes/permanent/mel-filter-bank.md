@@ -5,4 +5,4 @@ modified: 2024-01-20 00:00
 status: draft
 ---
 
-See [Mel Spectrogram](melspectrogram.md).
+See [Mel Spectrogram](mel-spectrogram.md).
