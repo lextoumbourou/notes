@@ -486,4 +486,14 @@ div.output_prompt {
 
 div.output_subarea {
   max-width: 100% !important;
+}
 
+.book-rec-container {
+  display: flex;
+  align-items: start;
+}
+
+.book-image {
+  margin-right: 20px;
+  width: 200px; /* adjust as needed */
+}
