@@ -36,7 +36,7 @@ modified: 2023-04-08 00:00
     * The depth or the height of a tree is the maximum path length across all nodes.
     * The depth (height) of this tree is 4.
 * Special trees
-    * [Binary tree](permanent/binary-tree.md) is a rooted tree in which every vertex has 2 or fewer children.
+    * [Binary Tree](../../../../permanent/binary-tree.md) is a rooted tree in which every vertex has 2 or fewer children.
 
         ![week-16-binary-tree](../../../../_media/week-16-binary-tree.png)
 
