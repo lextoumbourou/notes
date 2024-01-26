@@ -12,7 +12,7 @@ Iterative development is the centrepiece of the [Principles of Agile Manifesto](
 
 > Deliver working software frequently, from a couple of weeks to a couple of months, with a preference for a shorter timescale.
 
-It is the antithesis of the hypothetic "Waterfall" methodology, which aims to deliver a project in a long, finite work stream.
+It is the antithesis of the hypothetic "Waterfall" methodology, which aims to deliver a project in a cascading, finite work stream, with results delivered at the end.
 
 In the book The Art of Game Design, the importance of iterative development is summarised in this quote from [Rule of Loop](rule-of-loop.md):
 

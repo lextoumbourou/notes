@@ -287,12 +287,9 @@ $p(c_{:,1}|x, \tilde{C}_{:,1}; \theta AR) = \prod\limits^{T}_{t=0} p(c_{t,1}|c <
 
 Since VALL-E is a decoder-only LM, the concatenation of $\tilde{c}_{: 1}$ and $c_{: 1}$ is a whole sequence, and they do not distinguish them or insert a specific token in training. Only $c_{:,1}$ is predicted while the prefix $\tilde{c}_{:,1}$ is given during inference
 
-I think in other words they mean: they concat the speaker identity and the speech output to train on using an autoregressive approach. At inference time, they just provide the speaker identity code sequence.
-
 Then, for the discrete tokens from the second to the last quantisers, $c_{:,j} \in [2,8]$, we train a [Non-Autoregressive](Non-Autoregressive) (NAR) language model.
 
-Since the tokens can not access each other in a NAR manner, to constrain the speaker identity, the acoustic prompt matrix $\tilde{C}$ is used as an acoustic prompt. Thus, the model is conditioned on the phoneme sequence x, the acoustic prompt $\tilde{C}$ and the predicted acoustic tokens
-belong to the previous codebooks $C_{:,<j}$
+Since the tokens can not access each other in a NAR manner, to constrain the speaker identity, the acoustic prompt matrix $\tilde{C}$ is used as an acoustic prompt. Thus, the model is conditioned on the phoneme sequence x, the acoustic prompt $\tilde{C}$ and the predicted acoustic tokens belonging to the previous codebooks $C_{:,<j}$
 
 The combination of the AR model and the NAR model provides a good trade-off between speech quality and inference speed:
 
@@ -317,7 +314,7 @@ In order to generate speech with specific content, we use the phoneme sequence a
 
 Thus, the model input is the concatenation of $\mathbf{x}$ and $\mathbf{c}_{: 1}$, and two special `<EOS>` tokens are appended after each of them.
 
-We compute sinuous position embedding separately for prompt and input tokens.
+[[Sinuous Position Embedding]] is computed separately for prompt and input tokens.
 
 For the causal transformer model, each token $ct,1$ can attend to $(x, c≤t,1)$ as illustrated in the left part of Figure 3.
 
@@ -363,7 +360,7 @@ To predict the acoustic tokens from the $i-th$ codebook, the transformer input i
 
 The positional embeddings are also computed separately for prompts and the acoustic sequence.
 
-The current stage $i$ is injected into the network with [adaptive-layer-normalization](../../permanent/adaptive-layer-normalization.md) operator, i.e., $\text{AdaLN}(h, i) = a_i \ \text{LayerNorm}(h) + b_i$, where h is the intermediate activations, $ai$ and $bi$ are obtained from a linear projection of the stage embedding. Unlike AR, the NAR model allows each token to attend to all the input tokens in the self-attention layer.
+The current stage $i$ is injected into the network with [Adaptive Layer Normalization](../../permanent/adaptive-layer-normalization.md) operator, i.e., $\text{AdaLN}(h, i) = a_i \ \text{LayerNorm}(h) + b_i$, where h is the intermediate activations, $ai$ and $bi$ are obtained from a linear projection of the stage embedding. Unlike AR, the NAR model allows each token to attend to all the input tokens in the self-attention layer.
 
 We also share the parameters of the acoustic embedding layer and the output prediction layer.
 
