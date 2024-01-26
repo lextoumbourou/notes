@@ -32,9 +32,6 @@ However, since the function outputs zero for any negative input, neurons can som
 Variations like [Leaky ReLU](leaky-relu.md) and Parametric ReLU mitigate this by replacing 0 with a small value when the unit is inactive, providing a way to keep the neurons alive during the training process.
 
 ![ReLU plot](../_media/relu-activation-plot.png)
-
----
-
 ## Recommended Reading
 
 ![Deep Learning for Coders with fastai & PyTorch](../_media/deep-learning-for-coders-book-cover.png)
