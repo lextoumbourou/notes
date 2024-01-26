@@ -12,7 +12,7 @@ hide_cover_in_article: true
 
 The **Convex Hull** is the smallest polygon that contains a set of points.
 
-Think of some nails poking out of a board. If you were to place a rubber band around all nails, the **Convex Hull** would be the polygon shape the rubber band makes.
+Think of some nails poking out of a board. If you place a rubber band around all nails, the **Convex Hull** would be the polygon shape the rubber band makes.
 
 ![](../_media/convex-hull.png)
 
@@ -30,6 +30,7 @@ This example from the Roblox docs shows the collision region for a 3d model with
 ---
 ## Recommended Reading
 
-For more about Convex Hulls and algorithms for computing them, see **Chapter 33** of [Introduction to Algorithms, Third Edition](https://amzn.to/3HyDauB).
-
+[Introduction to Algorithms, Third Edition](https://amzn.to/3HyDauB).
 ![Intro to Algorithms cover](../_media/intro-to-algorithms-3rd.png)
+
+**Chapter 1** has an introduction to Convex Hull. Also **Chapter 33** details some algorithms for computing Convex Hulls.
