@@ -43,22 +43,6 @@
         </div>
 
         <div class="clear"></div>
-
-        <div class="article-book-rec">
-          <h2>Book Recommendation</h2>
-          {% if article.book_recommendation %}
-            <div class="book-rec-container">
-              <img src="{{ article.book_recommendation.image_link }}" alt="{{ article.book_recommendation.title }}" class="book-image">
-              <div>
-                <h3>{{ article.book_recommendation.title }}</h3>
-                <p>{{ article.book_recommendation.blurb }}</p>
-                <a href="{{ article.book_recommendation.amazon_link }}">Buy on Amazon</a>
-              </div>
-            </div>
-          {% else %}
-            <p>No book recommendation for this article.</p>
-          {% endif %}
-        </div>
       </div>
   </article>
 </section>
