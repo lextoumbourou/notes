@@ -486,4 +486,13 @@ div.output_prompt {
 
 div.output_subarea {
   max-width: 100% !important;
+}
+
+table th {
+  text-align: left;
+}
+
+table th, table td {
+  padding: 0;
+}
 
