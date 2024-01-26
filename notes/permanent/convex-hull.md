@@ -34,5 +34,4 @@ This example from the Roblox docs shows the collision region for a 3d model with
 
 ![Intro to Algorithms cover](../_media/intro-to-algorithms-3rd.png)
 
-- **Chapter 1** has an introduction to Convex Hull
-- **Chapter 33** details some algorithms for computing Convex Hulls
+**Chapter 1** has an introduction to Convex Hull. **Chapter 33** details some algorithms for computing Convex Hulls
