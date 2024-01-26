@@ -16,7 +16,7 @@ Think of some nails poking out of a board. If you place a rubber band around all
 
 ![](../_media/convex-hull.png)
 
-One real-world application in game programming is **Collision Detection**. Since computing collisions can be expensive, a convex hull is calculated around the 3d model of an object to provide an approximate box for detecting character collisions, reducing the number of computations required.
+One real-world application in game programming is **Collision Detection**. Since computing collisions can be expensive, a convex hull is calculated around the 3d model of an object to provide an approximate collision region, reducing the number of computations required.
 
 This example from the Roblox docs shows the collision region for a 3d model with the `Hull` collision option.
 
