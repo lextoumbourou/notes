@@ -12,7 +12,7 @@ hide_cover_in_article: true
 
 The **Convex Hull** is the smallest polygon that contains a set of points.
 
-Think of some nails poking out of a board. If you place a rubber band around all nails, the **Convex Hull** would be the polygon shape the rubber band makes.
+Think of some nails poking out of a board. If you place a rubber band around all nails, the polygon shape the rubber band makes is the convex hull.
 
 ![](../_media/convex-hull.png)
 
