@@ -12,7 +12,7 @@ Software development is a trade, and we should educate developers accordingly.
 
 Despite their occasional ridicule within the industry, the software boot camp model works - the top boot camps tend to have a higher success rate at landing people in jobs than computer science departments at top universities [^1] [^2].
 
-Anecdotally, I've hired many devs that came straight out of boot camps (specifically Coder Academy Brisbane), and they all rocked and are in the industry to this day - most of them have become seniors.
+Anecdotally, I've hired many devs that came straight out of boot camps, and they all rocked and are in the industry to this day - most of them have become seniors.
 
 From day 1, they came to work knowing Git, how to use their IDE (shortcuts), the basics of typical Agile-like practices and had practical experience building web applications.
 
