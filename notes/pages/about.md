@@ -35,3 +35,7 @@ I don't post on social media much, but I'm sometimes on:
 - [Roblox Devforum](https://devforum.roblox.com/u/lexandstuff)
 
 I used to [Tweet](https://twitter.com/lexandstuff), but much less so now.
+
+## Affiliate Links
+
+I've started experimenting with affiliate links to monetise my ten daily page views (🚀). It's usually book recommendations, but sometimes products. I always write the articles first and figure out if there are affiliate options later. The content is all 100% my own opinions.
