@@ -19,6 +19,6 @@ In [Unit Testing: Principles and Practices and Patterns](https://amzn.to/496VEy2
 
 [Unit Testing: Principles, Practices and Patterns: Effective Testing Styles, Patterns, and Reliable Automation for Unit Testing, Mocking, and Integration Testing with Examples in C#](https://amzn.to/496VEy2)
 
-![Cover for book Unit Testing: Principles, Practices and Patterns by Vladimir Khorikov](../../../_media/unit-testing-principles-practices-and-patterns.png)
+![Cover for book Unit Testing: Principles, Practices and Patterns by Vladimir Khorikov](../_media/unit-testing-principles-practices-and-patterns.png)
 
 This book is one of the comprehensive guides to automated testing. I highly recommend it. Chapter 4 (pp. 87-90) compares in-depth black and box testing.
