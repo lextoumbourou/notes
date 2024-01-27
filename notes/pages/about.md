@@ -23,6 +23,8 @@ I'm a generalist software developer currently living in Brisbane, Australia. At 
 
 I'm a [Kaggle journeyman](https://www.kaggle.com/lextoumbourou/competitions?sort=recently+launched&tab=completed), having achieved ten medals (9 silvers) in a row with no golds. However, I am a Kaggle Notebook Master. I'm on a Kaggle hiatus now, but I hope to get back on the wagon soon.
 
+I spent many years working on the Roblox game [Splash](https://www.roblox.com/games/4936591712/SPLASH-Skate-Music#!/game-instances), so you will find game design and Roblox content scattered throughout the blog, though I'm back to focusing on ML now, and not sure I'll go back to game development.
+
 I don't post on social media much, but I'm sometimes on:
 
 - [LinkedIn](https://www.linkedin.com/in/lextoumbourou/)
@@ -30,5 +32,6 @@ I don't post on social media much, but I'm sometimes on:
 - [Kaggle](https://www.kaggle.com/lextoumbourou)
 - [YouTube](https://www.youtube.com/channel/UCWVXR9GEEAoNiEEfkJU3MpA)
 - [Hacker News](https://news.ycombinator.com/user?id=lexandstuff)
+- [Roblox Devforum](https://devforum.roblox.com/u/lexandstuff)
 
 I used to [Tweet](https://twitter.com/lexandstuff), but much less so now.
