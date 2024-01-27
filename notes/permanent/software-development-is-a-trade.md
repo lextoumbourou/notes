@@ -4,9 +4,11 @@ date: 2024-01-27 00:00
 modified: 2024-01-27 00:00
 tags:
   - SoftwareEngineering
-cover: /_media/software-is-a-trade.png
-summary: educate developers accordingly.
+cover: /_media/software-is-a-trade-cover.png
+summary: we should educate developers accordingly.
 ---
+
+Software is a trade, and we should educate developers accordingly.
 
 Despite their occasional ridicule within the industry, the Software Bootcamp model works - the top boot camps have a higher success rate at landing people in jobs at ~80% than computer science departments at top universities, at ~61% or less. [1]
 
@@ -24,4 +26,6 @@ However, I argue that **fundamentals are much more efficiently learned alongside
 
 That's much closer to how an apprenticeship works: some study, followed by lots of hands-on experience, followed by more study, and so on until you're a professional. Like a trade, writing software can only be mastered by practising it - a lot, and we should educate developers accordingly.
 
-- [1]: Burning Glass Technologies via [this article by Optimal](https://www.linkedin.com/pulse/new-data-shows-which-bootcamps-have-higher-tech-employment-). The data is from 2021, so it's probably in need of updating in 2022-2023 conditions. My opinion about software engineering as a trade is agnostic to the success of boot camps anyway.
+---
+
+* [1]: Burning Glass Technologies via [this article by Optimal](https://www.linkedin.com/pulse/new-data-shows-which-bootcamps-have-higher-tech-employment-). The data is from 2021, so it's probably in need of updating in 2022-2023 conditions. My opinion about software engineering as a trade is agnostic to the success of boot camps anyway.
