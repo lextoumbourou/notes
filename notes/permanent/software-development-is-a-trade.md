@@ -10,7 +10,7 @@ summary: we should educate developers accordingly.
 
 Software development is a trade, and we should educate developers accordingly.
 
-Despite their occasional ridicule within the industry, the Software Bootcamp model works - the top boot camps have a higher success rate at landing people in jobs than computer science departments at top universities, around ~70%+ vs ~60% or less (see [1][1] [2][2])
+Despite their occasional ridicule within the industry, the Software Bootcamp model works - the top boot camps have a higher success rate at landing people in jobs than computer science departments at top universities, around ~70%+ vs ~60% or less [1] [2].
 
 Anecdotally, I've hired many devs that came straight out of boot camps (specifically Coder Academy Brisbane), and they all rocked and are in the industry to this day - most of them have become seniors.
 
