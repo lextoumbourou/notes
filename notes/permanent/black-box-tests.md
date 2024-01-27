@@ -9,7 +9,7 @@ cover: /_media/black-box-testing-cover.png
 
 **Black-box tests** are automated tests constructed without knowledge of the software's internal structure. They test what the software is expected to do from an end user's perspective - verifying just the output results given some inputs.
 
-White-box tests are the opposite of that. They test with a good understanding of the internal workings of the software.
+[White-box Tests](white-boxtests.md) are the opposite of that. They test with a good understanding of the internal workings of the software.
 
 In [Unit Testing: Principles and Practices and Patterns](https://amzn.to/496VEy2), Khorikov argues that since black box tests provide the best resistance to refactoring one of the [4 Pillars of Good Unit Tests](4-pillars-of-good-unit-tests.md), you should aim to write tests in this style mostly. Reserve white box testing to analyse your tests, for example, by utilising [Test Coverage Metrics](test-coverage-metrics.md) to examine branch or code coverage.
 
