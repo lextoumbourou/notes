@@ -1,15 +1,24 @@
 ---
-title: Black-box Testing
+title: Black-box Tests
 date: 2021-04-04 00:00
 tags:
   - AutomatedTesting
-summary: Tests written without knowledge of software's internal structure
+summary: Tests written without knowledge of the software's internal structure
+cover: /_media/black-box-testing-cover.png
 ---
 
-Black-box tests are tests that run without knowing anything about the internal structure of the software. They test what the software is expected to do from a business perspective.
+**Black-box tests** are automated tests constructed without knowledge of the software's internal structure. They test what the software is expected to do from an end user's perspective - verifying just the output results given some inputs.
 
 White-box tests are the opposite of that. They test with a good understanding of the internal workings of the software.
 
-Khorikov argues that since black box tests provide the best resistance to refactoring one of the [4 Pillars of Good Unit Tests](4 Pillars of Good Unit Tests.md), you should aim to mostly write tests in this style. Reserving white box testing for the analysis of your tests, for example, by utilising [Test Coverage Metrics](test-coverage-metrics.md) to examine branch or code coverage.
+In [Unit Testing: Principles and Practices and Patterns](https://amzn.to/496VEy2), Khorikov argues that since black box tests provide the best resistance to refactoring one of the [4 Pillars of Good Unit Tests](4 Pillars of Good Unit Tests.md), you should aim to write tests in this style mostly. Reserve white box testing to analyse your tests, for example, by utilising [Test Coverage Metrics](test-coverage-metrics.md) to examine branch or code coverage.
 
-[@khorikovUnitTestingPrinciples2020] (pg. 90)
+---
+
+## Further Reading
+
+[Unit Testing: Principles, Practices and Patterns: Effective Testing Styles, Patterns, and Reliable Automation for Unit Testing, Mocking, and Integration Testing with Examples in C#](https://amzn.to/496VEy2)
+
+![Cover for book Unit Testing: Principles, Practices and Patterns by Vladimir Khorikov](../../../_media/unit-testing-principles-practices-and-patterns.png)
+
+This book is one of the comprehensive guides to automated testing. I highly recommend it. Chapter 4 (pp. 87-90) compares in-depth black and box testing.
