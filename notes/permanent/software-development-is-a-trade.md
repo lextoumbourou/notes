@@ -26,7 +26,5 @@ However, I argue that **fundamentals are much more efficiently learned alongside
 
 That's much closer to how an apprenticeship works: some study, followed by lots of hands-on experience, followed by more study, and so on until you're a professional. Like a trade, writing software can only be mastered by practising it - a lot, and we should educate developers accordingly.
 
----
-
  [^1]: Burning Glass Technologies via [this article by Optimal](https://www.linkedin.com/pulse/new-data-shows-which-bootcamps-have-higher-tech-employment-). reports on Boot camp vs College tech job placement success rate. The data is from 2021 and needs updating in 2022-2023 conditions.
 [^2]: Council on Integrity in Results Reporting (CIRR) via [a Forbes article](https://www.forbes.com/advisor/education/bootcamps-job-guarantee/#:~:text=Yes%2C%20it's%20realistic%20to%20get,placement%20and%20career%20outcomes%20data.) reports ~71% success rate of tech placements from boot camps.
