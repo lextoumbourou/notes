@@ -21,7 +21,7 @@ I don't know how useful the contents of notes will be to others. However, I've m
 
 I'm a generalist software developer currently living in Brisbane, Australia. When writing, I'm the CTO of a Music startup called [Splash](https://www.splashmusic.com), working on Generative AI for music.
 
-I have a long career in software and operations before that, around 20 years in total. In the most recent part of my career, I've been making products with data and ML, except for a few years working on the Roblox game [Splash](https://www.roblox.com/games/4936591712/SPLASH-Skate-Music#!/game-instances), so you will find game design and Roblox content scattered throughout the blog. However, I'm back to focusing on ~~ML~~ and AI for now.
+I have a long career in software and operations before that, around 20 years in total. In the most recent part of my career, I've been making products with data and ML, except for a few years working on the Roblox game [Splash](https://www.roblox.com/games/4936591712/SPLASH-Skate-Music#!/game-instances), so you will find game design and Roblox content scattered throughout the blog. However, I'm back to focusing on ~~ML~~ AI for now.
 
 I'm a [Kaggle journeyman](https://www.kaggle.com/lextoumbourou/competitions?sort=recently+launched&tab=completed), having achieved ten medals (9 silvers) in a row with no golds. However, I am a [Kaggle Notebook Master](https://www.kaggle.com/lextoumbourou/code?userId=21102&sortBy=voteCount&tab=profile). I'm on a Kaggle hiatus now, but I hope to get back on the wagon soon.
 
