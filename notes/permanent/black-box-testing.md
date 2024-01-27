@@ -11,7 +11,7 @@ cover: /_media/black-box-testing-cover.png
 
 White-box tests are the opposite of that. They test with a good understanding of the internal workings of the software.
 
-In [Unit Testing: Principles and Practices and Patterns](https://amzn.to/496VEy2), Khorikov argues that since black box tests provide the best resistance to refactoring one of the [4 Pillars of Good Unit Tests](4 Pillars of Good Unit Tests.md), you should aim to write tests in this style mostly. Reserve white box testing to analyse your tests, for example, by utilising [Test Coverage Metrics](test-coverage-metrics.md) to examine branch or code coverage.
+In [Unit Testing: Principles and Practices and Patterns](https://amzn.to/496VEy2), Khorikov argues that since black box tests provide the best resistance to refactoring one of the [4 Pillars of Good Unit Tests](4-pillars-of-good-unit-tests.md), you should aim to write tests in this style mostly. Reserve white box testing to analyse your tests, for example, by utilising [Test Coverage Metrics](test-coverage-metrics.md) to examine branch or code coverage.
 
 ---
 
