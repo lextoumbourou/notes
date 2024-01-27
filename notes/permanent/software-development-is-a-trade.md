@@ -18,7 +18,7 @@ From day 1, they came to work knowing Git, how to use their IDE (shortcuts), the
 
 Yes, a survivorship bias is at play here - not everyone "made it". However, the other fellow students who found the software wasn't for them only took 3-6 months of their lives learning this instead of 3-10 years getting a degree.
 
-On the flip side, I'm nearly two years into a part-time Computer Science degree, and the engineering content is about 5-10 years behind what the industry is doing [^3]. I haven't seen version control mentioned in a lecture once. Since I intend to study Computer Science, I am fine with this arrangement and enjoying the material. However, it's a far cry from the knowledge required to productively operate as a junior web developer on a team of 10.
+On the flip side, I'm nearly two years into a part-time Computer Science degree, and the engineering content is about 5-10 years behind what the industry is doing [^3]. I haven't seen version control mentioned in a lecture once. Since I intend to study *Computer Science*, I am fine with this arrangement and enjoying the material. However, it's a far cry from the knowledge required to productively operate as a junior web developer on a team of 10.
 
 That's not to say that the fundamentals aren't important or useful - they must be learned to progress into senior roles, and they typically can't be taught in depth at a short boot camp. However, I argue that **fundamentals are much more efficiently learned alongside a career as a practising software engineer**. 
 
