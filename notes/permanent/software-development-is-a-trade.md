@@ -14,7 +14,7 @@ Despite their occasional ridicule within the industry, the software boot camp mo
 
 Anecdotally, I've hired many devs who came straight out of boot camps, and they all rocked and are in the industry to this day - most of them have become seniors.
 
-From day 1, they came to work knowing Git, how to use their IDE (shortcuts), the basics of typical Agile-like practices and had practical experience building web applications.
+From day 1, they came to work knowing Git, how to use their IDE (shortcuts, etc.), the basics of typical Agile-like practices and had practical experience building web applications.
 
 Yes, a survivorship bias is at play here - not everyone "made it". However, the other fellow students who found the software wasn't for them only took 3-6 months of their lives learning this instead of 3-10 years getting a degree.
 
