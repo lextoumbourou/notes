@@ -10,7 +10,7 @@ summary: we should educate developers accordingly.
 
 Software development is a trade, and we should educate developers accordingly.
 
-Despite their occasional ridicule within the industry, the Software Bootcamp model works - the top boot camps have a higher success rate at landing people in jobs than computer science departments at top universities, around ~70%+ vs ~60% or less [1] [2].
+Despite their occasional ridicule within the industry, the Software Bootcamp model works - the top boot camps tend to have a higher success rate at landing people in jobs than computer science departments at top universities [^1] [^2].
 
 Anecdotally, I've hired many devs that came straight out of boot camps (specifically Coder Academy Brisbane), and they all rocked and are in the industry to this day - most of them have become seniors.
 
@@ -28,5 +28,5 @@ That's much closer to how an apprenticeship works: some study, followed by lots 
 
 ---
 
-* [1]: Burning Glass Technologies via [this article by Optimal](https://www.linkedin.com/pulse/new-data-shows-which-bootcamps-have-higher-tech-employment-). reports an 81% success rate. The data is from 2021 and needs updating in 2022-2023 conditions.
-* [2]: Council on Integrity in Results Reporting (CIRR) via [a Forbes article](https://www.forbes.com/advisor/education/bootcamps-job-guarantee/#:~:text=Yes%2C%20it's%20realistic%20to%20get,placement%20and%20career%20outcomes%20data.) reports ~71%.
+ [^1]: Burning Glass Technologies via [this article by Optimal](https://www.linkedin.com/pulse/new-data-shows-which-bootcamps-have-higher-tech-employment-). reports on Boot camp vs College tech job placement success rate. The data is from 2021 and needs updating in 2022-2023 conditions.
+[^2]: Council on Integrity in Results Reporting (CIRR) via [a Forbes article](https://www.forbes.com/advisor/education/bootcamps-job-guarantee/#:~:text=Yes%2C%20it's%20realistic%20to%20get,placement%20and%20career%20outcomes%20data.) reports ~71% success rate of tech placements from boot camps.
