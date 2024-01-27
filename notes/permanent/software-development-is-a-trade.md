@@ -5,7 +5,7 @@ modified: 2024-01-27 00:00
 tags:
   - SoftwareEngineering
 cover: /_media/software-is-a-trade-cover.png
-summary: we should educate developers accordingly.
+summary: we should educate developers accordingly
 ---
 
 Software development is a trade, and we should educate developers accordingly.
