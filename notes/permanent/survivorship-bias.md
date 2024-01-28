@@ -4,6 +4,7 @@ date: 2021-06-01 00:00
 tags:
   - ErrorsOfThinking
 cover: /_media/world-war-2-aircraft-survivorship-bias-abraham-wald-17.jpeg
+summary: arriving at false conclusions by only examining success cases
 ---
 
 **Survivorship Bias** is a common error of thinking where we arrive at false conclusions by only examining success cases.
