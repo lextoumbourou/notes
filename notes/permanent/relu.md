@@ -34,6 +34,8 @@ Variations like [Leaky ReLU](leaky-relu.md) and Parametric ReLU mitigate this by
 ![ReLU plot](../_media/relu-activation-plot.png)
 ## Recommended Reading
 
+[Deep Learning for Coders with Fastai and PyTorch: AI Applications Without a PhD](https://amzn.to/3Svowuu)
+
 ![Deep Learning for Coders with fastai & PyTorch](../_media/deep-learning-for-coders-book-cover.png)
 
 To learn more about loss functions and the fundamentals of neural networks in general, I recommend [Deep Learning for Coders with Fastai and PyTorch: AI Applications Without a PhD](https://amzn.to/3Svowuu)—an approachable yet complete top-down guide to Deep Learning. 
