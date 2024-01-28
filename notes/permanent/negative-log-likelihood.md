@@ -5,7 +5,6 @@ date: 2021-07-10 00:00
 cover: /_media/negative-log-likelihood.png
 tags:
   - MachineLearning
-  - LossFunctions
 ---
 
 Negative log-likelihood is a loss function used in multi-class classification.

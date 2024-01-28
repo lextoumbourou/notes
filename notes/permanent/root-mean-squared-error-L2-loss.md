@@ -3,7 +3,6 @@ title: Root mean-squared error - L2 Loss
 date: 2016-02-03 00:00
 tags:
   - MachineLearning
-  - LossFunctions
 ---
 
 Root mean-squared error (RMSE) is a function for assessing [Regression](Regression) predictions. Sometimes called L2 Error because it takes the [L2 Norm](L2 Norm) of the error vector.
