@@ -72,7 +72,7 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
 
 ## 00:15:56 - Transfer learning
 
-* [Transfer learning](permanent/transfer-learning.md) is about taking a pretrained model and repurposing it on a different dataset
+* [Transfer Learning](permanent/transfer-learning.md) is about taking a pretrained model and repurposing it on a different dataset
 * [Fine Tuning](permanent/fine-tuning.md) is what we do to enable transfer learning
 * Intuition is that concepts about images are already learned by models and therefore can be reused:
     * It's a key focus for fastai library

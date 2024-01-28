@@ -3,7 +3,6 @@ title: Binary Cross-Entropy Loss
 date: 2021-08-08 00:00
 tags:
   - MachineLearning
-  - LossFunctions
 ---
 
 Binary Cross-Entropy (BCE), also known as log loss, is a loss function used in binary or multi-label machine learning training.

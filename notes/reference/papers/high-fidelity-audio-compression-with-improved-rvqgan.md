@@ -207,7 +207,7 @@ DAC is a drop-in replacement for the audio tokenization model used in these meth
 
 Like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../../../permanent/encodec.md), uses an RVQGAN architecture which is built on framework of [VQ-GAN](../../../../permanent/vq-gan.md) models
 
-- Architecture: Full Convolutional Encoder-Decoder like [SoundStream](../../../../permanent/soundstream.md)
+- Architecture: Full Convolutional [Encoder-Decoder](../../permanent/encoder-decoder.md) like [SoundStream](../../../../permanent/soundstream.md)
 - Goal: time-based downscaling with a chosen striding factor
 - Special techniques:
     * Quantise the encoding with [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md)

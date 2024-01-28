@@ -3,7 +3,6 @@ title: Mean Absolute Difference - L1 Loss
 date: 2016-02-03 00:00
 tags:
   - MachineLearning
-  - LossFunctions
 ---
 
 Mean Absolute Difference (MAE) is a function for assessing [Regression](Regression) predictions. It's also as L1 Loss because it takes the [L1 Norm](L1 Norm) of the error vector.
