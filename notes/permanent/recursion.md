@@ -4,6 +4,8 @@ date: 2023-04-15 00:00
 cover: /_media/recursion-tree.png
 hide_cover_in_article: true
 summary: a method of solving a problem where a function calls itself
+tags:
+  - ComputerScience
 ---
 
 **Recursion** is a problem-solving method where a [Function](function.md) calls itself with a smaller instance of the problem. A [Base Case](../../../permanent/base-case.md)  is required to ensure the calls eventually terminate.
@@ -14,7 +16,7 @@ All recursive problems can be solved using iteration; however, some algorithms, 
 
 The canonical example of a recursive solution is the Fibonacci number sequence. The sequence is the sum of the previous two numbers:
 
-$F_n = 0, 1, 1, 2, 3, 5, 8, 13, ..., n$
+$0, 1, 1, 2, 3, 5, 8, 13, ..., n$
 
 It can be expressed recursively as: $F_n = F_{n - 1} + F_{n - 2}$
 
