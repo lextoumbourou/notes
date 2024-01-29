@@ -1,12 +1,12 @@
 ---
 title: Recursion
-date: 2023-04-09 00:00
+date: 2023-04-15 00:00
 cover: /_media/recursion-tree.png
 hide_cover_in_article: true
 summary: a method of solving a problem where a function calls itself
 ---
 
-**Recursion** is a problem-solving method where a function calls itself with a smaller instance of the problem. A [Base Case](../../../permanent/base-case.md)  is required to ensure the calls eventually terminate.
+**Recursion** is a problem-solving method where a [Function](function.md) calls itself with a smaller instance of the problem. A [Base Case](../../../permanent/base-case.md)  is required to ensure the calls eventually terminate.
 
 All recursive problems can be solved using iteration; however, some algorithms, particularly a [Divide-and-Conquer Algorithm](divide-and-conquer-algorithm.md), can be solved much more elegantly with recursion.
 
