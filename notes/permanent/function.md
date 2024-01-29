@@ -1,6 +1,6 @@
 ---
 title: Function
-date: 2023-04-14 00:00
+date: 2023-04-09 00:00
 tags:
   - DiscreteMath
 summary: A rule that matches inputs with outputs.

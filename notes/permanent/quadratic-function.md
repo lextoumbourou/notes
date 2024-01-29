@@ -1,7 +1,6 @@
 ---
 title: Quadratic Function
-date: 2023-04-10 00:00
-modified: 2023-04-10 00:00
+date: 2023-04-09 01:00
 summary: a function represented by a U-shaped curve on a graph
 cover: /_media/quad-func-cover.png
 ---
