@@ -6,15 +6,29 @@ hide_cover_in_article: true
 summary: a method of solving a problem where a function calls itself
 ---
 
-**Recursion** is a method of solving problems where a function calls itself to solve a smaller instance of the problem. A recursive solution requires a [Base Case](../../../permanent/base-case.md) to avoid infinite recursion, ensuring that the calls eventually terminate.
+**Recursion** is a problem-solving method where a function calls itself with a smaller instance of the problem. A [Base Case](../../../permanent/base-case.md)  is required to ensure the calls eventually terminate.
 
 All recursive problems can be solved using iteration; however, some algorithms, particularly a [Divide-and-Conquer Algorithm](divide-and-conquer-algorithm.md), can be solved much more elegantly with recursion.
 
 ## Fibonacci numbers example
 
-The Fibonacci number function is a recursive function that calculates the sum of the previous two numbers: $F_n = F_{n - 1} + F_{n - 2}$
+The canonical example of a recursive solution is the Fibonacci number sequence. The sequence is the sum of the previous two numbers:
 
-The base case is $\text{Fibonacci}(1) = 1$, $\text{Fibonacci}(0) = 0$
+$F_n = 0, 1, 1, 2, 3, 5, 8, 13, ..., n$
+
+It can be expressed recursively as: $F_n = F_{n - 1} + F_{n - 2}$
+
+The base cases are:
+- $\text{Fibonacci}(1) = 1$
+- $\text{Fibonacci}(0) = 0$
+
+We visualise a call to $\text{Fibonacci}(5)$ by representing the call stack as a tree, like this:
+
+![Recursion Tree](../_media/recursion-tree.png)
+
+*[Source dhovemey at ycp](http://faculty.ycp.edu/~dhovemey/fall2005/cs102/lecture/fib5.png) (page now unavailable)*
+
+As you can see, each branch opens two new branches until we finally reach the bottom of the tree (the base case) and can finally propagate the answers back to the top.
 
 In pseudocode:
 
@@ -31,12 +45,6 @@ function Fibonacci(n)
 end function
 ```
 
-We visualise a call to $\text{Fibonacci}(5)$ by representing the call stack as a tree, like this:
-
-![Recursion Tree](../_media/recursion-tree.png)
-*[Source dhovemey at ycp](http://faculty.ycp.edu/~dhovemey/fall2005/cs102/lecture/fib5.png) (page now unavailable)*
-
-Each branch opens two new branches until finally we reach the bottom of the tree and can propagate the answers back to the top.
 
 ## Factorial example
 
