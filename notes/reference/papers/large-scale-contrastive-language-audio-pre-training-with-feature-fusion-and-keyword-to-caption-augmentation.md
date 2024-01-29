@@ -100,7 +100,7 @@ However, they all share limitations:
 
 * Datasets "relatively small."
 * Prior work has yet to investigate selections and hyper-parameters thoroughly.
-* Can't accommodate varied audio lengths, particularly with [transformer](../../permanent/transformer.md)-based audio encoder.
+* Can't accommodate varied audio lengths, particularly with [Transformer](../../permanent/transformer.md)-based audio encoder.
 * No analysis of representation in the downstream task.
 
 ## Training Dataset
