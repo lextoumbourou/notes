@@ -19,8 +19,9 @@ $F_n = 0, 1, 1, 2, 3, 5, 8, 13, ..., n$
 It can be expressed recursively as: $F_n = F_{n - 1} + F_{n - 2}$
 
 The base cases are:
-- $\text{Fibonacci}(1) = 1$
-- $\text{Fibonacci}(0) = 0$
+
+* $\text{Fibonacci}(1) = 1$
+* $\text{Fibonacci}(0) = 0$
 
 We visualise a call to $\text{Fibonacci}(5)$ by representing the call stack as a tree, like this:
 
