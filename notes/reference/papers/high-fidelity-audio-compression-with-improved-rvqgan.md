@@ -17,7 +17,7 @@ The author's make the weights and code available on GitHub [.dac](https://github
 
 ## Main Contributions
 
-The authors use a encoder/decoder convolution architecture with [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md), which was originally used in [SoundStream](../../../../permanent/soundstream.md) and later [Encodec](../../../../permanent/encodec.md). The architecture is called Improved RVQGAN, although it's commonly referred to as DAC, based on the repository name.
+The authors use a encoder/decoder convolution architecture with [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md), which was originally used in [SoundStream](../../../../permanent/soundstream.md) and later [Encodec](../../permanent/encodec.md). The architecture is called Improved RVQGAN, although it's commonly referred to as DAC, based on the repository name.
 
 Improved RVQGAN makes these architectural and training improvements:
 
@@ -98,7 +98,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
         * [Advances in neural information processing systems](Advances%20in%20neural%20information%20processing%20systems)
         * [Generating Diverse High-Fidelity Images with VQ-VAE-2](../../../../permanent/generating-diverse-high-fidelity-images-with-vq-vae-2.md)
     * Handle all types of audio such as speech, music, environmental sounds, different audio encodings (such as mp3) as well as different sampling rates using a single universal model.
-* Some audio compression models like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../../../permanent/encodec.md) partially satisfy these properties but suffer from issues that plauge GAN models:
+* Some audio compression models like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../permanent/encodec.md) partially satisfy these properties but suffer from issues that plauge GAN models:
     * have audio artifacts such as tonal artifacts
         * See [Upsampling artifacts in neural audio synthesis](Upsampling%20artifacts%20in%20neural%20audio%20synthesis)
     * Pitch and periodicty artifacts
@@ -160,7 +160,7 @@ This model used the original architecture from [Neural discrete representation l
 * The model is trained using the VQ-GAN formulation by adding adversarial and feature matching losses along with the multi-scale spectral reconstruction loss
     * See [Taming Transformers for High-Resolution Image Synthesis](../../../../permanent/taming-transformers-for-high-resolution-image-synthesis.md)
 
-[Encodec](../../../../permanent/encodec.md)
+[Encodec](../../permanent/encodec.md)
 * Follows the SoundStream recipe, with a few modifications that lead to improved quality:
     * uses a multi-scale [STFT Discriminator](STFT%20Discriminator) with a multi-scale spectral reconstruction loss
     * Also use a loss balancer to adjust loss weights based on the varying scale of gradients coming from the discriminator.
@@ -205,7 +205,7 @@ DAC is a drop-in replacement for the audio tokenization model used in these meth
 
 ## The Improved RVQGAN Model
 
-Like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../../../permanent/encodec.md), uses an RVQGAN architecture which is built on framework of [VQ-GAN](../../../../permanent/vq-gan.md) models
+Like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../permanent/encodec.md), uses an RVQGAN architecture which is built on framework of [VQ-GAN](../../../../permanent/vq-gan.md) models
 
 - Architecture: Full Convolutional [Encoder-Decoder](../../permanent/encoder-decoder.md) like [SoundStream](../../../../permanent/soundstream.md)
 - Goal: time-based downscaling with a chosen striding factor

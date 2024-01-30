@@ -1,12 +1,13 @@
 ---
 title: "Neural Codec Language Models are Zero-Shot Text-to-Speech Synthesizers"
-date: 2023-01-22 00:00
-status: draft
-category: reference/papers
+date: 2024-01-31 00:00
+category: "reference/papers"
 tags:
   - MachineLearning
   - AudioEngineering
 summary: "Notes from the paper [Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers](https://arxiv.org/abs/2301.02111) by Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, Furu Wei"
+cover: /_media/valle-cover.png
+hide_cover_in_article: true
 ---
 
 Notes from the paper [Neural Codec Language Models are Zero-Shot Text to Speech Synthesizers](https://arxiv.org/abs/2301.02111) by Chengyi Wang, Sanyuan Chen, Yu Wu, Ziqiang Zhang, Long Zhou, Shujie Liu, Zhuo Chen, Yanqing Liu, Huaming Wang, Jinyu Li, Lei He, Sheng Zhao, Furu Wei
@@ -15,44 +16,48 @@ Notes from the paper [Neural Codec Language Models are Zero-Shot Text to Speech 
 
 ## Overview
 
-This paper describes a state-of-the-art (at least it was when it was released) [Zero-Shot TTS](../../permanent/zero-shot-tts.md) language model called [VALL-E](../../permanent/vall-e.md).
+This paper describes a state-of-the-art (for Jan 2023) [Zero-Shot TTS](../../permanent/zero-shot-tts.md) language model called [VALL-E](../../permanent/vall-e.md).
 
- At inference, VALL-E accepts text and a 3-second sample of a speaker and outputs new speech audio in that voice - even if the speaker was not in training data. The authors equate this capability with GPT-3's [In-Context Learning](../../permanent/in-context-learning.md) capability: learning information by providing additional context during inference.
+ At inference, VALL-E is conditioned on text and a 3-second sample of a speaker and can output new speech audio in that voice - even if the speaker was not in training data. The authors equate this capability with GPT-3's [In-Context Learning](../../permanent/in-context-learning.md) capability: learning information by providing additional context during inference.
 
 ## Key Details
 
 ### Use discrete codes as an intermediate representation of speech
 
-The main breakthrough of this paper is utilising the **neural audio codec** [Encodec](../../../../permanent/encodec.md) (from the family of [RVQ](../public/notes/permanent/residual-vector-quantisation.md) models) to converts audio into discrete tokens, which they call *acoustic tokens*, allows them to model the problem as a language model—subsequently allowing them to train on larger, more noisy datasets than previous TTS solutions and seriously improving the ability to generate unseen speakers. They aim to see similar improvements in scaling up data NLP has enjoyed in the last few years.
+The key insight in this paper, as was the theme of many audio papers in 2023, is utilising the **neural audio codec** [Encodec](../../permanent/encodec.md) (from the family of [RVQ](../public/notes/permanent/residual-vector-quantisation.md) models) to convert audio into discrete *"acoustic"* tokens, allowing them to model the problem as a language model—subsequently allowing them to train on larger, more noisy datasets than previous TTS solutions and seriously improving the ability to generate unseen speakers.
 
-Hence the paper the name: <font color="blue">Neural Codec</font> <font color="dark-yellow">Language Models</font> are <font color="orange">Zero-Shot</font> <font color="green">Text-to-Speech Synthesizes</font>.
+Hence the paper name: <font color="blue">Neural Codec</font> <font color="dark-yellow">Language Models</font> are <font color="orange">Zero-Shot</font> <font color="green">Text-to-Speech Synthesizes</font>.
 
 They also use discrete codes to encode the speaker sample provided at inference time.
  
 ![](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-fig-1.png)
 
-#### 2. Train on 60k hours of speech from the Libri-Light dataset
+*Fig 1. from Neural Codec Language Models are Zero-Shot Text-to-Speech Synthesizers*
 
-They train on 60k hours of audio from the [Libri-Light](https://github.com/facebookresearch/libri-light) dataset, hundreds of times more than existing TTS papers.
+#### Train on 60k hours of speech from the Libri-Light dataset
 
-Since most of the data is unannotated, they use an off-the-shelf speech recognition model to generate the annotations ([Hybrid Deep Neural Network--Hidden Markov Model](Hybrid%20Deep%20Neural%20Network--Hidden%20Markov%20Model))).
+Thanks to language models, they can scale up the dataset significantly more than any speech system before, training on 60k hours of audio from the [Libri-Light](https://github.com/facebookresearch/libri-light) dataset, hundreds of times more than existing TTS papers.
+
+Since most of Libri-Light is unannotated, they use an off-the-shelf speech recognition model to generate textual annotations (HDNN-HMM) for the raw speech.
 
 #### 3. Model the codes with a Hierarchical Language Model Architecture
 
-The tokens returned from RVQ have a hierarchical structure: tokens from the first quantisers can recover acoustic properties like speaker id, whereas later quantisers learn fine acoustic details. Therefore, they split the language model into two parts:
+The tokens returned from RVQ have a hierarchical structure: tokens from the first quantiser can recover acoustic properties like speaker ID, whereas the later quantiser learns fine acoustic details. Therefore, they split the language model into two parts:
 
 1. An [Autoregressive](Autoregressive) Transformer that is used to predict codes for the first codebook.
 
 ![](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-ar.png)
+
 *Figure 3 from Neural Codec Language Models are Zero-Shot Text to Speech Synthesisers*
 
 
 2. An [Non-Autoregressive](Non-Autoregressive) Transformer that predicts the subsequent codes from the first code. 
 
 ![](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-nar.png)
+
 *Figure 3 from Neural Codec Language Models are Zero-Shot Text to Speech Synthesisers*
 
-This configuration is a good trade-off between flexibility with the length of returned speech and inference performance, as the NAR can operate at O(1) instead of O(sequence length).
+This configuration is a good trade-off between flexibility with the length of returned speech and inference performance, as the NAR can operate at $O(1)$ instead of $O(T)$ where $T$ is the sequence length of the tokenised audio.
 
 ## History
 
@@ -64,7 +69,7 @@ In the past, a [Mel Spectrogram](../../permanent/mel-spectrogram.md) has been us
 
 However, these architectures typically need high-quality, clean audio to train on. And they don't tend to benefit from training on data scraped from the internet. Without the larger datasets, reliable zero-shot TTS on unseen speakers is impossible.
 
-Language models are good at taking advantage of large datasets, especially unlabelled ones. To train a language model, a discrete representation is required, so the authors make use of recent quantisation models, namely [Encodec](../../../../permanent/encodec.md).
+Language models are good at taking advantage of large datasets, especially unlabelled ones. To train a language model, a discrete representation is required, so the authors make use of recent quantisation models, namely [Encodec](../../permanent/encodec.md).
 
 ---
 
@@ -77,6 +82,7 @@ This capacity of in-context learning is mirrored with  [GPT-3](../../permanent/g
 Table 1 summarises the difference between VALL-E and previous TTS systems.
 
 ![](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-table-1%201.png)
+
 *Table 1 from Neural Codec Language Models are Zero-Shot Text to Speech Synthesisers*
 
 The acoustic tokens also allow us to generate diverse synthesised results in TTS by using different sampling strategies during inference.
@@ -85,10 +91,12 @@ The acoustic tokens also allow us to generate diverse synthesised results in TTS
 ## Results
 
 They evaluate VALL-E on datasets where all test speakers are unseen in the training corpus, namely:
+
 - [LibriSpeech](https://ieeexplore.ieee.org/document/7178964)
 - [VCTK](https://datashare.ed.ac.uk/handle/10283/2651)
 
 Results:
+
 - Improve on SOTA TTS system [YourTTS](https://arxiv.org/abs/2112.02418) with improvements to speech naturalness
 - LibriSpeech:
     - +0.12 [Comparitive Mean Opinion Score](Comparitive%20Mean%20Opinion%20Score) (CMOS), and speech naturalness
@@ -118,4 +126,4 @@ They use eight quantisers with 1024 code dimensionality.
 
 ![](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-fig-2.png)
 
-For a 10-second audio waveform, the discrete representation would be $750 \times 8$ ($750 = \frac{24000 \times 10}{320}$), which for EnCodec, gives us a 6k bitrate for 24 kHz audio reconstruction. More quantities give better reconstruction quality.
+For a 10-second audio waveform, the discrete representation would be $750 \times 8$ ( $750 = \frac{24000 \times 10}{320}$ ), which for EnCodec, gives us a 6k bitrate for 24 kHz audio reconstruction. More quantities give better reconstruction quality.
