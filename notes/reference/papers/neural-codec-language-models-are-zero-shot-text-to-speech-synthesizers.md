@@ -114,7 +114,7 @@ Both the AR model and the NAR model have the same [Transformer](../../permanent/
 * a feed-forward layer dimension of 4096
 * dropout of 0.1.
 
-Both the AR and NAR models received the phoneme sequence as a prompt. 
+Both the AR and NAR models received the phoneme sequence as a prompt.
 
 ### Encodec
 
@@ -139,10 +139,9 @@ They use a sinuous position embedding for the prompt and input tokens and share 
 For the AR model, we use sampling-based decoding conditioned on the prompts since they find that beam search can lead the language model into an infinite loop. For the NAR model, they use greedy decoding to choose the token with the highest
 probability.
 
-
 ## Training Settings
 
-
+<p>
 <table class="table-border">
   <tr>
     <td><strong>GPU</strong></td>
@@ -169,7 +168,7 @@ probability.
     <td>Randomly crop the waveform to a random length between 10 secs and 20 secs.</td>
 </tr>
 </table>
-
+</p>
 
 ## Evaluation
 
@@ -179,7 +178,7 @@ probability.
 
 Since there's no overlap between LibriLight and LibriSpeech, they use LibrisSpeech for Zero-Shot TTS evaluation.
 
-They use the samples from LibriSpeech test-clean with lengths between 4 and 10 seconds, resulting in a 2.2-hour subset. 
+They use the samples from LibriSpeech test-clean with lengths between 4 and 10 seconds, resulting in a 2.2-hour subset.
 
 For each sample synthesis, they randomly chose another utterance of the same speaker and cropped a 3-second speech segment as the enrolled speech. Each experiment runs three times, and the average score is reported.
 
@@ -187,11 +186,11 @@ For each sample synthesis, they randomly chose another utterance of the same spe
 
 ### TTS
 
-[YourTTS](https://github.com/Edresson/YourTTS), 
+[YourTTS](https://github.com/Edresson/YourTTS),
 
-SOTA zero-shot TTS model trained on VCTK, LibriTTS, TS-Porugeuse.
+SOTA zero-shot TTS model trained on VCTK, LibriTTS, TS-Portuguese.
 
-VALL-E is significantly better in robustness and speaker similarity, showing that our generated speech is close to the given text and the enrolled speech. Furthermore, the word error rate can be further reduced in the VALL-E-continual setting because the acoustic tokens for the first 3 seconds are extracted from the ground truth.
+VALL-E is more robust and better at speaker similarity, showing that our generated speech is close to the given text and the enrolled speech. Furthermore, the word error rate can be further reduced in the VALL-E-continual setting because the acoustic tokens for the first 3 seconds are extracted from the ground truth.
 
 ### Speaker to Speaker
 
@@ -199,7 +198,7 @@ VALL-E is significantly better in robustness and speaker similarity, showing tha
 
 GSLM uses HuBERT code as input and reconstructs the waveform with the Tacotron2 model and the WaveGlow vocoder. HuBERT codes discard speaker identity, so they achieve a poor speaker score.
 
-For AudioLM, they use the word error score reported in their paper, which a Conformer Transducer model obtained. 
+For AudioLM, they use the word error score reported in their paper, which a Conformer Transducer model obtained.
 
 VALL-E is better than other speech-to-speech LM-based generative systems in terms of robustness. One major reason is VALL-E trained with pseudo-phoneme instead of HuBERT/w2v-BERT codes,
 which enjoys better alignment quality with the input text.
@@ -220,9 +219,9 @@ They run speech recognition on the generated audio and calculate the word error 
 
 Table 2 shows the objective evaluation results.
 
-They first compute the WER score and the speaker similarity score of the ground truth speech as the upper bound. They used speech pairs from the same speaker in the test set to compare their similarity. 
+They first compute the WER score and the speaker similarity score of the ground truth speech as the upper bound. They used speech pairs from the same speaker in the test set to compare their similarity.
 
-**Table 2. Automatic Metric results** 
+**Table 2. Automatic Metric results**
 
 <table class="table-border">
   <tr>
@@ -262,14 +261,13 @@ They first compute the WER score and the speaker similarity score of the ground 
   </tr>
 </table>
 
-
 ### Human evaluation
 
 They also use crowd-sourcing to calculate the comparative mean option score (CMOS) and similarity mean option score (SMOS), as follows:
 
-- invite 12 and 6 native speakers as CMOS and SMOS contributors.
+* invite 12 and 6 native speakers as CMOS and SMOS contributors.
 The scale of SMOS is from 1 to 5 with 0.5-point increments.
-- CMOS ranges from -3 to 3 with intervals of 1.
+* CMOS ranges from -3 to 3 with intervals of 1.
 
 CMOS is an indicator of speech naturalness. SMOS measures where speech is similar to the original speaker's voice.
 
@@ -304,9 +302,9 @@ CMOS is an indicator of speech naturalness. SMOS measures where speech is simila
 
 They train three NAR models with different numbers of prompts:
 
-- **NAR-no prompt**  - trained without any prompts.
-- **NAR-phn prompt** - trained with only phoneme sequence as prompt
-- **NAR-2 prompts** - uses phoneme prompt and acoustic token prompt as conditions
+* **NAR-no prompt** - trained without any prompts.
+* **NAR-phn prompt** - trained with only phoneme sequence as prompt
+* **NAR-2 prompts** - uses phoneme prompt and acoustic token prompt as conditions
 
 They use ground-truth first-level acoustic tokens as the model input and compute the WER and speaker similarity scores.
 
@@ -402,7 +400,6 @@ For each speaker, they randomly selected three utterances of 3s/5s/10s as the pr
   </tr>
 </table>
 
-
 11 unseen speakers
 
 <table class="table-border">
@@ -431,7 +428,6 @@ For each speaker, they randomly selected three utterances of 3s/5s/10s as the pr
     <td>0.586</td>
   </tr>
 </table>
-
 
 **Table 6: Automatic evaluation of speaker similarity with 108 speakers on VCTK. **
 
@@ -474,9 +470,7 @@ Table 7: Human evaluation with 60 speakers on VCTK with a 3-second enrolled reco
   </tr>
 </table>
 
-
 VCTK is more challenging as it contains speakers with various accents, while the training data and LibriSpeech test data do not include multiple accent speakers.
-
 
 ## Qualitative Analysis
 
