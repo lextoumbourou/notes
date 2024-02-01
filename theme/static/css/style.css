@@ -492,3 +492,27 @@ table th, table td {
   padding: 0;
 }
 
+.table-border {
+    border-collapse: collapse; /* ensures that borders collapse into a single border */
+    width: 100%; /* table width */
+    font-family: Arial, sans-serif; /* font for table */
+    font-size: 14px; /* font size */
+}
+
+.table-border, .table-border th, .table-border td {
+    border: 1px solid black; /* border around the table, th, and td elements */
+}
+
+.table-border th, .table-border td {
+    text-align: left; /* aligns text to the left */
+    padding: 8px; /* padding inside cells */
+}
+
+.table-border th {
+    background-color: #f2f2f2; /* light grey background for headers */
+}
+
+.table-border tr:nth-child(even) {
+    background-color: #f9f9f9; /* zebra stripes for rows */
+}
+

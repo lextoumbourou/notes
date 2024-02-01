@@ -36,15 +36,17 @@ Thanks to the discrete representation, they can take advantage of language model
 
 These first two details are where the paper gets its name: <font color= "blue">Neural Codec</font> <font color= "dark-yellow">Language Models</font> are <font color= "orange">Zero-Shot</font> <font color= "green">Text-to-Speech Synthesizes</font>.
 
-By treating TTS as a language model, they can take advantage of large, noisy datasets, which is the key to reliable zero-shot TTS.
+By treating TTS as a language model problem, they can take advantage of large, noisy datasets, which is a step toward reliable zero-shot TTS.
 
 **Train on 60k hours of unannotated speech from the Libri-Light dataset**
 
-[Libri-Light](https://github.com/facebookresearch/libri-light) dataset has over 60k hours of unannotated speech, hundreds of times more than existing TTS papers. Since most of Libri-Light is unannotated, they train a speech recognition model to generate textual annotations (HDNN-HMM) for the raw speech.
+The [Libri-Light](https://github.com/facebookresearch/libri-light) dataset has over 60k hours of unannotated speech, hundreds of times more than existing TTS papers. Since most of Libri-Light is unannotated, they train a speech recognition model to generate textual annotations (HDNN-HMM) for the raw speech.
 
 **Model tokens hierarchically**
 
-The tokens returned from RVQ have a hierarchical structure: tokens from the first quantiser can recover acoustic properties like speaker ID, whereas the later quantiser learns fine acoustic details. Therefore, they split the language model into two parts:
+The authors note that the quantising approach in RVQ has a hierarchical structure: tokens from the first quantiser can recover acoustic properties like speaker identification, whereas the later quantiser learns fine acoustic details.
+
+They exploit this insight by splitting the language model into two parts:
 
 1\. An [Autoregressive](Autoregressive) Transformer that is used to predict codes for the first codebook.
 
@@ -62,20 +64,41 @@ This configuration is a good trade-off between flexibility with the length of re
 
 ## Comparison to Previous Work
 
-In the past, a [Mel Spectrogram](../../permanent/mel-spectrogram.md) has been commonly used as the intermediary representation, which relies on a Vocoder (like [HiFi-GAN](../../permanent/hifigan.md)) to the decoder. This problem is typically formulated as continuous signal regression. There have also been some successful end-to-end approaches. However, all these architectures typically need high-quality, clean audio to train on. And they don't tend to benefit from training on data scraped from the internet. Without the larger datasets, reliable zero-shot TTS on unseen speakers is very difficult.
+In the past, a [Mel Spectrogram](../../permanent/mel-spectrogram.md) has been commonly used as the intermediary representation for TTS, relying on a Vocoder (like [HiFi-GAN](../../permanent/hifigan.md)) to the decoder. This problem is typically formulated as continuous signal regression. There have also been some successful end-to-end TTS approaches. However, all these architectures need high-quality, clean audio to train on. And they don't tend to benefit from training on data scraped from the internet. Without the larger datasets, reliable zero-shot TTS on unseen speakers is very difficult.
 
-Past TTS papers have typically trained on much smaller datasets with hundreds of hours of single speakers. VALL-E's dataset is noisy and has more inaccurate transcriptions but more diverse speakers and prosodies.
+Past TTS papers have trained on much smaller datasets with only hundreds of hours of single speakers. VALL-E's dataset is noisy and has more inaccurate transcriptions but more diverse speakers and intonations.
 
 The capacity for in-context learning enjoyed by GPT is now available for speech synthesis.
 
 Table 1 summarises the difference between VALL-E and previous TTS systems.
 
-|                             | Current Systems              | VALL-E           |
-| --------------------------- | ---------------------------- | ---------------- |
-| Intermediate representation | Mel Spectrogram              | Audio Codec Code |
-| Objective functioni         | Continuous Signal Regression | Language Model   |
-| Training Data               | <= 600 hours                 | 60k hours        |
-| In-Context Learning                            | ☒                             | ☑                  |
+<table class="table-border">
+    <tr>
+        <th></th>
+        <th>Current Systems</th>
+        <th>VALL-E</th>
+    </tr>
+    <tr>
+        <td><strong>Intermediate representation</strong></td>
+        <td>Mel Spectrogram</td>
+        <td>Audio Codec Code</td>
+    </tr>
+    <tr>
+        <td><strong>Objective function</strong></td>
+        <td>Continuous Signal Regression</td>
+        <td>Language Model</td>
+    </tr>
+    <tr>
+        <td><strong>Training Data</strong></td>
+        <td>&le; 600 hours</td>
+        <td>60k hours</td>
+    </tr>
+    <tr>
+        <td><strong>In-Context Learning</strong></td>
+        <td>&#10008;</td> <!-- Represents a cross mark -->
+        <td>&#10004;</td> <!-- Represents a check mark -->
+    </tr>
+</table>
 
 *Table 1 from Neural Codec Language Models are Zero-Shot Text to Speech Synthesisers*
 
@@ -105,7 +128,7 @@ They use eight codebooks, each with 1024 code dimensionality. The encoder produc
 
 The AR model can attend to all previous tokens in the sequence, whereas the NAR model can attend to all previously predicted tokens.
 
-![](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-fig-3-attention.png)
+![Attention used by AR and NAR models in VALL-E](../../../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-fig-3-attention.png)
 
 ### Embeddings and decoding
 
@@ -116,26 +139,39 @@ They use a sinuous position embedding for the prompt and input tokens and share 
 For the AR model, we use sampling-based decoding conditioned on the prompts since they find that beam search can lead the language model into an infinite loop. For the NAR model, they use greedy decoding to choose the token with the highest
 probability.
 
-### Data Processing
-
-The average length of the waveform in LibriLight is 60 seconds. During
-training, they randomly crop the waveform to a random length between 10 seconds and 20 seconds. The corresponding phoneme alignments are used as the phoneme prompt. They remove the consecutive
-repetitions in the force-aligned phoneme sequence. For the NAR acoustic prompt tokens, they select a random segment waveform of 3 seconds from the same utterance.
 
 ## Training Settings
 
-|  |  |
-| ---- | ---- |
-| **GPU** | 16 NVIDIA TESLA V100 32GB GPUs |
-| **Batch size** | 6k acoustic tokens per GPU |
-| **Steps** | 800k |
-| **Optimiser** | AdamW Optimizer |
-| **Learning rate** | Warm up for the first 32k , peak at 5 x 10-4, then linear decay |
-|  |  |
-|  |  |
+
+<table class="table-border">
+  <tr>
+    <td><strong>GPU</strong></td>
+    <td>16 NVIDIA TESLA V100 32GB GPUs</td>
+  </tr>
+  <tr>
+    <td><strong>Batch size</strong></td>
+    <td>6k acoustic tokens per GPU</td>
+  </tr>
+  <tr>
+    <td><strong>Steps</strong></td>
+    <td>800k</td>
+  </tr>
+  <tr>
+    <td><strong>Optimiser</strong></td>
+    <td>AdamW Optimizer</td>
+  </tr>
+  <tr>
+    <td><strong>Learning rate</strong></td>
+    <td>Warm up for the first 32k, peak at 5 x 10-4, then linear decay</td>
+  </tr>
+<tr>
+    <td><strong>Data preprocessing</strong></td>
+    <td>Randomly crop the waveform to a random length between 10 secs and 20 secs.</td>
+</tr>
+</table>
+
 
 ## Evaluation
-
 
 ### Datasets
 
@@ -147,7 +183,7 @@ They use the samples from LibriSpeech test-clean with lengths between 4 and 10 s
 
 For each sample synthesis, they randomly chose another utterance of the same speaker and cropped a 3-second speech segment as the enrolled speech. Each experiment runs three times, and the average score is reported.
 
-### Base line
+### Baseline
 
 ### TTS
 
@@ -163,7 +199,7 @@ VALL-E is significantly better in robustness and speaker similarity, showing tha
 
 GSLM uses HuBERT code as input and reconstructs the waveform with the Tacotron2 model and the WaveGlow vocoder. HuBERT codes discard speaker identity, so they achieve a poor speaker score.
 
-For AudioLM, they use the word error score reported in their paper, which was obtained by a Conformer Transducer model. 
+For AudioLM, they use the word error score reported in their paper, which a Conformer Transducer model obtained. 
 
 VALL-E is better than other speech-to-speech LM-based generative systems in terms of robustness. One major reason is VALL-E trained with pseudo-phoneme instead of HuBERT/w2v-BERT codes,
 which enjoys better alignment quality with the input text.
@@ -188,14 +224,44 @@ They first compute the WER score and the speaker similarity score of the ground 
 
 **Table 2. Automatic Metric results** 
 
-| model                              | Word Error Rate | Speaker Identity |
-| ---------------------------------- | ---------------- | ---------------- |
-| GroundTruth                        | 2.2              | 0.754            |
-| GSLM                               | 12.4             | 0.126            |
-| AudioLM (model is not open source) | 6                |                  |
-| YourTTS                            | 7.7              | 0.337            |
-| VALL-E                             | 5.9              | 0.580            |
-| VALL-E continual                                   | 3.8                 | 0.508                 |
+<table class="table-border">
+  <tr>
+    <th>Model</th>
+    <th>Word Error Rate</th>
+    <th>Speaker Identity</th>
+  </tr>
+  <tr>
+    <td>GroundTruth</td>
+    <td>2.2</td>
+    <td>0.754</td>
+  </tr>
+  <tr>
+    <td>GSLM</td>
+    <td>12.4</td>
+    <td>0.126</td>
+  </tr>
+  <tr>
+    <td>AudioLM (model is not open source)</td>
+    <td>6</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>YourTTS</td>
+    <td>7.7</td>
+    <td>0.337</td>
+  </tr>
+  <tr>
+    <td>VALL-E</td>
+    <td>5.9</td>
+    <td>0.580</td>
+  </tr>
+  <tr>
+    <td>VALL-E continual</td>
+    <td>3.8</td>
+    <td>0.508</td>
+  </tr>
+</table>
+
 
 ### Human evaluation
 
@@ -209,12 +275,28 @@ CMOS is an indicator of speech naturalness. SMOS measures where speech is simila
 
 **Table 3. Human evaluations**
 
-| model                              | SMOS | CMOS (vs VALL-E |
-| ---------------------------------- | ---------------- | ---------------- |
-| YourTTS                            | 3.45              | -0.12            |
-| VALL-E                             | 4.38              | 0.0            |
-| GroundTruth                        | 4.5              | +0.17            |
-
+<table class="table-border">
+  <tr>
+    <th>Model</th>
+    <th>SMOS</th>
+    <th>CMOS (vs VALL-E)</th>
+  </tr>
+  <tr>
+    <td>YourTTS</td>
+    <td>3.45</td>
+    <td>-0.12</td>
+  </tr>
+  <tr>
+    <td>VALL-E</td>
+    <td>4.38</td>
+    <td>0.0</td>
+  </tr>
+  <tr>
+    <td>GroundTruth</td>
+    <td>4.5</td>
+    <td>+0.17</td>
+  </tr>
+</table>
 
 ### Ablation
 
@@ -238,10 +320,26 @@ In the NAR-2 prompts, the model can learn speaker information from the acoustic 
 
 Table 4: Ablation study of the NAR model. The inputs of the NAR models are the ground truth for the ablation study.
 
-|     | NAR-no prompt | NAR-phn prompt | NAR-2 prompts |
-| --- | ------------- | -------------- | ------------- |
-| WER | 19.6          | 3.0            | 2.8           |
-| SPK | 0.518         | 0.541          | 0.732         |
+<table class="table-border">
+  <tr>
+    <th></th>
+    <th>NAR-no prompt</th>
+    <th>NAR-phn prompt</th>
+    <th>NAR-2 prompts</th>
+  </tr>
+  <tr>
+    <td>WER</td>
+    <td>19.6</td>
+    <td>3.0</td>
+    <td>2.8</td>
+  </tr>
+  <tr>
+    <td>SPK</td>
+    <td>0.518</td>
+    <td>0.541</td>
+    <td>0.732</td>
+  </tr>
+</table>
 
 #### AR Ablation
 
@@ -249,10 +347,23 @@ They always use the NAR-2 prompts setting in these experiments as the NAR model.
 
 They try removing the acoustic prompt (**w/o acoustic prompt**). After that, it can only obtain a speaker similarity score of 0.236, showing the prompt is extremely crucial for speaker identity. Even if the NAR model could see the prompt, the prompt for the AR model also contributes a lot to speaker similarity.
 
-|                     | WER | SPK   |
-| ------------------- | --- | ----- |
-| VALL-E              | 5.9 | 0.585 |
-| w/o acoustic prompt | 5.9 | 0.236      |
+<table class="table-border">
+  <tr>
+    <th></th>
+    <th>WER</th>
+    <th>SPK</th>
+  </tr>
+  <tr>
+    <td>VALL-E</td>
+    <td>5.9</td>
+    <td>0.585</td>
+  </tr>
+  <tr>
+    <td>w/o acoustic prompt</td>
+    <td>5.9</td>
+    <td>0.236</td>
+  </tr>
+</table>
 
 ### VCTK Evaluation
 
@@ -264,19 +375,63 @@ For each speaker, they randomly selected three utterances of 3s/5s/10s as the pr
 
 97 speakers in VCTK as training
 
-|             | 3s prompt | 5s prompt | 10s prompt |
-| ----------- | --------- | --------- | ---------- |
-| YourTTS     | 0.357     | 0.337     | 0.394      |
-| VALL-E      | 0.382     | 0.423     | 0.484      |
-| GroundTruth | 0.546     | 0.591     | 0.620      |
+<table class="table-border">
+  <tr>
+    <th></th>
+    <th>3s prompt</th>
+    <th>5s prompt</th>
+    <th>10s prompt</th>
+  </tr>
+  <tr>
+    <td>YourTTS</td>
+    <td>0.357</td>
+    <td>0.337</td>
+    <td>0.394</td>
+  </tr>
+  <tr>
+    <td>VALL-E</td>
+    <td>0.382</td>
+    <td>0.423</td>
+    <td>0.484</td>
+  </tr>
+  <tr>
+    <td>GroundTruth</td>
+    <td>0.546</td>
+    <td>0.591</td>
+    <td>0.620</td>
+  </tr>
+</table>
+
 
 11 unseen speakers
 
-|             | 3s prompt | 5s prompt | 10s prompt |
-| ----------- | --------- | --------- | ---------- |
-| YourTTS     | 0.331     | 0.337     | 0.334      |
-| VALL-E      | 0.389     | 0.380     | 0.414      |
-| GroundTruth | 0.528     | 0.556     | 0.586      |
+<table class="table-border">
+  <tr>
+    <th></th>
+    <th>3s prompt</th>
+    <th>5s prompt</th>
+    <th>10s prompt</th>
+  </tr>
+  <tr>
+    <td>YourTTS</td>
+    <td>0.331</td>
+    <td>0.337</td>
+    <td>0.334</td>
+  </tr>
+  <tr>
+    <td>VALL-E</td>
+    <td>0.389</td>
+    <td>0.380</td>
+    <td>0.414</td>
+  </tr>
+  <tr>
+    <td>GroundTruth</td>
+    <td>0.528</td>
+    <td>0.556</td>
+    <td>0.586</td>
+  </tr>
+</table>
+
 
 **Table 6: Automatic evaluation of speaker similarity with 108 speakers on VCTK. **
 
@@ -296,11 +451,29 @@ Table 7 shows a comparison of our method against baseline and ground truth. The 
 
 Table 7: Human evaluation with 60 speakers on VCTK with a 3-second enrolled recording for each.
 
-|             | SMOS         | CMOS (v.s. VALL-E) |
-| ----------- | ------------ | ------------------ |
-| YourTTS     | 3.70 (+0.09) | 0.23               |
-| VALL-E      | 3.81 (+0.09) | 0.00               |
-| GroundTruth | 4.29 (+0.09) | -0.04                   |
+<table class="table-border">
+  <tr>
+    <th></th>
+    <th>SMOS</th>
+    <th>CMOS (v.s. VALL-E)</th>
+  </tr>
+  <tr>
+    <td>YourTTS</td>
+    <td>3.70 (+0.09)</td>
+    <td>0.23</td>
+  </tr>
+  <tr>
+    <td>VALL-E</td>
+    <td>3.81 (+0.09)</td>
+    <td>0.00</td>
+  </tr>
+  <tr>
+    <td>GroundTruth</td>
+    <td>4.29 (+0.09)</td>
+    <td>-0.04</td>
+  </tr>
+</table>
+
 
 VCTK is more challenging as it contains speakers with various accents, while the training data and LibriSpeech test data do not include multiple accent speakers.
 
@@ -309,50 +482,54 @@ VCTK is more challenging as it contains speakers with various accents, while the
 
 **Diversity**
 
-Previous TTS systems have a strong one-to-one mapping between input text and output waveform because mel spectrum generation is based on reconstruction for each step without randomness.
+Previous TTS systems had a strong one-to-one mapping between input text and output waveform because mel spectrogram generation was based on reconstruction for each step without randomness. On the other hand, VALL-E uses the sampling-based method to generate discrete tokens so that the output can be diverse for the same input text.
 
-Since VALL-E uses the sampling-based method to generate discrete tokens, its output is diverse for the same input text due to the randomness in inference.
-
-Given a sentence and an enrolled recording, they run the inference process twice and visualise its waveform in Figure 4.
+Given a sentence and an enrolled recording, they run the inference process twice and visualise its waveform.
 
 They observed the two samples having different lengths and phrase durations, where the first has a faster speech rate.
 
-In Figure 4(b), they observe that the accents of the two samples are different. The second output emphasises the word "must" with a larger amplitude, whereas the first does not.
+They observe that the accents of the two samples are different. The second output emphasises the word "must" with a larger amplitude, whereas the first does not.
 
-![](../../permanent/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-diversity-analysis.png)
+The diversity may be useful for downstream scenarios, particularly generating pseudo-data for speech recognition.
 
-The diversity is important for some downstream scenarios; for example, speech recognition benefits from diverse inputs with different speakers and acoustic environments, which the previous TTS system could not meet.
+![Diversity analysis](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-diversity-analysis.png)
 
-Considering the diversity feature of VALL-E, it is an ideal candidate to generate pseudo-data for speech recognition.
+*Partial Figure 4. from Neural Codec Language Models are Zero-Shot Text to Speech Synthesisers*
 
-Acoustic environment maintenance: Another interesting finding is the acoustic environment consistency between the acoustic prompt and the generation. VALL-E could also synthesise speech with reverberation when the acoustic prompt reverberates, whereas the baseline outputs clean speech. They explain that VALL-E is trained on a large-scale dataset consisting of more acoustic conditions than the data used by the baseline. VALL-E could learn acoustic consistency
-instead of a clean environment only during training. We show consistency on our demo page.
+**Acoustic environment maintenance**
+
+They find acoustic environment consistency between the acoustic prompt and the generation. VALL-E could also synthesise speech with reverberation when the acoustic prompt reverberates, whereas the baseline outputs clean speech.
+
+They explain that VALL-E is trained on a large-scale dataset consisting of more acoustic conditions than the data used by the baseline.
+
+VALL-E could learn acoustic consistency instead of a clean environment only during training.
 
 **Speaker's emotion maintenance**
 
-Emotional TTS is a classic subtopic of speech synthesis, synthesising speech with a required emotion. Traditional methods always train a
-model on a supervised emotional TTS dataset, where the speech corresponds to a transcription and an emotion label.
+Emotional TTS is a classic subtopic of speech synthesis, synthesising speech with a required emotion.
+
+Traditional methods always train a model on a supervised emotional TTS dataset, where the speech corresponds to a transcription and an emotion label.
 
 They find that VALL-E can preserve the emotion in the prompt at a zero-shot setting.
 
-They select acoustic prompts from EmoV-DB, a dataset containing speech with five emotions; VALL-E can keep the same emotion of the prompt in speech synthesis, even if the model is not fine-tuned on an emotional TTS dataset. We put audio samples on our demo page.
+They select acoustic prompts from EmoV-DB, a dataset containing speech with five emotions; VALL-E can keep the same emotion of the prompt in speech synthesis, even if the model is not fine-tuned on an emotional TTS dataset.
 
 ## Future Work
 
-The authors note four future directions this research could take:
+The authors note four future directions for this research.
 
-1\. Improve synthesis robustness
+**1\. Improve synthesis robustness**
 
-The pronunciation isn't always clear, and occasional words are duplicated. They think it's mainly due to the phoneme-to-acoustic being an autoregression model, where disordered attention alignments exist with no constraints. They could try modifying the attention mechanism or applying more non-autoregression models to solve.
+The pronunciation isn't always clear, and occasional words are duplicated. They think it's mainly due to the phoneme-to-acoustic being an autoregression model, where disordered attention alignments exist with no constraints. They could modify the attention mechanism or apply more non-autoregression models to solve.
 
-2\. Data coverage:
+**2\. Data coverage**
 
 Due to dataset limitations, VALL-E does not work for everyone's voice, especially those with accents. More data scale-up is likely the answer to improve this.
 
-3\. Model structure:
+**3\. Model structure**
 
 One possible direction is to predict codes with a large universal model. Using NAR models to speed up inference is another.
 
-4\. Risk mitigation
+**4\. Risk mitigation**
 
 Since a zero-shot TTS model like this carries a large potential for misuse, they want to consider building a model to detect where AI-synthesised audio.
