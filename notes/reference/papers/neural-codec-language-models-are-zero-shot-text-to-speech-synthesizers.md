@@ -16,7 +16,7 @@ hide_cover_in_article: true
 
 ## Overview
 
-This paper describes a state-of-the-art (Jan 2023) text2speech (TTS) language model called [VALL-E](../../permanent/vall-e.md).
+This paper describes a state-of-the-art (Jan 2023) text-to-speech (TTS) language model called [VALL-E](../../permanent/vall-e.md).
 
 VALL-E can generate speech in anyone's voice with only a 3-second sample of the speaker and some text - this capability is known as zero-shot TTS. It is the speech equivalent of GPT's *in-context learning* capability.
 
