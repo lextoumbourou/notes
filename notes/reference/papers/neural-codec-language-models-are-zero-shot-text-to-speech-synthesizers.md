@@ -32,7 +32,7 @@ VALL-E uses an intermediate representation of speech instead of modelling audio 
 
 **TTS as a language model problem**
 
-Thanks to the discrete representation, they can take advantage of language models, a first for a TTS problem.
+Thanks to the discrete representation, they can take advantage of language models - a first for a TTS problem.
 
 These first two details are where the paper gets its name: <font color= "blue">Neural Codec</font> <font color= "dark-yellow">Language Models</font> are <font color= "orange">Zero-Shot</font> <font color= "green">Text-to-Speech Synthesizes</font>.
 
@@ -54,7 +54,7 @@ They exploit this insight by splitting the language model into two parts:
 
 *Partial of Figure 3 from Neural Codec Language Models are Zero-Shot Text to Speech Synthesisers*
 
-2\. An *non-autoregressive* Transformer that predicts the subsequent codes from the first code.
+2\. A *non-autoregressive* Transformer that predicts the subsequent codes from the first code.
 
 ![Diagram of non-autoregression token modelling](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-nar.png)
 
