@@ -64,11 +64,7 @@ This configuration is a good trade-off between flexibility with the length of re
 
 ## Comparison to Previous Work
 
-In the past, a [Mel Spectrogram](../../permanent/mel-spectrogram.md) has been commonly used as the intermediary representation for TTS, relying on a Vocoder (like [HiFi-GAN](https://arxiv.org/abs/2010.05646)) to the decoder. This problem is typically formulated as continuous signal regression. There have also been some successful end-to-end TTS approaches. However, all these architectures need high-quality, clean audio to train on. And they don't tend to benefit from training on data scraped from the internet. Without the larger datasets, reliable zero-shot TTS on unseen speakers is very difficult.
-
-Past TTS papers have trained on much smaller datasets with only hundreds of hours of single speakers. VALL-E's dataset is noisy and has more inaccurate transcriptions but more diverse speakers and intonations.
-
-The capacity for in-context learning enjoyed by GPT is now available for speech synthesis.
+In the past, a [Mel Spectrogram](../../permanent/mel-spectrogram.md) has been commonly used as the intermediary representation for TTS, relying on a Vocoder (like [HiFi-GAN](https://arxiv.org/abs/2010.05646)) to the decoder. There have also been some successful end-to-end TTS approaches. However, all these problems are typically formulated as continuous signal regression problems, which so far have needed high-quality, clean audio to train on - not data scraped from the internet. Without the larger datasets, reliable zero-shot TTS on unseen speakers is very difficult. The capacity for *in-context* learning enjoyed by GPT is a powerful capability and is now available for speech synthesis.
 
 Table 1 summarises the difference between VALL-E and previous TTS systems.
 
@@ -191,15 +187,15 @@ An audio-to-audio model that also uses RVQ codes. They use the word error score 
 
 ### Datasets
 
-#### LibriSpeech
+[LibriSpeech](https://www.openslr.org/12)
 
-Since there's no overlap between LibriLight and [LibriSpeech](https://www.openslr.org/12), they use it for Zero-Shot TTS evaluation.
+Since there's no overlap between LibriLight and LibriSpeech, they can use it for Zero-Shot TTS evaluation.
 
 They use the samples from LibriSpeech test-clean with lengths between 4 and 10 seconds, resulting in a 2.2-hour subset.
 
-For each sample synthesis, they randomly chose another utterance of the same speaker and cropped a 3-second speech segment as the enrolled speech. Each experiment runs three times, and the average score is reported.
+For each sample synthesis, they randomly chose another utterance of the same speaker and cropped a 3-second speech segment as the enrolled speech, giving them 40 test cases. Each experiment runs three times, and the average score is reported.
 
-#### VCTK
+[VCTK](https://paperswithcode.com/dataset/vctk)
 
 VCTK consists of 108 speakers, none in the training set. VCTK is more challenging than LibriSpeech as it contains speakers with various accents.
 
@@ -211,15 +207,19 @@ For each speaker, they randomly selected three utterances of 3s/5s/10s as the pr
 
 #### Automated
 
-#### Speaker Similar
+**Speaker Similarity**
 
 They use a SOTA speaker verification model, WaLM-TDNN, to check the speaker similarity between audio prompt and synthesised speech.
 
-#### Word Error rate
+**Word Error Rate**
 
 They run speech recognition on the generated audio and calculate the word error rate (WER) concerning the original transcriptions (using the HuBERT-Large model fine-tuned on LibriSpeech 960h as the ASR model)
 
 #### Human evaluation
+
+**CMOS** is an indicator of speech naturalness.
+
+**SMOS** measures where speech is similar to the original speaker's voice.
 
 They also use crowd-sourcing to calculate the comparative mean option score (CMOS) and similarity mean option score (SMOS) by inviting 12 and 6 native speakers as CMOS and SMOS contributors.
 
@@ -227,13 +227,11 @@ The scale of SMOS is from 1 to 5 with 0.5-point increments.
 
 CMOS ranges from -3 to 3 with intervals of 1.
 
-CMOS is an indicator of speech naturalness. SMOS measures where speech is similar to the original speaker's voice.
-
 ### Results
 
 Table 2 shows the objective evaluation results on the automatic metrics. VALL-E does much better than YourTTS at speaker similarity and robustness. For GSLM, since the HuBERT codes discard the speaker identity, it achieves a poor speaker score. There is no open-source implementation of AudioLM, so they use the results from the paper.
 
-**Table 2. Automatic Metric results**
+**Automatic Metric results (Table 2)**
 
 <table class="table-border">
   <tr>
@@ -275,12 +273,10 @@ Table 2 shows the objective evaluation results on the automatic metrics. VALL-E 
 
 ---
 
-Table 3 shows the results of human evaluations. They randomly sample one utterance for each speaker in LibriSpeech test-clean, resulting in 40 test cases.
-
 VALL-E is very close to ground truth regarding SMOS, indicating the synthesised speech is similar to the given unseen
 speaker in testing. It significantly outperforms the baseline with +0.93 SMOS, demonstrating the effectiveness of VALL-E in zero-shot scenarios. Regarding naturalness, VALL-E beats the baseline with +0.12 CMOS, indicating the proposed method could synthesise more natural and realistic speech against baselines.
 
-**Table 3. Human evaluations**
+**Human evaluations (Table 3)**
 
 <table class="table-border">
   <tr>
@@ -401,7 +397,7 @@ Table 7 shows a comparison of their method against baseline and ground truth. VA
 
 ### Ablation
 
-#### NAR Ablation
+**NAR Ablation**
 
 They train three NAR models with different numbers of prompts:
 
@@ -411,15 +407,14 @@ They train three NAR models with different numbers of prompts:
 
 They use ground-truth first-level acoustic tokens as the model input and compute the WER and speaker similarity scores.
 
-The results are listed in Table 4.
-
+Results:
 The model, without any prompts, performs poorly on both ASR and speaker similarity evaluations, even though the acoustic input token is ground truth.
-
-When adding the phoneme prompt, the WER is reduced by a large margin from 19.6 to 3.0. It shows the phoneme prompt mainly contributes to the content of the generation.
+When adding the phoneme prompt, the WER is reduced by a large margin from 19.6 to 3.0.
+It shows the phoneme prompt mainly contributes to the content of the generation.
 
 In the NAR-2 prompts, the model can learn speaker information from the acoustic token prompt and thus improve the speaker evaluation quality.
 
-**Table 4: Ablation study of the NAR model. The inputs of the NAR models are the ground truth for the ablation study.**
+**Ablation study of the NAR model. The inputs of the NAR models are the ground truth for the ablation study. (Table 4)**
 
 <table class="table-border">
   <tr>
@@ -442,13 +437,13 @@ In the NAR-2 prompts, the model can learn speaker information from the acoustic 
   </tr>
 </table>
 
-#### AR Ablation
+**AR Ablation**
 
 They always use the NAR-2 prompts setting in these experiments as the NAR model.
 
 They try removing the acoustic prompt (**w/o acoustic prompt**). After that, it can only obtain a speaker similarity score of 0.236, showing the prompt is extremely crucial for speaker identity. Even if the NAR model could see the prompt, the prompt for the AR model also contributes a lot to speaker similarity.
 
-**Table 5: Ablation study of the AR model**
+**Ablation study of the AR model (Table 5)**
 
 <table class="table-border">
   <tr>
