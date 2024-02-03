@@ -28,7 +28,7 @@ VALL-E can generate speech in anyone's voice with only a 3-second sample of the 
 
 **Use RVQ tokens as an intermediate representation of speech**
 
-VALL-E uses an intermediate representation of speech instead of modelling audio directly, which makes it a *cascading TTS system*. The key insight in this paper, as was the theme of many audio papers in 2023, is utilising a [RVQ](../public/notes/permanent/residual-vector-quantisation.md) audio codec, which compresses audio into discrete *"acoustic"* tokens (they use the [Encodec](../../permanent/encodec.md) RVQ implementation).
+VALL-E uses an intermediate representation of speech instead of modelling audio directly, which makes it a *cascading TTS system*. The key insight in this paper, as was the theme of many audio papers in 2023, is utilising a [RVQ](../public/notes/permanent/residual-vector-quantisation.md) audio codec, which compresses audio into discrete *"acoustic"* tokens (they use the [Encodec](https://github.com/facebookresearch/encodec) RVQ implementation).
 
 **TTS as a language model problem**
 
@@ -48,13 +48,13 @@ The authors note that the quantising approach in RVQ has a hierarchical structur
 
 They exploit this insight by splitting the language model into two parts:
 
-1\. An [Autoregressive](Autoregressive) Transformer that is used to predict codes for the first codebook.
+1\. An *autoregressive* Transformer that is used to predict codes for the first codebook.
 
 ![Diagram of autoregression token modelling](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-ar.png)
 
 *Partial of Figure 3 from Neural Codec Language Models are Zero-Shot Text to Speech Synthesisers*
 
-2\. An [Non-Autoregressive](Non-Autoregressive) Transformer that predicts the subsequent codes from the first code.
+2\. An *non-autoregressive* Transformer that predicts the subsequent codes from the first code.
 
 ![Diagram of non-autoregression token modelling](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-nar.png)
 
@@ -64,7 +64,7 @@ This configuration is a good trade-off between flexibility with the length of re
 
 ## Comparison to Previous Work
 
-In the past, a [Mel Spectrogram](../../permanent/mel-spectrogram.md) has been commonly used as the intermediary representation for TTS, relying on a Vocoder (like [HiFi-GAN](../../permanent/hifigan.md)) to the decoder. This problem is typically formulated as continuous signal regression. There have also been some successful end-to-end TTS approaches. However, all these architectures need high-quality, clean audio to train on. And they don't tend to benefit from training on data scraped from the internet. Without the larger datasets, reliable zero-shot TTS on unseen speakers is very difficult.
+In the past, a [Mel Spectrogram](../../permanent/mel-spectrogram.md) has been commonly used as the intermediary representation for TTS, relying on a Vocoder (like [HiFi-GAN](https://arxiv.org/abs/2010.05646)) to the decoder. This problem is typically formulated as continuous signal regression. There have also been some successful end-to-end TTS approaches. However, all these architectures need high-quality, clean audio to train on. And they don't tend to benefit from training on data scraped from the internet. Without the larger datasets, reliable zero-shot TTS on unseen speakers is very difficult.
 
 Past TTS papers have trained on much smaller datasets with only hundreds of hours of single speakers. VALL-E's dataset is noisy and has more inaccurate transcriptions but more diverse speakers and intonations.
 
