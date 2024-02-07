@@ -60,7 +60,7 @@ They exploit this insight by splitting the language model into two parts:
 
 *Partial of Figure 3 from Neural Codec Language Models are Zero-Shot Text to Speech Synthesisers*
 
-This configuration is a good trade-off between flexibility with the length of returned speech and inference performance, as the NAR can operate at $O(1)$ instead of $O(T)$ where $T$ is the sequence length of the tokenised audio.
+Proposing VALL-E as a [Hierarchical Model](../../permanent/hierarchical-model.md) provides a good trade-off between flexibility with the length of returned speech and inference performance, as the NAR can operate at $O(1)$ instead of $O(T)$ where $T$ is the sequence length of the tokenised audio.
 
 ## Comparison to Previous Work
 
