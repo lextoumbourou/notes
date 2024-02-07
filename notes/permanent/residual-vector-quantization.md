@@ -2,9 +2,6 @@
 title: Residual Vector Quantisation
 date: 2024-01-13 00:00
 modified: 2024-01-13 00:00
-aliases:
-  - Codebook
-   - "Residual Vector Quantisation (RVQ)"
 tags:
   - MachineLearning
   - AudioEngineering
