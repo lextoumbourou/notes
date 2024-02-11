@@ -14,7 +14,7 @@ At the end of a series of conversations, each man and woman writes their prefere
 
 We want an algorithm that ensures no woman is paired with a man but prefers another man who also prefers her. This pairing is considered **unstable**.
 
-![Unstable pairs](../_media/stable-pairs.png)
+![Unstable Pairs](../_media/unstable-pairs.png)
 
 **Gale-Shapely guarantees no unstable pairs.**
 
