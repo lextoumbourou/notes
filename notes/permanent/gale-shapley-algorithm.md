@@ -6,7 +6,7 @@ cover: /_media/gale-shapley-cover.png
 summary: an algorithm that matches 2-equally sizes groups based on preferences.
 ---
 
-The Gale-Shapley algorithm (also known as **Deferred Acceptance**) solves the **stable matching problem**, where the goal is to match members of 2 equally sized groups based on their preferences, which  *stable* pairs, that is, a series of matches where no two pairs would prefer another compared to their assigned match.
+The Gale-Shapley algorithm (also known as **Deferred Acceptance**) solves the **stable matching problem**, where the goal is to match members of two equally sized groups based on their preferences. All pairs should be *stable*, that is, no two pairs would prefer another compared to their assigned match.
 
 Consider a speed dating event; for simplicity of explanation, I'll assume all participants are heterosexual.
 
@@ -38,13 +38,13 @@ The process continues iteratively until all men are matched with women. Gale-Sha
 
 Step 1.
 
-All the men propose. Since all choose Sally, she takes her first preference John.
+All the men propose. Since everyone chose Sally, she took her first preference, John.
 
 Step 2.
 
-All the remaining men, propose to the next on their list. Jacob chooses Jill and Bob chooses Doris. Jacob is Jill's number one preference so she accepts. As does Doris.
+All the remaining men propose to the next on their list. Jacob chooses Jill, and Bob decides Doris. Jacob is Jill's number one preference, so she accepts. As does Doris.
 
-Here the algorithm is written in Python code. It's commonly executed with a while loop that continues to find proposals until no unmatched pairs exist.
+Here, the algorithm is written in Python code. It's commonly executed with a while loop that continues to find proposals until no unmatched pairs exist.
 
 ```python
 def gale_shapley(men_preferences, women_preferences):
