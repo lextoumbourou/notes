@@ -70,4 +70,4 @@ def gale_shapley(men_preferences, women_preferences):
     return engaged
 ```
 
-In the real world, the algorithm is used in kidney exchange programs to match medical graduates to residency problems, job/employer matching, and many other places.
+In the real world, the algorithm is used in dating to match medical graduates to residency problems, job/employer matching, and many other places.
