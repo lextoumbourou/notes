@@ -6,13 +6,23 @@ cover: /_media/gale-shapley-cover.png
 summary: an algorithm that matches 2-equally sizes groups based on preferences.
 ---
 
-The Gale-Shapley algorithm (also known as **Deferred Acceptance**) solves the **stable matching problem**, where the goal is to match members of two equally sized groups based on their preferences. All pairs should be *stable*, that is, no two pairs would prefer another compared to their assigned match.
+The Gale-Shapley algorithm (also known as **Deferred Acceptance**) solves the **stable matching problem**, where the goal is to match members of two equally sized groups based on their preferences. Gale-Shapley guarantees that all pairs are *stable*; no two pairs would prefer another compared to their assigned match.
 
 Consider a speed dating event; for simplicity of explanation, I'll assume all participants are heterosexual.
 
-At the event of a series of conversations, each party writes their preferences in order.
+At the end of a series of conversations, each man and woman writes their preferences in order.
 
-Here, the preferences are expressed as Python code.
+We want an algorithm that ensures no woman is paired with a man but prefers another man who also prefers her. This pairing is considered **unstable**.
+
+![Unstable pairs](../_media/stable-pairs.png)
+
+**Gale-Shapely guarantees no unstable pairs.**
+
+The algorithms orchestrate a series of *proposals*. Each woman proposes to their top-choice man. If a man receives multiple proposals, they accept the ones highest on their preference list and reject others. If a woman is rejected, she proposes to her next choice.
+
+The process continues iteratively until all women are matched with partners. It's worst case [Time Complexity](time-complexity.md) is $O(n^2)$
+
+Here, the algorithm is written in Python code. It's commonly executed with a while loop that continues to find proposals until no unmatched pairs exist.
 
 ```python
 men_preferences = {
@@ -20,33 +30,16 @@ men_preferences = {
     "Jacob": ["Sally", "Jill", "Doris"],
     "Bob": ["Sally", "Doris", "Jill"]
 }
-```
 
-```python
 womens_preferences = {
     "Sally": ["John", "Jacob", "Bob"],
     "Jill": ["Jacob", "John", "Bob"],
     "Doris": ["John", "Bob", "Jacob"]
 }
-```
 
-Can we match them so that no pairs prefer another match to their own? For example, Doris might prefer John, but we can see that John prefers Sally.
+def woman_prefers(new_man, current_man, woman_prefs):
+    return woman_prefs.index(new_man) < woman_prefs.index(current_man)
 
-The Gale-Shapely algorithm orchestrates a series of *proposals*. Each man proposes to their top-choice woman. If a woman receives multiple proposals, they accept the ones highest on their preference list and reject others. If a man is rejected, he proposes his next choice.
-
-The process continues iteratively until all men are matched with women. Gale-Shapely guarantees a stable match, where no man or woman would prefer each other to their current partners.
-
-Step 1.
-
-All the men propose. Since everyone chose Sally, she took her first preference, John.
-
-Step 2.
-
-All the remaining men propose to the next on their list. Jacob chooses Jill, and Bob decides Doris. Jacob is Jill's number one preference, so she accepts. As does Doris.
-
-Here, the algorithm is written in Python code. It's commonly executed with a while loop that continues to find proposals until no unmatched pairs exist.
-
-```python
 def gale_shapley(men_preferences, women_preferences):
     # Initial setup
     n = len(men_preferences)
