@@ -6,18 +6,75 @@ cover: /_media/gale-shapley-cover.png
 summary: an algorithm that matches 2-equally sizes groups based on preferences.
 ---
 
-The Gale-Shapley algorithm (also known as **Deferred Acceptance**) solves the **stable matching problem**, where the goal is to match members of 2 equally sized groups based on their preferences while avoiding unstable pairs.
+The Gale-Shapley algorithm (also known as **Deferred Acceptance**) solves the **stable matching problem**, where the goal is to match members of 2 equally sized groups based on their preferences, which  *stable* pairs, that is, a series of matches where no two pairs would prefer another compared to their assigned match.
 
-It works when you have one group and propose to another group of members based on a hierarchy of preferences. Proposals are either accepted or rejected according to the preference rules of the receiving group.
+Consider a speed dating event; for simplicity of explanation, I'll assume all participants are heterosexual.
 
-Imagine you have ten musicians and ten bands looking for musicians. Each band ranks musicians according to their preferences, which could be based on criteria like preferred instrument, skill level, experience, etc. Conversely, each musician ranks the bands based on genre, vibe or practice location.
+At the event of a series of conversations, each party writes their preferences in order.
 
-The Gale-Shapely algorithm then orchestrates a series of *proposals*. Each band initially proposes to their top-choice musician. If a musician receives multiple proposals, they will tentatively accept the one from the band highest on their preference list and reject others. Bands whose proposals are rejected then propose to their next choice.
+Here, the preferences are expressed as Python code.
 
-The process continues iteratively, with rejected bands making proposals to their next -preference musicians and musicians reconsidering their options until even the musician has a band.
+```python
+men_preferences = {
+    "John": ["Sally", "Jill", "Doris"],
+    "Jacob": ["Sally", "Jill", "Doris"],
+    "Bob": ["Sally", "Doris", "Jill"]
+}
+```
 
-The gale-Shapely algorithm guarantees a stable match, where no band and musician would prefer each other to their current partners.
+```python
+womens_preferences = {
+    "Sally": ["John", "Jacob", "Bob"],
+    "Jill": ["Jacob", "John", "Bob"],
+    "Doris": ["John", "Bob", "Jacob"]
+}
+```
 
-The algorithm is used in the real world for matching medical graduates to residency problems in the US, in kidney exchange programs, for matching in job markets and many other places.
+Can we match them so that no pairs prefer another match to their own? For example, Doris might prefer John, but we can see that John prefers Sally.
 
-In conclusion, the Gale-Shapley algorithm efficiently resolves the stable matching problem by ensuring that all participants end up in stable pairs, meaning no two individuals would prefer to be matched over their current partners.
+The Gale-Shapely algorithm orchestrates a series of *proposals*. Each man proposes to their top-choice woman. If a woman receives multiple proposals, they accept the ones highest on their preference list and reject others. If a man is rejected, he proposes his next choice.
+
+The process continues iteratively until all men are matched with women. Gale-Shapely guarantees a stable match, where no man or woman would prefer each other to their current partners.
+
+Step 1.
+
+All the men propose. Since all choose Sally, she takes her first preference John.
+
+Step 2.
+
+All the remaining men, propose to the next on their list. Jacob chooses Jill and Bob chooses Doris. Jacob is Jill's number one preference so she accepts. As does Doris.
+
+Here the algorithm is written in Python code. It's commonly executed with a while loop that continues to find proposals until no unmatched pairs exist.
+
+```python
+def gale_shapley(men_preferences, women_preferences):
+    # Initial setup
+    n = len(men_preferences)
+    free_men = list(men_preferences.keys())
+    engaged = {}
+    proposed = {man: [] for man in men_preferences}
+
+    while free_men:
+        man = free_men[0]
+        man_prefs = men_preferences[man]
+        woman = next(w for w in man_prefs if w not in proposed[man])
+        proposed[man].append(woman)
+
+        if woman not in engaged:
+            # Woman is free
+            engaged[woman] = man
+            free_men.remove(man)
+        else:
+            # Woman is engaged, check if she prefers this new man
+            current_man = engaged[woman]
+            if woman_prefers(man, current_man, women_preferences[woman]):
+                # Woman prefers new man
+                engaged[woman] = man
+                free_men.remove(man)
+                free_men.append(current_man)
+            # Otherwise, do nothing
+
+    return engaged
+```
+
+In the real world, the algorithm is used in kidney exchange programs to match medical graduates to residency problems, job/employer matching, and many other places.

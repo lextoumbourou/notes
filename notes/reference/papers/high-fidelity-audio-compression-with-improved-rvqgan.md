@@ -79,7 +79,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
             * [Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions](../../../../permanent/natural-tts-synthesis-by-conditioning-wavenet-on-mel-spectrogram-predictions.md)
             * [Fastspeech 2: Fast and high-quality end-to-end text to speech](Fastspeech%202:%20Fast%20and%20high-quality%20end-to-end%20text%20to%20speech)
     * Can be interpret this as a [Hierarchical Generative Model](../../../../permanent/hierarchical-generative-model.md) with observed intermediate variables.
-* Alternate formulation is to learn the intermediate variables using a [variational-auto-encoder](../../../../permanent/variational-auto-encoder.md) framework with a learned conditional prior to predict the latent variables given some conditioning.
+* Alternate formulation is to learn the intermediate variables using a [Variational Auto-Encoder](../../../../permanent/variational-auto-encoder.md) framework with a learned conditional prior to predict the latent variables given some conditioning.
     * This formulation, with continuous latent variables and training an expressive prior using normalizing flows has been quite successful for speech synthesis.
         * [Conditional variational autoencoder with adversar- ial learning for end-to-end text-to-speech](Conditional%20variational%20autoencoder%20with%20adversar-%20ial%20learning%20for%20end-to-end%20text-to-speech)
         * [Naturalspeech: End-to-end text to speech synthesis with human-level quality.](Naturalspeech:%20End-to-end%20text%20to%20speech%20synthesis%20with%20human-level%20quality.)
