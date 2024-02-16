@@ -7,3 +7,5 @@ tags:
   - ComputerScience
 ---
 
+A **language** is a collection of strings over an [Alphabet](compsci-alphabet.md).
+
