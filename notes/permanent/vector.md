@@ -1,7 +1,5 @@
 ---
 title: Vector
-aliases:
-  - Vectors
 date: 2020-11-08 00:00
 modified: 2021-08-22 16:00
 tags: 
@@ -39,7 +37,7 @@ $$
 
 We can plot these numbers in a coordinate system to see how the flowers relate to each other. This example from [Wikipedia](https://commons.wikimedia.org/wiki/File:Iris_dataset_scatterplot.svg) generates a 2d scatterplot for each pair of values.
 
-![Iris scatterplot](/_media/iris-scatterplot.png)
+![Iris scatterplot](../_media/iris-scatterplot.png)
 
 * We can add a vector. See [Vector Addition](Vector Addition.md).
 * We can subtract vectors. See [Vector Subtraction](vector-subtraction.md).
