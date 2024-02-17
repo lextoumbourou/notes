@@ -19,7 +19,7 @@ To understand RVQ, let's start by ignoring the R part of RVQ to focus on **Vecto
 
 Quantisation is the process of converting continuous infinite values into discrete finite values.
 
-In VQ, we encode a signal into a series of [Vectors](vector.md), then query each vector to find the closest neighbour in a lookup table called a **codebook**. Now, we can represent an entire chunk or *"frame"* of a signal with a single **code**.
+In VQ, we encode a signal into a series of [Vector](vector.md), then query each vector to find the closest neighbour in a lookup table called a **codebook**. Now, we can represent an entire chunk or *"frame"* of a signal with a single **code**.
 
 ![Vector Quantisation](../_media/vq.png)
 
