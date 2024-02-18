@@ -12,9 +12,21 @@ hide_cover_in_article: true
 
 A **stack** is a variable length data structure that supports last in, first out access, and only the **top** element is accessible.
 
+Think of a stack of plates - you can only add and retrieve from the top.
+
+When we add an item to a stack, we typically call that operation **push**, and taking an item off the stack is usually called **pop**. 
+
 ![Diagram of a Stack](../_media/stack-diagram.png)
 
-Think of a stack of plates - you can only add and retrieve from the top.
+A stack can be implemented with an [Array](compsci-array.md). The size of the array is the maximum size of the stack. We can track which element of the array is the `top`.
+
+![Stack array](../_media/stack-array.png)
+
+*Example of array-based stack implementation - From Introduction to Algorithms, Third Edition*
+
+Programming languages typically use a stack to keep track of functions running in a program called a [Call Stack](call-stack.md).
+
+ If we try to pop from an empty stack, we get the **Stack Underflow**error. If we attempt to add to a stack beyond its max size, we get an error called a [Stack Overflow](stack-overflow.md).
 
 A stack supports the following operations in its typical form:
 
@@ -32,7 +44,7 @@ A stack supports the following operations in its typical form:
     <tr>
         <td><code>top</code></td>
         <td><code>TOP(s)</code></td>
-        <td>Return the element at top of stack.</td>
+        <td>Return the element at the top of the stack.</td>
     </tr>
     <tr>
         <td><code>pop!(o)</code></td>
