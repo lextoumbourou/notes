@@ -7,6 +7,7 @@ tags:
   - ComputerScience
 summary: a data structure in which we can only read and write from the top
 cover: /_media/stack-cover.png
+hide_cover_in_article: true
 ---
 
 A **stack** is a variable length data structure that supports last in, first out access, and only the **top** element is accessible.
