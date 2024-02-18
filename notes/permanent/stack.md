@@ -13,6 +13,7 @@ hide_cover_in_article: true
 A **stack** is a variable length data structure that supports last in, first out access, and only the **top** element is accessible.
 
 ![Diagram of a Stack](../_media/stack-diagram.png)
+
 Think of a stack of plates - you can only add and retrieve from the top.
 
 A stack supports the following operations in its typical form:
