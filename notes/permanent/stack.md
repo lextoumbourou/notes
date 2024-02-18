@@ -3,8 +3,8 @@ title: Stack
 date: 2024-02-18 00:00
 modified: 2024-02-18 00:00
 tags:
-  - Algorithms
   - ComputerScience
+  - DataStructures
 summary: a data structure where only the top element is accessible
 cover: /_media/stack-cover.png
 hide_cover_in_article: true
@@ -18,7 +18,7 @@ When we add an item to a stack, we call that operation **push**. When you take a
 
 ![Diagram of a Stack](../_media/stack-diagram.png)
 
-A stack $S$ can be implemented easily with a fixed-length array. We can track which element is at the top with `S.top`. The size of the array is the maximum size of the stack.
+A stack `S` can be implemented easily with a fixed-length array. We can track which element is at the top with `S.top`. The size of the array is the maximum size of the stack.
 
 ![Stack array](../_media/stack-array.png)
 
