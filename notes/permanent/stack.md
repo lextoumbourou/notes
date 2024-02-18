@@ -18,7 +18,7 @@ When we add an item to a stack, we typically call that operation **push**, and t
 
 ![Diagram of a Stack](../_media/stack-diagram.png)
 
-A stack can be implemented with an [Array](compsci-array.md). The size of the array is the maximum size of the stack. We can track which element of the array is the `top`.
+A stack can be implemented with an [Array](array.md). The size of the array is the maximum size of the stack. We can track which element of the array is the `top`.
 
 ![Stack array](../_media/stack-array.png)
 
@@ -26,7 +26,7 @@ A stack can be implemented with an [Array](compsci-array.md). The size of the ar
 
 Programming languages typically use a stack to keep track of functions running in a program called a [Call Stack](call-stack.md).
 
- If we try to pop from an empty stack, we get the **Stack Underflow**error. If we attempt to add to a stack beyond its max size, we get an error called a [Stack Overflow](stack-overflow.md).
+ If we try to pop from an empty stack, we get the **Stack Underflow** error. If we attempt to add to a stack beyond its max size, [Stack Overflow](stack-overflow.md) error.
 
 A stack supports the following operations in its typical form:
 
@@ -71,4 +71,4 @@ A stack supports the following operations in its typical form:
 
 ![Intro to Algorithms cover](../_media/intro-to-algorithms-3rd.png)
 
-**Chapter 10** covers Elementary Data Structures like stacks.
+**Chapter 10** covers Elementary Data Structures like a [Stack](stack.md) or [Queue](queue.md).
