@@ -50,3 +50,13 @@ A stack supports the following operations in its typical form:
         <td>Create a new stack.</td>
     </tr>
 </table>
+
+---
+
+## Recommended Reading
+
+[Introduction to Algorithms, Third Edition](https://amzn.to/3HyDauB)
+
+![Intro to Algorithms cover](../_media/intro-to-algorithms-3rd.png)
+
+**Chapter 10** covers Elementary Data Structures like stacks.
