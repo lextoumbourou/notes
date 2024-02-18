@@ -1,11 +1,11 @@
 ---
 title: Stack
-date: 2023-11-19 00:00
-modified: 2023-11-19 00:00
+date: 2024-02-18 00:00
+modified: 2024-02-18 00:00
 tags:
   - Algorithms
   - ComputerScience
-summary: a data structure in which we can only read and write from the top
+summary: a data structure where only the top element is accessible
 cover: /_media/stack-cover.png
 hide_cover_in_article: true
 ---
@@ -14,11 +14,11 @@ A **stack** is a simple data structure based on the Last In, First Out (LIFO) pr
 
 Think of a stack of plates - you can only add or retrieve from the top.
 
-When we add an item to a stack, we call that operation **push**. When you an item off the stack, we call it **pop**. 
+When we add an item to a stack, we call that operation **push**. When you take an item off the stack, we call it **pop**. 
 
 ![Diagram of a Stack](../_media/stack-diagram.png)
 
-A stack $S$ can be implemented easily with a fixed-length array. We can track which element is the top with `S.top`. The size of the array is the maximum size of the stack.
+A stack $S$ can be implemented easily with a fixed-length array. We can track which element is at the top with `S.top`. The size of the array is the maximum size of the stack.
 
 ![Stack array](../_media/stack-array.png)
 
@@ -26,7 +26,7 @@ A stack $S$ can be implemented easily with a fixed-length array. We can track wh
 
  If we attempt to add to a stack beyond its max size, [Stack Overflow](stack-overflow.md) error. If we try to pop from an empty stack, we get the **Stack Underflow** error.
  
-Programming languages use a type of stack called called a [Call Stack](call-stack.md) to keep track of functions running.
+Programming languages use a stack called a [Call Stack](call-stack.md) to keep track of functions running.
 
 A stack supports the following operations in its typical form:
 
