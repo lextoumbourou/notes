@@ -1,0 +1,10 @@
+---
+title: Decision Problems
+date: 2024-02-09 00:00
+modified: 2024-02-09 00:00
+status: draft
+---
+
+**Decision Problems**, in Computer Science, are classes of problems where a machine decides if it accepts of rejects an input.
+
+See [Finite Automaton](compsci-finite-automaton.md) and [Turing Machine](../../../permanent/turing-machine.md).
