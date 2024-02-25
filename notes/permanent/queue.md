@@ -14,7 +14,7 @@ A queue is a simple data structure based on First In, First Out (FIFO) principle
 
 It is based around the fundamental queue paradigm that we're familiar with: front of the line goes first.
 
-A queue has a **head** and a **tail**. We **dequeue** by removing an element from the head of the queue and **dequeue** by adding an element to the tail.
+A queue has a **head** and a **tail**. We **dequeue** by removing an element from the head of the queue and **enqueue** by adding an element to the tail.
 
 ![Diagram of a Queue](../_media/queue.png)
 
