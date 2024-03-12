@@ -73,7 +73,7 @@ Note: this is unfinished. Some of the text is copied and pasted verbatim from th
         * In this work, we introduce a novel modelling framework, which generalises to various codebook interleaving patterns, and we explore several variants.
         * Through patterns, we can leverage the internal structure of the quantised audio tokens.
     * Supports conditional generation based on either text or melody.
-* [Audio Tokenization](Audio%20Tokenization)
+* [Audio Tokenization](../../../../permanent/audio-tokenization.md)
     * Uses EnCodec, a convolutional auto-encoder with a latent space quantized using Residual Vector Quantization (RVQ)
     * And adversarial reconstruction loss.
     * [Encodec](../../permanent/encodec.md) overview

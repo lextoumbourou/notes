@@ -8,7 +8,7 @@ parent: uol-discrete-mathematics
 
 ## 10.201 Binomial coefficients and identities
 
-* [Binomial Theorem](permanent/binomial-theorem.md)
+* [Binomial Theorem](../../../../permanent/binomial-theorem.md)
     * An expression consisting of 2 terms, connected by a + or - sign.
     * Examples:
         * $x + a$
