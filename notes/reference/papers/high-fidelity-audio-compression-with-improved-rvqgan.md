@@ -123,7 +123,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
 
 ### High fidelity neural audio synthesis
 
-[Generative Adversarial Network](Generative%20Adversarial%20Network) models are a solution to generate high-quality audio with fast inference speeds, due to the feedforward (parallel) generator:
+[Generative Adversarial Network](../../../../permanent/generative-adversarial-network.md) models are a solution to generate high-quality audio with fast inference speeds, due to the feedforward (parallel) generator:
 
 * [MelGAN](../../../../permanent/MelGAN.md)
         - Successfully trains a GAN-based spectrogram inversion (neural vocoding) model
