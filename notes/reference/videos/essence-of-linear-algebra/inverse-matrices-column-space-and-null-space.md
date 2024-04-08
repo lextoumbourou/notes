@@ -70,7 +70,7 @@ For a randomly generated matrix, the determinant is likely non-zero. That corres
 
 The same intuition carries over into higher dimensions.
 
-When the [Matrix Determinate](../../../permanent/matrix-determinate.md) is 0 - it squishes space onto a single line or a point - a [Matrix Transformation](../../../permanent/matrix-transformation.md) has no inverse: you can't un-squish a line to transform it onto a plane.
+    When the [Matrix Determinate](../../../permanent/matrix-determinate.md) is 0 - it squishes space onto a single line or a point - a [Matrix Transformation](../../../permanent/matrix-transformation.md) has no inverse: you can't un-squish a line to transform it onto a plane.
 
 When the output of a transformation is a line, we say it has [Rank](../../../permanent/matrix-rank.md) of 1.
 

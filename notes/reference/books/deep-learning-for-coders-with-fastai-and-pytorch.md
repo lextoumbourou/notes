@@ -84,7 +84,7 @@ status: draft
                 * The inverse of natural logarithm
         * Always positive and increases fast
     * [Softmax Activation Function](../../permanent/softmax-activation-function.md) (pg. 223-227)
-        * The multi-category equivalent of the [Sigmoid Activation Function](../../permanent/sigmoid-activation-function.md)
+        * The multi-category equivalent of the [Sigmoid Function](../../permanent/sigmoid-function.md)
             * Similarly "smooth and symmetric" properties
         * Use if more than 2 categories and want probabilities add to 1.
             * Can also use when there are just 2 categories to be consistent

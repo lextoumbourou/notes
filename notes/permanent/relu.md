@@ -25,7 +25,7 @@ def relu(x):
 
 The paper [Rectified Linear Units Improve Restricted Boltzmann Machines](https://www.cs.toronto.edu/~fritz/absps/reluICML.pdf) is commonly cited as the first usage of the ReLU activation function, though the first usage of the function dates back to the 1975 paper [Cognitron: A self-organizing multilayered neural network](https://link.springer.com/article/10.1007/BF00342633)
 
-ReLU helped to overcome the vanishing gradient problem prevalent in traditional activation functions like [Sigmoid](sigmoid-activation-function.md) or tanh. In these functions, gradients can become extremely small, stopping the network from learning further.
+ReLU helped to overcome the vanishing gradient problem prevalent in traditional activation functions like [Sigmoid Function](sigmoid-function.md) or tanh. In these functions, gradients can become extremely small, stopping the network from learning further.
  
 However, since the function outputs zero for any negative input, neurons can sometimes become inactive and stop contributing to the learning process, referred to as *"dying ReLU"*, especially if the network is not properly initialized or the learning rate is too high.
 
