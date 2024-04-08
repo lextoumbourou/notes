@@ -1,5 +1,5 @@
 ---
-title: Sigmoid Activation Function
+title: Sigmoid Function
 date: 2021-07-03 00:00
 cover: /_media/sigmoid-plot.png
 tags:
@@ -9,7 +9,7 @@ aliases:
 - Sigmoid
 ---
 
-The Sigmoid function squeezes numbers into a probability-like range between 0 and 1.[^1] Used in [Binary Classification](Binary%20Classification) model architectures to compute loss on discrete labels, that is, labels that are either 1 or 0 (hotdog or not hotdog). The equation is:
+The Sigmoid function, also known as the [Logistic Function](../../../permanent/logistic-function.md), squeezes numbers into a probability-like range between 0 and 1.[^1] Used in [Binary Classification](Binary%20Classification) model architectures to compute loss on discrete labels, that is, labels that are either 1 or 0 (hotdog or not hotdog). The equation is:
 
 $$S(x) = \frac{1}{1 + e^{-x}}$$
 

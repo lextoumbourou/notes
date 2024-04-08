@@ -134,7 +134,7 @@ $$Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i}) = \ma
 
 ### The sigmoid (or logistic) link function
 
-* For logistic regression, the link function is called "logistic function" or [Sigmoid Activation Function](../../../../permanent/sigmoid-activation-function.md):
+* For logistic regression, the link function is called "logistic function" or [Sigmoid Function](../../../../permanent/sigmoid-function.md):
 
 	$$sigmoid(Score) = \dfrac{1}{1 + e^{-Score}}$$
 

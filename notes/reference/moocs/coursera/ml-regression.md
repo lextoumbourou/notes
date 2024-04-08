@@ -292,9 +292,9 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
 * Loss can be measured with a *loss function*: $$L(y, f_\hat{w}(\mathbf{x})) $$
     * Examples:
         * Absolute error: $$L(y, f_\hat{w}(\mathbf{x})) = |y - f_\hat{w}(\mathbf{x})| $$
-            * [Mean Absolute Difference - L1 Loss](../../../permanent/mean-absolute-error-L1-loss.md)
+            * [Mean Absolute Error](../../../permanent/mean-absolute-error.md)
         * Squared error: $$L(y, f_\hat{w}(\mathbf{x})) = (y - f_\hat{w}(\mathbf{x}))^2 $$
-            * [Root mean-squared error - L2 Loss](../../../permanent/root-mean-squared-error-L2-loss.md) squared.
+            * [Root Mean-Squared Error](../../../permanent/root-mean-squared-error.md) squared.
                 * Can have a very high cost if difference is large, compared to absolute error.
 * Compute training error:
   1. Define some loss function (as above).

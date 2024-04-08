@@ -6,7 +6,7 @@ summary: a sequential data structure where we can add an element to the tail, or
 tags:
     - DataStructures
     - ComputerScience
-cover: /_media/queue-cover.png
+cover: /_media/queue.png
 hide_cover_in_article: true
 ---
 
