@@ -6,6 +6,7 @@ tags:
   - MachineLearning
 cover: /_media/kmeans-cover.png
 hide_cover_in_article: true
+summary: an unsupervised clustering algorithm
 ---
 
 K-Means is an unsupervised clustering algorithm and a method of [Vector Quantization](../../../permanent/vector-quantization.md). The goal is to partition $n$ data points into $k$ clusters, where each data point belongs to the cluster with the closest centroid.
@@ -22,4 +23,4 @@ The algorithm works like this:
 
 The quality of the K-Means clustering is typically evaluated by calculating the average distance of all data points to their assigned centroids. However, K-Means does not guarantee convergence to the global minimum, and the final clustering may depend on the initial centroid positions.
 
-![](../_media/kmeans.png)
+![K-Means clustering example](../_media/kmeans.png)
