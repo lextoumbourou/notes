@@ -13,7 +13,7 @@ summary: A tokeniser for audio
 
 RVQ was first applied to audio in the [Soundstream](https://blog.research.google/2021/08/soundstream-end-to-end-neural-audio.html) paper by Google Researchers and has since been used in popular neural audio compression architectures like [Encodec](https://github.com/facebookresearch/encodec) and [DAC](https://github.com/descriptinc/descript-audio-codec).
 
-To understand RVQ, let's start by ignoring the R part of RVQ to focus on **Vector Quantisation (VQ)**.
+To understand RVQ, let's start by ignoring the R part of RVQ to focus on [Vector Quantisation](vector-quantisation.md) (VQ).
 
 ## Vector Quantisation
 
