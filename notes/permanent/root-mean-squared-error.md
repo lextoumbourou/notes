@@ -7,7 +7,7 @@ tags:
 
 Root mean-squared error (RMSE) is a function for assessing [Regression](Regression) predictions.
 
-Sometimes called [L2 Loss](../../../permanent/l2-loss.md) because it takes the [L2 Norm](L2 Norm) of the error vector.
+Sometimes called [L2 Loss](l2-loss.md) because it takes the [L2 Norm](l2-norm.md) of the error vector.
 ### Steps
 
 1. Calculate error vector as **labels** - **predictions**
@@ -19,7 +19,7 @@ $\sqrt{\frac{1}{n} \sum\limits_{i=1}^{N} (\text{labels}-\text{predictions})^2}$
 
 An alternative to [Mean Absolute Error](mean-absolute-error.md), where the key difference is the square operation instead of the absolute value. Because the square operations penalises very wrong predictions, it is often preferred. However, some also say it can be sensitive to outliers. In my experience, it's usually worth trying both (or some combination).
 
-Sometimes you choose not to perform the square root operation when in a loss function. In that case, the operation is called a **squared** [L2 Norm](L2 Norm) and expressed $\| e\|^{2}_{2}$
+Sometimes you choose not to perform the square root operation when in a loss function. In that case, the operation is called a **squared** [L2 Norm](l2-norm.md) and expressed $\| e\|^{2}_{2}$
 
 {% notebook permanent/notebooks/rmse-example.ipynb %}
 
