@@ -39,10 +39,10 @@ We can plot these numbers in a coordinate system to see how the flowers relate t
 
 ![Iris scatterplot](../_media/iris-scatterplot.png)
 
-* We can add a vector. See [Vector Addition](Vector Addition.md).
+* We can add a vector. See [Vector Addition](vector-addition.md).
 * We can subtract vectors. See [Vector Subtraction](vector-subtraction.md).
-* We can multiply vectors by a value. See [Vector Scaling](Vector Scaling.md).
-* We can combine vectors in various ways. See [Dot Product](Dot Product.md) or [Element-wise product](Element-wise product).
+* We can multiply vectors by a value. See [Vector Scaling](vector-scaling.md).
+* We can combine vectors in various ways. See [Dot Product](dot-product.md) or [Element-wise product](Element-wise product).
 
 We describe a [Ray](ray.md) with a similar notation to vectors. However, a Ray doesn't have a length—only a direction to continue infinitely.
 
