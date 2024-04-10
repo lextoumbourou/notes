@@ -1,7 +1,7 @@
 ---
 title: K-Means
-date: 2020-05-10 00:00
-modified: 2020-05-10 00:00
+date: 2017-11-10 00:00
+modified: 2024-04-10 00:00
 tags:
   - MachineLearning
 cover: /_media/kmeans-cover.png

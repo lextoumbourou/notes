@@ -1,7 +1,7 @@
 ---
 title: Principal Component Analysis
-date: 2020-04-08 00:00
-modified: 2020-04-08 00:00
+date: 2015-09-08 00:00
+modified: 2024-04-10 00:00
 summary: a technique for reducing the dimensionality of data
 cover: /_media/pca-cover.png
 hide_cover_in_article: true
