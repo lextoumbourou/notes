@@ -23,4 +23,5 @@ The algorithm works like this:
 
 The quality of the K-Means clustering is typically evaluated by calculating the average distance of all data points to their assigned centroids. However, K-Means does not guarantee convergence to the global minimum, and the final clustering may depend on the initial centroid positions.
 
+
 ![K-Means clustering example](../_media/kmeans.png)
