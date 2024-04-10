@@ -29,7 +29,7 @@ An interesting note is that $\cos(90°) = 0$, so when you have a right triangle,
 
 $c^2 = a^2 + b^2$
 
-...which is the [Pythogorean theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem).
+...which is the [Pythagorean Theorem](pythagorean-theorem.md).
 
 #Maths/Trigonometry
 

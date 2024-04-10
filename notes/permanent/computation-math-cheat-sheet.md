@@ -190,7 +190,7 @@ All angles must add to $180°$ ($\pi$ radians).
 180° = A + B + C
 ![](../_media/computation-math-cheat-sheet-unit-circle-degrees.png)
 ![](../_media/computation-math-cheat-sheet-unit-circle-radians.png)
-### [law-of-cosines](law-of-cosines.md)
+### [Law Of Cosines](law-of-cosines.md)
 
 $c^2 = a^2 + b^2 + 2ab \times \cos(\theta)$
 

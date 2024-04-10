@@ -15,7 +15,7 @@ The algorithm works like this:
 
 1. Standardise the data by centring at 0 to ensure all features are utilised equally for clustering.
 2. Randomly create $k$ centroids—one for each cluster. Common methods include selecting $k$ random data points as centroids or randomly generating centroid coordinates.
-3. Calculate the distance between each data point and the centroid. Euclidean distance is commonly used: $\sqrt{\sum\limits_{i=0}^{n} (q_i - p_i)^2}$, where $q_i$ and $p_i$ refer to the $i_{th}$ feature of datapoint $q$ and centroid $p$, respectively. However, other distance functions may be more suitable.
+3. Calculate the distance between each data point and the centroid. [Euclidean Distance](euclidean-distance.md) is commonly used: $\sqrt{\sum\limits_{i=0}^{n} (q_i - p_i)^2}$, where $q_i$ and $p_i$ refer to the $i_{th}$ feature of datapoint $q$ and centroid $p$, respectively. However, other distance functions may be more suitable.
 
 4. Assign each datapoint to its closest centroid based on the calculated distances.
 5. Update the position of the k centroids by taking the mean of all data points assigned to each cluster.
