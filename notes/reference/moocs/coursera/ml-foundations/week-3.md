@@ -38,7 +38,7 @@ parent: ml-foundations
     * As you increase number of features, boundary "shape" changes:
         * 2 weights: line
         * 3 weights: plane
-        * Many weights: hyperplane
+        * Many weights: [Hyperplane](../../../../permanent/hyperplane.md)
 * Evaluting classification models
     * Similar to regression using training set and test set; check results of training set against test set.
     * Outcomes measured as follows:

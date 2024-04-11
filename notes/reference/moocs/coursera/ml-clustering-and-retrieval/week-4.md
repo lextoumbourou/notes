@@ -10,27 +10,27 @@ status: draft
 ## Motivating probabilistic clustering models
 
 * Why a probabilistic approach?
-  * Rarely in situation with clear cut cluster differences which k-means implies.
-  * Often have overlapping clusters, yep k-means does hard assignment.
-  * Cluster centers may not be most important point: may want to take into account shape of cluster.
-* Mixture model:
-  * Can provide "soft assignment" of observations to clusters.
+    * Rarely in situation with clear cut cluster differences which [K-Means](../../../../permanent/k-means.md) implies.
+    * Often have overlapping clusters, yet k-means does hard assignment.
+    * Also, cluster centers may not be most important point: may want to take into account shape of cluster.
+* [Mixture Model](../../../../../../permanent/mixture-model.md)
+      * Can provide "soft assignment" of observations to clusters.
     * Example: 54% fashion, 30% beauty, 16% travel etc.
-  * Can account for cluster shape, not just focused on cluster center.
+    * Can account for cluster shape, not just focused on cluster center.
 
 ## Aggregating over unknown classes in an image dataset
 
 * Basic idea: clustering with multiple dimensions can uncover groups that a single dimension may struggle with.
-  * Example: using RBG values to detect groups of images. If only using green to classify, may be difficult to distinguish forest and sunset until red is introduced as dimension.
+    * Example: using RBG values to detect groups of images. If only using green to classify, may be difficult to distinguish forest and sunset until red is introduced as dimension.
 
 ## Univariate Gaussian distributions
 
-* Gaussian distribution:
-  * Aka normal distribution.
-  * Fully specified by **mean** μ and **variance** σ^2 (or **standard deviation** σ).
-  * Notated as follows:
-
-    $$N(x | \mu, \sigma^2) $$
+* Gaussian distribution
+    * Aka normal distribution.
+    * Fully specified by **mean** μ and **variance** σ^2 (or **standard deviation** σ).
+    * Notated as follows:
+    
+        $$N(x | \mu, \sigma^2) $$
 
     * x represents the random variable the distribution is over (eg blue intensity)
     * μ and σ^2 represent the fixed "parameters" of the gaussian.
@@ -38,22 +38,25 @@ status: draft
 ## Bivariate and multivariate gaussians
 
 * Gaussian in 2 or more dimensions aka distribution of multiple random variables.
-  * Examples: word count of "I" and "we" in social media bios to determine person or people.
+    * Examples: word count of "I" and "we" in social media bios to determine person or people.
 * When 2 dimensions is drawn as a 3d mesh plot:
-  * Most probable region at tip of peak.
-  * Least probable towards the bottom.
+    * Most probable region at tip of peak.
+    * Least probable towards the bottom.
 * Contour plot:
-  * "Birds eye view" of 3d mesh plot.
+    * "Birds eye view" of 3d mesh plot.
 * In 2D: gaussian fully specified by **mean** ***vector*** and **covariance** ***matrix***
 * Mean vector:
-   * $$\mathbf{\mu} = [\mu_{\color{blue}{\text{blue}}}, \mu_{\color{green}{\text{green}}}] $$
+
+    $$\mathbf{\mu} = [\mu_{\color{blue}{\text{blue}}}, \mu_{\color{green}{\text{green}}}] $$
    * Mean "centres the distribution in 2D"
        * The middle point between the 2 values means is the centre point of the contour plot.
 * Covariance matrix:
-   * $$\Sigma = \begin{bmatrix}{\sigma_\color{blue}{blue}}^2 & \sigma_{\color{blue}{blue},\color{green}{green}} \\ \sigma_{\color{green}{green},\color{blue}{blue}} & {\sigma_\color{green}{green}}^2 \end{bmatrix} $$
-   * determines orientation and spread aka correlation structure (don't quite get this yet).
+
+ $$\Sigma = \begin{bmatrix}{\sigma_\color{blue}{blue}}^2 & \sigma_{\color{blue}{blue},\color{green}{green}} \\ \sigma_{\color{green}{green},\color{blue}{blue}} & {\sigma_\color{green}{green}}^2 \end{bmatrix}$$
+ 
+    * determines orientation and spread aka correlation structure (don't quite get this yet).
 * Covariance structure examples:
-   * Diagonal covariance with equal elements over the diagonal
+    * Diagonal covariance with equal elements over the diagonal
      * $$\Sigma = \begin{bmatrix}\sigma^2 & 0 \\ 0 & \sigma^2 \end{bmatrix} $$
      * "There's no correlation between the random variables"
      * Get a circulate shape to the distribution because variables on both dimensions are the same.
@@ -71,7 +74,7 @@ status: draft
 
 ### Mixture of Gaussians
 
-* Special case of mixture model: mixture of gaussians.
+* Special case of mixture model: [Gaussian Mixture Model](../../../../../../permanent/gaussian-mixture-model.md)
 * Each class of images has a multi variable gaussian distribution of the different colour values.
 * Since we initially don't know the image classes, we just have a bunch of gaussians over the entire dataset space.
 * Question: how are you going to model the colour distribution across the entire dataset?
@@ -192,13 +195,13 @@ Use whatever info we have at start time. If none, assign cluster centres randoml
 ##### Datapoint 0
 
 ```
-In [4]: print 1/3. * multivariate_normal.pdf([10, 5], mean=[3, 4], cov=[[3, 0], [0, 3]])
+In [4]: print 1/3. * multivariate_normal.pdf([10, 5], mean=[3, 4], cov=[3, 0](3,%200))
 4.2506655934e-06
 
-In [5]: print 1/3. * multivariate_normal.pdf([10, 5], mean=[6, 3], cov=[[3, 0], [0, 3]])
+In [5]: print 1/3. * multivariate_normal.pdf([10, 5], mean=[6, 3], cov=[3, 0](3,%200))
 0.000630854709005
 
-In [6]: print 1/3. * multivariate_normal.pdf([10, 5], mean=[4, 6], cov=[[3, 0], [0, 3]])
+In [6]: print 1/3. * multivariate_normal.pdf([10, 5], mean=[4, 6], cov=[3, 0](3,%200))
 3.71046481027e-05
 
 In [7]: 4.2506655934e-06 + 0.000630854709005 + 3.71046481027e-05
@@ -213,13 +216,13 @@ L / sum 0.007 | 0.938 | 0.055
 ##### Datapoint 1
 
 ```
-In [11]: print 1/3. * multivariate_normal.pdf([2, 1], mean=[3, 4], cov=[[3, 0], [0, 3]])
+In [11]: print 1/3. * multivariate_normal.pdf([2, 1], mean=[3, 4], cov=[3, 0](3,%200))
 0.00334005398012
 
-In [12]: print 1/3. * multivariate_normal.pdf([2, 1], mean=[6, 3], cov=[[3, 0], [0, 3]])
+In [12]: print 1/3. * multivariate_normal.pdf([2, 1], mean=[6, 3], cov=[3, 0](3,%200))
 0.000630854709005
 
-In [13]: print 1/3. * multivariate_normal.pdf([2, 1], mean=[4, 6], cov=[[3, 0], [0, 3]])
+In [13]: print 1/3. * multivariate_normal.pdf([2, 1], mean=[4, 6], cov=[3, 0](3,%200))
 0.000140762712251
 
 In [14]: 0.00334005398012 + 0.000630854709005 + 0.000140762712251
@@ -243,13 +246,13 @@ L / sum 0.8123348521971447 | 0.15343023491465782 | 0.034234912888197
 ##### Datapoint 2
 
 ```
-In [18]: print 1/3. * multivariate_normal.pdf([3, 7], mean=[3, 4], cov=[[3, 0], [0, 3]])
+In [18]: print 1/3. * multivariate_normal.pdf([3, 7], mean=[3, 4], cov=[3, 0](3,%200))
 0.00394580754895
 
-In [19]: print 1/3. * multivariate_normal.pdf([3, 7], mean=[6, 3], cov=[[3, 0], [0, 3]])
+In [19]: print 1/3. * multivariate_normal.pdf([3, 7], mean=[6, 3], cov=[3, 0](3,%200))
 0.000274168326362
 
-In [20]: print 1/3. * multivariate_normal.pdf([3, 7], mean=[4, 6], cov=[[3, 0], [0, 3]])
+In [20]: print 1/3. * multivariate_normal.pdf([3, 7], mean=[4, 6], cov=[3, 0](3,%200))
 0.0126710555509
 
 In [21]: 0.00394580754895 + 0.000274168326362 + 0.0126710555509
@@ -335,17 +338,17 @@ Compute difference from the mean like so: ``data point i - cluster mean k``
 Then compute the "outer products" which are two-by-two matrices:
 
 ```
-= [[7.725], [2.640]] * [[7.725,2.640]] = [[59.676,20.394], [20.394,6.970]]
+= [7.725](7.725) * [7.725,2.640](7.725,2.640) = [59.676,20.394](59.676,20.394)
 
-= [[-0.275], [-1.360]] * [[-0.275,-1.360]] = [[0.076,0.374], [0.374,1.850]]
+= [-0.275](-0.275) * [-0.275,-1.360](-0.275,-1.360) = [0.076,0.374](0.076,0.374)
 
-= [[0.725], [4.640]] * [[0.725,4.640]] = [[0.526,3.364], [3.364,21.530]]
+= [0.725](0.725) * [0.725,4.640](0.725,4.640) = [0.526,3.364](0.526,3.364)
 ```
 
 Then take the weighted average using cluster responsibilities:
 
 ```
-=  0.007 * [[59.676,20.394], [20.394,6.970]] + 0.812*[[0.076,0.374], [0.374,1.850]] + 0.234*[[0.526,3.364], [3.364,21.530]]
+=  0.007 * [59.676,20.394](59.676,20.394) + 0.812*[0.076,0.374](0.076,0.374) + 0.234*[0.526,3.364](0.526,3.364)
 = (0.602, 1.234), (1.234, 6.589)
 ```
 

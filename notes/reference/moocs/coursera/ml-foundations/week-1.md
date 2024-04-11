@@ -12,24 +12,24 @@ parent: ml-foundations
     * Data:
         * prices of other houses.
         * other features of houses (number of bedrooms etc).
-    * ML method: Regression
+    * ML method: [Regression](../../../../permanent/regression.md)
 * Case Study 2: Sentiment analysis
     * Data:
         * look at other reviews.
         * "decision boundary" -on
-    * ML method: Classification
+    * ML method: [Classification](../../../../permanent/classification.md)
 * Case Study 3: Document retrieval
     * Data:
         * collection of articles.
-    * ML Method: Clustering
+    * ML Method: [Clustering](../../../../permanent/clustering.md)
 * Case Study 4: Product recommendation
     * Data:
         * past purchases
-    * ML Method: Matrix Factorization
+    * ML Method: [Matrix Factorization](Matrix%20Factorization)
 * Case Study 5: Visual product recommender
     * Data:
         * input images (shoes)
-    * ML Method: Deep Learning
+    * ML Method: [Deep Learning](Deep%20Learning)
 
 ## 2. Regression
 
@@ -55,10 +55,10 @@ parent: ml-foundations
     * Kernels
     * Decision trees
 * Algorithms
-    * Stocastic gradient descent
+    * Stochastic gradient descent
     * Boosting
 * Concepts
-    * Descision boundaries
+    * Decision boundaries
     * MLE
     * Ensemble methods
     * Random forest
@@ -87,7 +87,7 @@ parent: ml-foundations
 * Models
     * Collaborative filtering
     * Matrix factorization
-    * PCA
+    * [Principal Component Analysis](../../../../permanent/principal-component-analysis.md)
 * Algorithms
     * Coordinate descent
     * Eigen decomposition

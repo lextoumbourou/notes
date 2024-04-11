@@ -75,7 +75,7 @@ parent: ml-foundations
     * The test error, on the other hand, will eventually increase as model order increases.
 * Adding other features
     * Look at relationships between other features and observation.
-    * With an extra feature, we'd fit a "hyperplane" through features, instead of line in 2d space.
+    * With an extra feature, we'd fit a [Hyperplane](../../../../permanent/hyperplane.md) through features, instead of line in 2d space.
 
 ## Exercise Notes
 
