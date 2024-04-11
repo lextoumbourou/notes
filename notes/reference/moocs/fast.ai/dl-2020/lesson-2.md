@@ -25,9 +25,9 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
 
 ## 00:02:55 - Classification vs Regression
 
-* If predicting class (ie which breed of dog, whether a user is likely to default or not), it's called: [Classification](permanent/classification.md)
+* If predicting class (ie which breed of dog, whether a user is likely to default or not), it's called: [Classification](../../../../permanent/classification.md)
     * Value is discrete
-* If prediction continuous value (ie age of person), it's called: [Regression](permanent/regression.md)
+* If prediction continuous value (ie age of person), it's called: [Regression](../../../../permanent/regression.md)
 * Sometimes people use regression as short-hand for linear regression model, but that's incorrect
 
 ## 00:04:50 - valid_pct

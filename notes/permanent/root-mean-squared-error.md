@@ -5,7 +5,7 @@ tags:
   - MachineLearning
 ---
 
-Root mean-squared error (RMSE) is a function for assessing [Regression](Regression) predictions.
+Root mean-squared error (RMSE) is a function for assessing [regression](regression.md) predictions.
 
 Sometimes called [L2 Loss](l2-loss.md) because it takes the [L2 Norm](l2-norm.md) of the error vector.
 ### Steps

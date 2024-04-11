@@ -45,7 +45,7 @@ status: draft
 * Decision Boundary types:
     * When 2 coefficients are non-zero: line
     * When 3 coefficients are non-zero: plane
-    * When many coefficients are non-zero: hyperplane
+    * When many coefficients are non-zero: [Hyperplane](../../../../permanent/hyperplane.md)
     * More general classifiers: more complicated (squiggly?) lines
 
 ### Linear classifier model
