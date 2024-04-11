@@ -7,6 +7,7 @@ tags:
 - LinearAlgebra
 summary: a subspace where the dimension is one less than the ambient space
 cover: /_media/hyperplane-cover.png
+hide_cover_in_article: true
 ---
 
 A hyperplane is a subspace where the dimension is one less than the ambient space. In 2-dimensional space, a hyperplane is a line; in 3-dimensional space, it's a plane.
