@@ -16,7 +16,7 @@ status: draft
   * 90s: Small data = high model complexity required for accuracy.
   * 00s-10s: Larger datasets = simpler model. Lower model complexity mitigated by bigger datasets.
   * 10s-20s: Even larger datasets = high model complexity, new algorithms using GPUs, clusters, parallelism etc.
-* Change to gradient descent which updates coefficients as it iterates through the datasets.
+* Change to [Gradient Descent](../../../../permanent/gradient-descent.md) which updates coefficients as it iterates through the datasets.
 
 ## Scaling ML with stochastic gradient
 
