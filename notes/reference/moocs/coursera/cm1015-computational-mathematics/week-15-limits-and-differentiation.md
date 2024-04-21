@@ -54,7 +54,7 @@ Formalises the idea that if $f(x)$ gets arbitrarily close to value $L$, the clos
 
 If limit is finite and coincides with the value of the function in x_0, i.e. if $f(x_0) = lim_{x \rightarrow x0} \ f(x) = L$
 
-the function is said to be a [[Continuous Function]] in $x_0$, if the value exists and is its limit, and the limit is finite.
+the function is said to be a [Continuous Function](Continuous%20Function) in $x_0$, if the value exists and is its limit, and the limit is finite.
 
 A function is continuous, if you can draw it with a pencil without living the pencil.
 
@@ -74,7 +74,7 @@ Limit exists if and only if $\lim_{x \rightarrow x_0^{-}} f(x) = \lim_{x \righta
 
 Here, we can see that the limit is 1 from either side.
 
-[[Discontinuous Function]]
+[Discontinuous Function](Discontinuous%20Function)
 
 $$
 y = f(x) = \begin{equation}
@@ -99,13 +99,13 @@ Can see from the left, we're approaching 1, and from the right, approach 0. So t
 
 Another interesting case of discontinuous function. You can have a limit that exists, but is different from the value at the point. It means that f is not continuous in x_0 = 0, even though the limit exist and is 1.
 
-![](../../../../journal/_media/week-15-limits-and-differentiation-limit-not-continuuos.png)
+![](/_media/week-15-limits-and-differentiation-limit-not-continuuos.png)
 
 $\lim f(x) = 0 = \lim f(x) \neq f(0) = 1$
 
 ## Lesson 8.3 Derivative of a function
 
-[[Function Derivative]]
+[Derivative](../../../../../../permanent/derivative.md)
 
 Directly connected to the concept of slope or gradient of a function
 
@@ -117,18 +117,18 @@ $\tan \alpha = \triangle y / \triangle x$
 
 Consider a more generic function f(x):
 
-![](../../../../journal/_media/week-15-limits-and-differentiation-generic-func.png)
+![](/_media/week-15-limits-and-differentiation-generic-func.png)
 
 The slope at any point x, the line tangent to the curve is the slope. 
 
-![](../../../../journal/_media/week-15-limits-and-differentiation-tangent.png)
+![](/_media/week-15-limits-and-differentiation-tangent.png)
 The derivative is the slope of the line tangent to the curve at a point P.
 
 Derivative;
 
 $f'(x) = \frac{df}{dx} = \lim_{\triangle x \rightarrow 0} \frac{f(x + \triangle{x}) - f(x)}{\triangle x}$
 
-[Function Derivative](Function%20Derivative) from first principles.
+[Derivative](../../../../../../permanent/derivative.md) from first principles.
 
 * $f(x) = x$
     * $f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h} = \frac{x + h - x}{h} = \frac{h}{h} = 1$
@@ -143,7 +143,7 @@ $f'(x) = \frac{df}{dx} = \lim_{\triangle x \rightarrow 0} \frac{f(x + \triangle{
 
 Croft, A. and R. Davison, Foundation maths. (Harlow: Pearson, 2016) 6th edition. Chapter 34 and 35.
 
-[[Gradient Function]]
+[Gradient Function](Gradient%20Function)
 
 If we have a function $y = f(x)$ and want its slope, or gradient at sevenl points.
 

@@ -54,14 +54,13 @@ status: draft
     * Addition:
         * $101_2 + 111_2$
         * Similar to decimal sum in column divide y two carry over quotient and take remainder
-             ![](../../../../_media/week-2-non-integer-conversion-decimal-addition.png)
      * Subtraction
          * In base 10 subtraction, you "borrow" from the adjacent left column.
          * Same in base 2, except you get a 2 from the adjacent column.
-           ![](../../../../journal/_media/week-2-non-integer-conversion-base2-subtraction.png)
+           ![](_media/week-2-non-integer-conversion-base2-subtraction.png)
      * Multiplication
          * Same as decimal
-           ![](../../../../journal/_media/week-2-non-integer-conversion-multiplication.png)
+           ![](/_media/week-2-non-integer-conversion-multiplication.png)
    * Division
-      ![](../../../../journal/_media/week-2-non-integer-conversion-division.png) 
+      ![](/_media/week-2-non-integer-conversion-division.png) 
   * Need to revise this.
