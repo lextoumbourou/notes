@@ -20,11 +20,11 @@ and
 
 >  "The size was **minute**."
 
-The token representing **minute** will mean very different things in each sentence, even though they will use the same embedding representation. The words "took" and "size" indicate whether the word relates to time or size, respectively. We want a way to represent each token, including information about important surrounding tokens.
+The token representing **minute** will mean very different things in each sentence, even though they will use the same embedding representation. The words "took" and "size" indicate whether the word relates to time or size, respectively. We want a way to represent each token with information about important surrounding tokens.
 
-We could use a weighted average to achieve this. However, in the **minute** cases, some words are more important to defining the context than others. Could we also use a neural network to compute the weights for each other tokens in sequence to have the most useful average representation? That's exactly what Scaled-Dot Product Attention is.
+We could use a simple average to achieve this. However, in the **minute** cases, some words are more important to defining the context than others. Could we also use a neural network to compute the weights for each other tokens in sequence to have the most useful average representation? That's exactly what Scaled-Dot Product Attention is.
 
-Scaled-Dot Product Attention uses two matrix projections to compute the scores of other tokens in the sequence, then a softmax to convert to weights. Then, a final projection is to create the final weighted representation.
+Scaled-Dot Product Attention uses two matrix projections to compute the scores of other tokens in the sequence, then a softmax to convert to weights. Then, a final projection is to create the final weighted representation. All the weights in the attention module are learned alongside the rest of the network.
 
 Let's see how to compute it step-by-step.
 
@@ -85,7 +85,7 @@ In the Decoder part of the Transformer, we need to ensure that the model cannot 
 We can use the [tril](https://pytorch.org/docs/stable/generated/torch.tril.html) function to create a diagonal mask where the value `True` represents positions to be masked, then [masked_fill](https://pytorch.org/docs/stable/generated/torch.Tensor.masked_fill_.html#torch.Tensor.masked_fill_) will replace any masked positions with `float("-inf")`. After performing the Softmax operation, any -inf values will be converted into a weight of 0.
 
 ```python
-# Compute a mask and set all future values to -inf. This ensures a score of 0 after softmax.
+# Compute a mask and set all future values to -inf, which ensures a score of 0 after softmax.
 attn_mask = torch.tril(torch.ones(*scores.shape)) == 0
 scores = torch.masked_fill(scores, attn_mask, float("-inf"))
 ```
@@ -135,7 +135,7 @@ class SingleHeadAttention(nn.Module):
         # Scale scores by sqrt of attention dim
         scores = scores / math.sqrt(self.attention_dim)
 
-        # Compute a mask and set all future values to -inf. This ensures a score of 0 after softmax.
+        # Compute a mask and set all future values to -inf, which ensures a score of 0 after softmax.
         attn_mask = torch.tril(torch.ones(*scores.shape)) == 0
         scores = torch.masked_fill(scores, attn_mask, float("-inf"))
 
