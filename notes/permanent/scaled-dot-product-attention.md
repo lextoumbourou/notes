@@ -150,5 +150,5 @@ class SingleHeadAttention(nn.Module):
 
 In the Transformer architecture, we combine multiple Self-Attention modules by concatenating their outputs into one final representation, passed through a final feed-forward layer. These multiple Self-Attention layers together are called [Multi-head Attention](multi-head-attention.md).
 
-![](../../../_media/scaled-dot-product-attention-multi-head.png)
-*Diagram from paper Attention Is All Your Need*
+![Multi-Head Attention diagram](../_media/scaled-dot-product-attention-multi-head.png)
+*Multi-Head Attention diagram from paper Attention Is All Your Need*
