@@ -103,7 +103,7 @@ Notes taken from watching the [Lesson 3 - Deep Learning for Coders (2020)](https
     * Predictive policing example:
         * Predicts crime in certain areas, causing police to go there
         * More police means more arrest, which in turns makes model more confident in predictions
-        * An example of where [Metrics Are Proxies](../../../../permanent/metrics-are-proxies.md) - you want to reduce crime, but use arrests as a proxy for crime
+        * An example of where [Proxy Metrics](../../../../permanent/proxy-metrics.md) - you want to reduce crime, but use arrests as a proxy for crime
     * Issue is particularly a problem in the prescence of bias
     * Risk of having a feedback loop is anytime your model controls what your future data looks like
     * Consider human's in the loop: appeals process, monitoring etc

@@ -1,5 +1,5 @@
 ---
-title: Metrics Are Proxies
+title: Proxy Metrics
 date: 2021-06-12 00:00
 tags:
   - MachineLearningFailureModes
