@@ -39,7 +39,7 @@ status: draft
     * [Bijective Function](Bijective%20Function)
         * Injective + Surjective (one-to-one)
           ![](../../../../_media/week-9-function-cartesian-coordinates-bijective.png)
-* [Cartesian Coordinates](Cartesian%20Coordinates)
+* [Cartesian Coordinates](../../../../../../permanent/cartesian-coordinates.md)
     * A of coordinates which is commonly used to graphically represent the range of a function.
     * Contains 2 perpendicular axes, $x, y$ to map and label points on the plane
       ![](../../../../_media/week-9-function-cartesian-coordinates-cartesian.png)
