@@ -21,7 +21,7 @@ modified: 2023-04-09 00:00
 ### Modulus and inner product
 
 * A vector has two properties: its length and its direction.
-* [Vector Magnitude](permanent/vector-magnitude.md) (0:35-2:54)
+* [Vector Magnitude](../../../../permanent/vector-magnitude.md) (0:35-2:54)
     * A vector can be described in terms of its unit vectors. In this example, they're $\hat{i}$ and $\hat{j}$:
         $r = a\hat{i} + b\hat{i}$
     * From [Pythagoras Theorem](permanent/pythagoras-theorem.md), we can calculate the magnitude (size) of the vector as $\|r\| = \sqrt{a^2 + b^2}$

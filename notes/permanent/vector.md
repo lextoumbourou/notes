@@ -39,6 +39,7 @@ We can plot these numbers in a coordinate system to see how the flowers relate t
 
 ![Iris scatterplot](../_media/iris-scatterplot.png)
 
+* The length of a vector is called its magnitude. See [Vector Magnitude](vector-magnitude.md).
 * We can add a vector. See [Vector Addition](vector-addition.md).
 * We can subtract vectors. See [Vector Subtraction](vector-subtraction.md).
 * We can multiply vectors by a value. See [Vector Scaling](vector-scaling.md).
