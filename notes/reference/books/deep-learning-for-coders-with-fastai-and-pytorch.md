@@ -104,7 +104,7 @@ status: draft
         * So it's the same a [Root mean-squared error - L2 Loss](../../permanent/Root mean-squared error - L2 Loss.md) in regression.
         * Because gradient is linear, don't see sudden jumps or exponential increases in gradients
 * Model Interpretation
-    * [Confusion Matrix](Confusion Matrix) (pg. 232)
+    * [Confusion Matrix](../../permanent/confusion-matrix.md) (pg. 232)
     * `most_confused` method for showing the items with highest loss (pg. 232-233)
 * Improving the model
     * [Learning Rate Finder](Learning Rate Finder) (pg. 233-236)

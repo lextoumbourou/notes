@@ -186,7 +186,7 @@ Language modelling of natural signals
 Neural language models have demonstrated great success in diverse tasks such as open-ended text generation with in-context learning capabilities.
 * See [Language models are few shot learners](Language%20models%20are%20few%20shot%20learners).
 
-[Self-Attention](Self-Attention) allows it to complex, long-range dependencies. However, has quadratic computational cost with the length of the sequence. Bad for natural signals like images, audio with high dimensionality. Instead they need a compact mapping into a discrete representation space.
+[Self-Attention](../../permanent/self-attention.md) allows it to complex, long-range dependencies. However, has quadratic computational cost with the length of the sequence. Bad for natural signals like images, audio with high dimensionality. Instead they need a compact mapping into a discrete representation space.
 
 Mapping usually learned with [VQ-GAN](../../../../permanent/vq-gan.md), followed by training autoregressive Transformer on discrete tokens.
 * [Taming Transformers for High-Resolution Image Synthesis](../../../../permanent/taming-transformers-for-high-resolution-image-synthesis.md).

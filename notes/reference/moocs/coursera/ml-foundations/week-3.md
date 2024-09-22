@@ -69,7 +69,7 @@ parent: ml-foundations
                 Positive     |  Negative |
               |---------------------------
 
-    * Relationship between these outcomes: "confusion matrix".
+    * Relationship between these outcomes: [Confusion Matrix](../../../../permanent/confusion-matrix.md).
 * How much data does a model need to learn?
     * More data == better, as long as it's good.
     * As you increase data, you reduce test error but never to 0. Gap between model results and 100% accuracy == "bias of model".

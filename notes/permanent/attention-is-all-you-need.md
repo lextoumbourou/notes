@@ -46,7 +46,7 @@ This makes it more difficult to learn dependencies between distant positions.
 
 In the Transformer this is reduced to a constant number of operations, albeit at the cost of reduced effective resolution due to averaging attention-weighted positions, an effect we counteract with Multi-Head Attention as described in section 3.2.
 
-[Self-Attention](../../../permanent/self-attention.md), sometimes called intra-attention is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence.
+[Self-Attention](self-attention.md), sometimes called intra-attention is an attention mechanism relating different positions of a single sequence in order to compute a representation of the sequence.
 
 Self-attention has been used successfully in a variety of tasks including reading comprehension, abstractive summarization,
 textual entailment and learning task-independent sentence representations [4, 27, 28, 22].

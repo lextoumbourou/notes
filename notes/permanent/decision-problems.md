@@ -7,4 +7,4 @@ status: draft
 
 **Decision Problems**, in Computer Science, are classes of problems where a machine decides if it accepts of rejects an input.
 
-See [Finite Automaton](finite-automaton.md) and [Turing Machine](../../../permanent/turing-machine.md).
+See [Finite Automaton](finite-automaton.md) and [Turing Machine](turing-machine.md).

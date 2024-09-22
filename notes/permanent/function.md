@@ -25,7 +25,7 @@ Consider a function, $f$, that maps a set of people's names to their ages:
 * $B = \{0, 1, 2, \cdots, 120 \}$
 * $f : A \rightarrow B$
 
-![An example of the above mapping](/_media/function-diagram.png)
+![An example of the above mapping](_media/function-diagram.png)
 
 The set of possible inputs is called the [Domain of a Function](function-domain.md) or $D_f$:
 
