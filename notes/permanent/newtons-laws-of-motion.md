@@ -11,9 +11,9 @@ In 1686, Newton presented his 3 laws of motion in "Principia Mathematica Philoso
 
 An object remains at rest or in motion a constant velocity unless acted upon by a net external force. In other words, an object will move at a constant speed unless a force is applied to it pushing it in another direction (gravity is one example of a force).
 
-## [newtons-second-law](../../../permanent/newtons-second-law.md)
+## [Newton's Second Law of Motion](../../../permanent/newtons-second-law.md)
 
-2nd law: the acceleration of an object is equal to the sum of forces / the object's mass (`acceleration = sum of forces / object's mass`). Sometimes expressed as `sum of forces = mass * acceleration` , however, the former is preferred as it shows the positive relationship between acceleration and the force and the negative relationship between its mass.
+2nd law: the [Acceleration](acceleration.md) of an object is equal to the sum of forces / the object's mass (`acceleration = sum of forces / object's mass`). Sometimes expressed as `sum of forces = mass * acceleration` , however, the former is preferred as it shows the positive relationship between acceleration and the force and the negative relationship between its mass.
 
 ## [[Newton's Third Law]]
 

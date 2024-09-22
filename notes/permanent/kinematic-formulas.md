@@ -13,7 +13,7 @@ They are concerned with 5 key variables:
 2. $t$ - Time elapsed.
 3. $u$ - Initial velocity.
 4. $v$ - Final velocity.
-5. $a$ - [Acceleration](Acceleration) (a constant in these formulas)
+5. $a$ - [Acceleration](acceleration.md) (a constant in these formulas)
 
 Also called [SUVAT Equations](../journal/permanent/suvat-equations.md).
 

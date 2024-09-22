@@ -134,7 +134,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
 * [HiFi-GAN](../../permanent/hifigan.md)
     * Introduce a multi-period waveform discriminator (MPD) for high fidelity synthesis
     * adding an auxiliary mel-reconstruction loss for fast training
-* [UnivNet](../../../../permanent/UnivNet.md)
+* [univnet](../../../../permanent/univnet.md)
     * introduces a multi-resolution spectrogram discriminator (MRSD) to generate audio with sharp spectrograms
 * [BigVGAN](../../../../permanent/BigVGAN.md)
     * Improve HifiGAN recipe by introducing a periodic inductive bias using the [Snake Activation Function](../../permanent/snake-activation-function.md)
