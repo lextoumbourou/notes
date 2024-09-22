@@ -33,6 +33,6 @@ the node corresponding to the former. So we have the following picture:
 
 ![](../../../_media/linked-list-stack-as-linked-list.png)
 
-## [Doubly Linked List](../../../permanent/Doubly%20Linked%20List.md)
+## [Doubly Linked List](../../../permanent/doubly-linked-list.md)
 
 A variant of Linked List where nodes also contain a reference to the previous node `x.prev`.
