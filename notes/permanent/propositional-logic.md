@@ -209,4 +209,4 @@ $(p \rightarrow q) \equiv (\neg p \land q)$
 
 ## Laws of logic
 
-See [Laws of Logic](../../../permanent/laws-of-logic.md).
+See [Laws of Logic](laws-of-logic.md).
