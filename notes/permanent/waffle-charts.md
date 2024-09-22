@@ -1,5 +1,5 @@
 ---
-title: Waffle Charts
+title: Waffle Chart
 date: 2024-07-24 00:00
 modified: 2024-07-24 00:00
 cover: /_media/waffle_cover.png
