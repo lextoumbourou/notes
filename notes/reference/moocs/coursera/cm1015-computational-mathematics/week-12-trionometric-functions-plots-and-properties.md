@@ -30,7 +30,7 @@ status: draft
     * $\cos(2n\pi + x) = \cos(x)$
     * $\sin(2n\pi + x) = \sin(x)$
     
-* $\sin$ is a [[Periodic Function]] with a period that's $2\pi$. 
+* $\sin$ is a [Periodic Function](../../../../permanent/periodic-function.md) with a period that's $2\pi$. 
      ![](../../../../journal/_media/week-12-trionometric-functions-plots-and-properties-2pi.png)
      
 * $\cos$ has a similar curve, but shifted $\frac{\pi}{2}$ 
