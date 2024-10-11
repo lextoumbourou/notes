@@ -213,7 +213,7 @@ They use a SOTA speaker verification model, WaLM-TDNN, to check the speaker simi
 
 **Word Error Rate**
 
-They run speech recognition on the generated audio and calculate the [Word Error Rate (WER)](../../../../permanent/word-error-rate.md) concerning the original transcriptions (using the HuBERT-Large model fine-tuned on LibriSpeech 960h as the ASR model)
+They run speech recognition on the generated audio and calculate the [Word Error Rate (WER)](../../permanent/word-error-rate.md) concerning the original transcriptions (using the HuBERT-Large model fine-tuned on LibriSpeech 960h as the ASR model)
 
 #### Human evaluation
 

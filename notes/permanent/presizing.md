@@ -17,11 +17,11 @@ If we first resize the images to some smaller size that is well above our target
 
 Without presizing (using the [imgaug](https://imgaug.readthedocs.io/en/latest/) library):
 
-![Presizing](/_media/presizing-standard-aug.png)
+![Presizing](_media/presizing-standard-aug.png)
 
 With presizing (using the [fastai library](https://docs.fast.ai)):
 
-![Presizing](/_media/presizing-cover.png)
+![Presizing](_media/presizing-cover.png)
 
 These examples use an image from the [Plant Pathology 2020 - FGVC7](https://www.kaggle.com/c/plant-pathology-2020-fgvc7) dataset. You can see the source [here](https://www.kaggle.com/lextoumbourou/presizing).
 
