@@ -21,4 +21,4 @@ The authors demonstrate the U-Net’s superior performance compared to prior met
 - neuronal structure segmentation in electron microscopic stacks
 - cell segmentation in light microscopy images.
 
-They utilise [Data Augmentation](../../../permanent/data-augmentation.md) techniques, like elastic deformations, to enhance the network’s ability to generalise and handle variations in image data.
+They utilise [Data Augmentation](../permanent/data-augmentation.md) techniques, like elastic deformations, to enhance the network’s ability to generalise and handle variations in image data.

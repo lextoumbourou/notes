@@ -5,7 +5,7 @@ modified: 2024-03-18 00:00
 status: draft
 ---
 
-**Sliding Window Attention** is a modification to [Attention](../../../permanent/attention.md), which modifies the causal mask, so tokens can only attend to $W$ past tokens. Here, we can see an example where $W = 3$
+**Sliding Window Attention** is a modification to [Attention](attention.md), which modifies the causal mask, so tokens can only attend to $W$ past tokens. Here, we can see an example where $W = 3$
 
 ![](../../../_media/sliding-window-attention-sliding-window.png)
 *Image from [mistral-src](https://github.com/mistralai/mistral-src?tab=readme-ov-file).*
