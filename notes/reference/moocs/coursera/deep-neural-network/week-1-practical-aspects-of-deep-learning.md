@@ -91,7 +91,7 @@ tags:
 
 ### Other regularisation methods
 
-* [Data Augmentation](../../../../../../permanent/data-augmentation.md)
+* [Data Augmentation](../../../../permanent/data-augmentation.md)
     * Flip images, random zoom, crop, etc.
     * Not as good as new data.
 * Early stopping.

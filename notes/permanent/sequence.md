@@ -7,20 +7,20 @@ status: draft
 
 A sequence is a set of numbers written in a specific order.
 
-[[Arithmetic Sequence]]
+[Arithmetic Sequence](Arithmetic%20Sequence)
 
 When you calculate a sequence by adding a fixed amount to the previous term, it's called an **arithmetic progression** or **arithmetic sequence**.
 
 The fixed amount added each time is called the  When you calculate a sequence by adding a fixed amount to the previous term, it's called an **arithmetic progression** or **arithmetic sequence**.
-        * [[Common Difference]]
+        * [Common Difference](Common%20Difference)
             * The fixed amount added each time is **common difference**.
-        * [[First Term]]
+        * [First Term](First%20Term)
             * The starting point is called the **first term**.
         * For example, start at 1 and add 6 each time: 1, 7,  13, 19, ...
             * 1 is first term
             * 6 is common difference
 
- [[Geometric Progressions]]
+ [Geometric Progressions](geometric-progressions.md)
  
 * When you multiply the previous term by a fixed amount.
 * The first value of the sequence: **first term**

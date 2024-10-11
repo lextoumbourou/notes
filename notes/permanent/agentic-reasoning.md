@@ -7,11 +7,11 @@ tags:
 - AgenticReasoning
 ---
 
-**Agentic Reasoning** refers to an approach to utilising LLMs that involves multi-states of interaction with [AI Agents](../../../permanent/ai-agents.md), for example, an agent may plan, reflect on its own output, or even call other tools or agents to reason.
+**Agentic Reasoning** refers to an approach to utilising LLMs that involves multi-states of interaction with [AI Agents](ai-agents.md), for example, an agent may plan, reflect on its own output, or even call other tools or agents to reason.
 
-It is the counter to [Zero-Shot Prompting](../../../permanent/zero-shot-prompting.md) where the LLM returns the result based on a single prompt.
+It is the counter to [Zero-Shot Prompting](zero-shot-prompting.md) where the LLM returns the result based on a single prompt.
 
-There are typically 4 high-level categories of activity which constitute Agentic Reasoning, including **Reflection**, **Tool Use**, **Planning** and **Memory**. Additionally, agents can be part of [Single-Agent Systems](single-agent-systems.md), where a single LLM performs Agentic Reasoning, or [Multi-Agent Systems](../../../permanent/multi-agent-systems.md) where multiple LLMs work together to achieve a goal.
+There are typically 4 high-level categories of activity which constitute Agentic Reasoning, including **Reflection**, **Tool Use**, **Planning** and **Memory**. Additionally, agents can be part of [Single-Agent Systems](single-agent-systems.md), where a single LLM performs Agentic Reasoning, or [Multi-Agent Systems](multi-agent-systems.md) where multiple LLMs work together to achieve a goal.
 
 ## Design Patterns
 ### [Reflection](../../../permanent/reflection.md)
@@ -30,7 +30,7 @@ In [Gorilla Large Language Model Connected with Massive APIs](../../../permanent
 
 In [MM-REACT Prompting ChatGPT for Multimodal Reasoning and Action](../../../permanent/mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md) uses prompting techniques to allow ChatGPT to call vision models and other models to answer questions.
 
-In [SheetCopilot: Bringing Software Productivity to the Next Level through Large Language Models](../../../reference/papers-sheet-copilot.md) utilises [Atomic Actions](../../../permanent/atomic-actions.md) to represent API commands, which allow the agent to interact with any spreadsheet application.
+In [SheetCopilot: Bringing Software Productivity to the Next Level through Large Language Models](../../../reference/papers-sheet-copilot.md) utilises [Atomic Actions](atomic-actions.md) to represent API commands, which allow the agent to interact with any spreadsheet application.
 
 ### [Planning](../../../permanent/planning.md)
 
@@ -40,8 +40,8 @@ The paper [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models
 
 Another is [HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face](../../../permanent/hugginggpt-solving-ai-tasks-with-chatgpt-and-its-friends-in-hugging-face.md) which conducts task planning using HuggingFace hosted models.
 
-### [Memory](../../../permanent/memory-ai-agents.md)
+### [Memory](../../../permanent/memory.md)
 
 ### [Single-Agent Systems](single-agent-systems.md)
 
-### [Multi-Agent Systems](../../../permanent/multi-agent-systems.md)
+### [Multi-Agent Systems](multi-agent-systems.md)
