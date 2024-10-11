@@ -10,7 +10,7 @@ hide_cover_in_article: true
 
 The Cross Product is an operation between two vectors that returns a vector: $\vec{a} \times \vec{b} = \vec{c}$
 
-The returned vector will be orthogonal to both input vectors and have a length equal to the area of the parallelogram the input vectors define.
+The returned vector will be orthogonal to both input vectors and have a length equal to the [Parallelogram Area](parallelogram-area.md) the input vectors define.
 
 <video controls loop><source src="/_media/cross-product.mp4" type="video/mp4"></video>
 

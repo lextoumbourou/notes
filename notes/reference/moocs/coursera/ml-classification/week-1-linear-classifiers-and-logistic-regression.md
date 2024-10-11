@@ -117,7 +117,7 @@ $$Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i}) = \ma
 * A lot of classifiers output degree of confidence.
 * We generally train a classifier to output some $\mathbf{\hat{P}}$ which uses $\mathbf{\hat{w}}$ values to make predictions. It can then use outputted probability to return +1 if > 0.5 (is positive) or -1 if < 0.5 (is negative) and also how confident we are with the answer.
 
-## Logistic Regression
+## [Logistic Regression](../../../logistic-regression.md)
 
 ### Predicting class probabilities with (generalized) linear models
 

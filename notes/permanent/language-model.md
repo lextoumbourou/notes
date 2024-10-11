@@ -6,3 +6,5 @@ status: draft
 ---
 
 A **language model** predicts the next word given a sequence of text - or any discrete sequence of information.
+
+Nowadays mostly discussed in the context of [Large Language Model](../../../permanent/large-language-model.md).

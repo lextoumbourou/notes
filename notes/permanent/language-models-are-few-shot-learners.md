@@ -10,3 +10,7 @@ Notes for paper [Language Models are Few-Shot Learners](https://arxiv.org/abs/20
 ---
 
 The paper that introduced [GPT-3](gpt-3.md).
+
+![](../../../_media/language-models-are-few-shot-learners-title.png)
+
+![](../../../_media/language-models-are-few-shot-learners-arvxiv.png)

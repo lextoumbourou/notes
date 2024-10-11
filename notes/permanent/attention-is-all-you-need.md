@@ -7,6 +7,9 @@ status: draft
 
 Shell page for [Attention Is All You Need](https://arxiv.org/abs/1706.03762) by Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin.
 
+![](../../../_media/attention-is-all-you-need-title.png)
+![](../../../_media/attention-is-all-you-need-abstract.png)
+
 ## Abstract
 
 At the time of the paper, the prevalent sequence-to-sequence were [Encoder-Decoder](encoder-decoder.md) models that used recurrent or convolutional neural networks, where an encoder would represent an input sequence of tokens as a sequence of embeddings, and a decoder would take those embeddings and predict a new sequence one token at a time. The best performance models would connect the encoder and decoder using an [Attention](../../../permanent/attention.md) mechanism.
@@ -22,7 +25,7 @@ They also show the Transformer generalised well to other tasks.
 
 ## Introduction
 
-[Recurrent Neural Networks](../../../permanent/recurrent-neural-networks.md), [Long Short-Term Memory](../../../permanent/lstm.md) and [Gated Recurrent Neural Networks](Gated%20Recurrent%20Neural%20Networks) were the go-to models for state-of-the-art performance in sequence modelling tasks, like building a [Language Model](language-model.md) and models for [Machine Translation](Machine%20Translation).
+[Recurrent Neural Networks](../../../permanent/recurrent-neural-networks.md), [LSTM](../../../permanent/lstm.md) and [Gated Recurrent Neural Networks](Gated%20Recurrent%20Neural%20Networks) were the go-to models for state-of-the-art performance in sequence modelling tasks, like building a [Language Model](language-model.md) and models for [Machine Translation](Machine%20Translation).
 
 All these model "factor computation along the symbol positions of the input and output sequences". They aliging the positions to steps in computation time, they generate a sequence of hidden states, $h_t$, which are calculated as functions of the previous hidden states $h_{t-1}$ and input position $t$.
 
