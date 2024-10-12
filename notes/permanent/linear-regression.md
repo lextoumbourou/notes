@@ -7,6 +7,8 @@ status: draft
 
 **Linear Regression** is a supervised learning algorithm for determining the relationship between a independent variable (X) and a dependent variable (y). It can also be used to determine the relationship between multiple independent variables and a dependent variable, in which case it's technically called [Multiple Linear Regression](../../../permanent/multiple-linear-regression.md).
 
+The term **Linear** because it uses a [Linear Model](linear-model.md), and [Regression](regression.md) due to the continuous dependent variable.
+
 For example, consider some data that maps the size of a house to its price:
 
 | House size (sq ft) | House price |

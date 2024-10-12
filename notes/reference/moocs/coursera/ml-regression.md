@@ -82,7 +82,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
       * Module 4: Ridge Regression
           ``Ridge total cost = measure of fit + measure of model complexity``
           * Cross validation (??)
-      * Module 5: Feature Selection & Lasso Regression
+      * Module 5: Feature Selection & [Lasso](../../../permanent/lasso.md) Regression
           * What are the most important features for model?
            ``Lasso total cost = measure of fit + (different) measure of model complexity``
           * Will learn: coordinate descent algorithm.
