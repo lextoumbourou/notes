@@ -36,7 +36,7 @@ parent: ml-foundations
 * Linear regression
 * Regularization:
     * Ridge (L2)
-    * Lasso (L1)
+    * [Lasso](../../../../permanent/lasso.md) (L1)
 * Algorithms
     * Gradient descent
     * Coordinate descent
