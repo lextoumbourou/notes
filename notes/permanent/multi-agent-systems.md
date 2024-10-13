@@ -7,7 +7,7 @@ tags:
 - AgenticReasoning
 ---
 
-**Multi-Agent Systems** in [Reflection](reflection.md)](agentic-reasoning.md) involve multiple models working together to execute [Reflection](reflection.md), [Planning](planning.md), and [Tool Use](../../../permanent/tool-use.md) in a collaborative or competitive manner. These agents can communicate with one another, exchange feedback, and coordinate tasks to solve complex problems. Tends to improve upon [Single-Agent Systems](single-agent-systems.md) more when collaboration and multiple distinct execution paths are required [^1].
+**Multi-Agent Systems** in [Agentic Reasoning](agentic-reasoning.md) involve multiple models working together to execute [Reflection](reflection.md), [Planning](planning.md), and [Tool Use](../../../permanent/tool-use.md) in a collaborative or competitive manner. These agents can communicate with one another, exchange feedback, and coordinate tasks to solve complex problems. Tends to improve upon [Single-Agent Systems](single-agent-systems.md) more when collaboration and multiple distinct execution paths are required [^1].
 
 In this system, agents may have specialised roles and communicate with one another to enhance performance, such as through division of labor or consensus-building. While human guidance can still be integrated, the focus is on agents autonomously interacting to optimise the outcomes.
 
