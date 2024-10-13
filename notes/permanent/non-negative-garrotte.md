@@ -23,4 +23,4 @@ The non-negative garrote may be preferable to the Lasso in scenarios where best 
 
 "A drawback of the garotte is that its solution depends on both the sign and the magnitude of the OLS estimates. In overfit or highly correlated settings where the OLS estimates behave poorly, the garotte may suffer as a result. In contrast, the lasso avoids the explicit use of the OLS estimates." [^1]
 
-[Regression Shrinkage and Selection via the Lasso](../reference/regression-shrinkage-and-selection-via-the-lasso.md). Journal of the Royal Statistical Society: Series B (Methodological), 58(1), 267–288. https://www.jstor.org/stable/2346178  
+[Regression Shrinkage and Selection via the Lasso](../reference/papers/regression-shrinkage-and-selection-via-the-lasso.md). Journal of the Royal Statistical Society: Series B (Methodological), 58(1), 267–288. https://www.jstor.org/stable/2346178  

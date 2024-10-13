@@ -5,4 +5,4 @@ modified: 2024-01-07 00:00
 status: draft
 ---
 
-The model originally described in [Language Models are Few-Shot Learners](language-models-are-few-shot-learners.md)
+The model originally described in [Brown et al., 2020: Language Models are Few-Shot Learners](brown-et-al-2020-language-models-are-few-shot-learners.md)
