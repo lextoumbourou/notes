@@ -27,7 +27,7 @@ tags:
 ## Contents
 
 * [Week 1 - Number Bases](week-1-number-bases.md)
-* [Week 2 - Non-Integer Numbers Conversion](week-2-non-integer-conversion.md) 
+* [Week 2 - Non-Integer Numbers Conversion](week-2-non-integer-conversion.md)
 * [Week 3 - Sequences and Series](week-3-sequences-and-series.md)
 * [Week 4 - Sequences and Series](week-4-sequences-and-series.md)
 * [Week 5 - Modular Arithmetic](week-5-modular-arithmetic.md)
@@ -36,5 +36,4 @@ tags:
 * [Week 8: Applications of Sine and Cosine Rules](week-8-applications-of-sine-and-cosine-rules.md)
 * [Week 15: Limits and differentiation](week-15-limits-and-differentiation.md)
 
-
-#BscUoL/CM 
+#BscUoL/CM

@@ -9,6 +9,6 @@ status: draft
 
 Examples:
 * [Clustering](clustering.md) - groups similar data points into clusters, where items within a cluster share more similarity with each other than with those in other clusters.
-* [Dimensionality Reduction](../../../permanent/dimensionality-reduction.md) -  to reduce the number of variables under consideration, simplifying the data while retaining essential information.
+* [Dimensionality Reduction](../../../permanent/dimensionality-reduction.md) - to reduce the number of variables under consideration, simplifying the data while retaining essential information.
 * [Anomaly Detection](anomaly-detection.md) - focuses on identifying unusual data points that deviate significantly from the norm
 * [Self-Supervised Learning](self-supervised-learning.md) - modifying the data in someway to create labels.

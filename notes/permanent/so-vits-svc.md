@@ -12,6 +12,3 @@ The feature vectors are fed into [[VITS]] without the need for conversion to a t
 Therefore, the pitch and intonations of the original audio are preserved.
 
 Meanwhile, vocoder was replaced with [[NSF HiFiGAN]] to solve the problem of sound interruption.
-
-
-

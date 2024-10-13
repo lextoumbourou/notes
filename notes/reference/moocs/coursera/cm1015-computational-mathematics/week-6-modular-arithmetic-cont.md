@@ -7,7 +7,6 @@ status: draft
 
 ## Lesson 3.2 - Operations with congruent numbers
 
-* 
 * Addition and subtraction (mod k): map number in "minimal subset" called $Min_k$, then sum or subtract. Adjust if result is not in $Min_k$
     * Example (mod 12): mapping to min_12 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
         * $14 + 28 \equiv 2 + 4 \equiv 6 \rightarrow 14 + 28 = 6 \text{(mod 12)}$

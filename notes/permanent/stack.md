@@ -14,7 +14,7 @@ A **stack** is a simple data structure based on the Last In, First Out (LIFO) pr
 
 Think of a stack of plates - you can only add or retrieve from the top.
 
-When we add an item to a stack, we call that operation **push**. When you take an item off the stack, we call it **pop**. 
+When we add an item to a stack, we call that operation **push**. When you take an item off the stack, we call it **pop**.
 
 ![Diagram of a Stack](../_media/stack-diagram.png)
 
@@ -25,7 +25,7 @@ A stack `S` can be implemented easily with a fixed-length array. We can track wh
 *Example of array-based stack implementation - From Introduction to Algorithms, Third Edition*
 
  If we attempt to add to a stack beyond its max size, [Stack Overflow](stack-overflow.md) error. If we try to pop from an empty stack, we get the **Stack Underflow** error.
- 
+
 Programming languages use a stack called a [Call Stack](call-stack.md) to keep track of functions running.
 
 A stack supports the following operations in its typical form:

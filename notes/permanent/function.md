@@ -121,4 +121,3 @@ Some special cases apply:
 * Rational functions: Continuous when the denominator is not zeo.
 * Trig functions: continuous on their domain.
 * Exponential and log functions: continuous when defined.
-

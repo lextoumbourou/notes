@@ -14,6 +14,6 @@ Bit depth refers to the number of bits used to describe the amplitude of these w
 
 Common Bit Depths:
 
-- 16-bit: Standard for CDs, offers a good dynamic range for most listening environments.
-- 24-bit: Often used in professional recording studios, providing a greater dynamic range.
-- 32-bit: Mostly used in audio processing and mixing for its high precision and headroom.
+* 16-bit: Standard for CDs, offers a good dynamic range for most listening environments.
+* 24-bit: Often used in professional recording studios, providing a greater dynamic range.
+* 32-bit: Mostly used in audio processing and mixing for its high precision and headroom.

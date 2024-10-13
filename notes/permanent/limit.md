@@ -13,7 +13,6 @@ A limit must be the same from both sides. We say a limit doesn't exist in this c
 
 Coming back to $f(x) = x + 2$ and $\lim {x \rightarrow 3} \ f(x)$
 
-
 $$
 f(x) = 
      \begin{cases}

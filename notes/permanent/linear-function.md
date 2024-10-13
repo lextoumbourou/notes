@@ -9,9 +9,9 @@ tags:
 
 **A linear function** is represented by a straight line on a graph. It indicates a linear relationship between two variables: when one changes, the other changes at a constant rate. For example:
 
-- The count of floors vs number of windows on a high-rise building.
-- The distance travelled vs time at a constant speed.
-- The number of beers consumed vs blood alcohol content.
+* The count of floors vs number of windows on a high-rise building.
+* The distance travelled vs time at a constant speed.
+* The number of beers consumed vs blood alcohol content.
 
 ![A graph showing a linear relationship between BAC and beers consumed](../_media/linear-func-bac-vs-beers.png)
 

@@ -44,6 +44,7 @@ For example, consider $\neg p$:
 | 0   | 1         |
 
 We can use truth tables to help us understand the truth values of other connectives within propositional logic.
+
 ## [Connective](logical-connective.md)
 
 ### [Negation](logical-negation.md) (NOT)
@@ -78,6 +79,7 @@ Truth table
  | 0   | 1   | 1           |
  | 1   | 1   | 1           |
  | 0   | 0   | 0           |
+
 
 Equivalent to $\max(T(p), T(q))$
 
@@ -148,6 +150,7 @@ Truth Table
 | 0   | 0   | 0                 |
 
 Truth table is opposite of bi-conditional.
+
 ## Operator Precendence
 
 1. $\neg$
@@ -201,8 +204,8 @@ $\neg (p \land q) \equiv \neg p \lor \neg q$
 | $p$ | $q$ | $\neg (p \land q)$ | $\neg p$ | $\neg q$ | $\neg p \lor \neg q$ |
 | --- | --- | ---------------- |--| -- | -- |
 | 1   | 1   | 0                  | 0 | 0 | 0 |
-| 1   | 0   | 1                  | 0 | 1 | 1| 
-| 0   | 1   | 1                  | 1 |  0 | 1| 
+| 1   | 0   | 1                  | 0 | 1 | 1|
+| 0   | 1   | 1                  | 1 |  0 | 1|
 | 0   | 0   | 1                  | 1 | 1 |  1|
 
 $(p \rightarrow q) \equiv (\neg p \land q)$

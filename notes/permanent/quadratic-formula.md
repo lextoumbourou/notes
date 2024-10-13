@@ -32,7 +32,7 @@ $3x^2 + 6x + 10 = 0$
 
 $x = \frac{-6 \pm \sqrt{6^2 - 4 \cdot 3 \cdot 10}}{2\cdot 3}$
 $x = \frac{-6 \pm \sqrt{36 - 120}}{6}$
-$x = \frac{-6 \pm \sqrt{-84}}{6}$ 
+$x = \frac{-6 \pm \sqrt{-84}}{6}$
 
 Since there is no real number solution to $\sqrt{-84}$, the quadratic does not have a real number solution (imaginary numbers are required).
 

@@ -38,6 +38,7 @@ In Python, the sound is typically represented using a Numpy multidimensional arr
 As you can see, we can find the length of audio represented as a Numpy array by dividing the number of samples by the sample rate.
 
 How do we determine the optimal sample rate?
+
 ## Nyquist-Shannon sampling theorem
 
 According to the [Nyquist-Shannon Sampling Theorem](nyquist-shannon-sampling-theorem.md) the frequency of sampling of a wave must be greater than twice the highest frequency in a wave. Since the highest frequency the human ear can hear is around 20 kHz, anything about 40 kHz should perfectly reproduce what the human ear can perceive.
@@ -53,15 +54,19 @@ However, there are other standard sample rates for different types of audio.
 ### 44.1 kHz
 
 The most commonly found sample rate, as it has been the standard for CD quality since inception.
+
 ### 48 kHz
 
 For audio and some film and video
+
 ### 88.2 kHz and 96 kHz
 
 For higher-resolution audio formats
+
 ### 192 kHz
 
 For some ultra-high-definition recordings.
+
 ## Aliasing
 
 Since the true sound wave has to be inferred from digital samples, the sound will only be accurately captured if the rate is higher. In particular, the higher frequencies will be folded into lower frequencies, causing distortion - this issue of under-sampling is referred to as aliasing.

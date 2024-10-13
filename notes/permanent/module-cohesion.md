@@ -1,6 +1,6 @@
 ---
 title: Module Cohesion
-date: 2023-12-29 10:00
+date: 2023-12-29 00:00
 modified: 2023-12-29 10:00
 summary: How elements of a module relate to each other
 cover: /_media/module-cohesion.png

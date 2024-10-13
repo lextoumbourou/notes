@@ -35,5 +35,3 @@ mean, median, mode
 
 * [[Variance]] and [[Standard Deviation]]
     * Contain information about the spread of the data, which the mean does not provide.
-    * 
-

@@ -18,8 +18,8 @@ This paper proposes a revolutionary architecture called [Transformer](transforme
 
 The model achieved:
 
-- 28.4 [Bilingual Evaluation Understudy](../../../permanent/bilingual-evaluation-understudy.md) on the [WMT 2014 English-to-German](WMT%202014%20English-to-German) translation task, improving over the existing best results, including ensembles. by over 2 [BLEU](BLEU).
- - On [WMT 2014 English-to-French](WMT%202014%20English-to-French) translation task, the model establishes a new single-model state-of-the-art BLEU score of 41.8 after 3.8 days of training on eight GPUs. That was a fraction of the training codes from literature.
+* 28.4 [Bilingual Evaluation Understudy](../../../permanent/bilingual-evaluation-understudy.md) on the [WMT 2014 English-to-German](WMT%202014%20English-to-German) translation task, improving over the existing best results, including ensembles. by over 2 [BLEU](BLEU).
+ * On [WMT 2014 English-to-French](WMT%202014%20English-to-French) translation task, the model establishes a new single-model state-of-the-art BLEU score of 41.8 after 3.8 days of training on eight GPUs. That was a fraction of the training codes from literature.
 
 They also show the Transformer generalised well to other tasks.
 
@@ -29,10 +29,9 @@ They also show the Transformer generalised well to other tasks.
 
 All these model "factor computation along the symbol positions of the input and output sequences". They aliging the positions to steps in computation time, they generate a sequence of hidden states, $h_t$, which are calculated as functions of the previous hidden states $h_{t-1}$ and input position $t$.
 
-Because of this sequential natural, we cannot parallelization within training examples, which precludes working on longer sequences, as we often won't have enough memory to batch across examples. Various improvements have been proposed like factorization tricks  and conditional computation, which do improve the performance, but still the problem of sequential computation remains.
+Because of this sequential natural, we cannot parallelization within training examples, which precludes working on longer sequences, as we often won't have enough memory to batch across examples. Various improvements have been proposed like factorization tricks and conditional computation, which do improve the performance, but still the problem of sequential computation remains.
 
 [Attention](attention.md) mechanisms are a key part of sequence modelling, allowing modelling of dependencies without regard to their distance in input or output sequences. Except for a few examples, attention was used with a recurrent network.
-
 
 This paper proposes the Transformer, a model architecture that doesn't have recurrence and relies purely on attention for global dependencies for input and output.
 
@@ -40,7 +39,7 @@ Transformer allows for more parallelisation and can reach a new state of the art
 
 ## Background
 
-The goal of reducing sequential computation was explored in [Convolutional Neural Network](convolutional-neural-network.md) architectures like [Extended Neural GPU](../../../permanent/extended-neural-gpu.md), [ByteNet](ByteNet) and  [ConvS2S](ConvS2S), which aimed to use CNNs to compute the hidden representations in parallel for all input and output positions.
+The goal of reducing sequential computation was explored in [Convolutional Neural Network](convolutional-neural-network.md) architectures like [Extended Neural GPU](../../../permanent/extended-neural-gpu.md), [ByteNet](ByteNet) and [ConvS2S](ConvS2S), which aimed to use CNNs to compute the hidden representations in parallel for all input and output positions.
 
 In these models, the number of operations required to relate signals from two arbitrary input or output positions grows
 in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet.
@@ -75,8 +74,8 @@ At each step the model is [Auto-Regressive](Auto-Regressive), in that it takes t
 The encoder is composed of a stack of N = 6 identical layers.
 
 Each layer has two sub-layers:
-- One [Multi-head Attention](multi-head-attention.md) mechanism.
-- Position-wise fully connected feed-forward network.
+* One [Multi-head Attention](multi-head-attention.md) mechanism.
+* Position-wise fully connected feed-forward network.
 
 They employ a residual connection around each of the two sub-layers, followed by layer normalisation.
 
@@ -96,7 +95,7 @@ This masking, combined with the fact the output embeddings are offset by one pos
 
 ### Attention
 
-An attention function can be described as mapping a query and a set of key-value pairs to an output, where the query, keys, values, and output are all vectors. 
+An attention function can be described as mapping a query and a set of key-value pairs to an output, where the query, keys, values, and output are all vectors.
 
 The output is computed as a weighted sum of the values, where the weight assigned to each value is computed by a compatibility function of the query with the corresponding key.
 
@@ -140,7 +139,7 @@ They think that for large values of $d_k$, the dot products grow large in magnit
 
 Instead of performing a single attention function with dmodel-dimensional keys, values and queries,
 we found it beneficial to linearly project the queries, keys and values h times with different, learned
-linear projections to dk, dk and dv dimensions, respectively. 
+linear projections to dk, dk and dv dimensions, respectively.
 
 On each of these projected versions of
 queries, keys and values we then perform the attention function in parallel, yielding dv-dimensional
@@ -184,11 +183,11 @@ is similar to that of single-head attention with full dimensionality
 
 The Transformer uses multi-head attention in three different ways:
 
-- In "encoder-decoder attention" layers, the queries come from the previous decoder layer, and the memory keys and values come from the output of the encoder. This allows every position in the decoder to attend over all positions in the input sequence. This mimics the typical encoder-decoder attention mechanisms in sequence-to-sequence models such as
-- The encoder contains self-attention layers. In a self-attention layer all of the keys, values and queries come from the same place, in this case, the output of the previous layer in the encoder. Each position in the encoder can attend to all positions in the previous layer of the encoder.
-- Similarly, self-attention layers in the decoder allow each position in the decoder to attend to all positions in the decoder up to and including that position.
-    - We need to prevent leftward information flow in the decoder to preserve the auto-regressive property.
-    - We implement this inside of scaled dot-product attention by masking out (setting to −∞) all values in the input of the softmax which correspond to illegal connections.
+* In "encoder-decoder attention" layers, the queries come from the previous decoder layer, and the memory keys and values come from the output of the encoder. This allows every position in the decoder to attend over all positions in the input sequence. This mimics the typical encoder-decoder attention mechanisms in sequence-to-sequence models such as
+* The encoder contains self-attention layers. In a self-attention layer all of the keys, values and queries come from the same place, in this case, the output of the previous layer in the encoder. Each position in the encoder can attend to all positions in the previous layer of the encoder.
+* Similarly, self-attention layers in the decoder allow each position in the decoder to attend to all positions in the decoder up to and including that position.
+    * We need to prevent leftward information flow in the decoder to preserve the auto-regressive property.
+    * We implement this inside of scaled dot-product attention by masking out (setting to −∞) all values in the input of the softmax which correspond to illegal connections.
 
 ### Position-wise Feed-Forward Networks
 
@@ -196,7 +195,7 @@ In addition to attention sub-layers, each of the layers in our encoder and decod
 connected feed-forward network, which is applied to each position separately and identically. This
 consists of two linear transformations with a ReLU activation in between.
 
-FFN(x) = max(0, xW1 + b1)W2 + b2 
+FFN(x) = max(0, xW1 + b1)W2 + b2
 
 While the linear transformations are the same across different positions, they use different parameters
 from layer to layer. Another way of describing this is as two convolutions with kernel size 1.
@@ -214,7 +213,7 @@ In
 our model, we share the same weight matrix between the two embedding layers and the pre-softmax
 linear transformation, similar to [30].
 
-In the embedding layers, we multiply those weights by $\sqrt{d_{\text{model}}}$ 
+In the embedding layers, we multiply those weights by $\sqrt{d_{\text{model}}}$
 
 In table 1, they show maximim path lengths, per-layer complexity and minimum number of sequential operations for different layer types. $n$ is the equence lrngth, $d$ is the represetation dimensino, $k$ is the key size of convolutions and $r$ the size of the neighbourhood in restircted self-attention.
 
@@ -224,6 +223,7 @@ In table 1, they show maximim path lengths, per-layer complexity and minimum num
 | Recurrent                   | $O(n \cdot d^2)$         | $O(n)$                | $O(n)$              |
 | Convolutional               | $O(k \cdot n \cdot d^2)$ | $O(1)$                | $O(\log_k(n))$      |
 | Self-Attention (restricted) | $O(r \cdot n \cdot d)$   | $O(1)$                | O(n/r)<br>          |
+
 ### Positional Encoding
 
 Since our model contains no recurrence and no convolution, in order for the model to make use of the
@@ -275,7 +275,7 @@ be parallelized, as measured by the minimum number of sequential operations requ
 
 The third is the path length between long-range dependencies in the network
 
-Learning long-range dependencies is a key challenge in many sequence transduction tasks. 
+Learning long-range dependencies is a key challenge in many sequence transduction tasks.
 
 One key factor affecting the
 ability to learn such dependencies is the length of the paths forward and backward signals have to
@@ -367,10 +367,10 @@ hurts perplexity, as the model learns to be more unsure, but improves accuracy a
 
 On the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big)
 in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0
-BLEU, establishing a new state-of-the-art BLEU score of 28.4. 
+BLEU, establishing a new state-of-the-art BLEU score of 28.4.
 
 The configuration of this model is
-listed in the bottom line of Table 3. 
+listed in the bottom line of Table 3.
 
 Training took 3.5 days on 8 P100 GPUs. Even our base model
 surpasses all previously published models and ensembles, at a fraction of the training cost of any of
@@ -392,4 +392,3 @@ architectures from the literature. We estimate the number of floating point oper
 model by multiplying the training time, the number of GPUs used, and an estimate of the sustained
 single-precision floating-point capacity of each GPU 5
 .
-

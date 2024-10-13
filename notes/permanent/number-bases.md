@@ -20,6 +20,7 @@ We describe it as 3 hundred and twenty-one. Or:
 3 one-hundreds (300) + 2 tens (20) + one
 
 Another way to write is is as a table:
+
 | 100 | 10  | 1   |
 | --- | --- | --- |
 |  3   |  2   |  1   |

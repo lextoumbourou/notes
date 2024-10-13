@@ -1,6 +1,6 @@
 ---
 title: Data Augmentation
-date: 2017-09-30
+date: 2017-09-30 00:00
 modified: 2017-09-30
 status: draft
 tags:

@@ -5,5 +5,4 @@ modified: 2024-10-13 00:00
 status: draft
 ---
 
-
 ![](../../../_media/godel-agent-a-self-referential-frameowkr-for-agents-recursively-self-improvement-abstract.png)

@@ -52,7 +52,7 @@ Let me list all the permutations:
 {c a}
 {c a}
 
-The formula for counting permutations is: 
+The formula for counting permutations is:
 
 $P(n, r) = \frac{n!}{(n - r)!}$
 
@@ -69,12 +69,11 @@ Consider this problem:
 
 How many different 4-letter sequences can be made using the letters in
 the word "door"? You can only use each letter once, noting that the letter
-’o’ appears twice and can therefore be used twice. 
-
+’o’ appears twice and can therefore be used twice.
 
 Since o appears twice, and it does not matter what order we write the 0s in, how do we account for that?
 
-We can use this formula: 
+We can use this formula:
 
 n!/x_1!, x_2!, x_3!
 
@@ -85,6 +84,3 @@ o = 2
 r = 1
 
 4! / 1!2!1! = 24 / 1 * 2 * 1 = 12
-
-
-

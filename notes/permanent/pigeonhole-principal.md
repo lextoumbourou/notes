@@ -23,9 +23,9 @@ Also known as [Dirichlet Drawer Principle]().
 
 Examples:
 
-- "If I 4 bedrooms and 5 children, then some of the children will have to share a room"
-- "If 5 cards are drawn from a standard deck of 52 cards, then at least 2 of them are of the same suit"
-- "If there are more than 368 people at a venue, in a class, at least 3 of them have will the same bday."
+* "If I 4 bedrooms and 5 children, then some of the children will have to share a room"
+* "If 5 cards are drawn from a standard deck of 52 cards, then at least 2 of them are of the same suit"
+* "If there are more than 368 people at a venue, in a class, at least 3 of them have will the same bday."
 
 ---
 
@@ -35,10 +35,10 @@ Generalised principle: if there are $N$ objects to be placed in $k$ boxes, there
 
 Can be proved using [Contradiction](logical-contradiction.md).
 
-- Assume no box has more than $[N/k]-1$ objects
-- Number of objects $\le k([N/k] - 1) < k(N/k+1-1)=N$
-- Number of objects < N
-- This is a contradiction, as we have N objects.
+* Assume no box has more than $[N/k]-1$ objects
+* Number of objects $\le k([N/k] - 1) < k(N/k+1-1)=N$
+* Number of objects < N
+* This is a contradiction, as we have N objects.
 
 ---
 

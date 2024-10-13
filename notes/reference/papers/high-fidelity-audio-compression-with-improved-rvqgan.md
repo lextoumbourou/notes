@@ -24,7 +24,7 @@ Improved RVQGAN makes these architectural and training improvements:
 * Replace [Leaky ReLU](../../permanent/leaky-relu.md) with the [Snake Activation Function](../../permanent/snake-activation-function.md) which is helps to with the periodic nature of audio.
 * Two changes to Vector Quantisation operation based on ideas from [Improved VQGAN](../../../../permanent/improved-vqgan.md):
     * Project the query embedding into low-dimensional space before performing the nearest neighbour lookup for codes (64d to 8d), this decouples code lookup and code embedding. We can think of it as using the principle components to do the lookup.
-    
+
       ```python
       input_dim = 64
       codebook_dim = 8
@@ -33,7 +33,7 @@ Improved RVQGAN makes these architectural and training improvements:
       # in forward pass:
       z_e = self.in_proj(z)
       ```
-      
+
     * L2-normalisation of encoded and codebook vectors, converting lookup from euclidean distance to cosine similarity.
 * The original RVQ proposal includes codebook dropout, so the model is sometimes reconstructing audio using only some of the codebooks. They found this hurts the model performance when using all codebooks, so they only do this 50% of the time.
 * For the discriminator they use a Multi-Scale Time-Frequency Spectrogram Discriminator
@@ -91,7 +91,6 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
 * Modelling the prior is straightforward but modelling the discrete latent codes using a quantized auto-encoder remains a challenge.
 * Learning discrete codes can be interpreted as a lossy compression task:
     * audio signal is compressed into a discrete latent space by vector-quantizing the representations of an autoencoder using a fixed length codebook.
-
 * An [Audio Compression Model](../../../../permanent/audio-compression-model.md) needs to satisfy the following properties:
     * Reconstruct audio with high fidelity and free of artifacts
     * Achieve high level of compression along with temporal downscaling to learn a compact representation that discards low-level imperceptible details while preserving high-level structure:
@@ -116,7 +115,6 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
         * [multi-scale-stft-discriminator](../../../../permanent/multi-scale-stft-discriminator.md)
         * [Multi-scale Mel Loss](Multi-scale%20Mel%20Loss)
     * Provide thorough ablations and intuitions to motivate them.
-
 * Proposed method: universal audio compression model, capable of handling speech, music, environmental sounds, different sampling rates and audio encoding formats.
 
 ## Related Work
@@ -207,14 +205,14 @@ DAC is a drop-in replacement for the audio tokenization model used in these meth
 
 Like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../permanent/encodec.md), uses an RVQGAN architecture which is built on framework of [VQ-GAN](../../../../permanent/vq-gan.md) models
 
-- Architecture: Full Convolutional [Encoder-Decoder](../../permanent/encoder-decoder.md) like [SoundStream](../../../../permanent/soundstream.md)
-- Goal: time-based downscaling with a chosen striding factor
-- Special techniques:
+* Architecture: Full Convolutional [Encoder-Decoder](../../permanent/encoder-decoder.md) like [SoundStream](../../../../permanent/soundstream.md)
+* Goal: time-based downscaling with a chosen striding factor
+* Special techniques:
     * Quantise the encoding with [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md)
         * "recursively quantises residuals following an initial quantisation step with a distinct codebook"
 * Apply quantizer dropout, so that some of the later codebooks are not always used, which comes from SoundStream.
-- Loss: [Frequency Domain Reconstruction Loss](Frequency%20Domain%20Reconstruction%20Loss) and adversarial and perceptual losses.
-- Inputs:
+* Loss: [Frequency Domain Reconstruction Loss](Frequency%20Domain%20Reconstruction%20Loss) and adversarial and perceptual losses.
+* Inputs:
      * Audio signal with sampling rate $fs$ (Hz)
      * Encoding striding factor $M$
      * $Nq$ layers of $RVQ$
@@ -238,7 +236,7 @@ Lower frame rate is desirable when training a language model on the discrete cod
 
 The authors note that audio waveforms have high "periodicity" (in other words, the waveform repeats itself a bunch). The most common neural network activation for generative models is [Leaky ReLU](../../permanent/leaky-relu.md) but it struggles to extrapolate periodic signals, causes poor generalisation.
 
-By replacing Leaky ReLU with the [Snake Activation Function](../../permanent/snake-activation-function.md), it  adds "periodic inductive bias" to the generator. The BigVGAN model introduced the Snake Activation function to the audio domain.
+By replacing Leaky ReLU with the [Snake Activation Function](../../permanent/snake-activation-function.md), it adds "periodic inductive bias" to the generator. The BigVGAN model introduced the Snake Activation function to the audio domain.
 
 In the ablation studies, snake activation function was an important change in improving audio fidelity.
 

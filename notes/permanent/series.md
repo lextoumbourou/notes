@@ -40,6 +40,3 @@ $S = \lim_{n \rightarrow \infty} S_n$
 $\frac{2n^3}{n^2 + 3n + 2}$
 
 Since the numerator has the highest order, the limit should approach infinty. Therefore, we say the series diverges.
-
-
-

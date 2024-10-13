@@ -28,19 +28,19 @@ EARS broke down into 5 main ideas:
 **Ubiquitous (always occurring)**: Defines fundamental properties of the system.
 
 *`"The <system name> shall <system response>"`*
-    
+
 **Event-driven**: Initiates when and only when in case of a trigger.
 
 `"WHEN <trigger> <optional precondition> the <system name> shall <system response>"`
-   
+
  **Unwanted behaviours**: Managing undesired occurrences such as errors, failures, faults, disturbances, and other unwanted behaviours.
- 
+
  `"IF <unwanted condition or event>, THEN the <system name> shall <system response>"`
-    
+
 **State-driven**: Triggered while in a state.
 
 `WHILE <system state>, the <system name> shall <system response>"`
-    
+
 **Optional features**: These are called upon exclusively within systems with specific optional features.
 
 `WHERE <feature is included>, the <system name> shall <system response>`

@@ -74,4 +74,4 @@ Last note: If you take the product of 2 matrices, it's the same as the products 
 
 $\det(M_1 \ M_2) =\det(M_1) \det(M_2)$
 
-#Maths/LinearAlgebra/Determinant 
+#Maths/LinearAlgebra/Determinant

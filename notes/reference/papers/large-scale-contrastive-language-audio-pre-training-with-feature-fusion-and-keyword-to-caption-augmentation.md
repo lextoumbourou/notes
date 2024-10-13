@@ -75,8 +75,8 @@ Contains:
 
 [CLIP](../../permanent/contrastive-language-image-pretraining.md)
 
-- Demonstrated how contrastive loss can be used to learn the relationship between text and image by projecting into a shared latent space
-- trained on a large-scale internet scrape
+* Demonstrated how contrastive loss can be used to learn the relationship between text and image by projecting into a shared latent space
+* trained on a large-scale internet scrape
 
 Other attempts to use contrastive pre-training on language-audio:
 
@@ -88,13 +88,13 @@ Other attempts to use contrastive pre-training on language-audio:
 
 [Audio Retrieval with WavText5K and CLAP Training](https://arxiv.org/abs/2209.14275)
 
-- Also adds [HTS-AT](https://arxiv.org/abs/2202.00874) and [RoBERTa](https://arxiv.org/abs/1907.11692) into encoder list to enhance performance.
-- Uses representation in the downstream task of audio classification.
+* Also adds [HTS-AT](https://arxiv.org/abs/2202.00874) and [RoBERTa](https://arxiv.org/abs/1907.11692) into encoder list to enhance performance.
+* Uses representation in the downstream task of audio classification.
 
 Other studies extending CLIP for audio:
 
-- [AudioCLIP: Extending CLIP to Image, Text and Audio](https://arxiv.org/abs/2106.13043)
-- [Wav2CLIP: Learning Robust Audio Representations From CLIP](https://arxiv.org/abs/2110.11499)
+* [AudioCLIP: Extending CLIP to Image, Text and Audio](https://arxiv.org/abs/2106.13043)
+* [Wav2CLIP: Learning Robust Audio Representations From CLIP](https://arxiv.org/abs/2110.11499)
 
 However, they all share limitations:
 
@@ -107,11 +107,11 @@ However, they all share limitations:
 
 [Laion Audio 630K](../../permanent/laion-audio-630K.md)
 
-- 630K+ audio-text pairs.
+* 630K+ audio-text pairs.
 
 [AudioCaps](https://audiocaps.github.io/) + [Clotho](https://zenodo.org/records/3490684)
 
-- 55k audio-text pairs.
+* 55k audio-text pairs.
 
 [Audioset](https://research.google.com/audioset/)
 
@@ -129,32 +129,32 @@ Expand data with only tags or labels using the template: *"the sound of `label-1
 
 ## Model Architecture
 
-- $X^{a}_i$ = audio example i
-- $X^{t}_{i}$ = text example i
-- $X^{a}_{i}, X^{t}_{i}$ = audio-text pair $i$.
-- $\text{faudio}(X^{a}_{i})$ = audio encodings.
+* $X^{a}_i$ = audio example i
+* $X^{t}_{i}$ = text example i
+* $X^{a}_{i}, X^{t}_{i}$ = audio-text pair $i$.
+* $\text{faudio}(X^{a}_{i})$ = audio encodings.
 * $\text{ftext}(X^{t}_{i})$ = text encodings
 
 Pass the audio and text encodings into another neural network layer to get 512-dimension embeddings.
 
-- $E^{a}_{t} = \text{MLPaudio}(\text{faudio}(X^{a}_{i}))$ 
-- $E^{t}_{i} = \text{MLPtext}(\text{ftext}(X^{t}_{i}))$
+* $E^{a}_{t} = \text{MLPaudio}(\text{faudio}(X^{a}_{i}))$
+* $E^{t}_{i} = \text{MLPtext}(\text{ftext}(X^{t}_{i}))$
 
 Now, you can use the contrastive learning loss function to compare pairs and negative pairs in each batch.
 
 $L = \frac{1}{2N} \Sigma^{N}_{i=1} \ ( \log  \frac{\exp{E^{a}_{i} \cdot E^{t}_{i} / r}}{\Sigma^{N}_{j=1} \exp(E^{a}_{i} \cdot E^{t}_{j} / r)} + \log \frac{\exp{E^{t}_{i} \cdot E^{a}_{i} / r}}{\Sigma^{N}_{j=1} \exp(E^{t}_{i} \cdot E^{a}_{j} / r)} )$
 
 Where:
-- $r$ is a learnable temperature parameter for scaling the loss
-- N is the batch size.
+* $r$ is a learnable temperature parameter for scaling the loss
+* N is the batch size.
 
 Note: the two logarithmic terms consider audio-to-text or text-to-audio logits in each bath.
 
 After training, embeddings are then used for upstream tasks:
 
-- **Text-to-Audio Retrieval**: given text, find the closest audio (or vice versa).
-- **Zero-shot audio classification**: construct text like: *"the sound of `class name`"*, and use to query your audio. This classification style is useful because it allows you to use any category, provided it is in the training data.
-- **Supervised Audio Classification**: take audio embeddings and fine-tune them on a classification task.
+* **Text-to-Audio Retrieval**: given text, find the closest audio (or vice versa).
+* **Zero-shot audio classification**: construct text like: *"the sound of `class name`"*, and use to query your audio. This classification style is useful because it allows you to use any category, provided it is in the training data.
+* **Supervised Audio Classification**: take audio embeddings and fine-tune them on a classification task.
 
 ### Audio Encoders and Text Encoders
 
@@ -162,7 +162,7 @@ They experiment with two models for audio encoders:
 
 [PANNs](../../../../permanent/PANNs.md)
 
-- a CNN-based audio classification model with seven downsampling CNN blocks and seven upsampling blocks.
+* a CNN-based audio classification model with seven downsampling CNN blocks and seven upsampling blocks.
 
 [HTS-AT](../../permanent/hts-at.md)
 
@@ -190,7 +190,7 @@ For an audio in T seconds and a fixed chunk duration d = 10 seconds:
 
 $T < d$:
 
-- repeat the input, then pad with zero values. For example, 3-second input will be repeated 3 x 3 = 9 seconds and padded with 1-second zero values.
+* repeat the input, then pad with zero values. For example, 3-second input will be repeated 3 x 3 = 9 seconds and padded with 1-second zero values.
 
 $T > d$:
 
@@ -291,6 +291,7 @@ Results:
 * Text encoder: RoBERTa beats BERT. CLIP transformer worst.
 
 ![](../../_media/large-scale-contrastive-language-audio-retraining-with-feature-fusion-table-2.png)
+
 #### Dataset Scale
 
 Now, they use the HTSAT-RoBERTa model to perform text-to-audio retrieval experiments across the datasets.
@@ -337,11 +338,12 @@ There's some dataset overlap between the training data and the zero-shot dataset
 
 ![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-zeroshot.png)
 
-As shown in Table 4, the models achieve new SoTAs of zero-shot audio classification across all three datasets. 
+As shown in Table 4, the models achieve new SoTAs of zero-shot audio classification across all three datasets.
 
 Keyword-to-caption augmentation increases the performance of VGGsound and US8K by adding more text captions to "enrich" the text embedding space.
 
 ![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-table-4.png)
+
 ### Supervised Audio Classification
 
 They perform supervised audio classification by fine-tuning the audio encoder on [FSD50K](https://paperswithcode.com/dataset/fsd50k) and [VGGSound](https://arxiv.org/abs/2004.14368) datasets. They do not run experiments on [ESC50](https://github.com/karolpiczak/ESC-50) or [Urbansound8K](https://urbansounddataset.weebly.com/urbansound8k.html) due to data leakage concerns. mAP is used as an evaluation metric.

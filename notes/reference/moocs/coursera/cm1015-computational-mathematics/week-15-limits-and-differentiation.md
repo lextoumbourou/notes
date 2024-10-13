@@ -15,7 +15,7 @@ $0, \frac{1}{2}, \frac{2}{3}, \frac{3}{4}, ... \frac{100}{101}$
 
 We can see from this that the sequence is approach 1. This is an example of a convergent sequence.
 
-In general: $\lim_{n \rightarrow \infty} a_n = L \text{ if } \forall \epsilon > 0 \ \exists \ N: \text{ for } n > N |a_n -L| < \epsilon$ 
+In general: $\lim_{n \rightarrow \infty} a_n = L \text{ if } \forall \epsilon > 0 \ \exists \ N: \text{ for } n > N |a_n -L| < \epsilon$
 
 In other words, as you go further along the sequence, the terms get closer to L. You can pick any arbitrarily small value, and find somewhere on the sequence where the different between the value at the sequence, and the limit L is smaller than the epsilon value.
 
@@ -30,19 +30,18 @@ $a_n = \sin(\pi \frac{n}{2}) = 0. 1, 0, -1, 0, 1, 0, -1$ ... also does not conve
 Some examples:
 
 * $\lim_{n \rightarrow \infty} dn = \frac{1}{(n+1)^3}$
-    - $1, \frac{1}{8}, \frac{1}{27}, \frac{1}{64}, ...$
-    - We can see that the limit converges to 0.
+    * $1, \frac{1}{8}, \frac{1}{27}, \frac{1}{64}, ...$
+    * We can see that the limit converges to 0.
+* $\lim_{n \rightarrow \infty} dn = -2 + (-1)^m$
+    * $-1, -3, -1, -3, -1, -3$
+    * The limit is not convergent, as it oscillates.
 
-- $\lim_{n \rightarrow \infty} dn = -2 + (-1)^m$
-    - $-1, -3, -1, -3, -1, -3$
-    - The limit is not convergent, as it oscillates.
-    
-- $\lim_{n\rightarrow \infty} \frac{n^2 + 2n + 5}{3n^2 + 2}$
-    - One approach, find highest power and rewrite to line up:
-        - $\frac{n^2(1 + \frac{2}{n} + \frac{5}{n^2})}{n^2(3 + \frac{2}{n})}$
-        - $\frac{1 + \frac{2}{n} + \frac{5}{n^2}}{(3 + \frac{2}{n})}$
-        - $\frac{1}{3}$
-    - Limit converges to $\frac{1}{3}$
+* $\lim_{n\rightarrow \infty} \frac{n^2 + 2n + 5}{3n^2 + 2}$
+    * One approach, find highest power and rewrite to line up:
+        * $\frac{n^2(1 + \frac{2}{n} + \frac{5}{n^2})}{n^2(3 + \frac{2}{n})}$
+        * $\frac{1 + \frac{2}{n} + \frac{5}{n^2}}{(3 + \frac{2}{n})}$
+        * $\frac{1}{3}$
+    * Limit converges to $\frac{1}{3}$
 
 ## Lesson 8.2. Limit and continuity of a function
 
@@ -119,7 +118,7 @@ Consider a more generic function f(x):
 
 ![](/_media/week-15-limits-and-differentiation-generic-func.png)
 
-The slope at any point x, the line tangent to the curve is the slope. 
+The slope at any point x, the line tangent to the curve is the slope.
 
 ![](/_media/week-15-limits-and-differentiation-tangent.png)
 The derivative is the slope of the line tangent to the curve at a point P.
@@ -232,7 +231,7 @@ y' = e^x
 
 34.7 Find the gradient function of $y =e^{-x}$. Hence find the gradient of the graph of $y$ at the point where $x = 1$.
 
-Can rewrite as  $e^{-1x}$
+Can rewrite as $e^{-1x}$
 
 $-1e^{-x}$
 
@@ -246,7 +245,7 @@ $y' = 4 \cos 4x$
 $y' = 4 \cos 4 (0.3)$
 $y' = 1.4494$
 
-Exercise 34.2 
+Exercise 34.2
 
 34.3 Some rules for finding gradient functions
 
@@ -296,5 +295,3 @@ $y' = \frac{2}{3}e^{2t} + \frac{1}{5} \frac{1}{t} = \frac{2e^{2t}}{3} + \frac{1}
 Exercise 34.3 (to do)
 
 ### Lesson 34.3 Higher derivatives
-
-

@@ -26,7 +26,7 @@ status: draft
                 * all values between -4 and 4, excluding -4, 4.
             * Range including endpoints: $-4 \le x \le 4$ or $[-4, 4]$ include -4 and 4
             * Can mix inclusive/exclusive: $-4 \le x \lt 4$ or $(-4, 4]$ includes -4 not 4.
-            * Union between 2 intervals: $-4 \le x \lt 4 \cup 6 \lt x \lt 8$  or $[-4, 4) \cup (6, 8)$
+            * Union between 2 intervals: $-4 \le x \lt 4 \cup 6 \lt x \lt 8$ or $[-4, 4) \cup (6, 8)$
     * Codomain of a function:
         * Elements of Y linked by f to X.
         * Codomain also called image of the function.
@@ -51,14 +51,14 @@ status: draft
     * Distance between P and Q:
         ![](../../../../_media/week-9-function-cartesian-coordinates-cartesians-coordinates.png)
         * Can use Pythagoras theorem: $d_{PQ} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^{2}}$
-        
+
 * Examples:
     * $f(x) = -2x + 4$ Domain $R$.
-    
+
 | x      | -5                | -4      | -3       | -2      | -1      | 0      |
 | ------ | ----------------- | ------- | -------- | ------- | ------- | ------ |
 | f(x)   | -2 (-5) + 4 = 14 | 12      | 10       | 8       | 6       | 4      |
-| coords | (-5, 14)          | (-4, 12) | (-3, 10) | (-2, 8) | (-1, 6) | (0, 4) | 
+| coords | (-5, 14)          | (-4, 12) | (-3, 10) | (-2, 8) | (-1, 6) | (0, 4) |
 
 | x      | 1               | 2      | 3       | 4       |
 | ------ | --------------- | ------ | ------- | ------- |
@@ -69,13 +69,12 @@ status: draft
 * Intersection with y-axis $\rightarrow$ $x=0 \rightarrow y_0 = f(0) = -2(0) + 4 = 4$
 * Intersection with x-axis $\rightarrow y = 0 -> f(x_0) = 0$
 * Solve $-2x_0 + 4 = 0 \rightarrow 2 x_0 = 4 \rightarrow x_o = 2$
-
 * The angle that the straight line makes with x-axis
     ![](../../../../_media/week-9-function-cartesian-coordinates-right-triangle.png)
     * $\beta = 180 - \alpha$
     $tan(\beta) = a/b = 4/2 = 2$
 * [Slope-Intercept Form](../../../../../../permanent/Slope-Intercept%20Form.md) for a straight line: $y = mx + n$
-    * With $m = tan(\alpha)$, In our case $n=4$,  $m=tan(\alpha) = -\tan(\beta) = -2$
+    * With $m = tan(\alpha)$, In our case $n=4$, $m=tan(\alpha) = -\tan(\beta) = -2$
 
 ## Quiz
 
@@ -96,10 +95,8 @@ The horizontal asymptote is given by the constant $b$ if $|a|$ tends to infinity
 
 Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. Chapter 17 Graphs of functions.
 
-
-
 Chapter 3 Motion (sections 3.1–3.7) of the following book
-Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS student book. (Oxford: OUP, 2015). 
+Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS student book. (Oxford: OUP, 2015).
 
 #### Motion 3.1 Distance and speed
 
@@ -149,12 +146,12 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
             * $\Delta x = 19.2m$
             * $\Delta y = 24 * 60 * 60 = 84600$ seconds
             * $19.2/84600 = 0.0002ms^{-1}$
-        * 3. A car travels for 19 sat an average speed of 31 m s- 1. How far does it travel? 
+        * 3. A car travels for 19 sat an average speed of 31 m s- 1. How far does it travel?
         * 4. An aircraft travels at an average speed of 240 m s- 1 for 12 000 km.
         * 5. A lorry travels on a motorway for 2.0 minutes at a constant speed of $25 ms^{-1}$. It then struggles on a hill and travels 800 m in 50 s. Calculate:
             * a the total distance travelled; (2 marks)
-            * b the average speed of the lorry. 
-        * Use Figure 3 to determine tM instantaneous speed of the object at time t = 80 s. 
+            * b the average speed of the lorry.
+        * Use Figure 3 to determine tM instantaneous speed of the object at time t = 80 s.
 * 3.2 Displacement and velocity
     * Where a swimmer does one 2 laps, returning to their original position, their displacement is 0.
     * A displacement $s$ is a [Vector](../../../../permanent/vector.md) quantity, unlike distance, which is a [Scalar](Scalar).
@@ -178,7 +175,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
                 * The overall change in displacement woudl be zro and theroge average velocity would be zero.
     * Diplacement-time graphs
         * Graphs of displacement against time are used to represent the motion of objects.
-        • Displacement is plotted on the y-axis (vertical axis). 
+        * Displacement is plotted on the y-axis (vertical axis).
         * Time is plotted on the x-axis (horizontal axis).
         * Here we see the displacement-time graph for a car travelling along a straight road. The car is travelling at a constant velocity between $t = 0$ and $t = 20s$, as seen from the first straight-line section of the graph.
             ![](../../../../_media/week-9-function-cartesian-coordinates-displacement-time.png)
@@ -201,7 +198,6 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
                             * Negative sign fo the velocity shows that the car is travelling in the opposite direction toits motion between 0 and 20s
         * Summary questions:
 
-
 ## Lesson 5.2 Higher order polynomials
 
 * Recap: Cartesian coordinates allow map and label points on the plane.
@@ -214,7 +210,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * It appears like a parabola on a graph.
             ![](../../../../_media/week-9-function-cartesian-coordinates-parabola.png)
     * You can make the plot using a simple table, evaluating the function for different inputs.
-        * $-3, (-3)^2 - 12 = 21$, 
+        * $-3, (-3)^2 - 12 = 21$,
         * $-2, (-2)^2 - 4 = 21$
         * $-1, (-1)^2 - 4 = 5$
         * $0, (0)^2 - 0 = 0$
@@ -237,7 +233,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
     * Intersection with y-axis $\rightarrow x=0 \rightarrow = y_0 = f(0) = (0)^3 - 4(0) = 0$
     * Intersection with x-axis $\rightarrow = y = 0 \rightarrow f(x_0) = 0$
     * Solve ${x_0}^3-4x_0=x_0({x_0}^2-4)=0 \rightarrow x_0 = 0, x_0 = \pm 2$
-        ![](../../../../_media/week-9-function-cartesian-coordinates-cube.png) 
+        ![](../../../../_media/week-9-function-cartesian-coordinates-cube.png)
     * Note: vertical line intersects the curve in only one point: single-valued functions.
     * Higher order polynomials $f(x) = ax^n + bx^{n-1} + ... + cx + d$
         * Example in factorised form: $f(x) = (x+2)(x+1)(x-1)(x-2)(x-3) n =5 D = R$
@@ -248,7 +244,8 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * Domain: $R\{-1, 1\}$
     ![](../../../../_media/week-9-function-cartesian-coordinates-fractional.png)
     * This specific function has two vertical asymptotes in x equal minus 1 and x equal 1, which are indicated by the dashed blue lines on the plot.
-    
+
+
 ## Essential reading
 
 Larson, R. Precalc with limits. (Boston, MA: Cengage, 2017) 4th edition. Chapter 1 Functions and their graphs (sections 1.1–1.8).

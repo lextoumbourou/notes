@@ -49,4 +49,3 @@ get model predictions - which is each feature multiplied by the corresponding co
 Then, get derivate. The derivative of mean-squared error is,
 
 -2/N * ground_truch - module_prediction * x_iw
-

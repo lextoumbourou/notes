@@ -4,6 +4,7 @@ date: 2023-08-12 00:00
 modified: 2023-08-12 00:00
 status: draft
 ---
+
 ## Fundamental Identity
 
 $\sin^2a + \cos^2a = 1$

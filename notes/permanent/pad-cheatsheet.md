@@ -22,7 +22,7 @@ For example, if I have a 1-dimension Tensor of length 5:
 ```
 
  I can add a value of 0 to the left as follows:
- 
+
 ```python
 > p = F.pad(input=t1d, pad=(1, 0), value=0)
 > p.shape, p
@@ -89,12 +89,12 @@ If I pass four arguments, I can set the padding for the last dimension left and 
 ```
 
 I can even pad the batch dimension by padding six arguments:
-- left
-- right
-- top
-- bottom
-- front
-- back
+* left
+* right
+* top
+* bottom
+* front
+* back
 
 ```python
 > p = F.pad(t3d, (0, 0, 1, 1, 1, 1), value=0)
@@ -127,7 +127,7 @@ I can even pad the batch dimension by padding six arguments:
 
 ## Padding Mode
 
-The `mode` argument supports various types of padding. 
+The `mode` argument supports various types of padding.
 
 ### Constant
 

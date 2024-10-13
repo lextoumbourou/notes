@@ -20,14 +20,14 @@ One real-world application in game programming is **Collision Detection**. Since
 
 This example from the Roblox docs shows the collision region for a 3d model with the `Hull` collision option.
 
-| Original Mesh                       | **Hull Collision Region**                                        | 
+| Original Mesh                       | **Hull Collision Region**                                        |
 | ----------------------------------- | --------------------------------------- |
 | ![A 3d mesh](../_media/3d-model-no-hull.png) | ![Convex Hull collision](../_media/3d-model-convex-hull.png) |
 
 *This example of a 3d model to its hull collision model comes from the [Roblox docs](https://create.roblox.com/docs/workspace/collisions#mesh-and-solid-model-collisions).*
 
-
 ---
+
 ## Recommended Reading
 
 [Introduction to Algorithms, Third Edition](https://amzn.to/3HyDauB)

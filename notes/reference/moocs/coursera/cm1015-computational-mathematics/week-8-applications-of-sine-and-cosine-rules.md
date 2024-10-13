@@ -30,9 +30,9 @@ status: draft
         * $\beta = Sin^{-1}(0.318) = 18.54°$
     * Can evaluate $\gamma$ as we know it's 180 - sum of other angles.
         * $\gamma = 180° - 18.54° - 58° = 103.46°$
-    * We  know $c/ \sin(\gamma) = a / \sin(\alpha)$
+    * We know $c/ \sin(\gamma) = a / \sin(\alpha)$
     * $c = a \sin(\gamma) / \sin(\alpha) = 8 \times 0.97 / 0.848 = 9.15cm$
-*  Generic triangle example
+* Generic triangle example
         ![](../../../../journal/_media/week-8-applications-of-sine-and-cosine-rules-generic-triangle-1.png)
     * $a = 6cm$, $b = 4cm, $c = 3cm, $\alpha = ?$
     * Use cosine rule: $a^2 = b^2 + c^2 -2bc \cos(\alpha)$

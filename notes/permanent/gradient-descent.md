@@ -6,8 +6,7 @@ summary: an optimisation algorithm to minimise a cost function
 status: draft
 ---
 
-Gradient descent is an optimisation algorithm used to minimise a cost function. It works by repeatedly calculating the [Derivative](../../../permanent/derivative.md) of the cost function with respect to the model's parameters and updating those parameters in the direction of the negative gradient. 
-
+Gradient descent is an optimisation algorithm used to minimise a cost function. It works by repeatedly calculating the [Derivative](../../../permanent/derivative.md) of the cost function with respect to the model's parameters and updating those parameters in the direction of the negative gradient.
 
 In pseudocode, one step of Gradient Descent looks like this:
 

@@ -8,7 +8,7 @@ tags:
   - ComputerScience
 ---
 
-**Recursion** is a problem-solving method where a [Function](function.md) calls itself with a smaller instance of the problem. A [Base Case](../../../permanent/base-case.md)  is required to ensure the calls eventually terminate.
+**Recursion** is a problem-solving method where a [Function](function.md) calls itself with a smaller instance of the problem. A [Base Case](../../../permanent/base-case.md) is required to ensure the calls eventually terminate.
 
 All recursive problems can be solved using iteration; however, some algorithms, particularly a [Divide-and-Conquer](divide-and-conquer.md) algorithm, can be solved much more elegantly with recursion.
 
@@ -47,7 +47,6 @@ function Fibonacci(n)
 
 end function
 ```
-
 
 ## Factorial example
 

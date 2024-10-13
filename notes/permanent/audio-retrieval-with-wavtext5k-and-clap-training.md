@@ -6,4 +6,3 @@ status: draft
 ---
 
 Skeleton for paper [Audio retrieveal with WavText5k and CLAP Training](https://arxiv.org/abs/2209.14275) by Soham Deshmukh, Benjamin Elizalde, Huaming Wang.
-

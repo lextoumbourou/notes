@@ -1,6 +1,6 @@
 ---
 title: Queue
-date: 2024-02-18 01:00
+date: 2024-02-18 00:00
 modified: 2024-02-18 01:00
 summary: a sequential data structure where we can add an element to the tail, or remove an element from the head.
 tags:

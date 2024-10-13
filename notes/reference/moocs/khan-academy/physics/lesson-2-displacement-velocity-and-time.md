@@ -15,18 +15,18 @@ Notes from [Lesson 2: Displacement, velocity, and time](https://www.khanacademy.
     * Displacement is a vector quantity.
 * Speed
     * If we travelled 5 meters over 2 seconds (change in time is 2 seconds), we can express it as:
-        * $\frac{\text{5 meters}}{\text{2 seconds}}$ =  2.5 metres / second
+        * $\frac{\text{5 meters}}{\text{2 seconds}}$ = 2.5 metres / second
             * This is called "speed".
             * This is a scalar value.
 * Velocity
-    * $\frac{\text{5 meters to the right}}{\text{2 seconds}}$ =  2.5 metres / second to the right
+    * $\frac{\text{5 meters to the right}}{\text{2 seconds}}$ = 2.5 metres / second to the right
     * When you include the direction and the displacement, you are talking about velocity.
 
 ## Introduction to reference frames
 
 * [Frame of Reference](../../../../journal/permanent/frame-of-reference.md)
     * Point of view for which you're measuring from.
-    
+
     ![lesson-2-displacement-velocity-and-time-frame-of-ref](../../../../journal/_media/lesson-2-displacement-velocity-and-time-frame-of-ref.png)
 
 ## What is displacement
@@ -39,7 +39,7 @@ Notes from [Lesson 2: Displacement, velocity, and time](https://www.khanacademy.
 * Variable $y$ is used to represent the vertical position.
 * Change in position is known as [Displacement](../../../../journal/permanent/displacement.md).
 * Mathematically defined as follows:
-    * Displacement = $\triangle x = x_f - x_0$ 
+    * Displacement = $\triangle x = x_f - x_0$
         * x_f refers to the value of the final position.
         * x_0 refers to the value of the initial position.
         * $\triangle x$ is the symbol used to represent displacement.

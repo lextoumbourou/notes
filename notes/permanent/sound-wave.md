@@ -30,7 +30,5 @@ Individuals with typical hearing can perceive sounds as soft as 0 dB SPL and gen
 
 Recommended videos:
 
-- [Understanding Sound Waves](https://www.youtube.com/watch?v=XLfQpv2ZRPU)
-- [The Science of Sound](https://www.youtube.com/watch?v=Gd_mhBf_FJA)
-
-
+* [Understanding Sound Waves](https://www.youtube.com/watch?v=XLfQpv2ZRPU)
+* [The Science of Sound](https://www.youtube.com/watch?v=Gd_mhBf_FJA)

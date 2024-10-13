@@ -160,6 +160,7 @@ modified: 2023-04-08 00:00
 
 
 
+
         \begin{align}
         E &= (xy)'' + z')((x' + =z)'+(y' + z')') \\
         &= (xy + z')((x'' . z') +y'' . z'') \\
@@ -170,6 +171,7 @@ modified: 2023-04-08 00:00
         * Can be further simplified using **distributive** laws: $E = xyxz' + xyyz + z'xz' + z'yz$
        * Using **commutative**, **idempotent** and **complement** laws: $E = xyz' + xyz + xz' + 0$
        * Using **absorption** law: $E = xyz + xz'$
+
 
 
 

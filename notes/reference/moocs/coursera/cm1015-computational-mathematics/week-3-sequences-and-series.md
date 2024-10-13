@@ -7,7 +7,6 @@ status: draft
 
 #BscUoL/CM #Maths/Sequences
 
-
 ## Lesson 2.1 Introduction to sequences and series
 
 * When folding paper, every fold the thickness of the paper increases:
@@ -48,9 +47,9 @@ status: draft
     * If you join 2 opposite sides of the square with an arccos circumference, you obtain the Fibonacci spiral, which is observed throughout nature.
         ![Fibonacci Spiral](../../../../journal/_media/week-3-sequences-and-series-fib-spiral.png)
 
-## Essential Reading / Topic 2       
+## Essential Reading / Topic 2
 
-Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. Chapter 12 Sequences and series. 
+Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. Chapter 12 Sequences and series.
 
 * [Sequence](../../../../permanent/sequence.md)
     * A sequence is a set of numbers written down in a specific order:
@@ -76,14 +75,13 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
         * etc
     * What is a finite sequence? A sequence that has a finite number of terms.
     * Write down the first five temrs of the sequencs given by:
-        * 
 * [Arithmetic Sequence](Arithmetic%20Sequence) (pg. 12.2)
     * When you calculate a sequence by adding a fixed amount to the previous term, it's called an **arithmetic progression** or **arithmetic sequence**.
         * [Common Difference](Common%20Difference)
             * The fixed amount added each time is **common difference**.
         * [First Term](First%20Term)
             * The starting point is called the **first term**.
-        * For example, start at 1 and add 6 each time: 1, 7,  13, 19, ...
+        * For example, start at 1 and add 6 each time: 1, 7, 13, 19, ...
             * 1 is first term
             * 6 is common difference
     * Write down the four terms of arithmetic progression has first term 10 and common diff 3:
@@ -114,7 +112,7 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
         * Find first 6 terms of geometric progression with first term 3 and common ratio 2:
             * $3$, $2 \times 3 = 6$, $2 \times 3 \times 2 = 12, 24, 48, 96$
         * First 5 terms of geometric sequence with first term 5 and common ratio $\frac{2}{3}$
-            * $5, 10/3, 20/9, 40/27, 80/81$ 
+            * $5, 10/3, 20/9, 40/27, 80/81$
         * A geometric progression is given by 1, 1/2, 1/4, ... What is the common ratio?
             * First term is 1. What must you multiple to get 1/2? 1/2
             * Common ratio can always be found by dividing any term by the previous term.
@@ -187,9 +185,9 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
             * $\displaystyle{\lim_{k \to \infty} (k) = \infty}$ (no limit)
         * b) $x_k = k^2, k = 1, 2, 3 ...$
             * $\displaystyle{\lim_{k \to \infty} (k^2) = \infty}$ (no limit)
-        * c) $x_k = \frac{100}{k}, k = 1, 2, 3$ 
+        * c) $x_k = \frac{100}{k}, k = 1, 2, 3$
             * $\displaystyle{\lim_{k \to \infty}} (\frac{100}{k}) = 0$
-        * d) $x_k = \frac{1}{k^2}, k = 1, 2, 3, ...$ 
+        * d) $x_k = \frac{1}{k^2}, k = 1, 2, 3, ...$
             * $\displaystyle{\lim_{k \to \infty}} (\frac{1}{k^2}) = 0$
         * e) $x_k = k + 1$, $k = , 1, 2, 3, ...$
             * $\displaystyle{\lim_{k \to \infty}} (k + 1) = \infty$ (no limit)
@@ -197,9 +195,9 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
             * $\displaystyle{\lim_{k \to \infty}} (2^{k}) = \infty$ (no limit)
         * g) $x_k = (\frac{1}{2})^{k}, k= 1, 2, 3, ....$
             * $\displaystyle{\lim_{k \to \infty}} (\frac{1}{2})^k = 0$
-        * h) $x_k = 7 + \frac{3}{k^2}, k = 1, 2, 3,...$ 
+        * h) $x_k = 7 + \frac{3}{k^2}, k = 1, 2, 3,...$
             * $\displaystyle{\lim_{k \to \infty}} (7 + \frac{3}{k^2}) = 7$
-        * i) $x_k = \frac{k+1}{k}, k = 1, 2, 3, ...$ 
+        * i) $x_k = \frac{k+1}{k}, k = 1, 2, 3, ...$
             * $\displaystyle{\lim_{k \to \infty}} (\frac{k + 1}{k}) = 1$
 * [Series and Sigma Notation](Series%20and%20Sigma%20Notation)
     * [series](../../../../permanent/series.md)
@@ -223,7 +221,7 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
             * Express $\frac{1}{1} + \frac{1}{2} + \frac{1}{3} + \frac{1}{4}$ using Sigma notation.
                 * $\sum\limits_{k=1}^{k=4} \frac{1}{k}$
             * Write the sum $x_1 + x_2 + x_3 + x_4 + ... + x_{19} + x_{20}$
-                * The sum may be written as 
+                * The sum may be written as
                     * $\sum\limits_{k=1}^{k=20} x_k$
         * It does not have to be the letter $k$, any letter can be used.
         * There's also a little trick to alternate the signs of numbers betwee n+ and -. A factor of (-1)^{k} mean the terms in the series alternate in sign.
@@ -234,7 +232,7 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
                 * $-1^{3}2^{3} = -8$
                 * $-1^{4}2^{4} = 16$
             * Write out fully what is meant by $\sum\limits_{i=0}^{5} \frac{(-1)^{i + 1}}{2i + 1}$
-                * i=0 = -1^1 / (2 *0 + 1)  = -1/1
+                * i=0 = -1^1 / (2 *0 + 1) = -1/1
                 * $(-1)^2 / (2*1 + 1)$ = 1/3
                 * $(-1)^3 / (2*2 + 1)$ = -1 / 5
                 * $(-1)^4 / (2*3 + 1)$ = 1 / 7
@@ -254,7 +252,7 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
                 * 2. Write out fully what is meant by:
                     * a) $\sum\limits_{i=1}^{4} \frac{i}{i+1}$
                         * $\frac{1}{2} + \frac{2}{3} + \frac{3}{4} + \frac{4}{5}$
-                    * b) $\sum\limits_{n=0}^{3} \frac{n+1}{n+2}$ 
+                    * b) $\sum\limits_{n=0}^{3} \frac{n+1}{n+2}$
                         * $\frac{1}{2} + \frac{2}{3} + \frac{3}{4} + \frac{4}{5}$
                 * 3. Write out fully what is meant by:
                     * $\sum\limits_{k=1}^{3} \frac{(-1)^k}{k}$
@@ -288,10 +286,10 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
             * $S_7 = \frac{7}{2} (-6 + 6 \times (-2)$
             * $S_7 = \frac{7}{2} 0 = 0$
         * 3. The sum of the arithmetric series is 270. The common difference is 1 and the first term is 4. Calculate the number of terms in the series.
-            * $270 = \frac{n}{2} (2(4) + (n-1) \times (1)$ 
-            * $270 = \frac{n}{2} (8 + (n-1))$ 
-            * $270 = \frac{n}{2} (7 + n)$ 
-            * $540 = n \times (7 + n)$  -- multiple both sides by 2.
+            * $270 = \frac{n}{2} (2(4) + (n-1) \times (1)$
+            * $270 = \frac{n}{2} (8 + (n-1))$
+            * $270 = \frac{n}{2} (7 + n)$
+            * $540 = n \times (7 + n)$ -- multiple both sides by 2.
             * $540 = 7n + n^2$ -- factorise
             * $0 = n^2 + 7n - 540$ --quadratic form where a=1, b=7, c=-540
             * Need 2 numbers that multiple to -540 and add to 7.

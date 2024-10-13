@@ -29,7 +29,7 @@ status: draft
     * Aka normal distribution.
     * Fully specified by **mean** μ and **variance** σ^2 (or **standard deviation** σ).
     * Notated as follows:
-    
+
         $$N(x | \mu, \sigma^2) $$
 
     * x represents the random variable the distribution is over (eg blue intensity)
@@ -48,12 +48,13 @@ status: draft
 * Mean vector:
 
     $$\mathbf{\mu} = [\mu_{\color{blue}{\text{blue}}}, \mu_{\color{green}{\text{green}}}] $$
+
    * Mean "centres the distribution in 2D"
        * The middle point between the 2 values means is the centre point of the contour plot.
 * Covariance matrix:
 
  $$\Sigma = \begin{bmatrix}{\sigma_\color{blue}{blue}}^2 & \sigma_{\color{blue}{blue},\color{green}{green}} \\ \sigma_{\color{green}{green},\color{blue}{blue}} & {\sigma_\color{green}{green}}^2 \end{bmatrix}$$
- 
+
     * determines orientation and spread aka correlation structure (don't quite get this yet).
 * Covariance structure examples:
     * Diagonal covariance with equal elements over the diagonal

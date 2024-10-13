@@ -6,4 +6,4 @@ status: draft
 ---
 
 See [Propositional Logic](propositional-logic.md##Tautology)
-   
+
