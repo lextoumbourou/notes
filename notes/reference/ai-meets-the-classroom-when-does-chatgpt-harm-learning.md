@@ -3,9 +3,9 @@ title: "AI Meets the Classroom: When Does ChatGPT Harm Learning?"
 date: 2024-10-13 00:00
 modified: 2024-10-13 00:00
 summary: LLMs can help and also hinder learning outcomes
-cover: _media/ai-meets-the-classroom-when-does-chatgpt-harm-learning-fig-1.png
+cover: ai-meets-the-classroom-when-does-chatgpt-harm-learning-fig-1.png
 tags:
-- LearningWithAI
+  - LearningWithAI
 ---
 
 *My notes from the paper [AI Meets the Classroom: When Does ChatGPT Harm Learning?](https://arxiv.org/abs/2409.09047) by Matthias Lehmann, Philipp B. Cornelius, Fabian J. Sting.*
@@ -46,4 +46,4 @@ For the remaining 85% of participants, the distribution is more condensed for th
 This observation is quantitatively supported by Levene's test (𝑝 = 0.069) and the Brown-Forsythe test (𝑝 = 0.094), which show that the variance of learning outcomes is significantly lower in the treatment group compared to the control group when not considering the high performers.
 
 This suggests that access to ChatGPT may have led to a more homogeneous distribution of learning outcomes, with fewer students performing poorly but also potentially fewer students achieving exceptionally high scores.
-![](_media/ai-meets-the-classroom-when-does-chatgpt-harm-learning-fig-1.png)
+![](../_media/ai-meets-the-classroom-when-does-chatgpt-harm-learning-fig-1.png)
