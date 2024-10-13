@@ -11,7 +11,7 @@ For example, the [[../journal/permanent/sine]], can be expressed as follows
 
 $\sin(\theta) = x$
 
-Is there a function that can take $x$ and return $\theta$?  It's called $\arcsin$ 
+Is there a function that can take $x$ and return $\theta$? It's called $\arcsin$
 
 $\arcsin(x) = \theta$
 
@@ -21,7 +21,7 @@ We have the following functions:
 * $\arccos(x)$ or $\cos^{-1}(x)$ is the inverse of $\cos(x)$
 * $\arctan(x)$ or $\tan^{-1}(x)$ is the inverse of $\tan(x)$
 
-Trig functions aren't really invertible (see [Inverse Function](inverse-function.md)) as they have multiple inputs with the same output (see [Injective Function](injective-function.md)), like $\sin(0) = \sin(\pi) = 0$. 
+Trig functions aren't really invertible (see [Inverse Function](inverse-function.md)) as they have multiple inputs with the same output (see [Injective Function](injective-function.md)), like $\sin(0) = \sin(\pi) = 0$.
 
 So how can we define $\sin^{-1}(0)$?
 
@@ -35,4 +35,4 @@ The value from the appropriate functions is called the **Principal value** of th
 | $\arccos$ | $0 \le \arccos(\theta) \le \pi$ |    $0° \le \arccos(\theta) \le 180°$     |
 | $\arctan$ | $-\frac{\pi}{2} \lt \arctan(\theta) \lt \frac{pi}{2}$ |    $-90° \lt \arctan(\theta) \lt 90°$     |
 
-If the theta is outside of 
+If the theta is outside of

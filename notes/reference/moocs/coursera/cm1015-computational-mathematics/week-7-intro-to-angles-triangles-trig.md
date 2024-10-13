@@ -15,7 +15,7 @@ status: draft
             * 1 minute is $\frac{1}{60}$ of a degree, 1 second of $\frac{1}{60}$ of a min
     * [Radians](../../../../permanent/radians.md)
         ![](../../../../journal/_media/week-7-radians.png)
-    *  $r \rightarrow 1 \text{ radian} \Rightarrow \text{ (circ) } 2\pi r \rightarrow 2 \pi \text{ radians }$
+    * $r \rightarrow 1 \text{ radian} \Rightarrow \text{ (circ) } 2\pi r \rightarrow 2 \pi \text{ radians }$
     * $360\deg = 2\pi \text{ radians }$
     * $\text{ radians } = \text{ degrees } \times \pi / 180$
 * [[Triangle]]
@@ -43,7 +43,7 @@ status: draft
  * [[Right Triangle]]
      * ![](../../../../journal/_media/week-7-intro-to-angles-triangles-trig-right-triangle.png)
      * SOH CAH TOA
-     * Opposite / Hypotenuse = $\cos(90 - \theta) = Sin(\theta)$ 
+     * Opposite / Hypotenuse = $\cos(90 - \theta) = Sin(\theta)$
          * SOH
      * Adjacent / Hypotenuse = $\sin(90 - \theta) = \cos(\theta)$h
          * CAH
@@ -62,7 +62,7 @@ status: draft
              * $a / \sin(\theta) = b / \sin(90 - \theta) = h = h / \sin(90)$
              * Applies to a general triangle:
                  ![](../../../../journal/_media/week-7-intro-to-angles-triangles-trig-sine-rule.png)
-            * Generalised Pythagoras Theorem: $a^2 = b^2 + c^2 - 2bc \cos(\alpha)$  also known as [Law Of Cosines](../../../../permanent/law-of-cosines.md).
+            * Generalised Pythagoras Theorem: $a^2 = b^2 + c^2 - 2bc \cos(\alpha)$ also known as [Law Of Cosines](../../../../permanent/law-of-cosines.md).
 
 ## Reading
 

@@ -16,6 +16,6 @@ Tokens outside the sliding window can still influence next-word prediction, and 
 *Image from [mistral-src](https://github.com/mistralai/mistral-src?tab=readme-ov-file).*
 
 References:
-- [Mistral 7B](https://arxiv.org/abs/2310.06825)
-- [Longformer: The Long-Document Transformer](https://arxiv.org/pdf/2004.05150.pdf)
-- [Generating long sequences with sparse transformers](https://arxiv.org/abs/1904.10509).
+* [Mistral 7B](https://arxiv.org/abs/2310.06825)
+* [Longformer: The Long-Document Transformer](https://arxiv.org/pdf/2004.05150.pdf)
+* [Generating long sequences with sparse transformers](https://arxiv.org/abs/1904.10509).

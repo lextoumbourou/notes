@@ -11,6 +11,7 @@ tag:
 ---
 
 These are my notes from the paper [ContentVec: An Improved Self-Supervised Speech Representation by Disentangling Speakers](https://arxiv.org/abs/2204.09224) by Kaizhi Qian, Yang Zhang, Heting Gao, Junrui Ni, Cheng-I Lai, David Cox, Mark Hasegawa-Johnson, Shiyu Chang
+
 ## Abstract
 
 ContentVec is a method for building an [Embedding](../../permanent/embedding.md) representation of speech, that "disentangles" content information from speech. This representation is useful for many downstream tasks like [Voice Conversion](../../../voice-conversion.md).
@@ -18,6 +19,7 @@ ContentVec is a method for building an [Embedding](../../permanent/embedding.md)
 Typically [Speaker Disentanglement](../../../../permanent/speaker-disentanglement.md) is hard because it causes content loss. ContentVec fixes this. They modify the [HuBERT](../../permanent/hubert.md) framework, and incorporates disentangling mechanisms to regularise the teachers (masked prediction labels) and the student (learned representations).
 
 ![](../../_media/papers-contentvec-fig1.png)
+
 ## Introduction
 
 State-of-the-art for many speech processing problems with low volume of data, is a [Self-Supervised Learning](../../permanent/self-supervised-learning.md) pre-training.
@@ -34,23 +36,22 @@ Because we don't have text annotations, removing speaker variations from speech 
 
 Papers tries to answer 2 question:
 
-- Can you disentangle speaker variations during SSL without significant content loss?
-- Second research question: how much performance gain, if any, can speaker disentanglement in SSL features contribute to downstream tasks?
+* Can you disentangle speaker variations during SSL without significant content loss?
+* Second research question: how much performance gain, if any, can speaker disentanglement in SSL features contribute to downstream tasks?
 
 For the first question, they propose ContentVec, an SSL framework that is adapted from the HUBERT training paradigm.
-
 
 The key idea of HUBERT is that by having some relatively poor speech representations, such as [Mel-frequency Cepstral Coefficients](Mel-frequency%20Cepstral%20Coefficients), serve as the
 teacher labels for the masked prediction task, one can derive speech representations (which are sometimes referred to as students) that are far better than the teachers in many aspects, including content preservation. This inspires us that by combining HUBERT’s teacher-student framework with speaker disentanglement techniques, we could potentially restore the content loss caused by the latter.
 
 This has led us to the design of CONTENTVEC, which incorporates into HUBERT three disentangling mechanisms:
 
-- disentanglement in teachers
-- disentanglement in students
-- speaker conditioning
+* disentanglement in teachers
+* disentanglement in students
+* speaker conditioning
 
 Specifically, disentanglement in teachers refers to removing the speaker information
-from the teacher labels. 
+from the teacher labels.
 
 Disentanglement in students refers to introducing a regularization loss that directly enforces speaker invariance on the speech representations.
 
@@ -67,26 +68,26 @@ next-generation speech representations that can supply more
 targeted information to the downstream tasks and enable
 more powerful content processing directly on speech.
 
-- Our extensive evaluation shows that speaker disentanglement can achieve a consistent performance advantage over the baseline speech representations on content-related applications. The findings of this paper can shed some light on next-generation speech representations that can supply more targeted information to the downstream tasks and enable more powerful content processing directly on speech.
+* Our extensive evaluation shows that speaker disentanglement can achieve a consistent performance advantage over the baseline speech representations on content-related applications. The findings of this paper can shed some light on next-generation speech representations that can supply more targeted information to the downstream tasks and enable more powerful content processing directly on speech.
 
 ### 2. Related Work
 
 [Voice Conversion](../../../voice-conversion.md) is among the first research areas where speaker disentanglement is explored.
 
-The general trend follows the analysis-synthesis framework, where the analysis stage learns a speaker-independent speech representation that only preserves the content, and the synthesis stage uses the speaker-independent speech representation and the speaker-related variations to synthesize the conversion results. 
+The general trend follows the analysis-synthesis framework, where the analysis stage learns a speaker-independent speech representation that only preserves the content, and the synthesis stage uses the speaker-independent speech representation and the speaker-related variations to synthesize the conversion results.
 
-Much research focuses on learning better linguistic representations during the analysis stage and/or injecting speaker variations better during the synthesis stage. 
+Much research focuses on learning better linguistic representations during the analysis stage and/or injecting speaker variations better during the synthesis stage.
 
 VAE-VC (Hsu et al., 2016) is an early attempt of directly using VAE for voice conversion.
 
 Afterward, Chou et al. (2018) disentangles more speaker variations from the latent representation by discouraging the latent representation to be classified as the source speaker using an auxiliary speaker classifier on the latent representation.
 
-In contrast, ACVAE-VC (Kameoka et al., 2019) indirectly encourages more speaker disentanglement by encouraging the conversion output to be correctly classified as the source speaker. 
+In contrast, ACVAE-VC (Kameoka et al., 2019) indirectly encourages more speaker disentanglement by encouraging the conversion output to be correctly classified as the source speaker.
 
 Inspired by image style transfer, StarGAN, VC (Kameoka et al., 2018), StarGAN-VC2 (Kaneko et al.,
 2019b), CycleGAN-VC (Kaneko & Kameoka, 2018), and
 CycleGAN-VC2 (Kaneko et al., 2019a) adapted StarGAN
-(Choi et al., 2018) and CycleGAN (Zhu et al., 2017) respectively for voice conversion. 
+(Choi et al., 2018) and CycleGAN (Zhu et al., 2017) respectively for voice conversion.
 
 AutoVC (Qian et al., 2019)
 disentangles speakers and content by directly tuning the
@@ -98,8 +99,7 @@ VoiceMixer (Lee & Kim, 2021) improves the content loss of AutoVC using similarit
 
 AdaIN-VC (Chou et al., 2019) uses instance normalization to normalize out the speaker variations in the analysis stage, and AGAIN-VC (Chen et al., 2021) additionally uses an activation function to constrain the speaker variations from flowing into the synthesis stage.
 
-
-Instead of pursuing extreme speaker disentanglement, another slightly different track of research encourages the synthesis stage to use the supplied speaker variations by using partially disentangled content representations combined with speaker variations that are easier for the synthesis stage to utilize. 
+Instead of pursuing extreme speaker disentanglement, another slightly different track of research encourages the synthesis stage to use the supplied speaker variations by using partially disentangled content representations combined with speaker variations that are easier for the synthesis stage to utilize.
 
 SpeechSplit (Qian et al., 2020b), AutoPST (Qian
 et al., 2021), and NANSY (Choi et al., 2021) perturb the speaker variations during the analysis stage to encourage the synthesis stage to use the supplied more stable speaker representations.
@@ -149,6 +149,7 @@ In this section, we will introduce of our approach. We use
 upper-cased latters, X and X, to represent random scalars
 and vectors, respectively, and lower-cased latters, x and x,
 to represent deterministic scalars and vectors, respectively.
+
 ### 3.1. Problem Formulation
 
 Denote X = [X1, · · · , XT ] as the sequence of a speech
@@ -157,9 +158,9 @@ t, and T is the total number of frames. Our goal is to
 learn a speech representation network R = f(X), where
 R = [R1, · · · , RT ] and Rt is the representation for frame t.
 R should desirably satisfy the following two properties.
-• R should preserve as much content information as possible, and the content information roughly corresponds
+* R should preserve as much content information as possible, and the content information roughly corresponds
 to the phonetic/text transcriptions of the utterance.
-• R should be invariant across speaker variations.
+* R should be invariant across speaker variations.
 As mentioned, the pursuit of one goal can easily compromise another. In the following , we will describe our method
 to strike a better balance and discuss the rationale behind.
 
@@ -327,13 +328,13 @@ not have to carry the speaker information themselves.
 Formally, the masked prediction loss now becomes
 
 Lpred =E[`m(p(f(X˜1), s(X)), g(X))
-+ `m(p(f(X˜2), s(X)), g(X))],
+* `m(p(f(X˜2), s(X)), g(X))],
 
-where s(X) denotes the speaker embeddings. 
+where s(X) denotes the speaker embeddings.
 
 The final loss
 is the superposition of the prediction and contrastive losses:
-L = Lpred + λLcontr. 
+L = Lpred + λLcontr.
 
 ![](../../_media/papers-contentvec-fig-2.png)
 
@@ -348,7 +349,6 @@ can well generalize to unseen speakers, the training set for
 CONTENTVEC does not need to contain any speaker labels.
 
 ### 3.6. An Information Flow Perspective
-
 
 To provide an intuitive illustration of how the aforementioned modules work collaboratively towards disentangling
 speakers, Figure 2 shows a conceptual curve of how the
@@ -418,12 +418,11 @@ for quantizing final teacher labels is 100
 
 Baselines and Dataset The following baselines are included in the evaluation.
 
-- WAV2VEC 2.0 (Baevski et al., 2020b): Following Lakhotia et al. (2021), the 14th layer representation is chosen.
-
-- HUBERT (Hsu et al., 2021): We adopt the publiclyreleased pretrained model in Ott et al. (2019). Following Hsu et al. (2021), the sixth layer representation is chosen.
+* WAV2VEC 2.0 (Baevski et al., 2020b): Following Lakhotia et al. (2021), the 14th layer representation is chosen.
+* HUBERT (Hsu et al., 2021): We adopt the publiclyreleased pretrained model in Ott et al. (2019). Following Hsu et al. (2021), the sixth layer representation is chosen.
 * HUBERT-ITER: Since CONTENTVEC is guided by a https://github.com/pytorch/fairseq/tree/pretrained HUBERT as teachers, for a fair comparison, we
 introduce another HUBERT baseline that is trained by the same pretrained HUBERT as teachers (except that no voice conversion is performed). This baseline controls the benefit of iterative training. We performed the same teacher quality evaluation as in Hsu et al. (2021), and identified layer eight as the best performing layer.
-- CONTENTVEC and all the baselines are trained on the
+* CONTENTVEC and all the baselines are trained on the
 Librispeech dataset (Panayotov et al., 2015). If the
 evaluation task requires discrete representations, all the representations will be quantized to 100 clusters by k-means.
 Otherwise, the continuous representations will be used.
@@ -476,7 +475,7 @@ sentences, based on the perplexity of the language model.
 Table 1 (left four columns) shows the results of the zeroshot probing tasks. There are three key observations. First,
 CONTENTVEC achieves consistent advantage on all four
 metrics, demonstrating that speaker disentanglement does
-help in these tasks. 
+help in these tasks.
 
 However, the size of the performance
 gain varies across different tasks and across different number
@@ -515,7 +514,7 @@ to a language model with higher quality.
 To this end, we
 use the same language models as in Section 4.2 to generate random speech representation sequences under different
 temperatures, and resynthesize speech from these sequences
-using TACOTRON as in Lakhotia et al. (2021). 
+using TACOTRON as in Lakhotia et al. (2021).
 
 For each temperature level, we compute the perplexity (PPX) and variety
 (VERT) score of the transcript as proposed in Lakhotia et al.
@@ -525,7 +524,7 @@ each language model. We report the following three metrics.
 
 PPX at oracle VERT: The perplexity score when the
 VERT score equals the VERT score of true text.
-• VERT at oracle PPX: The VERT score when the PPX
+* VERT at oracle PPX: The VERT score when the PPX
 CONTENTVEC: An Improved Self-Supervised Speech Representation by Disentangling Speakers
 Table 2. Results on SUPERB tasks within “Content” and “’Semantics” categories.
 Tasks PR ASR KS QbE IC SF
@@ -534,7 +533,7 @@ CONTENTVEC 0.049 5.7 0.964 0.0590 0.991 0.896 0.236
 HUBERT-ITER 0.052 6.5 0.963 0.0891 0.983 0.886 0.259
 HUBERT 0.054 6.4 0.963 0.0736 0.983 0.885 0.256
 score equals the PPX score of the true text.
-• AUC: Area under the perplexity-VERT curve.
+* AUC: Area under the perplexity-VERT curve.
 
 Table 1 (right columns) shows the results. As can be seen,
 CONTENTVEC achieves a significantly lower PPX score
@@ -662,7 +661,6 @@ representations and ground truth phonetic unit (PNMI) proposed in Hsu et al. (20
 accuracy. For each model variant, we report the best-layer
 results under each respective metric.
 
-
 ## 5. Conclusions
 
 In this paper, we propose CONTENTVEC, which is a speech
@@ -677,7 +675,3 @@ speaker disentanglement does help with a wide range of
 content-related speech processing tasks. Meanwhile, CONTENTVEC still have some limitations, e.g. slight content loss
 and the lack of hyperparameter selection method. Finding
 solutions to these problems will be our future directions.
-
-
-
-

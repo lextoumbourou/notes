@@ -22,7 +22,7 @@ The algorithms orchestrate a series of *proposals*. Each woman proposes to their
 
 The process continues iteratively until all women are matched with partners. It's worst case [Time Complexity](time-complexity.md) is $O(n^2)$
 
-Here, the algorithm is written in Python code. It's commonly executed with a while loop that continues to find proposals until no unmatched pairs exist. 
+Here, the algorithm is written in Python code. It's commonly executed with a while loop that continues to find proposals until no unmatched pairs exist.
 
 ```python
 men_preferences = {

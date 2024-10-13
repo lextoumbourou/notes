@@ -36,7 +36,6 @@ The direct VQ approach to encoding audio might look like this:
 3. **Quantise**: Find each vector's nearest neighbour in the codebook table. Again, the codebook table is learned alongside the encoder and decoder during training.
 4. **Output**: The index of the lookup vector in the matrix is the "code" and is all we need to reconstruct the audio, given a Decoder. Though not pictured in the diagram, the decoder is learned alongside the encoder and codebook table.
 
-
 ![Vector Quantisation for Audio](../_media/vq-for-audio.png)
 
 Note that for upstream modelling tasks, we will want to use the vector representation of each code.

@@ -14,7 +14,7 @@ Since there are 2 possible outcomes of a coin flip, we would write as:
 $P(H) = \frac{1}{2}$
 
 If you add the probabilities of all possible events, the sum should equal 1.
+
 ## Compounding Probability of Independent Events
 
-What if we wanted to calculate the probability of 
-
+What if we wanted to calculate the probability of

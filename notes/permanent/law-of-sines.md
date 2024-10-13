@@ -14,6 +14,7 @@ The Law of Sines tells us that the ratio between the sine of an angle and the si
 $\frac{\sin A}{a} = \frac{\sin B}{b} = \frac{\sin C}{c}$
 
 If we have at least two sides and an angle or two angles and a side, we can use it to find the missing values.
+
 ## Example
 
 **Question**
@@ -30,7 +31,7 @@ Since we know that $\frac{\sin 42°}{15cm} = \frac{\sin B}{1cm}$
 
 We can calculate $\frac{\sin 42°}{15} = 0.0446$
 
-$\frac{\sin B}{1} = 0.0446$ 
+$\frac{\sin B}{1} = 0.0446$
 
 Since dividing by 1 equals the numerator, we know:
 

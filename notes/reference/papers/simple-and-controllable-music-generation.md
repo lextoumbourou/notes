@@ -30,14 +30,14 @@ Note: this is unfinished. Some of the text is copied and pasted verbatim from th
 * Utilises a number of recent advances:
     * self-supervised audio representation learning [A Cookbook of Self-Supervised Learning](paper-cookbook-of-self-supervised%20learning.md)
     * sequential modelling [LLaMA: Open and Efficient Foundation Language Models](../../../../permanent/llama-open-and-efficient-foundation-language-models.md)
-    * audio synthesis [Survey on Neural Speech Synthesis](Survey%20on%20Neural%20Speech%20Synthesis) 
-    *  [High Fidelity Neural Audio Compression](high-fidelity-neural-audio-compression.md)  proposes [Encodec](../../permanent/encodec.md) which represents audio signals as multiple streams of discrete tokens.
+    * audio synthesis [Survey on Neural Speech Synthesis](Survey%20on%20Neural%20Speech%20Synthesis)
+    * [High Fidelity Neural Audio Compression](high-fidelity-neural-audio-compression.md) proposes [Encodec](../../permanent/encodec.md) which represents audio signals as multiple streams of discrete tokens.
          * Allows high-quality audio generation and effective audio modelling.
           * "However, this comes at the cost of jointly modelling several parallel dependent streams."
-            * [MusicLM: Generating Music From Text](paper-musiclm-generating-music-from-text.md) 
+            * [MusicLM: Generating Music From Text](paper-musiclm-generating-music-from-text.md)
                 * representing musical segments using multiple sequences of discrete tokens at different granularity
                 * model them using a hierarchy of autoregressive models
-            * In parallel, [Generating musical accompaniments from singing](Generating%20musical%20accompaniments%20from%20singing) 
+            * In parallel, [Generating musical accompaniments from singing](Generating%20musical%20accompaniments%20from%20singing)
                 * Similar approach for singing to accompaniment generation
             * Recently, [Neural Codec Language Models are Zero-Shot Text-to-Speech Synthesizers](neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers.md)
                 * proposed tackling this problem in two stages:
@@ -82,11 +82,11 @@ Note: this is unfinished. Some of the text is copied and pasted verbatim from th
             * $fs$ the sample rate
         * Encode into a continuous tensor with a frame rate $fr << fs$
             * Representation is quantised into $Q \in \{1, ..., M\} \ d \ ·f r×K$
-                * with K being the number of codebooks used in RVQ and M being the codebook size. 
+                * with K being the number of codebooks used in RVQ and M being the codebook size.
         * Notice, after quantisation we are left with K parallel discrete tokens sequences, each of length $T = d · fr$, representing the audio sample.
         * In $RVQ$, each quantiser encodes the quantisation error left by the previous quantiser
         * Thus quantised values for different codebooks are in general not independent, and the first codebook is the most important one.
-     
+
 * 2.2 [Codebook Interleaving Patterns](Codebook%20Interleaving%20Patterns) (see Figure 1)
 
 Multiple techniqes
@@ -110,7 +110,7 @@ One solution would be to flatten out Q, thus taking $S = d \cdot f_r \cdot K$, e
 
 Then, using eq. (1) and eq. (2), we could theoretically fit an exact model of the distribution of Q. The downside however is the increased complexity, with part of the gain coming from the lowest sample rate fr being lost.
 
-More than one possible flattening exists, and not all the pˆt functions need to be estimated through a single model. 
+More than one possible flattening exists, and not all the pˆt functions need to be estimated through a single model.
 
 For instance, MusicLM [Agostinelli et al., 2023] uses two models, one modeling the flattened first K/2 codebooks, and a second one the other K/2 flattened codebooks, conditioned on the decision of the first model. In that case, the number of autoregressive steps is still dfr · K.
 
@@ -154,9 +154,6 @@ Ps = {(s − k + 1, k) : k ∈ {1, . . . , K}, s − k ≥ 0}. (6)
 Through empirical evaluations, we show the benefits and drawbacks of various codebook patterns,
 shedding light on the importance of exact modeling of the parallel codebook sequences.
 
-
-
-
 By convention, we will take U0 = 0, a deterministic special token indicating the beginning of the sequence. We can then model the distribution ∀t > 0, pt (Ut−1, . . . , U0) ≜ P [Ut|Ut−1, . . . , U0]
     * Arbitrary codebook interleaving patterns. In order to experiment with various such decompositions, and measure exactly the impact of using an inexact decomposition, we introduce codebook interleaving patterns. Let us consider Ω = {(t, k) : {1, . . . , d · fr}, k ∈ {1, . . . , K}} be the set of all pairs of time steps and codebook indexes. A codebook pattern is a sequence P = (P0, P1, P2, . . . , PS), with P0 = ∅, and for all 0 < s ≤ S, Ps ⊂ Ω, such that P is partition of Ω. We model Q by predicting in parallel all the positions in Ps, conditionally on all the positions in P0, P1, . . . , Ps−1. Pragmatically, we restrict ourselves to patterns where each codebook index appears at most once in any of the Ps. We can now easily define a number of decompositions, for instance the “parallel” pattern given by Ps = {(s, k) : k ∈ {1, . . . , K}}. (5) It is also possible to introduce a “delay” between the codebooks, as in Kharitonov et al. [2022], e.g., Ps = {(s − k + 1, k) : k ∈ {1, . . . , K}, s − k ≥ 0}. (6) Through empirical evaluations, we show the benefits and drawbacks of various codebook patterns, shedding light on the importance of exact modeling of the parallel codebook sequences
 * 2.3 Model conditioning
@@ -183,5 +180,5 @@ By convention, we will take U0 = 0, a deterministic special token indicating the
                 * 300M
                 * 1.5B
                 * 3.3B parameters.
-            * Use Flash attention [Dao et al., 2022]  a memory efficient  from the xFormers package [Lefaudeux et al., 2022] to improve both speed and memory usage with long sequences.
+            * Use Flash attention [Dao et al., 2022] a memory efficient from the xFormers package [Lefaudeux et al., 2022] to improve both speed and memory usage with long sequences.
             * We study the impact of the size of the model in Section 4.

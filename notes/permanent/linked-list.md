@@ -14,7 +14,7 @@ Each element of a linked list is called **node**, which has a data field and a f
 
 A linked list will store a reference to the **head**, which tracks which node is first. If the list is empty, it will point to null.
 
-We can add a new element to the front of the list by creating a new node which points to the current head element.  Then, we update the head point to point to this new node.
+We can add a new element to the front of the list by creating a new node which points to the current head element. Then, we update the head point to point to this new node.
 
 We can also change the current head by pointing to a different element.
 

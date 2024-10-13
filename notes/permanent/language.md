@@ -8,4 +8,3 @@ tags:
 ---
 
 A **language**, in Computer Science, is a collection of strings over an [Alphabet](compsci-alphabet.md).
-

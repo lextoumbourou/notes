@@ -13,5 +13,5 @@ In Computer Science, an alphabet is a non-empty set of symbols. Often denoted us
 
 Examples:
 
-- $\Sigma = \{0, 1\}$ is the binary alphabet.
+* $\Sigma = \{0, 1\}$ is the binary alphabet.
 * $\Sigma = \{a, b, ..., z\}$ is the alphabet of lowercase letters.

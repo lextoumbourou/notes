@@ -8,6 +8,7 @@ tags:
 Root mean-squared error (RMSE) is a function for assessing [Regression](regression.md) predictions.
 
 Sometimes called [L2 Loss](l2-loss.md) because it takes the [L2 Norm](l2-norm.md) of the error vector.
+
 ### Steps
 
 1. Calculate error vector as **labels** - **predictions**

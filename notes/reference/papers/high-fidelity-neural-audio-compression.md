@@ -17,7 +17,7 @@ It consists in a streaming encoder-decoder architecture with quantized latent sp
 
 We simplify and speed-up the training by using a single multiscale spectrogram adversary that efficiently reduces artifacts and produce high-quality samples
 
-We introduce a novel loss balancer mechanism to stabilize training: the weight of a loss now defines the fraction of the overall gradient it should represent, thus decoupling the choice of this hyper-parameter from the typical scale of the loss. 
+We introduce a novel loss balancer mechanism to stabilize training: the weight of a loss now defines the fraction of the overall gradient it should represent, thus decoupling the choice of this hyper-parameter from the typical scale of the loss.
 
 Finally, we study how lightweight Transformer models can be used to further compress the obtained representation by up to 40%, while staying faster than real time
 
@@ -55,4 +55,3 @@ as discriminator networks (see Section 3.4) that serve as perceptual losses, whi
 Section 4.5.1, Table 2. T
 
 The other problem is that of compressing efficiently, both in compute time and in size.
-

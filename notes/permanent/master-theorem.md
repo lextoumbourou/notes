@@ -5,7 +5,7 @@ modified: 2024-02-24 00:00
 status: draft
 ---
 
-The **Master Theorem** is a method for analysing the [Time Complexity](time-complexity.md) of recursive algorithms that follow a divide-and-conquer approach. 
+The **Master Theorem** is a method for analysing the [Time Complexity](time-complexity.md) of recursive algorithms that follow a divide-and-conquer approach.
 
 For the recurrence $T(n) = aT(\frac{n}{b}) + O(n^d)$ where $a \ge 1, b \gt 1, d \ge 0$
 

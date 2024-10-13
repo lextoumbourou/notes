@@ -14,9 +14,9 @@ Smaller items are moved to right, and larger to left of pivot.
 Then run QuickSort on the 2 smaller vectors recursively until we hit the base case: a sort on a one element vector.
 
 Diagram:
-    
+
  ![](../../../_media/week-17-sorting-data-ii-part-1-quicksort.png)
- 
+
 Don't need to create new vector for the move operations, as we use swap operation.
 
 The partition operation does the bulk of the work in Quick sort. This method of partition is called [[Hoare Partition]] named after inventor of Quicksort, Tony Hoare.

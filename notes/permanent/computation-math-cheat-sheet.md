@@ -4,6 +4,7 @@ date: 2023-08-31 00:00
 modified: 2023-09-02 00:00
 status: draft
 ---
+
 ## 1. Number bases
 
 ### Decomposing number basis
@@ -85,6 +86,7 @@ $1100110_2$
 | $1 \div 8 = 0 \ r \ 1$ | 1          |
 
 Working backwards: $1751_8$
+
 ### Any base
 
 #### Convert to decimal
@@ -112,7 +114,6 @@ $325_n = 3(n^2) + 2(n^1) + 5(n^0)$
 | 14        |     E        |
 | 15        |     F        |
 
-
 ### Non-integer decomposition
 
 $$
@@ -121,6 +122,7 @@ $$
 =& 10 + 7 + 3/10 + 7/100 + 5/1000 \\
 \end{align}
 $$
+
 ### Convert decimal to binary
 
 17.375
@@ -145,7 +147,7 @@ $1101.101_2 = (1 \times 2^3) + (1 \times 2^2) + 0 + (1 \times 2^0) + (1 \times 2
 
 ### General bases
 
-$a_n a_{n-1} a{n-2} ... a_0 . c_{-1} c_{-2} ... c_{-k}$ 
+$a_n a_{n-1} a{n-2} ... a_0 . c_{-1} c_{-2} ... c_{-k}$
 
 ### Operations
 
@@ -162,19 +164,23 @@ Similar to decimal sum in column divide by two carry over quotient and take the 
 
 Sequence = a set of numbers written in a particular order.
 Series = the sum of all values in the sequence.
+
 ### Arithmetic progression
 
 * Add a fixed amount to previous term: 1, 4, 7, 10
     * Fixed amount = common difference.
+
 ### Geometric sequence
 
 * Multiply by fixed amount of 5, starting from 2 : 2, 10, 50, 250, 1250
     * Fixed amount = common ratio
+
 ### Partial series
 
 $S_n = \sum\limits_{n}^{i=1} a_n$
 
 The sum of the values of the sequence up to $n$.
+
 ### Divergent/convergent series
 
 Take the limit of the partial series $S_n$ as $n \rightarrow n$
@@ -190,6 +196,7 @@ All angles must add to $180°$ ($\pi$ radians).
 180° = A + B + C
 ![](../_media/computation-math-cheat-sheet-unit-circle-degrees.png)
 ![](../_media/computation-math-cheat-sheet-unit-circle-radians.png)
+
 ### [Law Of Cosines](law-of-cosines.md)
 
 $c^2 = a^2 + b^2 + 2ab \times \cos(\theta)$
@@ -211,14 +218,14 @@ $\tan = \frac{\sin}{\cos}$
 
 ### Properties
 
-$\sin(180°, -\alpha) = \sin(\alpha)$ 
-$\cos(180°, -\alpha) = -\cos(\alpha)$ 
+$\sin(180°, -\alpha) = \sin(\alpha)$
+$\cos(180°, -\alpha) = -\cos(\alpha)$
 
-$\sin(180°, +\alpha) = -\sin(\alpha)$ 
-$\cos(180°, +\alpha) = -\cos(\alpha)$ 
+$\sin(180°, +\alpha) = -\sin(\alpha)$
+$\cos(180°, +\alpha) = -\cos(\alpha)$
 
-$\sin(360°, -\alpha) = -\sin(\alpha)$ 
-$\cos(360°, -\alpha) = \cos(\alpha)$ 
+$\sin(360°, -\alpha) = -\sin(\alpha)$
+$\cos(360°, -\alpha) = \cos(\alpha)$
 
 ### [Trig Angle Identities](trig-angle-identities.md)
 
@@ -292,9 +299,10 @@ Domain of $\sin^{-1}(x)$: $−1 \le x \le 1$ because sin only returns between -1
 $2\sin^2a + \cos 2a = 1$
 $2\sin^2a = 1 - \cos 2a$
 $\sin^2a = \frac{1}{2} (1 - \cos 2a)$
+
 #### Pythagorean theory
 
-When it's a right-triangle, the angle $\theta = 90°$. From the unit circle above, we can see $\cos(90°) = 0$, so the $2ab \times cos(\theta)$ is simply 0. Therefore: 
+When it's a right-triangle, the angle $\theta = 90°$. From the unit circle above, we can see $\cos(90°) = 0$, so the $2ab \times cos(\theta)$ is simply 0. Therefore:
 
 When $\theta = 90°$:
     $c^2 = a^2 + b^2$
@@ -325,13 +333,11 @@ Displacement refers to amount it would have travelled based on initial velocity 
 
 ---
 
-
-
 ## 6. Trigonometric functions
 
 ## 7. Exponential and Logarithmic functions
 
-Log: if $\log_a y = x$ then  $y = a^x$ 
+Log: if $\log_a y = x$ then $y = a^x$
 
 Remember: the exponent base is the same value as the log base.
 
@@ -399,8 +405,6 @@ Example:
 $f(x) = x^2e^{-x}$
 $f(x) = (x^2)'e^{-x} + x^2(e^{-x})'$
 
-
-
 ## 9. Algebra, Vectors and Matrices
 
 Quadratic formula:
@@ -440,6 +444,7 @@ $\vec{v} = \begin{bmatrix}11 & -8 \\ -4 & 3\end{bmatrix} \begin{bmatrix}5 \\ 7\e
 **Answer**
 
 $\begin{bmatrix}-1 \\ 1\end{bmatrix}$
+
 ## 10. Combinatorics and Probability
 
 Permutations = Position matters
@@ -449,6 +454,7 @@ $P(n, r) = \frac{n!}{(n - r)!}$
 Combinations = Choose without concern for order
 
 $C(n, r) = \frac{n!}{(n-r)!r!} = \frac{P(n, r)}{r!}$
+
 ### Compound Probability of independent events
 
 The product of the individual events.
@@ -458,6 +464,3 @@ Example: What is the probability that the die shows an odd number and the coin s
 $P(\text{odd dice}) = \frac{3}{6} = \frac{1}{2}$
 $P(\text{head coin}) = \frac{1}{2}$
 $P(\text{odd and head}) = \frac{1}{2} \times \frac{1}{2} = \frac{1}{4}$
-
-
-

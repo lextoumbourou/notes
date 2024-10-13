@@ -29,13 +29,14 @@ Given data $(\mathbf{x}^{i}, y_i)$ for $i =1, 2, \ldots, N$, where $\mathbf{x}^i
 The observations are assumed to be independent, or the $y_i$ are conditionally independent given the $x_{ij}$. Assumes predictors are standardised so that $\sum_{i}x_{ij}/N = 0$ and $\sum_{i}x_{ij}^2 / N = 1$.
 
 The LASSO estimate $(\hat{\alpha}, \hat{\beta})$ is defined as:
+
 $$
 (\hat{\alpha}, \hat{\beta}) = \arg \min \left\{ \sum_{i=1}^{N} \left( y_i - \alpha - \sum_{j} \beta_j x_{ij} \right)^2 \right\} \quad \text{subject to} \quad \sum_{j} |\beta_j| \leq t.
 $$
 
 $t > 0$ is a tuning parameter.
 
-For all $t$, the solution for $\alpha$ is $\hat{\alpha} = \bar{y}$,  We can assume without loss of generality that $\hat{y} = 0$ and hence omit the bias term $\alpha$, focusing on the coefficients $\hat{\beta}$
+For all $t$, the solution for $\alpha$ is $\hat{\alpha} = \bar{y}$, We can assume without loss of generality that $\hat{y} = 0$ and hence omit the bias term $\alpha$, focusing on the coefficients $\hat{\beta}$
 
 Computation of the solution is a quadratic programming problem with linear inequality constraints.
 
@@ -44,6 +45,7 @@ The parameter $t \ge 0$ controls the amount of shrinkage applied to the estimate
 Let $\hat{\beta}^0_j$ be the full least squares estimates and let $t_0 = \sum_j |\hat{\beta}^0_j|$. Values of $t < t_0$ will cause shrinkage of the solutions towards 0, and some coefficients may be exactly equal to 0. For example, if $t = t_0/2$, the effect will be roughly similar to finding the best subset of size $p/2$. Note also that the design matrix does not need to be of full rank.
 
  The motivation for the Lasso came from Breiman's [Non-negative Garrotte](../../permanent/non-negative-garrotte.md), which minimises:
+
 $$
 \sum_{i=1}^{N} \left( y_i - \alpha - \sum_{j} c_j \hat{\beta_j} x_{ij} \right)^2 \quad \text{subject to} \quad c_j \geq 0, \quad \sum_j c_j \leq t.
 $$

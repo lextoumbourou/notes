@@ -167,6 +167,7 @@ probability.
 </p>
 
 ## Evaluation
+
 ### Baseline Models
 
 #### TTS
@@ -365,10 +366,9 @@ Table 6 shows the results for the VCTK dataset. VALL-E outperforms the baseline 
   </tr>
 </table>
 
-
 ---
 
-Table 7 shows a comparison of their method against baseline and ground truth. VALL-E has better speaker similarity than the baseline, even if the baseline has seen some speakers in training. The side-by-side CMOS evaluation shows that VALL-E is +0.23 over YourTTS, indicating a significantly better performance speaking of naturalness. VALL-E also achieves +0.04 CMOS over ground truth, demonstrating no statistically significant difference from human recordings. 
+Table 7 shows a comparison of their method against baseline and ground truth. VALL-E has better speaker similarity than the baseline, even if the baseline has seen some speakers in training. The side-by-side CMOS evaluation shows that VALL-E is +0.23 over YourTTS, indicating a significantly better performance speaking of naturalness. VALL-E also achieves +0.04 CMOS over ground truth, demonstrating no statistically significant difference from human recordings.
 
 **Table 7: Human evaluation with 60 speakers on VCTK with a 3-second enrolled recording for each.**
 
@@ -462,7 +462,6 @@ They try removing the acoustic prompt (**w/o acoustic prompt**). After that, it 
     <td>0.236</td>
   </tr>
 </table>
-
 
 ## Qualitative Analysis
 

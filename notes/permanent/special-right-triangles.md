@@ -24,7 +24,6 @@ Angles:
 * 45° or $\frac{pi}{4}$ radians
 * 45° or $\frac{pi}{4}$ radians
 * 90° or $\frac{pi}{2}$
-
 * When hypotenuse = 1 (ie unit circle):
     * Side opposite: $\frac{\sqrt{2}}{2}$
     * Side opposite: $\frac{\sqrt{2}}{2}$

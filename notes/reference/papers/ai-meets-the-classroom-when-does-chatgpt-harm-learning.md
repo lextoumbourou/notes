@@ -12,6 +12,7 @@ tags:
 *My notes from the paper [AI Meets the Classroom: When Does ChatGPT Harm Learning?](https://arxiv.org/abs/2409.09047) by Matthias Lehmann, Philipp B. Cornelius, Fabian J. Sting.*
 
 ---
+
 ## Summary
 
 This paper covers one observational and two experimental studies on the effects of LLM access on students learning to code.
@@ -34,7 +35,6 @@ $$
 $$
 
 for student $i$ and question $q$, where $\text{Code}_{iq}$ is the final student code, $\text{Code}^{LLM}_{jq}$ is one of the 50 ChatGPT generated solutions, $j = 1, \dots, 50$, and $\text{sim}(\cdot, \cdot)$ is [Damerau Levenshtein](../../permanent/damerau-levenshtein.md) similarity.
-
 
 ---
 

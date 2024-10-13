@@ -18,7 +18,7 @@ Yes, a [Survivorship Bias](survivorship-bias.md) is at play here - not everyone 
 
 On the flip side, I'm nearly two years into a part-time Computer Science degree, and the engineering content is about 5-10 years behind what the industry is doing [^3]. I haven't seen version control mentioned in a lecture once. Since I intend to study *Computer Science*, I am fine with this arrangement and enjoying the material. However, it's a far cry from the knowledge required to productively operate as a junior web developer on a team of 10. Actual practice building products with software would be a much better use of time.
 
-That's not to say that the fundamentals aren't important or useful - they must be learned to progress into senior roles, and they typically can't be taught in depth at a short boot camp. However, I argue that **fundamentals are much more efficiently learned alongside a career as a practising software engineer**. 
+That's not to say that the fundamentals aren't important or useful - they must be learned to progress into senior roles, and they typically can't be taught in depth at a short boot camp. However, I argue that **fundamentals are much more efficiently learned alongside a career as a practising software engineer**.
 
 For example, learning about worst-case complexity and Big O notation is much easier when you have already blown up prod, thanks to a nested loop in your code.
 

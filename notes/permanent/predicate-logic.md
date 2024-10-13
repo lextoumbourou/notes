@@ -11,15 +11,16 @@ cover: /_media/predicate-logic-cover.png
 ---
 
 An extension of [Propositional Logic](propositional-logic.md) that uses variables and quantifiers to represent and analyse [Statement](logical-statement.md).
+
 ## [Predicate](predicate.md)
 
 Is a [Statement](logical-statement.md) that includes a variable.
 
-- $P(x)$: "x is a prime number"
+* $P(x)$: "x is a prime number"
 
 A predicate becomes a proposition when the variable are substituted for values.
 
-- $P(2)$: "2 is a prime number" (True)
+* $P(2)$: "2 is a prime number" (True)
 
 ## [Quantifiers](../journal/permanent/logical-quantifiers.md)
 
@@ -48,4 +49,4 @@ $\exists x, P(x)$: "There exists an x such that x is a prime number"
 ## DeMorgan's Laws for negating quantifiers
 
  ∼[(∀x)P(x)] ≡ (∃ x)[∼P(x)]
- ∼[(∀x)P(x)] ≡ (∀x)[∼P(x)] 
+ ∼[(∀x)P(x)] ≡ (∀x)[∼P(x)]

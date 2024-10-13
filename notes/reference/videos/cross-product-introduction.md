@@ -44,4 +44,4 @@ $= \mathbf{a_2 a_3 b_1} \mathbf{- a_3 a_2 b_1}$
 
 $= 0$
 
-#Maths/LinearAlgebra/CrossProduct 
+#Maths/LinearAlgebra/CrossProduct

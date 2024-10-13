@@ -6,9 +6,9 @@ status: draft
 ---
 
 A **binomial** is an expression that has two terms. For example:
-- $(a + b)$
-- $(6x - 5y)$
-- $1g + 100f $
+* $(a + b)$
+* $(6x - 5y)$
+* $1g + 100f $
 
 You could square a binomial following this formula:
 

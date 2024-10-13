@@ -62,5 +62,5 @@ status: draft
          * Same as decimal
            ![](/_media/week-2-non-integer-conversion-multiplication.png)
    * Division
-      ![](/_media/week-2-non-integer-conversion-division.png) 
+      ![](/_media/week-2-non-integer-conversion-division.png)
   * Need to revise this.

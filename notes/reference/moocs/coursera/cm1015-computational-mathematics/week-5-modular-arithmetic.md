@@ -12,7 +12,7 @@ status: draft
         * Basic notion congruence between integers
         * Two numbers a and b are congruent "mod 2" if they have the same remainder when divided by 2.
         * Congruent symbol: $\equiv$
-        * In general, we say $a \equiv b$ (mod k) $\Leftrightarrow a = nk + R, b=mk + R$ 
+        * In general, we say $a \equiv b$ (mod k) $\Leftrightarrow a = nk + R, b=mk + R$
             * Or in other words, if you divide by n you get the same remainder.
     * Clock arithmetic
         * if it is 8AM after 7 hours it will be 15 or 3 PM as it is "mod 12".
@@ -26,12 +26,13 @@ status: draft
             * $\rightarrow -17 \equiv 7$ (mod 12)
 
 ### Essential Reading
-            
+
+
 * Theory of Divisibility
     * Basic concepts and properties of divisibility
         * Let $a$ and $b$ be integers with $a \ne  0$
             * We say a divides b, denoted by $a \mid b$, if there's an integer $c$ such that $b = ac$
-                * In this case, $a$ is a *divisor* 
+                * In this case, $a$ is a *divisor*
                 * $b$ is a *multiple* of $a$.
             * When a divides b, we say that a is a divisor (or factor) of b, and b is a multiple of a.
             * If a does not divide b, we write $x\nmid y$
@@ -71,4 +72,3 @@ status: draft
             * 2) if $a \mid b$ and $b \mid a$ then $a = \pm b$
             * 3) if $a \mid b$ and $a \mid c$, then for all integers $m$ and $n$ we have $a \mid (mb + nc)$
             * 4) if $a \mid b$ and $a$ and $b$ are positive integers, then $a < b$
-        * 

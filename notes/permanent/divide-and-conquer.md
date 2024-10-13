@@ -9,8 +9,8 @@ status: draft
 
 Examples:
 
-- [Merge Sort](merge-sort.md): a sorting algorithm that involves dividing an array into two halves, recursively sorting each half, and then merging the halves.
-- [Quicksort](quicksort.md): selects a "pivot" element from the array and partitions the other elements into sub-array,s, according to where they are less or greater than the pivot. The sub-arrays are sorted recursively.
-- Multiplication can be implemented as a divide-and-conquer algorithm by splitting large numbers into smaller parts, multiplying these parts in fewer steps, and combining the results to obtain the final product. 12 x 30 = (4 x 3) x (10 x 3)
+* [Merge Sort](merge-sort.md): a sorting algorithm that involves dividing an array into two halves, recursively sorting each half, and then merging the halves.
+* [Quicksort](quicksort.md): selects a "pivot" element from the array and partitions the other elements into sub-array,s, according to where they are less or greater than the pivot. The sub-arrays are sorted recursively.
+* Multiplication can be implemented as a divide-and-conquer algorithm by splitting large numbers into smaller parts, multiplying these parts in fewer steps, and combining the results to obtain the final product. 12 x 30 = (4 x 3) x (10 x 3)
 
 See also [Decrease and Conquer](decrease-and-conquer.md).

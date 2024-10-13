@@ -24,8 +24,8 @@ How much memory is required to complete the algorithm?
 When comparing a function's asymptotic growth, we can look at only the parts that grow the fastest. Big-O notation describes just the fastest growing factor of a function, to simplify the comparison of algorithms.
 
 For example,
-- $f(n) = 2^{n} + 3n$ in Big-O notation is $O(2^n)$
-- $g(n) = 1000n^2 + n$ is $O(n^2)$
+* $f(n) = 2^{n} + 3n$ in Big-O notation is $O(2^n)$
+* $g(n) = 1000n^2 + n$ is $O(n^2)$
 
 ## [Worst-Case Time Complexity](worst-case-time-complexity.md)
 

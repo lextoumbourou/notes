@@ -80,4 +80,4 @@ Vectors are the building block of linear algebra.
 
         $$2 \begin{bmatrix} 1 \\ 2 \end{bmatrix} = \begin{bmatrix} 2 * 1 \\ 2 * 2 \end{bmatrix} = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$$
 
-#Maths/LinearAlgebra/Vectors 
+#Maths/LinearAlgebra/Vectors
