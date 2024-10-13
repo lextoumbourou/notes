@@ -6,6 +6,7 @@ summary: LLMs can help and also hinder learning outcomes
 cover: ai-meets-the-classroom-when-does-chatgpt-harm-learning-fig-1.png
 tags:
   - LearningWithAI
+  - LearningandTeaching
 ---
 
 *My notes from the paper [AI Meets the Classroom: When Does ChatGPT Harm Learning?](https://arxiv.org/abs/2409.09047) by Matthias Lehmann, Philipp B. Cornelius, Fabian J. Sting.*
