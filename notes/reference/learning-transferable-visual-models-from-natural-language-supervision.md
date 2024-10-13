@@ -24,13 +24,13 @@ The code and pre-trained model weights at https://github.com/OpenAI/CLIP.
 
 **Unsupervised Pre-training in NLP**
 
-Many papers have achieve good results doing Unsupervised Pre-training in NLP, including task objectives like [[Autoregressive]] and [Masked Language Modelling](Masked%20Language%20Modelling):
+Many papers have achieve good results doing Unsupervised Pre-training in NLP, including task objectives like [Masked Language Modelling](../../../permanent/masked-language-modelling.md):
 
 * [Dai & Le, 2015: Semi-supervised Sequence Learning](papers/dai-le-2015-semi-supervised-sequence-learning.md)
-* [Peters et al., 2018: Deep Contextualized Word Representations](reference/peters-et-al-2018-deep-contextualized-word-representations.md)
+* [Deep Contextualized Word Representations](../../../reference/deep-contextualized-word-representations.md)
 * [Howard & Ruder, 2018: Universal Language Model Fine-tuning for Text Classification](reference/howard-ruder-2018-universal-language-model-fine-tuning-for-text-classification.md)
-* [Radford et al., 2018: Improving Language Understanding by Generative Pre-Training](reference/radford-et-al-2018-improving-language-understanding-by-generative-pre-training.md)
-* [Devlin et al., 2018: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](reference/devlin-et-al-2018-bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding.md)
+* [Improving Language Understanding by Generative Pre-Training](../../../reference/rimproving-language-understanding-by-generative-pre-training.md)
+* [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](../../../reference/bert-pre-training-of-deep-bidirectional-transformers-for-language-understanding.md)
 * [Raffel et al., 2019: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer](reference/raffel-et-al-2019-exploring-the-limits-of-transfer-learning-with-a-unified-text-to-text-transformer.md)
 
 **Text-to-text** models
