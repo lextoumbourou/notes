@@ -2,46 +2,38 @@
 title: Agentic Reasoning
 date: 2024-08-25 00:00
 modified: 2024-08-25 00:00
+summary: an approach to utilising LLMs that involves multi-states of interaction
 tags:
 - MachineLearning
 - AgenticReasoning
 ---
 
-**Agentic Reasoning** refers to an approach to utilising LLMs that involves multi-states of interaction with [AI Agents](ai-agents.md), for example, an agent may plan, reflect on its own output, or even call other tools or agents to reason.
+**Agentic Reasoning** is about approaches to LLMs that involve multi-state interaction, as opposed to [Zero-Shot Prompting](zero-shot-prompting.md), where the LLM returns the result based on a single prompt.
 
-It is the counter to [Zero-Shot Prompting](zero-shot-prompting.md) where the LLM returns the result based on a single prompt.
+We think of LLM interactions as [AI Agents](ai-agents.md); agents can reflect, plan, use tools and store things in long-term memory. Additionally, agents can work collaboratively with other agents in [Multi-Agent Systems](multi-agent-systems.md).
 
-There are typically 4 high-level categories of activity which constitute Agentic Reasoning, including **Reflection**, **Tool Use**, **Planning** and **Memory**. Additionally, agents can be part of [Single-Agent Systems](single-agent-systems.md), where a single LLM performs Agentic Reasoning, or [Multi-Agent Systems](multi-agent-systems.md) where multiple LLMs work together to achieve a goal.
-
-## Design Patterns
+![Agentic Reasoning Workflow Overview](../_media/agentic-reasoning-overview.png)
 ### [Reflection](../../../permanent/reflection.md)
 
-Reflect is the ability of an AI to analyse its own outputs and reasoning.
+Reflection is the ability of an agent to analyse its outputs and prior reasoning. For example, [Self-Refine](../../../permanent/self-refine.md) is an approach where an LLM can provide feedback for its outputs to improve and refine its strategy in iterations. [Reflexion](../../../permanent/reflexion.md) is an alternative approach that involves storing mistakes in memory that can be reused.
 
-For example, in paper [Self-Refine: Iterative Refinement with Self-Feedback](../../../reference/self-refine-iterative-refinement-with-self-feedback.md) they describe an approach where an LLM can provide feedback for its own outputs, to improve and refine its approach.
+### [Planning](../../../permanent/planning.md)
 
-In [Reflexion: Language Agents with Verbal Reinforcement Learning](../../../permanent/reflexion-language-agents-with-verbal-reinforcement-learning.md), they propose an approach to reflection that involves storing mistakes in memory that can be reused.
+Planning involves breaking down complex tasks into smaller, manageable steps. [Chain-of-Thought Prompting](chain-of-thought-prompting.md) is a key example of work in this area, which encourages the model to perform a set of "intermediate reasoning steps", which significantly improves its ability to reason through complex tasks.
+
+Some systems use [Open-loop Planning](../../../permanent/open-loop-planning.md), which involves creating an entire plan and following it in one go, whereas [Closed-loop Planning](closed-loop-planning.md) consists of planning an action, executing it, and then planning the next action based on the updated state of the world.
 
 ### [Tool Use](../../../permanent/tool-use.md)
 
-An important pattern in Agentic Reasoning is the ability to leveraging external tools or APIs to gather information or perform actions.
+Using tools is key, as agents can leverage external tools or APIs to gather information or perform actions, another important component of an agentic system.
 
-In [Gorilla Large Language Model Connected with Massive APIs](../../../permanent/gorilla-large-language-model-connected-with-massive-apis.md), they fine-tune a model which can perform tasks by retrieving API documents and calling functions. They use test-time modifications to ensure that the model can handle changes to APIs, and it not limited to information in pretrainining.
+In [Gorilla Large Language Model Connected with Massive APIs](../../../permanent/gorilla-large-language-model-connected-with-massive-apis.md), they fine-tune a model that can perform tasks by retrieving API documents and calling functions. They use test-time modifications to ensure that the model can handle changes to APIs, and is not limited to information in pre-training.
 
 In [MM-REACT Prompting ChatGPT for Multimodal Reasoning and Action](../../../permanent/mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md) uses prompting techniques to allow ChatGPT to call vision models and other models to answer questions.
 
 In [SheetCopilot: Bringing Software Productivity to the Next Level through Large Language Models](../../../reference/papers-sheet-copilot.md) utilises [Atomic Actions](atomic-actions.md) to represent API commands, which allow the agent to interact with any spreadsheet application.
 
-### [Planning](../../../permanent/planning.md)
-
-Planning in Agentic Reasoning, involves breaking down complex tasks into smaller, manageable steps.  [Open-loop Planning](../../../permanent/open-loop-planning.md) involves creating an entire plan and following it in one go, whereas [Closed-loop Planning](closed-loop-planning.md) involves planning an action, exectuting it, and then planning the next action based on the updated state of the world.
-
-The paper [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](../../../reference/chain-of-thought-prompting-elicits-reasoning-in-large-language-models.md), is a key example of work in this area which encourages the model to perform a set of "intermediate reasoning steps", the capability for Chain-of-Thought prompting only emerges in Large Language Models, it typically does not help in smaller models.
-
-Another is [HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in Hugging Face](../../../permanent/hugginggpt-solving-ai-tasks-with-chatgpt-and-its-friends-in-hugging-face.md) which conducts task planning using HuggingFace hosted models.
-
+More recent papers like [ToolGen: Unified Tool Retrieval and Calling via Generation](../../../permanent/toolgen-unified-tool-retrieval-and-calling-via-generation.md), investigating including tool calls are part of the token vocabulary.
 ### [Memory](../../../permanent/memory.md)
 
-### [Single-Agent Systems](single-agent-systems.md)
-
-### [Multi-Agent Systems](multi-agent-systems.md)
+Recent papers have introduced a paradigm of long-term memory, such as [RAISE](../../../permanent/RAISE.md) and [Reflexion](../../../permanent/reflexion.md).

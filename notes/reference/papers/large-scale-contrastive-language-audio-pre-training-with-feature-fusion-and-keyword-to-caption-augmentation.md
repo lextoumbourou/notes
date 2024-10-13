@@ -73,7 +73,7 @@ Contains:
 
 ## Related work
 
-[Contrastive Language-Image Pre-training (CLIP)](../../permanent/contrastive-language-image-pretraining.md)
+[CLIP](../../permanent/contrastive-language-image-pretraining.md)
 
 - Demonstrated how contrastive loss can be used to learn the relationship between text and image by projecting into a shared latent space
 - trained on a large-scale internet scrape
