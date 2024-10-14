@@ -4,6 +4,7 @@ date: 2024-10-03 00:00
 modified: 2024-10-03 00:00
 summary: a paper that shows a model needs to see a concept exponentially more times to achieve linear improvements
 cover: /_media/no-zero-shot-without-exponential-data-pretraining-concept-frequency-determines-multimodal-model-performance-cover.png
+category: reference/papers
 hide_cover_in_article: true
 ---
 
