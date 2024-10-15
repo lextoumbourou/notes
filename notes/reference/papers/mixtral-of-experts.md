@@ -3,7 +3,7 @@ title: Mixtral of Experts
 date: 2024-10-15 00:00
 modified: 2024-10-15 00:00
 cover: /_media/mixtral-of-experts-cover.png
-summary: a Sparse Mixture of Experts (SMoE) language model with 47B but only uses 13B at a time
+summary: a Sparse Mixture of Experts (SMoE) language model
 hide_cover_in_article: true
 ---
 
@@ -17,7 +17,7 @@ The model uses an SMoE approach where each layer comprises eight "experts", and 
 
 It outperforms Llama 2 70B and GPT-3.5 on many benchmarks, particularly in mathematics, code generation, and multilingual tasks.
 
-They also present [Mixtral 8x7B – Instruct](Mixtral%208x7B%20%E2%80%93%20Instruct), a chat model fine-tuned to follow instructions, which outperforms other chat models like GPT-3.5 Turbo and Llama 2 70B – chat.
+They also present [Mixtral 8x7B – Instruct](../../permanent/mixtral-8x7B-instruct.md), a chat model fine-tuned to follow instructions, which outperforms other chat models like GPT-3.5 Turbo and Llama 2 70B – chat.
 
 The base and instruct models are released under the Apache 2.0 license, making them freely available for academic and commercial use.
 
@@ -47,18 +47,18 @@ Mixtral supports a fully dense context length of 32k tokens.
  
 Architecture details
 
-| Parameter | Value |
-|---|---|
-| dim | 4096 |
-| n_layers | 32 |
-| head_dim | 128 |
-| hidden_dim | 14336 |
-| n_heads | 32 |
-| n_kv_heads | 8 |
-| context_len | 32768 |
-| vocab_size | 32000 |
-| num_experts | 8 |
-| top_k_experts | 2 |
+| Parameter     | Value |
+| ------------- | ----- |
+| dim           | 4096  |
+| n_layers      | 32    |
+| head_dim      | 128   |
+| hidden_dim    | 14336 |
+| n_heads       | 32    |
+| n_kv_heads    | 8     |
+| context_len   | 32768 |
+| vocab_size    | 32000 |
+| num_experts   | 8     |
+| top_k_experts | 2     |
 
 **Routing Analysis**
 
@@ -77,11 +77,12 @@ Mixtral outperforms or matches Llama 2 70B on a wide range of benchmarks, includ
 ![Figure 2](../../_media/mixtral-of-experts-fig2.png)
 Mixtral is particularly strong in mathematical and coding tasks, significantly surpassing Llama 2 70B.
 
-Comparison with Other Models:
+**MMLU and MT Bench**: Mixtral performs similarly or better than GPT-3.5 on MMLU and MT Bench despite its smaller size. Although some differences in evaluation protocols between Mixtral and Llama 2 may affect direct comparisons.
 
-* **MMLU and MT Bench**: Mixtral performs similarly or better than GPT-3.5 on MMLU and MT Bench despite its smaller size.
-    * Although some differences in evaluation protocols between Mixtral and Llama 2 may affect direct comparisons.
-* **Multilingual Proficiency**: Mixtral significantly outperforms Llama 2 70B in French, German, Spanish, and Italian, demonstrating its strong multilingual capabilities.
-* **Long Context Handling**: Mixtral can effectively process long sequences, achieving 100% accuracy on the passkey retrieval task regardless of context length or passkey position.
-* **Bias Mitigation**: Compared to Llama 2, Mixtral exhibits less bias on the BBQ and BOLD benchmarks, indicating improved fairness and reduced bias in its responses.
-* **Positive Sentiment**: Mixtral consistently displays more positive sentiments than Llama 2, suggesting a more optimistic and encouraging tone in its generated text.
+**Multilingual Proficiency**: Mixtral significantly outperforms Llama 2 70B in French, German, Spanish, and Italian, demonstrating its strong multilingual capabilities.
+
+**Long Context Handling**: Mixtral can effectively process long sequences, achieving 100% accuracy on the passkey retrieval task regardless of context length or passkey position.
+
+**Bias Mitigation**: Compared to Llama 2, Mixtral exhibits less bias on the BBQ and BOLD benchmarks, indicating improved fairness and reduced bias in its responses.
+
+**Positive Sentiment**: Mixtral consistently displays more positive sentiments than Llama 2, suggesting a more optimistic and encouraging tone in its generated text.
