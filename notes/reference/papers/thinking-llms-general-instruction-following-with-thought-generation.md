@@ -21,7 +21,7 @@ Unlike Chain-of-Thought prompting, which mainly benefits math and logic tasks, T
 
 ![Figure 4 - showing evaluation as win rate of TPO against baseline of GPT4](../../_media/thinking-llms-general-instruction-following-with-thought-generation-fig-4.png)
 
-*Fig 4: Fine-grained evaluation on unseen instructions from UltraFeedback, broken down by category. We measure the win rate of TPO against the direct baseline as judged by GPT4.*
+*Fig 4: Fine-grained evaluation on unseen instructions from UltraFeedback, broken down by category. They measure the win rate of TPO against the direct baseline as judged by GPT4.*
 
 The method separates the thought process from the final answer, enabling developers to choose whether to display the thought process for interpretability or keep it hidden. For example, in Fig 6, you can see the response is separate from the thoughts using the `<R>`; this works similarly to o1-preview, which also hides its internal thought process.
 
@@ -41,6 +41,6 @@ The paper introduces [Thought Policy Optimisation](../../permanent/thought-polic
 
 ![Fig 1](../../_media/thinking-llms-general-instruction-following-with-thought-generation-fig-1.png)
 
-*Figure 1: Thought Preference Optimisation: they start by prompting the LLM to generate thoughts before its response. After sampling different outputs, we feed the response parts to the judge model which determines the best and worst ones. Then, they use the corresponding full outputs as chosen and rejected pairs for DPO optimisation. We perform multiple iterations of this training.*
+*Figure 1: Thought Preference Optimisation: they start by prompting the LLM to generate thoughts before its response. After sampling different outputs, we feed the response parts to the judge model which determines the best and worst ones. Then, they use the corresponding full outputs as chosen and rejected pairs for DPO optimisation. They perform multiple iterations of this training.*
 
 Gets top 3 in AlpacaEval (52.5%) and performs on par with GPT4 in Arena-Hard (37.3%)
