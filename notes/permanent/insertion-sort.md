@@ -8,9 +8,7 @@ cover: /_media/Sorting_insertion_sort_anim.gif
 hide_cover_in_article: true
 ---
 
-**Insertion Sort** is one of the most widely known sorting [Algorithm](algorithm.md). The algorithm iteratively compares each element with its left neighbours, shifting them one position to the right if they are greater.
-
-It is one of the most intuitive and simple algorithms - how we would typically approach something like sorting a deck of cards.
+**Insertion Sort** is one of the most widely known sorting [Algorithm](algorithm.md). The algorithm iteratively compares each element with its left neighbours, shifting them one position to the right if they are greater. It has an average and worst-case run time of $O(n^2)$, so it is one of the slowest algorithms for large input sizes; however, if the list is mostly sorted, it can be one of the best-performing options.
 
 ![Insertion sort animated gif from Wikimedia commons](../_media/Sorting_insertion_sort_anim.gif)
 
@@ -18,37 +16,6 @@ It is one of the most intuitive and simple algorithms - how we would typically a
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Q1JdRUh1_98?si=7ZwTitcOrNLhU7wZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
-## Pseudocode
-
-```pseudo
-\begin{algorithm}
-
-\caption{InsertionSort}
-
-\begin{algorithmic}
-    \Function{InsertionSort}{v}
-        \State $j \gets 2$
-
-        \For{$j \leq LENGTH[v]$}
-        
-            \State $key \gets v[j]$
-            \State $i \gets j - 1$
-            
-            \While{$i \gt 0 \land v[i] \gt \text{key}$}
-                \State $v[i+1] \gets v[i]$
-                \State $i \gets i - 1$
-            \EndWhile
-            
-            \State $v[i + 1] \gets \text{key}$
-            \State $j \gets j + 1$
-            
-        \EndFor
-\EndFunction
-\end{algorithmic}
-
-\end{algorithm}
-```
 
 ## Python code
 
