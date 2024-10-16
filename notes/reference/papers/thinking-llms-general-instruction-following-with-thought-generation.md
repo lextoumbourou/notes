@@ -1,5 +1,5 @@
 ---
-title: "Thinking LLMs: General Instruction Following with Thought Generation"
+title: "Thinking LLMs: General Instruction Following with Thought Generation (Oct 2024)"
 date: 2024-10-16 10:00
 modified: 2024-10-16 10:00
 tags:
@@ -11,7 +11,7 @@ summary: a prompting and fine-tuning method that enables LLMs to engage in a "th
 category: reference/papers
 ---
 
-These are my notes from the paper [Thinking LLMs: General Instruction Following with Thought Generation](https://arxiv.org/abs/2410.10630) by Tianhao Wu, Janice Lan, Weizhe Yuan, Jiantao Jiao, Jason Weston and Sainbayar Sukhbaatar.
+*These are my notes from the paper [Thinking LLMs: General Instruction Following with Thought Generation](https://arxiv.org/abs/2410.10630) (Oct 2024) by Tianhao Wu, Janice Lan, Weizhe Yuan, Jiantao Jiao, Jason Weston and Sainbayar Sukhbaatar.*
 
 ## Overview
 
