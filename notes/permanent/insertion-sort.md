@@ -6,6 +6,7 @@ tags:
 - SortingAlgorithm
 cover: /_media/Sorting_insertion_sort_anim.gif
 hide_cover_in_article: true
+summary: a widely-known iterate sorting algorithm
 ---
 
 **Insertion Sort** is one of the most widely known sorting [Algorithm](algorithm.md). The algorithm iteratively compares each element with its left neighbours, shifting them one position to the right if they are greater. It has an average and worst-case run time of $O(n^2)$, so it is one of the slowest algorithms for large input sizes; however, if the list is mostly sorted, it can be one of the best-performing options.
