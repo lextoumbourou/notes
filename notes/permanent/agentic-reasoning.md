@@ -18,7 +18,7 @@ LLMs are called [AI Agents](ai-agents.md) within this framework. Agents can take
 
 In contrast, non-agentic workflows include direct methods like [Zero-Shot Prompting](zero-shot-prompting.md), where the LLM returns the result based on a single prompt. Some techniques from agentic reasoning are also used in zero-shot prompting, so the line between agentic and non-agentic is not always clear.
 
-However, there are a series of "design patterns" [^1] that are indicative of an agentic system.
+However, there are a series of ["design patterns"](https://www.deeplearning.ai/the-batch/how-agents-can-improve-llm-performance) that are indicative of an agentic system.
 
 ### [Tool Use](tool-use.md)
 
@@ -27,6 +27,7 @@ The clearest example of when an LLM becomes an AI Agent is when it calls another
 Typically, approaches to tool use allow the model to generate command sequences that get translated into API commands, such as [Atomic Actions](atomic-actions.md), which are LLM outputs that can be mapped into API commands. Alternatively, the LLM may generate code used to call a tool. Recent papers like [ToolGen: Unified Tool Retrieval and Calling via Generation](../../../permanent/toolgen-unified-tool-retrieval-and-calling-via-generation.md) explore embedding tool commands directly into the model's vocabulary.
 
 Other examples include:
+
 * [Gorilla Large Language Model Connected with Massive APIs](../../../permanent/gorilla-large-language-model-connected-with-massive-apis.md) - they fine-tune a model that can perform tasks by retrieving API documents and calling functions. They use test-time modifications to ensure that the model can handle changes to APIs and is not limited to information in pre-training.
 * [MM-REACT Prompting ChatGPT for Multimodal Reasoning and Action](../../../permanent/mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md)  - they use prompting techniques to allow ChatGPT to call vision models and other models to answer questions.
 
@@ -39,10 +40,11 @@ Incorporating long-term memory allows LLMs to store and recall information over 
 Planning involves decomposing tasks into smaller, manageable steps. Techniques like [Chain-of-Thought Prompting](chain-of-thought-prompting.md) encourage models to generate intermediate reasoning steps, significantly improving their ability to solve complex problems.
 
 Systems may employ:
+
 * [Open-loop Planning](open-loop-planning.md): Creating and executing an entire plan without adjustments.
 * [Closed-loop Planning](closed-loop-planning.md): Planning an action, executing it, observing the outcome, and then planning the next step based on the new state.
 
-### Act / Observe
+### Acting / Observing
 
 In agentic systems, the model performs actions and then observes the results, updating its plans based on feedback. This iterative process allows the agent to adapt to new information and refine its strategies accordingly.
 

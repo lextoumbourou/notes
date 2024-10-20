@@ -16,6 +16,7 @@ Agents are given system prompts and the necessary tools; no other models provide
 See also [Multi-Agent Systems](multi-agent-systems.md).
 
 Papers:
+
 * [The Landscape of Emerging AI Agent Architectures for Reasoning, Planning, and Tool Calling: A Survey](../../../permanent/the-landscape-of-emerging-ai-agent-architectures-for-reasoning-planning-and-tool-calling-a-survey.md)
 * [ReAct (Agent)](../../../permanent/react-agent.md)
 
