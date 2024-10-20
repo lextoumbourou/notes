@@ -13,4 +13,4 @@ They can be part of a [Single-Agent Systems](single-agent-systems.md), or [Multi
 
 Commonly, each agent is given a [Persona](../../../permanent/persona-prompt-engineering.md), as well as access to tools (see [Tool Use](tool-use.md)).
 
-Some agents also contain a [[memory]] component, where they can save and load information outside of their messages and prompts.
+Some agents also contain a [Memory](memory.md) component, where they can save and load information outside of their messages and prompts.
