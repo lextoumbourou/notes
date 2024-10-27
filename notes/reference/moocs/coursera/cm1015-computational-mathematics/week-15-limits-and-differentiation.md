@@ -35,7 +35,6 @@ Some examples:
 * $\lim_{n \rightarrow \infty} dn = -2 + (-1)^m$
     * $-1, -3, -1, -3, -1, -3$
     * The limit is not convergent, as it oscillates.
-
 * $\lim_{n\rightarrow \infty} \frac{n^2 + 2n + 5}{3n^2 + 2}$
     * One approach, find highest power and rewrite to line up:
         * $\frac{n^2(1 + \frac{2}{n} + \frac{5}{n^2})}{n^2(3 + \frac{2}{n})}$

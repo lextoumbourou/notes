@@ -86,7 +86,6 @@ Note: this is unfinished. Some of the text is copied and pasted verbatim from th
         * Notice, after quantisation we are left with K parallel discrete tokens sequences, each of length $T = d · fr$, representing the audio sample.
         * In $RVQ$, each quantiser encodes the quantisation error left by the previous quantiser
         * Thus quantised values for different codebooks are in general not independent, and the first codebook is the most important one.
-
 * 2.2 [Codebook Interleaving Patterns](Codebook%20Interleaving%20Patterns) (see Figure 1)
 
 Multiple techniqes

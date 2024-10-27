@@ -77,7 +77,6 @@ status: draft
           * $t$: This is the time that has elapsed. Time is usually measured in seconds (s)
           * So you know where an object started, and you know its constant speed, can figure out where it will be in time.
       * $S(t) = S_0 + {V_0}t$
-
 * [Uniform Accelerating Motion](Uniform%20Accelerating%20Motion)
     * Here the velocity is no longer constant.
         * If acceleration is positive, velocity will increase in time.

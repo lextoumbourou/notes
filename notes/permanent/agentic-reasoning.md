@@ -29,7 +29,7 @@ Typically, approaches to tool use allow the model to generate command sequences 
 Other examples include:
 
 * [Gorilla Large Language Model Connected with Massive APIs](../../../permanent/gorilla-large-language-model-connected-with-massive-apis.md) - they fine-tune a model that can perform tasks by retrieving API documents and calling functions. They use test-time modifications to ensure that the model can handle changes to APIs and is not limited to information in pre-training.
-* [MM-REACT Prompting ChatGPT for Multimodal Reasoning and Action](../../../permanent/mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md)  - they use prompting techniques to allow ChatGPT to call vision models and other models to answer questions.
+* [MM-REACT Prompting ChatGPT for Multimodal Reasoning and Action](../../../permanent/mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md) - they use prompting techniques to allow ChatGPT to call vision models and other models to answer questions.
 
 ### [Memory](memory.md)
 

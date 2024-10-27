@@ -27,7 +27,6 @@ status: draft
 
 ### Essential Reading
 
-
 * Theory of Divisibility
     * Basic concepts and properties of divisibility
         * Let $a$ and $b$ be integers with $a \ne  0$

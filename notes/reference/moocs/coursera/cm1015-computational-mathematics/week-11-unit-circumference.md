@@ -28,7 +28,6 @@ The trigonometrical functions and their graphs and Trigonometric identities.
     * Cos(\theta) - x-coordinate of projection
     * Sin(\theta) - y-coordinate
     * tan(\theta) = y-coordinate / x projection
-
 * When you project in the first quadrant, sin and cosine will be position.
 * In the 2nd quadrant, the x will be negative (cos < 0) and y (sin) will be position
 * In the 3rd quadrant, the x will be negative (cos < 0) and y (sin) will be negative.

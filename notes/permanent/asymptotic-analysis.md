@@ -5,7 +5,7 @@ modified: 2024-01-18 00:00
 status: draft
 ---
 
-**Asymptotic Analysis** of a function, $f(n)$, tells us what happens to the function as $n$ grows larger.
+**Asymptotic Analysis** of a function, $f(n)$, tells us what happens to the function as $n$ grows larger. The term "asymptotic" refers to the behavior or value of a function as its input approaches a particular value or limit - in this case, as the input size approaches infinity.
 
 ## [Complexity Analysis](complexity-analysis.md)
 
@@ -20,6 +20,8 @@ How many steps is required to complete the algorithm?
 How much memory is required to complete the algorithm?
 
 ## [Big-O Notation](big-o-notation.md)
+
+Big-O finds the upper bound of a function's asympototic growth.
 
 When comparing a function's asymptotic growth, we can look at only the parts that grow the fastest. Big-O notation describes just the fastest growing factor of a function, to simplify the comparison of algorithms.
 
