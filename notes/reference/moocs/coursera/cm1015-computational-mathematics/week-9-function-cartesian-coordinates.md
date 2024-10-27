@@ -51,7 +51,6 @@ status: draft
     * Distance between P and Q:
         ![](../../../../_media/week-9-function-cartesian-coordinates-cartesians-coordinates.png)
         * Can use Pythagoras theorem: $d_{PQ} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^{2}}$
-
 * Examples:
     * $f(x) = -2x + 4$ Domain $R$.
 
@@ -244,7 +243,6 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * Domain: $R\{-1, 1\}$
     ![](../../../../_media/week-9-function-cartesian-coordinates-fractional.png)
     * This specific function has two vertical asymptotes in x equal minus 1 and x equal 1, which are indicated by the dashed blue lines on the plot.
-
 
 ## Essential reading
 

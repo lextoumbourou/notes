@@ -29,10 +29,8 @@ The ratios between the sides of a right-angle triangle have do a bunch of really
 
 * [Sine](sine.md)
     * The ratio between opposite and hypotenuse.
-
 * [Cosine](permanent/cosine.md)
     * The ratio between adjacent and hypotenuse.
-
 * [Tangent](../journal/permanent/tangent)
     * The ratio between opposite and adjacent.
 

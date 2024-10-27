@@ -45,7 +45,7 @@ y = moe_layer(x, Wg)
 ```
 
 Mixtral supports a fully dense context length of 32k tokens.
- 
+
 Architecture details
 
 | Parameter     | Value |

@@ -10,7 +10,7 @@ tags:
 
 ## Overview
 
-Papers revisits [Recurrent Neural Networks](../../../../permanent/recurrent-neural-networks.md), specifically [LSTM](../../../../permanent/lstm.md) and [Gated Recurrent Neural Networks](Gated%20Recurrent%20Neural%20Networks), they show that by removing their hidden state dependencies from their input, forget and update gates, LSTMs an GRUs no longer need [[Backpropagation Through Time]], meaning they can be trained in paralell.
+Papers revisits [Recurrent Neural Networks](../../../../permanent/recurrent-neural-networks.md), specifically [LSTM](../../permanent/lstm.md) and [Gated Recurrent Neural Networks](Gated%20Recurrent%20Neural%20Networks), they show that by removing their hidden state dependencies from their input, forget and update gates, LSTMs an GRUs no longer need [[Backpropagation Through Time]], meaning they can be trained in paralell.
 
 They introduce minimal versions that [[minLSTM]] and [[minGRU]].
 
@@ -22,4 +22,4 @@ They show these stripped-down versions of decade-old RNNs match the empirical pe
 
 ## Related Papers
 
-* [Long Short-Term Memory](../../../../reference/long-short-term-memory.md)
+* [Long Short-Term Memory (1997)](long-short-term-memory-1997.md)

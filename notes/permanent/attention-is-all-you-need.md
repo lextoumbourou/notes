@@ -12,7 +12,7 @@ Shell page for [Attention Is All You Need](https://arxiv.org/abs/1706.03762) by 
 
 ## Abstract
 
-At the time of the paper, the prevalent sequence-to-sequence were [Encoder-Decoder](encoder-decoder.md) models that used recurrent or convolutional neural networks, where an encoder would represent an input sequence of tokens as a sequence of embeddings, and a decoder would take those embeddings and predict a new sequence one token at a time. The best performance models would connect the encoder and decoder using an [Attention](attention.md) mechanism.
+At the time of the paper, the prevalent sequence-to-sequence were [Encoder-Decoder](encoder-decoder.md) models that used recurrent or convolutional neural networks, where an encoder would represent an input sequence of tokens as a sequence of embeddings, and a decoder would take those embeddings and predict a new sequence one token at a time. The best performance models would connect the encoder and decoder using an [Attention Mechanism](attention-mechanism.md) mechanism.
 
 This paper proposes a revolutionary architecture called [Transformer](transformer.md), entirely based on attention mechanisms, without recurrence and convolutions at all.
 
@@ -25,13 +25,13 @@ They also show the Transformer generalised well to other tasks.
 
 ## Introduction
 
-[Recurrent Neural Networks](../../../permanent/recurrent-neural-networks.md), [LSTM](../../../permanent/lstm.md) and [Gated Recurrent Neural Networks](Gated%20Recurrent%20Neural%20Networks) were the go-to models for state-of-the-art performance in sequence modelling tasks, like building a [Language Model](language-model.md) and models for [Machine Translation](Machine%20Translation).
+[Recurrent Neural Networks](../../../permanent/recurrent-neural-networks.md), [LSTM](lstm.md) and [Gated Recurrent Neural Networks](Gated%20Recurrent%20Neural%20Networks) were the go-to models for state-of-the-art performance in sequence modelling tasks, like building a [Language Model](language-model.md) and models for [Machine Translation](Machine%20Translation).
 
 All these model "factor computation along the symbol positions of the input and output sequences". They aliging the positions to steps in computation time, they generate a sequence of hidden states, $h_t$, which are calculated as functions of the previous hidden states $h_{t-1}$ and input position $t$.
 
 Because of this sequential natural, we cannot parallelization within training examples, which precludes working on longer sequences, as we often won't have enough memory to batch across examples. Various improvements have been proposed like factorization tricks and conditional computation, which do improve the performance, but still the problem of sequential computation remains.
 
-[Attention](attention.md) mechanisms are a key part of sequence modelling, allowing modelling of dependencies without regard to their distance in input or output sequences. Except for a few examples, attention was used with a recurrent network.
+[Attention Mechanism](attention-mechanism.md) mechanisms are a key part of sequence modelling, allowing modelling of dependencies without regard to their distance in input or output sequences. Except for a few examples, attention was used with a recurrent network.
 
 This paper proposes the Transformer, a model architecture that doesn't have recurrence and relies purely on attention for global dependencies for input and output.
 

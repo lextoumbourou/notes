@@ -6,6 +6,8 @@ category: reference/moocs
 parent: attention-models-in-nlp
 ---
 
+Notes from [Natural Language Processing Specialization](https://www.coursera.org/specializations/natural-language-processing) offered by deeplearning.ai.
+
 ## Intro
 
 * Natural Language Processing with Attention Models.
@@ -39,11 +41,12 @@ parent: attention-models-in-nlp
     * Takes a sequence of words (or any sequence you can encode as tokens) and return another sequence.
     * Works by mapping variable length sequences to fixed length memory called [Embedding Space](Embedding Space).
     * Inputs and outputs don't need to be the same length.
-    * LSTMs and GRUs can deal with vanishing and exploding gradients.
+    * [lstm](../../../../permanent/lstm.md) and [Gated Recurrent Unit](../../../../../../permanent/gated-recurrent-unit.md) architectures can deal with vanishing and exploding gradients.
     * How it works
         * Encoder takes word tokens as inputs.
         * Returns a hidden state as output.
         * Hidden state is used by decoder to generate decoded sequence.
+
         ![Seq to seq encoder and decoder](_media/s2s-encoder-decoder.png)
     * Encoder
         * Has an embedding layer that converts input tokens to embedding vectors.
@@ -120,7 +123,7 @@ parent: attention-models-in-nlp
 * Conceptually queries, keys and values can be thought of as a lookup table, where the query is mapped to a key which returns a value.
 * In this example, when translating between French and English, "l'heure" matches "time", so we want to get the value for time.
 
-![Queries, Keys and Values](/_media/seq2seq-queries-keys-values.png)
+![Queries, Keys and Values](_media/seq2seq-queries-keys-values.png)
 * Queries, keys and vectors are represented by learned embedding vectors.
 * Similarity between words is called *alignment*.
     * Similarity is used for the weighted sum.
@@ -138,18 +141,19 @@ parent: attention-models-in-nlp
 * Total operations of scaled dot-product attention: 2 matrix multiplications and a Softmax.
 * When the attention mechanism assigns a higher attention score to a word in the sequence, it means the next word in decoder's output will be strongly influenced.
 
-![Scaled-dot product](/_media/seq2seq-scaled-dot-product.png)
+![Scaled-dot product](_media/seq2seq-scaled-dot-product.png)
 
 * Alignment between source and target languages must be learnt elsewhere.
 * Typically, alignment is used in other input embeddings before attention layer.
 * The alignments weights form a matrix with source words (queries) as the rows, and targets (keys) as the columns.
-    ![Alignment weights](/_media/attention-alignment-weights.png)
+
+    ![Alignment weights](_media/attention-alignment-weights.png)
 
 * Similar words will have larger weights.
 * Through training, the model learns which words have similar information and encodes it into vectors.
 * It's particularly useful for languages with different grammatical structures.
 
-![Flexible Attention](/_media/seq2seq-flexible-attention.png)
+![Flexible Attention](_media/seq2seq-flexible-attention.png)
 
 * This flexibility allows the model to focus on different input words, despite the word order.
 * Summary:
@@ -193,7 +197,7 @@ parent: attention-models-in-nlp
     * Pass input sequence through encoder.
     * The decoder passes its hidden state to the Attention Mechanism. Since it's difficult to implement, we use 2 decoders, one pre attention and one after attention.
 
-    ![NMT Model](/_media/nmt-model.png)
+    ![NMT Model](_media/nmt-model.png)
 * First step: create 2 copies of the input tokens and target topics.
     * First copy of input goes into Encoder.
     * First copy of target, goes into Pre-attention Decoder. These are shifted right and we add a start of sentence token.
@@ -283,7 +287,7 @@ A lower temperature setting will give you a more confident yet conservative set 
 
 Here's the setting from the GPT3 playground:
 
-![GPT Temperature](/_media/gpt-temperature.png)
+![GPT Temperature](_media/gpt-temperature.png)
 
 Both of these methods don't always produce the most convincing outputs, compared to those coming up in future lessons.
 
@@ -296,16 +300,16 @@ Both of these methods don't always produce the most convincing outputs, compared
 * Step by step:
     1. At each step, calculate the probability of multiple possible sequences.
     2. Beam width B determines number of sequences you keep.
-    3. Continue until all B most probable sequences end with <EOS>.
-    4. Greedy decoding is just Beam search with B=1.
-
+        1. Continue until all B most probable sequences end with `<EOS>`.
+    3. Greedy decoding is just Beam search with B=1.
 * Problems with Beam Search:
-    1. It penalises long sequences, so you have to normalise by length.
-    2. Computationally expensive and uses lots of memory.
+1. It penalises long sequences, so you have to normalise by length.
+2. Computationally expensive and uses lots of memory.
 
 ## Minimum Bayes Risk
 
 Step-by-step:
+
 1. Generate candidate translations.
 2. Assign a similarity to every pair using a similarity score (like ROUGE)
 3. Select sample with the highest average similarity.

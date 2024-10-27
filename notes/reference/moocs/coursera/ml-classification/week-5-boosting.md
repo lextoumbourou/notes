@@ -77,6 +77,7 @@ and so on.
 
 
 
+
 * Interesting thing about the formula is poor classifiers, ones with values close to 1 are inverted to become good classifiers the other way. Average classifiers, eg random, end up with weights of 0.
 
 ### Reweighing data to focus on mistakes

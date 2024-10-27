@@ -15,11 +15,12 @@ tags:
 
 This report comprehensively analyses the o1-preview across many tasks and domains. In short, o1-preview significantly improves over gpt4 in all areas, albeit at the cost of inference performance. There are some areas where it continues to struggle, particularly advanced reasoning, creativity and understanding nuanced human-language, however, it is clearly a leap forward, and there's a lot of evidence to suggest it will continue to improve.
 
-A recent paper [GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models](gsm-symbolic-understanding-the-limitations-of-mathematical-reasoning-in-large-language-models.md) has found that by modifying the GSM test set, i.e. by adding distracting information, or modifying the numbers used in the equation, they see a considerable drop in performance in all LLM models,  which people have suggest means that LLMS "can't reason". However, notably o1-preview is the most robust to these perturbations in the test set.
+A recent paper [GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models](gsm-symbolic-understanding-the-limitations-of-mathematical-reasoning-in-large-language-models.md) has found that by modifying the GSM test set, i.e. by adding distracting information, or modifying the numbers used in the equation, they see a considerable drop in performance in all LLM models, which people have suggest means that LLMS "can't reason". However, notably o1-preview is the most robust to these perturbations in the test set.
 
 ![](../../_media/evaluation-of-openai-o1-opportunities-and-challenges-of-agi-fig8.png)
 
 *Figure 8. from [GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models](gsm-symbolic-understanding-the-limitations-of-mathematical-reasoning-in-large-language-models.md)*
+
 ## Categories tested
 
 Note that I haven't included all the areas tested in the paper, just a few of interest.

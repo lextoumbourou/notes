@@ -27,12 +27,10 @@ status: draft
     * $\cos(180° + \alpha) = -\cos(\alpha)$
     * $\sin(360° - \alpha) = -\sin(\alpha)$
     * $\cos(360° - \alpha) = \cos(\alpha)$
-
 * Can use this relation to convert angle to the first quadrant before taking $\sin$.
 * General rule:
     * $\cos(2n\pi + x) = \cos(x)$
     * $\sin(2n\pi + x) = \sin(x)$
-
 * $\sin$ is a [Periodic Function](../../../../permanent/periodic-function.md) with a period that's $2\pi$.
      ![](../../../../journal/_media/week-12-trionometric-functions-plots-and-properties-2pi.png)
 

@@ -3,6 +3,7 @@
 .obsidian
 journal
 .env
+.venv
 .vscode
 __pycache__
 output
