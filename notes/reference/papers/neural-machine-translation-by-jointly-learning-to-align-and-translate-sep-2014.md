@@ -22,13 +22,13 @@ At the time, neural networks had emerged as a promising approach to machine tran
 
 *Note: for simplicity, I do not show the context vector being passed at each decoder step in the diagram - technically it's optional).*
 
-However, this approach struggled with longer sentences, as the encoder has to compress information into a fixed-length context vector.
+However, this approach struggled with longer sentences, as the encoder had to compress information into a fixed-length context vector.
 
-The authors proposed freeing the encoder from representing information in a fixed-length vector by outputting a sequence, and add a "soft-"search mechanism to the decoder, which allows it to *focus* on the most relevant information in the input for predicting each word in the output sequence.
+The authors proposed freeing the encoder from representing information in a fixed-length vector by outputting a sequence and adding a "soft-"search mechanism to the decoder, which allows it to *focus* on the most relevant information in the input for predicting each word in the output sequence.
  
 ![RNN Encoder-Decoder with Attention](../../_media/rnn-encoder-decoder-with-attention.png)
 
-They related the modification to the human notion of "attention", calling it an [Attention Mechanism](../../permanent/attention-mechanism.md). Though not the first Machine Learning paper to propose applying human-like attention to model architectures [^2], this approach was very influential in NLP, leading to many further alternatives to the attention mechanism, eventually converging on an entirely attention-based architecture called the [Transformer](../../permanent/transformer.md).
+They likened the modification to the human notion of "attention", calling it an [Attention Mechanism](../../permanent/attention-mechanism.md). Though not the first Machine Learning paper to propose applying human-like attention to model architectures [^2], this approach was very influential in NLP, leading to further research into the attention mechanism, eventually converging on an entirely attention-based architecture called the [Transformer](../../permanent/transformer.md).
 
 ## Architecture Details
 
@@ -162,7 +162,7 @@ For each metric, they created one set with sentences that included unknown `[UNK
   </tbody>
 </table>
 
-They outperformoutperform state-of-the-art only when unknown tokens are excluded.
+They outperform state-of-the-art only when unknown tokens are excluded.
 
 *Note: RNNsearch-50\* was trained much longer until the performance on the development set stopped improving.
 
