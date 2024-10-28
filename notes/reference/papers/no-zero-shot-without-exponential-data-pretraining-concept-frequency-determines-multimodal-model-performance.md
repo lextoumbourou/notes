@@ -6,11 +6,12 @@ summary: a paper that shows a model needs to see a concept exponentially more ti
 cover: /_media/no-zero-shot-without-exponential-data-pretraining-concept-frequency-determines-multimodal-model-performance-cover.png
 category: reference/papers
 hide_cover_in_article: true
+tags:
+- DatasetConcepts
 ---
+#Data
 
 Notes from paper [No "Zero-Shot" Without Exponential Data: Pretraining Concept Frequency Determines Multimodal Model Performance](https://arxiv.org/abs/2404.04125) by Vishaal Udandarao, Ameya Prabhu, Adhiraj Ghosh, Yash Sharma, Philip H.S. Torr, Adel Bibi, Samuel Albanie and Matthias Bethge.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pth7rOpcyIc?si=1BLzfXW5LgS-njLB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
 
 ## Overview
 
