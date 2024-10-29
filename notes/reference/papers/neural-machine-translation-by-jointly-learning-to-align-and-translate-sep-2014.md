@@ -16,28 +16,26 @@ tags:
 
 This paper proposed an improvement to the [RNN Encoder-Decoder](../../permanent/rnn-encoder-decoder.md) [^1] network architecture, introducing an "attention mechanism" to the decoder, which significantly improved performance over longer sentences. The concept of attention went on to become extremely influential in Machine Learning.
 
-At the time, neural networks had emerged as a promising approach to machine translation, where researchers were aiming for an end-to-end translation model, in contrast to the state-of-the-art statistical phrase-based translation methods, which involved many individually trained components. The RNN Encoder-Decoder approach would encode an input sentence into a fixed-length context vector. A decoder would then output a translation from the context vector. The system is *jointly* trained to maximise the probability of a correct translation given a source sentence. 
+At the time, neural networks had emerged as a promising approach to machine translation, where researchers were aiming for an end-to-end translation model, in contrast to the state-of-the-art statistical phrase-based translation methods, which involved many individually trained components. The RNN Encoder-Decoder approach would encode an input sentence into a fixed-length context vector; a decoder would then output a translation using the context vector. The encoder and decoder are jointly trained on a dataset of text pairs, where the goal is to maximise the probability of the target given the input.
 
 ![RNN Encoder-Decoder](../../_media/rnn-encoder-decoder.png)
 
-*Note: for simplicity, I do not show the context vector being passed at each decoder step in the diagram - technically it's optional).*
+However, this approach struggles with longer sentences, as the encoder has to drop information to compress it into a fixed-length context vector.
 
-However, this approach struggled with longer sentences, as the encoder had to compress information into a fixed-length context vector.
+The authors proposed modifying the encoder to output a sequence with one hidden representation per input word, then adding a "soft-"search mechanism to the decoder, allowing it to find the most relevant information in the input sequence to predict each word in the output sequence.
 
-The authors proposed freeing the encoder from representing information in a fixed-length vector by outputting a sequence and adding a "soft-"search mechanism to the decoder, which allows it to *focus* on the most relevant information in the input for predicting each word in the output sequence.
- 
-![RNN Encoder-Decoder with Attention](../../_media/rnn-encoder-decoder-with-attention.png)
+![](../../_media/rnn-encoder-decoder-with-attention.png)
 
 They likened the modification to the human notion of "attention", calling it an [Attention Mechanism](../../permanent/attention-mechanism.md). Though not the first Machine Learning paper to propose applying human-like attention to model architectures [^2], this approach was very influential in NLP, leading to further research into the attention mechanism, eventually converging on an entirely attention-based architecture called the [Transformer](../../permanent/transformer.md).
 
 ## Architecture Details
 
-The authors propose an [RNNSearch](../../permanent/rnnsearch.md) model: an Encoder / Decoder model with an attention mechanism. For comparison, they train a model called **RNNencdec**, which follows the standard RNN Encoder / Decoder architecture [^2] with the encoder returning a fixed-length context vector. 
+The authors propose an [RNNSearch](../../permanent/rnnsearch.md) model: an Encoder / Decoder model with an attention mechanism. For comparison, they train **RNNencdec**, which follows the standard RNN Encoder / Decoder architecture [^2] with the encoder returning a fixed-length context vector.
 
-To demonstrate the ability to handle longer sequences, they train each model twice: first with sentences of length up to 30 words and then with sentences of size up to 50.
+To demonstrate the ability to handle longer sequences, they train each model twice:
 
- * (RNNencdec-30, RNNsearch-30)
- * (RNNencdec-50, RNNsearch-50)
+* First, with sentences of length up to 30 words: `RNNencdec-30`, `RNNsearch-30`
+* Next, with sentences of size up to 50 words: `RNNencdec-50`, `RNNsearch-50`
 
 ### Encoder
 
@@ -45,25 +43,41 @@ For the RNN, they use a Bidirectional RNN: a [Gated Recurrent Unit](../../perman
 
 ![Figure 1 from paper](../../_media/neural-machine-translation-by-jointly-learning-to-align-and-translate-sep-2014-fig-1.png)
 
-*Figure 1: The graphical illustration of the proposed model trying to generate the t-th target word $y_t$ given a source sentence ($x_1, x_2, \ldots, x_T$)*
+*Figure 1: The graphical illustration of the proposed model trying to generate the t-th target word $y_t$ given a source sentence* ( $x_1, x_2, \ldots, x_T$ )
 
 ### Decoder
 
 For the decoder, they use a uni-directional [Gated Recurrent Unit](../../permanent/gated-recurrent-unit.md).
 
+The initial hidden state $s_0$ is computed as an initialisation layer, which comprises a linear layer followed by a `tanh` activation function.
+
+$s_0 = \tanh \left( W_s \overleftarrow{h}_1 \right)$ where $W_s \in \mathbb{R}^{n \times n}$.
+
+```python
+init_state = nn.Linear(hidden_size, hidden_size)
+dec_hidden = torch.tanh(init_state(encoder_hidden)).unsqueeze(0)
+dec_hidden.shape
+```
+
 For each prediction step, they calculate the word probability as:
 
-$p(y_i|y_1, \ldots, y{i−1}, x) = g(yi−1, s_i, c_i)$
+$p(y_i|y_1, \ldots, y_{i−1}, x) = g(y_{i−1}, s_i, c_i)$
+
+Where
+
+* $y_{i-1}$ is the token from the previous step.
+* $s_i$ is the hidden state output from the previous layer.
+* $c_i$ is the context vector.
 
 The context vector, $c_i$ is calculated as follows:
 
 $c_i = \sum\limits_{j=1}^{T_x}\alpha_{ij}h_j$
 
-The weights, $\alpha_{ij}$, are calculated in the alignment (Attention) model.
+The weights, $\alpha_{ij}$, are calculated by the alignment (Attention) model.
 
-#### Alignment Model
+#### Alignment Model (Attention)
 
-The alignment scores are calculated by combining a projection of the decoder's previous state and a projection of the encoder output, then applying a hyperbolic tanh activation followed by a linear combination with another weight vector.
+The **alignment scores** are calculated by combining a projection of the decoder's previous state and a projection of the encoder output, then applying tanh activation followed by a linear combination with another weight vector.
 
 $$
 e_{ij} = v_a^{T} \tanh(W_as_{i-1} + U_{a}h_{j})
@@ -79,8 +93,7 @@ $$
 
 The final layer, which returns the probabilities for each word, uses a [Maxout](../../permanent/maxout.md) layer to generate the final probabilities. A Maxout layer projects a linear layer into two buckets, takes the max, and is a form of regularisation.
 
-## Training
-
+## Training Params
 
 * **Algorithm**: [Stochasic Gradient Descent](../../permanent/stochasic-gradient-descent.md) (SGD)
 * **Optimiser**: Adadelta (Zeiler, 2012)
@@ -106,9 +119,9 @@ The final layer, which returns the probabilities for each word, uses a [Maxout](
 
 ### Quantitative Results
 
+The RNNsearch-50 model achieved a BLEU score of 34.16 on sentences with unknown tokens excluded, significantly outperforming the RNNencdec-50 model, which scored 26.71 and training RNNsearch-50 to convergence beat the state-of-the-art Moses (again, only when unknown tokens were excluded).
 
-* The RNNsearch-50 model achieved a BLEU score of 34.16 on sentences without unknown tokens, significantly outperforming the RNNencdec-50 model, which scored 26.71, highlighting the superiority of RNNsearch.
-* RNNsearch was much better at longer sentences. 
+RNNsearch was much better at longer sentences.
 
 ![Figure 2](../../_media/neural-machine-translation-by-jointly-learning-to-align-and-translate-sep-2014-fig-2.png)
 
