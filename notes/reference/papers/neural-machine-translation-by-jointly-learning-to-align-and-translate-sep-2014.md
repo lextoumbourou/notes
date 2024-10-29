@@ -22,11 +22,11 @@ At the time, neural networks had emerged as a promising approach to machine tran
 
 However, this approach struggles with longer sentences, as the encoder has to drop information to compress it into a fixed-length context vector.
 
-The authors proposed modifying the encoder to output a sequence with one hidden representation per input word, then adding a "soft-"search mechanism to the decoder, allowing it to find the most relevant information in the input sequence to predict each word in the output sequence.
+The authors proposed modifying the encoder to output a sequence with one hidden representation per input word, then adding a search mechanism to the decoder, allowing it to find the most relevant information in the input sequence to predict each word in the output sequence.
 
 ![](../../_media/rnn-encoder-decoder-with-attention.png)
 
-They likened the modification to the human notion of "attention", calling it an [Attention Mechanism](../../permanent/attention-mechanism.md). Though not the first Machine Learning paper to propose applying human-like attention to model architectures [^2], this approach was very influential in NLP, leading to further research into the attention mechanism, eventually converging on an entirely attention-based architecture called the [Transformer](../../permanent/transformer.md).
+They likened the modification to the human notion of "attention", calling it an [Attention Mechanism](../../permanent/attention-mechanism.md). Though not the first Machine Learning paper to propose applying human-like attention to model architectures [^2], this approach was very influential in NLP, leading to a lot of research eventually converging on an entirely attention-based architecture called the [Transformer](../../permanent/transformer.md).
 
 ## Architecture Details
 
@@ -39,11 +39,35 @@ To demonstrate the ability to handle longer sequences, they train each model twi
 
 ### Encoder
 
-For the RNN, they use a Bidirectional RNN: a [Gated Recurrent Unit](../../permanent/gated-recurrent-unit.md) (GRU), where the forward and backward pass tokens are concatenated to make a single representation for each token $h_j$ containing information about the preceding and following words.
+For the RNN, they use a Bidirectional RNN: a [Gated Recurrent Unit](../../permanent/gated-recurrent-unit.md) (GRU).
+
+Each input token is fed into an embedding layer, $x_i$, then a GRU encodes into an forwards and backwards "annotation" per token, which are concatenated to make a single representation, $h_i$.
+
+The idea is to allow each annotation to summarise not only the preceding words but also the following words, providing the richest possible representation for the attention mechanism.
 
 ![Figure 1 from paper](../../_media/neural-machine-translation-by-jointly-learning-to-align-and-translate-sep-2014-fig-1.png)
 
 *Figure 1: The graphical illustration of the proposed model trying to generate the t-th target word $y_t$ given a source sentence* ( $x_1, x_2, \ldots, x_T$ )
+
+```python
+import torch
+import torch.nn as nn
+
+class Encoder(nn.Module):
+    def __init__(self, vocab_size, embedding_dim, hidden_size):
+        super(Encoder, self).__init__()
+        self.embedding = nn.Embedding(vocab_size, embedding_dim)
+        self.gru = nn.GRU(embedding_dim, hidden_size, bidirectional=True)
+
+    def forward(self, input_sequence):
+        embedded = self.embedding(input_sequence)
+        outputs, hidden = self.gru(embedded)
+
+        # Concatenate forward and backward hidden states
+        hidden = torch.cat((hidden[-2,:,:], hidden[-1,:,:]), dim=1)  # (batch_size, 2*hidden_size)
+
+        return outputs, hidden
+```
 
 ### Decoder
 
@@ -54,6 +78,9 @@ The initial hidden state $s_0$ is computed as an initialisation layer, which com
 $s_0 = \tanh \left( W_s \overleftarrow{h}_1 \right)$ where $W_s \in \mathbb{R}^{n \times n}$.
 
 ```python
+import torch
+import torch.nn as nn
+
 init_state = nn.Linear(hidden_size, hidden_size)
 dec_hidden = torch.tanh(init_state(encoder_hidden)).unsqueeze(0)
 dec_hidden.shape
@@ -65,7 +92,7 @@ $p(y_i|y_1, \ldots, y_{i−1}, x) = g(y_{i−1}, s_i, c_i)$
 
 Where
 
-* $y_{i-1}$ is the token from the previous step.
+* $y_{i-1}$ is the embedding of the token from the previous step.
 * $s_i$ is the hidden state output from the previous layer.
 * $c_i$ is the context vector.
 
@@ -89,9 +116,51 @@ $$
 \sigma_{ij} = \frac{\exp(e_{ij})}{\sum_{k=1}^{T_x}\exp(e_{ij})}
 $$
 
+```python
+import torch
+import torch.nn as nn
+
+class Attention(nn.Module):
+    def __init__(self, encoder_hidden_size, decoder_hidden_size, alignment_hidden_size):
+        super(AlignmentModel, self).__init__()
+
+        self.Wa = nn.Linear(decoder_hidden_size, alignment_hidden_size)
+        self.Ua = nn.Linear(encoder_hidden_size, alignment_hidden_size)
+        self.va = nn.Linear(alignment_hidden_size, 1)
+
+    def forward(self, decoder_hidden_state, encoder_outputs):
+        projected_decoder_state = self.Wa(decoder_hidden_state)
+        projected_encoder_outputs = self.Ua(encoder_outputs)
+
+        alignment_scores = torch.tanh(projected_decoder_state + projected_encoder_outputs)
+        alignment_scores = self.va(alignment_scores).squeeze(2)  # (batch_size, sequence_length)
+
+        # Apply softmax to get alignment weights
+        alignment_weights = F.softmax(alignment_scores, dim=1)
+
+        return alignment_scores
+```
 ### Maxout
 
-The final layer, which returns the probabilities for each word, uses a [Maxout](../../permanent/maxout.md) layer to generate the final probabilities. A Maxout layer projects a linear layer into two buckets, takes the max, and is a form of regularisation.
+The final layer, which returns the probabilities for each word, uses a [Maxout](../../permanent/maxout.md) layer to generate the final probabilities. A Maxout layer acts as a form of regularisation. It projects the input vector onto multiple "buckets" and selects the maximum value from each bucket. This process introduces non-linearity and helps prevent overfitting, akin to dropout.
+
+```python
+import torch
+import torch.nn as nn
+
+class Maxout(nn.Module):
+    def __init__(self, input_size, output_size, num_pieces):
+        super(Maxout, self).__init__()
+        self.linear = nn.Linear(input_size, output_size * num_pieces)
+        self.num_pieces = num_pieces
+
+    def forward(self, x):
+        output = self.linear(x)
+        output = output.view(-1, self.num_pieces, output.size(1) // self.num_pieces)
+        output, _ = torch.max(output, dim=1)
+
+        return output
+```
 
 ## Training Params
 
