@@ -41,33 +41,13 @@ To demonstrate the ability to handle longer sequences, they train each model twi
 
 For the RNN, they use a Bidirectional RNN: a [Gated Recurrent Unit](../../permanent/gated-recurrent-unit.md) (GRU).
 
-Each input token is fed into an embedding layer, $x_i$, then a GRU encodes into an forwards and backwards "annotation" per token, which are concatenated to make a single representation, $h_i$.
+Each input token is fed into an embedding layer, $x_i$, and then a GRU encodes into a forward and backward "annotation" per token, concatenated to make a single representation, $h_i$.
 
-The idea is to allow each annotation to summarise not only the preceding words but also the following words, providing the richest possible representation for the attention mechanism.
+The idea is to allow each annotation to summarise the preceding and the following words, providing the most possible representation for the attention mechanism.
 
 ![Figure 1 from paper](../../_media/neural-machine-translation-by-jointly-learning-to-align-and-translate-sep-2014-fig-1.png)
 
 *Figure 1: The graphical illustration of the proposed model trying to generate the t-th target word $y_t$ given a source sentence* ( $x_1, x_2, \ldots, x_T$ )
-
-```python
-import torch
-import torch.nn as nn
-
-class Encoder(nn.Module):
-    def __init__(self, vocab_size, embedding_dim, hidden_size):
-        super(Encoder, self).__init__()
-        self.embedding = nn.Embedding(vocab_size, embedding_dim)
-        self.gru = nn.GRU(embedding_dim, hidden_size, bidirectional=True)
-
-    def forward(self, input_sequence):
-        embedded = self.embedding(input_sequence)
-        outputs, hidden = self.gru(embedded)
-
-        # Concatenate forward and backward hidden states
-        hidden = torch.cat((hidden[-2,:,:], hidden[-1,:,:]), dim=1)  # (batch_size, 2*hidden_size)
-
-        return outputs, hidden
-```
 
 ### Decoder
 
@@ -76,15 +56,6 @@ For the decoder, they use a uni-directional [Gated Recurrent Unit](../../permane
 The initial hidden state $s_0$ is computed as an initialisation layer, which comprises a linear layer followed by a `tanh` activation function.
 
 $s_0 = \tanh \left( W_s \overleftarrow{h}_1 \right)$ where $W_s \in \mathbb{R}^{n \times n}$.
-
-```python
-import torch
-import torch.nn as nn
-
-init_state = nn.Linear(hidden_size, hidden_size)
-dec_hidden = torch.tanh(init_state(encoder_hidden)).unsqueeze(0)
-dec_hidden.shape
-```
 
 For each prediction step, they calculate the word probability as:
 
@@ -96,7 +67,7 @@ Where
 * $s_i$ is the hidden state output from the previous layer.
 * $c_i$ is the context vector.
 
-The context vector, $c_i$ is calculated as follows:
+The context vector, $c_i$ is calculated at each step as follows:
 
 $c_i = \sum\limits_{j=1}^{T_x}\alpha_{ij}h_j$
 
@@ -104,7 +75,7 @@ The weights, $\alpha_{ij}$, are calculated by the alignment (Attention) model.
 
 #### Alignment Model (Attention)
 
-The **alignment scores** are calculated by combining a projection of the decoder's previous state and a projection of the encoder output, then applying tanh activation followed by a linear combination with another weight vector.
+The **alignment scores** are calculated by combining a projection of the decoder's previous state and a projection of the encoder output, then applying `tanh` activation followed by a linear combination with another weight vector.
 
 $$
 e_{ij} = v_a^{T} \tanh(W_as_{i-1} + U_{a}h_{j})
@@ -116,51 +87,9 @@ $$
 \sigma_{ij} = \frac{\exp(e_{ij})}{\sum_{k=1}^{T_x}\exp(e_{ij})}
 $$
 
-```python
-import torch
-import torch.nn as nn
-
-class Attention(nn.Module):
-    def __init__(self, encoder_hidden_size, decoder_hidden_size, alignment_hidden_size):
-        super(AlignmentModel, self).__init__()
-
-        self.Wa = nn.Linear(decoder_hidden_size, alignment_hidden_size)
-        self.Ua = nn.Linear(encoder_hidden_size, alignment_hidden_size)
-        self.va = nn.Linear(alignment_hidden_size, 1)
-
-    def forward(self, decoder_hidden_state, encoder_outputs):
-        projected_decoder_state = self.Wa(decoder_hidden_state)
-        projected_encoder_outputs = self.Ua(encoder_outputs)
-
-        alignment_scores = torch.tanh(projected_decoder_state + projected_encoder_outputs)
-        alignment_scores = self.va(alignment_scores).squeeze(2)  # (batch_size, sequence_length)
-
-        # Apply softmax to get alignment weights
-        alignment_weights = F.softmax(alignment_scores, dim=1)
-
-        return alignment_scores
-```
 ### Maxout
 
 The final layer, which returns the probabilities for each word, uses a [Maxout](../../permanent/maxout.md) layer to generate the final probabilities. A Maxout layer acts as a form of regularisation. It projects the input vector onto multiple "buckets" and selects the maximum value from each bucket. This process introduces non-linearity and helps prevent overfitting, akin to dropout.
-
-```python
-import torch
-import torch.nn as nn
-
-class Maxout(nn.Module):
-    def __init__(self, input_size, output_size, num_pieces):
-        super(Maxout, self).__init__()
-        self.linear = nn.Linear(input_size, output_size * num_pieces)
-        self.num_pieces = num_pieces
-
-    def forward(self, x):
-        output = self.linear(x)
-        output = output.view(-1, self.num_pieces, output.size(1) // self.num_pieces)
-        output, _ = torch.max(output, dim=1)
-
-        return output
-```
 
 ## Training Params
 
@@ -177,30 +106,24 @@ class Maxout(nn.Module):
         * News Commentary (5.5M)
         * UN (421M)
         * two crawled corpora of 90M and 272.5M words, respectively
-* **Metric**: [[BLEU Score]].
-* **Tokeniser**: from open-source machine translation package Moses.
+* **Metric**: [BLEU Score](../../permanent/bleu-score.md).
+* **Tokeniser**: from open-source machine translation package Moses. They shortlist the most frequent 30k words and map everything else to `[UNK]`.
 * **Comparisons**: They compare RNNsearch with a standard RNN Encoder-Decoder, RNNenc and Moses, the state-of-the-art translation package.
 * **Test Set**: For the test set, they evaluate `news-test-2014` from WMT'14, which contains 3003 sentences not in training
 * **Valid Set**: They concat `news-test-2012` and `news-test-2013`.
-* **Initialisation**: Orthogonal for recurrent weights, Gaussian (0, 0.01²) for feed-forward weights, zeros for biases.
+* **Initialisation**: Orthogonal for recurrent weights, Gaussian ($0, 0.01^2$) for feed-forward weights, zeros for biases.
 
 ## Results
 
-### Quantitative Results
+They record results on all test data with only examples that don't contain unknown tokens.
 
-The RNNsearch-50 model achieved a BLEU score of 34.16 on sentences with unknown tokens excluded, significantly outperforming the RNNencdec-50 model, which scored 26.71 and training RNNsearch-50 to convergence beat the state-of-the-art Moses (again, only when unknown tokens were excluded).
+The RNNsearch-50 model achieved a BLEU score of 34.16 on sentences with unknown tokens excluded, significantly outperforming the RNNencdec-50 model, which scored 26.71 and training RNNsearch-50 to convergence beat the state-of-the-art Moses. However, when unknown tokens are included, the model performs considerably worse.
 
-RNNsearch was much better at longer sentences.
+RNNsearch was much better at longer sentences than RNNenc.
 
 ![Figure 2](../../_media/neural-machine-translation-by-jointly-learning-to-align-and-translate-sep-2014-fig-2.png)
 
-*Figure 2: The BLEU scores of the generated translations on the test set with respect to the lengths of the sentences.**
-
-### Limitations
-
-The paper shows that neural networks struggle with unknown tokens, with a significant drop in BLEU scores observed when sentences contain such tokens.
-
-For each metric, they created one set with sentences that included unknown `[UNK]` tokens and another where they excluded them.
+*Figure 2: The BLEU scores of the generated translations on the test set with respect to the lengths of the sentences.*
 
 <table class="table-border">
   <thead>
@@ -243,8 +166,6 @@ For each metric, they created one set with sentences that included unknown `[UNK
     </tr>
   </tbody>
 </table>
-
-They outperform state-of-the-art only when unknown tokens are excluded.
 
 *Note: RNNsearch-50\* was trained much longer until the performance on the development set stopped improving.
 
