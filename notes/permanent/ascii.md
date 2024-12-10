@@ -7,7 +7,7 @@ tags:
 - CharacterEncoding
 ---
 
-ASCII (American Standard Code for Information Interchange) is a character encoding standard developed in the 1960s that forms the foundation of most modern text encoding systems. 
+ASCII (American Standard Code for Information Interchange) is a character encoding standard developed in the 1960s that forms the foundation of most modern text encoding systems.
 
 ASCII uses 7 bits to represent each character, allowing for 128 unique values (0-127).
 
