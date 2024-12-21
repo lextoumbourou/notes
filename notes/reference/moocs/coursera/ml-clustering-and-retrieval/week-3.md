@@ -108,7 +108,7 @@ being chosen proportional to $$d(\mathbf{x})^2 $$
 
 * MapReduce: distribute data and each word does a subset of them, then they're combined together.
 * All counts for subset of words should go to the same machine.
-* Map words to machines with a hash function:
+* Map words to machines with a [Hash Function](../../../../permanent/hash-function.md):
 
   ```
   h(word index) -> machine index

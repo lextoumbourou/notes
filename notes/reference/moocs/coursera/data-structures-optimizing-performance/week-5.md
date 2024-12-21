@@ -8,14 +8,15 @@ parent: data-structures-optimizing-performance
 
 ## Core: Hash Tables
 
-* Hash table key idea: pigging back off the ``O(1)`` speed of arrays by convert data to an array index with a hash function.
-* Simplest hash function: modulo.
-  * Hash with 5 elements, add 11:
-    * ``hash = 11 % 5``
-  * Add char ``b``:
-    * ``hash = int("b") % 5``
-  * Add string ``hi``:
-    * ``hash = (int("h") + int("i")) % 5``
+* [Hash Table](../../../../permanent/hash-table.md)
+    * Hash table key idea: pigging back off the ``O(1)`` speed of arrays by convert data to an array index with a [Hash Function](../../../../permanent/hash-function.md).
+    * Simplest hash function: modulo.
+      * Hash with 5 elements, add 11:
+        * ``hash = 11 % 5``
+      * Add char ``b``:
+        * ``hash = int("b") % 5``
+      * Add string ``hi``:
+        * ``hash = (int("h") + int("i")) % 5``
 
 ## Core: Collisions in Hash Tables
 
