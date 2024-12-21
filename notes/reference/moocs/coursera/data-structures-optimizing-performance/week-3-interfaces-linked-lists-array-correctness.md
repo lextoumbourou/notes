@@ -13,22 +13,24 @@ parent: data-structures-optimizing-performance
 
 ## Abstraction, Interfaces and Linked Lists
 
-* Data abstraction: fundamental concept of programming. Hide implementation details for the user.
-* Abstract Data Type (ADT)
-  * No implementation.
-  * Just defines the methods and properties of a class; a promise.
-* Data Structure
-  * Actual implementation.
-  * Eg ``ArrayList``
+* Data abstraction
+    * fundamental concept of programming
+    * Hide implementation details for the user.
+* [[Abstract Data Type]] (ADT)
+    * No implementation.
+    * Just defines the methods and properties of a class; a promise.
+* [[Data Structure]]
+    * Actual implementation.
+    * Eg ``ArrayList``
 * In the real world: data abstraction
 
 ## Core: Linked Lists vs Arrays
 
 * ADT: specifies behaviour, not implementation.
-  * ArrayList implements the List interface using an array.
+* ArrayList implements the List interface using an array.
     * Provides access to elements in constant time.
     * O(n) to add elements.
-  * LinkedList
+* LinkedList
     * Doubly [Linked List](../../../../permanent/linked-list.md) usually stores a pointer to the head and tail.
     * Each node has a next and prev references.
     * Each node in the list is a ``ListNode`` element.
@@ -52,47 +54,51 @@ parent: data-structures-optimizing-performance
   * Raise an exception: ``throw new NullPointerException("Cannot store null pointers, yo")``
   * If exception is a "checked exception" then we will to declare in method header that it throws the exception.
 * Core: Java Code for a Linked List
-  * List node defined as follows:
+    * List node defined as follows:
 
-        class ListNode<E> {
-            ListNode<E> next; // considered a "recursive class" - uses its own definition in it.
-            ListNode<E> prev;
-            E data;
+```java
+class ListNode<E> {
+    ListNode<E> next; // considered a "recursive class" - uses its own definition in it.
+    ListNode<E> prev;
+    E data;
 
-              public ListNode(E theData)
-              {
-                this.data = theData;
-              }
-        }
+      public ListNode(E theData)
+      {
+        this.data = theData;
+      }
+}
+```
 
-  * Linked list class as follows:
+* Linked list class as follows:
 
-        public class MyLinkedList<E>
-        {
-            private ListNode<E> head;
-            private ListNode<E> tail;
-            private int size;
+```java
+public class MyLinkedList<E>
+{
+    private ListNode<E> head;
+    private ListNode<E> tail;
+    private int size;
 
-            public MyLinkedList() {
-                size = 0;
-                head = new ListNode<E>(null);
-                tail = new ListNode<E>(null);
-                head.next = tail;
-                tail.prev = head;
-            }
-        }
+    public MyLinkedList() {
+        size = 0;
+        head = new ListNode<E>(null);
+        tail = new ListNode<E>(null);
+        head.next = tail;
+        tail.prev = head;
+    }
+}
+```
 
 ## Testing and Correctness
 
 * Core: Testing and Confidence
-  * Risk assessment of problem domain should be considered when decided on degrees of confidence for code (self-driving car vs blog).
+    * Risk assessment of problem domain should be considered when decided on degrees of confidence for code (self-driving car vs blog).
 * Core: Testing Practises
-  * Standard Cycle: write code, write tests and test code.
-  * Test-Driven Development: write tests, write code and test code.
+    * Standard Cycle: write code, write tests and test code.
+* Test-Driven Development: write tests, write code and test code.
 * Testing types: black box testing and clear box testing.
-  * Black box
-    * more representative of how users use the code.
-    * easier to write by someone unfamiliar with the implementation.
+    * Black box
+        * more representative of how users use the code.
+        * easier to write by someone unfamiliar with the implementation.
 
 ## Core: Markov Text Generation
 
