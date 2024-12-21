@@ -5,4 +5,4 @@ modified: 2024-12-22 00:00
 status: draft
 ---
 
-See [[Rehashing](rehashing.md)](hash-table.md).
+See [Hash Table](hash-table.md).
