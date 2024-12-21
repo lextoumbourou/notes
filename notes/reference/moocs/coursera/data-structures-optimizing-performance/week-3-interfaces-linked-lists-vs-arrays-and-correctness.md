@@ -16,10 +16,10 @@ parent: data-structures-optimizing-performance
 * Data abstraction
     * fundamental concept of programming
     * Hide implementation details for the user.
-* [[Abstract Data Type]] (ADT)
+* [Abstract Data Type](../../../../../../permanent/abstract-data-type.md) (ADT)
     * No implementation.
     * Just defines the methods and properties of a class; a promise.
-* [[Data Structure]]
+* [Data Structure](../../../../../../permanent/data-structure.md)
     * Actual implementation.
     * Eg ``ArrayList``
 * In the real world: data abstraction

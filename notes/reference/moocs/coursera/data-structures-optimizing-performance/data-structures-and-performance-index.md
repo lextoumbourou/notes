@@ -12,6 +12,6 @@ summary: Course notes from Data Structures and Performance on Coursera
 
 * [Week 1 - Introduction to the Course](week-1-introduction-to-the-course.md)
 * [Week 2 - Working with Strings](week-2-working-with-strings.md)
-* [Week 3: Interfaces, Linked Lists vs. Arrays, and Correctness](week-3-interfaces-linked-lists-array-correctness.md)
+* [Week 3: Interfaces, Linked Lists vs. Arrays, and Correctness](week-3-interfaces-linked-lists-vs-arrays-and-correctness.md)
 * [Week 4: Trees! (including Binary Search Trees and Tries)](week-4-trees-including-binary-search-trees-and-tries.md)
 * [Week 5: Hash Maps and Edit Distance](week-5-hash-maps-and-edit-distance.md)

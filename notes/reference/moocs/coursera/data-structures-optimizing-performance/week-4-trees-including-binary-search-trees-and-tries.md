@@ -10,9 +10,9 @@ parent: data-structures-optimizing-performance
 
 * Trees can naturally represent data in the real world eg family tree, decision tree etc.
 * Organisation of tree can define type of tree:
-  * Root most important -> heap
-  * Organised by char frequency -> Huffman Tree
-  * Organised by node ordering -> search trees
+    * Root most important -> heap
+    * Organised by char frequency -> Huffman Tree
+    * Organised by node ordering -> search trees
 
 ## Core: Defining Trees
 
@@ -114,16 +114,16 @@ public void levelOrder() {
 ## Core: Introduction to Binary Search Trees
 
 * Binary search
-  * Requires sorted array of items.
-  * Start at middle, if middle is more than what you want, go for right-half, otherwise left.
-  * Slow to insert into array.
+    * Requires sorted array of items.
+    * Start at middle, if middle is more than what you want, go for right-half, otherwise left.
+    * Slow to insert into array.
 * Binary search tree
-  * Get ``O(log n)`` search
-  * Get ``(O(1))`` insertion.
-  * Max 2 children per node (same as binary tree).
-  * Left subtrees must be less than parent.
-  * Right subtree must be greater than parent.
-* Searching in a BST: start at root. Are you at the node? If not, throw away one half of the tree and start again.
+    * Get ``O(log n)`` search
+    * Get ``(O(1))`` insertion.
+    * Max 2 children per node (same as binary tree).
+    * Left subtrees must be less than parent.
+    * Right subtree must be greater than parent.
+    * Searching in a BST: start at root. Are you at the node? If not, throw away one half of the tree and start again.
 
 # Run Time Analysis of BSTs
 
@@ -131,39 +131,39 @@ public void levelOrder() {
 
 * BSTs structure depend on insertion order.
 * Algorithm for ``isDictionaryWord(String wordToFind)``
-  * Start at root.
-  * Compare word to current node.
-    * If null, return false.
-    * If less than current node, search left subtree.
-    * If greater, search right subtree.
-    * If equal, return true.
+    * Start at root.
+    * Compare word to current node.
+        * If null, return false.
+        * If less than current node, search left subtree.
+        * If greater, search right subtree.
+        * If equal, return true.
 * Best case: ``O(1)`` - word is at root node.
 * Worst case: ``O(n)`` - all nodes are less than root node, so you have to iterate through every node.
-  * Note: the data structure can be setup such that this situation doesn't happen.
+    * Note: the data structure can be setup such that this situation doesn't happen.
 
 ## Core: Performance of BSTs and Balancing, Part 2
 
 * Consider maximum distance until leaf: unbalanced trees may have really long paths on one side.
-  * Enter: Balanced BSTs.
+    * Enter: Balanced BSTs.
 * Balanced BSTs: height on one side should be no more than 1 more than the other side.
-  * ``abs(left height - right height) <= 1``
-  * ``height = log(n)``
+    * ``abs(left height - right height) <= 1``
+    * ``height = log(n)``
 * When using a BST, worst case search is ``O(log n)``.
 
 # Tries
 
 ## Core: Introduction to Tries
 
-[Tries](../../../../permanent/tries.md)
-* Takes advantage of the structure of the keys it stores.
-* Comes from word "reTRIEval".
-* Tries can have more than 2 children at each node (depends on size of the key alphabet).
-* Find word by walking through the tree, a character at a time:
-  * Finding ``hey``:
-    1. Start at root. Look for path for ``h``. Follow node.
-    2. Find path for ``e`` at next node.
-    3. Find path for ``y`` at next node.
-    4. Next node either has ``hey`` or it's missing from trie.
+* [Tries](../../../../permanent/tries.md)
+    * Takes advantage of the structure of the keys it stores.
+    * Comes from word "reTRIEval".
+    * Tries can have more than 2 children at each node (depends on size of the key alphabet).
+    * Find word by walking through the tree, a character at a time:
+      * Finding ``hey``:
+        1. Start at root. Look for path for ``h``. Follow node.
+        2. Find path for ``e`` at next node.
+        3. Find path for ``y`` at next node.
+        4. Next node either has ``hey`` or it's missing from trie.
 
 ## Core: Performance of Tries
 
