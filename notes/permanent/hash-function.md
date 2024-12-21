@@ -7,4 +7,4 @@ tags:
 - Hashing
 ---
 
-A **hash function** takes an input sequence of characters and returns a hash value, it's used in [[Rehashing](rehashing.md)](hash-table.md) to convert keys into array indexes.
+A **hash function** takes an input sequence of characters and returns a hash value, it's used in [Hash Table](hash-table.md) to convert keys into array indexes.
