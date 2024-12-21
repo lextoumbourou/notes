@@ -20,40 +20,43 @@ parent: data-structures-optimizing-performance
 
 ## Core: Collisions in Hash Tables
 
-* Linear probing: When you get a collision, just put the element in the next free slot.
-  * Could potential result in slower inserts when hash table gets full.
-  * Random probing: randomly place element somewhere on collision.
-* Separate chaining: keep a list of elements at index locations. Just add elements to list on collision.
-  * Has own drawbacks.
+* [Linear Probing](../../../../permanent/linear-probing.md)
+    * When you get a collision, just put the element in the next free slot.
+    * Could potential result in slower inserts when hash table gets full.
+* [Random Probing](../../../../../../permanent/random-probing.md)
+    * Randomly place element somewhere on collision.
+* [Separate Chaining](../../../../permanent/separate-chaining.md)
+    * Keep a list of elements at index locations. Just add elements to list on collision.
+    * Has own drawbacks.
 * Downsides to hash tables:
-  1. Resizing cost:
-    * When hash table gets too full (usually 70%), need to resize it.
-    * Requires creating a new table and reinserting everything. Potentially very expensive.
-  2. Ordering data:
-    * Hash tables don't have implicit order in themselves.
+    1. Resizing cost:
+        * When hash table gets too full (usually 70%), need to resize it.
+        * Requires creating a new table and reinserting everything. Potentially very expensive.
+    2. Ordering data:
+        * Hash tables don't have implicit order in themselves.
 
 ## Core: Applications of Hash Tables
 
 * HashSet vs HashMap
-  * HashSet doesn't map to a value (standard set).
-  * HashMap does.
+    * HashSet doesn't map to a value (standard set).
+    * HashMap does.
 
 # Edit Distance
 
 ## Core: Overview
 
 * Generate valid words for misspelled words.
-* Edit distance of words:
-  * Start with ``speel``
-  * Close == altered as little as possible.
-  * Possible transformations:
-    * 1 step away (single character transformation)
-      * Substitution (change a single char): ``speel`` -> ``apeel``, ``sbeel``, ``spell``, ``speek``
-      * Insertion (add a single char): ``speel`` -> ``bspeel``, ``sipeel``, ``speeel``.
-      * Deletion (remove one char): ``speel`` -> ``seel`` -> ``spee``
+* [Edit Distance](../../../../../../permanent/edit-distance.md) of words:
+    * Start with ``speel``
+    * Close == altered as little as possible.
+    * Possible transformations:
+        * 1 step away (single character transformation)
+            * Substitution (change a single char): ``speel`` -> ``apeel``, ``sbeel``, ``spell``, ``speek``
+            * Insertion (add a single char): ``speel`` -> ``bspeel``, ``sipeel``, ``speeel``.
+            * Deletion (remove one char): ``speel`` -> ``seel`` -> ``spee``
 * Simple spell suggestion algo:
-  1. Generate all strings "1 away" from original.
-  2. Discard all that aren't words.
+    1. Generate all strings "1 away" from original.
+    2. Discard all that aren't words.
 * What if not enough? Make it 2 edits away.
 
 ## Core: Algorithm
