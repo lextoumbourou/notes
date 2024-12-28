@@ -44,3 +44,7 @@ Hash tables typically have these core operations:
 * **Delete**: remove a key-value pair.
 
 Under good conditions, these operations take an average $O(1)$ time, making hash tables extremely efficient for storing and retrieving data.
+
+## [Load Factor](../../../permanent/load-factor.md)
+
+The load factor of a hash table is calculated by storing the number of stored key by the number of buckets.
