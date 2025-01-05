@@ -15,7 +15,7 @@ Then run QuickSort on the 2 smaller vectors recursively until we hit the base ca
 
 Diagram:
 
- ![](../../../_media/week-17-sorting-data-ii-part-1-quicksort.png)
+ ![Quicksort diagram of choicing pivot](../../../_media/week-17-sorting-data-ii-part-1-quicksort.png)
 
 Don't need to create new vector for the move operations, as we use swap operation.
 

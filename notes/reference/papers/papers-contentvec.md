@@ -18,7 +18,7 @@ ContentVec is a method for building an [Embedding](../../permanent/embedding.md)
 
 Typically [Speaker Disentanglement](../../../../permanent/speaker-disentanglement.md) is hard because it causes content loss. ContentVec fixes this. They modify the [HuBERT](../../permanent/hubert.md) framework, and incorporates disentangling mechanisms to regularise the teachers (masked prediction labels) and the student (learned representations).
 
-![](../../_media/papers-contentvec-fig1.png)
+![Figure 1](../../_media/papers-contentvec-fig1.png)
 
 ## Introduction
 

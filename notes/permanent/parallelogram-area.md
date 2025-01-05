@@ -11,5 +11,5 @@ $A = bh$
 
 Notice how you can move the triangle from the left to the right? After that, it's a standard rectangle.
 
-![](../../../_media/area-of-parallelogram-diagram.png)
+![Area of parallelogram diagram](../../../_media/area-of-parallelogram-diagram.png)
 *Diagram from Khan Academy*

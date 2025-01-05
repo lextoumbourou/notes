@@ -32,13 +32,14 @@ status: draft
     * $\cos(2n\pi + x) = \cos(x)$
     * $\sin(2n\pi + x) = \sin(x)$
 * $\sin$ is a [Periodic Function](../../../../permanent/periodic-function.md) with a period that's $2\pi$.
-     ![](../../../../journal/_media/week-12-trionometric-functions-plots-and-properties-2pi.png)
+     ![Sin visualisation](_media/week-12-trionometric-functions-plots-and-properties-2pi.png)
 
 * $\cos$ has a similar curve, but shifted $\frac{\pi}{2}$
-    ![](../../../../journal/_media/week-12-trionometric-functions-plots-and-properties-cos.png)
 
-| Func     | period | frequency       | amplitude |
-| -------- | ------ | --------------- | --------- |
+    ![Cos visualisation](_media/week-12-trionometric-functions-plots-and-properties-cos.png)
+
+| Func     | period | frequency        | amplitude |
+| -------- | ------ | ---------------- | --------- |
 | $\sin x$ | $2\pi$ | $\frac{1}{2\pi}$ | 1         |
 | $\cos x$ | $2\pi$ | $\frac{1}{2\pi}$ | 1         |
 
@@ -46,7 +47,7 @@ status: draft
     * Defined as ratio between sin and cos: $tan(x) = sin(x) / cos(x)$
     * In general: $\tan(2n\pi + x) = \tan(x)$
 
-    ![](../../../../journal/_media/week-12-trionometric-functions-plots-and-properties-tan-1.png)
+    ![Tan](_media/week-12-trionometric-functions-plots-and-properties-tan-1.png)
 * Also: $\tan(x - \pi) = \tan(x)$
 * $\tan(x + \pi) = tan(x)$
 * Tangent has period $\pi$
@@ -54,7 +55,7 @@ status: draft
 * Amplitude of $\sin$
     * $f(x) = 2 \sin x$
         * Has the same period as $f(x) = \sin x$
-            ![](../../../../journal/_media/week-12-trionometric-functions-plots-and-properties-sin-period.png)
+            ![Sin x vs 2 sin x ](_media/week-12-trionometric-functions-plots-and-properties-sin-period.png)
 
 | Func       | period | frequency        | amplitude |
 | ---------- | ------ | ---------------- | --------- |

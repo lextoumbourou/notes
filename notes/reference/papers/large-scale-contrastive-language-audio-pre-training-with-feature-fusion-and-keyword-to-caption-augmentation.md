@@ -25,7 +25,7 @@ It is trained using [Contrastive Loss](../../permanent/contrastive-loss.md). Hen
 
 The authors use a text-encoder and audio-encoder to generate respective representations, then feed into an MLP layer to learn a shared latent space. For the text-encoder, they use [RoBERTa](https://arxiv.org/abs/1907.11692), and for the audio-encoder, they use [HTS-AT](https://arxiv.org/abs/2202.00874). The authors also compared several alternatives.
 
-![](../../_media/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion-clap-overview.png)
+![Overall of the whole system](../../_media/paper-large-scale-contrastive-language-audio-retraining-with-feature-fusion-clap-overview.png)
 
 They released the architecture, training code and series of weights trained on different subsets of their datasets [here](https://github.com/LAION-AI/CLAP).
 
