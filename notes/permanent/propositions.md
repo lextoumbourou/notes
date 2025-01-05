@@ -1,12 +1,11 @@
 ---
 title: Propositions
 aliases: Statement
-date: 2022-11-23 00:00
+date: 2023-10-11 00:00
 modified: 2025-01-01 00:00
-status: draft
 tags:
-  - Logic
   - DiscreteMath
+  - Logic
 summary: Declarative sentences that are either true or false (but not both)
 ---
 
@@ -31,7 +30,10 @@ These are not propositions:
 * "What time is it?" - Questions aren't propositions as they don't make claims
 * "Close the door" - Commands don't have truth values
 * "What a beautiful day!" - Exclamations and opinions without clear criteria aren't propositions
-* "x + 2 = 5" - Expressions with variables aren't propositions until the variables have specific values
+
+Also, expressions with variables, where the value of the variable would affect the truth value, aren't propositions:
+
+* $x + 2 = 5$  - Not a proposition, as its truth value depends on the value of $x$.
 
 When a statement contains a variable whose truth value depends on that variable's value, it's called a [Predicate](predicate.md). 
 
@@ -52,7 +54,7 @@ For example:
 > > e) $11 \times 11 = -1$
 > > Only (a) and (e) are valid propositions because:
 > > * "I live in Australia" is a declarative statement that is either true or false
-> > * "$11 \times 11 = -1$" is a mathematical statement that is definitely false
+> > * $11 \times 11 = -1$ is a mathematical statement that is definitely false
 > > * (b) contains a variable, making it a predicate
 > > * (c) is a command
 > > * (d) is an expression, not a statement
