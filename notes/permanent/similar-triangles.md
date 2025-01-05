@@ -9,4 +9,4 @@ status: draft
 
 Same angle, proportinal sides: AB/EG = AC/EF = BC/GF
 
- ![](../../../../journal/_media/week-7-intro-to-angles-triangles-trig-similar.png)
+ ![Similar triangles example](../_media/week-7-intro-to-angles-triangles-trig-similar.png)

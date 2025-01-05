@@ -56,7 +56,7 @@ Rule: add coefficients of alternative terms. If sums are the same, then x = -1
 
 Step 3. find the divisors of the Q and P
 
-![](../journal/_media/algebra-cheatsheet-divisors-p-q.png)
+![Example of finding the divisors](../_media/algebra-cheatsheet-divisors-p-q.png)
 
 $Q = 2$, $P = 6$
 

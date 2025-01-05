@@ -1,7 +1,7 @@
 ---
 title: Data Augmentation
 date: 2017-09-30 00:00
-modified: 2017-09-30
+modified: 2017-09-30 00:00
 status: draft
 tags:
 - DataAugmentation

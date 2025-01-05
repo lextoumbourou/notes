@@ -7,26 +7,10 @@ summary: A system that deals with statements that are either true or false
 tags:
     - DiscreteMath
     - MathematicalLogic
+hide_cover_in_article: true
 ---
 
-A system that deals with [Proposition](proposition.md) (statements).
-
-## Proposition
-
-A declarative sentence that is either true or false (but not both) is a proposition.
-
-Also known as a statement.
-
-These sentences would be considered propositions:
-
-* It is Thursday today (true).
-* I am 14 years old (false).
-* 1 + 1 = 3 (false).
-
-Usually denoted using lowercase letters $p$, $q$, $r$, $s$ or $t$.
-
-p = It rained yesterday.
-q = I am happy.
+**Propositional Logic** is a system that deals with [Propositions](propositions.md) (statements).
 
 The truthfulness or falsity of a proposition is called its [Truth Value](truth-value.md). Denoted by $T$ or $F$, or 1 and 0 in computer science.
 
@@ -63,7 +47,7 @@ Truth table
 | $p$ | $\neg p$ |
 | --- | -------- |
 | 1   | 0        |
-| 0   | 1         |
+| 0   | 1        |
 
 ## [Disjunction](logical-disjunction.md) (OR)
 

@@ -427,7 +427,7 @@ For the reconstruction loss:
 * We use feature matching and codebook losses, as described in Section 3.5.
 * For our ablation study, we train each model with a batch size of 12 for 250k iterations.
 * In practice, this takes about 30 hours to train on a single GPU. For our final model, we train with a batch size of 72 for 400k iterations
-* We train with excerpts of duration 0.38s. We use the AdamW optimizer [23] with a learning rate of 1e − 4, β1 = 0.8, and β2 = 0.9, for both the generator and the discriminator.
+* We train with excerpts of duration 0.38s. We use the AdamW optimizer [23] with a learning rate of 1e - 4, β1 = 0.8, and β2 = 0.9, for both the generator and the discriminator.
 * We decay the learning rate at every step, with γ = 0.999996.
 
 ### 4.4 Objective and subjective metrics

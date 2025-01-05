@@ -7,9 +7,6 @@ status: draft
 
 Shell page for [Attention Is All You Need](https://arxiv.org/abs/1706.03762) by Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin.
 
-![](../../../_media/attention-is-all-you-need-title.png)
-![](../../../_media/attention-is-all-you-need-abstract.png)
-
 ## Abstract
 
 At the time of the paper, the prevalent sequence-to-sequence were [Encoder-Decoder](encoder-decoder.md) models that used recurrent or convolutional neural networks, where an encoder would represent an input sequence of tokens as a sequence of embeddings, and a decoder would take those embeddings and predict a new sequence one token at a time. The best performance models would connect the encoder and decoder using an [Attention Mechanism](attention-mechanism.md) mechanism.
@@ -187,7 +184,7 @@ The Transformer uses multi-head attention in three different ways:
 * The encoder contains self-attention layers. In a self-attention layer all of the keys, values and queries come from the same place, in this case, the output of the previous layer in the encoder. Each position in the encoder can attend to all positions in the previous layer of the encoder.
 * Similarly, self-attention layers in the decoder allow each position in the decoder to attend to all positions in the decoder up to and including that position.
     * We need to prevent leftward information flow in the decoder to preserve the auto-regressive property.
-    * We implement this inside of scaled dot-product attention by masking out (setting to −∞) all values in the input of the softmax which correspond to illegal connections.
+    * We implement this inside of scaled dot-product attention by masking out (setting to -∞) all values in the input of the softmax which correspond to illegal connections.
 
 ### Position-wise Feed-Forward Networks
 
@@ -337,13 +334,13 @@ bottom line of table 3), step time was 1.0 seconds. The big models were trained 
 
 ### Optimizer
 
-We used the Adam optimizer [20] with β1 = 0.9, β2 = 0.98 and ϵ = 10−9
+We used the Adam optimizer [20] with β1 = 0.9, β2 = 0.98 and ϵ = 10-9
 . We varied the learning
 rate over the course of training, according to the formula:
 lrate = d
-−0.5
-model · min(step_num−0.5
-, step_num · warmup_steps−1.5
+-0.5
+model · min(step_num-0.5
+, step_num · warmup_steps-1.5
 ) (3)
 This corresponds to increasing the learning rate linearly for the first warmup_steps training steps,
 and decreasing it thereafter proportionally to the inverse square root of the step number. We used

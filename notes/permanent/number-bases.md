@@ -3,8 +3,6 @@ title: Number Base
 date: 2023-04-21 00:00
 modified: 2023-04-21 00:00
 status: draft
-tags:
-
 ---
 
 A Number Base represents how we represent numbers. The base number determines the number of unique symbols that it uses, and as how values of each digit position are calculated.

@@ -59,7 +59,7 @@ $s_0 = \tanh \left( W_s \overleftarrow{h}_1 \right)$ where $W_s \in \mathbb{R}^{
 
 For each prediction step, they calculate the word probability as:
 
-$p(y_i|y_1, \ldots, y_{i−1}, x) = g(y_{i−1}, s_i, c_i)$
+$p(y_i|y_1, \ldots, y_{i-1}, x) = g(y_{i-1}, s_i, c_i)$
 
 Where
 

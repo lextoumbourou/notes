@@ -14,7 +14,7 @@ The **Convex Hull** is the smallest polygon that contains a set of points.
 
 Think of some nails poking out of a board. If you place a rubber band around all nails, the polygon shape the rubber band makes is the convex hull.
 
-![](../_media/convex-hull.png)
+![Example of a convex hull](../_media/convex-hull.png)
 
 One real-world application in game programming is **Collision Detection**. Since computing collisions can be expensive, a convex hull is calculated around the 3d model of an object to provide an approximate collision region, reducing the number of computations required.
 

@@ -1,12 +1,12 @@
 ---
 title: Proposition
 date: 2022-11-23 00:00
-aliases: Propositions, Statement
+status: draft
+aliases: Statement
 tags:
   - Logic
   - DiscreteMath
-summary: A statement that is true or false (but not both)
-status: draft
+summary: Declarative sentences that are either true or false (but not both)
 ---
 
-See [Propositional Logic](propositional-logic.md##Proposition).
+See [Propositions](propositions.md).

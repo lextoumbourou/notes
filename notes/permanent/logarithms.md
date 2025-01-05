@@ -1,5 +1,5 @@
 ---
-title: logarithms
+title: Logarithms
 date: 2023-09-02 00:00
 modified: 2023-09-02 00:00
 status: draft

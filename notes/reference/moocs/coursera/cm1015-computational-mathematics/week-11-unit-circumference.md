@@ -14,7 +14,8 @@ The trigonometrical functions and their graphs and Trigonometric identities.
 * Generally a right-angled triangle is used to define trigonometrical ratios. However, since the angle $\theta$ is limited to a maximum value of 90°, we need an extended definition.
 * [[Quadrants]]
     * The x and y axis divide plane into four quadrants.
-    ![](../../../../journal/_media/week-11-unit-circumference-figure-23-1.png)
+    
+    ![Plane divided into four quadrants](../../../../_media/week-11-unit-circumference-figure-23-1.png)
         * The origin is O. We considern an arm OC that can rotate into any of the quadrants. IN Fig 23, it's in 1.
         * We measure the anticlock angle from position x axis to the arm an call this angle $\theta$.
         * When measured in a clockwise direction from the positive x axis, when take a negative angle.

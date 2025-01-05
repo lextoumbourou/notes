@@ -351,13 +351,13 @@ Find the coefficient of each:
 
 1\. $x^3y^5$ in the expansions of $(x + y)^8$
 
-2. $x^4y^6$ in the expansion of $(x − y)^{10}$
+2. $x^4y^6$ in the expansion of $(x - y)^{10}$
 
 Using the binomial theorem, expand each:
 
 5. $(x+y)^4$
-6. $(x−y)^5$
-7. $(2x−1)^5$
+6. $(x-y)^5$
+7. $(2x-1)^5$
 8. $(x + 2y)^6$
 
 Find the middle term in the binomial expansion of each:

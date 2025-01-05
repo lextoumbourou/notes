@@ -48,7 +48,8 @@ Note: this is unfinished. Some of the text is copied and pasted verbatim from th
     * generate high-quality music given textual description.
     * propose a general framework for modelling multiple parallel streams of acoustic tokens
         * generalisation of previous studies (see Fig 1).
-        * ![](../../../../_media/papers-musicgen-fig-1.png)
+
+        * ![Figure 1 from the paper](../../_media/papers-musicgen-fig-1.png)
     * can extend to stereo generate at no example cost.
     * also, introduces unsupervised melody conditioning, so model can generate music given harmonic and melodic structures.
     * Evaluation:
@@ -118,7 +119,7 @@ For instance, MusicLM [Agostinelli et al., 2023] uses two models, one modeling t
 Another possibility is to consider an autoregressive decomposition, where some codebooks are predicted in parallel. For instance, let us define another
 sequence with V0 = 0 and for all t ∈ {1, . . . , T}, k ∈ {1, . . . , K}, Vt,k = Qt,k. When dropping the
 codebook index k, e.g. Vt, we mean the concatenation of all the codebooks at time t.
-pt,k (Vt−1, . . . , V0) ≜ P [Vt,k|Vt−1, ·, . . . , V0] . (3)
+pt,k (Vt-1, . . . , V0) ≜ P [Vt,k|Vt-1, ·, . . . , V0] . (3)
 Let’s define again recursively V˜
 0 = 0 and for all t > 0,
 ∀t > 0, ∀k, P
@@ -127,13 +128,13 @@ V˜
 t,ki
 = pt,k 
 V˜
-t−1, . . . , V˜
+t-1, . . . , V˜
 0
 
 . (4)
 Unlike in (2), we no longer have in the general case that V˜ follows the same distribution as V ,
 even assuming we have access to the exact distribution pt,k. In fact, we would only have a proper
-generative model if for all t, (Vt,k)k are independent conditionally on Vt−1, . . . , V0. As t increases,
+generative model if for all t, (Vt,k)k are independent conditionally on Vt-1, . . . , V0. As t increases,
 the errors will compound and the two distributions can grow further apart. Such a decomposition
 is inexact, but allows to keep the original frame rate which can considerably speed up training and
 inference, especially for long sequences.
@@ -144,17 +145,17 @@ In order to experiment with various such decompositions, and measure exactly the
 
 Let us consider Ω = {(t, k) : {1, . . . , d · fr}, k ∈ {1, . . . , K}} be the set of all pairs of time steps and codebook indexes
 
-A codebook pattern is a sequence P = (P0, P1, P2, . . . , PS), with P0 = ∅, and for all 0 < s ≤ S, Ps ⊂ Ω, such that P is partition of Ω. We model Q by predicting in parallel all the positions in Ps, conditionally on all the positions in P0, P1, . . . , Ps−1. Pragmatically, we restrict ourselves to patterns where each codebook index appears at most once in any of the Ps
+A codebook pattern is a sequence P = (P0, P1, P2, . . . , PS), with P0 = ∅, and for all 0 < s ≤ S, Ps ⊂ Ω, such that P is partition of Ω. We model Q by predicting in parallel all the positions in Ps, conditionally on all the positions in P0, P1, . . . , Ps-1. Pragmatically, we restrict ourselves to patterns where each codebook index appears at most once in any of the Ps
 
 We can now easily define a number of decompositions, for instance the “parallel” pattern given by
 Ps = {(s, k) : k ∈ {1, . . . , K}}. (5)
 It is also possible to introduce a “delay” between the codebooks, as in Kharitonov et al. [2022], e.g.,
-Ps = {(s − k + 1, k) : k ∈ {1, . . . , K}, s − k ≥ 0}. (6)
+Ps = {(s - k + 1, k) : k ∈ {1, . . . , K}, s - k ≥ 0}. (6)
 Through empirical evaluations, we show the benefits and drawbacks of various codebook patterns,
 shedding light on the importance of exact modeling of the parallel codebook sequences.
 
-By convention, we will take U0 = 0, a deterministic special token indicating the beginning of the sequence. We can then model the distribution ∀t > 0, pt (Ut−1, . . . , U0) ≜ P [Ut|Ut−1, . . . , U0]
-    * Arbitrary codebook interleaving patterns. In order to experiment with various such decompositions, and measure exactly the impact of using an inexact decomposition, we introduce codebook interleaving patterns. Let us consider Ω = {(t, k) : {1, . . . , d · fr}, k ∈ {1, . . . , K}} be the set of all pairs of time steps and codebook indexes. A codebook pattern is a sequence P = (P0, P1, P2, . . . , PS), with P0 = ∅, and for all 0 < s ≤ S, Ps ⊂ Ω, such that P is partition of Ω. We model Q by predicting in parallel all the positions in Ps, conditionally on all the positions in P0, P1, . . . , Ps−1. Pragmatically, we restrict ourselves to patterns where each codebook index appears at most once in any of the Ps. We can now easily define a number of decompositions, for instance the “parallel” pattern given by Ps = {(s, k) : k ∈ {1, . . . , K}}. (5) It is also possible to introduce a “delay” between the codebooks, as in Kharitonov et al. [2022], e.g., Ps = {(s − k + 1, k) : k ∈ {1, . . . , K}, s − k ≥ 0}. (6) Through empirical evaluations, we show the benefits and drawbacks of various codebook patterns, shedding light on the importance of exact modeling of the parallel codebook sequences
+By convention, we will take U0 = 0, a deterministic special token indicating the beginning of the sequence. We can then model the distribution ∀t > 0, pt (Ut-1, . . . , U0) ≜ P [Ut|Ut-1, . . . , U0]
+    * Arbitrary codebook interleaving patterns. In order to experiment with various such decompositions, and measure exactly the impact of using an inexact decomposition, we introduce codebook interleaving patterns. Let us consider Ω = {(t, k) : {1, . . . , d · fr}, k ∈ {1, . . . , K}} be the set of all pairs of time steps and codebook indexes. A codebook pattern is a sequence P = (P0, P1, P2, . . . , PS), with P0 = ∅, and for all 0 < s ≤ S, Ps ⊂ Ω, such that P is partition of Ω. We model Q by predicting in parallel all the positions in Ps, conditionally on all the positions in P0, P1, . . . , Ps-1. Pragmatically, we restrict ourselves to patterns where each codebook index appears at most once in any of the Ps. We can now easily define a number of decompositions, for instance the “parallel” pattern given by Ps = {(s, k) : k ∈ {1, . . . , K}}. (5) It is also possible to introduce a “delay” between the codebooks, as in Kharitonov et al. [2022], e.g., Ps = {(s - k + 1, k) : k ∈ {1, . . . , K}, s - k ≥ 0}. (6) Through empirical evaluations, we show the benefits and drawbacks of various codebook patterns, shedding light on the importance of exact modeling of the parallel codebook sequences
 * 2.3 Model conditioning
     * Text conditioning. Given a textual description matching the input audio X, we compute a conditioning tensor C ∈ R TC ×D with D being the inner dimension used in the autoregressive model.
     * Generally, there are three main approaches for representing text for conditional audio generation. Kreuk et al. [2022] proposed using a pretrained text encoder, specifically T5 [Raffel et al., 2020].

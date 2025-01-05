@@ -22,7 +22,7 @@ Each person posts to 54 people. Therefore:
 
 Which of the following represents the set:
 
-$\{−1, \frac{1}{2}, \frac{−1}{3},\frac{1}{4},\frac{−1}{5},\frac{1}{6},\frac{−1}{7},\frac{1}{8},\frac{−1}{9},\frac{1}{10} \}$
+$\{-1, \frac{1}{2}, \frac{-1}{3},\frac{1}{4},\frac{-1}{5},\frac{1}{6},\frac{-1}{7},\frac{1}{8},\frac{-1}{9},\frac{1}{10} \}$
 
 $\frac{(-1)^n}{n} : n \in Z \text{ and } 0 \leq n \leq 10 \}$
 

@@ -276,7 +276,7 @@ Table 3 reports the rank-1 identification rate with at least 1 million distracto
 
 ![Table 3](/_media/center-loss-table-3.png)
 
-Table 4 reports the True Accept Rate with a False Accept Rate of $10^{−6}$.
+Table 4 reports the True Accept Rate with a False Accept Rate of $10^{-6}$.
 
 ![Table 4](/_media/center-loss-table-4.png)
 
