@@ -97,7 +97,7 @@ Can see from the left, we're approaching 1, and from the right, approach 0. So t
 
 Another interesting case of discontinuous function. You can have a limit that exists, but is different from the value at the point. It means that f is not continuous in x_0 = 0, even though the limit exist and is 1.
 
-![](/_media/week-15-limits-and-differentiation-limit-not-continuuos.png)
+![graph showing a piecewise function with multiple segments](../../../../_media/week-15-limits-and-differentiation-limit-not-continuuos.png)
 
 $\lim f(x) = 0 = \lim f(x) \neq f(0) = 1$
 
