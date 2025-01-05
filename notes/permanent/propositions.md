@@ -5,7 +5,7 @@ date: 2023-10-11 00:00
 modified: 2025-01-01 00:00
 tags:
   - DiscreteMath
-  - Logic
+  - MathematicalLogic
 summary: Declarative sentences that are either true or false (but not both)
 ---
 
