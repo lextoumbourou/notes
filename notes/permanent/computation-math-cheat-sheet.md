@@ -292,7 +292,7 @@ $\cos^2a = \frac{1}{2} (1 + \cos 2a)$
 
 $\sin(-c) = -\sin(c)$
 
-Domain of $\sin^{-1}(x)$: $−1 \le x \le 1$ because sin only returns between -1 and 1.
+Domain of $\sin^{-1}(x)$: $-1 \le x \le 1$ because sin only returns between -1 and 1.
 
 #### Sine Reduction Identity
 

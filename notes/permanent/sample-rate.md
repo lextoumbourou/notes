@@ -19,7 +19,7 @@ Together, they are the two critical details that define the quality of a digital
 
 If we zoom into an audio file in Audacity to the higher resolutions, we can visualise our waveform at the sample level:
 
-![](../_media/sample-rate-1.png)
+![Example of zoomed in audio file in Audacity to show how sampling works](../_media/sample-rate-1.png)
 
 The number of elements in the array is $\text{ audio time (secs) } \times \text{ sample rate }$. Therefore, higher sample rates will require more storage space. We will have an array per channel for stereo and other multichannel audio.
 

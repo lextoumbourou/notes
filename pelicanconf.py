@@ -30,6 +30,7 @@ ENV = os.environ.get("ENV", "prod")
 
 MARKDOWN = {
     "extension_configs": {
+        "obsidian-callouts": {},
         "markdown.extensions.codehilite": {
             "css_class": "highlight",
         },
@@ -46,7 +47,7 @@ PLUGINS = [
     "subcategory",
     nb_liquid,
     "md_link_converter",
-    "linked_mentions",
+    "linked_mentions"
 ]
 
 PUBLICATIONS_SRC = "notes/citations.bib"

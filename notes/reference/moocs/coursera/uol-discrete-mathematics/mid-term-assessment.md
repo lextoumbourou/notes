@@ -168,7 +168,7 @@ Which of the following are functions? If f is not a function explain why.
 
 #### i
 
-$f : \mathbb{R} \rightarrow \mathbb{R} \text { with } f(x) = \frac{1}{1−x^2}$
+$f : \mathbb{R} \rightarrow \mathbb{R} \text { with } f(x) = \frac{1}{1-x^2}$
 
 To be a function, every element in the domain has to have an image in the co-domain.
 

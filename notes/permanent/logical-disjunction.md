@@ -9,7 +9,7 @@ tags:
 status: draft
 ---
 
-Another way to combine two [Propositions](proposition.md) using the connective "or".
+Another way to combine two [Proposition](proposition.md) using the connective "or".
 
 The proposition $p$ or $q$ is true if $p$ or $q$ is true.
 

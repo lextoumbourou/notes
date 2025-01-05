@@ -9,7 +9,8 @@ status: draft
     * Some examples that utilise sine and cosine rule.
 * Triangle Rectangle Isosceles
     * We have a right-triangle with hypothenuse $h$ and 2 other sides that have the same length.
-        ![](../../../../journal/_media/week-8-applications-of-sine-and-cosine-rules-right-triangle.png)
+    
+        ![Right-triangle example with 2 other sides that have the same length](_media/week-8-applications-of-sine-and-cosine-rules-right-triangle.png)
     * Since it's an [[Isosceles Triangle]], meaning on angle is 90°, we know that the 2 angles adjacent to h are equal, which means they're 45°.
     * Pythagoras theorem gives us $a^2 + b^2 = 2a^2 = h^2$
         * That means, $2a^2 = h^2$
@@ -17,9 +18,11 @@ status: draft
         * We know that the ratio of adjacent to hypotenuse is $sin(90 - \theta)$ so $a/h=1/\sqrt(2) = \sin(45°)$
         * $\sin(45°) = 1/\sqrt(2) = \sqrt(2) / 2$
 * Finding the length of right-hand side of larger triangle with [[../../../../permanent/similar-triangles]]
-    * ![](../../../../journal/_media/week-8-applications-of-sine-and-cosine-rules-similar-tri.png)
+
+    * ![Example of using similar triangles](../../../../_media/week-8-applications-of-sine-and-cosine-rules-similar-tri.png)
         * We know that 1cm / X = 2.5 / 5cm
         * So X = 2cm.
+        
 * Generic triangle
     * $a = 8cm, b = 3cm, \alpha = 58°, c?$
         * Note: $\sin(58°) = 0.848$
@@ -33,7 +36,7 @@ status: draft
     * We know $c/ \sin(\gamma) = a / \sin(\alpha)$
     * $c = a \sin(\gamma) / \sin(\alpha) = 8 \times 0.97 / 0.848 = 9.15cm$
 * Generic triangle example
-        ![](../../../../journal/_media/week-8-applications-of-sine-and-cosine-rules-generic-triangle-1.png)
+        ![Generic triangle example](../../../../_media/week-8-applications-of-sine-and-cosine-rules-generic-triangle-1.png)
     * $a = 6cm$, $b = 4cm, $c = 3cm, $\alpha = ?$
     * Use cosine rule: $a^2 = b^2 + c^2 -2bc \cos(\alpha)$
     * $\cos(\alpha) = \frac{b^2 + c^2 - a^2}{2bc} = {16 + 9  -36}{24} = -0.458$

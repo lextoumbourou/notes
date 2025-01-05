@@ -17,7 +17,7 @@ This report comprehensively analyses the o1-preview across many tasks and domain
 
 A recent paper [GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models](gsm-symbolic-understanding-the-limitations-of-mathematical-reasoning-in-large-language-models.md) has found that by modifying the GSM test set, i.e. by adding distracting information, or modifying the numbers used in the equation, they see a considerable drop in performance in all LLM models, which people have suggest means that LLMS "can't reason". However, notably o1-preview is the most robust to these perturbations in the test set.
 
-![](../../_media/evaluation-of-openai-o1-opportunities-and-challenges-of-agi-fig8.png)
+![Figure 8.](../../_media/evaluation-of-openai-o1-opportunities-and-challenges-of-agi-fig8.png)
 
 *Figure 8. from [GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models](gsm-symbolic-understanding-the-limitations-of-mathematical-reasoning-in-large-language-models.md)*
 

@@ -98,12 +98,12 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
     * Commonly used infinite sets:
         * $\mathbf{Z}$ = set of integers = {... -1, 0, 1, ...}
         * $\mathbb{N}$ = $\mathbf{Z^{+}}$ = set of positive integers = {1,2,3,...}
-        * $\mathbf{Z^{−}}$ = set of negative integers = {. . . , −3, −2, −1}
+        * $\mathbf{Z^{-}}$ = set of negative integers = {. . . , -3, -2, -1}
         * $\mathbf{W}$ = set of whole numbers = $\{0,1,2...\}$
         * $\mathbf{Q}$ = set of rational numbers = $\{p/q|p, q \in \mathbf{Z} ∧ q \neq 0\}$
         * $\mathbb{R}$ = set of real numbers
         * $\mathbb{R}^{+}$ = set of positive real numbers = ${x \in \mathbb{R}|x > 0}$
-        * $\mathbb{R}^{−}$ = set of negative real numbers = ${x \in \mathbb{R}|x < 0}$
+        * $\mathbb{R}^{-}$ = set of negative real numbers = ${x \in \mathbb{R}|x < 0}$
     * Some additional subsets of $\mathbb{R}$ called **intervals**, given here where $a < b$
     * closed interval - `[a,b] = {x ∈ R|a ≤ x ≤ b}`
     * closed–open interval - `[a, b) = {x ∈ R|a ≤ x < b}`

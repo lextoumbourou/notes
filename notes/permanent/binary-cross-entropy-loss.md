@@ -17,7 +17,7 @@ For a single binary output, the function can be expressed as:
 
 Or in math:
 
-$$L(p, y) = −(\underbrace{y \times log(𝑝)}_{\text{Expr 1}} + \underbrace{(1−𝑦) \times log(1−𝑝)}_{\text{Expr 2}})$$
+$$L(p, y) = -(\underbrace{y \times log(𝑝)}_{\text{Expr 1}} + \underbrace{(1-𝑦) \times log(1-𝑝)}_{\text{Expr 2}})$$
 
 Where $p$ is the model's predictions and $y$ is the true label.
 
@@ -29,7 +29,7 @@ For multi-label outputs, the function takes the mean (or sometimes sum) of each 
 
 That is represented in math as follows:
 
-$$L(P, Y) = −\frac{1}{N} \sum\limits_{i=1}^{N} (Y_{i} \times log(P_{i}) + (1− Y_{i}) \times log(1− P_{i}))$$
+$$L(P, Y) = -\frac{1}{N} \sum\limits_{i=1}^{N} (Y_{i} \times log(P_{i}) + (1- Y_{i}) \times log(1- P_{i}))$$
 
 PyTorch provides the function via the [`nn.BCELoss`](https://pytorch.org/docs/stable/generated/torch.nn.BCELoss.html) class. It's the equivalent of [`nn.NLLLoss`](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) in multi-class classification with a single true label per input.
 

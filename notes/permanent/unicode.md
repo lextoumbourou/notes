@@ -1,7 +1,7 @@
 ---
 title: Unicode
 date: 2024-12-07 00:00
-modified: 2024-12-07
+modified: 2024-12-07 00:00
 status: draft
 tags:
   - CharacterEncoding

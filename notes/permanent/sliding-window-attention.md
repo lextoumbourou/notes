@@ -7,12 +7,12 @@ status: draft
 
 **Sliding Window Attention** is a modification to [Attention Mechanism](attention-mechanism.md), which modifies the causal mask, so tokens can only attend to $W$ past tokens. Here, we can see an example where $W = 3$
 
-![](../../../_media/sliding-window-attention-sliding-window.png)
+![Sliding window attention example](../_media/sliding-window-attention-sliding-window.png)
 *Image from [mistral-src](https://github.com/mistralai/mistral-src?tab=readme-ov-file).*
 
 Tokens outside the sliding window can still influence next-word prediction, and information can move forward by W tokens in each attention layer. For example, after four attention layers with a sliding window of 4k tokens, information can propagate to a context length of 16k.
 
-![](../../../_media/sliding-window-attention-propogation.png)
+![Layes diagram](../_media/sliding-window-attention-propogation.png)
 *Image from [mistral-src](https://github.com/mistralai/mistral-src?tab=readme-ov-file).*
 
 References:
