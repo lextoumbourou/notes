@@ -12,7 +12,7 @@ hide_cover_in_article: true
 
 ## Overview
 
-Language models have shown impressive capabilities in few-shot learning, where they learn from a handful of examples. However, this paper from early 2023 shows that large language models (LLMs) can perform complex reasoning tasks with zero examples - they just need to be asked to "think step by step."
+Language models have shown impressive capabilities in few-shot learning, where they learn from a handful of examples. However, this paper from early 2023 shows that large language models (LLMs) can perform complex reasoning tasks with zero examples - they just need to be asked to [Think Step-by-Step](../../permanent/think-step-by-step.md)
 
 ## Background
 
