@@ -43,13 +43,13 @@ For example:
 * $Y + 1 = 5$
 * "The speed of light in a vacuum is approximately $Z$ meters per second."
 
-> [!QUESTION] Which of these is a valid **proposition**?
+> [!question] Which of these is a valid **proposition**?
 > a) I live in Australia.
 > b) Z > 2
 > c) Please don't do that anymore
 > d) $1 + 2$
 > e) $11 \times 11 = -1$
-> > [!SUCCESS]- Answer
+> > [!success]- Answer
 > > a) I live in Australia.
 > > e) $11 \times 11 = -1$
 > > Only (a) and (e) are valid propositions because:
