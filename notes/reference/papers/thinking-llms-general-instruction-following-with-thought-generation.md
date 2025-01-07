@@ -29,7 +29,7 @@ The method separates the thought process from the final answer, enabling develop
 
 *Fig 6: Example of TPO answering a simple factoid question. This model is trained with the specific thought prompt, so it writes a draft and evaluates it in the thought part.*
 
-The downside is that it relies on fine-tuning - it doesn't benefit "thoughtless" models. As shown in Fig 3, adding Thought Prompting to an untrained model worsens results.
+Unlike [Think Step-by-Step](../../permanent/think-step-by-step.md), it relies on fine-tuning - it doesn't benefit "thoughtless" models. As shown in Fig 3, adding Thought Prompting to an untrained model worsens results.
 
 ![Figure 3](../../_media/thinking-llms-general-instruction-following-with-thought-generation-fig-3.png)
 
