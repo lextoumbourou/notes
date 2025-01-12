@@ -3,6 +3,8 @@ title: Chain-of-Thought Prompting
 date: 2024-09-29 00:00
 modified: 2024-09-29 00:00
 status: draft
+tags:
+- LargeLanguageModels
 ---
 
 **Chain-of-Thought Prompting** is a [[Few-Shot Prompting]] technique where model is given examples of step-by-step reasoning rather than standard question and answer examples, encouraging the model to think through a problem before returning an answer.

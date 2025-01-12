@@ -4,7 +4,8 @@ date: 2025-01-12 00:00
 modified: 2025-01-12 00:00
 tags:
 - LLMPerformance
-summary: FSKD routes tasks to cheaper models based on novelty.
+- LargeLanguageModels
+summary: Routes LLMs tasks to cheaper or more powerful models based on task novelty.
 ---
 
 Good idea from this [blogpost by Steve Krenzel](https://bits.logic.inc/p/getting-gpt-4o-mini-to-perform-like).
@@ -15,6 +16,21 @@ A retrieval routing model idea he calls **Few-Shot Knowledge Distillation (FSKD)
 2. For new examples, compute a novelty score: measure how similar to other examples is the new example?
 3. Send novel examples to `gpt4o` (or some big, expensive model).
 4. Send other examples to `gpt4o-mini` (or some cheaper, lower performance model), but include similar `gpt4o` examples in prompt (few-shot knowledge distillation).
+
+The novelty score is a is determined by:
+
+- The similarity threshold (θ) - which defines how similar an entry needs to be to be considered a match
+- The matches threshold (m) - which specifies the number of matches needed to be considered "low novelty"
+* And the task embedding (T):
+
+$$
+\text{noveltyScore}(T, \theta, m) = \begin{cases}
+\text{LOW} & \text{if } |\text{search}(T,\theta)| \geq m \\
+\text{HIGH} & \text{otherwise}
+\end{cases}
+$$
+
+The defaults of $\theta = 0.8$ and m = 3 can be tuned for cost/performance trade-offs.
 
 It's cool because it's self-adapting - if the [Domain Shift](domain-shift.md), new examples are sent the larger model until it builds up new examples.
 
