@@ -6,7 +6,7 @@ summary: an approach to utilising LLMs that involve multi-state interactions.
 cover: /_media/agentic-reasoning-overview.png
 hide_cover_in_article: true
 tags:
-- MachineLearning
+- LargeLanguageModels
 - AgenticReasoning
 ---
 

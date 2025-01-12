@@ -4,6 +4,8 @@ date: 2022-12-10 00:00
 cover: /_media/cover-parking-fine.png
 summary: A use case for ChatGPT
 hide_cover_in_article: true
+tags:
+- LargeLanguageModels
 ---
 
 This article covers a use case for [ChatGPT](https://chat.openai.com/), an exciting new product by [OpenAI](https://chat.openai.com/).

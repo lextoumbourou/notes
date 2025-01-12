@@ -5,7 +5,8 @@ modified: 2024-03-13 00:00
 summary: a method of computing a token representation that includes the context of surrounding tokens.
 cover: /_media/scaled-dot-product-attention.png
 tags:
-    - MachineLearning
+- MachineLearning
+- LargeLanguageModels
 ---
 
 Scaled-Dot Product Attention is a method of computing a token representation to include the context of surrounding tokens. It was described in the paper [Attention Is All You Need](attention-is-all-you-need.md) and is used in the [Transformer](../public/notes/permanent/transformer.md) architecture.
