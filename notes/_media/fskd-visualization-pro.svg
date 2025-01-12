@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700">
+    <!-- Definitions for gradients and filters -->
+    <defs>
+        <!-- Lighter gradients -->
+        <linearGradient id="startGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#AAC5D7;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#8BADC4;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="processGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#D7D1AA;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#C4BC8B;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="decisionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#D7AAB8;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#C48B9C;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="modelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#99B68A;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#84A176;stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Refined drop shadow -->
+        <filter id="drop-shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+            <feOffset dx="1.5" dy="1.5" result="offsetblur"/>
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.15"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Background -->
+    <rect width="800" height="700" fill="#fff"/>
+    
+    <!-- Start Node -->
+    <g filter="url(#drop-shadow)">
+        <ellipse cx="400" cy="50" rx="70" ry="35" fill="url(#startGradient)" stroke="#8BADC4" stroke-width="2"/>
+        <text x="400" y="55" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">New Task</text>
+    </g>
+    
+    <!-- Embedding Calculation -->
+    <g filter="url(#drop-shadow)">
+        <rect x="300" y="110" width="200" height="60" rx="12" fill="url(#processGradient)" stroke="#C4BC8B" stroke-width="2"/>
+        <text x="400" y="145" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">Calculate Task Embedding</text>
+    </g>
+    
+    <!-- Similar Search -->
+    <g filter="url(#drop-shadow)">
+        <rect x="300" y="200" width="200" height="60" rx="12" fill="url(#processGradient)" stroke="#C4BC8B" stroke-width="2"/>
+        <text x="400" y="225" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">Search Similar</text>
+        <text x="400" y="245" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">Historical Tasks</text>
+    </g>
+    
+    <!-- Decision Diamond (Enlarged) -->
+    <g filter="url(#drop-shadow)">
+        <path d="M400 290 L520 350 L400 410 L280 350 Z" fill="url(#decisionGradient)" stroke="#C48B9C" stroke-width="2"/>
+        <text x="400" y="340" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">Enough Similar Tasks?</text>
+        <text x="400" y="360" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">similarity > θ</text>
+        <text x="400" y="380" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">matches > m</text>
+    </g>
+    
+    <!-- Large Model -->
+    <g filter="url(#drop-shadow)">
+        <rect x="150" y="440" width="200" height="70" rx="12" fill="url(#modelGradient)" stroke="#84A176" stroke-width="2"/>
+        <text x="250" y="470" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">Process with Large Model</text>
+        <text x="250" y="490" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">(e.g., GPT-4)</text>
+    </g>
+    
+    <!-- Small Model -->
+    <g filter="url(#drop-shadow)">
+        <rect x="450" y="440" width="200" height="70" rx="12" fill="url(#modelGradient)" stroke="#84A176" stroke-width="2"/>
+        <text x="550" y="470" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">Process with Small Model</text>
+        <text x="550" y="490" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">(e.g., GPT-4-mini)</text>
+    </g>
+    
+    <!-- Storage -->
+    <g filter="url(#drop-shadow)">
+        <rect x="150" y="540" width="200" height="60" rx="12" fill="url(#processGradient)" stroke="#C4BC8B" stroke-width="2"/>
+        <text x="250" y="570" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">Store Task + Result</text>
+        <text x="250" y="590" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">for Future Reference</text>
+    </g>
+    
+    <!-- Output -->
+    <g filter="url(#drop-shadow)">
+        <ellipse cx="400" cy="650" rx="70" ry="35" fill="url(#startGradient)" stroke="#8BADC4" stroke-width="2"/>
+        <text x="400" y="655" text-anchor="middle" font-family="Helvetica" font-size="14" fill="#1B3D2F" font-weight="600">Return Result</text>
+    </g>
+    
+    <!-- Connectors with enhanced styling -->
+    <path d="M400 85 L400 110" stroke="#1B3D2F" stroke-width="2" fill="none" stroke-opacity="0.5"/>
+    <path d="M400 170 L400 200" stroke="#1B3D2F" stroke-width="2" fill="none" stroke-opacity="0.5"/>
+    <path d="M400 260 L400 290" stroke="#1B3D2F" stroke-width="2" fill="none" stroke-opacity="0.5"/>
+    <path d="M280 350 L250 350 L250 440" stroke="#1B3D2F" stroke-width="2" fill="none" stroke-opacity="0.5"/>
+    <path d="M520 350 L550 350 L550 440" stroke="#1B3D2F" stroke-width="2" fill="none" stroke-opacity="0.5"/>
+    <path d="M250 510 L250 540" stroke="#1B3D2F" stroke-width="2" fill="none" stroke-opacity="0.5"/>
+    <path d="M250 600 L250 650 L330 650" stroke="#1B3D2F" stroke-width="2" fill="none" stroke-opacity="0.5"/>
+    <path d="M550 510 L550 650 L470 650" stroke="#1B3D2F" stroke-width="2" fill="none" stroke-opacity="0.5"/>
+    
+    <!-- Flow Labels with enhanced styling -->
+    <text x="220" y="340" text-anchor="end" font-family="Helvetica" font-size="12" fill="#1B3D2F" font-weight="600">No - High Novelty</text>
+    <text x="580" y="340" text-anchor="start" font-family="Helvetica" font-size="12" fill="#1B3D2F" font-weight="600">Yes - Low Novelty</text>
+</svg>
