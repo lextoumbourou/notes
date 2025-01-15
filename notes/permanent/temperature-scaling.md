@@ -139,10 +139,10 @@ In a [Language Model](language-model.md), which predicts a token at a time based
 
 The temperature parameter, therefore, affects how much randomness is injected at inference time.
 
-$T = 0$: Deterministic, always selects the highest probability token. Good for math, coding, fact-based responses
+$T = 0$: Deterministic, always selects the highest probability token. However, in practice, you can only approximate it with a very small temperature (since dividing by zero is undefined). Good for math, coding, and fact-based responses.
 
 $T \approx 0.7$: Balanced between coherence and creativity. Industry standard for chat models. Maintains context while allowing natural variation
 
 $T > 1$: Increases randomness. Can generate more creative/diverse outputs. Risk of incoherent or off-topic responses
 
-Temperature is typically applied during inference only. During training, models use $T = 1$ to learn the true probability distribution of the data.
+Temperature is typically applied during inference only. During training, models use $T = 1$ to learn the true probability distribution of the data. Although in the paper, [Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531), they experiment with using higher temperature during training to help the model distinguish between similar classes of items.
