@@ -16,6 +16,8 @@ A **hash table** is a key-value pair data structure that provides constant time 
 
 *Diagram by [Jorge Stolfi via Wikipedia](https://en.wikipedia.org/wiki/Hash_table#/media/File:Hash_table_3_1_1_0_1_0_0_SP.svg)*
 
+It's considered a [Linear Data Structure](../../../permanent/linear-data-structure.md) as elements in the array are stored sequentially.
+
 Two keys can produce the same index, called a collision, depending on the implementation. There are multiple common techniques to resolve hash collisions:
 
 ### [Rehashing](rehashing.md)

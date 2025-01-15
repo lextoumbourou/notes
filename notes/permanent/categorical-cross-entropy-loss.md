@@ -6,7 +6,7 @@ tags:
   - MachineLearning
 ---
 
-Categorical Cross-Entropy Loss Function, also known as Softmax Loss, is a loss function used in multiclass classification model training. It applies the [Softmax Activation Function](softmax-activation-function.md) to a model's output (logits) before applying the [Negative Log-Likelihood](negative-log-likelihood.md) function.
+Categorical Cross-Entropy Loss Function, also known as Softmax Loss, is a loss function used in multiclass classification model training. It applies the [Softmax Function](softmax-activation-function.md) to a model's output (logits) before applying the [Negative Log-Likelihood](negative-log-likelihood.md) function.
 
 Lower loss means closer to the ground truth.
 

@@ -77,13 +77,13 @@ status: draft
             * On validation, only resize is done.
 * Train a simple model early (pg. 221)
 * [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md) (pg. 222-231)
-    * Defined as: [Softmax Activation Function](../../permanent/softmax-activation-function.md) then [Negative Log-Likelihood](../../permanent/negative-log-likelihood.md)
+    * Defined as: [Softmax Function](../../permanent/softmax-activation-function.md) then [Negative Log-Likelihood](../../permanent/negative-log-likelihood.md)
     * [Exponential Function](../../permanent/exponential-function.md)
         * Defined as $e^x$
             * $e$ is a number about 2.718
                 * The inverse of natural logarithm
         * Always positive and increases fast
-    * [Softmax Activation Function](../../permanent/softmax-activation-function.md) (pg. 223-227)
+    * [Softmax Function](../../permanent/softmax-activation-function.md) (pg. 223-227)
         * The multi-category equivalent of the [Sigmoid Function](../../permanent/sigmoid-function.md)
             * Similarly "smooth and symmetric" properties
         * Use if more than 2 categories and want probabilities add to 1.
