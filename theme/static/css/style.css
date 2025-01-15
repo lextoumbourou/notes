@@ -493,10 +493,9 @@ table td,
 table th {
   padding: 10px;
   border: 1px solid #ccc;
-}
-
-table th, table td {
-  padding: 0;
+  min-width: 6ch;
+  height: 100%;
+  padding: 4px 8px;
 }
 
 .table-border {
