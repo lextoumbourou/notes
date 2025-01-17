@@ -41,7 +41,7 @@ Notes from [Natural Language Processing Specialization](https://www.coursera.org
     * Takes a sequence of words (or any sequence you can encode as tokens) and return another sequence.
     * Works by mapping variable length sequences to fixed length memory called [Embedding Space](Embedding Space).
     * Inputs and outputs don't need to be the same length.
-    * [lstm](../../../../permanent/lstm.md) and [Gated Recurrent Unit](../../../../permanent/gated-recurrent-unit.md) architectures can deal with vanishing and exploding gradients.
+    * [LSTM](../../../../permanent/lstm.md) and [Gated Recurrent Unit](../../../../permanent/gated-recurrent-unit.md) architectures can deal with vanishing and exploding gradients.
     * How it works
         * Encoder takes word tokens as inputs.
         * Returns a hidden state as output.

@@ -398,7 +398,7 @@ Result:
 
 Derivate of $e^{-x}$ with respect to $x$ is $-e^{-x}$
 
-[product-rule](product-rule.md)
+[Product Rule](product-rule.md)
 
 $(fg)' = f'g + fg'$
 Example:

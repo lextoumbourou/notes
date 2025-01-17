@@ -15,7 +15,7 @@ Step-by-step:
 2. Take the absolute values of the errors
 3. Take the mean of all values.
 
- It's also known as [L1 Loss](l1-loss.md) or [L1 Penalty](../../../permanent/l1-penalty.md) because it takes the [l1-norm](../../../permanent/l1-norm.md) of the error vector
+ It's also known as [L1 Loss](l1-loss.md) or [L1 Penalty](../../../permanent/l1-penalty.md) because it takes the [L1 Norm](../../../permanent/l1-norm.md) of the error vector
 
 An alternative to [Root Mean-Squared Error](root-mean-squared-error.md).
 

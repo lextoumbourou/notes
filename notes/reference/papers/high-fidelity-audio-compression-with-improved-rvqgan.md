@@ -112,7 +112,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
     * Identify side-effect of quantizer dropout - a technique designed to allow a single model to support variable bitrates, actually hurts the full-bandwidth audio quality and propose a solution to mitigate it.
     * We make impactful design changes to existing neural audio codecs by adding:
         * [Periodic Inductive Biases](../../../../permanent/Periodic%20Inductive%20Biases.md)
-        * [multi-scale-stft-discriminator](../../../../permanent/multi-scale-stft-discriminator.md)
+        * [Multi-scale STFT Discriminator](../../../../permanent/multi-scale-stft-discriminator.md)
         * [Multi-scale Mel Loss](Multi-scale%20Mel%20Loss)
     * Provide thorough ablations and intuitions to motivate them.
 * Proposed method: universal audio compression model, capable of handling speech, music, environmental sounds, different sampling rates and audio encoding formats.
