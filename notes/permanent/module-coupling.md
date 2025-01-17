@@ -9,7 +9,7 @@ tags:
   - SoftwareEngineering
 ---
 
-Module coupling concerns the interdependence between software [Modules](module.md): how much do a group of modules rely on each other?
+Module coupling concerns the interdependence between software [Module](module.md): how much do a group of modules rely on each other?
 
 Coupling is certainly not a bad thing on its own; it's necessary to develop a sufficiently complex system. However, some types of coupling are preferred over others.
 

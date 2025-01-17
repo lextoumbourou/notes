@@ -22,7 +22,7 @@ status: draft
 * Sequence
     * $a, a \times q, a \times q^2, ..., a \times q^n$
     * Formal definition:
-        * Given a [Set](permanent/set.md) X, a sequence is a [function](../../../../permanent/function.md) $a: N \rightarrow X$
+        * Given a [Set](permanent/set.md) X, a sequence is a [Function](../../../../permanent/function.md) $a: N \rightarrow X$
             * i.e. a set a(0), a(1), ...., a(n) ... denoted with $\{a_n\}_{n \in N}$
     * Can be defined explicitly $a_n = f(n)$
         * Example: $a_n = 2n + 1 \rightarrow 1, 3, 5, 7, 9 ...$
@@ -200,7 +200,7 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
         * i) $x_k = \frac{k+1}{k}, k = 1, 2, 3, ...$
             * $\displaystyle{\lim_{k \to \infty}} (\frac{k + 1}{k}) = 1$
 * [Series and Sigma Notation](Series%20and%20Sigma%20Notation)
-    * [series](../../../../permanent/series.md)
+    * [Series](../../../../permanent/series.md)
         * If the terms of a sequence are added, the result is called series.
         * For example, if you add the term: 1, 2, 3, 4, 5 you get: 1 + 2 + 3 + 4 + 5
         * Clearly a series is a sum: if the series contains a finite number of terms, we are able to add them all up and obtain the sum of the series.
