@@ -10,7 +10,7 @@ summary: a parameter that controls how confident Softmax predictions are
 
 Temperature scaling controls how "confident" a model is when making predictions by adjusting the sharpness of probability distributions produced by the [Softmax Function](softmax-activation-function.md).
 
-Softmax is a function that converts a neural network's raw outputs (logits) into probabilities that sum to 1. For example, in a dog breed classifier, the model might output logits representing its confidence for different breeds:
+Softmax is a function that converts a neural network's raw outputs (logits) into probabilities that sum to 1. For example, in a dog breed classifier, the model might output logits representing its confidence for different breeds, and the Softmax function would convert those into probability-like values:
 
 |                  | logit | softmax  |
 | ---------------- | ----- | -------- |
@@ -141,8 +141,8 @@ The temperature parameter, therefore, affects how much randomness is injected at
 
 $T = 0$: Deterministic, always selects the highest probability token. However, in practice, you can only approximate it with a very small temperature (since dividing by zero is undefined). Good for math, coding, and fact-based responses.
 
-$T \approx 0.7$: Balanced between coherence and creativity. Industry standard for chat models. Maintains context while allowing natural variation
+$T \approx 0.7$: Balanced between coherence and creativity. Common default for chat models. Maintains context while allowing natural variation
 
 $T > 1$: Increases randomness. Can generate more creative/diverse outputs. Risk of incoherent or off-topic responses
 
-Temperature is typically applied during inference only. During training, models use $T = 1$ to learn the true probability distribution of the data. Although in the paper, [Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531), they experiment with using higher temperature during training to help the model distinguish between similar classes of items.
+Temperature is typically applied during inference only. During training, models use $T = 1$ to learn the true probability distribution of the data. However, in the paper, [Distilling the Knowledge in a Neural Network](https://arxiv.org/abs/1503.02531), they experiment with using higher temperatures during training to help the model distinguish between similar classes of items.
