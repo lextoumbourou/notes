@@ -1,0 +1,9 @@
+[build]
+  command = "npm install -g @mermaid-js/mermaid-cli"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_VERSION = "10"
+
+[[plugins]]
+  package = "@netlify/plugin-functions" 
