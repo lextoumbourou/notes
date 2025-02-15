@@ -1,8 +1,9 @@
 [build]
-  command = "npm install -g @mermaid-js/mermaid-cli"
+  command = "npm install -g @mermaid-js/mermaid-cli && npm run build"
+  publish = "output"
 
 [build.environment]
-  NODE_VERSION = "22"
+  NODE_VERSION = "18"
   NPM_VERSION = "10"
 
 [[plugins]]
