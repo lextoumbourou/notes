@@ -30,6 +30,7 @@ ENV = os.environ.get("ENV", "prod")
 
 MARKDOWN = {
     "extension_configs": {
+        "markdown_inline_mermaid": {},
         "obsidian-callouts": {},
         "markdown.extensions.codehilite": {
             "css_class": "highlight",

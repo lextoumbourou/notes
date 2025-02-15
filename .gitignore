@@ -12,3 +12,4 @@ pelican-plugins/
 node_modules
 media
 .ipynb_checkpoints
+.aider*

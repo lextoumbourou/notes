@@ -14,7 +14,7 @@ tags:
 
 LLMs are called [AI Agents](ai-agents.md) within this framework. Agents can take on different roles or states, like planning actions, using tools, reflecting on their own outputs, and storing information for long-term use. In [Multi-Agent Systems](multi-agent-systems.md), an agent can collaborate with other agents.
 
-![Agentic Reasoning Workflow Overview](../_media/agentic-reasoning-overview.png)
+![agentic-reasoning-overview.png](../_media/agentic-reasoning-overview.png)
 
 In contrast, non-agentic workflows include direct methods like [Zero-Shot Prompting](zero-shot-prompting.md), where the LLM returns the result based on a single prompt. Some techniques from agentic reasoning are also used in zero-shot prompting, so the line between agentic and non-agentic is not always clear.
 

@@ -13,4 +13,4 @@ Part of the [Planning](planning.md) category of [Agentic Reasoning](agentic-reas
 
 Described in paper [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](../../../reference/chain-of-thought-prompting-elicits-reasoning-in-large-language-models.md).
 
-![Chain-of-Thought Example](../_media/chain-of-thought-prompting.png)
+![chain-of-thought-prompting.png](../_media/chain-of-thought-prompting.png)

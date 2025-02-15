@@ -20,7 +20,7 @@ Traditional approaches to getting LLMs to solve complex reasoning problems invol
 
 This new research shows that by simply adding the phrase "Let's think step by step" before asking for an answer, LLMs can break down and solve complex problems without any examples.
 
-![Figure 1 from the paper showing the Let's think step by step technique](../../_media/large-language-models-are-zero-shot-reasoners-fig-1.png)
+![large-language-models-are-zero-shot-reasoners-fig-1.png](../../_media/large-language-models-are-zero-shot-reasoners-fig-1.png)
 
 *Figure 1: Example inputs and outputs of GPT-3 with different prompting techniques.*
 
@@ -48,7 +48,7 @@ Let's think step-by-step uses a two-stage prompting process:
 - Uses format-specific triggers like "Therefore, the answer is..."
 - Extracts final answer in correct format
 
-![Figure 2 showing the two stage approach](../../_media/large-language-models-are-zero-shot-reasoners-fig-2.png)
+![large-language-models-are-zero-shot-reasoners-fig-2.png](../../_media/large-language-models-are-zero-shot-reasoners-fig-2.png)
 
 *Figure 2: Full pipeline of Zero-shot-CoT as described in section 3.*
 
