@@ -5,16 +5,12 @@ modified: 2025-02-15 00:00
 status: draft
 ---
 
-Prim's Algorithm is an algorithm for building a [Minimum Spanning Tree](../../../permanent/minimum-spanning-tree.md) by:
+**Prim's Algorithm** is an algorithm for building a [Minimum Spanning Tree](minimum-spanning-tree.md), alternative to [Kruskal's Algorithm](kruskals-algorithm.md).
 
 1. Starting with a randomly selected node.
 2. Repeatedly adding the lowest weight edge that connects the current tree to a new node.
 3. Continuing until all nodes are included.
 
-* The main steps of the algorithm are:
-    * Step 1: Initialise the tree with any vertex from the graph
-    * Step 2: Incrementally construct the tree by finding and adding minimum weight edges and their connected nodes
-    
 ## Algorithm
 
 $$
@@ -75,95 +71,3 @@ def prims_algorithm(G: Graph):
         
     return T
 ```
-
-## Visualisation
-
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
-  <defs>
-    <!-- Animations -->
-    <animate id="fadeIn" attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze"/>
-    
-    <!-- Node highlight -->
-    <animate id="nodeHighlight" attributeName="fill" 
-             values="#ccc;#98fb98;#98fb98" 
-             dur="1s" 
-             fill="freeze"/>
-             
-    <!-- Edge highlight -->
-    <animate id="edgeHighlight" attributeName="stroke" 
-             values="#666;#ff0000;#ff0000" 
-             dur="1s" 
-             fill="freeze"/>
-  </defs>
-
-  <!-- Background -->
-  <rect width="400" height="300" fill="#fff"/>
-  
-  <!-- Edges -->
-  <g stroke-width="2">
-    <line x1="100" y1="150" x2="200" y2="80" stroke="#666">
-      <title>Weight: 4</title>
-      <!-- A to B -->
-      <animate attributeName="stroke" values="#666;#ff0000" dur="3s" begin="3s" fill="freeze"/>
-    </line>
-    
-    <line x1="200" y1="80" x2="300" y2="150" stroke="#666">
-      <title>Weight: 2</title>
-      <!-- B to C -->
-      <animate attributeName="stroke" values="#666;#ff0000" dur="3s" begin="2s" fill="freeze"/>
-    </line>
-    
-    <line x1="300" y1="150" x2="200" y2="220" stroke="#666">
-      <title>Weight: 1</title>
-      <!-- C to D -->
-      <animate attributeName="stroke" values="#666;#ff0000" dur="3s" begin="1s" fill="freeze"/>
-    </line>
-    
-    <line x1="100" y1="150" x2="300" y2="150" stroke="#666">
-      <title>Weight: 3</title>
-      <!-- A to C -->
-      <animate attributeName="stroke" values="#666;#ff0000" dur="3s" begin="0s" fill="freeze"/>
-    </line>
-    
-    <line x1="100" y1="150" x2="200" y2="220" stroke="#666">
-      <title>Weight: 6</title>
-      <!-- A to D -->
-    </line>
-  </g>
-
-  <!-- Nodes -->
-  <g>
-    <!-- Node A -->
-    <circle cx="100" cy="150" r="20" fill="#ccc" stroke="black" stroke-width="2">
-      <animate attributeName="fill" values="#ccc;#98fb98" dur="1s" begin="0s" fill="freeze"/>
-    </circle>
-    <text x="100" y="155" text-anchor="middle" font-family="Arial" font-size="16">A</text>
-    
-    <!-- Node B -->
-    <circle cx="200" cy="80" r="20" fill="#ccc" stroke="black" stroke-width="2">
-      <animate attributeName="fill" values="#ccc;#98fb98" dur="1s" begin="3s" fill="freeze"/>
-    </circle>
-    <text x="200" y="85" text-anchor="middle" font-family="Arial" font-size="16">B</text>
-    
-    <!-- Node C -->
-    <circle cx="300" cy="150" r="20" fill="#ccc" stroke="black" stroke-width="2">
-      <animate attributeName="fill" values="#ccc;#98fb98" dur="1s" begin="1s" fill="freeze"/>
-    </circle>
-    <text x="300" y="155" text-anchor="middle" font-family="Arial" font-size="16">C</text>
-    
-    <!-- Node D -->
-    <circle cx="200" cy="220" r="20" fill="#ccc" stroke="black" stroke-width="2">
-      <animate attributeName="fill" values="#ccc;#98fb98" dur="1s" begin="2s" fill="freeze"/>
-    </circle>
-    <text x="200" y="225" text-anchor="middle" font-family="Arial" font-size="16">D</text>
-  </g>
-
-  <!-- Edge Weights -->
-  <g font-family="Arial" font-size="14">
-    <text x="150" y="100" text-anchor="middle">4</text>
-    <text x="250" y="100" text-anchor="middle">2</text>
-    <text x="250" y="200" text-anchor="middle">1</text>
-    <text x="200" y="140" text-anchor="middle">3</text>
-    <text x="150" y="200" text-anchor="middle">6</text>
-  </g>
-</svg>

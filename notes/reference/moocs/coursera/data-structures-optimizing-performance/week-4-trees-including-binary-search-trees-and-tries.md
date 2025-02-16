@@ -57,10 +57,11 @@ private class TreeNode<E> {
 
 ## Core: Pre-Order Traversals
 
-* Pre-order traversal (aka depth first search):
-    1. Visit yourself
-    2. Visit all of your left subtree.
-    3. Visit all of your right subtree.
+* [Pre-order Tree Traversal](../../../../../../permanent/pre-order-tree-traversal.md)
+    * (aka depth first search):
+        1. Visit yourself
+        2. Visit all of your left subtree.
+        3. Visit all of your right subtree.
 
 ```java
 private void preOrder(TreeNode<E> node) {
