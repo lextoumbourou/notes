@@ -32,7 +32,7 @@ The books required:
 
 ## Contents
 
-* [Week 1 - Sets A](week-1-sets-a.md)
+* [UOL Discrete Maths - Week 1 - Sets A](week-1-sets-a.md)
 * [Week 2 - Sets B](week-2-sets-b.md)
 * [Week 3 - Functions A](week-3-functions-a.md)
 * [Week 4 - Functions B](week-4-functions-b.md)

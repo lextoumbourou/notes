@@ -1,243 +1,388 @@
 ---
 title: Dijkstra's Shortest Path Algorithm
 date: 2014-01-12 00:00
+modified: 2025-02-22 00:00
 tags:
-  - Algorithms
-summary: An algorithm for finding a path between nodes in a graph.
-status: draft
+  - ComputerScience
+  - GraphTheory
+summary: An elegant algorithm for finding the shortest path between nodes in a graph.
 ---
 
-Dijkstra's Shortest Path Algorithm provides a simple way for a computer to build a shortest path tree for a graph with non-negative path costs.
+**Dijkstra's Shortest Path Algorithm** provides an efficient way to find the shortest path between nodes in a [Graph Theory](graph-theory.md) with non-negative edge weights. It's widely used in routing protocols, GPS navigation systems, and network optimisation.
+## Algorithm Intuition
 
-Firstly, the intuition behind it.
+Imagine a robot navigating through a maze. The robot has no map of the maze but knows that at each intersection (corner) there are checkpoints, which we'll call **nodes**. There are paths between checkpoints, which we'll call **edges**. Each edge has a cost to traverse (like distance or time). Importantly, none of the edges have negative costs.
 
-Imagine a robot in a maze. The robot has no map of the maze. All it knows is that in each corner of the maze there are checkpoints, which we'll call **nodes**. There are paths between checkpoints, which we'll call **edges**. Each edge has a cost. None of the edges have negative path costs.
+The robot aims to find the path through the maze with the lowest total cost.
 
-The robot is aiming to find the path through the maze with the lowest cost.
+The robot tracks information in two lists:
 
-At each node, the robot can find information about the node's neighbours, including cost to traverse the edge.
-
-The robot keeps track of which nodes it plans to visit next in a list called the **Frontier**.
-
-The robox keeps track of which nodes it's visited in a list called **Explored**.
+- **Frontier**: Nodes it plans to visit next
+- **Explored**: Nodes it has already visited and processed
 
 Our robot begins at `Node A`.
 
-It firstly adds this node to the **Explored** list, since it never needs to visit again. Since we haven't accrued a cost, the current path is 0.
-
-    > Explored list <
-
-    Node   Cost   Path
-    A      0      A
+```mermaid
+graph TD
+    A((A)):::current
+    B((B))
+    C((C))
+    D((D))
+    E((E))
     
-It then finds information about A's neighbours:
-
-* **B** with a cost of 5.
-* **C** with a cost of 3.
-
-Since neither of these nodes is on the **Explored** list, it puts them both on the **Frontier**. The robot adds the cost spent so far (current $0) to the price to get to these nodes.
-
-    > Frontier list <
-
-    Node   Cost           Path
-    B      $0 + $5 = $5   A -> B
-    C      $0 + $3 = $3   A -> C
-
-The Robot decides where to travel next by searching the **Frontier** list for the cheapest path. It finds C.
-
-Now at C, the robot moves it from the **Frontier** to the **Explored** list. It is impossible for the robot to find a cheaper path to C, because if such a path existed, it would have found it already.
-
-    > Explored list <
-
-    Node    Cost    Path 
-    A       0       A
-    C       $3      A -> C
-
-    > Frontier list <
-
-    Node    Cost       Path
-    B       $5         A -> B
-
-The robot asks the node C for its neighbours.
-
-* **A** with a cost of 3.
-* **E** with a cost of 2.
-* **B** with a cost of 1.
-
-The Robot knows ```A``` is on the **Explored** list, so it doesn't need to explore that again. The robot hasn't explored ```E```, so it adds the **Frontier**, with the path and new cost. The robot goes to add ```B``` to the **Frontier**, but realises that it's already on it. However, the cost of path to B through ```A -> C -> B``` is only $4 ($0 + $3 + $1) which is less than the path it has stored. So, the robot removes the old path to B and adds the new.
-
-    > Frontier list <
+    A -- 5 --> B
+    A -- 3 --> C
+    B -- 2 --> D
+    C -- 1 --> B
+    C -- 2 --> E
+    C -- 6 --> D
     
-    Node    Cost            Path
-    B       $3 + $1 = $4    A -> C -> B    
-    E       $3 + $2 = $5    A -> C -> E
+    classDef current fill:#ff9900;
+```
 
-The robot scans the **Frontier** list for the next destination. Since B is the cheapest path so far, it follows it.
+It first adds node A to the **Explored** list, as it never needs to visit it again. Since we're at the starting point, the current path cost is 0.
 
-Now at **B**, the Robot takes **B** from the Frontier and adds it to Explored.
+**Explored list:**
 
-    > Explored list <
+| Node | Cost | Path |
+|------|------|------|
+| A    | 0    | A    |
 
-    Node    Cost            Path 
-    A       0               A
-    C       $3              A -> C
-    B       $3 + $1 = $4    A -> B -> B    
+The robot then gathers information about A's neighbors:
+- **B** with a cost of 5
+- **C** with a cost of 3
 
-    > Frontier list < 
+Since neither of these nodes is on the **Explored** list, the robot puts both on the **Frontier**. It adds the current cost (0) to the price to reach these nodes.
 
-    Node    Cost            Path
-    D       $3 + $6 = $9    A -> C -> D
+**Frontier list:**
+
+| Node | Cost | Path |
+|------|------|------|
+| B    | 5    | A → B |
+| C    | 3    | A → C |
+
+The robot decides where to go next by finding the cheapest path in the **Frontier**. It selects C.
+
+```mermaid
+graph TD
+    A((A)):::visited
+    B((B))
+    C((C)):::current
+    D((D))
+    E((E))
     
- It examines **B**'s neighbours:
-
- * **A** with a cost of 5.
- * **D** with a cost of 2.
-
-The Robot checks the Frontier. It's got a path to D, but the path to B + the path to D is cheaper than what's on the Frontier. So, it replaces the D path with the new one
-
-    > Frontier list <
+    A -- 5 --> B
+    A -- 3 --> C
+    B -- 2 --> D
+    C -- 1 --> B
+    C -- 2 --> E
+    C -- 6 --> D
     
-    Node     Cost            Path
-    D        $4 + $2 = $6    A -> B -> D
+    classDef current fill:#ff9900;
+    classDef visited fill:#cccccc;
+```
 
-The robot only has one node on the Frontier. It travels to D.
+Now at C, the robot moves it from the **Frontier** to the **Explored** list. It's impossible to find a cheaper path to C than what we already have because if such a path existed, we would have found it already (a key insight of Dijkstra's algorithm).
 
-The Robot adds D to the Explored list
+**Explored list:**
 
-    > Explored list <
+| Node | Cost | Path |
+|------|------|------|
+| A    | 0    | A    |
+| C    | 3    | A → C |
 
-    Node    Cost            Path
-    A       0               A
-    C       $3              A -> C
-    B       $3 + $1 = $4    A -> C -> B
-    D       $4 + $2 = $6    A -> B -> D
+**Frontier list:**
+
+| Node | Cost | Path |
+|------|------|------|
+| B    | 5    | A → B |
+
+The robot asks node C for its neighbors:
+- **A** with a cost of 3
+- **E** with a cost of 2
+- **B** with a cost of 1
+
+The robot ignores A since it's already on the **Explored** list. It adds E to the **Frontier** with the new path cost. The robot notices B is already on the **Frontier**, but the path through C is cheaper (A → C → B costs 4, which is less than A → B at 5), so it updates the path to B.
+
+**Frontier list:**
+
+| Node | Cost | Path |
+|------|------|------|
+| B    | 4    | A → C → B |
+| E    | 5    | A → C → E |
+
+The robot scans the **Frontier** for the next destination. B has the cheapest path, so it goes there.
+
+```mermaid
+graph TD
+    A((A)):::visited
+    B((B)):::current
+    C((C)):::visited
+    D((D))
+    E((E))
     
-Each neighbour of D has been visited. So it has found the shortest path.
+    A -- 5 --> B
+    A -- 3 --> C
+    B -- 2 --> D
+    C -- 1 --> B
+    C -- 2 --> E
+    C -- 6 --> D
+    
+    classDef current fill:#ff9900;
+    classDef visited fill:#cccccc;
+```
 
----
+At B, the robot moves it from **Frontier** to **Explored**.
 
-So, now let's see it as Python code. For the remainder of the blog post, the code with get built in the right-hand side as you scroll down.
+**Explored list:**
 
-Firstly, the way we can represent a graph like the maze is something like this.
+| Node | Cost | Path |
+|------|------|------|
+| A    | 0    | A    |
+| C    | 3    | A → C |
+| B    | 4    | A → C → B |
 
-    maze_graph = {
-        'A': {'B':5, 'C': 6},
-        'B': {'A':5, 'D': 2},
-        'C': {'A':5, 'D': 2},
-        'D': {'B': 2,}
+**Frontier list:**
 
-You can see that A is connected to B with a cost of $5, and if you look at B, it's connected to A with the same cost. Because each node is connected back to each other, we call the graph "Undirected".
+| Node | Cost | Path |
+|------|------|------|
+| E    | 5    | A → C → E |
 
-I'm going to create the ```frontier``` list as a dictionary, where the Node is the key. Each value will be a tuple, where the first value is the cost, the second the path (represented as a list of nodes). Like this:
+It examines B's neighbors:
+- **A** with a cost of 5 (already explored, so ignored)
+- **D** with a cost of 2
 
-    frontier = {node: (cost, path)}
+The robot adds D to the **Frontier** with a total cost of 6 (4 + 2).
 
-Since we're starting at A, I'll add it to the frontier dictionary with a cost of $0.
+**Frontier list:**
 
-    frontier['A'] = {
-        (0, ['A'])
-    }
+| Node | Cost | Path |
+|------|------|------|
+| E    | 5    | A → C → E |
+| D    | 6    | A → C → B → D |
 
-Tthe explorer list will be another dictionary, in the same format as the ```frontier```.
+E now has the lowest cost on the **Frontier**, so the robot visits it next.
 
-    explored = {}
+```mermaid
+graph TD
+    A((A)):::visited
+    B((B)):::visited
+    C((C)):::visited
+    D((D))
+    E((E)):::current
+    
+    A -- 5 --> B
+    A -- 3 --> C
+    B -- 2 --> D
+    C -- 1 --> B
+    C -- 2 --> E
+    C -- 6 --> D
+    
+    classDef current fill:#ff9900;
+    classDef visited fill:#cccccc;
+```
 
-Before we go on, I'm going to define a function called ```get_smallest_node(frontier)```. This implementation of function is quite important, it's the different between this being a "fast" algorithm and a "slow" one. In my implementation, I will loop through all the nodes on the frontier each time I visit a node. A better way to do it is to use a data structure that allows for quickly finding the minimum like a "heap queue", but that's out of scope of this article for now. The function looks something like this:
+The robot adds E to the **Explored** list.
 
-    def get_smallest_node(frontier):
-        # Start off by setting the smallest value to infinity
-        smallest_node, smallest_value = None, float('inf')
+**Explored list:**
 
-        # Go through the frontier, each time we find a smaller value than 
-        # what we've stored, we save it
-        for node in frontier:
-            cost = frontier[node][0]
-            if cost < smallest_value:
-                smallest_value = cost
-                smallest_node = node
+| Node | Cost | Path |
+|------|------|------|
+| A    | 0    | A    |
+| C    | 3    | A → C |
+| B    | 4    | A → C → B |
+| E    | 5    | A → C → E |
 
-        return smallest_node
+**Frontier list:**
 
-While there is nodes to visit on the Frontier, we're going to follow the procedure
+| Node | Cost | Path |
+|------|------|------|
+| D    | 6    | A → C → B → D |
 
-    while frontier:
+Finally, the robot visits D.
 
-Firstly, we call the ```get_smallest_node``` function, the robot then visits the node and adds it to the ```explored``` list, removing it from the ```frontier```.
+```mermaid
+graph TD
+    A((A)):::visited
+    B((B)):::visited
+    C((C)):::visited
+    D((D)):::current
+    E((E)):::visited
+    
+    A -- 5 --> B
+    A -- 3 --> C
+    B -- 2 --> D
+    C -- 1 --> B
+    C -- 2 --> E
+    C -- 6 --> D
+    
+    classDef current fill:#ff9900;
+    classDef visited fill:#cccccc;
+```
 
-        node = get_smallest_node(frontier)
-        explored[node] = frontier.pop(node)
+The robot adds D to the **Explored** list.
 
-Next, we ask the node for each of its neighbours
+**Explored list:**
 
-        for neighbour in maze[node]:
+| Node | Cost | Path |
+|------|------|------|
+| A    | 0    | A    |
+| C    | 3    | A → C |
+| B    | 4    | A → C → B |
+| E    | 5    | A → C → E |
+| D    | 6    | A → C → B → D |
+
+All nodes have been visited, and the **Frontier** is empty. The robot has found the shortest path to all nodes from the starting point.
+
+```mermaid
+graph TD
+    A((A)):::visited
+    B((B)):::visited
+    C((C)):::visited
+    D((D)):::visited
+    E((E)):::visited
+    
+    A -- 5 --> B
+    A -- 3 --> C
+    B -- 2 --> D
+    C -- 1 --> B
+    C -- 2 --> E
+    C -- 6 --> D
+    
+    classDef visited fill:#cccccc;
+```
+
+## Code
+
+Let's see how we can implement Dijkstra's algorithm in Python code.
+
+First, we'll represent our graph. A graph can be represented as a dictionary where keys are nodes and values are dictionaries of connected nodes with their edge weights:
+
+```python
+maze_graph = {
+    'A': {'B': 5, 'C': 3},
+    'B': {'A': 5, 'D': 2},
+    'C': {'A': 3, 'B': 1, 'D': 6, 'E': 2},
+    'D': {'B': 2, 'C': 6},
+    'E': {'C': 2}
+}
+```
+
+We'll create the `frontier` as a dictionary where each node maps to a tuple containing its cost and path:
+
+```python
+frontier = {node: (cost, path)}
+```
+
+Since we're starting at A, we'll add it to the frontier with a cost of 0:
+
+```python
+frontier = {
+    'A': (0, ['A'])
+}
+```
+
+The `explored` dictionary will have the same format.
+
+A key function in our implementation is `get_smallest_node()`, which finds the node with the lowest cost in the frontier:
+
+```python
+def get_smallest_node(frontier):
+    """Find the node with the lowest cost in the frontier."""
+    # Start with infinity as the smallest value
+    smallest_node, smallest_value = None, float('inf')
+
+    # Check each node in the frontier
+    for node in frontier:
+        cost = frontier[node][0]
+        if cost < smallest_value:
+            smallest_value = cost
+            smallest_node = node
+
+    return smallest_node
+```
+
+Here's the complete implementation of Dijkstra's algorithm:
+
+```python
+def dijkstra_shortest_path(graph, start):
+    """
+    Find shortest paths from start node to all other nodes using Dijkstra's algorithm.
+    
+    Args:
+        graph: Dictionary of dictionaries representing the graph
+        start: Starting node
         
-
-Firstly, if the node is in ```explored``` we ignore it.
-
-            if neighbour in explored:
-                continue
-
-If the neighbour is not in the ```frontier```, we add it. When we add it, we make the cost, the cost from node -> neighbour + the cost so far to node. We also make the add the neighbour to the path so far. Like so:
-
-            if neighbour not in frontier:
-                 cost_so_far = explored[node][0]
-                 cost_to_neighbour = maze[node][neighbour][0]
-                 total_path_cost = cost_so_far + cost_to_neighbour
-                 new_path = explored[node][1] + [neighbour]
-                 frontier[neighbour] = (
-                     total_path_cost, new_path)
-
-One other thing we need to do, is update the ```frontier``` if we find a path that's *cheaper* than the one we already have, we can do that by adding an extra statement to the ```neighbour not in frontier``` check which also updates the ```frontier``` if the cost we get is less than the cost we already have in the frontier:
-
-            if neighbour not in frontier or (total_path_cost < frontier[node][0]):
-                 cost_so_far = explored[node][0]
-                 cost_to_neighbour = maze[node][neighbour][0]
-                 total_path_cost = cost_so_far + cost_to_neighbour
-                 new_path = explored[node][1] + [neighbour]
-                 frontier[neighbour] = (
-                     total_path_cost, new_path)
-
-Let's see all that code together:
-
-    def get_smallest_node(frontier):
-        # Start off by setting the smallest value to infinity
-        smallest_node, smallest_value = None, float('inf')
-
-        # Go through the frontier, each time we find a smaller value than 
-        # what we've stored, we save it
-        for node in frontier:
-            cost = frontier[node][0]
-            if cost < smallest_value:
-                smallest_value = cost
-                smallest_node = node
-
-        return smallest_node
-
-	 maze_graph = {
-	     'A': {'B':5, 'C': 6},
-	     'B': {'A':5, 'D': 2},
-	     'C': {'A':5, 'D': 2},
-	     'D': {'B': 2}
-     }
-
+    Returns:
+        Dictionary with shortest paths to all nodes
+    """
+    # Initialize frontier with starting node
     frontier = {
-       'A': (0, ['A'])
+        start: (0, [start])
     }
+    
+    # Initialize empty explored set
     explored = {}
-
+    
+    # Continue until frontier is empty
     while frontier:
-        node = get_smallest_node(frontier)
-        explored[node] = frontier.pop(node)
-
-        for neighbour in maze[node]:
-            if neighbour in explored:
+        # Get node with smallest cost from frontier
+        current = get_smallest_node(frontier)
+        
+        # Move node from frontier to explored
+        current_cost, current_path = frontier.pop(current)
+        explored[current] = (current_cost, current_path)
+        
+        # Check all neighbors of current node
+        for neighbor, edge_cost in graph[current].items():
+            # Skip if already explored
+            if neighbor in explored:
                 continue
+                
+            # Calculate total path cost
+            total_cost = current_cost + edge_cost
+            
+            # Update frontier if neighbor is not in frontier or new path is cheaper
+            if (neighbor not in frontier) or (total_cost < frontier[neighbor][0]):
+                new_path = current_path + [neighbor]
+                frontier[neighbor] = (total_cost, new_path)
+    
+    return explored
 
-            total_path_cost = explored[node][0] + maze[node][neighbour][0]
-            if (neighbour not in frontier) or \
-               (total_path_cost < frontier[neighbour][0]):
-	                 new_path = explored[node][1] + [neighbour]
-	                 frontier[neighbour] = (
-	                     total_path_cost, new_path)
+# Function to find smallest node in frontier
+def get_smallest_node(frontier):
+    """Find the node with the lowest cost in the frontier."""
+    smallest_node, smallest_value = None, float('inf')
+    
+    for node in frontier:
+        cost = frontier[node][0]
+        if cost < smallest_value:
+            smallest_value = cost
+            smallest_node = node
+            
+    return smallest_node
+```
 
-And, that's it. I hope that helps you wrap your head around Dijkstra's Shortest Path Algorithm.
+### Example Usage
+
+```python
+# Define our graph
+maze_graph = {
+    'A': {'B': 5, 'C': 3},
+    'B': {'A': 5, 'D': 2},
+    'C': {'A': 3, 'B': 1, 'D': 6, 'E': 2},
+    'D': {'B': 2, 'C': 6},
+    'E': {'C': 2}
+}
+
+# Find shortest paths from node A
+shortest_paths = dijkstra_shortest_path(maze_graph, 'A')
+
+# Print results
+for node, (cost, path) in shortest_paths.items():
+    print(f"Shortest path to {node}: {' → '.join(path)} with cost {cost}")
+```
+
+## Optimisations
+
+The implementation above has a time complexity of $O(V^{2})$ where $V$ is the number of vertices (nodes). For larger graphs, this can be improved to $O((V+E) \log V)$ by using a priority queue (like a min-heap) instead of repeatedly scanning the entire frontier for the smallest cost.

@@ -6,6 +6,8 @@ status: draft
 parent: uol-discrete-mathematics
 ---
 
+My notes from Week 2 from [Discrete Mathematics Course Notes](index.md).
+
 ## Lesson 1.2 Set representation and manipulation
 
 ### 1.201 The representation of a set using Venn diagrams
@@ -21,22 +23,23 @@ parent: uol-discrete-mathematics
     * Used to visualise the possible relations among a collection of sets.
     * In this example, the red area represents the union of A and B:
 
-        ![Venn Diagram example](_media/venn-union.png)
+        ![venn-union.png](_media/venn-union.png)
 
     * In this example, the red area represents the intersection of A and B:
 
-        ![Venn Intersection](/_media/venn-intersection.png)
+        ![venn-intersection.png](_media/venn-intersection.png)
 
     * In this example, the set difference:
 
-        ![Venn Set Difference](/_media/venn-set-diff.png)
+        ![venn-set-diff.png](_media/venn-set-diff.png)
 
     * In this example, it shows the symmetric difference between A and B
 
-        ![Venn Symmetric Difference](/_media/venn-symmetric-diff.png)
+        ![venn-symmetric-diff.png](_media/venn-symmetric-diff.png)
 
     * Can use a Venn Diagram to show that each sets are equivalent.
-        ![Venn Show Sets Same](/_media/venn-show-sets-same.png)
+    
+        ![venn-show-sets-same.png](_media/venn-show-sets-same.png)
 
 ### 1.203 De Morgan's laws
 
@@ -95,7 +98,7 @@ parent: uol-discrete-mathematics
         * $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
 * [Set Identities](../../../../permanent/set-identities.md)
 
-    ![Set identities table](/_media/set-identities-table.png)
+    ![set-identities-table.png](_media/set-identities-table.png)
 
     * Set identities can be used to simplify set expressions.
         * Example:
@@ -117,7 +120,7 @@ parent: uol-discrete-mathematics
         * the union of all subsets $A_i$ is equal to $A$.
     * Example:
 
-         ![Partition Example](/_media/week-2-partition-example.png)
+         ![week-2-partition-example.png](_media/week-2-partition-example.png)
 
         * $A_1 \cap A_2 = A_2 \cap A_3 = .... A_4 \cap A_5 = \emptyset$
         * $A = A_1 \cup A_2 \cup A_3 \cup A_4 \cup A_5$
