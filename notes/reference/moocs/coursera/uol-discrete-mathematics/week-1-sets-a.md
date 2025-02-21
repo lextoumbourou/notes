@@ -1,10 +1,12 @@
 ---
-title: Week 1 - Sets A
+title: "UOL Discrete Maths - Week 1 - Sets A"
 date: 2022-10-10 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
 ---
+
+My notes from Week 1 from [Discrete Mathematics Course Notes](index.md).
 
 ## 1.104 The definition of a set
 
@@ -16,7 +18,7 @@ parent: uol-discrete-mathematics
         * relations
         * graph theory
         * finite state machines
-* [Set](../../../../permanent/set.md)
+* [Set Theory, Sets](../../../../permanent/set.md)
     * a collection of any kind of "well-defined" objects:
         * people, ideas, numbers etc.
     * Set is *unordered* and contains *unique* objects.

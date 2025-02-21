@@ -9,4 +9,4 @@ A **Turing Machine** is a [Finite Automaton](finite-automaton.md) with **unbound
 
 Given $w \in (1 \cup 0)^{*}$, make $w \in 1^{*}0^{*}$. For example, given 111001001, make 111110000
 
-![Turing Machine Example](../../../_media/cheatsheet-topic-7-turing-machines-turing2.png)
+![cheatsheet-topic-7-turing-machines-turing2.png](../../../_media/cheatsheet-topic-7-turing-machines-turing2.png)

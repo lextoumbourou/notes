@@ -35,7 +35,7 @@ parent: uol-discrete-mathematics
         * $y$ is called the image of $x$.
         * $x$ is called the pre-image of $y$.
 
-            ![Domain Codomain Range](/_media/domain-codomain-range.png)
+            ![domain-codomain-range.png](_media/domain-codomain-range.png)
 
         * Example: a set mapping characters to a length.
             * $f(\text{Sea}) \rightarrow 3$ (contains 3 characters)
@@ -68,7 +68,7 @@ parent: uol-discrete-mathematics
             * That is: $x_1 \leq x_2$ then $f(x_1) \leq f(x_2)$.
         * Example of increasing linear function:
 
-          ![Linear Increasing Function](/_media/linear-increasing.png)
+          ![linear-increasing.png](_media/linear-increasing.png)
 
         * When the gradient is < 0, the function is decreasing.
     * $f: R \rightarrow R$
@@ -76,20 +76,20 @@ parent: uol-discrete-mathematics
             * If $a > 0$ then function is increasing.
             * If $x_1 \leq x_2$ then $f(x_1) \leq f(x_2)$
 
-                ![Linear Decreasing Function](/_media/linear-decreasing.png)
+                ![linear-decreasing.png](_media/linear-decreasing.png)
 
 * [Quadratric Functions](../../../../permanent/quadatric-functions.md)
     * Quadratic functions: $f(x) = ax^2 + bx + c$
         * Where $a$, $b$ and $c$ are real numbers and $a \ne 0$.
 
-            ![Quadratic](/_media/quadratic.png)
+            ![quadratic.png](_media/quadratic.png)
 
         * Domain of function f(x) is set of real numbers.
         * Range of function is set of positive numbers.
 * [Exponential Functions](permanent/exponential-functions.md)
     * If base $b$ in $f(x) = b^x$, $b > 1$ then function is increasing and represents growth shown in this graph:
 
-      ![exponential-growth-function](../../../../_media/exponential-growth-function.png)
+      ![exponential-growth-function.png](../../../../_media/exponential-growth-function.png)
 
         * Graph also shows that the point $(0,1)$ is a "common point".
         * Domain is equal to set of all real numbers.
@@ -97,7 +97,7 @@ parent: uol-discrete-mathematics
         * X-axis is horizontal asymtot to curve of function.
     * If base 0 < b < 1, then function is decreasing:
 
-        ![Exponential Decay Function](/_media/exponential-decay-function.png)
+        ![exponential-decay-function.png](_media/exponential-decay-function.png)
 
         * Domain and range are the same as previous function.
 * [Laws Of Exponential Functions](../../../../permanent/laws-of-exponential-functions.md)
@@ -119,7 +119,7 @@ parent: uol-discrete-mathematics
         * Example on the left is an injective function, as every element of $A$ has a unique image in B.
         * Example on the right is not injective. 2 or 4 in A have the same image 0. 1 and 3 have the same image 1.
 
-        ![Injective Function](_media/injective-function.png)
+        ![injective-function.png](_media/injective-function.png)
 
     * You can show a function is not injective by finding two different inputs $a$ and $b$ with the same [Function Image](permanent/function-image.md).
     * An example with a linear function:
@@ -149,7 +149,7 @@ parent: uol-discrete-mathematics
             * $\text{ CO}-D_f = R_f$
         * Examples:
 
-            ![Surjective Example](_media/surjective-example.png)
+            ![surjective-example.png](_media/surjective-example.png)
 
     * An example [Linear Function](../../../../permanent/linear-function.md)
         * Show that the function $f: R -> R$ with $f(x) = 2x+3$ is a surjective (onto) function.

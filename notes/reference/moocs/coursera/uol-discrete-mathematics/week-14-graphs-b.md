@@ -13,17 +13,17 @@ modified: 2023-04-08 00:00
     * Two graphs $G_1$ and $G_2$ are isomorphic if there is a bijection (invertible function) $f: G_1 \rightarrow G_2$ that preserves adjacency and non-adjacency.
         * if $uv$ is in $E(G_1)$ then $f(u)f(v)$ is in $E(G_2)$
 
-        ![week-14-isomorphic-graph](../../../../_media/week-14-isomorphic-graph.png)
+        ![week-14-isomorphic-graph.png](../../../../_media/week-14-isomorphic-graph.png)
 
     * Two graphs with different degree sequences can't be ismorphic.
 * Properties of isomorphic graphs
     * 2 graphs with different degree sequence can't be isomorphic.
 
-      ![week-14-not-isomorphic](../../../../_media/week-14-not-isomorphic.png)
+      ![week-14-not-isomorphic.png](../../../../_media/week-14-not-isomorphic.png)
 
     * 2 graphs with the same degree sequence may not be isomorphic.
 
-      ![week-14-not-isomorphic-2](../../../../_media/week-14-not-isomorphic-2.png)
+      ![week-14-not-isomorphic-2.png](../../../../_media/week-14-not-isomorphic-2.png)
 
 ## 7.203 Bipartite graphs
 
@@ -32,7 +32,7 @@ modified: 2023-04-08 00:00
     * If the set of vertices V can be partitioned in 2 no-empty disjoint sets $V_1$ and $V_2$ in such a way that each edge $e$ in $G$ has one endpoint in $V_1$ and another endpoint in $V_2$.
     * Example:
 
-      ![week-14-bipartite-graphs](../../../../_media/week-14-bipartite-graphs.png)
+      ![week-14-bipartite-graphs.png](../../../../_media/week-14-bipartite-graphs.png)
 
       * Graph is 2-colourable.
       * No odd-length cycles.
@@ -42,7 +42,7 @@ modified: 2023-04-08 00:00
     * A vertex is matched (or saturated) if it is an endpoint of one of the edges in the matching.
         * Otherwise the vertex is unmatched.
 
-        ![week-14-matching](../../../../_media/week-14-matching.png)
+        ![week-14-matching.png](../../../../_media/week-14-matching.png)
 
 * Maximum matching
     * A maximum matching is a matching of maximum size so that if any edge is added, it's no longer matching.
@@ -58,7 +58,7 @@ modified: 2023-04-08 00:00
             * Traverses graph all the way to a leaf before starting another path.
     * Example:
 
-      ![week-14-hopcroft-karp-example](../../../../_media/week-14-hopcroft-karp-example.png)
+      ![week-14-hopcroft-karp-example.png](../../../../_media/week-14-hopcroft-karp-example.png)
 
     * Pseduo code:
         * Initialise M = {}
@@ -73,12 +73,12 @@ modified: 2023-04-08 00:00
     * So far a graph has been represented by a set of vertices and a set of edges.
     * Adjaceny list of a graph G is a list of all vertices in G and their corresponding individual adjacent vertices.
 
-    ![week-14-adjaceny-matrix](../../../../_media/week-14-adjaceny-matrix.png)
+    ![week-14-adjaceny-matrix.png](../../../../_media/week-14-adjaceny-matrix.png)
 
 * [Adjacent Matrix](permanent/adjacent-matrix.md) of a graph.
     * A graph can also be represented by its adjacency matrix.
 
-    ![week-14-adjaceny-matrix-1](../../../../_media/week-14-adjaceny-matrix-1.png)
+    ![week-14-adjaceny-matrix-1.png](../../../../_media/week-14-adjaceny-matrix-1.png)
 
     * Apparent from the loops, ever other edge is represented twice (ie v1 -> v3 and v3->v1)
     * So we can multiply the diagonal by 2 to represent loops consistently.
@@ -86,16 +86,16 @@ modified: 2023-04-08 00:00
     * Adjaceny matrix of an undirected graph is symmetric.
     * Number of edges in undirected graph equals half the sum of all elements ($\mathbf{m_ij}$) of its corresponding adjaceny matrix.
 
-      ![week-14-sum-of-degree-sequence](../../../../_media/week-14-sum-of-degree-sequence.png)
+      ![week-14-sum-of-degree-sequence.png](../../../../_media/week-14-sum-of-degree-sequence.png)
 
     * In a directed graph, the adjaceny matrix only counts an edge pointing in a certain direction once.
 
 ## 7.207 Dijkstra's algorithm
 
-* [Weighted Graphs](permanent/weighted-graphs.md)
+* [Weighted Graphs](../../../../permanent/weighted-graphs.md)
     * A weighted graph is a graph where each edge is assigned a numerical weight.
 
-      ![week-14-weighted-graph](../../../../_media/week-14-weighted-graph.png)
+      ![week-14-weighted-graph.png](../../../../_media/week-14-weighted-graph.png)
 
       * Can be used to model:
           * Distance between cities.
@@ -106,9 +106,9 @@ modified: 2023-04-08 00:00
     * Find shortest path between nodes in weighted graph.
 * Example
 
-    ![week-14-dijkstra-1](../../../../_media/week-14-dijkstra-1.png)
-    ![week-14-dijkstra-2-1](../../../../_media/week-14-dijkstra-2-1.png)
-    ![week-14-dijkstra-3-1](../../../../_media/week-14-dijkstra-3-1.png)
+    ![week-14-dijkstra-1.png](../../../../_media/week-14-dijkstra-1.png)
+    ![week-14-dijkstra-2-1.png](../../../../_media/week-14-dijkstra-2-1.png)
+    ![week-14-dijkstra-3-1.png](../../../../_media/week-14-dijkstra-3-1.png)
 
 * Algorithm's pseudocode.
     * Let G be a graph and s a source vertex.
@@ -143,7 +143,7 @@ $E = \{ \{v1, v2\}, \{v2, v5\}, \{v5, v3\}, \{v3, v4\}, \{v2, v4\}, \{u6, u6\} \
 
 1. Draw the graph G
 
-![week-14-problem-sheet-q1-graph](../../../../_media/week-14-problem-sheet-q1-graph.png)
+![week-14-problem-sheet-q1-graph.png](../../../../_media/week-14-problem-sheet-q1-graph.png)
 
 2. List the set of vertices adjacent to v2
 
@@ -165,7 +165,7 @@ v2, v4, v3, v5, v2
 
 Given the following graph:
 
-![week-14-problem-sheet-q2-graph](../../../../_media/week-14-problem-sheet-q2-graph.png)
+![week-14-problem-sheet-q2-graph.png](../../../../_media/week-14-problem-sheet-q2-graph.png)
 
 Determine which of the walks are trails, paths or circuits.
 
@@ -203,7 +203,7 @@ v2 e3 v3 e5 v4 e10 v5 e9 v6 e8 v2
 
 Which of the following undirected graphs have a Euler circuit? Which of those that do not have an Euler circuit have a Euler path?
 
-![week-14-problem-sheet-q3](../../../../_media/week-14-problem-sheet-q3.png)
+![week-14-problem-sheet-q3.png](../../../../_media/week-14-problem-sheet-q3.png)
 
 * Euler path
     * A graph that has a path that uses each edge of the graph exactly once. If the path exists, the graph is considered traversable.
@@ -224,7 +224,7 @@ ab, bd, da, ac, cd, de, eb
 
 Which of the following directed graphs has an Euler circuit? Which of those that do not have a Euler path?
 
-![week-14-problem-sheet-q4](../../../../_media/week-14-problem-sheet-q4.png)
+![week-14-problem-sheet-q4.png](../../../../_media/week-14-problem-sheet-q4.png)
 
 1. Does not have a Euler circuit, or path.
 2. Does have a Euler circuit
@@ -245,11 +245,11 @@ The degree sequence here adds to 11. The sum of a degree sequence must be even.
 
 2. A simple graph with degree sequence 4, 3, 3, 2, 2
 
-![week-14-problem-sheet-simple-graph](../../../../_media/week-14-problem-sheet-simple-graph.png)
+![week-14-problem-sheet-simple-graph.png](../../../../_media/week-14-problem-sheet-simple-graph.png)
 
 3. A simple 3 regular graph with 6 vertices
 
-![week-14-problem-sheet-3-regular](../../../../_media/week-14-problem-sheet-3-regular.png)A
+![week-14-problem-sheet-3-regular.png](../../../../_media/week-14-problem-sheet-3-regular.png)A
 
 ## Question 6
 
@@ -261,7 +261,7 @@ I think it's not, as in order to have a degree sequence of 3 with 25 vertices, y
 
 Find a Hamiltonian circuit in the following graph:
 
-![week-14-problem-sheet-q7](../../../../_media/week-14-problem-sheet-q7.png)
+![week-14-problem-sheet-q7.png](../../../../_media/week-14-problem-sheet-q7.png)
 
 ![week-14-problem-sheet-q7-hamiltonian](../../../../journal/_media/week-14-problem-sheet-q7-hamiltonian.png)
 
@@ -269,7 +269,7 @@ Find a Hamiltonian circuit in the following graph:
 
 Given the following directed graph:
 
-![week-14-problem-sheet-q8](../../../../_media/week-14-problem-sheet-q8.png)
+![week-14-problem-sheet-q8.png](../../../../_media/week-14-problem-sheet-q8.png)
 
 Find the transitive closure, G*, of the graph G.
 
@@ -279,7 +279,7 @@ To find the [Transitive Closure](permanent/transitive-closure.md) of G, we need 
 2. Check if there is a directed path between and 2 vertices of G. For example, a directed path from vertex u to v.
 3. Then add a direct path if it's not already in the graph.
 
-![week-14-problem-sheet-q8-1](../../../../_media/week-14-problem-sheet-q8-1.png)
+![week-14-problem-sheet-q8-1.png](../../../../_media/week-14-problem-sheet-q8-1.png)
 
 ## Question 9
 
@@ -304,7 +304,7 @@ Suppose that 7 sites are connected in a network. The number of other sites to wh
 Degree of each vertex = n - 1 = 7
 Number of edges = 8 * 7 / 2 = 28
 
-![week-14-problem-sheet-q10-k_8](../../../../_media/week-14-problem-sheet-q10-k_8.png)
+![week-14-problem-sheet-q10-k_8.png](../../../../_media/week-14-problem-sheet-q10-k_8.png)
 
 3. The degree of each vertex of complete graph K_n = n -1. It will have n(n-1) / 2 edges.
 
