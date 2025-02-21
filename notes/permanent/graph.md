@@ -2,7 +2,7 @@
 title: Graph
 date: 2023-04-09 00:00
 modified: 2025-02-22 00:00
-cover: _media/konigsberg-bridges.png
+cover: /_media/konigsberg-bridges.png
 summary: the study of graphs
 hide_cover_in_article: true
 aliases:
