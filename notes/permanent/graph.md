@@ -63,7 +63,7 @@ Graphs can be classified in several ways based on their properties:
 
 ### Directed vs. Undirected
 
-#### [Directed Graphs](directed-graphs%201.md)
+#### [Directed Graphs](directed-graphs.md)
 
 In directed graphs, edges have a specific direction indicated by arrows. These represent one-way relationships.
 
