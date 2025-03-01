@@ -7,7 +7,7 @@ aliases:
 summary: "a sub graph of a connected graph that contains all vertices, but no cycles"
 tags:
 - ComputerScience
-- Graphs
+- GraphTheory
 ---
 
 The **Spanning Tree** of a connected graph $G$ is a connected sub graph which contains all vertices of $G$, but with no cycles.
