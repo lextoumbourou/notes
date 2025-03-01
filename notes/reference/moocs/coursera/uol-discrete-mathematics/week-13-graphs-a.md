@@ -133,7 +133,7 @@ modified: 2023-04-09 00:00
 
       ![week-13-hamiltonian-path.png](../../../../_media/week-13-hamiltonian-path.png)
 
-* Hamiltonian cycle
+* [Hamiltonian Cycle](../../../../../../permanent/hamiltonian-cycle.md)
     * A Hamilton cycle is a cycle that visits each vertex exactly once (except for the starting vertex, which is visited once at the start and once again at end).
 
       ![week-13-hamiltonian-cycle.png](../../../../_media/week-13-hamiltonian-cycle.png)
