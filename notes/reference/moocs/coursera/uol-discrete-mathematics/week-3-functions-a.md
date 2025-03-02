@@ -35,7 +35,7 @@ parent: uol-discrete-mathematics
         * $y$ is called the image of $x$.
         * $x$ is called the pre-image of $y$.
 
-            ![domain-codomain-range.png](_media/domain-codomain-range.png)
+            ![Domain, co-domain and range example](_media/domain-codomain-range.png)
 
         * Example: a set mapping characters to a length.
             * $f(\text{Sea}) \rightarrow 3$ (contains 3 characters)
@@ -68,7 +68,7 @@ parent: uol-discrete-mathematics
             * That is: $x_1 \leq x_2$ then $f(x_1) \leq f(x_2)$.
         * Example of increasing linear function:
 
-          ![linear-increasing.png](_media/linear-increasing.png)
+          ![Example of increasing linear function](_media/linear-increasing.png)
 
         * When the gradient is < 0, the function is decreasing.
     * $f: R \rightarrow R$
@@ -76,7 +76,7 @@ parent: uol-discrete-mathematics
             * If $a > 0$ then function is increasing.
             * If $x_1 \leq x_2$ then $f(x_1) \leq f(x_2)$
 
-                ![linear-decreasing.png](_media/linear-decreasing.png)
+                ![Example of decreasing linear function](_media/linear-decreasing.png)
 
 * [Quadratric Functions](../../../../permanent/quadatric-functions.md)
     * Quadratic functions: $f(x) = ax^2 + bx + c$
@@ -89,7 +89,7 @@ parent: uol-discrete-mathematics
 * [Exponential Functions](permanent/exponential-functions.md)
     * If base $b$ in $f(x) = b^x$, $b > 1$ then function is increasing and represents growth shown in this graph:
 
-      ![exponential-growth-function.png](../../../../_media/exponential-growth-function.png)
+      ![Example of exponential growth function](../../../../_media/exponential-growth-function.png)
 
         * Graph also shows that the point $(0,1)$ is a "common point".
         * Domain is equal to set of all real numbers.
@@ -97,7 +97,7 @@ parent: uol-discrete-mathematics
         * X-axis is horizontal asymtot to curve of function.
     * If base 0 < b < 1, then function is decreasing:
 
-        ![exponential-decay-function.png](_media/exponential-decay-function.png)
+        ![Example of exponential decay function](_media/exponential-decay-function.png)
 
         * Domain and range are the same as previous function.
 * [Laws Of Exponential Functions](../../../../permanent/laws-of-exponential-functions.md)
@@ -119,7 +119,7 @@ parent: uol-discrete-mathematics
         * Example on the left is an injective function, as every element of $A$ has a unique image in B.
         * Example on the right is not injective. 2 or 4 in A have the same image 0. 1 and 3 have the same image 1.
 
-        ![injective-function.png](_media/injective-function.png)
+        ![Injective function example](_media/injective-function.png)
 
     * You can show a function is not injective by finding two different inputs $a$ and $b$ with the same [Function Image](permanent/function-image.md).
     * An example with a linear function:
@@ -149,7 +149,7 @@ parent: uol-discrete-mathematics
             * $\text{ CO}-D_f = R_f$
         * Examples:
 
-            ![surjective-example.png](_media/surjective-example.png)
+            ![Surjective function example](_media/surjective-example.png)
 
     * An example [Linear Function](../../../../permanent/linear-function.md)
         * Show that the function $f: R -> R$ with $f(x) = 2x+3$ is a surjective (onto) function.
@@ -165,22 +165,22 @@ parent: uol-discrete-mathematics
                     * We know the range of $Rf$ is positive integers only: all negative images have no pre-images.
 * Examples:
     * Injective, not surjective
-      ![injective-not-surjective](/_media/injective-not-surjective.png)
+      ![injective-not-surjective.png](_media/injective-not-surjective.png)
         * Injective because each element in the domain has a unique image.
         * Not surjective because the element 2 in the co-domain has no pre-image.
     * Surjective but not injective
-        ![surjective-not-injective](/_media/surjective-not-injective.png)
+        ![surjective-not-injective.png](_media/surjective-not-injective.png)
         * Not injective because a and d are different but have the same image.
     * Injective and surjective
-        ![injective-and-surjective](/_media/injective-and-surjective.png)
+        ![injective-and-surjective.png](_media/injective-and-surjective.png)
         * Each element has a unique image.
         * Each element in co-domain has at least one pre-image.
     * Neither injective nor surjective
-    ![not-injective-or-surjective](/_media/not-injective-or-surjective.png)
+    ![not-injective-or-surjective.png](_media/not-injective-or-surjective.png)
         * Not injective because a and c have the same image.
         * Not surjective because the 4 element of co-domain has no pre-image.
     * Not a valid function
-      ![not-valid-function](/_media/not-valid-function.png)
+      ![not-valid-function.png](_media/not-valid-function.png)
       * Input a has 2 outputs. In a function, an input can only have a single output.
 
 ## 2.109 Functions (Peer-graded Assignment)
@@ -284,7 +284,9 @@ Let $f : \mathbb{R} \rightarrow ]1, +\infty[$ with $f(x) = e^{x} + 1$
     * $f^{-1}(x) = log_e(x - 1)$
 
 3. Plot the curve of $f$ and $f^{-1}$ in the same graph.
-     ![plot-f-and-f-inverse](/_media/plot-f-and-f-inverse.png)
+
+     ![Plot of curves](_media/plot-f-and-f-inverse.png)
+
 4. What can you say about these two curves?
 
 The curves are symmetric with respect to the line $y = x$.

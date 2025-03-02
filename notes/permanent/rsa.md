@@ -25,8 +25,9 @@ To create a private and public key, we use the following steps:
 5. Compute the private key $d$ where:
    $(d \times e) \mod \phi(N) = 1$
 
-* $N$ and $e$ are public key components, represented as $(N, e)$.
-* $p$, $q$, and $d$ are the private key components, although $p$ and $q$ are typically discarded, and it's represented as $(N, d)$.
+$N$ and $e$ are **public key** components, represented as $(N, e)$.
+
+$p$, $q$, and $d$ are the **private key** components, although $p$ and $q$ are typically discarded, and it's represented as $(N, d)$.
 
 ### Encryption and Decryption
 
@@ -36,13 +37,16 @@ Given $d$, we can decrypt messages: $m = c^d \mod N$.
 ### Example
 
 For a simple example (using small numbers for clarity):
+
 * Choose primes $p = 61$ and $q = 53$
 * Calculate $N = 61 \times 53 = 3233$
 * Calculate $\phi(N) = (61-1) \times (53-1) = 60 \times 52 = 3120$
 * Choose $e = 17$ (relatively prime to 3120)
 * Calculate $d = 2753$ (since $17 \times 2753 \mod 3120 = 1$)
-* Public key: $(N=3233, e=17)$
-* Private key: $(N=3233, d=2753)$
+
+Public key: $(N=3233, e=17)$
+
+Private key: $(N=3233, d=2753)$
 
 To encrypt message $m = 123$: $c = 123^{17} \mod 3233 = 855$
 To decrypt ciphertext $c = 855$: $m = 855^{2753} \mod 3233 = 123$
