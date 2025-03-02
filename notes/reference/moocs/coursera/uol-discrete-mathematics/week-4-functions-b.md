@@ -16,7 +16,7 @@ modified: 2023-04-09 00:00
         * Then we pass the function output into $f$ to get $f(g(x))$
     * Example of function composition:
 
-        ![function-composition-1](/_media/function-composition-1.png)
+        ![Function composition](_media/function-composition-1.png)
 
     * Function composition is not commutative
         * $f \text{ o } g \ne g \text{ o } f$
@@ -32,11 +32,13 @@ modified: 2023-04-09 00:00
     * A function is said to be bijective or invertible if and only if it is both injective and surjective.
     * Examples:
         * $f$ is bijective as it is both injective and surjective.
-            ![Bijective function](/_media/bijective-f.png)
+
+            ![Bijective function](_media/bijective-f.png)
         * $g$ is bijective as it isn't surjective
-            ![Not bijective - surjective](/_media/not-bijective-due-to-surjective.png)
+
+            ![Not bijective - surjective](_media/not-bijective-due-to-surjective.png)
     * $h$ isn't bijective as it isn't injective.
-        ![Not bijective - not injective](/_media/not-bijective-due-to-not-injective.png)
+        ![Not bijective - not injective](_media/not-bijective-due-to-not-injective.png)
     * Show that the function: $f: R \rightarrow R$ with $f(x) = 2x + 3$ is a bijective (invertible) function.
         * Show that f is injective (one-to-one)
             * Proof:
@@ -53,9 +55,10 @@ modified: 2023-04-09 00:00
         * If $f$ is bijective (invertible) then the inverse function, $f^{-1}$, exists and is defined as follows: $f^{-1}: B \rightarrow A$
           * What the inverse function really does is reverse the function $f(x)$.
     * Example 1
-      ![Inverse Function](/_media/inverse-function.png)
+      ![Inverse Function](_media/inverse-function.png)
   * Example 2: Let $f(x) = 2x$
-    ![inverse-example-2](../../../../journal/_media/inverse-example-2.png)
+
+    ![inverse-example-2](_media/inverse-example-2.png)
     * Exercise: The following function $f: R \rightarrow R \text{ with } f(x) = 2x + 3$ find the inverse function, $f^{-1}$
         * We know it's injective and surjective.
         * $f(x) = y$
@@ -72,7 +75,8 @@ modified: 2023-04-09 00:00
         * $(f^{-1} \text{ o } f)(x) = f^{-1}(f(x)) = f^{-1}(2x) = \frac{2x}{2} = x$
     * Plotting on a graph
         * The curves of $f$ and $f^{1}$ are symmetric with respect to the straight line $y = x$.
-            ![Plot inverse](/_media/plot-inverse.png)
+
+            ![Plot inverse](_media/plot-inverse.png)
 
 ## 2.205 Logarithmic functions
 
@@ -83,11 +87,11 @@ modified: 2023-04-09 00:00
     * Graphs:
         * First graph shows exponential growth where base > 1.
 
-            ![Exponential growth](/_media/exponential-growth.png)
+            ![Exponential growth](_media/exponential-growth.png)
 
     * 2nd graphs exponential decay where b < 1.
 
-        ![Exponential decay](/_media/exponential-decay.png)
+        ![Exponential decay](_media/exponential-decay.png)
 
     * Properties of exponential function:
         * $y = f(x) = b^x$ where ($b > 0$ and $b \ne 1$).
@@ -123,12 +127,12 @@ modified: 2023-04-09 00:00
         * Can see function is increasing.
         * Passes through coordinate (1, 0)
 
-            ![log_2_graph](/_media/log_2_graph.png)
+            ![log_2_graph](_media/log_2_graph.png)
 
         * Logarithm function with b > 1
             * $\log_{2} \ {x}$
 
-                ![log_base_greater_than_one](/_media/log_base_greater_than_one.png)
+                ![log_base_greater_than_one](_media/log_base_greater_than_one.png)
 
             * Can see the curves are symmetric with respect to red line y = x.
                 * This is expected as logarthim is inverse of exponential function.
@@ -152,7 +156,7 @@ modified: 2023-04-09 00:00
     * $\ln \ x = \log_e x$ where $e = 2.71828$
     * $\ln e = log_e e = 1$
     * Graph shows it is an increasing function:
-        * ![log_e_x](/_media/log_e_x.png)
+        * ![log_e_x](_media/log_e_x.png)
 
 ## The floor function and ceiling functions
 
@@ -161,7 +165,7 @@ modified: 2023-04-09 00:00
     * Function domain and range: $\mathbb{R} \rightarrow \mathbb{Z}$.
     * Denoted as $|\_x\_|$
       * Graph of floor function:
-          * ![floor-function](/_media/floor-function.png)
+          * ![floor-function](_media/floor-function.png)
       * Examples:
           * floor(10) = 10
           * floor(1.1) = 1
@@ -175,7 +179,7 @@ modified: 2023-04-09 00:00
     * Denoted as: $\lceil{x}\rceil$
     * Graph of ceiling function:
 
-        ![ceiling-function](/_media/ceiling-function.png)
+        ![ceiling-function](_media/ceiling-function.png)
 
     * Examples:
         * ceiling(10) = 10
@@ -223,7 +227,7 @@ Real-life examples
 
 * Let $A$ and $B$ be two sets with $A = \{x, y, z\}$ and $B = \{1, 2, 3, 4\}$. Which of the following arrow diagrams define functions from $A$ to $B$?
 
-![function-q1](/_media/function-q1.png)
+![function-q1](_media/function-q1.png)
 
 Answer
 
@@ -237,7 +241,7 @@ Let $A$ and $B$ be two sets with $A = \{x, y, z\}$ and $B = \{1, 2, 3, 4\}$.
 
 Let $f$ from $A$ to $B$ defined by the following arrow diagram:
 
-![function-q2](/_media/function-q2.png)
+![function-q2](_media/function-q2.png)
 
 1. Write the domain, the co-domain and the range of $f$.
 
@@ -311,7 +315,7 @@ g : B → C is defined by the following table.
 
 1. Draw arrow diagrams to represent the function f and g.
 
-    ![week-4-fx-gx.drawio](/_media/week-4-fx-gx.drawio.png)
+    ![week-4-fx-gx.drawio](_media/week-4-fx-gx.drawio.png)
 
 2. List the domain; the co-domain and the range of f and g.
 
@@ -357,7 +361,7 @@ Given a function $f$ defined by $f(x) = \lfloor x \rfloor$ where $f : \mathbb{R}
 
 1. Plot the graph of a the function $f(x)$ where $x \in [-3, 3]$
 
-    ![FloorGraph.drawio](/_media/FloorGraph.drawio.png)
+    ![FloorGraph.drawio](_media/FloorGraph.drawio.png)
 
 2. Find $floor(\pi)$, $floor(-2.5)$, $floor(-1)$
 
