@@ -15,6 +15,7 @@ tags:
 Leaf nodes contain hashes of individual data blocks, while parent nodes contain hashes of their children's hashes.
 
 ![merkle-tree.png](../_media/merkle-tree.png)
+
 *Original illustration by David Göthberg. [Source](https://commons.wikimedia.org/wiki/File:Hash_Tree.svg)*
 
 Merkle Trees enable "Merkle proofs" to verify that a specific transaction or piece of data is included in a dataset by only checking a small number of hashes rather than the entire set.
@@ -22,6 +23,8 @@ Merkle Trees enable "Merkle proofs" to verify that a specific transaction or pie
 In [Bitcoin](../../../permanent/bitcoin.md), the blockchain uses Merkle Trees to save disk space by hashing transactions into a tree structure with only the Merkle root stored in the block header, which enables Simplified Payment Verification (SPV), allowing lightweight clients to verify transactions without downloading the entire blockchain.
 
 ![merkle-tree-in-bitcoin.png](../_media/merkle-tree-in-bitcoin.png)
+
+**Diagram from [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)*
 
 Merkle Trees are also used in:
 
