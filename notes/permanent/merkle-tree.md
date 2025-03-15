@@ -1,5 +1,5 @@
 ---
-title: Merkle Tree
+title: Merkle Trees
 date: 2025-03-15 00:00
 modified: 2025-03-15 00:00
 summary: a data structure where each node contains the hash of its child nodes
@@ -8,6 +8,8 @@ hide_cover_in_article: true
 tags:
 - DataStructures
 - Cryptography
+aliases:
+- Merkle Tree
 ---
 
 **Merkle Tree** is a cryptographic data structure where each non-leaf node contains the hash of its child nodes, which allows for efficient verification of the integrity of large datasets without requiring the entire dataset.
@@ -24,10 +26,6 @@ In [Bitcoin](../../../permanent/bitcoin.md), the blockchain uses Merkle Trees to
 
 ![merkle-tree-in-bitcoin.png](../_media/merkle-tree-in-bitcoin.png)
 
-**Diagram from [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)*
+*Diagram from [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)*
 
-Merkle Trees are also used in:
-
-* **Git**: For efficient repository versioning.
-* **IPFS**: For content-addressed storage.
-* **Ethereum**: For tracking state changes and transaction verification.
+[Git](git.md) repositories are a Merkle Tree, where each commit is identified by a hash that depends on the entire history of the repository, including the file contents, commit messages, timestamps, and parent commits.
