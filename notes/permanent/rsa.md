@@ -21,7 +21,7 @@ To create a private and public key, we use the following steps:
 1. Select two large prime numbers, $p$ and $q$. (In practice, each should be hundreds or thousands of bits long—commonly 2048 bits or more—to ensure security.)
 2. Calculate $N = p \times q$ (the modulus).
 3. Calculate [Euler's Totient Function](eulers-totient-function.md): $\phi(N) = (p-1)(q-1)$
-4. Choose a public key $e$ that is relatively prime to $\phi(N)$. Two numbers are relatively prime when their greatest common divisor (GCD) is 1. (A common choice is $e = 65537$, a [Fermat Prime](fermat-prime.md). It has only two 1’s in its binary representation, greatly reducing exponentiation time.)
+4. Choose a public key $e$ that is relatively prime to $\phi(N)$. Two numbers are relatively prime when their greatest common divisor (GCD) is 1. (A common choice is $e = 65537$, a [Fermat Prime](fermat-prime.md). It has only two 1's in its binary representation, greatly reducing exponentiation time.)
 5. Compute the private key $d$ where:
    $(d \times e) \mod \phi(N) = 1$
 
@@ -49,13 +49,15 @@ Public key: $(N=3233, e=17)$
 Private key: $(N=3233, d=2753)$
 
 To encrypt message $m = 123$: $c = 123^{17} \mod 3233 = 855$
+
 To decrypt ciphertext $c = 855$: $m = 855^{2753} \mod 3233 = 123$
 
 ### Security Considerations
 
-* If the value of $N$ is not large enough, an attacker could factorise it, effectively allowing them to solve for $d$.
-* Modern RSA implementations use secure padding schemes (like PKCS\#1 OAEP) to protect against various attacks, including chosen-ciphertext attacks.
-* Key sizes of at least 2048 bits are recommended for security through 2030.
-* Side-channel attacks can leak information about private keys during implementation, requiring additional countermeasures.
+If the value of $N$ is not large enough, an attacker could factorise it, effectively allowing them to solve for $d$. Key sizes of at least 2048 bits are recommended for security through 2030.
 
-RSA's security relies on the computational difficulty of the factoring problem, but quantum computers running Shor's algorithm could break RSA encryption, driving research into post-quantum cryptography alternatives.
+Additionally, modern RSA implementations use secure padding schemes (like PKCS\#1 OAEP) to protect against various attacks, including chosen-ciphertext attacks.
+
+Side-channel attacks can leak information about private keys during implementation, requiring additional countermeasures.
+
+Lastly, RSA's security relies on the computational difficulty of the factoring problem, but quantum computers running Shor's algorithm could break RSA encryption, driving research into post-quantum cryptography alternatives.

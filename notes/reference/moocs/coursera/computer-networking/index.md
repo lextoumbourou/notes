@@ -13,27 +13,27 @@ At the time of taking the course, I had previously learned all the concepts, how
 
 ## Week 1
 
-* [[TCP / IP]]
+* [TCP/IP](tcp-ip)
     * Transmission Control Protocol
     * Internet Protocol
 * [[NAT]]
     * Network Address Translation.
-* [[TCP/IP Five-Layer Network Model]]
-    * [[Physical Layer]]
+* [TCP/IP Five-Layer Network Model](../../../../../../permanent/tcp-ip-5-layer-network-model.md)
+    * [Physical Layer](../../../../../../permanent/physical-layer.md)
         * Physical devices like network cables, ports, cards etc
         * Includes specifications for the network cables.
-    * [[Data Link Layer]]
+    * [Link Layer](../../../../../../permanent/data-link-layer.md)
         * Ethernet / Wi-Fi
         * Defines a common way of interpretting signals from physical so network devices can communicate.
         * Switches live here.
-    * [[Network Layer]]
+    * [Network Layer](../../../../../../permanent/network-layer.md)
         * IP
         * Aka the internet layer.
         * Routers
-    * [[Transport Layer]]
+    * [Transport Layer](../../../../../../permanent/transport-layer.md)
         * TCP/UDP
         * Figures out which client or server programs should get the data.
-    * [[Application Layer]]
+    * [Application Layer](../../../../../../permanent/application-layer.md)
         * HTTP / SMTP etc
 * Internetwork
     * A collection of networks.
@@ -180,7 +180,7 @@ At the time of taking the course, I had previously learned all the concepts, how
 
 ### The Transport Layer
 
-* [[Transport Layer]]
+* [[../../../../../../permanent/transport-layer|Transport Layer]]
     * Responsibilities:
         * Multiplexing and demultiplexing.
         * Establishing long running connections.
@@ -294,7 +294,7 @@ At the time of taking the course, I had previously learned all the concepts, how
 ### The Application Layer
 
 * The payload section is the data that the applications are actually trying to send.
-* [[OSI Model]]
+* [[../../../../../../permanent/osi-model|OSI Model]]
     * A 7 layer networking model.
         * Application
         * Presentation
