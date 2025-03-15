@@ -4,6 +4,7 @@ date: 2021-06-24 00:00
 tags:
   - GameDesign
 cover: /_media/enforcer.png
+status: draft
 ---
 
 To prevent cheating, a game needs a rule enforcer.

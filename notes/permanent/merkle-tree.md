@@ -24,12 +24,12 @@ If there's an odd number of nodes at any level, the last node is typically dupli
 
 Merkle Proofs, a capability enabled by Merkle Trees, allows us to verify a specific transaction or piece of data is included in a dataset by only checking a small number of hashes rather than the entire set. You only need to hash values from the leaf to the node to verify that a transaction (for example) exists in the ledger.
 
-In the Bitcoin Paper, Nakamoto described a method to reclaim disk space by hashing transactions into a tree structure with only the Merkle root stored in the block header. The Merkle Root used in Bitcoin also enables "simple payment verification", a feature allowing clients to verify transactions without downloading the entire blockchain.
+In the [Bitcoin Paper](../../../permanent/bitcoin-a-peer-to-peer-electronic-cash-system.md), Nakamoto described a method to reclaim disk space by hashing transactions into a tree structure with only the Merkle root stored in the block header. The Merkle Root used in Bitcoin also enables "simple payment verification", a feature allowing clients to verify transactions without downloading the entire blockchain.
 
 ![merkle-tree-in-bitcoin.png](../_media/merkle-tree-in-bitcoin.png)
 
 *Diagram from [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)*
 
-Also, [Git](git.md) repositories are a type of Merkle Tree, where each commit is identified by a hash that depends on the entire history of the repository, including the file contents, commit messages, timestamps, and parent commits.
+[Git](git.md) repositories are a type of Merkle Tree, where each commit is identified by a hash that depends on the entire history of the repository, including the file contents, commit messages, timestamps, and parent commits.
 
-Beyond Bitcoin and Git, Merkle Trees are foundational in distributed file systems like IPFS and Certificate Transparency logs used to verify SSL certificates across the web.
+Beyond Bitcoin and Git, Merkle Trees are used in distributed file systems like IPFS and Certificate Transparency logs used to verify SSL certificates across the web.
