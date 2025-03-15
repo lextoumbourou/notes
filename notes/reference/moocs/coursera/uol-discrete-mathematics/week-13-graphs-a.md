@@ -37,7 +37,7 @@ modified: 2023-04-09 00:00
 
 ## Lesson 7.103 - Definition of a graph
 
-* [Graph Theory](../../../../permanent/graph-theory.md)
+* [Graph Theory.png](../../../../_media/week-13-complete-graphs](../../../../permanent/graph.md)
     * Discrete structures consisting of vertices and edges connecting them.
 * Formal definition:
     * $G$ is an ordered pair $G=(V, E)$.
@@ -133,7 +133,7 @@ modified: 2023-04-09 00:00
 
       ![week-13-hamiltonian-path.png](../../../../_media/week-13-hamiltonian-path.png)
 
-* [Hamiltonian Cycle](../../../../../../permanent/hamiltonian-cycle.md)
+* Hamiltonian cycle
     * A Hamilton cycle is a cycle that visits each vertex exactly once (except for the starting vertex, which is visited once at the start and once again at end).
 
       ![week-13-hamiltonian-cycle.png](../../../../_media/week-13-hamiltonian-cycle.png)
@@ -253,7 +253,7 @@ modified: 2023-04-09 00:00
     * A [Simple Graph](permanent/simple-graph.md) where every pair of vertices are adjacent (linked with an edge).
     * A vertex on its own is a complete graph.
 
-      ![week-13-complete-graph.png](../../../../_media/week-13-complete-graph.png)
+      ![week-13-complete-graph.png.png)
 
     * A complete graph with n vertices, k_n, has these properties:
         * Every vertex has a degree $(n-1)$
