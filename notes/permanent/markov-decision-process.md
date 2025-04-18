@@ -5,6 +5,8 @@ modified: 2025-03-29 00:00
 summary: A mathematical framework for modelling decision-making under uncertainty
 cover: /_media/action-frozen-lake.png
 hide_cover_in_article: true
+tags:
+- ReinforcementLearning
 ---
 
 A **Markov Decision Process (MDP)** is a mathematical framework for modelling decision-making problems where outcomes are partly random and partly controlled by a decision-maker. The goal is to find an optimal policy that maximizes cumulative reward over time.
