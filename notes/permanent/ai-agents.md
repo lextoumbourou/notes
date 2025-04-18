@@ -7,7 +7,7 @@ tags:
 - AgenticReasoning
 ---
 
-**Agents**, in [Agentic Reasoning](agentic-reasoning.md), are entities powered by [Large Language Models](large-language-models.md)s that can plan and take actions to execute goals.
+**Agents**, in [Agentic Reasoning](agentic-reasoning.md), are entities powered by [Large Language Models](large-language-models.md) that can plan and take actions to execute goals
 
 They can be part of a [Single-Agent Systems](single-agent-systems.md), or [Multi-Agent Systems](multi-agent-systems.md) where multiple agents work together to achieve a goal.
 

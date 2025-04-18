@@ -1,5 +1,5 @@
 ---
-title: Merkle Trees
+title: Merkle Tree
 date: 2025-03-15 00:00
 modified: 2025-03-15 00:00
 summary: a data structure where each node contains the hash of its child nodes
@@ -9,7 +9,7 @@ tags:
 - DataStructures
 - Cryptography
 aliases:
-- Merkle Tree
+- Merkle Trees
 ---
 
 **Merkle Tree** is a data structure where each parent node contains the hash of its child nodes, enabling efficient verification of large datasets, amongst many other useful things.

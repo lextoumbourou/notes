@@ -8,6 +8,8 @@ tags:
 cover: /_media/hash-table-wikipedia.png
 hide_cover_in_article: true
 summary: a key-value pair data structure with constant time data access
+aliases:
+- Hash Tables
 ---
 
 A **hash table** is a key-value pair data structure that provides constant time data access, using a [Hash Function](hash-function.md) to convert a key into a numeric array index.
