@@ -4,6 +4,8 @@ date: 2023-10-06 00:00
 modified: 2023-10-06 00:00
 cover: /_media/sound-wave-cover.png
 summary: Wave of pressure which our ears can perceive
+aliases:
+  - Sound Waves
 tags:
   - AudioEngineering
 ---
