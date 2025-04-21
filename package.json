@@ -2,7 +2,7 @@
   "name": "notes",
   "version": "1.0.0",
   "dependencies": {
-    "@mermaid-js/mermaid-cli": "^10.6.1",
-    "puppeteer": "^21.0.0"
+    "@mermaid-js/mermaid-cli": "^11.4.2",
+    "puppeteer": "^24.6.1"
   }
 } 
