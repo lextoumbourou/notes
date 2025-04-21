@@ -5,6 +5,8 @@ modified: 2025-03-29 00:00
 summary: A mathematical framework for modelling decision-making under uncertainty
 cover: /_media/action-frozen-lake.png
 hide_cover_in_article: true
+aliases:
+- MDP
 tags:
 - ReinforcementLearning
 ---
@@ -140,7 +142,7 @@ Various algorithms can solve MDPs by finding the optimal policy or value functio
 
 ### Model-Free Methods
 
-* **[Q-Learning](../../../permanent/q-learning.md)**
+* **[Q-Learning](q-learning.md)**
     * A model-free reinforcement learning algorithm that learns the optimal action-value function directly from experience.
     * Does not require knowledge of transition probabilities or rewards.
 * **SARSA (State-Action-Reward-State-Action)**
