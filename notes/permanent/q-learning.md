@@ -2,7 +2,7 @@
 title: "Q-Learning"
 date: 2025-04-18 00:00
 modified: 2025-04-21 00:00
-summary: an algorithm for finding optimal policies in a Markov Decision Process model
+summary: a reinforcement learning algorithm for finding optimal policies
 tags:
 - ReinforcementLearning
 cover: /_media/taxi-q-learning-example.png
@@ -10,7 +10,7 @@ cover: /_media/taxi-q-learning-example.png
 
 This article is part of my (WIP) series on [Reinforcement Learning](reinforcement-learning.md).
 
-**Q-Learning** is a reinforcement learning algorithm for finding optimal policies in [Markov Decision Process](markov-decision-process.md). Unlike supervised learning, where we learn from labelled examples, Q-learning learns from interaction with an environment. It can learn the value of actions without requiring a model of the environment. Hence, it's called a "model-free" method.
+**Q-Learning** is a reinforcement learning algorithm for finding optimal policies in [Markov Decision Process](markov-decision-process.md). Unlike supervised learning, where we learn from labelled examples, Q-learning learns from interaction with an environment. It can learn the value of actions without requiring a model of the environment (i.e. learning via trial-and-error), hence, it is considered a "model-free" method.
 
 The algorithm was introduced by Chris Watkins in his 1989 PhD thesis at King's College [^1], with a convergence proof later published by Watkins alongside Peter Dayan [^2]. The concept was also developed independently by several others in the early 90s.
 
@@ -20,13 +20,13 @@ Q-Learning is an **iterative optimisation algorithm**, similar to [Gradient Desc
 
 At the core is a lookup table called a **Q-Table**, which maps state-action pairs to expected future rewards. The values in the **Q-Table** are called **Q-Values**. Conceptually, a Q-value $Q(s,a)$ represents "how good" it is to take action a when in state s.
 
-Rewards are discounted over time, meaning immediate rewards are valued more than distant ones – similar to how businesses value present cash flow over future earnings.
+Rewards are discounted over time, meaning immediate rewards are valued more than distant ones – like how businesses value present cash flow over future earnings.
 
-The algorithm uses three key hyperparameters:
+The algorithm uses three key hyper-parameters:
 
 - **Learning Rate** $\alpha$ (0 to 1) – how quickly the algorithm updates its estimates. Higher values mean faster learning but potentially unstable convergence.
 - **Discount Factor** $\gamma$ (0 to 1) – how much it values future rewards versus immediate ones. Higher values mean the agent is more forward-thinking.
-- **Exploration Rate** $\epsilon$ (0 to 1) – how often it chooses a random action over the current best action. This parameter can be decreased over time as the agent learns.
+- **Exploration Rate** $\epsilon$ (0 to 1) – how often it chooses a random action over the current best action. This parameter is typically decreased over time as the agent learns.
 
 The $\epsilon$ parameter balances the trade-off between **exploration and exploitation**, managing how much the agent tries new things versus sticking to what it already thinks is best. See also the [Exploration-Exploitation Dilemma](../../../permanent/exploration-exploitation-dilemma.md) in A/B testing.
 
@@ -78,9 +78,11 @@ for ep in tqdm(range(episodes), desc="Training episodes"):
     while not done:
         # Epsilon-greedy action selection
         if np.random.random() < epsilon:
-            action = env.action_space.sample()  # Explore: random action
+            # Explore: random action
+            action = env.action_space.sample()
         else:
-            action = np.argmax(Q[state])  # Exploit: best known action
+            # Exploit: best known action
+            action = np.argmax(Q[state])
         
         # Take action and observe new state and reward
         next_state, reward, terminated, truncated, _ = env.step(action)
@@ -100,11 +102,11 @@ env.close()
 
 The code above will show a visual representation of the agent exploring and slowly updating its policy. Early episodes often show random-looking behaviour:
 
-![taxi_q_learning-episode-0](_media/taxi_q_learning-episode-0.mp4)
+<video controls loop><source src="../_media/taxi_q_learning-episode-0.mp4" type="video/mp4"></video>
 
 After training is completed, the final episodes demonstrate much more efficient behaviour:
 
-![taxi_q_learning-episode-0](_media/taxi_q_learning-episode-9999.mp4)
+<video controls loop><source src="../_media/taxi_q_learning-episode-9999.mp4" type="video/mp4"></video>
 
 As you can see, the taxi can pick the passengers up and drop them off at the destination directly.
 
@@ -151,25 +153,20 @@ Where:
 - $\Big[ r + \gamma \max_{a'} Q(s', a') - Q(s,a) \Big]$: The temporal difference (TD) error
 
 In simpler terms:
+
 1. We take our current estimate $Q(s,a)$
 2. Calculate the TD error (difference between ideal and current estimate)
 3. Update our estimate by moving it slightly (by $\alpha$) toward the ideal
-
-Think of it as similar to how gradient descent works in supervised learning, where we update parameters based on the error gradient, but here, we're estimating values through experience rather than labelled data.
 
 ## Deep Q-Learning
 
 For complex environments with large state spaces, maintaining a Q-table becomes impractical or impossible. For example, in Atari games, where the state is a raw pixel image, there are millions of possible states.
 
-In 2013, DeepMind published a landmark paper where they replaced the Q-table with a [Neural Network](../../../permanent/neural-network.md) to approximate the Q-values - a technique known as [Deep-Q Learning](../../../permanent/deep-q-learning.md) or DQN [^3].
+In 2013, DeepMind published a landmark paper where they replaced the Q-table with a [Neural Network](../../../permanent/neural-network.md) to approximate the Q-values - a technique known as [Deep-Q Learning](deep-q-learning.md) or DQN [^3].
 
 The neural network inputs the state and outputs Q-values for all possible actions, which allows the algorithm to generalise across similar states and handle continuous state spaces.
 
-Key innovations in their approach included:
-- **Experience replay**: Storing and randomly sampling past experiences to break correlations between sequential samples
-- **Fixed Q-targets**: Using a separate target network that updates slowly to stabilise learning
-
-Deep Q-learning combines the power of deep learning's function approximation with reinforcement learning's ability to learn from interaction, creating a powerful framework that can solve complex problems like playing Atari games at human or superhuman levels using only raw pixels as input.
+See the [Deep-Q Learning](deep-q-learning.md) article for more.
 
 ## Summary
 
