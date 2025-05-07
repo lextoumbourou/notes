@@ -2,11 +2,13 @@
 title: Convolutional Neural Network
 date: 2023-04-09 00:00
 status: draft
+aliases:
+- CNN
 ---
 
 A **Convolutional Neural Network (CNN)** is a particular type of neural network that learns feature engineer via filters (aka kernels) optimisation.
 
-Typically a CNN contains multiple combinations of a [[../../../permanent/convolutional-layer]] and a [[Pooling Layer]].
+Typically a CNN contains multiple combinations of a [[../../../permanent/convolutional-layer|Convolutional Layer]] and a [[Pooling Layer]].
 
 ## Convolutional Layer
 
