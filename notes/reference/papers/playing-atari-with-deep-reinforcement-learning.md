@@ -277,7 +277,7 @@ def get_targets(next_states):
 
 An interesting point to note here is that we use a target network. The papers mention that:
 
->> The parameters from the previous iteration θi−1 are held fixed when optimising the loss function Li (θi)
+> The parameters from the previous iteration θi−1 are held fixed when optimising the loss function Li (θi)
 
 Basically, keeping a separate copy of the weights it prevents the "moving target" problem where Q-value updates chase a constantly shifting target, which can lead to oscillations or divergence in training. By keeping the target network fixed for many steps, the optimization becomes more stable, similar to how freezing parts of a network helps in transfer learning.
 
@@ -326,6 +326,10 @@ def train_one_step():
     # Update parameters
     optimizer.update(model, grads)
 ```
+
+### Metrics
+
+By plotting the average total reward during training, the loss appears to be unstable, but instead plotting the average predicted max Q-value over a fixed batch of states shows an increase in the amount of future reward expected, increasing steadily.
 
 ### Training Loop
 
@@ -387,38 +391,4 @@ def train_dqn(num_episodes=10000, max_steps_per_episode=10000):
     return rewards_history, loss_history, q_values_history
 ```
 
-You can checkout the entire code base [here](https://github.com/lextoumbourou/deep-q-network-mlx).
-
-### Metrics
-
-By plotting the average total reward during training, the loss appears to be unstable, but instead plotting the average predicted max Q-value over a fixed batch of states shows an increase in the amount of future reward expected, increasing steadily.
-
-### Results from Original Paper
-
-The original DQN paper reported impressive results across seven Atari games. The DQN agent surpassed all previous approaches and achieved human-level performance on three games (Breakout, Enduro, and Pong). For example, in Breakout, the DQN achieved a score of 168 points versus the human expert's 31. In Space Invaders, it scored 581 versus the human's 1,652.
-
-These results were groundbreaking because they demonstrated, for the first time, that a single architecture with minimal adjustments could master diverse games with different visual appearances, goals, and mechanics—showing the versatility of deep reinforcement learning approaches.
-
-### Limitations and Subsequent Improvements
-
-While revolutionary, the original DQN algorithm has several limitations that were addressed in subsequent research:
-
-1. **Overestimation Bias**: DQN tends to overestimate action values due to the max operator in Q-learning. **Double DQN** (DDQN) addressed this by decoupling action selection and evaluation between the online and target networks.
-2. **Inefficient Learning**: All experiences are sampled with equal probability regardless of their importance. **Prioritized Experience Replay** (PER) improved this by sampling important transitions more frequently based on their TD error.
-3. **Value and Advantage**: **Dueling DQN** architecture separated the representation of state value and action advantage, enabling better policy evaluation when actions don't affect the environment in a relevant way.
-4. **Sample Efficiency**: The **Rainbow** algorithm combined multiple improvements (DDQN, PER, Dueling, Multi-step learning, Distributional RL, and Noisy Nets) to achieve state-of-the-art performance with significantly better sample efficiency.
-
-These enhancements have further improved DQN's performance and stability, making deep reinforcement learning even more powerful and applicable to complex real-world problems.
-
-### Wrap-up
-
-The Deep Q-Network approach represented a fundamental breakthrough in reinforcement learning by demonstrating that a single architecture could learn to play multiple different games directly from pixels, without human engineering of game-specific features, this was achieved through:
-
-1. Using a convolutional neural network to process raw pixel input
-2. Implementing experience replay to break correlations between sequential samples
-3. Creating a separate target network for more stable Q-learning updates
-4. Using an ε-greedy policy with annealing to balance exploration and exploitation
-
-This work paved the way for numerous advances in deep reinforcement learning, including policy gradient methods, actor-critic architectures, and innovations like AlphaGo that combined deep neural networks with Monte Carlo Tree Search. The fundamental approach of using experience replay and target networks to stabilise training of deep neural networks in RL remains influential in modern algorithms.
-
-While initially applied to Atari games, the principles here have been extended to more complex environments, including robotic control, strategic games, and real-world applications where agents must learn directly from high-dimensional sensory input.
+I'm running into some memories issues with MLX, so haven't managed to fully reproduce the paper yet. You can checkout the entire code base [here](https://github.com/lextoumbourou/deep-q-network-mlx).
