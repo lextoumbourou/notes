@@ -71,7 +71,7 @@ modified: 2023-04-08 00:00
 
 ## 6.103 The principle of mathematical induction
 
-* [Mathematical Induction](../../../../permanent/induction.md)
+* [Induction](../../../../permanent/induction.md)
     * Can be used to prove that a propositional function $P(n)$ is true for all positive integers.
     * The rule of inference:
         $P(1) \text{ is true}$
