@@ -5,6 +5,7 @@ modified: 2025-05-12 00:00
 summary: learn to reason without any human-annotated data.
 cover: "/_media/absolute-zero.png"
 hide_cover_in_article: true
+category: reference/papers
 tags:
 - ReinforcementLearning
 - ReasoningModels
@@ -35,3 +36,5 @@ Of note, is that they also notice some potentially unsafe reasoning chains gener
 ![uh-oh-moment.png](_media/uh-oh-moment.png)
 
 It's pretty wild that this works. In theory, we can improve reasoning capability of models by just training them longer with no additional data needed, although I'm a bit dubious about how far it can be pushed, given that the proposing step is still limited to the distribution of the foundation model's training data.
+
+---
