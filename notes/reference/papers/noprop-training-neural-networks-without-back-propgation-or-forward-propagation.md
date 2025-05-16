@@ -27,6 +27,6 @@ Each layer is trained using the sum of multiple loss functions:
 * KL divergence between the initial noise and standard normal.
 * L2 loss between the block output and the label embedding (scaled by SNR change).
 
-They experiment with a continuous version with a continuous trajectory over time, instead of discrete blocks, similar to Flow Matching or score-based diffusion.
+They experiment with a few different versions, including using continuous time steps (NoProp-CT and NoProp-FM), instead of discrete blocks (NoProp-DT), similar to Flow Matching.
 
 They test on MNIST, CIFAR-10, and CIFAR-100. There's not much to improve upon those problems in 2025, but they get comparable or even slightly better results than traditional backprop while using about half the GPU memory.
