@@ -15,7 +15,7 @@ hide_cover_in_article: true
 
 ## Overview
 
-In late 2013, DeepMind researchers published a Reinforcement Learning approach called [Deep Q-Networks](../../permanent/deep-q-networks.md), which was one of the first deep learning models that could successfully "learn control policies" (i.e. play games), only from observing the raw pixels from the game.
+In late 2013, DeepMind researchers published a Reinforcement Learning approach to playing Atari games with AI called [Deep Q-Networks](../../permanent/deep-q-networks.md). This was one of the first approaches to game playing could successfully "learn control policies" (i.e. play games), only from observing the raw pixels from the game, thanks to recent advanced in deep learning.
 
 ![atari-fig-1.png](_media/atari-fig-1.png)
 
@@ -25,9 +25,9 @@ In this article, I'm going to walk through the architecture they described in th
 
 ## High-Level
 
-The paper describes a [CNN](../../permanent/convolutional-neural-network.md) architecture to process game frames, and the final layers predicted the expected future rewards (i.e. the game score) by taking each available action (i.e. move up, move left, etc). The influential [[AlexNet]] paper had just been released a year earlier, leading to an explosion of experimentation with CNNs.
+The paper describes a [CNN](../../permanent/convolutional-neural-network.md) architecture that inputs game frames as raw pixels, and outputs predicted future rewards (i.e. the game score) for each available action (i.e. move up, move left, etc).
 
-A naive approach to processing frames from the games could be to process a sequential batch of frames at each training step. However, these frames would be strongly correlated. Instead, they used a technique, from a 1993 attempt to train a robotic policy using neural networks, called **Experience Replay**, which effectively stores a history of game states, their corresponding score (rewards) from action taken, and samples from this each training step.
+A naive approach to processing frames from the games could be to process a sequential batch of frames at each training step. However, these frames would be strongly correlated. Instead, they used a technique, from a 1993 attempt to train a robotic policy using neural networks, called [Experience Replay](../../../../permanent/experience-replay.md), which effectively stores a history of game states, their corresponding score (rewards) from action taken, and samples from this each training step.
 
 In practice, the agent plays randomly for a bit, gets the rewards throughout the game, and then uses a neural network to predict the rewards. As the model trains, the agent increasingly uses the model to take the optimal action, which balances exploiting and exploring.
 
