@@ -38,5 +38,4 @@ One interesting detail is that the open problems were suggested by mathematician
 
 ![alphaevolve-fig-2.png](../../_media/alphaevolve-fig-2.png)
 
-Discussions:
-* https://www.linkedin.com/feed/update/urn:li:activity:7328934233345798144/
+Discussion on [Linkedin](https://www.linkedin.com/feed/update/urn:li:activity:7328934233345798144/).
