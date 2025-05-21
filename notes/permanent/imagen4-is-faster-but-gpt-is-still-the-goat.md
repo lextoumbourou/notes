@@ -1,5 +1,5 @@
 ---
-title: "Imagen 4 is faster, but gpt-image-1 is still the GOAT"
+title: "Imagen 4 is faster, but GPT is still the GOAT"
 date: 2025-05-21 00:00
 modified: 2025-05-21 00:00
 summary: "a few comparisons of Google's Imagen 4 vs OpenAI's gpt-image-1"
