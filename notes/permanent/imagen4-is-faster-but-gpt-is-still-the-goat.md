@@ -11,18 +11,18 @@ hide_cover_in_article: true
 
 Yesterday, Google [announced](https://blog.google/technology/ai/generative-media-models-io-2025) a bunch of new generative tools at the ongoing Google I/O event. Although, at the time of writing, they're mostly unavailable outside of the USA:
 
-* **Veo 3**: state-of-the-art video generation that can generate videos with audio. (can't access it)
-* **Veo 2**: updated to include camera controls, outpainting, and adding and removing objects. (I can access Veo 2 via Gemini, but I'm not sure if these features are available)
-* **Flow AI**: a filmmaking tool, which appears to be for creating videos with continuity between clips. (unavailable outside of the US)
+* **Veo 3**: state-of-the-art video generation that can generate videos with audio.
+* **Veo 2**: updated to include camera controls, outpainting, and adding and removing objects.)
+* **Flow AI**: a filmmaking tool that appears to be used to create videos with continuity between clips.
 * **SynthID Detector**: a tool for detecting the SynthID watermark that Google inject in all generated content.
 * **Lyria 2**: an updated version of the music generation tool.
-* **Imagen 4**: which promises a number of improvements on Imagen 3, including supporting up to 2k resolution and improved typography.
+* **Imagen 4**: This promises a number of improvements to Imagen 3, including supporting up to 2k resolution and improved typography.
 
-**Imagen 4** seems to be the only thing available to me right now, and only via the Gemini app. However, when generating images in Gemini, they don't mention the model name in the image outputs, I'm not sure if I'm testing Imagen 3 or 4. Also, in Google AI Studio, only **Imagen 3** is available. **Imagen 4** is available on [Fal.ai](https://fal.ai/models/fal-ai/imagen4/preview) - not sure I quite understand the logic behind that, but I do appreciate how complicated shipping products at Google's scale is.
+**Imagen 4** seems to be the only thing available to me right now in Australia, and only via the Gemini app. However, when generating images in Gemini, they don't mention the model name in the image outputs - I'm not sure if I'm testing Imagen 3 or 4. Imagen 4 is publicly available on [Fal.ai](https://fal.ai/models/fal-ai/imagen4/preview); however, as a preview, I'm not sure I quite understand the logic behind that, but I do appreciate how complicated shipping products at Google's scale is.
 
 I did a quick test of some prompts to compare **Imagen 4** to OpenAI's **gpt-image-1**, which is currently the SOTA for image gen.
 
-TL;DR **gpt-image-1** is still the greatest for overall quality and prompt adherence, but **Imagen 4** is so absurdly fast.
+TL;DR **gpt-image-1** is still the greatest for overall quality and prompt adherence, but **Imagen 4** is about 5- 10x faster. They are both incredible image generators.
 
 ---
 
@@ -39,7 +39,7 @@ TL;DR **gpt-image-1** is still the greatest for overall quality and prompt adher
   </tr>
 </table>
 
-In terms of aesthetic quality and prompt adherence, **gpt-image-1** is the clear winner. The phone is turned around the wrong way in the **Imagen 4** version, and it feels more AI-slop-esque. However, you can see that **Imagen 4** ran about 6x faster.
+In terms of aesthetic quality and prompt adherence, gpt-image-1 is the clear winner. The phone is turned around the wrong way in the Imagen 4 version, and it feels more AI-slop-esque. However, you can see that Imagen 4 ran about 6x faster.
 
 ---
 
@@ -56,7 +56,7 @@ In terms of aesthetic quality and prompt adherence, **gpt-image-1** is the clear
   </tr>
 </table>
 
-In this example, I would say this is one rare example of **Imagen 4** being better, although both are really good.
+In this example, I would say this is one rare example of Imagen 4 being better, although both are really good.
 
 ---
 
@@ -77,7 +77,7 @@ Again, while both are incredible, gpt-image-1 is nearly flawless. The text is a 
 
 ---
 
-I read a nice paper last year did some investigation into the poor performance of rare "concepts" in AI image datasets ([No 'Zero-Shot' Without Exponential Data: Pretraining Concept Frequency Determines Multimodal Model Performance](../reference/papers/no-zero-shot-without-exponential-data-pretraining-concept-frequency-determines-multimodal-model-performance.md).
+I saw a nice paper last year that did some investigation into the poor performance of rare "concepts" in AI image datasets ([No 'Zero-Shot' Without Exponential Data: Pretraining Concept Frequency Determines Multimodal Model Performance](../reference/papers/no-zero-shot-without-exponential-data-pretraining-concept-frequency-determines-multimodal-model-performance.md)).
 
 The thesis is that image classification and generation models perform much worse on rare concepts in the dataset. They created a dataset of rare concepts (at least rare in the LAION family of datasets) called [Let It Wag](let-it-wag.md). I made images with three rare concepts from the Let It Wag dataset: **red-necked grebe**, **Globeflower** and **SR-20**. Not sure how rare these are in OpenAI's or Google's dataset, but it gives some indication of how "rareness" affects the image outputs.
 
@@ -94,11 +94,11 @@ The thesis is that image classification and generation models perform much worse
   </tr>
 </table>
 
-I'm no expert on Globe Flowers, Red-necked Grebes or SR-20s, but while **Imagen 4** does a really good job, it seems **gpt-image-1** is better. But only marginally. These are really impressive results. Both models can do well on even extremely rare concepts.
+I'm no expert on Globe Flowers, Red-necked Grebes or SR-20s, but while Imagen 4 does a really good job, it seems gpt-image-1 is better. But only marginally. These are really impressive results. Both models can do well on even extremely rare concepts.
 
 ---
 
-For the last test, I've tested a very specific prompt containing some complicated poses.
+For the last test, I tested a very specific prompt containing some complicated poses.
 
 I enlisted GPT-4o's help to write this prompt:
 
@@ -115,10 +115,10 @@ I enlisted GPT-4o's help to write this prompt:
   </tr>
 </table>
 
-**gpt-image-1** got it usefully close. I'd say the form is nearly perfect, although Cleo goes from holding one and a half dumbbells to a barbell. I don't know what exercise **Imagen 4** is doing, but it ain't what I had in mind.
+gpt-image-1 got it usefully close. I'd say the form is nearly perfect, although Cleo goes from holding one and a half dumbbells to a barbell. I don't know what exercise Imagen 4 is doing, but it ain't what I had in mind.
 
 ---
 
 ## Summary
 
-I'd say **gpt-image-1** wins in 4/5 of the images, based on aesthetics and prompt adherence. However, **Imagen 4** was sometimes more than 10x faster than **gpt-image-1**. I could see **Imagen 4** being useful for rapid prototyping and exploration of ideas.
+I'd say gpt-image-1 wins in 4/5 of my simplistic tests, based on aesthetics and prompt adherence. However, Imagen 4 was sometimes more than 10x faster than gpt-image-1. I could see Imagen 4 being useful for rapid prototyping and exploration of ideas.
