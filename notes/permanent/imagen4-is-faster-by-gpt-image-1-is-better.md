@@ -1,5 +1,5 @@
 ---
-title: "Imagen 4 is faster, but gpt-image-1 is still the GOAT."
+title: "Imagen 4 is faster, but gpt-image-1 is still the GOAT"
 date: 2025-05-21 00:00
 modified: 2025-05-21 00:00
 summary: "a few comparisons of Google's Imagen 4 vs OpenAI's gpt-image-1"
@@ -14,6 +14,8 @@ Yesterday, Google [announced](https://blog.google/technology/ai/generative-media
 * **Veo 3**: state-of-the-art video generation that can generate videos with audio. (can't access it)
 * **Veo 2** was updated to include camera controls, outpainting, and adding and removing objects. (I can access Veo 2 via Gemini, but I'm not sure if these features are available.)
 * **Flow AI** is a filmmaking tool that lets you seamlessly create cinematic clips, scenes and stories. (unavailable outside of the US)
+* **SynthID Detector** which is a tool for detecting the **SynthID** watermark Google now inject in all generated content.
+* **Lyria 2** an updated version of the music generation tool.
 * **Imagen 4** is released, which promises a number of improvements on Imagen 3, including supporting up to 2k resolution and improved typography.
 
 **Imagen 4** seems to be the only thing available to me right now, and only via the Gemini app. However, when generating images in Gemini, they don't mention the model name in the image outputs, I'm not sure if I'm testing Imagen 3 or 4. Also, in Google AI Studio, only **Imagen 3** is available. **Imagen 4** is available on [Fal.ai](https://fal.ai/models/fal-ai/imagen4/preview) - not sure I quite understand the logic behind that, but I do appreciate how complicated shipping products at Google's scale is.
@@ -28,7 +30,7 @@ TL;DR **gpt-image-1** is still the greatest for overall quality and prompt adher
 
 <table>
   <tr>
-    <th>imagegen4</th>
+    <th>Imagen 4</th>
     <th>gpt-image-1</th>
   </tr>
   <tr>
@@ -45,7 +47,7 @@ In terms of aesthetic quality and prompt adherence, **gpt-image-1** is the clear
 
 <table>
   <tr>
-    <th>imagegen4</th>
+    <th>Imagen 4</th>
     <th>gpt-image-1</th>
   </tr>
   <tr>
@@ -63,7 +65,7 @@ In this example, I would say this is one rare example of **Imagen 4** being bett
 
 <table>
   <tr>
-    <th>imagegen4</th>
+    <th>Imagen 4</th>
     <th>gpt-image-1</th>
   </tr>
   <tr>
@@ -82,7 +84,7 @@ A paper last year did some investigation into very rare "concepts" in a dataset 
 
 <table>
   <tr>
-    <th>imagegen4</th>
+    <th>Imagen 4</th>
     <th>gpt-image-1</th>
   </tr>
   <tr>
@@ -97,7 +99,7 @@ These are really impressive results. Both models can do well on even extremely r
 
 ---
 
-For the last frames, I've tested a very specific prompt containing some complicated poses.
+For the last test, I've tested a very specific prompt containing some complicated poses.
 
 I enlisted GPT-4o's help to write this prompt:
 
@@ -105,7 +107,7 @@ I enlisted GPT-4o's help to write this prompt:
 
 <table>
   <tr>
-    <th>imagegen4</th>
+    <th>Imagen 4</th>
     <th>gpt-image-1</th>
   </tr>
   <tr>
