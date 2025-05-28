@@ -6,6 +6,8 @@ summary: learn to reason without any human-annotated data.
 cover: "/_media/absolute-zero.png"
 hide_cover_in_article: true
 category: reference/papers
+aliases:
+- AbsoluteZero
 tags:
 - ReinforcementLearning
 - ReasoningModels
