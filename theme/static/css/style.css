@@ -17,7 +17,7 @@ body {
 }
 
 img {
-  max-width: 700px;
+  max-width: 500px;
   height: auto;
   width: auto\9; /* ie8 */
 }
