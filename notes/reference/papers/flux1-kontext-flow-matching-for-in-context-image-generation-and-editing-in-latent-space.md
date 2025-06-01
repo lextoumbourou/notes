@@ -64,4 +64,4 @@ FLUX.1 Kontext is a near‑top contender in every metric despite not being tuned
 
 Kontext dominates all five editing tasks, especially multi‑turn consistency.
 
-See my own test: [Absurdly Good Doggo Consistency with Flux.1 Kontext](../../permanent/absurdly-good-doggo-consistency-with-flux-1-kontext.md).
+See my own test: [Absurdly Good Doggo Consistency with FLUX.1 Kontext](../../permanent/absurdly-good-doggo-consistency-with-flux-1-kontext.md).

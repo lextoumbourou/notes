@@ -1,5 +1,5 @@
 ---
-title: "Absurdly Good Doggo Consistency with Flux.1 Kontext"
+title: "Absurdly Good Doggo Consistency with FLUX.1 Kontext"
 date: 2025-06-01 00:00
 modified: 2025-06-01 00:00
 summary: "Experiments with multi-turn character consistent editing"
@@ -17,7 +17,7 @@ table tr, table td {
 
 This new image editing model from Black Forest Labs called **FLUX.1 Kontext** is really good. You can read more about it [here](https://bfl.ai/models/flux-kontext).
 
-Although GPT Image is still one of the <a href="https://notesbylex.com/imagen-4-is-faster-but-gpt-is-still-the-goat">best image models out there</a>, it is pretty limited in its ability to edit: characters get lost, and there's usually unrelated changes returned in the images.
+Although GPT Image 1 is still one of the <a href="https://notesbylex.com/imagen-4-is-faster-but-gpt-is-still-the-goat">best image models out there</a>, it is pretty limited in its ability to edit: characters get lost, and there's usually unrelated changes returned in the images.
 
 On the other hand, FLUX.1 Kontext, thanks to approach of [Flow Matching](flow-matching.md) in latent space, maintains a high-quality level of text-to-image quality but with an absurdly good ability to edit photos. One remarkable thing is that it can maintain character consistency through many edits (called *multi-turn editing*). Even without the context of the chain of images, or any sort of in-painting, I found that it was able to keep a source character consistent, even after many rounds of editing.
 
@@ -31,7 +31,7 @@ However, for the first two weeks after surgery, our poor puppy had to wear a gia
   <img src="_media/flux1-experiments/doggo-cone-1.jpg" alt="Original: A picture of my dog after TPLO surgery" />
 </a>
 
-Let's see if Flux.1: Kontext can remove the cone from poor Doggo's head.
+Let's see if Kontext can remove the cone from poor Doggo's head.
 
 > "remove the cone from my dog's head"
 
@@ -97,7 +97,7 @@ I wonder if I can use the same photo for all my future greeting card needs. It's
 
 Amazing. Now we're seven edits deep, and it still looks like my Doggo. Granted, we've started to see some artifacts, and there's some roughness around the edges, but this is looking good.
 
-Flux.1 also excels at style transfer, so let's try a few different styles for the Christmas Card.
+Kontext also excels at style transfer, so let's try a few different styles for the Christmas Card.
 
 <table style="width:100%; table-layout: fixed;">
   <tr>
@@ -146,7 +146,7 @@ Let's experiment with some of that.
 
 I mean, that kind of works. I think it's still my dog in the driver's seat. Hard to tell whether the snowman or Doggo is driving the car, but between them I assume they've got it covered.
 
-I tried the prompt "Watch them from behind.", which is actually given as an example in the paper. That was immediately flagged as NSFW and refused. Flux, you definitely are misunderstanding me.
+I tried the prompt "Watch them from behind.", which is actually given as an example in the paper. That was immediately flagged as NSFW and refused. Kontext, you definitely are misunderstanding me.
 
 I tried an alternate prompt.
 
@@ -160,7 +160,7 @@ Not sure exactly what's going on here, but it has turned the car around, but not
 
 Now, the showcase of all the edits:
 
-## Flux.1: Kontext - Character Consistency
+## FLUX.1: Kontext - Character Consistency
 
 <table style="width:100%; table-layout: fixed;">
   <tr>
@@ -217,13 +217,13 @@ Now, the showcase of all the edits:
   </tr>
 </table>
 
-It's a very impressive model indeed. We can contrast the same sequence of turns with gpt-image-1, which the paper reports as the second best performing model for character consistency.
+It's a very impressive model indeed. We can contrast the same sequence of turns with GPT Image 1, which the paper reports as the second best performing model for character consistency.
 
 ![character-ref.png](../_media/flux1-experiments/character-ref.png)
 
 *Figure 9: Image-to-image evaluation on KontextBench by Black Forest Labs*
 
-## gpt-image-1 - Character Consistency ref
+## GPT Image 1 - Character Consistency
 
 <table style="width:100%; table-layout: fixed;">
   <tr>
