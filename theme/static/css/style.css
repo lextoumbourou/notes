@@ -505,6 +505,8 @@ table th {
   padding: 4px 8px;
 }
 
+
+
 .table-border {
     border-collapse: collapse; /* ensures that borders collapse into a single border */
     width: 100%; /* table width */
@@ -529,3 +531,6 @@ table th {
     background-color: #f9f9f9; /* zebra stripes for rows */
 }
 
+.no-border {
+  border: 0;
+}
