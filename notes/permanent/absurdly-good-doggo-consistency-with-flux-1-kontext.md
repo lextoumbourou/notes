@@ -91,22 +91,18 @@ Flux.1 also excels at style transfer, so let's try a few different styles for th
   <tr>
     <td style="text-align:center; vertical-align:top;">
       <img src="../_media/flux1-experiments/doggo-90s-christmas.jpg" width="150" /><br>
-      <strong>1.</strong><br>
       <span style="font-size:smaller;">"Convert into the style of a 90s Christmas Movie poster"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="../_media/flux1-experiments/doggo-vintage.jpg" width="150" /><br>
-      <strong>2.</strong><br>
       <span style="font-size:smaller;">"Convert into a Vintage Storybook Style Christmas Card."</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="../_media/flux1-experiments/doggo-illustration.jpg" width="150" /><br>
-      <strong>3.</strong><br>
       <span style="font-size:smaller;">"Convert into a watercolor illustrated Christmas Card."</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="../_media/flux1-experiments/doggo-simpsons.jpg" width="150" /><br>
-      <strong>4.</strong><br>
       <span style="font-size:smaller;">"change into the style of The Simpsons"</span>
     </td>
   </tr>
@@ -146,44 +142,36 @@ Now, the showcase of all the edits:
   <tr>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-1.jpg" width="150" /><br>
-      <strong>0.</strong><br>
       <span style="font-size:smaller;">Source image</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-2.jpg" width="150" /><br>
-      <strong>1.</strong><br>
       <span style="font-size:smaller;">"remove the cone from my dog's head"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-3.jpg" width="150" /><br>
-      <strong>2.</strong><br>
       <span style="font-size:smaller;">"make my dog look happy"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-4-beach.jpg" width="150" /><br>
-      <strong>3.</strong><br>
       <span style="font-size:smaller;">"change the background to a sunny beach scene"</span>
     </td>
   </tr>
   <tr>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-5-beach.jpg" width="150" /><br>
-      <strong>4.</strong><br>
       <span style="font-size:smaller;">"add an antler bone in front of her"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-6-bday.jpg" width="150" /><br>
-      <strong>5.</strong><br>
       <span style="font-size:smaller;">"Change background to Minecraft. Write 'Happy Birthday, Nephew' in bright, colorful text"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-xmas-1.jpg" width="150" /><br>
-      <strong>6.</strong><br>
       <span style="font-size:smaller;">"Seasons Greetings, snowy background, snowman, Christmas hat, remove antler"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-convertable.jpg" width="150" /><br>
-      <strong>7.</strong><br>
       <span style="font-size:smaller;">"Two dogs driving in a pink convertible"</span>
     </td>
   </tr>
