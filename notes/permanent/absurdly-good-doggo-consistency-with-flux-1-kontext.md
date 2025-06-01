@@ -1,8 +1,8 @@
 ---
-title: "Consistent Doggo with Flux.1 Kontext"
+title: "Absurdly Good Doggo Consistency with Flux.1 Kontext"
 date: 2025-06-01 00:00
 modified: 2025-06-01 00:00
-summary: "An absurdly good multi-turn editing model."
+summary: "Experiments with multi-turn character consistent editing"
 tags:
 - ImageEditing
 - ImageGeneration
@@ -10,12 +10,13 @@ cover: /_media/flux1-experiments/doggo-convertable.jpg
 ---
 
 This new image editing model from Black Forest Labs called [FLUX.1: Kontext](flux1-kontext.md) is really good.
-
 You can read my paper summary here: [FLUX.1 Kontext: Flow Matching for In‑Context Image Generation and Editing in Latent Space](../reference/papers/flux1-kontext-flow-matching-for-in-context-image-generation-and-editing-in-latent-space.md)
 
 Although GPT Image is still one of the <a href="https://notesbylex.com/imagen-4-is-faster-but-gpt-is-still-the-goat">best image models out there</a>, it is pretty limited in its ability to edit, characters get lost, and there's usually unrelated changes returned in the images.
 
-On the other hand, FLUX.1: Kontext maintains a high-quality level of text-to-image quality but with an absurdly good ability to edit photos.
+On the other hand, FLUX.1: Kontext, thanks to approach of [Flow Matching](flow-matching.md) in latent space, maintains a high-quality level of text-to-image quality but with an absurdly good ability to edit photos.
+ .
+
 
 One remarkable thing about it is how it can maintain character consistency through many edits (called *multi-turn editing*). It does not need the context of the chain of images, and it does not have any in-painting, but the character consistency is really astounding; even after many rounds of editing, I found that the source character remained in my experiments.
 
