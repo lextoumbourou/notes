@@ -15,9 +15,7 @@ table tr, table td {
 }
 </style>
 
-This new image editing model from Black Forest Labs called [FLUX.1: Kontext](flux1-kontext.md) is really good.
-
-You can read my paper summary here: [FLUX.1 Kontext: Flow Matching for In‑Context Image Generation and Editing in Latent Space](../reference/papers/flux1-kontext-flow-matching-for-in-context-image-generation-and-editing-in-latent-space.md)
+This new image editing model from Black Forest Labs called [FLUX.1: Kontext](flux1-kontext.md) is really good. You can read more about it [here](https://bfl.ai/models/flux-kontext).
 
 Although GPT Image is still one of the <a href="https://notesbylex.com/imagen-4-is-faster-but-gpt-is-still-the-goat">best image models out there</a>, it is pretty limited in its ability to edit: characters get lost, and there's usually unrelated changes returned in the images.
 
