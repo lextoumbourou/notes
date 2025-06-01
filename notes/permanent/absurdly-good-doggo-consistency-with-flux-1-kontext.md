@@ -10,7 +10,7 @@ cover: /_media/flux1-experiments/doggo-convertable.jpg
 ---
 
 <style>
-table, tr, td {
+table tr, table td {
    border: none;
 }
 </style>
@@ -91,18 +91,22 @@ Flux.1 also excels at style transfer, so let's try a few different styles for th
   <tr>
     <td style="text-align:center; vertical-align:top;">
       <img src="../_media/flux1-experiments/doggo-90s-christmas.jpg" width="150" /><br>
+      <strong>1.</strong><br>
       <span style="font-size:smaller;">"Convert into the style of a 90s Christmas Movie poster"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="../_media/flux1-experiments/doggo-vintage.jpg" width="150" /><br>
+      <strong>2.</strong><br>
       <span style="font-size:smaller;">"Convert into a Vintage Storybook Style Christmas Card."</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="../_media/flux1-experiments/doggo-illustration.jpg" width="150" /><br>
+      <strong>3.</strong><br>
       <span style="font-size:smaller;">"Convert into a watercolor illustrated Christmas Card."</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="../_media/flux1-experiments/doggo-simpsons.jpg" width="150" /><br>
+      <strong>4.</strong><br>
       <span style="font-size:smaller;">"change into the style of The Simpsons"</span>
     </td>
   </tr>
@@ -138,41 +142,49 @@ Now, the showcase of all the edits:
 
 ## Flux.1: Kontext - Character Consistency
 
-<table style="width:100%; table-layout: fixed;" class="no-border">
+<table style="width:100%; table-layout: fixed;">
   <tr>
-    <td style="text-align:center; vertical-align:top">
+    <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-1.jpg" width="150" /><br>
+      <strong>0.</strong><br>
       <span style="font-size:smaller;">Source image</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-2.jpg" width="150" /><br>
-      <span style="font-size:smaller;">1. "remove the cone from my dog's head"</span>
+      <strong>1.</strong><br>
+      <span style="font-size:smaller;">"remove the cone from my dog's head"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-3.jpg" width="150" /><br>
-      <span style="font-size:smaller;">2. "make my dog look happy"</span>
+      <strong>2.</strong><br>
+      <span style="font-size:smaller;">"make my dog look happy"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-4-beach.jpg" width="150" /><br>
-      <span style="font-size:smaller;">3. "change the background to a sunny beach scene"</span>
+      <strong>3.</strong><br>
+      <span style="font-size:smaller;">"change the background to a sunny beach scene"</span>
     </td>
   </tr>
   <tr>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-5-beach.jpg" width="150" /><br>
-      <span style="font-size:smaller;">4. "add an antler bone in front of her"</span>
+      <strong>4.</strong><br>
+      <span style="font-size:smaller;">"add an antler bone in front of her"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-cone-6-bday.jpg" width="150" /><br>
-      <span style="font-size:smaller;">5. "Change background to minecraft. Write 'Happy Birthday, Nephew' in bright, colorful text on top of the image."</span>
+      <strong>5.</strong><br>
+      <span style="font-size:smaller;">"Change background to Minecraft. Write 'Happy Birthday, Nephew' in bright, colorful text"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-xmas-1.jpg" width="150" /><br>
-      <span style="font-size:smaller;">6. "change text to 'Seasons Greetings'. Convert into a snowy background. Remove antler. Add a snowman next to her. Add a Christmas hat on top."</span>
+      <strong>6.</strong><br>
+      <span style="font-size:smaller;">"Seasons Greetings, snowy background, snowman, Christmas hat, remove antler"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
       <img src="_media/flux1-experiments/doggo-convertable.jpg" width="150" /><br>
-      <span style="font-size:smaller;">7. "Remove text. There are now two dogs driving in a pink convertible."</span>
+      <strong>7.</strong><br>
+      <span style="font-size:smaller;">"Two dogs driving in a pink convertible"</span>
     </td>
   </tr>
 </table>
@@ -188,37 +200,53 @@ It's a very impressive model indeed. We can contrast the same sequence of turns 
 <table style="width:100%; table-layout: fixed;">
   <tr>
     <td style="text-align:center; vertical-align:top">
-      <img src="_media/flux1-experiments/doggo-cone-1.jpg" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-cone-1.jpg" target="_blank">
+        <img src="_media/flux1-experiments/doggo-cone-1.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">Source image</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-gpt-image-1.png" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-gpt-image-1.png" target="_blank">
+        <img src="_media/flux1-experiments/doggo-gpt-image-1.png" width="150" />
+      </a><br>
       <span style="font-size:smaller;">1. "remove the cone from my dog's head" (gpt-image-1)</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-gpt-image-2.png" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-gpt-image-2.png" target="_blank">
+        <img src="_media/flux1-experiments/doggo-gpt-image-2.png" width="150" />
+      </a><br>
       <span style="font-size:smaller;">2. "make my dog look happy" (gpt-image-1)</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-gpt-image-3.png" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-gpt-image-3.png" target="_blank">
+        <img src="_media/flux1-experiments/doggo-gpt-image-3.png" width="150" />
+      </a><br>
       <span style="font-size:smaller;">3. "change the background to a sunny beach scene"</span>
     </td>
   </tr>
   <tr>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-gpt-image-4.png" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-gpt-image-4.png" target="_blank">
+        <img src="_media/flux1-experiments/doggo-gpt-image-4.png" width="150" />
+      </a><br>
       <span style="font-size:smaller;">4. "add an antler bone in front of her"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-gpt-image-5.png" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-gpt-image-5.png" target="_blank">
+        <img src="_media/flux1-experiments/doggo-gpt-image-5.png" width="150" />
+      </a><br>
       <span style="font-size:smaller;">5. "Change background to minecraft. Write 'Happy Birthday, Nephew' in bright, colorful text on top of the image."</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-gpt-image-6.png" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-gpt-image-6.png" target="_blank">
+        <img src="_media/flux1-experiments/doggo-gpt-image-6.png" width="150" />
+      </a><br>
       <span style="font-size:smaller;">6. "change text to 'Seasons Greetings'. Convert into a snowy background. Remove antler. Add a snowman next to her. Add a Christmas hat on top."</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-gpt-image-7.png" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-gpt-image-7.png" target="_blank">
+        <img src="_media/flux1-experiments/doggo-gpt-image-7.png" width="150" />
+      </a><br>
       <span style="font-size:smaller;">7. "Remove text. There are now two dogs driving in a pink convertible."</span>
     </td>
   </tr>
