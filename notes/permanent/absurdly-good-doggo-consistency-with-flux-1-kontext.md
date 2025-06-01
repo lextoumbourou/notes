@@ -9,18 +9,21 @@ tags:
 cover: /_media/flux1-experiments/doggo-convertable.jpg
 ---
 
+<style>
+table, tr, td {
+   border: none;
+}
+</style>
+
 This new image editing model from Black Forest Labs called [FLUX.1: Kontext](flux1-kontext.md) is really good.
+
 You can read my paper summary here: [FLUX.1 Kontext: Flow Matching for In‑Context Image Generation and Editing in Latent Space](../reference/papers/flux1-kontext-flow-matching-for-in-context-image-generation-and-editing-in-latent-space.md)
 
-Although GPT Image is still one of the <a href="https://notesbylex.com/imagen-4-is-faster-but-gpt-is-still-the-goat">best image models out there</a>, it is pretty limited in its ability to edit, characters get lost, and there's usually unrelated changes returned in the images.
+Although GPT Image is still one of the <a href="https://notesbylex.com/imagen-4-is-faster-but-gpt-is-still-the-goat">best image models out there</a>, it is pretty limited in its ability to edit: characters get lost, and there's usually unrelated changes returned in the images.
 
-On the other hand, FLUX.1: Kontext, thanks to approach of [Flow Matching](flow-matching.md) in latent space, maintains a high-quality level of text-to-image quality but with an absurdly good ability to edit photos.
- .
+On the other hand, FLUX.1: Kontext, thanks to approach of [Flow Matching](flow-matching.md) in latent space, maintains a high-quality level of text-to-image quality but with an absurdly good ability to edit photos. One remarkable thing is that it can maintain character consistency through many edits (called *multi-turn editing*). Even without the context of the chain of images, or any sort of in-painting, I found that it was able to keep a source character consistent, even after many rounds of editing.
 
-
-One remarkable thing about it is how it can maintain character consistency through many edits (called *multi-turn editing*). It does not need the context of the chain of images, and it does not have any in-painting, but the character consistency is really astounding; even after many rounds of editing, I found that the source character remained in my experiments.
-
-To test out the character consistently, I found the most recently taken photo of my dog, Doggo.
+To demonstrate the character consistency, I found the most recently taken photo of my dog, Doggo.
 
 Doggo recently had TPLO surgery on each of her legs in two separate staggered surgeries due to some painful arthritis. She is fully recovered now and doing much better.
 
@@ -46,11 +49,9 @@ Again, the amazing thing about the Kontext model is its ability to do multi-turn
 
 Admittedly, I had to try this a few times before I got something that looked convincing like this. One of them made her head too big, and the other did some weird stuff with her ears.
 
-
-
 Anyway, that's pretty happy! I don't think she's ever quite smiled like that, but it's close.
 
-Now, to maximise her happiness, I move her to one of her favourite places in the world: 
+Now, to maximise her happiness, I move her to one of her favourite places in the world:
 
 > "change the background to a sunny beach scene."
 
@@ -179,11 +180,12 @@ Now, the showcase of all the edits:
 It's a very impressive model indeed. We can contrast the same sequence of turns with gpt-image-1, which the paper reports as the second best performing model for character consistency.
 
 ![character-ref.png](../_media/flux1-experiments/character-ref.png)
+
 *Figure 9: Image-to-image evaluation on KontextBench by Black Forest Labs*
 
 ## gpt-image-1 - Character Consistency ref
 
-<table style="width:100%; table-layout: fixed;" class="no-border">
+<table style="width:100%; table-layout: fixed;">
   <tr>
     <td style="text-align:center; vertical-align:top">
       <img src="_media/flux1-experiments/doggo-cone-1.jpg" width="150" /><br>
@@ -223,3 +225,5 @@ It's a very impressive model indeed. We can contrast the same sequence of turns 
 </table>
 
 Still an incredible model, but we can see clearly that even by the second image it's a totally different dog.
+
+Black Forest Labs cooked with this one, as the kids would say.
