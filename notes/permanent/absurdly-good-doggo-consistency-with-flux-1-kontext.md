@@ -29,13 +29,17 @@ Doggo recently had TPLO surgery on each of her legs in two separate staggered su
 
 However, for the first two weeks after surgery, our poor puppy had to wear a giant cone to prevent her chewing off her stitches, which she hated.
 
-![Original: A picture of my dog after TPLO surgery](_media/flux1-experiments/doggo-cone-1.jpg)
+<a href="_media/flux1-experiments/doggo-cone-1.jpg" target="_blank">
+  <img src="_media/flux1-experiments/doggo-cone-1.jpg" alt="Original: A picture of my dog after TPLO surgery" />
+</a>
 
 Let's see if Flux.1: Kontext can remove the cone from poor Doggo's head.
 
 > "remove the cone from my dog's head"
 
-![Updated Original - a very convincing removal of my Dog's cone](_media/flux1-experiments/doggo-cone-2.jpg)
+<a href="_media/flux1-experiments/doggo-cone-2.jpg" target="_blank">
+  <img src="_media/flux1-experiments/doggo-cone-2.jpg" alt="Updated Original - a very convincing removal of my Dog's cone" />
+</a>
 
 Much better.
 
@@ -45,9 +49,11 @@ Again, the amazing thing about the Kontext model is its ability to do multi-turn
 
 > "make my dog look happy"
 
-![_media/flux1-experiments/doggo-cone-3.jpg](_media/flux1-experiments/doggo-cone-3.jpg)
+<a href="_media/flux1-experiments/doggo-cone-3.jpg" target="_blank">
+  <img src="_media/flux1-experiments/doggo-cone-3.jpg" alt="Doggo happy edit" />
+</a>
 
-Admittedly, I had to try this a few times before I got something that looked convincing like this. One of them made her head too big, and the other did some weird stuff with her ears.
+Admittedly, I had to try this prompt a few times before I got something that looked convincing like this. One of them made her head too big, and the other did some weird stuff with her ears.
 
 Anyway, that's pretty happy! I don't think she's ever quite smiled like that, but it's close.
 
@@ -55,7 +61,9 @@ Now, to maximise her happiness, I move her to one of her favourite places in the
 
 > "change the background to a sunny beach scene."
 
-![Doggo on the beach](../_media/flux1-experiments/doggo-cone-4-beach.jpg)
+<a href="../_media/flux1-experiments/doggo-cone-4-beach.jpg" target="_blank">
+  <img src="../_media/flux1-experiments/doggo-cone-4-beach.jpg" alt="Doggo on the beach" />
+</a>
 
 I'm really impressed by the cast shadows. The model has figure out where it wants the sun to be, and can generate shadows at roughly match that model. Wild.
 
@@ -63,7 +71,9 @@ Finally, to achieve peak happiness, I put her favourite chew toy next to her, a 
 
 > "add an antler bone in front of her"
 
-![Doggo with antler bone in front of her](../_media/flux1-experiments/doggo-cone-5-beach.jpg)
+<a href="../_media/flux1-experiments/doggo-cone-5-beach.jpg" target="_blank">
+  <img src="../_media/flux1-experiments/doggo-cone-5-beach.jpg" alt="Doggo with antler bone in front of her" />
+</a>
 
 Even after four rounds of editing, it still looks exactly like Doggo - really impressive stuff.
 
@@ -73,7 +83,9 @@ My nephew's birthday is coming up, and he loves Minecraft. So I'll try turning i
 
 > Change background to minecraft. Write "Happy Birthday, Nephew" in bright, colorful text on top of the image.
 
-![doggo-cone-6.jpg](../_media/flux1-experiments/doggo-cone-6-bday.jpg)
+<a href="../_media/flux1-experiments/doggo-cone-6-bday.jpg" target="_blank">
+  <img src="../_media/flux1-experiments/doggo-cone-6-bday.jpg" alt="Minecraft birthday Doggo" />
+</a>
 
 Looking pretty good, albeit a little distorted.
 
@@ -81,7 +93,9 @@ I wonder if I can use the same photo for all my future greeting card needs. It's
 
 > change text to "Seasons Greetings" with a Christmas font. Convert into a snowy background. Remove antler. Add a snowman next to her. Add a Christmas hat on top.
 
-![doggo-xmas-1.jpg](../_media/flux1-experiments/doggo-xmas-1.jpg)
+<a href="../_media/flux1-experiments/doggo-xmas-1.jpg" target="_blank">
+  <img src="../_media/flux1-experiments/doggo-xmas-1.jpg" alt="Christmas Doggo" />
+</a>
 
 Amazing. Now we're seven edits deep, and it still looks like my Doggo. Granted, we've started to see some artifacts, and there's some roughness around the edges, but this is looking good.
 
@@ -90,19 +104,27 @@ Flux.1 also excels at style transfer, so let's try a few different styles for th
 <table style="width:100%; table-layout: fixed;">
   <tr>
     <td style="text-align:center; vertical-align:top;">
-      <img src="../_media/flux1-experiments/doggo-90s-christmas.jpg" width="150" /><br>
+      <a href="../_media/flux1-experiments/doggo-90s-christmas.jpg" target="_blank">
+        <img src="../_media/flux1-experiments/doggo-90s-christmas.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">"Convert into the style of a 90s Christmas Movie poster"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="../_media/flux1-experiments/doggo-vintage.jpg" width="150" /><br>
+      <a href="../_media/flux1-experiments/doggo-vintage.jpg" target="_blank">
+        <img src="../_media/flux1-experiments/doggo-vintage.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">"Convert into a Vintage Storybook Style Christmas Card."</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="../_media/flux1-experiments/doggo-illustration.jpg" width="150" /><br>
+      <a href="../_media/flux1-experiments/doggo-illustration.jpg" target="_blank">
+        <img src="../_media/flux1-experiments/doggo-illustration.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">"Convert into a watercolor illustrated Christmas Card."</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="../_media/flux1-experiments/doggo-simpsons.jpg" width="150" /><br>
+      <a href="../_media/flux1-experiments/doggo-simpsons.jpg" target="_blank">
+        <img src="../_media/flux1-experiments/doggo-simpsons.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">"change into the style of The Simpsons"</span>
     </td>
   </tr>
@@ -120,7 +142,9 @@ Let's experiment with some of that.
 
 > Remove text. There are now two dogs driving in a pink convertible.
 
-![doggo-convertable.jpg](../_media/flux1-experiments/doggo-convertable.jpg)
+<a href="../_media/flux1-experiments/doggo-convertable.jpg" target="_blank">
+  <img src="../_media/flux1-experiments/doggo-convertable.jpg" alt="doggo-convertable.jpg" />
+</a>
 
 I mean, that kind of works. I think it's still my dog in the driver's seat. Hard to tell whether the snowman or Doggo is driving the car, but between them I assume they've got it covered.
 
@@ -130,7 +154,9 @@ I tried an alternate prompt.
 
 > "turn the camera to watch them from the back"
 
-![doggo-car.jpg](../_media/flux1-experiments/doggo-car.jpg)
+<a href="../_media/flux1-experiments/doggo-car.jpg" target="_blank">
+  <img src="../_media/flux1-experiments/doggo-car.jpg" alt="doggo-car.jpg" />
+</a>
 
 Not sure exactly what's going on here, but it has turned the car around, but not any of the character. Starting to get a little terrifying, feeling a bit like [Loab](https://en.wikipedia.org/wiki/Loab) might be waiting a few turns down the line, so I'll stop.
 
@@ -141,37 +167,53 @@ Now, the showcase of all the edits:
 <table style="width:100%; table-layout: fixed;">
   <tr>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-cone-1.jpg" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-cone-1.jpg" target="_blank">
+        <img src="_media/flux1-experiments/doggo-cone-1.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">Source image</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-cone-2.jpg" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-cone-2.jpg" target="_blank">
+        <img src="_media/flux1-experiments/doggo-cone-2.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">"remove the cone from my dog's head"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-cone-3.jpg" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-cone-3.jpg" target="_blank">
+        <img src="_media/flux1-experiments/doggo-cone-3.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">"make my dog look happy"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-cone-4-beach.jpg" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-cone-4-beach.jpg" target="_blank">
+        <img src="_media/flux1-experiments/doggo-cone-4-beach.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">"change the background to a sunny beach scene"</span>
     </td>
   </tr>
   <tr>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-cone-5-beach.jpg" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-cone-5-beach.jpg" target="_blank">
+        <img src="_media/flux1-experiments/doggo-cone-5-beach.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">"add an antler bone in front of her"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-cone-6-bday.jpg" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-cone-6-bday.jpg" target="_blank">
+        <img src="_media/flux1-experiments/doggo-cone-6-bday.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">"Change background to Minecraft. Write 'Happy Birthday, Nephew' in bright, colorful text"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-xmas-1.jpg" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-xmas-1.jpg" target="_blank">
+        <img src="_media/flux1-experiments/doggo-xmas-1.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">"Seasons Greetings, snowy background, snowman, Christmas hat, remove antler"</span>
     </td>
     <td style="text-align:center; vertical-align:top;">
-      <img src="_media/flux1-experiments/doggo-convertable.jpg" width="150" /><br>
+      <a href="_media/flux1-experiments/doggo-convertable.jpg" target="_blank">
+        <img src="_media/flux1-experiments/doggo-convertable.jpg" width="150" />
+      </a><br>
       <span style="font-size:smaller;">"Two dogs driving in a pink convertible"</span>
     </td>
   </tr>
