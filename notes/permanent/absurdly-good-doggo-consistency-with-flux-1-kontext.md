@@ -15,11 +15,11 @@ table tr, table td {
 }
 </style>
 
-This new image editing model from Black Forest Labs called [FLUX.1: Kontext](flux1-kontext.md) is really good. You can read more about it [here](https://bfl.ai/models/flux-kontext).
+This new image editing model from Black Forest Labs called **FLUX.1 Kontext** is really good. You can read more about it [here](https://bfl.ai/models/flux-kontext).
 
 Although GPT Image is still one of the <a href="https://notesbylex.com/imagen-4-is-faster-but-gpt-is-still-the-goat">best image models out there</a>, it is pretty limited in its ability to edit: characters get lost, and there's usually unrelated changes returned in the images.
 
-On the other hand, FLUX.1: Kontext, thanks to approach of [Flow Matching](flow-matching.md) in latent space, maintains a high-quality level of text-to-image quality but with an absurdly good ability to edit photos. One remarkable thing is that it can maintain character consistency through many edits (called *multi-turn editing*). Even without the context of the chain of images, or any sort of in-painting, I found that it was able to keep a source character consistent, even after many rounds of editing.
+On the other hand, FLUX.1 Kontext, thanks to approach of [Flow Matching](flow-matching.md) in latent space, maintains a high-quality level of text-to-image quality but with an absurdly good ability to edit photos. One remarkable thing is that it can maintain character consistency through many edits (called *multi-turn editing*). Even without the context of the chain of images, or any sort of in-painting, I found that it was able to keep a source character consistent, even after many rounds of editing.
 
 To demonstrate the character consistency, I found the most recently taken photo of my dog, Doggo.
 
