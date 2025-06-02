@@ -9,11 +9,6 @@ tags:
 cover: /_media/flux1-experiments/doggo-convertable.jpg
 ---
 
-<style>
-table tr, table td {
-   border: none;
-}
-</style>
 
 This new image editing model from Black Forest Labs called **FLUX.1 Kontext** is really good. You can read more about it [here](https://bfl.ai/models/flux-kontext).
 
@@ -98,6 +93,12 @@ I wonder if I can use the same photo for all my future greeting card needs. It's
 Amazing. Now we're seven edits deep, and it still looks like my Doggo. Granted, we've started to see some artifacts, and there's some roughness around the edges, but this is looking good.
 
 Kontext also excels at style transfer, so let's try a few different styles for the Christmas Card.
+
+<style>
+table tr, table td {
+   border: none;
+}
+</style>
 
 <table style="width:100%; table-layout: fixed;">
   <tr>
