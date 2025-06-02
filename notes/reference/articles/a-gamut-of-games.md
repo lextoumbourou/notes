@@ -37,9 +37,9 @@ Checkers History
 * It beat Robert Nealey in a 1963 exhibition match, and people erroneously concluded that checkers was a "solved" game.
 * It was beaten in 1979 by further research at Duke University but still did not reach human-level.
 
-[Chinook](../../../../permanent/Chinook.md)
+[Chinook](../../permanent/chinook.md)
 
-* In 1989, [Chinook](../../../../permanent/Chinook.md) was developed, initially defeated by the greatest player of all time, Marion Tinsley.
+* In 1989, [Chinook](../../permanent/chinook.md) was developed, initially defeated by the greatest player of all time, Marion Tinsley.
 * In 1992, Tinsley beat Chinook 4–2 in a 40-game match.
 * In 1994, Tinsley resigned the rematch after 6 drawn games due to health issues; Chinook became world champion.
 * Chinook used alpha-beta search with enhancements and large endgame databases (covering all 8-piece positions).
