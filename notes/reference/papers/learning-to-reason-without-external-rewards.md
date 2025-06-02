@@ -20,7 +20,7 @@ Turns out we can just use the model's internal sense of confidence as the reward
 
 The authors take GRPO (from Deepseek R1) and replace the verifiable reward signal with a "self-certainty score" (specifically the KL divergence between the model's output distribution and a uniform distribution), then train on a collection of prompts relative to the evaluated domains. They demonstrate reasoning performance comparable to GRPO on math while exceeding it on coding tasks.
 
-They introduce a new paradigm, "Reinforcement Learning from Internal Feedback" (RLIF) and call their approach [INTUITOR](INTUITOR.md).
+They introduce a new paradigm, "Reinforcement Learning from Internal Feedback" (RLIF) and call their approach [INTUITOR](../../permanent/intuitor.md).
 
 If this approach scales, it could unlock the ability to generally improve reasoning LLMs in domains where high-quality ground truth isn't available or not verifiable (i.e., any domain other than math and code) and provide evidence that pre-trained LLMs "possess richer latent behavioural priors than previously recognised."
 

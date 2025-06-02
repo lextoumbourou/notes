@@ -16,7 +16,7 @@ category: reference/papers
 
 To create Kontext, they start from a [FLUX.1](../../../../permanent/flux1.md) base checkpoint, make a few small architectural tweaks and fine‑tune with edit‑focused data.
 
-They also introduce [[KontextBench]], 1 026 image‑prompt pairs across five tasks (local, global, text, style, character edits) designed to test both single‑turn quality and multi‑turn stability.
+They also introduce [KontextBench](../../permanent/kontextbench.md), 1 026 image‑prompt pairs across five tasks (local, global, text, style, character edits) designed to test both single‑turn quality and multi‑turn stability.
 
 ## FLUX 1 Kontext
 
