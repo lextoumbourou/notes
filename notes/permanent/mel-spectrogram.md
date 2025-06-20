@@ -9,14 +9,14 @@ tags:
 hide_cover_in_article: true
 ---
 
-Mel Spectrogram is a graphic representation of a [Sound Wave](sound-wave.md), visualising frequency over time.
+Mel Spectrogram is a graphic representation of a [Sound Wave](sound-wave.md), visualising frequency over time. The difference between a Mel Spectogram and a [Spectrogram](Spectrogram.md), is the frequency y-axis is represented using the [Mel Scale](mel-scale.md) in the former.
 
 Here is a Mel Spectrogram of the audio of a Trumpet
 
 ![Melspectrogram example of a Trumpet](../_media/melspectrogram-example.png)
 
 <audio controls>
-  <source src="/_media/trumpet_example.mp3" type="audio/mpeg">
+  <source src="_media/trumpet_example.mp3" type="audio/mpeg">
 </audio>
 
 The process of generating a Mel Spectrogram works like this:
