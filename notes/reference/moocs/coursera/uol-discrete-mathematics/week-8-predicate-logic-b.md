@@ -9,7 +9,7 @@ modified: 2023-04-08 00:00
 
 ## 4.201 De Morgan's law for quantifiers
 
-* Intuition of [In [Set](permanent/Set.md) theory](permanent/De%20Morgan's%20Law.md)
+* Intuition of [Set](permanent/Set.md) theory](permanent/De%20Morgan's%20Law.md)
     * Often we must consider the negation of a quantified expression.
     * Example
         * $S$: "All university's are connected to the network"

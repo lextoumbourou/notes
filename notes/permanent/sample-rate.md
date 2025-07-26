@@ -37,6 +37,8 @@ In Python, the sound is typically represented using a Numpy multidimensional arr
 
 As you can see, we can find the length of audio represented as a Numpy array by dividing the number of samples by the sample rate.
 
+A higher sample rate means that we can store higher frequencies, since higher frequency sound waves have shorter cycles, and therefore need more samples to capture.
+
 How do we determine the optimal sample rate?
 
 ## Nyquist-Shannon sampling theorem
@@ -57,7 +59,7 @@ The most commonly found sample rate, as it has been the standard for CD quality 
 
 ### 48 kHz
 
-For audio and some film and video
+For audio and some film and video, as it divides evenly for film/video rates.
 
 ### 88.2 kHz and 96 kHz
 
@@ -76,3 +78,7 @@ The figure below shows an example of a 15Hz sine wave over a minute. As you can 
 ![](../_media/sample-rate-examples.png)
 
 Real sound waves are more complex than simple sine waves, so more samples are needed to capture that complexity. However, the important detail is that more samples are not necessarily better. We can accurately represent all audio we perceive at any sample rate above 40kHz.
+
+## Bit Rate
+
+[Bit Rate](../../../permanent/bit-rate.md) is the number of bits per second required to store or transport the audio signal. For uncompressed audio, that is simply the number of bits per sample x sample rate. For mono audio with a bit depth of 16, and a sample rate of 44,100Hz, we could calculate it as: 16 bits x 44,100Hz = 705,600 bits/s.
