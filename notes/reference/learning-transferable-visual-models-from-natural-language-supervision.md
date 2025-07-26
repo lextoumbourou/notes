@@ -38,7 +38,7 @@ Many papers have achieve good results doing Unsupervised Pre-training in NLP, in
 They allowed task-agnostic architectures for zero-shot transfer to downstream datasets without fine-tuning:
 
 * [McCann et al., 2018: The Natural Language Decathlon: Multitask Learning as Question Answering](reference/mccann-et-al-2018-the-natural-language-decathlon-multitask-learning-as-question-answering.md)
-* [Radford et al., 2019: Language Models are Unsupervised Multitask Learners](reference/radford-et-al-2019-language-models-are-unsupervised-multitask-learners.md)
+* [Language Models are Unsupervised Multitask Learners](../../../reference/language-models-are-unsupervised-multitask-learners.md)
 * [Raffel et al., 2019: Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer](reference/raffel-et-al-2019-exploring-the-limits-of-transfer-learning-with-a-unified-text-to-text-transformer.md)
 
 **General purpose LLMs**
@@ -57,7 +57,7 @@ Over 20 years ago, Mori et al. (1999) explored ways to improve content-based ima
 
 **Learning Image Representations via Manifold Learning**
 
-Quattoni et al. (2007) demonstrated that [[../../../permanent/manifold-learning]] in the weight space of classifiers could result in more data-efficient image representations by predicting words in captions associated with images.
+Quattoni et al. (2007) demonstrated that [[../../../permanent/manifold-learning|Manifold Learning]] in the weight space of classifiers could result in more data-efficient image representations by predicting words in captions associated with images.
 
 * [Quattoni et al., 2007: Learning Efficient Image Representations via Manifold Learning](reference/quattoni-et-al-2007-learning-efficient-image-representations-via-manifold-learning.md)
 

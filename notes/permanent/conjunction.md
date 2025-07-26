@@ -5,6 +5,8 @@ tags:
   - Logic
   - DiscreteMath
 status: draft
+aliases:
+- Logical AND
 ---
 
 Given two [Proposition](proposition.md) $p$ and $q$, their conjunction is the proposition $p$ *and* $q$.
