@@ -5,6 +5,11 @@ modified: 2025-05-28 00:00
 cover: /_media/rlif-cover.png
 summary: "aka Self-Confidence is All You Need"
 hide_cover_in_article: true
+category: reference/papers
+tags:
+- ReinforcementLearning
+- RewardModeling
+- LargeLanguageModels
 ---
 
 *My summary of [Learning to Reason without External Rewards](https://arxiv.org/abs/2505.19590v1) by Xuandong Zhao, Zhewei Kang, Aosong Feng, Sergey Levine, Dawn Song.*
