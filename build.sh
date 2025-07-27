@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ENV=local uv run pelican ./notes/ --output=output/
+ENV=local uv run pelican ./notes/ --output=output/ --debug
