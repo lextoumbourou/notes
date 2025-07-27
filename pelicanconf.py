@@ -43,7 +43,6 @@ MARKDOWN = {
 
 PLUGINS = [
     "pelican_katex",
-    "pelican_cite",
     frontmark,
     "subcategory",
     nb_liquid,
