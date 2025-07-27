@@ -15,7 +15,7 @@ hide_cover_in_article: true
 
 Really interesting paper from researchers at KAIST AI, Mila and Google: "Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation"
 
-They build on the [Recursive Transformer](recursive-transformers.md), where layers (or groups of layers) can be applied repeatedly during decoding, allowing us to reduce the overall layer count of a network. They add a router to each stack of layers, which assigns the number of repeats (or recursion depth) per token.
+They build on the [Recursive Transformer](recursive-transformer.md), where layers (or groups of layers) can be applied repeatedly during decoding, allowing us to reduce the overall layer count of a network. They add a router to each stack of layers, which assigns the number of repeats (or recursion depth) per token.
 
 This routing strategy means that simple tokens (think: "and", "the", etc) only need to traverse a small recursive depth, and more content-rich tokens can be assigned larger recursion depths, effectively allowing the model to optimise computation at the token level. The routing is a form of latent reasoning, where the model can effectively think at each layer group within the network.
 
