@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ENV=local python3 -m pelican ./notes/ --output=output/
+ENV=local uv run python -m pelican ./notes/ --output=output/
