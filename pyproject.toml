@@ -1,0 +1,27 @@
+[project]
+name = "public"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "gymnasium[other]>=1.2.0",
+    "markdown==3.3.4",
+    "markdown-inline-mermaid==1.0.4",
+    "markdown-obsidian-callouts",
+    "markupsafe==2.0.1",
+    "nbconvert==7.2.5",
+    "notebook==5.6.0",
+    "pelican==4.8.0",
+    "pelican-cite",
+    "pelican-frontmark",
+    "pelican-jupyter",
+    "pelican-katex==1.6.1",
+    "pybtex==0.22.2",
+]
+
+[tool.uv.sources]
+pelican-frontmark = { git = "https://github.com/lextoumbourou/pelican-frontmark.git" }
+pelican-jupyter = { git = "https://github.com/lextoumbourou/pelican-jupyter.git" }
+markdown-obsidian-callouts = { git = "https://github.com/lextoumbourou/markdown-obsidian-callouts.git" }
+pelican-cite = { git = "https://github.com/VorpalBlade/pelican-cite.git", rev = "e1ac8202446bcf790ddffe4b48aa58a8d04ec4dc" }
