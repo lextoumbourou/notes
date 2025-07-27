@@ -20,4 +20,4 @@ if [ "$found_control_chars" = true ]; then
 fi
 
 echo "No control characters found. Proceeding with build..."
-ENV=local uv run pelican ./notes/ --output=output/ --debug
+ENV=local uv run pelican ./notes/ --output=output/
