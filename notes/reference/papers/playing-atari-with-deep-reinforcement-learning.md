@@ -179,13 +179,13 @@ Which might look something like this:
 
 ![Environment observation](_media/pacman_frame_stack_3d_layered.png)
 
-### $\epsilon$-greedy policy
+### Epsilon-greedy policy
 
 A key component of Reinforcement Learning is the tradeoff between **exploring** and **exploiting**. The is, we need to ensure that the model takes enough random actions to examine the space adequately, but also follows the policy it is learning at times, so that it makes progress when going in the correct direction (see [Exploration-Exploitation Dilemma](../../../../permanent/exploration-exploitation-dilemma.md)).
 
 They set an epislon parameter which slowly anneals (changes throughout training), starting at 1, always selecting random, and gradually going to 0.1, where only 10% of the time we are going random, the rest we are using the highest reward action, as predicted by the model so far.
 
-> The behavior policy during training was $\epsilon-greedy$ with  annealed linearly from 1 to 0.1 over the first million frames, and fixed at 0.1 thereafter.
+> The behavior policy during training was $\epsilon-greedy$ with annealed linearly from 1 to 0.1 over the first million frames, and fixed at 0.1 thereafter.
 
 ```python
 epsilon = 1.0  # Epsilon greedy parameter
@@ -317,12 +317,12 @@ def train_one_step():
     next_q_values = target_model(next_states)
     max_next_q = mx.max(next_q_values, axis=1)
     targets = rewards + gamma * max_next_q * (1 - dones)
-    
+
     params = model.trainable_parameters()
-                
+ 
     # Compute gradients
     grads = grad_fn(params, states, actions, targets)
-    
+
     # Update parameters
     optimizer.update(model, grads)
 ```
@@ -341,53 +341,53 @@ def train_dqn(num_episodes=10000, max_steps_per_episode=10000):
     rewards_history = []
     loss_history = []
     q_values_history = []
-    
+
     # Main training loop
     for episode in range(num_episodes):
         state, _ = env.reset()
         episode_reward = 0
         episode_loss = []
-        
+
         for step in range(max_steps_per_episode):
             # Get action based on epsilon-greedy policy
             epsilon = anneal_epsilon(epsilon)
             action = get_next_action(epsilon)
-            
+
             # Take action in environment
             next_state, reward, terminated, truncated, _ = env.step(action)
             done = terminated or truncated
             episode_reward += reward
-            
+
             # Store experience in replay buffer
             replay_buffer.add(Experience(state, action, reward, next_state, done))
             state = next_state
-            
+
             # Only train once we have enough samples
             if len(replay_buffer) >= batch_size:
                 loss = train_one_step()
                 episode_loss.append(loss)
-            
+
             # Update target network periodically
             if step % target_update_freq == 0:
                 target_model.update(model.parameters())
-            
+
             if done:
                 break
-        
+
         # Record metrics
         rewards_history.append(episode_reward)
         if episode_loss:
             loss_history.append(sum(episode_loss) / len(episode_loss))
-        
+
         # Track average Q-values on fixed set of states
         if episode % 100 == 0:
             q_values = mx.mean(mx.max(model(evaluation_states), axis=1))
             q_values_history.append(q_values.item())
-            
+
             print(f"Episode {episode}, Reward: {episode_reward}, "
                   f"Loss: {loss_history[-1] if episode_loss else 'N/A'}, "
                   f"Avg Q-value: {q_values.item()}, Epsilon: {epsilon}")
-    
+
     return rewards_history, loss_history, q_values_history
 ```
 
