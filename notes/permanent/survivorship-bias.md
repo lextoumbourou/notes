@@ -3,11 +3,12 @@ title: Survivorship Bias
 date: 2021-06-01 00:00
 tags:
   - ErrorsOfThinking
+  - CognitiveBias
 cover: /_media/world-war-2-aircraft-survivorship-bias-abraham-wald-17.jpeg
 summary: arriving at false conclusions by only examining success cases
 ---
 
-**Survivorship Bias** is a common error of thinking where we arrive at false conclusions by only examining success cases.
+**Survivorship Bias** is a common cognitive bias where we arrive at false conclusions by only examining success cases.
 
 For example, on one of my former teams, some of us had been keeping tabs on how well Microservices had worked at NetFlix, and we didn't want to miss out. Collectively, we decided to start a new project following a strict Microservice architecture.
 
