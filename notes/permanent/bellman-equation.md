@@ -5,7 +5,7 @@ modified: 2025-04-15 00:00
 status: draft
 ---
 
-The **Bellman equation** provides a recursive definition for the value of a state in a [Markov Decision Process](markov-decision-process.md). It expresses the value of a state as the expected return of taking an action from that state and then following a particular policy. This recursive formulation is central to many reinforcement learning algorithms, including Q-learning and Value Iteration.
+The **Bellman equation** provides a recursive definition for the value of a state in a [Markov Decision Process (MDP)](markov-decision-process.md). It expresses the value of a state as the expected return of taking an action from that state and then following a particular policy. This recursive formulation is central to many reinforcement learning algorithms, including Q-learning and Value Iteration.
 
 $$
 \textcolor{magenta}{V^\pi(s)} = \mathbb{E}_\pi \left[ \textcolor{red}{R_{t+1}} + \textcolor{orange}{\gamma} \cdot \textcolor{blue}{V^\pi(S_{t+1})} \mid S_t = s \right]

@@ -8,9 +8,9 @@ tags:
 cover: /_media/taxi-q-learning-example.png
 ---
 
-This article is part of my (WIP) series on [Reinforcement Learning](reinforcement-learning.md).
+This article is part of my (WIP) series on [Reinforcement Learning (RL)](reinforcement-learning.md).
 
-**Q-Learning** is a reinforcement learning algorithm for finding optimal policies in [Markov Decision Process](markov-decision-process.md). Unlike supervised learning, where we learn from labelled examples, Q-learning learns from interaction with an environment. It can learn the value of actions without requiring a model of the environment (i.e. learning via trial-and-error), hence, it is considered a "model-free" method.
+**Q-Learning** is a reinforcement learning algorithm for finding optimal policies in [Markov Decision Process (MDP)](markov-decision-process.md). Unlike supervised learning, where we learn from labelled examples, Q-learning learns from interaction with an environment. It can learn the value of actions without requiring a model of the environment (i.e. learning via trial-and-error), hence, it is considered a "model-free" method.
 
 The algorithm was introduced by Chris Watkins in his 1989 PhD thesis at King's College [^1], with a convergence proof later published by Watkins alongside Peter Dayan [^2]. The concept was also developed independently by several others in the early 90s.
 
@@ -162,7 +162,7 @@ In simpler terms:
 
 For complex environments with large state spaces, maintaining a Q-table becomes impractical or impossible. For example, in Atari games, where the state is a raw pixel image, there are millions of possible states.
 
-In 2013, DeepMind published a landmark paper where they replaced the Q-table with a [Neural Network](../../../permanent/neural-network.md) to approximate the Q-values - a technique known as [Deep-Q Learning](deep-q-learning.md) or DQN [^3].
+In 2013, DeepMind published a landmark paper where they replaced the Q-table with a [Neural Network](neural-network.md) to approximate the Q-values - a technique known as [Deep-Q Learning](deep-q-learning.md) or DQN [^3].
 
 The neural network inputs the state and outputs Q-values for all possible actions, which allows the algorithm to generalise across similar states and handle continuous state spaces.
 

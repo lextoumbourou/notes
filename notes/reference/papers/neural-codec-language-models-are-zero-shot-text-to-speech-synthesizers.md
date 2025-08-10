@@ -5,6 +5,7 @@ category: reference/papers
 tags:
   - MachineLearning
   - AudioEngineering
+  - SpeechSynthesis
 summary: VALL-E can generate speech in anyone's voice with only a 3-second sample of the speaker and some text
 cover: /_media/valle-cover.png
 hide_cover_in_article: true
@@ -64,7 +65,7 @@ Proposing VALL-E as a [Hierarchical Model](../../permanent/hierarchical-model.md
 
 ## Comparison to Previous Work
 
-In the past, a [Mel Spectrogram](../../permanent/mel-spectrogram.md) has been commonly used as the intermediary representation for TTS, relying on a Vocoder (like [HiFi-GAN](https://arxiv.org/abs/2010.05646)) to the decoder. There have also been some successful end-to-end TTS approaches. However, all these problems are typically formulated as continuous signal regression problems, which so far have needed high-quality, clean audio to train on - not data scraped from the internet. Without the larger datasets, reliable zero-shot TTS on unseen speakers is very difficult. The capacity for *in-context* learning enjoyed by GPT is a powerful capability and is now available for speech synthesis.
+In the past, a [Mel Spectrogram](../../permanent/mel-spectrogram.md) has been commonly used as the intermediary representation for TTS, relying on a Vocoder (like [HiFi-GAN](https://arxiv.org/abs/2010.05646)) to the decoder. There have also been some successful end-to-end TTS approaches. However, all these problems are typically formulated as continuous signal regression problems, which so far have needed high-quality, clean audio to train on - not data scraped from the internet. Without the larger datasets, reliable zero-shot TTS on unseen speakers is very difficult. The capacity for *in-context* learning enjoyed by GPT is a powerful capability and is now available for [Speech Synthesis](../../permanent/speech-synthesis.md).
 
 Table 1 summarises the difference between VALL-E and previous TTS systems.
 

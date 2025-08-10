@@ -2,6 +2,8 @@
 title: Embedding
 date: 2022-03-04 00:00
 status: draft
+alias:
+- Embeddings
 ---
 
 A vector of numbers that provides a representation or, effectively a summary something.

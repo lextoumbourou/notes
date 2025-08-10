@@ -10,7 +10,7 @@ These are my notes from the paper [A Discriminative Feature Learning Approach fo
 
 ## Abstract
 
-We commonly train image classification models using [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md)wever, softmax loss does not learn sufficiently discriminative features for face recognition.
+We commonly train image classification models using [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md). However, softmax loss does not learn sufficiently discriminative features for face recognition.
 
 This paper proposes a new supervision signal called [Center Loss](../../journal/permanent/Center Loss.md). Center Loss simultaneously learns a center for each class and penalizes the distance between features and their class centers.
 

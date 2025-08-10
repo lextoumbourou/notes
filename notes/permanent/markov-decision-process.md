@@ -1,5 +1,5 @@
 ---
-title: "Markov Decision Process"
+title: "Markov Decision Process (MDP)"
 date: 2025-03-29 00:00
 modified: 2025-03-29 00:00
 summary: A mathematical framework for modelling decision-making under uncertainty
@@ -15,7 +15,7 @@ A **Markov Decision Process (MDP)** is a mathematical framework for modelling de
 
 The Frozen Lake environment in the [gymnasium](https://gymnasium.farama.org/) library provides an excellent visualization of an MDP. In this environment, an agent navigates a frozen lake with slippery surfaces, where taking an action (like moving left) doesn't guarantee the intended movement due to environmental uncertainty.
 
-MDPs form the theoretical foundation for many [Reinforcement Learning](reinforcement-learning.md) algorithms, enabling theoretical understanding and practical implementation of RL solutions.
+MDPs form the theoretical foundation for many [Reinforcement Learning (RL)](reinforcement-learning.md) algorithms, enabling theoretical understanding and practical implementation of RL solutions.
 
 ## Core Components
 

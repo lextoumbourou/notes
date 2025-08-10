@@ -15,7 +15,7 @@ hide_cover_in_article: true
 
 ## Overview
 
-In late 2013, DeepMind researchers published a Reinforcement Learning approach to playing Atari games with AI called [Deep Q-Networks](../../permanent/deep-q-networks.md). This was one of the first approaches to game playing could successfully "learn control policies" (i.e. play games), only from observing the raw pixels from the game, thanks to recent advanced in deep learning.
+In late 2013, DeepMind researchers published a Reinforcement Learning approach to playing Atari games with AI called [Deep Q-Network (DQN)](../../permanent/deep-q-networks.md). This was one of the first approaches to game playing could successfully "learn control policies" (i.e. play games), only from observing the raw pixels from the game, thanks to recent advanced in deep learning.
 
 ![atari-fig-1.png](_media/atari-fig-1.png)
 

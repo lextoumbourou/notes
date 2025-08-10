@@ -3,11 +3,12 @@ title: Negative Log-Likelihood
 date: 2021-07-10 00:00
 cover: /_media/negative-log-likelihood.png
 tags:
-  - MachineLearning
+- MachineLearning
+- LossFunction 
 summary: a multi-class classification loss function
 ---
 
-Negative log-likelihood, or NLL, is a loss function used in multi-class classification. It measures how closely our model predictions align with the ground truth labels.
+Negative log-likelihood, or NLL, is a [Loss Function](../../../permanent/loss-function.md) used in multi-class classification. It measures how closely our model predictions align with the ground truth labels.
 
 It is calculated as $-log(\hat{y})$, where $\hat{y}$ is the prediction corresponding to the true class label after the model outputs are converted into probabilities by applying the [Softmax Function](softmax-activation-function.md) to them. The loss for a mini-batch is computed by calculating the NLL for each item and then calculating the mean or sum of all items in the batch.
 
