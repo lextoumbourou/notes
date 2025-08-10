@@ -1,5 +1,5 @@
 ---
-title: Reinforcement Learning
+title: Reinforcement Learning (RL)
 date: 2024-10-11 00:00
 modified: 2024-10-11 00:00
 status: draft

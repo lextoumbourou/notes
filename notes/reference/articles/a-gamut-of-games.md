@@ -24,7 +24,7 @@ status: draft
 [TD-Gammon](TD-Gammon.md)
 
 * Next program was TD-Gammon, which used a neural network trained via "temporal difference" learning from self-play games.
-* Similar to [Deep Q-Network](../../permanent/deep-q-networks.md), it takes input as the current board position and outputs an estimated score for the position.
+* Similar to [Deep Q-Network (DQN)](../../permanent/deep-q-networks.md), it takes input as the current board position and outputs an estimated score for the position.
 * Contains 160 hidden units, approximately 50,000 weights to be trained.
 * Trained on 1.5 million self-play games.
 * “Tesauro’s success with temporal-difference learning in his backgammon program is a major milestone in AI research.” (Schaeffer, 2001)
