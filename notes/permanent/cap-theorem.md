@@ -6,7 +6,7 @@ tags:
   - DataEngineering
 ---
 
-Also known as Brewer's theorem, after computer scientist Eric Brewer, is the assertion that a distributed data store can't provide 3 of the following capabilities simultaneously:
+**CAP Theorem**, also known as Brewer's theorem, after computer scientist Eric Brewer, is the assertion that a distributed data store can't provide 3 of the following capabilities simultaneously:
 
 * Consistency: every read request gets the most recent write
 * Availability: Every read request receives a non-error response
