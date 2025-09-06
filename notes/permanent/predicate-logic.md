@@ -48,5 +48,18 @@ $\exists x, P(x)$: "There exists an x such that x is a prime number"
 
 ## DeMorgan's Laws for negating quantifiers
 
- ∼[(∀x)P(x)] ≡ (∃ x)[∼P(x)]
- ∼[(∀x)P(x)] ≡ (∀x)[∼P(x)]
+### First law
+
+The negation of "for all x, P(x)" is equivalent to "there exists an x such that not P(x)"
+
+$$
+\sim[(\forall x)P(x)] \equiv (\exists x)[\sim P(x)]
+$$
+
+## Second law
+
+The negation of "there exists an x such that P(x)" is equivalent to "for all x, not P(x)"
+
+$$
+\sim[(\exists x)P(x)] \equiv (\forall x)[\sim P(x)]
+$$
