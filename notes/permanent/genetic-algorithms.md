@@ -28,6 +28,8 @@ The algorithm looks like this:
 6. Replace some or all of the population with the new offspring (see **Replacement**).
 7. Repeat 2-6 until the termination condition is met.
 
+<a href="_media/genetic-algorithms-overview.png" target="_blank"><img src="_media/genetic-algorithms-overview.png" alt="Genetic Algorithms Overview - an overview of this article in visual form"  style="max-width: 100%" /></a>
+
 One of the most famous examples comes from [Evolving Virtual Creatures](../reference/papers/evolving-virtual-creatures.md) by Karl Sims. It's also recently been used within [AlphaEvolve](../reference/papers/alphaevolve-a-coding-agent-for-scientific-and-algorithmic-discovery.md), which developed novel solutions to many problems by utilising techniques of Genetic Algorithm, utilising LLMs for the breeding solutions together.
 
 ## [Fitness Function](fitness-function.md)
@@ -59,12 +61,6 @@ Individuals are ranked by fitness, and the selection probability is based on ran
 ### One-Point Crossover
 
 A single crossover point is chosen randomly. Everything before this point comes from Parent 1, and everything after comes from Parent 2.
-
-For example:
-
-- Parent 1: `[1, 0, 1, 1, 0, 0, 1]`
-- Parent 2: `[0, 1, 0, 0, 1, 1, 0]`
-- Child: `[1, 0, 1, | 0, 1, 1, 0]`
 
 ### Two-Point Crossover
 
