@@ -32,7 +32,7 @@ The algorithm looks like this:
   <img src="_media/genetic-algorithms-overview.png" alt="Genetic Algorithms Overview - an overview of this article in visual form"  style="max-width: 100%" />
 </a>
 
-One of the most famous examples comes from [Evolving Virtual Creatures](../../../permanent/evolving-virtual-creatures.md) by Karl Sims. It's also recently been used within [AlphaEvolve](../reference/papers/alphaevolve-a-coding-agent-for-scientific-and-algorithmic-discovery.md), which developed novel solutions to many problems by utilising techniques of Genetic Algorithm, utilising LLMs for the breeding solutions together.
+One of the most famous examples comes from [Evolving Virtual Creatures](../reference/papers/evolving-virtual-creatures.md) by Karl Sims. It's also recently been used within [AlphaEvolve](../reference/papers/alphaevolve-a-coding-agent-for-scientific-and-algorithmic-discovery.md), which developed novel solutions to many problems by utilising techniques of Genetic Algorithm, utilising LLMs for the breeding solutions together.
 
 ## [Fitness Function](../../../permanent/fitness-function.md)
 
