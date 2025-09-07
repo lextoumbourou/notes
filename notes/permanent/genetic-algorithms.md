@@ -28,15 +28,13 @@ The algorithm looks like this:
 6. Replace some or all of the population with the new offspring (see **Replacement**).
 7. Repeat 2-6 until the termination condition is met.
 
-<a href="_media/genetic-algorithms-overview.png" target="_blank"><img src="_media/genetic-algorithms-overview.png" alt="Genetic Algorithms Overview - an overview of this article in visual form"  style="max-width: 100%" /></a>
-
 One of the most famous examples comes from [Evolving Virtual Creatures](../reference/papers/evolving-virtual-creatures.md) by Karl Sims. It's also recently been used within [AlphaEvolve](../reference/papers/alphaevolve-a-coding-agent-for-scientific-and-algorithmic-discovery.md), which developed novel solutions to many problems by utilising techniques of Genetic Algorithm, utilising LLMs for the breeding solutions together.
 
-## [Fitness Function](../../../permanent/fitness-function.md)
+## [Fitness Function](fitness-function.md)
 
 A fitness function evaluates the population in some way. In the Virtual Creatures example, the fitness is based on how far they travel under different conditions. In AlphaEvolve, the fitness is a test specific to the problem it is trying to solve, designed to find an optimal solution.
 
-## [Selection](../../../permanent/selection.md)
+## [Selection](selection.md)
 
 Selection algorithms determine which individuals will become parents for the next generation, giving fitter individuals a higher chance of reproduction while maintaining some diversity.
 
