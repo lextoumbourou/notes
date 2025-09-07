@@ -16,7 +16,7 @@ hide_cover_in_article: true
 
 The high-level idea is that we start from a population of possible solutions to a problem, where, importantly, we have a way to evaluate how good each solution is - called a **fitness function**. Then we perform a loop that involves selecting from the fittest solutions (with randomness), breeding these solutions together, creating mutations, and replacing the population with the new solutions.
 
-The solutions need to be represented in a way that allows us to breed and mutate solutions. Typically, this is an array, where each element represents some parameter of a solution. For example, for building a robot, we might have elements that correspond to how many joints they have, and another that describes joint length, and so on. This representation is called a [Genotype](genotype.md), a term borrowed from biology, where all living organisms have a genetic code that stores their information, encoded in DNA. The expression of the **genotype**, for example, the robot that is constructed as a result of the information in the array, is called a [Phenotype](phenotype.md).
+The solutions need to be represented in a way that allows us to breed and mutate solutions. Typically, this is an array, where each element represents some parameter of a solution. For example, for testing robot designs, we might have elements that correspond to how many joints they have, and another that describes joint length, and so on. This representation is called a [Genotype](genotype.md), a term borrowed from biology, where all living organisms have a genetic code that stores their information, encoded in DNA. The expression of the **genotype**, for example, the robot that is constructed as a result of the information in the array, is called a [Phenotype](phenotype.md). In this example, we might utilise a fitness function that tests the robot's ability to complete a task, or to simply move without falling.
 
 The algorithm looks like this:
 
@@ -25,7 +25,7 @@ The algorithm looks like this:
 3. **Selection**: Select "parents" based on their fitness.
 4. **Crossover**: also known as "Breeding", where parents create a new "offspring" by combining the genotype in some way.
 5. **Mutation**: the offspring is mutated in different ways using algorithms that involve randomness.
-6. **Replacement**: some or all of the population with the new offspring.
+6. **Replacement**: replace some or all of the population with the new offspring.
 7. Repeat 2-6 until the termination condition is met.
 
 <a href="_media/genetic-algorithms-overview.png" target="_blank"><img src="_media/genetic-algorithms-overview.png" alt="Genetic Algorithms Overview - an overview of this article in visual form"  style="max-width: 100%" /></a>
