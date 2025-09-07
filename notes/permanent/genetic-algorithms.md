@@ -94,7 +94,7 @@ For binary representations, each bit has a small probability (typically 1-5%) of
 
 For real-valued genes, add a random value drawn from a Gaussian (normal) distribution with mean zero and a small standard deviation.
 
-Formula: new_gene = old_gene + N(0, σ)
+Formula: $\text{new gene} = \text{old gene} + \mathcal{N}(0, \sigma)$
 
 ### Swap Mutation
 
