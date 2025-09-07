@@ -25,12 +25,10 @@ The algorithm looks like this:
 3. Select "parents" based on their fitness (see **Selection**).
 4. Parents create a new "offspring" (see **Crossover**).
 5. Offspring is mutated in some way with some probability (see **Mutation**).
-6. Replace some or all of the population with the new offspring (see **Replace**).
+6. Replace some or all of the population with the new offspring (see **Replacement**).
 7. Repeat 2-6 until the termination condition is met.
 
-<a href="_media/genetic-algorithms-overview.png" target="_blank">
-  <img src="_media/genetic-algorithms-overview.png" alt="Genetic Algorithms Overview - an overview of this article in visual form"  style="max-width: 100%" />
-</a>
+<a href="_media/genetic-algorithms-overview.png" target="_blank"><img src="_media/genetic-algorithms-overview.png" alt="Genetic Algorithms Overview - an overview of this article in visual form"  style="max-width: 100%" /></a>
 
 One of the most famous examples comes from [Evolving Virtual Creatures](../reference/papers/evolving-virtual-creatures.md) by Karl Sims. It's also recently been used within [AlphaEvolve](../reference/papers/alphaevolve-a-coding-agent-for-scientific-and-algorithmic-discovery.md), which developed novel solutions to many problems by utilising techniques of Genetic Algorithm, utilising LLMs for the breeding solutions together.
 
@@ -68,7 +66,7 @@ For example:
 
 - Parent 1: `[1, 0, 1, 1, 0, 0, 1]`
 - Parent 2: `[0, 1, 0, 0, 1, 1, 0]`
-- Child: `[1, 0, 1 | 0, 1, 1, 0]`
+- Child: `[1, 0, 1, | 0, 1, 1, 0]`
 
 ### Two-Point Crossover
 
@@ -94,7 +92,7 @@ For binary representations, each bit has a small probability (typically 1-5%) of
 
 For real-valued genes, add a random value drawn from a Gaussian (normal) distribution with mean zero and a small standard deviation.
 
-Formula: $\text{new gene} = \text{old gene} + \mathcal{N}(0, \sigma)$
+Formula: $\text{new gene} = \text{old gene} + \mathcal{N}( 0, \sigma )$
 
 ### Swap Mutation
 
