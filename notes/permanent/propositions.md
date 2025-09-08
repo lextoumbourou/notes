@@ -6,6 +6,7 @@ modified: 2025-01-01 00:00
 tags:
   - DiscreteMath
   - MathematicalLogic
+  - LogicalReasoning
 summary: Declarative sentences that are either true or false (but not both)
 ---
 
