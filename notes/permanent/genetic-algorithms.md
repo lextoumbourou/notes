@@ -28,7 +28,7 @@ The algorithm looks like this:
 6. **Replacement**: replace some or all of the population with the new offspring.
 7. Repeat 2-6 until the termination condition is met.
 
-<a href="_media/genetic-algorithms-overview.png" target="_blank"><img src="_media/genetic-algorithms-overview.png" alt="Genetic Algorithms Overview - an overview of this article in visual form"  style="max-width: 100%" /></a>
+<a href="_media/genetic-algorithms-overview.png" target="_blank"><img src="_media/genetic-algorithms-overview.png" alt="Genetic Algorithms Overview - an overview of this article in visual form" style="max-width: 100%" /></a>
 
 One of the most famous examples comes from [Evolving Virtual Creatures](../reference/papers/evolving-virtual-creatures.md) by Karl Sims, where he evolved virtual creatures in a simulated 3D environment. In his groundbreaking work, Sims used genetic algorithms to simultaneously evolve both the morphology (body structure) and neural networks (brain/control systems) of virtual creatures.
 
@@ -60,15 +60,17 @@ Individuals are ranked by fitness, and the selection probability is based on ran
 
 ## [Crossover](crossover.md)
 
+Crossover, also known as breeding, is where we combine the genetic material of the two selected parents to create a new offspring. The goal is to create new solutions that potentially inherit the best features from both parents while exploring new areas of the solution space. Different crossover methods are suited to different types of problems and solution representations.
+
 ### One-Point Crossover
 
 A single crossover point is chosen randomly. Everything before this point comes from Parent 1, and everything after comes from Parent 2.
 
 For example:
 
-- Parent 1: $[1, 0, 1, 1, 0, 0, 1]$
-- Parent 2: $[0, 1, 0, 0, 1, 1, 0]$
-- Child: $[1, 0, 1 \ \textcolor{red}{\bf{|}} \ 0, 1, 1, 0]$
+* Parent 1: $[1, 0, 1, 1, 0, 0, 1]$
+* Parent 2: $[0, 1, 0, 0, 1, 1, 0]$
+* Child: $[1, 0, 1, \ \textcolor{red}{\bf{|}} \ 0, 1, 1, 0]$
 
 ### Two-Point Crossover
 
@@ -106,6 +108,11 @@ Remove a gene from one position and insert it at another random position.
 
 ## Advantages and Limitations
 
-There are several advantages to genetic algorithms over other AI approaches, such as supervised learning. Firstly, no training data is required. If we can construct a fitness function and encode the problem effectively, then we can run a Genetic Algorithm search over the solution space. It can also handle discrete, continuous and mixed variable types. Since each solution is evaluated independently, it is highly parallelisable, allowing cores to be allocated to evaluate one or a subset of the solutions. It is also robust to noise in the fitness function and can typically escape local optima.
+There are several advantages to genetic algorithms over other AI approaches, such as supervised learning. Firstly, no training data is required. If we can construct a fitness function and encode the problem effectively, then we can run a Genetic Algorithm search over the solution space. It can also handle discrete, continuous and mixed variable types. Since each solution is evaluated independently, it is highly parallelisable, allowing cores to be allocated to evaluate one or a subset of the solutions, so it is good when the search space is huge. It is also robust to noisy/weird objectives and can typically escape local optima.
 
 On the other hand, there's no guarantee of finding a global optimum; typically, many parameters need to be tuned, which can be computationally expensive and can easily lead to premature convergence.
+
+## Schema Theorem
+
+For the theoretical foundation of Genetic Algorithms see [Schema Theorem](schema-theorem.md).
+
