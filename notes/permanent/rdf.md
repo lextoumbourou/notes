@@ -29,6 +29,7 @@ Then I can also have triples about my dog:
 * `dog:Doggo` -> `has age` -> 6
 
 The key rules for RDF triples are:
+
 - **Subjects** can be URIs or blank nodes (anonymous resources)
 - **Predicates** must be URIs
 - **Objects** can be URIs, blank nodes, or literals (strings, numbers, dates, etc.)
