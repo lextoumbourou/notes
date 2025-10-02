@@ -9,15 +9,10 @@ aliases:
 
 **SPARQL** (or **SPARQL Protocol and RDF Query Language**) is a Query Language for [RDF](rdf.md) databases and [Triplestores](triplestores.md).
 
-SPARQL has some important characteristics:
-
-- **Pattern-based searching**: Queries specify patterns of relationships rather than exact data locations.
-- **No hierarchical structure**: ph databases have no fixed starting points of order.
-- **Variable-based**: use variables beginning with question marks (e.g., `?friend`, `?name`)
-- **Protocol included**: it also defined how to communicate with SPARQL endpoints over HTTP - it's not just a query language.
+It uses pattern-based queries. ph databases have no fixed starting points of order.
+Use variables beginning with question marks (e.g., `?friend`, `?name`). It also defined how to communicate with SPARQL endpoints over HTTP - it's not just a query language.
 
 ## Example Queries
-### Basic Information
 
 All of these queries can be run live against https://dbpedia.org/sparql
 
