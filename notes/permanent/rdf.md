@@ -12,43 +12,59 @@ cover: /_media/rdf-cover.png
 hide_cover_in_article: true
 ---
 
-**RDF** (or **Resource Description Framework**) is a data model for representing data as a graph, where all data is defined as triples: `subject` -> `predicate` -> `object`.
+**RDF** (or **Resource Description Framework**) is a data model for representing data as a graph. RDF is the foundational technology for the [Semantic Web](semantic-web.md), which was Tim Berners-Lee's vision for a machine-readable web, once described as Web 3.0 (unrelated to the crypto bros blockchain-powered [Web3](https://en.wikipedia.org/wiki/Web3)). RDF is also the backbone of a standard for interconnecting datasets called [Linked Data](linked-data.md).
+
+Though the Semantic Web never fully materialised, partially due to its reliance on users to input correct data [^1], the RDF standard does live on in multiple forms. Many social media sites and feed readers also support various RDF serialisation standards, such as JSON-LD, to read metadata on websites [^4]. I've also seen it deployed in organisations for taxonomy management, such as maintaining databases of keywords and their relationships (e.g., if an item is a Daffodil, it's also a Flower, which means it's also a Plant).
+
+It's worth taking the time to wrap your head around RDF, although it can seem a little cumbersome at first.
+
+In RDF, data points are defined as triples in the form: `<subject> <predicate> <object>`.
 
 ![rdf-cover.png](../_media/rdf-cover.png)
 
-For example, to represent information about myself, I might define these triples:
+Jumping straight into an example, here's how I might represent information about myself in this form:
 
-* `person:lex` -> `has name` -> "Lex"
-* `person:lex` -> `has occupation` -> software engineer
-* `person:lex` -> `has pet` -> `dog:Doggo`
+```
+<Lex> <is a> <person>
+<Lex> <has occupation> <Software Engineer>
+<Lex> <has pet> <Doggo>
+```
 
-Then I can also have triples about my dog:
+Then let's also define some triples for my dog, Doggo:
 
-* `dog:Doggo` -> `has name` -> "Doggo"
-* `dog:Doggo` -> `has breed` -> "Staghound"
-* `dog:Doggo` -> `has age` -> 6
+```
+<Doggo> <is a> <dog>
+<Doggo> <has breed> <Staghound>
+<Doggo> <is aged> 6
+```
 
-The key rules for RDF triples are:
+A key detail of RDF is that Subjects and Predicates must be represented as an IRI (Internationalised Resource Identifier), of which URLs are a subset. Objects can be IRIs, but can also be literals: strings, numbers, dates, etc.
 
-- **Subjects** can be URIs or blank nodes (anonymous resources)
-- **Predicates** must be URIs
-- **Objects** can be URIs, blank nodes, or literals (strings, numbers, dates, etc.)
+These IRIs serve as globally unique identifiers for resources (the "R" in RDF). For instance, I could describe myself using my website's URL and reference schema.org's standardised definition of a person, so that other people would know I was a person.
 
-The RDF data model is the key building block of Tim Berners-Lee's vision for the [Semantic Web](semantic-web.md), an ambitious proposal from the late 1990s/early 2000s to turn the web into a machine-readable data structure, called [Linked Data](linked-data.md), that could power AI agents to understand the web.
+```
+<https://notesbylex.com/Lex> <rdf:type> <http://schema.org/Person>
+```
 
-RDF allows for logical reasoning across data. For example, if we know that:
+This IRI-based approach provides two powerful capabilities. First, it enables shared vocabularies across the internet: different datasets can reference the same definitions, ensuring everyone means the same thing by "Person" or "owns." Second, it allows easy creation of new vocabularies, whether public standards or private organisational schemas.
 
-* `person:lex` -> `has pet` -> `dog:Doggo`
-* `dog:Doggo` -> `is a` -> `Dog`
-* `Dog -> is subclass of` -> `Animal`
+RDF's graph structure also enables logical reasoning across the data.
 
-Then we can infer that `person:lex` has a relationship with an Animal, even though this wasn't explicitly stated in our original data (of course, we hope to find much more interesting examples than that, like potential drug interactions or to develop hypotheses about gene functions [^3]).
+For example, given the information:
 
-The technique of representing information in such a way that we can perform logical inference over it comes from a branch of AI called [Knowledge Representation](knowledge-representation.md).
+```xml
+<Aspirin> <inhibits> <COX-2 enzyme>
+<COX-2 enzyme> <produces> <Prostaglandins>
+<Prostaglandins> <mediate> <Inflammation>
+```
 
-Though the vision for the Semantic Web never fully materialised as Berners-Lee envisioned, partially due to its reliance on users to input correct data [^1], the RDF standard does live on in multiple forms. It powers graph databases, which are semantic databases that can be queried using the [SPARQL](sparql.md) query language, although [Property Graph](../../../permanent/property-graph.md) databases have also gained popularity as an alternative approach [^2], though both models continue to coexist for different use cases.
+We can infer that:
 
-RDF technology continues to be actively used by major knowledge graphs, including Wikidata, GeoNames (an open-source location data source), DBpedia, and principles from RDF inform enterprise knowledge graphs, such as Google's Knowledge Graph and Microsoft's Satori. Some elements of the Semantic Web are still thriving, like using JSON-LD to represent page metadata for search engine optimisation [^4]. With the rise of LLMs and the need for high-quality training datasets, we may yet see a resurgence in this technology.
+```xml
+<Aspirin> <reduces> <Inflammation>
+```
+
+The technique of representing information in a way that allows us to perform logical inference over it originates from a branch of AI known as [Knowledge Representation](knowledge-representation.md).
 
 ## RDF Serialisation
 
@@ -58,7 +74,7 @@ There are multiple ways to serialise RDF data, each with different advantages:
 
 The simplest serialisation format, expressing each triple on a separate line using full URIs. While it is verbose, it's also easy to parse and process programmatically.
 
-Here is an example of how I might express myself using N-Triples format:
+The example earlier was an of how I might express myself using N-Triples format:
 
 ```
 <https://example.org/person#lex> <https://example.org/hasName> "Lex" .
