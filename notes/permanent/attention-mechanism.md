@@ -3,6 +3,8 @@ title: Attention Mechanism
 date: 2022-10-07 00:00
 status: draft
 modified: 2023-04-16 00:00
+aliases:
+- Attention
 ---
 
 **Attention Mechanism** or just **Attention** is a technique for calculating a weighted combination of a sequence of vectors, influence by human concept of attention.
