@@ -373,7 +373,7 @@ Some special cases apply:
 
 ---
 
-[Chain Rule](Chain%20Rule)
+[Chain Rule](chain-rule.md)
 
 $\frac{d}{dx}[f(g(x))] = f^{\prime}(g(x)) \cdot g^{\prime}(x)$
 
