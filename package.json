@@ -6,6 +6,6 @@
   },
   "dependencies": {
     "@mermaid-js/mermaid-cli": "^10.6.1",
-    "puppeteer": "^21.0.0"
+    "puppeteer": "^24.22.3"
   }
 } 
