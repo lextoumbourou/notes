@@ -18,21 +18,31 @@ X-ray **Mammography** is a breast cancer screening method and remains one of the
 When reading a mammogram, a radiologist looks for specific abnormalities: masses, calcifications, distortion of breast tissue, or asymmetries when comparing the two breasts and two views.
 
 To standardise reporting, radiologists use the [Breast Imaging Reporting and Data System (BI-RADS)](breast-imaging-reporting-and-data-system.md), which assigns a category from 0 to 6 indicating the level of suspicion:
-- 0: (incomplete: additional imaging needed)
-- 1: (negative)
-- 2: (benign)
-- 3: (probably benign: short-interval follow-up suggested)
-- 4: (suspicious: biopsy should be considered)
-- 5: (highly suggestive of malignancy)
-- 6: (known biopsy with proven malignancy).
+
+* **0** - incomplete: additional imaging needed.
+* **1** - negative.
+* **2** - benign.
+* **3** - probably benign: short-interval follow-up suggested.
+* **4** - suspicious: biopsy should be considered.
+* **5** - highly suggestive of malignancy.
+* **6** - known biopsy with proven malignancy.
 
 Categories 4 and 5 typically warrant a biopsy to confirm or rule out cancer.
 
 ![mammography-bi-rads.png](../_media/mammography-bi-rads.png)
 
-Radiologists also classify breast composition by density using four categories: A (almost entirely fatty), B (scattered fibroglandular densities), C (heterogeneously dense), and D (extremely dense). Higher breast density both increases breast cancer risk and reduces mammographic sensitivity, as dense tissue appears white on mammograms (the same appearance as potential tumours), effectively masking lesions.
+Radiologists also classify breast composition by density using four categories:
+
+* **A** - almost entirely fatty
+* **B** - scattered fibroglandular densities
+* **C** - heterogeneously dense
+* **D** - extremely dense
+
+Higher breast density both increases breast cancer risk and reduces mammographic sensitivity, as dense tissue appears white on mammograms (the same appearance as potential tumours), effectively masking lesions.
 
 ![mammography-breast-density-categories.png](../_media/mammography-breast-density-categories.png)
+
+Modern screening often utilise [Digital Breast Tomosynthesis (DBT)](digital-breast-tomosynthesisd-dbt.md), or "3D mammography." Unlike standard 2D mammography, DBT captures multiple X-ray projections from different angles to reconstruct the breast in "slices." This minimises the effect of overlapping tissue, improving detection rates in dense breasts.
 
 ## References
 
