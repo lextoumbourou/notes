@@ -2,8 +2,6 @@ import os
 
 from functools import partial
 
-import frontmark
-
 MARKUP = ("md",)
 
 from pelican_jupyter import liquid as nb_liquid
@@ -43,7 +41,8 @@ MARKDOWN = {
 
 PLUGINS = [
     "pelican_katex",
-    frontmark,
+    "frontmark",
+    "pelican_jupytext",
     "subcategory",
     nb_liquid,
     "md_link_converter",

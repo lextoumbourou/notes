@@ -6,10 +6,10 @@ category: reference/papers
 paper_url: https://arxiv.org/abs/2511.21140
 year: 2025
 doi:  https://doi.org/10.48550/arXiv.2511.21140
+status: draft
 tags:
 - LLMEvals
 - LargeLanguageModels
-status: draft
 ---
 
 *My notes for the paper How to Correctly Report LLM-as-a-Judge Evaluations* [@leeHowCorrectlyReport2025]
