@@ -24,7 +24,7 @@ A successful model assists radiologists by flagging probable cancer cases while 
 
 They develop a new mammography dataset that contains images for 11913 patients, with about 4 images per patient (two per breast, two views)
 
-Like [CBIS-DDSM Mammography Dataset](../../../../permanent/cbis-ddsm.md) it also contains metadata files:
+Like [CBIS-DDSM Mammography Dataset](../../permanent/cbis-ddsm-mammography-dataset.md) it also contains metadata files:
 * `train.csv` and `test.csv` — metadata describing each image.  
 * `site_id`: hospital source  
 * `patient_id`: unique identifier  

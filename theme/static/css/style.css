@@ -534,3 +534,65 @@ table th {
 .no-border {
   border: 0;
 }
+
+/* Jupyter Notebook Styles */
+.cell {
+  margin-bottom: 1em;
+}
+
+.input_area {
+  overflow-x: auto;
+}
+
+.output_wrapper {
+  margin-top: 0.5em;
+}
+
+.output_area {
+  overflow-x: auto;
+}
+
+.output_html {
+  overflow-x: auto;
+}
+
+/* Pandas DataFrame tables */
+table.dataframe {
+  border-collapse: collapse;
+  font-size: 13px;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+}
+
+table.dataframe th,
+table.dataframe td {
+  border: 1px solid #ddd;
+  padding: 6px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+table.dataframe th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+table.dataframe tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+table.dataframe tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Output images */
+.output_png img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Text output */
+.output_text pre {
+  overflow-x: auto;
+}
