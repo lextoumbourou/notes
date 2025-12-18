@@ -14,13 +14,9 @@ Anecdotally, I've hired many devs who came straight out of boot camps, and they 
 
 From day 1, they came to work knowing Git, how to use their IDE (shortcuts, etc.), the basics of typical Agile-like practices and had practical experience building web applications.
 
-Yes, a [Survivorship Bias](survivorship-bias.md) is at play here - not everyone "made it". However, the other fellow students who found the software wasn't for them only took 3-6 months of their lives learning this instead of 3-10 years getting a degree.
+Yes, a [Survivorship Bias](survivorship-bias.md) is at play here - not everyone "made it". However, the other fellow students who found the software wasn't for them only took 3-6 months of their lives learning it instead of 3-10 years to get a degree.
 
-On the flip side, I'm nearly two years into a part-time Computer Science degree, and the engineering content is about 5-10 years behind what the industry is doing [^3]. I haven't seen version control mentioned in a lecture once. Since I intend to study *Computer Science*, I am fine with this arrangement and enjoying the material. However, it's a far cry from the knowledge required to productively operate as a junior web developer on a team of 10. Actual practice building products with software would be a much better use of time.
-
-That's not to say that the fundamentals aren't important or useful - they must be learned to progress into senior roles, and they typically can't be taught in depth at a short boot camp. However, I argue that **fundamentals are much more efficiently learned alongside a career as a practising software engineer**.
-
-For example, learning about worst-case complexity and Big O notation is much easier when you have already blown up prod, thanks to a nested loop in your code.
+On the flip side, for a typical Computer Science degree, the engineering content is often unaligned with industry needs [^3]. The fundamentals are useful and typically must be in place to progress into senior roles; they can't be taught in depth at a short boot camp. However, I argue that **fundamentals are much more efficiently learned alongside a career as a practising software engineer**. Instead of learning them all up front, they'd be much more effectively taught after an engineer has some practice building products with software. For example, learning about worst-case complexity and Big O notation is much easier when you have already blown up prod, thanks to a nested loop in your code.
 
 And that's much closer to how an apprenticeship works: some study, followed by lots of hands-on experience, followed by more study, and so on until you're a professional.
 
@@ -28,4 +24,4 @@ And that's much closer to how an apprenticeship works: some study, followed by l
 
  [^1]: Burning Glass Technologies via [this article by Optimal](https://www.linkedin.com/pulse/new-data-shows-which-bootcamps-have-higher-tech-employment-) reports on boot camp vs college, job placement success rate. The data is from 2021 and needs updating in 2022-2023 conditions.
 [^2]: Council on Integrity in Results Reporting (CIRR) via [a Forbes article](https://www.forbes.com/advisor/education/bootcamps-job-guarantee/#:~:text=Yes%2C%20it's%20realistic%20to%20get,placement%20and%20career%20outcomes%20data.) reports ~71% success rate of tech placements from boot camps.
-[^3]: The Computer Science material is exceptional, however.
+[^3]: Garousi, V., Giray, G., Tüzün, E., Catal, C., & Felderer, M. (2020). *Closing the gap between software engineering education and industrial needs*. *IEEE Software, 37*(2), 68–77. https://doi.org/10.1109/MS.2018.2880823
