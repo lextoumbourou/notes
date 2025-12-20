@@ -22,6 +22,7 @@ dependencies = [
     "pelican-katex==1.6.1",
     "prometheus-client>=0.23.1",
     "pybtex==0.22.2",
+    "scikit-learn>=1.7.2",
 ]
 
 [tool.uv.sources]
