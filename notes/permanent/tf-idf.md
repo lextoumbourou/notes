@@ -4,6 +4,7 @@ date: 2023-04-09 00:00
 modified: 2025-12-20 00:00
 summary: A word numerisation technique that weights terms by their importance to a document.
 cover: /_media/tf-idf-cover.png
+hide_cover_in_article: true
 tags:
 - NaturalLanguageProcessing
 jupyter:
@@ -26,17 +27,18 @@ jupyter:
 1. Words that appear frequently in a specific document should be weighted higher.
 2. Words that appear frequently across all documents (like "the", "is", and "and") have less signal and are weighted lower.
 
-#### Step-by-step:
+An alternative numerisation approach to the [Bag-of-Words Model](bag-of-words-model.md), which simply counts word frequency in a text - TF-IDF includes context about how important each word is compared to the corpus as a whole.
+#### Step-by-step
 
 **1. Term Frequency (TF)**
 
 Measures how frequently a term occurs in a document.
 
-$$\text{tf}(t, d) = \frac{\text{count of \textit{t} in \textit{d}}}{\text{total words in \textit{d}}}$$
+$\text{tf}(t, d) = \frac{\text{count of \textit{t} in \textit{d}}}{\text{total words in \textit{d}}}$
 
 **2. Inverse Document Frequency (IDF)**
 
-$$\text{idf}(t) = \log\left(\frac{N}{1 + df_t}\right)$$
+$\text{idf}(t) = \log\left(\frac{N}{1 + df_t}\right)$
 
 Measures how rare a term is across the entire corpus of documents.
 
@@ -49,7 +51,7 @@ Measures how rare a term is across the entire corpus of documents.
 
 The final score is the product of these two metrics:
 
-$$\text{tf-idf}(t, d) = \text{tf}(t, d) \times \text{idf}(t)$$
+$\text{tf-idf}(t, d) = \text{tf}(t, d) \times \text{idf}(t)$
 
 Words that are frequent in a specific document but rare across the corpus receive the highest scores, making them the "signature" terms for that document.
 
@@ -57,7 +59,7 @@ Words that are frequent in a specific document but rare across the corpus receiv
 
 TF-IDF vectors are typically normalised to unit length using L2 (Euclidean) normalisation:
 
-$$\hat{v} = \frac{v}{\|v\|_2} = \frac{v}{\sqrt{\sum_i v_i^2}}$$
+$\hat{v} = \frac{v}{\|v\|_2} = \frac{v}{\sqrt{\sum_i v_i^2}}$
 
 Otherwise, longer documents would naturally have higher TF-IDF magnitudes.
 
