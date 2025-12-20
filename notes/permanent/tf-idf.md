@@ -2,7 +2,7 @@
 title: TF-IDF
 date: 2023-04-09 00:00
 modified: 2025-12-20 00:00
-summary: A word vectorisation technique that weights terms by their importance to a document relative to a corpus.
+summary: A word numerisation technique that weights terms by their importance to a document.
 cover: /_media/tf-idf-cover.png
 tags:
 - NaturalLanguageProcessing
@@ -21,14 +21,12 @@ jupyter:
     name: python3
 ---
 
-**TF-IDF** (Term Frequency - Inverse Document Frequency) is a numerical statistic used in Natural Language Processing to reflect how important a word is to a document in a collection or corpus.
-
-The fundamental intuition is that:
+**TF-IDF** (Term Frequency - Inverse Document Frequency) is a word numerisation technique in NLP which weights terms by their importance in the document relative to a corpus. The idea is that:
 
 1. Words that appear frequently in a specific document should be weighted higher.
 2. Words that appear frequently across all documents (like "the", "is", and "and") have less signal and are weighted lower.
 
-#### How it works:
+#### Step-by-step:
 
 **1. Term Frequency (TF)**
 
@@ -55,9 +53,17 @@ $$\text{tf-idf}(t, d) = \text{tf}(t, d) \times \text{idf}(t)$$
 
 Words that are frequent in a specific document but rare across the corpus receive the highest scores, making them the "signature" terms for that document.
 
+**4. Normalisation**
+
+TF-IDF vectors are typically normalised to unit length using L2 (Euclidean) normalisation:
+
+$$\hat{v} = \frac{v}{\|v\|_2} = \frac{v}{\sqrt{\sum_i v_i^2}}$$
+
+Otherwise, longer documents would naturally have higher TF-IDF magnitudes.
+
 ---
 
-We can visualise TF-IDF using a quick heatmap of 4 short documents with a limited vocabulary.
+Scikit-learn provides `TfidfVectorizer`, which can convert a collection of text documents into a matrix of TF-IDF features. Here we visualise a heatmap of 4 simple texts to illustrate TF-IDF in effect:
 
 ```python
 import pandas as pd
