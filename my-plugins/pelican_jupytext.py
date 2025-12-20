@@ -14,8 +14,34 @@ import yaml
 from nbconvert import HTMLExporter
 from pelican import signals
 from pelican.readers import BaseReader
+from pelican_katex.rendering import render_latex
 
 log = logging.getLogger(__name__)
+
+
+def render_latex_in_html(html_content):
+    """Replace $$...$$ and $...$ with KaTeX-rendered HTML."""
+    def replace_display_math(match):
+        latex = match.group(1)
+        try:
+            return render_latex(latex, {"displayMode": True})
+        except Exception as e:
+            log.warning(f"KaTeX failed to render display math: {e}")
+            return match.group(0)
+
+    def replace_inline_math(match):
+        latex = match.group(1)
+        try:
+            return render_latex(latex, {"displayMode": False})
+        except Exception as e:
+            log.warning(f"KaTeX failed to render inline math: {e}")
+            return match.group(0)
+
+    # Render display math first ($$...$$), then inline ($...$)
+    # Use negative lookbehind/ahead to avoid matching $$ as two $
+    content = re.sub(r'\$\$(.*?)\$\$', replace_display_math, html_content, flags=re.DOTALL)
+    content = re.sub(r'(?<!\$)\$(?!\$)(.*?)(?<!\$)\$(?!\$)', replace_inline_math, content, flags=re.DOTALL)
+    return content
 
 YAML_FRONTMATTER_PATTERN = re.compile(r'^---\s*\n(.*?)\n---\s*\n', re.DOTALL)
 
@@ -111,6 +137,9 @@ class JupytextMarkdownReader(BaseReader):
         )
 
         content, resources = exporter.from_filename(notebook_path)
+
+        # Render LaTeX math expressions with KaTeX
+        content = render_latex_in_html(content)
 
         # Build metadata from YAML frontmatter
         metadata = {}
