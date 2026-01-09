@@ -16,7 +16,7 @@ From day 1, they came to work knowing Git, how to use their IDE (shortcuts, etc.
 
 Yes, a [Survivorship Bias](survivorship-bias.md) is at play here - not everyone "made it". However, the other fellow students who found the software wasn't for them only took 3-6 months of their lives learning it instead of 3-10 years to get a degree.
 
-On the flip side, for a typical Computer Science degree, the engineering content is often unaligned with the expectations of a junior developer [^3]. You're going to spend a lot less time writing performant search algorithms and a lot more time creating CI pipelines, dealing with merge conflicts, and investigating complex customer issues.
+On the flip side, for a typical Computer Science degree, the engineering content is often unaligned with the expectations of a junior developer [^3]. In the field, you're going to spend a lot less time writing performant search algorithms and a lot more time creating CI pipelines, dealing with merge conflicts, and investigating complex customer issues.
 
 The fundamentals are useful and typically must be in place to progress into senior roles, and they can't be taught in depth at a short boot camp. However, I argue that **fundamentals are much more efficiently learned alongside a career as a practising software engineer**. Instead of learning them all up front, they'd be much more effectively taught after an engineer has some practice building products with software. For example, learning about worst-case complexity and Big O notation is much easier when you have already blown up prod, thanks to a nested loop in your code.
 
