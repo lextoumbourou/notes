@@ -10,7 +10,9 @@ import logging
 import os
 import re
 
+import nbformat
 import yaml
+from markdown import Markdown
 from nbconvert import HTMLExporter
 from pelican import signals
 from pelican.readers import BaseReader
@@ -129,14 +131,63 @@ class JupytextMarkdownReader(BaseReader):
 
     def _read_notebook(self, md_path, notebook_path, yaml_meta):
         """Render notebook to HTML and extract metadata from markdown frontmatter."""
+        # Read the notebook
+        with open(notebook_path, 'r', encoding='utf-8') as f:
+            nb = nbformat.read(f, as_version=4)
+
+        # Set up HTMLExporter for code cells only
         exporter = HTMLExporter(
             template_name='basic',
-            exclude_raw=True,  # Skip raw cells (including jupytext frontmatter)
+            exclude_raw=True,
             exclude_input_prompt=True,
             exclude_output_prompt=True,
         )
 
-        content, resources = exporter.from_filename(notebook_path)
+        # Collect all markdown content to process together (for footnotes)
+        all_markdown = []
+        cell_info = []  # Track cell type and index for reconstruction
+
+        for cell in nb.cells:
+            if cell.cell_type == 'raw':
+                # Skip raw cells (frontmatter)
+                continue
+            elif cell.cell_type == 'markdown':
+                cell_info.append(('markdown', len(all_markdown)))
+                all_markdown.append(cell.source)
+            elif cell.cell_type == 'code':
+                cell_info.append(('code', cell))
+
+        # Convert all markdown together so footnotes resolve
+        combined_markdown = '\n\n'.join(all_markdown)
+        md_converter = Markdown(extensions=['footnotes', 'tables', 'fenced_code'])
+        combined_html = md_converter.convert(combined_markdown)
+
+        # Now we need to split the HTML back to match individual cells
+        # Since footnotes may have moved references around, we'll use a different approach:
+        # Convert each markdown cell individually, but append all footnote definitions to each
+        footnote_defs = self._extract_footnote_definitions(all_markdown)
+
+        html_parts = []
+        for cell_type, cell_data in cell_info:
+            if cell_type == 'markdown':
+                # Get the original markdown and append footnote definitions
+                md_content = all_markdown[cell_data]
+                if footnote_defs:
+                    md_content = md_content + '\n\n' + footnote_defs
+                md_conv = Markdown(extensions=['footnotes', 'tables', 'fenced_code'])
+                cell_html = md_conv.convert(md_content)
+                # Remove duplicate footnote sections (keep only in last cell)
+                if cell_data < len(all_markdown) - 1:
+                    cell_html = self._remove_footnote_section(cell_html)
+                html_parts.append(cell_html)
+            else:
+                # Code cell - create a mini notebook with just this cell
+                mini_nb = nbformat.v4.new_notebook()
+                mini_nb.cells = [cell_data]
+                code_html, _ = exporter.from_notebook_node(mini_nb)
+                html_parts.append(code_html)
+
+        content = '\n'.join(html_parts)
 
         # Render LaTeX math expressions with KaTeX
         content = render_latex_in_html(content)
@@ -152,10 +203,29 @@ class JupytextMarkdownReader(BaseReader):
                 value = yaml_meta[field]
                 metadata[field] = self.process_metadata(field, value)
 
+        # Pass through any extra metadata fields (cover, hide_cover_in_article, etc.)
+        skip_fields = set(standard_fields) | {'jupyter'}
+        for field, value in yaml_meta.items():
+            if field not in skip_fields:
+                metadata[field] = value
+
         metadata['jupyter_notebook'] = True
         metadata['jupytext_paired'] = True
 
         return content, metadata
+
+    def _extract_footnote_definitions(self, markdown_cells):
+        """Extract all footnote definitions from markdown cells."""
+        footnote_pattern = re.compile(r'^\[\^[^\]]+\]:.*?(?=\n\[\^|\n\n|\Z)', re.MULTILINE | re.DOTALL)
+        definitions = []
+        for md in markdown_cells:
+            definitions.extend(footnote_pattern.findall(md))
+        return '\n'.join(definitions)
+
+    def _remove_footnote_section(self, html):
+        """Remove the footnotes div from HTML (to avoid duplicates)."""
+        # The footnotes extension wraps footnotes in <div class="footnote">
+        return re.sub(r'<div class="footnote">.*?</div>', '', html, flags=re.DOTALL)
 
 
 def add_reader(readers):
