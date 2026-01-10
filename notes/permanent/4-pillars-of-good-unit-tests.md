@@ -1,5 +1,5 @@
 ---
-title: 4 Pillars of Good Unit Tests
+title: Four Pillars of Good Unit Tests
 date: 2021-04-04 00:00
 summary: Khorikov's 4 pillars of good unit tests
 tags:

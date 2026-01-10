@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "gymnasium[other]>=1.2.0",
+    "jupyter>=1.1.1",
     "jupyterlab>=4.4.10",
     "jupytext>=1.18.1",
     "markdown==3.3.4",
@@ -22,6 +23,7 @@ dependencies = [
     "pelican-katex==1.6.1",
     "prometheus-client>=0.23.1",
     "pybtex==0.22.2",
+    "pydicom>=3.0.1",
     "scikit-learn>=1.7.2",
 ]
 

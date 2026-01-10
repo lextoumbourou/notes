@@ -13,7 +13,7 @@ aliases:
 - "RSNA 2023 Breast Cancer Competition"
 ---
 
-The RSNA Breast Cancer Detection challenge was a 2023 Kaggle competition hosted by Radiological Society of North America (RSNA) to identify malignant cases in screening [Mammograms](../../../../permanent/mammogram.md).
+The RSNA Breast Cancer Detection challenge was a 2023 Kaggle competition hosted by Radiological Society of North America (RSNA) to identify malignant cases in screening [Mammograms](../../permanent/mammogram.md).
 
 Participants develop models using DICOM-format breast images and metadata to predict the likelihood of cancer while minimizing false positives.
 
