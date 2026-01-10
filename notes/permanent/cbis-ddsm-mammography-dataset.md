@@ -2,9 +2,8 @@
 title: CBIS-DDSM Mammography Dataset
 date: 2025-10-18 00:00
 modified: 2025-10-18 00:00
-summary: "an attempt at creating the ImageNet for Mammography"
+summary: "ImageNet for Mammography"
 cover: /_media/cbis-ddsm-patient-assets.png
-hide_cover_in_article: true
 tags:
 - BreastCancerDetection
 - MedicalImaging
@@ -24,43 +23,30 @@ jupyter:
     name: python3
 ---
 
-**CBIS-DDSM (Curated Breast Imaging Subset of DDSM)**, introduced by Lee et al.[^1], is a [Mammography](mammography.md) dataset, derived from the original Digital Database for Screening Mammography (DDSM) [^2].
+**CBIS-DDSM (Curated Breast Imaging Subset of DDSM)**, introduced by Lee et al.[^1], is a [Mammography](mammography.md) dataset for [Computer-Aided Detection (CADe)](../../../permanent/computer-aided-detection-cade.md) and [Computer-Aided Diagnosis (CADx)](../../../permanent/computer-aided-diagnosis.md), derived from the original DDSM.
 
-The idea of CBIS-DDSM was to provide a standardised Mammography dataset towards an [ImageNet](../../../permanent/ImageNet.md) for Mammography. Though a few different datasets for Mammography did exist, (DDSM - itself), Mammographic Imaging Analysis Society (MIAS) database [^3], and the Image Retrieval in Medical Applications (IRMA) project [^4], they were limited by accessibility issues.
+The idea of CBIS-DDSM was to provide a standardised mammography dataset towards an [ImageNet](../../../permanent/ImageNet.md) for mammography. Though a few mammography datasets did exist—the Digital Database for Screening Mammography (DDSM) [^2], the Mammographic Imaging Analysis Society (MIAS) database [^3], and the Image Retrieval in Medical Applications (IRMA) project [^4]—they were limited by accessibility issues.
 
-DDSM had 2620 scanned mammography studies, from 3 separate sources:
+DDSM was the most promising, with 2620 scanned mammography studies from multiple hospitals. It contains ROI annotations and [BI-RADS](breast-imaging-reporting-and-data-system.md) labels for a series of Mammography studies, along with extensive metadata.
 
-- Massachusetts General Hospital
-- Wake Forest University School of Medicine
-- Sacred Heart Hospital
-- Washington University of St Louis School of Medicine
+However, the original DDSM has several problems: inaccurate region-of-interest annotations, personal health information in some images, and an obsolete file format (LJPEG).
 
-It was developed through a joined grant from DOD Breast Cancer Research Program, US Army Research and Material Comment.
+The authors of the CBIS-DDSM subset stripped several dubious annotations and the examples containing PII. They also wrote a conversion tool for LJPEG and converted the images into TIFF files, which are then stored as [DICOM](DICOM) files, the standard for medical images.
 
-It contains ROI annotations, and contains [BI-RADS](breast-imaging-reporting-and-data-system.md) labels for a series of Mammography studies including a lot of useful metadata.
-
-However, the original DDSM contains a number of problems, including inaccurate region-of-interest annotations, as well as personal health information in the images, and is stored in an obselte file formats (LJPEG)
-
-The authors of CBIS-DDSM strip a number of dubious annotations, and the examples containing PII. They also write a conversion tool for LJPEG, and converted the images into TIFF files, which are a then stored them as [DICOM](DICOM) files, which is the standard for medical images.
-
-They also included convenience images including the region-of-interest mask, and the cropped region as an image. Here's an examples of all the artifacts provided for the [CC](caniocaudal-cc.md) scan for patient id `P_00065`, with the final image demonstrating how the mask region-of-interest looks when applied to the breast scan:
+They also included convenience images, including the region-of-interest mask and the cropped region. You can see an example of it later in the article.
 
 
-![Example assets for the CC image in study P_00065](../_media/cbis-ddsm-patient-assets.png)
-
-They also improved upon the accuracy of the existing region-of-interest annotations, by applying [Chan-Vese Algorithm](../../../permanent/chan-vese.md) , which was initialised by the original countours, though they only applied these modifications to the mass examples, not the calcifications. You can see in Figure 2 below, in red the original annotations, in blue some example annotations created by physicians, and in green the annotations derived from the Chan-Vese model - clearly improving on the annotations.
+They also improved the accuracy of the existing region-of-interest annotations by applying the [Chan-Vese Algorithm](chan-vese.md), initialised with the original contours, but only to the mass examples, not the calcifications. In the figure below: in red, the original annotations; in blue, some example annotations created by physicians; and in green, the annotations derived from the Chan-Vese model, which clearly improve on the original annotations.
 
 ![Figure 2 from Lee et al demonstrating the Chan-Vese algorithm for improving ROI annotations](../_media/cbis-ddsm-figure-2.png)
 
----
+I'm going to walk through how the dataset works in this rendered notebook. Interestingly, there appear to be some glaring data bugs in the original dataset, which open-source projects have patched.
 
-In this article, I'm going to walk through how the dataset works in practice. Interestingly, there appears to be some glaring data bugs in the original dataset, which has been patched by open-source projects.
+The dataset can be downloaded from the [Cancer Imaging Archive](https://www.cancerimagingarchive.net/collection/cbis-ddsm).
 
-The dataset can be download from from https://www.cancerimagingarchive.net/collection/cbis-ddsm.
+I downloaded the **Images** dataset to the `~/datasets/CBIS-DDSM` folder, which uncompresses into the `./CBIS-DDSM` directory.
 
-I download the **Images** dataset to folder `~/datasets/CBIS-DDSM`, which uncompresses it self to `./CBIS-DDSM`
-
-The image dataset 164GB compressed dataset which uncompresses to around 180GB.
+The image dataset is a 164GB compressed dataset, which uncompresses to around 180GB.
 
 ```python
 from pathlib import Path
@@ -75,14 +61,14 @@ DATASET_ROOT = Path("/Users/lex/datasets/CBIS-DDSM")
 !cd {DATASET_ROOT} && du -sh *.csv CBIS-DDSM
 ```
 
-There is 2 files provided for each split, representing either **calcification** or **mass abnormalities** found in the breast.
+2 files are provided for each split, representing either **calcification** or **mass abnormalities** found in the breast.
 
 - `calc_case_description_${train|test}_set.csv`
 - `mass_case_description_${train|test}_set.csv`
 
-Here we load each file, then concat together to give us one dataset file per split.
+Here, we load each file, then concatenate them into a single dataset file per split.
+
 ```python
-pd.set_option('display.max_colwidth', None)
 train_mass_df = pd.read_csv(DATASET_ROOT / "mass_case_description_train_set.csv")
 train_mass_df.head(1).T
 ```
@@ -97,13 +83,13 @@ As you can see, each row in the CSV files contains references to 3 DICOM files:
 - `ROI mask file path` - binary mask of the region of interest
 - `cropped image file path` - cropped region containing the abnormality
 
-However, the DICOM filenames don't match the files download from the **Images** dataset, in quite a confusing way.
+However, the DICOM filenames don't match the files downloaded from the **Images** dataset in a quite confusing way.
 
 The CSVs reference files like `000000.dcm` or `000001.dcm`, but the actual files are named `1-1.dcm` or `1-2.dcm`. Even worse, the mapping between these naming conventions is inconsistent. Additionally, some entries in the `ROI mask file path` column incorrectly point to cropped images rather than actual binary masks.
 
 Andrés Sarmiento created a tool[^5] that fixes these issues by interrogating the mask files to determine if they're crops or masks, and correcting the filepath references. The corrected CSV files are available on HuggingFace[^6].
 
-It's easiest to just use the corrected CSV files, which I've downloaded to `~/datasets/CBIS-DDSM/fixed-csv`. The rest of the notebook will use them accordingly.
+It's easiest just to use the corrected CSV files, which I've downloaded to `~/datasets/CBIS-DDSM/fixed-csv`. The rest of the notebook will use them accordingly.
 
 
 ## Metadata File Review
@@ -118,21 +104,27 @@ train_mass_df = train_calc_df = None
 train_df.head(1)
 ```
 
+We do the same for the test set:
+
 ```python
 test_mass_df = pd.read_csv(DATASET_ROOT / "fixed-csv" / "mass_case_description_test_set.csv")
 test_calc_df = pd.read_csv(DATASET_ROOT / "fixed-csv" / "calc_case_description_test_set.csv")
 test_df = pd.concat([test_mass_df, test_calc_df])
 test_mass_df = test_mass_df = None
-test_df.head(1)
+test_df.head(1).T
 ```
+
+Then combine both splits for analysis:
 
 ```python
 all_df = pd.concat([train_df, test_df])
 ```
 
+The `metadata.csv` file maps the CSV path references to actual file locations on disk:
+
 ```python
 metadata_df = pd.read_csv(DATASET_ROOT / "metadata.csv")
-metadata_df.head(1)
+metadata_df.head(1).T
 ```
 
 CBIS-DDSM contains 1,566 studies.
@@ -144,21 +136,21 @@ print(f"Total patients: {len(images_per_patient)}")
 
 They separate the studies by the abnormality type present, either "mass" or "calcification".
 
-The paper[^1] claims that there's 891 mass cases, although the actual dataset appears to have 892 mass abnormalities.
+The paper[^1] claims there are 891 mass cases, although the actual dataset appears to have 892 mass abnormalities.
 
 ```python
 len(all_df[all_df["abnormality type"] == "mass"].patient_id.unique())
 ```
 
-The paper also describes 753 calcification abnormalities, which matches what we see in the paper.
+The paper also describes 753 calcification abnormalities that match what we see.
 
 ```python
 len(all_df[all_df["abnormality type"] == "calcification"].patient_id.unique())
 ```
 
-We know that a Mammogram consists of 2 images per breast, a top-down view (MLO) or a side-view CLO.
+We know that a mammogram consists of 2 images per breast: a craniocaudal (CC) view from above and a mediolateral oblique (MLO) view from the side.
 
-Looking at the distribution of images per patient, we have about 1005 complete mammograms, with a number of single image 
+Looking at the distribution of images per patient, about 1005 patients have both views, while many have only a single image.
 
 ```python
 fig, ax = plt.subplots(figsize=(10, 5))
@@ -174,9 +166,9 @@ plt.show()
 
 ## Fetching Images
 
-Even with the corrected CSVs, there's still a few things we need to do to lookup the DICOM images for each study.
+Even with the corrected CSVs, we still need to do a few things to look up the DICOM images for each study.
 
-The file paths in the CSV (e.g. `Mass-Training_P_00001_LEFT_CC/.../.../1-1.dcm`) aren't direct paths to the files on disk. They encode metadata: subject ID, study UID, series UID, and filename. We need to parse these components and cross-reference with `metadata.csv` to find the actual file location.
+The file paths in the CSV (e.g. `Mass-Training_P_00001_LEFT_CC/1.3.6.1.4.1.9590.100.1.2.422112722213189649807611434612228974994/1.3.6.1.4.1.9590.100.1.2.342386194811267636608694132590482924515/1-1.dcm`) aren't direct paths to the files on disk. They encode metadata: subject ID, study UID, series UID, and filename. We need to parse these components and cross-reference with `metadata.csv` to find the actual file location.
 
 ```python
 from pydantic import BaseModel
@@ -222,8 +214,9 @@ def dicom_to_array(file_path: Path):
     return ds.pixel_array
 ```
 
+Let's load an example patient to see all three image types (full mammogram, ROI mask, and cropped region):
+
 ```python
-# Example: load images for patient P_00065
 patient_df = all_df[all_df.patient_id == "P_00065"]
 row = patient_df[patient_df["image view"] == "CC"].iloc[0]
 
@@ -235,6 +228,8 @@ original_img = dicom_to_array(img_path)
 mask_img = dicom_to_array(mask_path)
 crop_img = dicom_to_array(crop_path)
 ```
+
+Visualising the original mammogram, the binary ROI mask, an overlay of the two, and the cropped abnormality region:
 
 ```python
 fig, axes = plt.subplots(1, 4, figsize=(12, 5))
@@ -291,7 +286,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-The dataset also includes [BI-RADS](breast-imaging-reporting-and-data-system.md) assessment categories (0-6), indicating level of suspicion. The distribution shows most cases fall into categories 4 and 5 (suspicious/highly suggestive of malignancy), which makes sense given this is a dataset specifically curated around abnormalities.
+The dataset also includes [BI-RADS](breast-imaging-reporting-and-data-system.md) assessment categories (0-6) that indicate the level of suspicion. The distribution shows most cases fall into categories 4 and 5 (suspicious/highly suggestive of malignancy), which makes sense given that this is a dataset specifically curated around abnormalities.
 
 ### Mass Descriptors
 
@@ -350,7 +345,7 @@ Note that case counts differ from abnormality counts since some cases contain mu
 
 ## Segmentation Quality
 
-The authors validated their Chan-Vese segmentations against hand-drawn ROIs from an experienced radiologist on 118 images. The mean Dice coefficient between computer-generated and hand-drawn ROIs was **0.792 ± 0.108**, compared to **0.398 ± 0.195** for the original DDSM annotations vs hand-drawn. This represents a statistically significant improvement (Wilcoxon signed rank test p = 5.54 × 10⁻¹⁹). The Wilcoxon test is a non-parametric alternative to the paired t-test, used here because the Dice coefficient distributions were non-normal.
+The authors validated their Chan-Vese segmentations against hand-drawn ROIs from an experienced radiologist on 118 images. The mean Dice coefficient between computer-generated and hand-drawn ROIs was **0.792 ± 0.108**, compared to **0.398 ± 0.195** for the original DDSM annotations vs hand-drawn. These results represent a statistically significant improvement (Wilcoxon signed-rank test, p = 5.54 × 10⁻¹⁹).
 
 During curation, 339 mass images where the lesion was not clearly visible were removed after review by a trained mammographer.
 
@@ -358,7 +353,7 @@ During curation, 339 mass images where the lesion was not clearly visible were r
 
 While CBIS-DDSM is valuable for research, it has some limitations worth noting:
 
-- **Scanned film images**: The original DDSM images were digitised from film mammograms, not acquired digitally. Modern Full-Field Digital Mammography (FFDM) systems produce higher quality images.
+- **Scanned film images**: The original DDSM images were digitised from film mammograms, not acquired digitally. Modern Full-Field Digital Mammography (FFDM) systems produce higher-quality images.
 - **Single abnormality focus**: Each case focuses on a specific abnormality, which may not reflect real-world screening where radiologists evaluate entire images.
 - **Age of data**: The original DDSM was collected in the 1990s, so imaging quality and patient demographics may differ from contemporary datasets.
 

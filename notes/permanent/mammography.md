@@ -44,7 +44,7 @@ Higher breast density both increases breast cancer risk and reduces mammographic
 
 Modern screening often utilise [Digital Breast Tomosynthesis (DBT)](digital-breast-tomosynthesisd-dbt.md), or "3D mammography." Unlike standard 2D mammography, DBT captures multiple X-ray projections from different angles to reconstruct the breast in "slices." This minimises the effect of overlapping tissue, improving detection rates in dense breasts.
 
-See [CBIS-DDSM Mammography Dataset](cbis-ddsm-mammography-dataset.md) for an example of the canonical, albeit older, dataset for Mammography detection (CADe) and diagnosis (CADx).
+On of the canonical Mammography datasets is [CBIS-DDSM Mammography Dataset](cbis-ddsm-mammography-dataset.md).
 
 ## References
 
