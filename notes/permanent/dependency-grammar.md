@@ -46,5 +46,3 @@ chased (ROOT)
 All major arguemnts and modiefi depend (direclty or indirectly) on it.
 
 We say a dependency tree is **Projective** is not depency arcs cross when words are laid out in linear order - in other words, it has no crossing dependencies
-
-![image-53.png](image-53.png)
