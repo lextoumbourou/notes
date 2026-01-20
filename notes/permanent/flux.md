@@ -5,7 +5,7 @@ modified: 2025-12-19 00:00
 status: draft
 ---
 
-Flux is one of the two [Reactive APIs](../../../permanent/reactive-apis.md) provided as part of Java's [Project Reactor](Project%20Reactor.md). It represents a **reactive stream** that can emit 0 to N elements, and then complete (either successfully or with an error). Unlike a Mono object, which emits 0 or 1 element (used for finding a single element), or just doing a task where you don't care about the output.
+Flux is one of the two [Reactive APIs](../../../permanent/reactive-apis.md) provided as part of Java's [Project Reactor](../../../permanent/project-reactor.md). It represents a **reactive stream** that can emit 0 to N elements, and then complete (either successfully or with an error). Unlike a Mono object, which emits 0 or 1 element (used for finding a single element), or just doing a task where you don't care about the output.
 
 It's a similar idea to a [Python Generator](python-generator.md) or [Lua Coroutines](lua-coroutines.md) in the sense it models a sequence of values over time, but Flux is push-based, asynchronous and reactive, with the producer controlling when values are emitted.
 
