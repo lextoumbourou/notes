@@ -265,7 +265,7 @@ Tokenise the text with a maximum token length of 77
 
 #### Optimiser
 
-Use the [Adam](Adam) optimiser with β1 = 0.99, β2 = 0.9 with a warm-up and cosine learning rate decay at a basic learning rate of 10-4.
+Use the [Adam](../../../../permanent/adam.md) optimiser with β1 = 0.99, β2 = 0.9 with a warm-up and cosine learning rate decay at a basic learning rate of 10-4.
 
 #### Batch sizes
 
