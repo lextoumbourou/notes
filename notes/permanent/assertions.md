@@ -17,7 +17,7 @@ For example, `assert x > 0` ensures that x is positive during execution and will
 
 ### [Unit Test Assertions](unit-test-assertions.md)
 
-Assertions in unit tests verify the correctness of specific sections of code. These are not run during runtime, but generally in development and on [Continuous Integration](Continuous%20Integration) infrastructure. The [Test-Driven Development](../../../permanent/test-driven-development.md) methodology ensures the code meets its design and behaves as intended.
+Assertions in unit tests verify the correctness of specific sections of code. These are not run during runtime, but generally in development and on [Continuous Integration](Continuous%20Integration) infrastructure. The [Test-Driven Development](test-driven-development.md) methodology ensures the code meets its design and behaves as intended.
 
 For example, a unit test might assert that a function returns the expected value for a given set of input parameters.
 
