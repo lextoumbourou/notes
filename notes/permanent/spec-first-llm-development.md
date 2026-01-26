@@ -15,7 +15,7 @@ Luke Bechtel writes a really useful article called [Vibe Specs: Vibe Coding That
 
 Another really interesting solution to this problem comes from [Steve Yegge](https://en.wikipedia.org/wiki/Steve_Yegge) in his project [beads](https://github.com/steveyegge/beads), which is a much more engineered approach that builds a dependency-aware graph of tasks. It looks like Claude is going to implement a similar solution in Claude Code called [Tasks](https://x.com/trq212/status/2014480496013803643).
 
-It's nothing new. The concept of [Software Requirements Specifications (SRS)](software-requirements-specification-srs.md) was commonplace as early as 1975 [^1]. However, I suspect I haven't seen many of these in my career because keeping them up to date with the pace of software change was just too difficult an undertaking. Now that we have LLMs to do it for us, the story is very different.
+It's nothing new. The concept of [Software Requirements Specifications (SRS)](software-requirements-specifications-srs.md) was commonplace as early as 1975 [^1]. However, I suspect I haven't seen many of these in my career because keeping them up to date with the pace of software change was just too difficult an undertaking. Now that we have LLMs to do it for us, the story is very different.
 
 It seems that a lot of the paradigms for writing high-quality software, that in practice often get pushed aside due to them being deemed too labour intensive - SRS being one obvious example, but other practices like [Test-Driven Development](test-driven-development.md) and [Property-based Testing](property-based-testing.md) - start to sound a lot more sensible when it's the LLM doing the hard labour, and the engineer reaping the rewards in the form of reliable software.
 
