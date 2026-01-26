@@ -23,17 +23,17 @@ jupyter:
     name: python3
 ---
 
-**CBIS-DDSM (Curated Breast Imaging Subset of DDSM)** [^1] is a [Mammography](mammography.md) dataset for [Computer-Aided Detection (CADe)](../../../permanent/computer-aided-detection-cade.md) and [Computer-Aided Diagnosis (CADx)](../../../permanent/computer-aided-diagnosis.md), derived from an earlier dataset, the Digital Database for Screening Mammography (DDSM) [^2].
+**CBIS-DDSM (Curated Breast Imaging Subset of DDSM)** [^1] is a [Mammography](mammography.md) dataset for [Computer-Aided Detection (CADe)](../../../permanent/computer-aided-detection-cade.md) and [Computer-Aided Diagnosis (CADx)](../../../permanent/computer-aided-diagnosis.md), derived from an earlier dataset, the Digital Database for Screening Mammography (DDSM) [^2]. This note comes from background research for my Breast Cancer Detection BSc final project.
 
 The idea of CBIS-DDSM was to provide a standardised mammography dataset towards an [ImageNet](../../../permanent/ImageNet.md) for mammography. Though a few mammography datasets already existed: the DDSM itself [^2], the Mammographic Imaging Analysis Society (MIAS) database [^3], and the Image Retrieval in Medical Applications (IRMA) project [^4], they were limited by accessibility and data quality issues.
 
-DDSM was already a promising dataset for this purpose, comprising 2620 scanned mammography studies from multiple hospitals. It contains ROI annotations and [BI-RADS](breast-imaging-reporting-and-data-system.md) labels for a series of Mammography studies, along with extensive metadata. However, it had several problems: inaccurate region-of-interest annotations, personal health information in some images, and an obsolete file format (LJPEG).
+DDSM was already a promising dataset for this purpose, comprising 2620 scanned mammography studies from multiple hospitals. It contains ROI annotations and [Breast Imaging Reporting and Data System (BI-RADS)](breast-imaging-reporting-and-data-system-bi-rads.md) labels for a series of Mammography studies, along with extensive metadata. However, it had several problems: inaccurate region-of-interest annotations, personal health information in some images, and an obsolete file format (LJPEG).
 
-The authors of the CBIS-DDSM subset stripped the dubious annotations and the examples containing PII. They also wrote a conversion tool for LJPEG and converted the images into TIFF files, which are then stored as [DICOM](DICOM) files, the standard for medical images, to create CBIS-DDSM.
+The authors of the CBIS-DDSM subset stripped the dubious annotations and the examples containing PII. They also wrote a conversion tool for LJPEG and converted the images into TIFF files, which are then stored as [DICOM](dicom.md) files, the standard for medical images, to create CBIS-DDSM.
 
 They also included convenience images, including the region-of-interest mask and the cropped region. You can see an example of it later in the article.
 
-Finally, they improved the accuracy of the existing region-of-interest annotations by applying the [Chan-Vese Algorithm](chan-vese.md), initialised with the original contours, but only to the mass examples, not the calcifications. In the figure below, in red, the original annotations; in blue, some example annotations created by physicians; and in green, the annotations derived from the Chan-Vese model, which clearly improve on the original annotations.
+Finally, they improved the accuracy of the existing region-of-interest annotations by applying the [Chan-Vese Algorithm](chan-vese-algorithm.md), initialised with the original contours, but only to the mass examples, not the calcifications. In the figure below, in red, the original annotations; in blue, some example annotations created by physicians; and in green, the annotations derived from the Chan-Vese model, which clearly improve on the original annotations.
 
 ![Figure 2 from Lee et al demonstrating the Chan-Vese algorithm for improving ROI annotations](../_media/cbis-ddsm-figure-2.png)
 
@@ -67,8 +67,6 @@ DATASET_ROOT = Path("/Users/lex/datasets/CBIS-DDSM")
 - `calc_case_description_{train|test}_set.csv`
 - `mass_case_description_{train|test}_set.csv`
 
-Here, we load each file, then concatenate them into a single dataset file per split.
-
 ```python
 train_mass_df = pd.read_csv(DATASET_ROOT / "mass_case_description_train_set.csv")
 train_mass_df.head(1).T
@@ -92,9 +90,9 @@ Thankfully, Andrés Sarmiento created a [tool](https://gitlab.com/ACSG-64/cbis-d
 
 I downloaded the correct CSV to `~/datasets/CBIS-DDSM/fixed-csv`, and the rest of the notebook will use it accordingly.
 
-## Metadata File Review
+## Train / Test Data
 
-To work with the data, we need to extract the subject ID, study UID, and series UID from the file path strings, then look up the actual file location in `metadata.csv`:
+As mentioned, the training and test data are split by the abnormality type present in the scan: calcification or mass. I find it easiest to combine the training into a single file:
 
 ```python
 train_mass_df = pd.read_csv(DATASET_ROOT / "fixed-csv" / "mass_case_description_train_set.csv")
@@ -110,7 +108,7 @@ We do the same for the test set:
 test_mass_df = pd.read_csv(DATASET_ROOT / "fixed-csv" / "mass_case_description_test_set.csv")
 test_calc_df = pd.read_csv(DATASET_ROOT / "fixed-csv" / "calc_case_description_test_set.csv")
 test_df = pd.concat([test_mass_df, test_calc_df])
-test_mass_df = test_mass_df = None
+test_mass_df = test_calc_df = None
 test_df.head(1).T
 ```
 
@@ -162,8 +160,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-Looking at the distribution of images per patient, about 1005 patients have both views, while many have only a single image, which are basically incomplete mammograms (containing only one view per patient, instead of the expected two).
-
+Looking at the distribution of images per patient, about 1005 patients have both views, while many have only a single image, which is basically an incomplete mammogram (containing only one view per patient, instead of the expected two).
 
 ## Fetching Images
 
@@ -258,34 +255,37 @@ plt.show()
 
 ## Key Metadata
 
-The most important label is `pathology`, indicating whether the abnormality is **benign**, **benign_without_callback**, or **malignant**.
+The most important label is `pathology`, indicating whether the abnormality is **benign**, **benign_without_callback** (clearly no risk of malignancy), or **malignant**.
 
 ```python
-fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-
-# Overall pathology distribution
 pathology_counts = all_df['pathology'].value_counts()
-axes[0].bar(pathology_counts.index, pathology_counts.values, color=['#2ecc71', '#3498db', '#e74c3c'])
-axes[0].set_title('Pathology Distribution', fontsize=12, fontweight='bold')
-axes[0].set_ylabel('Count')
-axes[0].tick_params(axis='x', rotation=45)
+
+plt.figure(figsize=(8, 5))
+plt.bar(pathology_counts.index, pathology_counts.values, color=['#2ecc71', '#3498db', '#e74c3c'])
+plt.title('Pathology Distribution', fontsize=12, fontweight='bold')
+plt.ylabel('Count')
+plt.xticks(rotation=45)
 for i, v in enumerate(pathology_counts.values):
-    axes[0].text(i, v + 5, str(v), ha='center', va='bottom')
-
-# BI-RADS assessment distribution
-assessment_counts = all_df['assessment'].value_counts().sort_index()
-axes[1].bar(assessment_counts.index.astype(str), assessment_counts.values, color='#9b59b6')
-axes[1].set_title('BI-RADS Assessment Distribution', fontsize=12, fontweight='bold')
-axes[1].set_xlabel('Assessment Category')
-axes[1].set_ylabel('Count')
-for i, (idx, v) in enumerate(assessment_counts.items()):
-    axes[1].text(i, v + 5, str(v), ha='center', va='bottom')
-
+    plt.text(i, v + 5, str(v), ha='center', va='bottom')
 plt.tight_layout()
 plt.show()
 ```
 
-The dataset also includes [BI-RADS](breast-imaging-reporting-and-data-system.md) assessment categories (0-6) that indicate the level of suspicion. The distribution shows most cases fall into categories 4 and 5 (suspicious/highly suggestive of malignancy), which makes sense given that this is a dataset specifically curated around abnormalities.
+The dataset also includes [Breast Imaging Reporting and Data System (BI-RADS)](breast-imaging-reporting-and-data-system-bi-rads.md) assessment categories (0-6) that indicate the level of suspicion. The distribution shows most cases fall into categories 4 and 5 (suspicious/highly suggestive of malignancy), which makes sense given that this is a dataset specifically curated around abnormalities.
+
+```python
+assessment_counts = all_df['assessment'].value_counts().sort_index()
+
+plt.figure(figsize=(8, 5))
+plt.bar(assessment_counts.index.astype(str), assessment_counts.values, color='#9b59b6')
+plt.title('BI-RADS Assessment Distribution', fontsize=12, fontweight='bold')
+plt.xlabel('Assessment Category')
+plt.ylabel('Count')
+for i, (idx, v) in enumerate(assessment_counts.items()):
+    plt.text(i, v + 5, str(v), ha='center', va='bottom')
+plt.tight_layout()
+plt.show()
+```
 
 ### Mass Descriptors
 
@@ -350,11 +350,7 @@ During curation, 339 mass images where the lesion was not clearly visible were r
 
 ## Limitations
 
-While CBIS-DDSM is valuable for research, it has some limitations worth noting:
-
-- **Scanned film images**: The original DDSM images were digitised from film mammograms, not acquired digitally. Modern Full-Field Digital Mammography (FFDM) systems produce higher-quality images.
-- **Single abnormality focus**: Each case focuses on a specific abnormality, which may not reflect real-world screening where radiologists evaluate entire images.
-- **Age of data**: The original DDSM was collected in the 1990s, so imaging quality and patient demographics may differ from contemporary datasets.
+While CBIS-DDSM is valuable for research, it has some limitations worth noting. The original DDSM images were digitised from film mammograms, not acquired digitally. Modern Full-Field Digital Mammography (FFDM) systems produce higher-quality images, and newer datasets like [InBreast](inbreast.md) and [VinDr-Mammo](vindr-mammo.md) tend to contain these sorts of images. Additionally, DDSM images are focused on a specific abnormality, but a breast may contain multiple abnormalities, warranting investigation. Lastly, the original DDSM was collected in the 1990s, so imaging quality and patient demographics may differ from those in contemporary datasets.
 
 Despite these limitations, CBIS-DDSM remains one of the most widely used public mammography datasets for developing and benchmarking CAD algorithms.
 
