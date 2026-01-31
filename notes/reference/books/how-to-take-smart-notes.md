@@ -5,7 +5,7 @@ category: reference/books
 cover: /_media/how-to-take-smart-notes.jpeg
 ---
 
-How to Take Smart Notes provides an overview of the Zettelkasten system, popularised by prolific sociologist Niklas Luhman. The book starts with an overview of the entire Zettelkasten method, then delves deeper into why it works. This "top down" approach quite reminisant of David Perkins [Teaching the whole game](../../permanent/teaching-the-whole-game.md) approach to teaching.
+How to Take Smart Notes provides an overview of the [Zettelkasten](../../permanent/zettelkasten.md) system, popularised by prolific sociologist Niklas Luhman. The book starts with an overview of the entire Zettelkasten method, then delves deeper into why it works. This "top down" approach quite reminisant of David Perkins [Teaching the whole game](../../permanent/teaching-the-whole-game.md) approach to teaching.
 
 I tried to be quite comprehensive with the notes while reading, using it as an opportunity to practice the system and ensure I didn't miss anything.
 
