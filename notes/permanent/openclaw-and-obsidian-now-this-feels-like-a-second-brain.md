@@ -156,7 +156,7 @@ My `todo.md` is the source of truth for what I'm working on. It's helpful for M 
 * Possessions I've bought (with receipts)
 * Recipes, with a journal of modifications as I improve them
 
-There's a lot. You can also give M access to your Gmail via the 
+There's a lot. You can also give M access to your Gmail, Calendar and Docs via the [gog skill](https://www.clawhub.com/steipete/gog), which has proven to be quite useful, albeit it a little unsettling.
 
 ### Morning Routine
 
