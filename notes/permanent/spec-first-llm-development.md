@@ -19,6 +19,10 @@ It's nothing new. The concept of [Software Requirements Specifications (SRS)](so
 
 It seems that a lot of the paradigms for writing high-quality software, that in practice often get pushed aside due to them being deemed too labour intensive - SRS being one obvious example, but other practices like [Test-Driven Development](test-driven-development.md) and [Property-based Testing](property-based-testing.md) - start to sound a lot more sensible when it's the LLM doing the hard labour, and the engineer reaping the rewards in the form of reliable software.
 
+Personally, I've had some success adding implementation notes to my toolkit for recent projects. I've been working on porting some PyTorch projects to the MLX framework (see [mlx-demucs](https://github.com/lextoumbourou/mlx-demucs), [mlx-contentvec](https://github.com/lextoumbourou/mlx-contentvec) and [mlx-rvc](https://github.com/lextoumbourou/mlx-rvc) for recent examples), and anecdotally, it seems to prevent the LLM from getting stuck in loops, especially across context compactions. It also seems to help prevent it from making the same kinds of errors, like failing to use uv or using the wrong Python version for comparison testing, working better than instructions in [AGENTS.md](https://agents.md) or [CLAUDE.md](https://code.claude.com/docs/en/memory) instructions alone.
+
+That said, a text file feels like a pretty rudimentary solution to [Memory](memory.md) for an LLM - I'm sure there's going to be a lot more exploration in this space.
+
 ## References
 
 [^1]: Ramamoorthy, C. V., & Ho, S. F. (1975). Testing large software with automated software evaluation systems. ACM SIGPLAN Notices, 10(6), 382–394. https://doi.org/10.1145/390016.808461
