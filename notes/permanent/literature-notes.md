@@ -6,7 +6,7 @@ tags:
 cover: /_media/reference-notes.jpg
 ---
 
-Literature Notes in Zettelkasten are notes which capture information from the source material in our own words. They are sometimes referred to as Reference or Bibliographic notes. They the output of processing [Fleeting Notes](permanent/Fleeting Notes.md). Literature notes are then parsed for key ideas that we want to retain for our long-term thinking by converting into [Permanent Notes](permanent-notes.md).
+Literature Notes in [Zettelkasten](zettelkasten.md) are notes which capture information from the source material in our own words. They are sometimes referred to as Reference or Bibliographic notes. They the output of processing [Fleeting Notes](permanent/Fleeting Notes.md). Literature notes are then parsed for key ideas that we want to retain for our long-term thinking by converting into [Permanent Notes](permanent-notes.md).
 
 Luhmann, a key proponent of Zettelkasten, stored his reference notes in a separate notebox with the information on one side and their bibliographic reference on the other. [@ahrensHowTakeSmart2017] *(pg. 23)*
 
