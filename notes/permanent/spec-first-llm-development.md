@@ -23,6 +23,10 @@ Personally, I've had some success adding implementation notes to my toolkit for 
 
 That said, a text file feels like a pretty rudimentary solution to [Memory](memory.md) for an LLM - I'm sure there's going to be a lot more exploration in this space.
 
+---
+
+Discussion on [Bluesky](https://bsky.app/profile/notesbylex.com/post/3mdqtpk6e5s2c, [Mastodon](https://fedi.notesbylex.com/@lex/115991998235821477) and [Mastodon](https://fedi.notesbylex.com/@lex/115991998235821477).
+
 ## References
 
 [^1]: Ramamoorthy, C. V., & Ho, S. F. (1975). Testing large software with automated software evaluation systems. ACM SIGPLAN Notices, 10(6), 382–394. https://doi.org/10.1145/390016.808461

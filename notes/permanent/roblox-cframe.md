@@ -104,4 +104,4 @@ $\begin{bmatrix}\textcolor{red}{rX} & \textcolor{green}{uX} & \textcolor{blue}{l
 
 This example shows a simple matrix multiplication example. Multiplying a 90° rotated CFrame with a straight facing vector two up. Note how the result CFrame is two studs higher than the original CFrame. This is the equivalent of using `ToWorldSpace(cframe)`.
 
-![Matrix multiplication CFrame](/_media/cframes-matrix-multiplication-cover.gif)
+![Matrix multiplication CFrame](_media/cframes-matrix-multiplication-cover.gif)

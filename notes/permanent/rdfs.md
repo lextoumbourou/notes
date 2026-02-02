@@ -29,6 +29,8 @@ ex:Poodle rdfs:subClassOf ex:Dog .
 
 Therefore, every Dog is also a Domesticated Mammal, and every Poodle is both a Dog and a Domesticated Mammal. You can even subclass from multiple parent classes to create rich, interconnected vocabularies.
 
+In [Lexical Semantics](lexical-semantics.md), `rdfs:subClassOf` captures the [Hyponym](hyponym.md) -> [Hypernym](hypernym.md) relationship between terms.
+
 ## Established Vocabularies
 
 RDFS uses prefixes to make URIs more readable and leverages existing ontologies. For example, FOAF (Friend of a Friend) is a well-established ontology for describing social networks and contact details.
