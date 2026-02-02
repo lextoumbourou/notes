@@ -170,3 +170,7 @@ Now I just tell the LLM what I want to track and let it figure out the structure
 ## On Costs
 
 OpenClaw really has become an indispensable part of my Obsidian and life management strategy. However, it comes at a pretty huge price (literally). All these heartbeats, and skill running and file editing eats up a lot of tokens, especially using the recommended model Opus 4.5. Not even going to mention how much I've spent on it so far - it's too much. But, I'm hoping once I have the system built, day-to-day operations will become a lot cheaper. Plus, the cost of LLM intelligence tends to track downward over time. So hopefully it will be financially sustainable.
+
+---
+
+Discussion on [Hacker News](https://news.ycombinator.com/item?id=46841993), [Bluesky](https://bsky.app/profile/notesbylex.com/post/3mdqxwotdgc2c) or [Mastodon](https://fedi.notesbylex.com/@lex/115992306678660814).
