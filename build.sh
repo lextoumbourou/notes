@@ -21,4 +21,4 @@ fi
 
 echo "No control characters found. Proceeding with build..."
 rm -rf output/
-ENV=local uv run pelican ./notes/ --output=output/ --debug
+ENV=local uv run pelican ./notes/ --output=output/
