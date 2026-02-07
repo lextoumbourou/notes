@@ -12,11 +12,11 @@ The notes are collected using my interpretation of the [Zettelkasten](https://en
 
 I've accumulated notes since 2012, but started using this methodology in 2020.
 
-The notes are currently sorted by their creation date. However, the intention is that each note will be constantly updated and changed. I recommend using the tags to explore the notes.
+The notes are currently sorted by their creation date. However, the intention is that each note will be continually updated. I recommend using the tags to explore the notes.
 
-I intend to be flexible with the topics this blog explores; it's what I'm interested in or learning about at the time. Right now, I'm most interested in Generative AI and Software Engineering. I'm also pursuing my Bachelor's Degree in Computer Science, having nearly 15 years of experience as a self-taught developer, so some of my notes will cover computer science fundamentals.
+I intend to be flexible with the topics this blog explores; it's what I'm interested in or learning about at the time. Right now, I'm most interested in Generative AI and Software Engineering. I'm also pursuing my Bachelor's Degree in Computer Science and have nearly 15 years of experience as a self-taught developer, so some of my notes will cover computer science fundamentals.
 
-I don't know how useful the notes' contents will be to others. However, I've made them public because it helps me motivate the creation of these notes, and you never know.
+I don't know how useful the notes' contents will be to others. However, I've made them public because it helps me motivate myself to create these notes, and you never know.
 
 ### About me
 
@@ -24,12 +24,14 @@ I'm a generalist software developer currently living in Brisbane, Australia. At 
 
 I have a long career in software and, before that, operations, spanning around 20 years in total. In the most recent part of my career, I've been making products with data and ML, except for a few years working on the Roblox game [Splash](https://www.roblox.com/games/4936591712/SPLASH-Skate-Music#!/game-instances), so you will find game design and Roblox content scattered throughout the blog. However, I'm now back to focusing on ML.
 
-I'm a [Kaggle journeyman](https://www.kaggle.com/lextoumbourou/competitions?sort=recently+launched&tab=completed), having achieved ten medals (9 silvers) in a row with no golds. However, I am a [Kaggle Notebook Master](https://www.kaggle.com/lextoumbourou/code?userId=21102&sortBy=voteCount&tab=profile). I'm on a Kaggle hiatus now, but I hope to get back on the wagon after my degree.
+On Kaggle, I'm a [Competition Expert](https://www.kaggle.com/lextoumbourou/competitions?sort=recently+launched&tab=completed) and a [Notebook Master](https://www.kaggle.com/lextoumbourou/code?userId=21102&sortBy=voteCount&tab=profile). I'm on a Kaggle hiatus now, but I hope to get back on the wagon after my degree.
 
 The main social media I'm active on is:
 
 * [LinkedIn](https://www.linkedin.com/in/lextoumbourou/)
 * [Hacker News](https://news.ycombinator.com/user?id=lexandstuff)
+* [Bluesky](https://bsky.app/profile/notesbylex.com)
+* [Mastodon](https://fedi.notesbylex.com/@lex)
 
 And previously have been active on:
 
@@ -38,7 +40,7 @@ And previously have been active on:
 
 I have accounts on many other platforms, but I haven't posted consistently on them.
 
-Music has also been an on-and-off interest throughout my life. A decade ago, I was making electronic music under the alias 5-Foot Nothing, now I'm making non-serious hip-hop music under the alias Uncle Lex.
+Music has also been an on-and-off interest throughout my life. A decade ago, I was making electronic music under the alias 5-Foot Nothing; now I'm making non-serious hip-hop music under the alias Uncle Lex.
 
 You can find my music (and some other random creative experiments) on:
 

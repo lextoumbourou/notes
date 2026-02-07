@@ -25,6 +25,8 @@ For my actual work at Canva, our users depend on us getting things exactly right
 
 The present of engineering is becoming more about reviewing code than writing it. But the future of engineering might be more about exhaustive verification of your system's correctness, and not much about the actual code at all.
 
+Discussion on [Bluesky](https://bsky.app/profile/notesbylex.com/post/3mecieamjac2d), [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7426027007207059456/?originTrackingId=maBhvwgNnwJXZQ%2BUNUWKbA%3D%3D) or [Mastodon](https://fedi.notesbylex.com/@lex/116031765064843416).
+
 *Cover by <a href="https://unsplash.com/@homaappliances?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Homa Appliances</a> on <a href="https://unsplash.com/photos/a-machine-that-is-inside-of-a-building-_XDK4naBbgw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*
 
 ## References
