@@ -24,7 +24,7 @@ I'm a generalist software developer currently living in Brisbane, Australia. At 
 
 I have a long career in software and, before that, operations, spanning around 20 years in total. In the most recent part of my career, I've been making products with data and ML, except for a few years working on the Roblox game [Splash](https://www.roblox.com/games/4936591712/SPLASH-Skate-Music#!/game-instances), so you will find game design and Roblox content scattered throughout the blog. However, I'm now back to focusing on ML.
 
-On Kaggle, I'm a [Competition Expert](https://www.kaggle.com/lextoumbourou/competitions?sort=recently+launched&tab=completed) and a [Notebook Master](https://www.kaggle.com/lextoumbourou/code?userId=21102&sortBy=voteCount&tab=profile). I'm on a Kaggle hiatus now, but I hope to get back on the wagon after my degree.
+On Kaggle, I'm a [Competitions Expert](https://www.kaggle.com/lextoumbourou/competitions?sort=recently+launched&tab=completed) and a [Notebooks Master](https://www.kaggle.com/lextoumbourou/code?userId=21102&sortBy=voteCount&tab=profile). I'm on a Kaggle hiatus now, but I hope to get back on the wagon after my degree.
 
 The main social media I'm active on is:
 
