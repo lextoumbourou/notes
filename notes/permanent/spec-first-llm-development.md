@@ -25,7 +25,7 @@ That said, a text file feels like a pretty rudimentary solution to [Memory](memo
 
 ---
 
-Discussion on [Bluesky](https://bsky.app/profile/notesbylex.com/post/3mdqtpk6e5s2c, [Mastodon](https://fedi.notesbylex.com/@lex/115991998235821477) and [Mastodon](https://fedi.notesbylex.com/@lex/115991998235821477).
+Discussion on [Bluesky](https://bsky.app/profile/notesbylex.com/post/3mdqtpk6e5s2c), [Mastodon](https://fedi.notesbylex.com/@lex/115991998235821477) and [Mastodon](https://fedi.notesbylex.com/@lex/115991998235821477).
 
 ## References
 
