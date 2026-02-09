@@ -15,7 +15,7 @@ dependencies = [
     "markupsafe==2.0.1",
     "mlx>=0.29.3",
     "mlx-image>=0.1.7",
-    "nbconvert==7.2.5",
+    "nbconvert==7.17.0",
     "pelican==4.8.0",
     "pelican-cite",
     "pelican-frontmark",
