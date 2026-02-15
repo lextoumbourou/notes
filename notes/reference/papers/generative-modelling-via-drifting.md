@@ -17,17 +17,15 @@ Where Diffusion/Flow Matching performs iterative denoising at inference time, Dr
 
 ![drifting-models-figure-4.png](../../_media/drifting-models-figure-4.png)
 
-The core of the algorithm is the computation of a "drift field", which is a vector for each generated sample that points toward the direction of the real distribution. When the model's output distribution matches the real distribution, the drift is zero.
+The core of the algorithm is the computation of a "drift field", which is a vector for each generated sample that points toward the direction of the real distribution. The goal is to calculate a drift field where when model's output distribution matches the real distribution, the drift is zero.
 
-The drift field is calculated using positive and negative samples. Positive samples are real examples from the same class in the training data. Negative samples are other model outputs in the batch (though other negatives, such as real examples from other classes, are also tested). The idea: attract toward positives, repel from negatives. At equilibrium, attraction and repulsion balance out: $\mathbf{V} = \mathbf{V}^+ - \mathbf{V}^- = 0$
-
-We update the model so its outputs move toward the drifted positions computed from attraction to real samples and repulsion from generated samples. When the generated distribution matches the true distribution, these forces cancel each other out.
+The drift field is calculated using positive and negative samples. Positive samples are real examples from the same class in the training data. Negative samples are other model outputs in the batch (though other negatives, such as real examples from other classes, are also tested). We want the drift field to attract toward positives, repel from negatives, but at equilibrium, attraction and repulsion balance out: $\mathbf{V} = \mathbf{V}^+ - \mathbf{V}^- = 0$
 
 ![drifting-models-figure-2.png](../../_media/drifting-models-figure-2.png)
 
-Leaving aside computing the drifting field for a second, the loss is straightforward.
+Leaving aside computing the drifting field for a second, the loss computation is straightforward.
 
-We compute a drifting vector for each output sample and train the model so its output moves toward its drifted version, indirectly minimising the magnitude of the drift. We use stop-gradient to avoid backpropagating through the drift computation.
+We compute a drifting vector for each output sample and train the model so its output moves toward its drifted version, indirectly minimising the magnitude of the drift. We use stop-gradient to avoid back-propagating through the drift computation.
 
 ```python
 noise = rand([N, C])
@@ -43,11 +41,11 @@ x_drifted = stopgrad(x + V)
 loss = mse_loss(x - x_drifted)
 ```
 
-The drifting can occur in raw pixel space or in feature space, e.g., via an image encoder such as SimCLR or MoCo-v2. Outside of toy examples like MNIST, they were unable to achieve decent imagegen results on ImageNet without a feature encoder. However, they did test on robotics control tasks and successfully used raw representations without a feature space.
+ The drifting can occur in raw pixel space or in feature space via an image encoder such as SimCLR or MoCo-v2. Outside of toy examples like MNIST, the authors were unable to achieve strong ImageNet without a feature encoder. However, they did test on robotics control tasks and successfully used raw representations without a feature space.
 
 ## Computing the Drift Vector - V
 
-The paper provides the Drift Vector calculation in pseudocode. Walking through it, we have a batch of samples from the model - these could be raw image pixels or some kind of encoding.
+The computation for the Drift Vector - V can be broken down into a couple of steps
 
 ```python
 def compute_V(samples, y_pos, y_neg):
@@ -57,10 +55,12 @@ def compute_V(samples, y_pos, y_neg):
 
 ### 1. Compute L2 Distances
 
-We first compute the distance between the model samples and the positive and negative examples. The paper uses the L2 norm, which is available in scipy as cdist:
+We first compute the distance between the model samples and the positive samples (a batch of training examples) and negative examples (the model samples themselves). The paper uses the L2 norm, which is available in scipy as cdist:
 
 ```python
 from scipy.spatial.distance import cdist
+
+# compute_V
 
 dist_pos = cdist(samples, y_pos)
 dist_neg = cdist(samples, y_neg)
@@ -70,7 +70,7 @@ So we have two matrices that represent the distance between each sample.
 
 ### 2. Mask out self
 
-Since we're using the batch of model outputs as negatives, we want to ensure that the model ignores any self-distances. In practice, we give ourselves a very large distance, so it's ignored in the softmax (nearby generated samples contribute stronger repulsion, so we don't want a sample repelling itself).
+Since we're using the batch of model outputs as negatives, we want to ensure that the model ignores any self-distances. In practice, we set this to a very large distance, to ensure it's ignored the softmax (nearby generated samples contribute stronger repulsion, so we don't want a sample repelling itself).
 
 ```python
 # Add a large value to the diagonal so self-distances are ignored in softmax
@@ -150,9 +150,10 @@ When the generated distribution matches the data distribution, the attraction an
 The theoretical foundation of the method rests on the anti-symmetry property that the drift field satisfies.
 
 $$\mathbf{V}_{p,q}(\mathbf{x}) = -\mathbf{V}_{q,p}(\mathbf{x})$$
+
  Where:
- - $p$ is the target data distribution (positive samples) and
- - $q$ is the generated distribution (negative samples)
+ * $p$ is the target data distribution (positive samples) and
+ * $q$ is the generated distribution (negative samples)
 
 Swapping $p$ and $q$ flips the sign of the drift, which means that when $q = p$ (the generated distribution matches the data distribution), we have $\mathbf{V}_{p,p} = -\mathbf{V}_{p,p}$, which means $\mathbf{V} = 0$.
 
@@ -168,7 +169,6 @@ V_total = sum(compute_V(x, y_pos, y_neg, t) for t in temperatures)
 ```
 
 Lower temperatures (0.02) draw sharp attention to the nearest neighbours. Higher temperatures (0.2) spread attention more broadly. Combining them gives a richer gradient signal.
-
 
 ## Classifier-Free Guidance
 
