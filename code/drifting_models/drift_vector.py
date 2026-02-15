@@ -7,14 +7,46 @@ Generates visualization images for the drift field computation from:
 Usage:
     uv run --with numpy --with scipy --with pillow --with tensorflow python drift_vector.py
 
-Output images are saved to notes/_media/ with prefix 'drifting-models-'
+Output images are saved to public/notes/_media/ with prefix 'drifting-models-'
 """
 
 import argparse
 import numpy as np
+from pathlib import Path
 from scipy.spatial.distance import cdist
 from scipy.special import softmax
-import os
+
+SCRIPT_DIR = Path(__file__).parent
+DEFAULT_OUTPUT = (SCRIPT_DIR / "../../notes/_media").resolve()
+
+def generate_noisy_samples(base_imgs, size=28):
+    """Generate visually distinct noisy versions of base images.
+
+    Each sample uses a different base image with a different gradient overlay,
+    making them easy to distinguish while showing they're noisy digits.
+    """
+    patterns = []
+    np.random.seed(123)
+    noise_scale = 0.5  # Very heavy noise
+
+    for i, base_img in enumerate(base_imgs):
+        base = base_img.reshape(size, size)
+
+        if i == 0:
+            # Pattern 0: Horizontal gradient overlay
+            grad = np.linspace(-0.4, 0.4, size).reshape(1, -1).repeat(size, axis=0)
+        elif i == 1:
+            # Pattern 1: Vertical gradient overlay
+            grad = np.linspace(-0.4, 0.4, size).reshape(-1, 1).repeat(size, axis=1)
+        else:
+            # Pattern 2: Diagonal gradient overlay
+            x, y = np.meshgrid(np.linspace(-0.4, 0.4, size), np.linspace(-0.4, 0.4, size))
+            grad = (x + y) / 2
+
+        noisy = np.clip(base + grad + np.random.randn(size, size) * noise_scale, 0, 1)
+        patterns.append(noisy)
+
+    return np.array(patterns)
 
 # Load MNIST
 try:
@@ -96,12 +128,14 @@ def create_matrix_viz(matrix, row_imgs, col_imgs, output_path, cell_format=".2f"
 
     # Column headers
     for j, col_img in enumerate(col_imgs):
-        pil = Image.fromarray((col_img * 255).astype(np.uint8)).resize((img_size, img_size), Image.NEAREST)
+        gray = (col_img * 255).astype(np.uint8)
+        pil = Image.fromarray(gray).resize((img_size, img_size), Image.NEAREST)
         img.paste(pil, (col_start_x + j * col_cell_width + img_padding // 2, margin))
 
     # Rows
     for i, row_img in enumerate(row_imgs):
-        pil = Image.fromarray((row_img * 255).astype(np.uint8)).resize((img_size, img_size), Image.NEAREST)
+        gray = (row_img * 255).astype(np.uint8)
+        pil = Image.fromarray(gray).resize((img_size, img_size), Image.NEAREST)
         img.paste(pil, (margin, row_start_y + i * cell_height + (cell_height - img_size) // 2))
 
         for j in range(n_cols):
@@ -146,7 +180,8 @@ def create_drift_viz(drift_pos, drift_neg, V, row_imgs, output_path):
 
     # Rows
     for i, row_img in enumerate(row_imgs):
-        pil = Image.fromarray((row_img * 255).astype(np.uint8)).resize((img_size, img_size), Image.NEAREST)
+        gray = (row_img * 255).astype(np.uint8)
+        pil = Image.fromarray(gray).resize((img_size, img_size), Image.NEAREST)
         img.paste(pil, (margin, row_start_y + i * cell_height + (cell_height - img_size) // 2))
 
         for j, data in enumerate([drift_pos[i], drift_neg[i], V[i]]):
@@ -160,12 +195,12 @@ def create_drift_viz(drift_pos, drift_neg, V, row_imgs, output_path):
 
 def main():
     parser = argparse.ArgumentParser(description='Generate drift vector visualizations')
-    parser.add_argument('--output', '-o', default='notes/_media', help='Output directory')
+    parser.add_argument('--output', '-o', default=str(DEFAULT_OUTPUT), help='Output directory')
     parser.add_argument('--prefix', '-p', default='drifting-models-', help='Filename prefix')
     args = parser.parse_args()
 
-    output_dir = os.path.join(os.path.dirname(__file__), args.output)
-    os.makedirs(output_dir, exist_ok=True)
+    output_dir = Path(args.output)
+    output_dir.mkdir(parents=True, exist_ok=True)
 
     print("Loading MNIST...")
     x_train, y_train = load_mnist()
@@ -174,16 +209,19 @@ def main():
     np.random.seed(42)
     idx_3 = np.where(y_train == 3)[0]
 
-    # 5 positive samples (real 3s), 3 generated samples (noisy 3s)
+    # 5 positive samples (real MNIST 3s)
     pos_idx = np.random.choice(idx_3, 5, replace=False)
     y_pos = x_train_norm[pos_idx].reshape(5, -1)
 
-    query_idx = np.random.choice(np.setdiff1d(idx_3, pos_idx), 3, replace=False)
-    x_query = np.clip(x_train_norm[query_idx] + np.random.randn(3, 28, 28) * 0.5, 0, 1).reshape(3, -1)
-    y_neg = x_query
+    # 3 generated samples - each based on a different 3 with heavy noise
+    base_idx = np.random.choice(np.setdiff1d(idx_3, pos_idx), 3, replace=False)
+    base_imgs = x_train_norm[base_idx]
+    noisy_samples = generate_noisy_samples(base_imgs)
+    x_query = noisy_samples.reshape(3, -1)
+    y_neg = x_query  # negatives are the same as generated samples
 
     print("Computing drift vectors...")
-    data = compute_V(x_query, y_pos, y_neg, temperature=0.05)
+    data = compute_V(x_query, y_pos, y_neg, temperature=0.04)
 
     x_imgs = x_query.reshape(-1, 28, 28)
     pos_imgs = y_pos.reshape(-1, 28, 28)
@@ -192,6 +230,7 @@ def main():
     print("Generating visualizations...")
     prefix = args.prefix
 
+    # No color tinting needed - patterns are visually distinct
     create_matrix_viz(data['dist_pos'], x_imgs, pos_imgs, f"{output_dir}/{prefix}01_dist_pos.png")
     create_matrix_viz(data['dist_neg_raw'], x_imgs, neg_imgs, f"{output_dir}/{prefix}02a_dist_neg_raw.png")
     create_matrix_viz(data['dist_neg_masked'], x_imgs, neg_imgs, f"{output_dir}/{prefix}02b_dist_neg_masked.png")

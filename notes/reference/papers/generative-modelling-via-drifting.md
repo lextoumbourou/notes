@@ -41,7 +41,7 @@ x_drifted = stopgrad(x + V)
 loss = mse_loss(x - x_drifted)
 ```
 
- The drifting can occur in raw pixel space or in feature space via an image encoder such as SimCLR or MoCo-v2. Outside of toy examples like MNIST, the authors were unable to achieve strong ImageNet without a feature encoder. However, they did test on robotics control tasks and successfully used raw representations without a feature space.
+ The drifting can occur in feature space (via an image encoder such as SimCLR or MoCo-v2) or even raw pixel space. Albeit the best results on ImageNet came from feature space.
 
 ## Computing the Drift Vector - V
 
@@ -233,6 +233,8 @@ where $p_{\text{data}}(\cdot|\varnothing)$ is the unconditional distribution (sa
 ## Mode Collapse Robustness
 
 Unlike GANs, drifting models are robust to mode collapse. Figure 3 in the paper shows that even when $q$ is initialised collapsed onto a single mode, the method recovers the full distribution, because if $q$ collapses to one mode, the positive samples from *other* modes of $p$ still attract generated samples toward them. The attraction from missing modes pulls samples out of the collapsed state.
+
+![drifting-models-figure-3.png](../../_media/drifting-models-figure-3.png)
 
 ## Results
 
