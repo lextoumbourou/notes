@@ -1,7 +1,7 @@
 ---
 title: Generative Modelling via Drifting
 date: 2026-02-11 00:00
-modified: 2026-02-11 00:00
+modified: 2026-02-15 00:00
 summary: "A new paradigm for single-step generative modelling"
 cover: /_media/drifting-models-figure-4.png
 category: reference/papers
@@ -68,6 +68,23 @@ dist_neg = cdist(samples, y_neg)
 
 So we have two matrices that represent the distance between each sample.
 
+<table style="border: 0">
+<tr>
+<td>
+<strong>dist_pos</strong><br>
+Distance to positive samples
+</td>
+<td>
+<strong>dist_neg</strong><br>
+Distance to negative samples
+</td>
+</tr>
+<tr>
+<td><img src="../../_media/drifting-models-01_dist_pos.png"></td>
+<td><img src="../../_media/drifting-models-02a_dist_neg_raw.png"></td>
+</tr>
+</table>
+
 ### 2. Mask out self
 
 Since we're using the batch of model outputs as negatives, we want to ensure that the model ignores any self-distances. In practice, we set this to a very large distance, to ensure it's ignored the softmax (nearby generated samples contribute stronger repulsion, so we don't want a sample repelling itself).
@@ -76,6 +93,10 @@ Since we're using the batch of model outputs as negatives, we want to ensure tha
 # Add a large value to the diagonal so self-distances are ignored in softmax
 dist_neg += np.eye(N) * 1e6
 ```
+
+**dist_neg_masked** - Self-distances are masked so samples don't repel themselves:
+
+<img src="../../_media/drifting-models-02b_dist_neg_masked.png">
 
 ### 3. Compute weights via Softmax
 
@@ -99,12 +120,29 @@ A_col = softmax(logit, axis=0)  # normalize over x samples
 A = np.sqrt(A_row * A_col)      # geometric mean
 ```
 
-This bidirectional normalisation helps prevent any single sample from dominating the attention. Finally, we split back into positive and negative attention:
+This bidirectional normalisation helps prevent any single sample from dominating the attention.
+
+**A** - Combined attention matrix (positives on left, negatives on right):
+
+<img src="../../_media/drifting-models-03_attention.png">
+
+Finally, we split back into positive and negative attention:
 
 ```python
 A_pos = A[:, :N_pos]  # [N, N_pos]
 A_neg = A[:, N_pos:]  # [N, N_neg]
 ```
+
+<table>
+<tr>
+<td><strong>A_pos</strong> - Attention to positives</td>
+<td><strong>A_neg</strong> - Attention to negatives (self masked)</td>
+</tr>
+<tr>
+<td><img src="../../_media/drifting-models-04a_A_pos.png"></td>
+<td><img src="../../_media/drifting-models-04b_A_neg.png"></td>
+</tr>
+</table>
 
 ### 4. Cross-weighting
 
@@ -126,6 +164,17 @@ W_neg = A_neg * np.sum(A_pos, axis=1, keepdims=True)
 
 This cross-weighting ensures that if you're strongly attracted to positives, you're also strongly repelled from negatives (and vice versa). It maintains the balance needed for the anti-symmetric property.
 
+<table>
+<tr>
+<td><strong>W_pos</strong> - Cross-weighted positives</td>
+<td><strong>W_neg</strong> - Cross-weighted negatives</td>
+</tr>
+<tr>
+<td><img src="../../_media/drifting-models-05a_W_pos.png"></td>
+<td><img src="../../_media/drifting-models-05b_W_neg.png"></td>
+</tr>
+</table>
+
 ### 5. Compute Drift Vectors
 
 These weights are used to compute weighted averages of the positive and negative samples:
@@ -141,6 +190,8 @@ The final drift vector is the difference - attraction toward positives minus rep
 V = drift_pos - drift_neg
 ```
 
+<img src="../../_media/drifting-models-06_drift_vectors.png">
+
 When the generated distribution matches the data distribution, the attraction and repulsion cancel and $\mathbf{V} = 0$. The paper shows this is a necessary condition for equilibrium (though the converse is not strictly proven).
 
 ---
@@ -152,8 +203,9 @@ The theoretical foundation of the method rests on the anti-symmetry property tha
 $$\mathbf{V}_{p,q}(\mathbf{x}) = -\mathbf{V}_{q,p}(\mathbf{x})$$
 
  Where:
- * $p$ is the target data distribution (positive samples) and
- * $q$ is the generated distribution (negative samples)
+
+* $p$ is the target data distribution (positive samples) and
+* $q$ is the generated distribution (negative samples)
 
 Swapping $p$ and $q$ flips the sign of the drift, which means that when $q = p$ (the generated distribution matches the data distribution), we have $\mathbf{V}_{p,p} = -\mathbf{V}_{p,p}$, which means $\mathbf{V} = 0$.
 
