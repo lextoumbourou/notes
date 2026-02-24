@@ -6,7 +6,7 @@ summary: "in which the LLM maintains a spec file alongside the project"
 cover: /_media/spec-first-llm-development-cover.png
 tags:
 - SoftwareEngineering
-- AIAssistedSoftwareEngineering
+- AgenticReasoning
 ---
 
 **Spec-First LLM Development** is the simple idea that, instead of asking an LLM to immediately output code after prompting, you first ask it to output a spec file, which is continually updated as you and the LLM develop software together. The spec file is stored in version control and should be re-read by the LLM whenever new context is added.
