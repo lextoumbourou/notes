@@ -704,13 +704,9 @@ wheels = [
 [[package]]
 name = "feedgenerator"
 version = "2.2.1"
-source = { registry = "https://pypi.org/simple" }
+source = { git = "https://github.com/lextoumbourou/feedgenerator.git#a8429ab7200eef8deaa4e1b133e10b4874a4dcaf" }
 dependencies = [
     { name = "tzdata", marker = "sys_platform == 'win32'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/b0/d2/f05e9f4628cb0df988de66f8a97dd52877490e6ebf8e7b41cd341bf2ad6b/feedgenerator-2.2.1.tar.gz", hash = "sha256:0eaa955f1f0bcb5b87ac195af740f06ff9fff4a40ed30b8a7c6bbebb264d4dd1", size = 20872 }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/b9/08/6f74bef4663fb137fa10b493facce85bee8c055b67fbd9a7695d88e3d1a3/feedgenerator-2.2.1-py3-none-any.whl", hash = "sha256:0d8bb321e49dd43c916b659e137c1eab1b1c053dd4535a03ef8d47e5f3358ba5", size = 18495 },
 ]
 
 [[package]]
@@ -2264,6 +2260,7 @@ name = "public"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "feedgenerator" },
     { name = "gymnasium", extra = ["other"] },
     { name = "jupyter" },
     { name = "jupyterlab" },
@@ -2289,6 +2286,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "feedgenerator", git = "https://github.com/lextoumbourou/feedgenerator.git" },
     { name = "gymnasium", extras = ["other"], specifier = ">=1.2.0" },
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "jupyterlab", specifier = ">=4.4.10" },
