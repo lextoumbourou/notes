@@ -1,0 +1,6 @@
+[build]
+  command = "./setup.sh"
+  publish = "output"
+
+[build.environment]
+  PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "true"
