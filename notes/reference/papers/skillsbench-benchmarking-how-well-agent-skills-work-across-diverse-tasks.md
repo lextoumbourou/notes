@@ -5,8 +5,8 @@ modified: 2026-02-21 00:00
 summary: "Benchmarking Agent Skills"
 cover: /_media/skillsbench-cover.png
 tags:
-- AgenticAI
-- AIAssistedSoftwareEngineering
+- AgenticReasoning
+- SoftwareEngineering
 category: reference/papers
 ---
 

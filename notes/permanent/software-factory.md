@@ -5,7 +5,6 @@ modified: 2026-02-08 00:00
 cover: /_media/software-factory-cover.jpeg
 summary: "is verification the future of software engineering?"
 tags:
-- AIAssistedSoftwareEngineering
 - SoftwareEngineering
 ---
 
