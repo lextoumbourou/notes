@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "feedgenerator",
     "gymnasium[other]>=1.2.0",
     "jupyter>=1.1.1",
     "jupyterlab>=4.4.10",
@@ -28,6 +29,7 @@ dependencies = [
 ]
 
 [tool.uv.sources]
+feedgenerator = { git = "https://github.com/lextoumbourou/feedgenerator.git" }
 pelican-frontmark = { git = "https://github.com/lextoumbourou/pelican-frontmark.git" }
 pelican-jupyter = { git = "https://github.com/lextoumbourou/pelican-jupyter.git" }
 markdown-obsidian-callouts = { git = "https://github.com/lextoumbourou/markdown-obsidian-callouts.git" }
