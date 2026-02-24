@@ -31,18 +31,15 @@ In the paper, they describe their [SkillsBench](../../permanent/skillsbench.md) 
 
 The skills themselves were pulled from GitHub, community marketplaces, and corporate partners, with around 47k skills tested as part of the collection.
 
-Probably, the most important finding is that self-generated skills provide no benefit on average, suggesting that models cannot reliably author procedural knowledge.
+They found that the self-generated skills offered no benefit (or worse) on average. However, curated skills raised the average pass rate by 16.2 percentage points, with effects varying across domains. Healthcare tasks got the biggest boost from skills, while software got the least, suggesting that the models already have a lot of useful knowledge about how to achieve software tasks, and less-understood domains get the biggest boost from skills.
 
-They also demonstrate that curated skills raise the pass rate by an average of 16.2 percentage points, but the effects vary by domain. Skills help most when tasks require concrete procedures like specific steps, constraints, and sanity checks, rather than conceptual knowledge. Gains are largest on specialised workflows or brittle formats, and smallest when models already have strong priors.
+Also, 2-3 focused skills per task seems to be the sweet spot, with the authors seeing diminishing returns beyond that.
 
-Focused skills with 2–3 modules outperform comprehensive documentation, and smaller models with skills can match larger models without them.
-
-They test a number of different LLMs with their corresponding agent harness and find that Gemini performed best overall, but skills had the greatest impact on the Claude Code user, which I guess makes sense since Anthropic created skills in the first place and probably has the greatest lead with their models fine-tuning to use skills. Codex CLI showed competitive raw performance, but it frequently neglects the provided skills. Agents acknowledge the skill content but often implement solutions independently. I suspect Codex will improve at skill utilisation in future versions as OpenAI refines its implementation.
+They test several LLMs with their respective agent harnesses and find that Gemini performs best overall. However, skills had the greatest impact on the Claude Code's capability, which I guess makes sense since Anthropic created skills in the first place and probably has the greatest lead with their models fine-tuning to use skills. Codex CLI showed competitive raw performance, but it frequently neglects the provided skills. Agents acknowledge the skill content but often implement solutions independently. I suspect Codex will improve at skill utilisation in future versions as OpenAI refines its implementation.
 
 ![skillsbench-fig-1.png](../../_media/skillsbench-fig-1.png)
 
 The paper provides a concrete definition of a skill, contrasting it with other agentic paradigms like [Few-Shot Examples](../../permanent/few-shot-examples.md), [Retrieval Augmented Generation](../../permanent/retrieval-augmented-generation.md) and [Tool Documentation](../../../../permanent/tool-documentation.md).
-
 According to the paper, a Skill is an artifact that satisfies four criteria:
 
 - **Procedural**: It teaches *how* to do something (workflows, step-by-step procedures) rather than just stating facts
@@ -52,7 +49,7 @@ According to the paper, a Skill is an artifact that satisfies four criteria:
 
 The paper draws a nice analogy to computing paradigms: foundation models provide base capabilities (like CPUs), agent harnesses orchestrate context and tools (like operating systems), and skills extend competence to specialised domains (like applications).
 
-In my own work, I've been finding a lot of success recently by adding skills to our project. They tend to be really useful for guiding the LLM on how to run the test suite and evals effectively, how to check for common issues across the codebase, and even parse logs and debug common customer issues. Any time I find myself repeatedly performing a cumbersome sequence of steps, turning it into a Skill pays dividends pretty quickly. They're just docs and convenience scripts at the end of the day. Not exactly a brand new paradigm for software engineers.
+In my own work, I've been finding a lot of success recently by adding skills to our project. They tend to be really useful for guiding the LLM on how to run the test suite and evals effectively, how to check for common issues across the codebase, and even for parsing logs and debugging common customer issues. Any time I find myself repeatedly performing a cumbersome sequence of steps, turning it into a Skill pays dividends pretty quickly. They're just docs and convenience scripts at the end of the day. Not exactly a brand new paradigm for software engineers.
 
 Related articles:
 
