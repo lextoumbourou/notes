@@ -2,7 +2,7 @@
 title: "SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks"
 date: 2026-02-21 00:00
 modified: 2026-02-21 00:00
-summary: "Benchmarking Agent Skills"
+summary: "Self-generated skills don't help."
 cover: /_media/skillsbench-cover.png
 tags:
 - AgenticReasoning
