@@ -24,7 +24,7 @@ modified: 2023-04-09 00:00
 
 ## 8.103 Definition of a tree
 
-* [Acyclic Graph](permanent/acyclic-graph.md)
+* [Acyclic Graph](../../../../permanent/acyclic-graph.md)
     * A graph G is called an acyclic graph if and only if G has **no cycles**.
         * No loops and no parallel edges.
     * $G_1$ contains a cycle B, C, D, E
