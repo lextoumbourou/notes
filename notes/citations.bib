@@ -314,6 +314,19 @@
   month = aug
 }
 
+@misc{sakaiSignLockInRandomly2026,
+  title = {Sign {{Lock-In}}: {{Randomly Initialized Weight Signs Persist}} and {{Bottleneck Sub-Bit Model Compression}}},
+  shorttitle = {Sign {{Lock-In}}},
+  author = {Sakai, Akira and Ichikawa, Yuma},
+  year = 2026,
+  publisher = {arXiv},
+  doi = {10.48550/ARXIV.2602.17063},
+  urldate = {2026-03-01},
+  abstract = {Sub-bit model compression seeks storage below one bit per weight; as magnitudes are aggressively compressed, the sign bit becomes a fixed-cost bottleneck. Across Transformers, CNNs, and MLPs, learned sign matrices resist low-rank approximation and are spectrally indistinguishable from an i.i.d. Rademacher baseline. Despite this apparent randomness, most weights retain their initialization signs; flips primarily occur via rare near-zero boundary crossings, suggesting that sign-pattern randomness is largely inherited from initialization. We formalize this behavior with sign lock-in theory, a stopping-time analysis of sign flips under SGD noise. Under bounded updates and a rare re-entry condition into a small neighborhood around zero, the number of effective sign flips exhibits a geometric tail. Building on this mechanism, we introduce a gap-based initialization and a lightweight outward-drift regularizer, reducing the effective flip rate to approximately \$10\textasciicircum\textbraceleft -3\textbraceright\$ with only about a one-point increase in perplexity.},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords = {Artificial Intelligence (cs.AI),Computation and Language (cs.CL),Computer Vision and Pattern Recognition (cs.CV),FOS: Computer and information sciences,Machine Learning (cs.LG)}
+}
+
 @book{schellArtGameDesign2015a,
   title = {The Art of Game Design: A Book of Lenses},
   shorttitle = {The Art of Game Design},
