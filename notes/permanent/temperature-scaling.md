@@ -8,7 +8,7 @@ tags:
 summary: a parameter that controls how confident Softmax predictions are
 ---
 
-Temperature scaling controls how "confident" a model is when making predictions by adjusting the sharpness of probability distributions produced by the [Softmax Function](softmax-activation-function.md).
+Temperature scaling controls how "confident" a model is when making predictions by adjusting the sharpness of probability distributions produced by the [Softmax Function](softmax-function.md).
 
 Softmax is a function that converts a neural network's raw outputs (logits) into probabilities that sum to 1. For example, in a dog breed classifier, the model might output logits representing its confidence for different breeds, and the Softmax function would convert those into probability-like values:
 
