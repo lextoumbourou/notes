@@ -1,13 +1,11 @@
 ---
 title: Research, Plan, Implement Workflow
-date: 2026-02-22 13:40
-modified: 2026-02-22 13:40
+date: 2026-03-22 00:00
+modified: 2026-04-13 00:00
 tags:
-  - LLMs
-  - AIAssistedSoftwareEngineering
   - SoftwareEngineering
-  - ClaudeCodeTips
-source: https://boristane.com/blog/how-i-use-claude-code/
+  - AgenticReasoning
+status: draft
 ---
 
 For people that have been using Claude Code or Codex for a while, there's a very obvious pattern that we find ourselves doing: we ask Claude to research part of the code, then we tell it what we want and ask for a plan that we iterate on, then we implement based on the plan.
