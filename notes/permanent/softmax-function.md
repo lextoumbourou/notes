@@ -21,7 +21,7 @@ It is the multi-class extension of the [Sigmoid Activation Function](Sigmoid Act
 
  Code example:
 
-```python {run format=image id=softmax-output}
+```python
 import numpy as np
 import pandas as pd
 
