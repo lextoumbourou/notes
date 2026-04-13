@@ -34,7 +34,7 @@ probs = softmax(logits)
 df = pd.DataFrame({'logit': logits, 'prob': probs}, index=['woman', 'man', 'camera', 'tv'])
 df
 ```
-<!-- nb-output id="softmax-output" hash="c7a4398df7a8bc35" format="html" -->
+<!-- nb-output hash="c7a4398df7a8bc35" format="html" -->
 <div class="nb-output">
 <div class="nb-output-html"><div>
 <style scoped>
