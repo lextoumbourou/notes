@@ -8,49 +8,41 @@ tags:
 status: draft
 ---
 
-For people that have been using Claude Code or Codex for a while, there's a very obvious pattern that we find ourselves doing: we ask Claude to research part of the code, then we tell it what we want and ask for a plan that we iterate on, then we implement based on the plan.
+For people who have been using Claude Code or a similar agentic coding tool for a while, there's a very obvious pattern that we find ourselves doing: start a new session by asking the agent to research part of the code, then we tell it what we want and iterate on a plan, then we implement based on the plan.
 
-This is absolutely not an original idea. My colleagues have been using this approach, and there's a some great writing on it out there, like this blog post from Boris Tane [How I Use Claude Code](https://boristane.com/blog/how-i-use-claude-code)
+This is absolutely not an original idea. My colleagues have been using this approach, and there's some great writing on it out there, like this blog post from Boris Tane [How I Use Claude Code](https://boristane.com/blog/how-i-use-claude-code)
 
-The idea is that each development loop with Claude starts with **Research**, **Planning** then **Implementation**. It's very similar to [Spec-First LLM Development](spec-first-llm-development.md) , in fact, it is really just another term for it. However, it describes a concrete approach to using the tools, rather than an abstract idea.
+The idea is that each development loop with Claude starts with **Research**, **Planning** then **Implementation**. It's very similar to [Spec-First LLM Development](spec-first-llm-development.md); in fact, it's just another term for it. However, it describes a concrete approach to using the tools, rather than an abstract idea.
 ##  Research
 
-   - Ask the model to deeply read relevant code and write a persistent `research.md`.
-    * study the notification system in great details, understand the intricacies of it and write a detailed research.md document with everything there is to know about how notifications work
-    * read this folder in depth, understand how it works deeply, what it does and all its specificities. when that’s done, write a detailed report of your learnings and findings in research.md
-   - Purpose: verify understanding before making architectural changes
+In the research phase, we ask the model to read the relevant code. In my work codebase, that's usually an entire service directory or a path within it. In Boris Tane's article, we write a persistence `research.md` file.  Although I do find that useful for some problems, I'm not sure the persistence is always required.
+
+The key detail is that you want the agent to write a summary of its research, and check that it aligns with your understanding.
+
+This research will be referred to during the next key stage.
+
 ## Planning
 
-Generate a detailed `plan.md` with file-level changes, snippets, and trade-offs.
+Next, we want to tell the LLM what we want to do and work together to develop a plan.
 
-I want to build a new feature `<name and description>` that extends the system to perform `<business outcome>`. write a detailed plan.md document outlining how to implement this. include code snippets
+Claude Code has a Planning Mode that I sometimes use. t.
 
-## **Annotation cycle**
+Usually, the outcome is a plan that includes a to-do list for the LLM.
 
-   - Human adds inline notes directly in the plan.
-   - Model updates the plan to address notes.
-   - Repeat until the plan is correct.
-#### **Todo breakdown**
-   - Add granular checklist/tasks to track progress during execution.
+### Planning Techniques
 
-#### **Implementation**
+#### Interviews
 
-   - Execute against the approved plan and mark tasks complete in the document.
-   - Keep quality constraints explicit (types, checks, no unnecessary bloat).
-   
-### **Terse feedback loop**
-   - During implementation, human gives short corrections and references existing patterns.
+Some useful techniques here are to get the LLM to interview you and to make sure you agree on exactly what the solution needs to look like.
 
+#### Collaborate on Plan File
 
-- Separates **thinking** from **typing**.
-- Uses markdown plans as shared, durable state (survives long sessions/compaction better than chat alone).
-- Reduces early wrong assumptions and rework.
-- Keeps human judgment in control of scope and trade-offs.
+Boris likes to write the `plan.md`, which I have experimented with in the past. He adds inline notes directly to the plan and gets the model to read them. Repeating until the plan is correct.
 
-## Connection to Spec-First LLM Development
+## Implementation
 
+Finally, we execute against the approved plan and mark tasks complete in the document. Getting the LLM to write tests first can be a great starting point. I like to work with the LLM here. Typically, it will not get everything right. There's no shame in editing code yourself, correcting comments and so forth.
+ 
+---
 
-This is strongly aligned with [[public/notes/permanent/spec-first-llm-development|Spec-First LLM Development]]: both use persistent specs/plan artifacts as the control surface for AI-assisted coding before implementation.
-
-## Practical takeaway
-Treat implementation as a mostly mechanical phase. Put creativity and decision-making into research + plan review iterations first.
+Even though the pattern is obvious, it doesn't hurt to give it a name.
