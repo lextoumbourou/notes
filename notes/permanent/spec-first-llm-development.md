@@ -4,6 +4,7 @@ date: 2026-01-19 00:00
 modified: 2026-01-19 00:00
 summary: "in which the LLM maintains a spec file alongside the project"
 cover: /_media/spec-first-llm-development-cover.png
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mdqtpk6e5s2c
 tags:
 - SoftwareEngineering
 - AgenticReasoning

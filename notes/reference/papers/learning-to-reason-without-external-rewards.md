@@ -3,6 +3,7 @@ title: Learning to Reason without External Rewards
 date: 2025-05-28 00:00
 modified: 2025-05-28 00:00
 cover: /_media/rlif-cover.png
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3lqlfvwvszm2a
 summary: "aka Self-Confidence is All You Need"
 hide_cover_in_article: true
 category: reference/papers

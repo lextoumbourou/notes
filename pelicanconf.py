@@ -46,7 +46,8 @@ PLUGINS = [
     "subcategory",
     nb_liquid,
     "md_link_converter",
-    "linked_mentions"
+    "linked_mentions",
+    "bluesky_comments"
 ]
 
 PUBLICATIONS_SRC = "notes/citations.bib"
