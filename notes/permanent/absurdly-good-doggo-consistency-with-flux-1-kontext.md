@@ -8,6 +8,7 @@ tags:
 - ImageGeneration
 cover: /_media/flux1-experiments/doggo-convertable.jpg
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3lqlfw3h3j424
+mastodon_post: https://fedi.notesbylex.com/@lex/114610686219001915
 ---
 
 

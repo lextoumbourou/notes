@@ -5,6 +5,8 @@ def add_bluesky_metadata(generator):
     for article in generator.articles:
         if not hasattr(article, 'bluesky_post'):
             article.bluesky_post = None
+        if not hasattr(article, 'mastodon_post'):
+            article.mastodon_post = None
 
 
 def register():

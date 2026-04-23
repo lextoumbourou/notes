@@ -4,6 +4,7 @@ date: 2025-05-23 00:00
 modified: 2025-05-23 00:00
 summary: "on John Carmack's Upperbound 25 Talk Notes"
 cover: /_media/atari-realtime.png
+mastodon_post: https://fedi.notesbylex.com/@lex/114566485688726134
 category: reference/talks
 tags:
 - GamePlayingAI

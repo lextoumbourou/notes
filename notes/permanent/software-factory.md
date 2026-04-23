@@ -4,6 +4,7 @@ date: 2026-02-08 00:00
 modified: 2026-02-08 00:00
 cover: /_media/software-factory-cover.jpeg
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mecieamjac2d
+mastodon_post: https://fedi.notesbylex.com/@lex/116031765064843416
 summary: "is verification the future of software engineering?"
 tags:
 - SoftwareEngineering

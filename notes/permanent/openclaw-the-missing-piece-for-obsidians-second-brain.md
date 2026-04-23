@@ -5,6 +5,7 @@ modified: 2026-01-29 11:40
 summary: "how I integrate OpenClaw into my Obsidian vault"
 cover: /_media/openclaw-and-obsidian/openclaw-and-obsidian-cover.png
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mdqxwotdgc2c
+mastodon_post: https://fedi.notesbylex.com/@lex/115992306678660814
 tags:
 - Obsidian
 - OpenClaw
