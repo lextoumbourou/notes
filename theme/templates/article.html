@@ -44,16 +44,30 @@
 
         <div class="clear"></div>
 
-        {% if article.bluesky_post %}
+        {% if article.bluesky_post or article.mastodon_post %}
         <hr>
-        <div class="bluesky-comments-header">
-          <h3>Comments</h3>
-          <p>Reply to <a href="{{ article.bluesky_post }}" target="_blank" rel="noopener">this post on Bluesky</a> to join the conversation.</p>
-        </div>
+        <h3>Comments</h3>
+        <p>Reply to this post on
+          {%- if article.bluesky_post %} <a href="{{ article.bluesky_post }}" target="_blank" rel="noopener">Bluesky</a>{% endif %}
+          {%- if article.bluesky_post and article.mastodon_post %} or{% endif %}
+          {%- if article.mastodon_post %} <a href="{{ article.mastodon_post }}" target="_blank" rel="noopener">Mastodon</a>{% endif %}
+          to join the conversation.</p>
+        {% endif %}
+
+        {% if article.bluesky_post %}
         <bluesky-comments url="{{ article.bluesky_post }}"></bluesky-comments>
         <script type="module">
           import "https://esm.sh/bluesky-comments-tag/load";
         </script>
+        {% endif %}
+
+        {% if article.mastodon_post %}
+        <link rel="stylesheet" href="https://esm.sh/gh/oom-components/mastodon-comments/src/styles.css">
+        <script type="module">
+          import Comments from "https://esm.sh/gh/oom-components/mastodon-comments/src/comments.js";
+          customElements.define("oom-comments", Comments);
+        </script>
+        <oom-comments mastodon="{{ article.mastodon_post }}"></oom-comments>
         {% endif %}
       </div>
   </article>

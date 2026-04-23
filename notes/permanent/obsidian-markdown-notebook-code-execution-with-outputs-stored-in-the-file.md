@@ -8,6 +8,7 @@ summary: "A Jupyter Notebook-style Obsidian plugin that runs code in your notes 
 tags:
 - ObsidianPlugins
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mjyjfn6ef22q
+mastodon_post: https://fedi.notesbylex.com/@lex/116441657095403744
 ---
 
 I've built [Obsidian Markdown Notebook](https://github.com/lextoumbourou/obsidian-markdown-notebook), a plugin that lets you execute code in Obsidian with both code and output stored in the same file, kinda like a Markdown [Jupyter Notebook](https://jupyter.org/).

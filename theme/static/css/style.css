@@ -149,6 +149,14 @@ hr {
   border:0;
 }
 
+bluesky-comments {
+  --bluesky-avatar-size: 50px;
+}
+
+oom-comments {
+  padding: 0;
+}
+
 .img-annotated {
   margin: 40px auto;
   text-align: center;
