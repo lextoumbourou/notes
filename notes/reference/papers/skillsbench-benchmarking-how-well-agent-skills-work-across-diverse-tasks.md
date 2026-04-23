@@ -4,6 +4,7 @@ date: 2026-02-21 00:00
 modified: 2026-02-21 00:00
 summary: "Self-generated skills don't help."
 cover: /_media/skillsbench-cover.png
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mflrlxrlks2l
 tags:
 - AgenticReasoning
 - SoftwareEngineering

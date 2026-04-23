@@ -43,6 +43,18 @@
         </div>
 
         <div class="clear"></div>
+
+        {% if article.bluesky_post %}
+        <hr>
+        <div class="bluesky-comments-header">
+          <h3>Comments</h3>
+          <p>Reply to <a href="{{ article.bluesky_post }}" target="_blank" rel="noopener">this post on Bluesky</a> to join the conversation.</p>
+        </div>
+        <bluesky-comments url="{{ article.bluesky_post }}"></bluesky-comments>
+        <script type="module">
+          import "https://esm.sh/bluesky-comments-tag/load";
+        </script>
+        {% endif %}
       </div>
   </article>
 </section>

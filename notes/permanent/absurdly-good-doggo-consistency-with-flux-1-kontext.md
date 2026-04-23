@@ -7,6 +7,7 @@ tags:
 - ImageEditing
 - ImageGeneration
 cover: /_media/flux1-experiments/doggo-convertable.jpg
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3lqlfw3h3j424
 ---
 
 

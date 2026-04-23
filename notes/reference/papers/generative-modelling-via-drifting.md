@@ -4,6 +4,7 @@ date: 2026-02-11 00:00
 modified: 2026-02-15 00:00
 summary: "A new paradigm for single-step generative modelling"
 cover: /_media/drifting-models-figure-4.png
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mevdrc7br22h
 category: reference/papers
 tags:
 - GenerativeModelling

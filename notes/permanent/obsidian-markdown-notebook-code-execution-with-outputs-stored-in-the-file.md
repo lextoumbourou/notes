@@ -7,6 +7,7 @@ hide_cover_in_article: true
 summary: "A Jupyter Notebook-style Obsidian plugin that runs code in your notes and stores the outputs directly in the Markdown file."
 tags:
 - ObsidianPlugins
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mjyjfn6ef22q
 ---
 
 I've built [Obsidian Markdown Notebook](https://github.com/lextoumbourou/obsidian-markdown-notebook), a plugin that lets you execute code in Obsidian with both code and output stored in the same file, kinda like a Markdown [Jupyter Notebook](https://jupyter.org/).
