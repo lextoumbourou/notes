@@ -8,6 +8,8 @@ tags:
   - SoftwareEngineering
 cover: /_media/named-things-is-easy-now-cover.jpg
 summary: I guess there is only one hard thing left in Computer Science?
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mkcf4zley225
+mastodon_post: https://fedi.notesbylex.com/@lex/116463868139379738
 ---
 
 > “There are only two hard things in Computer Science: cache invalidation and naming things.” - **Phil Karlton**
