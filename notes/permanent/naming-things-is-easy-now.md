@@ -12,17 +12,17 @@ summary: I guess there is only one hard thing left in Computer Science?
 
 > “There are only two hard things in Computer Science: cache invalidation and naming things.” - **Phil Karlton**
 
-I think naming things is not so hard anymore (cache invalidation is about the same).
+I don't think naming things is hard anymore (cache invalidation is about the same).
 
-LLMs, with their default of sampling from the highest-probability tokens, make for painfully boring and mediocre writing, but for many naming tasks, that’s exactly what you want.
+LLMs, with their default of sampling from the highest-probability tokens, make for painfully boring and mediocre writing, but for many naming tasks, that’s exactly what you want. For example: naming methods for a public API; choosing names for events, actions, states etc; or trying to name an as-yet unnamed but known concept.
 
-For example: naming methods for a public API, choosing names for events, actions, and states in a codebase, or trying to name a concept that doesn’t yet have a name.
+It also drastically reduces the time wasted bike-shedding or being stuck in analysis paralysis that often comes with naming tasks.
 
-It also drastically reduces time wasted in analysis paralysis.
-
-[Simon Willison said something similar](https://simonwillison.net/2023/Aug/3/weird-world-of-llms/) in the context of API design. I’m sure many others have said it too:
+[Simon Willison said something similar](https://simonwillison.net/2023/Aug/3/weird-world-of-llms/) in the context of API design:
 
 > “A common criticism of these things is that they always come up with the most obvious answer… but when you’re designing an API, that’s exactly what you want.”
+
+I’m sure many others have said it too.
 
 My approach to naming things with LLMs is something like this:
 
@@ -35,7 +35,7 @@ My approach to naming things with LLMs is something like this:
 4. If one of the top candidate names is in the hold-out set, that’s a pretty damn good signal we have a winner. If the model’s candidates and mine are completely different, there’s a good chance I haven’t explained the concept well enough.
 5. If I don’t see a clear winner in the candidate set, I’ll do another round. This time, I’ll give it my hold-out set of names and ask it to reason through whether my names or its names are better, and why.
 
-In a very short while, I usually find a name that feels obviously right.
+In a short while, I usually find a name that feels obviously right.
 
 ---
 
