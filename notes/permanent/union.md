@@ -6,7 +6,7 @@ status: draft
 
 A merge operation between between 2 [Set](set.md)s.
 
-Represented by the $\cup$ symbol (`\cup` in [LaTeX](LaTeX.md)).
+Represented by the $\cup$ symbol (`\cup` in [Latex](LaTeX.md)).
 
 Example (using [Listing Method](set-listing-method.md):
 

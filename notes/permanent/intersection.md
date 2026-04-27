@@ -6,7 +6,7 @@ status: draft
 
 The set of elements that common to 2 sets.
 
-Represented by the $\cap$ symbol (`\cap` in [LaTeX](LaTeX.md)).
+Represented by the $\cap$ symbol (`\cap` in [Latex](LaTeX.md)).
 
 Example (using [Listing Method](set-listing-method.md)):
 
