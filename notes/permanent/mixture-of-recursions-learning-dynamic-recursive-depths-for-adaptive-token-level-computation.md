@@ -9,6 +9,7 @@ tags:
 - TestTimeScaling
 cover: /_media/mor-article-cover.png
 hide_cover_in_article: true
+category: reference/papers
 ---
 
 *My notes on paper [Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation](https://arxiv.org/pdf/2507.10524) by Sangmin Bae, Yujin Kim, Reza Bayat, Sungnyun Kim, Jiyoun Ha, Tal Schuster, Adam Fisch, Hrayr Harutyunyan, Ziwei Ji, Aaron Courville and Se-Young Yun*
