@@ -1,19 +1,21 @@
 ---
-title: "OpenGame: Open Agentic Coding for Games"  
-date: 2026-04-29 00:00  
-modified: 2026-04-29 00:00  
-status: draft  
-category: reference/papers  
+title: "OpenGame: Open Agentic Coding for Games"
+date: 2026-04-29 00:00
+modified: 2026-04-29 00:00
+category: reference/papers
 cover: /_media/jiang-et-all-figure-2.png
-hide_cover_in_article: true  
-tags:  
-- AgenticReasoning  
+hide_cover_in_article: true
+summary: "An agentic framework for end-to-end game creation"
+tags:
+- AgenticReasoning
 - GameDevelopment
 ---
 
 *My notes on [OpenGame: Open Agentic Coding for Games](https://arxiv.org/abs/2604.18394v1) by Yilei Jiang, Jinyuan Hu, Qianyin Xiao, Yaozhi Zheng, Ruize Ma, Kaituo Feng, Jiaming Han, Tianshuo Peng, Kaixuan Fan, Manyuan Zhang, Xiangyu Yue*
 
-A paper very relevant to my interests right now: **OpenGame: Open Agentic Coding for Games** [@jiangOpenGameOpenAgentic2026] describes **OpenGame**, an agentic framework designed for end-to-end web game creation.
+A paper very relevant to my interests right now.
+
+**OpenGame: Open Agentic Coding for Games** describes **OpenGame**, an agentic framework designed for end-to-end web game creation. [@jiangOpenGameOpenAgentic2026]
 
 The paper argues that to build products as complex as games, the field needs to move beyond *generalist code agents* to *specialist frameworks*. Reminds me of the [SheetCopilot Agent](../../permanent/sheetcopilot-agent.md), an agentic framework for spreadsheet controls, and systems like [AlphaEvolve](alphaevolve-a-coding-agent-for-scientific-and-algorithmic-discovery.md), a system for algorithmic discovery.
 

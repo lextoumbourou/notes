@@ -2304,7 +2304,7 @@ requires-dist = [
     { name = "pelican-jupyter", git = "https://github.com/lextoumbourou/pelican-jupyter.git" },
     { name = "pelican-katex", specifier = "==1.6.1" },
     { name = "prometheus-client", specifier = ">=0.23.1" },
-    { name = "pybtex", specifier = "==0.22.2" },
+    { name = "pybtex", specifier = "==0.26.1" },
     { name = "pydicom", specifier = ">=3.0.1" },
     { name = "scikit-learn", specifier = ">=1.7.2" },
 ]
@@ -2320,16 +2320,15 @@ wheels = [
 
 [[package]]
 name = "pybtex"
-version = "0.22.2"
+version = "0.26.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "latexcodec" },
     { name = "pyyaml" },
-    { name = "six" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/74/73/cbb788404c1b90e7b15f411e60eadeb67965d36a0738775ca031931fedd1/pybtex-0.22.2.tar.gz", hash = "sha256:00816e5f8570609d8ce3360cd23916bd3e50428a3508127578fdb4dc2b731c1c", size = 363094 }
+sdist = { url = "https://files.pythonhosted.org/packages/4d/f5/f30da9c93f0fa6d619332b2f69597219b625f35780473a05164a9981fd9a/pybtex-0.26.1.tar.gz", hash = "sha256:2e5543bea424e60e9e42eef70bff597be48649d8f68ba061a7a092b2477d5464", size = 692991 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/94/2a/11039970561f1bbc74fbaca89b59c26b398a0a70bba8caad553ac779b4f7/pybtex-0.22.2-py2.py3-none-any.whl", hash = "sha256:9ce2ce13d8d4f5a8d3848463f58167dbbbe75a53511f1088eaa6197637cdf8cf", size = 279275 },
+    { url = "https://files.pythonhosted.org/packages/44/f6/775eb92e865b28cdb4ad1f2bed7a5446197516f76b58a950faa3be3fd08d/pybtex-0.26.1-py3-none-any.whl", hash = "sha256:e26c0412cc54f5f21b2a6d9d175762a2d2af9ccf3a8f651cdb89ec035db77aa1", size = 126134 },
 ]
 
 [[package]]

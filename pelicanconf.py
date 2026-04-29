@@ -47,7 +47,8 @@ PLUGINS = [
     nb_liquid,
     "md_link_converter",
     "linked_mentions",
-    "bluesky_comments"
+    "bluesky_comments",
+    "pelican_cite",
 ]
 
 PUBLICATIONS_SRC = "notes/citations.bib"

@@ -23,7 +23,7 @@ dependencies = [
     "pelican-jupyter",
     "pelican-katex==1.6.1",
     "prometheus-client>=0.23.1",
-    "pybtex==0.22.2",
+    "pybtex==0.26.1",
     "pydicom>=3.0.1",
     "scikit-learn>=1.7.2",
 ]
