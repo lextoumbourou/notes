@@ -20,7 +20,7 @@ Natural language tasks to spreadsheet controls.
 
 Uses [Atomic Actions](../../permanent/atomic-actions.md): an abstraction of spreadsheet software functionalities.
 
-Uses a [State Machine](../../permanent/state-machine.md) Task [Planning](../../permanent/planning.md) framework for LLMs to interact with spreadsheets.
+Uses a [state-machine](../../permanent/state-machine.md) Task [Planning](../../permanent/planning.md) framework for LLMs to interact with spreadsheets.
 
 Curate a dataset of 221 spreadsheet control tasks.
 

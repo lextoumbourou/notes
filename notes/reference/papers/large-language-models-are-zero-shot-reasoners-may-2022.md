@@ -94,7 +94,7 @@ The results were remarkable. For example, on the MultiArith dataset, accuracy in
 
 ## Why This Matters
 
-This discovery has several important implications for [[Large Language Models]].
+This discovery has several important implications for [Large Language Models](../../permanent/large-language-models.md).
 
 1. It suggests that LLMs have inherent reasoning capabilities that can be accessed with the right prompting
 2. It provides a simpler alternative to few-shot learning for complex tasks
