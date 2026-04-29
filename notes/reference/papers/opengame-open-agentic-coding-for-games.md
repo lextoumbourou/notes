@@ -6,8 +6,8 @@ category: reference/papers
 cover: /_media/jiang-et-all-figure-2.png
 hide_cover_in_article: true
 summary: "An agentic framework for end-to-end game creation"
-mastodon_link: https://fedi.notesbylex.com/@lex/116489956360313366
-bluesky_link: https://bsky.app/profile/notesbylex.com/post/3mknxwdphfs2s
+mastodon_post: https://fedi.notesbylex.com/@lex/116489956360313366
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mknxwdphfs2s
 tags:
 - AgenticReasoning
 - GameDevelopment
