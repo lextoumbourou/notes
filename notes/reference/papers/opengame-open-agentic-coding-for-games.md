@@ -15,34 +15,24 @@ tags:
 
 A paper very relevant to my interests right now.
 
-**OpenGame: Open Agentic Coding for Games** describes **OpenGame**, an agentic framework designed for end-to-end web game creation. [@jiangOpenGameOpenAgentic2026]
+Paper describes **OpenGame**, an agentic framework designed for end-to-end web game creation. [@jiangOpenGameOpenAgentic2026]
 
-The paper argues that to build products as complex as games, the field needs to move beyond *generalist code agents* to *specialist frameworks*. Reminds me of the [SheetCopilot Agent](../../permanent/sheetcopilot-agent.md), an agentic framework for spreadsheet controls, and systems like [AlphaEvolve](alphaevolve-a-coding-agent-for-scientific-and-algorithmic-discovery.md), a system for algorithmic discovery.
+The paper argues that to build products as complex as games, the field needs to move beyond *generalist code agents* to *specialist frameworks*.
 
 The paper basically throws the kitchen sink at the problem of game design: a base model, a code agent, a new collection of [Agent Skills](../../permanent/agent-skills.md) for game development, and a new benchmark and evaluation framework.
 
-![jiang-et-all-figure-2.png](../../_media/jiang-et-all-figure-2.png)  
+![jiang-et-all-figure-2.png](../../_media/jiang-et-all-figure-2.png)
 *Figure 2. [@jiangOpenGameOpenAgentic2026]*
-
-### Common Failure Modes
-
-They identify three reasons why general-purpose LLMs struggle to produce complete, playable games:
-
-1. **Logical Incoherence**: the model loses track of global state across the game loop, causing freezes, failures to terminate, or mechanics that never materialise.  
-2. **Engine-Specific Knowledge Gaps**: general models misuse or ignore engine abstractions, reimplementing mechanics from scratch instead of using framework-native physics, scene, and event systems.  
-3. **Cross-File Inconsistencies**: individual files look plausible, but the overall project breaks due to mismatched asset keys, flawed scene wiring, missing config fields, or broken init order.
-
-The argument is that fixing this requires frameworks that understand the *intrinsic structure* of games, not just better prompting of generalist agents.
 
 ### Base Model
 
 They build a new foundation model based on a Qwen3.5-27B backbone, called **GameCoder-27B**, via a three-stage pipeline:
 
-[Continual Pre-Training (CPT)](../../../../permanent/continual-pre-training-cpt.md) on a corpus of open-source Phaser and JavaScript/TypeScript game repositories from GitHub, with docs and tutorials, to build strong priors over game loops, physics systems, asset usage, and state management.
+[Continual Pre-Training (CPT)](../../permanent/continual-pre-training-cpt.md) on a corpus of open-source Phaser and JavaScript/TypeScript game repositories from GitHub, with docs and tutorials, to build strong priors over game loops, physics systems, asset usage, and state management.
 
 [Supervised Fine-Tuning](../../permanent/fine-tuning.md) on game generation prompts using `gpt-codex5.1`, with solutions from `minimax2.5`. For example: *"Implement a 2D platformer character controller with double-jump and sprite animations."*
 
-[Reinforcement Learning (RL)](../../permanent/reinforcement-learning.md) at the component level — execution grounded, rewarding unit test pass rate and execution success on single-file gameplay logic and targeted functional modules (e.g., collision detection, state-machine transitions). Getting the model strong at the component level works because a downstream agent assembles those building blocks into a full multi-file project.
+[Reinforcement Learning (RL)](../../permanent/reinforcement-learning.md) at the component level: execution grounded, rewarding unit test pass rate and execution success on single-file gameplay logic and targeted functional modules (e.g., collision detection, state-machine transitions). Getting the model strong at the component level works because a downstream agent assembles those building blocks into a full multi-file project.
 
 ### Code Agent Design
 
@@ -52,11 +42,11 @@ OpenGame orchestrates the agent through six operational phases, using a persiste
 
 #### 1. Classification
 
-The agent invokes `classify-game-type`, which applies a **Physics-First Classification** rule. Rather than relying on ambiguous genre labels, it categorises the task by physical constraints and spatial mechanics  (e.g. "falling without ground support" == platformer archetype, "snapping to a grid" == `grid_logic`. This sets the macro-level execution plan.
+The agent invokes `classify-game-type`, which applies a Physics-First Classification rule. Rather than relying on ambiguous genre labels, it categorises the task by physical constraints and spatial mechanics (e.g. "falling without ground support" == platformer archetype, "snapping to a grid" == `grid_logic`). This sets the macro-level execution plan.
 
 #### 2. Scaffolding
 
-Once the game archetype is known, the agent runs `run_shell_command` to copy the shared core, the appropriate `modules/{archetype}` codebase, and the relevant architectural documentation into the workspace. This creates a stable structural baseline before any game-specific implementation begins.
+Once the game archetype is known, the agent runs `run_shell_command` to copy the shared scaffolding codebase and relevant architectural documentation into the workspace, giing the model a baseline to operate from.
 
 #### 3. GDD Generation
 
@@ -100,8 +90,22 @@ Maintains a living debugging protocol $P$, updated from observed build, test, an
 
 A new evaluation pipeline for agentic game generation, scoring output across three metrics:
 
-- Build Health: whether the project compiles and runs without errors under headless browser execution.
-- Visual Usability: whether the game is visually coherent and navigable, assessed via VLM judging.
-- Intent Alignment: whether the generated game matches the original natural-language specification.
+* Build Health: whether the project compiles and runs without errors under headless browser execution.
+* Visual Usability: whether the game is visually coherent and navigable, assessed via VLM judging.
+* Intent Alignment: whether the generated game matches the original natural-language specification.
 
 Evaluation uses a combination of headless browser execution and VLM judging across 150 game prompts.
+
+---
+
+They identify three reasons why general-purpose LLMs struggle to produce complete, playable games:
+
+1. **Logical Incoherence**: the model loses track of global state across the game loop, causing freezes, failures to terminate, or mechanics that never materialise.
+2. **Engine-Specific Knowledge Gaps**: general models misuse or ignore engine abstractions, reimplementing mechanics from scratch instead of using framework-native physics, scene, and event systems.
+3. **Cross-File Inconsistencies**: individual files look plausible, but the overall project breaks due to mismatched asset keys, flawed scene wiring, missing config fields, or broken init order.
+
+The argument is that fixing this requires frameworks that understand the *intrinsic structure* of games, not just better prompting of generalist agents.
+
+---
+
+Reminds me of the [SheetCopilot Agent](../../permanent/sheetcopilot-agent.md), an agentic framework for spreadsheet controls, and systems like [AlphaEvolve](alphaevolve-a-coding-agent-for-scientific-and-algorithmic-discovery.md), a system for algorithmic discovery.
