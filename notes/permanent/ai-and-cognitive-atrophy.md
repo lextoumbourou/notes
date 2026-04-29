@@ -13,9 +13,11 @@ This post was originally [a Hacker News comment](https://news.ycombinator.com/it
 I have a feeling that a big risk of using AI all the time is that our own neurological capacity starts to dwindle.
 Just as many people leading sedentary lifestyles have to make a deliberate effort to exercise, because inactivity is really bad for our bodies, I think we're going to realise that a similar process is necessary for our minds.
 
-You really want to be spending a bit of time every day operating at your cognitive limits - trying to fully engage your System 2 - if you want to avoid brain atrophy. Coding used to kind of give you this exercise for free, but you can go really far with just your System 1 nowadays - literally get things done while scrolling Reddit.
+You really want to be spending a bit of time every day operating at your cognitive limits - trying to fully engage your System 2 - if you want to avoid brain atrophy. Progressive overloading for the mind.
 
-I'm trying to allocate 30-60 minutes a day to doing something difficult, like writing code by hand for an unfamiliar problem or reading and summarising difficult papers without AI.
+Coding used to kind of give you this exercise for free, but you can go really far with just your System 1 nowadays - literally get things done while scrolling Reddit.
+
+I've been trying to combat this by allocating 30-60 minutes a day to doing something mentally difficult, like writing code by hand for an unfamiliar problem or reading and summarising difficult papers without AI.
 
 ---
 
