@@ -31,13 +31,13 @@ The intuition for why the order doesn't matter:
 * If $\vec{v}$ and $\vec{w}$ were the same length, we draw a line of symmetry between them.
 * Then, we project $\vec{w}$ onto $\vec{v}$, it would be identical to protecting $\vec{v}$ onto $\vec{w}$.
 
-  ![Dot product symmetry](/_media/dot-product-symmetry-example.png)
+  ![Dot product symmetry](../../../_media/dot-product-symmetry-example.png)
 
 * Now, if we scaled up the vector $\vec{v}$ by a factor of 2, the symmetry is broken. However, we can see that if we project $\vec{w}$ onto $\vec{v}$, the length of the projection $w$ isn't changed, but the vector we're projecting on has changed.
 
   On the other hand, if we project $\vec{v}$ onto $\vec{w}$, we double the length of the projection, which has the same effect.
 
-  ![Dot product scaled symmetry](/_media/dot-product-scaled-symmetry-example.png)
+  ![Dot product scaled symmetry](../../../_media/dot-product-scaled-symmetry-example.png)
 
 One question one might ask: why does the process of matching coordinates, multiplying pairs, and adding together have anything to do with projection? To understand that, we have to uncover something called *duality*.
 
@@ -57,7 +57,7 @@ $\begin{bmatrix}1 \\ -2\end{bmatrix}$
 
 Now, to follow where a vector like $\begin{bmatrix}4 \\ 3\end{bmatrix}$ would land, find the vector that's $4 \times \hat{i}$ and $3 \times \hat{j}$: $4 \times (1) + 3 \times -2 = -2$
 
-![Dot product 1d transform example](/_media/dot-product-1d-transform.png)
+![Dot product 1d transform example](../../../_media/dot-product-1d-transform.png)
 
 In this case, it lands on -2.
 
@@ -65,11 +65,11 @@ When doing the calculation numerically, it's matrix-vector multiplication. But, 
 
 Suppose we take a copy of the number line and space it in 2d space. Then create a 2d unit vector $\hat{u}$ whose tip sits on the 1 in the number line.
 
-![1d in 2d unit vector](/_media/1d-in-2d-unit-vector.png)
+![1d in 2d unit vector](../../../_media/1d-in-2d-unit-vector.png)
 
 If you project any vector onto the number line, you have a transformation that takes 2d vectors to numbers.
 
-![1d transformation](/_media/1d-transformation-visualisation.png)
+![1d transformation](../../../_media/1d-transformation-visualisation.png)
 
 The function is linear since it passes the test that lines remain evenly spaced.
 
@@ -83,7 +83,7 @@ Since $\hat{i}$ and $\hat{u}$ are unit vectors, when you project $\hat{i}$ onto 
 
 But, by projecting $\hat{u}$ onto $\hat{i}$, it should be the same as just taking the $x$ coordinate of $\hat{u}$.
 
-![u-hat projection](/_media/u-hat-projection.png)
+![u-hat projection](../../../_media/u-hat-projection.png)
 
 For $\hat{j}$, the reasoning is identical. The $y$ coordinate of $\hat{u}$ gives you the projection onto $\hat{j}$
 

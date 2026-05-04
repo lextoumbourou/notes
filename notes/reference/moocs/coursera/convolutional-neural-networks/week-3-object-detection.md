@@ -70,7 +70,7 @@ status: draft
     * Replace the last fc layer with a 1x1x400 conv layer.
     * Replace the softmax output with a 1x1x4 conv layer.
 
-![Turning Convolution Layers to FC](/_media/conv-to-fc.png)
+![Turning Convolution Layers to FC](../../../../_media/conv-to-fc.png)
 
 * This conversion lets you implement a convolutional implementation of sliding windows detection.
 * Instead of running forward prop on a bunch of different sections of the image, can run it just once with the filters sharing a lot of data.
@@ -91,7 +91,7 @@ status: draft
 
 ## Intersection Over Union
 
-![Intersection over union](/_media/intersection-over-union.png)
+![Intersection over union](../../../../_media/intersection-over-union.png)
 
 * Measure of overlap between 2 bounding boxes.
 * Bounding boxes considered correct if IoU >= 0.5.

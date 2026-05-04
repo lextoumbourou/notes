@@ -19,7 +19,7 @@ To calculate 180°, we can divide both sides by 2: $\frac{2 \ \pi \ \textrm{radi
 
 We can then divide both sides by $\pi$ to find one radian: $\text{radian} = \frac{180}{\pi} = ~57.2958$
 
-![Radian cover](/_media/radian-cover.png)
+![Radian cover](../_media/radian-cover.png)
 
 Most programming languages provide simple functions for converting between radians and degrees.
 

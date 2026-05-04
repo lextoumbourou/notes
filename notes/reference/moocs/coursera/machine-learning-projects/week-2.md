@@ -58,7 +58,7 @@ parent: machine-learning-projects
   * Add an extra set called training-dev set from the training distribution.
 * Called a "data mismatch" when performance is good on training-dev but not dev.
 
-  ![Data mismatch](/_media/data-mismatch.png)
+  ![Data mismatch](../../../../_media/data-mismatch.png)
 
 * No "super systematic" ways to go about addressing data mismatch.
 

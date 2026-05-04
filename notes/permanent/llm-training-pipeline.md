@@ -5,7 +5,7 @@ modified: 2026-04-29 00:00
 status: draft
 ---
 
-A typical pipeline for training [Large Language Models](../../../permanent/large-language-models.md).
+A typical pipeline for training [Large Language Models](large-language-models.md).
 
 Steps typically include:
 

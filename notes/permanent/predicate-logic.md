@@ -22,7 +22,7 @@ A predicate becomes a proposition when the variable are substituted for values.
 
 * $P(2)$: "2 is a prime number" (True)
 
-## [Quantifiers](../journal/permanent/logical-quantifiers.md)
+## [Quantifiers](logical-quantifiers.md)
 
 Quantifiers describe how many of a thing there are.
 

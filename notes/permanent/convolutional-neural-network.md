@@ -8,11 +8,11 @@ aliases:
 
 A **Convolutional Neural Network (CNN)** is a particular type of neural network that learns feature engineer via filters (aka kernels) optimisation.
 
-Typically a CNN contains multiple combinations of a [[convolutional-layer|Convolutional Layer]] and a [[Pooling Layer]].
+Typically a CNN contains multiple combinations of a [Convolutional Layer](convolutional-layer.md) and a [Pooling Layer](../../../permanent/pooling-layer.md).
 
 ## Convolutional Layer
 
-The convolutional layer extracts features from an input image by applying a [[Kernel]] to different parts of an image. The concept of a *kernel* comes from image processing , and is a small matrix which is applied over different regions of the matrix. It can be used for blurring, sharening, embossing, edge detection and so on.
+The convolutional layer extracts features from an input image by applying a [Kernel](Kernel.md) to different parts of an image. The concept of a *kernel* comes from image processing , and is a small matrix which is applied over different regions of the matrix. It can be used for blurring, sharening, embossing, edge detection and so on.
 
 ## Pooling Layer
 

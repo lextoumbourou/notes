@@ -10,7 +10,7 @@ parent: ml-foundations
     * Represent classifiers using graphs.
         * Allows for complex, non-linear features.
 
-            ![Basic neural networks](/_media/ml-foundations-basic-neural-network.png)
+            ![Basic neural networks](../../../../_media/ml-foundations-basic-neural-network.png)
 
     * ``X[]`` - represents features.
     * ``W[]`` - represents weights.

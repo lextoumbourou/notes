@@ -81,7 +81,7 @@ We can see that the sentence tokeniser has split sentences based on punctuation.
 
 Once a word has been tokenised, a number of other techniques exist for normalising tokens.
 
-### [Stemming](../../../permanent/stemming.md)
+### [Stemming](stemming.md)
 
 Stemming is the process of converting a token like driving into its root form, in a very basic way by simply chopping off the end: `driving` - > `drive`. This is useful when using basic word normalisation, as it prevents the model from having to learn a entirely different representation for a very similar word. However, in practice this lack of sophistocation can still mean that similar words end up represented differently.
 

@@ -31,7 +31,7 @@ parent: linear-algebra-machine-learning
 
     It takes the basis vector and moves it to another place:
 
-    ![Vectors transformed by matrix](_media/laml-simultaneous-equation.png)
+    ![Vectors transformed by matrix](../../../../_media/laml-simultaneous-equation.png)
 
     So the matrix "moves" the basis vectors.
 
@@ -75,13 +75,13 @@ parent: linear-algebra-machine-learning
 
     $\begin{bmatrix}3 & 0 \\ 0 & 2\end{bmatrix}$
 
-    ![Scaling matrix](/_media/laml-scaling-matrix.png)
+    ![Scaling matrix](../../../../_media/laml-scaling-matrix.png)
 
 * If you have a negative number for one of the axes, you could flip a vector.
 
     $\begin{bmatrix}-1 & 0 \\ 0 & 2\end{bmatrix}$
 
-    ![Flip basis](/_media/laml-flip-basis.png)
+    ![Flip basis](../../../../_media/laml-flip-basis.png)
 
 * If you have negative numbers in each of the diagonal positions, you invert the vector.
 
@@ -99,7 +99,7 @@ parent: linear-algebra-machine-learning
 
     $\begin{bmatrix}1 & 1 \\ 0 & 1\end{bmatrix}$
 
-    ![Shear matrix](/_media/laml-shear-matrix.png)
+    ![Shear matrix](../../../../_media/laml-shear-matrix.png)
 
 * You can rotate a vector with this matrix
 
@@ -107,7 +107,7 @@ parent: linear-algebra-machine-learning
 
 * In general, the matrix for a rotation in 2d is: $\begin{bmatrix}\cos\theta & \sin\theta \\ -\sin\theta & \cos\theta\end{bmatrix}$ where $\theta$ describes the angle between vectors:
 
-     ![Rotation example](/_media/laml-rotation-matrix.png)
+     ![Rotation example](../../../../_media/laml-rotation-matrix.png)
 
 * We store a digital image as a collection of colored pixels at their particular coordinates on a grid. If we apply a matrix transformation to the coordinates of each pixel in an image, we transform the picture as a whole.
 
@@ -214,15 +214,15 @@ parent: linear-algebra-machine-learning
   * A matrix like this scales space: $\begin{bmatrix}a & 0 \\ 0 & d\end{bmatrix}$ by a factor of $ad$.
   * $ab$ is called the "determinate" of the transformation matrix.
 
-      ![Determinate of a Matrix](/_media/laml-determinate-of-a-matrix.png)
+      ![Determinate of a Matrix](../../../../_media/laml-determinate-of-a-matrix.png)
 
   * If you have matrix $\begin{bmatrix}a & b \\ 0 & d\end{bmatrix}$ you create a parallelogram, but the area is still $ad$
 
-       ![Determinate of a Matrix that transforms space to Parallelogram](../_media/laml-determinate-of-a-matrix-parallelogram.png)
+       ![Determinate of a Matrix that transforms space to Parallelogram](../../../../_media/laml-determinate-of-a-matrix-parallelogram.png)
 
   * If you have a general matrix $\begin{bmatrix}a & b \\ c & d\end{bmatrix}$, the area creating by transforming the basis vectors is $ad-bc$
 
-       ![Maths for finding determinate of a matrix](../_media/laml-maths-for-finding-determinate.png)
+       ![Maths for finding determinate of a matrix](../../../../_media/laml-maths-for-finding-determinate.png)
 
   * We denote finding the determinate as $|A|$.
   * A standard method for finding the inverse of a matrix is to flip the terms on the leading diagonal and to flip the terms on the other diagonal, then multiplying by 1 / determinate:

@@ -17,7 +17,7 @@ parent: ml-foundations
         * Look at other features
 * Terminology:
 
-    ![Regression terminology](/_media/ml-foundations-regression-terminology.png)
+    ![Regression terminology](../../../../_media/ml-foundations-regression-terminology.png)
 
     * x-axis
         * Feature

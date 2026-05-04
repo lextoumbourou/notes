@@ -15,7 +15,7 @@ They are concerned with 5 key variables:
 4. $v$ - Final velocity.
 5. $a$ - [Acceleration](acceleration.md) (a constant in these formulas)
 
-Also called [SUVAT Equations](../journal/permanent/suvat-equations.md).
+Also called [SUVAT Equations](suvat-equations.md).
 
 If we know three of the five kinematic variable, we can use one of the kinematic formulas to solve for an unknown variable.
 

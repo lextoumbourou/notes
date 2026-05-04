@@ -473,7 +473,7 @@ I tried to read this book really carefully and take a lot of notes.
   * Socialities - pleasure of fellowship
   * Killers - competing with and defeating others and "impressing themselves on others" which could also include helping others
   * Graph shows that achievers are interested in acting on the world, explorers interacting with the world, socializers in interacting with players and killers interesed in acting on players:
-        ![Bartel's graph of player type space](bartles-player-space.png)
+        ![Bartel's graph of player type space](../_media/bartles-player-space.png)
 * Other pleasures to consider:
   * Anticipation
   * Completion
@@ -524,7 +524,7 @@ I tried to read this book really carefully and take a lot of notes.
     * Continuously challenging
       * "flow activities must manage to stay in the narrow margin of challenge that lies between boredom and frustration"
       * Ideal game has a cycle of "tense and release" where the play experience follows a track like this:
-        * ![Optimal challenges to skill for flow](optimal-challenges-to-skill-for-flow.png)
+        * ![Optimal challenges to skill for flow](../_media/optimal-challenges-to-skill-for-flow.png)
   * **Lens #21: The Lens of Flow**
     * Does my game have clear goals?
     * Are the goals of the player the same goals I intended?
@@ -547,7 +547,7 @@ I tried to read this book really carefully and take a lot of notes.
 * Maslow's Hierarchy of Needs
   * Represented as a pyramid.
   * Idea is that lower levels need to be achieved before tackling higher levels of need.
-  * ![Maslows' Hierarchy of Needs](maslows-hierarchy-of-needs.png)
+  * ![Maslows' Hierarchy of Needs](../_media/maslows-hierarchy-of-needs.png)
   * Most games fulfill achievement and mastery needs, so even higher levels.
 * More needs
   * [Edward Deci](Edward Deci) and [Richard Ryan](Richard Ryan) developed self-determination theory
@@ -564,7 +564,7 @@ I tried to read this book really carefully and take a lot of notes.
 * Intrinstic vs Extrinsic motivation
   * Core idea is that intrinsic is stuff you do for fun, extrinsic is stuff others motivate you to do (ie for payment)
   * Reality, most activities don't fit neatly into one category or other but on a spectrum.
-  * ![Extrinsic vs intrinsic motivation](extrinsic-vs-intrinsic-motivation.png)
+  * ![Extrinsic vs intrinsic motivation](../_media/extrinsic-vs-intrinsic-motivation.png)
 * Wanna vs Hafta
   * Many gameplaying motivations are about pleasure seeking: collecting stars, getting combos etc; many are centered on pain avoidance: avoiding enemies, trying not to die.
   * Free to play games often start out as pleasure seeking, then eventually pain avoidance: not keeping daily streak etc.
@@ -708,7 +708,7 @@ I tried to read this book really carefully and take a lot of notes.
     * Deciding on actions is most fundamental decision designers can make.
 * Mechanic #5: Rules
   * David Parlett's game rule diagram
-    * ![David Parlett's Game Rule Diagram.png](david-parletts-game-rule-diagram.png)
+    * ![David Parlett's Game Rule Diagram.png](../_media/david-parletts-game-rule-diagram.png)
     * Operational rules
       * Most basic: what do players do to play the game?
       * Understanding required for players to play the game.
@@ -2235,7 +2235,7 @@ I tried to read this book really carefully and take a lot of notes.
 * Know your business model
   * Retail:
     * When a consumer buys a $50 title, here's how the money flows:
-      * ![Retail business](retail-business.png)
+      * ![Retail business](../_media/retail-business.png)
       * Platform holder: Sony, Nintendo, Microsoft etc make money by "taxing" publishers for each title.
       * Retailer takes so much: it's a low-margin business and they have to cut every corner to survive
       * Publisher takes a big cut because they're taking on a lot of the risk. Titles that aren't sold have to be rebought off the publisher.

@@ -37,4 +37,4 @@ Shortly after this paper, many other varients of attention
 
 This freed up the encoder from having to represent an entire sequence as a single vector, was very influential in neural machine translation, leading to the [Transformer](transformer.md) architecture years later.
 
-Scaled-Dot Product Attention is a method of computing a token representation to include the context of surrounding tokens. It was described in the paper [Attention Is All You Need](attention-is-all-you-need.md) and is used in the [Transformer](../public/notes/permanent/transformer.md) architecture.
+Scaled-Dot Product Attention is a method of computing a token representation to include the context of surrounding tokens. It was described in the paper [Attention Is All You Need](attention-is-all-you-need.md) and is used in the [Transformer](transformer.md) architecture.

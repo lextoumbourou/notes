@@ -104,7 +104,7 @@ status: draft
 
     $t=e^{(z^{[l]})} \\ a^{[l]}=\frac{e^{(z^{[l]})}}{\sum\limits_{j=1}^{4}t_i}$
 
-    ![Softmax example](/_media/softmax-example.png)
+    ![Softmax example](../../../../_media/softmax-example.png)
 
 * Gives you a probability-like value (where all sum to one) for each category.
 

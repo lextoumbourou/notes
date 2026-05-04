@@ -7,7 +7,7 @@ aliases:
 summary: a model that can associate textual representations with images.
 ---
 
-**Contrastive Language-Image Pretraining** or **CLIP** is an approach to training a model to associate images with their textual representations using [Contrastive Loss](contrastive-loss.md). This allows for high-performing [Zero-Shot Learning](../public/notes/permanent/zero-shot-learning.md) i.e. the model can generalise to new tasks without fine-tuning.
+**Contrastive Language-Image Pretraining** or **CLIP** is an approach to training a model to associate images with their textual representations using [Contrastive Loss](contrastive-loss.md). This allows for high-performing [Zero-Shot Learning](zero-shot-learning.md) i.e. the model can generalise to new tasks without fine-tuning.
 
 The architecture is a "simplified version of [ConVIRT](convirt.md)" [^1] trained from scratch.
 

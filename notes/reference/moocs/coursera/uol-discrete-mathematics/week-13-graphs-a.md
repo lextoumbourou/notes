@@ -37,7 +37,7 @@ modified: 2023-04-09 00:00
 
 ## Lesson 7.103 - Definition of a graph
 
-* [Graph Theory.png](../../../../_media/week-13-complete-graphs](../../../../permanent/graph.md)
+* [Graph Theory.png](../../../../permanent/graph.md)
     * Discrete structures consisting of vertices and edges connecting them.
 * Formal definition:
     * $G$ is an ordered pair $G=(V, E)$.

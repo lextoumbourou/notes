@@ -24,7 +24,7 @@ Modern image classification typically involves some backbone model to learn feat
 
 At the time of the paper, CNNs were the best-performing model architecture for learning features.
 
-Since image classification problems are typically [Close-Set](Close-Set) (all possible test classes well represented in the training set), [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md)itable loss function choice. In this case, the features learned by the backbone model only need to be separable enough so the classifier can distinguish between classes.
+Since image classification problems are typically [Close-Set](Close-Set) (all possible test classes well represented in the training set), [Categorical Cross-Entropy Loss](../../permanent/categorical-cross-entropy-loss.md) table loss function choice. In this case, the features learned by the backbone model only need to be separable enough so the classifier can distinguish between classes.
 
 However, in facial recognition, you cannot pre-collect all possible test identities in the training set for face recognition. We call these problems [Open-Set Classification](Open-Set Classification). Therefore, for facial recognition, we need to learn discriminative features.
 
@@ -35,7 +35,7 @@ Discriminative features have two properties:
 
 In Fig 1. we see a typical image classification pipeline, comparing separable and discriminative features.
 
-![Fig 1. Showing a typical image classification pipeline and the difference between separable and discriminative features](/_media/center-loss-fig-1.png)
+![Fig 1. Showing a typical image classification pipeline and the difference between separable and discriminative features](../../_media/center-loss-fig-1.png)
 
 Typically recognition pipelines use a Nearest Neighbours or K Nearest Neighbours step to classify faces based on the distance to other identities instead of label predictions.
 
@@ -95,7 +95,7 @@ The toy example is trained on [MNIST](MNIST). They modify LeNet (a standard conv
 
 Fig 2. shows the results of plotting the 2-dimension hidden layer output on the training set (a) and the test set (b).
 
-![2D hidden layer plot for features learned using Softmax Loss](/_media/center-loss-fig-2.png)
+![2D hidden layer plot for features learned using Softmax Loss](../../_media/center-loss-fig-2.png)
 
 We can infer from this that the learned features are separable - a classifier can find a decision boundary between them - but not discriminative. In other words, it would be challenging to classify features using the nearest neighbors approach, as the distance between intra-class samples often matches those inter-class.
 
@@ -117,7 +117,7 @@ Lastly, they train the model using joint supervision of softmax loss and center 
 
 Fig 3. shows how the hyperparameters $\lambda$ affect the feature distributions. The higher it is, the more discriminative the features.
 
-![Plot for 2d features trained using Center Loss](/_media/center-loss-fig-3.png)
+![Plot for 2d features trained using Center Loss](../../_media/center-loss-fig-3.png)
 
 Joint supervision is necessary: if you only trained using class centers, the centers would degrade to 0 since that creates the lowest possible center loss.
 
@@ -135,7 +135,7 @@ They concatenate the output of the 4th pooling layer and the 3rd local conv laye
 
 In Fig 4, we see a diagram of this architecture.
 
-![CNN architecture used throughout experiments](/_media/center-loss-fig-4.png)
+![CNN architecture used throughout experiments](../../_media/center-loss-fig-4.png)
 
 ### 4.1 Implementation Details
 
@@ -185,7 +185,7 @@ Experiment (b)
 * Fix $\lambda = 0.003$
 * Vary $\alpha$ from 0.01 to 1.
 
-![Fig 5. Experiments with different hyperparameters](/_media/center-loss-fig-5.png)
+![Fig 5. Experiments with different hyperparameters](../../_media/center-loss-fig-5.png)
 
 From this they infer:
 
@@ -203,7 +203,7 @@ In (a), they show pairs in LFW the green frame is for positive pairs, and the re
 
 In (b), they show examples from YTF, where the white bounding box is the face for testing.
 
-![Examples from Labeled Faces in the Wild and YouTube Faces](/_media/center-loss-fig-6.png)
+![Examples from Labeled Faces in the Wild and YouTube Faces](../../_media/center-loss-fig-6.png)
 
 They train model on only 0.7M outside data with no overlapping in LFW and YTF. Fix $\lambda = 0.003$ and $\alpha = 0.5$ for Model C.
 
@@ -214,7 +214,7 @@ average of 2.15 videos per person. The clip durations vary from 48 to 6,070 fram
 
 Table 2 has the results on 5,000 video pairs.
 
-![Table 2](/_media/center-loss-table-2.png)
+![Table 2](../../_media/center-loss-table-2.png)
 
 They observe the following:
 
@@ -252,7 +252,7 @@ Face identification aims to match a given probe image to those with the same per
 
 In Fig 8, they show the results of face identification experiments. They measure performance using Cumulative Match Characteristics (CMC) curves, which is the probability that a correct gallery image is in top-K.
 
-![Fig 8. CMC Curves of different methods](/_media/center-loss-fig-8.png)
+![Fig 8. CMC Curves of different methods](../../_media/center-loss-fig-8.png)
 
 **Face Verification**
 
@@ -262,7 +262,7 @@ They create four billion negative pairs between the probe and gallery datasets.
 
 They compute the True Accept Rate (TAR) and False Accept Rate (FAR) and plot the Receiver Operating Characteristic (ROC) curves of different methods in Fig. 9.
 
-![Fig 9. ROC Curves of different verification methods](/_media/center-loss-fig-9.png)
+![Fig 9. ROC Curves of different verification methods](../../_media/center-loss-fig-9.png)
 
 Some of the methods they compare against include methods that require hand-crafted features, including LBP (Local Binary Pattern) and shallow models like JointBayes.
 
@@ -274,11 +274,11 @@ To be practical, face recognition models should achieve high performance with mi
 
 Table 3 reports the rank-1 identification rate with at least 1 million distractors.
 
-![Table 3](/_media/center-loss-table-3.png)
+![Table 3](../../_media/center-loss-table-3.png)
 
 Table 4 reports the True Accept Rate with a False Accept Rate of $10^{-6}$.
 
-![Table 4](/_media/center-loss-table-4.png)
+![Table 4](../../_media/center-loss-table-4.png)
 
 They make these observations from the results:
 

@@ -30,7 +30,7 @@ $\begin{bmatrix}\color{olive}{1} & 0 \\ 0 & \color{olive}{1}\end{bmatrix} \begin
 
 In this [Matrix Multiplication](matrix-multiplication.md) example, we can see how the main diagonal of 1s returns the original matrix.
 
-![Identity matrix example 1](/_media/identity-matrix-1.gif)
+![Identity matrix example 1](../_media/identity-matrix-1.gif)
 
 Multiplying a matrix by its [Inverse Matrix](Inverse Matrix) will return the identity matrix.
 

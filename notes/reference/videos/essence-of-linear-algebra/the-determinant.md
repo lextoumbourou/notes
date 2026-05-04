@@ -46,7 +46,7 @@ A way to determine if the determinate in 3d space is negative is to use the "rig
 
 Point your fingers and thumbs on your right hand like this:
 
-![Rignt-hand rule example](/_media/right-hand-rules.png)
+![Rignt-hand rule example](../../../_media/right-hand-rules.png)
 
 Then if after the transformation, you can only do that with your left hand, you know the determinate is negative.
 
@@ -58,11 +58,11 @@ The intuition for it:
 
 * if c and b are 0, the calculation would be $ad - 0$. That means the determinate is just how much you scale in the x-direction and how much y.
 
-![Determinate when bc are 0](/_media/determinate-when-bc-0.png)
+![Determinate when bc are 0](../../../_media/determinate-when-bc-0.png)
 
 * Even if either b or c = 0, the area would turn into a parallelogram and remain the same area.
 
-![Determinate when b or c = 0](/_media/determinate-when-bc-0.png)
+![Determinate when b or c = 0](../../../_media/determinate-when-bc-0.png)
 
 Computing the determinants by hand can be done, and you get better with practice.
 

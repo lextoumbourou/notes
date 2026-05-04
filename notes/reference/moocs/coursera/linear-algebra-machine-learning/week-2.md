@@ -41,7 +41,7 @@ modified: 2023-04-09 00:00
 * Cosign rule from algebra ([Law Of Cosines](../../../../permanent/law-of-cosines.md)):
     * If you have a triangle with sides a, b and c and angle between a and b $\theta$ then: $c^2 = a^2 + b^2 - 2ab \cos \theta$
 
-        ![Cosine rule example](/_media/laml-cosine-rule.png)
+        ![Cosine rule example](../../../../_media/laml-cosine-rule.png)
 
 * In the triangle above, we can use [Vector Subtraction](../../../../permanent/vector-subtraction.md)
 * So $c^2  = |r-s|^2$, which means:
@@ -63,7 +63,7 @@ modified: 2023-04-09 00:00
     * Scalar projection is the amount one vector "goes along" another.
         * Draw a line straight down from the tip of vector $s$ onto vector $\vec{r}$. How far along $\vec{r}$ does it land?
 
-            ![Scalar projection example](/_media/laml-scalar-projection.png)
+            ![Scalar projection example](../../../../_media/laml-scalar-projection.png)
 
         * Using Pythagoras Theorem, we know that $\theta = \frac{adj}{hyp}$
             * In the above image, the hypotenuse is the length of s: $|\vec{s}|$
@@ -87,7 +87,7 @@ modified: 2023-04-09 00:00
 * [Coordinate System](Coordinate System) (00:00 - 03:35)
     * Coordinate system is defined by 2 vectors called the [Basis Vectors](../../../../permanent/basis-vectors.md). In the image, they're $\hat{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $\hat{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$.
 
-        ![Basic vectors](/_media/laml-basic-vectors.png)
+        ![Basic vectors](../../../../_media/laml-basic-vectors.png)
 
     * If our space had more dimensions, you could have more basis vectors.
     * We can think of $\vec{r}$ as being some amount of the basis vectors: $r_e = 3\hat{e}_1 + 4\hat{e}_2  = \begin{bmatrix} 3 \\ 4 \end{bmatrix}$
@@ -99,7 +99,7 @@ modified: 2023-04-09 00:00
     * We can use the dot product to find the numbers for a [Vector](../../../../permanent/vector.md) in a different space if you know the new basis vectors in terms of the original.
         * In this example, $b_2 = \begin{bmatrix} -2 \\ 4 \end{bmatrix}$ (or `-2, 4` $e_2$s) and $b_1 = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$ (or `2, 1` $e_1$s)
 
-            ![New basic vectors to calculate r for](/_media/laml-new-basic-vectors.png)
+            ![New basic vectors to calculate r for](../../../../_media/laml-new-basic-vectors.png)
 
     * The new set of basis vectors $b$ must be 90° to each other. We can use the dot product to find the new numbers for $r$ in a new basis $b$ if we know what $b$ is in terms of $e$.
         * If they aren't 90 degrees to each other, we have to use matrices and a transformation of the axis.

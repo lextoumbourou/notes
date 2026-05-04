@@ -19,7 +19,7 @@ We can visualize Vector subtraction as follows:
 2. draw the 2nd negative [Vector](vector.md) as a vector pointing in the opposite direction
 3. Draw a line from the tail of the 1st [Vector](vector.md) to the tip of the negative 2nd [Vector](vector.md).
 
-![Vector subtraction visual example](/_media/vector-subtract-example.gif)
+![Vector subtraction visual example](../_media/vector-subtract-example.gif)
 
 Like [Vector Addition](Vector Addition.md), we can only subtract two vectors with the same number of dimensions.
 

@@ -52,7 +52,7 @@ For Residual Vector Quantisation, we add these steps to the VQ operation:
 * **Repeat** - repeat this for $Nq$ codebook tables.
 * **Output** - at the end, we will have $Nq$ sequences of codes for modelling.
 
-![Residual Vector Quantisation](../../../_media/rvq.png)
+![Residual Vector Quantisation](../_media/rvq.png)
 
 So now we have: <span style="color: red;">**Residual**</span> <span style="color: blue;">**Vector Quantization**</a>.
 

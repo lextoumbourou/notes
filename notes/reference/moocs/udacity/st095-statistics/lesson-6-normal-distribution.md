@@ -11,7 +11,7 @@ modified: 2023-04-08 00:00
 * PDF - Probability Density Function (actual formula not covered)
     1. Find a position on x-axis of distribution called x
     2. Area of curve before x is probability of selecting a value less than X
-    <img src="./images/prob_density.png"></img>
+    <img src="/_media/st095-statistics/prob_density.png"></img>
     * If probability less than 0.8 (or 80%) then say "x is 80th percentile"
 * 68 - 95 - 99.7 rule
     * 68% of values lie within 1 standard deviation of mean

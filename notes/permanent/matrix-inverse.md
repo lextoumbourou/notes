@@ -12,7 +12,7 @@ The inverse of a [Matrix Transformation](matrix-transformation.md) is a matrix t
 
 For example, if our matrix transform did a 90° anticlockwise rotation, the inverse matrix would do a 90° clockwise rotation.
 
-![Inverse transformation example](/_media/inverse-matrix-transformation.gif)
+![Inverse transformation example](../_media/inverse-matrix-transformation.gif)
 
 We represent the inverse of a matrix $A$ as $A^{-1}$.
 

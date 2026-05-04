@@ -19,13 +19,13 @@ $\begin{bmatrix}\text{x*} \\ \text{y*} \end{bmatrix} = \begin{bmatrix}\cos\theta
 
 In this example, we perform a 90° rotation of vector $\begin{bmatrix}2 \\ 2\end{bmatrix}$.
 
-![Rotation matrix product with vector](/_media/transformation-matrix-example.gif)
+![Rotation matrix product with vector](../_media/transformation-matrix-example.gif)
 
 To describe a transformation as a matrix, we only need to record where the [Basis Vectors](Basis Vectors.md) land as columns of a new matrix: $\begin{bmatrix}\color{red}{a} && \color{green}{b} \\ \color{red}{c} && \color{green}{d}\end{bmatrix}$
 
 For example, a [Shear Transformation](Shear Transformation) keeps the $\hat{i}$ basis vector fixed, and slants the $\hat{j}$ basis vector. We can record that as: $\begin{bmatrix}\color{red}{1} && \color{green}{1} \\ \color{red}{0} && \color{green}{2}\end{bmatrix}$
 
-![Transformed basis vectors](/_media/trans-basis.gif)
+![Transformed basis vectors](../_media/trans-basis.gif)
 
 A matrix transformation is always linear in that it keeps all gridlines in space are parallel and evenly spaced.
 

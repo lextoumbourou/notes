@@ -15,7 +15,7 @@ modified: 2023-04-08 00:00
     * -1.96
     * 1.96
 
-<img src="./images/z-score_bounds.png"></img>
+<img src="/_media/st095-statistics/z-score_bounds.png"></img>
 
 * 95% confidence interval for a sample mean
     * ```sample_mean - SE < mean < sample_mean + SE```

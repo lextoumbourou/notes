@@ -9,7 +9,7 @@ tags:
 - LargeLanguageModels
 ---
 
-Scaled-Dot Product Attention is a method of computing a token representation to include the context of surrounding tokens. It was described in the paper [Attention Is All You Need](attention-is-all-you-need.md) and is used in the [Transformer](../public/notes/permanent/transformer.md) architecture.
+Scaled-Dot Product Attention is a method of computing a token representation to include the context of surrounding tokens. It was described in the paper [Attention Is All You Need](attention-is-all-you-need.md) and is used in the [Transformer](transformer.md) architecture.
 
 In a seq-to-seq architecture, we typically convert tokens (words) into a sequence of embeddings. However, some token embeddings will be ambiguous without the surrounding context.
 

@@ -63,7 +63,7 @@ parent: ml-foundations
         * One strategy: "Jaccard similarity"
     * "Jaccard similarity"
 
-        ![Normalise by Popularity](/_media/ml-foundations-normalize-by-popularity.png)
+        ![Normalise by Popularity](../../../../_media/ml-foundations-normalize-by-popularity.png)
 
       * Normalize by popularity.
       * Overview:
@@ -130,7 +130,7 @@ parent: ml-foundations
     * Looking at score for ```Rating(u, v)``` == ```<Lu, Rv>``` < element-wise product and sum.
     * Can get the ```u```th from the ```L``` matrix row and multiple by the ```v```th row from the ``R`` matrix column.
 
-        ![Predictions in matrix form](/_media/ml-foundations-predictions-in-matrix-form.png)
+        ![Predictions in matrix form](../../../../_media/ml-foundations-predictions-in-matrix-form.png)
 
 * Discovering hidden structure by matrix factorization
     * Using only observed rating (black squares), we want to estimate L and R matrices.
@@ -191,11 +191,11 @@ parent: ml-foundations
     * Output: Algorithm-specific precision-recall curve
     * Optimal recommender precision / recall curve:
 
-        ![Perfect Precision Recall Curve](/_media/ml-foundations-perfect-precision-recall-curve.png)
+        ![Perfect Precision Recall Curve](../../../../_media/ml-foundations-perfect-precision-recall-curve.png)
 
     * Realistic recommender:
 
-        ![Realistic Precision Recall Curve](/_media/ml-foundations-realistic-precision-recall-curve.png)
+        ![Realistic Precision Recall Curve](../../../../_media/ml-foundations-realistic-precision-recall-curve.png)
 
     * Comparing algorithms:
       * Largest "area under the curve" (AUC).

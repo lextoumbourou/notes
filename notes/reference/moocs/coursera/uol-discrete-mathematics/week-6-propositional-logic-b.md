@@ -156,7 +156,7 @@ modified: 2023-04-09 00:00
 
     * Example
 
-        ![distributive-law-truth-table](/_media/distributative-law-truth-table.png)
+        ![distributive-law-truth-table](../../../../_media/distributative-law-truth-table.png)
 
     * Laws of propositional logic 2
 

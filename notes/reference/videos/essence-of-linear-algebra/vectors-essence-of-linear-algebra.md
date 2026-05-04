@@ -30,16 +30,16 @@ Vectors are the building block of linear algebra.
     * Have a vertical line called the y-axis
     * Place where they intersect is called the Origin
 
-         ![origin in coordinate system](/_media/origin-in-coordinate-system.png)
+         ![origin in coordinate system](../../../_media/origin-in-coordinate-system.png)
 
         * Can be thought of as the center of space and root of all vectors.
     * An arbitrary length is chosen to represent one, then tick marks are created on each axis spaced at this distance
 
-        ![Tick marks in the coordinate system](/_media/tick-marks-in-coordinate-system.png)
+        ![Tick marks in the coordinate system](../../../_media/tick-marks-in-coordinate-system.png)
 
 * Coordinates of vector give instructions to get from the Origin to its tip
 
-    ![Coords of vector](/_media/coords-of-vector.png)
+    ![Coords of vector](../../../_media/coords-of-vector.png)
 
     1. The first number describes how far to walk along the x-axis.
     2. The second number describes how far along the y-axis.
@@ -47,25 +47,25 @@ Vectors are the building block of linear algebra.
 * We distinguish vectors from points by writing them vertically using square bracket notation.
 * In 3d, an additional axis is drawn that's perpendicular to the other axes, adding a 3rd coordinate
 
-    ![Vector in 3d space](/_media/vector-in-3d-space.png)
+    ![Vector in 3d space](../../../_media/vector-in-3d-space.png)
 
 * Vector addition from the physics perspective:
 
     1. First draw both vectors:
 
-        ![Vector addition step 1](/_media/vector-addition-step-1.png)
+        ![Vector addition step 1](../../../_media/vector-addition-step-1.png)
 
     2. Move the 2nd vector up to the tip of the tail of the first vector:
 
-        ![Vector addition step 2](/_media/vector-addition-step-2.png)
+        ![Vector addition step 2](../../../_media/vector-addition-step-2.png)
 
     3. Draw a new vector that starts from the tail of the first to the tip of the 2nd. The new vector represents the sum of 2 vectors.
 
-        ![Vector addition step 3](/_media/vector-addition-step-3.png)
+        ![Vector addition step 3](../../../_media/vector-addition-step-3.png)
 
 * The above definition of vector addition is an extension to how we teach kids to add numbers using the number line: we start at a number, then step in the direction of the number we're adding.
 
-    ![Vector addition analogy to number line addition](/_media/addition-along-number-line.png)
+    ![Vector addition analogy to number line addition](../../../_media/addition-along-number-line.png)
 
 * The same operation written from the computer scientist perspective:
 
@@ -73,7 +73,7 @@ Vectors are the building block of linear algebra.
 
 * Vector multiplication is when you multiply a vector by a number ([Vector Scaling](../../../permanent/vector-scaling.md)) either stretching or squishing the vector by that amount.
 
-    ![Vector scaling](/_media/vector-scaling.png)
+    ![Vector scaling](../../../_media/vector-scaling.png)
 
     * Referred to as "scaling the vector," hence the number in this context is called a "scalar."
     * Computer science perspective:

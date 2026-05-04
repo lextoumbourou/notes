@@ -237,7 +237,7 @@ $\cos^2a = 1 - \sin^2a$
 
 $\sin^2a = 1 - \cos^2a$
 
-The [Sine](../journal/permanent/sine.md) of two angles added together identity is as follows:
+The [Sine](sine.md) of two angles added together identity is as follows:
 
 $\sin(a + b) = \sin(a)\cos(b) + \sin(b)\cos(a)$
 
@@ -245,7 +245,7 @@ And subtraction:
 
 $\sin(a - b) = \sin(a)\cos(b) - \sin(b)\cos(a)$
 
-The [Cosine](permanent/cosine.md) of two angles:
+The [Cosine](cosine.md) of two angles:
 
 $\cos(a + b) = \cos(a)\cos(b) - \sin(a)\sin(b)$
 
@@ -255,7 +255,7 @@ $\cos(a - b) = \cos(a)\cos(b) + \sin(a)\sin(b)$
 
 ### Cosine Properties
 
-[Cosine](permanent/cosine.md) is an [Even Function](../journal/permanent/even-function). Meaning, any negative inputs are equal to the equivalent positive input.
+[Cosine](cosine.md) is an [Even Function](even-function.md). Meaning, any negative inputs are equal to the equivalent positive input.
 
 $\cos(-c) = \cos(c)$
 
@@ -288,7 +288,7 @@ $\cos^2a = \frac{1}{2} (1 + \cos 2a)$
 
 ### Sine Properties
 
-[Sine](../journal/permanent/sine.md) is an [Odd Function](../journal/permanent/odd-function). Meaning, any negative inputs are equal to the negative value of the function.
+[Sine](sine.md) is an [Odd Function](odd-function.md). Meaning, any negative inputs are equal to the negative value of the function.
 
 $\sin(-c) = -\sin(c)$
 
@@ -309,7 +309,7 @@ When $\theta = 90°$:
 
 ## 5. Graph sketching and kinematics
 
-[SUVAT Equations](../journal/permanent/suvat-equations.md)
+[SUVAT Equations](suvat-equations.md)
 
 $s$ = displacement in metres m
 $u$ = initial velocity in meters per seconds

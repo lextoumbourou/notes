@@ -33,7 +33,7 @@ parent: attention-models-in-nlp
 * Standard for large language models include Bert, GPT3, T5 etc.
 * Uses Scaled Dot-Product Attention:
 
-![Scaled Dot-Product](/_media/attention-scaled-dot-product.png)
+![Scaled Dot-Product](../../../../_media/attention-scaled-dot-product.png)
 
 * Very efficient as it's just matrix multiplication operations and a Softmax.
 * Model can grow larger and more complex while using less memory.
@@ -41,7 +41,7 @@ parent: attention-models-in-nlp
     * has multiple linear transformations and dot-product attention running in parallel.
     * linear transations have parameters that are learned.
 
-    ![Multi-head attention](/_media/attention-multi-head.png)
+    ![Multi-head attention](../../../../_media/attention-multi-head.png)
 
 * Encoder step-by-step:
     * Multi-head attention modules perform self-attention on input sequence.
@@ -52,9 +52,9 @@ parent: attention-models-in-nlp
     * This layer is one block that is repeated N times.
     * Gives you contextual representation of inputs.
 
-    ![Encoder diagram](/_media/attention-encoder.png)
+    ![Encoder diagram](../../../../_media/attention-encoder.png)
 * Decoder:
-    ![Decoder](/_media/attention-decoder.png)
+    ![Decoder](../../../../_media/attention-decoder.png)
     * First attention module is masked so each position only attends to previous positions: can't see into the future.
     * 2nd attention module, takes encoder outputs and decoder attends to all items.
     * Whole later repeated one after the other.
@@ -62,7 +62,7 @@ parent: attention-models-in-nlp
     * Transformers don't use recurrent neural networks, so needs a way to represent word order.
     * Positional encoding vectors are added to word embeddings for input embeddings.
     * Positional encoding can be learned or fixed.
-    ![Positional Encoding](/_media/attention-pos-encoding.png)
+    ![Positional Encoding](../../../../_media/attention-pos-encoding.png)
 
 ## Transformer Applications
 
@@ -112,7 +112,7 @@ parent: attention-models-in-nlp
 * Softmax ensures weights add to 1.
 * Division by square root of dimension of key factors improves performance.
 
-![Softmax scaling](/_media/attention-softmax-scaling.png)
+![Softmax scaling](../../../../_media/attention-softmax-scaling.png)
 
 $$
 \text{softmax}( \frac{QK^{T}}{\sqrt{d_k}}) V
@@ -126,18 +126,18 @@ $$
 * Example translating French sentence: "Je suis heureux".
     * Firstly get embedding vector for each word.
     * Stack into matrix Q.
-    ![Queries part of embedding](/_media/attention-queries.png)
+    ![Queries part of embedding](../../../../_media/attention-queries.png)
 
     * Then, get the key matrix $K$, from the input sequence: "I am happy".
     * You will usually use the same key matrix for the values $V$, though they can sometimes be transformed first.
     * The number of vectors for key and values will usually be the same.
-    ![Key and values](/_media/attention-key-and-values.png)
+    ![Key and values](../../../../_media/attention-key-and-values.png)
 
 * Now compute the product using [Matrix Multiplication](../../../../permanent/matrix-multiplication.md) between $Q$ and the transposed $K$
 * Then scale by inverse of square of dimension of key vectors: $\sqrt{d_k}$
     * The computation, will give you a matrix with weights for each key per query.
     * Weight matrix will have total number of elements equal to: `(num_queries X num_keys)`.
-![Attention math](/_media/attention-math.png)
+![Attention math](../../../../_media/attention-math.png)
     * The weight matrix is multiplied by the value matrix, $V$, to return a context vector for each query.
 
 ## Masked Self-Attention
@@ -150,7 +150,7 @@ $$
 
 * Style of attention covered in course so far:
     * Queries from one sentence, keys and values from another.
-    ![Encoder-Decoder Attention](/_media/attention-encoder-decoder-attention.png)
+    ![Encoder-Decoder Attention](../../../../_media/attention-encoder-decoder-attention.png)
 
 * Used in translation task from last week.
 
@@ -158,7 +158,7 @@ $$
 
 * In Self-Attention, queries, keys and values come from the same sentence.
 * This gives you contextual representations of your words.
-![Self Attention](/_media/attention-self-attention.png)
+![Self Attention](../../../../_media/attention-self-attention.png)
 
 ### Masked Self-Attention
 
@@ -168,7 +168,7 @@ $$
     * After taking a Softmax, all elements in weights matrix are zero for keys in subsequent position to query.
 * Multiple weights by value matrix to get context vectors per query as normal.
 * We put this mechanism in decoder. It ensures that all predictions only depend on known outputs.
-![Masked Self-Attention](/_media/attention-masked-self-attention.png)
+![Masked Self-Attention](../../../../_media/attention-masked-self-attention.png)
 
 ## Multi-head Attention
 
@@ -176,9 +176,9 @@ $$
     * Apply multiple versions of Scaled-Dot Product Attention in parallel.
     * Then apply a transformations many times.
     * Different sets of representation, allows model to return multiple relationships betweens words in query and key matrice.
-    ![Plot embeddings in Scaled-Dot Product Attention](/_media/attention-plot-embeddings.png)
+    ![Plot embeddings in Scaled-Dot Product Attention](../../../../_media/attention-plot-embeddings.png)
 
-    ![Multi-head attention](/_media/attention-multi-head.png)
+    ![Multi-head attention](../../../../_media/attention-multi-head.png)
 
 * How it works:
     * Inputs are multiple sets of values, keys and queries matrices.
@@ -205,7 +205,7 @@ $$
 * Pass to residual connection with layer normalization.
 * Repeat Attention and Feed Forward N times depending on model size.
 
-![Transformer Decoder](/_media/attention-transformer-decoder.png)
+![Transformer Decoder](../../../../_media/attention-transformer-decoder.png)
 
 * More detail:
     * Model has 3 layers at the beginning: inputs, word embedding and positional embedding.

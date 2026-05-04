@@ -28,7 +28,7 @@ England   | 100
     * Frequency is always y-axis
     * Variable is on x-axis
 
-<img src="./images/histogram.png"></img>
+<img src="/_media/st095-statistics/histogram.png"></img>
 
 * Bar graph
     * Different from histogram, each variable is a distinct value
