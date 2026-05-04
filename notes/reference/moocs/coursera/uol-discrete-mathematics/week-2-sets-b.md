@@ -23,23 +23,23 @@ My notes from Week 2 from [Discrete Mathematics Course Notes](index.md).
     * Used to visualise the possible relations among a collection of sets.
     * In this example, the red area represents the union of A and B:
 
-        ![venn-union.png](_media/venn-union.png)
+        ![venn-union.png](../../../../_media/venn-union.png)
 
     * In this example, the red area represents the intersection of A and B:
 
-        ![venn-intersection.png](_media/venn-intersection.png)
+        ![venn-intersection.png](../../../../_media/venn-intersection.png)
 
     * In this example, the set difference:
 
-        ![venn-set-diff.png](_media/venn-set-diff.png)
+        ![venn-set-diff.png](../../../../_media/venn-set-diff.png)
 
     * In this example, it shows the symmetric difference between A and B
 
-        ![venn-symmetric-diff.png](_media/venn-symmetric-diff.png)
+        ![venn-symmetric-diff.png](../../../../_media/venn-symmetric-diff.png)
 
     * Can use a Venn Diagram to show that each sets are equivalent.
     
-        ![venn-show-sets-same.png](_media/venn-show-sets-same.png)
+        ![venn-show-sets-same.png](../../../../_media/venn-show-sets-same.png)
 
 ### 1.203 De Morgan's laws
 
@@ -98,7 +98,7 @@ My notes from Week 2 from [Discrete Mathematics Course Notes](index.md).
         * $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
 * [Set Identities](../../../../permanent/set-identities.md)
 
-    ![set-identities-table.png](_media/set-identities-table.png)
+    ![set-identities-table.png](../../../../_media/set-identities-table.png)
 
     * Set identities can be used to simplify set expressions.
         * Example:
@@ -120,7 +120,7 @@ My notes from Week 2 from [Discrete Mathematics Course Notes](index.md).
         * the union of all subsets $A_i$ is equal to $A$.
     * Example:
 
-         ![week-2-partition-example.png](_media/week-2-partition-example.png)
+         ![week-2-partition-example.png](../../../../_media/week-2-partition-example.png)
 
         * $A_1 \cap A_2 = A_2 \cap A_3 = .... A_4 \cap A_5 = \emptyset$
         * $A = A_1 \cup A_2 \cup A_3 \cup A_4 \cup A_5$

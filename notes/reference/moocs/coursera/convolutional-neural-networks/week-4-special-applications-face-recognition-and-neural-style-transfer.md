@@ -59,7 +59,7 @@ status: draft
 
 * An alternate to triplet loss could be to construct two conv NN that are merged into a single binary output layer that predicts whether they're a match or not.
 
-	![Learning the similarity function](/_media/learning-the-similarity-function.png)
+	![Learning the similarity function](../../../../_media/learning-the-similarity-function.png)
 
 ## Neural Style Transfer
 
@@ -79,11 +79,11 @@ status: draft
     * Layer 2: more complex textures.
     * Layer 3 and 4: features (dogs, water).
 
-  ![Visualising and Understanding Convolutional Neural Networks](/_media/visualising-conv.png)
+  ![Visualising and Understanding Convolutional Neural Networks](../../../../_media/visualising-conv.png)
 
   * Layer 5: even more sophisticated things.
 
-  ![Visuallising and Understanding Convolutional Neural Networks 2](/_media/visualising-conv-2.png)
+  ![Visuallising and Understanding Convolutional Neural Networks 2](../../../../_media/visualising-conv-2.png)
 
 ### Cost function
 
@@ -114,7 +114,7 @@ status: draft
 * Take a single activation from a layer l and, for each channel, calculate the correlation between activations.
   * For each position in a channel, how different is each value.
 
-      ![Style cost function](/_media/style-cost-function.png)
+      ![Style cost function](../../../../_media/style-cost-function.png)
 
 * What does it mean for two activation to be correlated?
   * Example: when a certain texture occurs, a tone or colour also occurs.

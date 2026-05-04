@@ -25,7 +25,7 @@ modified: 2023-04-08 00:00
     * Average for the sample is called "sample statistics". Denoted by 'x-bar'
     * Difference between mu and x-bar is called "sampling error"
 
-    <img src="./images/sample_and_population.png"></img>
+    <img src="/_media/st095-statistics/sample_and_population.png"></img>
 
     * Obviously, the bigger the sample, the closer the mu is to x-bar population
 * Visualize relationship

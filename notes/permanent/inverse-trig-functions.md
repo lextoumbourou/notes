@@ -7,7 +7,7 @@ status: draft
 
 For each of the 3 trigonometric functions, there is a function that can invert the results.
 
-For example, the [[../journal/permanent/sine]], can be expressed as follows
+For example, the [sine](sine.md), can be expressed as follows
 
 $\sin(\theta) = x$
 

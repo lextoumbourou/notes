@@ -29,13 +29,13 @@ The ratios between the sides of a right-angle triangle have do a bunch of really
 
 * [Sine](sine.md)
     * The ratio between opposite and hypotenuse.
-* [Cosine](permanent/cosine.md)
+* [Cosine](cosine.md)
     * The ratio between adjacent and hypotenuse.
-* [Tangent](../journal/permanent/tangent)
+* [Tangent](tangent.md)
     * The ratio between opposite and adjacent.
 
 If we set the size of the hypotenuse to be 1, notice that sine is simply the size of the opposite angle. And cosine is simply the size of the adjacent angle.
 
-These functions also have an inverse [Inverse Trigonomentric Functions](../../permanent/inverse-trig-functions.md).
+These functions also have an inverse [Inverse Trigonomentric Functions](inverse-trig-functions.md).
 
-The functions have some useful [Trig Angle Identities](../../permanent/trig-angle-identities.md) that can help solve trig problems algebraically.
+The functions have some useful [Trig Angle Identities](trig-angle-identities.md) that can help solve trig problems algebraically.

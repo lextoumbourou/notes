@@ -15,7 +15,7 @@ If you have two vectors in 2-dimensional space, think about the parallelogram th
 
 The area of that parallelogram is part of the cross product. Although, when $\vec{v}$ is on the right, then $\vec{v} \times \vec{w}$ is positive, and on the left, then the area is negative.
 
-![Cross product in 2d](/_media/3blue-2d-cross-product.png)
+![Cross product in 2d](../../../_media/3blue-2d-cross-product.png)
 
 That means that the cross-product order matters. If you switched the order, the cross product would become the negative of what it was before.
 
@@ -39,7 +39,7 @@ Using the "right-hand rule," we can determine which direction the new vector wil
 
 Point your index finger in the direction of $\vec{v}$ and middle finger in the direction of $\vec{w}$. When you stick out your thumb, that's the direction of the cross product.
 
-![Right-hand rule](/_media/3blue-right-hand-rule.png)
+![Right-hand rule](../../../_media/3blue-right-hand-rule.png)
 
 For general computations, there is a formula you can memorise:
 

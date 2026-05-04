@@ -45,18 +45,18 @@ modified: 2023-04-09 00:00
     * The dot product between vectors $\vec{u}$ and $\vec{v}$ in the summation convention is: $u_{i}v_{i}$
     * We can also consider a dot product a matrix product of a row vector and a column vector:
 
-        ![Dot product as matrix multiplication](/_media/laml-dot-product-as-matrix-mult.png)
+        ![Dot product as matrix multiplication](../../../../_media/laml-dot-product-as-matrix-mult.png)
 
         So there's some equivalence between [Matrix Multiplication](../../../../permanent/matrix-multiplication.md) and the [Dot Product](../../../../permanent/dot-product.md).
 
 * Symmetry of the [Dot Product](../../../../permanent/dot-product.md) (07:15-09:32)
     * If we have unit vector $\hat{u} = \begin{bmatrix}u_1 \\ u_2\end{bmatrix}$ and we do a projection onto one of the axis vectors: $\hat{e_1} = \begin{bmatrix}1 \\ 0\end{bmatrix}$, we get a length of $u_1$
 
-        ![Projection onto axis vectors](/_media/laml-projection-axis-vector.png)
+        ![Projection onto axis vectors](../../../../_media/laml-projection-axis-vector.png)
 
         * If we then project $e_1$ onto $\hat{u}$, we can draw a line of Symmetry between where the two projections cross:
 
-            ![Symmetry of dot product](/_media/laml-symmetry-of-dot-product.png)
+            ![Symmetry of dot product](../../../../_media/laml-symmetry-of-dot-product.png)
 
             * The two triangles on either side are the same size, proving that the projection is the same length in either direction. So that proves the [Dot Product](../../../../permanent/dot-product.md) is symmetrical and also that projection is the [Dot Product](../../../../permanent/dot-product.md).
                 * That explains why matrix multiplication with a vector is considered a projection onto the vectors composing the matrix (the matrix columns).
@@ -70,7 +70,7 @@ modified: 2023-04-09 00:00
         * Then, how do we transform a vector from one set of basis vectors to another?
     * If we have 2 basis vectors that describe the world of Panda bear in at $\begin{bmatrix}3 \\ 1\end{bmatrix}$ and $\begin{bmatrix}1 \\ 1\end{bmatrix}$. Noting that these vectors are describes in the normal coordinate system with basis vectors $\begin{bmatrix}0 \\ 1\end{bmatrix}$ and $\begin{bmatrix}1 \\ 0\end{bmatrix}$
 
-        ![Pandas basis vectors](/_media/laml-pandas-basis-vectors.png)
+        ![Pandas basis vectors](../../../../_media/laml-pandas-basis-vectors.png)
 
         * In Panda's world, those basis vectors are $\begin{bmatrix}1 \\ 0\end{bmatrix}$ and $\begin{bmatrix}0 \\ 1\end{bmatrix}$
     * If we have a vector described in Panda's world as $\frac{1}{2} \begin{bmatrix}3 \\ 1\end{bmatrix}$, we can get it in our frame, by multiplying with Panda's basis vectors:
@@ -135,7 +135,7 @@ modified: 2023-04-09 00:00
         * Take the first vector in the set, $v_1$ and normalise so it's of unit length giving you $e_1$ the first basis vector: $e_1 = \frac{v_1}{|v_1|}$
         * We can think of $v_2$ as having a component in the direction of $e_1$ and a component that's perpendicular.
 
-            ![e2 in Gram-Schmidt](/_media/laml-v2-in-gram-schmidt.png)
+            ![e2 in Gram-Schmidt](../../../../_media/laml-v2-in-gram-schmidt.png)
 
             * We can find the component in the direction of $e_1$ by finding the vector projection of $v_2$ onto $e_1$: $\frac{v_2 \cdot e_1}{|e_1|}$
                 * To get as a vector we multiply by $e_1$ (noting that it's already of unit length): $\frac{v_2 \cdot e_1}{|e_1|} e_1$

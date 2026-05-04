@@ -14,7 +14,7 @@ The trade-off with this architecture is that it introduces a latency penalty for
 
 The diagram below shows a hypothetic request to update a client's score.
 
-![Server Authoritative Multiplayer](/_media/server-auth.png)
+![Server Authoritative Multiplayer](../_media/server-auth.png)
 
 In this architecture, the server act's as the games [Rule Enforcer](rule-enforcer.md).
 

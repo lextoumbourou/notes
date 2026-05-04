@@ -28,7 +28,7 @@ The amplitude largely determines the loudness of a sound.
 
 Individuals with typical hearing can perceive sounds as soft as 0 dB SPL and generally tolerate up to around 120 dB SPL.
 
-![Sound wave diagram](_media/sound-wave-diagram.png)
+![Sound wave diagram](../_media/sound-wave-diagram.png)
 
 Recommended videos:
 

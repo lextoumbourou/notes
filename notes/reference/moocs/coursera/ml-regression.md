@@ -111,7 +111,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
   * Task 2: Estimate the specific fit from the data.
 * Block diagram for regression (diagram from memory)
 
-  ![Regression block diagram](/reference/_media/regression-block-diagram.jpg)
+  ![Regression block diagram](../../_media/regression-block-diagram.jpg)
 
 ### ML Model
 
@@ -158,7 +158,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
     * Any two points will be above the curve of the function
     * Min is where derivative = 0
 
-      ![Concave Convex](/reference/_media/concave-convex.png)
+      ![Concave Convex](../../_media/concave-convex.png)
 
   * Other functions:
     * Can be multiple solutions to derivative = 0 or no solutions
@@ -202,7 +202,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
 * When you have functions in higher dimensions, don't talk about "derivates" talk about "gradients".
 * Notation example:
 
-  ![Gradient Notation](/reference/_media/gradient-notation.png)
+  ![Gradient Notation](../../_media/gradient-notation.png)
 
 * Gradient definition:
   * A vector (array) with partial derivatives.
@@ -210,7 +210,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
   * Same as derivate but involves other derivates. Treats them like constants.
 * Worked example:
 
-  ![Gradient Example](/reference/_media/gradient-example.png)
+  ![Gradient Example](../../_media/gradient-example.png)
 
 * Gradient descent == hill descent but compute the gradient instead of derivate for each iteration.
 
@@ -233,8 +233,8 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
     * Different coefficients = parameters.
 * More inputs added to regression model lets you factor in other relationships between your output variable.
 
-![General notation](/reference/_media/general-notation.png)
-![More notation](/reference/_media/more-notation.png)
+![General notation](../../_media/general-notation.png)
+![More notation](../../_media/more-notation.png)
 
   * |Question| What letter will be used to represent number of observations?
     * ``N``
@@ -244,7 +244,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
      * ``D``
 * Commonly used equation:
 
-  ![Commonly used equation](/reference/_media/commonly-used-equation.png)
+  ![Commonly used equation](../../_media/commonly-used-equation.png)
 
 * Interpreting coefficients of fitted function
   * Co-efficient's should be considered in the context of the entire model.
@@ -255,7 +255,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
   * Step 1: Rewrite regression model using linear algebra
     * Rewrite the regression model for a single observation in matrix notation:
 
-      ![Rewrite Matrix Notation](/reference/_media/rewrite-matrix-notation.png)
+      ![Rewrite Matrix Notation](../../_media/rewrite-matrix-notation.png)
 
       * Multiple two vectors:
 
@@ -265,21 +265,21 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
       * Then add the error term.
     * Rewrite model for all observations:
 
-      ![Matrix Notation All Observations](/reference/_media/matrix-notation-all-observations.png)
+      ![Matrix Notation All Observations](../../_media/matrix-notation-all-observations.png)
 
         * Rows of middle matrix (matrix ``H``) = vector of features from previous section.
   * Step 2: Compute the cost
     * Algorithm = search all different fits to find the smallest cost (RSS).
     * RSS in matrix notation:
 
-      ![RSS Matrix Notation](/reference/_media/rss-matrix-notation.png)
+      ![RSS Matrix Notation](../../_media/rss-matrix-notation.png)
 
       * ``y - Hw`` is a residual vector.
       * Using vector multiplication of that vector times the transpose, you end up with a scalar of the residual sum of squares.
   * Step 3: Take the gradient of the RSS:
     * ``-2 * H_vector_transposed * (y_vector - H_vector * w_vector)``
 
-      ![Gradient of RSS Notes](/reference/_media/gradient-of-RSS-notes.png)
+      ![Gradient of RSS Notes](../../_media/gradient-of-RSS-notes.png)
 
   * Step 4: Approach 1, closed-form solution: solve for W.
     * Set result to 0 and solve.
@@ -414,7 +414,7 @@ i* Symptom of overfitting:
 	* Few observations (N small) can cause model to be quickly overfit as complexity grows.
 	* Many observations (N very large) can be harder to overfit (but harder to find datasets).
 
-        ![Number of Observations](./images/number-of-observations.png)
+        ![Number of Observations](../../_media/number-of-observations.png)
 
 * The larger the inputs, the more change of data not including inputs for all data points causing overfitting.
 * Balancing fits and magnitude of coefficients:
@@ -658,7 +658,7 @@ is sparse (eg has a lot of 0s in the dataset) can eliminate all 0 features.
  (ie coefficients shrink to 0).
 		* Coefficient path for Lasso:
 
-			![Coefficient path for Lasso](coefficient-path-for-lasso.png)
+			![Coefficient path for Lasso](../../_media/coefficient-path-for-lasso.png)
 
 			* For certain lambda values, features jump out of the model and other fall to 0. Individual impact of features becomes clearer.
 * Optimising the lasso objective

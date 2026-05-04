@@ -98,12 +98,12 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
     * Layer 1
         * Finds lines, gradients etc
 
-            ![CNN Layer 1 visualisation](/_media/cnn-layer-1.png)
+            ![CNN Layer 1 visualisation](../../../../_media/cnn-layer-1.png)
 
     * Layer 2
         * Combines filters from layer 1 to start to learn shapes, textures etc
 
-            ![CNN Layer 2 visualisation](/_media/cnn-layer-2.png)
+            ![CNN Layer 2 visualisation](../../../../_media/cnn-layer-2.png)
 
     * Layer 3 and up
         * Learning more concrete things like petals, faces etc
@@ -187,7 +187,7 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
         * Get data of independent (temperature) and dependent (R)
         * Ask: what % of time would we see relationship by chance under null hypothesis?
 
-            ![p-value](/_media/p-value-null-hypothesis.png)
+            ![p-value](../../../../_media/p-value-null-hypothesis.png)
 
             * Example from paper: null hypothesis is line of best-fit has a slope of 0
         * Most papers report on p-value

@@ -24,7 +24,7 @@ $\vec{a} \times \vec{b} = \begin{bmatrix} a_2 \cdot b_3 -  a_3 \cdot b_2 \\ a_3 
 
 The vector that's returned is orthogonal to both $\vec{a}$ and $\vec{b}$.
 
-![Orthogonal vector example](/_media/khan-orthogonal-example.png)
+![Orthogonal vector example](../../_media/khan-orthogonal-example.png)
 
 Note that two vectors are orthogonal to those vectors. To find which direction it points in, you use the right-hand rule: take your right hand and put your index finger in the direction of $\vec{a}$ and your middle finger in the direction of $\vec{b}$, where your thumb is pointing in the direction of the returned vector.
 

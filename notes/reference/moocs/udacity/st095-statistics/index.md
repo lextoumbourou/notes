@@ -4,6 +4,7 @@ date: 2013-08-30 00:00
 category: reference/moocs
 slug: st095-statistics
 modified: 2023-04-08 00:00
+summary: "Notes from [Statistics (st095)](https://www.udacity.com/course/statistics--st095) by Udacity"
 ---
 
 # Statistics (Udacity - st095)

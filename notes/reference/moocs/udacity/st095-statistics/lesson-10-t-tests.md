@@ -51,7 +51,7 @@ modified: 2023-04-08 00:00
     * t-statistic = ```(x-bar - mu) / (Std_dev / sqrt(n))``` = 22.36
     * We can definitely reject the null
 
-    <img src="./images/finch_t_statistic.png"></img>
+    <img src="/_media/st095-statistics/finch_t_statistic.png"></img>
 * Cohen's d
     * Common measure of "effect" size when comparing means
     * Measures the distance between two means in std deviation units

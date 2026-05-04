@@ -47,50 +47,50 @@ Notes from [Natural Language Processing Specialization](https://www.coursera.org
         * Returns a hidden state as output.
         * Hidden state is used by decoder to generate decoded sequence.
 
-        ![Seq to seq encoder and decoder](_media/s2s-encoder-decoder.png)
+        ![Seq to seq encoder and decoder](../../../../_media/s2s-encoder-decoder.png)
     * Encoder
         * Has an embedding layer that converts input tokens to embedding vectors.
         * At each input step, LSTM gets input embedding and hidden state from previous step.
         * Encoder returns the final hidden state, which aims to encodes the meaning of the sequence.
-        ![Seq to seq encoder](_media/s2s-encoder.png)
+        ![Seq to seq encoder](../../../../_media/s2s-encoder.png)
 
     * Decoder
         * Constructed of embedding layer and LSTM layer.
         * Use output of last hidden step of encoder and embedding for start token token `<sos>`.
         * Model outputs most probable next work, then pass the LSTM hidden state and embedding for predicted word to the next step.
-            ![Seq2Seq Decoder](_media/s2s-decoder.png)
+            ![Seq2Seq Decoder](../../../../_media/s2s-decoder.png)
 
 * Seq2Seq limitations:
     * Information bottleneck:
         * Since it uses a fixed length memory for hidden states, long sequences are difficult
         * As sequence size increases, model performance decreases.
         * Could work around using all encoder hidden states? Would have memory issues with bigger sequences.
-        ![Information bottleneck](_media/s2s-info-bottle-neck.png)
+        ![Information bottleneck](../../../../_media/s2s-info-bottle-neck.png)
 * Attention:
     * Maybe model can learn what's important to focus on at each step?
     * More in next section.
-    ![Seq 2 Seq attention idea](_media/s2s-attention.png)
+    ![Seq 2 Seq attention idea](../../../../_media/s2s-attention.png)
 
 ## Seq2Seq Model with Attention
 
 * What we now call attention was introduced in paper: [Neural Machine Translation By Jointly Learning to Align and Translate](https://arxiv.org/abs/1409.0473)
 * In the paper, they proved that Seq2Seq could be significantly improved with Attention by comparing BLEU scores against alternatives.
     * Note that the RNNsearch-50 model has no dropoff as the sequence length increases.
-![Seq2Seq performance](_media/seq2seq-performance.png)
+![Seq2Seq performance](../../../../_media/seq2seq-performance.png)
 
 * Attention motivation
     * We know traditional seq2seq models use final hidden state of encoder as input to decoder.
     * Therefore, the encoder has to compress all the information into one hidden state.
     * Instead of compressing, what about concatenating the hidden states and passing to the decoder?
         * It is inefficient and likely memory prohibitive for long sequences.
-     ![Use all hidden states](_media/seq2seq-concat-hidden-states.png)
+     ![Use all hidden states](../../../../_media/seq2seq-concat-hidden-states.png)
     * What about combining all hidden states into one vector: "The Context Vector"?
         * Pointwise additional is a simply approach. Just add up the vectors to produce another vector.
         * Now, each step in the decoder gets information about each step, but for the first words of the sentence, the latter encoder outputs are less useful.
         * Really, it's not that different from using the last hidden state.
-    ![Pointwise addition](_media/seq2seq-pointwise-addition.png)
+    ![Pointwise addition](../../../../_media/seq2seq-pointwise-addition.png)
     * Maybe we can weight the encoder vectors before the addition. If the word will be more important to the decoder, we can weight it higher.
-    ![Weighted sum](/_media/seq2seq-weighted-sum.png)
+    ![Weighted sum](../../../../_media/seq2seq-weighted-sum.png)
     * How do we learn these weights? Attention.
 * How attention weights are calculated
     * Decoders previous hidden states: $s_{i-1}$ has info about previous words in the output translation.
@@ -107,7 +107,7 @@ Notes from [Natural Language Processing Specialization](https://www.coursera.org
     * We can treat these Softmax values as the weights of each hidden state.
     * We can now do a weighted sum of each hidden state.
     * Diagram:
-     ![Attention layer overview](_media/seq2seq-attention-layer-in-more-depth.png)
+     ![Attention layer overview](../../../../_media/seq2seq-attention-layer-in-more-depth.png)
 
 ## Background on seq2seq
 
@@ -123,7 +123,7 @@ Notes from [Natural Language Processing Specialization](https://www.coursera.org
 * Conceptually queries, keys and values can be thought of as a lookup table, where the query is mapped to a key which returns a value.
 * In this example, when translating between French and English, "l'heure" matches "time", so we want to get the value for time.
 
-![Queries, Keys and Values](_media/seq2seq-queries-keys-values.png)
+![Queries, Keys and Values](../../../../_media/seq2seq-queries-keys-values.png)
 * Queries, keys and vectors are represented by learned embedding vectors.
 * Similarity between words is called *alignment*.
     * Similarity is used for the weighted sum.
@@ -141,19 +141,19 @@ Notes from [Natural Language Processing Specialization](https://www.coursera.org
 * Total operations of scaled dot-product attention: 2 matrix multiplications and a Softmax.
 * When the attention mechanism assigns a higher attention score to a word in the sequence, it means the next word in decoder's output will be strongly influenced.
 
-![Scaled-dot product](_media/seq2seq-scaled-dot-product.png)
+![Scaled-dot product](../../../../_media/seq2seq-scaled-dot-product.png)
 
 * Alignment between source and target languages must be learnt elsewhere.
 * Typically, alignment is used in other input embeddings before attention layer.
 * The alignments weights form a matrix with source words (queries) as the rows, and targets (keys) as the columns.
 
-    ![Alignment weights](_media/attention-alignment-weights.png)
+    ![Alignment weights](../../../../_media/attention-alignment-weights.png)
 
 * Similar words will have larger weights.
 * Through training, the model learns which words have similar information and encodes it into vectors.
 * It's particularly useful for languages with different grammatical structures.
 
-![Flexible Attention](_media/seq2seq-flexible-attention.png)
+![Flexible Attention](../../../../_media/seq2seq-flexible-attention.png)
 
 * This flexibility allows the model to focus on different input words, despite the word order.
 * Summary:
@@ -197,7 +197,7 @@ Notes from [Natural Language Processing Specialization](https://www.coursera.org
     * Pass input sequence through encoder.
     * The decoder passes its hidden state to the Attention Mechanism. Since it's difficult to implement, we use 2 decoders, one pre attention and one after attention.
 
-    ![NMT Model](_media/nmt-model.png)
+    ![NMT Model](../../../../_media/nmt-model.png)
 * First step: create 2 copies of the input tokens and target topics.
     * First copy of input goes into Encoder.
     * First copy of target, goes into Pre-attention Decoder. These are shifted right and we add a start of sentence token.
@@ -287,7 +287,7 @@ A lower temperature setting will give you a more confident yet conservative set 
 
 Here's the setting from the GPT3 playground:
 
-![GPT Temperature](_media/gpt-temperature.png)
+![GPT Temperature](../../../../_media/gpt-temperature.png)
 
 Both of these methods don't always produce the most convincing outputs, compared to those coming up in future lessons.
 
@@ -316,7 +316,7 @@ Step-by-step:
 
 If using Rouge, MBR would be summarised like this:
 
-![MBR with Rouge](_media/attention-mbr-rouge.png)
+![MBR with Rouge](../../../../_media/attention-mbr-rouge.png)
 
 This method gives better performance than random sampling and greedy decoding.
 

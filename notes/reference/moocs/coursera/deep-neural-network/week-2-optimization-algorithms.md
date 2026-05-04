@@ -57,6 +57,6 @@ status: draft
     * In the above example we set beta as follows: $\beta = 0.9$
 * Creates a line through the data that's much smoother but the curve shifts a bit to the right. So you have some latency when the weather changes:
 
-    ![Weather change exponentially weighted average example](/_media/weather-changed-exponentially-weighted-average-example.png)
+    ![Weather change exponentially weighted average example](../../../../_media/weather-changed-exponentially-weighted-average-example.png)
 
     * The higher you set beta, the more latency you have and the more days you would be averaging over, in the example.

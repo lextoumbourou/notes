@@ -10,14 +10,14 @@ status: draft
 * Triangle Rectangle Isosceles
     * We have a right-triangle with hypothenuse $h$ and 2 other sides that have the same length.
     
-        ![Right-triangle example with 2 other sides that have the same length](_media/week-8-applications-of-sine-and-cosine-rules-right-triangle.png)
+        ![Right-triangle example with 2 other sides that have the same length](../../../../_media/week-8-applications-of-sine-and-cosine-rules-right-triangle.png)
     * Since it's an [[Isosceles Triangle]], meaning on angle is 90°, we know that the 2 angles adjacent to h are equal, which means they're 45°.
     * Pythagoras theorem gives us $a^2 + b^2 = 2a^2 = h^2$
         * That means, $2a^2 = h^2$
         * Which means $a = h / \sqrt(2)$
         * We know that the ratio of adjacent to hypotenuse is $sin(90 - \theta)$ so $a/h=1/\sqrt(2) = \sin(45°)$
         * $\sin(45°) = 1/\sqrt(2) = \sqrt(2) / 2$
-* Finding the length of right-hand side of larger triangle with [[../../../../permanent/similar-triangles]]
+* Finding the length of right-hand side of larger triangle with [similar triangles](../../../../permanent/similar-triangles.md)
 
     * ![Example of using similar triangles](../../../../_media/week-8-applications-of-sine-and-cosine-rules-similar-tri.png)
         * We know that 1cm / X = 2.5 / 5cm

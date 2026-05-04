@@ -17,7 +17,7 @@ hide_cover_in_article: true
 
 In late 2013, DeepMind researchers published a Reinforcement Learning approach to playing Atari games with AI called [Deep Q-Network (DQN)](../../permanent/deep-q-networks.md). This was one of the first approaches to game playing could successfully "learn control policies" (i.e. play games), only from observing the raw pixels from the game, thanks to recent advanced in deep learning.
 
-![atari-fig-1.png](_media/atari-fig-1.png)
+![atari-fig-1.png](../../_media/atari-fig-1.png)
 
 This paper was published about one month before Google announced it would acquire DeepMind in January 2014.
 
@@ -167,7 +167,7 @@ obs, _ = env.reset()
 plt.imsave(PUBLIC_MEDIA_DIR / "pacman_preprocessed.png", obs, cmap="grey")
 ```
 
-![Pacman after preprocessing](_media/pacman_preprocessed.png)
+![Pacman after preprocessing](../../_media/pacman_preprocessed.png)
 
 Now we can stack the last N timesteps together, which is how a single observation is recognised.
 
@@ -177,7 +177,7 @@ env = wrappers.FrameStackObservation(env, stack_size=4)
 
 Which might look something like this:
 
-![Environment observation](_media/pacman_frame_stack_3d_layered.png)
+![Environment observation](../../_media/pacman_frame_stack_3d_layered.png)
 
 ### Epsilon-greedy policy
 

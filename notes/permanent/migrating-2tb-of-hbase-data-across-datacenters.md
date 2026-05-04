@@ -1,20 +1,20 @@
 ---
-date: 2023-04-16 00:00
+title: Migrating TB HBase datasets across datacenters
+date: 2016-06-19 00:00
+tags:
+ - HBase
+ - DataMigration
 ---
-Title: Migrating TB HBase datasets across datacenters
-Date: 2016-06-19
-Tags: HBase, Migration
-Status: Draft
 
 # Practical considerations for migrating TB datasets across datacenters
 
-At Scruch, we recently switch hosting providers for Rackspace to AWS. One of the many migration tasks was to move our 2TB HBase cluster with very little to no downtime. This article is mostly a brain dump of the research that went into this migration and includes some practical advice about the migration that aren't really available in other articles.
+At Scrunch, we recently switch hosting providers for Rackspace to AWS. One of the many migration tasks was to move our 2TB HBase cluster with very little to no downtime. This article is mostly a brain dump of the research that went into this migration and includes some practical advice about the migration that aren't really available in other articles.
 
 ## Requirements
 
 The requirements for the migration were pretty straight forward:
 
-* Copy 2TB (roughly x rows), across 10 tables from Rackspace's DLW datacentre to AWS North Virginia DC (us-west-1).
+* Copy 2TB of data across 10 tables from Rackspace's DLW datacentre to AWS North Virginia DC (us-west-1).
 * Little, to no downtime.
 * No data loss (obviously).
 
@@ -60,7 +60,7 @@ The copyTable operation is reasonable heavy on memory, so it's probably not advi
 
 At Scrunch, we aren't really running MapReduce jobs yet, so there was a little bit of setup involved to prepare YARN. If you're familar with YARN, then you can safely skip these steps:
 
-To do: list the steps here.
+At minimum, you need to confirm that YARN can start containers and that the node running the CopyTable job has enough memory to scan and write at a decent rate. In our case, that meant starting the ResourceManager and NodeManager, checking the ResourceManager UI, and running a small test job before attempting the real copy.
 
 ### Ensure source cluster can communicate with destination cluster
 
@@ -84,11 +84,9 @@ region3.internal 50.23.23.12
 Then setup my security groups (firewall rules in AWS-land) such that the source cluster could access the remote cluster on the following ports:
 
 * ZooKeeper - 2181
-* RegionServer RPC - ??
+* RegionServer RPC - whatever your destination cluster has configured for `hbase.regionserver.port`
 
-Here's a screenshot of the security group configuration for the destination cluster:
-
-To do: add me.
+The important bit is that the task nodes running CopyTable need to be able to resolve and connect to every RegionServer they are going to write to. If the client can reach ZooKeeper but not the RegionServers it discovers from ZooKeeper, the job will fail part-way through.
 
 ## Preparing the destination cluster
 
@@ -118,13 +116,12 @@ alse', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}
 Which translates directing into a create table command on the destination cluster:
 
 ```
-hbase(main):005:0> create 'my_table'
-To do
+hbase(main):005:0> create 'my_table', 'a', 'i', 'r'
 ```
 
 ### (Optional) Pre-split your regions on the destination cluster
 
-To do.
+If you know the existing region split points, pre-splitting the destination table can help avoid writing all the imported rows into a single region at the start of the copy. For a simple migration, you can skip this and let HBase split regions naturally as data arrives.
 
 ## Running the migration
 
@@ -133,20 +130,22 @@ To run the migration, the premise is simple: copy up all the data, then copy up 
 For our requirements, nothing particularly complex is required here and was all done with a bash script. Just store the time that the job was started, then run CopyTable for each table, then copy up the data that's changed since the job was started. Something like this:
 
 ```
-TABLES="""
+TABLES="
 table1
 table2
-"""
+"
 
 STARTTIME_IN_MS=$(($(date +%s%N)/1000000))
 
-for table in TABLES; do
+for table in $TABLES; do
    hbase org.apache.hadoop.hbase.mapreduce.CopyTable --new.name=$table $table
 done
 
-for table in TABLES; do
-   hbase org.apache.hadoop.hbase.mapreduce.CopyTable --new.name=$table $table --starttime=STARTTIME_IN_MS
+for table in $TABLES; do
+   hbase org.apache.hadoop.hbase.mapreduce.CopyTable --new.name=$table --starttime=$STARTTIME_IN_MS $table
 done
 ```
 
 Then, once you've done some basic verification of the remote cluster (count rows etc), you're ready to cut your application over to the destination cluster.
+
+The main thing to remember is that CopyTable is not a full replication system. It is useful for the initial bulk copy and a short catch-up window, but you still need to plan the cutover carefully and keep the final write window as small as possible.

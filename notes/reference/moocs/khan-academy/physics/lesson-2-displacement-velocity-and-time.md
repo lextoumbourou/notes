@@ -10,7 +10,7 @@ Notes from [Lesson 2: Displacement, velocity, and time](https://www.khanacademy.
 ## Intro to vectors and scalars
 
 * [Vector](../../../../permanent/vector.md) has a magnitude/size AND distance. A [Scalar](Scalar) only has a distance.
-* [Displacement](../../../../journal/permanent/displacement.md)
+* [Displacement](../../../../permanent/displacement.md)
     * In physics, we call distance "displacement".
     * Displacement is a vector quantity.
 * Speed
@@ -24,7 +24,7 @@ Notes from [Lesson 2: Displacement, velocity, and time](https://www.khanacademy.
 
 ## Introduction to reference frames
 
-* [Frame of Reference](../../../../journal/permanent/frame-of-reference.md)
+* [Frame of Reference](../../../../permanent/frame-of-reference.md)
     * Point of view for which you're measuring from.
 
     ![lesson-2-displacement-velocity-and-time-frame-of-ref](../../../../journal/_media/lesson-2-displacement-velocity-and-time-frame-of-ref.png)
@@ -32,12 +32,12 @@ Notes from [Lesson 2: Displacement, velocity, and time](https://www.khanacademy.
 ## What is displacement
 
 * To describe an object's motion, we first need to describe its position.
-    * Specifically: need to specify its position relative to a convenient [Frame of Reference](../../../../journal/permanent/frame-of-reference.md).
+    * Specifically: need to specify its position relative to a convenient [Frame of Reference](../../../../permanent/frame-of-reference.md).
         * Earth is a common reference frame.
         * If a person is in an airplane, we might use that as the frame of reference.
 * Variable $x$ is commonly used to represent the horizontal position.
 * Variable $y$ is used to represent the vertical position.
-* Change in position is known as [Displacement](../../../../journal/permanent/displacement.md).
+* Change in position is known as [Displacement](../../../../permanent/displacement.md).
 * Mathematically defined as follows:
     * Displacement = $\triangle x = x_f - x_0$
         * x_f refers to the value of the final position.

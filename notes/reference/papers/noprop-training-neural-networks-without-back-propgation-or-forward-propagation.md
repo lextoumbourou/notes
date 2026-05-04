@@ -1,4 +1,3 @@
-
 ---
 title: "NoProp: Training Neural Networks Without Back-Propagation or Forward-Propagation"
 date: 2025-05-15 00:00

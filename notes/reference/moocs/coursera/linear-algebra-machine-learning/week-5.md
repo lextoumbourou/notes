@@ -15,24 +15,24 @@ parent: linear-algebra-machine-learning
 * Geometric interpretation of [Eigenvector](../../../../permanent/eigenvector.md) and [Eigenvalue](../../../../permanent/eigenvalue.md) (00:45-04:22)
     * Though we typically visualize linear transformations based on how they affect a single vector, we can also consider how they affect every vector in the space by drawing a square.
 
-        ![Visualing all vectors in space as square](/_media/laml-all-vectors-in-space-square.png)
+        ![Visualing all vectors in space as square](../../../../_media/laml-all-vectors-in-space-square.png)
 
         We can then see how a transformation distorts the shape of the square.
 
     * If we apply a scaling of 2 in vertical direction $\left( \begin{bmatrix}1 & 0 \\ 0 & 2\end{bmatrix} \right)$ the square becomes a rectangle.
 
-        ![Vertical scaling](/_media/laml-vertical-scaling-to-rectangle.png)
+        ![Vertical scaling](../../../../_media/laml-vertical-scaling-to-rectangle.png)
 
     * A horizontal sheer on the other hand looks like this: $\left( \begin{bmatrix}1 & s \\ 0 & 1\end{bmatrix} \right)$
 
-        ![Horizontal sheer transform](/_media/laml-horizontal-sheer-transform.png)
+        ![Horizontal sheer transform](../../../../_media/laml-horizontal-sheer-transform.png)
 
     * When we perform these operations:
         * Some vectors point in the same direction but change length.
         * Some vectors point in a new direction.
         * Some vectors do not change.
 
-        ![Highlighted vectors after scaling](_media/laml-vectors-after-scaling.png)
+        ![Highlighted vectors after scaling](../../../../_media/laml-vectors-after-scaling.png)
 
     * The vectors that point in the same direction we refer to as [Eigenvector](../../../../permanent/eigenvector.md).
     * The vectors that point in the same direction and whose size does not change are said to have [Eigenvalues](Eigenvalues) 1.
@@ -55,17 +55,17 @@ parent: linear-algebra-machine-learning
         * In regular rotation, there are no Eigenvectors. However, in 180° rotation, all vectors become [Eigenvector](../../../../permanent/eigenvector.md) pointing in the opposite direction.
             * Since they are pointing in the opposite direction, we say they have [Eigenvalues](Eigenvalues) of -1.
 
-                ![180 degree rotation Eigenvectors](/_media/laml-180-rotation-eigenvectors.png)
+                ![180 degree rotation Eigenvectors](../../../../_media/laml-180-rotation-eigenvectors.png)
 
     * Combination of horizontal sheer and vertical scaling
         * Has 2 [Eigenvector](../../../../permanent/eigenvector.md). The horizontal vector and a 2nd Eigenvector between the orange and pink vector.
 
-            ![Eigenvectors after horizontal and vertical scaling](/_media/laml-horizontal-and-vertical-scaling.png)
+            ![Eigenvectors after horizontal and vertical scaling](../../../../_media/laml-horizontal-and-vertical-scaling.png)
 
 * We can calculate Eigenvalues in much higher dimensions.
     * In the 3d example, finding the Eigenvector also tells you the axis of rotation.
 
-        ![3d Eigenvector example showing the axis of rotation](/_media/laml-3d-eigenvector-example.png)
+        ![3d Eigenvector example showing the axis of rotation](../../../../_media/laml-3d-eigenvector-example.png)
 
 ### Calculating eigenvectors
 
@@ -116,7 +116,7 @@ parent: linear-algebra-machine-learning
         * For example, if you have a matrix that represents a change to a single particle after a specific timestep: $T = \left( \begin{bmatrix}0.9 & 0.8 \\ -1 & 0.35\end{bmatrix} \right)$ and you apply to a matrix $v_0 = \begin{bmatrix}0.5 \\ 1 \end{bmatrix}$ you end up with result: $v_1 = Tv_0$
         * You can apply it again to that result $v_2 = Tv_1$
 
-            ![Multiple matrix multiplications](/_media/laml-multiple-matrix-multiplications.png)
+            ![Multiple matrix multiplications](../../../../_media/laml-multiple-matrix-multiplications.png)
 
         * If you wanted to apply it millions of times, the operation could be expensive.
     * Can instead square $T$ to get the same result: $v_2 = {T^2} v_0$ or to the power of any $n$: $v_n = {T^n} v_0$
@@ -132,7 +132,7 @@ parent: linear-algebra-machine-learning
     * Since $C^1C$ returns the identity, we can rewrite as: $T^{n} = CD^{2}C^{1}$
 * The whole process looks like this:
 
-    ![Multiple matrix multiplications with diagonalization](/_media/laml-multiple-transformations-with-diagonalisation.png)
+    ![Multiple matrix multiplications with diagonalization](../../../../_media/laml-multiple-transformations-with-diagonalisation.png)
 
 ### Eigenbasis example
 
@@ -163,7 +163,7 @@ parent: linear-algebra-machine-learning
         * Central assumption: "the importance of a website is related it links to and from other websites."
     * Model represents a model mini internet:
 
-        ![Mini internet graph](/_media/laml-mini-internet-graph.png)
+        ![Mini internet graph](../../../../_media/laml-mini-internet-graph.png)
 
         * Network $1_A$ would have vector: $\begin{bmatrix}0 & 1 & 1 & 1\end{bmatrix}$ where a $1$ represents a link to it.
         * We then normalise the vector so the total probabilty sums to 1: $\begin{bmatrix}0 & 1/3 & 1/3 & 1/3 \end{bmatrix}$

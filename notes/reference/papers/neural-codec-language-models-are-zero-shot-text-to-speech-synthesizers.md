@@ -125,7 +125,7 @@ They use eight codebooks, each with 1024 code dimensionality. The encoder produc
 
 The AR model can attend to all previous tokens in the sequence, whereas the NAR model can attend to all previously predicted tokens.
 
-![Attention used by AR and NAR models in VALL-E](../../../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-fig-3-attention.png)
+![Attention used by AR and NAR models in VALL-E](../../_media/neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers-fig-3-attention.png)
 
 ### Embeddings and decoding
 

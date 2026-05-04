@@ -20,7 +20,7 @@ x-bar = sum(x) / n
 mu = sum(x) / N
 ```
 
-<img src="./images/mu_xbar.png"></img>
+<img src="/_media/st095-statistics/mu_xbar.png"></img>
 
 * Properties of mean
     * All scores in distribution affect mean

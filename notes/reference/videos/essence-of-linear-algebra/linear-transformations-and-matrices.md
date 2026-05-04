@@ -41,7 +41,7 @@ Another example is a 90 degree rotation of space. $\hat{i}$ ends up at $\begin{b
 
 We get transformation matrix: $\begin{bmatrix}0 && -1 \\ 1 && 0\end{bmatrix}$
 
-![90 degree rotation](/_media/linear-trans-90-degree-rot.png)
+![90 degree rotation](../../../_media/linear-trans-90-degree-rot.png)
 
 We can determine where vector $\vec{u} = \begin{bmatrix}a \\ b\end{bmatrix}$ lands as $a\begin{bmatrix}0 \\ 1\end{bmatrix} + b\begin{bmatrix}-1 \\ 1\end{bmatrix}$
 
@@ -49,12 +49,12 @@ Another example is a [Sheer Transformation](../../../permanent/lintrans-shear.md
 
 We get transformation matrix: $\begin{bmatrix}1 && 1 \\ 0 && 1\end{bmatrix}$
 
-![Shear transformation](/_media/linear-trans-shear-trans.png)
+![Shear transformation](../../../_media/linear-trans-shear-trans.png)
 
 We can determine where vector $\vec{u} = \begin{bmatrix}a \\ b\end{bmatrix}$ lands as $a\begin{bmatrix}1 \\ 0\end{bmatrix} + b\begin{bmatrix}1 \\ 1\end{bmatrix}$
 
 If the columns of a transformation matrix are linearly dependent, the linear transformation "squishes" space into a single line.
 
-![Linear dependent columns](/_media/linear-trans-linear-dep-columns.png)
+![Linear dependent columns](../../../_media/linear-trans-linear-dep-columns.png)
 
 The span of those 2 vectors is 1-dimensional in this case.

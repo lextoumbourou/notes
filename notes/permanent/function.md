@@ -13,7 +13,7 @@ A function is a rule that associates inputs with outputs.
 
 They form the core of many aspects of mathematics and numerous programming languages.
 
-The fundamental explanation of functions comes from [Set Theory](permanent/set-theory.md), in which a function is regarded as the mapping from one set, $A$, to another set, $B$, expressed as:
+The fundamental explanation of functions comes from [Set Theory](set-theory.md), in which a function is regarded as the mapping from one set, $A$, to another set, $B$, expressed as:
 
 $f : A \rightarrow B$
 
@@ -25,7 +25,7 @@ Consider a function, $f$, that maps a set of people's names to their ages:
 * $B = \{0, 1, 2, \cdots, 120 \}$
 * $f : A \rightarrow B$
 
-![An example of the above mapping](_media/function-diagram.png)
+![An example of the above mapping](../_media/function-diagram.png)
 
 The set of possible inputs is called the [Domain of a Function](function-domain.md) or $D_f$:
 

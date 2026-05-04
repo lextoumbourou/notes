@@ -44,7 +44,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 * Declared that since brain activity had an "all-or-nothing" characteristic, they could be treated as "propositional logic"
 * In 1950s, Frank Rosenblatt made some subtle changes to model and oversaw the creation of the [Mark 1 Perceptron](permanent/mark-1-perceptron.md)
 
-    ![Mark 1 Perceptron](/_media/mark-1-perceptron.jpeg)
+    ![Mark 1 Perceptron](../../../../_media/mark-1-perceptron.jpeg)
 
 ## 11:22 - First AI winter
 
@@ -56,7 +56,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 
 * Released in 1986, described the foundations of modern deep learning:
 
-    ![PDP](/_media/pdp.png)
+    ![PDP](../../../../_media/pdp.png)
 
 ## 13:38 The Age of Deep Learning
 
@@ -183,7 +183,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 
 * A function can particular data really well, but that doesn't mean it will generalise to new data.
 
-![Proper vs Overfit](/_media/proper-vs-overfit.png)
+![Proper vs Overfit](../../../../_media/proper-vs-overfit.png)
 
 * "Craft of Deep Learning is about creating models with proper fit"
 * Only way to do it is to check the metrics on data the model wasn't trained on.

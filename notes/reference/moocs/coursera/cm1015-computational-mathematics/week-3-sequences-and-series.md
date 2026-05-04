@@ -22,7 +22,7 @@ status: draft
 * Sequence
     * $a, a \times q, a \times q^2, ..., a \times q^n$
     * Formal definition:
-        * Given a [Set](permanent/set.md) X, a sequence is a [Function](../../../../permanent/function.md) $a: N \rightarrow X$
+        * Given a [Set](../../../../permanent/set.md) X, a sequence is a [Function](../../../../permanent/function.md) $a: N \rightarrow X$
             * i.e. a set a(0), a(1), ...., a(n) ... denoted with $\{a_n\}_{n \in N}$
     * Can be defined explicitly $a_n = f(n)$
         * Example: $a_n = 2n + 1 \rightarrow 1, 3, 5, 7, 9 ...$

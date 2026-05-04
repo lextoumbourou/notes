@@ -24,7 +24,7 @@ For two vectors $\vec{v}$ and $\vec{w}$, we can imagine all the vectors you can 
 
 If both vectors are on the same line, the result vector will all be limited to the same line.
 
-![Vector span same line](/_media/linear-vector-span-same-line.png)
+![Vector span same line](../../../_media/linear-vector-span-same-line.png)
 
 Also, any set of vectors to consider is both vectors have a magnitude of 0, which means they're stuck at the origin.
 
@@ -40,7 +40,7 @@ The span of most pairs of vectors is the entire space itself. When the vectors l
 
 In 3d space, if you have two vectors pointing in a different direction, you can think of span as a flat sheet across 3d space.
 
-![3d space span](/_media/linear-flat-sheet.png)
+![3d space span](../../../_media/linear-flat-sheet.png)
 
 If you have three vectors, the span is the entire 3d space unless one vector shares a span with another.
 

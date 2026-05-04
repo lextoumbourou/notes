@@ -27,4 +27,4 @@ If we have a set of tasks A that can achieved in $m$ different ways, and task B 
 
 ## [Multiplication Principle](multiplication-principle.md)
 
-There are 2 key ideas: [Permutation](permutation.md)s and [Combination](Combination)s.
+There are 2 key ideas: [Permutation](permutation.md)s and [Combination](combination.md)s.

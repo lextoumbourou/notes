@@ -19,7 +19,7 @@ status: draft
 * Given an image, the computer may do object detection using vertical edges and horizontal images. How would one approach it?
 * Take a 3x3 "filter" and perform a "convolution" operation.
 
-  ![Vertical Edge Detection](/_media/vertical-edge-detection.png)
+  ![Vertical Edge Detection](../../../../_media/vertical-edge-detection.png)
 
 * Basically place the filter over a 3x3 section of an input image and take the element-wise product every place you can.
 	* Research papers may call a filter a "kernel".

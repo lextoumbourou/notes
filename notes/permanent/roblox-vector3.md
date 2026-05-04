@@ -9,7 +9,7 @@ In Roblox, a [Vector3](https://developer.roblox.com/en-us/api-reference/datatype
 
 For example, a Part's `Position` property is a Vector3 that sets its center position.
 
-![Set part Position](/_media/roblox-set-part-position-vector3.gif)
+![Set part Position](../_media/roblox-set-part-position-vector3.gif)
 
 ```lua
 game.Workspace.Part.Position = Vector3.new(0, 0, 0)
@@ -17,7 +17,7 @@ game.Workspace.Part.Position = Vector3.new(0, 0, 0)
 
 The `Rotation` property describes the amount of rotation along each axis in degrees.
 
-![Set part Rotation](/_media/roblox-set-part-rotation-vector3.gif)
+![Set part Rotation](../_media/roblox-set-part-rotation-vector3.gif)
 
 ```lua
 game.Workspace.Part.Rotation = Vector3.new(0, 90, 0)
@@ -25,7 +25,7 @@ game.Workspace.Part.Rotation = Vector3.new(0, 90, 0)
 
 The `Size` property describes the size of each side of a rectangular prism.
 
-![Set part Size](/_media/roblox-set-part-size-vector3.gif)
+![Set part Size](../_media/roblox-set-part-size-vector3.gif)
 
 ```lua
 game.Workspace.Part.Size = Vector3.new(0)

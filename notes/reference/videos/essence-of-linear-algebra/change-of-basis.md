@@ -24,7 +24,7 @@ Using a different set of basis vectors for a coordinate system is possible.
 
 For example, a friend could have these basis vectors:
 
-![Alternate basis vectors](/_media/3blue-alternate-basis-vectors.png)
+![Alternate basis vectors](../../../_media/3blue-alternate-basis-vectors.png)
 
 A vector $\begin{bmatrix}3 \\ 2\end{bmatrix}$ (described in the standard basis ), in your friend's basis would be $\begin{bmatrix}(5/3) \\ (1/3)\end{bmatrix}$.
 
@@ -66,7 +66,7 @@ Then, apply the transformation in our basis.
 
 Then, apply the inverse alternate basis vectors transformation to convert back into her basis.
 
-![Changing basis of transformation](/_media/3blue-changing-basis-transform-composition.png)
+![Changing basis of transformation](../../../_media/3blue-changing-basis-transform-composition.png)
 
 Since we can think of those three matrices as simply a composition of transformations, we can compose them into one transformational matrix: a transformation to the alternate basis.
 

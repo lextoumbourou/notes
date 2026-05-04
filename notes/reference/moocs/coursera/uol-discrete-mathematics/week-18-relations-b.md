@@ -9,7 +9,7 @@ modified: 2023-04-08 00:00
 
 ## 9.201 Equivalence relations and equivalence classes
 
-* Definition of [Equivalence Relation](permanent/equivalence-relation.md)
+* Definition of [Equivalence Relation](../../../../permanent/equivalence-relation.md)
     * Let R be a relation of elements on a set S. R is an equivalence relation if and only if R is reflexive, symmetric and transitive.
 * Example 1
     * Let R be relation of elements in Z:

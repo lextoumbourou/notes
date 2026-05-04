@@ -80,12 +80,12 @@ Notes from [Discrete Mathematics with Applications] by Susanna Epp.
     * Named after English logician John Venn.
         * In a Venn diagram, universal set U is represented by points inside a rectangle and sets by the points enclodes by simple close.
     * No overlap:
-    ![Venn diagram no overlap](/_media/venn-no-overlap.png)
+    ![Venn diagram no overlap](../../../_media/venn-no-overlap.png)
     * A subset of B
-    ![Venn diagram subset](/_media/venn-subset.png)
+    ![Venn diagram subset](../../../_media/venn-subset.png)
 
     * A and B has common elements.
-    ![Venn common elements](/_media/venn-common-elements.png)
+    ![Venn common elements](../../../_media/venn-common-elements.png)
 * Power Set
     * Family of setsets of set A is the power set of A, denoted by P(A).
     * Find power set P(A) of the set A = {a, b} = {{a}, {b}, {a, b}, {}}

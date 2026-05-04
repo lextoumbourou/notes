@@ -13,17 +13,17 @@ These are notes from [Eigenvectors and eigenvalues | Chapter 14, Essence of line
 
 Consider a linear transformation in 2d, $\begin{bmatrix}3 && 1 \\ 0 && 2\end{bmatrix}$. Most vectors don't continue along their span after the transformation.
 
-![Vector knocked off span](/_media/3blue-vector-knocked.png)
+![Vector knocked off span](../../../_media/3blue-vector-knocked.png)
 
 However, some particular vectors do remain on their span. The vector $\hat{i}$ moves over to 3x itself but still on the x-axis.
 
-![Vector remain on span after transformation](/_media/3blue-vector-remain-on-span.png)
+![Vector remain on span after transformation](../../../_media/3blue-vector-remain-on-span.png)
 
 Because of how linear transformations work, any other vector on the same axis is scaled by 3.
 
 Another vector $\begin{bmatrix}-1 \\ 1\end{bmatrix}$ also stays on its span during the transformation. It is stretched by a factor of 2, as does any vector on the same span.
 
-![Eigenvectors stay on the same span](/_media/3blue-eigenvectors.png)
+![Eigenvectors stay on the same span](../../../_media/3blue-eigenvectors.png)
 
 These vectors are called the [Eigenvector](../../../permanent/eigenvector.md)s.
 
@@ -33,7 +33,7 @@ The Eigenvalues can be negative and fractional.
 
 Finding Eigenvectors is useful in 3d transformations because the Eigenvector is the axis of rotation.
 
-![Eigenvectors in 3d transformation](/_media/3blue-eigenvectors-axis-of-rotation.png)
+![Eigenvectors in 3d transformation](../../../_media/3blue-eigenvectors-axis-of-rotation.png)
 
 It is much easier to think about a 3d rotation using the axis of rotation and the angle it's rotating, rather than thinking of the 3x3 matrix that describes the rotation.
 

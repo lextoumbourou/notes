@@ -36,7 +36,7 @@ $C = acos(\frac{a^2 + b^2 - c^2}{2ab})$
 
 One way to solve the problem using the law of cosines is to convert them into two right triangles.
 
-![Law of Cosines](/_media/khan-academy-law-of-cosines.png)
+![Law of Cosines](../../../../_media/khan-academy-law-of-cosines.png)
 
 Then we can calculate the side $d$ knowing CAH: Cosine =Adjacent / Hypotenuse.
 

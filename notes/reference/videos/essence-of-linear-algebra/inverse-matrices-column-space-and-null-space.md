@@ -34,7 +34,7 @@ $\begin{bmatrix}2 && 5 && 3 \\ 4 && 0 && 8 \\ 1 && 3 && 0\end{bmatrix} \begin{bm
 
 We can visualize a [Matrix Transformation](../../../permanent/matrix-transformation.md) geometrically by finding a vector $\vec{x}$ that, when transformed by $A$, lands on $\vec{v}$.
 
-![Linear system transformation visualisation](/_media/linear-system-trans-visual.png)
+![Linear system transformation visualisation](../../../_media/linear-system-trans-visual.png)
 
 In 2d example, with 2 equations and 2 unknowns:
 

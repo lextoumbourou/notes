@@ -26,7 +26,7 @@ I paid using the EasyPark App per the council's instruction on various signs thr
 
 When we returned, they had slapped a fine on our Toyota anyway.
 
-![Parking Fine](/_media/chatgpt1-parking-fine.png)
+![Parking Fine](../_media/chatgpt1-parking-fine.png)
 
 I double-checked what I had entered into the app. I mistyped the number plate by one letter. Oops.
 
@@ -34,25 +34,25 @@ Since we have never received a parking fine before, and I had proof of payment, 
 
 We had already been experimenting with ChatGPT, and the letter seemed a good test case.
 
-![This is the prompt I first put into ChatGPT](/_media/chatgpt1-prompt1.png)
+![This is the prompt I first put into ChatGPT](../_media/chatgpt1-prompt1.png)
 
-![This is the first response I first put into ChatGPT](/_media/chatgpt1-response1.png)
+![This is the first response I first put into ChatGPT](../_media/chatgpt1-response1.png)
 
 The first response was close but longer than I would like. Plus, I didn't tell it that I was planning to attach a photo of the fine and proof of payment.
 
-![The 2nd prompt passed to ChatGPT](/_media/chatgpt1-prompt2-response2.png)
+![The 2nd prompt passed to ChatGPT](../_media/chatgpt1-prompt2-response2.png)
 
-![ChatGPT 2nd Response](_media/chatgpt1-response2.png)
+![ChatGPT 2nd Response](../_media/chatgpt1-response2.png)
 
 That works. Now for a title.
 
-![Title request](/_media/chatgpt1-title.png)
+![Title request](../_media/chatgpt1-title.png)
 
 I emailed that<small>*</small> from my phone and a day later received this response.
 
-![Response from Council](_media/chatgpt1-response-email.png)
+![Response from Council](../_media/chatgpt1-response-email.png)
 
-![Council response](_media/chatgpt1-council-response.png)
+![Council response](../_media/chatgpt1-council-response.png)
 
 So you can dispute a parking fine with ChatGPT.
 

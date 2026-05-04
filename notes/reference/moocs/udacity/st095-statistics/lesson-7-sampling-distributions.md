@@ -17,9 +17,9 @@ modified: 2023-04-08 00:00
     * Mean == population mean
     * standard deviation = SE = pop_standard_deviation / sqrt(sample_size)
 
-<img src="./images/sqr_root_sample_size.png"></img>
+<img src="/_media/st095-statistics/sqr_root_sample_size.png"></img>
 
 * Central Limit Theorem
     * given any population shape, if you take a sample from it and calculate the mean enough times, you'll get a normal distribution
 
-<img src="./images/central_limit_theorum.png"></img>
+<img src="/_media/st095-statistics/central_limit_theorum.png"></img>
