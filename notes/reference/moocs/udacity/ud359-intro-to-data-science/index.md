@@ -2,6 +2,7 @@
 title: Intro to Data Science (Udacity - ud359)
 date: 2014-04-16 00:00
 status: draft
+summary: "Notes from [Intro to Data Science (ud359)](https://www.udacity.com/course/intro-to-data-science--ud359) by Udacity"
 ---
 
 # Intro to Data Science (Udacity - ud359)

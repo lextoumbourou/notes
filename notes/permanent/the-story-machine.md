@@ -4,6 +4,7 @@ date: 2021-01-26 00:00
 tags:
   - GameDesign
   - StoryWriting
+summary: A game designed to generate a unique story each playthrough rather than follow a scripted one.
 ---
 
 One of the two methods of story telling in games. The game isn't designed with a specific story, but a unique one is generated each game. The Sims and Minecraft are games that are specifically designed to be story machines. [@schellArtGameDesign2015a] (pg. 229-230)

@@ -4,6 +4,7 @@ date: 2021-05-30 00:00
 cover: /_media/babe-ruth-and-others.jpeg
 tags:
   - LearningAndTeaching
+summary: Starting with the big picture.
 ---
 
 Teaching the "whole game" uses the metaphor of baseball to highlight how common approaches to teaching are the equivalent of doing batting practice without ever playing an actual game.

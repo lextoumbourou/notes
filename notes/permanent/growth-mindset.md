@@ -3,6 +3,7 @@ title: Growth Mindset
 date: 2021-04-29 00:00
 tags:
   - Personal Growth
+summary: The belief that any skill can be mastered through effort, rather than being fixed at birth.
 ---
 
 According to Carol Dweck, people are on a continuum between two ideas about acquiring skills: those with Fixed Mindset believe that all ability is fixed at birth and those with Growth Mindsets believe that they can master any skill.

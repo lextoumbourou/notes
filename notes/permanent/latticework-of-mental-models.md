@@ -5,6 +5,7 @@ tags:
   - Zettelkasten
   - LearningandTeaching
 cover: /_media/latticework-at-ceremonial-count.jpeg
+summary: Building a broad network of concepts across disciplines so ideas can reinforce each other.
 ---
 
 Charlies Munger advocates for building a "broad theoretical toolbox" that he calls a Latticework of Mental Models. The idea is to accumulate concepts from a wide range of disciplines so that our facts can "hang together" in a network of ideas.

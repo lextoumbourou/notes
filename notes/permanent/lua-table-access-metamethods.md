@@ -3,6 +3,7 @@ title: Lua Table-Access Metamethods
 date: 2021-02-14 00:00
 tags:
   - Lua
+summary: Metamethods for intercepting table reads and writes — the foundation of OOP in Lua.
 ---
 
 Table access [metamethods (Lua)](metamethods (Lua)) provide a mechanism for handling table lookup using the `__index` metamethod and writes to missing keys, using the `__newindex` metamethod. They are the foundation for object-oriented programming in Lua using [Object Prototypes](object-prototypes.md)es.md) and are also useful for creating read-only tables, tables with default values and tracking tables access.

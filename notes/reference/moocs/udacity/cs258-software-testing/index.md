@@ -4,6 +4,7 @@ date: 2014-12-14 00:00
 category: reference/moocs
 slug: cs258-software-testing
 status: draft
+summary: "Notes from [Software Testing (cs258)](https://www.udacity.com/course/software-testing--cs258) by Udacity"
 ---
 
 # Software Testing (Udacity - cs258)

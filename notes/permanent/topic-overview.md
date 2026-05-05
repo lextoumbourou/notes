@@ -4,6 +4,7 @@ date: 2021-05-28 00:00
 tags:
   - Zettelkasten
 cover: /_media/slipbox-index-card.png
+summary: The entry point for a cluster of ideas.
 ---
 
 In Zettelkasten, the topic overview is a note that links to key [Permanent Notes](permanent-notes.md) within a topic. It is linked to via the index and serves as an entry point for a topic.

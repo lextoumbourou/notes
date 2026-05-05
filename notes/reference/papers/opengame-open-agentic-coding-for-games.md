@@ -24,7 +24,8 @@ The paper argues that to build products as complex as games, the field needs to 
 The paper basically throws the kitchen sink at the problem of game design: a base model, a code agent, a new collection of [Agent Skills](../../permanent/agent-skills.md) for game development, and a new benchmark and evaluation framework.
 
 ![jiang-et-all-figure-2.png](../../_media/jiang-et-all-figure-2.png)
-*Figure 2. [@jiangOpenGameOpenAgentic2026]*
+
+*Figure 2. from [@jiangOpenGameOpenAgentic2026] - showcasing the entire end-to-end OpenGame system.*
 
 ### Base Model
 

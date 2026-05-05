@@ -3,6 +3,7 @@ title: Zombie Processes
 date: 2013-06-08 00:00
 tags:
   - linux
+summary: A dead process waiting to be reaped.
 ---
 
 Zombie processes are "dead" processes. That is, processes that have finished executing and are waiting for the parent to reap them (collect information about their status).

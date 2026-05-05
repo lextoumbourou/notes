@@ -3,6 +3,7 @@ title: ML Regression
 date: 2016-02-03 00:00
 category: reference/moocs
 modified: 2023-04-09 00:00
+summary: "Notes from Machine Learning: Regression by University of Washington on Coursera."
 ---
 
 Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression) by Coursera.

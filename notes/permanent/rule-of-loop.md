@@ -5,6 +5,7 @@ tags:
   - GameProjects
   - Product
 cover: /_media/boardgame-prototype.jpg
+summary: The more times you test and improve your design, the better your game will be.
 ---
 
 The Rule of Loop can be summarised in one quote:

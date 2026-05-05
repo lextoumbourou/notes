@@ -4,6 +4,7 @@ date: 2021-06-24 00:00
 cover: /_media/hal-9000.png
 tags:
   - MultiplayerArchitecture
+summary: A multiplayer architecture where the server is the single source of truth for game state.
 ---
 
 A typical multiplayer game architecture where the server has authority over the game state. The server keeps track of players' positions, the resources they own, scores, etc., and validates any changes the client requests to the game.

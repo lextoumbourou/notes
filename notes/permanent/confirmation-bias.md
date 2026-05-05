@@ -4,6 +4,7 @@ date: 2021-05-04 00:00
 tags:
   - ErrorsOfThinking
   - CognitiveBias
+summary: The tendency to seek out information that confirms what we already believe.
 ---
 
 Our brains are naturally drawn to information that agrees with our world view. We end up surrounded by people that think like us and consume information mostly from sources that support our beliefs.

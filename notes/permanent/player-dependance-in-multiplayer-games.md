@@ -3,6 +3,7 @@ title: Player Dependance in Multiplayer Games
 date: 2021-02-09 00:00
 tags:
   - GameCommunity
+summary: Strong multiplayer communities form when players genuinely need each other to succeed.
 ---
 
 Schell says to create an effective online game community create situations in which players depend on each other: they require each others assistance to complete a task, or meet together at certain times to complete quests together.

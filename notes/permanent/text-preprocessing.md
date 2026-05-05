@@ -3,19 +3,6 @@ title: Text Preprocessing
 date: 2025-11-03 00:00
 modified: 2025-11-03 00:00
 status: draft
-jupyter:
-  jupytext:
-    cell_metadata_filter: -all
-    formats: ipynb,md
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.18.1
-  kernelspec:
-    display_name: Python 3 (ipykernel)
-    language: python
-    name: python3
 ---
 
 For classical NLP, there are a number of text preprocessing techniques that are worth knowing.
@@ -33,12 +20,29 @@ encoding = tiktoken.get_encoding("cl100k_base")
 tokens = encoding.encode("hello world aaaaaaaaaaaa")
 print(tokens)
 ```
+<!-- nb-output hash="72a7bf1c97c66ae2" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">[15339, 1917, 264, 70540, 33746]
+
+</pre>
+</div>
+<!-- /nb-output -->
 
 ```python
-
 for token_id in tokens:
     print(token_id, "->", encoding.decode([token_id]))
 ```
+<!-- nb-output hash="ca0445962d8625aa" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">15339 -&gt; hello
+1917 -&gt;  world
+264 -&gt;  a
+70540 -&gt; aaaaaaaa
+33746 -&gt; aaa
+
+</pre>
+</div>
+<!-- /nb-output -->
 
 Subword tokenisers are not the only game in town for NLP.
 ### [Word Tokenisation](../../../permanent/word-tokenisation.md)
@@ -52,6 +56,13 @@ import nltk
 tokens = nltk.word_tokenize("Hello world aaaaaaaaaaaa")
 print(tokens)
 ```
+<!-- nb-output hash="2a64233a27fd7d59" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">['Hello', 'world', 'aaaaaaaaaaaa']
+
+</pre>
+</div>
+<!-- /nb-output -->
 
 ### [Sentence Segmentation](../../../permanent/sentence-segmentation.md)
 
@@ -63,17 +74,42 @@ Here's an example from nltk using the `punkt_tab`
 import nltk, pprint
 nltk.download("punkt_tab")
 ```
+<!-- nb-output hash="6e645744f83ebb62" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stderr">... ... ... ... ... ... ... [nltk_data] Downloading package punkt_tab to /Users/lex/nltk_data...
+[nltk_data]   Package punkt_tab is already up-to-date!
+</pre>
+<pre class="nb-stream-stdout">True
+
+</pre>
+</div>
+<!-- /nb-output -->
 
 ```python
 text = """He never even had the makings of a varsity athlete. Your point being what, Junior? Oh, forget it, he's just breaking balls. All right, one thought I had in the interest of harmony, maybe there could be a power-sharing situation.
 
 The Sopranos have two bosses."""
 ```
+<!-- nb-output hash="c6d101c0ff1c7b24" format="html" -->
+
+<!-- /nb-output -->
 
 ```python
 sentences = nltk.tokenize.sent_tokenize(text)
 pprint.pprint(sentences)
 ```
+<!-- nb-output hash="9001e809232d353f" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">['He never even had the makings of a varsity athlete.',
+ 'Your point being what, Junior?',
+ &quot;Oh, forget it, he's just breaking balls.&quot;,
+ 'All right, one thought I had in the interest of harmony, maybe there could '
+ 'be a power-sharing situation.',
+ 'The Sopranos have two bosses.']
+
+</pre>
+</div>
+<!-- /nb-output -->
 
 We can see that the sentence tokeniser has split sentences based on punctuation.
 
@@ -93,6 +129,13 @@ from nltk.stem import PorterStemmer
 stemmer = PorterStemmer()
 print(stemmer.stem("driving"))
 ```
+<!-- nb-output hash="5a56fad459aa7db2" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">drive
+
+</pre>
+</div>
+<!-- /nb-output -->
 
 ### [Lemmatisation](../../../permanent/lemmatisation.md)
 
@@ -114,3 +157,13 @@ from nltk.stem import WordNetLemmatizer
 lem = WordNetLemmatizer()
 print(lem.lemmatize("driving"))
 ```
+<!-- nb-output hash="832d68f932854b65" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stderr">... ... ... ... ... ... ... [nltk_data] Downloading package wordnet to /Users/lex/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+</pre>
+<pre class="nb-stream-stdout">driving
+
+</pre>
+</div>
+<!-- /nb-output -->

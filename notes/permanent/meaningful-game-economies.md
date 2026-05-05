@@ -3,6 +3,7 @@ title: Meaningful Game Economies
 date: 2021-01-17 00:00
 tags:
   - GameDesign
+summary: A game economy is meaningful when spending and earning money form a rewarding loop.
 ---
 
 Schell says that a [game economy](game economy) is defined as simply: how players spend and earn money. He says a successful game economy has meaningful answers to those questions and usually that involves a loop: they spend money to allow them to earn more money. This patterns shows up in a lot of game design.

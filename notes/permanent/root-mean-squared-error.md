@@ -3,6 +3,7 @@ title: Root Mean-Squared Error
 date: 2016-02-03 00:00
 tags:
   - MachineLearning
+summary: A regression metric that penalises large errors.
 ---
 
 Root mean-squared error (RMSE) is a function for assessing [Regression](regression.md) predictions.

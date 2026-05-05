@@ -3,6 +3,7 @@ title: 50% Rule for Game Development
 date: 2021-01-06 00:00
 tags:
   - GameProjects
+summary: Plan to ship at half the budget, use the rest to make it great.
 ---
 
 The 50% rule states that you should plan such that if 50% of your budget were removed, you'd still have a shippable game. Then use the rest of the time to make it great.

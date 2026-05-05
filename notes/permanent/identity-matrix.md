@@ -4,6 +4,7 @@ date: 2021-09-18 00:00
 tags:
   - LinearAlgebra
 cover: /_media/identity-matrix.png
+summary: A square matrix with 1s on the diagonal and 0s elsewhere — multiplying by it leaves any matrix unchanged.
 ---
 
 When you multiply a matrix $(A)$ by the Identity Matrix $(I)$, you get the original matrix back.

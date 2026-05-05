@@ -3,6 +3,7 @@ title: Orphan Processes
 date: 2013-06-08 00:00
 tags:
   - Unix
+summary: A child process whose parent has exited.
 ---
 
 When a parent process finishes executing before its children, the child

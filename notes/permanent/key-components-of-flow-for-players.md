@@ -3,6 +3,7 @@ title: Key Components of Flow For Players
 date: 2020-11-15 00:00
 tags:
   - GameDesign
+summary: Clear goals, immediate feedback, and continuous challenge pitched between boredom and frustration.
 ---
 
 Schell says that the key components that promote [Flow State](flow-state.md) for players are:

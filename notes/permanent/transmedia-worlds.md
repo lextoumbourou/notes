@@ -4,6 +4,7 @@ date: 2021-01-31 00:00
 tags:
   - Transmedia
   - Product
+summary: A fictional world that can be entered through many different types of media.
 ---
 
 ![Pokemon Cards](../_media/pokemon-cards.jpeg)

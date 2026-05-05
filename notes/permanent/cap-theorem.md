@@ -4,6 +4,7 @@ aliases: "Brewer's Theorem"
 date: 2021-04-03 00:00
 tags: 
   - DataEngineering
+summary: Consistency, availability, and partition tolerance — pick two.
 ---
 
 **CAP Theorem**, also known as Brewer's theorem, after computer scientist Eric Brewer, is the assertion that a distributed data store can't provide 3 of the following capabilities simultaneously:

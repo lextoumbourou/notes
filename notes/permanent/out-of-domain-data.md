@@ -5,6 +5,7 @@ cover: /_media/odd-one-out.png
 tags:
   - MachineLearning
   - MachineLearningFailureModes
+summary: When the production data is significantly different from the training distribution.
 ---
 
 When data is provided to a model that is significantly different from what it was trained on, it's referred to as out-of-domain data.

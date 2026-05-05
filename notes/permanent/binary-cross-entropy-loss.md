@@ -3,13 +3,14 @@ title: Binary Cross-Entropy Loss
 date: 2021-08-08 00:00
 tags:
   - MachineLearning
+summary: A loss function for binary and multi-label classification, also known as log loss.
 ---
 
 Binary Cross-Entropy (BCE), also known as log loss, is a loss function used in binary or multi-label machine learning training.
 
-It's nearly identical to [Negative Log-Likelihood](permanent/Negative Log-Likelihood.md) except it supports any number of positive labels (including zero).
+It's nearly identical to [Negative Log-Likelihood](negative-log-likelihood.md) except it supports any number of positive labels (including zero).
 
-For each value in a set of model outputs, we first apply the [Sigmoid Activation Function](Sigmoid Activation Function.md) before taking `-log(pred)` if the corresponding label is positive or `-log(1-pred)` if negative.
+For each value in a set of model outputs, we first apply the [Sigmoid Function](sigmoid-function.md) before taking `-log(pred)` if the corresponding label is positive or `-log(1-pred)` if negative.
 
 For a single binary output, the function can be expressed as:
 
@@ -39,6 +40,6 @@ which is equivalent to this function:
 
 {% notebook permanent/notebooks/bce-loss-function.ipynb cells[5:7] %}
 
-Use [`nn.BCEWithLogitsLoss`](https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html) if your model architecture doesn't perform the [Sigmoid Activation Function](Sigmoid Activation Function.md) on the final layer. That's equivalent to [`nn.CrossEntropyLoss`](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) in PyTorch (see [Categorical Cross-Entropy Loss](categorical-cross-entropy-loss.md)).
+Use [`nn.BCEWithLogitsLoss`](https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html) if your model architecture doesn't perform the [Sigmoid Function](sigmoid-function.md) on the final layer. That's equivalent to [`nn.CrossEntropyLoss`](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) in PyTorch (see [Categorical Cross-Entropy Loss](categorical-cross-entropy-loss.md)).
 
 [@howardDeepLearningCoders2020] *(pg. 256-257)*

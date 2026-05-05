@@ -3,13 +3,14 @@ title: fork System Call
 date: 2013-06-08 00:00
 tags:
   - Linux
+summary: A system call that duplicates the current process, creating a parent and child that continue from the same point.
 ---
 
 When a process spawns a separate process to handle some work, it invokes
 the `fork(2)` system call. `fork(2)` duplicates the current process in
 memory, and both processes continue executing from the current location.
 
-We refer to the new process as the *child* process. We refer to the calling process as the *parent*. See `man two fork` for information.
+We refer to the new process as the *child* process. We refer to the calling process as the *parent*. See `man 2 fork` for information.
 
 In the parent process, the `fork(2)` call returns the process id, aka
 the *PID*, of the child process. The same call from the child returns 0.

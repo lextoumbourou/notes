@@ -3,6 +3,7 @@ title: Indirect Control
 date: 2021-01-30 00:00
 tags:
   - GameInterfaces
+summary: The art of guiding players through your experience, while still making them feel in control.
 ---
 
 A game designer can exert indirect control of the player through constraints, goals, visual interfaces, game characters; and sound and music. An important part of game design as it allows players to experience a feeling of freedom while still following the designers intended [interest Curve](interest Curve.md).
