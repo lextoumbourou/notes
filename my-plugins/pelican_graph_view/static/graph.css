@@ -5,19 +5,14 @@
    ------------------------------------------------------------------ */
 
 .graph-container-local {
-  margin: 2rem 0 1rem;
-  border-top: 1px solid var(--lightgray, #d4d4d4);
-  padding-top: 0.75rem;
+  margin: 0;
+  border-top: none;
+  padding-top: 0;
 }
 
-.graph-local-heading {
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--gray, #9b9b9b);
-  margin: 0 0 0.5rem;
-  user-select: none;
+/* hide the built-in heading — the panel supplies its own */
+.graph-container-local > .graph-local-heading {
+  display: none;
 }
 
 .graph-canvas-wrapper {

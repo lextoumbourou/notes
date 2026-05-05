@@ -155,29 +155,35 @@ def article_generator_pretaxonomy(generator):
     _graph_state["nodes"] = nodes
     _graph_state["links"] = deduped_links
 
+    # Build inverted index: slug → list of (source_slug, source_title)
+    backlink_map = {a.slug: [] for a in generator.articles}
+    for lnk in deduped_links:
+        src, tgt = lnk["source"], lnk["target"]
+        if tgt in backlink_map and src in slug_map:
+            backlink_map[tgt].append({
+                "slug": src,
+                "title": slug_map[src].title,
+            })
+    _graph_state["backlink_map"] = backlink_map
+
 
 # ---------------------------------------------------------------------------
 # Signal: article_generator_write_article
 # ---------------------------------------------------------------------------
 
-_CDN_SCRIPTS = """\
-<link rel="stylesheet" href="/static/graph.css" data-graph-view="1" />
-<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" data-graph-view="1"></script>
-<script src="https://cdn.jsdelivr.net/npm/pixi.js@7/dist/pixi.min.js" data-graph-view="1"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@23/dist/tween.umd.js" data-graph-view="1"></script>
-<script src="/static/graph.js" data-graph-view="1"></script>"""
-
-_SCRIPTS_MARKER = 'data-graph-view="1"'
-
-
 def article_generator_write_article(generator, content):
-    """Inject a local graph container div (+ CDN scripts once) at end of article."""
+    """Attach graph_html attribute to article for use in the template."""
     cfg = _graph_state.get("cfg") or _merge_defaults(
         generator.settings.get("GRAPH_VIEW", {})
     )
     local_cfg = cfg.get("local", DEFAULTS["local"])
 
+    # Attach backlinks regardless of local graph enabled state
+    backlink_map = _graph_state.get("backlink_map", {})
+    content.graph_backlinks = backlink_map.get(content.slug, [])
+
     if not local_cfg.get("enabled", True):
+        content.graph_html = ""
         return
 
     slug = content.slug
@@ -186,7 +192,7 @@ def article_generator_write_article(generator, content):
         {
             "depth": local_cfg.get("depth", 1),
             "focusOnHover": local_cfg.get("focus_on_hover", False),
-            "showTags": cfg.get("show_tags", True),
+            "showTags": cfg.get("show_tags", False),
             "repelForce": cfg.get("repel_force", 0.5),
             "centerForce": cfg.get("center_force", 0.3),
             "linkDistance": cfg.get("link_distance", 30),
@@ -196,13 +202,7 @@ def article_generator_write_article(generator, content):
         separators=(",", ":"),
     )
 
-    # Inject CDN scripts once (guard against double-injection on re-renders)
-    scripts_block = ""
-    if _SCRIPTS_MARKER not in content._content:
-        scripts_block = _CDN_SCRIPTS + "\n"
-
-    graph_html = (
-        f'{scripts_block}'
+    content.graph_html = (
         f'<div class="graph-container-local"'
         f' data-slug="{slug}"'
         f' data-graph-url="/graph.json"'
@@ -213,8 +213,6 @@ def article_generator_write_article(generator, content):
         f'  </div>\n'
         f'</div>'
     )
-
-    content._content += "\n" + graph_html
 
 
 # ---------------------------------------------------------------------------

@@ -2,74 +2,97 @@
 
 {% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
 
+{% block body_class %}page-article{% endblock %}
+
+{% block right_panel %}
+{% if (article.graph_html is defined and article.graph_html) or (article.graph_backlinks is defined and article.graph_backlinks) %}
+<aside id="site-right-panel">
+  {% if article.graph_html is defined and article.graph_html %}
+  <p class="graph-panel-heading">Graph View</p>
+  {{ article.graph_html }}
+  {% endif %}
+
+  {% if article.graph_backlinks is defined and article.graph_backlinks %}
+  <div class="backlinks">
+    <p class="graph-panel-heading">Backlinks</p>
+    <ul>
+      {% for bl in article.graph_backlinks %}
+      <li><a href="/{{ bl.slug }}.html">{{ bl.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</aside>
+{% endif %}
+{% endblock %}
+
 {% block content %}
 <section id="content">
-  
   <article class="post">
-      <div class="article-content">
-        <h2>
-          <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-        </h2>
+    <div class="article-content">
+      <h2>
+        <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+      </h2>
 
-        <div class="article-meta">
-          <span class="created">{{ article.date|strftime('%b %d, %Y') }}</span>
+      <div class="article-meta">
+        <span class="created">{{ article.date|strftime('%b %d, %Y') }}</span>
 
-          <span class="category">
-            {%- if article.parent -%}
-            ../<a href="{{ SITEURL }}/{{ article.parent }}.html">{{ article.parent }}</a>
-            {%- else -%}
-            <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category}}</a>{%- for subcategory in article.subcategories -%}/<a href="{{ SITEURL }}/{{subcategory.url}}">{{subcategory.shortname}}</a>{% endfor %}
-            {% endif %}
-          </span>
+        <span class="category">
+          {%- if article.parent -%}
+          ../<a href="{{ SITEURL }}/{{ article.parent }}.html">{{ article.parent }}</a>
+          {%- else -%}
+          <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category}}</a>{%- for subcategory in article.subcategories -%}/<a href="{{ SITEURL }}/{{subcategory.url}}">{{subcategory.shortname}}</a>{% endfor %}
+          {% endif %}
+        </span>
 
-          <span class="info">
-              {% if article.tags %}
-              &nbsp;
-              {% for t in article.tags %}
-              &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags{% if tag and tag.name == t.name %} selected{% endif %}">{{ t }}</a>
-              {% endfor %}
-              {% endif %}
-          </span>
-        </div>
-
-        <div class="article-content">
-          <div class="cover-image">
-            {% if article.cover and not article.hide_cover_in_article %}
-            <img src="{{ article.cover }}" />
-            {% endif %}
-          </div>
-
-          {{ article.content }}
-        </div>
-
-        <div class="clear"></div>
-
-        {% if article.bluesky_post or article.mastodon_post %}
-        <hr>
-        <h3>Comments</h3>
-        <p>Reply to this post on
-          {%- if article.bluesky_post %} <a href="{{ article.bluesky_post }}" target="_blank" rel="noopener">Bluesky</a>{% endif %}
-          {%- if article.bluesky_post and article.mastodon_post %} or{% endif %}
-          {%- if article.mastodon_post %} <a href="{{ article.mastodon_post }}" target="_blank" rel="noopener">Mastodon</a>{% endif %}
-          to join the conversation.</p>
-        {% endif %}
-
-        {% if article.bluesky_post %}
-        <bluesky-comments url="{{ article.bluesky_post }}"></bluesky-comments>
-        <script type="module">
-          import "https://esm.sh/bluesky-comments-tag/load";
-        </script>
-        {% endif %}
-
-        {% if article.mastodon_post %}
-        <link rel="stylesheet" href="https://esm.sh/gh/oom-components/mastodon-comments/src/styles.css">
-        <script type="module">
-          import Comments from "https://esm.sh/gh/oom-components/mastodon-comments/src/comments.js";
-          customElements.define("oom-comments", Comments);
-        </script>
-        <oom-comments mastodon="{{ article.mastodon_post }}"></oom-comments>
-        {% endif %}
+        <span class="info">
+          {% if article.tags %}
+          &nbsp;
+          {% for t in article.tags %}
+          &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags{% if tag and tag.name == t.name %} selected{% endif %}">{{ t }}</a>
+          {% endfor %}
+          {% endif %}
+        </span>
       </div>
+
+      <div class="article-content">
+        <div class="cover-image">
+          {% if article.cover and not article.hide_cover_in_article %}
+          <img src="{{ article.cover }}" />
+          {% endif %}
+        </div>
+
+        {{ article.content }}
+      </div>
+
+      <div class="clear"></div>
+
+      {% if article.bluesky_post or article.mastodon_post %}
+      <hr>
+      <h3>Comments</h3>
+      <p>Reply to this post on
+        {%- if article.bluesky_post %} <a href="{{ article.bluesky_post }}" target="_blank" rel="noopener">Bluesky</a>{% endif %}
+        {%- if article.bluesky_post and article.mastodon_post %} or{% endif %}
+        {%- if article.mastodon_post %} <a href="{{ article.mastodon_post }}" target="_blank" rel="noopener">Mastodon</a>{% endif %}
+        to join the conversation.</p>
+      {% endif %}
+
+      {% if article.bluesky_post %}
+      <bluesky-comments url="{{ article.bluesky_post }}"></bluesky-comments>
+      <script type="module">
+        import "https://esm.sh/bluesky-comments-tag/load";
+      </script>
+      {% endif %}
+
+      {% if article.mastodon_post %}
+      <link rel="stylesheet" href="https://esm.sh/gh/oom-components/mastodon-comments/src/styles.css">
+      <script type="module">
+        import Comments from "https://esm.sh/gh/oom-components/mastodon-comments/src/comments.js";
+        customElements.define("oom-comments", Comments);
+      </script>
+      <oom-comments mastodon="{{ article.mastodon_post }}"></oom-comments>
+      {% endif %}
+    </div>
   </article>
 </section>
 {% endblock %}
