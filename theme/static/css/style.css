@@ -38,33 +38,64 @@ code {
   overflow: scroll;
 }
 
-/* The side navigation menu */
-#sidebar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
+/* ------------------------------------------------------------------
+   Page grid
+   nav (200px) | content (1fr) | right panel (260px, article pages only)
+   ------------------------------------------------------------------ */
+
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas: "nav content";
+  min-height: 100vh;
+  align-items: start;
 }
 
-/* Sidebar links */
-#sidebar a {
+.page-article .page-wrapper {
+  grid-template-columns: 200px 1fr 280px;
+  grid-template-areas: "nav content right";
+}
+
+#site-nav {
+  grid-area: nav;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #f1f1f1;
+}
+
+#site-content {
+  grid-area: content;
+  padding: 1px 24px 40px;
+  min-width: 0; /* prevent grid blowout */
+}
+
+#site-right-panel {
+  grid-area: right;
+  position: sticky;
+  top: 24px;
+  padding: 12px;
+  margin-top: 24px;
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+/* Nav links */
+#site-nav a {
   display: block;
   color: black;
   padding: 12px;
   text-decoration: none;
 }
 
-/* Active/current link */
-#sidebar a.active {
+#site-nav a.active {
   background-color: #3B4653;
   color: white;
 }
 
-/* Links on mouse-over */
-#sidebar a:hover:not(.active) {
+#site-nav a:hover:not(.active) {
   background-color: #d9d7cb;
 }
 
@@ -74,7 +105,7 @@ code {
 
 .section-header h2 {
   font-size: 16px;
-  text-align:center;
+  text-align: center;
   border-bottom: 1px solid #bab28a;
   position: relative;
 }
@@ -89,10 +120,32 @@ code {
   color: #bab28a;
 }
 
-div#content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
+/* Right panel sections */
+.backlinks {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.backlinks ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.backlinks ul li {
+  margin: 4px 0;
+  font-size: 0.85rem;
+}
+
+.graph-panel-heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9b9b9b;
+  margin: 0 0 8px;
+  user-select: none;
 }
 
 .cover-image img {
@@ -109,13 +162,39 @@ ul li p {
   display: inline-block;
 }
 
-@media screen and (max-width: 700px) {
-  #sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
+/* Collapse right panel below 1100px */
+@media screen and (max-width: 1100px) {
+  .page-article .page-wrapper {
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+      "nav content"
+      "nav right";
   }
-  #sidebar a {
+
+  #site-right-panel {
+    position: static;
+    margin: 0 24px 24px;
+  }
+}
+
+/* Collapse nav to top bar below 700px */
+@media screen and (max-width: 700px) {
+  .page-wrapper,
+  .page-article .page-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "content"
+      "right";
+  }
+
+  #site-nav {
+    position: static;
+    height: auto;
+    overflow: visible;
+  }
+
+  #site-nav a {
     float: left;
   }
 
@@ -123,7 +202,9 @@ ul li p {
     clear: both;
   }
 
-  div#content {margin-left: 0;}
+  #site-right-panel {
+    margin: 0 16px 24px;
+  }
 
   .cover-image img {
     float: none;
@@ -604,3 +685,4 @@ table.dataframe tr:hover {
 .output_text pre {
   overflow-x: auto;
 }
+

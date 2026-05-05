@@ -46,7 +46,6 @@ PLUGINS = [
     "subcategory",
     nb_liquid,
     "md_link_converter",
-    "linked_mentions",
     "bluesky_comments",
     "pelican_cite",
     "pelican_graph_view",
