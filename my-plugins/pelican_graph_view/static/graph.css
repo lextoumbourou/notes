@@ -1,0 +1,95 @@
+/* pelican_graph_view — graph.css */
+
+/* ------------------------------------------------------------------
+   Local graph (per-article)
+   ------------------------------------------------------------------ */
+
+.graph-container-local {
+  margin: 2rem 0 1rem;
+  border-top: 1px solid var(--lightgray, #d4d4d4);
+  padding-top: 0.75rem;
+}
+
+.graph-local-heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray, #9b9b9b);
+  margin: 0 0 0.5rem;
+  user-select: none;
+}
+
+.graph-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: var(--light, #f8f8f8);
+  border: 1px solid var(--lightgray, #d4d4d4);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Loading placeholder shown before JS initialises the canvas */
+.graph-canvas-wrapper::before {
+  content: "Loading graph…";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--gray, #9b9b9b);
+  pointer-events: none;
+}
+
+/* Hide the placeholder once a canvas is injected */
+.graph-canvas-wrapper canvas ~ .graph-loading-text,
+.graph-canvas-wrapper:has(canvas)::before {
+  display: none;
+}
+
+.graph-canvas-wrapper .graph-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.graph-canvas-wrapper canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ------------------------------------------------------------------
+   Global graph page
+   ------------------------------------------------------------------ */
+
+.graph-container-global {
+  position: fixed;
+  inset: 0;
+  background: var(--light, #f8f8f8);
+  z-index: 9999;
+}
+
+.graph-container-global .graph-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.graph-container-global canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ------------------------------------------------------------------
+   Responsive tweaks
+   ------------------------------------------------------------------ */
+
+@media (max-width: 600px) {
+  .graph-canvas-wrapper {
+    height: 220px;
+  }
+}

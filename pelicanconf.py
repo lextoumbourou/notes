@@ -49,7 +49,10 @@ PLUGINS = [
     "linked_mentions",
     "bluesky_comments",
     "pelican_cite",
+    "pelican_graph_view",
 ]
+
+GRAPH_VIEW = {}
 
 PUBLICATIONS_SRC = "notes/citations.bib"
 
