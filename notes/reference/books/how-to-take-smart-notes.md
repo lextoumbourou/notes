@@ -3,6 +3,7 @@ title: How to Take Smart Notes
 date: 2021-06-07 00:00
 category: reference/books
 cover: /_media/how-to-take-smart-notes.jpeg
+summary: Notes from Sönke Ahrens' guide to the Zettelkasten note-taking system.
 ---
 
 How to Take Smart Notes provides an overview of the [Zettelkasten](../../permanent/zettelkasten.md) system, popularised by prolific sociologist Niklas Luhman. The book starts with an overview of the entire Zettelkasten method, then delves deeper into why it works. This "top down" approach quite reminisant of David Perkins [Teaching the whole game](../../permanent/teaching-the-whole-game.md) approach to teaching.

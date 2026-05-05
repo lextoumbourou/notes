@@ -3,6 +3,7 @@ title: Adversarial Validation
 date: 2021-05-12 00:00
 tags:
   - EDA
+summary: A technique for measuring how different your test set is from your training set.
 ---
 
 A technique used to evalute how different the test set is to the training set, commonly used in Kaggle competitions to assess likelihood of a [Leaderboard Shakeup](leaderboard-shakeup.md). It's a form of [Black-box Tests](black-box-tests.md) for datasets.

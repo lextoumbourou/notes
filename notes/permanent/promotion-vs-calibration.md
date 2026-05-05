@@ -3,6 +3,7 @@ title: Promotion vs Calibration
 date: 2021-05-09 00:00
 tags:
   - Career
+summary: Promotion means proving you can already do the next job.
 ---
 
 Some assume that the path to promotion is doing their current job well. However, promotion is about proving that you're capable of another job.

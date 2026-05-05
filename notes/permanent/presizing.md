@@ -5,6 +5,7 @@ tags:
   - MachineLearning
   - ImageClassification
 cover: /_media/presizing-cover.png
+summary: Resize images to a larger intermediate size before augmenting.
 ---
 
 Pre-sizing is a technique for preparing images for training a neural network.

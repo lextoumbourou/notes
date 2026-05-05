@@ -4,7 +4,10 @@ date: 2016-06-19 00:00
 tags:
  - HBase
  - DataMigration
+summary: Practical notes on migrating a 2TB HBase cluster from Rackspace to AWS with minimal downtime using CopyTable.
 ---
+
+> **Note:** This write-up was never fully completed. The content covers the approach and setup but may be missing final steps or conclusions.
 
 # Practical considerations for migrating TB datasets across datacenters
 

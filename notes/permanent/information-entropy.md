@@ -4,6 +4,7 @@ date: 2021-07-28 00:00
 tags:
   - InformationTheory
 cover: /_media/claude-shannon-entropy.jpeg
+summary: A measure of uncertainty — highest when all outcomes are equally likely, lowest when one dominates.
 ---
 
 Entropy is a measure of uncertainty of a random variable's possible outcomes.

@@ -4,6 +4,7 @@ date: 2021-07-29 00:00
 tags:
   - InformationTheory
 cover: /_media/cross-entropy-cover.png
+summary: A measure of how well one probability distribution encodes events from another.
 ---
 
 Cross-entropy measures the average number of bits required to identify an event if you had a coding scheme optimised for one probability distribution $q$, where the true probability distribution was actually $p$.

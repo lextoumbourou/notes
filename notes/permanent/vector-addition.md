@@ -6,6 +6,7 @@ cover: /_media/vector-add-cover.png
 tags:
   - GameMath
   - LinearAlgebra
+summary: Adding two vectors by summing their corresponding components.
 ---
 
 We add two [Vector](vector.md)s together by adding the corresponding components.

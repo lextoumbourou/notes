@@ -3,6 +3,7 @@ title: Character Web
 date: 2021-02-02 00:00
 tags:
   - StoryWriting 
+summary: A map of what each character thinks of every other character.
 ---
 
 A Character Web [@schellArtGameDesign2015a] *(pg. 356-357)* is a story writing tool for creating strong character relationships. You simply write down what each character thinks of each other.

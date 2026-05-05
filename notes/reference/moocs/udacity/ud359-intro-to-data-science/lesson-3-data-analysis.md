@@ -18,7 +18,7 @@ status: draft
         * Std (sigma)
     * Variance = sigma^2
 
-<img src="./images/normal-distribution.png"></img>
+<img src="/_media/ud359-intro-to-data-science/normal-distribution.png"></img>
 
 * null hypothesis
     * statement to 'disprove' or reject with a test
@@ -26,7 +26,7 @@ status: draft
     * Used for comparing two samples which don't necessarily have the same sample size
     * Formula:
 
-    <img src="./images/welch-formula.png"></img>
+    <img src="/_media/ud359-intro-to-data-science/welch-formula.png"></img>
 
     * In code:
 
@@ -41,7 +41,7 @@ status: draft
 
     * Calculate degrees of freedom (aka nu)
 
-    <img src="./images/calculate-degrees-of-freedom.png"></img>
+    <img src="/_media/ud359-intro-to-data-science/calculate-degrees-of-freedom.png"></img>
 
     * In code:
 
@@ -105,7 +105,7 @@ status: draft
     1. Start with some Theta value
     2. For each Theta, update Theta values according to this equation
 
-    <img src="./images/theta-equation.png"></img>
+    <img src="/_media/ud359-intro-to-data-science/theta-equation.png"></img>
 
         theta - alpha / m * numpy.dot((predicted_values) - values), features)
 * Need to understand what the hell ```numpy.dot``` does. It's never explained.

@@ -43,7 +43,7 @@ status: draft
 * Modified condition/decision (MC/DC coverage)
   * Branch coverage + conditions take all possible values + every condition independently affects the outcome of a decision
 
-  <img src="./images/mc-dc-example.png"></img>
+  <img src="/_media/cs258-software-testing/mc-dc-example.png"></img>
 
   * Used for avionics and things where lives are at stake.
   * Allows you to discover conditionals that don't affect outcome of decision.
@@ -53,7 +53,7 @@ status: draft
   * Can't test all but but you'd like to test majority cases.
   * Can cause exponential sized tests
 
-  <img src="./images/path-coverage-example.png"></img>
+  <img src="/_media/cs258-software-testing/path-coverage-example.png"></img>
 
 * Boundary value coverage
   * No tight technical definition

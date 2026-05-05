@@ -4,6 +4,7 @@ date: 2021-06-06 00:00
 tags:
   - Zettelkasten
 cover: /_media/fleeting-notes.jpg
+summary: Temporary captures of ideas to be processed into permanent notes.
 ---
 
 Fleeting notes in Zettelkasten are for capturing ideas while reading, listening, or thinking. They are designed to be short-lived and should be stored in an inbox for processing into [Literature Notes](Literature Notes.md), ideally within 1 to 2 days. They can be highlights, notes within a page, or notes on paper.

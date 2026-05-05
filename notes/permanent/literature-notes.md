@@ -4,6 +4,7 @@ date: 2021-06-06 00:00
 tags:
   - Zettelkasten
 cover: /_media/reference-notes.jpg
+summary: Notes that capture source material in your own words, as an intermediate step toward permanent notes.
 ---
 
 Literature Notes in [Zettelkasten](zettelkasten.md) are notes which capture information from the source material in our own words. They are sometimes referred to as Reference or Bibliographic notes. They the output of processing [Fleeting Notes](permanent/Fleeting Notes.md). Literature notes are then parsed for key ideas that we want to retain for our long-term thinking by converting into [Permanent Notes](permanent-notes.md).

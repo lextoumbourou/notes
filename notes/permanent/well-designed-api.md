@@ -3,6 +3,7 @@ title: Well-Designed API
 date: 2021-04-11 00:00
 tags:
   - SoftwareEngineering
+summary: Make the wrong thing impossible.
 ---
 
 According to Khorikov, a well-designed API (application programming interface) is one in which observable behaviours are entirely in the public API, and implementation details are part of the private API.

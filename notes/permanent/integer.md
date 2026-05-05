@@ -3,6 +3,7 @@ title: Integer
 date: 2021-01-30 00:00
 tags:
   - ComputerScience
+summary: A 32-bit number encoding, either signed (-2B to 2B) or unsigned (0 to 4B).
 ---
 
 An integer is a 32-bit (4-byte) encoding of a number.

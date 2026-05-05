@@ -4,6 +4,7 @@ date: 2021-06-06 00:00
 tags:
   - Zettelkasten
 cover: /_media/light-bulb.jpeg
+summary: Atomic, self-contained notes that capture a single idea and link to related ones.
 ---
 
 Permanent notes (also known as [Evergreen notes](https://notes.andymatuschak.org/Evergreen_notes)) capture a single "atomic" idea. They also include links to related ideas. In the Zettelkasten system, they're created from [Literature Notes](literature-notes.md), or [Fleeting Notes](fleeting-notes.md) if reference isn't required.

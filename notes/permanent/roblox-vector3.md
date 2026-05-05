@@ -3,6 +3,7 @@ title: Roblox Vector3
 date: 2021-08-29 00:00
 tags:
   - Roblox
+summary: Roblox's 3D vector type.
 ---
 
 In Roblox, a [Vector3](https://developer.roblox.com/en-us/api-reference/datatype/Vector3) defines a [Vector](vector.md) with three components. We use it for setting the position, rotation, and size of elements.

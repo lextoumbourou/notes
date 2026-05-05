@@ -4,6 +4,7 @@ date: 2026-04-30 06:40
 modified: 2026-04-30 06:40
 tags:
   - LearningWithAI
+  - LearningAndTeaching
 cover: /_media/ai-neurological-atrophy-cover.jpg
 summary: "Your brain needs progressive overloading too"
 ---

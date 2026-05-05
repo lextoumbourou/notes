@@ -2,6 +2,7 @@
 title: Packet capturing in parallel with Ansible
 date: 2013-08-13 00:00
 slug: packet-capturing-in-parallel-ansible
+summary: An Ansible playbook for running tcpdump in parallel across many servers and collecting the captures.
 ---
 
 <a name="intro"></a>

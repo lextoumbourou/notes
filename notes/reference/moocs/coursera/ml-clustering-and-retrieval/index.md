@@ -1,14 +1,15 @@
 ---
-title: "Coursera - ML Classification"
+title: "ML Clustering and Retrieval (Coursera)"
 date: 2017-01-20 00:00
 status: draft
+summary: "Notes from [Machine Learning: Clustering & Retrieval](https://www.coursera.org/learn/ml-clustering-and-retrieval) by University of Washington"
 ---
 
 ## Status
 
 Complete - 2017-01-20
 
-<img src="./images/cert.png" width="600px" />
+<img src="/_media/ml-clustering-and-retrieval/cert.png" width="600px" />
 
 ## Contents
 

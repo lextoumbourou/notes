@@ -3,6 +3,7 @@ title: Key to Addictive Game Design
 date: 2021-01-11 00:00
 tags:
   - GameDesign
+summary: Addictive games keep players exercising a skill, taking risks, and working a strategy simultaneously.
 ---
 
 Schell quotes Designer David Perry's key to addictive games: games should be designed so that players are doing 3 things at a time: exercising a skill, taking risks and working a strategy.

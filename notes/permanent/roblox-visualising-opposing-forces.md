@@ -4,6 +4,7 @@ date: 2021-01-06 00:00
 tags:
   - Roblox
   - Physics
+summary: Visualising Newton's 2nd law and opposing forces using Roblox's BodyForce object.
 ---
 
 `BodyForce` in Roblox will apply a force to a part with the magnitude and velocity specified in world coordinates. By setting `workspace.Gravity` to 0, we can explore what a force applied to an object does. Firstly, if we apply a force of 5 studs in the y direction (`Vector3.new(0, 5, 0)`) we can see the part begins to accelerate at a constant velocity:

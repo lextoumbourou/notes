@@ -5,6 +5,7 @@ cover: /_media/vector-subtract-cover.png
 tags:
   - GameMath
   - LinearAlgebra
+summary: Subtracting two vectors by subtracting their corresponding components.
 ---
 
 We subtract one [Vector](vector.md) from another by subtracting the corresponding components.
