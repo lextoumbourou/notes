@@ -25,7 +25,7 @@ So the natural question arises for a software developer, and a knowledge worker 
 
 Just as many people leading sedentary lifestyles have to make a deliberate effort to exercise, because inactivity is really bad for our bodies, I think we’re going to realise that a similar process is necessary for our minds.
 
-My hypothesis is that you need to deliberately spend time every day operating near your cognitive limits - performing deep [System 2 Thinking](system-2-thinking.md) - if you want to avoid skill atrophy, which will in turn make you worse at wielding AI agents. The idea of [Progressive Overload](progressive-overload.md) in strength training is to improve your overall capacity by gradually increasing the resistance via heavier weights. The same paradigm applies to cognitive capacity.
+My hypothesis is that you need to deliberately spend time every day exercising your skills, operating near your cognitive limits - performing deep [System 2 Thinking](system-2-thinking.md) - if you want to avoid the kind of atrophy that will make you worse at wielding AI agents. The idea of [Progressive Overload](progressive-overload.md) in strength training is to improve your overall capacity by gradually increasing the resistance via heavier weights. The same paradigm applies to cognitive capacity.
 
 One thing I've been experimenting with is making sure I allocate at least 30 minutes a day on something mentally difficult, like writing code by hand for an unfamiliar problem or reading difficult papers. Writing these notes is also another task that clearly feels like a form of this exercise.
 
