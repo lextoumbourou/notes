@@ -1,7 +1,7 @@
 ---
 title: On AI-Induced Cognitive Atrophy
 date: 2026-05-07 06:33
-modified: 2026-05-07 06:33
+modified: 2026-05-07 09:14
 tags:
 - LearningWithAI
 - LearningAndTeaching
@@ -17,7 +17,7 @@ In a popular paper from 2025 ([AI Meets the Classroom: When Does ChatGPT Harm Le
 
 Learning is effortful: you need to exert mental energy to learn. However, AI can give you the illusion of learning without any mental exertion at all.
 
-The study also found that students who used AI to complement learning activities, like asking for explanations rather than answers, actually saw an increase in understanding. But when given a free choice, most students defaulted to substitution and found that nearly half of all solution requests came without the student making a single attempt first. Clearly, our brains tend to prefer to conserve energy. They also found that students with weaker foundations learned less with AI access, while stronger students benefited more.
+The study also found that students who used AI to complement learning activities, like asking for explanations rather than answers, actually saw an increase in understanding. But when given a free choice, most students defaulted to substitution and found that nearly half of all solution requests came without the student making a single attempt first. Our brains tend to prefer to conserve energy. They also found that students with weaker foundations learned less with AI access, while stronger students benefited more.
 
 For a software developer, it’s impossible to ignore the upside from modern agentic coding workflows; they are clearly here to stay. But, at the same time, for complicated projects beyond what can be vibe-coded, a pre-developed intuition for software is necessary to guide those agents safely.
 
@@ -27,7 +27,7 @@ Just as many people leading sedentary lifestyles have to make a deliberate effor
 
 My hypothesis is that you need to deliberately spend time every day exercising your skills, operating near your cognitive limits - performing deep [System 2 Thinking](system-2-thinking.md) - if you want to avoid the kind of atrophy that will make you worse at wielding AI agents. The idea of [Progressive Overload](progressive-overload.md) in strength training is to gradually increase resistance via heavier weights, building overall capacity. The same paradigm applies to cognitive capacity.
 
-One thing I've been experimenting with is making sure I allocate at least 30 minutes a day on something mentally difficult, like writing code by hand for an unfamiliar problem or reading difficult papers. Writing these notes is another task that clearly feels like a form of this exercise.
+One thing I've been experimenting with is making sure I allocate at least 30 minutes a day on something mentally difficult, like writing code by hand for an unfamiliar problem or reading difficult papers. Writing these notes is another task that feels like a form of this exercise.
 
 ---
 
