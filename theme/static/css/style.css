@@ -346,6 +346,15 @@ blockquote.pull_quote {
   font-color:#000;
 }
 
+.article-summary {
+  display: block;
+  margin-top: 0.15em;
+  margin-bottom: 0;
+  font-size: 1.1em;
+  color: #555;
+  font-style: italic;
+}
+
 .comment {
   margin-bottom:20px;
 }
