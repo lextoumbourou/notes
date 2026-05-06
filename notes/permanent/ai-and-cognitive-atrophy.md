@@ -1,24 +1,41 @@
 ---
 title: AI and Cognitive Atrophy
 date: 2026-04-30 06:40
-modified: 2026-04-30 06:40
+modified: 2026-05-06 06:40
 tags:
-  - LearningWithAI
-  - LearningAndTeaching
+- LearningWithAI
+- LearningAndTeaching
 cover: /_media/ai-neurological-atrophy-cover.jpg
 summary: "Your brain needs progressive overloading too"
 ---
 
-This post was originally [a Hacker News comment](https://news.ycombinator.com/item?id=47953011#47954191).
+TL;DR: We probably need to do deliberate daily mental exercise.
 
-I have a feeling that a big risk of using AI all the time is that our own neurological capacity starts to dwindle.
-Just as many people leading sedentary lifestyles have to make a deliberate effort to exercise, because inactivity is really bad for our bodies, I think we're going to realise that a similar process is necessary for our minds.
+---
 
-You really want to be spending a bit of time every day operating at your cognitive limits - trying to fully engage your System 2 - if you want to avoid brain atrophy. Progressive overloading for the mind.
+Something I’m increasingly worried about is that the more mental labour we offload to AI, the more our own neurological capacity starts to dwindle.
 
-Coding used to kind of give you this exercise for free, but you can go really far with just your System 1 nowadays - literally get things done while scrolling Reddit.
+In a popular paper from 2025 (AI Meets the Classroom: When Does ChatGPT Harm Learning?), they found that students in a programming course who used LLMs to generate answers to questions (substitution) saw a significant decrease in topic understanding, even though they perceived an increase [@lehmannAIMeetsClassroom2025].
 
-I've been trying to combat this by allocating 30-60 minutes a day to doing something mentally difficult, like writing code by hand for an unfamiliar problem or reading and summarising difficult papers without AI.
+Basically, learning is an “effortful task” - you need to exert mental energy to learn. However, AI can give you the illusion of learning without any mental exertion at all. The paper found that nearly half of all solution requests came without the student making a single attempt first.
+
+The study also found that students who used AI to complement learning activities - like asking for explanations rather than answers - actually saw an increase in understanding. But when given a free choice, most students defaulted to substitution. Our brains tend to prefer to conserve energy.
+
+Finally, the study also found that students with weaker foundations learned less with AI access than stronger students with pre-existing foundations.
+
+For a software developer, it’s impossible to ignore the productivity gains from modern agentic coding workflows. But then again, for complicated software projects beyond what can be vibe-coded, a pre-developed intuition for software development is needed to successfully navigate these agents. They will do what you say, but there are many trade-offs and lurking dangers in building software products that are unclear to a novice. So somehow, we need to make the most of these powerful tools whilst still maintaining the intuition we developed, mostly through writing code by hand.
+
+So the natural question arises for a software developer, and a knowledge worker in general: how do we find the balance between making the most of LLMs while avoiding neurological decay?
+
+Just as many people leading sedentary lifestyles have to make a deliberate effort to exercise, because inactivity is really bad for our bodies, I think we’re going to realise that a similar process is necessary for our minds.
+
+The idea of [Progressive Overload](progressive-overload.md) in strength training is to improve your overall capacity by gradually increasing the resistance via heavier weights. Perhaps we need the same paradigm for cognitive training.
+
+My hypothesis is that you really want to be spending a bit of time every day operating at your cognitive limits - performing [System 2 Thinking](system-2-thinking.md) - if you want to avoid cognitive atrophy, which will in turn make you worse at wielding AI agents.
+
+One thing I've been experimenting with is making sure I allocate at least 30 minutes a day to something mentally difficult, like writing code by hand for an unfamiliar problem or reading and summarising difficult papers without AI.
+
+Writing these notes is one such task that clearly feels like a form of this exercise. Maybe you can find a similar approach.
 
 ---
 
