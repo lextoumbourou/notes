@@ -19,7 +19,7 @@ Learning is effortful: you need to exert mental energy to learn. However, AI can
 
 The study also found that students who used AI to complement learning activities - like asking for explanations rather than answers - actually saw an increase in understanding. But when given a free choice, most students defaulted to substitution. Our brains tend to prefer to conserve energy. They also found that students with weaker foundations learned less with AI access, while stronger students benefited more.
 
-For a software developer, it’s impossible to ignore the upside from modern agentic coding workflows - they are clearly here to stay. But, at the same time, for complicated software projects beyond what can be vibe-coded, a pre-developed intuition for software development is necessary to guide them safely.
+For a software developer, it’s impossible to ignore the upside from modern agentic coding workflows, they are clearly here to stay. But, at the same time, for complicated projects beyond what can be vibe-coded, a pre-developed intuition for software is necessary to guide them safely.
 
 So the natural question arises for a software developer, and a knowledge worker in general: how do we find the balance between making the most of AI while avoiding letting our skills, intuition and understanding decay?
 

@@ -51,7 +51,7 @@ PLUGINS = [
     "pelican_graph_view",
 ]
 
-GRAPH_VIEW = {}
+GRAPH_VIEW = {"include_hidden": True}
 
 PUBLICATIONS_SRC = "notes/citations.bib"
 

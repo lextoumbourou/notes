@@ -27,6 +27,7 @@ DEFAULTS = {
     "show_tags": False,
     "exclude_tags": [],
     "exclude_slugs": [],
+    "include_hidden": False,
     "local": {
         "enabled": True,
         "depth": 1,
@@ -98,10 +99,14 @@ def article_generator_pretaxonomy(generator):
     links = []
 
     # Build slug → article map first so we can validate link targets
-    slug_map = {a.slug: a for a in generator.articles}
+    include_hidden = cfg.get("include_hidden", False)
+    all_articles = list(generator.articles)
+    if include_hidden:
+        all_articles += list(generator.hidden_articles)
+    slug_map = {a.slug: a for a in all_articles}
     generator._graph_slug_map = slug_map
 
-    for article in generator.articles:
+    for article in all_articles:
         slug = article.slug
         if slug in exclude_slugs:
             continue
@@ -156,7 +161,7 @@ def article_generator_pretaxonomy(generator):
     _graph_state["links"] = deduped_links
 
     # Build inverted index: slug → list of (source_slug, source_title)
-    backlink_map = {a.slug: [] for a in generator.articles}
+    backlink_map = {a.slug: [] for a in all_articles}
     for lnk in deduped_links:
         src, tgt = lnk["source"], lnk["target"]
         if tgt in backlink_map and src in slug_map:
