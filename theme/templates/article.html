@@ -34,6 +34,8 @@
         <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
       </h2>
 
+      {% if article.summary %}<p class="article-summary">{{ article.summary }}</p>{% endif %}
+
       <div class="article-meta">
         <span class="created">{{ article.date|strftime('%b %d, %Y') }}</span>
 
