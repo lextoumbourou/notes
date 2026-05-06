@@ -7,6 +7,8 @@ tags:
 - LearningAndTeaching
 cover: /_media/ai-neurological-atrophy-cover.jpg
 summary: "We probably need to do deliberate daily mental exercise"
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3ml7kseu6z222
+mastodon_post: https://fedi.notesbylex.com/@lex/116529569267015741
 ---
 
 Something I’m increasingly worried about is that the more mental labour we offload to AI, the more our own cognitive capacity starts to dwindle.
