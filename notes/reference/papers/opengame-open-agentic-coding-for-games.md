@@ -15,13 +15,11 @@ tags:
 
 *My notes on [OpenGame: Open Agentic Coding for Games](https://arxiv.org/abs/2604.18394v1) by Yilei Jiang, Jinyuan Hu, Qianyin Xiao, Yaozhi Zheng, Ruize Ma, Kaituo Feng, Jiaming Han, Tianshuo Peng, Kaixuan Fan, Manyuan Zhang, Xiangyu Yue*
 
-A paper very relevant to my interests right now.
-
 Paper describes **OpenGame**, an agentic framework designed for end-to-end web game creation. [@jiangOpenGameOpenAgentic2026]
 
-The paper argues that to build products as complex as games, the field needs to move beyond *generalist code agents* to *specialist frameworks*.
+The authors argues that to build products as complex as games, the field needs to move beyond *generalist code agents* to *specialist frameworks*.
 
-The paper basically throws the kitchen sink at the problem of game design: a base model, a code agent, a new collection of [Agent Skills](../../permanent/agent-skills.md) for game development, and a new benchmark and evaluation framework.
+They throw the kitchen sink at the problem of game design: a base model, a code agent, a new collection of [Agent Skills](../../permanent/agent-skills.md) for game development, and a new benchmark and evaluation framework.
 
 ![jiang-et-all-figure-2.png](../../_media/jiang-et-all-figure-2.png)
 
@@ -29,7 +27,7 @@ The paper basically throws the kitchen sink at the problem of game design: a bas
 
 ### Base Model
 
-They build a new foundation model based on a Qwen3.5-27B backbone, called **GameCoder-27B**, via a three-stage pipeline:
+The authors contribute a new foundation model based on a [Qwen3.5-27B](../../../../permanent/qwen35-27b.md) backbone, called **GameCoder-27B**, via a three-stage pipeline:
 
 [Continual Pre-Training (CPT)](../../permanent/continual-pre-training-cpt.md) on a corpus of open-source Phaser and JavaScript/TypeScript game repositories from GitHub, with docs and tutorials, to build strong priors over game loops, physics systems, asset usage, and state management.
 
@@ -39,7 +37,7 @@ They build a new foundation model based on a Qwen3.5-27B backbone, called **Game
 
 ### Code Agent Design
 
-To produce a complete game, the authors argue you need [Structured Long-Horizon Workflows](Structured%20Long-Horizon%20Workflows.md).
+To produce a complete game, the authors argue you need Structured [Long-Horizon Workflow](../../permanent/long-horizon-workflow.md) systems.
 
 OpenGame orchestrates the agent through six operational phases, using a persistent `todo_write` tool that lets the agent plan, execute, and transition across phases in a controlled manner.
 

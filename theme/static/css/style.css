@@ -17,7 +17,7 @@ body {
 }
 
 img {
-  max-width: 500px;
+  max-width: 100%;
   height: auto;
   width: auto\9; /* ie8 */
 }
@@ -450,7 +450,11 @@ pre.prettyprint {
   border-radius: 10pt 10pt 10px 10px;
   box-shadow: 5px 5px 5px #888888;
   display: block;
-  margin: 30px;
+  margin: 30px auto;
+  max-width: 100%;
+  max-height: 600px;
+  width: auto;
+  height: auto;
 }
 
 .article code {
