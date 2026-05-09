@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lextoumbourou/markdown-obsidian-callouts@e54d4dfcbce9791f24fc8c9ae39d0f4909e5ae8f/markdown_obsidian_callouts/static/callouts.min.css">
     {% if article is defined %}
     <link rel="stylesheet" href="/static/graph.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     {% endif %}
     {% block head %}
     {% endblock %}
@@ -89,6 +90,22 @@
     </div>
 
     {% if article is defined %}
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Wrap every article image that isn't already inside an <a> in a lightbox link
+        document.querySelectorAll(".article-content img").forEach(function (img) {
+          if (img.closest("a")) return;
+          var a = document.createElement("a");
+          a.href = img.src;
+          a.className = "glightbox";
+          a.dataset.description = img.alt || "";
+          img.parentNode.insertBefore(a, img);
+          a.appendChild(img);
+        });
+        GLightbox({ selector: ".glightbox" });
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pixi.js@7/dist/pixi.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@23/dist/tween.umd.js"></script>
