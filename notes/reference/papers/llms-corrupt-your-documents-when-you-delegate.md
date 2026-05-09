@@ -6,15 +6,17 @@ category: reference/papers
 cover: /_media/llms-corrupt-cover.png
 hide_cover_in_article: true
 summary: "A large-scale study on long-horizon document tasks."
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mlf6gyxguc2r
+mastodon_post: https://fedi.notesbylex.com/@lex/116542213243149508
+linkedin_post: https://www.linkedin.com/feed/update/urn:li:activity:7458690168427003904
 tags:
 - AgenticReasoning
 - LimitationsofLLMs
-
 ---
 
 *My notes on [LLMs Corrupt Your Documents When You Delegate](https://arxiv.org/pdf/2604.15597) by Philippe Laban, Tobias Schnabel and Jennifer Neville from Microsoft Research.*
 
-An interesting paper from 3 researchers at Microsoft.
+An interesting paper from researchers at Microsoft.
 
 They found that when delegating document manipulation tasks to an LLM (things like splitting a CSV into separate files based on categories, transposing the key of a music score) in almost all cases, the information in the document would degrade over time. Even with the latest frontier models, users would see an average of 25% document corruption by the end of a long workflow, with all tested models averaging 50% corruption [@labanLLMsCorruptYour2026].
 
@@ -28,9 +30,7 @@ Interestingly, they also found that agentic tools don't help prevent degradation
 
 ## Measuring Document Corruption
 
-How did they measure document corruption?
-
-Firstly, they introduce a domain-specific document similarity measure that parses documents into components. For a recipe, that means ingredients (name, quantity, unit), steps, and tips; for Python code, it's functions, classes, and imports.
+To measure document corruption, they introduce a domain-specific document similarity measure that parses documents into components. For a recipe, that means ingredients (name, quantity, unit), steps, and tips; for Python code, it's functions, classes, and imports. That allows them to convert two parsed instances based on the true contents of the document, and can include quantifiable values in the parsed results.
 
 ![Pipeline diagram showing how a raw recipe text file is parsed into structured ingredients, steps and tips, then scored for semantic equivalence against a reference using a weighted formula: 0.4 times ingredient score plus 0.4 times step score plus 0.2 times tip score.](../../_media/llms-corrupt-figure-5-document-parsing-similarity-score.png)
 
@@ -73,7 +73,7 @@ They tested 19 models across the benchmark. Every single model degraded document
 
 *Table 1 from [@labanLLMsCorruptYour2026] - round-trip relay results for 19 LLMs across 20 interactions, colour-coded by degradation severity. Every model declines monotonically; frontier models delay but don't avoid the collapse.*
 
-Python was the only domain where models were genuinely ready for delegation, with 17 of 19 models achieving near-lossless manipulation. Outside of that, models were considered "ready" (>=98% reconstruction score) in fewer than 11 of 52 domains, even for the best model.
+Python was the only domain where models were genuinely ready for delegation, with 17 of 19 models achieving near-lossless manipulation. Outside of that, models were considered "ready" (>=98% reconstruction score) in only 11 of 52 domains even for the best model (Gemini 3.1 Pro).
 
 The failure mode is also worth noting: it's not a slow bleed. Models maintain near-perfect reconstruction for several rounds, then experience a sudden catastrophic failure, typically losing 10–30 points in a single round-trip. These sparse critical failures account for about 80% of the total observed degradation.
 
