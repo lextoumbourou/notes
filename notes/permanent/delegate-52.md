@@ -16,5 +16,5 @@ Document 15k tokens in length and 5-10 complex editing tasks, which are typical 
 
 Similar benchmarks are domain-focused:
 
-- [CanItEdit](../../../permanent/canitedit.md) - focused only on coding
-- [NewsEdit](../../../permanent/newsedit.md) - focused on news-article edits
+- [CanItEdit](canitedit.md) - focused only on coding
+- [NewsEdit](newsedit.md) - focused on news-article edits
