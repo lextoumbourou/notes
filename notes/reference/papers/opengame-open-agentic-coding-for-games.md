@@ -27,7 +27,7 @@ They throw the kitchen sink at the problem of game design: a base model, a code 
 
 ### Base Model
 
-The authors contribute a new foundation model based on a [Qwen3.5-27B](../../../../permanent/qwen35-27b.md) backbone, called **GameCoder-27B**, via a three-stage pipeline:
+The authors contribute a new foundation model based on a [Qwen3.5-27B](../../permanent/qwen35-27b.md) backbone, called **GameCoder-27B**, via a three-stage pipeline:
 
 [Continual Pre-Training (CPT)](../../permanent/continual-pre-training-cpt.md) on a corpus of open-source Phaser and JavaScript/TypeScript game repositories from GitHub, with docs and tutorials, to build strong priors over game loops, physics systems, asset usage, and state management.
 
