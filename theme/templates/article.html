@@ -69,6 +69,15 @@
 
       <div class="clear"></div>
 
+      {% if article.youtube_video_id %}
+      <hr>
+      <h3>Video</h3>
+      <p>I've made a YouTube video for this article.</p>
+      <div class="youtube-embed">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ article.youtube_video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      {% endif %}
+
       {% if article.bluesky_post or article.mastodon_post %}
       <hr>
       <h3>Comments</h3>
