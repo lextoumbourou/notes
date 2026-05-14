@@ -6,6 +6,7 @@ category: reference/papers
 cover: /_media/llms-corrupt-cover.png
 hide_cover_in_article: true
 summary: "A large-scale study on long-horizon document tasks."
+youtube_video: https://youtu.be/eEAXbFL9BZM?si=qn2Fds8BASZR0T_7
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mlf6gyxguc2r
 mastodon_post: https://fedi.notesbylex.com/@lex/116542213243149508
 linkedin_post: https://www.linkedin.com/feed/update/urn:li:activity:7458690168427003904
@@ -18,7 +19,7 @@ tags:
 
 An interesting paper from researchers at Microsoft.
 
-They introduce a benchmark called [DELEGATE-52](../../permanent/delegate-52.md) that tests whether LLMs can safely carry out, what they call, long-delegated document-editing workflows across 52 domains. Every set of instructions in the benchmark is lossless and reversible, allowing the authors to measure how much each task degrades the information in the file when reversed.
+They introduce a benchmark called [DELEGATE-52](../../permanent/delegate-52.md) that tests whether LLMs can safely carry out, what they call, "long-delegated workflows" for document editing across 52 domains. Every set of instructions in the benchmark is lossless and reversible, allowing the authors to measure how much each task degrades the file's information over multiple interactions.
 
 They found that even the strongest frontier models, including Gemini 3.1 Pro, Claude 4.6 Opus, and GPT 5.4 (the paper was released before their successors), corrupted an average of about 25% of document content after 20 interactions. Across all tested models, average degradation was about 50% [@labanLLMsCorruptYour2026].
 
