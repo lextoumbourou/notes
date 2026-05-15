@@ -73,8 +73,8 @@
       <hr>
       <h3>Video</h3>
       <p>I've made a YouTube video for this article.</p>
-      <div class="youtube-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:560px;max-height:315px;">
-        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/{{ article.youtube_video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="youtube-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden">
+        <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;max-width:560px;max-height:315px;" src="https://www.youtube.com/embed/{{ article.youtube_video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       {% endif %}
 
