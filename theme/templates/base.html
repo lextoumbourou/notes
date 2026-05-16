@@ -77,6 +77,15 @@
           <a href="/pages/about.html" {% if output_file == 'pages/about.html' %}class="active"{% endif %}>About</a>
         </nav>
 
+        <div class="nav-search" id="nav-search">
+          <div class="nav-search-input-wrap">
+            <svg class="nav-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="nav-search-input" class="nav-search-field" placeholder="Search notes…" autocomplete="off" />
+            <kbd class="nav-search-kbd">/</kbd>
+          </div>
+          <ul class="nav-search-results" id="nav-search-results" hidden></ul>
+        </div>
+
         <div class="nav-tabs" id="nav-tabs">
           <a class="nav-tab active" href="#" data-tab="recent">Recent</a>
           <a class="nav-tab" href="#" data-tab="tags">Tags</a>
@@ -169,5 +178,65 @@
     <script src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script>lucide.createIcons();</script>
+    <script>
+    (function() {
+      var input = document.getElementById('nav-search-input');
+      var results = document.getElementById('nav-search-results');
+      if (!input || !results) return;
+
+      var pagefind;
+      async function loadPagefind() {
+        if (pagefind) return pagefind;
+        try {
+          pagefind = await import('/pagefind/pagefind.js');
+          await pagefind.options({ excerptLength: 12 });
+          return pagefind;
+        } catch(e) { return null; }
+      }
+
+      var debounce;
+      input.addEventListener('input', function() {
+        clearTimeout(debounce);
+        var q = input.value.trim();
+        if (!q) { results.hidden = true; results.innerHTML = ''; return; }
+        debounce = setTimeout(async function() {
+          var pf = await loadPagefind();
+          if (!pf) return;
+          var res = await pf.search(q);
+          var items = await Promise.all(res.results.slice(0, 8).map(r => r.data()));
+          results.innerHTML = '';
+          if (!items.length) {
+            results.innerHTML = '<li class="nav-search-empty">No results</li>';
+          } else {
+            items.forEach(function(item) {
+              var li = document.createElement('li');
+              var a = document.createElement('a');
+              a.href = item.url;
+              a.innerHTML = '<span class="nav-search-title">' + (item.meta && item.meta.title ? item.meta.title : item.url) + '</span>' +
+                            '<span class="nav-search-excerpt">' + (item.excerpt || '') + '</span>';
+              li.appendChild(a);
+              results.appendChild(li);
+            });
+          }
+          results.hidden = false;
+        }, 200);
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === '/' && document.activeElement !== input && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+          e.preventDefault();
+          input.focus();
+          input.select();
+        }
+        if (e.key === 'Escape') { results.hidden = true; input.blur(); }
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!document.getElementById('nav-search').contains(e.target)) {
+          results.hidden = true;
+        }
+      });
+    })();
+    </script>
   </body>
 </html>

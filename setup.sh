@@ -10,9 +10,10 @@ fi
 echo "Installing dependencies with uv..."
 uv sync
 
-# Install npm dependencies (mermaid-cli, puppeteer)
+# Install npm dependencies (mermaid-cli, puppeteer, pagefind)
 echo "Installing npm dependencies..."
 npm install
+
 
 # Set Puppeteer to use Chromium from netlify-plugin-chromium
 if [ -n "$CHROME_PATH" ]; then

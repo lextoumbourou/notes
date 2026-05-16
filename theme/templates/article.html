@@ -58,7 +58,7 @@
 
 {% block content %}
 <section id="content">
-  <div class="article-content-wrap">
+  <div class="article-content-wrap"{% if article.status == 'draft' %} data-pagefind-ignore{% endif %}>
 
     <div class="article-crumbs">
       <a href="/">Home</a>

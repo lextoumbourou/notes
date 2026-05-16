@@ -22,3 +22,6 @@ fi
 echo "No control characters found. Proceeding with build..."
 rm -rf output/
 ENV=local uv run pelican ./notes/ --output=output/
+
+echo "Building search index with pagefind..."
+npx pagefind --site output --output-path output/pagefind

@@ -279,6 +279,113 @@ hr {
 }
 .nav-see-more:hover { color: var(--g-link-hov); text-decoration: underline; }
 
+/* Search */
+.nav-search {
+  position: relative;
+  margin-bottom: 14px;
+}
+
+.nav-search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--g-surface);
+  border: 1px solid var(--g-rule);
+  border-radius: var(--radius08);
+  padding: 6px 8px;
+  transition: border-color 0.15s;
+}
+.nav-search-input-wrap:focus-within {
+  border-color: var(--g-link);
+}
+
+.nav-search-icon {
+  flex-shrink: 0;
+  color: var(--g-muted);
+}
+
+.nav-search-field {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--g-ink);
+  outline: none;
+  min-width: 0;
+}
+.nav-search-field::placeholder { color: var(--g-muted); }
+.nav-search-field::-webkit-search-cancel-button { -webkit-appearance: none; }
+
+.nav-search-kbd {
+  flex-shrink: 0;
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--g-muted);
+  background: var(--g-rule-soft);
+  border: 1px solid var(--g-rule);
+  border-radius: 3px;
+  padding: 1px 4px;
+  line-height: 1.6;
+  pointer-events: none;
+}
+.nav-search-input-wrap:focus-within .nav-search-kbd { display: none; }
+
+.nav-search-results {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0; right: 0;
+  z-index: 100;
+  background: var(--g-bg);
+  border: 1px solid var(--g-rule);
+  border-radius: var(--radius08);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  list-style: none;
+  margin: 0; padding: 4px 0;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.nav-search-results li a {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0;
+}
+.nav-search-results li a:hover { background: var(--g-surface); }
+
+.nav-search-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--g-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-search-excerpt {
+  font-size: 11px;
+  color: var(--g-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nav-search-excerpt mark {
+  background: transparent;
+  color: var(--g-accent);
+  font-weight: 600;
+}
+
+.nav-search-empty {
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--g-muted);
+}
+
 .panel-see-more {
   display: block;
   margin-top: 10px;
