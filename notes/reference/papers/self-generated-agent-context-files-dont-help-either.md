@@ -1,17 +1,21 @@
 ---
-title: "Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?"
+title: "Self-Generated Agent Context Files Don't Help Either"
 date: 2026-02-26 00:00
 modified: 2026-02-26 00:00
 summary: "Self-generated agent context files don't help."
 cover: /_media/evaluating-agents-md-page-1.png
+alias: evaluating-agents-md-are-repository-level-context-files-helpful-for-coding-agents
 tags:
 - AgenticReasoning
 - SoftwareEngineering
 - AIAgents
 category: reference/papers
+paper_title: "Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?"
+paper_url: https://arxiv.org/abs/2602.11988
+paper_authors: Thibaud Gloaguen, Niels Mündler, Mark Müller, Veselin Raychev, Martin Vechev
 ---
 
-Self-Generated [Agent Context Files](../../../../permanent/agent-context-files.md) don't help either.
+Self-Generated [Agent Context Files](../../permanent/agent-context-files.md) don't help either.
 
 [This paper](https://arxiv.org/abs/2602.11988 ), released around the same time as [SkillsBench](../../permanent/skillsbench.md), evaluates whether repository context files (`AGENTS.md`, `CLAUDE.md`) actually improve coding-agent performance.
 
@@ -36,7 +40,7 @@ So, putting the paper findings together, it seems the rules of thumb with contex
 
 Related articles:
 
-- [SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks](./skillsbench-benchmarking-how-well-agent-skills-work-across-diverse-tasks.md)
+- [Self-Generated Skills Don't Help](self-generated-skills-dont-help.md)
 - [OpenClaw: the missing piece for Obsidian's second brain](../../permanent/openclaw-the-missing-piece-for-obsidians-second-brain.md)
 - [Spec-First LLM Development](../../permanent/spec-first-llm-development.md)
 

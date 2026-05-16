@@ -1,0 +1,8 @@
+{% extends "article_list.html" %}
+
+{% block content_title %}
+<div class="list-page-header">
+  <h1 class="list-page-title">All Notes</h1>
+  <p class="list-page-meta">{{ articles | count }} notes, sorted by date</p>
+</div>
+{% endblock %}

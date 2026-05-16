@@ -6,9 +6,10 @@ category: reference/papers
 summary: "an alternative training method to backprop that does local layer learning"
 tags:
 - MachineLearning
+paper_title: "NoProp: Training Neural Networks without Back-propagation or Forward-propagation"
+paper_url: https://arxiv.org/abs/2503.24322
+paper_authors: Qinyu Li, Yee Whye Teh, Razvan Pascanu
 ---
-
-*My summary of [NoProp: Training Neural Networks without Back-propagation or Forward-propagation](https://arxiv.org/abs/2503.24322) by Qinyu Li, Yee Whye Teh, Razvan Pascanu.*
 
 This paper proposes a "back-propagation-free" (kinda) approach to training a denoising (Diffusion / Flow Matching) model.
 

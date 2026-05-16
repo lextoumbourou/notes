@@ -159,10 +159,14 @@ def article_generator_pretaxonomy(generator):
 
     _graph_state["nodes"] = nodes
     _graph_state["links"] = deduped_links
+    _graph_state["slug_map"] = slug_map
 
-    # Build inverted index: slug → list of (source_slug, source_title)
-    backlink_map = {a.slug: [] for a in all_articles}
-    for lnk in deduped_links:
+    _rebuild_backlink_map(slug_map, deduped_links)
+
+
+def _rebuild_backlink_map(slug_map, links):
+    backlink_map = {slug: [] for slug in slug_map}
+    for lnk in links:
         src, tgt = lnk["source"], lnk["target"]
         if tgt in backlink_map and src in slug_map:
             backlink_map[tgt].append({
@@ -173,17 +177,59 @@ def article_generator_pretaxonomy(generator):
 
 
 # ---------------------------------------------------------------------------
+# Signal: page_generator_finalized
+# ---------------------------------------------------------------------------
+
+def page_generator_finalized(generator):
+    """Add pages as nodes and their outgoing links to the graph."""
+    cfg = _graph_state.get("cfg", {})
+    exclude_slugs = set(cfg.get("exclude_slugs", []))
+    slug_map = _graph_state.get("slug_map", {})
+    nodes = _graph_state.get("nodes", [])
+    links = _graph_state.get("links", [])
+
+    existing_node_ids = {n["id"] for n in nodes}
+
+    new_links = []
+    for page in generator.pages:
+        slug = page.slug
+        if slug in exclude_slugs or slug in existing_node_ids:
+            continue
+
+        nodes.append({"id": slug, "text": page.title, "tags": []})
+        slug_map[slug] = page
+
+        if page._content:
+            for match in re.finditer(r'href="([^"]+)\.html"', page._content):
+                target_slug = match.group(1).split("/")[-1]
+                if target_slug in slug_map and target_slug != slug:
+                    new_links.append({"source": slug, "target": target_slug})
+
+    # Deduplicate new links against existing
+    existing_link_keys = {(l["source"], l["target"]) for l in links}
+    for lnk in new_links:
+        key = (lnk["source"], lnk["target"])
+        if key not in existing_link_keys:
+            links.append(lnk)
+            existing_link_keys.add(key)
+
+    _graph_state["nodes"] = nodes
+    _graph_state["links"] = links
+    _graph_state["slug_map"] = slug_map
+    _rebuild_backlink_map(slug_map, links)
+
+
+# ---------------------------------------------------------------------------
 # Signal: article_generator_write_article
 # ---------------------------------------------------------------------------
 
-def article_generator_write_article(generator, content):
-    """Attach graph_html attribute to article for use in the template."""
+def _attach_graph_to_content(generator, content):
+    """Shared logic for attaching graph_html and graph_backlinks to any content object."""
     cfg = _graph_state.get("cfg") or _merge_defaults(
         generator.settings.get("GRAPH_VIEW", {})
     )
     local_cfg = cfg.get("local", DEFAULTS["local"])
 
-    # Attach backlinks regardless of local graph enabled state
     backlink_map = _graph_state.get("backlink_map", {})
     content.graph_backlinks = backlink_map.get(content.slug, [])
 
@@ -192,7 +238,6 @@ def article_generator_write_article(generator, content):
         return
 
     slug = content.slug
-
     js_cfg = json.dumps(
         {
             "depth": local_cfg.get("depth", 1),
@@ -218,6 +263,24 @@ def article_generator_write_article(generator, content):
         f'  </div>\n'
         f'</div>'
     )
+
+
+def page_generator_write_page(generator, content):
+    _attach_graph_to_content(generator, content)
+
+
+def all_generators_finalized(generators):
+    """Pre-attach graph attributes to all pages so index templates can use them."""
+    from pelican.generators import PagesGenerator
+    for generator in generators:
+        if isinstance(generator, PagesGenerator):
+            for page in generator.pages:
+                _attach_graph_to_content(generator, page)
+
+
+def article_generator_write_article(generator, content):
+    """Attach graph_html attribute to article for use in the template."""
+    _attach_graph_to_content(generator, content)
 
 
 # ---------------------------------------------------------------------------
@@ -316,5 +379,8 @@ def _write_global_graph_html(output_path, cfg):
 def register():
     signals.article_generator_init.connect(article_generator_init)
     signals.article_generator_pretaxonomy.connect(article_generator_pretaxonomy)
+    signals.page_generator_finalized.connect(page_generator_finalized)
     signals.article_generator_write_article.connect(article_generator_write_article)
+    signals.page_generator_write_page.connect(page_generator_write_page)
+    signals.all_generators_finalized.connect(all_generators_finalized)
     signals.finalized.connect(finalized)

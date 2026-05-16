@@ -9,9 +9,11 @@ tags:
 - LargeLanguageModels
 - EvolutionaryAlgorithms
 cover: /_media/alphaevolve-fig-1.png
+hide_cover_in_article: true
+paper_title: "AlphaEvolve: A coding agent for scientific and algorithmic discovery"
+paper_url: https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/AlphaEvolve.pdf
+paper_authors: Alexander Novikov, Ngân Vu, Marvin Eisenberger, Emilien Dupont, Po-Sen Huang, Adam Zsolt Wagner, Sergey Shirobokov, Borislav Kozlovskii, Francisco J. R. Ruiz, Abbas Mehrabian, M. Pawan Kumar, Abigail See, Swarat Chaudhuri, George Holland, Alex Davies, Sebastian Nowozin, Pushmeet Kohli and Matej Balog
 ---
-
-*My summary of the white paper from DeepMind: [AlphaEvolve: A coding agent for scientific and algorithmic discovery](https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/AlphaEvolve.pdf) by Alexander Novikov, Ngân Vu, Marvin Eisenberger, Emilien Dupont, Po-Sen Huang, Adam Zsolt Wagner, Sergey Shirobokov, Borislav Kozlovskii, Francisco J. R. Ruiz, Abbas Mehrabian, M. Pawan Kumar, Abigail See, Swarat Chaudhuri, George Holland, Alex Davies, Sebastian Nowozin, Pushmeet Kohli and Matej Balog*
 
 You may have heard of DeepMind's new whitepaper about their coding agent, AlphaEvolve. It discovered a new algorithm for multiplying matrices, improving a 56-year-old solution, and many other mathematical problems, including optimising Google's internal infrastructure scheduling algorithms.
 

@@ -3,9 +3,10 @@ title: "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challe
 date: 2025-05-24 00:00
 modified: 2025-05-24 00:00
 status: draft
+paper_title: "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges"
+paper_url: https://arxiv.org/abs/2505.10468v3
+paper_authors: Ranjan Sapkota, Konstantinos I. Roumeliotis, Manoj Karkee
 ---
-
-*My summary of [AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges](https://arxiv.org/abs/2505.10468v3) by Ranjan Sapkota, Konstantinos I. Roumeliotis, Manoj Karkee.*
 
 This paper provides a comprehensive literature review to distinguish between [AI Agents](../../permanent/ai-agents.md) and [Agentic AI](Agentic%20AI.md). It highlights different examples of each to help illustrate the differences. Since my writing is very taxonomy-focused, I appreciate these papers, which help clarify and understand topics.
 

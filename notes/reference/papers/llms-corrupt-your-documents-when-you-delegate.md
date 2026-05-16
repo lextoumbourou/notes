@@ -13,9 +13,10 @@ linkedin_post: https://www.linkedin.com/feed/update/urn:li:activity:745869016842
 tags:
 - AgenticReasoning
 - LimitationsofLLMs
+paper_title: "LLMs Corrupt Your Documents When You Delegate"
+paper_url: https://arxiv.org/pdf/2604.15597
+paper_authors: Philippe Laban, Tobias Schnabel and Jennifer Neville
 ---
-
-*My notes on [LLMs Corrupt Your Documents When You Delegate](https://arxiv.org/pdf/2604.15597) by Philippe Laban, Tobias Schnabel and Jennifer Neville from Microsoft Research.*
 
 An interesting paper from researchers at Microsoft.
 

@@ -12,9 +12,10 @@ tags:
 - ReinforcementLearning
 - RewardModeling
 - LargeLanguageModels
+paper_title: "Learning to Reason without External Rewards"
+paper_url: https://arxiv.org/abs/2505.19590v1
+paper_authors: Xuandong Zhao, Zhewei Kang, Aosong Feng, Sergey Levine, Dawn Song
 ---
-
-*My summary of [Learning to Reason without External Rewards](https://arxiv.org/abs/2505.19590v1) by Xuandong Zhao, Zhewei Kang, Aosong Feng, Sergey Levine, Dawn Song.*
 
 Another very interesting paper on the topic of reward modelling, that continues to turn assumptions on their head about how to train reasoning LLMs.
 
