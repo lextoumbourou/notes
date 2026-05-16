@@ -11,9 +11,10 @@ bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mknxwdphfs2s
 tags:
 - AgenticReasoning
 - GameDevelopment
+paper_title: "OpenGame: Open Agentic Coding for Games"
+paper_url: https://arxiv.org/abs/2604.18394v1
+paper_authors: Yilei Jiang, Jinyuan Hu, Qianyin Xiao, Yaozhi Zheng, Ruize Ma, Kaituo Feng, Jiaming Han, Tianshuo Peng, Kaixuan Fan, Manyuan Zhang, Xiangyu Yue
 ---
-
-*My notes on [OpenGame: Open Agentic Coding for Games](https://arxiv.org/abs/2604.18394v1) by Yilei Jiang, Jinyuan Hu, Qianyin Xiao, Yaozhi Zheng, Ruize Ma, Kaituo Feng, Jiaming Han, Tianshuo Peng, Kaixuan Fan, Manyuan Zhang, Xiangyu Yue*
 
 Paper describes **OpenGame**, an agentic framework designed for end-to-end web game creation. [@jiangOpenGameOpenAgentic2026]
 

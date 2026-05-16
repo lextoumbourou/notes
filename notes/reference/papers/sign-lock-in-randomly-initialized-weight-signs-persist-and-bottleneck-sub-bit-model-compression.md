@@ -32,7 +32,7 @@ The useful mental model: sub-bit compression is no longer mostly about magnitude
 
 Related articles:
 
-- [Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?](./evaluating-agents-md-are-repository-level-context-files-helpful-for-coding-agents.md)
-- [SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks](./skillsbench-benchmarking-how-well-agent-skills-work-across-diverse-tasks.md)
+- [Self-Generated Agent Context Files Don't Help Either](./self-generated-agent-context-files-dont-help-either.md)
+- [Self-Generated Skills Don't Help](self-generated-skills-dont-help.md)
 
 [^1]: Sakai, A., & Ichikawa, Y. (2026). *Sign Lock-In: Randomly Initialised Weight Signs Persist and Bottleneck Sub-Bit Model Compression* (v1). arXiv. https://arxiv.org/abs/2602.17063

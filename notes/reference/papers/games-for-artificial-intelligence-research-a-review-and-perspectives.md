@@ -3,9 +3,10 @@ title: "Games for Artificial Intelligence Research: A Review and Perspectives"
 date: 2025-05-31 00:00
 modified: 2025-05-31 00:00
 status: draft
+paper_title: "Games for Artificial Intelligence Research: A Review and Perspectives"
+paper_url: https://arxiv.org/abs/2304.13269v4
+paper_authors: Chengpeng Hu, Yunlong Zhao, Ziqi Wang, Haocheng Du, Jialin Liu
 ---
-
-*My summary of [Games for Artificial Intelligence Research: A Review and Perspectives](https://arxiv.org/abs/2304.13269v4) by Chengpeng Hu, Yunlong Zhao, Ziqi Wang, Haocheng Du, Jialin Liu*
 
 "Games have been the perfect test-beds for artificial intelligence research for the characteristics that widely exist in real-world scenarios."
 "GAMES have played an essential role in the rapid development of artificial intelligence (AI). As a controllable, cost-effective, and realistic simulator [1], games provide virtual worlds for AI to explore."

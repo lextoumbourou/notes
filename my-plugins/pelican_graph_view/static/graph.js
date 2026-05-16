@@ -180,13 +180,13 @@
 
     // ---- Resolve colors from CSS custom properties -------------------
     const colors = {
-      secondary:  resolveColor("--secondary",  "#7b97aa"),
-      tertiary:   resolveColor("--tertiary",   "#84a59d"),
-      gray:       resolveColor("--gray",       "#9b9b9b"),
-      light:      resolveColor("--light",      "#e8e8e8"),
-      lightgray:  resolveColor("--lightgray",  "#d4d4d4"),
-      dark:       resolveColor("--dark",       "#141021"),
-      bodyFont:   resolveColor("--bodyFont",   "sans-serif"),
+      secondary:  resolveColor("--g-node-self", resolveColor("--secondary",  "#B58B3C")),
+      tertiary:   resolveColor("--g-node",      resolveColor("--tertiary",   "#3B6A8A")),
+      gray:       resolveColor("--g-muted",     resolveColor("--gray",       "#9b9b9b")),
+      light:      resolveColor("--g-surface",   resolveColor("--light",      "#e8e8e8")),
+      lightgray:  resolveColor("--g-rule",      resolveColor("--lightgray",  "#d4d4d4")),
+      dark:       resolveColor("--g-ink",       resolveColor("--dark",       "#141021")),
+      bodyFont:   resolveColor("--font-sans",   resolveColor("--bodyFont",   "sans-serif")),
     };
 
     function nodeColor(node) {
@@ -214,6 +214,15 @@
     });
 
     const nodeIdSet = new Set(filteredNodes.map((n) => n.id));
+
+    // Update node count badge if present (local graph panel)
+    if (focusSlug) {
+      const card = container.closest(".panel-card");
+      if (card) {
+        const badge = card.querySelector(".graph-node-count");
+        if (badge) badge.textContent = `${filteredNodes.length} nodes`;
+      }
+    }
 
     const filteredLinks = links.filter(
       (l) => nodeIdSet.has(l.source) && nodeIdSet.has(l.target)

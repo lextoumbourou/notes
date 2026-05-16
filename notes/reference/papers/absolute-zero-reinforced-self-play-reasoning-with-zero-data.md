@@ -12,9 +12,10 @@ tags:
 - ReinforcementLearning
 - ReasoningModels
 - LargeLanguageModels
+paper_title: "Absolute Zero: Reinforced Self-play Reasoning with Zero Data"
+paper_url: https://www.arxiv.org/abs/2505.03335
+paper_authors: Andrew Zhao, Yiran Wu, Yang Yue, Tong Wu, Quentin Xu, Yang Yue, Matthieu Lin, Shenzhi Wang, Qingyun Wu, Zilong Zheng, and Gao Huang
 ---
-
-*My summary of [Absolute Zero: Reinforced Self-play Reasoning with Zero Data](https://www.arxiv.org/abs/2505.03335) by Andrew Zhao, Yiran Wu, Yang Yue, Tong Wu, Quentin Xu, Yang Yue, Matthieu Lin, Shenzhi Wang, Qingyun Wu, Zilong Zheng, and Gao Huang.*
 
 This paper introduces the [Absolute Zero Reasoner](../../permanent/absolute-zero-reasoner.md).
 

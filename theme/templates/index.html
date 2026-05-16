@@ -1,25 +1,127 @@
 {% extends "base.html" %}
 
-{% block content %}
-<section id="content">
-{% block content_title %}
+{% set home_page = pages | selectattr("slug", "equalto", "index") | list | first %}
+{% set currently_page = pages | selectattr("slug", "equalto", "currently") | list | first %}
+
+{% if home_page %}
+{% block graph_css %}<link rel="stylesheet" href="/static/graph.css" />{% endblock %}
+{% block graph_js %}
+<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@7/dist/pixi.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@23/dist/tween.umd.js"></script>
+<script src="/static/graph.js"></script>
 {% endblock %}
-
-{% if page_name == "index" %}
-<div class="intro">
-This is the rendered collections of notes by me, Lex Toumbourou.
-<br><br>
-
-You can find the source on the <a href="https://github.com/lextoumbourou/notes">GitHub project</a>.
-<br><br>
-
-The notes are collecting using my interpretation of the <a href="https://en.wikipedia.org/wiki/Zettelkasten">Zettelkasten method</a>.
-<br><br>
-
-<a href="/pages/about.html">More</a>
-</div>
 {% endif %}
 
+{% block body_class %}{% if home_page %}page-article{% endif %}{% endblock %}
+
+{% block right_panel %}
+{% if home_page %}
+<aside id="site-right-panel">
+
+  {% if tags %}
+  <div class="panel-card">
+    <div class="panel-card-head">
+      <p class="panel-heading">Topics</p>
+      <span class="panel-card-meta">{{ tags | list | length }}</span>
+    </div>
+    {% set max_count = tags | map(attribute=1) | map('count') | max %}
+    <div class="home-tag-cloud">
+      {% for tag, tag_articles in tags | sort_by_article_count %}
+        {% if loop.index <= 30 %}
+        {% set count = tag_articles | count %}
+        {% set size = (12 + (count / max_count) * 6) | round(1) %}
+        <a href="{{ SITEURL }}/{{ tag.url }}" class="cloud-tag" style="font-size:{{ size }}px">
+          {{ tag }}<span class="cloud-n">{{ count }}</span>
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% if tags | list | length > 30 %}
+    <a href="/tags.html" class="panel-see-more">See all {{ tags | list | length }} topics →</a>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if SOCIAL is defined and SOCIAL %}
+  <div class="panel-card">
+    <div class="panel-card-head">
+      <p class="panel-heading">Socials</p>
+    </div>
+    <div class="socials-list">
+      {% for icon, name, url in SOCIAL %}
+      <a href="{{ url }}" target="_blank" rel="noopener">
+        <span class="social-ico">{{ icon }}</span> {{ name }}
+      </a>
+      {% endfor %}
+      <a href="{{ SITEURL }}/feeds/all.atom.xml">
+        <span class="social-ico">⌁</span> RSS
+      </a>
+    </div>
+  </div>
+  {% endif %}
+
+</aside>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<section id="content">
+
+{% if home_page %}
+<div class="home">
+
+  {# Hero #}
+  <section class="home-hero{% if not (HERO_PORTRAIT is defined and HERO_PORTRAIT) %} home-hero-full{% endif %}">
+    <div class="hero-text">
+      {% if HERO_TITLE is defined and HERO_TITLE %}
+      <h1 class="hero-title">{{ HERO_TITLE }}</h1>
+      {% endif %}
+      {% if HERO_LEDE is defined and HERO_LEDE %}
+      <p class="hero-lede">{{ HERO_LEDE }}</p>
+      {% endif %}
+      <p class="hero-bio">{{ home_page.content | striptags | truncate(500, True, '…') }}</p>
+      <div class="hero-actions">
+        <a href="/pages/about.html" class="btn-ghost">Learn more</a>
+      </div>
+    </div>
+    {% if HERO_PORTRAIT is defined and HERO_PORTRAIT %}
+    <div class="hero-portrait">
+      <img src="{{ HERO_PORTRAIT }}" alt="{{ AUTHOR }}" />
+    </div>
+    {% endif %}
+  </section>
+
+  {# Recently tended #}
+  {% set all_recent = (articles | sort(attribute='date', reverse=True))[:12] %}
+  {% if all_recent %}
+  <section id="recently-tended" class="recent">
+    <header class="section-head">
+      <h2>Recent notes</h2>
+      <p>Notes sorted by date. <a href="/notes.html">All notes →</a></p>
+    </header>
+    <ol class="timeline">
+      {% for article in all_recent %}
+      <li class="tl-row">
+        <span class="tl-date">{{ article.date.strftime('%b %-d, %Y') }}</span>
+        <span class="tl-kind tl-kind-{{ article.category.name }}">{{ article.category.name }}</span>
+        <a class="tl-title" href="/{{ article.url }}">{{ article.title }}</a>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  <footer class="home-foot">
+    <div>© {{ now().year if now is defined else '2026' }} {{ AUTHOR }} · <a href="/pages/about.html">About</a></div>
+    <div>Built with <a href="https://getpelican.com">Pelican</a></div>
+  </footer>
+
+</div>
+
+{% else %}
+
+{# Fallback: article list #}
 {% if articles_page.has_other_pages() %}
     {% include 'pagination.html' %}
 {% endif %}
@@ -28,7 +130,6 @@ The notes are collecting using my interpretation of the <a href="https://en.wiki
 {% for article in articles_page.object_list %}
 <li>
   <article class="post">
-    
     <div class="article-content">
       <h2>
         <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
@@ -36,35 +137,31 @@ The notes are collecting using my interpretation of the <a href="https://en.wiki
 
       <div class="article-meta">
         <span class="created">{{ article.date|strftime('%b %d, %Y') }}</span>
-
         <span class="category">
           <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category}}</a>{%- for cat in article.subcategories -%}/<a href="{{ SITEURL }}/{{cat.url}}">{{cat.shortname}}</a>{% endfor %}
         </span>
-
         <span class="info">
             {% if article.tags %}
-            &nbsp;
             {% for t in article.tags %}
-            &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags{% if tag and tag.name == t.name %} selected{% endif %}">{{ t }}</a>
+            &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags">{{ t }}</a>
             {% endfor %}
             {% endif %}
         </span>
       </div>
 
       <div class="article-summary">
+        {% if article.cover %}
         <div class="cover-image">
-          {% if article.cover %}
           <img src="{{ article.cover }}" />
-          {% endif %}
         </div>
-        {{ article.summary }}
+        {% endif %}
+        <div class="article-summary-text">
+          {{ article.summary }}
+          <div class="article-link">
+            <a href="{{ SITEURL}}/{{ article.url }}">Read More</a>
+          </div>
+        </div>
       </div>
-
-      <div class="article-link">
-        <a href="{{ SITEURL}}/{{ article.url }}">Read More</a>
-      </div>
-
-      <div class="clear"></div>
     </div>
   </article>
 </li>
@@ -73,6 +170,8 @@ The notes are collecting using my interpretation of the <a href="https://en.wiki
 
 {% if articles_page.has_other_pages() %}
     {% include 'pagination.html' %}
+{% endif %}
+
 {% endif %}
 
 </section>

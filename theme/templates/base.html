@@ -3,31 +3,32 @@
 
 <html lang="en">
   <head>
+    {% if GOOGLE_ANALYTICS_ID is defined and GOOGLE_ANALYTICS_ID %}
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GLND6HLD4D"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS_ID }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
-      gtag('config', 'G-GLND6HLD4D');
+      gtag('config', '{{ GOOGLE_ANALYTICS_ID }}');
     </script>
+    {% endif %}
 
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
-    <title>{% block title %}Notes by Lex Toumbourou{% endblock %}</title>
+    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="//yandex.st/highlightjs/7.3/styles/github.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lextoumbourou/markdown-obsidian-callouts@e54d4dfcbce9791f24fc8c9ae39d0f4909e5ae8f/markdown_obsidian_callouts/static/callouts.min.css">
     {% if article is defined %}
     <link rel="stylesheet" href="/static/graph.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     {% endif %}
-    {% block head %}
-    {% endblock %}
+    {% block graph_css %}{% endblock %}
+    {% for css_url in EXTRA_CSS_URLS | default([]) %}
+    <link rel="stylesheet" href="{{ css_url }}" crossorigin="anonymous">
+    {% endfor %}
+    {% block head %}{% endblock %}
 
     {% if article is defined %}
     <meta property="og:type" content="article" />
@@ -39,14 +40,11 @@
     <meta property="og:type" content="page" />
     <meta property="og:url" content="{{ SITEURL }}" />
     <meta property="og:title" content="{{ SITENAME }}" />
-    <meta property="og:description" content="A collection of notes by Lex Toumbourou." />
+    <meta property="og:description" content="{{ SITE_DESCRIPTION | default('') }}" />
     {% endif %}
 
     {% block scripts %}
       <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-      <!--[if lt IE 8]>
-        <link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection">
-      <![endif]-->
       <script type="text/javascript" src="https://unpkg.com/lucide@latest"></script>
     {% endblock %}
     <noscript>
@@ -57,32 +55,85 @@
     </noscript>
   </head>
 
-  <body class="theme-light {% block body_class %}{% endblock %}">
+  <body class="{% block body_class %}{% endblock %}">
     <div class="page-wrapper">
 
       <nav id="site-nav">
-        <div class="home-menu">
-          <a {% if page_name == "index" %}class="active"{% endif %} href="/">Home</a>
-          <a href="/pages/about.html" {%- if output_file =='pages/about.html' -%}class="active"{% endif %}>About</a>
+        <div class="nav-brand">
+          <div class="nav-brand-mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M4 5h11l5 5v9H4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M15 5v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M7 13h8M7 16h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <a href="/" class="nav-brand-name">{{ SITENAME }}</a>
+          </div>
         </div>
 
-        <div class="tags-menu sidebar-section">
-          <span class="section-header">
-            <h2><span>Tags</span></h2>
-          </span>
+        <nav class="nav-quick">
+          <a href="/" {% if page_name == "index" %}class="active"{% endif %}>Home</a>
+          <a href="/pages/about.html" {% if output_file == 'pages/about.html' %}class="active"{% endif %}>About</a>
+        </nav>
 
-          {%- for tag, articles in (tags|sort_by_article_count)[:12] -%}
-            <a {% if page_name and page_name|string in tag.url|string %}class="active"{% endif %} href="{{ SITEURL}}/{{ tag.url }}">{{ tag }} ({{ articles|count }})</a>
+        <div class="nav-tabs" id="nav-tabs">
+          <a class="nav-tab active" href="#" data-tab="recent">Recent</a>
+          <a class="nav-tab" href="#" data-tab="tags">Tags</a>
+        </div>
+
+        {% set recent_posts = articles | selectattr("category.name", "equalto", "posts") | list %}
+        {% set recent_notes = articles | rejectattr("category.name", "equalto", "posts") | list %}
+        {% set all_recent = (recent_posts + recent_notes) | sort(attribute='date', reverse=True) %}
+
+        <ul class="nav-note-list" id="nav-recent">
+          {% for article in all_recent[:10] %}
+          <li class="{% if article.url == output_file %}active{% elif loop.index > 3 %}nav-recent-extra{% endif %}">
+            <a href="/{{ article.url }}">
+              <span class="nav-note-title">{{ article.title }}</span>
+              <span class="nav-note-date">{{ article.date.strftime('%b %-d, %Y') }}</span>
+            </a>
+          </li>
           {% endfor %}
-          <a {% if page_name == "tags" %}class="active"{% endif %} href="/tags.html">More</a>
-        </div>
+          {% if all_recent | length > 10 %}
+          <li><a href="/notes.html" class="nav-see-more">See more →</a></li>
+          {% endif %}
+        </ul>
+
+        <ul class="nav-note-list" id="nav-tags" style="display:none">
+          {% for tag, tag_articles in tags | sort_by_article_count %}
+          {% if loop.index <= 20 %}
+          <li{% if loop.index > 3 %} class="nav-tag-extra"{% endif %}>
+            <a href="{{ SITEURL }}/{{ tag.url }}">
+              <span class="nav-note-title" style="display:flex;justify-content:space-between">
+                <span>{{ tag }}</span>
+                <span style="font-family:var(--font-mono);font-size:11px;color:var(--g-muted)">{{ tag_articles | count }}</span>
+              </span>
+            </a>
+          </li>
+          {% endif %}
+          {% endfor %}
+          {% if tags | list | length > 20 %}
+          <li><a href="/tags.html" class="nav-see-more">See all {{ tags | list | length }} topics →</a></li>
+          {% endif %}
+        </ul>
+
+        <script>
+          document.querySelectorAll('#nav-tabs .nav-tab').forEach(function(tab) {
+            tab.addEventListener('click', function(e) {
+              e.preventDefault();
+              document.querySelectorAll('#nav-tabs .nav-tab').forEach(t => t.classList.remove('active'));
+              this.classList.add('active');
+              var which = this.dataset.tab;
+              document.getElementById('nav-recent').style.display = which === 'recent' ? '' : 'none';
+              document.getElementById('nav-tags').style.display  = which === 'tags'   ? '' : 'none';
+            });
+          });
+        </script>
       </nav>
 
       <div id="site-content">
-        <div id="header">
-          <h1><a href="/">Notes by Lex Toumbourou</a></h1>
-        </div>
-
+        <div id="header"></div>
         {% block content %}
         {% endblock %}
       </div>{% block right_panel %}{% endblock %}
@@ -90,11 +141,11 @@
     </div>
 
     {% if article is defined %}
+    <script src="/theme/js/toc.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Wrap every article image that isn't already inside an <a> in a lightbox link
-        document.querySelectorAll(".article-content img").forEach(function (img) {
+        document.querySelectorAll(".prose-body img").forEach(function (img) {
           if (img.closest("a")) return;
           var a = document.createElement("a");
           a.href = img.src;
@@ -111,7 +162,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@23/dist/tween.umd.js"></script>
     <script src="/static/graph.js"></script>
     {% endif %}
-    <script src="https://cdn.jsdelivr.net/gh/lextoumbourou/markdown-obsidian-callouts@e54d4dfcbce9791f24fc8c9ae39d0f4909e5ae8f/markdown_obsidian_callouts/static/callouts.min.js"></script>
+    {% block graph_js %}{% endblock %}
+    {% for js_url in EXTRA_JS_URLS | default([]) %}
+    <script src="{{ js_url }}"></script>
+    {% endfor %}
     <script src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
     <script>lucide.createIcons();</script>

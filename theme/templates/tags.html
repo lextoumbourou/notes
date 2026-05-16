@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Tags - {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<section id="content">
+  <h1 class="tags-page-title">Tags</h1>
+  <div class="tag-cloud">
+    {% set counts = tags | map(attribute=1) | map('count') | list %}
+    {% set min_count = counts | min %}
+    {% set max_count = counts | max %}
+    {% set range = (max_count - min_count) or 1 %}
+    {% for tag, articles in tags | sort %}
+      {% set count = articles | count %}
+      {% set weight = ((count - min_count) / range * 4) | round | int %}
+      <a href="{{ SITEURL }}/{{ tag.url }}"
+         class="tag-cloud-item tag-weight-{{ weight }}"
+         title="{{ count }} note{% if count != 1 %}s{% endif %}">{{ tag }}</a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

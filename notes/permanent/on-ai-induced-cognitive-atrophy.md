@@ -6,6 +6,8 @@ tags:
 - LearningWithAI
 - LearningAndTeaching
 cover: /_media/ai-neurological-atrophy-cover.jpg
+cover_credits: Photo by <a href="https://unsplash.com/@simonfollin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">simon follin</a> on <a href="https://unsplash.com/photos/a-person-sitting-at-a-desk-with-a-laptop-tixXGZbKclU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+alias: ai-induced-cognitive-atrophy.html
 summary: "We probably need to do deliberate daily mental exercise"
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3ml7kseu6z222
 mastodon_post: https://fedi.notesbylex.com/@lex/116529569267015741
@@ -28,7 +30,3 @@ Just as many people leading sedentary lifestyles have to make a deliberate effor
 My hypothesis is that you need to deliberately spend time every day exercising your skills, operating near your cognitive limits - performing deep [System 2 Thinking](system-2-thinking.md) - if you want to avoid the kind of atrophy that will make you worse at wielding AI agents. The idea of [Progressive Overload](progressive-overload.md) in strength training is to gradually increase resistance via heavier weights, building overall capacity. The same paradigm applies to cognitive capacity.
 
 One thing I've been experimenting with is making sure I allocate at least 30 minutes a day on something mentally difficult, like writing code by hand for an unfamiliar problem or reading difficult papers. Writing these notes is another task that feels like a form of this exercise.
-
----
-
-Cover by <a href="https://unsplash.com/@simonfollin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">simon follin</a> on <a href="https://unsplash.com/photos/a-person-sitting-at-a-desk-with-a-laptop-tixXGZbKclU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

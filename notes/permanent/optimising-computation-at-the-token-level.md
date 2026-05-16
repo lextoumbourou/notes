@@ -1,5 +1,5 @@
 ---
-title: "Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation"
+title: "Optimising Computation At The Token-Level"
 date: 2025-07-21 00:00
 modified: 2025-07-27 00:00
 summary: Optimising computation at the token-level
@@ -10,9 +10,11 @@ tags:
 cover: /_media/mor-article-cover.png
 hide_cover_in_article: true
 category: reference/papers
+alias: mixture-of-recursions-learning-dynamic-recursive-depths-for-adaptive-token-level-computation.html
+paper_title: "Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation"
+paper_url: https://arxiv.org/pdf/2507.10524
+paper_authors: Sangmin Bae, Yujin Kim, Reza Bayat, Sungnyun Kim, Jiyoun Ha, Tal Schuster, Adam Fisch, Hrayr Harutyunyan, Ziwei Ji, Aaron Courville and Se-Young Yun
 ---
-
-*My notes on paper [Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation](https://arxiv.org/pdf/2507.10524) by Sangmin Bae, Yujin Kim, Reza Bayat, Sungnyun Kim, Jiyoun Ha, Tal Schuster, Adam Fisch, Hrayr Harutyunyan, Ziwei Ji, Aaron Courville and Se-Young Yun*
 
 Really interesting paper from researchers at KAIST AI, Mila and Google: "Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation"
 

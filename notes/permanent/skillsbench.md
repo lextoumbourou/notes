@@ -5,4 +5,4 @@ modified: 2026-02-23 00:00
 status: draft
 ---
 
-See [SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks](../reference/papers/skillsbench-benchmarking-how-well-agent-skills-work-across-diverse-tasks.md)
+See [Self-Generated Skills Don't Help](../reference/papers/self-generated-skills-dont-help.md)
