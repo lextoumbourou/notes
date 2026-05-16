@@ -1038,6 +1038,7 @@ oom-comments { padding: 0; }
 @media screen and (max-width: 700px) {
   .nav-tag-extra { display: none; }
   .nav-recent-extra { display: none; }
+  .nav-brand-mark { display: none; }
 
   .page-wrapper,
   .page-article .page-wrapper {
@@ -1461,6 +1462,7 @@ oom-comments { padding: 0; }
 
 @media (max-width: 980px) {
   .home-hero { grid-template-columns: minmax(0,1fr) 120px; gap: 20px; }
+  .home-hero-full { grid-template-columns: 1fr; }
   .featured-grid { grid-template-columns: 1fr; }
   .tl-row { grid-template-columns: 80px 80px 1fr; gap: 10px; }
 }

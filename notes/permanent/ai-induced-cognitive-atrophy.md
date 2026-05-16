@@ -1,5 +1,5 @@
 ---
-title: On AI-Induced Cognitive Atrophy
+title: AI-Induced Cognitive Atrophy
 date: 2026-05-07 06:33
 modified: 2026-05-07 09:14
 tags:
@@ -7,7 +7,7 @@ tags:
 - LearningAndTeaching
 cover: /_media/ai-neurological-atrophy-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@simonfollin?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">simon follin</a> on <a href="https://unsplash.com/photos/a-person-sitting-at-a-desk-with-a-laptop-tixXGZbKclU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-alias: ai-induced-cognitive-atrophy.html
+alias: on-ai-induced-cognitive-atrophy.html
 summary: "We probably need to do deliberate daily mental exercise"
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3ml7kseu6z222
 mastodon_post: https://fedi.notesbylex.com/@lex/116529569267015741

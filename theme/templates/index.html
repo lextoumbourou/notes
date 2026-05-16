@@ -28,7 +28,7 @@
     {% set max_count = tags | map(attribute=1) | map('count') | max %}
     <div class="home-tag-cloud">
       {% for tag, tag_articles in tags | sort_by_article_count %}
-        {% if loop.index <= 30 %}
+        {% if loop.index <= 25 %}
         {% set count = tag_articles | count %}
         {% set size = (12 + (count / max_count) * 6) | round(1) %}
         <a href="{{ SITEURL }}/{{ tag.url }}" class="cloud-tag" style="font-size:{{ size }}px">
@@ -37,7 +37,7 @@
         {% endif %}
       {% endfor %}
     </div>
-    {% if tags | list | length > 30 %}
+    {% if tags | list | length > 25 %}
     <a href="/tags.html" class="panel-see-more">See all {{ tags | list | length }} topics →</a>
     {% endif %}
   </div>
