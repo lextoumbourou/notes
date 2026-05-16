@@ -5,6 +5,7 @@ modified: 2026-02-21 00:00
 summary: "Curated skills boost agent performance by 16 points; self-generated ones don't help at all."
 alias: skillsbench-benchmarking-how-well-agent-skills-work-across-diverse-tasks.html
 cover: /_media/skillsbench-cover.png
+hide_cover_in_article: true
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mflrlxrlks2l
 tags:
 - AgenticReasoning
