@@ -5,4 +5,4 @@ modified: 2026-05-17 00:00
 status: draft
 ---
 
-See [Heavy Thinking: A Two-Stage Test-Time Scaling Pattern](../reference/papers/heavythinking-a-two-stage-test-time-scaling-pattern.md)
+See [Heavy Thinking: A Test-Time Scaling Pattern for Hard Problems](../reference/papers/heavythinking-a-test-time-scaling-pattern-for-hard-problems.md)
