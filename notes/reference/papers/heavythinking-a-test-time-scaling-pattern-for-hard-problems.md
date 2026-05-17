@@ -19,7 +19,7 @@ summary: "Now we can have GPT5 Pro at home"
 
 This paper is an empirical investigation of an [Agentic Reasoning](../../permanent/agentic-reasoning.md) approach they call [Heavy Thinking](../../permanent/heavy-thinking.md).
 
-It's a simple two-stage workflow: a bunch of subagents reason independently in parallel on a problem, then another LLM summarises their responses.
+It's a simple two-stage workflow: a bunch of subagents reason independently in parallel on a problem, then another LLM "deliberates" over their reasoning traces to generate a final answer.
 
 In **Stage 1**, the step they call **Parallel Reasoning**, sub-agents attempt to solve a problem independently, encouraged to approach it from different perspectives, and output both a reasoning trace and an answer.
 
@@ -39,7 +39,7 @@ Finally, they propose **HeavySkill**, where they consolidate their insights into
 
 ![heavyskill-figure-1.png](_media/heavyskill/figure-1.png)
 
-We don't know for sure, but others have speculated that GPT-5 Pro uses a similar internal pattern of parallel reasoning chains [@nateGPT5ProFirst2025], hence it is about 5x more expensive than GPT-5.
+We don't know for sure, but others have speculated that GPT-5.5 Pro uses a similar internal pattern of parallel reasoning chains [@nateGPT5ProFirst2025], hence it is about 5x more expensive than GPT-5.5.
 
 Also, reminds me a lot of the [Stacking](../../permanent/stacking.md) ensemble approach in classification-based ML, where a meta-model combines outputs from other models to improve overall performance.
 
