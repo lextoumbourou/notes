@@ -10,6 +10,9 @@ category: reference/papers
 paper_title: "HEAVYSKILL: Heavy Thinking as the Inner Skill in Agentic Harness"
 paper_url: https://arxiv.org/abs/2605.02396
 paper_authors: "Jianing Wang, Linsen Guo, Zhengyu Chen, Qi Guo, Hongyu Zang, Wenjie Shi, Haoxiang Ma, Xiangyu Xi, Xiaoyu Li, Wei Wang, Xunliang Cai"
+cover: /_media/heavyskill/figure-1.png
+hide_cover_in_article: true
+summary: "Now we can have GPT5 Pro at home"
 ---
 
 ## Overview

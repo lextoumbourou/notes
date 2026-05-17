@@ -3,7 +3,7 @@ title: "Neural Machine Translation by Jointly Learning to Align and Translate (S
 date: 2024-10-28 00:00
 modified: 2024-10-28 00:00
 summary: improve the Encoder/Decoder alignment with an Attention Mechanism
-cover: _media/neural-machine-translation-by-jointly-learning-to-align-and-translate-sep-2014-fig-1.png
+cover: /_media/neural-machine-translation-by-jointly-learning-to-align-and-translate-sep-2014-fig-1.png
 hide_cover_in_article: true
 category: reference/papers
 tags:
