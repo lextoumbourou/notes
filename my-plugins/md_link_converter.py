@@ -12,8 +12,8 @@ def convert_md_links(instance):
         return
 
     try:
-        # Find <a> tags with .md hrefs
-        html_links = re.compile(r'<a href="([^"]+\.md)">([^<]+)</a>')
+        # Find <a> tags with .md hrefs, excluding external URLs
+        html_links = re.compile(r'<a href="(?!https?://)([^"]+\.md)">([^<]+)</a>')
 
         # Replace the .md links with file_stem.html links
         def replace_link(match):
