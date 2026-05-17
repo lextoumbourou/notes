@@ -20,7 +20,7 @@ Paper describes **OpenGame**, an agentic framework designed for end-to-end web g
 
 The authors argues that to build products as complex as games, the field needs to move beyond *generalist code agents* to *specialist frameworks*.
 
-They throw the kitchen sink at the problem of game design: a base model, a code agent, a new collection of [Agent Skills](../../permanent/agent-skills.md) for game development, and a new benchmark and evaluation framework.
+They throw the kitchen sink at the problem of game design: a base model, a code agent, a new collection of [Agent Skills](../../permanent/agent-skill.md) for game development, and a new benchmark and evaluation framework.
 
 ![jiang-et-all-figure-2.png](../../_media/jiang-et-all-figure-2.png)
 

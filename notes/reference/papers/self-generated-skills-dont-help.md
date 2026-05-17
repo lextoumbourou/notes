@@ -16,7 +16,7 @@ paper_url: https://arxiv.org/abs/2602.12670
 paper_authors: Xiangyi Li, Wenbo Chen, Yimin Liu, Shenghan Zheng, Xiaokun Chen, Yifeng He, Yubo Li, Bingran You, Haotian Shen, Jiankai Sun, Shuyi Wang, Binxu Li, Qunhong Zeng, Di Wang, Xuandong Zhao, Yuanli Wang, Roey Ben Chaim, Zonglin Di, Yipeng Gao, Junwei He, Yizhuo He, Liqiang Jing, Luyang Kong, Xin Lan, Jiachen Li, Songlin Li, Yijiang Li, Yueqian Lin, Xinyi Liu, Xuanqing Liu, Haoran Lyu, Ze Ma, Bowei Wang, Runhui Wang, Tianyu Wang, Wengao Ye, Yue Zhang, Hanwen Xing, Yiqi Xue, Steven Dillmann, Han-chung Lee
 ---
 
-[Agent Skills](../../permanent/agent-skills.md) are structured packages of Markdown files and scripts that augment [AI Agents](../../permanent/ai-agents.md)' capabilities. They usually look something like this:
+[Agent Skills](../../permanent/agent-skill.md) are structured packages of Markdown files and scripts that augment [AI Agents](../../permanent/ai-agents.md)' capabilities. They usually look something like this:
 
 ```
 ~/.claude/skills/some-skill/

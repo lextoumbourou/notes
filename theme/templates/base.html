@@ -44,7 +44,6 @@
     {% endif %}
 
     {% block scripts %}
-      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
       <script type="text/javascript" src="https://unpkg.com/lucide@latest"></script>
     {% endblock %}
     <noscript>
@@ -175,8 +174,6 @@
     {% for js_url in EXTRA_JS_URLS | default([]) %}
     <script src="{{ js_url }}"></script>
     {% endfor %}
-    <script src="//yandex.st/highlightjs/7.3/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     <script>lucide.createIcons();</script>
     <script>
     (function() {
