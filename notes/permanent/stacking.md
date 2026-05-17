@@ -5,4 +5,4 @@ modified: 2025-10-15 00:00
 status: hidden
 ---
 
-**Stacking** is an [Ensemble](Ensemble.md) approach to classification in ML where you blend the predictions of different models using a meta-learner.
+**Stacking** is an [Ensemble](ensemble.md) approach to classification in ML where you blend the predictions of different models using a meta-learner.
