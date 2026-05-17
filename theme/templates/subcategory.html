@@ -1,7 +1,56 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
-{% block title %}{{ subcategory }} category - {{ SITENAME }}{% endblock %}
+{% block title %}{{ subcategory }} - {{ SITENAME }}{% endblock %}
 
-{% block content_title %}
-<h2>Articles in the {{ subcategory }} subcategory</h2>
-{% endblock %}
+{% block content %}
+<section id="content">
+
+<h2>Notes in {{ subcategory }}</h2>
+
+<ul class="articles">
+{% for article in articles %}
+<li>
+  <article class="post">
+    <div class="article-content">
+      <h2>
+        <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+      </h2>
+
+      <div class="article-meta">
+        <span class="created">{{ article.date|strftime('%b %d, %Y') }}</span>
+
+        <span class="category">
+          <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category}}</a>{%- for cat in article.subcategories -%}/<a href="{{ SITEURL }}/{{cat.url}}">{{cat.shortname}}</a>{% endfor %}
+        </span>
+
+        <span class="info">
+            {% if article.tags %}
+            &nbsp;
+            {% for t in article.tags %}
+            &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags">{{ t }}</a>
+            {% endfor %}
+            {% endif %}
+        </span>
+      </div>
+
+      <div class="article-summary">
+        {% if article.cover %}
+        <div class="cover-image">
+          <img src="{{ article.cover }}" />
+        </div>
+        {% endif %}
+        <div class="article-summary-text">
+          {{ article.summary }}
+          <div class="article-link">
+            <a href="{{ SITEURL}}/{{ article.url }}">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+</li>
+{% endfor %}
+</ul>
+
+</section>
+{% endblock content %}
