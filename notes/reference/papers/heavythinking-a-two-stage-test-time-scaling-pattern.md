@@ -71,6 +71,8 @@ Even more surprisingly, they report that stronger models can approach the upper 
 
 The strongest results appear on difficult reasoning benchmarks like: AIME25, BeyondAIME, HMMT25-Feb, GPQA-Diamond. On harder benchmarks, the advantage over voting becomes more pronounced.
 
+![Table 1. Overview performance of heavy mode on STEM tasks](_media/heavyskill/table-1.png)
+
 The results are more mixed outside STEM. Heavy thinking helps on correctness-oriented tasks like: LiveCodeBench, IFEval and IMO-style answer benchmarks. These tasks still have relatively clear success criteria. Code either passes tests or it does not. Instruction following can be checked. Math answers can be verified.
 
 But the gains are weaker on Arena-Hard. Arena-Hard is more subjective and preference-based. There may not be a single correct answer. In that setting, combining multiple answers does not necessarily produce something the judge prefers.
@@ -85,6 +87,8 @@ A key finding is that deliberation can sometimes recover correct answers even wh
 
 The authors describe the deliberation model as acting like an implicit verifier. It compares trajectories, identifies inconsistencies, and seeks the strongest reasoning path.
 
+![Figure 2. Pass rate distribution of heavy thinking across different parallel pass rates](_media/heavyskill/figure-2.png)
+
 ### The deliberation model does not need to be the best reasoning model
 
 The paper also tests different models in the second-stage deliberation role. The interesting result is that the deliberation model does not necessarily need to be the strongest raw problem solver. It mainly needs to be good at reading reasoning traces, comparing arguments, identifying mistakes and synthesising a final answer
@@ -94,6 +98,8 @@ That suggests the two stages may need different capabilities. The first-stage mo
 ### Iteration has a trade-off
 
 Iterative deliberation can improve Heavy-Mean performance as more rounds of deliberation are added, but it also has a downside. The paper finds that Heavy-Pass can degrade with increasing iterations. The likely reason is that later deliberation rounds can inherit mistakes, noise, or bias from earlier summaries. So, more deliberation is not automatically better.
+
+![Figure 4. Heavy-Mean climbs with iterations while Heavy-Pass degrades](_media/heavyskill/figure-4.png)
 
 ### Heavy thinking also works with tool use
 
