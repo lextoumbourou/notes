@@ -1,5 +1,5 @@
 ---
-title: "Heavy Thinking: A Two-Stage Test-Time Scaling Pattern"
+title: "Heavy Thinking: A Test-Time Scaling Pattern for Hard Problems"
 date: 2026-05-17 00:00
 modified: 2026-05-17 00:00
 tags:
@@ -98,8 +98,6 @@ That suggests the two stages may need different capabilities. The first-stage mo
 ### Iteration has a trade-off
 
 Iterative deliberation can improve Heavy-Mean performance as more rounds of deliberation are added, but it also has a downside. The paper finds that Heavy-Pass can degrade with increasing iterations. The likely reason is that later deliberation rounds can inherit mistakes, noise, or bias from earlier summaries. So, more deliberation is not automatically better.
-
-![Figure 4. Heavy-Mean climbs with iterations while Heavy-Pass degrades](_media/heavyskill/figure-4.png)
 
 ### Heavy thinking also works with tool use
 
