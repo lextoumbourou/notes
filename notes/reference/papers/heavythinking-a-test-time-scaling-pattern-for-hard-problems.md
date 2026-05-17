@@ -8,7 +8,7 @@ tags:
 - AgentSkills
 category: reference/papers
 paper_title: "HEAVYSKILL: Heavy Thinking as the Inner Skill in Agentic Harness"
-paper_link: https://arxiv.org/abs/2605.02396
+paper_url: https://arxiv.org/abs/2605.02396
 paper_authors: "Jianing Wang, Linsen Guo, Zhengyu Chen, Qi Guo, Hongyu Zang, Wenjie Shi, Haoxiang Ma, Xiangyu Xi, Xiaoyu Li, Wei Wang, Xunliang Cai"
 ---
 
