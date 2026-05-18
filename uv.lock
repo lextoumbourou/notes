@@ -1675,15 +1675,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/af/0a/82422526f2d69917015ed7d47ba6dcd2789875359595fc5cb04a58115ec9/pelican-alias-1.1.tar.gz", hash = "sha256:e548c8245127bd540d53d9b1a95c8fb6958184f819d13f996f208f45f7237c4f", size = 3183 }
 
 [[package]]
-name = "pelican-cite"
-version = "1.0.0"
-source = { git = "https://github.com/VorpalBlade/pelican-cite.git?rev=e1ac8202446bcf790ddffe4b48aa58a8d04ec4dc#e1ac8202446bcf790ddffe4b48aa58a8d04ec4dc" }
-dependencies = [
-    { name = "pelican" },
-    { name = "pybtex" },
-]
-
-[[package]]
 name = "pelican-frontmark"
 version = "1.2.2.dev0"
 source = { git = "https://github.com/lextoumbourou/pelican-frontmark.git#d68003a34c952089df6d653a79ba31388619b69e" }
@@ -1890,7 +1881,6 @@ dependencies = [
     { name = "nbconvert" },
     { name = "pelican" },
     { name = "pelican-alias" },
-    { name = "pelican-cite" },
     { name = "pelican-frontmark" },
     { name = "pelican-jupyter" },
     { name = "pelican-katex" },
@@ -1916,7 +1906,6 @@ requires-dist = [
     { name = "nbconvert", specifier = "==7.2.5" },
     { name = "pelican", specifier = "==4.12.0" },
     { name = "pelican-alias", specifier = ">=1.1" },
-    { name = "pelican-cite", git = "https://github.com/VorpalBlade/pelican-cite.git?rev=e1ac8202446bcf790ddffe4b48aa58a8d04ec4dc" },
     { name = "pelican-frontmark", git = "https://github.com/lextoumbourou/pelican-frontmark.git" },
     { name = "pelican-jupyter", git = "https://github.com/lextoumbourou/pelican-jupyter.git" },
     { name = "pelican-katex", specifier = "==1.6.1" },

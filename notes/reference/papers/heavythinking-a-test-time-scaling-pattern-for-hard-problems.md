@@ -12,51 +12,45 @@ paper_url: https://arxiv.org/abs/2605.02396
 paper_authors: "Jianing Wang, Linsen Guo, Zhengyu Chen, Qi Guo, Hongyu Zang, Wenjie Shi, Haoxiang Ma, Xiangyu Xi, Xiaoyu Li, Wei Wang, Xunliang Cai"
 cover: /_media/heavyskill/figure-1.png
 hide_cover_in_article: true
-summary: "Now we can have GPT Pro at home"
+summary: "Now we have GPT Pro at home"
 mastodon_post: https://fedi.notesbylex.com/@lex/116592685345019773
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mm3lq4daes2l
+aliases:
+- Heavy Thinking
 ---
 
 ## Overview
 
-This paper is an empirical investigation of an [Agentic Reasoning](../../permanent/agentic-reasoning.md) approach they call [Heavy Thinking](../../permanent/heavy-thinking.md).
+This paper is an empirical investigation of an [Agentic Reasoning](../../permanent/agentic-reasoning.md) approach they call **Heavy Thinking** [@wangHeavySkillHeavyThinking2026].
 
-It's a simple two-stage workflow: a bunch of subagents reason independently in parallel on a problem, then another LLM "deliberates" over their reasoning traces to generate a final answer.
+It's a simple two-stage workflow: a bunch of subagents reason independently in parallel on a problem, then another LLM "deliberates" over their outputs to generate a final answer.
 
-In **Stage 1**, the step they call **Parallel Reasoning**, sub-agents attempt to solve a problem independently, encouraged to approach it from different perspectives, and output both a reasoning trace and an answer.
+In **Stage 1**, the step they call **Parallel Reasoning**, sub-agents attempt to solve a user query independently, encouraged to approach it from different perspectives, with each outputting both a reasoning trace and an answer.
+
+The outputs are stored in a **Serialised Memory Cache**, where they are pruned and shuffled. They shuffle the outputs to avoid [Position Bias](../../permanent/position-bias.md), where the model tends to prefer answers that appear first or last in the context [@bitoEvaluatingPositionBias2025].
 
 In **Stage 2**, which they call **Sequential Deliberation**, the same or another LLM analyses the set of outputs from the previous step and performs meta-analysis to derive a final answer. This can be an iterative process in which the LLM deliberates across multiple steps and optionally includes the deliberation outputs in the parallel reasoning traces at each iteration (they call this **Iterative Deliberation**).
 
-They also propose a memory cache mechanism to store and organise reasoning trajectories, with a few details I go into in the next section.
+![Figure 1. The overview framework of heavy thinking in LLMs test time scaling](_media/heavyskill/figure-1.png)
+
+*Figure 1. The overview framework of heavy thinking in LLMs test time scaling [@wangHeavySkillHeavyThinking2026].*
 
 Since we can scale the number of parallel agents, or the "width" of reasoning, and the number of sequential deliberation steps, the "depth" of reasoning, it serves as a powerful [Test-Time Scaling](../../permanent/test-time-scaling.md) technique.
 
-They argue that the complex orchestration systems behind tools such as Codex, Claude Code, OpenClaw, and Hermes can be abstracted into this two-stage pattern.
+They argue that the complex orchestration systems behind tools such as Codex, Claude Code, OpenClaw, and Hermes can be abstracted into this two-stage pattern, and are the *"inner skill"* they use to reason through complex problems.
 
 > "We abstract the agentic harness into the LLM’s inherent capability of heavy thinking."
 
-And to demonstrate this, they propose **HeavySkill**, where they consolidate their insights into a single [Agent Skill](../../permanent/agent-skill.md).
-
-The whole [Skill can be read in GitHub](https://github.com/wjn1996/HeavySkill/blob/main/skill/heavyskill.md). It's quite readable.
-
-![heavyskill-figure-1.png](_media/heavyskill/figure-1.png)
+Finally, they propose both a Python pipeline for executing the workflow, and also consolidate the insights into a single [Agent Skill](../../permanent/agent-skill.md) called **HeavySkill**, which can be read in full in the [GitHub repo](https://github.com/wjn1996/HeavySkill/blob/main/skill/heavyskill.md).
 
 We don't know for sure, but others have speculated that GPT‑5.5 Pro uses a similar internal pattern of parallel reasoning chains [@nateGPT5ProFirst2025], hence it is about 6x more expensive than GPT‑5.5.
 
 It reminds me a lot of the [Stacking](../../permanent/stacking.md) ensemble approach in classification-based ML, where a meta-model combines outputs from other models to improve overall performance.
 
 ---
-### Serialised Memory Cache
-
-The memory cache is the bridge between the parallel reasoning step and the deliberation step.
-
-Since each parallel trajectory contains a reasoning trace and the final answer, the model cannot always fit every full reasoning trace into context. So the paper prunes the trajectories before passing them into the deliberation stage.
-
-The trajectories are also shuffled. This is to stop the deliberation model from developing a position bias, where it trusts answers more just because they appear first or last in the prompt.
-
 ## Results
 
-They test both closed-weight (`GPT-5` with reasoning, `Claude 4.5 Thinking` and `Gemini 3 Pro Preview`) and open-weight models (`R1-Distill-Qwen-*`, `Qwen3-*`, `DeepSeek R1-0528`, `GPT-OSS-20B`, `Kimi K2 Thinking`, `GLM 4.6` and `DeepSeek V3.2 Thinking`).
+They test both closed-weight (`GPT-5 Thinking`, `Claude 4.5 Thinking` and `Gemini 3 Pro Preview`) and open-weight models (`R1-Distill-Qwen-*`, `Qwen3-*`, `DeepSeek R1-0528`, `GPT-OSS-20B`, `Kimi K2 Thinking`, `GLM 4.6` and `DeepSeek V3.2 Thinking`).
 
 By default, the same model is used for both stages, although in theory different models could be used to further improve performance.
 
@@ -70,7 +64,9 @@ The strongest results appear on difficult reasoning benchmarks such as **AIME25*
 
 ![Table 1. Overview performance of heavy mode on STEM tasks](_media/heavyskill/table-1.png)
 
-The results are more mixed outside STEM. Heavy thinking helps on correctness-oriented tasks like: LiveCodeBench, IFEval and IMO-style answer benchmarks. These tasks still have relatively clear success criteria. Code either passes tests or it does not. Instruction following can be checked. Math answers can be verified.
+*Table 1. Overview performance of heavy mode on STEM tasks (Heavy Mean@4 compared to basic TTS metrics) [@wangHeavySkillHeavyThinking2026].*
+
+The results are more mixed outside STEM. Heavy thinking helps on correctness-oriented tasks like LiveCodeBench, IFEval and IMO-style answer benchmarks. These tasks still have relatively clear success criteria. Code either passes tests or it does not. Instruction following can be checked. Math answers can be verified.
 
 But the gains are weaker on Arena-Hard, which is more subjective and preference-based. There may not be a single correct answer. In that setting, combining multiple answers does not necessarily produce something the judge prefers.
 
@@ -80,11 +76,13 @@ The paper also investigates in depth why heavy thinking works.
 
 ### Sequential deliberation can rescue low-frequency correct answers
 
-Again, deliberation can sometimes recover correct answers even when they are not the majority. If 3 out of 16 trajectories are correct, majority voting may still fail. But a deliberation model can inspect the reasoning and decide that the minority answer is actually better.
+Deliberation can sometimes recover correct answers even when they are not the majority. If 3 out of 16 trajectories are correct, majority voting may still fail. But a deliberation model can inspect the reasoning and decide that the minority answer is actually better.
 
 The authors describe the deliberation model as acting like an implicit verifier. It compares trajectories, identifies inconsistencies, and seeks the strongest reasoning path.
 
-![Figure 2. Pass rate distribution of heavy thinking across different parallel pass rates](_media/heavyskill/figure-2.png)
+![Figure 2. The pass rate distribution of heavy thinking in different pass rates of parallel reasoning](_media/heavyskill/figure-2.png)
+
+*Figure 2. The pass rate distribution of heavy thinking in different pass rates of parallel reasoning [@wangHeavySkillHeavyThinking2026].*
 
 ### The deliberation model does not need to be the best reasoning model
 

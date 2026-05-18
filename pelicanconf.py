@@ -33,7 +33,7 @@ SITENAME = "NotesByLex.com"
 
 THEME = "theme"
 
-PLUGIN_PATHS = ["pelican-plugins", "pelican-cite/src", "my-plugins"]
+PLUGIN_PATHS = ["pelican-plugins", "my-plugins"]
 STATIC_PATHS = ["_media"]
 
 DRAFT_URL = "{slug}.html"
