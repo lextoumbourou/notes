@@ -13,6 +13,8 @@ paper_authors: "Jianing Wang, Linsen Guo, Zhengyu Chen, Qi Guo, Hongyu Zang, Wen
 cover: /_media/heavyskill/figure-1.png
 hide_cover_in_article: true
 summary: "Now we can have GPT Pro at home"
+mastodon_post: https://fedi.notesbylex.com/@lex/116592685345019773
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mm3lq4daes2l
 ---
 
 ## Overview
