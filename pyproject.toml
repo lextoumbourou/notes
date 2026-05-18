@@ -18,7 +18,6 @@ dependencies = [
     "mlx-image>=0.1.7",
     "nbconvert==7.2.5",
     "pelican==4.12.0",
-    "pelican-cite",
     "pelican-frontmark",
     "pelican-jupyter",
     "pelican-katex==1.6.1",
@@ -34,4 +33,3 @@ feedgenerator = { git = "https://github.com/lextoumbourou/feedgenerator.git" }
 pelican-frontmark = { git = "https://github.com/lextoumbourou/pelican-frontmark.git" }
 pelican-jupyter = { git = "https://github.com/lextoumbourou/pelican-jupyter.git" }
 markdown-obsidian-callouts = { git = "https://github.com/lextoumbourou/markdown-obsidian-callouts.git" }
-pelican-cite = { git = "https://github.com/VorpalBlade/pelican-cite.git", rev = "e1ac8202446bcf790ddffe4b48aa58a8d04ec4dc" }
