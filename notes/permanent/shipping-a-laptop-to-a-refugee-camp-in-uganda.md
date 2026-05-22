@@ -7,7 +7,6 @@ hide_graph: true
 cover: /_media/shipping-laptop-uganda-cover.png
 hide_cover_in_article: true
 category: story
-status: draft
 ---
 
 For the last few years, while finally earning my belated Bachelor's Degree in the University of London's "World Class" program, I've met some amazing people from all across the world, completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.
@@ -22,8 +21,8 @@ His laptop's motherboard burned out after accidentally connecting a USB cable to
 
 <table style="width:100%; border-collapse:collapse;">
   <tr>
-    <td style="padding:4px; width:33%;"><img src="../_media/shipping-laptop-uganda-burned-motherboard-1.jpg" alt="Django's laptop open on a table, showing burn damage" style="width:100%;"></td>
-    <td style="padding:4px; width:33%;"><img src="../_media/shipping-laptop-uganda-burned-motherboard-2.jpg" alt="Close-up of the burned and discoloured motherboard" style="width:100%;"></td>
+    <td style="padding:4px; width:50%;"><img src="../_media/shipping-laptop-uganda-burned-motherboard-1.jpg" alt="Django's laptop open on a table, showing burn damage" style="width:100%;"></td>
+    <td style="padding:4px; width:50%;"><img src="../_media/shipping-laptop-uganda-burned-motherboard-2.jpg" alt="Close-up of the burned and discoloured motherboard" style="width:100%;"></td>
   </tr>
 </table>
 
@@ -35,7 +34,7 @@ Naively, I figured that I'd just go to my local post office, put it in a box wit
 
 I dusted off the laptop, wiped the hard drive and reinstalled macOS using [Apple's instructions](https://support.apple.com/en-au/guide/mac-help/mh27903/mac). I wiped the screen with a lint-free cloth wetted with only water, avoiding alcohol-based cleaning products. For the keyboard, I used standard multipurpose wipes to remove my ancient finger grime.
 
-I asked ChatGPT how to send the laptop, and it gave me a spiel about finding a reliable freight service or courier. Despite this, I asked whether it would be possible to send via Australia Post (our national mail service) anyway, since an outlet was down the road from my house. Apparently, I could, as long as the lithium battery was installed in the device.
+I asked ChatGPT how to send the laptop, and it gave me a spiel about finding a reliable freight service or courier. I asked anyway whether it would be possible to send via Australia Post (our national mail service) anyway, since an outlet was down the road from my house. Apparently, I could, as long as the lithium battery was installed in the device.
 
 ![Australia Post website showing lithium battery rules for international parcels](../_media/shipping-laptop-uganda-auspost-lithium-rules.png)
 
@@ -52,11 +51,11 @@ I shared the tracking number with Django on April 1st and left it at that. Six d
 
 However, a few hours later, I got a knock at my door. The package had been returned to my house after failing to be processed at the distribution centre.
 
-Turns out Australia Post won't ship devices containing lithium batteries internationally by air, after all.
+Turns out Australia Post won't ship devices containing lithium batteries internationally by air, after all. I should have listened to ChatGPT.
 
 ---
 
-I searched for how to actually send a laptop overseas, and a few freight services with well-tuned SEO popped up. I found a vendor called Pack & Send with an office a few kms from my house.
+I searched for how to actually send a laptop overseas, and a few freight services with well-tuned SEO popped up. I found a vendor called Pack & Send with an office a few km from my house.
 
 ![Pack & Send quote for shipping a laptop to Uganda](../_media/shipping-laptop-uganda-pack-and-send-quote.png)
 
@@ -66,7 +65,7 @@ I walked about 45 minutes to the office, in a neighbouring industrial suburb.
 
 The woman at the front desk laughed at the packaging job I had done at the Post Office and said she'd repackage it properly.
 
-This was April 9th, which was about 6 weeks into the Strait of Hormuz crisis, which had thrown global freight routes into chaos, so she told me to expect delays. She also mentioned there would be additional costs for Django in Uganda: customs fees, taxes, and government charges she couldn't estimate, and that he would need a buffer of at least $50–100 on his end.
+This was April 9th, which was about 6 weeks into the Strait of Hormuz crisis, which had thrown global freight routes into chaos, so she told me to expect delays. She also mentioned there would be additional costs for Django in Uganda: customs fees and taxes she couldn't estimate, and that he would need a buffer of at least $50–100 on his end.
 
 Since money was extremely tight on Django's end, I offered to send some for the buffer. Most Ugandan services accept Airtel Money, which I knew could be transferred easily via the [WorldRemit app](https://www.worldremit.com/en). He received the money in about 5 minutes.
 
@@ -100,7 +99,7 @@ When I reached the town, I first went to a police station to ask for directions 
 
 At the URA office, I was told that I needed to return all the way back to the refugee settlement and obtain a local authorization letter from the camp leadership before they could process my request. That day was a Friday. I explained repeatedly that I had travelled from very far away, using money that had originally been sent for the laptop clearance process itself, and that returning on Monday would be extremely difficult for me. But they continued insisting.
 
-At some point, one man quietly pulled me aside and suggested that if I "gave something," they could help solve the problem more easily. I refused because I did not want to participate in corruption. After some time, another officer finally agreed to look at my documents. However, after opening the file, he told me that "the network was down" and that I should come back on Monday.
+At some point, one man quietly pulled me aside and suggested that if I "gave something," they could help solve the problem more easily. I refused. After some time, another officer finally agreed to look at my documents. However, after opening the file, he told me that "the network was down" and that I should come back on Monday.
 
 He then told me to walk around town for one or two hours and come back later to check whether the network had returned. I did exactly that. When I returned, he again told me the network was still unavailable. So I remained sitting there in the office area for hours.
 
@@ -116,11 +115,11 @@ When I finally received the printed TIN certificate, I was honestly overwhelmed 
 
 ---
 
-With the TIN in hand, Django could finally complete the Agent Appointment in the URA Portal and the tax worksheet. Taxes totalled UGX 127,657.76 (~$47 AUD), bringing the running total to ~$407 AUD - unfortunately getting close to the laptop's value.
+With the TIN in hand, Django could finally complete the Agent Appointment in the URA Portal and the tax worksheet. Taxes totalled UGX 127,657.76 (~$47 AUD), bringing the running total to ~$407 AUD - already close to the laptop's value.
 
 We were then informed that the laptop was in the Netherlands, and we were still unsure of when it would arrive in Uganda.
 
-That was April 17th, and the new semester was due to start on April 20th.
+That was April 17th. The new semester was due to start on April 20th - three days away, with the laptop still sitting in the Netherlands.
 
 ## Delivery restrictions and laptop seizure
 
@@ -160,7 +159,7 @@ The final tally:
 
 ## Finding the laptop
 
-We received a notification that the laptop was out for delivery in Kampala, a 4-hour drive from Django's home. He followed up and was told it was now in Mbale, which is a 4-hour drive in the opposite direction. Then he was told to wait until Thursday, the 14th, another 4 days away.
+We received a notification that the laptop was out for delivery in Kampala, already about a 4-hour drive from Django's home. He followed up and was told it had gone to Mbale - east of Kampala, and even further from him. Then he was told to wait until Thursday, the 14th, another 4 days away.
 
 Meanwhile, the tracking showed an Attempt Failure.
 
@@ -234,13 +233,7 @@ On his way home, Django sent me this email:
 
 Dear Lex,
 
-I hope you are doing well.
-
 I am very happy to let you know that I have finally received the shipment safely. I turned it on, and everything appears to be working properly.
-
-The process of finding and receiving it turned out to be quite an experience. Instead of only waiting for the electronic tracking updates, I decided to personally follow up physically until I finally located it myself. It was not easy, and it involved much more movement and effort than expected, but in the end, I successfully got it.
-
-I checked everything carefully after opening it. Although the package had already been unsealed, everything seems fine and in good condition.
 
 At the moment, I am still on my way back home and not yet fully settled, but I wanted to send this message immediately to let you know that it has safely reached me.
 
