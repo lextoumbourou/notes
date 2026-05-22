@@ -12,7 +12,7 @@ status: draft
 
 ## Intro
 
-For the last few years, while finally earning my belated Bachelor's Degree in the [University of London's World-Class program](../../../permanent/university-of-londons-world-class-program.md). I've met some amazing people from all across the world, resiliently completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.
+For the last few years, while finally earning my belated Bachelor's Degree in the [University of London's World-Class program](university-of-londons-world-class-program.md). I've met some amazing people from all across the world, resiliently completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.
 
 However, there are a few with circumstances quite as challenging as Django's.
 
