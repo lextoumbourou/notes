@@ -1,7 +1,7 @@
 ---
 title: Shipping a laptop to a refugee camp in Uganda
-date: 2026-05-22 00:00
-modified: 2026-05-22 00:00
+date: 2026-05-23 00:00
+modified: 2026-05-23 00:00
 summary: "The surprisingly difficult ordeal of sending a decade-old MacBook to a friend in a Ugandan refugee camp."
 hide_graph: true
 cover: /_media/shipping-laptop-uganda-cover.png
