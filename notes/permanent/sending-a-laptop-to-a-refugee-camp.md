@@ -37,7 +37,7 @@ I thought it might be interesting to document the process from both our perspect
 
 ## Sending the laptop
 
-I dusted off the laptop, wiped the hard drive and reinstalled macOS using [Apple's instructions](https://support.apple.com/en-au/guide/mac-help/mh27903/mac). I wiped the screen with a lint-free cloth wetted with only water, avoiding alcohol-based cleaning products.
+I dusted off the laptop, wiped the hard drive and reinstalled macOS using [Apple's instructions](https://support.apple.com/en-au/guide/mac-help/mh27903/mac). I wiped the screen with a lint-free cloth wetted with only water, avoiding alcohol-based cleaning products. For the keyboard, I used standard alcohol-based multipurpose wipes to remove my ancient finger grime.
 
 I asked ChatGPT how to send the laptop, and it gave me a spiel about finding a reliable freight service or courier.
 
