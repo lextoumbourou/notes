@@ -10,13 +10,13 @@ category: story
 status: draft
 ---
 
-## Intro
+*After travelling through twelve countries, clearing customs, surviving a seizure, and costing almost as much as it was worth, my decade-old MacBook was eventually found on a dusty shelf in a Ugandan hardware shop, surrounded by welding equipment.*
 
-For the last few years, while finally earning my belated Bachelor's Degree in the University of London's World-Class program, I've met some amazing people from all across the world, resiliently completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.
+For the last few years, while finally earning my belated Bachelor's Degree in the University of London's aptly name "World Class" program, I've met some amazing people from all across the world, completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.
 
-However, there are a few with circumstances quite as challenging as Django's.
+But few have circumstances as challenging as Django’s.
 
-Django is a Congolese refugee living in a refugee camp in Western Uganda. He has no reliable electricity in the camp and runs his laptop on solar power; his internet access comes from Airtel minutes, which he needs to ration on a very limited income. This makes completing a Computer Science degree - with video lectures, assignments that need to be uploaded on time and remotely proctored exams - at times seem nearly impossible. In the last few years, thanks to various world events and a general sentiment away from compassion and charity, it has only gotten harder.
+Django is a Congolese refugee living in a camp in Western Uganda. He has no reliable electricity in the camp and runs his laptop on solar power; his internet access comes from Airtel minutes, which he needs to ration on a very limited income. This makes completing a remote Computer Science degree - with video lectures, assignments that need to be uploaded on time and remotely proctored exams - at times seem nearly impossible. In the last few years, thanks to various world events and a general sentiment away from compassion and charity, it has only gotten harder.
 
 Recently, Django found himself in a new predicament.
 
@@ -33,7 +33,7 @@ I have a few old MacBooks that are in working order, just sitting around the hou
 
 Naively, I figured that I'd just go to my local post office, put it in a box with some bubble wrap, and he'd have it in a few days/weeks. However, the process proved a surprisingly difficult ordeal.
 
-I thought it might be interesting to document the process from both our perspectives. It may serve as a practical guide for anyone in a similar circumstance, and also as a window into the day-to-day difficulties my friend faces.
+Initially, my plan was just to write a sort of how to guide to document the teaching. However, when asking Django to fill in the details from his side, I soon realised that Django's side of the story serves as a window into the day-to-day difficulties my friend faces.
 
 ## Sending the laptop
 
@@ -56,7 +56,7 @@ At the post office, a friendly staff member confirmed it could be sent, helped m
   </tr>
 </table>
 
-I shared the tracking number with Django on April 1st and left it at that. Six days later, he messaged to say it looked like the package was arriving soon. Too easy.
+I shared the tracking number with Django on April 1st and left it at that. Six days later, he messaged to say it looked like the package was arriving soon. Too easy, apparently.
 
 However, a few hours later, I got a knock at my door. The package had been returned to my house after failing to be processed at the distribution centre.
 
@@ -76,29 +76,17 @@ The woman at the front desk laughed at the packaging job I had done at the Post 
 
 This was April 9th, which was about 11 days into the [Strait of Hormuz crisis](https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis), so she told me to expect delays. She also mentioned there would be additional costs for Django in Uganda: customs fees, taxes, and government charges she couldn't estimate, and that he would need a buffer of at least $50–100 on his end.
 
-## Sending money
+Since money was extremely tight on Django's end, I offered to send some for the buffer. Most Ugandan services accept Airtel Money, which I knew could be transferred easily via the [WorldRemit app](https://www.worldremit.com/en). He received the money in about 5 minutes. Great job, WorldRemit team.
 
-Since money was extremely tight on Django's end, I offered to send some for the buffer. Most Ugandan services accept Airtel Money, which I knew could be transferred easily via the [WorldRemit app](https://www.worldremit.com/en). He received the money in about 5 minutes.
-
-Great job, WorldRemit team.
-
-## Clearing Ugandan Customs
+## Clearing Ugandan customs
 
 We tracked the package from **Brisbane** → **Sydney** → **Guangzhou** → **Korea** → **Japan** → **Hong Kong** → **Turkey** → **France** → **The Netherlands**.
 
-Then, on April 15th, Django received an email from an EHS Africa Logistics Agent outlining the 5-step customs process:
+Then, on April 15th, Django received an email from an EHS Africa Logistics Agent: there was an agency fee of **UGX 95,000 (~$35 AUD)**, then he'd need to register via the Uganda Revenue Authority (URA) Portal, complete a tax assessment, and pay any applicable taxes. All of this had to be cleared within 5 working days, or we would be paying storage fees, the agent warned.
 
-1. Agency Fee Payment of **UGX 95,000 (~$35 AUD)** for administrative fees
-2. Appoint EHS Logistics Uganda via the Uganda Revenue Authority (URA) Portal
-3. Complete a Tax Assessment
-4. Pay any taxes
-5. Complete URA Verification
+However, registration required a Tax Identification Number (TIN), which Django, a refugee, does not have. Getting one requires physically presenting at a URA office, and there was none nearby in his district.
 
-All of this had to be cleared within 5 working days, or we would be paying storage fees, the agent warned.
-
-However, Step 2 required a Tax Identification Number (TIN), which Django, a refugee, does not have. Getting one requires physically presenting at a URA office, and there was none nearby in his district.
-
-## Getting a TIN Number as a Refugee
+## Getting a TIN number as a refugee
 
 Django sent an email to the EHS rep asking if it could be completed without a TIN, but received no reply. So he took matters into his own hands.
 
@@ -132,6 +120,8 @@ What had taken nearly two full days of travelling, waiting, stress, negotiation,
 
 When I finally received the printed TIN certificate, I was honestly overwhelmed with relief and gratitude. Before leaving, I found myself individually thanking almost everyone in the office - including some of the people who had initially refused to help me - simply because, after everything, I was deeply relieved that the process was finally over.
 
+*- Django*
+
 ---
 
 With the TIN in hand, Django could finally complete the Agent Appointment in the URA Portal and the tax worksheet. Taxes totalled **UGX 127,657.76 (~$47 AUD)**, bringing the running total to **~$359 AUD** - unfortunately getting close to the laptop's value.
@@ -140,7 +130,7 @@ We were then informed that the laptop was in the Netherlands, and we were still 
 
 That was April 17th, and the new semester was due to start on April 20th.
 
-## Delivery Restrictions and Laptop Seizure
+## Delivery restrictions and laptop seizure
 
 The package next travelled to **France** → **UK** → **Uganda**. However, we received a notice that there were "delivery restrictions".
 
@@ -166,7 +156,7 @@ Django paid on May 8th. A day later, the shipment was released from customs and 
 
 ![FedEx tracking showing the shipment released and ready for delivery](../_media/shipping-laptop-uganda-shipment-released.png)
 
-## The last leg - getting the laptop
+## Finding the laptop
 
 We received a notification that the laptop was out for delivery in Kampala, a 4-hour drive from Django's home. He followed up and was told it was now in Mbale, which is a 4-hour drive in the opposite direction. Then he was told to wait until Thursday, the 14th, another 4 days away.
 
@@ -174,9 +164,69 @@ Meanwhile, the tracking showed an Attempt Failure.
 
 ![FedEx tracking showing an attempt failure for delivery in Uganda](../_media/shipping-laptop-uganda-attempt-failure.png)
 
-Django took matters into his own hands and followed up physically to get the package. He had picked it up from Bukere, Uganda - about 4 hours from the refugee settlement.
+Django took matters into his own hands. In his words:
 
-On May 13th, I received this email:
+---
+
+Since the tracking information was no longer reliable, I started tracing back through the different phone numbers that had previously called me regarding the shipment.
+
+Some of those numbers no longer answered. Eventually, I called a woman from another town who had earlier contacted me when the laptop had temporarily passed through her hands. At that stage, the tracking system had described the shipment as being with a "third-party trusted delivery agent."
+
+She explained that she no longer had possession of it and then gave me another phone number to call.
+
+I called the new number, and the man told me that the shipment had already been passed again to yet another delivery person. I asked him when I should expect to receive it, and he simply replied, "They will call you."
+
+After some time, I called him back. He said that the delivery people were already supposed to have contacted me by then. But instead of receiving a proper call, I only received a missed call from a new number.
+
+I immediately called them back. The man who answered told me that he was "about to find any boda-boda rider" and simply give him the laptop together with some transport money so that the rider could bring it to me.
+
+I asked him where exactly he was and whether he personally knew the boda-boda rider he intended to trust with the shipment. His answer was essentially that he would just stop any passing motorcycle rider and hand over the package.
+
+At first, I tried to accept the situation calmly. But after a few minutes, I suddenly realized the reality of what was happening: my laptop, which had already crossed oceans and multiple customs stages, was now about to be handed to a completely random motorcycle rider by a man whose full identity I did not even know myself.
+
+That was the moment I decided I could not continue waiting passively anymore.
+
+I immediately called him back and told him not to hand the package to anyone else. I asked him to tell me exactly where he was so that I could come personally and collect it myself.
+
+The moment I received the location, I left immediately. I did not even stop to change properly; I was still wearing sandals. I rushed to find a boda-boda motorcycle and began travelling toward the location as quickly as possible.
+
+About three hours later, I finally arrived at the place where the laptop was supposedly waiting for me.
+
+But when I reached the petrol station that had been described to me over the phone, there was no obvious delivery office, no courier sign, and no person visibly waiting with a package.
+
+So I called the man again.
+
+After several minutes of walking and phone communication, I finally reached a small hardware business they had described. This was not a delivery office. It was an ordinary hardware shop filled with metal materials, construction tools, and iron equipment. Outside, people were welding metal doors and iron structures. There was nothing there suggesting electronics, parcels, or courier services.
+
+Then, to my complete surprise, the hardware shop owner climbed onto a shelf among the metal equipment and pulled out a cardboard box that had been sitting there between hardware items and iron materials.
+
+That box was my laptop.
+
+I remember standing there almost unable to process the situation. A MacBook that had travelled internationally, passed through customs procedures, taxes, agency clearances, and multiple transport stages was now resting quietly on a dusty hardware shelf beside welding equipment.
+
+Before leaving, I asked him whether he even knew what was inside the package. He answered very casually that he had no idea and that he did not need to know. I then asked whether he at least knew which company had entrusted him with the delivery. He replied that it was simply "a friend" who had asked him to temporarily keep the box until someone came to collect it.
+
+So right there, inside a hardware shop surrounded by iron bars, metal dust, and welding sparks, I finally opened the box.
+
+And there it was.
+
+The MacBook had survived the entire journey.
+
+I switched it on briefly, and that was actually the moment when the hardware shop owner himself suddenly became excited. Until then, he had apparently not known what kind of item he had been storing on his shelf. Seeing the Apple logo appear on the screen, he immediately smiled and said something along the lines of, "Ah… a MacBook is a MacBook. Apple is still Apple."
+
+At that moment, after all the stress, uncertainty, travelling, delays, calls, negotiations, and confusion, the atmosphere completely changed.
+
+We shook hands, laughed, and genuinely celebrated the fact that the laptop had finally arrived safely.
+
+Interestingly, even after I had physically received the laptop, the electronic tracking system still had not properly updated to show that the shipment had been delivered.
+
+*- Django*
+
+---
+
+## A MacBook is a MacBook
+
+On May 13th, I (Lex) received this email:
 
 ---
 
@@ -204,7 +254,7 @@ Django
 
 ---
 
-It is now May 13th, nearly 6 weeks after the first attempt. After **~$426 AUD (~UGX 1,163,832)**, and ~36,000 km travelled across 12 countries over 42 days, he had the laptop.
+That email was sent on May 13th, nearly 6 weeks after my first attempt. After **~$426 AUD (~UGX 1,163,832)**, and ~36,000 km travelled across 12 countries over 42 days, he had the laptop.
 
 ![Django with the MacBook open, showing it working](../_media/shipping-laptop-uganda-django-macbook-2.jpg)
 
