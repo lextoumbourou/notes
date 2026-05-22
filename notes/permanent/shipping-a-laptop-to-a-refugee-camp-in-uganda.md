@@ -30,9 +30,9 @@ His laptop's motherboard burned out after accidentally connecting a USB cable to
 
 I have a few old MacBooks that are in working order, just sitting around the house. So I offered to send one to him.
 
-Naively, I figured that I'd just go to my local post office, put it in a box with some bubble wrap, and he'd have it in a few days/weeks. However, the process proved a surprisingly difficult ordeal.
+Naively, I figured that I'd just go to my local post office, put it in a box with some bubble wrap, and he'd have it in a few days/weeks. However, the process turned out to be far more complicated than expected.
 
-## Sending the laptop
+## First attempt
 
 I dusted off the laptop, wiped the hard drive and reinstalled macOS using [Apple's instructions](https://support.apple.com/en-au/guide/mac-help/mh27903/mac). I wiped the screen with a lint-free cloth wetted with only water, avoiding alcohol-based cleaning products. For the keyboard, I used standard multipurpose wipes to remove my ancient finger grime.
 
@@ -49,7 +49,7 @@ At the post office, a friendly staff member confirmed it could be sent, helped m
   </tr>
 </table>
 
-I shared the tracking number with Django on April 1st and left it at that. Six days later, he messaged to say it looked like the package was arriving soon.
+I shared the tracking number with Django on April 1st. Six days later, he messaged to say it looked like the package was arriving soon.
 
 However, a few hours later, I got a knock at my door. The package had been returned to my house after failing to be processed at the distribution centre.
 
@@ -61,7 +61,7 @@ I searched for how to actually send a laptop overseas, and a few freight service
 
 ![Pack & Send quote for shipping a laptop to Uganda](../_media/shipping-laptop-uganda-pack-and-send-quote.png)
 
-I submitted a quote request on their website, and they called me back with a price of $213 AUD.
+I submitted a quote request on their website, and they called me back with a quote of $213 AUD.
 
 I walked about 45 minutes to the office, in a neighbouring industrial suburb.
 
@@ -117,11 +117,11 @@ When I finally received the printed TIN certificate, I was honestly overwhelmed 
 
 ---
 
-With the TIN in hand, Django could finally complete the Agent Appointment in the URA Portal and the tax worksheet. Taxes totalled UGX 127,657.76 (~$47 AUD), bringing the running total to ~$407 AUD - already close to the laptop's value.
+With the TIN in hand, Django could finally complete the Agent Appointment in the URA Portal and the tax worksheet. Taxes totalled UGX 127,657.76 (~$47 AUD), bringing the running total — including the failed Australia Post attempt — to ~$407 AUD, already close to the laptop's value.
 
 That was April 17th - three days before the new semester was due to start, with the laptop still sitting in the Netherlands.
 
-## Delivery restrictions and laptop seizure
+## Laptop seizure
 
 The package next travelled to **France** → **UK** and finally to **Uganda**. However, we received a notice that there were "delivery restrictions".
 
@@ -136,8 +136,6 @@ According to Ugandan regulations, used laptops cannot be imported unless accompa
 We were told FedEx were in contact with the authorities to resolve the situation and were awaiting official communication from customs specifying the additional payment required. However, EHS informed us their system was down, causing further delays.
 
 Meanwhile, Django managed to borrow a laptop for a small daily fee, so he could start the semester while waiting.
-
-## Final top-up payment
 
 After some convincing, the authorities accepted a confirmation that the laptop was a used gift. The EHS representative requested a top-up payment of UGX 50,000 (~$18.50 AUD) to submit the amendment.
 
@@ -157,7 +155,7 @@ The final tally:
 | Customs amendment top-up        | ~$18.50   | 50,000         |
 | **Total**                       | **~$426** | **~1,163,832** |
 
-## Finding the laptop
+## Finding the laptop in a hardware store
 
 We received a notification that the laptop was out for delivery in Kampala, already about a 4-hour drive from Django's home. He followed up and was told it had gone to Mbale - east of Kampala, and even further from him. Then he was told to wait until Thursday, the 14th, another 4 days away.
 
@@ -225,7 +223,7 @@ Interestingly, even after I had physically received the laptop, the electronic t
 
 ---
 
-## Conclusion
+## Mission accomplished
 
 On his way home, Django sent me this email:
 
@@ -253,5 +251,3 @@ Django
 Finally, on May 13th, after ~36,000 km across 12 countries over 42 days, the laptop had arrived.
 
 ![Django with the MacBook open, showing it working](../_media/shipping-laptop-uganda-django-macbook-2.jpg)
-
-Mission accomplished.
