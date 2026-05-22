@@ -995,6 +995,7 @@ table.dataframe tr:hover { background: var(--g-surface-2); }
 /* .no-border table */
 .no-border { border: 0; }
 .no-border td, .no-border th { border: 0; padding: 4px; }
+.prose-body table.no-border td, .prose-body table.no-border th { border: 0; padding: 4px; }
 .table-border { border-collapse: collapse; width: 100%; font-size: 14px; }
 .table-border, .table-border th, .table-border td { border: 1px solid var(--g-rule); }
 .table-border th, .table-border td { text-align: left; padding: 8px; }

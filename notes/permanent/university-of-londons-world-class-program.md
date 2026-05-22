@@ -1,5 +1,5 @@
 ---
-title: University of London's World-Class program
+title: University of London's World Class Program
 date: 2026-05-22 00:00
 modified: 2026-05-22 00:00
 status: hidden
