@@ -233,7 +233,9 @@ def _attach_graph_to_content(generator, content):
     backlink_map = _graph_state.get("backlink_map", {})
     content.graph_backlinks = backlink_map.get(content.slug, [])
 
-    if not local_cfg.get("enabled", True):
+    _hide_graph = content.metadata.get("hide_graph", False)
+    hide_graph = _hide_graph is True or str(_hide_graph).lower() == "true"
+    if not local_cfg.get("enabled", True) or hide_graph:
         content.graph_html = ""
         return
 

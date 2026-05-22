@@ -24,5 +24,8 @@ fi
 # Clone pelican-plugins repository
 git clone --recursive https://github.com/getpelican/pelican-plugins
 
+# Create toc symlink so Pelican can find the pelican-toc plugin by the name "toc"
+ln -sf pelican-toc pelican-plugins/toc
+
 # Run build script
 ./build.sh
