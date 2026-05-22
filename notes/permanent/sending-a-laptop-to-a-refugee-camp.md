@@ -12,15 +12,15 @@ status: draft
 
 ## Intro
 
-For the last few years, while finally earning my belated Bachelor's Degree in the [University of London's World-Class program](university-of-londons-world-class-program.md). I've met some amazing people from all across the world, resiliently completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.
+For the last few years, while finally earning my belated Bachelor's Degree in the University of London's World-Class program, I've met some amazing people from all across the world, resiliently completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.
 
 However, there are a few with circumstances quite as challenging as Django's.
 
-Django is a Congolese refugee living in a refugee camp in Western Uganda. He has no reliable electricity in the camp and runs his laptop on solar power; his internet access comes from Airtel minutes, which he needs to ration on a very limited income. This makes completing a Computer Science degree - with assignments that need to be uploaded on time and remotely proctored exams - at times seem nearly impossible. In the last few years, thanks to various world events and a general sentiment away from compassion and charity, it has only gotten harder.
+Django is a Congolese refugee living in a refugee camp in Western Uganda. He has no reliable electricity in the camp and runs his laptop on solar power; his internet access comes from Airtel minutes, which he needs to ration on a very limited income. This makes completing a Computer Science degree - with video lectures, assignments that need to be uploaded on time and remotely proctored exams - at times seem nearly impossible. In the last few years, thanks to various world events and a general sentiment away from compassion and charity, it has only gotten harder.
 
 Recently, Django found himself in a new predicament.
 
-His laptop's motherboard burned out after accidentally connecting a USB cable to a 12V battery output, and the next semester was set to start in a few weeks. He had tried to repair it to no avail - the laptop continued to overheat and would not turn on.
+His laptop's motherboard burned out after accidentally connecting a USB cable to a 12V battery output, and the next semester was set to start in a few weeks. He had tried to repair it to no avail: the laptop continued to overheat and would not turn on.
 
 <table style="width:100%; border-collapse:collapse;">
   <tr>
@@ -37,13 +37,13 @@ I thought it might be interesting to document the process from both our perspect
 
 ## Sending the laptop
 
-I dusted off the laptop, wiped the hard drive and reinstalled macOS using [Apple's instructions](https://support.apple.com/en-au/guide/mac-help/mh27903/mac). I wiped the screen with a lint-free cloth wetted with only water, avoiding alcohol-based cleaning products. For the keyboard, I used standard alcohol-based multipurpose wipes to remove my ancient finger grime.
+I dusted off the laptop, wiped the hard drive and reinstalled macOS using [Apple's instructions](https://support.apple.com/en-au/guide/mac-help/mh27903/mac). I wiped the screen with a lint-free cloth wetted with only water, avoiding alcohol-based cleaning products. For the keyboard, I used standard multipurpose wipes to remove my ancient finger grime.
 
 I asked ChatGPT how to send the laptop, and it gave me a spiel about finding a reliable freight service or courier.
 
 ![ChatGPT recommending a specialist freight service for sending a laptop overseas](../_media/shipping-laptop-uganda-chatgpt-advice.png)
 
-Despite this, I asked whether it would be possible to send via Australia Post (our national mail service) anyway, since it was down the road from my house. Apparently, I could, as long as the lithium battery was installed in the device.
+Despite this, I asked whether it would be possible to send via Australia Post (our national mail service) anyway, since an outlet was down the road from my house. Apparently, I could, as long as the lithium battery was installed in the device.
 
 ![Australia Post website showing lithium battery rules for international parcels](../_media/shipping-laptop-uganda-auspost-lithium-rules.png)
 
@@ -60,7 +60,9 @@ I shared the tracking number with Django on April 1st and left it at that. Six d
 
 However, a few hours later, I got a knock at my door. The package had been returned to my house after failing to be processed at the distribution centre.
 
-Turns out Australia Post won't ship devices containing lithium batteries internationally by air, after all. I probably [should have checked that on their website](https://auspost.com.au/sending/guidelines/dangerous-prohibited-items). I guess the staff apparently weren't aware of this policy either.
+Turns out Australia Post won't ship devices containing lithium batteries internationally by air, after all. I probably [should have checked that on their website](https://auspost.com.au/sending/guidelines/dangerous-prohibited-items). The staff apparently weren't aware of this policy either.
+
+---
 
 I searched for how to actually send a laptop overseas, and a few freight services with well-tuned SEO popped up. I found a vendor called Pack & Send with an office a few kms from my house.
 
@@ -84,7 +86,7 @@ Great job, WorldRemit team.
 
 We tracked the package from **Brisbane** → **Sydney** → **Guangzhou** → **Korea** → **Japan** → **Hong Kong** → **Turkey** → **France** → **The Netherlands**.
 
-Then, on April 15th, Django received an email outlining the 5-step customs process from an EHS Africa Logistics Agent:
+Then, on April 15th, Django received an email from an EHS Africa Logistics Agent outlining the 5-step customs process:
 
 1. Agency Fee Payment of **UGX 95,000 (~$35 AUD)** for administrative fees
 2. Appoint EHS Logistics Uganda via the Uganda Revenue Authority (URA) Portal
@@ -94,7 +96,7 @@ Then, on April 15th, Django received an email outlining the 5-step customs proce
 
 All of this had to be cleared within 5 working days, or we would be paying storage fees, the agent warned.
 
-However, Step 2 required a Tax Identification Number, which Django - a refugee - does not have. And, getting one requires physically presenting at a URA office, and there was none nearby in his district.
+However, Step 2 required a Tax Identification Number (TIN), which Django, a refugee, does not have. Getting one requires physically presenting at a URA office, and there was none nearby in his district.
 
 ## Getting a TIN Number as a Refugee
 
@@ -128,13 +130,15 @@ After waiting several more hours, I approached again and asked whether they coul
 
 What had taken nearly two full days of travelling, waiting, stress, negotiation, and indirect requests for unofficial payments was finally completed in a matter of minutes.
 
-When I finally received the printed TIN certificate, I was honestly overwhelmed with relief and gratitude. Before leaving, I found myself individually thanking almost everyone in the office - including some of the people who had initially refused to help me - simply because after everything, I was deeply relieved that the process was finally over.
+When I finally received the printed TIN certificate, I was honestly overwhelmed with relief and gratitude. Before leaving, I found myself individually thanking almost everyone in the office - including some of the people who had initially refused to help me - simply because, after everything, I was deeply relieved that the process was finally over.
 
 ---
 
-With the TIN in hand, Django could finally complete the Agent Appointment in the URA Portal and the tax worksheet. Taxes totalled **UGX 127,657.76 (~$47 AUD)**. Running total so far: **~$359 AUD** - unfortunately getting close to the laptop's value.
+With the TIN in hand, Django could finally complete the Agent Appointment in the URA Portal and the tax worksheet. Taxes totalled **UGX 127,657.76 (~$47 AUD)**, bringing the running total to **~$359 AUD** - unfortunately getting close to the laptop's value.
 
-That was April 17th. We were informed the laptop was in the Netherlands, and still unsure of when it would arrive in Uganda - particularly concerning because the new semester was due to start on April 20th.
+We were then informed that the laptop was in the Netherlands, and we were still unsure of when it would arrive in Uganda.
+
+That was April 17th, and the new semester was due to start on April 20th.
 
 ## Delivery Restrictions and Laptop Seizure
 
@@ -144,26 +148,23 @@ The package next travelled to **France** → **UK** → **Uganda**. However, we 
 
 This caused the package to re-route: **UK** → **UAE** → **Kenya** → back to **Uganda** on May 5th.
 
-Finally, on May 6th, it was back in Uganda - but there was a new problem.
+Finally, on May 6th, it was back in Uganda. But there was a new problem.
 
 According to Ugandan regulations, used laptops cannot be imported unless accompanied by an original purchase receipt showing the exact purchase price. A customs invoice indicating an estimated value and noting that the laptop is used was not sufficient. Customs temporarily seized it.
 
-FedEx was in contact with the authorities to resolve the situation and was awaiting official communication from customs specifying the additional payment required. However, they told us their system was down, causing further delays.
+FedEx told us they were in contact with the authorities to resolve the situation and were awaiting official communication from customs specifying the additional payment required. However, they told us their system was down, causing further delays.
 
 Meanwhile, Django luckily managed to arrange to borrow a laptop temporarily for a small daily fee, so he could start the semester while waiting.
 
 ## Final top-up payment
 
-After some convincing, the authorities accepted a confirmation that the laptop was a used gift, not intended for sale or purchase. The EHS representative requested a top-up payment of **UGX 50,000** for the submission of the amendment.
+After some convincing, the authorities accepted a confirmation that the laptop was a used gift, not intended for sale or purchase. The EHS representative requested a top-up payment of **UGX 50,000 (~$18.50 AUD)** to submit the amendment.
 
-<table style="width:100%; border-collapse:collapse;">
-  <tr>
-    <td style="padding:4px; width:50%;"><img src="../_media/shipping-laptop-uganda-ugx-top-up-payment.png" alt="EHS message requesting a UGX 50,000 top-up payment for the customs amendment" style="width:100%;"></td>
-    <td style="padding:4px; width:50%;"><img src="../_media/shipping-laptop-uganda-shipment-released.png" alt="FedEx tracking showing the shipment released and ready for delivery" style="width:100%;"></td>
-  </tr>
-</table>
+![EHS message requesting a UGX 50,000 top-up payment for the customs amendment](../_media/shipping-laptop-uganda-ugx-top-up-payment.png)
 
 Django paid on May 8th. A day later, the shipment was released from customs and marked ready for delivery. Running total: **~$426 AUD**.
+
+![FedEx tracking showing the shipment released and ready for delivery](../_media/shipping-laptop-uganda-shipment-released.png)
 
 ## The last leg - getting the laptop
 
@@ -203,7 +204,7 @@ Django
 
 ---
 
-It is now May 13th, nearly 6 weeks after the first attempt. After **~$426**, and ~36,000 km travelled across 12 countries over 42 days, he had the laptop.
+It is now May 13th, nearly 6 weeks after the first attempt. After **~$426 AUD (~UGX 1,163,832)**, and ~36,000 km travelled across 12 countries over 42 days, he had the laptop.
 
 ![Django with the MacBook open, showing it working](../_media/shipping-laptop-uganda-django-macbook-2.jpg)
 
