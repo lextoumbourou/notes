@@ -1,4 +1,5 @@
 ---
+category: note
 title: Law Of Cosines
 date: 2021-09-04 00:00
 tags:

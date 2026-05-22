@@ -1,4 +1,5 @@
 ---
+category: note
 title: Principal Component Analysis
 date: 2015-09-08 00:00
 modified: 2024-04-10 00:00

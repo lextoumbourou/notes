@@ -1,4 +1,5 @@
 ---
+category: note
 title: Propositions
 aliases: Statement
 date: 2023-10-11 00:00

@@ -1,4 +1,5 @@
 ---
+category: note
 title: Cross-Entropy
 date: 2021-07-29 00:00
 tags:

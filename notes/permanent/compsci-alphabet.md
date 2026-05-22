@@ -1,4 +1,5 @@
 ---
+category: note
 title: Alphabet
 date: 2023-11-26 00:00
 modified: 2023-11-26 00:00

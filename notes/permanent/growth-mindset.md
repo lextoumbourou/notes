@@ -1,4 +1,5 @@
 ---
+category: note
 title: Growth Mindset
 date: 2021-04-29 00:00
 tags:

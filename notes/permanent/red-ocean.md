@@ -1,4 +1,5 @@
 ---
+category: note
 title: Red Ocean
 date: 2021-02-24 00:00
 tags:

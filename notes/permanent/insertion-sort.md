@@ -1,4 +1,5 @@
 ---
+category: note
 title: Insertion Sort
 date: 2024-01-25 00:00
 modified: 2024-01-25 00:00

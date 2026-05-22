@@ -1,4 +1,5 @@
 ---
+category: note
 title: Linear Function
 date: 2023-04-09 00:00
 summary: a function represented by a straight line on a graph

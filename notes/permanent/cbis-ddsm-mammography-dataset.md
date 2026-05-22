@@ -1,4 +1,5 @@
 ---
+category: note
 title: CBIS-DDSM Mammography Dataset
 date: 2025-10-18 00:00
 modified: 2025-10-18 00:00

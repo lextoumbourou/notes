@@ -1,4 +1,5 @@
 ---
+category: note
 title: Agentic Reasoning
 date: 2024-08-25 00:00
 modified: 2024-08-25 00:00

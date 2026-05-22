@@ -1,4 +1,5 @@
 ---
+category: note
 title: Player Dependance in Multiplayer Games
 date: 2021-02-09 00:00
 tags:

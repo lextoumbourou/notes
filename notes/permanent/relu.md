@@ -1,4 +1,5 @@
 ---
+category: note
 title: ReLU
 date: 2024-01-02 00:00
 modified: 2024-01-02 00:00

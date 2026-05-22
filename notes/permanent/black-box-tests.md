@@ -1,4 +1,5 @@
 ---
+category: note
 title: Black-box Tests
 date: 2021-04-04 00:00
 tags:

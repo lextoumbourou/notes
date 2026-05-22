@@ -1,4 +1,5 @@
 ---
+category: note
 title: Mel Spectrogram
 date: 2023-10-09 00:00
 modified: 2023-10-09 00:00

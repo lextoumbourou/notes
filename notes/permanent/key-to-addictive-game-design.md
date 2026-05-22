@@ -1,4 +1,5 @@
 ---
+category: note
 title: Key to Addictive Game Design
 date: 2021-01-11 00:00
 tags:

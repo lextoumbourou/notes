@@ -1,4 +1,5 @@
 ---
+category: note
 title: Matrix Inverse
 date: 2021-09-21 00:00
 modified: 2021-11-13 00:00

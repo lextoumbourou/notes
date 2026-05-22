@@ -1,4 +1,5 @@
 ---
+category: note
 title: Unit tests
 date: 2021-03-27 00:00
 tags:

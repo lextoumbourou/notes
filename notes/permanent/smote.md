@@ -1,4 +1,5 @@
 ---
+category: note
 title: SMOTE
 date: 2017-12-09 00:00
 modified: 2017-12-09 00:00

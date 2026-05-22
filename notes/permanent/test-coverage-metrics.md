@@ -1,4 +1,5 @@
 ---
+category: note
 title: Test Coverage Metrics
 date: 2021-03-24 00:00
 modified: 2021-05-27 00:00

@@ -1,4 +1,5 @@
 ---
+category: note
 title: Graph
 date: 2023-04-09 00:00
 modified: 2025-02-22 00:00

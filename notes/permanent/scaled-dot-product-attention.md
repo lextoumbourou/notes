@@ -1,4 +1,5 @@
 ---
+category: note
 title: Scaled-Dot Product Attention
 date: 2024-03-13 00:00
 modified: 2024-03-13 00:00

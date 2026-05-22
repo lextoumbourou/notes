@@ -1,4 +1,5 @@
 ---
+category: note
 title: Presizing
 date: 2021-08-05 00:00
 tags:

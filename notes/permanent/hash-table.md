@@ -1,4 +1,5 @@
 ---
+category: note
 title: "Hash Table"
 date: 2016-10-10 00:00
 modified: 2024-12-14 00:00

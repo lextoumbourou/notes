@@ -1,4 +1,5 @@
 ---
+category: note
 title: Gradient Descent
 date: 2015-10-10 00:00
 modified: 2024-04-04 00:00

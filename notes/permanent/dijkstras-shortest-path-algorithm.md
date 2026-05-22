@@ -1,4 +1,5 @@
 ---
+category: note
 title: Dijkstra's Shortest Path Algorithm
 date: 2014-01-12 00:00
 modified: 2025-02-22 00:00

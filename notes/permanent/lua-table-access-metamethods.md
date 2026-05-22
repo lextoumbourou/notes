@@ -1,4 +1,5 @@
 ---
+category: note
 title: Lua Table-Access Metamethods
 date: 2021-02-14 00:00
 tags:

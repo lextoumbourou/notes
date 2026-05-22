@@ -1,4 +1,5 @@
 ---
+category: note
 title: "Absurdly Good Doggo Consistency with FLUX.1 Kontext"
 date: 2025-06-01 00:00
 modified: 2025-06-01 00:00

@@ -1,4 +1,5 @@
 ---
+category: note
 title: K-Means
 date: 2017-11-10 00:00
 modified: 2024-04-10 00:00

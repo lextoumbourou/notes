@@ -1,4 +1,5 @@
 ---
+category: note
 title: "Q-Learning"
 date: 2025-04-18 00:00
 modified: 2025-04-21 00:00

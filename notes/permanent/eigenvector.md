@@ -1,4 +1,5 @@
 ---
+category: note
 title: Eigenvector
 date: 2022-01-21 00:00
 tags:

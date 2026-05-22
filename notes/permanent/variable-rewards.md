@@ -1,4 +1,5 @@
 ---
+category: note
 title: Variable Rewards
 date: 2021-01-13 00:00
 tags:

@@ -1,4 +1,5 @@
 ---
+category: note
 title: Newton's Laws Of Motion
 date: 2020-12-27 00:00
 tags:

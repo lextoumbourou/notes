@@ -1,4 +1,5 @@
 ---
+category: note
 title: Multiple Inheritance
 date: 2021-02-21 00:00
 tags:

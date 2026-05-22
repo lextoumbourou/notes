@@ -1,4 +1,5 @@
 ---
+category: note
 title: Sample Rate
 date: 2023-10-08 00:00
 modified: 2023-10-08 00:00

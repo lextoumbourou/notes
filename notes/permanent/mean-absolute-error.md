@@ -1,4 +1,5 @@
 ---
+category: note
 title: Mean Absolute Error
 date: 2016-02-03 00:00
 tags:

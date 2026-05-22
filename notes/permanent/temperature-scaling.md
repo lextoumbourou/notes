@@ -1,4 +1,5 @@
 ---
+category: note
 title: Temperature Scaling
 date: 2025-01-14 00:00
 modified: 2025-01-15 00:00

@@ -1,4 +1,5 @@
 ---
+category: note
 title: Permanent Notes
 date: 2021-06-06 00:00
 tags:

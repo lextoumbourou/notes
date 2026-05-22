@@ -1,4 +1,5 @@
 ---
+category: note
 title: Promotion vs Calibration
 date: 2021-05-09 00:00
 tags:

@@ -1,4 +1,5 @@
 ---
+category: note
 title: Bit Depth
 date: 2023-10-10 00:00
 modified: 2023-10-10 00:00

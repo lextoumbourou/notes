@@ -1,4 +1,5 @@
 ---
+category: note
 title: Set
 aliases: Set Theory, Sets
 date: 2023-01-15 00:00

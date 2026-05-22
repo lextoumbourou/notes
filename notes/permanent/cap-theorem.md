@@ -1,4 +1,5 @@
 ---
+category: note
 title: CAP Theorem
 aliases: "Brewer's Theorem"
 date: 2021-04-03 00:00

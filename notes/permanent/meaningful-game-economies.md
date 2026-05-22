@@ -1,4 +1,5 @@
 ---
+category: note
 title: Meaningful Game Economies
 date: 2021-01-17 00:00
 tags:

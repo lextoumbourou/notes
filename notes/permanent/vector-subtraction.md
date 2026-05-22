@@ -1,4 +1,5 @@
 ---
+category: note
 title: Vector Subtraction
 date: 2021-01-06 00:00
 cover: /_media/vector-subtract-cover.png

@@ -1,4 +1,5 @@
 ---
+category: note
 title: Dot Product
 date: 2021-08-11 00:00
 modified: 2021-12-02 19:00

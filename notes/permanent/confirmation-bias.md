@@ -1,4 +1,5 @@
 ---
+category: note
 title: Confirmation Bias
 date: 2021-05-04 00:00
 tags:

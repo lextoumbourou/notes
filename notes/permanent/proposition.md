@@ -1,4 +1,5 @@
 ---
+category: note
 title: Proposition
 date: 2022-11-23 00:00
 status: draft

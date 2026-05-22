@@ -1,4 +1,5 @@
 ---
+category: note
 title: Jagged Frontier of LLM Capability
 date: 2026-05-09 00:00
 modified: 2026-05-09 00:00

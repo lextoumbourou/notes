@@ -1,4 +1,5 @@
 ---
+category: note
 title: Roblox CFrame
 date: 2021-10-19 00:00
 cover: /_media/roblox-cframe-cover.png

@@ -1,4 +1,5 @@
 ---
+category: note
 title: RDF
 date: 2025-09-14 00:00
 modified: 2025-09-14 00:00

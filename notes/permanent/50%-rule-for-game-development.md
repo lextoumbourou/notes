@@ -1,4 +1,5 @@
 ---
+category: note
 title: 50% Rule for Game Development
 date: 2021-01-06 00:00
 tags:

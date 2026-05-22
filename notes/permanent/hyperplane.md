@@ -1,4 +1,5 @@
 ---
+category: note
 title: Hyperplane
 date: 2015-10-07 00:00
 modified: 2024-04-11 00:00

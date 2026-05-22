@@ -1,4 +1,5 @@
 ---
+category: note
 title: Predicate Logic
 date: 2023-10-13 00:00
 summary: An extension of propositional logic that involves variables and quantifiers.

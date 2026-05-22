@@ -1,4 +1,5 @@
 ---
+category: note
 title: Triangularity In Game Design
 date: 2021-01-06 00:00
 tags:

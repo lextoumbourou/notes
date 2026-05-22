@@ -1,4 +1,5 @@
 ---
+category: project
 title: "Title As Link Text: automatic note titles in Obsidian links"
 date: 2025-11-01 00:00
 modified: 2025-11-01 00:00

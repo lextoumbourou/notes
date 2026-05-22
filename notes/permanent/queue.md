@@ -1,4 +1,5 @@
 ---
+category: note
 title: Queue
 date: 2024-02-18 00:00
 modified: 2024-02-18 01:00
