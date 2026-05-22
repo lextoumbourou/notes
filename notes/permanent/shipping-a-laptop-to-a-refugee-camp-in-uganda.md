@@ -19,10 +19,10 @@ Recently, Django found himself in a new predicament.
 
 His laptop's motherboard burned out after accidentally connecting a USB cable to a 12V battery output, and the next semester was set to start in a few weeks. He had tried to repair it to no avail: the laptop continued to overheat and would not turn on.
 
-<table style="width:100%; border-collapse:collapse;">
+<table class="no-border" style="width:100%;">
   <tr>
-    <td style="padding:4px; width:50%;"><img src="../_media/shipping-laptop-uganda-burned-motherboard-1.jpg" alt="Django's laptop open on a table, showing burn damage" style="width:100%;"></td>
-    <td style="padding:4px; width:50%;"><img src="../_media/shipping-laptop-uganda-burned-motherboard-2.jpg" alt="Close-up of the burned and discoloured motherboard" style="width:100%;"></td>
+    <td style="width:50%;"><img src="../_media/shipping-laptop-uganda-burned-motherboard-1.jpg" alt="Django's laptop open on a table, showing burn damage" style="width:100%;"></td>
+    <td style="width:50%;"><img src="../_media/shipping-laptop-uganda-burned-motherboard-2.jpg" alt="Close-up of the burned and discoloured motherboard" style="width:100%;"></td>
   </tr>
 </table>
 
@@ -34,16 +34,16 @@ Naively, I figured that I'd just go to my local post office, put it in a box wit
 
 I dusted off the laptop, wiped the hard drive and reinstalled macOS using [Apple's instructions](https://support.apple.com/en-au/guide/mac-help/mh27903/mac). I wiped the screen with a lint-free cloth wetted with only water, avoiding alcohol-based cleaning products. For the keyboard, I used standard multipurpose wipes to remove my ancient finger grime.
 
-I asked ChatGPT how to send the laptop, and it gave me a spiel about finding a reliable freight service or courier. I asked anyway whether it would be possible to send via Australia Post (our national mail service) anyway, since an outlet was down the road from my house. Apparently, I could, as long as the lithium battery was installed in the device.
+I asked ChatGPT how to send the laptop, and it gave me a spiel about finding a reliable freight service or courier. I asked whether it would be possible to send via Australia Post (our national mail service) anyway, since an outlet was down the road from my house. Apparently, I could, as long as the lithium battery was installed in the device.
 
 ![Australia Post website showing lithium battery rules for international parcels](../_media/shipping-laptop-uganda-auspost-lithium-rules.png)
 
 At the post office, a friendly staff member confirmed it could be sent, helped me package it up securely, and it cost me $111.60 AUD.
 
-<table style="width:100%; border-collapse:collapse;">
+<table class="no-border" style="width:100%;">
   <tr>
-    <td style="padding:4px; width:50%;"><img src="../_media/shipping-laptop-uganda-post-office-package.jpg" alt="The packaged MacBook on the Australia Post counter, wrapped and ready to send" style="width:100%;"></td>
-    <td style="padding:4px; width:50%;"><img src="../_media/shipping-laptop-uganda-post-office-package-2.jpg" alt="Australia Post staff helping package up the laptop for international shipping" style="width:100%;"></td>
+    <td style="width:50%;"><img src="../_media/shipping-laptop-uganda-post-office-package.jpg" alt="The packaged MacBook on the Australia Post counter, wrapped and ready to send" style="width:100%;"></td>
+    <td style="width:50%;"><img src="../_media/shipping-laptop-uganda-post-office-package-2.jpg" alt="Australia Post staff helping package up the laptop for international shipping" style="width:100%;"></td>
   </tr>
 </table>
 
@@ -117,9 +117,7 @@ When I finally received the printed TIN certificate, I was honestly overwhelmed 
 
 With the TIN in hand, Django could finally complete the Agent Appointment in the URA Portal and the tax worksheet. Taxes totalled UGX 127,657.76 (~$47 AUD), bringing the running total to ~$407 AUD - already close to the laptop's value.
 
-We were then informed that the laptop was in the Netherlands, and we were still unsure of when it would arrive in Uganda.
-
-That was April 17th. The new semester was due to start on April 20th - three days away, with the laptop still sitting in the Netherlands.
+That was April 17th - three days before the new semester was due to start, with the laptop still sitting in the Netherlands.
 
 ## Delivery restrictions and laptop seizure
 
@@ -127,19 +125,19 @@ The package next travelled to **France** → **UK** and finally to **Uganda**. H
 
 ![FedEx tracking notification showing a delivery restrictions flag on the package](../_media/shipping-laptop-uganda-delivery-restrictions.png)
 
-Apparently, this caused the package to require re-routing through: **UK** → **UAE** → **Kenya** → **Uganda**.
+This caused the package to re-route through: **UK** → **UAE** → **Kenya** → **Uganda**.
 
 Finally, on May 6th, it was in Uganda. But there was a new problem.
 
 According to Ugandan regulations, used laptops cannot be imported unless accompanied by an original purchase receipt showing the exact purchase price. A customs invoice indicating an estimated value and noting that the laptop is used was not sufficient. Customs temporarily seized it.
 
-FedEx told us they were in contact with the authorities to resolve the situation and were awaiting official communication from customs specifying the additional payment required. However, they told us their system was down, causing further delays.
+We were told FedEx were in contact with the authorities to resolve the situation and were awaiting official communication from customs specifying the additional payment required. However, EHS informed us their system was down, causing further delays.
 
-Meanwhile, Django luckily managed to arrange to borrow a laptop temporarily for a small daily fee, so he could start the semester while waiting.
+Meanwhile, Django managed to borrow a laptop for a small daily fee, so he could start the semester while waiting.
 
 ## Final top-up payment
 
-After some convincing, the authorities accepted a confirmation that the laptop was a used gift, not intended for sale or purchase. The EHS representative requested a top-up payment of UGX 50,000 (~$18.50 AUD) to submit the amendment.
+After some convincing, the authorities accepted a confirmation that the laptop was a used gift. The EHS representative requested a top-up payment of UGX 50,000 (~$18.50 AUD) to submit the amendment.
 
 ![EHS message requesting a UGX 50,000 top-up payment for the customs amendment](../_media/shipping-laptop-uganda-ugx-top-up-payment.png)
 
@@ -225,7 +223,7 @@ Interestingly, even after I had physically received the laptop, the electronic t
 
 ---
 
-## Mission accomplished
+## Conclusion
 
 On his way home, Django sent me this email:
 
