@@ -1,5 +1,5 @@
 ---
-title: Disputing A Parking Fine with ChatGPT
+title: Disputing a Parking Fine with ChatGPT
 date: 2022-12-10 00:00
 cover: /_media/cover-parking-fine.png
 summary: A use case for ChatGPT
