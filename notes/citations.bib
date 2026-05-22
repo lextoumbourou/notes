@@ -592,3 +592,21 @@
   keywords = {Computer Science - Computation and Language},
   file = {/Users/lex/code/zotero/storage/JW6GCCXI/Zhang et al. - 2026 - Embarrassingly Simple Self-Distillation Improves Code Generation.pdf;/Users/lex/code/zotero/storage/VK3ZMUEE/2604.html}
 }
+
+@misc{zhuSANAWMEfficientMinuteScale2026,
+  title = {{{SANA-WM}}: {{Efficient Minute-Scale World Modeling}} with {{Hybrid Linear Diffusion Transformer}}},
+  shorttitle = {{{SANA-WM}}},
+  author = {Zhu, Haoyi and Liu, Haozhe and Zhao, Yuyang and Ye, Tian and Chen, Junsong and Yu, Jincheng and He, Tong and Han, Song and Xie, Enze},
+  year = 2026,
+  month = may,
+  number = {arXiv:2605.15178},
+  eprint = {2605.15178},
+  primaryclass = {cs.CV},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2605.15178},
+  urldate = {2026-05-18},
+  abstract = {We introduce SANA-WM, an efficient 2.6B-parameter open-source world model natively trained for one-minute generation, synthesizing high-fidelity, 720p, minute-scale videos with precise camera control. SANA-WM achieves visual quality comparable to large-scale industrial baselines such as LingBot-World and HY-WorldPlay, while significantly improving efficiency. Four core designs drive our architecture: (1) Hybrid Linear Attention combines frame-wise Gated DeltaNet (GDN) with softmax attention for memory-efficient long-context modeling. (2) Dual-Branch Camera Control ensures precise 6-DoF trajectory adherence. (3) Two-Stage Generation Pipeline applies a long-video refiner to stage-1 outputs, improving quality and consistency across sequences. (4) Robust Annotation Pipeline extracts accurate metric-scale 6-DoF camera poses from public videos to yield high-quality, spatiotemporally consistent action labels. Driven by these designs, SANA-WMdemonstrates remarkable efficiency across data, training compute, and inference hardware: it uses only \$\textbackslash sim\$213K public video clips with metric-scale pose supervision, completes training in 15 days on 64 H100s, and generates each 60s clip on a single GPU; its distilled variant can be deployed on a single RTX 5090 with NVFP4 quantization to denoise a 60s 720p clip in 34s. On our one-minute world-model benchmark, SANA-WM demonstrates stronger action-following accuracy than prior open-source baselines and achieves comparable visual quality at \$36\textbackslash times\$ higher throughput for scalable world modeling.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition},
+  file = {/Users/lex/code/zotero/storage/KRWK4DGC/Zhu et al. - 2026 - SANA-WM Efficient Minute-Scale World Modeling with Hybrid Linear Diffusion Transformer.pdf;/Users/lex/code/zotero/storage/2DEILZTD/2605.html}
+}

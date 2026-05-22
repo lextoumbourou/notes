@@ -4,6 +4,7 @@ date: 2022-12-10 00:00
 cover: /_media/cover-parking-fine.png
 summary: A use case for ChatGPT
 hide_cover_in_article: true
+category: story
 tags:
 - LargeLanguageModels
 ---
