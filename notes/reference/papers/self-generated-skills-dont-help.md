@@ -1,6 +1,7 @@
 ---
 title: "Self-Generated Skills Don't Help"
 date: 2026-02-21 00:00
+category: paper
 modified: 2026-02-21 00:00
 summary: "Curated skills boost agent performance by 16 points; self-generated ones don't help at all."
 alias: skillsbench-benchmarking-how-well-agent-skills-work-across-diverse-tasks.html
@@ -10,7 +11,6 @@ bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mflrlxrlks2l
 tags:
 - AgenticReasoning
 - SoftwareEngineering
-category: reference/papers
 paper_title: "SkillsBench: Benchmarking How Well Agent Skills Work Across Diverse Tasks"
 paper_url: https://arxiv.org/abs/2602.12670
 paper_authors: Xiangyi Li, Wenbo Chen, Yimin Liu, Shenghan Zheng, Xiaokun Chen, Yifeng He, Yubo Li, Bingran You, Haotian Shen, Jiankai Sun, Shuyi Wang, Binxu Li, Qunhong Zeng, Di Wang, Xuandong Zhao, Yuanli Wang, Roey Ben Chaim, Zonglin Di, Yipeng Gao, Junwei He, Yizhuo He, Liqiang Jing, Luyang Kong, Xin Lan, Jiachen Li, Songlin Li, Yijiang Li, Yueqian Lin, Xinyi Liu, Xuanqing Liu, Haoran Lyu, Ze Ma, Bowei Wang, Runhui Wang, Tianyu Wang, Wengao Ye, Yue Zhang, Hanwen Xing, Yiqi Xue, Steven Dillmann, Han-chung Lee

@@ -1,6 +1,7 @@
 ---
 title: "DreamFusion: Text-to-3D Using 2D Diffusion"
 date: 2025-01-11 00:00
+category: paper
 modified: 2025-01-11 00:00
 status: draft
 ---

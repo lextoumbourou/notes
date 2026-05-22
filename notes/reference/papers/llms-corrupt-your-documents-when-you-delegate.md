@@ -2,7 +2,7 @@
 title: "LLMs Corrupt Your Documents When You Delegate"
 date: 2026-05-09 00:00
 modified: 2026-05-09 00:00
-category: reference/papers
+category: paper
 cover: /_media/llms-corrupt-cover.png
 hide_cover_in_article: true
 summary: "A large-scale study on long-horizon document tasks."

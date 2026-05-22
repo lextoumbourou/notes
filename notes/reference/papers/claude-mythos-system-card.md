@@ -1,6 +1,7 @@
 ---
 title: "Claude Mythos Preview - System Card Highlights"
 date: 2026-04-08 00:00
+category: paper
 modified: 2026-04-08 00:00
 status: draft
 ---

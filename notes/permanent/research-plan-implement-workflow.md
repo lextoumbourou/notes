@@ -1,6 +1,7 @@
 ---
 title: Research, Plan, Implement Workflow
 date: 2026-03-22 00:00
+category: note
 modified: 2026-04-20 19:33
 tags:
   - SoftwareEngineering

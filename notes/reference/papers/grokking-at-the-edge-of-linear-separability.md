@@ -1,6 +1,7 @@
 ---
 title: Grokking at the Edge of Linear Separability
 date: 2024-10-14 00:00
+category: paper
 modified: 2024-10-14 00:00
 status: draft
 tags:

@@ -1,6 +1,7 @@
 ---
 title: Simple and Controllable Music Generation
 date: 2023-12-02 00:00
+category: paper
 modified: 2023-12-02 00:00
 status: draft
 ---

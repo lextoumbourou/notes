@@ -1,6 +1,7 @@
 ---
 title: "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges"
 date: 2025-05-24 00:00
+category: paper
 modified: 2025-05-24 00:00
 status: draft
 paper_title: "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges"

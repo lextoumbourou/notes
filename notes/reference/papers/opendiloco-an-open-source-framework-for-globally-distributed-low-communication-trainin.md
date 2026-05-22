@@ -1,6 +1,7 @@
 ---
 title: "OpenDiLoCo: An Open-Source Framework for Globally Distributed Low-Communication Training"
 date: 2024-10-15 00:00
+category: paper
 modified: 2024-10-15 00:00
 status: draft
 ---

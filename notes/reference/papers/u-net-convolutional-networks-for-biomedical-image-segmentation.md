@@ -1,6 +1,7 @@
 ---
 title: "U-Net: Convolutional Networks for Biomedical Image Segmentation"
 date: 2024-10-11 00:00
+category: paper
 modified: 2024-10-11 00:00
 status: draft
 tags:

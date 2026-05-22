@@ -1,6 +1,7 @@
 ---
 title: "LLMs Know More Than They Show: On the Intrinsic Representation of LLM Hallucinations"
 date: 2024-10-07 00:00
+category: paper
 modified: 2024-10-07 00:00
 status: draft
 tags:

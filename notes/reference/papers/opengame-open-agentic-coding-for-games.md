@@ -2,7 +2,7 @@
 title: "OpenGame: Open Agentic Coding for Games"
 date: 2026-04-29 00:00
 modified: 2026-04-29 00:00
-category: reference/papers
+category: paper
 cover: /_media/jiang-et-all-figure-2.png
 hide_cover_in_article: true
 summary: "An agentic framework for end-to-end game creation"

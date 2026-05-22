@@ -1,6 +1,7 @@
 ---
 title: "It's Your Turn: A Novel Channel Contention Mechanism for Improving Wi-Fi’s Reliability"
 date: 2024-10-14 00:00
+category: paper
 modified: 2024-10-14 00:00
 status: draft
 ---

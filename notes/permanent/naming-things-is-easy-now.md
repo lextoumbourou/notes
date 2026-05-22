@@ -1,6 +1,7 @@
 ---
 title: Naming Things Is Easy Now
 date: 2026-04-25 10:58
+category: essay
 modified: 2026-04-25 13:19
 tags:
   - AgentNativeNotes

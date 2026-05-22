@@ -1,6 +1,7 @@
 ---
 title: Segment Anything
 date: 2024-10-11 00:00
+category: paper
 modified: 2024-10-11 00:00
 status: draft
 ---

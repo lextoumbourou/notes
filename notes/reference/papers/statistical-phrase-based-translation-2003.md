@@ -1,6 +1,7 @@
 ---
 title: "Statistical Phrase-Based Translation (2003)"
 date: 2024-10-28 00:00
+category: paper
 modified: 2024-10-28 00:00
 status: draft
 ---

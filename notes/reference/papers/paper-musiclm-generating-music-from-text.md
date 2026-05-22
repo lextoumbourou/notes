@@ -1,6 +1,7 @@
 ---
 title: "MusicLM: Generating Music From Text"
 date: 2023-12-04 00:00
+category: paper
 modified: 2023-12-04 00:00
 status: draft
 ---

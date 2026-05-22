@@ -4,6 +4,7 @@ year: 2023
 doi: "10.1038/s41597-023-02100-7"
 citekey: "nguyen2023vindrmammo"
 date: 2025-10-20 00:00
+category: paper
 modified: 2025-10-20 00:00
 status: draft
 tags:

@@ -1,6 +1,7 @@
 ---
 title: "Games for Artificial Intelligence Research: A Review and Perspectives"
 date: 2025-05-31 00:00
+category: paper
 modified: 2025-05-31 00:00
 status: draft
 paper_title: "Games for Artificial Intelligence Research: A Review and Perspectives"

@@ -1,6 +1,7 @@
 ---
 title: "Reflexion: Language Agents with Verbal Reinforcement Learning"
 date: 2024-10-04 00:00
+category: paper
 modified: 2024-10-04 00:00
 status: draft
 ---

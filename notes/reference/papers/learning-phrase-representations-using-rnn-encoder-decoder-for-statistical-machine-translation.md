@@ -1,6 +1,7 @@
 ---
 title: Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation
 date: 2024-10-25 00:00
+category: paper
 modified: 2024-10-25 00:00
 status: draft
 ---

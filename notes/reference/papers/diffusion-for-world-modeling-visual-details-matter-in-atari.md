@@ -1,6 +1,7 @@
 ---
 title: "Diffusion for World Modeling: Visual Details Matter in Atari"
 date: 2024-10-14 00:00
+category: paper
 modified: 2024-10-14 00:00
 status: draft
 ---
