@@ -22,6 +22,7 @@ if [ -n "$CHROME_PATH" ]; then
 fi
 
 # Clone pelican-plugins repository
+rm -rf pelican-plugins
 git clone --recursive https://github.com/getpelican/pelican-plugins
 
 # Create toc symlink so Pelican can find the pelican-toc plugin by the name "toc"
