@@ -10,13 +10,11 @@ category: story
 status: draft
 ---
 
-*After travelling through twelve countries, clearing customs, surviving a seizure, and costing almost as much as it was worth, my decade-old MacBook was eventually found on a dusty shelf in a Ugandan hardware shop, surrounded by welding equipment.*
-
-For the last few years, while finally earning my belated Bachelor's Degree in the University of London's aptly name "World Class" program, I've met some amazing people from all across the world, completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.
+For the last few years, while finally earning my belated Bachelor's Degree in the University of London's "World Class" program, I've met some amazing people from all across the world, completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.
 
 But few have circumstances as challenging as Django’s.
 
-Django is a Congolese refugee living in a camp in Western Uganda. He has no reliable electricity in the camp and runs his laptop on solar power; his internet access comes from Airtel minutes, which he needs to ration on a very limited income. This makes completing a remote Computer Science degree - with video lectures, assignments that need to be uploaded on time and remotely proctored exams - at times seem nearly impossible. In the last few years, thanks to various world events and a general sentiment away from compassion and charity, it has only gotten harder.
+Django is a Congolese refugee living in a camp in Western Uganda. He has no reliable electricity in the camp and runs his laptop on solar power; his internet access comes from Airtel minutes, which he needs to ration on a very limited income. This makes completing a remote Computer Science degree - with video lectures, assignments that need to be uploaded on time and remotely proctored exams - at times seem nearly impossible.
 
 Recently, Django found himself in a new predicament.
 
@@ -33,21 +31,15 @@ I have a few old MacBooks that are in working order, just sitting around the hou
 
 Naively, I figured that I'd just go to my local post office, put it in a box with some bubble wrap, and he'd have it in a few days/weeks. However, the process proved a surprisingly difficult ordeal.
 
-Initially, my plan was just to write a sort of how to guide to document the teaching. However, when asking Django to fill in the details from his side, I soon realised that Django's side of the story serves as a window into the day-to-day difficulties my friend faces.
-
 ## Sending the laptop
 
 I dusted off the laptop, wiped the hard drive and reinstalled macOS using [Apple's instructions](https://support.apple.com/en-au/guide/mac-help/mh27903/mac). I wiped the screen with a lint-free cloth wetted with only water, avoiding alcohol-based cleaning products. For the keyboard, I used standard multipurpose wipes to remove my ancient finger grime.
 
-I asked ChatGPT how to send the laptop, and it gave me a spiel about finding a reliable freight service or courier.
-
-![ChatGPT recommending a specialist freight service for sending a laptop overseas](../_media/shipping-laptop-uganda-chatgpt-advice.png)
-
-Despite this, I asked whether it would be possible to send via Australia Post (our national mail service) anyway, since an outlet was down the road from my house. Apparently, I could, as long as the lithium battery was installed in the device.
+I asked ChatGPT how to send the laptop, and it gave me a spiel about finding a reliable freight service or courier. Despite this, I asked whether it would be possible to send via Australia Post (our national mail service) anyway, since an outlet was down the road from my house. Apparently, I could, as long as the lithium battery was installed in the device.
 
 ![Australia Post website showing lithium battery rules for international parcels](../_media/shipping-laptop-uganda-auspost-lithium-rules.png)
 
-At the post office, a friendly staff member confirmed it could be sent, helped me package it up securely, and it cost me **$111.60 AUD**.
+At the post office, a friendly staff member confirmed it could be sent, helped me package it up securely, and it cost me $111.60 AUD.
 
 <table style="width:100%; border-collapse:collapse;">
   <tr>
@@ -56,11 +48,11 @@ At the post office, a friendly staff member confirmed it could be sent, helped m
   </tr>
 </table>
 
-I shared the tracking number with Django on April 1st and left it at that. Six days later, he messaged to say it looked like the package was arriving soon. Too easy, apparently.
+I shared the tracking number with Django on April 1st and left it at that. Six days later, he messaged to say it looked like the package was arriving soon.
 
-A few hours later, I got a knock at my door. The package had been returned to my house after failing to be processed at the distribution centre.
+However, a few hours later, I got a knock at my door. The package had been returned to my house after failing to be processed at the distribution centre.
 
-Turns out Australia Post won't ship devices containing lithium batteries internationally by air, after all. I probably [should have checked that on their website](https://auspost.com.au/sending/guidelines/dangerous-prohibited-items). The staff apparently weren't aware of this policy either.
+Turns out Australia Post won't ship devices containing lithium batteries internationally by air, after all.
 
 ---
 
@@ -74,33 +66,33 @@ I walked about 45 minutes to the office, in a neighbouring industrial suburb.
 
 The woman at the front desk laughed at the packaging job I had done at the Post Office and said she'd repackage it properly.
 
-This was April 9th, which was about 11 days into the Strait of Hormuz crisis, so she told me to expect delays. She also mentioned there would be additional costs for Django in Uganda: customs fees, taxes, and government charges she couldn't estimate, and that he would need a buffer of at least $50–100 on his end.
+This was April 9th, which was about 6 weeks into the Strait of Hormuz crisis, which had thrown global freight routes into chaos, so she told me to expect delays. She also mentioned there would be additional costs for Django in Uganda: customs fees, taxes, and government charges she couldn't estimate, and that he would need a buffer of at least $50–100 on his end.
 
-Since money was extremely tight on Django's end, I offered to send some for the buffer. Most Ugandan services accept Airtel Money, which I knew could be transferred easily via the [WorldRemit app](https://www.worldremit.com/en). He received the money in about 5 minutes. Great job, WorldRemit team.
+Since money was extremely tight on Django's end, I offered to send some for the buffer. Most Ugandan services accept Airtel Money, which I knew could be transferred easily via the [WorldRemit app](https://www.worldremit.com/en). He received the money in about 5 minutes.
 
 ## Clearing Ugandan customs
 
-Over the next few days, the package moved from **Brisbane** → **Sydney** → **Guangzhou** → **Korea** → **Japan** → **Hong Kong** → **Turkey** → **France** → **The Netherlands**.
+Over the next few days, the package made its way through nine countries before reaching the Netherlands.
 
-Then, on April 15th, Django received an email from an EHS Africa Logistics Agent with instructions on the next step: there was an agency fee of **UGX 95,000 (~$35 AUD)**, then he'd need to register via the Uganda Revenue Authority (URA) Portal, complete a tax assessment, and pay any applicable taxes. All of this had to be cleared within 5 working days, or we would be paying storage fees, the agent warned.
+Then, on April 15th, Django received an email from an EHS Africa Logistics Agent with instructions on the next step: there was an agency fee of UGX 95,000 (~$35 AUD), then he'd need to register via the Uganda Revenue Authority (URA) Portal, complete a tax assessment, and pay any applicable taxes. All of this had to be cleared within 5 working days, or we would be paying storage fees, the agent warned.
 
 However, registration required a Tax Identification Number (TIN), which Django, a refugee, does not have. Getting one requires physically presenting at a URA office, and there was none nearby in his district.
 
 Django sent an email to the EHS rep asking if it could be completed without a TIN, but received no reply. So he decided to sort it himself.
 
-## Getting a TIN number as a refugee
+## Getting a TIN as a refugee
 
 In his words:
 
 ---
 
-Regarding the TIN number, I first tried to do it online because the URA website suggested that the process could be started electronically. However, I discovered that for refugees and non-citizens, it was not truly an online process. Ugandan citizens could complete everything online, but refugees could only begin the application online and then had to physically appear at a URA office with documents for verification before approval.
+Regarding the TIN, I first tried to do it online because the URA website suggested that the process could be started electronically. However, I discovered that for refugees and non-citizens, it was not truly an online process. Ugandan citizens could complete everything online, but refugees could only begin the application online and then had to physically appear at a URA office with documents for verification before approval.
 
 Even starting the online part was difficult. The application form was an old Excel macro form that could not properly work on my phone. At that time, I did not yet have a computer, so there was practically no way for me to complete or upload the form myself.
 
 I then went to a nearby organization that says it assists refugee youth. They told me they could help fill and submit the form, but they asked me for the equivalent of about 20 USD just to complete the submission process, and they also told me the process could take around two weeks. At another point, I was even told an amount closer to 40 USD. The difficult part was that this was not even the full service - after paying, I would still have to personally travel to a URA office for physical verification.
 
-Since I urgently needed the TIN number for customs clearance, I decided to do the rest myself instead of waiting.
+Since I urgently needed the TIN for customs clearance, I decided to do the rest myself instead of waiting.
 
 From my area in the refugee settlement, I first walked for about two hours to reach a trading center "Bukere" where I could get a boda-boda motorcycle. From there, I travelled to the main road in "Kyegegwa" and boarded a public taxi/bus to another town, "Mubende", where there was a URA office. The taxi constantly stopped along the road picking up passengers, so the trip took around three hours.
 
@@ -124,7 +116,7 @@ When I finally received the printed TIN certificate, I was honestly overwhelmed 
 
 ---
 
-With the TIN in hand, Django could finally complete the Agent Appointment in the URA Portal and the tax worksheet. Taxes totalled **UGX 127,657.76 (~$47 AUD)**, bringing the running total to **~$359 AUD** - unfortunately getting close to the laptop's value.
+With the TIN in hand, Django could finally complete the Agent Appointment in the URA Portal and the tax worksheet. Taxes totalled UGX 127,657.76 (~$47 AUD), bringing the running total to ~$407 AUD - unfortunately getting close to the laptop's value.
 
 We were then informed that the laptop was in the Netherlands, and we were still unsure of when it would arrive in Uganda.
 
@@ -148,13 +140,23 @@ Meanwhile, Django luckily managed to arrange to borrow a laptop temporarily for 
 
 ## Final top-up payment
 
-After some convincing, the authorities accepted a confirmation that the laptop was a used gift, not intended for sale or purchase. The EHS representative requested a top-up payment of **UGX 50,000 (~$18.50 AUD)** to submit the amendment.
+After some convincing, the authorities accepted a confirmation that the laptop was a used gift, not intended for sale or purchase. The EHS representative requested a top-up payment of UGX 50,000 (~$18.50 AUD) to submit the amendment.
 
 ![EHS message requesting a UGX 50,000 top-up payment for the customs amendment](../_media/shipping-laptop-uganda-ugx-top-up-payment.png)
 
-Django paid on May 8th. A day later, the shipment was released from customs and marked ready for delivery. Running total of costs now at **~$426 AUD (~UGX 1,163,832)**.
+Django paid on May 8th. A day later, the shipment was released from customs and marked ready for delivery.
 
 ![FedEx tracking showing the shipment released and ready for delivery](../_media/shipping-laptop-uganda-shipment-released.png)
+The final tally:
+
+| Expense                         | AUD       | UGX            |
+| ------------------------------- | --------- | -------------- |
+| Australia Post (failed attempt) | $111.60   | -              |
+| Pack & Send courier             | $213.00   | -              |
+| Ugandan agency fee              | ~$35.00   | 95,000         |
+| URA customs taxes               | ~$47.00   | 127,658        |
+| Customs amendment top-up        | ~$18.50   | 50,000         |
+| **Total**                       | **~$426** | **~1,163,832** |
 
 ## Finding the laptop
 
@@ -224,9 +226,9 @@ Interestingly, even after I had physically received the laptop, the electronic t
 
 ---
 
-## A MacBook is a MacBook
+## Mission accomplished
 
-On May 13th, I (Lex) received this email:
+On his way home, Django sent me this email:
 
 ---
 
@@ -244,7 +246,7 @@ At the moment, I am still on my way back home and not yet fully settled, but I w
 
 Honestly, after finally receiving it, I felt that all the trouble and effort were worth it. Earlier, we had talked about how expensive the whole process seemed and how it might have been easier to buy something locally instead. But once I held it in my hands, even the person helping me and I both reached the same conclusion: an Apple is still an Apple.
 
-This is my first Apple device in my life, and now I truly understand why people speak so highly about it. A MacBook is a MacBook.
+This is my first Apple device in my life, and now I truly understand why people speak so highly about it.
 
 Thank you very much again, Lex. I truly appreciate your kindness, patience, and support throughout this journey.
 
@@ -254,7 +256,8 @@ Django
 
 ---
 
-Finally, after spending **~$426 AUD (~UGX 1,163,832)** and travelling over ~36,000 km across 12 countries over 42 days, the laptop had arrived.
+
+Finally, on May 13th, after ~36,000 km across 12 countries over 42 days, the laptop had arrived.
 
 ![Django with the MacBook open, showing it working](../_media/shipping-laptop-uganda-django-macbook-2.jpg)
 
