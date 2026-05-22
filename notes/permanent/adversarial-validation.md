@@ -1,4 +1,5 @@
 ---
+category: note
 title: Adversarial Validation
 date: 2021-05-12 00:00
 tags:

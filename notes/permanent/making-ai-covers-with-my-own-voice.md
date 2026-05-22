@@ -1,4 +1,5 @@
 ---
+category: story
 title: Making Song Covers With My AI Voice
 date: 2023-05-07 00:00
 cover: /_media/svc-cover.png

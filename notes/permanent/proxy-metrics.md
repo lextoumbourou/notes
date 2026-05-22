@@ -1,4 +1,5 @@
 ---
+category: note
 title: Proxy Metrics
 date: 2021-06-12 00:00
 tags:

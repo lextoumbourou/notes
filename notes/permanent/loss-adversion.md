@@ -1,4 +1,5 @@
 ---
+category: note
 title: Loss Adversion
 date: 2021-01-03 00:00
 tags:

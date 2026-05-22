@@ -1,4 +1,5 @@
 ---
+category: note
 title: Roblox Vector3
 date: 2021-08-29 00:00
 tags:

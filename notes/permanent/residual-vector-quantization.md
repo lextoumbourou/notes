@@ -1,4 +1,5 @@
 ---
+category: note
 title: Residual Vector Quantisation
 date: 2024-01-13 00:00
 modified: 2024-01-13 00:00

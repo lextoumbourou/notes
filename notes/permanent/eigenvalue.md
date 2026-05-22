@@ -1,4 +1,5 @@
 ---
+category: note
 title: Eigenvalue
 date: 2022-01-22 00:00
 tags:

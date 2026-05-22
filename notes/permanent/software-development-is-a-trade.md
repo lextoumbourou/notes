@@ -1,4 +1,5 @@
 ---
+category: essay
 title: "Software Development is a Trade"
 date: 2024-01-27 00:00
 modified: 2024-01-27 00:00

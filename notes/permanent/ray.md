@@ -1,4 +1,5 @@
 ---
+category: note
 title: Ray
 date: 2020-11-04 00:00
 summary: A line-like figure that continue indefinitely in one direction

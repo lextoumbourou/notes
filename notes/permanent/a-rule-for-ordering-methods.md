@@ -1,4 +1,5 @@
 ---
+category: note
 title: A Rule For Ordering Methods
 date: 2022-06-27 00:00
 tags:

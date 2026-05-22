@@ -1,4 +1,5 @@
 ---
+category: note
 title: Orphan Processes
 date: 2013-06-08 00:00
 tags:

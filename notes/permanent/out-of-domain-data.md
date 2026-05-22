@@ -1,4 +1,5 @@
 ---
+category: note
 title: Out-of-Domain
 date: 2021-06-22 00:00
 cover: /_media/odd-one-out.png

@@ -1,4 +1,5 @@
 ---
+category: note
 title: Bucket Sort
 date: 2025-02-15 00:00
 modified: 2025-02-15 00:00

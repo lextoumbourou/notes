@@ -1,4 +1,5 @@
 ---
+category: note
 title: Rule of Loop
 date: 2021-01-05 00:00
 tags:

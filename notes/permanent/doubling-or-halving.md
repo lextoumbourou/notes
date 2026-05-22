@@ -1,4 +1,5 @@
 ---
+category: note
 title: Doubling or Halving as a Game Balancing Technique
 date: 2021-01-17 00:00
 tags:

@@ -1,4 +1,5 @@
 ---
+category: note
 title: Test Pyramid
 date: 2021-04-04 00:00
 tags:

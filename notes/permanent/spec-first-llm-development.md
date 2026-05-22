@@ -1,4 +1,5 @@
 ---
+category: note
 title: Spec-First LLM Development
 date: 2026-01-19 00:00
 modified: 2026-01-19 00:00

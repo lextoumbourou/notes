@@ -1,4 +1,5 @@
 ---
+category: note
 title: Categorical Cross-Entropy Loss
 aliases: [Softmax Loss]
 date: 2021-07-29 00:00

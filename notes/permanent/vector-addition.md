@@ -1,4 +1,5 @@
 ---
+category: note
 title: Vector Addition
 date: 2021-01-06 00:00
 modified: 2021-09-05 17:45

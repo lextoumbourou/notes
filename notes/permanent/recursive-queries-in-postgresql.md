@@ -1,4 +1,5 @@
 ---
+category: note
 title: Recursive queries in PostgreSQL
 date: 2016-05-08 00:00
 tags:

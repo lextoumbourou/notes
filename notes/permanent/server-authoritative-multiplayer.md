@@ -1,4 +1,5 @@
 ---
+category: note
 title: Server Authoritative Multiplayer
 date: 2021-06-24 00:00
 cover: /_media/hal-9000.png

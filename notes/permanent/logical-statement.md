@@ -1,4 +1,5 @@
 ---
+category: note
 title: Statement
 date: 2023-11-05 00:00
 modified: 2023-11-05 00:00

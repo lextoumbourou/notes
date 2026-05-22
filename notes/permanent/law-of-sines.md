@@ -1,4 +1,5 @@
 ---
+category: note
 title: Law of Sines
 date: 2023-08-05 00:00
 tags:

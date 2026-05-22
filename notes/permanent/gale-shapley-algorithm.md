@@ -1,4 +1,5 @@
 ---
+category: note
 title: Gale-Shapley Algorithm
 date: 2024-02-08 00:00
 modified: 2024-02-08 00:00

@@ -1,4 +1,5 @@
 ---
+category: essay
 title: "OpenClaw: the missing piece for Obsidian's second brain"
 date: 2026-01-29 00:00
 modified: 2026-01-29 11:40

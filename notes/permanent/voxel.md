@@ -1,4 +1,5 @@
 ---
+category: note
 title: Voxel
 date: 2021-05-11 00:00
 tags:

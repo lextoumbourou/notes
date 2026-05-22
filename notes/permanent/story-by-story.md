@@ -1,4 +1,5 @@
 ---
+category: note
 title: Do Standups Story-By-Story not Person-By-Person
 date: 2022-06-21 00:00
 tags:

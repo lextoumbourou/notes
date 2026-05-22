@@ -1,4 +1,5 @@
 ---
+category: note
 title: TF-IDF
 date: 2023-04-09 00:00
 modified: 2025-12-20 00:00

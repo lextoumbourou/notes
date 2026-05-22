@@ -1,4 +1,5 @@
 ---
+category: note
 title: Convex Hull
 date: 2024-01-26 00:00
 modified: 2024-01-26 00:00

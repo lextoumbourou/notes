@@ -1,4 +1,5 @@
 ---
+category: note
 title: Encapsulation
 date: 2021-04-19 00:00
 tags:

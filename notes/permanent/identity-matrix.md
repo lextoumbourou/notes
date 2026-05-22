@@ -1,4 +1,5 @@
 ---
+category: note
 title: Identity Matrix
 date: 2021-09-18 00:00
 tags:

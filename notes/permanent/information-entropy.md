@@ -1,4 +1,5 @@
 ---
+category: note
 title: Information Entropy
 date: 2021-07-28 00:00
 tags:

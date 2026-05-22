@@ -1,4 +1,5 @@
 ---
+category: note
 title: Roblox Raycasting
 date: 2020-11-07 00:00
 tags:

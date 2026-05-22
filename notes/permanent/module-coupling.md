@@ -1,4 +1,5 @@
 ---
+category: note
 title: Module Coupling
 date: 2023-12-31 00:00
 modified: 2023-12-31 00:00

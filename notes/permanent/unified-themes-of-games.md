@@ -1,4 +1,5 @@
 ---
+category: note
 title: Unified Themes of Games
 date: 2021-01-06 00:00
 tags:

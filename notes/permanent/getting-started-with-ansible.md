@@ -1,4 +1,5 @@
 ---
+category: note
 title: Getting Started With Ansible
 slug: getting-started-with-ansible
 date: 2013-02-04 00:00

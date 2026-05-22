@@ -1,4 +1,5 @@
 ---
+category: note
 title: Leaky ReLU
 date: 2024-01-03 00:00
 modified: 2024-01-03 00:00

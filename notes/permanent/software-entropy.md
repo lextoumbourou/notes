@@ -1,4 +1,5 @@
 ---
+category: note
 title: Software Entropy
 date: 2021-03-24 00:00
 Tags:

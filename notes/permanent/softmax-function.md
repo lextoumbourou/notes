@@ -1,4 +1,5 @@
 ---
+category: note
 title: Softmax Function
 date: 2021-07-08 00:00
 cover: /_media/softmax-table.png

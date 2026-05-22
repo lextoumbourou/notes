@@ -1,4 +1,5 @@
 ---
+category: essay
 title: An Interface Should Respond Within A Tenth Of A Second
 date: 2022-07-03 00:00
 tags:

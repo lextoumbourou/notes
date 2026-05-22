@@ -1,4 +1,5 @@
 ---
+category: note
 title: Radians
 date: 2021-10-17 00:00
 tags:

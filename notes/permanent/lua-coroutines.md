@@ -1,4 +1,5 @@
 ---
+category: note
 title: Lua Coroutines
 date: 2021-01-18 00:00
 tags:

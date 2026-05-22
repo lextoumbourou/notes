@@ -1,4 +1,5 @@
 ---
+category: note
 title: Recursion
 date: 2023-04-15 00:00
 cover: /_media/recursion-tree.png

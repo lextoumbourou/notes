@@ -1,4 +1,5 @@
 ---
+category: note
 title: Cardinality
 date: 2023-04-08 00:00
 tags:

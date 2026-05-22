@@ -1,4 +1,5 @@
 ---
+category: note
 title: Mammography
 date: 2025-10-15 00:00
 modified: 2025-10-15 00:00

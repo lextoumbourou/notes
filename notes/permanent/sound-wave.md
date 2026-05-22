@@ -1,4 +1,5 @@
 ---
+category: note
 title: Sound Wave
 date: 2023-10-06 00:00
 modified: 2023-10-06 00:00

@@ -7,6 +7,8 @@ hide_graph: true
 cover: /_media/shipping-laptop-uganda-cover.png
 hide_cover_in_article: true
 category: story
+mastodon_post: https://fedi.notesbylex.com/@lex/116620242773553317
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mmhtdrhxbc25
 ---
 
 For the last few years, while finally earning my belated Bachelor's Degree in the University of London's World Class program, I've met some amazing people from all across the world, completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.

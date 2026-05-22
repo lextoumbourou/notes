@@ -1,4 +1,5 @@
 ---
+category: note
 title: Domain Shift
 date: 2021-06-26 00:00
 tags:

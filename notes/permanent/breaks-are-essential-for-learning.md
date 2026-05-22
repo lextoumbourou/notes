@@ -1,4 +1,5 @@
 ---
+category: note
 title: Breaks Are Essential For Learning
 date: 2021-05-03 00:00
 tags:

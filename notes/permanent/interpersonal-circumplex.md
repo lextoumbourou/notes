@@ -1,4 +1,5 @@
 ---
+category: note
 title: "Interpersonal Circumplex"
 date: 2021-02-01 00:00
 tags:

@@ -1,4 +1,5 @@
 ---
+category: note
 title: String of Pearls
 date: 2021-01-06 00:00
 tags:

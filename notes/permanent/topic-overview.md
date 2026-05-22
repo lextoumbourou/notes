@@ -1,4 +1,5 @@
 ---
+category: topic
 title: Topic Overview (Zettlekasten)
 date: 2021-05-28 00:00
 tags:

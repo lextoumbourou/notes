@@ -1,4 +1,5 @@
 ---
+category: note
 title: Packet capturing in parallel with Ansible
 date: 2013-08-13 00:00
 slug: packet-capturing-in-parallel-ansible

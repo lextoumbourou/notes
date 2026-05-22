@@ -1,4 +1,5 @@
 ---
+category: note
 title: Vector Scaling
 date: 2020-11-08 00:00
 cover: /_media/vector-scaling-visual.png

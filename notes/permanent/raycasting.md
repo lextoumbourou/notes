@@ -1,4 +1,5 @@
 ---
+category: note
 title: Raycasting
 date: 2020-11-05 00:00
 tags:

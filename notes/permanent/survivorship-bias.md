@@ -1,4 +1,5 @@
 ---
+category: note
 title: Survivorship Bias
 date: 2021-06-01 00:00
 tags:
