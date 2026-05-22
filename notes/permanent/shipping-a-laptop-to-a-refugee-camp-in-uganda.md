@@ -1,13 +1,12 @@
 ---
-title: Sending a laptop to a friend living in a Ugandan Refugee Camp
+title: Shipping a laptop to a refugee camp in Uganda
 date: 2026-05-22 00:00
 modified: 2026-05-22 00:00
-summary: "A guide and story about sending a 2nd-hand laptop from Brisbane to Uganda"
+summary: "The surprisingly difficult ordeal of sending a decade-old MacBook to a friend in a Ugandan refugee camp."
 hide_graph: true
 cover: /_media/shipping-laptop-uganda-cover.png
 hide_cover_in_article: true
 category: story
-status: draft
 ---
 
 *After travelling through twelve countries, clearing customs, surviving a seizure, and costing almost as much as it was worth, my decade-old MacBook was eventually found on a dusty shelf in a Ugandan hardware shop, surrounded by welding equipment.*
@@ -88,7 +87,7 @@ However, registration required a Tax Identification Number (TIN), which Django, 
 
 ## Getting a TIN number as a refugee
 
-Django sent an email to the EHS rep asking if it could be completed without a TIN, but received no reply. So he took matters into his own hands.
+Django sent an email to the EHS rep asking if it could be completed without a TIN, but received no reply. So he decided to sort it himself.
 
 In his words:
 
@@ -254,7 +253,7 @@ Django
 
 ---
 
-That email was sent on May 13th, nearly 6 weeks after my first attempt. After **~$426 AUD (~UGX 1,163,832)**, and ~36,000 km travelled across 12 countries over 42 days, he had the laptop.
+That email was sent nearly 6 weeks after my first attempt. After **~$426 AUD (~UGX 1,163,832)**, and ~36,000 km travelled across 12 countries over 42 days, he had the laptop.
 
 ![Django with the MacBook open, showing it working](../_media/shipping-laptop-uganda-django-macbook-2.jpg)
 
