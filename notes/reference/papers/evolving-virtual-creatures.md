@@ -1,6 +1,7 @@
 ---
 title: Evolving Virtual Creatures
 date: 2025-09-06 00:00
+category: paper
 modified: 2025-09-06 00:00
 status: draft
 ---

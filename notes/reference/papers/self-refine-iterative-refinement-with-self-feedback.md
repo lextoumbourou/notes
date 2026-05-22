@@ -1,6 +1,7 @@
 ---
 title: "Self-Refine: Iterative Refinement with Self-Feedback"
 date: 2024-09-29 00:00
+category: paper
 modified: 2024-09-29 00:00
 status: draft
 ---

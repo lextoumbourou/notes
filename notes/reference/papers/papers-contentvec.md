@@ -1,6 +1,7 @@
 ---
 title: ContentVec
 date: 2023-12-01 00:00
+category: paper
 modified: 2023-12-01 00:00
 status: draft
 summary: training a representation of speech that disentangles content information from speaker information

@@ -9,7 +9,7 @@ hide_cover_in_article: true
 category: story
 ---
 
-For the last few years, while finally earning my belated Bachelor's Degree in the University of London's "World Class" program, I've met some amazing people from all across the world, completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.
+For the last few years, while finally earning my belated Bachelor's Degree in the University of London's World Class program, I've met some amazing people from all across the world, completing their degrees after hours while balancing work, families, and other extremely challenging circumstances.
 
 But few have circumstances as challenging as Django’s.
 

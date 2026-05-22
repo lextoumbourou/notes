@@ -1,6 +1,7 @@
 ---
 title: AI-Induced Cognitive Atrophy
 date: 2026-05-07 06:33
+category: essay
 modified: 2026-05-07 09:14
 tags:
 - LearningWithAI

@@ -1,6 +1,7 @@
 ---
 title: "Software Factory"
 date: 2026-02-08 00:00
+category: essay
 modified: 2026-02-08 00:00
 cover: /_media/software-factory-cover.jpeg
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mecieamjac2d

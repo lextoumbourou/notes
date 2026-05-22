@@ -1,6 +1,7 @@
 ---
 title: On the Measure of Intelligence (2019)
 date: 2024-10-22 00:00
+category: paper
 modified: 2024-10-22 00:00
 summary: a shift in how we evaluate artificatial intelligence
 cover: _media/on-the-measure-of-intelligence-2019-fig3.png

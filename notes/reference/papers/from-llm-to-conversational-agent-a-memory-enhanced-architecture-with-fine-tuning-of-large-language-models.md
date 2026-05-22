@@ -1,6 +1,7 @@
 ---
 title: From LLM to Conversational Agent A Memory Enhanced Architecture with Fine-Tuning of Large Language Models
 date: 2024-10-11 00:00
+category: paper
 modified: 2024-10-11 00:00
 status: draft
 ---

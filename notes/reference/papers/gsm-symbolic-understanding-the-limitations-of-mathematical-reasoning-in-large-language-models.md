@@ -1,6 +1,7 @@
 ---
 title: "GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models"
 date: 2024-10-12 00:00
+category: paper
 modified: 2024-10-12 00:00
 status: draft
 ---

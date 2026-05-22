@@ -1,6 +1,7 @@
 ---
 title: High-Fidelity Audio Compression with Improved RVQGAN
 date: 2023-12-18 00:00
+category: paper
 modified: 2023-12-18 00:00
 status: draft
 ---

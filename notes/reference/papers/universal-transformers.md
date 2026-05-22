@@ -1,6 +1,7 @@
 ---
 title: Universal Transformers
 date: 2025-07-27 00:00
+category: paper
 modified: 2025-07-27 00:00
 status: draft
 ---

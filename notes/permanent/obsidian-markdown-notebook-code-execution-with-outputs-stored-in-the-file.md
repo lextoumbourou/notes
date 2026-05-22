@@ -1,6 +1,7 @@
 ---
 title: "Obsidian Markdown Notebook: code execution with outputs stored in the file"
 date: 2026-04-21 00:00
+category: project
 modified: 2026-04-21 00:00
 cover: /_media/obsidian-markdown-notebook-cover.png
 hide_cover_in_article: true

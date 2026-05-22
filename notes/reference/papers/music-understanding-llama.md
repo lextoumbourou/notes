@@ -1,6 +1,7 @@
 ---
 title: "Paper summary: Music Undersanding LLAMA: advancing text-to-music generation with question answering and captioning"
 date: 2023-10-15 00:00
+category: paper
 modified: 2023-10-15 00:00
 status: draft
 ---
