@@ -20,6 +20,8 @@ def add_bluesky_metadata(generator):
             article.bluesky_post = None
         if not hasattr(article, 'mastodon_post'):
             article.mastodon_post = None
+        if not hasattr(article, 'hn_post'):
+            article.hn_post = None
         if not hasattr(article, 'youtube_video'):
             article.youtube_video = None
         article.youtube_video_id = (

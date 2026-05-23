@@ -116,13 +116,15 @@
     </div>
     {% endif %}
 
-    {% if article.bluesky_post or article.mastodon_post %}
+    {% if article.bluesky_post or article.mastodon_post or article.hn_post %}
     <hr>
     <h3>Comments</h3>
     <p>Reply to this post on
       {%- if article.bluesky_post %} <a href="{{ article.bluesky_post }}" target="_blank" rel="noopener">Bluesky</a>{% endif %}
       {%- if article.bluesky_post and article.mastodon_post %} or{% endif %}
       {%- if article.mastodon_post %} <a href="{{ article.mastodon_post }}" target="_blank" rel="noopener">Mastodon</a>{% endif %}
+      {%- if article.hn_post and (article.bluesky_post or article.mastodon_post) %} or{% endif %}
+      {%- if article.hn_post %} <a href="{{ article.hn_post }}" target="_blank" rel="noopener">Hacker News</a>{% endif %}
       to join the conversation.</p>
     {% endif %}
 
