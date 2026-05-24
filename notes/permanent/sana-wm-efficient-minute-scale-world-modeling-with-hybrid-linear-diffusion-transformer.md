@@ -9,8 +9,10 @@ paper_title: "Sana-WM: Efficient Minute-Scale World Modeling with Hybrid Linear 
 ---
 
 Introduces a new world model called **SANA-WM**, that is camera-controlled and can generate a 60-second clip on a single GPU.
+
+Video is not my area of expertise, but nonetheless, I wanted to have a crack at understanding all the details.
  
-The architecture builds on their earlier work with **SANA-Video**
+The architecture builds on their earlier work by Nvidia with [SANA-Video](SANA-Video.md).
 
 At only 2.6B parameters, they can train it in only 15 days on only 64 H100 GPUs, using on 213K public video clips as training data.
 
@@ -22,7 +24,7 @@ They distill a variant with [NVFP4 Quantization](https://build.nvidia.com/spark/
   - Two-Stage Generation Pipeline
   - Robust Annotation Pipeline
   
-They consider distilling the long-video model from a short-video teacher, but claim that it doesn't provide enoug supervision to give them the scene persistence and "trajectory following" they want.
+They consider distilling the long-video model from a short-video teacher, but claim that it doesn't provide enough supervision to give them the scene persistence and "trajectory following" they want.
 
 ## Related Work
 

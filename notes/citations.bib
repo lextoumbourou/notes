@@ -84,6 +84,23 @@
   file = {/Users/lex/code/zotero/storage/R8RNZZMS/home_drone.html}
 }
 
+@misc{bahdanauNeuralMachineTranslation2016,
+  title = {Neural {{Machine Translation}} by {{Jointly Learning}} to {{Align}} and {{Translate}}},
+  author = {Bahdanau, Dzmitry and Cho, Kyunghyun and Bengio, Yoshua},
+  year = 2016,
+  month = may,
+  number = {arXiv:1409.0473},
+  eprint = {1409.0473},
+  primaryclass = {cs.CL},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.1409.0473},
+  urldate = {2026-05-24},
+  abstract = {Neural machine translation is a recently proposed approach to machine translation. Unlike the traditional statistical machine translation, the neural machine translation aims at building a single neural network that can be jointly tuned to maximize the translation performance. The models proposed recently for neural machine translation often belong to a family of encoder-decoders and consists of an encoder that encodes a source sentence into a fixed-length vector from which a decoder generates a translation. In this paper, we conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder-decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly. With this new approach, we achieve a translation performance comparable to the existing state-of-the-art phrase-based system on the task of English-to-French translation. Furthermore, qualitative analysis reveals that the (soft-)alignments found by the model agree well with our intuition.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computation and Language,Computer Science - Machine Learning,Computer Science - Neural and Evolutionary Computing,Statistics - Machine Learning},
+  file = {/Users/lex/code/zotero/storage/N9QNBZGD/Bahdanau et al. - 2016 - Neural Machine Translation by Jointly Learning to Align and Translate.pdf;/Users/lex/code/zotero/storage/Z4STEW7M/1409.html}
+}
+
 @misc{behrouzNestedLearningIllusion2025,
   title = {Nested {{Learning}}: {{The Illusion}} of {{Deep Learning Architectures}}},
   shorttitle = {Nested {{Learning}}},
@@ -113,6 +130,24 @@
   archiveprefix = {arXiv},
   keywords = {Computer Science - Information Retrieval},
   file = {/Users/lex/code/zotero/storage/KDF6SEQJ/Bito et al. - 2025 - Evaluating Position Bias in Large Language Model Recommendations.pdf;/Users/lex/code/zotero/storage/NVR8XHH4/2508.html}
+}
+
+@misc{chenSANAVideoEfficientVideo2025,
+  title = {{{SANA-Video}}: {{Efficient Video Generation}} with {{Block Linear Diffusion Transformer}}},
+  shorttitle = {{{SANA-Video}}},
+  author = {Chen, Junsong and Zhao, Yuyang and Yu, Jincheng and Chu, Ruihang and Chen, Junyu and Yang, Shuai and Wang, Xianbang and Pan, Yicheng and Zhou, Daquan and Ling, Huan and Liu, Haozhe and Yi, Hongwei and Zhang, Hao and Li, Muyang and Chen, Yukang and Cai, Han and Fidler, Sanja and Luo, Ping and Han, Song and Xie, Enze},
+  year = 2025,
+  month = oct,
+  number = {arXiv:2509.24695},
+  eprint = {2509.24695},
+  primaryclass = {cs.CV},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2509.24695},
+  urldate = {2026-05-23},
+  abstract = {We introduce SANA-Video, a small diffusion model that can efficiently generate videos up to 720x1280 resolution and minute-length duration. SANA-Video synthesizes high-resolution, high-quality and long videos with strong text-video alignment at a remarkably fast speed, deployable on RTX 5090 GPU. Two core designs ensure our efficient, effective and long video generation: (1) Linear DiT: We leverage linear attention as the core operation, which is more efficient than vanilla attention given the large number of tokens processed in video generation. (2) Constant-Memory KV cache for Block Linear Attention: we design block-wise autoregressive approach for long video generation by employing a constant-memory state, derived from the cumulative properties of linear attention. This KV cache provides the Linear DiT with global context at a fixed memory cost, eliminating the need for a traditional KV cache and enabling efficient, minute-long video generation. In addition, we explore effective data filters and model training strategies, narrowing the training cost to 12 days on 64 H100 GPUs, which is only 1\% of the cost of MovieGen. Given its low cost, SANA-Video achieves competitive performance compared to modern state-of-the-art small diffusion models (e.g., Wan 2.1-1.3B and SkyReel-V2-1.3B) while being 16x faster in measured latency. Moreover, SANA-Video can be deployed on RTX 5090 GPUs with NVFP4 precision, accelerating the inference speed of generating a 5-second 720p video from 71s to 29s (2.4x speedup). In summary, SANA-Video enables low-cost, high-quality video generation.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Computer Vision and Pattern Recognition},
+  file = {/Users/lex/code/zotero/storage/ZZMCE3GR/Chen et al. - 2025 - SANA-Video Efficient Video Generation with Block Linear Diffusion Transformer.pdf;/Users/lex/code/zotero/storage/6HHE9BTC/2509.html}
 }
 
 @article{CrossEntropy2021,
@@ -547,6 +582,23 @@
   abstract = {Optimizing a given metric is a central aspect of most current AI approaches, yet overemphasizing metrics leads to manipulation, gaming, a myopic focus on short-term goals, and other unexpected negative consequences. This poses a fundamental contradiction for AI development. Through a series of real-world case studies, we look at various aspects of where metrics go wrong in practice and aspects of how our online environment and current business practices are exacerbating these failures. Finally, we propose a framework towards mitigating the harms caused by overemphasis of metrics within AI by: (1) using a slate of metrics to get a fuller and more nuanced picture, (2) combining metrics with qualitative accounts, and (3) involving a range of stakeholders, including those who will be most impacted.},
   archiveprefix = {arXiv},
   keywords = {Computer Science - Artificial Intelligence,Computer Science - Computers and Society}
+}
+
+@misc{vaswaniAttentionAllYou2017,
+  title = {Attention {{Is All You Need}}},
+  author = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, Lukasz and Polosukhin, Illia},
+  year = 2023,
+  month = aug,
+  number = {arXiv:1706.03762},
+  eprint = {1706.03762},
+  primaryclass = {cs.CL},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.1706.03762},
+  urldate = {2026-05-24},
+  abstract = {The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computation and Language,Computer Science - Machine Learning},
+  file = {/Users/lex/code/zotero/storage/F3TW8GI9/Vaswani et al. - 2023 - Attention Is All You Need.pdf;/Users/lex/code/zotero/storage/DX573J6D/1706.html}
 }
 
 @misc{wangHeavySkillHeavyThinking2026,
