@@ -110,15 +110,17 @@ A strict contract for how assets must be requested is described in ([`asset_prot
 
 ### 5. Context-Aware Code Implementation
 
+This phase is where the model actually generates the code.
+
 Before writing gameplay logic, the agent merges the game design doc's parameters into the game config (`gameConfig.json`), enforcing a data-driven interface between design and code.
 
 To keep context light, they introduce a "three-layer reading strategy", where the `read_file` tool loads:
 
 1. an API summary for the template system
-2. the template to be modified
+2. a template file to be modified
 3. the implementation guide (loaded last to maximise salience)
 
-Then, code generation follows the [Template Method Pattern](../../permanent/template-method-pattern.md), a software engineering design pattern, where the base class defines the skeleton of an algorithm, with the details to be filled in by subclasses.
+The template file approach is based on the [Template Method Pattern](../../permanent/template-method-pattern.md), a software engineering design pattern, where the base class defines the skeleton of an algorithm, with the details filled in by its subclasses.
 
 This means that the agent doesn't have to write the project from scratch - it simply copies template files and overrides the hook methods it needs to inject game-specific logic.
 
@@ -134,7 +136,7 @@ create() {
   // ... other methods
 }
 
-protected setupCustomCollisions(): void {
+protected setupPlayers(): void {
   // no-op by default — overridden in the copied template
 }
 ```
@@ -143,25 +145,23 @@ The agent copies a template file with a class that inherits from the base scene 
 
 ```typescript
 // Level1Scene.ts (copied from _TemplateLevel.ts)
-protected override setupCustomCollisions(): void {
-  utils.addOverlap(this, this.player, this.coins, (_player, coin) => {
-    coin.destroy();
-    this.score += 10;
-  });
+protected override setupPlayers(): void {
+  this.player = this.physics.add.sprite(100, 450, "ironman");
+  this.player.setCollideWorldBounds(true);
 }
 ```
 
 ### 6. Verification and Self-Correction
 
-The agent reads a debug protocol ([`debug_protocol.md`](https://github.com/leigest519/OpenGame/blob/c54307efe1dab927e7fc52dbb92af6b3df1d1c66/agent-test/docs/debug_protocol.md#L4)) to perform a self-review over common generative failure modes, then executes build (`npm run build`) and test (`npm run test`) commands under headless browser evaluation.
+The agent reads a debug protocol ([`debug_protocol.md`](https://github.com/leigest519/OpenGame/blob/c54307efe1dab927e7fc52dbb92af6b3df1d1c66/agent-test/docs/debug_protocol.md#L4)) to perform a static self-review over common generative failure modes, then executes build (`npm run build`) and test (`npm run test`) commands in a headless browser environment for dynamic checks.
 
 If build or test failures occur, the agent parses the compiler output, finds the faulty script, and tries to repair the project until the game is playable.
 
-The Debug Skill, described next, maintains an evolving record of common errors and their fixes.
+Using the Debug Skill, which I'll talk more about next, the agent evolves a record of common errors and their fixes, and gets better at debugging over time. Super cool.
 
 ## Agent Evolution with Game Skill
 
-**Game Skill** is a "reusable, evolving capability" composed of two components: Template Skill and Debug Skill. Together, they let the agent scaffold stable architectures and systematically repair integration errors, rather than patching isolated syntax bugs. The templates and error/fix catalogue form a kind of long-term [Memory](../../permanent/memory.md) across projects.
+**Game Skill** is a "reusable, evolving capability" that they equip the agent with, composed of two components: Template Skill and Debug Skill. Together, they let the agent scaffold stable architectures and systematically repair integration errors, with an evolving catalogue of templates and error/fix pairs that forms a kind of long-term [Memory](../../permanent/memory.md) across projects. In other words, the agent gets better at scaffolding and fixing issues the more games it creates.
 
 ### Template Skill
 
@@ -175,13 +175,13 @@ As the agent completes games, reusable fragments are extracted and merged back i
 
 Debug Skill maintains a living debugging protocol $P$, continually updated with observations from the verification and self-correction step in the agent's workflow.
 
-Each new failure pattern is appended as a verified triple, with an error signature, a root cause, and a verified fix.
+Each new failure pattern is appended as a triple, with an error signature, a root cause, and a verified fix.
 
-This means the agent is accumulating a library of verified fixes and can systematically resolve common integration failures across games, rather than re-diagnosing the same classes of error each time.
+This means the agent is accumulating a library of fixes over time, similar to the template library, and can learn to systematically resolve common integration failures across games, rather than re-diagnosing each time.
 
 ## OpenGame-Bench
 
-OpenGame-Bench is a new evaluation pipeline for agentic game generation. It actually runs the games in a headless browser and scores them across three metrics:
+The final paper contribution is OpenGame-Bench, a new evaluation pipeline for agentic game generation. It actually runs the games in a headless browser and scores them across three metrics:
 
 * **Build Health**: whether the project compiles and runs without critical errors.
 * **Visual Usability**: whether the game is visually coherent and navigable, assessed via VLM judging.
@@ -191,9 +191,9 @@ The authors evaluate the framework across 150 game prompts.
 
 ## Results
 
-Across the 150 game prompts, OpenGame outperforms both direct LLM generation and existing coding-agent baselines (such as Cursor) on all three metrics.
+Across the game prompts, OpenGame outperforms both direct LLM generation and existing coding-agent baselines (such as Cursor) on all three metrics.
 
-The strongest configuration is OpenGame with **Claude Sonnet 4.6** as the reasoning backend, scoring **72.4 / 67.2 / 65.1** on Build Health / Visual Usability / Intent Alignment, respectively, beating out Cursor with Claude by **5.6 / 5.8 / 6.2** points.
+The strongest configuration is OpenGame agent with **Claude Sonnet 4.6** as the reasoning backend, scoring **72.4 / 67.2 / 65.1** on Build Health / Visual Usability / Intent Alignment, respectively, beating out Cursor with Claude by **5.6 / 5.8 / 6.2** points.
 
 Running the agent on the open **GameCoder-27B** model instead scores lower than the Sonnet config, but it is still very strong for an open 27B model, competitive with much larger proprietary agentic systems.
 
