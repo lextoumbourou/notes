@@ -3,6 +3,8 @@ title: LLM Training Pipeline
 date: 2026-04-29 00:00
 modified: 2026-04-29 00:00
 status: draft
+aliases:
+- LLM Training Recipe
 ---
 
 A typical pipeline for training [Large Language Models](large-language-models.md).
