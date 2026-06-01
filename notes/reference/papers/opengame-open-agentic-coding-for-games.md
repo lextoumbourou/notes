@@ -20,7 +20,7 @@ aliases:
 
 This paper describes an *agentic framework* for designing end-to-end web games from text prompts, called **OpenGame** [@jiangOpenGameOpenAgentic2026], from researchers at the Chinese University of Hong Kong's Multimedia Lab.
 
-They throw the kitchen sink at the problem of game development. Including training a new domain-specialised coding model, **GameCoder-27B**, which powers a custom agentic workflow; a reusable Game Skill comprising of a self-evolving **Template Skill** and **Debug Skill**; and, finally, a new benchmark and evaluation framework, **OpenGame-Bench**.
+They throw the kitchen sink at the problem of game development, including training a new domain-specialised coding model, **GameCoder-27B**, which powers a custom agentic workflow; a reusable **Game Skill** comprising a self-evolving **Template Skill** and **Debug Skill**; and, finally, a new benchmark and evaluation framework, **OpenGame-Bench**.
 
 The authors identify three reasons why general-purpose LLMs struggle to produce complete, playable games:
 
@@ -91,13 +91,13 @@ Once the game archetype is known, the agent runs the `run_shell_command` tool to
 
 ### 3. Game Design Document (GDD) Generation
 
-Next, the agent invokes `generate-gdd` tool to produce a technical Game Design Document. This tool dynamically loads game-type-specific API constraints from the scaffolded documentation, ensuring the proposed mechanics are feasible under the selected framework. The agent extracts the implementation roadmap from the GDD and uses `todo_write` to refine its high-level plan into granular, file-specific actions.
+Next, the agent invokes the `generate-gdd` tool to produce a technical Game Design Document. This tool dynamically loads game-type-specific API constraints from the scaffolded documentation, ensuring the proposed mechanics are feasible under the selected framework. The agent extracts the implementation roadmap from the GDD and uses `todo_write` to refine its high-level plan into granular, file-specific actions.
 
 ![opengame-gdd-generation.png](../../_media/opengame-gdd-generation.png)
 
 ### 4. Multimodal Asset Synthesis
 
-To generate game assets (stuff like backgrounds, sprites, audio, etc.), the agent invokes the `generate-game-assets` tool, which calls multimodal models  to produce the assets described in the GDD's asset registry, along with an `asset-pack.json` manifest.
+To generate game assets (stuff like backgrounds, sprites, audio, etc.), the agent invokes the `generate-game-assets` tool, which calls multimodal models to produce the assets described in the GDD's asset registry, along with an `asset-pack.json` manifest.
 
 ![opengame-asset-example.png](../../_media/opengame-asset-example.png)
 *A sample of the assets generated for the Marvel platformer demo: character animation frames, a tileset, an effect, and a level background.*
@@ -106,7 +106,7 @@ For tile-based games, the `generate-tilemap` tool converts ASCII layouts into st
 
 The agent then reads the asset pack to record exact texture and asset keys needed during implementation, substantially reducing downstream asset-reference hallucinations.
 
-A strict contract for how assets must be requested is described in ([`asset_protocol.md`](https://github.com/leigest519/OpenGame/blob/c54307efe1dab927e7fc52dbb92af6b3df1d1c66/agent-test/docs/asset_protocol.md)), one of the fixed protocol files that was copied into the scaffolding.
+A strict contract for how assets must be requested is described in [`asset_protocol.md`](https://github.com/leigest519/OpenGame/blob/c54307efe1dab927e7fc52dbb92af6b3df1d1c66/agent-test/docs/asset_protocol.md), one of the fixed protocol files copied into the scaffolding.
 
 ### 5. Context-Aware Code Implementation
 
@@ -165,11 +165,11 @@ Using the Debug Skill, which I'll talk more about next, the agent evolves a reco
 
 ### Template Skill
 
-Template Skill grows an evolving library of specialised project skeletons ($L$), starting from a game-agnostic meta template ($M_0$) and expanding into specialised template families like gravity-based side-view and top-down continuous motion.
+Template Skill grows an evolving library, $L$, of specialised project skeletons, starting from a game-agnostic meta template, $M_0$, and expanding into specialised template families like gravity-based side-view and top-down continuous motion.
 
-The meta template ($M_0$) intentionally assumes no genre, physics regime, or gameplay mechanic, just the universal structure required for a playable game - things like project layout, initialisation, asset loading, scene loops, and configuration interfaces.
+The meta template $M_0$ intentionally assumes no genre, physics regime, or gameplay mechanic, just the universal structure required for a playable game - things like project layout, initialisation, asset loading, scene loops, and configuration interfaces.
 
-As the agent completes games, reusable fragments are extracted and merged back into the library ($L$). This reduces the search space during generation and stabilises project-wide structure across the games it generates.
+As the agent completes games, reusable fragments are extracted and merged back into the library $L$. This reduces the search space during generation and stabilises project-wide structure across the games it generates.
 
 ### Debug Skill
 
@@ -193,13 +193,13 @@ The authors evaluate the framework across 150 game prompts.
 
 Across the game prompts, OpenGame outperforms both direct LLM generation and existing coding-agent baselines (such as Cursor) on all three metrics.
 
-The strongest configuration is OpenGame agent with **Claude Sonnet 4.6** as the reasoning backend, scoring **72.4 / 67.2 / 65.1** on Build Health / Visual Usability / Intent Alignment, respectively, beating out Cursor with Claude by **5.6 / 5.8 / 6.2** points.
+The strongest configuration is the OpenGame agent with **Claude Sonnet 4.6** as the reasoning backend, scoring **72.4 / 67.2 / 65.1** on Build Health / Visual Usability / Intent Alignment, respectively, beating out Cursor with Claude by **5.6 / 5.8 / 6.2** points.
 
 Running the agent on the open **GameCoder-27B** model instead scores lower than the Sonnet config, but it is still very strong for an open 27B model, competitive with much larger proprietary agentic systems.
 
 ![opengame-results-chart.png](../../_media/opengame-results-chart.png)
 
-*OpenGame-Bench scores (Table 1). OpenGame with Claude Sonnet 4.6 leads on all three metrics; OpenGame on its own GameCoder-27B is competitive with much larger proprietary agentic systems.*
+*OpenGame-Bench scores (Table 1). OpenGame with Claude Sonnet 4.6 leads on all three metrics; even on its own GameCoder-27B model, it holds up against far larger proprietary systems.*
 
 The authors perform a series of ablations to isolate the usefulness of parts of the framework. The ablations suggest the *framework* matters more than the backbone model alone: removing the hook-driven implementation step hurts performance badly, and much of the gain traces to the scaffolding and workflow rather than the model itself.
 
