@@ -11,7 +11,7 @@ alias:
 - Embeddings
 ---
 
-An **embedding** is a [Vector](vector.md) of numbers that represents something - a word, a token, an image, a user - in a way that captures meaningful relationships. Things that are semantically similar end up close together in that space.
+An **embedding** is a learned [Feature Vector](feature-vector.md) that represents something discrete. That could be a word, an image, a movie. The embedded is designed in such a way that captures meaningful relationships, where things that are semantically similar end up close together in that space.
 
 ## The intuition: recommending movies
 

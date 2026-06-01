@@ -36,6 +36,8 @@ $$
 \end{bmatrix}
 $$
 
+These types of vectors, used to model something tangible or *discreet*, are commonly called [Feature Vectors](feature-vector.md).
+
 We can plot these numbers in a coordinate system to see how the flowers relate to each other. This example from [Wikipedia](https://commons.wikimedia.org/wiki/File:Iris_dataset_scatterplot.svg) generates a 2d scatterplot for each pair of values.
 
 ![Iris scatterplot](../_media/iris-scatterplot.png)
@@ -46,6 +48,6 @@ We can plot these numbers in a coordinate system to see how the flowers relate t
 * We can multiply vectors by a value. See [Vector Scaling](vector-scaling.md).
 * We can combine vectors in various ways. See [Dot Product](dot-product.md) or [Element-wise product](Element-wise product).
 
-We describe a [Ray](ray.md) with a similar notation to vectors. However, a Ray doesn't have a length—only a direction to continue infinitely.
+We describe a [Ray](ray.md) with a similar notation to vectors. However, a Ray doesn't have a length - only a direction to continue infinitely.
 
 [@3blue1brownVectorsChapterEssence2016]
