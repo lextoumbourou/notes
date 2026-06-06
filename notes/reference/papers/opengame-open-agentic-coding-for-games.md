@@ -6,6 +6,7 @@ category: paper
 cover: /_media/jiang-et-all-figure-2.png
 hide_cover_in_article: true
 summary: "An agentic framework for end-to-end game creation"
+youtube_video: https://www.youtube.com/watch?v=qHpT35qNyPA
 mastodon_post: https://fedi.notesbylex.com/@lex/116489956360313366
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mknxwdphfs2s
 tags:
@@ -20,7 +21,7 @@ aliases:
 
 This paper describes an *agentic framework* for designing end-to-end web games from text prompts, called **OpenGame** [@jiangOpenGameOpenAgentic2026], from researchers at the Chinese University of Hong Kong's Multimedia Lab.
 
-They throw the kitchen sink at the problem of game development, including training a new domain-specialised coding model, **GameCoder-27B**, which powers a custom agentic workflow; a reusable **Game Skill** comprising a self-evolving **Template Skill** and **Debug Skill**; and, finally, a new benchmark and evaluation framework, **OpenGame-Bench**.
+They throw the kitchen sink at the problem of game development. They develop a new multi-phase workflow and explore powering it by training a domain-specialised coding model, **GameCoder-27B**. They also develop a reusable **Game Skill** comprising a self-evolving **Template Skill** and **Debug Skill**. Finally, they introduce a new benchmark and evaluation framework, **OpenGame-Bench**.
 
 The authors identify three reasons why general-purpose LLMs struggle to produce complete, playable games:
 
