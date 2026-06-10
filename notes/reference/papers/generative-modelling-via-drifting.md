@@ -18,7 +18,7 @@ Where Diffusion/Flow Matching performs iterative denoising at inference time, Dr
 
 ![drifting-models-figure-4.png](../../_media/drifting-models-figure-4.png)
 
-The core of the algorithm is the computation of a "drift field", which is a vector for each generated sample that points toward the direction of the real distribution. The goal is to calculate a drift field where when model's output distribution matches the real distribution, the drift is zero.
+The core of the algorithm is the computation of a "drift field", which is a vector for each generated sample that points toward the direction of the real distribution. The goal is to calculate a drift field where, when the model's output distribution matches the real distribution, the drift is zero.
 
 The drift field is calculated using positive and negative samples. Positive samples are real examples from the same class in the training data. Negative samples are other model outputs in the batch (though other negatives, such as real examples from other classes, are also tested). We want the drift field to attract toward positives, repel from negatives, but at equilibrium, attraction and repulsion balance out: $\mathbf{V} = \mathbf{V}^+ - \mathbf{V}^- = 0$
 
@@ -29,7 +29,7 @@ Leaving aside computing the drifting field for a second, the loss computation is
 We compute a drifting vector for each output sample and train the model so its output moves toward its drifted version, indirectly minimising the magnitude of the drift. We use stop-gradient to avoid back-propagating through the drift computation.
 
 ```python
-noise = rand([N, C])
+noise = randn([N, C])
 
 x = model(noise)
 y_neg = x
@@ -42,7 +42,7 @@ x_drifted = stopgrad(x + V)
 loss = mse_loss(x - x_drifted)
 ```
 
- The drifting can occur in feature space (via an image encoder such as SimCLR or MoCo-v2) or even raw pixel space. Albeit the best results on ImageNet came from feature space.
+ The drifting loss is computed in the feature space of a self-supervised image encoder (SimCLR and MoCo-v2 work; a custom "latent-MAE" works best). The formulation also supports drifting in raw data space, which they use for the 2D toy examples and the robotics experiments, but the authors report they were unable to make ImageNet work without a feature encoder. Note this is separate from the choice of *generation* space: both the latent-space (with VAE) and pixel-space (no VAE) generators compute their drifting loss in a feature space.
 
 ## Computing the Drift Vector - V
 
@@ -88,7 +88,7 @@ Distance to negative samples
 
 ### 2. Mask out self
 
-Since we're using the batch of model outputs as negatives, we want to ensure that the model ignores any self-distances. In practice, we set this to a very large distance, to ensure it's ignored the softmax (nearby generated samples contribute stronger repulsion, so we don't want a sample repelling itself).
+Since we're using the batch of model outputs as negatives, we want to ensure that the model ignores any self-distances. In practice, we set this to a very large distance, to ensure it's ignored in the softmax (nearby generated samples contribute stronger repulsion, so we don't want a sample repelling itself).
 
 ```python
 # Add a large value to the diagonal so self-distances are ignored in softmax
@@ -121,7 +121,7 @@ A_col = softmax(logit, axis=0)  # normalize over x samples
 A = np.sqrt(A_row * A_col)      # geometric mean
 ```
 
-This bidirectional normalisation helps prevent any single sample from dominating the attention.
+This bidirectional normalisation helps prevent any single sample from dominating the attention. The paper ablates it: bidirectional improves FID from 8.92 to 8.46 (Table 11).
 
 **A** - Combined attention matrix (positives on left, negatives on right):
 
@@ -222,6 +222,8 @@ V_total = sum(compute_V(x, y_pos, y_neg, t) for t in temperatures)
 ```
 
 Lower temperatures (0.02) draw sharp attention to the nearest neighbours. Higher temperatures (0.2) spread attention more broadly. Combining them gives a richer gradient signal.
+
+Note these temperature values assume the features and the drift have both been normalised (Appendix A.6); on raw, unnormalised features the same values won't transfer.
 
 ## Classifier-Free Guidance
 
