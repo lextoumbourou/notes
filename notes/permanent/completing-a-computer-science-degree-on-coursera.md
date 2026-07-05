@@ -6,6 +6,8 @@ modified: 2026-07-05 19:05
 summary: "A short write-up on my experience completing a Computer Science BSc from my bedroom."
 cover: /_media/bachelors-after-hours/uni-assessment-results.png
 hide_cover_in_article: true
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mpwiq6ttok2b
+mastodon_post: https://fedi.notesbylex.com/@lex/116869448984978667
 tags:
   - Career
   - LearningAndTeaching
