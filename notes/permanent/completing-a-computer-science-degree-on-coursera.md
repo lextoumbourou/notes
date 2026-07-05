@@ -12,6 +12,8 @@ tags:
 
 In September 2022, I impulsively signed up for a [Bachelor's Degree in Computer Science](https://www.coursera.org/degrees/bachelor-of-science-computer-science-london) after seeing an ad for it on Coursera. Getting a degree had been on my mind for quite some time, after a long career without one, but I wasn't sure how to go about it. And now, about 3 years and 9 months later (with the last 3 of those months spent waiting for my results), I've finally completed my degree - with First Class Honours.
 
+![The Coursera ad for the University of London BSc Computer Science](../_media/bachelors-after-hours/coursera-uol-ad.png)
+
 ![My final assessment results](../_media/bachelors-after-hours/uni-assessment-results.png)
 
 This article is a brief write-up of my experience.
@@ -20,7 +22,7 @@ This article is a brief write-up of my experience.
 
 My degree-less tech career spans nearly 21 years, with about 14 of those as a software developer. I left high school early as a teenager; it's a story for another day, but basically, I was ready to enter the workforce and become independent as early as possible. I did have a desire to work in tech (it seemed like a better option than the jobs I had at KFC and a mattress factory), completed a series of certifications like MCP, MCSA, and A+ (they were all the rage back then), which was enough to get my first helpdesk job at the age of 18. I followed my interests throughout my career, which eventually led to software engineering and, later, a focus on machine learning.
 
-So far, my lack of a degree hasn't been a barrier to my career. I've heard from colleagues that Australia tends to value experience and attitude over formal education, whereas the opposite can be true overseas, so I like to think I got lucky in that respect. I'd go as far as to say that being "self-taught" is typically seen as a positive by employers, provided you appear to have actually taught yourself the skills needed to do the job. That said, I'm not really "self-taught" per se. My education has been a bit more piecemeal, learning the things I thought I needed via MOOCs (big shout-outs to David J. Malan's CS50 and Jeremy Howard's fastai), certificates, books, and Kaggle. I've always had something to put in the Education section of my resume.
+So far, my lack of a degree hasn't been a barrier to my career. I've heard from colleagues that Australia tends to value experience and attitude over formal education, whereas the opposite can be true overseas, so I like to think I got lucky in that respect. I'd go as far as to say that being "self-taught" is typically seen as a positive by employers, provided you appear to have actually taught yourself the skills needed to do the job. That said, I'm not really "self-taught" per se. My education has been a bit more piecemeal, learning the things I thought I needed via MOOCs (big shout-outs to David J. Malan's CS50 and Jeremy Howard's fastai), certificates, books, and Kaggle. I've always had something to put in the Education section of my resume. I also believe software is a career that should be treated like a trade, with work interspersed with education (see [Software Development is a Trade](software-development-is-a-trade.md)). Of course, I acknowledge my own journey biases me here.
 
 However, a lack of a degree has impacted my ability to work overseas. In my younger years, I made it to the final rounds of an interview with a US company I was interested in, only to learn that the E-3 visa, an Australia-US-specific agreement, requires at least a Bachelor's Degree. Though I have no intention of working overseas at the moment, it's nice to have the option.
 
@@ -30,9 +32,9 @@ Finally, I'm not getting any younger. I sometimes wonder if I should have got my
 
 ## About The Degree
 
-Firstly, the degree is done 100% remotely.
+The degree is done 100% remotely.
 
-It's hosted on Coursera - that's where you watch the lectures, and where they host the class resources, such as lab notebooks and quizzes. Coursera also provide forums to chat with teaching staff (which are rarely used), and this is how you upload your assignments.
+It's hosted on Coursera - that's where you watch the lectures, and where they host the class resources, such as lab notebooks and quizzes. Coursera also provides forums to chat with teaching staff (which are rarely used), and this is how you upload your assignments.
 
 The program is run by the University of London Worldwide, its distance-learning arm. And Goldsmiths, University of London, marks the assignments and exams.
 
@@ -58,7 +60,7 @@ Since this is education that's directly applicable to my career, it's also tax-d
 
 ## Workload
 
-Just because it's remote doesn't mean it's easy. Even if you're a software veteran, like some of us were (alumni working at FAANG companies and tech leads at large companies), familiarity with the corpus helps, but you still have to do the work.
+Just because it's remote doesn't mean it's easy. Even if you're a software veteran, like some of us (alumni working at FAANG companies and tech leads at large companies), familiarity with the corpus helps, but you still have to do the work.
 
 Each module has mandatory midterm assignments, followed by either a final exam or a final assignment. The assignments are often long and challenging. The exams are no picnic either.
 
@@ -103,13 +105,13 @@ If you want to dig deeper into the modules, the student community maintains a co
 
 ## The Best Parts
 
-One of my favourite parts of the course was working with the other students. Coursera invites you into a student Slack channel, which is basically a Lord of the Flies-style free-for-all, with no apparent official representation of any kind.
+One of my favourite parts of the course was working with the other students. Coursera invites you into a student Slack workspace, which is basically a Lord of the Flies-style free-for-all, with no apparent official representation of any kind.
 
-Some students took it upon themselves to run the Slack channel with an iron fist, reprimanding people for posting in the wrong channel.
+Some students took it upon themselves to run the Slack with an iron fist, reprimanding people for posting in the wrong channel.
 
 In fact, for many people, their first experience meeting fellow students was a rude message in `#general` for their introduction, when it clearly should have been posted in `#intros`.
 
-There are really fascinating people from all over the world, and many in the industry, like me, are alumni of FAANG companies. Others worked through the war in Ukraine. One of my friends was funding her education while running her own web development studio. And there's my friend Django, who's been completing his degree from a refugee camp in Uganda, powering his laptop off a solar panel and studying on mobile data. His story turned into a saga of its own: [Shipping a Laptop to a Refugee Camp in Uganda](shipping-a-laptop-to-a-refugee-camp-in-uganda.md).
+And yet, there are really fascinating people from all over the world, and many in the industry, like me. Some worked through the war in Ukraine. One of my friends was funding her education while running her own web development studio. And there's my friend Django, who's been completing his degree from a refugee camp in Uganda, powering his laptop off a solar panel and studying on mobile data. His story turned into a saga of its own: [Shipping a Laptop to a Refugee Camp in Uganda](shipping-a-laptop-to-a-refugee-camp-in-uganda.md).
 
 One of my fellow students took 4 modules every semester and, in her words, "gave birth twice in this degree, lost both my grandparents along the way, and I'm still doing the same 4, working a full-time job as a teacher and have already completed my master's in Jan 2025 (I started it 4 months into this degree)."
 
@@ -146,7 +148,7 @@ In Feb 2025, about 2.5 years into my degree, the uni launched an official AI pol
 
 > "Submitting work which has been produced by software, or as the result of providing prompts or queries to any third-party service, either in full or in part and without acknowledgement, is a form of contract cheating. This includes the use of Large Language Model/AI chatbots." - General Regulation 7.9
 
-Post that, they introduced a three-level framework for AI in assessment. Level Zero means no AI at all (think locked-down browser exams). Level One means you can use it for brainstorming and structuring, as long as you declare it. And Level Two means the assessment actually *requires* you to use AI, for example, generating an output with it and then critiquing the result.
+After that, they introduced a three-level framework for AI in assessment. Level Zero means no AI at all (think locked-down browser exams). Level One means you can use it for brainstorming and structuring, as long as you declare it. And Level Two means the assessment actually *requires* you to use AI, for example, generating an output with it and then critiquing the result.
 
 I can only imagine the difficulty of being an educator trying to strike a balance between preventing people from totally phoning in submissions with AI and the reality that AI is almost certainly going to be part of someone's professional life.
 
