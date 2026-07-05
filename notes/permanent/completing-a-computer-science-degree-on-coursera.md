@@ -18,9 +18,9 @@ This article is a brief write-up of my experience.
 
 ## My Background
 
-My degree-less tech career spans nearly 21 years, with about 14 of those as a software developer and MLE. I left high school early as a teenager; I was ready to enter the workforce and become independent as early as possible. I managed to get into tech via certifications like MCP, MCSA, and A+ (they were all the rage back then), which was enough to land a helpdesk job at the age of 18. From there, I followed my interests, which eventually led to software engineering and, later, a focus on machine learning.
+My degree-less tech career spans nearly 21 years, with about 14 of those as a software developer and MLE. I left high school early as a teenager; I was ready to enter the workforce and become independent as early as possible. I got into tech through certifications like MCP, MCSA, and A+ (they were all the rage back then), which was enough to land a helpdesk job at 18. From there, I followed my interests, which eventually led to software engineering and, later, a focus on machine learning.
 
-So far, my lack of a degree hasn't been a barrier to my career. I've heard from colleagues that Australia tends to value experience and attitude over formal education, whereas the opposite can be true overseas, so I got lucky in that respect. I'd go as far as to say that being "self-taught" is typically seen as a positive by employers, provided you appear to have actually taught yourself the skills needed to do the job. That said, I'm not really "self-taught" per se - I think "self-educated" is a better word for it. I've collected the skills I've needed for the jobs I wanted via MOOCs (shouts to David J. Malan's CS50, Andrew Ng's ML courses and Jeremy Howard's fastai), certificates, books, and Kaggle. I've always had something to put in the Education section of my resume. I've written before about my opinion that [Software Development is a Trade](software-development-is-a-trade.md), and that education makes sense interspersed with work experience. Of course, I acknowledge that my own journey is a huge bias here.
+So far, my lack of a degree hasn't been a barrier to my career. I've heard from colleagues that Australia tends to value experience and attitude over formal education, whereas the opposite can be true overseas, so maybe I got lucky in that respect. I'd go as far as to say that being "self-taught" is typically seen as a positive by employers, provided you appear to have actually taught yourself the skills needed to do the job. That said, I'm not really "self-taught" - I think "self-educated" is a better term. I've collected the skills I've needed for the jobs I wanted via MOOCs (shouts to David J. Malan's CS50, Andrew Ng's ML courses and Jeremy Howard's fastai), certificates, books, and Kaggle. I've always had something to put in the Education section of my resume. I've written before about my opinion that [Software Development is a Trade](software-development-is-a-trade.md), and that education makes sense interspersed with work experience. Of course, I acknowledge that my journey makes me quite biased here.
 
 However, a lack of a degree has impacted my ability to work overseas. In my younger years, I made it to the final rounds of an interview with a US company I was interested in, only to learn that the E-3 visa, an Australia-US-specific agreement, requires at least a Bachelor's Degree. Though I have no intention of working overseas at the moment, it's nice to have the option.
 
@@ -60,13 +60,13 @@ Since this is education that's directly applicable to my career, it's also tax-d
 
 Just because it's online doesn't mean it's easy. Even if you're a software veteran, like myself and many of the other students, familiarity with the corpus helps, but you still have to do the work.
 
-Each module has mandatory midterm assignments, followed by either a final exam or a final assignment. The assignments are often long and challenging. The exams are no picnic either.
+Each module has mandatory midterm assignments, followed by either a final exam or a final assignment. The assignments are often long and challenging, and the exams are pretty tough too.
 
-They allow you to take up to 4 modules per session (or 2 plus the final project), plus a retake, and you have to complete them in 6 years, which requires about 2 modules per session. After completing the PBA, I took an average of about 3 modules per session, getting the RPL certificates (see below) in between sessions. In the final sessions I took on 4 modules, which was a lot.
+They allow you to take up to 4 modules per session (or 2 plus the final project), plus a retake, and you have to complete them in 6 years, which requires about 2 modules per session. After completing the PBA, I took an average of about 3 modules per session, getting the RPL certificates (see below) in between sessions. In the final sessions, I took on 4 modules, which was a lot.
 
-However, many of the students opt to do 4 modules the whole way through, and I think the fastest possible time you can complete the course is 3 years flat.
+However, many students opt to complete 4 modules straight through, and I think the fastest possible time to complete the course is 3 years flat.
 
-Generally, I found that during the weeks surrounding midterms and exams, the degree would consume most of my free time. The workload ramped up significantly from the earlier to the later modules, with the last 2 sessions easily the hardest. There were some really intense periods of my life where I would wake up at 4am, complete a four-hour exam, work through the day, then work on an assignment at night.
+Generally, I found that during the weeks leading up to midterms and exams, the degree would consume most of my free time. The workload ramped up significantly from the earlier to the later modules, with the last 2 sessions easily the hardest. There were some really intense periods of my life where I would wake up at 4am, complete a four-hour exam, work through the day, then work on an assignment at night.
 
 ## Recognition of Prior Learning
 
@@ -82,13 +82,13 @@ I interspersed these with my regular modules. I finished the Google certificate 
 
 The topics are pretty typical of a Bachelor's Degree in Computer Science, no surprises. Some math, although less than an engineering degree, and most things are quite hands-on.
 
-There were quite a few interesting projects as coursework. Some highlights include a JavaScript audio visualiser, a couple of JavaScript games (including a pool simulation which you were encouraged to put a twist on), a DJ simulator built with JUCE, an evolutionary algorithms project inspired by Karl Sims' 1994 [*Evolving Virtual Creatures*](https://youtu.be/JBgG_VSP7f8), an interesting collection of signal processing exercises including building an object detector using Frame Differencing and Background Subtraction, plus a few different research projects based around scraping and analysing web data, and and, finally, open-ended final project, where I built a breast-cancer detection mammography classifier that trains and runs end-to-end on Apple Silicon (see [cm3070-final-project](https://github.com/lextoumbourou/cm3070-final-project)).
+There were quite a few interesting projects as coursework. Some highlights include some audio visualisers, a couple of JavaScript games (including a pool simulation which you were encouraged to put a twist on), a DJ simulator built with JUCE, an evolutionary algorithms project inspired by Karl Sims' 1994 [*Evolving Virtual Creatures*](https://youtu.be/JBgG_VSP7f8), an interesting collection of signal processing exercises, plus a few different research projects based around scraping and analysing web data; and, finally, the open-ended final project, where I built a breast-cancer detection mammography classifier that trains and runs end-to-end on Apple Silicon (see [cm3070-final-project](https://github.com/lextoumbourou/cm3070-final-project)).
 
 Here's my JUCE DJ simulator in action:
 
 <video controls loop><source src="/_media/bachelors-after-hours/vinyl-dj-simulator.mp4" type="video/mp4"></video>
 
-And the pool table game, rodents included:
+And the pool table game with rodents that could be killed for bonus points (not something I endorse in the real world):
 
 <video controls loop><source src="/_media/bachelors-after-hours/pool-table-mouse.mp4" type="video/mp4"></video>
 
@@ -110,13 +110,13 @@ If you want to dig deeper into the modules, the student community maintains a co
 
 One of my favourite parts of the course was working with the other students. Coursera invites you into a student Slack workspace, which is basically a Lord of the Flies-style free-for-all, with no apparent official representation of any kind.
 
-Some students took it upon themselves to run the Slack with an iron fist, reprimanding people for posting in the wrong channel. Some alumni students hang around the Slack helping students, answering questions. Other former students haunt the Slack channels, posting intermittent trolls. It's all pretty chaotic and hilarious.
+Some students took it upon themselves to run the Slack with an iron fist, reprimanding people for posting in the wrong channel. Some alumni hang out on Slack, helping students and answering questions. Other former students haunt the Slack channels, posting intermittent trolls. It's all pretty chaotic and hilarious.
 
-On top of that, there's a culture of the high-achievers sharing videos and screenshots of their assignments, some of which were really impressive, which would motivate me to do my best work.
+On top of that, there's a culture of high-achieving students sharing videos and screenshots of their assignments, some of which were really impressive, which would motivate me to do my best work.
 
-There are really fascinating people from all over the world, with interesting round-about stories like mine. One fellow student completed her degree in the midst of the war in Ukraine. Another student self-funded her education while running her own web development studio, after teaching herself. Another student gave birth twice during the degree, managed to complete the BSc while working a full-time job as a teacher, and somehow completed a master's that she started 4 months into this degree. And there's my friend Django, who's been completing his degree from a refugee camp in Uganda, powering his laptop off a solar panel and studying on mobile data. His story turned into a saga of its own: [Shipping a Laptop to a Refugee Camp in Uganda](shipping-a-laptop-to-a-refugee-camp-in-uganda.md).
+There are really fascinating people from all over the world, with interesting, roundabout career stories like mine. One fellow student completed her degree during the war in Ukraine. Another student taught herself web development and ran her own studio to self-fund her education. Another student gave birth twice during the degree, managed to complete the BSc while working a full-time job as a teacher, and somehow also completed a master's. And there's my friend Django, who's been completing his degree from a refugee camp in Uganda, powering his laptop off a solar panel and studying on mobile data. His story turned into a saga of its own: [Shipping a Laptop to a Refugee Camp in Uganda](shipping-a-laptop-to-a-refugee-camp-in-uganda.md).
 
-Whenever I felt like I was doing it tough, there were many people in much much tougher circumstances to bring me down to earth.
+Whenever I felt like I was doing it tough, there were many people in much, much tougher circumstances to bring me down to earth.
 
 ## The Worst Parts
 
@@ -124,11 +124,11 @@ My #1 complaint is how long it takes to get grades: about 3 months. So you're us
 
 If you fail a module, you can resit just the part you failed. But because final grades come well after the following session has started, you might end up waiting an entire year before you can resit. This has proved to be the biggest frustration for course participants.
 
-Group projects were also a common complaint. You were randomly assigned a group, but it was often unclear if the participants were even doing the course - many people were in completely ghost groups. I had a decent group for the one group project subject I took. However, we did have the unpleasant experience of one of the members showing up in the last week, and we basically had no choice but to cut him in without him doing any work. Although, they've since changed the syllabus: only one subject has a mandatory group project now, and it's just the midterms - not too bad.
+Group projects were also a common complaint. You were randomly assigned a group, but it was often unclear if the participants were even doing the course - many people were in completely ghost groups. I had a decent group for the one group-project subject I took. However, we did have the unpleasant experience of one of the members showing up in the last week, and we basically had no choice but to cut him in without him doing any work. Although they've since changed the syllabus, only one subject has a mandatory group project now, and it's just the midterms - not too bad.
 
 The Coursera platform could also use many quality-of-life improvements. It's often out of sync with the actual program and unaware that exams are completed outside Coursera. Submitting everything requires uploading multiple files, including videos, and there's no way to edit your submission without reuploading everything. So if you spend 30 minutes uploading a video and then find a typo in the report, you have to start again.
 
-Inspera is also quite difficult software, with many false positives causing it to suddenly shut down midway through the exam. They do have extra support people on during the exam, to help. With only 4 hours to complete the exam and the threat of a one year wait to try again, it's a very anxiety-inducing experience.
+Inspera is also quite difficult software, with many false positives causing it to suddenly shut down midway through the exam. They do have extra support people on during the exam, to help. With only 4 hours to complete the exam and the threat of a one-year wait to try again, it's a very anxiety-inducing experience.
 
 Getting in touch with support is also really hard. I had a result that didn't come through when everyone else's did, and it took a few weeks to get resolved.
 
@@ -137,10 +137,11 @@ Getting in touch with support is also really hard. I had a result that didn't co
 A few things that worked for me:
 
 1. **Start early on your assignments, and submit often.** I like to get a version of my assignment done end-to-end that could conceivably be a pass, then just keep iterating from there. As soon as I knew what the assignment was, I'd start making progress and submit drafts as I went, which took a lot of the deadline stress away.
-2. **Find a study time that works for you and be consistent.** For me, it's the early morning. I usually had to work late, so I rarely found time to study after work; instead, I'd go to bed early and get a few hours in before the workday started.
-3. **Do the blockers first.** Some subjects must be passed before you can progress to the next level (at Level 5, the key ones are Object-Oriented Programming and Software Design and Development). You really want to de-risk your studies by getting these done early. If you're forced to resit, it can really block your progress and potentially risk your degree running overtime.
-4. **Read the regulations closely.** Especially the Admission Notice, which only comes via email: it has your exam dates and your candidate number, which changes every session.
-5. **Read the pins in the Slack.** People have taken great care to share useful information, including a lot about what to do when something goes wrong.
+2. **Check and triple-check your submissions.** A very common mistake people make is to not check that they submitted everything correctly. I would create a checklist for my project submissions, screenshot the submission screen, and even log the S3 URLs for all uploaded assets.
+3. **Find a study time that works for you and be consistent.** For me, it's the early morning. I usually had to work late, so I rarely found time to study after work; instead, I'd go to bed early and get a few hours in before the workday started.
+4. **Do the blocker subjects first.** Some subjects must be passed before you can progress to the next level (at Level 5, the key ones are Object-Oriented Programming and Software Design and Development). You really want to de-risk your studies by getting these done early. If you're forced to resit, it can really block your progress and potentially risk your degree running overtime.
+5. **Read the regulations closely.** Especially the Admission Notice, which only comes via email: it has your exam dates and your candidate number, which changes every session.
+6. **Read the pins in the Slack.** People have taken great care to share useful information, including a lot about what to do when something goes wrong.
 
 ## AI Policy and The Evolution of LLMs
 
@@ -154,12 +155,10 @@ In Feb 2025, about 2.5 years into my degree, the uni launched an official AI pol
 
 > "Submitting work which has been produced by software, or as the result of providing prompts or queries to any third-party service, either in full or in part and without acknowledgement, is a form of contract cheating. This includes the use of Large Language Model/AI chatbots." - General Regulation 7.9
 
-After that, they introduced a three-level framework for AI in assessment. Level Zero means no AI at all (think locked-down browser exams). Level One means you can use it for brainstorming and structuring, as long as you declare it. And Level Two means the assessment actually *requires* you to use AI, for example, generating an output with it and then critiquing the result.
+They also introduced a three-level framework for AI in assessment. Level Zero means no AI at all. Level One means you can use it for brainstorming and structuring, as long as you declare it. And Level Two means the assessment actually *requires* you to use AI, for example, generating an output with it and then critiquing the result.
 
 I can only imagine the difficulty of being an educator trying to strike a balance between preventing people from totally phoning in submissions with AI and the reality that AI is almost certainly going to be part of someone's professional life.
 
 ## Summary
 
-While it's been a hard 3 and a half years, particularly on my wife and friends, who were definitely neglected, it's really nice to finally have a degree. Some of the topics, especially the math subjects, I would never have studied on my own. I'm definitely better for it. My other fellow students were some of the most interesting people I've ever met, and I hope I've made some friends for life. Aside from a few annoyances (things that will hopefully improve over time), I loved every minute of my experience.
-
-Thanks, team UoL.
+While it's been a hard 3 and a half years, particularly on my wife and friends, who were definitely neglected, it's really nice to finally have a degree. Some of the topics, especially the math subjects, I would never have studied on my own. I'm definitely better for it. My other fellow students were some of the most interesting people I've ever met, and I hope I've made some friends for life. Aside from a few annoyances (things that will hopefully improve over time), I loved the experience.
