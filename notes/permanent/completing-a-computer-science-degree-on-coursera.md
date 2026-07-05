@@ -1,6 +1,6 @@
 ---
 category: essay
-title: "Completing A Computer Science Degree On Coursera in 3.5 Years"
+title: "Completing A Computer Science Degree On Coursera"
 date: 2026-07-05 00:00
 modified: 2026-07-05 19:45
 summary: "A short write-up on my experience completing a Computer Science BSc from my bedroom."
@@ -10,7 +10,7 @@ tags:
   - Career
 ---
 
-In September 2022, I signed up for a [Bachelor's Degree in Computer Science](https://www.coursera.org/degrees/bachelor-of-science-computer-science-london) kinda impulsively after seeing an ad for it on Coursera. And now, 3 years and 9 months later (with 3 of those months spent waiting for my results), I've finally completed my degree - with First Class Honours.
+In September 2022, I impusively signed up for a [Bachelor's Degree in Computer Science](https://www.coursera.org/degrees/bachelor-of-science-computer-science-london) after seeing an ad for it on Coursera. It's something that had been on my mind after a long career as a self-taught developer. And now, 3 years and 9 months later (with 3 of those months spent waiting for my results), I've finally completed my degree - with First Class Honours.
 
 ![My final assessment results](../_media/bachelors-after-hours/uni-assessment-results.png)
 
