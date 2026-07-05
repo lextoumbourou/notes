@@ -6,8 +6,8 @@ modified: 2023-10-12 00:00
 cover: /_media/prop-logic-cover.png
 summary: A system that deals with statements that are either true or false
 tags:
-    - DiscreteMath
-    - MathematicalLogic
+- DiscreteMath
+- MathematicalLogic
 hide_cover_in_article: true
 ---
 
