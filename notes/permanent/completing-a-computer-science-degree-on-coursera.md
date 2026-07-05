@@ -4,6 +4,8 @@ title: "Completing A Computer Science Degree On Coursera"
 date: 2026-07-05 00:00
 modified: 2026-07-05 19:05
 summary: "A short write-up on my experience completing a Computer Science BSc from my bedroom."
+cover: /_media/bachelors-after-hours/uni-assessment-results.png
+hide_cover_in_article: true
 tags:
   - Career
   - LearningAndTeaching
