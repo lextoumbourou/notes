@@ -58,7 +58,7 @@ Since this is education that's directly applicable to my career, it's also tax-d
 
 ## Workload
 
-Just because it's remote doesn't mean it's easy. Even if you're a software veteran, like some of us were (with alumni working at FAANG companies and tech leads of large companies), familiarity with the corpus helps, but you still have to do the work.
+Just because it's remote doesn't mean it's easy. Even if you're a software veteran, like some of us were (alumni working at FAANG companies and tech leads at large companies), familiarity with the corpus helps, but you still have to do the work.
 
 Each module has mandatory midterm assignments, followed by either a final exam or a final assignment. The assignments are often long and challenging. The exams are no picnic either.
 
@@ -94,14 +94,14 @@ Here's the full path I took:
 | Apr 2023  | Introduction to Programming II, Computational Mathematics, Web Development                                                                    |
 | Oct 2023  | Fundamentals of Computer Science, Algorithms and Data Structures I, Software Design and Development                                           |
 | Apr 2024  | Object-Oriented Programming, Programming with Data, Graphics Programming                                                                      |
-| Oct 2024  | Computer Security, Algorithms and Data Structures II, Databases Networks and the Web                                                          |
+| Oct 2024  | Computer Security, Algorithms and Data Structures II, Databases, Networks and the Web                                                          |
 | Apr 2025  | Professional Practice for Computer Scientists, Databases and Advanced Data Techniques, Artificial Intelligence, Intelligent Signal Processing |
 | Oct 2025  | Natural Language Processing, Final Project                                                                                                    |
 | RPL       | How Computers Work, Data Science, Machine Learning and Neural Networks                                                                        |
 
 If you want to dig deeper into the modules, the student community maintains a couple of great resources: [world-class/notes](https://github.com/world-class/notes), a student-run repo where people post their course notes, and [world-class/REPL](https://github.com/world-class/REPL), a collection of course material and resources. There's also a [spreadsheet](https://docs.google.com/spreadsheets/d/1vyRqV4BVxZx9nVJvLJtUYI19aAgChu-4aPunoVS7uAg/edit#gid=507585853) someone made that breaks down each module's difficulty and other metrics, as ranked by former students.
 
-## The Best Bits
+## The Best Parts
 
 One of my favourite parts of the course was working with the other students. Coursera invites you into a student Slack channel, which is basically a Lord of the Flies-style free-for-all, with no apparent official representation of any kind.
 
@@ -109,9 +109,9 @@ Some students took it upon themselves to run the Slack channel with an iron fist
 
 In fact, for many people, their first experience meeting fellow students was a rude message in `#general` for their introduction, when it clearly should have been posted in `#intros`.
 
-There are really fascinating people from all over the world, and many in the industry, like me; some alumni work at FAANG companies. Others worked through the war in Ukraine. One of my friends was funding her education while running her own web development studio. And there's my friend Django, who's been completing his degree from a refugee camp in Uganda, powering his laptop off a solar panel and studying on mobile data. His story turned into a saga of its own: [Shipping a Laptop to a Refugee Camp in Uganda](shipping-a-laptop-to-a-refugee-camp-in-uganda.md).
+There are really fascinating people from all over the world, and many in the industry, like me, are alumni of FAANG companies. Others worked through the war in Ukraine. One of my friends was funding her education while running her own web development studio. And there's my friend Django, who's been completing his degree from a refugee camp in Uganda, powering his laptop off a solar panel and studying on mobile data. His story turned into a saga of its own: [Shipping a Laptop to a Refugee Camp in Uganda](shipping-a-laptop-to-a-refugee-camp-in-uganda.md).
 
-One of my fellow students took 4 modules every semester and, in her words, "gave birth twice in this degree, lost both my grandparents along the way and I'm still doing the same 4 working a full-time job as a teacher and have already completed my masters Jan 2025 (I started it 4 months into this degree)."
+One of my fellow students took 4 modules every semester and, in her words, "gave birth twice in this degree, lost both my grandparents along the way, and I'm still doing the same 4, working a full-time job as a teacher and have already completed my master's in Jan 2025 (I started it 4 months into this degree)."
 
 People would share their assignments, and some of them were really impressive. We would motivate and push each other to do our best work.
 
@@ -119,7 +119,7 @@ People would share their assignments, and some of them were really impressive. W
 
 My #1 complaint is how long it takes to get grades: about 3 months. So you're usually getting your midterm grades right around the time you're about to submit the finals. Way too long to incorporate the feedback usefully.
 
-The Coursera platform could also use many quality-of-life improvements. It's often out of sync with the actual program, unaware that exams are completed outside of Coursera. Submitting everything requires uploading multiple files, including videos, and there's no way to edit your submission without reuploading everything. So if you spend 30 minutes uploading a video and then find a typo in the report, you have to start again.
+The Coursera platform could also use many quality-of-life improvements. It's often out of sync with the actual program and unaware that exams are completed outside Coursera. Submitting everything requires uploading multiple files, including videos, and there's no way to edit your submission without reuploading everything. So if you spend 30 minutes uploading a video and then find a typo in the report, you have to start again.
 
 Getting in touch with support is also really hard. I had a result that didn't come through when everyone else's did, and it took a few weeks to get resolved.
 
@@ -138,7 +138,7 @@ I started my degree one month before ChatGPT was launched, so it's been quite in
 
 Funnily enough, I wrote a little article about [Disputing a Parking Fine with ChatGPT](disputing-a-parking-fine-with-chatgpt.md) a few weeks into ChatGPT's launch, which I thought was kind of cute at the time, but now it seems so pathetically trivial it makes me laugh.
 
-Firstly, they introduced proctoring and have been progressively locking down the proctoring, recently removing cheatsheets, presumably to prevent people from generating cheatsheets with an LLM or smuggling in a second screen. They used to allow people to complete the exam at their convenience within a 24-hour window, but recently changed that so that each hemisphere takes the exam at the same time.
+Firstly, they introduced proctoring and have progressively locked it down, recently removing cheatsheets, presumably to prevent people from generating them with an LLM or smuggling in a second screen. They used to allow people to complete the exam at their convenience within a 24-hour window, but recently changed that so that people in each hemisphere take the exam at the same time.
 
 LLMs also had a noticeable effect on the amount of conversation in the course channels. When I started, there was a lot of chatter, with people asking questions about the material and a conversation ensuing, but that has noticeably declined. More people prefer to ask their questions to an LLM.
 
@@ -146,7 +146,7 @@ In Feb 2025, about 2.5 years into my degree, the uni launched an official AI pol
 
 > "Submitting work which has been produced by software, or as the result of providing prompts or queries to any third-party service, either in full or in part and without acknowledgement, is a form of contract cheating. This includes the use of Large Language Model/AI chatbots." - General Regulation 7.9
 
-Post that, they introduced a three-level framework for AI in assessment. Level Zero means no AI at all (think locked-down browser exams). Level One means you can use it for brainstorming and structuring, as long as you declare it. And Level Two means the assessment actually *requires* you to use AI, for example generating an output with it and then critiquing the result.
+Post that, they introduced a three-level framework for AI in assessment. Level Zero means no AI at all (think locked-down browser exams). Level One means you can use it for brainstorming and structuring, as long as you declare it. And Level Two means the assessment actually *requires* you to use AI, for example, generating an output with it and then critiquing the result.
 
 I can only imagine the difficulty of being an educator trying to strike a balance between preventing people from totally phoning in submissions with AI and the reality that AI is almost certainly going to be part of someone's professional life.
 
