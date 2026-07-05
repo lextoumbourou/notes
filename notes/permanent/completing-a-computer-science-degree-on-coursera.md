@@ -14,7 +14,7 @@ tags:
   - LearningWithAI
 ---
 
-In September 2022, I impulsively signed up for a [Bachelor's Degree in Computer Science](https://www.coursera.org/degrees/bachelor-of-science-computer-science-london) after seeing an ad for it on Coursera. Getting a degree had been on my mind for quite some time, after a long career without one, but I wasn't sure how to go about it. And now, about 3 years and 9 months later (with the last 3 of those months spent waiting for my results), I've finally completed my degree.
+In September 2022, I impulsively signed up for a [Bachelor's Degree in Computer Science](https://www.coursera.org/degrees/bachelor-of-science-computer-science-london) after seeing an ad for it on Coursera. Getting a degree had been on my mind for quite some time, after a long career without one, but I wasn't sure how to go about it. And now, about 3 years and 9 months later (with the last 3 of those months spent waiting for my results), I've finally completed my degree - entirely after hours whilst working full-time.
 
 ![My final assessment results](../_media/bachelors-after-hours/uni-assessment-results.png)
 
