@@ -55,7 +55,7 @@ I shared the tracking number with Django on April 1st. Six days later, he messag
 
 However, a few hours later, I got a knock at my door. The package had been returned to my house after failing to be processed at the distribution centre.
 
-Turns out Australia Post won't ship devices containing lithium batteries internationally by air, after all. I should have listened to ChatGPT.
+Turns out Australia Post won't ship devices containing lithium batteries internationally by air, after all. I should have listened to ChatGPT the first time.
 
 ---
 
