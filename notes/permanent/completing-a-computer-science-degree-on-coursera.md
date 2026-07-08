@@ -24,7 +24,7 @@ This article is a brief write-up of my experience.
 
 My degree-less tech career spans nearly 21 years, with about 14 of those as a software developer and MLE. I left high school early as a teenager; I was ready to enter the workforce and become independent as early as possible. I got into tech through certifications like MCP, MCSA, and A+ (they were all the rage back then), which was enough to land a helpdesk job at 18. From there, I followed my interests, which eventually led to software engineering and, later, a focus on machine learning.
 
-So far, my lack of a degree hasn't been a barrier to my career. I've heard from colleagues that Australia tends to value experience and attitude over formal education, whereas the opposite can be true overseas, so maybe I got lucky in that respect. I'd go as far as to say that being "self-taught" is typically seen as a positive by employers, provided you appear to have actually taught yourself the skills needed to do the job. That said, I'm not really "self-taught" - I think "self-educated" is a better term. I've collected the skills I've needed for the jobs I wanted via MOOCs (shouts to David J. Malan's CS50, Andrew Ng's ML courses and Jeremy Howard's fastai), certificates, books, and Kaggle. I've always had something to put in the Education section of my resume. I've written before about my opinion that [Software Development is a Trade](software-development-is-a-trade.md), and that education makes sense interspersed with work experience. Of course, I acknowledge that my journey makes me quite biased here.
+So far, my lack of a degree hasn't been a barrier to my career. I've heard from colleagues that Australia tends to value experience and attitude over formal education, whereas the opposite can be true overseas, so maybe I got lucky in that respect. I'd go as far as to say that being "self-taught" is typically seen as a positive by employers, provided you appear to have actually taught yourself the skills needed to do the job. That said, I'm not really "self-taught" - I think "self-educated" is a better term. I've collected the skills I've needed for the jobs I wanted via MOOCs (shouts to David J. Malan's [CS50](https://pll.harvard.edu/course/cs50-introduction-computer-science), Andrew Ng's [ML courses](https://www.deeplearning.ai/) and Jeremy Howard's [fastai](https://www.fast.ai/)), certificates, books, and Kaggle. I've always had something to put in the Education section of my resume. I've written before about my opinion that [Software Development is a Trade](software-development-is-a-trade.md), and that education makes sense interspersed with work experience. Of course, I acknowledge that my journey makes me quite biased here.
 
 However, a lack of a degree has impacted my ability to work overseas. In my younger years, I made it to the final rounds of an interview with a US company I was interested in, only to learn that the E-3 visa, an Australia-US-specific agreement, requires at least a Bachelor's Degree. Though I have no intention of working overseas at the moment, it's nice to have the option.
 
@@ -50,7 +50,7 @@ I'm sure there are similar degrees out there. I didn't shop around for alternati
 
 ## Prerequisites and Performance-Based Admission
 
-The course prerequisites stipulate a [high school diploma](https://www.london.ac.uk/study/how-apply/am-qualified). However, they offer an alternate route called Performance-Based Admission (PBA). Basically, you sit two modules (Introduction to Programming I, plus one of the math modules), and if you pass them both, you're allowed to enter the full degree. The modules are counted towards your final grades, so it's not wasted time, but you get a good sense of whether the program is for you.
+The [course prerequisites](https://www.london.ac.uk/study/how-apply/am-qualified) stipulate a high school diploma. However, they offer an alternate route called Performance-Based Admission (PBA). Basically, you sit two modules (Introduction to Programming I and one of the math modules), and if you pass both, you're allowed to enter the full degree. The modules count towards your final grades, so it's not wasted time, and you get a good sense of whether the program is for you.
 
 ## Cost
 
@@ -66,11 +66,11 @@ Just because it's online doesn't mean it's easy. Even if you're a software veter
 
 Each module has mandatory midterm assignments, followed by either a final exam or a final assignment. The assignments are often long and challenging, and the exams are pretty tough too.
 
-They allow you to take up to 4 modules per session (or 2 plus the final project), plus a retake, and you have to complete them in 6 years, which requires about 2 modules per session. After completing the PBA, I took an average of about 3 modules per session, getting the RPL certificates (see below) in between sessions. In the final sessions, I took on 4 modules, which was a lot.
+They allow you to take up to 4 modules per session (or 2 plus the final project), plus a retake, and you have to complete them in 6 years, which requires about 2 modules per session. After completing the PBA, I took an average of about 3 modules per session, getting the RPL certificates (see below) in between sessions. In one of my final sessions, I took on 4 modules - some of the hardest ones in the course - which was a lot, but it's definitely possible.
 
-However, many students opt to complete 4 modules straight through, and I think the fastest possible time to complete the course is 3 years flat.
+Many ambitious students opt to complete 4 modules straight through, and I think the fastest possible time to complete the course is 3 years flat.
 
-Generally, I found that during the weeks leading up to midterms and exams, the degree would consume most of my free time. The workload ramped up significantly from the earlier to the later modules, with the last 2 sessions easily the hardest. There were some really intense periods of my life where I would wake up at 4am, complete a four-hour exam, work through the day, then work on an assignment at night.
+Generally, I found that during the weeks leading up to midterms and exams, the degree would consume most of my free time. The workload ramped up significantly from the earlier to the later modules, with the last 2 sessions easily the hardest. There were some really intense periods in my life when I would wake up at 4am, complete a four-hour exam, work through the day, and then work on assignments at night.
 
 ## Recognition of Prior Learning
 
@@ -86,7 +86,7 @@ I interspersed these with my regular modules. I finished the Google certificate 
 
 The topics are pretty typical of a Bachelor's Degree in Computer Science, no surprises. Some math, although less than an engineering degree, and most things are quite hands-on.
 
-There were quite a few interesting projects as coursework. Some highlights include some audio visualisers; a couple of JavaScript games (including a pool simulation which you were encouraged to put a twist on); a DJ simulator built with JUCE; an evolutionary algorithms project inspired by Karl Sims' 1994 [*Evolving Virtual Creatures*](https://youtu.be/JBgG_VSP7f8); an interesting collection of signal processing exercises; a few different research projects based around scraping and analysing web data; and, finally, the open-ended final project, where I built a breast-cancer detection mammography classifier that trains and runs end-to-end on Apple Silicon (see [cm3070-final-project](https://github.com/lextoumbourou/cm3070-final-project)).
+There were quite a few interesting projects as coursework. Some highlights include some audio visualisers; a couple of JavaScript games (including a pool game simulation, which you were encouraged to put a twist on); a DJ simulator built with JUCE; an evolutionary algorithms project inspired by Karl Sims' 1994 [*Evolving Virtual Creatures*](https://youtu.be/JBgG_VSP7f8); an interesting collection of signal processing exercises; a few different research projects based around scraping and analysing web data; and, finally, the open-ended final project, where I built a breast-cancer detection mammography classifier that trains and runs end-to-end on Apple Silicon (see [cm3070-final-project](https://github.com/lextoumbourou/cm3070-final-project)).
 
 Here's my vinyl DJ simulator in action:
 
@@ -108,7 +108,9 @@ Here's the full path I took:
 | Apr 2025 | Professional Practice for Computer Scientists, Databases and Advanced Data Techniques, Artificial Intelligence, Intelligent Signal Processing |                                                                                                  |
 | Oct 2025 | Natural Language Processing, Final Project                                                                                                    |                                                                                                  |
 
-If you want to dig deeper into the modules, the student community maintains a couple of great resources: [world-class/notes](https://github.com/world-class/notes), a student-run repo where people post their course notes, and [world-class/REPL](https://github.com/world-class/REPL), a collection of course material and resources. There's also a [spreadsheet](https://docs.google.com/spreadsheets/d/1vyRqV4BVxZx9nVJvLJtUYI19aAgChu-4aPunoVS7uAg/edit#gid=507585853) someone made that breaks down each module's difficulty and other metrics, as ranked by former students.
+If you want to look at some of the module content, the student community maintains a couple of great resources: [world-class/notes](https://github.com/world-class/notes), a student-run repo where people post their course notes, and [world-class/REPL](https://github.com/world-class/REPL), a collection of course material and resources.
+
+There's also a [spreadsheet](https://docs.google.com/spreadsheets/d/1vyRqV4BVxZx9nVJvLJtUYI19aAgChu-4aPunoVS7uAg/edit#gid=507585853) someone made that breaks down each module's difficulty and other metrics, as ranked by former students.
 
 ## The Best Parts
 
@@ -134,7 +136,7 @@ The Coursera platform could also use many quality-of-life improvements. It's oft
 
 Inspera is also quite difficult software, with many false positives causing it to suddenly shut down midway through the exam. With only 4 hours to complete the exam and the threat of a one-year wait to try again, it's a very anxiety-inducing experience.
 
-They do have extra support people on during the exam, to help. But outside of that, getting in touch with real people can be slow. I had a result that didn't come through when everyone else's did, and it took a few weeks to get resolved. Not a terrible turnaround, just one extra thing to be anxious about.
+They do have extra support people on during exam times, for live assistance. But outside of that, getting in touch with real people can be slow. I had a result that didn't come through when everyone else's did, and it took a few weeks to get resolved. Not a terrible turnaround, just one extra thing to be anxious about.
 
 ## Tips
 
@@ -144,7 +146,7 @@ A few things that worked for me:
 2. **Check and triple-check your submissions.** A very common mistake people make is not to check that they submitted everything correctly. I would create a checklist for my project submissions, take a screenshot of the submission screen, and even log the S3 URLs for all uploaded assets, just in case.
 3. **Find a study time that works for you and be consistent.** For me, it's the early morning. I usually had to work late, so I rarely found time to study after work; instead, I'd go to bed early and get a few hours in before the workday started.
 4. **Do the blocker subjects first.** Some subjects must be passed before you can progress to the next level (at Level 5, the key ones are Object-Oriented Programming and Software Design and Development). You really want to de-risk your studies by getting these done early. If you're forced to resit, it can really block your progress and add wasted sessions to your degree.
-5. **Read the regulations closely.** Especially the Admission Notice, which only comes via email: it includes updated rules, exam dates and other important information for each exam.
+5. **Read the regulations closely.** Especially the Admission Notice, which only comes via email and includes updated rules, exam dates and other important information for each exam.
 6. **Read the pins in Slack.** People have taken great care to share useful information, including a lot of guidance on what to do when something goes wrong.
 
 ## AI Policy and The Evolution of LLMs
@@ -165,4 +167,4 @@ I can only imagine the difficulty of being an educator in the age of AI - trying
 
 ## Summary
 
-While it's been a hard 3 and a half years, particularly on my wife and friends, who were definitely neglected, it's really nice to finally have a degree. Some of the topics, especially the math subjects, I would never have studied on my own. I'm glad I did. My other fellow students were some of the most interesting people I've ever met, and I hope I've made some friends for life. Aside from a few minor grievances (things that will hopefully improve over time), I loved the experience.
+While it's been a hard 3 and a half years, particularly on my wife, family and friends, who were definitely neglected, it's really nice to finally have a degree. Some of the topics, especially the math subjects, I would never have studied on my own. I'm glad I did. My other fellow students were some of the most interesting people I've ever met, and I hope I've made some friends for life. Aside from a few minor grievances (things that will hopefully improve over time), I loved the experience.
