@@ -42,7 +42,7 @@ The program is run by the University of London Worldwide, its distance-learning 
 
 ![A classmate's University of London certificate (name blurred)](../_media/bachelors-after-hours/university-certificate.jpeg)
 
-The exams themselves are done remotely using [Inspera proctoring software](https://inspera.com/inspera-proctoring/). I've heard from other students that before COVID, people actually went to local teaching centres for their exams. There was also a short window in 2022, where the exams were unproctored - you just had 4 hours to complete them once started, open web/book. But I guess the success of LLMs forced their hand to add proctoring.
+The exams themselves are done remotely using [Inspera proctoring software](https://inspera.com/inspera-proctoring/). I've heard from other students that before COVID, people actually went to local teaching centres for their exams. There was also a short window between COVID and early 2023, where the exams were unproctored - you just had 4 hours to complete them once started, open web/book. But I guess the success of LLMs forced their hand to add proctoring.
 
 ![The Inspera Integrity Browser, showing my final two exams](../_media/bachelors-after-hours/inspera-screenshot.jpg)
 
@@ -66,7 +66,7 @@ Just because it's online doesn't mean it's easy. Even if you're a software veter
 
 Each module has mandatory midterm assignments, followed by either a final exam or a final assignment. The assignments are often long and challenging, and the exams are pretty tough too.
 
-They allow you to take up to 4 modules per session (or 2 plus the final project), plus a retake, and you have to complete them in 6 years, which requires about 2 modules per session. After completing the PBA, I took an average of about 3 modules per session, getting the RPL certificates (see below) in between sessions. In one of my final sessions, I took on 4 modules - some of the hardest ones in the course - which was a lot, but it's definitely possible.
+They allow you to take up to 4 modules per session (or 2 plus the final project), plus a retake, and you have to complete them in 6 years, which requires a minimum of about 2 modules per session. After completing the PBA, I took an average of about 3 modules per session, getting the RPL certificates (see below) in between sessions. In one of my final sessions, I took on 4 modules - some of the hardest ones in the course - which was very tough, but doable.
 
 Many ambitious students opt to complete 4 modules straight through, and I think the fastest possible time to complete the course is 3 years flat.
 
