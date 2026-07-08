@@ -42,7 +42,7 @@ The program is run by the University of London Worldwide, its distance-learning 
 
 ![A classmate's University of London certificate (name blurred)](../_media/bachelors-after-hours/university-certificate.jpeg)
 
-The exams themselves are done remotely using [Inspera proctoring software](https://inspera.com/inspera-proctoring/). I've heard from other students that before COVID, people actually went to local teaching centres for their exams. There was also a short window between COVID and early 2023, where the exams were unproctored - you just had 4 hours to complete them once started, open web/book. But I guess the success of LLMs forced their hand to add proctoring.
+The exams themselves are done remotely using [Inspera proctoring software](https://inspera.com/inspera-proctoring/). I've heard from other students that before COVID, people actually went to local teaching centres for their exams. There was also a short window between COVID and early 2023, when the exams were unproctored - you just had 4 hours to complete them once started, open web/book. But I guess the success of LLMs forced their hand to add proctoring.
 
 ![The Inspera Integrity Browser, showing my final two exams](../_media/bachelors-after-hours/inspera-screenshot.jpg)
 
