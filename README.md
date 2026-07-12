@@ -39,3 +39,12 @@ To build the blog without running setup, use the `build.sh` script:
 
 ```
 ./build.sh
+```
+
+### Dev server
+
+To preview the blog locally with auto-reload (serves at http://localhost:8000):
+
+```
+./dev.sh
+```
