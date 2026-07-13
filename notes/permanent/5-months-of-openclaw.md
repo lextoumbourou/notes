@@ -1,8 +1,8 @@
 ---
 category: essay
-title: "6 Months of OpenClaw"
+title: "5+ Months of OpenClaw"
 date: 2026-07-11 17:30
-modified: 2026-07-13 17:10
+modified: 2026-07-13 18:58
 summary: "Macros, workouts and life admin."
 status: draft
 tags:
@@ -19,33 +19,35 @@ trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"op
 
 ---
 
-But I'm still using it every day, and have been ever since I set it up in late January, mainly as a convenient entry point into my Markdown-based life admin system, via the chat apps that I already use (mostly WhatsApp).
+But I'm still using it every day, and have been ever since I set it up in late January, mainly as a convenient entry point to my Markdown-based life admin and note-taking system. The combination of LLM agents, cron, and connectors to chat apps has proven very useful.
 
-I feel like it's the final piece to the promise of having a "second-brain"; a digital memory store for everything going on in my life. And it means that the [Memory](memory.md) that I accumulate as I work with LLMs, I have complete ownership over. Plus, there's no vendor lock-in - if a better LLM comes along, I can just switch with a change in config.
+I feel like it's the final piece to the promise of having a "second-brain", a digital memory store for everything going on in my life.
 
-I wrote an article about my setup a few weeks into my OpenClaw journey, and my setup hasn't meaningfully changed much (see [OpenClaw: the missing piece for Obsidian's second brain](openclaw-the-missing-piece-for-obsidians-second-brain.md)).
+I also love that it lets me create a [Memory](memory.md) of the work I do with LLMs that is vendor-agnostic; when a better LLM comes along, I can just switch to it with a config change and take my information with me.
 
-In this article, I want to do a kind of retrospective of what I've got out of running a personal OpenClaw instance, and share a few things I've learned.
+I wrote an article about my setup a few weeks into my OpenClaw journey, and my setup hasn't meaningfully changed much (see [OpenClaw: the missing piece for Obsidian's second brain](openclaw-the-missing-piece-for-obsidians-second-brain.md)). However, in this article, I want to do a kind of retrospective on what I actually achieved from running an OpenClaw instance and share a few things I've learned along the way.
 
 ## My High-Level Workflow
 
-I'll assume that if you're reading this blog, you're familiar with OpenClaw. But if not, it's a self-hosted agent harness that offers a range of connectors for popular chat apps. I run mine inside my Obsidian vault.
+I'll assume that if you're reading this blog, you're familiar with OpenClaw and likely Obsidian too. But if not, [OpenClaw](https://openclaw.ai/) is a self-hosted agent harness that offers a range of connectors for popular chat apps. [Obsidian](https://obsidian.md/) is a Markdown text editor with a few handy conventions, such as [daily notes](https://obsidian.md/help/plugins/daily-notes), and features like automatically updating internal links and file syncing.
 
-I have an Obsidian vault - a collection of Markdown notes that I've been accumulating for years. Every day, I create a "daily note" to write my to-do list in, and it serves as a dumping ground for any notes and info I need to remember. I also create separate notes for projects, people and topics. Each of those notes has a journal, with entries that use the current date as a heading, linking back to the daily note.
+I have an Obsidian vault, a collection of Markdown notes and documents I've been accumulating for years. Every day, I create a daily note to write my to-do list in, and it serves as a dumping ground for any notes and info I need to remember. I also create separate notes for projects, people and topics, which are linked back to the daily notes. Each of those notes has a journal, with entries that are updated as I work on or interact with the thing.
 
-I also maintain a centralised to-do list, and aim to put everything here, with links to the project pages.
+On top of that, I also maintain a centralised to-do list, and aim to put everything here, with links to the project pages.
 
-Initially, my vault was maintained entirely by hand, but over time, it's become a hybrid of a [LLM Wiki](llm-wiki.md) and a journal. I still like to do a lot of writing by hand, but I'm also okay with an LLM managing certain parts of the vault, especially admin stuff.
+Initially, my vault was maintained entirely by hand, but in recent years, it's become a hybrid of an [LLM Wiki](llm-wiki.md) and a journal.
 
-OpenClaw runs on a personal laptop that's always on. Its workspace is a folder in my vault, and the main OpenClaw files are simply pointers to existing files in that folder.
+I still like to do a lot of writing by hand, but I'm also okay with an LLM managing certain parts of the vault, especially admin stuff.
 
-I also like the flexibility to use whichever agent I need - at work, I use both Claude Code and Codex, and for some personal projects, like tax filing, I like to use a coding agent. The vault can be used interchangeably by all.
+OpenClaw runs on a personal laptop that's always on. Its [agent workspace](https://docs.openclaw.ai/concepts/agent-workspace) is a folder in my vault, and I purposely encourage OpenClaw to refer to existing files in my vault, instead of managing its own file structure.
 
-OpenClaw also never sees anything relating to work. I maintain a separate vault for work stuff that only exists on my work machine. And I never run OpenClaw on my work machine (in fact, my work prohibits it).
+This also gives me the flexibility to use whichever agent I need - at work, I use both Claude Code and Codex, and for some personal projects, like tax filing, I like to use a coding agent. The vault can be used interchangeably by all. I just run whichever agent makes sense over my vault and get to work.
 
-I use WhatsApp to communicate with OpenClaw, and bought a new SIM card to give me a separate WhatsApp account.
+OpenClaw also never sees anything relating to work - in fact, my work prohibits it for good reason. I maintain a separate vault for work stuff that only exists on my work machine. And I make sure it never syncs.
 
-## Primary use cases
+I use WhatsApp to communicate with OpenClaw - since it's already the chat app that my family and friends use - and bought a new SIM card to give me a separate WhatsApp account for my OpenClaw agent named M.
+
+## The main use cases
 
 ### 1. Calorie, weight and workout tracking
 
@@ -54,6 +56,14 @@ Late last year, I set myself a goal of getting lean, and doing so has meant trac
 For things that have labels, or where I know the calories (like fast food or restaurants that publish their nutrition info online), I'll tell OpenClaw the specific calories and also have it update a log of food I've eaten before, called `common-foods`.
 
 For meals I cook, I'll typically give OpenClaw the recipe and then weigh the portions to get precise measures.
+
+```mermaid
+graph TD
+    MEAL["Meal photo or text (WhatsApp)"] --> M["M (OpenClaw)"]
+    M -.->|"checks known macros first"| CF["common-foods.md"]
+    M --> DN["Daily note: Macros table +<br/>calories_consumed frontmatter"]
+    DN -->|"4am cron rolls up totals"| CL["calorie-log.md"]
+```
 
 I aim to eat about 2200 kcal per day, which should be about a 500 kcal deficit per day at my weight and height of around 181cm.
 
@@ -100,7 +110,7 @@ When I have to take my dog to the vet, I'll log any notes from the vet and track
 
 Any reminders, like subscriptions to cancel, all go into the vault via OpenClaw.
 
-There's just one place where everything goes: whether it's in Dropbox, in email, or sent by mail, I make sure it ends up in my vault, and anything I need to act on is turned into a to-do item.
+There's just one place where everything goes: whether it's in Dropbox, in email, or sent by mail, I make sure it ends up in my vault, and anything I need to act on is turned into a to-do item. I give OpenClaw read-only access to my email so it can help me find and triage things, but it doesn't send anything on my behalf.
 
 
 ### 3. Morning Routine
@@ -113,17 +123,19 @@ Then, after I give it my morning weight, it knows that I'm up and fetches stats 
 
 Not life-changing stuff, just kinda handy.
 
-Again, it's nice to have all this in one place. If I don't want to use Oura anymore, I can track my sleep some other way, but my data lives on.
+It's nice to have all this in one place. If I don't want to use Oura anymore, I can track my sleep some other way, but my data lives on.
+
+### 4. Tracking everything
+
+Again, OpenClaw is agentic LLMs, cron and chat apps. And that turns out to be really useful for tracking things. On top of calories and workouts, I tell M when I get sick, and it tracks my sicknesses, which can be handy for spotting patterns. If I notice a growth on my dog's body that the vet tells me to keep an eye on, I get M to create a weekly cron, and I take photos when I get alerted, to show my vet.
+
+There are tapping sounds around the house that I'm trying to get on top of. Birthday present ideas for my wife. Things I want to buy on my next visit to the supermarket. Subscriptions to cancel.
+
+These things end up in daily notes, project files and people files, and I get reminders when I need them.
+
+It's really handy.
 
 ## Principles and Lessons
-
-### Tracking is the killer feature
-
-The thing I find most appealing is how simple it makes tracking the things I actually care about. There is a useful principle in habit formation: what gets measured gets managed. The hard part is usually not creating a spreadsheet or a note. It is remembering to open it, finding the right place, and doing the boring little update every day.
-
-With OpenClaw, I can send a message in the app I already use. Calories, morning weight, stretching and workouts all become data points in a system that can show me the trend later. The same applies to less numerical goals: I can track whether I have written social media posts this week, or keep a running journal for a project rather than relying on my memory.
-
-It also works for the mundane stuff that would otherwise disappear. I currently have an intermittent tapping sound somewhere around the upstairs bathroom. Each observation goes into a project journal, with a link back to that day's note: where it was audible, whether it rained, and how long it was between sounds. None of this is individually impressive, but together it means small bits of evidence do not evaporate before they become useful.
 
 ### Everything in one place
 
@@ -140,7 +152,7 @@ I find it convenient to give OpenClaw access to a few things, particularly email
 
 The vault itself is the exception - OpenClaw can write to it. But the whole vault is in git, so if it ever makes a mess of a file, recovery is one revert away. (The rest of my security setup is covered in [OpenClaw: the missing piece for Obsidian's second brain](openclaw-the-missing-piece-for-obsidians-second-brain.md).)
 
-I use [googleworkspace/cli](https://github.com/googleworkspace/cli) for Gmail/Docs access; I use my [pocketsmith-skill](https://github.com/lextoumbourou/pocketsmith-skill) for Pocketsmith access; and [Sharesight Skill](https://github.com/lextoumbourou/sharesight-skill) for my investments.
+I use [googleworkspace/cli](https://github.com/googleworkspace/cli) for Gmail/Docs access - a really handy way to turn emails into project journal items and to-dos; I use my [pocketsmith-skill](https://github.com/lextoumbourou/pocketsmith-skill) for Pocketsmith access; and [Sharesight Skill](https://github.com/lextoumbourou/sharesight-skill) for my investments.
 
 ### Keep Cron Jobs Light
 
@@ -148,7 +160,7 @@ Cron jobs get pretty unwieldy pretty fast, and they're not convenient to edit.
 
 My rule is typically to keep cron jobs small, and they either point to a file or a skill that provides the instructions.
 
-### Use a Real Agent When You Need to Do Real Work
+### Use a Coding Agent When You Need to Do Real Work
 
 Some bigger projects just do not make sense to do via OpenClaw - like coding, and even admin tasks like preparing my tax return for my accountant.
 
@@ -158,15 +170,13 @@ I try to make sure that my repo is totally agent-agnostic, and the OpenClaw stuf
 
 ## Models and Costs
 
-*(All figures as of July 2026.)*
-
 After a bit of exploring options, I've found that a $20 Codex subscription tends to be enough to do everything I need in OpenClaw. Sometimes I've needed to add extra credits to top up my monthly credit allocation, but not very often. It's fairly manageable.
 
 I'm using between about 6 and 21 million tokens a day, but most of it is cache.
 
 ![OpenClaw Token Usage - Daily](../_media/6-months-of-openclaw/openclaw-tokens-daily.png)
 
-My initial attempt at using Claude directly via the API had me racking up $10-20 in API costs per day. LOL. Eventually, I moved to GPT-5.4 as my main session model, with GPT-5.4-mini for "heartbeats", that is, OpenClaw's background check-in process.
+My initial attempt at using Claude directly via the API had me racking up $10-$20 in API costs per day. LOL. Eventually, I moved to GPT-5.4 as my main session model, with GPT-5.4-mini for "heartbeats", that is, OpenClaw's background check-in process.
 
 Recently, I've cut over to the GPT-5.6 family of models, and it's another order of quality for around the same price - really nice.
 
