@@ -47,6 +47,15 @@ OpenClaw also never sees anything relating to work - in fact, my work prohibits 
 
 I use WhatsApp to communicate with OpenClaw - since it's already the chat app that my family and friends use - and bought a new SIM card to give me a separate WhatsApp account for my OpenClaw agent named M.
 
+```mermaid
+graph LR
+    ME["Me (WhatsApp)"] --> M["M (OpenClaw)"]
+    CRON["Cron + heartbeats"] --> M
+    M -->|"reads + writes"| V["Obsidian vault<br/>(Markdown, in git)"]
+    M -.->|"read-only"| EXT["Gmail · PocketSmith ·<br/>Sharesight · Oura"]
+    CODE["Claude Code / Codex<br/>(the big jobs)"] -->|"reads + writes"| V
+```
+
 ## The main use cases
 
 ### 1. Calorie, weight and workout tracking
