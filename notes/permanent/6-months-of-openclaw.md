@@ -2,7 +2,7 @@
 category: essay
 title: "6 Months of OpenClaw"
 date: 2026-07-11 17:30
-modified: 2026-07-13 16:30
+modified: 2026-07-13 17:10
 summary: "Macros, workouts and life admin."
 status: draft
 tags:
@@ -10,7 +10,7 @@ tags:
 - Obsidian
 ---
 
-OpenClaw was really popping off on the tech internet when it came out earlier this year, but if Google Trends is anything to go by, the hype has died significantly.
+[OpenClaw](openclaw.md) was really popping off on the tech internet when it came out earlier this year, but if Google Trends is anything to go by, the hype has died significantly.
 
 <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/4448_RC01/embed_loader.js"></script>
 <script type="text/javascript">
@@ -19,19 +19,17 @@ trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"op
 
 ---
 
-But I'm still using it every day, and have been ever since I set it up in late January, mainly as a convenient entry point into my Markdown-based life admin system.
+But I'm still using it every day, and have been ever since I set it up in late January, mainly as a convenient entry point into my Markdown-based life admin system, via the chat apps that I already use (mostly WhatsApp).
 
-For the unfamiliar: OpenClaw is a self-hosted AI agent that runs on my laptop. I message it via WhatsApp, and it can read and update my Obsidian vault, run scripts, and check a few external services on a schedule.
-
-I still feel like it's the final piece to the promise of having a "second-brain"; it's the digital memory store for everything going on in my life.
-
-The part I value most is that none of it is locked away with a vendor: OpenClaw's memory is my vault - Markdown in version control that I can read and edit. When a better LLM comes along, I can just switch, and my memory and system prompts come with me.
+I feel like it's the final piece to the promise of having a "second-brain"; a digital memory store for everything going on in my life. And it means that the [Memory](memory.md) that I accumulate as I work with LLMs, I have complete ownership over. Plus, there's no vendor lock-in - if a better LLM comes along, I can just switch with a change in config.
 
 I wrote an article about my setup a few weeks into my OpenClaw journey, and my setup hasn't meaningfully changed much (see [OpenClaw: the missing piece for Obsidian's second brain](openclaw-the-missing-piece-for-obsidians-second-brain.md)).
 
 In this article, I want to do a kind of retrospective of what I've got out of running a personal OpenClaw instance, and share a few things I've learned.
 
 ## My High-Level Workflow
+
+I'll assume that if you're reading this blog, you're familiar with OpenClaw. But if not, it's a self-hosted agent harness that offers a range of connectors for popular chat apps. I run mine inside my Obsidian vault.
 
 I have an Obsidian vault - a collection of Markdown notes that I've been accumulating for years. Every day, I create a "daily note" to write my to-do list in, and it serves as a dumping ground for any notes and info I need to remember. I also create separate notes for projects, people and topics. Each of those notes has a journal, with entries that use the current date as a heading, linking back to the daily note.
 
@@ -168,11 +166,11 @@ I'm using between about 6 and 21 million tokens a day, but most of it is cache.
 
 ![OpenClaw Token Usage - Daily](../_media/6-months-of-openclaw/openclaw-tokens-daily.png)
 
-My initial attempt at using Claude directly via the API had me racking up $10-20 in API costs per day. LOL. Eventually, I moved to GPT-5.4 as my main session model, with GPT-5.4-mini for heartbeats (OpenClaw's periodic background check-ins, rather than cron jobs that run at exact times).
+My initial attempt at using Claude directly via the API had me racking up $10-20 in API costs per day. LOL. Eventually, I moved to GPT-5.4 as my main session model, with GPT-5.4-mini for "heartbeats", that is, OpenClaw's background check-in process.
 
 Recently, I've cut over to the GPT-5.6 family of models, and it's another order of quality for around the same price - really nice.
 
-I'm running `gpt-5.6-terra` for the main session, and `gpt-5.6-luna` handles heartbeats and cron jobs (terra and luna are OpenAI's mid and budget tiers of the 5.6 family).
+I'm running [`gpt-5.6-terra`](https://developers.openai.com/api/docs/models/gpt-5.6-terra) (the mid-tier model - equivalent to Claude Sonnet) for the main session, and [`gpt-5.6-luna`](https://developers.openai.com/api/docs/models/gpt-5.6-luna) (the lower tier, equivalent to Haiku) handles heartbeats and cron jobs.
 
 ## More phone time is a downside
 
