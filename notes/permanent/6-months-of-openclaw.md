@@ -2,7 +2,7 @@
 category: essay
 title: "6 Months of OpenClaw"
 date: 2026-07-11 17:30
-modified: 2026-07-13 16:04
+modified: 2026-07-13 16:30
 summary: "Macros, workouts and life admin."
 status: draft
 tags:
@@ -21,7 +21,11 @@ trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"op
 
 But I'm still using it every day, and have been ever since I set it up in late January, mainly as a convenient entry point into my Markdown-based life admin system.
 
+For the unfamiliar: OpenClaw is a self-hosted AI agent that runs on my laptop. I message it via WhatsApp, and it can read and update my Obsidian vault, run scripts, and check a few external services on a schedule.
+
 I still feel like it's the final piece to the promise of having a "second-brain"; it's the digital memory store for everything going on in my life.
+
+The part I value most is that none of it is locked away with a vendor: OpenClaw's memory is my vault - Markdown in version control that I can read and edit. When a better LLM comes along, I can just switch, and my memory and system prompts come with me.
 
 I wrote an article about my setup a few weeks into my OpenClaw journey, and my setup hasn't meaningfully changed much (see [OpenClaw: the missing piece for Obsidian's second brain](openclaw-the-missing-piece-for-obsidians-second-brain.md)).
 
@@ -96,14 +100,14 @@ If something needs to be done around the house, I'll create a new project file f
 
 When I have to take my dog to the vet, I'll log any notes from the vet and track any medication in my Obsidian to-do list.
 
-Any reminders, like subscriptions to cancel, all go into OpenClaw.
+Any reminders, like subscriptions to cancel, all go into the vault via OpenClaw.
 
 There's just one place where everything goes: whether it's in Dropbox, in email, or sent by mail, I make sure it ends up in my vault, and anything I need to act on is turned into a to-do item.
 
 
 ### 3. Morning Routine
 
-I have a cron that runs every morning that creates the Daily Note around 4 am. It checks my to-do list for any projects or items that need action. It scans my people files for any upcoming birthdays. I have it connected to my finance-tracking software [Pocketsmith](https://my.pocketsmith.com/), and it shows how my spending is going. It has access to my stock portfolio and tells me how that is going.
+I have a cron that runs every morning that creates the Daily Note around 4 am. It checks my to-do list for any projects or items that need action. It scans my people files for any upcoming birthdays. I have it connected to my finance-tracking software [Pocketsmith](https://my.pocketsmith.com/), and it shows how my spending is going. It has access to my stock portfolio and tells me how it's doing.
 
 It tells me what workout I'll be doing today.
 
@@ -114,6 +118,14 @@ Not life-changing stuff, just kinda handy.
 Again, it's nice to have all this in one place. If I don't want to use Oura anymore, I can track my sleep some other way, but my data lives on.
 
 ## Principles and Lessons
+
+### Tracking is the killer feature
+
+The thing I find most appealing is how simple it makes tracking the things I actually care about. There is a useful principle in habit formation: what gets measured gets managed. The hard part is usually not creating a spreadsheet or a note. It is remembering to open it, finding the right place, and doing the boring little update every day.
+
+With OpenClaw, I can send a message in the app I already use. Calories, morning weight, stretching and workouts all become data points in a system that can show me the trend later. The same applies to less numerical goals: I can track whether I have written social media posts this week, or keep a running journal for a project rather than relying on my memory.
+
+It also works for the mundane stuff that would otherwise disappear. I currently have an intermittent tapping sound somewhere around the upstairs bathroom. Each observation goes into a project journal, with a link back to that day's note: where it was audible, whether it rained, and how long it was between sounds. None of this is individually impressive, but together it means small bits of evidence do not evaporate before they become useful.
 
 ### Everything in one place
 
@@ -127,6 +139,8 @@ I'll keep a project journal in the vault and update it as I work on the project.
 ### Read-only Access Only
 
 I find it convenient to give OpenClaw access to a few things, particularly email, my finances, and my investments, but it's all read-only. I'm not comfortable having an agent do things on my behalf, and frankly, why would I want to? I like sending emails to people.
+
+The vault itself is the exception - OpenClaw can write to it. But the whole vault is in git, so if it ever makes a mess of a file, recovery is one revert away. (The rest of my security setup is covered in [OpenClaw: the missing piece for Obsidian's second brain](openclaw-the-missing-piece-for-obsidians-second-brain.md).)
 
 I use [googleworkspace/cli](https://github.com/googleworkspace/cli) for Gmail/Docs access; I use my [pocketsmith-skill](https://github.com/lextoumbourou/pocketsmith-skill) for Pocketsmith access; and [Sharesight Skill](https://github.com/lextoumbourou/sharesight-skill) for my investments.
 
@@ -146,17 +160,19 @@ I try to make sure that my repo is totally agent-agnostic, and the OpenClaw stuf
 
 ## Models and Costs
 
+*(All figures as of July 2026.)*
+
 After a bit of exploring options, I've found that a $20 Codex subscription tends to be enough to do everything I need in OpenClaw. Sometimes I've needed to add extra credits to top up my monthly credit allocation, but not very often. It's fairly manageable.
 
 I'm using between about 6 and 21 million tokens a day, but most of it is cache.
 
 ![OpenClaw Token Usage - Daily](../_media/6-months-of-openclaw/openclaw-tokens-daily.png)
 
-My initial attempt at using Claude directly via the API had me racking up API costs of $10-20 per day. LOL. Eventually, I moved to GPT-5.4 as my main session model, with GPT-5.4-mini for heartbeats.
+My initial attempt at using Claude directly via the API had me racking up $10-20 in API costs per day. LOL. Eventually, I moved to GPT-5.4 as my main session model, with GPT-5.4-mini for heartbeats (OpenClaw's periodic background check-ins, rather than cron jobs that run at exact times).
 
 Recently, I've cut over to the GPT-5.6 family of models, and it's another order of quality for around the same price - really nice.
 
-I'm running `gpt-5.6-terra` for the main session, and `gpt-5.6-luna` handles heartbeats and cron jobs.
+I'm running `gpt-5.6-terra` for the main session, and `gpt-5.6-luna` handles heartbeats and cron jobs (terra and luna are OpenAI's mid and budget tiers of the 5.6 family).
 
 ## More phone time is a downside
 
