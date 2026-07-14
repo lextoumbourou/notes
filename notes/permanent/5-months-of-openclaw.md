@@ -2,7 +2,7 @@
 category: essay
 title: "5+ Months of OpenClaw"
 date: 2026-07-11 17:30
-modified: 2026-07-13 18:58
+modified: 2026-07-14 20:11
 summary: "Macros, workouts and life admin."
 status: draft
 tags:
@@ -39,7 +39,7 @@ Initially, my vault was maintained entirely by hand, but in recent years, it's b
 
 I still do all writing by hand, but I'm also okay with an LLM managing certain projects in the vault, and I let it manage my to-do list and so forth.
 
-![My Obsidian vault: to-do list, daily note and a project note, all linked|965](../_media/6-months-of-openclaw/obsidian-workflow.png)
+![My Obsidian vault: to-do list, daily note and a project note, all linked](../_media/6-months-of-openclaw/obsidian-workflow.png)
 ### OpenClaw and other agents
 
 OpenClaw runs on a personal laptop that's always on. Its [agent workspace](https://docs.openclaw.ai/concepts/agent-workspace) is a folder in my vault, and I mostly point OpenClaw's files to refer to existing files in my vault, instead of managing its own file structure.
@@ -62,17 +62,17 @@ For meals I cook, I'll typically give OpenClaw the recipe and then weigh the por
 
 ![How food tracking works: a WhatsApp photo, checked against common-foods.md, logged to the daily note's Macros table](../_media/6-months-of-openclaw/openclaw-food-log.png)
 
-I aim to eat about 2200 kcal per day, which should be about a 500 kcal deficit per day at my weight and height of around 181cm.
+I aim to eat about 2200 kcal per day, which should be about a 500 kcal deficit per day at my height of around 181cm and current weight.
 
 Then, every morning, I weigh myself, naked, after relieving my bladder.
 
-OpenClaw tracks my daily weight, and a script generates this nice pretty graph.
-
-As you can see, the trend is moving nicely, except for a few blips for holidays, where I didn't do any calorie counting and went back to my boozy old ways.
+OpenClaw tracks my daily weight, and a script generates this pretty graph.
 
 ![Weight Progress - All Time](../_media/6-months-of-openclaw/weight-all-time.png)
 
-I follow a muscle-building plan based on ideas from Jack Woods and Mindful Movers (who I highly recommend), which involves performing maximum-effort callisthenics movements a few times a week. No surprise that I track my progress with OpenClaw, sending it new PRs.
+As you can see, the trend is moving nicely, except for a few blips for holidays, where I didn't do any calorie counting and went back to my boozy old ways.
+
+I follow a muscle-building plan based on ideas from Jack Woods and Mindful Movers (who I highly recommend), which involves performing maximum-effort callisthenics movements a few times a week, and track my progress with OpenClaw.
 
 I also track stretching and use it to track recovery from any injuries. Once a week, I share body progress photos, and OpenClaw saves them in a nice table.
 
@@ -97,15 +97,15 @@ There are also some before-and-after photos, although I didn't think to create a
 
 ### 2. Morning Routine
 
-I have a cron that runs every morning that creates the Daily Note around 4 am. It checks my to-do list for any projects or items that need action. It scans my people files for any upcoming birthdays. I have it connected to my finance-tracking software [Pocketsmith](https://my.pocketsmith.com/), and it shows how my spending is going. It has access to my stock portfolio and tells me how it's doing.
+I have a cron that runs every morning around 4 am to create the Daily Note. It checks my to-do list for any projects or items that need action. It scans my people files for any upcoming birthdays. I have it connected to my finance-tracking software [Pocketsmith](https://my.pocketsmith.com/), and it shows how my spending is going. It has access to my stock portfolio and tells me how it's doing.
 
 It tells me what workout I'll be doing today.
 
-Then, after I give it my morning weight, it knows that I'm up and fetches stats from Oura, like my sleep and how many steps I walked the night before.
+Then, after I give it my morning weight, it knows that I'm up and fetches stats from Oura, like my sleep and how many steps I walked the day before.
 
 Not life-changing stuff, just kinda handy.
 
-It's nice to have all this in one place. If I don't want to use Oura anymore, I can track my sleep some other way, but my data lives on.
+If I don't want to use Oura anymore, I can track my sleep some other way, but my data lives on.
 
 ### 3. Life Admin - everything goes here
 
@@ -154,11 +154,13 @@ Some bigger projects just do not make sense to do via OpenClaw - like coding, an
 
 I'll use Codex or Claude Code in that case.
 
-I try to make sure that my repo is totally agent-agnostic, and the OpenClaw stuff just points to files that other agent files, like AGENTS.md and CLAUDE.md, also point to.
+I try to make sure that my repo is totally agent-agnostic, and the OpenClaw stuff just points to the same files that AGENTS.md and CLAUDE.md point to.
 
 ## Models and Costs
 
-After a bit of exploring options, and racking up some pretty painful Claude API bills, I've found that Codex models on OpenAI's $20 Plus subscription tend to be enough to do everything I need in OpenClaw. Sometimes I've needed to add extra credits to top up my monthly credit allocation, but not very often.
+(All figures as of July 2026.)
+
+After exploring a few options, and racking up some pretty painful Claude API bills, I've found that Codex models on OpenAI's $20 Plus subscription tend to be enough to do everything I need in OpenClaw. Sometimes I've needed to add extra credits to top up my monthly credit allocation, but not very often.
 
 I'm using between about 6 and 21 million tokens a day, but most of it is cache.
 
@@ -166,7 +168,7 @@ I'm using between about 6 and 21 million tokens a day, but most of it is cache.
 
 That kind of traffic on Opus 4.8 would cost over $10 per day, so you really need a subscription to make this work.
 
-I had been using GPT-5.4 as my main session model, with GPT-5.4-mini for "heartbeats", that is, OpenClaw's background check-in process, which wasn't the smartest model. But I've recently cut over to the GPT-5.6 family of models, and it's another order of quality for around the same price - they're really nice.
+I had been using GPT-5.4 as my main session model, with GPT-5.4-mini - not the smartest model - handling "heartbeats", OpenClaw's background check-in process. But I've recently cut over to the GPT-5.6 family of models, and it's another order of quality for around the same price - they're really nice.
 
 I'm running [`gpt-5.6-terra`](https://developers.openai.com/api/docs/models/gpt-5.6-terra) (the mid-tier model - think Claude Sonnet) for the main session, and [`gpt-5.6-luna`](https://developers.openai.com/api/docs/models/gpt-5.6-luna) (the lower tier - think Haiku) handles heartbeats and cron jobs.
 
