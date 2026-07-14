@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Food Log Flow</title>
+<style>
+  :root {
+    --paper: #ffffff;
+    --paper-under: #f3f0e8;
+    --ink: #2a2722;
+    --muted: #8a857a;
+    --border: #d9d4c8;
+    --accent: #7c3aed;
+    --yaml: #a05c1c;
+    --done: #4a9d6b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: transparent; font-family: ui-sans-serif, system-ui, sans-serif; color: var(--ink); }
+  .stage { position: relative; width: 960px; height: 450px; margin: 0 auto; }
+
+  .note {
+    position: absolute;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(60, 50, 30, 0.10);
+    padding: 10px 14px 12px;
+    width: 280px;
+  }
+  .note::before, .note::after {
+    content: ""; position: absolute; inset: 0;
+    background: var(--paper-under); border: 1px solid var(--border);
+    border-radius: 6px; z-index: -1;
+  }
+  .note::before { transform: rotate(-1.6deg) translate(-4px, 3px); }
+  .note::after  { transform: rotate(1.1deg)  translate(4px, 5px); }
+
+  .filename {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11px; color: var(--muted);
+    border-bottom: 1px solid #eeeae0; padding-bottom: 6px; margin-bottom: 8px;
+  }
+  .filename b { color: var(--ink); font-weight: 600; }
+
+  .yaml, .body {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 11.5px; line-height: 1.55; white-space: pre;
+  }
+  .yaml {
+    background: #f7f4ec; border-left: 3px solid #e3dccb;
+    padding: 6px 10px; margin-bottom: 8px; color: var(--yaml);
+    border-radius: 0 4px 4px 0;
+  }
+  .yaml .fence { color: #c0b9a8; }
+  .body .h2 { color: #3d3a33; font-weight: 700; }
+  .dim { color: var(--muted); }
+
+  /* WhatsApp-style chat */
+  .chat {
+    background: #ece5dd;
+    border-radius: 6px;
+    padding: 10px;
+  }
+  .bubble-out, .bubble-in {
+    border-radius: 8px;
+    padding: 6px 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    max-width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+  }
+  .bubble-out { background: #d9fdd3; margin: 0 0 8px 22px; border-top-right-radius: 2px; }
+  .bubble-in  { background: #ffffff; margin: 0 22px 0 0; border-top-left-radius: 2px; }
+  .bubble-out img { width: 100%; border-radius: 6px; display: block; margin-bottom: 4px; }
+  .stamp { font-size: 10px; color: #8a857a; text-align: right; margin-top: 2px; }
+
+  svg.arrows { position: absolute; inset: 0; pointer-events: none; }
+  .arrow-label {
+    position: absolute; font-size: 10.5px; color: var(--muted); text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <!-- ===== WhatsApp message (left) ===== -->
+  <div class="note" style="left: 20px; top: 24px;">
+    <div class="filename">&#128241; <b>WhatsApp - M</b></div>
+    <div class="chat">
+      <div class="bubble-out">
+        <img src="apple-food-fruit-preview.png" alt="">
+        2 apples
+        <div class="stamp">12:41 &#10003;&#10003;</div>
+      </div>
+      <div class="bubble-in">
+        Logged: 2 &#215; apple (medium),
+        190 kcal. 1,830 kcal today.
+        <div class="stamp">12:41</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== common-foods.md (middle) ===== -->
+  <div class="note" style="left: 340px; top: 24px;">
+    <div class="filename">&#128196; <b>health/common-foods.md</b></div>
+    <div class="yaml"><span class="fence">---</span>
+title: Common Foods
+modified: 2026-07-14 12:41
+<span class="fence">---</span></div>
+    <div class="body"><span class="h2">## Apple (medium)</span>
+- 95 kcal
+- 0.3g protein
+
+<span class="h2">## Flat white</span>
+- 120 kcal
+- 6g protein
+
+<span class="dim">...</span></div>
+  </div>
+
+  <!-- ===== Daily note (right) ===== -->
+  <div class="note" style="left: 660px; top: 24px;">
+    <div class="filename">&#128196; <b>daily/2026-07-14.md</b></div>
+    <div class="yaml"><span class="fence">---</span>
+date: 2026-07-14 04:00
+calories_consumed: 1830
+<span class="fence">---</span></div>
+    <div class="body"><span class="h2">## Macros</span>
+
+| Meal      | kcal | P    |
+|-----------|------|------|
+| Porridge  | 420  | 14g  |
+| Chicken   | 520  | 48g  |
+| Apples x2 | 190  | 0.6g |
+
+<span class="dim">...</span></div>
+  </div>
+
+  <!-- ===== Flow arrows ===== -->
+  <svg class="arrows" viewBox="0 0 960 450">
+    <defs>
+      <marker id="head" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+        <path d="M0,0 L6,3.5 L0,7 z" fill="#a39d90"/>
+      </marker>
+    </defs>
+    <path d="M 306 210 L 334 210" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+    <path d="M 626 210 L 654 210" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+  </svg>
+</div>
+</body>
+</html>

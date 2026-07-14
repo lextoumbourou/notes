@@ -39,8 +39,7 @@ Initially, my vault was maintained entirely by hand, but in recent years, it's b
 
 I still do all writing by hand, but I'm also okay with an LLM managing certain projects in the vault, and I let it manage my to-do list and so forth.
 
-![My Obsidian vault: daily note, project/people/travel journals and to-do list, with a separate work vault](../_media/6-months-of-openclaw/obsidian-workflow.png)
-
+![My Obsidian vault: to-do list, daily note and a project note, all linked|965](../_media/6-months-of-openclaw/obsidian-workflow.png)
 ### OpenClaw and other agents
 
 OpenClaw runs on a personal laptop that's always on. Its [agent workspace](https://docs.openclaw.ai/concepts/agent-workspace) is a folder in my vault, and I mostly point OpenClaw's files to refer to existing files in my vault, instead of managing its own file structure.
@@ -61,13 +60,7 @@ For things that have labels, or where I know the calories (like fast food or res
 
 For meals I cook, I'll typically give OpenClaw the recipe and then weigh the portions to get precise measures.
 
-```mermaid
-graph TD
-    MEAL["Meal photo or text (WhatsApp)"] --> M["M (OpenClaw)"]
-    M -.->|"checks known macros first"| CF["common-foods.md"]
-    M --> DN["Daily note: Macros table +<br/>calories_consumed frontmatter"]
-    DN -->|"4am cron rolls up totals"| CL["calorie-log.md"]
-```
+![How food tracking works: a WhatsApp photo, checked against common-foods.md, logged to the daily note's Macros table|767](../_media/6-months-of-openclaw/openclaw-food-log.png)
 
 I aim to eat about 2200 kcal per day, which should be about a 500 kcal deficit per day at my weight and height of around 181cm.
 
