@@ -12,11 +12,10 @@
     --border: #d9d4c8;
     --accent: #7c3aed;
     --yaml: #a05c1c;
-    --done: #4a9d6b;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: transparent; font-family: ui-sans-serif, system-ui, sans-serif; color: var(--ink); }
-  .stage { position: relative; width: 960px; height: 450px; margin: 0 auto; }
+  .stage { position: relative; width: 960px; height: 740px; margin: 0 auto; }
 
   .note {
     position: absolute;
@@ -55,18 +54,10 @@
   .body .h2 { color: #3d3a33; font-weight: 700; }
   .dim { color: var(--muted); }
 
-  /* WhatsApp-style chat */
-  .chat {
-    background: #ece5dd;
-    border-radius: 6px;
-    padding: 10px;
-  }
+  /* WhatsApp chat */
+  .chat { background: #ece5dd; border-radius: 6px; padding: 10px; }
   .bubble-out, .bubble-in {
-    border-radius: 8px;
-    padding: 6px 8px;
-    font-size: 12px;
-    line-height: 1.4;
-    max-width: 100%;
+    border-radius: 8px; padding: 6px 8px; font-size: 12px; line-height: 1.4;
     box-shadow: 0 1px 1px rgba(0,0,0,0.08);
   }
   .bubble-out { background: #d9fdd3; margin: 0 0 8px 22px; border-top-right-radius: 2px; }
@@ -74,18 +65,34 @@
   .bubble-out img { width: 100%; border-radius: 6px; display: block; margin-bottom: 4px; }
   .stamp { font-size: 10px; color: #8a857a; text-align: right; margin-top: 2px; }
 
-  svg.arrows { position: absolute; inset: 0; pointer-events: none; }
-  .arrow-label {
-    position: absolute; font-size: 10.5px; color: var(--muted); text-align: center;
+  /* agent node */
+  .agent {
+    position: absolute;
+    background: var(--paper);
+    border: 2px solid #8a857a;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(60, 50, 30, 0.12);
+    padding: 12px 16px;
+    text-align: center;
+    width: 130px;
   }
+  .agent .name { font-weight: 700; font-size: 14px; }
+  .agent .sub { font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+
+  .arrow-caption {
+    position: absolute; font-size: 10.5px; color: var(--muted);
+    font-family: ui-monospace, Menlo, monospace;
+  }
+
+  svg.arrows { position: absolute; inset: 0; pointer-events: none; }
 </style>
 </head>
 <body>
 <div class="stage">
 
-  <!-- ===== WhatsApp message (left) ===== -->
-  <div class="note" style="left: 20px; top: 24px;">
-    <div class="filename">&#128241; <b>WhatsApp - M</b></div>
+  <!-- ===== 1. WhatsApp message ===== -->
+  <div class="note" style="left: 20px; top: 24px; width: 260px;">
+    <div class="filename">&#128241; <b>WhatsApp</b></div>
     <div class="chat">
       <div class="bubble-out">
         <img src="apple-food-fruit-preview.png" alt="">
@@ -100,26 +107,14 @@
     </div>
   </div>
 
-  <!-- ===== common-foods.md (middle) ===== -->
-  <div class="note" style="left: 340px; top: 24px;">
-    <div class="filename">&#128196; <b>health/common-foods.md</b></div>
-    <div class="yaml"><span class="fence">---</span>
-title: Common Foods
-modified: 2026-07-14 12:41
-<span class="fence">---</span></div>
-    <div class="body"><span class="h2">## Apple (medium)</span>
-- 95 kcal
-- 0.3g protein
-
-<span class="h2">## Flat white</span>
-- 120 kcal
-- 6g protein
-
-<span class="dim">...</span></div>
+  <!-- ===== 2. OpenClaw agent ===== -->
+  <div class="agent" style="left: 330px; top: 160px;">
+    <div class="name">&#127744; M</div>
+    <div class="sub">OpenClaw</div>
   </div>
 
-  <!-- ===== Daily note (right) ===== -->
-  <div class="note" style="left: 660px; top: 24px;">
+  <!-- ===== 3. Daily note ===== -->
+  <div class="note" style="left: 550px; top: 24px;">
     <div class="filename">&#128196; <b>daily/2026-07-14.md</b></div>
     <div class="yaml"><span class="fence">---</span>
 date: 2026-07-14 04:00
@@ -136,16 +131,49 @@ calories_consumed: 1830
 <span class="dim">...</span></div>
   </div>
 
-  <!-- ===== Flow arrows ===== -->
-  <svg class="arrows" viewBox="0 0 960 450">
+  <!-- ===== 4. Calorie log (rolled up daily) ===== -->
+  <div class="note" style="left: 550px; top: 470px;">
+    <div class="filename">&#128196; <b>health/calorie-log.md</b></div>
+    <div class="body">| Date       | kcal | Protein |
+|------------|------|---------|
+| 2026-07-09 | 2374 | 201.5g  |
+| 2026-07-10 | 3004 | 194.8g  |
+| 2026-07-11 | 2417 | 162g    |
+<span class="dim">...one row per day...</span></div>
+  </div>
+
+  <!-- ===== common-foods lookup ===== -->
+  <div class="note" style="left: 250px; top: 470px;">
+    <div class="filename">&#128196; <b>health/common-foods.md</b></div>
+    <div class="body"><span class="h2">## Apple (medium)</span>
+- 95 kcal
+- 0.3g protein
+
+<span class="h2">## Flat white</span>
+- 120 kcal
+- 6g protein
+
+<span class="dim">...</span></div>
+  </div>
+
+  <!-- ===== Arrows ===== -->
+  <svg class="arrows" viewBox="0 0 960 740">
     <defs>
       <marker id="head" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
         <path d="M0,0 L6,3.5 L0,7 z" fill="#a39d90"/>
       </marker>
     </defs>
-    <path d="M 306 210 L 334 210" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
-    <path d="M 626 210 L 654 210" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+    <!-- whatsapp -> M -->
+    <path d="M 286 195 L 324 195" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+    <!-- M -> daily note -->
+    <path d="M 466 195 L 544 195" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+    <!-- M -> common-foods (lookup) -->
+    <path d="M 395 232 C 395 320, 392 380, 390 462" fill="none" stroke="#a39d90" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#head)"/>
+    <!-- daily note -> calorie log -->
+    <path d="M 690 400 L 690 462" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
   </svg>
+  <div class="arrow-caption" style="left: 706px; top: 420px;">4am cron rolls up totals</div>
+  <div class="arrow-caption" style="left: 410px; top: 330px;">checks known<br>macros first</div>
 </div>
 </body>
 </html>
