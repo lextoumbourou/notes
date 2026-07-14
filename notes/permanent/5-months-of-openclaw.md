@@ -60,7 +60,7 @@ For things that have labels, or where I know the calories (like fast food or res
 
 For meals I cook, I'll typically give OpenClaw the recipe and then weigh the portions to get precise measures.
 
-![How food tracking works: a WhatsApp photo, checked against common-foods.md, logged to the daily note's Macros table|767](../_media/6-months-of-openclaw/openclaw-food-log.png)
+![How food tracking works: a WhatsApp photo, checked against common-foods.md, logged to the daily note's Macros table](../_media/6-months-of-openclaw/openclaw-food-log.png)
 
 I aim to eat about 2200 kcal per day, which should be about a 500 kcal deficit per day at my weight and height of around 181cm.
 

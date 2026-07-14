@@ -8,7 +8,7 @@ OUT="$DIR/../../notes/_media/6-months-of-openclaw/openclaw-food-log.png"
   --headless --disable-gpu --hide-scrollbars \
   --default-background-color=00000000 \
   --force-device-scale-factor=2 \
-  --window-size=960,740 \
+  --window-size=1240,690 \
   --screenshot="$OUT" \
   "file://$DIR/food-log-diagram.html"
 echo "Rendered $OUT"

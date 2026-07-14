@@ -7,8 +7,7 @@ OUT="$DIR/../../notes/_media/6-months-of-openclaw/obsidian-workflow.png"
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
   --headless --disable-gpu --hide-scrollbars \
   --default-background-color=00000000 \
-  --force-device-scale-factor=2 \
-  --window-size=960,475 \
+  --window-size=1000,475 \
   --screenshot="$OUT" \
   "file://$DIR/obsidian-workflow-diagram.html"
 echo "Rendered $OUT"
