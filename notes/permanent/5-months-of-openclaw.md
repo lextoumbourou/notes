@@ -23,21 +23,23 @@ But I'm still using it every day, and have been ever since I set it up in late J
 
 I feel like it's the final piece to the promise of having a "second-brain", a digital memory store for everything going on in my life.
 
-I also love that it lets me create a [Memory](memory.md) of the work I do with LLMs that is vendor-agnostic; when a better LLM comes along, I can just switch to it with a config change and take my information with me.
+I also love that I'm building a [Memory](memory.md) system that's vendor-agnostic; I can just switch to a different LLM vendor or even a local one with a config change.
 
-I wrote an article about my setup a few weeks into my OpenClaw journey, and my setup hasn't meaningfully changed much (see [OpenClaw: the missing piece for Obsidian's second brain](openclaw-the-missing-piece-for-obsidians-second-brain.md)). However, in this article, I want to do a kind of retrospective on what I actually achieved from running an OpenClaw instance and share a few things I've learned along the way.
+I wrote an article about my setup a few weeks into my OpenClaw journey, and it hasn't meaningfully changed much (see [OpenClaw: the missing piece for Obsidian's second brain](openclaw-the-missing-piece-for-obsidians-second-brain.md)). However, in this article, I want to do a kind of retrospective on what I actually achieved from running an OpenClaw instance and share a few things I've learned along the way.
 
 ## My High-Level Workflow
 
 I'll assume that if you're reading this blog, you're familiar with OpenClaw and likely Obsidian too. But if not, [OpenClaw](https://openclaw.ai/) is a self-hosted agent harness that offers a range of connectors for popular chat apps alongside a large collection of plugins and security vulnerabilities. [Obsidian](https://obsidian.md/) is a Markdown text editor with a few handy conventions, such as [daily notes](https://obsidian.md/help/plugins/daily-notes), and features like automatically updating internal links and file syncing.
 
-I have an Obsidian vault, a collection of Markdown notes and documents I've been accumulating for years. Every day, I create a daily note to write my to-do list in, and it serves as a dumping ground for any notes and info I need to remember. I also create separate notes for projects, people and topics, which are linked back to the daily notes. Each of those notes has a journal, with entries that are updated as I work on or interact with the thing.
+### Obsidian vault
 
-On top of that, I also maintain a centralised to-do list, and aim to put everything here, with links to the project pages.
+I have an Obsidian vault, a collection of Markdown notes and documents I've been accumulating for years. Every day, I create a daily note to write my to-do list in, and it serves as a dumping ground for any notes and info I need to remember. I also create separate notes for projects, people and topics, which are linked back to the daily notes. Each of those notes has a journal, with entries that are updated as I work on or interact with the thing. On top of that, I also maintain a centralised to-do list, and aim to put everything here, with links to the project pages.
 
 Initially, my vault was maintained entirely by hand, but in recent years, it's become a hybrid of an [LLM Wiki](llm-wiki.md) and a journal.
 
-I still like to do a lot of writing by hand, but I'm also okay with an LLM managing certain parts of the vault, especially admin stuff.
+I still do all writing by hand, but I'm also okay with an LLM managing certain projects in the vault and I let manage my to-do list and so forth.
+
+### OpenClaw and other agents
 
 OpenClaw runs on a personal laptop that's always on. Its [agent workspace](https://docs.openclaw.ai/concepts/agent-workspace) is a folder in my vault, and I mostly poitn OpenClaws file to refer to existing files in my vault, instead of managing its own file structure.
 
@@ -60,7 +62,7 @@ graph LR
 
 ### 1. Calorie, weight and workout tracking
 
-Late last year, I set myself a goal of getting lean, and doing so has meant tracking calories for every meal I eat and trying to stay in a deficit. Generally, I found LLMs to be a convenient way to do this. The freeform nature of the text and the fact that most of them can absorb photos and labels make it pretty straightforward to track meals.
+Last year, I set myself a goal of getting lean, and have been trying to maintain a calorie deficir. doing so has meant tracking calories for every meal I eat and trying to stay in a deficit. Generally, I found LLMs to be a convenient way to do this. The freeform nature of the text and the fact that most of them can absorb photos and labels make it pretty straightforward to track meals.
 
 For things that have labels, or where I know the calories (like fast food or restaurants that publish their nutrition info online), I'll tell OpenClaw the specific calories and also have it update a log of food I've eaten before, called `common-foods`.
 
