@@ -36,14 +36,15 @@
 
   .filename {
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 11px; color: var(--muted);
-    border-bottom: 1px solid #eeeae0; padding-bottom: 6px; margin-bottom: 8px;
+    font-size: 19px; line-height: 1.25; color: var(--muted);
+    border-bottom: 1px solid #eeeae0; padding-bottom: 8px; margin-bottom: 9px;
   }
-  .filename b { color: var(--ink); font-weight: 600; }
+  .filename b { color: var(--ink); font-weight: 700; }
+  .filename .path { font-size: 12.5px; }
 
   .yaml, .body {
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 11.5px; line-height: 1.55; white-space: pre;
+    font-size: 12.75px; line-height: 1.5; white-space: pre;
   }
   .yaml {
     background: #f7f4ec; border-left: 3px solid #e3dccb;
@@ -51,19 +52,19 @@
     border-radius: 0 4px 4px 0;
   }
   .yaml .fence { color: #c0b9a8; }
-  .body .h2 { color: #3d3a33; font-weight: 700; }
+  .body .h2 { color: #3d3a33; font-size: 14px; font-weight: 700; }
   .dim { color: var(--muted); }
 
   /* WhatsApp chat */
   .chat { background: #ece5dd; border-radius: 6px; padding: 10px; }
   .bubble-out, .bubble-in {
-    border-radius: 8px; padding: 6px 8px; font-size: 12px; line-height: 1.4;
+    border-radius: 8px; padding: 7px 9px; font-size: 14px; line-height: 1.4;
     box-shadow: 0 1px 1px rgba(0,0,0,0.08);
   }
   .bubble-out { background: #d9fdd3; margin: 0 0 8px 22px; border-top-right-radius: 2px; }
   .bubble-in  { background: #ffffff; margin: 0 22px 0 0; border-top-left-radius: 2px; }
   .bubble-out img { width: 100%; border-radius: 6px; display: block; margin-bottom: 4px; }
-  .stamp { font-size: 10px; color: #8a857a; text-align: right; margin-top: 2px; }
+  .stamp { font-size: 11.5px; color: #8a857a; text-align: right; margin-top: 2px; }
 
   /* agent node */
   .agent {
@@ -76,11 +77,11 @@
     text-align: center;
     width: 130px;
   }
-  .agent .name { font-weight: 700; font-size: 14px; }
-  .agent .sub { font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+  .agent .name { font-weight: 700; font-size: 18px; }
+  .agent .sub { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
 
   .arrow-caption {
-    position: absolute; font-size: 10.5px; color: var(--muted);
+    position: absolute; font-size: 12.5px; line-height: 1.35; color: var(--muted);
     font-family: ui-monospace, Menlo, monospace;
   }
 
@@ -95,13 +96,14 @@
     <div class="filename">&#128241; <b>WhatsApp</b></div>
     <div class="chat">
       <div class="bubble-out">
-        <img src="apple-food-fruit-preview.png" alt="">
-        2 apples
+        <img src="spicy-beef-pho-preview.jpg" alt="">
+        Spicy beef pho from Roll'd
         <div class="stamp">12:41 &#10003;&#10003;</div>
       </div>
       <div class="bubble-in">
-        Logged: 2 &#215; apple (medium),
-        190 kcal. 1,830 kcal today.
+        Logged: Roll'd sliced rare
+        beef pho, 487 kcal. 1,427
+        kcal today.
         <div class="stamp">12:41</div>
       </div>
     </div>
@@ -115,25 +117,25 @@
 
   <!-- ===== 3. Daily note ===== -->
   <div class="note" style="left: 940px; top: 24px;">
-    <div class="filename">&#128196; <b>daily/2026-07-14.md</b></div>
+    <div class="filename">&#128196; <span class="path">daily/</span><b>2026-07-14.md</b></div>
     <div class="yaml"><span class="fence">---</span>
 date: 2026-07-14 04:00
-calories_consumed: 1830
+calories_consumed: 1427
 <span class="fence">---</span></div>
     <div class="body"><span class="h2">## Macros</span>
 
-| Meal      | kcal | P    |
-|-----------|------|------|
-| Porridge  | 420  | 14g  |
-| Chicken   | 520  | 48g  |
-| Apples x2 | 190  | 0.6g |
+| Meal       | kcal | P     |
+|------------|------|-------|
+| Porridge   | 420  | 14g   |
+| Chicken    | 520  | 48g   |
+| Roll'd pho | 487  | 19.2g |
 
 <span class="dim">...</span></div>
   </div>
 
   <!-- ===== 4. Calorie log (rolled up daily) ===== -->
   <div class="note" style="left: 940px; top: 470px;">
-    <div class="filename">&#128196; <b>health/calorie-log.md</b></div>
+    <div class="filename">&#128196; <span class="path">health/</span><b>calorie-log.md</b></div>
     <div class="body">| Date       | kcal | Protein |
 |------------|------|---------|
 | 2026-07-09 | 2374 | 201.5g  |
@@ -143,17 +145,17 @@ calories_consumed: 1830
   </div>
 
   <!-- ===== common-foods lookup ===== -->
-  <div class="note" style="left: 570px; top: 24px;">
-    <div class="filename">&#128196; <b>health/common-foods.md</b></div>
-    <div class="body"><span class="h2">## Apple (medium)</span>
-- 95 kcal
-- 0.3g protein
+  <div class="note" style="left: 560px; top: 24px; width: 300px;">
+    <div class="filename">&#128196; <span class="path">health/</span><b>common-foods.md</b></div>
+    <div class="body"><span class="h2">## Roll'd Sliced Rare Beef Pho</span>
+1 bowl (738g)
 
-<span class="h2">## Flat white</span>
-- 120 kcal
-- 6g protein
+- 487 kcal
+- 19.2g protein
+- 78.2g carbs
+- 10.3g fat
 
-<span class="dim">...</span></div>
+<span class="dim">official nutrition</span></div>
   </div>
 
   <!-- ===== Arrows ===== -->
@@ -166,14 +168,14 @@ calories_consumed: 1830
     <!-- whatsapp -> M -->
     <path d="M 286 195 L 344 195" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
     <!-- M -> daily note -->
-    <path d="M 856 195 L 934 195" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+    <path d="M 866 195 L 934 195" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
     <!-- M -> common-foods (lookup) -->
-    <path d="M 486 195 L 564 195" fill="none" stroke="#a39d90" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#head)"/>
+    <path d="M 486 195 L 554 195" fill="none" stroke="#a39d90" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#head)"/>
     <!-- daily note -> calorie log -->
     <path d="M 1080 400 L 1080 462" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
   </svg>
   <div class="arrow-caption" style="left: 880px; top: 425px;">4am cron<br>rolls up totals</div>
-  <div class="arrow-caption" style="left: 478px; top: 210px; width: 94px;">checks known<br>macros first</div>
+  <div class="arrow-caption" style="left: 490px; top: 255px; width: 120px;">checks known<br>macros first</div>
   <div class="arrow-caption" style="left: 862px; top: 210px; width: 80px;">logs the meal</div>
 </div>
 </body>

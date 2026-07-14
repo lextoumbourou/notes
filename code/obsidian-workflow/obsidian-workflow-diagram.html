@@ -16,7 +16,7 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { background: transparent; font-family: ui-sans-serif, system-ui, sans-serif; color: var(--ink); }
-  .stage { position: relative; width: 1000px; height: 475px; margin: 0 auto; }
+  .stage { position: relative; width: 1000px; height: 520px; margin: 0 auto; }
 
   .note {
     position: absolute;
@@ -37,14 +37,15 @@
 
   .filename {
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 11px; color: var(--muted);
-    border-bottom: 1px solid #eeeae0; padding-bottom: 6px; margin-bottom: 8px;
+    font-size: 19px; line-height: 1.25; color: var(--muted);
+    border-bottom: 1px solid #eeeae0; padding-bottom: 8px; margin-bottom: 9px;
   }
-  .filename b { color: var(--ink); font-weight: 600; }
+  .filename b { color: var(--ink); font-weight: 700; }
+  .filename .path { font-size: 12.5px; }
 
   .yaml, .body {
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
-    font-size: 11.5px; line-height: 1.55; white-space: pre;
+    font-size: 12.75px; line-height: 1.5; white-space: pre;
   }
   .yaml {
     background: #f7f4ec; border-left: 3px solid #e3dccb;
@@ -52,7 +53,7 @@
     border-radius: 0 4px 4px 0;
   }
   .yaml .fence { color: #c0b9a8; }
-  .body .h2 { color: #3d3a33; font-weight: 700; }
+  .body .h2 { color: #3d3a33; font-size: 14px; font-weight: 700; }
   .wiki { color: var(--accent); }
   .check { color: var(--done); }
   .ext { color: #2a78d6; }
@@ -87,7 +88,7 @@ for full list.</div>
 
   <!-- ===== Daily note (middle) ===== -->
   <div class="note" style="left: 360px; top: 24px;">
-    <div class="filename">&#128196; <b>daily/2026-07-14.md</b></div>
+    <div class="filename">&#128196; <span class="path">daily/</span><b>2026-07-14.md</b></div>
     <div class="yaml"><span class="fence">---</span>
 date: 2026-07-14 04:00
 modified: 2026-07-14 16:38
@@ -111,7 +112,7 @@ sleep_score: 79
 
   <!-- ===== Project note (right) ===== -->
   <div class="note" style="left: 700px; top: 24px;">
-    <div class="filename">&#128196; <b>projects/project-1.md</b></div>
+    <div class="filename">&#128196; <span class="path">projects/</span><b>project-1.md</b></div>
     <div class="yaml"><span class="fence">---</span>
 title: Project #1
 modified: 2026-07-14 09:12
@@ -125,7 +126,7 @@ on the thing.
   </div>
 
   <!-- ===== Link arrows (double-headed: linked, not directional) ===== -->
-  <svg class="arrows" viewBox="0 0 1000 475">
+  <svg class="arrows" viewBox="0 0 1000 520">
     <defs>
       <marker id="head" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
         <path d="M0,0 L6,3.5 L0,7 z" fill="#a39d90"/>

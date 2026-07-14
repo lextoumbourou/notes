@@ -1,6 +1,6 @@
 #!/bin/bash
 # Render the food-log flow diagram (HTML) to a transparent retina PNG
-# used by notes/permanent/5-months-of-openclaw.md.
+# used by notes/permanent/6-months-of-openclaw.md.
 set -euo pipefail
 DIR="$(cd "$(dirname "$0")" && pwd)"
 OUT="$DIR/../../notes/_media/6-months-of-openclaw/openclaw-food-log.png"
