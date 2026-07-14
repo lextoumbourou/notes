@@ -10,7 +10,7 @@ tags:
 - Obsidian
 ---
 
-[OpenClaw](openclaw.md) was really popping off on the tech internet when it came out earlier this year, but if Google Trends is anything to go by, the hype has died significantly.
+[OpenClaw](openclaw.md) went viral earlier this year on tech internet, but if Google Trends is anything to go by, the hype has died significantly.
 
 <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/4448_RC01/embed_loader.js"></script>
 <script type="text/javascript">
@@ -29,7 +29,7 @@ I wrote an article about my setup a few weeks into my OpenClaw journey, and it h
 
 ## My High-Level Workflow
 
-I'll assume that if you're reading this blog, you're familiar with OpenClaw and likely Obsidian too. But if not, [OpenClaw](https://openclaw.ai/) is a self-hosted agent harness that offers a range of connectors for popular chat apps alongside a large collection of plugins and security vulnerabilities. [Obsidian](https://obsidian.md/) is a Markdown text editor with a few handy conventions, such as [daily notes](https://obsidian.md/help/plugins/daily-notes), and features like automatically updating internal links and file syncing.
+I'll assume that if you're reading this blog, you're familiar with OpenClaw and likely Obsidian too. But if not, [OpenClaw](https://openclaw.ai/) is a self-hosted agent harness that offers a range of connectors for popular chat apps alongside a large collection of plugins and security vulnerabilities. [Obsidian](https://obsidian.md/) is a Markdown text editor with a few handy conventions, such as [daily notes](https://obsidian.md/help/plugins/daily-notes), and features like automatically updating internal links and optional file syncing.
 
 ### Obsidian vault
 
@@ -66,7 +66,7 @@ I aim to eat about 2200 kcal per day, which should be about a 500 kcal deficit p
 
 Then, every morning, I weigh myself, naked, after relieving my bladder.
 
-OpenClaw tracks my daily weight, and a script generates this nice, pretty graph.
+OpenClaw tracks my daily weight, and a script generates this nice pretty graph.
 
 As you can see, the trend is moving nicely, except for a few blips for holidays, where I didn't do any calorie counting and went back to my boozy old ways.
 
@@ -115,7 +115,7 @@ I have project files for all the different things going on in my life, and encou
 
 Then, documents get stored in a `_media` directory and are linked to the project. If I donate some money to a fundraiser, I'll tell OpenClaw, and it will track it in my tax deductions. If I get invited on a trip, I'll tell OpenClaw, and it will add the items to my to-do list and create a travel-specific project file.
 
-If something needs to be done around the house, I'll create a new house project file for it. Then, use it to track any research I do into tradespeople, and make sure to log any conversations I have.
+If something needs to be done around the house, I'll create a new house project file for it. Then, I use it to track any research I do into tradespeople, and make sure to log any conversations I have.
 
 When I have to take my dog to the vet, I'll log any notes from the vet and track any medication in my Obsidian to-do list.
 
@@ -164,11 +164,11 @@ I'm using between about 6 and 21 million tokens a day, but most of it is cache.
 
 ![OpenClaw Token Usage - Daily](../_media/6-months-of-openclaw/openclaw-tokens-daily.png)
 
-That kind of traffic on Opus 4.8 costs around $10-20 per day, so you really need a subscription to make this work.
+That kind of traffic on Opus 4.8 would cost over $10 per day, so you really need a subscription to make this work.
 
 I had been using GPT-5.4 as my main session model, with GPT-5.4-mini for "heartbeats", that is, OpenClaw's background check-in process, which wasn't the smartest model. But I've recently cut over to the GPT-5.6 family of models, and it's another order of quality for around the same price - they're really nice.
 
-I'm running [`gpt-5.6-terra`](https://developers.openai.com/api/docs/models/gpt-5.6-terra) (the mid-tier model - equivalent to Claude Sonnet) for the main session, and [`gpt-5.6-luna`](https://developers.openai.com/api/docs/models/gpt-5.6-luna) (the lower tier, equivalent to Haiku) handles heartbeats and cron jobs.
+I'm running [`gpt-5.6-terra`](https://developers.openai.com/api/docs/models/gpt-5.6-terra) (the mid-tier model - think Claude Sonnet) for the main session, and [`gpt-5.6-luna`](https://developers.openai.com/api/docs/models/gpt-5.6-luna) (the lower tier - think Haiku) handles heartbeats and cron jobs.
 
 ## OpenClaw vs Hermes
 
@@ -182,7 +182,7 @@ Hermes likely isn't for me - but if it works for you, that's great.
 
 ## Complaints
 
-I will say that one complaint is that I'm now annoyingly tied to my phone - even more so than before. But that's the price of tracking things meticulously I guess.
+I will say that one complaint is that I'm now annoyingly tied to my phone - even more so than before. But that's the price of tracking things meticulously, I guess.
 
 Also, it's a new software project, which means it's going to be broken a bunch. The OpenClaw development team is pretty quick to patch issues, though I must admit that the GitHub issue board is quite hard to follow with all the AI slop that's posted everywhere. Wish they had a policy of human-only issues, like other open-source projects.
 
