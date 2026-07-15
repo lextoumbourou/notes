@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Agent-Agnostic Vault Instructions</title>
+<style>
+  :root {
+    --paper: #ffffff;
+    --paper-under: #f3f0e8;
+    --ink: #2a2722;
+    --muted: #8a857a;
+    --border: #d9d4c8;
+    --accent: #7c3aed;
+    --yaml: #a05c1c;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #ffffff; font-family: ui-sans-serif, system-ui, sans-serif; color: var(--ink); }
+  .stage { position: relative; width: 1100px; height: 620px; margin: 0 auto; background: #ffffff; }
+
+  .note {
+    position: absolute;
+    width: 300px;
+    padding: 10px 14px 12px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(60, 50, 30, 0.10);
+  }
+  .note::before, .note::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--paper-under);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  .note::before { transform: rotate(-1.6deg) translate(-4px, 3px); }
+  .note::after { transform: rotate(1.1deg) translate(4px, 5px); }
+
+  .filename {
+    padding-bottom: 8px;
+    margin-bottom: 9px;
+    border-bottom: 1px solid #eeeae0;
+    color: var(--muted);
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 19px;
+    line-height: 1.25;
+  }
+  .filename b { color: var(--ink); font-weight: 700; }
+  .filename .path { font-size: 12.5px; }
+
+  .body {
+    color: var(--ink);
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: pre;
+  }
+  .body .h2 { color: #3d3a33; font-size: 14px; font-weight: 700; }
+  .body .link { color: var(--accent); }
+  .body .value { color: var(--yaml); }
+  .dim { color: var(--muted); }
+
+  .agent {
+    position: absolute;
+    width: 170px;
+    height: 72px;
+    padding: 12px 16px;
+    background: var(--paper);
+    border: 2px solid #8a857a;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(60, 50, 30, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .agent .name { font-size: 18px; font-weight: 700; }
+  .agent .sub { margin-top: 2px; color: var(--muted); font-size: 12.5px; }
+
+  .arrow-caption {
+    position: absolute;
+    color: var(--muted);
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 12.5px;
+    line-height: 1.35;
+  }
+  svg.arrows { position: absolute; inset: 0; pointer-events: none; }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="agent" style="left: 85px; top: 26px;">
+    <div class="name">&#127744; OpenClaw</div>
+  </div>
+
+  <div class="agent" style="left: 465px; top: 26px;">
+    <div class="name">Codex</div>
+    <div class="sub">reads AGENTS.md</div>
+  </div>
+
+  <div class="agent" style="left: 845px; top: 26px;">
+    <div class="name">Claude Code</div>
+    <div class="sub">imports AGENTS.md</div>
+  </div>
+
+  <div class="note" style="left: 20px; top: 130px;">
+    <div class="filename">&#128196; <span class="path">openclaw/</span><b>AGENTS.md</b></div>
+    <div class="body"><span class="h2">## Every Session</span>
+1. Read <span class="link">../AGENTS.md</span>
+2. Read IDENTITY.md
+3. Read SOUL.md
+4. Read USER.md
+
+<span class="dim">OpenClaw-specific context</span></div>
+  </div>
+
+  <div class="note" style="left: 20px; top: 400px;">
+    <div class="filename">&#128196; <span class="path">openclaw/</span><b>TOOLS.md</b></div>
+    <div class="body"><span class="h2">## Vault Access</span>
+Read <span class="link">../AGENTS.md</span>
+Use <span class="link">../.agents/skills/</span>
+<span class="dim">Machine + messaging notes</span></div>
+  </div>
+
+  <div class="note" style="left: 400px; top: 165px;">
+    <div class="filename">&#128196; <b>AGENTS.md</b></div>
+    <div class="body"><span class="h2"># Repository Context</span>
+
+Human context  <span class="link">people/me.md</span>
+Priorities     <span class="link">todo.md</span>
+Daily notes    <span class="link">daily/</span>
+Shared skills  <span class="link">.agents/skills/</span></div>
+  </div>
+
+  <div class="note" style="left: 400px; top: 430px;">
+    <div class="filename">&#128193; <b>.agents/skills/</b></div>
+    <div class="body">food-log/
+morning-routine/
+oura/
+<span class="dim">Reusable shared workflows</span></div>
+  </div>
+
+  <div class="note" style="left: 780px; top: 165px;">
+    <div class="filename">&#128196; <b>CLAUDE.md</b></div>
+    <div class="body"><span class="value">@AGENTS.md</span>
+
+<span class="dim">One-line import of the
+canonical instructions</span></div>
+  </div>
+
+  <svg class="arrows" viewBox="0 0 1100 620">
+    <defs>
+      <marker id="head" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+        <path d="M0,0 L6,3.5 L0,7 z" fill="#a39d90"/>
+      </marker>
+    </defs>
+    <path d="M 170 104 L 170 124" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+    <path d="M 170 350 L 170 394" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+    <path d="M 326 245 L 394 245" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+    <path d="M 326 470 L 394 470" fill="none" stroke="#a39d90" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#head)"/>
+    <path d="M 550 104 L 550 159" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+    <path d="M 930 104 L 930 159" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+    <path d="M 774 245 L 706 245" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+    <path d="M 550 355 L 550 424" fill="none" stroke="#a39d90" stroke-width="1.6" marker-end="url(#head)"/>
+  </svg>
+
+  <div class="arrow-caption" style="left: 330px; top: 218px;">points to</div>
+  <div class="arrow-caption" style="left: 711px; top: 218px;">imports</div>
+  <div class="arrow-caption" style="left: 564px; top: 385px;">shared workflows</div>
+</div>
+</body>
+</html>
