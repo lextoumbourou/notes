@@ -8,6 +8,7 @@ hide_cover_in_article: true
 summary: "A Jupyter Notebook-style Obsidian plugin that runs code in your notes and stores the outputs directly in the Markdown file."
 tags:
 - ObsidianPlugins
+- Obsidian
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mjyjfn6ef22q
 mastodon_post: https://fedi.notesbylex.com/@lex/116441657095403744
 ---

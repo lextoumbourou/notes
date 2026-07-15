@@ -6,6 +6,7 @@ modified: 2025-11-01 00:00
 summary: "An Obsidian plugin that automatically replaces filenames in your links with the actual note title, supporting both Wikilinks and Markdown links."
 tags:
 - ObsidianPlugins
+- Obisidian
 ---
 
 I've built [Title As Link Text](https://github.com/lextoumbourou/obsidian-title-as-link-text), a new Obsidian plugin that automatically updates your links to use the note's title instead of the filename.
