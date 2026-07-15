@@ -2,10 +2,14 @@
 category: essay
 title: "6 Months of OpenClaw"
 date: 2026-07-15 08:30
-modified: 2026-07-15 11:36
+modified: 2026-07-15 16:35
 summary: "Macros, workouts and life admin."
 cover: /_media/6-months-of-openclaw/weight-all-time.png
 hide_cover_in_article: true
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mqo3s4ibq224
+mastodon_post: https://fedi.notesbylex.com/@lex/116922581081935404
+hn_post: https://news.ycombinator.com/item?id=48915294
+threads_post: https://www.threads.com/@lexisoninsta/post/DazbxLBiSnK
 tags:
 - OpenClaw
 - Obsidian
@@ -132,7 +136,7 @@ The result is that I don't lose track of documents, tradespeople, appointments, 
 
 I find it convenient to give OpenClaw access to a few things outside my vault, particularly my email, finances and investments, but it's all read-only. I'm not comfortable having an agent do things on my behalf - plus, I mostly like sending emails to people.
 
-OpenClaw can, of course, write to the vault, which is version-controlled with Git. I commit manually, so I periodically review the changes it makes. The rest of my security setup is covered in my [original article](openclaw-the-missing-piece-for-obsidians-second-brain.md).
+OpenClaw can, of course, write to the vault, which is version-controlled with Git. I commit manually, so I periodically review the changes it makes. The rest of my security setup is covered in my [OpenClaw: the missing piece for Obsidian's second brain](openclaw-the-missing-piece-for-obsidians-second-brain.md).
 
 ### Keep cron job instructions light - point them to docs and skills
 

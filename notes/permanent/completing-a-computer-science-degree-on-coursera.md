@@ -2,16 +2,21 @@
 category: essay
 title: "Completing A Computer Science Degree On Coursera"
 date: 2026-07-05 00:00
-modified: 2026-07-05 19:05
+modified: 2026-07-15 16:33
 summary: "A short write-up on my experience completing a Computer Science BSc from my bedroom."
 cover: /_media/bachelors-after-hours/uni-assessment-results.png
 hide_cover_in_article: true
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mpwiq6ttok2b
 mastodon_post: https://fedi.notesbylex.com/@lex/116869448984978667
+hn_post: https://news.ycombinator.com/item?id=48798061
 tags:
   - Career
   - LearningAndTeaching
   - LearningWithAI
+---
+
+This post made it to the front page of Hacker News. See the discussion [here](https://news.ycombinator.com/item?id=48798061).
+
 ---
 
 In September 2022, I impulsively signed up for a [Bachelor's Degree in Computer Science](https://www.coursera.org/degrees/bachelor-of-science-computer-science-london) after seeing an ad for it on Coursera. Getting a degree had been on my mind for quite some time, after a long career without one, but I wasn't sure how to go about it. And now, about 3 years and 9 months later (with the last 3 of those months spent waiting for my results), I've finally completed my degree - entirely after hours whilst working full-time.
