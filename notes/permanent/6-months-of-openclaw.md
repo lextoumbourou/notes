@@ -2,7 +2,7 @@
 category: essay
 title: "6 Months of OpenClaw"
 date: 2026-07-15 08:30
-modified: 2026-07-15 16:35
+modified: 2026-07-18 11:20
 summary: "Macros, workouts and life admin."
 cover: /_media/6-months-of-openclaw/weight-all-time.png
 hide_cover_in_article: true
@@ -69,11 +69,8 @@ Then, every morning, I weigh myself naked after relieving my bladder, which give
 
 ![Weight Progress](../_media/6-months-of-openclaw/weight-all-time.png)
 
-As you can see, the trend is moving nicely, except for a few blips during holidays, when I went back to my careless, boozy old ways.
+As you can see, the trend is moving nicely, except for a few blips during holidays, when I went back to my careless, boozy old ways. Since I started tracking in late 2025, I've gone from **~94 kg to ~80 kg** - close to a **14 kg loss**.
 
-For workouts, I follow a muscle-building plan based on ideas from [Jack Woods](https://jackhwoods.com/) and [Mindful Mover](https://mindfulmover.com/), which involves short, maximum-effort callisthenics sessions a few times a week. I track these with OpenClaw.
-
-I am also trying to get more flexible, so I track my stretching, and, at times, my recovery from any injuries. After a particular workout session every week, I share body progress photos, and OpenClaw saves them in a nice table.
 
 There are also some before-and-after photos, although I didn't think to take a great before shot at the time.
 
@@ -94,6 +91,10 @@ There are also some before-and-after photos, although I didn't think to take a g
   </tr>
 </table>
 
+For workouts, I follow a muscle-building plan based on ideas from [Jack Woods](https://jackhwoods.com/) and [Mindful Mover](https://mindfulmover.com/), which involves short, maximum-effort callisthenics sessions a few times a week. I track these with OpenClaw.
+
+I am also trying to get more flexible, so I track my stretching, and, at times, my recovery from any injuries. After a particular workout session every week, I share body progress photos, and OpenClaw saves them in a nice table.
+
 ### 2. Morning routine
 
 I have a cron that runs every morning around 4 am to create the daily note. It checks my to-do list for any projects or items that need action. It scans my people files for any upcoming birthdays. I have it connected to my finance-tracking software [PocketSmith](https://my.pocketsmith.com/), and it shows how my spending is going. It has access to my stock portfolio and tells me how it's doing.
@@ -105,6 +106,8 @@ Then, after I give it my morning weight, it knows I'm up and fetches my Oura dat
 I like that key Oura data is copied into my vault. It gives me a sense of freedom from one particular vendor. If I want to track my sleep some other way, maybe with a watch or something, my historical data will live on.
 
 It's nice to be a guy who remembers people's birthdays now. I also don't pay bills late anymore and generally feel on top of things.
+
+![An OpenClaw morning brief and follow-up health summary in WhatsApp|333x564](../_media/6-months-of-openclaw/morning-brief-example.png)
 
 ### 3. Life admin, reminders and trackers
 
