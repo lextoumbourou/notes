@@ -20,13 +20,13 @@ So if I bought a single stock of COMPANY for $100 and sold it for $200. That's w
 
 The idea of the CGT discount, introduced by the Howard Government in 1999, was presumably to encourage long-term holding over short term speculation.
 
-However, if you you only made a profit on par with inflation (2-3% per year) you actually haven't really haven't come out ahead in real money.
+However, if you only made a profit on par with inflation (2-3% per year) you actually haven't really come out ahead in real money.
 
 ## What changes in 2027
 
 From 1 July 2027, the 50% discount will be replaced with an inflation-based discount. The cost base will be indexed, so tax is directed at the gain above inflation: the real gain.
 
-So, if you sold $100, but you held for 20 years, with inflation at 5% per year, the cost base of $100 would be adjust to $200 and you'd technically pay no tax.
+So, if you sold $100, but you held for 20 years, with inflation at 3.5% per year, the cost base of $100 would be adjust to $200 and you'd technically pay no tax.
 
 However, the reform also introduces a 30% minimum tax on relevant capital gains (regardless of your tax rate). It applies only to gains arising after 1 July 2027, rather than retrospectively rewriting the tax treatment of gains that accrued before the start date. Investors in new builds will be able to choose between the former 50% discount and the new arrangement.
 

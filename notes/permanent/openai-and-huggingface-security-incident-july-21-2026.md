@@ -3,9 +3,9 @@ category: news
 title: OpenAI and Hugging Face security incident - July 21, 2026
 date: 2026-07-22 00:00
 modified: 2026-07-22 08:38
-summary: "OpenAI's models broke out of a sandbox and hacked Hugging Face to get test answers during an evaluation."
+summary: "Ultimate benchmaxxing: hacking Hugging Face for test answers."
 tags:
-  - Security
+  - SecurityIncident
   - AI
 ---
 
