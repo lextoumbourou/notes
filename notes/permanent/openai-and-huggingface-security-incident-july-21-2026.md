@@ -19,6 +19,8 @@ Yesterday, OpenAI claimed responsibility.
 
 During an evaluation of a combination of GPT-5.6 Sol and a pre-release model (maybe GPT 6?) on [ExploitGym](https://arxiv.org/abs/2605.11086), the models figured out that the best way to beat the benchmark was to break into Hugging Face's database and literally get the test solutions.[^1]
 
+![ExploitGym README describing its benchmark of AI agents developing exploits from real-world vulnerabilities](../_media/exploitgym-readme-benchmark-description.png)
+
 The evaluation was performed in a sandbox, but the models found and exploited a zero-day vulnerability in the "package registry cache proxy". They then escalated their privileges and moved through OpenAI's internal systems until they found a node with Internet access. Once they had Internet access, they submitted a malicious dataset to Hugging Face that exploited two code-execution paths in its processing pipeline. From there, the models gained node-level access, grabbing cloud and cluster credentials, and moved through several of Hugging Face's internal clusters.
 
 ![Attack path from OpenAI's evaluation sandbox through its package cache and internal systems into Hugging Face's dataset processor, clusters and production database](../_media/openai-hugging-face-incident-attack-path.png)
@@ -29,11 +31,15 @@ In a pretty wild statement about where things are at in July, Hugging Face lamen
 
 ![Hugging Face's description of commercial model guardrails blocking incident analysis before it switched to GLM 5.2](../_media/hugging-face-guardrail-asymmetry-glm-5-2.png)
 
- OpenAI says that the models were run with reduced cyber refusals and without the production classifiers normally used to prevent high-risk cyber activity, because the evaluation was designed to measure maximal cyber capabilities.
+OpenAI says that the models were run with reduced cyber refusals and without the production classifiers normally used to prevent high-risk cyber activity, because the evaluation was designed to measure maximal cyber capabilities.
 
-There's always a question in my mind about how much of this is marketing material - cybersecurity scaremongering is always a way to make headlines for a new model release. Were the models given any instructions hinting at attempting to break out of the sandbox? Did OpenAI tilt the scales in any way to achieve this outcome? That said, Hugging Face's security disclosure feels very genuine.
+There's always a question in my mind about how much of this is marketing material. Cybersecurity scaremongering is always a way to make headlines for a new model release. But Hugging Face's security disclosure feels very genuine.
 
 And one can only be so sceptical. I know from my daily experience how capable these models are.
+
+The UK AI Security Institute evaluation shows the progress frontier models are making at the 32-step corporate network attack test.
+
+![](/_media/32-step-the-last-ones-cyber-range.png)
 
 What a time to be alive.
 
