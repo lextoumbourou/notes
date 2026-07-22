@@ -27,9 +27,11 @@ The evaluation was performed in a sandbox, but the models found and exploited a 
 
 The models accessed a limited set of internal datasets and several service credentials. Hugging Face says there was no evidence that public models, datasets, Spaces, packages or container images had been tampered with - but is still assessing whether any customer or partner data was affected.
 
-In a pretty wild statement about where things are at in July, Hugging Face lamented that they were unable to use frontier models behind commercial APIs because safety guardrails could not distinguish an "incident responder from an attacker". Instead, they used the open-weight GLM 5.2 to analyse more than 17,000 recorded events in hours.
+In a pretty wild statement about where things are at in July, Hugging Face lamented that they were unable to use frontier models behind commercial APIs because safety guardrails could not distinguish an "incident responder from an attacker". Instead, they used the open-weight [GLM 5.2](../../../permanent/glm-52.md) to analyse more than 17,000 recorded events in hours.
 
 ![Hugging Face's description of commercial model guardrails blocking incident analysis before it switched to GLM 5.2](../_media/hugging-face-guardrail-asymmetry-glm-5-2.png)
+
+![Z.ai's GLM-5.2 announcement describing the model as built for long-horizon tasks](../_media/glm-5-2-long-horizon-tasks.png)
 
 OpenAI says that the models were run with reduced cyber refusals and without the production classifiers normally used to prevent high-risk cyber activity, because the evaluation was designed to measure maximal cyber capabilities.
 
