@@ -2,8 +2,10 @@
 category: news
 title: OpenAI and Hugging Face security incident - July 21, 2026
 date: 2026-07-22 00:00
-modified: 2026-07-22 08:38
+modified: 2026-07-23 06:38
 summary: "Ultimate benchmaxxing: hacking Hugging Face for test answers."
+video: in-production
+youtube_video: https://www.youtube.com/watch?v=mZHxt5vW5To
 tags:
   - SecurityIncident
   - AI
@@ -25,25 +27,28 @@ The evaluation was performed in a sandbox, but the models found and exploited a 
 
 ![Attack path from OpenAI's evaluation sandbox through its package cache and internal systems into Hugging Face's dataset processor, clusters and production database](../_media/openai-hugging-face-incident-attack-path.png)
 
-The models accessed a limited set of internal datasets and several service credentials. Hugging Face says there was no evidence that public models, datasets, Spaces, packages or container images had been tampered with - but is still assessing whether any customer or partner data was affected.
+The models accessed a limited set of internal datasets and several service credentials. Hugging Face says there was no evidence that any public, user-facing models, datasets or Spaces had been tampered with and is still assessing whether any customer or partner data was affected.
 
-In a pretty wild statement about where things are at in July, Hugging Face lamented that they were unable to use frontier models behind commercial APIs because safety guardrails could not distinguish an "incident responder from an attacker". Instead, they used the open-weight [GLM 5.2](../../../permanent/glm-52.md) to analyse more than 17,000 recorded events in hours.
+In a pretty wild statement about where things are at in July, Hugging Face lamented that they were unable to use frontier models behind commercial APIs because safety guardrails could not distinguish an "incident responder from an attacker". Instead, they used the open-weight [GLM 5.2](glm-52.md) to analyse more than 17,000 recorded events in hours. So the same class of models used for attacking could not be used for defending.
 
 ![Hugging Face's description of commercial model guardrails blocking incident analysis before it switched to GLM 5.2](../_media/hugging-face-guardrail-asymmetry-glm-5-2.png)
 
 ![Z.ai's GLM-5.2 announcement describing the model as built for long-horizon tasks](../_media/glm-5-2-long-horizon-tasks.png)
 
-OpenAI says that the models were run with reduced cyber refusals and without the production classifiers normally used to prevent high-risk cyber activity, because the evaluation was designed to measure maximal cyber capabilities.
+Of course, OpenAI says the models were run with reduced cyber-refusal rates and without the production classifiers normally used to prevent high-risk cyber activity, because the evaluation was designed to measure maximal cyber capabilities.
 
-There's always a question in my mind about how much of this is marketing material. Cybersecurity scaremongering is always a way to make headlines for a new model release. But Hugging Face's security disclosure feels very genuine.
+---
+
+There's always a question in my mind about how much of this is marketing material. Cybersecurity scaremongering has become quite in vogue for making headlines for a new model release. But Hugging Face's security disclosure feels very genuine.
 
 And one can only be so sceptical. I know from my daily experience how capable these models are.
 
-The UK AI Security Institute evaluation shows the progress frontier models are making at the 32-step corporate network attack test.
+Also, the UK AI Security Institute evaluation shows the progress frontier models are making on the 32-step corporate network attack test.[^3]
 
-![](/_media/32-step-the-last-ones-cyber-range.png)
+![Trajectories showing frontier AI models progressing through the UK AI Security Institute's 32-step corporate network attack test](/_media/32-step-the-last-ones-cyber-range.png)
 
 What a time to be alive.
 
 [^1]: OpenAI, “OpenAI and Hugging Face partner to address security incident during model evaluation,” July 21, 2026. [Link](https://openai.com/index/hugging-face-model-evaluation-security-incident/)
 [^2]: Hugging Face, “Security incident disclosure: July 2026,” July 16, 2026. [Link](https://huggingface.co/blog/security-incident-july-2026)
+[^3]: UK AI Security Institute, “Our evaluation of Claude Mythos Preview’s cyber capabilities,” 2026. [Link](https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-cyber-capabilities)
