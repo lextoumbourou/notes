@@ -16,6 +16,14 @@
 
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <script>
+      (function () {
+        var saved = localStorage.getItem('notesbylex-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
+      })();
+    </script>
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
@@ -74,6 +82,10 @@
         <nav class="nav-quick">
           <a href="/" {% if page_name == "index" %}class="active"{% endif %}>Home</a>
           <a href="/pages/about.html" {% if output_file == 'pages/about.html' %}class="active"{% endif %}>About</a>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+            <svg class="theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+            <svg class="theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+          </button>
         </nav>
 
         <div class="nav-search" id="nav-search">
@@ -175,6 +187,32 @@
     <script src="{{ js_url }}"></script>
     {% endfor %}
     <script>lucide.createIcons();</script>
+    <script>
+    (function () {
+      var toggle = document.getElementById('theme-toggle');
+      if (!toggle) return;
+
+      function describeTheme() {
+        var dark = document.documentElement.dataset.theme === 'dark';
+        var label = dark ? 'Switch to light theme' : 'Switch to dark theme';
+        toggle.setAttribute('aria-label', label);
+        toggle.setAttribute('title', label);
+      }
+
+      describeTheme();
+      toggle.addEventListener('click', function () {
+        var root = document.documentElement;
+        var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        localStorage.setItem('notesbylex-theme', next);
+        describeTheme();
+
+        if (document.querySelector('.graph-canvas canvas')) {
+          window.location.reload();
+        }
+      });
+    })();
+    </script>
     <script>
     (function() {
       var input = document.getElementById('nav-search-input');

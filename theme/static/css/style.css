@@ -24,6 +24,7 @@
    Design tokens — Ivory theme (white bg, warm linen cards)
    ============================================================ */
 :root {
+  color-scheme: light;
   --g-bg:        #FFFFFF;
   --g-surface:   #F6F1E2;
   --g-surface-2: #EFE9D6;
@@ -43,6 +44,7 @@
   --g-accent:    #B58B3C;
   --g-node:      #3B6A8A;
   --g-node-self: #B58B3C;
+  --g-on-heading:#FFFFFF;
 
   --radius04: 4px;  --radius06: 6px;  --radius08: 8px;  --radius10: 10px;
   --radius12: 12px; --radius16: 16px; --radiusFull: 9999px;
@@ -52,6 +54,30 @@
   --font-var-body: "opsz" 0;
   --font-var-display: "opsz" 100;
   --font-feat-display: "ss02", "ss03";
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --g-bg:        #111820;
+  --g-surface:   #1A242D;
+  --g-surface-2: #232F38;
+  --g-ink:       #E8E2D3;
+  --g-ink-2:     #C8C1B3;
+  --g-muted:     #9DA8B2;
+  --g-rule:      #3A4650;
+  --g-rule-soft: #2B3741;
+  --g-link:      #82AEC9;
+  --g-link-hov:  #B4D5E7;
+  --g-heading:   #F1E9D8;
+  --g-tag-bg:    #494832;
+  --g-tag-fg:    #F2E7B8;
+  --g-tag-bg-2:  #3D493B;
+  --g-code-bg:   #202B33;
+  --g-code-fg:   #E2CA91;
+  --g-accent:    #D6AD5C;
+  --g-node:      #82AEC9;
+  --g-node-self: #D6AD5C;
+  --g-on-heading:#17202A;
 }
 
 /* ============================================================
@@ -198,6 +224,30 @@ hr {
 }
 .nav-quick a:hover { color: var(--g-link-hov); text-decoration: none; }
 .nav-quick a.active { color: var(--g-heading); font-weight: 600; }
+
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+  padding: 0;
+  border: 1px solid var(--g-rule);
+  border-radius: var(--radius08);
+  background: var(--g-surface);
+  color: var(--g-muted);
+  cursor: pointer;
+  transition: background 120ms, border-color 120ms, color 120ms;
+}
+.theme-toggle:hover {
+  background: var(--g-surface-2);
+  border-color: var(--g-link);
+  color: var(--g-heading);
+}
+.theme-toggle svg { width: 15px; height: 15px; }
+.theme-icon-sun { display: none; }
+html[data-theme="dark"] .theme-icon-sun { display: block; }
+html[data-theme="dark"] .theme-icon-moon { display: none; }
 
 /* Recent / Tags tabs */
 .nav-tabs {
@@ -1152,10 +1202,10 @@ oom-comments { padding: 0; }
 .btn-primary,
 .btn-primary:visited {
   background: var(--g-heading);
-  color: #fff;
+  color: var(--g-on-heading);
   border: 1px solid var(--g-heading);
 }
-.btn-primary:hover { transform: translateY(-1px); background: var(--g-link-hov); border-color: var(--g-link-hov); color: #fff; text-decoration: none; }
+.btn-primary:hover { transform: translateY(-1px); background: var(--g-link-hov); border-color: var(--g-link-hov); color: var(--g-on-heading); text-decoration: none; }
 .btn-ghost {
   background: transparent;
   color: var(--g-ink-2);
@@ -1468,3 +1518,14 @@ oom-comments { padding: 0; }
   .featured-grid { grid-template-columns: 1fr; }
   .tl-row { grid-template-columns: 80px 80px 1fr; gap: 10px; }
 }
+
+/* Dark syntax highlighting for the Pygments stylesheet. */
+html[data-theme="dark"] :is(.c, .cm, .c1, .cs) { color: #91A4AF; }
+html[data-theme="dark"] :is(.k, .kc, .kd, .kn, .kp, .kr, .kt) { color: #8CC4DF; }
+html[data-theme="dark"] :is(.s, .s1, .s2, .sa, .sb, .sc, .sd, .se, .sh, .si, .sr, .ss, .sx) { color: #A8CE9A; }
+html[data-theme="dark"] :is(.m, .mb, .mf, .mh, .mi, .mo, .il) { color: #D9B978; }
+html[data-theme="dark"] :is(.na, .nc, .nd, .ne, .nf, .nl, .nn, .nt) { color: #D7B96A; }
+html[data-theme="dark"] :is(.n, .nb, .bp, .nv, .vc, .vg, .vi, .vm, .o, .ow, .p) { color: var(--g-ink); }
+html[data-theme="dark"] :is(.gd, .gr, .err) { color: #F08A8A; }
+html[data-theme="dark"] .gi { color: #91C99B; }
+html[data-theme="dark"] .hll { background-color: var(--g-surface-2); }

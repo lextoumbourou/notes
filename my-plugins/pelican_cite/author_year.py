@@ -34,7 +34,7 @@ from collections import Counter
 from pybtex.style.labels import BaseLabelStyle
 from pybtex.textutils import abbreviate
 
-_nonalnum_pattern = re.compile(r'[^\w]+', re.UNICODE)
+_nonalnum_pattern = re.compile(r'[^\w-]+', re.UNICODE)
 
 
 def _strip_accents(s):
@@ -44,7 +44,7 @@ def _strip_accents(s):
 
 
 def _strip_nonalnum(parts):
-    """Strip all non-alphanumerical characters from a list of strings.
+    """Strip non-alphanumerical characters except surname hyphens.
 
     >>> _strip_nonalnum([u"ÅA. B. Testing 12+}[.@~_", u" 3%"])
     u'AABTesting123'
