@@ -19,8 +19,8 @@
   position: relative;
   width: 100%;
   height: 280px;
-  background: var(--light, #f8f8f8);
-  border: 1px solid var(--lightgray, #d4d4d4);
+  background: var(--g-bg, var(--light, #f8f8f8));
+  border: 1px solid var(--g-rule-soft, var(--lightgray, #d4d4d4));
   border-radius: 6px;
   overflow: hidden;
 }
@@ -34,7 +34,7 @@
   align-items: center;
   justify-content: center;
   font-size: 0.8rem;
-  color: var(--gray, #9b9b9b);
+  color: var(--g-muted, var(--gray, #9b9b9b));
   pointer-events: none;
 }
 
@@ -64,7 +64,7 @@
 .graph-container-global {
   position: fixed;
   inset: 0;
-  background: var(--light, #f8f8f8);
+  background: var(--g-bg, var(--light, #f8f8f8));
   z-index: 9999;
 }
 
