@@ -35,39 +35,9 @@ There are three parts:
 2. An evaluator that answers each question independently, then aggregates the answers per dimension into a score.
 3. A two-phase optimisation loop that improves the evaluator and generator prompts (and, through them, the questions) from question-level feedback.
 
-<div class="beval-pipe">
-<style>
-.beval-pipe{--bp-ink:#1f2430;--bp-line:#c9cedb;--bp-accent:#3a7ca5;--bp-yes:#2d6a4f;--bp-no:#9b2335;--bp-muted:#6b7280;--bp-bg:#f7f8fa;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:1.6rem 0}
-.beval-pipe *{box-sizing:border-box}
-.bp-flow{display:flex;align-items:stretch;overflow-x:auto;padding:.5rem 0}
-.bp-stage{flex:0 0 auto;display:flex;flex-direction:column;justify-content:center}
-.bp-box{background:var(--bp-bg);border:1.5px solid var(--bp-ink);border-radius:8px;padding:.7rem .8rem;min-width:150px;max-width:190px;box-shadow:3px 3px 0 rgba(31,36,48,.12)}
-.bp-box h4{margin:0 0 .3rem;font-size:.82rem;font-weight:700;color:var(--bp-ink)}
-.bp-box p{margin:0;font-size:.7rem;line-height:1.4;color:var(--bp-muted)}
-.bp-q{margin:.4rem 0 0;font-family:'SFMono-Regular',Consolas,monospace;font-size:.66rem;line-height:1.7;color:var(--bp-ink)}
-.bp-q span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bp-yes{color:var(--bp-yes);font-weight:700}
-.bp-no{color:var(--bp-no);font-weight:700}
-.bp-arrow{flex:0 0 auto;align-self:center;display:flex;flex-direction:column;align-items:center;padding:0 .55rem;min-width:66px}
-.bp-arrow em{font-style:normal;font-size:.58rem;color:var(--bp-accent);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:.25rem;text-align:center}
-.bp-shaft{width:100%;height:2px;background:var(--bp-line);position:relative}
-.bp-shaft::after{content:'';position:absolute;right:-1px;top:-4px;border-left:8px solid var(--bp-line);border-top:5px solid transparent;border-bottom:5px solid transparent}
-.bp-loop{margin-top:.95rem;border:1.5px dashed var(--bp-accent);border-radius:8px;padding:.6rem .85rem;font-size:.73rem;line-height:1.5;color:var(--bp-ink);background:rgba(58,124,165,.06)}
-.bp-loop strong{color:var(--bp-accent)}
-.bp-cap{margin-top:.6rem;font-size:.72rem;color:var(--bp-muted);font-style:italic}
-</style>
-<div class="bp-flow">
-  <div class="bp-stage"><div class="bp-box"><h4>Task prompt</h4><p>What you want evaluated, e.g. "summarise this article".</p></div></div>
-  <div class="bp-arrow"><em>meta-prompt</em><div class="bp-shaft"></div></div>
-  <div class="bp-stage"><div class="bp-box"><h4>Binary questions</h4><p>Grouped by dimension (coherence, consistency, …).</p><div class="bp-q"><span>Is it faithful to the source?</span><span>Does it stay on topic?</span><span>Is it fluent?</span></div></div></div>
-  <div class="bp-arrow"><em>evaluator</em><div class="bp-shaft"></div></div>
-  <div class="bp-stage"><div class="bp-box"><h4>Answers</h4><p>Each question answered independently.</p><div class="bp-q"><span><span class="bp-yes">yes</span> &middot; faithful</span><span><span class="bp-no">no</span> &middot; on topic</span><span><span class="bp-yes">yes</span> &middot; fluent</span></div></div></div>
-  <div class="bp-arrow"><em>aggregate</em><div class="bp-shaft"></div></div>
-  <div class="bp-stage"><div class="bp-box"><h4>Scores</h4><p>Fraction of yeses per dimension, plus one overall score.</p></div></div>
-</div>
-<div class="bp-loop"><strong>&#8635; Optimisation loop.</strong> Question-level disagreements feed back to rewrite the evaluator and generator prompts, and with them the questions themselves.</div>
-<p class="bp-cap">The BinEval pipeline (my own diagram, not from the paper).</p>
-</div>
+![The BinEval pipeline: a task prompt is decomposed by a meta-prompt into binary questions grouped by dimension; an evaluator answers each yes/no independently; the answers are aggregated into per-dimension and overall scores; and an optimisation loop feeds question-level disagreements back to rewrite the prompts and the questions.](../../_media/ask-dont-judge/beval-pipeline.png)
+
+*My own diagram of the BinEval pipeline.*
 
 The authors are motivated by prior work showing that hard tasks get easier when you break them into simpler sub-problems, like [Large Language Models Are Human-Level Prompt Engineers](https://arxiv.org/abs/2211.01910) and [Decomposed Prompting](https://arxiv.org/abs/2210.02406).
 
