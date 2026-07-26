@@ -36,7 +36,7 @@ His laptop's motherboard burned out after accidentally connecting a USB cable to
 
 I have a few old MacBooks that are in working order, just sitting around the house. So I offered to send one to him.
 
-Naively, I figured that I'd just go to my local post office, put it in a box with some bubble wrap, and he'd have it in a few days/weeks. However, the process turned out to be far more complicated than expected.
+Neither of us had ever sent or received a package in Uganda before. Naively, I figured that I'd just go to my local post office, put it in a box with some bubble wrap, and he'd have it in a few days/weeks. However, the process turned out to be far more complicated than expected.
 
 ## First attempt
 
