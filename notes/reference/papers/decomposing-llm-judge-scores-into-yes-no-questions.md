@@ -5,6 +5,9 @@ modified: 2026-07-28 00:00
 summary: "An LLM-judge approach that brings interpretability and actionability to your scores."
 cover: /_media/binary-questions-cover.png
 category: paper
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mrnskzvf2k2g
+mastodon_post: https://fedi.notesbylex.com/@lex/116993991770259642
+threads_post: https://www.threads.com/@lexisoninsta/post/DbT5nqSkxi6
 tags:
 - LLMJudge
 - LargeLanguageModels
