@@ -1,7 +1,7 @@
 ---
 title: "Decomposing LLM Judge Scores Into Yes/No Questions"
 date: 2026-07-26 00:00
-modified: 2026-07-27 00:00
+modified: 2026-07-28 00:00
 summary: "An LLM-judge approach that brings interpretability and actionability to your scores."
 cover: /_media/binary-questions-cover.png
 category: paper
@@ -19,7 +19,7 @@ Most LLM judges output a single score for each criterion. However, a score can o
 
 LLMs can also be biased by writing style, word choice, and length, which can result in misaligned scores.
 
-This paper introduces an LLM-judge evaluation framework called [BinEval](../../permanent/bineval.md), which addresses this by decomposing each criterion into a series of binary (yes/no) questions. This gives you interpretable, actionable feedback about why the output passed or failed each criterion. Plus, because you aggregate the binary answers into a single number, you still get one clean score that's easy to communicate.
+This paper introduces an LLM-judge evaluation framework called [BinEval](../../permanent/bineval.md), which addresses this by decomposing each high-level evaluation criterion, or **dimension**, into a series of binary (yes/no) questions. This gives you interpretable, actionable feedback about why the output passed or failed each dimension. Plus, because you aggregate the binary answers into a single number, you still get one clean score that's easy to communicate.
 
 The BinEval system has three parts:
 
@@ -35,9 +35,7 @@ The framework focuses on text tasks like summarisation, dialogue, and instructio
 
 ## Method
 
-BinEval applies a familiar prompting principle to evaluation: difficult judgements often become easier when decomposed into simpler sub-problems. The authors are motivated by prior work like [Large Language Models Are Human-Level Prompt Engineers](https://arxiv.org/abs/2211.01910) and [Decomposed Prompting](https://arxiv.org/abs/2210.02406).
-
-The paper formalises the full framework mathematically, but I've only included the equations that clarify how its scores are calculated.
+BinEval is motivated by prior work showing the effectiveness of decomposing complex tasks into simpler sub-problems, for example [Large Language Models Are Human-Level Prompt Engineers](https://arxiv.org/abs/2211.01910) and [Decomposed Prompting](https://arxiv.org/abs/2210.02406).
 
 ### Question generation
 
@@ -55,23 +53,23 @@ The questions are grouped into broader evaluation dimensions (like coherence or 
 
 ![Table 9 from the paper: the binary questions BinEval uses for the coherence dimension on SummEval](../../_media/ask-dont-judge/table9-coherence-binary-questions.png)
 
-The meta-prompt is task-agnostic: only the task prompt changes from one task to the next.
+The meta-prompt is task-agnostic; that is, only the task prompt changes from one task to the next.
 
 ### Scoring
 
-Here, $x$ is the source or input, $y$ is the output being evaluated, and $f_E$ returns 1 for "yes" and 0 for "no". $Q_d$ is the set of questions for dimension $d$, while $N$ is the total number of questions.
+Here, $\textcolor{#0072B2}{x}$ is the source or input, $\textcolor{#D55E00}{y}$ is the output being evaluated, and $\textcolor{#009E73}{f_E}$ returns 1 for "yes" and 0 for "no". $\textcolor{#CC79A7}{q_i}$ is an individual question and $\textcolor{#CC79A7}{Q_d}$ is the set of questions for dimension $\textcolor{#CC79A7}{d}$, while $\textcolor{#E69F00}{N}$ is the total number of questions.
 
 Since the questions are grouped by dimension, a dimension's score is just the fraction answered yes:
 
-$$S_d(x, y) = \frac{1}{|Q_d|} \sum_{q_i \in Q_d} f_E(x, y, q_i)$$
+$$S_{\textcolor{#CC79A7}{d}}(\textcolor{#0072B2}{x}, \textcolor{#D55E00}{y}) = \frac{1}{|\textcolor{#CC79A7}{Q_d}|} \sum_{\textcolor{#CC79A7}{q_i} \in \textcolor{#CC79A7}{Q_d}} \textcolor{#009E73}{f_E}(\textcolor{#0072B2}{x}, \textcolor{#D55E00}{y}, \textcolor{#CC79A7}{q_i})$$
 
 The overall score is calculated identically across all $N$ questions:
 
-$$S(x, y) = \frac{1}{N} \sum_{i=1}^{N} f_E(x, y, q_i)$$
+$$S(\textcolor{#0072B2}{x}, \textcolor{#D55E00}{y}) = \frac{1}{\textcolor{#E69F00}{N}} \sum_{i=1}^{\textcolor{#E69F00}{N}} \textcolor{#009E73}{f_E}(\textcolor{#0072B2}{x}, \textcolor{#D55E00}{y}, \textcolor{#CC79A7}{q_i})$$
 
 And if you want to map the scores from $[0, 1]$ to some other interval $[a, b]$, you can do it via affine scaling:
 
-$$S'(x, y) = S(x, y) \cdot (b - a) + a$$
+$$S'(\textcolor{#0072B2}{x}, \textcolor{#D55E00}{y}) = S(\textcolor{#0072B2}{x}, \textcolor{#D55E00}{y}) \cdot (b - a) + a$$
 
 ## Experiments and Results
 
@@ -105,7 +103,7 @@ On SummEval, BinEval (Claude) has the best average correlation with human rating
 
 ### Where decomposition helps most
 
-One clean win is **factual consistency**. On QAGS, splitting "is this faithful to the source?" into several targeted yes/no questions beats a single holistic score or one yes/no judgement by a wide margin, and consistency is also where it gains the most on SummEval.
+One clean win is **factual consistency**. On QAGS, splitting "is this faithful to the source?" into several targeted yes/no questions achieves the best average rank correlations, although it only narrowly beats G-Eval (GPT-4). Consistency is also where it gains the most on SummEval.
 
 Breaking a broad judgement into concrete checks appears to be where decomposition pays off most. Each question is easier to answer in isolation, while averaging across several answers may reduce noise. The question set can also explicitly cover distinct failure modes that a holistic judgement might overlook.
 
@@ -125,7 +123,7 @@ Because every answer is kept, you can see *which* questions failed, not just a f
 
 ### Where decomposition struggles
 
-The clear weak spot is **relevance**: G-Eval (GPT-4) still beats it there, and it's the one dimension that didn't improve under the iterative update either. A broad, holistic judgement like "is this relevant to the source?" doesn't cleanly break into independent yes/no checks, so decomposition loses its edge. The results suggest a broader pattern: concrete criteria appear to decompose more reliably than subjective, holistic ones.
+The clear weak spot is **relevance**: G-Eval (GPT-4) still beats it there, and it's the one dimension that didn't improve under the iterative update either. A broad, holistic judgement like "is this relevant to the source?" doesn't cleanly break into independent yes/no checks, so decomposition loses its edge. The results suggest a broader pattern: concrete criteria appear to decompose more reliably than broad, holistic ones.
 
 ### Improving prompts with the feedback
 
@@ -138,7 +136,7 @@ Both improved three of the four dimensions (fluency +0.119 via self-update, cons
 
 ## Summary
 
-Decomposition is a promising approach for people looking for LLM-judge scores that are interpretable and actionable. The results suggest that it works best on concrete criteria like factual consistency and not as well on subjective ones like relevance. Even where it isn't the single best score, it remains substantially more interpretable than a single holistic score.
+Decomposition is a promising approach for people looking for LLM-judge scores that are interpretable and actionable. The results suggest that it works best on concrete criteria like factual consistency and not as well on broad, holistic ones like relevance. Even where it isn't the single best score, it remains substantially more interpretable than a single holistic score.
 
 The question-level failures can also be used to improve evaluator and generator prompts, provided the problem is unclear instructions rather than a capability ceiling. The trade-off is extra evaluation work, and the quality of the result still depends on the quality of the generated questions.
 
