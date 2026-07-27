@@ -1,5 +1,5 @@
 ---
-title: "Decomposing LLM-Judge Scores Into Yes/No Questions"
+title: "Decomposing LLM Judge Scores Into Yes/No Questions"
 date: 2026-07-26 00:00
 modified: 2026-07-27 00:00
 summary: "An LLM-judge approach that brings interpretability and actionability to your scores."
@@ -15,35 +15,29 @@ paper_url: https://arxiv.org/pdf/2606.27226
 paper_authors: Sangwoo Cho, Kushal Chawla, Pengshan Cai, Zefang Liu, Chenyang Zhu, Shi-Xiong Zhang and Sambit Sahu
 ---
 
-This paper introduces an LLM-judge evaluation framework called [BinEval](../../permanent/bineval.md), based on decomposing each criterion into binary (yes/no) questions.
+Most LLM judges output a single score for each criterion. However, a score can often be opaque and difficult to act on, especially at the higher end: what should you change to get a 5 instead of a 4.5?
 
-![Table 9 from the paper: the binary questions BinEval uses for the coherence dimension on SummEval](../../_media/ask-dont-judge/table9-coherence-binary-questions.png)
+LLMs can also be biased by writing style, word choice, and length, which can result in misaligned scores.
 
-The framework focuses on text tasks like summarisation, dialogue, and instruction following, but in theory it could apply to any LLM-judge evaluation task.
+This paper introduces an LLM-judge evaluation framework called [BinEval](../../permanent/bineval.md), which addresses this by decomposing each criterion into a series of binary (yes/no) questions. This gives you interpretable, actionable feedback about why the output passed or failed each criterion. Plus, because you aggregate the binary answers into a single number, you still get one clean score that's easy to communicate.
 
-![A source excerpt and the summary evaluated against it, from the paper](../../_media/ask-dont-judge/source-summary-example.png)
-
-The approach targets a familiar weakness of your standard judge approaches. When your judge outputs a single score per criterion, it can be opaque and not clear how to act on it, especially at the higher end: what should you change to get a 5 instead of a 4.5? Also, LLMs can be biased by writing style, word choice, and length, which can result in misaligned scores.
-
-BinEval fixes this by decomposing the criterion into a series of yes/no questions, so you get informative, actionable feedback about your criteria. Plus, because you aggregate the yes/no answers into a single number, you still get one clean score that's easy to communicate.
-
-On top of evaluation, they also demonstrate how question-level feedback can be used to optimise system prompts and even the questions themselves.
-
-There are three parts:
+The BinEval system has three parts:
 
 1. A meta-prompt that decomposes the task prompt into a set of questions per dimension.
 2. An evaluator that answers each question independently, then aggregates the answers per dimension into a score.
-3. A two-phase optimisation loop that improves the evaluator and generator prompts (and, through them, the questions) from question-level feedback.
+3. An optimisation loop that uses question-level feedback to improve the evaluator and generator prompts.
 
 ![The BinEval pipeline: a task prompt is decomposed by a meta-prompt into binary questions grouped by dimension; an evaluator answers each yes/no independently; the answers are aggregated into per-dimension and overall scores; and an optimisation loop feeds question-level disagreements back to rewrite the prompts and the questions.](../../_media/ask-dont-judge/beval-pipeline.png)
 
 *My own diagram of the BinEval pipeline.*
 
-The authors are motivated by prior work showing that hard tasks get easier when you break them into simpler sub-problems, like [Large Language Models Are Human-Level Prompt Engineers](https://arxiv.org/abs/2211.01910) and [Decomposed Prompting](https://arxiv.org/abs/2210.02406).
+The framework focuses on text tasks like summarisation, dialogue, and instruction following, but in theory it could apply to any LLM-judge evaluation task. Beyond evaluation, they also demonstrate how question-level feedback can be used to optimise system prompts and even the questions themselves.
 
 ## Method
 
-There is math in the paper, but it doesn't add much, so I've only included it in this summary where there's actual math to do.
+BinEval applies a familiar prompting principle to evaluation: difficult judgements often become easier when decomposed into simpler sub-problems. The authors are motivated by prior work like [Large Language Models Are Human-Level Prompt Engineers](https://arxiv.org/abs/2211.01910) and [Decomposed Prompting](https://arxiv.org/abs/2210.02406).
+
+The paper formalises the full framework mathematically, but I've only included the equations that clarify how its scores are calculated.
 
 ### Question generation
 
@@ -53,21 +47,25 @@ The prompt that decomposes the criterion into questions is called the **"meta-pr
 
 They generate the questions in two steps:
 
-In the first step, they summarise the task prompt into an explicit set of requirements. Each requirement captures a distinct evaluation criterion, which helps the model build a representation of the task.
+In the first step, they summarise the task prompt into an explicit set of requirements. Each requirement captures a specific expectation, which helps the model build a representation of the task.
 
 In the second step, they decompose each requirement into binary questions.
 
-The questions are grouped into evaluation dimensions (like coherence or fluency), which is what lets you score each dimension separately later.
+The questions are grouped into broader evaluation dimensions (like coherence or fluency), which is what lets you score each dimension separately later. In other words, requirements are the specific expectations extracted from the task, while dimensions are the categories used to organise and report the resulting questions.
+
+![Table 9 from the paper: the binary questions BinEval uses for the coherence dimension on SummEval](../../_media/ask-dont-judge/table9-coherence-binary-questions.png)
 
 The meta-prompt is task-agnostic: only the task prompt changes from one task to the next.
 
 ### Scoring
 
+Here, $x$ is the source or input, $y$ is the output being evaluated, and $f_E$ returns 1 for "yes" and 0 for "no". $Q_d$ is the set of questions for dimension $d$, while $N$ is the total number of questions.
+
 Since the questions are grouped by dimension, a dimension's score is just the fraction answered yes:
 
 $$S_d(x, y) = \frac{1}{|Q_d|} \sum_{q_i \in Q_d} f_E(x, y, q_i)$$
 
-The overall score is the same thing, but across all $N$ questions:
+The overall score is calculated identically across all $N$ questions:
 
 $$S(x, y) = \frac{1}{N} \sum_{i=1}^{N} f_E(x, y, q_i)$$
 
@@ -77,7 +75,7 @@ $$S'(x, y) = S(x, y) \cdot (b - a) + a$$
 
 ## Experiments and Results
 
-They run two experiments: do BinEval's scores agree with human judgement (evaluation quality), and can its question-level feedback actually improve prompts (iterative updating)?
+The experiments ask two questions. First, how closely do BinEval's scores agree with human ratings? Second, can its question-level feedback be used to improve prompts?
 
 For evaluation quality, they check how well each method's scores correlate with human ratings (Spearman, Kendall, Pearson) across three benchmarks:
 
@@ -85,45 +83,64 @@ For evaluation quality, they check how well each method's scores correlate with 
 - [Topical-Chat](../../permanent/topical-chat.md): dialogue responses, rated on qualities like naturalness, coherence, engagingness, and groundedness.
 - [QAGS](../../permanent/qags.md): factual consistency (hallucination) in summaries.
 
-They compare BinEval against a spread of older metrics and LLM judges:
+They compare BinEval against a spread of traditional and model-based metrics:
 
 - [ROUGE-1](../../permanent/rouge-1.md): a simple overlap metric.
 - [BERTScore](../../permanent/bertscore.md): matches contextual BERT token embeddings.
 - [MoverScore](../../permanent/moverscore.md): similar to BERTScore, but uses Earth Mover's Distance.
 - [BARTScore](../../permanent/bartscore.md): scores text by how likely a language model is to generate it.
+
+They also compare it against two LLM-judge approaches:
+
 - [UniEval](../../permanent/unieval.md): an LLM-judge precursor to BinEval that asks a single yes/no per dimension.
 - [G-Eval](../../permanent/g-eval.md): an LLM-judge approach that scores via chain-of-thought, but still gives one opaque number.
 
-Overall, BinEval outperforms the other approaches (otherwise, I guess they wouldn't upload it to arXiv) on most criteria but not all.
+### Overall performance
+
+Overall, BinEval achieves the best average correlation with human ratings on SummEval and Topical-Chat, with its strongest gains appearing on factual consistency. Its main weakness is relevance.
 
 ![Table 1 from the paper: summary-level Spearman / Kendall correlations on SummEval. BinEval (Claude) has the best average (0.563 / 0.491), leading on coherence, consistency, and fluency, while G-Eval (GPT-4) leads on relevance.](../../_media/ask-dont-judge/table1-summeval-correlations.png)
 
-One clean win is **factual consistency**. On QAGS, splitting "is this faithful to the source?" into several targeted yes/no questions beats a single holistic score or one yes/no judgement by a wide margin, and consistency is also where it gains the most on SummEval. Breaking a fuzzy judgement into concrete checks is exactly where decomposition pays off, presumably because each yes/no is easier to answer, averaging several of them cancels noise, and the questions explicitly cover known failure modes.
+On SummEval, BinEval (Claude) has the best average correlation with human ratings ([Spearman Correlation](../../permanent/spearman-correlation.md) and Kendall), winning coherence, consistency, and fluency. And it transfers: on Topical-Chat it again gets the best average, even on subjective dialogue qualities like naturalness and engagingness.
 
-It's a better-behaved evaluator in general, too. On SummEval, BinEval (Claude) has the best average correlation with humans ([Spearman Correlation](../../permanent/spearman-correlation.md) and Kendall), winning coherence, consistency, and fluency. And it transfers: on Topical-Chat it again gets the best average, even on subjective dialogue qualities like naturalness and engagingness.
+### Where decomposition helps most
 
-It also tracks the *shape* of human scores more faithfully and avoids the ceiling effects that squash prior judges into a narrow band, so it draws sharper distinctions between borderline and clearly bad outputs. Even on a weaker backbone (gpt-oss), it beats G-Eval and UniEval, where UniEval's single yes/no collapses on fluency (near-zero correlation), a sign that one question per dimension is too coarse.
+One clean win is **factual consistency**. On QAGS, splitting "is this faithful to the source?" into several targeted yes/no questions beats a single holistic score or one yes/no judgement by a wide margin, and consistency is also where it gains the most on SummEval.
 
-![figure1-summeval-distributions.png](../../_media/ask-dont-judge/figure1-summeval-distributions.png)
+Breaking a broad judgement into concrete checks appears to be where decomposition pays off most. Each question is easier to answer in isolation, while averaging across several answers may reduce noise. The question set can also explicitly cover distinct failure modes that a holistic judgement might overlook.
 
-And because every answer is kept, you can see *which* questions failed, not just a final number.
+### Better score behaviour
 
-![figure4-consistency-case-study.png](../../_media/ask-dont-judge/figure4-consistency-case-study.png)
+BinEval tracks the *shape* of human scores more faithfully and avoids the ceiling effects that squash prior judges into a narrow band, so it draws sharper distinctions between borderline and clearly bad outputs. Even on a weaker backbone (gpt-oss), it beats G-Eval and UniEval, where UniEval's single yes/no collapses on fluency (near-zero correlation), a sign that one question per dimension is too coarse.
 
-The clear weak spot is **relevance**: G-Eval (GPT-4) still beats it there, and it's the one dimension that didn't improve under the iterative update either. A broad, holistic judgement like "is this relevant to the source?" doesn't cleanly break into independent yes/no checks, so decomposition loses its edge. The pattern holds in general: concrete criteria decompose well, inherently subjective ones less so.
+![Score distributions on SummEval: BinEval more closely follows the distribution of human ratings, while other LLM judges cluster their scores toward the top of the scale.](../../_media/ask-dont-judge/figure1-summeval-distributions.png)
+
+### Interpretability
+
+Because every answer is kept, you can see *which* questions failed, not just a final number. In the paper's factual-consistency case study, you can inspect the source and summary, then see the specific checks behind the score.
+
+![A source excerpt and the summary evaluated against it, from the paper](../../_media/ask-dont-judge/source-summary-example.png)
+
+![BinEval's factual-consistency case study: individual binary questions expose which claims in the summary are and are not supported by the source.](../../_media/ask-dont-judge/figure4-consistency-case-study.png)
+
+### Where decomposition struggles
+
+The clear weak spot is **relevance**: G-Eval (GPT-4) still beats it there, and it's the one dimension that didn't improve under the iterative update either. A broad, holistic judgement like "is this relevant to the source?" doesn't cleanly break into independent yes/no checks, so decomposition loses its edge. The results suggest a broader pattern: concrete criteria appear to decompose more reliably than subjective, holistic ones.
 
 ### Improving prompts with the feedback
 
-The second experiment tests whether the question-level feedback can improve prompts, not just score with them. They try two modes on SummEval:
+So far, BinEval has been used to evaluate outputs. The second experiment asks whether its question-level failures can also be used to improve the prompts behind the evaluator or generator. They try two modes on SummEval:
 
-- **Self-update**: one model (`gpt-oss-120b`) improves its own evaluator prompt from its failures against human judgements.
+- **Self-update**: one model (`gpt-oss-120b`) improves its own evaluator prompt from its failures against human ratings.
 - **Cross-model update**: a stronger model (Claude Sonnet 4) acts as the reference, and disagreements are used to update the weaker target model's prompt.
 
-Both improved three of the four dimensions (fluency +0.119 via self-update, consistency +0.136 via cross-model update), with relevance again the holdout. The same loop can also optimise a generation prompt on IFBench, where a programmatic checker verifies the outputs. The catch is that iteration only helps when the failure is unclear instructions, not a capability ceiling. If the model simply can't do it, better questions won't save it.
+Both improved three of the four dimensions (fluency +0.119 via self-update, consistency +0.136 via cross-model update), with relevance again the holdout. They also apply the loop to generation prompts on IFBench, an instruction-following benchmark with programmatically verifiable outputs. The catch is that iteration only helps when the failure is unclear instructions, not a capability ceiling. If the model simply can't do it, better questions won't save it.
 
 ## Summary
 
-Decomposition is a promising approach for people looking for LLM-Judge scores that are interpretable and actionable. In the experiments, it works best on concrete criteria like factual consistency and not as well on subjective ones like relevance. But even where it isn't the single best score, it's the most interpretable.
+Decomposition is a promising approach for people looking for LLM-judge scores that are interpretable and actionable. The results suggest that it works best on concrete criteria like factual consistency and not as well on subjective ones like relevance. Even where it isn't the single best score, it remains substantially more interpretable than a single holistic score.
+
+The question-level failures can also be used to improve evaluator and generator prompts, provided the problem is unclear instructions rather than a capability ceiling. The trade-off is extra evaluation work, and the quality of the result still depends on the quality of the generated questions.
 
 ---
 
