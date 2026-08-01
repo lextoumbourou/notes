@@ -10,6 +10,7 @@ mastodon_post: https://fedi.notesbylex.com/@lex/116993991770259642
 threads_post: https://www.threads.com/@lexisoninsta/post/DbT5nqSkxi6
 tags:
 - LLMJudge
+- LLMEvals
 - LargeLanguageModels
 aliases:
 - "Ask, Don’t Judge: Binary Questions for Interpretable LLM Evaluation and Self-Improvement"
