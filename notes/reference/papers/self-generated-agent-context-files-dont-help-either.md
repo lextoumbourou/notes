@@ -1,7 +1,7 @@
 ---
 title: "Self-Generated Agent Context Files Don't Help Either"
 date: 2026-02-26 00:00
-modified: 2026-02-26 00:00
+modified: 2026-08-01 17:42
 summary: "Self-generated agent context files don't help."
 category: paper
 cover: /_media/evaluating-agents-md-page-1.png
@@ -9,6 +9,7 @@ hide_cover_in_article: true
 alias: evaluating-agents-md-are-repository-level-context-files-helpful-for-coding-agents
 tags:
 - AgenticReasoning
+- AgenticFailureModes
 - SoftwareEngineering
 - AIAgents
 paper_title: "Evaluating AGENTS.md: Are Repository-Level Context Files Helpful for Coding Agents?"
