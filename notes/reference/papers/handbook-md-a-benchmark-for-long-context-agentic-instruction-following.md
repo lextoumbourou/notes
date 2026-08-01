@@ -1,7 +1,7 @@
 ---
 title: "LLM Agents Do Not Reliably Follow Company Policies"
 date: 2026-08-01 10:29
-modified: 2026-08-01 17:28
+modified: 2026-08-01 17:40
 summary: "A new benchmark that tests whether AI agents can follow long company policies during realistic work"
 cover: /_media/handbook-md-company-policy-folders.jpg
 cover_credits: Photo by <a href="https://www.pexels.com/photo/pile-of-folders-357514/">Pixabay via Pexels</a>
@@ -10,7 +10,8 @@ linkedin_post: https://www.linkedin.com/posts/lextoumbourou_llm-agents-do-not-re
 category: paper
 tags:
 - AgenticReasoning
-- LLMFailureModes
+- AgenticFailureModes
+- LLMEvals
 paper_title: "HANDBOOK.md: A Benchmark for Long-Context Agentic Instruction Following"
 paper_url: https://arxiv.org/pdf/2607.25398
 paper_authors: Liudas Panavas, Sebastian Minus, Bradley Monton, Derek Ray, Suhaas Garre, Sushant Mehta and Edwin Chen

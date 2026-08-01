@@ -1,7 +1,7 @@
 ---
 title: "LLMs Corrupt Your Documents When You Delegate"
 date: 2026-05-09 00:00
-modified: 2026-05-09 00:00
+modified: 2026-08-01 17:42
 category: paper
 cover: /_media/llms-corrupt-cover.png
 hide_cover_in_article: true
@@ -12,7 +12,7 @@ mastodon_post: https://fedi.notesbylex.com/@lex/116542213243149508
 linkedin_post: https://www.linkedin.com/feed/update/urn:li:activity:7458690168427003904
 tags:
 - AgenticReasoning
-- LimitationsofLLMs
+- AgenticFailureModes
 paper_title: "LLMs Corrupt Your Documents When You Delegate"
 paper_url: https://arxiv.org/pdf/2604.15597
 paper_authors: Philippe Laban, Tobias Schnabel and Jennifer Neville
