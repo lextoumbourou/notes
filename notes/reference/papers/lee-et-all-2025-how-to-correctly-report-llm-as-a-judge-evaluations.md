@@ -1,20 +1,26 @@
 ---
-title: "Lee et al., (2025) - How to Correctly Report LLM-as-a-Judge Evaluations"
+title: "How to Correctly Report LLM-as-a-Judge Evaluations"
 date: 2025-11-29 00:00
-modified: 2025-11-29 00:00
-category: reference/papers
-paper_url: https://arxiv.org/abs/2511.21140
-year: 2025
-doi:  https://doi.org/10.48550/arXiv.2511.21140
+modified: 2026-07-31 00:00
 status: draft
+category: paper
+summary: "A bias-correction method and confidence interval for LLM-as-a-judge evaluations."
+hide_cover_in_article: true
 tags:
+- LLMJudge
 - LLMEvals
 - LargeLanguageModels
+paper_title: "How to Correctly Report LLM-as-a-Judge Evaluations"
+paper_url: https://arxiv.org/abs/2511.21140
+paper_authors: Chungpa Lee, Thomas Zeng, Jongwon Jeong, Jy-yong Sohn and Kangwook Lee
+paper_year: 2025
+doi: https://doi.org/10.48550/arXiv.2511.21140
+code: https://github.com/UW-Madison-Lee-Lab/LLM-judge-reporting
 ---
 
 *My notes for the paper How to Correctly Report LLM-as-a-Judge Evaluations* [@leeHowCorrectlyReport2025]
 
-The paper describes a way to calculate a confidence interval for [LLM-Judge](LLM-Judge.md) evaluations. It works something like this: you have your eval set of input prompts, and a model under test, and a way to evaluate your outputs as true / false (this paper doesn't handle multiple criterions, but I guess you could do this for each output criterion).
+The paper describes a way to calculate a confidence interval for [LLM-Judge](LLM-Judge.md) evaluations. It works something like this: you have your eval set of input prompts, an model under test, and a way to evaluate your outputs as true / false (this paper doesn't handle multiple criteria but I guess you could do this for each output criterion).
 
 Compute your outputs given your inputs, then compute judge labels for your inputs.
 
@@ -71,4 +77,3 @@ def confidence_interval(p, q0, q1, n, m0, m1, alpha=0.05):
 
     return clip(th + dth - z*se), clip(th + dth + z*se)
 ```
-
