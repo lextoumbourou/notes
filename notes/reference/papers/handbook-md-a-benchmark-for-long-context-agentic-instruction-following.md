@@ -5,7 +5,6 @@ modified: 2026-08-01 17:40
 summary: "A new benchmark that tests whether AI agents can follow long company policies during realistic work"
 cover: /_media/handbook-md-company-policy-folders.jpg
 cover_credits: Photo by <a href="https://www.pexels.com/photo/pile-of-folders-357514/">Pixabay via Pexels</a>
-hide_cover_in_article: true
 linkedin_post: https://www.linkedin.com/posts/lextoumbourou_llm-agents-do-not-reliably-follow-company-share-7489214760664584192-Ou0W/
 category: paper
 tags:
