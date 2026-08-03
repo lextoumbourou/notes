@@ -76,8 +76,9 @@ image_path = (
 image = base64.b64encode(image_path.read_bytes()).decode()
 api_key = (Path.home() / ".secrets/qwencloud_personal").read_text().strip()
 
-client = OpenAI(api_key=api_key,
-                base_url="https://dashscope-intl.aliyuncs.com/compatible-mode/v1")
+client = OpenAI(
+    api_key=api_key,
+    base_url="https://dashscope-intl.aliyuncs.com/compatible-mode/v1")
 
 response = client.chat.completions.create(
     model="qwen3.8-max",
@@ -93,14 +94,15 @@ response = client.chat.completions.create(
 usage = response.usage
 cost = (usage.prompt_tokens * 2 + usage.completion_tokens * 6) / 1_000_000
 print(response.choices[0].message.content)
-print(f"\n{usage.prompt_tokens:,} input + {usage.completion_tokens:,} output tokens = ${cost:.4f}")
+print()
+print(f"{usage.prompt_tokens:,} input + {usage.completion_tokens:,} output tokens = ${cost:.4f}")
 ```
-<!-- nb-output hash="bf20d47bc84c923d" format="html" -->
+<!-- nb-output hash="05056f75d7c98b9e" format="html" -->
 <div class="nb-output">
-<pre class="nb-stream-stdout">This dog most resembles a mixed-breed with strong pit bull / Staffordshire-type or Australian cattle dog ancestry, likely crossed with a terrier given the wiry coat and white markings.
+<pre class="nb-stream-stdout">This dog most resembles a pit bull–type or Staffordshire terrier mix, likely with some hound or pointer influence given its lean brindle legs and white markings.
+
 </pre>
-<pre class="nb-stream-stdout">
-1,956 input + 179 output tokens = $0.0050
+<pre class="nb-stream-stdout">1,956 input + 159 output tokens = $0.0049
 </pre>
 </div>
 <!-- /nb-output -->
