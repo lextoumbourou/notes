@@ -12,7 +12,7 @@ category: reference/papers
 
 ---
 
-This paper introduces [Mixtral 8x7B](../../permanent/mixtral-8x7B.md), a [Sparse Mixture of Experts Model](../../permanent/sparse-mixture-of-experts-model.md) (SMoE) language model.
+This paper introduces [Mixtral 8x7B](../../permanent/mixtral-8x7B.md), a [Mixture of Experts Model](../../permanent/mixture-of-experts-model.md) (SMoE) language model.
 
 The model uses an SMoE approach where each layer comprises eight "experts", and a router network selects two experts to process each token. Thanks to this, despite having 47B parameters, it only uses 13B active parameters during inference, which makes it more computationally efficient than other models (although it doesn't save any memory).
 
