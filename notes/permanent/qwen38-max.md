@@ -9,17 +9,17 @@ tags:
   - OpenWeightLLM
 ---
 
-**Qwen3.8-Max** is a new 2.4-trillion-parameter flagship [Mixture of Experts Model](mixture-of-experts-model.md) from the Qwen team at Alibaba Cloud, with 95 billion active parameters.
+**Qwen3.8-Max** is a new 2.4-trillion-parameter [Mixture of Experts Model](mixture-of-experts-model.md) from the Qwen team at Alibaba Cloud, with 95 billion active parameters.
 
 It accepts text, image and video input. Its 1M-token context window supports up to 991,800 input tokens and 131,070 output tokens.
 
 Qwen plans to release the model weights next week, making this its first open-weight Max-class model.
 
-Like the [Kimi K3](kimi-k3.md) model released earlier last month, with the weights released shortly after, Qwen3.8-Max is a frontier-level open weights model. Wild times.
+Like the [Kimi K3](kimi-k3.md) model released earlier last month, Qwen3.8-Max is a frontier-level open weights model. Wild times.
 
 ## Benchmarks
 
-In Qwen's own benchmarks, it is broadly competitive with GPT5.6 Sol (max) and Fable5, although the results vary considerably by task.
+In Qwen's own benchmarks, it is competitive with GPT5.6 Sol (max) and Fable5, even beating them at certain benchmarks.
 
 Among the results reported by Qwen, Qwen3.8-Max leads PaperBench and several legal, finance, visual-reasoning and computer-use benchmarks. It remains behind Fable5 on many coding and cowork evaluations, and behind GPT5.6 Sol (max) on several general-reasoning tests.
 
