@@ -1,7 +1,7 @@
 ---
 title: Qwen3.8-Max
 date: 2026-08-03 14:55
-modified: 2026-08-03 21:13
+modified: 2026-08-03 22:02
 category: news
 summary: "A new frontier model from the Qwen team"
 tags:
@@ -9,19 +9,19 @@ tags:
   - OpenWeightLLM
 ---
 
-**Qwen3.8-Max** is a new 2.4-trillion-parameter [Mixture of Experts Model](mixture-of-experts-model.md) from the Qwen team at Alibaba Cloud, with 95 billion active parameters.
+**Qwen3.8-Max** is a new 2.4T parameter [Mixture of Experts Model](mixture-of-experts-model.md) from the Qwen team at Alibaba Cloud, with 95 billion active parameters.
 
-It accepts text, image and video input. Its 1M-token context window supports up to 991,800 input tokens and 131,070 output tokens.
+It accepts text, image and video input. It has a 1M-token context window, supporting up to 991,800 input tokens and 131,070 output tokens.
 
-Qwen plans to release the model weights next week, making this its first open-weight Max-class model.
+Qwen plans to release the model weights next week, making this its first open-weight Max-class Qwen model.
 
-Like the [Kimi K3](kimi-k3.md) model released earlier last month, Qwen3.8-Max is a frontier-level open weights model. Wild times.
+Qwen3.8-Max is another frontier-level open-weight model (well, soon to be: they release the weights next week), like the [Kimi K3](kimi-k3.md) model released last month. Wild times.
 
 ## Benchmarks
 
-In Qwen's own benchmarks, it is competitive with GPT5.6 Sol (max) and Fable5, even beating them at certain benchmarks.
+In Qwen's test results, it is competitive with GPT5.6 Sol (max) and Fable5, even beating them at certain benchmarks.
 
-Among the results reported by Qwen, Qwen3.8-Max leads PaperBench and several legal, finance, visual-reasoning and computer-use benchmarks. It remains behind Fable5 on many coding and cowork evaluations, and behind GPT5.6 Sol (max) on several general-reasoning tests.
+Among the results reported by the team, it leads PaperBench and several legal, finance, visual-reasoning and computer-use benchmarks. It remains behind Fable5 on many coding and cowork evaluations, and behind GPT5.6 Sol (max) on several general-reasoning tests, but is still an incredibly capable model.
 
 ![Selected Qwen3.8-Max benchmark results published by Qwen](../_media/qwen38-max-benchmarks.png)
 
@@ -39,7 +39,7 @@ QwenCloud lists the following prices per million tokens:
 | Explicit cache creation | $2.50 |
 | Explicit cache read     | $0.17 |
 
-These are Qwen3.8-Max's model-specific prices. They are slightly better than the standard percentage-based rates in QwenCloud's general cache guide.
+Implicit caching is always enabled - similar to how other vendors do it - the service attempts to cache common request prefixes, but does not guarantee a hit.
 
 If you want to guarantee a hit, "explicit caching" uses a `cache_control` marker to retain a prefix in cache for five minutes. Reading the cache resets that period for another five minutes.
 
@@ -47,15 +47,13 @@ Claude supports a [similar caching paradigm](https://platform.claude.com/docs/en
 
 ## Multimodal example
 
-Here is Doggo on a recent trip to the Sunshine Coast:
-
-<img src="../_media/qwen38-max-doggo.jpg" alt="Doggo standing on a beach" width="247" height="328">
-
 Conveniently, Qwen provides OpenAI- and Claude-compatible endpoints.
 
 You can create a new key via [QwenCloud](https://home.qwencloud.com/), under **API Keys** > **Create API key**.
 
-Then, via the OpenAI-compatible endpoint, you can send the local image as Base64 and ask Qwen for a breed estimate.
+In this example, using the OpenAI-compatible endpoint, I send an image of Doggo on a recent trip to the Sunshine Coast, and see if it can figure out her breed.
+
+<img src="../_media/qwen38-max-doggo.jpg" alt="Doggo standing on a beach" width="247" height="328">
 
 ```python
 import base64
