@@ -4,6 +4,9 @@ date: 2026-08-05 00:00
 modified: 2026-08-06 09:04
 category: note
 summary: "A new protocol for MCP that removes handshakes and mandatory sessions."
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mseo5dw3mf2g
+mastodon_post: https://fedi.notesbylex.com/@lex/117045465323546775
+threads_post: https://www.threads.com/@lexisoninsta/post/DbrTnhPAU_b
 tags:
   - AgentStandards
 cover: /_media/stateless-mcp-cover.jpg
