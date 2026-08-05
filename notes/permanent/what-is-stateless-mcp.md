@@ -1,7 +1,7 @@
 ---
 title: What is Stateless MCP?
 date: 2026-08-05 00:00
-modified: 2026-08-06 07:48
+modified: 2026-08-06 09:04
 category: note
 summary: "A new protocol for MCP that removes handshakes and mandatory sessions."
 tags:
@@ -43,15 +43,9 @@ I'll create a new instance of an `MCPServer`, add a single tool called `add` and
 - `stateless_http=True` disables transport session tracking.
 - `json_response=True` makes the server return a JSON object instead of an SSE stream.
 
+This starts the server in the background:
 
 ```bash
-if test -f /tmp/stateless-mcp.pid; then
-  old_pid="$(cat /tmp/stateless-mcp.pid)"
-  kill "$old_pid" 2>/dev/null || true
-  while kill -0 "$old_pid" 2>/dev/null; do sleep 0.1; done
-  rm -f /tmp/stateless-mcp.pid
-fi
-
 uv run --with 'mcp>=2,<3' python - >/tmp/stateless-mcp.log 2>&1 <<'PY' &
 from mcp.server import MCPServer
 
@@ -70,23 +64,10 @@ mcp.run(
 )
 PY
 
-uv_pid=$!
-server_pid=""
-for _ in {1..30}; do
-  server_pid="$(pgrep -P "$uv_pid" | head -n 1)"
-  test -n "$server_pid" && break
-  sleep 1
-done
-
-if test -z "$server_pid" || ! kill -0 "$server_pid" 2>/dev/null; then
-  cat /tmp/stateless-mcp.log >&2
-  exit 1
-fi
-
-echo "$server_pid" >/tmp/stateless-mcp.pid
+sleep 2
 echo "Server running at http://127.0.0.1:3001/mcp"
 ```
-<!-- nb-output hash="e6080fb6f0768b77" format="html" -->
+<!-- nb-output hash="050a09ad2ada1807" format="html" -->
 <div class="nb-output">
 <pre class="nb-stream-stdout">Server running at http://127.0.0.1:3001/mcp
 </pre>
@@ -302,13 +283,10 @@ There is our `add` tool, including the input and output schemas generated from t
 ### Stop the server
 
 ```bash
-server_pid="$(cat /tmp/stateless-mcp.pid)"
-kill "$server_pid" 2>/dev/null || true
-while kill -0 "$server_pid" 2>/dev/null; do sleep 0.1; done
-rm -f /tmp/stateless-mcp.pid
+kill "$(lsof -tiTCP:3001 -sTCP:LISTEN)"
 echo "Server stopped"
 ```
-<!-- nb-output hash="5be70c31f264d1bd" format="html" -->
+<!-- nb-output hash="4c9e32219050bfb7" format="html" -->
 <div class="nb-output">
 <pre class="nb-stream-stdout">Server stopped
 </pre>
