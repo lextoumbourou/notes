@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Stateless MCP Works</title>
+<style>
+  @font-face {
+    font-family: "Canva Sans";
+    font-style: normal;
+    font-weight: 400 700;
+    src: url("../../theme/static/fonts/canva-sans-latin.woff2") format("woff2");
+  }
+
+  :root {
+    --g-bg: #ffffff;
+    --g-surface: #f6f1e2;
+    --g-surface-2: #efe9d6;
+    --g-ink: #1f2a3d;
+    --g-ink-2: #3c4a60;
+    --g-muted: #76798a;
+    --g-rule: #e5decb;
+    --g-rule-soft: #eee9d8;
+    --g-link: #3b6a8a;
+    --g-heading: #243f58;
+    --g-code-bg: #efe9d8;
+    --g-code-fg: #5a4a2a;
+    --g-accent: #b58b3c;
+    --g-success: #567559;
+    --g-on-accent: #ffffff;
+    --g-shadow: rgba(31, 42, 61, 0.10);
+    --g-glow: rgba(181, 139, 60, 0.16);
+  }
+
+  html[data-theme="dark"] {
+    --g-bg: #111820;
+    --g-surface: #1a242d;
+    --g-surface-2: #232f38;
+    --g-ink: #e8e2d3;
+    --g-ink-2: #c8c1b3;
+    --g-muted: #9da8b2;
+    --g-rule: #3a4650;
+    --g-rule-soft: #2b3741;
+    --g-link: #82aec9;
+    --g-heading: #f1e9d8;
+    --g-code-bg: #202b33;
+    --g-code-fg: #e2ca91;
+    --g-accent: #d6ad5c;
+    --g-success: #8db493;
+    --g-on-accent: #17202a;
+    --g-shadow: rgba(0, 0, 0, 0.24);
+    --g-glow: rgba(214, 173, 92, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    background: var(--g-bg);
+    color: var(--g-ink);
+    font-family: "Canva Sans", system-ui, -apple-system, sans-serif;
+  }
+
+  .stage {
+    position: relative;
+    width: 1200px;
+    height: 675px;
+    margin: 0 auto;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 50% 45%, var(--g-glow), transparent 34%),
+      var(--g-bg);
+  }
+
+  .node {
+    position: absolute;
+    z-index: 2;
+    border: 1px solid var(--g-rule);
+    border-radius: 16px;
+    background: var(--g-surface);
+    box-shadow: 0 12px 28px var(--g-shadow);
+  }
+
+  .client {
+    left: 64px;
+    top: 135px;
+    width: 180px;
+    height: 160px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+
+  .client-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--g-heading);
+    color: var(--g-bg);
+  }
+
+  .client-icon svg { width: 32px; height: 32px; }
+  .node-title { color: var(--g-heading); font-size: 19px; font-weight: 650; }
+  .node-subtitle { margin-top: 2px; color: var(--g-muted); font-size: 13px; }
+
+  .request {
+    left: 314px;
+    top: 105px;
+    width: 286px;
+    height: 220px;
+    padding: 22px 24px;
+    background: var(--g-bg);
+    border-color: var(--g-accent);
+  }
+
+  .request::before {
+    content: "SELF-CONTAINED REQUEST";
+    position: absolute;
+    top: -14px;
+    left: 21px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--g-accent);
+    color: var(--g-on-accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+  }
+
+  .request-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--g-rule-soft);
+  }
+
+  .method {
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: var(--g-code-bg);
+    color: var(--g-code-fg);
+    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .endpoint { color: var(--g-muted); font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 12px; }
+  .json { margin-top: 15px; font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 14px; line-height: 1.65; }
+  .json-key { color: var(--g-link); }
+  .json-value { color: var(--g-code-fg); }
+  .json-muted { color: var(--g-muted); }
+
+  .router {
+    left: 665px;
+    top: 153px;
+    width: 142px;
+    height: 124px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background: var(--g-surface-2);
+  }
+
+  .router svg { width: 40px; height: 40px; color: var(--g-link); }
+
+  .servers-label {
+    position: absolute;
+    top: 81px;
+    left: 883px;
+    z-index: 2;
+    color: var(--g-muted);
+    font-size: 13px;
+    font-weight: 650;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .server {
+    left: 882px;
+    width: 254px;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 18px;
+    box-shadow: 0 7px 18px var(--g-shadow);
+  }
+
+  .server-a { top: 110px; }
+  .server-b { top: 203px; border-color: var(--g-accent); background: var(--g-bg); }
+  .server-c { top: 296px; }
+
+  .server-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    flex: none;
+    border: 1px solid var(--g-rule);
+    border-radius: 10px;
+    color: var(--g-link);
+    background: var(--g-bg);
+  }
+
+  .server-icon svg { width: 23px; height: 23px; }
+  .selected { color: var(--g-accent); font-size: 12px; font-weight: 700; }
+
+  .wires {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 1200px;
+    height: 675px;
+    pointer-events: none;
+  }
+
+  .wire { fill: none; stroke: var(--g-rule); stroke-width: 2; }
+  .wire-main { stroke: var(--g-link); }
+  .wire-selected { stroke: var(--g-accent); stroke-width: 2.5; }
+  .wire-return { stroke: var(--g-success); stroke-width: 2; }
+  .wire-muted { stroke-dasharray: 5 7; }
+
+  .flow-label {
+    position: absolute;
+    z-index: 3;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: var(--g-bg);
+    color: var(--g-muted);
+    font-size: 12px;
+  }
+
+  .send-label { left: 252px; top: 179px; }
+  .route-label { left: 604px; top: 179px; }
+  .result-label { left: 494px; top: 362px; color: var(--g-success); }
+
+  .result {
+    position: absolute;
+    left: 66px;
+    top: 348px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--g-success);
+    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .result-check {
+    width: 27px;
+    height: 27px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--g-success);
+    color: var(--g-bg);
+  }
+
+  .principle {
+    position: absolute;
+    left: 64px;
+    right: 64px;
+    bottom: 46px;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    padding-top: 22px;
+    border-top: 1px solid var(--g-rule-soft);
+  }
+
+  .principle-item { display: flex; align-items: flex-start; gap: 12px; }
+  .principle-mark {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    flex: none;
+    border-radius: 8px;
+    background: var(--g-surface-2);
+    color: var(--g-accent);
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .principle strong { display: block; color: var(--g-heading); font-size: 15px; }
+  .principle span { color: var(--g-muted); font-size: 13px; }
+  .state-handle {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 1px 6px;
+    border-radius: 4px;
+    background: var(--g-code-bg);
+    color: var(--g-code-fg) !important;
+    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size: 12px !important;
+  }
+
+  [data-reveal] { transition: opacity 320ms ease, transform 320ms ease; }
+  .stage[data-step="1"] [data-reveal="2"],
+  .stage[data-step="1"] [data-reveal="3"],
+  .stage[data-step="1"] [data-reveal="4"],
+  .stage[data-step="2"] [data-reveal="3"],
+  .stage[data-step="2"] [data-reveal="4"],
+  .stage[data-step="3"] [data-reveal="4"] { opacity: 0; transform: translateY(8px); }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main class="stage" id="stateless-mcp-diagram" data-step="4" role="img" aria-label="A stateless MCP client sends a self-contained JSON-RPC request through a load balancer to any compatible server instance. The selected server returns the result. No sticky session or shared session storage is required, and application state can be passed explicitly as a handle.">
+  <section class="node client" data-reveal="1" aria-label="MCP client">
+    <div>
+      <div class="client-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="16" rx="2"/>
+          <path d="m7 9 3 3-3 3M12 15h5"/>
+        </svg>
+      </div>
+      <div class="node-title" style="margin-top: 12px;">MCP client</div>
+      <div class="node-subtitle">curl, Codex, Claude</div>
+    </div>
+  </section>
+
+  <section class="node request" data-reveal="1" aria-label="Self-contained JSON-RPC request">
+    <div class="request-head">
+      <span class="method">POST</span>
+      <span class="endpoint">/mcp</span>
+    </div>
+    <div class="json">
+      <div><span class="json-key">"jsonrpc"</span>: <span class="json-value">"2.0"</span>,</div>
+      <div><span class="json-key">"method"</span>: <span class="json-value">"tools/call"</span>,</div>
+      <div><span class="json-key">"name"</span>: <span class="json-value">"add"</span>,</div>
+      <div><span class="json-key">"arguments"</span>: <span class="json-value">{ "a": 2, "b": 3 }</span></div>
+      <div class="json-muted">+ protocol metadata</div>
+    </div>
+  </section>
+
+  <section class="node router" data-reveal="2" aria-label="Load balancer">
+    <div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+        <path d="M5 5h6a4 4 0 0 1 4 4v10M5 19h6a4 4 0 0 0 4-4V5"/>
+        <path d="m18 8-3-3-3 3M18 16l-3 3-3-3"/>
+      </svg>
+      <div class="node-title" style="font-size: 16px; margin-top: 7px;">Load balancer</div>
+    </div>
+  </section>
+
+  <div class="servers-label" data-reveal="2">Compatible instances</div>
+
+  <section class="node server server-a" data-reveal="2" aria-label="Server instance A">
+    <div class="server-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+        <rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/>
+      </svg>
+    </div>
+    <div><div class="node-title" style="font-size: 16px;">Server A</div><div class="node-subtitle">ready</div></div>
+  </section>
+
+  <section class="node server server-b" data-reveal="2" aria-label="Server instance B processes this request">
+    <div class="server-icon" style="color: var(--g-accent);">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+        <rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/>
+      </svg>
+    </div>
+    <div><div class="node-title" style="font-size: 16px;">Server B</div><div class="selected">processes this call</div></div>
+  </section>
+
+  <section class="node server server-c" data-reveal="2" aria-label="Server instance C">
+    <div class="server-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+        <rect x="4" y="4" width="16" height="6" rx="2"/><rect x="4" y="14" width="16" height="6" rx="2"/><path d="M8 7h.01M8 17h.01"/>
+      </svg>
+    </div>
+    <div><div class="node-title" style="font-size: 16px;">Server C</div><div class="node-subtitle">ready</div></div>
+  </section>
+
+  <svg class="wires" viewBox="0 0 1200 675" aria-hidden="true">
+    <defs>
+      <marker id="arrow-link" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+        <path d="M0 0 8 4 0 8Z" fill="var(--g-link)"/>
+      </marker>
+      <marker id="arrow-accent" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+        <path d="M0 0 8 4 0 8Z" fill="var(--g-accent)"/>
+      </marker>
+      <marker id="arrow-success" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+        <path d="M0 0 8 4 0 8Z" fill="var(--g-success)"/>
+      </marker>
+    </defs>
+    <g data-reveal="1">
+      <path class="wire wire-main" d="M244 215H306" marker-end="url(#arrow-link)"/>
+    </g>
+    <g data-reveal="2">
+      <path class="wire wire-main" d="M600 215H657" marker-end="url(#arrow-link)"/>
+      <path class="wire wire-muted" d="M807 215C840 215 838 149 874 149"/>
+      <path class="wire wire-selected" d="M807 215C840 215 838 242 874 242" marker-end="url(#arrow-accent)"/>
+      <path class="wire wire-muted" d="M807 215C840 215 838 335 874 335"/>
+    </g>
+    <g data-reveal="3">
+      <path class="wire wire-return" d="M882 276C800 385 359 385 116 385" marker-end="url(#arrow-success)"/>
+    </g>
+  </svg>
+
+  <div class="flow-label send-label" data-reveal="1">send</div>
+  <div class="flow-label route-label" data-reveal="2">route</div>
+  <div class="flow-label result-label" data-reveal="3">JSON-RPC response</div>
+
+  <div class="result" data-reveal="3">
+    <span class="result-check">✓</span>
+    <span>result: 5</span>
+  </div>
+
+  <section class="principle" data-reveal="4" aria-label="Stateless MCP properties">
+    <div class="principle-item">
+      <div class="principle-mark">✓</div>
+      <div><strong>No hidden transport state</strong><span>No sticky sessions or shared session storage.</span></div>
+    </div>
+    <div class="principle-item">
+      <div class="principle-mark">↗</div>
+      <div><strong>Application state can remain explicit</strong><span>Pass a handle in the next request</span><span class="state-handle">state: calc_42</span></div>
+    </div>
+  </section>
+</main>
+
+<script>
+  const diagram = document.getElementById("stateless-mcp-diagram");
+  const requestedStep = Number(new URLSearchParams(window.location.search).get("step"));
+  if (requestedStep >= 1 && requestedStep <= 4) diagram.dataset.step = String(requestedStep);
+  window.setDiagramStep = (step) => {
+    const next = Math.max(1, Math.min(4, Number(step) || 1));
+    diagram.dataset.step = String(next);
+  };
+</script>
+</body>
+</html>
