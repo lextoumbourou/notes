@@ -37,7 +37,7 @@ The standard prices compare as follows per million tokens:
 | GPT-5.6 Terra | $2.50 | $15.00 |
 | Claude Sonnet 5 (from 1 Sep 2026) | $3.00 | $15.00 |
 
-*GPT-5.6 Terra requests with more than 272K input tokens are charged $5.00 per million input tokens and $22.50 per million output tokens. The Claude Sonnet 5 row uses its standard pricing after the introductory offer ends in August.*
+*GPT-5.6 Terra requests with more than 272K input tokens are charged \$5.00 per million input tokens and \$22.50 per million output tokens. The Claude Sonnet 5 row uses its standard pricing after the introductory offer ends in August.*
 
 QwenCloud lists the following cache prices:
 

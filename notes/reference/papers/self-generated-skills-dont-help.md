@@ -2,13 +2,14 @@
 title: "Self-Generated Skills Don't Help"
 date: 2026-02-21 00:00
 category: paper
-modified: 2026-08-01 17:42
+modified: 2026-08-06 07:43
 summary: "Curated skills boost agent performance by 16 points; self-generated ones don't help at all."
 alias: skillsbench-benchmarking-how-well-agent-skills-work-across-diverse-tasks.html
 cover: /_media/skillsbench-cover.png
 hide_cover_in_article: true
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mflrlxrlks2l
 tags:
+- AgentStandards
 - AgenticReasoning
 - AgenticFailureModes
 - SoftwareEngineering

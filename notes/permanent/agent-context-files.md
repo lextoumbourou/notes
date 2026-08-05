@@ -1,8 +1,10 @@
 ---
 title: Agent Context Files
 date: 2026-02-27 00:00
-modified: 2026-02-27 00:00
+modified: 2026-08-06 07:43
 status: draft
+tags:
+- AgentStandards
 ---
 
 A file that acts as a `README.md` for your AI Agents. Typically, `AGENTS.md` or `CLAUDE.md`.

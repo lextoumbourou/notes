@@ -1,8 +1,10 @@
 ---
 title: Agent Skill
 date: 2026-02-23 00:00
-modified: 2026-02-23 00:00
+modified: 2026-08-06 07:43
 status: draft
+tags:
+- AgentStandards
 aliases:
 - Agent Skills
 ---
@@ -15,4 +17,3 @@ aliases:
 └── scripts/
     └── some_script.py
 ```
-
