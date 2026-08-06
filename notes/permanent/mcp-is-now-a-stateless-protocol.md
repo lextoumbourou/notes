@@ -1,7 +1,7 @@
 ---
 title: MCP is Now A Stateless Protocol
 date: 2026-08-05 00:00
-modified: 2026-08-06 11:26
+modified: 2026-08-06 11:48
 category: note
 summary: "A new protocol for MCP that removes handshakes and mandatory sessions."
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mseo5dw3mf2g
@@ -22,7 +22,7 @@ The original MCP specification described a handshake protocol that started with 
 
 That's all gone now in the new spec.
 
-Clients can just call the MCP tools they want immediately. If they need to know what capabilities a server has, there's a new optional `server/discover` RPC method.
+Clients can just call the MCP tools they want immediately. If they need to know what capabilities a server has, there's a new optional (for clients, at least) [`server/discover`](https://modelcontextprotocol.io/specification/2026-07-28/server/discover) RPC method.
 
 Basically, stateless MCP looks a lot more like a typical [JSON-RPC](json-rpc.md) API, but with a few helpful standards for server and tool discovery, multi-round-trip requests and optional extensions for long-running tasks. It also supports Streamable HTTP, where the client sends each MCP message as a separate `POST` request.
 
