@@ -1,9 +1,9 @@
 ---
 title: MCP is Now a Stateless Protocol
 date: 2026-08-05 00:00
-modified: 2026-08-06 15:03
+modified: 2026-08-06 18:18
 category: note
-summary: "A new protocol for MCP that removes handshakes and mandatory sessions."
+summary: "A new MCP specification that removes handshakes and mandatory sessions."
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mseo5dw3mf2g
 mastodon_post: https://fedi.notesbylex.com/@lex/117045465323546775
 threads_post: https://www.threads.com/@lexisoninsta/post/DbrTnhPAU_b
@@ -16,31 +16,31 @@ aliases:
 - What Is Stateless MCP?
 ---
 
-The [latest MCP specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/) makes a major architectural change to the [MCP](mcp.md) protocol: it's now a stateless protocol.
+The [latest MCP specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/) makes a major architectural change to the [MCP](mcp.md) protocol: it's now stateless.
 
 The original MCP specification described a handshake protocol that started with an `initialize` request, which the client and the server used to agree on the protocol version and capabilities, and finished with an `initialized` notification.
 
-That's all gone now in the new spec.
+That's all gone now.
 
 Clients can just call the MCP tools they want immediately. If they need to know what capabilities a server has, there's a new optional (for clients, at least) [`server/discover`](https://modelcontextprotocol.io/specification/2026-07-28/server/discover) RPC method.
 
-Basically, stateless MCP looks a lot more like a typical [JSON-RPC](json-rpc.md) API, but with a few helpful standards for server and tool discovery, multi-round-trip requests and optional extensions for long-running tasks. It also supports Streamable HTTP, where the client sends each MCP message as a separate `POST` request.
+Basically, stateless MCP looks a lot more like a typical [JSON-RPC](json-rpc.md) API, but with a few helpful standards for server and tool discovery, multi-round-trip requests and optional extensions for long-running tasks.
 
 Stateless servers are a lot easier to host and manage. For one thing, they don't require sticky load balancing or shared session storage.
 
 ![A stateless MCP client sends a self-contained JSON-RPC request through a load balancer to any compatible server instance, which returns the result.](../_media/stateless-mcp/stateless-mcp-how-it-works.png)
 
-The protocol is stateless, but the application doesn't have to be. A tool can return an explicit state handle and the model can pass it to later calls.
-
-The Python SDK uses `/mcp` as the default endpoint, and the message body uses JSON-RPC. There are `Mcp-Method` and `Mcp-Name` headers to identify the request and help with routing and authorisation.
+However, just because the protocol is stateless doesn't mean the application has to be. A tool can return an explicit state handle, and the model can pass it to later calls.
 
 ## Building a stateless MCP server
 
 I'm going to construct a basic MCP server and client so we can see exactly what it looks like.
 
-### Server
-
 This example uses version 2 of the official MCP [Python SDK](https://github.com/modelcontextprotocol/python-sdk) for the server. It uses `curl` for the client.
+
+The Python SDK uses `/mcp` as the default endpoint, and the message body uses JSON-RPC. There are `Mcp-Method` and `Mcp-Name` headers to identify the request and help with routing and authorisation. It also supports Streamable HTTP, where the client sends each MCP message as a separate `POST` request.
+
+### Server
 
 First, install version 2 of the `mcp` package:
 
