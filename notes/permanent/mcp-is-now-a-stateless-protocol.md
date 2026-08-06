@@ -1,7 +1,7 @@
 ---
-title: MCP is Now A Stateless Protocol
+title: MCP is Now a Stateless Protocol
 date: 2026-08-05 00:00
-modified: 2026-08-06 11:48
+modified: 2026-08-06 14:28
 category: note
 summary: "A new protocol for MCP that removes handshakes and mandatory sessions."
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mseo5dw3mf2g
@@ -16,7 +16,7 @@ aliases:
 - What Is Stateless MCP?
 ---
 
-**Stateless MCP** is the new stateless protocol core for [MCP](mcp.md) introduced in the [2026-07-28 Specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/).
+The [latest MCP specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/) makes a major architectural change to the [MCP](mcp.md) protocol: it's now a stateless protocol.
 
 The original MCP specification described a handshake protocol that started with an `initialize` request, which the client and the server used to agree on the protocol version and capabilities, and finished with an `initialized` notification.
 
@@ -42,6 +42,19 @@ I'm going to construct a basic MCP server and client so we can see exactly what 
 
 This example uses version 2 of the official MCP [Python SDK](https://github.com/modelcontextprotocol/python-sdk) for the server. It uses `curl` for the client.
 
+First, install version 2 of the `mcp` package:
+
+```bash
+uv add "mcp>=2,<3"
+```
+<!-- nb-output hash="f7fab58ce3446564" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stderr">Resolved 182 packages in 0.49ms
+Audited 178 packages in 0.05ms
+</pre>
+</div>
+<!-- /nb-output -->
+
 Let's start with a trivial example of a calculator that can only add numbers.
 
 I'll create a new instance of an `MCPServer`, add a single tool called `add` and then set a few server options:
@@ -51,8 +64,7 @@ I'll create a new instance of an `MCPServer`, add a single tool called `add` and
 
 This starts the server in the background:
 
-```bash
-uv run --with 'mcp>=2,<3' python - >/tmp/stateless-mcp.log 2>&1 <<'PY' &
+```python {background=mcp-server}
 from mcp.server import MCPServer
 
 mcp = MCPServer("Calculator")
@@ -68,19 +80,21 @@ mcp.run(
     stateless_http=True,
     json_response=True,
 )
-PY
-
-sleep 2
-echo "Server running at http://127.0.0.1:3001/mcp"
 ```
-<!-- nb-output hash="050a09ad2ada1807" format="html" -->
+<!-- nb-output hash="7039592db2bdbe40" format="html" -->
 <div class="nb-output">
-<pre class="nb-stream-stdout">Server running at http://127.0.0.1:3001/mcp
+<pre class="nb-stream-stderr">INFO:     Started server process [21783]
+INFO:     Waiting for application startup.
+[08/06/26 14:14:04] INFO     StreamableHTTP       streamable_http_manager.py:151
+                             session manager                                    
+                             started                                            
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:3001 (Press CTRL+C to quit)
 </pre>
 </div>
 <!-- /nb-output -->
 
-Note that `uv run` lets us run a simple command without manually creating an environment.
+This example is running directly in my Obsidian notebook through my [Obsidian Markdown Notebook](obsidian-markdown-notebook-code-execution-with-outputs-stored-in-the-file.md) plugin. To run it outside Obsidian, save the code as `mcp_server.py`, then run `uv run python mcp_server.py`. Leave that terminal open while you run the client commands below in another terminal.
 
 ### Client
 
@@ -102,16 +116,12 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
       "arguments": {"a": 2, "b": 3},
       "_meta": {
         "io.modelcontextprotocol/protocolVersion": "2026-07-28",
-        "io.modelcontextprotocol/clientInfo": {
-          "name": "curl",
-          "version": "1.0"
-        },
         "io.modelcontextprotocol/clientCapabilities": {}
       }
     }
   }' | python3 -m json.tool
 ```
-<!-- nb-output hash="7df648bca06acadb" format="html" -->
+<!-- nb-output hash="17efe050c2b6ab32" format="html" -->
 <div class="nb-output">
 <pre class="nb-stream-stdout">{
     &quot;jsonrpc&quot;: &quot;2.0&quot;,
@@ -157,16 +167,12 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
     "params": {
       "_meta": {
         "io.modelcontextprotocol/protocolVersion": "2026-07-28",
-        "io.modelcontextprotocol/clientInfo": {
-          "name": "curl",
-          "version": "1.0"
-        },
         "io.modelcontextprotocol/clientCapabilities": {}
       }
     }
   }' | python3 -m json.tool
 ```
-<!-- nb-output hash="08d4041cafb2add0" format="html" -->
+<!-- nb-output hash="bd55cc4d06bcdcbd" format="html" -->
 <div class="nb-output">
 <pre class="nb-stream-stdout">{
     &quot;jsonrpc&quot;: &quot;2.0&quot;,
@@ -217,16 +223,12 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
     "params": {
       "_meta": {
         "io.modelcontextprotocol/protocolVersion": "2026-07-28",
-        "io.modelcontextprotocol/clientInfo": {
-          "name": "curl",
-          "version": "1.0"
-        },
         "io.modelcontextprotocol/clientCapabilities": {}
       }
     }
   }' | python3 -m json.tool
 ```
-<!-- nb-output hash="dd63c25ac06c3cd5" format="html" -->
+<!-- nb-output hash="acd1eb10593cfad1" format="html" -->
 <div class="nb-output">
 <pre class="nb-stream-stdout">{
     &quot;jsonrpc&quot;: &quot;2.0&quot;,
@@ -286,20 +288,7 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
 
 There is our `add` tool, including the input and output schemas generated from the Python types.
 
-### Stop the server
-
-```bash
-kill "$(lsof -tiTCP:3001 -sTCP:LISTEN)"
-echo "Server stopped"
-```
-<!-- nb-output hash="4c9e32219050bfb7" format="html" -->
-<div class="nb-output">
-<pre class="nb-stream-stdout">Server stopped
-</pre>
-</div>
-<!-- /nb-output -->
-
-An MCP request is now a self-contained unit of work. Any compatible server instance can process the request and the server does not need hidden transport state, so it can be load-balanced easily.
+An MCP request is now a self-contained unit of work. Any compatible server instance can process the request, and the server does not need hidden transport state, so it can be load-balanced easily.
 
 Much better.
 

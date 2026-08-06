@@ -26,6 +26,7 @@ dependencies = [
     "pydicom>=3.0.1",
     "scikit-learn>=1.7.2",
     "pelican-alias>=1.1",
+    "mcp>=2,<3",
 ]
 
 [tool.uv.sources]
