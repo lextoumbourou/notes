@@ -1,5 +1,5 @@
 ---
-title: What is Stateless MCP?
+title: MCP is Now A Stateless Protocol
 date: 2026-08-05 00:00
 modified: 2026-08-06 09:04
 category: note
@@ -11,6 +11,8 @@ tags:
   - AgentStandards
 cover: /_media/stateless-mcp-cover.jpg
 cover_credits: Photo by <a href="https://www.pexels.com/photo/black-and-white-hotel-corridor-perspective-view-36584990/">Mohamed B. via Pexels</a>
+aliases:
+- What is Stateless MCP?
 ---
 
 **Stateless MCP** is the new stateless protocol core for [MCP](mcp.md) introduced in the [2026-07-28 Specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/).
