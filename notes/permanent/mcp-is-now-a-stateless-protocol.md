@@ -1,7 +1,7 @@
 ---
 title: MCP is Now a Stateless Protocol
 date: 2026-08-05 00:00
-modified: 2026-08-06 19:13
+modified: 2026-08-06 21:14
 video: in-production
 category: note
 summary: "A new MCP specification that removes handshakes and mandatory sessions."
@@ -17,9 +17,9 @@ aliases:
 - What Is Stateless MCP?
 ---
 
-The [latest MCP specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/) makes a major architectural change to the [MCP](mcp.md) protocol: it's now stateless.
+The [latest MCP specification](https://blog.modelcontextprotocol.io/posts/2026-07-28/), released on the 28th of July 2026, makes a major architectural change to the [MCP](mcp.md) protocol: it's now stateless.
 
-The original MCP specification described a handshake protocol that started with an `initialize` request, which the client and the server used to agree on the protocol version and capabilities, and finished with an `initialized` notification.
+Previously, an MCP client and server had to complete a handshake before the client could call a tool. They used it to agree on the protocol version and capabilities, and to share session identifiers.
 
 That's all gone now.
 
@@ -28,6 +28,8 @@ That's all gone now.
 Clients can just call the MCP tools they want immediately. If they need to know what capabilities a server has, there's a new optional (for clients, at least) [`server/discover`](https://modelcontextprotocol.io/specification/2026-07-28/server/discover) RPC method.
 
 Basically, stateless MCP looks a lot more like a typical [JSON-RPC](json-rpc.md) API, but with a few helpful standards for server and tool discovery, multi-round-trip requests and optional extensions for long-running tasks.
+
+## Why does this matter?
 
 Stateless servers are a lot easier to host and manage. For one thing, they don't require sticky load balancing or shared session storage.
 
@@ -154,7 +156,7 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
 
 The server returns `5` in an MCP tool result.
 
-We can also use the `server/discover` method to see what the server supports. The request uses the same minimal `_meta` object as the tool call.
+As mentioned, we can also use the `server/discover` method to see what the server supports. The request uses the same `_meta` object as the tool call.
 
 ```bash {format=json}
 curl --silent --show-error http://127.0.0.1:3001/mcp \
@@ -209,7 +211,7 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
 ```
 <!-- /nb-output -->
 
-This tells us that the server supports tools. It does not list the individual `add` tool. A client can call `tools/list` if it needs the tool names and schemas.
+This tells us that the server supports tools. A client can call `tools/list` if it needs the tool names and schemas.
 
 ```bash {format=json}
 curl --silent --show-error http://127.0.0.1:3001/mcp \
