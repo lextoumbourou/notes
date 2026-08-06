@@ -44,6 +44,15 @@ USE_FOLDER_AS_CATEGORY = True
 ENV = os.environ.get("ENV", "prod")
 
 MARKDOWN = {
+    "extensions": [
+        "markdown_notebook_fences",
+        "markdown_inline_mermaid",
+        "obsidian-callouts",
+        "markdown.extensions.codehilite",
+        "markdown.extensions.extra",
+        "markdown.extensions.meta",
+        "markdown.extensions.toc",
+    ],
     "extension_configs": {
         "markdown_notebook_fences": {},
         "markdown_inline_mermaid": {},

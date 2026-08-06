@@ -2,4 +2,5 @@
 
 # Serve the blog locally in dev mode: rebuilds on file changes,
 # serves at http://localhost:8000
-ENV=local uv run pelican ./notes/ --output=output/ --autoreload --listen
+ENV=local PYTHONPATH="${PYTHONPATH:+$PYTHONPATH:}." \
+  uv run pelican ./notes/ --output=output/ --autoreload --listen

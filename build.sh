@@ -20,7 +20,8 @@ if [ "$found_control_chars" = true ]; then
 fi
 
 echo "No control characters found. Proceeding with build..."
-ENV=local uv run pelican ./notes/ --output=output/
+ENV=local PYTHONPATH="${PYTHONPATH:+$PYTHONPATH:}." \
+  uv run pelican ./notes/ --output=output/
 
 echo "Building search index with pagefind..."
 npx pagefind --site output --output-path output/pagefind
