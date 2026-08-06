@@ -1,7 +1,7 @@
 ---
 title: MCP is Now a Stateless Protocol
 date: 2026-08-05 00:00
-modified: 2026-08-06 14:28
+modified: 2026-08-06 15:03
 category: note
 summary: "A new protocol for MCP that removes handshakes and mandatory sessions."
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mseo5dw3mf2g
@@ -100,7 +100,7 @@ This example is running directly in my Obsidian notebook through my [Obsidian Ma
 
 The `tools/call` method allows us to call a known tool directly.
 
-```bash
+```bash {format=json}
 curl --silent --show-error http://127.0.0.1:3001/mcp \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json, text/event-stream' \
@@ -121,40 +121,39 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
     }
   }' | python3 -m json.tool
 ```
-<!-- nb-output hash="17efe050c2b6ab32" format="html" -->
-<div class="nb-output">
-<pre class="nb-stream-stdout">{
-    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-    &quot;id&quot;: 1,
-    &quot;result&quot;: {
-        &quot;content&quot;: [
+<!-- nb-output hash="17efe050c2b6ab32" format="json" -->
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "content": [
             {
-                &quot;text&quot;: &quot;5&quot;,
-                &quot;type&quot;: &quot;text&quot;
+                "text": "5",
+                "type": "text"
             }
         ],
-        &quot;isError&quot;: false,
-        &quot;resultType&quot;: &quot;complete&quot;,
-        &quot;structuredContent&quot;: {
-            &quot;result&quot;: 5
+        "isError": false,
+        "resultType": "complete",
+        "structuredContent": {
+            "result": 5
         },
-        &quot;_meta&quot;: {
-            &quot;io.modelcontextprotocol/serverInfo&quot;: {
-                &quot;name&quot;: &quot;Calculator&quot;,
-                &quot;version&quot;: &quot;&quot;
+        "_meta": {
+            "io.modelcontextprotocol/serverInfo": {
+                "name": "Calculator",
+                "version": ""
             }
         }
     }
 }
-</pre>
-</div>
+```
 <!-- /nb-output -->
 
 The server returns `5` in an MCP tool result.
 
 We can also use the `server/discover` method to see what the server supports. The request uses the same minimal `_meta` object as the tool call.
 
-```bash
+```bash {format=json}
 curl --silent --show-error http://127.0.0.1:3001/mcp \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json, text/event-stream' \
@@ -172,45 +171,44 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
     }
   }' | python3 -m json.tool
 ```
-<!-- nb-output hash="bd55cc4d06bcdcbd" format="html" -->
-<div class="nb-output">
-<pre class="nb-stream-stdout">{
-    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-    &quot;id&quot;: 2,
-    &quot;result&quot;: {
-        &quot;cacheScope&quot;: &quot;private&quot;,
-        &quot;capabilities&quot;: {
-            &quot;prompts&quot;: {
-                &quot;listChanged&quot;: true
+<!-- nb-output hash="bd55cc4d06bcdcbd" format="json" -->
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": {
+        "cacheScope": "private",
+        "capabilities": {
+            "prompts": {
+                "listChanged": true
             },
-            &quot;resources&quot;: {
-                &quot;listChanged&quot;: true,
-                &quot;subscribe&quot;: true
+            "resources": {
+                "listChanged": true,
+                "subscribe": true
             },
-            &quot;tools&quot;: {
-                &quot;listChanged&quot;: true
+            "tools": {
+                "listChanged": true
             }
         },
-        &quot;resultType&quot;: &quot;complete&quot;,
-        &quot;supportedVersions&quot;: [
-            &quot;2026-07-28&quot;
+        "resultType": "complete",
+        "supportedVersions": [
+            "2026-07-28"
         ],
-        &quot;ttlMs&quot;: 0,
-        &quot;_meta&quot;: {
-            &quot;io.modelcontextprotocol/serverInfo&quot;: {
-                &quot;name&quot;: &quot;Calculator&quot;,
-                &quot;version&quot;: &quot;&quot;
+        "ttlMs": 0,
+        "_meta": {
+            "io.modelcontextprotocol/serverInfo": {
+                "name": "Calculator",
+                "version": ""
             }
         }
     }
 }
-</pre>
-</div>
+```
 <!-- /nb-output -->
 
 This tells us that the server supports tools. It does not list the individual `add` tool. A client can call `tools/list` if it needs the tool names and schemas.
 
-```bash
+```bash {format=json}
 curl --silent --show-error http://127.0.0.1:3001/mcp \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json, text/event-stream' \
@@ -228,62 +226,61 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
     }
   }' | python3 -m json.tool
 ```
-<!-- nb-output hash="acd1eb10593cfad1" format="html" -->
-<div class="nb-output">
-<pre class="nb-stream-stdout">{
-    &quot;jsonrpc&quot;: &quot;2.0&quot;,
-    &quot;id&quot;: 3,
-    &quot;result&quot;: {
-        &quot;cacheScope&quot;: &quot;private&quot;,
-        &quot;resultType&quot;: &quot;complete&quot;,
-        &quot;tools&quot;: [
+<!-- nb-output hash="acd1eb10593cfad1" format="json" -->
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 3,
+    "result": {
+        "cacheScope": "private",
+        "resultType": "complete",
+        "tools": [
             {
-                &quot;description&quot;: &quot;Add two numbers.&quot;,
-                &quot;inputSchema&quot;: {
-                    &quot;type&quot;: &quot;object&quot;,
-                    &quot;properties&quot;: {
-                        &quot;a&quot;: {
-                            &quot;title&quot;: &quot;A&quot;,
-                            &quot;type&quot;: &quot;integer&quot;
+                "description": "Add two numbers.",
+                "inputSchema": {
+                    "type": "object",
+                    "properties": {
+                        "a": {
+                            "title": "A",
+                            "type": "integer"
                         },
-                        &quot;b&quot;: {
-                            &quot;title&quot;: &quot;B&quot;,
-                            &quot;type&quot;: &quot;integer&quot;
+                        "b": {
+                            "title": "B",
+                            "type": "integer"
                         }
                     },
-                    &quot;required&quot;: [
-                        &quot;a&quot;,
-                        &quot;b&quot;
+                    "required": [
+                        "a",
+                        "b"
                     ],
-                    &quot;title&quot;: &quot;addArguments&quot;
+                    "title": "addArguments"
                 },
-                &quot;name&quot;: &quot;add&quot;,
-                &quot;outputSchema&quot;: {
-                    &quot;properties&quot;: {
-                        &quot;result&quot;: {
-                            &quot;title&quot;: &quot;Result&quot;,
-                            &quot;type&quot;: &quot;integer&quot;
+                "name": "add",
+                "outputSchema": {
+                    "properties": {
+                        "result": {
+                            "title": "Result",
+                            "type": "integer"
                         }
                     },
-                    &quot;required&quot;: [
-                        &quot;result&quot;
+                    "required": [
+                        "result"
                     ],
-                    &quot;title&quot;: &quot;addOutput&quot;,
-                    &quot;type&quot;: &quot;object&quot;
+                    "title": "addOutput",
+                    "type": "object"
                 }
             }
         ],
-        &quot;ttlMs&quot;: 0,
-        &quot;_meta&quot;: {
-            &quot;io.modelcontextprotocol/serverInfo&quot;: {
-                &quot;name&quot;: &quot;Calculator&quot;,
-                &quot;version&quot;: &quot;&quot;
+        "ttlMs": 0,
+        "_meta": {
+            "io.modelcontextprotocol/serverInfo": {
+                "name": "Calculator",
+                "version": ""
             }
         }
     }
 }
-</pre>
-</div>
+```
 <!-- /nb-output -->
 
 There is our `add` tool, including the input and output schemas generated from the Python types.
