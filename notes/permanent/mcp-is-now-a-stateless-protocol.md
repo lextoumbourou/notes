@@ -1,7 +1,8 @@
 ---
 title: MCP is Now a Stateless Protocol
 date: 2026-08-05 00:00
-modified: 2026-08-06 18:18
+modified: 2026-08-06 19:13
+video: in-production
 category: note
 summary: "A new MCP specification that removes handshakes and mandatory sessions."
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mseo5dw3mf2g
@@ -22,6 +23,8 @@ The original MCP specification described a handshake protocol that started with 
 
 That's all gone now.
 
+![Before the 2026-07-28 specification, an MCP client had to exchange initialize, initialize result and initialized messages before calling a tool. Now it can send a self-contained tools/call request immediately, while server/discover is optional.](../_media/stateless-mcp/mcp-initialization-before-and-after.png)
+
 Clients can just call the MCP tools they want immediately. If they need to know what capabilities a server has, there's a new optional (for clients, at least) [`server/discover`](https://modelcontextprotocol.io/specification/2026-07-28/server/discover) RPC method.
 
 Basically, stateless MCP looks a lot more like a typical [JSON-RPC](json-rpc.md) API, but with a few helpful standards for server and tool discovery, multi-round-trip requests and optional extensions for long-running tasks.
@@ -30,7 +33,7 @@ Stateless servers are a lot easier to host and manage. For one thing, they don't
 
 ![A stateless MCP client sends a self-contained JSON-RPC request through a load balancer to any compatible server instance, which returns the result.](../_media/stateless-mcp/stateless-mcp-how-it-works.png)
 
-However, just because the protocol is stateless doesn't mean the application has to be. A tool can return an explicit state handle, and the model can pass it to later calls.
+However, just because the protocol is stateless doesn't mean the application has to be. If a tool needs to remember something between calls, it can return a state ID, which the client includes in the next request.
 
 ## Building a stateless MCP server
 
@@ -292,6 +295,8 @@ Much better.
 ## References
 
 - [The 2026-07-28 Specification announcement](https://blog.modelcontextprotocol.io/posts/2026-07-28/)
+- [The 2026-07-28 architecture specification](https://modelcontextprotocol.io/specification/2026-07-28/architecture)
+- [The 2024-11-05 lifecycle specification](https://modelcontextprotocol.io/specification/2024-11-05/basic/lifecycle)
 - [`server/discover` specification](https://modelcontextprotocol.io/specification/2026-07-28/server/discover)
 - [MCP tools specification](https://modelcontextprotocol.io/specification/2026-07-28/server/tools)
 - [Streamable HTTP specification](https://modelcontextprotocol.io/specification/2026-07-28/basic/transports/streamable-http)
