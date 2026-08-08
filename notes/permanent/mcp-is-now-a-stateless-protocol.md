@@ -1,7 +1,7 @@
 ---
 title: MCP is Now a Stateless Protocol
 date: 2026-08-05 00:00
-modified: 2026-08-06 21:14
+modified: 2026-08-08 10:33
 video: in-production
 category: note
 summary: "A new MCP specification that removes handshakes and mandatory sessions."
@@ -54,31 +54,44 @@ uv add "mcp>=2,<3"
 ```
 <!-- nb-output hash="f7fab58ce3446564" format="html" -->
 <div class="nb-output">
-<pre class="nb-stream-stderr">Resolved 182 packages in 0.49ms
-Audited 178 packages in 0.05ms
+<pre class="nb-stream-stderr">Resolved 182 packages in 3ms
+</pre>
+<pre class="nb-stream-stderr">Audited 178 packages in 5ms
 </pre>
 </div>
 <!-- /nb-output -->
 
 Let's start with a trivial example of a calculator that can only add numbers.
 
-I'll create a new instance of an `MCPServer`, add a single tool called `add` and then set a few server options:
+I'll create a new instance of an MCP server using the `MCPServer` base class:
 
-- `stateless_http=True` disables transport session tracking.
-- `json_response=True` makes the server return a JSON object instead of an SSE stream.
-
-This starts the server in the background:
-
-```python {background=mcp-server}
+```python
 from mcp.server import MCPServer
 
 mcp = MCPServer("Calculator")
+```
+<!-- nb-output hash="6fdb0c00cfca6c7c" format="html" -->
 
+<!-- /nb-output -->
+
+Then, use the [tool decorator](https://py.sdk.modelcontextprotocol.io/api/mcp/server/?h=tool+dectorator#mcp.server.MCPServer.tool) to add a single tool called `add`
+
+```python
 @mcp.tool()
 def add(a: int, b: int) -> int:
     """Add two numbers."""
     return a + b
+```
+<!-- nb-output hash="2d555ae5c76f8579" format="html" -->
 
+<!-- /nb-output -->
+
+Finally we can call the `run` method to start a server and set a few server options:
+
+- `stateless_http` disables transport session tracking.
+- `json_response` makes the server return a JSON object instead of an SSE stream.
+
+```python {background=mcp-server}
 mcp.run(
     transport="streamable-http",
     port=3001,
@@ -86,18 +99,26 @@ mcp.run(
     json_response=True,
 )
 ```
-<!-- nb-output hash="7039592db2bdbe40" format="html" -->
+<!-- nb-output hash="8bdffefd1a241872" format="html" -->
 <div class="nb-output">
-<pre class="nb-stream-stderr">INFO:     Started server process [21783]
-INFO:     Waiting for application startup.
-[08/06/26 14:14:04] INFO     StreamableHTTP       streamable_http_manager.py:151
+<pre class="nb-stream-stderr">INFO:     Started server process [46781]
+</pre>
+<pre class="nb-stream-stderr">INFO:     Waiting for application startup.
+</pre>
+<pre class="nb-stream-stderr">[08/08/26 10:34:09] INFO     StreamableHTTP       streamable_http_manager.py:151
                              session manager                                    
                              started                                            
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://127.0.0.1:3001 (Press CTRL+C to quit)
+</pre>
+<pre class="nb-stream-stderr">INFO:     Application startup complete.
+</pre>
+<pre class="nb-stream-stderr">INFO:     Uvicorn running on http://127.0.0.1:3001 (Press CTRL+C to quit)
+</pre>
+<pre class="nb-stream-stdout">Background process &quot;mcp-server&quot; started with 2 preceding python cells.
 </pre>
 </div>
 <!-- /nb-output -->
+
+The plugin combines these three Python cells into a temporary script and runs it as a background process.
 
 This example is running directly in my Obsidian notebook through my [Obsidian Markdown Notebook](obsidian-markdown-notebook-code-execution-with-outputs-stored-in-the-file.md) plugin. To run it outside Obsidian, save the code as `mcp_server.py`, then run `uv run python mcp_server.py`. Leave that terminal open while you run the client commands below in another terminal.
 
@@ -107,6 +128,7 @@ The `tools/call` method allows us to call a known tool directly.
 
 ```bash {format=json}
 curl --silent --show-error http://127.0.0.1:3001/mcp \
+  --retry 10 --retry-connrefused --retry-delay 1 \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json, text/event-stream' \
   -H 'MCP-Protocol-Version: 2026-07-28' \
@@ -126,7 +148,7 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
     }
   }' | python3 -m json.tool
 ```
-<!-- nb-output hash="17efe050c2b6ab32" format="json" -->
+<!-- nb-output hash="dc7c682ad70676c2" format="json" -->
 ```json
 {
     "jsonrpc": "2.0",
@@ -160,6 +182,7 @@ As mentioned, we can also use the `server/discover` method to see what the serve
 
 ```bash {format=json}
 curl --silent --show-error http://127.0.0.1:3001/mcp \
+  --retry 10 --retry-connrefused --retry-delay 1 \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json, text/event-stream' \
   -H 'MCP-Protocol-Version: 2026-07-28' \
@@ -176,7 +199,7 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
     }
   }' | python3 -m json.tool
 ```
-<!-- nb-output hash="bd55cc4d06bcdcbd" format="json" -->
+<!-- nb-output hash="da456ab7ae27d206" format="json" -->
 ```json
 {
     "jsonrpc": "2.0",
@@ -215,6 +238,7 @@ This tells us that the server supports tools. A client can call `tools/list` if 
 
 ```bash {format=json}
 curl --silent --show-error http://127.0.0.1:3001/mcp \
+  --retry 10 --retry-connrefused --retry-delay 1 \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json, text/event-stream' \
   -H 'MCP-Protocol-Version: 2026-07-28' \
@@ -231,7 +255,7 @@ curl --silent --show-error http://127.0.0.1:3001/mcp \
     }
   }' | python3 -m json.tool
 ```
-<!-- nb-output hash="acd1eb10593cfad1" format="json" -->
+<!-- nb-output hash="55763b6055b766af" format="json" -->
 ```json
 {
     "jsonrpc": "2.0",
