@@ -19,7 +19,7 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
         * Or use sigma notation:
             * $\bar{x} = \frac{\sum\limits^{n}_{i=1} x_1}{n}$
     * Given a [Frequency Table](Frequency%20Table) the mean is found by first multiplying each value by its frequency, the sum all the frequency and divide the sum of all the former values by the latter.
-* [Median](Median)
+* [Median](../../../../../../permanent/median.md)
     * Found by listing numbers in ascending order and selecting values that lies halfway along the list.
     * When there is an even number of values, the mean is found by taking the average of the 2 middle values.
 * [Mode](Mode)
