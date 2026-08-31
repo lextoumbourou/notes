@@ -18,7 +18,7 @@ To make progress towards AGI, we need better ways to define and evaluate intelli
 
 AI is typically measured by comparing performance at specific tasks, like games. However, solely measuring skills at a task doesn't measure intelligence, because the capability in a skill is determined by prior knowledge. With unlimited priors or unlimited training data allow experimenters to “buy” arbitrary levels of skills for a system, in a way that masks the system’s own generalisation power.
 
-In this paper, a new formal definition of intelligence based on [[../../../../permanent/algorithm Information Theory]] is described where they describe intelligence based on [Skill-Acquisition Efficiency](../../../../permanent/Skill-acquisition%20Efficiency.md). They show that generalisation difficulty, priors, and experience, as
+In this paper, a new formal definition of intelligence based on [[../../../../permanent/algorithm Information Theory|Algorithm Information Theory]] is described where they describe intelligence based on [Skill-Acquisition Efficiency](../../../../permanent/Skill-acquisition%20Efficiency.md). They show that generalisation difficulty, priors, and experience, as
 critical pieces to be accounted for in characterising intelligent systems, and they create guidelines for general AI benchmarks.
 
 With these guidelines, they propose a new benchmark [Abstraction and Reasoning Corpus](../../../../permanent/abstraction-and-reasoning-corpus.md) which is "built upon an explicit set of priors designed to be as close as possible to innate human priors", and can be used to measure a "human-like form of general fluid intelligence", which gives more fair comparisons between AI systems and humans.
