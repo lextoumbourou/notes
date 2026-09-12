@@ -10,6 +10,8 @@ bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mqo3s4ibq224
 mastodon_post: https://fedi.notesbylex.com/@lex/116922581081935404
 hn_post: https://news.ycombinator.com/item?id=48915294
 threads_post: https://www.threads.com/@lexisoninsta/post/DazbxLBiSnK
+aliases:
+- OpenClaw Setup
 tags:
 - OpenClaw
 - Obsidian
