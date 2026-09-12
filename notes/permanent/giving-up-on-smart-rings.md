@@ -12,7 +12,7 @@ tags:
 
 After about a year of wearing a smart ring, I've decided to throw in the towel.
 
-I did really like my Oura Ring. Tracking my sleep and steps, amongst other things, has been really helpful for my health journey. [Symptom Radar](https://support.ouraring.com/hc/en-us/articles/35593651188115-Symptom-Radar) was also typically pretty accurate and usually let me know I was about to get a cold before I did.
+I did really like my Oura Ring. Tracking my sleep and steps, amongst other things, has been really helpful for my health journey. [Symptom Radar](https://support.ouraring.com/hc/en-us/articles/35593651188115-Symptom-Radar) was also typically pretty accurate and usually let me know I was about to get a cold even before I noticed the symptoms.
 
 But a smart **ring** has a few major downsides that a wrist-based device doesn't, and they weren't obvious to me when I first bought mine.
 
@@ -28,7 +28,7 @@ Many exercises, from pull-ups to the bench press, place the ring between your ha
 
 ## 3. They get in the way when you wash and generally use your hands
 
-Rings are constantly exposed while washing your hands, showering, cleaning and gripping things. Even when the ring is water-resistant, water and soap can become trapped underneath it, so removing, drying and replacing it becomes another small source of daily friction - something I repeatedly forget to do, which might explain how I ended up with 2 broken devices. The outer surface is also easy to scratch. Oura's care instructions acknowledge the issue of both [trapped moisture and scratching](https://support.ouraring.com/hc/en-us/articles/43395388251283-Product-Safety-Use).
+Rings are constantly exposed while washing your hands, showering, cleaning and gripping things. Even when the ring is water-resistant, water and soap can become trapped underneath it, so removing, drying and replacing it becomes another small source of daily friction - something I repeatedly forget to do, which might explain how I ended up with 2 broken devices which I explain below. The outer surface is also easy to scratch. Oura's care instructions acknowledge the issue of both [trapped moisture and scratching](https://support.ouraring.com/hc/en-us/articles/43395388251283-Product-Safety-Use).
 
 ---
 
