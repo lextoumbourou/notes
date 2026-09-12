@@ -1,57 +1,43 @@
 ---
 category: essay
-title: The downsides to fitness tracking rings
-date: 2026-08-30 00:00
-modified: 2026-08-30 17:50
-summary: Why I gave up on fitness-tracking rings after a year, and what the research says about their accuracy.
+title: Giving Up on Fitness-Tracking Rings
+date: 2026-09-13 00:00
+modified: 2026-09-13 06:55
+summary: The practical downsides that made me give up on fitness-tracking rings after a year.
 cover: /_media/the-downsides-to-fitness-tracking-rings.jpg
 tags:
   - Fitness
   - Wearables
 ---
 
-After about a year of wearing a fitness-tracking ring, I've decided to throw in the towel and switch to a wrist device, namely, the Google Fitbit Air.
+After about a year of wearing a fitness-tracking ring, I've decided to throw in the towel.
 
-I've never been big on wearing watches - no reason in particular. I just never really got into them, since mobile phones have kept the time for most of my adult life. But I already wear a wedding ring. So when looking for a fitness and sleep-tracking device, I thought a fitness ring was going to be a natural fit, and hey, they look kinda cool.
+I did really like my Oura Ring. Tracking my sleep and steps, amongst other things, has been really helpful for my health journey. Both have improved considerably. [Symptom Radar](https://support.ouraring.com/hc/en-us/articles/35593651188115-Symptom-Radar) was also typically pretty accurate and usually let me know I was about to get a cold before I did.
 
-But there are a few major downsides to fitness rings that I hadn't considered when I purchased mine, which are now blatantly obvious.
+But a ring has a few major downsides that a wrist-based device doesn't, and they weren't obvious to me when I first bought mine.
 
-## 1. Rings are not adjustable
+## 1. Your fingers change size when you lose or gain weight, and rings are not adjustable
 
-Turns out your fingers store quite a bit of fat, and if you successfully use the fitness-tracking device to lose weight, well, it's very possible that the ring won't fit you anymore. I initially bought an Oura size 13 when I was around 94 kg. I lost about 14 kg and found that the Oura didn't fit. After picking up a new sizing kit, I was down to a size 11.
+Turns out your fingers store quite a bit of fat, and if the fitness-tracking device helps you successfully lose weight, the ring may no longer fit. I initially bought an Oura ring in size 13 when I was around 94 kg. I lost about 14 kg and found that it no longer fit. After picking up a new sizing kit for a new device, I learned I was down to a size 11.
 
-Not only that, your fingers change size with temperature. Cooler temperatures tend to make your fingers look smaller, while warmer temperatures do the opposite. Oura's own [product guidance](https://support.ouraring.com/hc/en-us/articles/43395388251283-Product-Safety-Use) says that finger size also fluctuates with food and drink, exercise and altitude.
+Your fingers also change size with temperature. Cooler temperatures tend to make your fingers smaller, while warmer temperatures do the opposite. Oura's [product guidance](https://support.ouraring.com/hc/en-us/articles/43395388251283-Product-Safety-Use) says that finger size also fluctuates with food and drink, exercise and altitude.
 
 ## 2. You have to take them off to lift weights
 
-Many exercises, from pull-ups to the bench press, place the ring between your hand and a metal bar. Oura recommends [removing the ring during activities that involve friction, including weightlifting](https://support.ouraring.com/hc/en-us/articles/43395388251283-Product-Safety-Use), to avoid scratches. For many people, this means the ring itself cannot track the very workouts they bought it for.
+Many exercises, from pull-ups to the bench press, place the ring between your hand and a metal bar. Oura recommends [removing the ring during activities that involve friction, including weightlifting](https://support.ouraring.com/hc/en-us/articles/43395388251283-Product-Safety-Use), to avoid scratches. For many people, including me, that means the ring can't track the very workouts they bought it for.
 
-## 3. They get in the way, a lot
+## 3. They get in the way when you use your hands
 
 Rings are constantly exposed while washing your hands, showering, cleaning and gripping things. Even when the ring is water-resistant, water and soap can become trapped underneath it, so removing, drying and replacing it becomes another small source of daily friction. The outer surface is also easy to scratch. Oura's care instructions acknowledge both [trapped moisture and scratching](https://support.ouraring.com/hc/en-us/articles/43395388251283-Product-Safety-Use).
 
 ---
 
-On the plus side, they are pretty good at tracking sleep. A [2024 study comparing the Oura Ring Gen3, Fitbit Sense 2 and Apple Watch Series 8 against polysomnography](https://doi.org/10.3390/s24206532) found that all three were good at distinguishing sleep from wake. Oura agreed with the sleep lab for 92% of those measurements, compared with 91% for Fitbit and 93% for Apple. For specific sleep stages, Oura's overall agreement was 76.3%, compared with 70.9% for Fitbit and 75% for Apple.
+Full disclosure: the catalyst for this epiphany about tracking rings was that both my original ring and its replacement stopped working. Bluetooth would connect, but neither ring would track anything, as if I wasn't wearing it.
 
-There are important caveats. This was a one-night study with 35 healthy adults. The Oura results were better for the group than for predicting an individual's deep and REM sleep totals, and Oura funded the study.
+The first ring stopped working around the same time it stopped fitting me, and a newer model had come out anyway, so I begrudgingly replaced it.
 
-### Heart rate
+But the replacement stopped working just two weeks after I got it. Thankfully, Oura were willing to offer a refund for the second ring. I think I was just unlucky, and I'm really not trying to throw the company under the bus, but it made me take stock of wearing a fitness ring and realise where the experience falls short.
 
-Oura also performs well when you're asleep and still. A [2022 study of 35 people](https://doi.org/10.2196/27487) found that its overnight heart rate readings closely matched a medical-grade ECG, with a mean bias of less than 1 beat per minute.
+As for what's next, I've decided to try a wrist-based device: Google Fitbit Air. I really have not historically been a fan of wearing watches and stuff on my wrist, but damn, do I now realise it's a convenient place to put a fitness-tracking device. Anyway, I'm nearly 40. Maybe that's the right age to get into wrist-based wearables. Does my watch era await?
 
-The story changes once you start moving. A [2026 independent study of nine wrist wearables and the Oura Ring Gen3](https://doi.org/10.2196/85186) found that Oura had a median heart-rate error of 11 beats per minute across rest, stress and walking, compared with 4.5 for the Fitbit Charge 6 and 4.9 for the Google Pixel Watch 2. The study tested only 10 people per device and did not include high-intensity exercise or weightlifting. Still, it supports the idea that Oura's daytime heart rate tracking can be less accurate than that of a good wrist device.
-
-### Steps
-
-Step counts are more mixed. In a [14-day study of 32 people](https://doi.org/10.1186/s12874-023-01868-x), Oura's daily step counts correlated strongly with those of the reference device, with a mean absolute percentage error of less than .10% Still, it overcounted by an average of 2,124 steps per day. Another [study comparing an Oura Gen2 and Polar Vantage watch](https://doi.org/10.2196/27248) found that both correlated similarly with a research-grade ActiGraph, although neither was accurate enough to replace it.
-
-So fitness rings are not generally less accurate than watches. Sleep and overnight heart rate are strengths, while step counts are rough estimates on both types of devices. Daytime heart rate is the weak point, as research supports. And if, like me, you need to remove the ring whenever you lift weights, its theoretical accuracy hardly matters. It isn't collecting anything.
-
-## References
-
-- Robbins et al., [Accuracy of Three Commercial Wearable Devices for Sleep Tracking in Healthy Adults](https://doi.org/10.3390/s24206532), 2024.
-- Cao et al., [Accuracy Assessment of Oura Ring Nocturnal Heart Rate and Heart Rate Variability in Comparison With Electrocardiography](https://doi.org/10.2196/27487), 2022.
-- Gielen et al., [Accuracy of Optical Heart Rate Measurements for 10 Commercial Wearables in Different Climate Conditions and Activities](https://doi.org/10.2196/85186), 2026.
-- Kristiansson et al., [Validation of Oura Ring Energy Expenditure and Steps in Laboratory and Free-Living](https://doi.org/10.1186/s12874-023-01868-x), 2023.
-- Henriksen et al., [Polar Vantage and Oura Physical Activity and Sleep Trackers: Validation and Comparison Study](https://doi.org/10.2196/27248), 2022.
+As for my [OpenClaw Setup](6-months-of-openclaw.md), it now reads from the [Google Health API](https://developers.google.com/health/data-types) instead of Oura's API. It was pretty trivial to cut over, except, sadly, Google Health doesn't expose Fitbit's Sleep Score or a readiness score (please fix, Google!).
