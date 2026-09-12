@@ -476,6 +476,7 @@ html[data-theme="dark"] .theme-icon-moon { display: none; }
 
 /* Cards (right panel) */
 .panel-card {
+  min-width: 0;
   background: var(--g-surface);
   border: 1px solid var(--g-rule);
   border-radius: var(--radius12);
@@ -1114,6 +1115,14 @@ oom-comments { padding: 0; }
   #site-right-panel {
     padding: 0 24px 24px;
     flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  #site-right-panel .panel-card { flex: 0 1 auto; }
+
+  .toc-list li a {
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .cover-image img { width: 100px; }
