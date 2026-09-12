@@ -3,7 +3,7 @@ category: note
 title: Graphs (Discrete Mathematics)
 slug: graphs-discrete-mathematics
 date: 2023-04-09 00:00
-modified: 2026-09-13 09:10
+modified: 2026-09-13 09:21
 cover: /_media/konigsberg-bridges.png
 summary: the study of graphs
 hide_cover_in_article: true
@@ -14,7 +14,7 @@ tags:
 - GraphTheory
 ---
 
-A [Graph Theory](graph-theory.md) is a visual representation of interconnected systems using circles and lines. Circles represent nodes or vertices. Lines represent links or edges. Graphs are used to analyze and solve problems in various interconnected systems.
+A graph is a mathematical structure consisting of vertices (or nodes) and edges that connect them. We often draw vertices as circles and edges as lines. [Graph Theory](graph-theory.md) is the study of these structures and their properties.
 
 ```mermaid
 graph LR

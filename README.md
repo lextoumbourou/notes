@@ -66,7 +66,12 @@ MERMAID_RENDERER=mmdc ./build.sh
 Pelican invocation, install the native renderer first with
 `uv run python scripts/install_mmdr.py` and use Pelican's `--fatal errors` option.
 
-Run the renderer and build-failure tests with:
+Obsidian callouts use `markdown_fast_callouts`, a small adapter around the existing
+callout extension. Blocks without the required `[!` marker skip the expensive
+regex search; matching, nesting, folding and HTML generation use the original
+processor. The adapter can be removed when the dependency includes this precheck.
+
+Run the Markdown extension and build-failure tests with:
 
 ```bash
 uv run python -m unittest discover -s tests -v
