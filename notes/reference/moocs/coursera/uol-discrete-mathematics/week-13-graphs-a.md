@@ -15,7 +15,7 @@ modified: 2023-04-09 00:00
     * Has to take into account associations between courses, students and rooms.
     * These associations (connections) between items are modelled by graphs.
     
-* [Graphs](../../../../permanent/graph.md)
+* [Graphs](../../../../permanent/graphs-discrete-mathematics.md)
     * Discrete structures consisting of vertices (nodes) and edges connecting them.
     * Graph theory is an area in discrete math which studies these type of discrete structure.
     * What is a graph?
@@ -37,7 +37,7 @@ modified: 2023-04-09 00:00
 
 ## Lesson 7.103 - Definition of a graph
 
-* [Graph](../../../../permanent/graph.md)
+* [Graphs](../../../../permanent/graphs-discrete-mathematics.md)
     * Discrete structures consisting of vertices and edges connecting them.
 * Formal definition:
     * $G$ is an ordered pair $G=(V, E)$.

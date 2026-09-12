@@ -8,4 +8,4 @@ tag:
 - GraphTheory
 ---
 
-See [Graphs](graph.md)
+See [Graphs](graphs-discrete-mathematics.md)

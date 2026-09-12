@@ -14,3 +14,4 @@ media
 .ipynb_checkpoints
 .aider*
 .claude
+.tools/
