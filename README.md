@@ -41,6 +41,37 @@ To build the blog without running setup, use the `build.sh` script:
 ./build.sh
 ```
 
+Mermaid diagrams use [mermaid-rs-renderer](https://github.com/1jehuang/mermaid-rs-renderer)
+v0.3.1. The build installs the official binary into the ignored `.tools/` directory
+on its first run, verifies the release archive's SHA-256, and reuses it afterwards.
+macOS (Apple Silicon/Intel) and Linux with glibc (arm64/x86_64) are supported.
+Netlify's `setup.sh` invokes the same build and installation step.
+
+The native renderer has different diagram layouts and styling from Mermaid CLI.
+Chained flowchart edges use the official CLI because mmdr v0.3.1 can misread their
+node definitions while still returning valid SVG. On the current corpus, 17
+diagrams use Rust and two use the official CLI.
+If it fails to render a diagram, the build logs a warning and tries the existing
+Mermaid CLI. If both fail, the build exits with an error before search indexing.
+The fallback still needs Node and Puppeteer/Chromium. A successful SVG can still
+have visual differences, so inspect diagrams when adding new Mermaid features.
+
+To use the previous renderer for comparisons or troubleshooting:
+
+```bash
+MERMAID_RENDERER=mmdc ./build.sh
+```
+
+`MMDR_BINARY` and `MMDC_BINARY` can override the executable paths. For a direct
+Pelican invocation, install the native renderer first with
+`uv run python scripts/install_mmdr.py` and use Pelican's `--fatal errors` option.
+
+Run the renderer and build-failure tests with:
+
+```bash
+uv run python -m unittest discover -s tests -v
+```
+
 ### Dev server
 
 To preview the blog locally with auto-reload (serves at http://localhost:8000):

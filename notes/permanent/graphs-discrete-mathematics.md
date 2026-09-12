@@ -1,8 +1,9 @@
 ---
 category: note
-title: Graph
+title: Graphs (Discrete Mathematics)
+slug: graphs-discrete-mathematics
 date: 2023-04-09 00:00
-modified: 2025-02-22 00:00
+modified: 2026-09-13 09:10
 cover: /_media/konigsberg-bridges.png
 summary: the study of graphs
 hide_cover_in_article: true

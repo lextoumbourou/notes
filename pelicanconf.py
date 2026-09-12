@@ -46,7 +46,7 @@ ENV = os.environ.get("ENV", "prod")
 MARKDOWN = {
     "extensions": [
         "markdown_notebook_fences",
-        "markdown_inline_mermaid",
+        "markdown_mermaid",
         "obsidian-callouts",
         "markdown.extensions.codehilite",
         "markdown.extensions.extra",
@@ -55,7 +55,7 @@ MARKDOWN = {
     ],
     "extension_configs": {
         "markdown_notebook_fences": {},
-        "markdown_inline_mermaid": {},
+        "markdown_mermaid": {},
         "obsidian-callouts": {},
         "markdown.extensions.codehilite": {
             "css_class": "highlight",

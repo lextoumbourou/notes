@@ -1,5 +1,11 @@
 #!/bin/bash
 
+set -euo pipefail
+
+if [ "${MERMAID_RENDERER:-mmdr}" = "mmdr" ]; then
+    uv run python scripts/install_mmdr.py
+fi
+
 # Check for control characters in notes files
 echo "Checking for control characters in notes files..."
 found_control_chars=false
@@ -21,7 +27,7 @@ fi
 
 echo "No control characters found. Proceeding with build..."
 ENV=local PYTHONPATH="${PYTHONPATH:+$PYTHONPATH:}." \
-  uv run pelican ./notes/ --output=output/
+  uv run pelican ./notes/ --output=output/ --fatal errors
 
 echo "Building search index with pagefind..."
 npx pagefind --site output --output-path output/pagefind
