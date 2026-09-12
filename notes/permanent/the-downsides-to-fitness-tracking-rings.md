@@ -2,9 +2,9 @@
 category: essay
 title: Giving Up on Fitness-Tracking Rings
 date: 2026-09-13 00:00
-modified: 2026-09-13 06:55
+modified: 2026-09-13 07:04
 summary: The practical downsides that made me give up on fitness-tracking rings after a year.
-cover: /_media/the-downsides-to-fitness-tracking-rings.jpg
+cover: /_media/the-downsides-to-fitness-tracking-rings.png
 tags:
   - Fitness
   - Wearables
