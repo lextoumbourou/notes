@@ -47,7 +47,7 @@ MARKDOWN = {
     "extensions": [
         "markdown_notebook_fences",
         "markdown_mermaid",
-        "obsidian-callouts",
+        "markdown_fast_callouts",
         "markdown.extensions.codehilite",
         "markdown.extensions.extra",
         "markdown.extensions.meta",
@@ -56,7 +56,7 @@ MARKDOWN = {
     "extension_configs": {
         "markdown_notebook_fences": {},
         "markdown_mermaid": {},
-        "obsidian-callouts": {},
+        "markdown_fast_callouts": {},
         "markdown.extensions.codehilite": {
             "css_class": "highlight",
         },
