@@ -2,9 +2,12 @@
 category: essay
 title: Giving Up on Smart Rings
 date: 2026-09-13 00:00
-modified: 2026-09-13 07:52
+modified: 2026-09-13 08:31
 summary: The downsides to wearing a fitness-tracking device on your finger
 cover: /_media/the-downsides-to-fitness-tracking-rings.png
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mve3nbax6x23
+mastodon_post: https://fedi.notesbylex.com/@lex/117260336057642738
+threads_post: https://www.threads.com/@lexisoninsta/post/DdNBLeGgT5F
 tags:
   - Fitness
   - Wearables
