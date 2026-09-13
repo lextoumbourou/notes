@@ -2,7 +2,7 @@
 title: On the Measure of Intelligence (2019)
 date: 2024-10-22 00:00
 category: paper
-modified: 2024-10-22 00:00
+modified: 2026-09-13 10:34
 summary: a shift in how we evaluate artificatial intelligence
 cover: _media/on-the-measure-of-intelligence-2019-fig3.png
 status: draft
@@ -68,7 +68,7 @@ of passing Wozniak's coffee cup test (entering a random kitchen and making a cup
 coffee) [99] could be said to display broad generalisation
 * Extreme generalisation (general intelligence) - i.e. biological forms of intelligence (humans and possibly other intelligent species) are the only example of such a system at this time
 
-![](../../../../_media/on-the-measure-of-intelligence-2019-fig-1.png)
+![Hierarchy connecting general intelligence and extreme generalization to broad cognitive abilities, then to task-specific skills and local generalization.](../../_media/on-the-measure-of-intelligence-2019-fig-1.png)
 *Figure 1. Hierarchical model of cognitive abilities and its mapping to the spectrum of generalisation.*
 
 This spectrum aligns with the hierarchical structure of cognitive abilities in psychometrics, with general intelligence (the 'g factor') at the apex.
@@ -83,7 +83,7 @@ Using [[Algorithmic Information Theory]], Chollet provides a formal definition o
 
 This formalisation allows for more rigorous comparisons between AI systems and even between AI and human intelligence.
 
-![](../../../../_media/on-the-measure-of-intelligence-2019-fig3.png)
+![Two systems start with the same known situations. The higher-intelligence system generalizes to a larger operational area, illustrating a higher information-conversion ratio.](../../_media/on-the-measure-of-intelligence-2019-fig3.png)
 *Figure 3: Higher intelligence "covers more ground" in future situation space using the same information*
 
 ### Abstraction and Reasoning Corpus (ARC)
@@ -95,7 +95,7 @@ To implement his ideas, Chollet introduces the [[Abstraction and Reasoning Corpu
 * Explicit [[Core Knowledge]] priors
 * Limited training examples
 
-![](../../../../_media/on-the-measure-of-intelligence-2019-fig4.png)
+![ARC task with three examples of reconstructing blacked-out regions in symmetric coloured grids, followed by a test grid whose missing patch must be inferred.](../../_media/on-the-measure-of-intelligence-2019-fig4.png)
 *Figure 4: A task where the implicit goal is to complete a symmetrical pattern. Three input/output examples specify the nature of the
 task. The test-taker must generate the output grid corresponding to the input grid of the test input (bottom right).*
 

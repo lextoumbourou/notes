@@ -1,7 +1,7 @@
 ---
 title: "Brown et al., 2020: Language Models are Few-Shot Learners"
 date: 2024-01-07 00:00
-modified: 2024-01-07 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -11,6 +11,6 @@ Notes for paper [Language Models are Few-Shot Learners](https://arxiv.org/abs/20
 
 The paper that introduced [GPT-3](gpt-3.md).
 
-![](../../../_media/language-models-are-few-shot-learners-title.png)
+![Title and author list of Language Models are Few-Shot Learners, by Tom B. Brown and colleagues at OpenAI.](../_media/language-models-are-few-shot-learners-title.png)
 
-![](../../../_media/language-models-are-few-shot-learners-arvxiv.png)
+![arXiv abstract for Language Models are Few-Shot Learners, describing GPT-3, a 175-billion-parameter model evaluated with instructions and examples without task-specific fine-tuning.](../_media/language-models-are-few-shot-learners-arvxiv.png)

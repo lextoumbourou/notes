@@ -1,7 +1,7 @@
 ---
 title: Computational Math Cheat Sheet
 date: 2023-08-31 00:00
-modified: 2023-09-02 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -194,8 +194,8 @@ Take the limit of the partial series $S_n$ as $n \rightarrow n$
 All angles must add to $180°$ ($\pi$ radians).
 
 180° = A + B + C
-![](../_media/computation-math-cheat-sheet-unit-circle-degrees.png)
-![](../_media/computation-math-cheat-sheet-unit-circle-radians.png)
+![Unit circle labelled with common angles in degrees and their exact coordinates, with cosine on the horizontal axis and sine on the vertical axis.](../_media/computation-math-cheat-sheet-unit-circle-degrees.png)
+![Unit circle labelled with common angles in radians and their exact cosine and sine coordinates across all four quadrants.](../_media/computation-math-cheat-sheet-unit-circle-radians.png)
 
 ### [Law Of Cosines](law-of-cosines.md)
 

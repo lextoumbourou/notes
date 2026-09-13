@@ -1,7 +1,7 @@
 ---
 title: "Week 2 - Non-Integer Numbers Conversion"
 date: 2023-04-20 00:00
-modified: 2023-04-20 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -62,7 +62,7 @@ status: draft
 
      * Multiplication
          * Same as decimal
-           ![](/_media/week-2-non-integer-conversion-multiplication.png)
+           ![Binary long multiplication: 1100 times 1111 equals 10110100, corresponding to decimal 12 times 15 equals 180.](../../../../_media/week-2-non-integer-conversion-multiplication.png)
    * Division
-      ![](/_media/week-2-non-integer-conversion-division.png)
+      ![Binary long division: 11100110 divided by 110 gives 100110 with remainder 10, corresponding to decimal 230 divided by 6.](../../../../_media/week-2-non-integer-conversion-division.png)
   * Need to revise this.

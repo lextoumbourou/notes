@@ -1,7 +1,7 @@
 ---
 title: "Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation"
 date: 2023-12-13 00:00
-modified: 2023-12-13 00:00
+modified: 2026-09-13 10:34
 category: reference/papers
 cover: /_media/cover-clap-paper.png
 summary: Notes from paper [Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation](https://arxiv.org/abs/2211.06687) by Yusong Wu, Ke Chen, Tianyu Zhang, Yuchen Hui, Taylor Berg-Kirkpatrick, Shlomo Dubnov
@@ -45,7 +45,7 @@ They also add a de-biasing step to convert references to "woman" or "man" to "pe
 
 Here are some examples of the keywords and the generated captions, followed by their debiased versions.
 
-![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-captions-debias.png)
+![Examples of keyword-to-caption augmentation, showing audio keywords, raw T5 captions and edited captions that replace gendered references with gender-neutral language.](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-captions-debias.png)
 
 ### 4. [Laion Audio 630K](../../permanent/laion-audio-630K.md)
 
@@ -290,7 +290,7 @@ Results:
 * Audio encoder: [HTS-AT](https://arxiv.org/abs/2202.00874) better than [PANNs](https://arxiv.org/abs/1912.10211) combined with RoBERTa or BERT.
 * Text encoder: RoBERTa beats BERT. CLIP transformer worst.
 
-![](../../_media/large-scale-contrastive-language-audio-retraining-with-feature-fusion-table-2.png)
+![AudioCaps and Clotho retrieval results for six audio and text encoder combinations. HTSAT with RoBERTa leads both AudioCaps directions; HTSAT with BERT leads Clotho text-to-audio retrieval.](../../_media/large-scale-contrastive-language-audio-retraining-with-feature-fusion-table-2.png)
 
 #### Dataset Scale
 
@@ -324,7 +324,7 @@ As a result, our best model outperforms previous methods on most metrics (mainly
 
 We show that training on large-scale datasets (LAION-Audio-630K and AudioSet with keyword-to-caption augmentation) and feature fusion can improve model performance.
 
-![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-table-3.png)
+![AudioCaps and Clotho retrieval benchmark comparing model and training-data variants. Keyword-to-caption augmentation gives the best AudioCaps audio-to-text scores, while feature fusion gives the best Clotho scores in several columns.](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-table-3.png)
 
 ### Zero-shot Audio Classification
 
@@ -336,13 +336,13 @@ They classify audio by performing audio-to-text retrieval with each text corresp
 
 There's some dataset overlap between the training data and the zero-shot dataset. They excluded all the overlap samples and performed a zero-shot evaluation on the remaining dataset.
 
-![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-zeroshot.png)
+![Zero-shot audio classification: encode audio and prompted class descriptions, project both through MLPs, then match their embeddings to select a class.](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-zeroshot.png)
 
 As shown in Table 4, the models achieve new SoTAs of zero-shot audio classification across all three datasets.
 
 Keyword-to-caption augmentation increases the performance of VGGsound and US8K by adding more text captions to "enrich" the text embedding space.
 
-![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-table-4.png)
+![Audio classification results on ESC-50, US8K, VGGSound and FSD50K. Keyword-to-caption augmentation achieves the best reported zero-shot scores: 91.0, 77.0 and 46.2 on the first three datasets.](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-table-4.png)
 
 ### Supervised Audio Classification
 
@@ -352,7 +352,7 @@ Feature-fusion enables the model to handle variable-length input and performs be
 
 They outperform the current state-of-the-art on the VGGSound dataset, close to the state-of-the-art on the FSD50K dataset.
 
-![](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-supervised.png)
+![Supervised audio classification: an audio encoder, MLP and projection layers are fine-tuned together to produce a class-probability vector.](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-supervised.png)
 
 ## Future Work
 

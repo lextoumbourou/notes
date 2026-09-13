@@ -1,7 +1,7 @@
 ---
 title: "Week 8: Applications of Sine and Cosine Rules"
 date: 2023-06-10 00:00
-modified: 2023-06-10 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -26,7 +26,7 @@ status: draft
 * Generic triangle
     * $a = 8cm, b = 3cm, \alpha = 58°, c?$
         * Note: $\sin(58°) = 0.848$
-         ![](../../../../journal/_media/week-8-applications-of-sine-and-cosine-rules-generic-triangle.png)
+         ![Triangle ABC with sides a, b and c opposite angles alpha, beta and gamma, used to illustrate the sine and cosine rules.](../../../../_media/week-8-applications-of-sine-and-cosine-rules-generic-triangle.png)
     * Use sine ratio: $a / \sin(\alpha)  = b / \sin(\beta) = c / \sin(\gamma)$
         * $\sin(\beta) = b \sin(\alpha) / a \rightarrow \sin(\beta) = 3 \times 0.848 / 8 = 0.318$
     * We can evaluate $\beta$ by inverting the $\sin$

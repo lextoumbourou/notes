@@ -41,6 +41,13 @@ To build the blog without running setup, use the `build.sh` script:
 ./build.sh
 ```
 
+The build checks `.md`, `.rst` and `.txt` notes for forbidden control characters
+in one Python process. It allows tabs and normal line endings, reports the file
+and first offending line, and stops before Pelican if validation fails. This
+replaces the per-file `grep -P` loop, which was slow and unsupported by macOS grep.
+The final line reports total elapsed time in whole seconds, including validation,
+Pelican and Pagefind. Failed builds report elapsed time and retain their exit code.
+
 Mermaid diagrams use [mermaid-rs-renderer](https://github.com/1jehuang/mermaid-rs-renderer)
 v0.3.1. The build installs the official binary into the ignored `.tools/` directory
 on its first run, verifies the release archive's SHA-256, and reuses it afterwards.

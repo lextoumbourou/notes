@@ -1,7 +1,7 @@
 ---
 title: "Week 15: Limits and differentiation"
 date: 2023-09-03 00:00
-modified: 2023-09-03 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -115,11 +115,11 @@ $\tan \alpha = \triangle y / \triangle x$
 
 Consider a more generic function f(x):
 
-![](/_media/week-15-limits-and-differentiation-generic-func.png)
+![Sketch of a curve f(x), with a cyclist on a descending section and a marked point P on a rising section.](../../../../_media/week-15-limits-and-differentiation-generic-func.png)
 
 The slope at any point x, the line tangent to the curve is the slope.
 
-![](/_media/week-15-limits-and-differentiation-tangent.png)
+![Tangents to f(x) illustrate a horizontal slope at the bottom of a curve and a positive slope at point P, with cyclists showing the changing steepness.](../../../../_media/week-15-limits-and-differentiation-tangent.png)
 The derivative is the slope of the line tangent to the curve at a point P.
 
 Derivative;
@@ -146,7 +146,7 @@ Croft, A. and R. Davison, Foundation maths. (Harlow: Pearson, 2016) 6th edition.
 If we have a function $y = f(x)$ and want its slope, or gradient at sevenl points.
 
 See the function $y=2x^2 + 3x$. At differnet points the slope of the graph is diff
-![](../../../../journal/_media/week-15-limits-and-differentiation-slope-points.png)
+![Parabola y = 2x squared plus 3x, with points A through E illustrating how the gradient changes from negative to zero to positive.](../../../../_media/week-15-limits-and-differentiation-slope-points.png)
 To find the exact gradient at a curve, need gradient function.
 
 Writteen as $\frac{dy}{dx}$ read as dy by dee x. Simplified to y' (y prime/dash).

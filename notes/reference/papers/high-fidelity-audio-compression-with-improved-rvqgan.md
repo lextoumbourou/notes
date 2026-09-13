@@ -2,7 +2,7 @@
 title: High-Fidelity Audio Compression with Improved RVQGAN
 date: 2023-12-18 00:00
 category: paper
-modified: 2023-12-18 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -225,7 +225,7 @@ Note: target bitrate is upper bound, since all models support variable bitrates.
 
 Table 1 shows [Improved RVQGAN](Improved%20RVQGAN) again baseline comparing compression factors and frame rate of latent codes.
 
-![](../../../../_media/high-fidelity-audio-compression-with-improved-rvqgan-table1.png)
+![Comparison of the proposed codec, EnCodec and SoundStream: the proposed codec compresses 44.1 kHz audio to 8 kbps using nine codebooks, a compression factor of 91.16.](../../_media/high-fidelity-audio-compression-with-improved-rvqgan-table1.png)
 
 Model achieves:
 * higher compression factor
@@ -245,7 +245,7 @@ Defined as $\text{snake}(x) = x + \frac{1}{\alpha} \sin^2(\alpha)$
 * $\alpha$ controls the frequency of periodic component of the signal
 * In experiments, replacing Leaky ReLU activations with Snake function is influential change that significantly improves audio fidelity (Table 2).
 
-![](../../../../_media/high-fidelity-audio-compression-with-improved-rvqgan-table2.png)
+![Codec ablation results comparing architecture, discriminator, reconstruction loss, latent dimension, quantization and data sampling using audio-quality and bitrate-efficiency metrics.](../../_media/high-fidelity-audio-compression-with-improved-rvqgan-table2.png)
 
 #### Improved residual vector quantization
 
@@ -284,7 +284,7 @@ The number of quantisers $Nq$ determine the bitrate, so for each input example w
 
 However, the authors found that this causes the audio reconstruction to degrade when you have full bandwidth. See Fig 2 below.
 
-![](../../../../_media/high-fidelity-audio-compression-with-improved-rvqgan-fig2-1.png)
+![Mel-reconstruction loss versus bitrate for four quantizer-dropout probabilities. Dropout substantially improves reconstruction at low bitrates; the curves converge near 8 kbps.](../../_media/high-fidelity-audio-compression-with-improved-rvqgan-fig2-1.png)
 However, we noticed that applying quantizer dropout degrades the audio reconstruction quality at full bandwidth (Figure 2)
 
 What they do is only apply the dropout operation 50% of the time.
