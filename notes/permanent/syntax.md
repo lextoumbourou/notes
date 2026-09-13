@@ -74,7 +74,7 @@ These are sets of phrase-level constituents that combine together to create a ne
 
 Statements of fact or belief.
 
-```
+```text
 S -> NP VP
 ```
 
@@ -86,7 +86,7 @@ This is the canoncical sentence form in English and the backbone of most grammar
 
 These are sentences formed via auxillary inversion.
 
-```
+```text
 S -> Aux NP VP
 ```
 
@@ -99,7 +99,7 @@ The key property is that they have subject-auxilary inversion.
 
 Questions that extract a constituent.
 
-```
+```text
 S -> Wh-Phrase Aux NP VP
 ```
 
@@ -114,7 +114,7 @@ These combine:
 
 Commands or requests.
 
-```
+```text
 S -> VP
 ```
 
@@ -127,7 +127,7 @@ The subject ("you") is implicit, and not syntactically present.
 
 Sentences where the object is promoted to subject position.
 
-```
+```text
 S -> NP Aux VP[passive]
 ```
 
@@ -153,7 +153,7 @@ Where `XP` can be:
 
 Introduce the existence of something
 
-```
+```text
 S -> There Aux NP
 ```
 
@@ -170,7 +170,7 @@ These are still sentence constructions, but not root sentences.
 
 Sentences embedded inside other sentences.
 
-```
+```text
 VP -> V CP
 CP -> (that) S
 ```
@@ -181,7 +181,7 @@ CP -> (that) S
 
 Modify noun phrases.
 
-```
+```text
 NP → NP CP
 ```
 
@@ -192,7 +192,7 @@ NP → NP CP
 
 Adverbial sentence modifiers.
 
-```
+```text
 S → Subordinator S , S
 ```
 

@@ -11,7 +11,7 @@ A **Context-Free Grammar** is a set of rules that expressed how symbols of a lan
 
 For example:
 
-```
+```text
 S -> NP VP
 NP -> Det N
 VP -> V NP
@@ -28,7 +28,7 @@ Take the sentence "the black cat chased the mouse"
 
 Using the CFG rules, we can derive:
 
-```
+```text
 S
 ├── NP
 │   ├── Det -> the
@@ -52,7 +52,7 @@ We can think of CFG as having two layers of rules:
 
 The "Lexical Rules" map syntactic categories to words:
 
-```
+```text
 Det -> the | a
 N -> cat | mouse
 V -> chased | caught

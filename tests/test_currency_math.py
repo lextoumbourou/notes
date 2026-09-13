@@ -1,6 +1,3 @@
-import importlib.util
-from pathlib import Path
-from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -8,8 +5,6 @@ from xml.sax.saxutils import escape
 
 from bs4 import BeautifulSoup
 from markdown import Markdown
-import nbformat
-from pelican.settings import DEFAULT_CONFIG
 
 from currency_katex import CurrencyKatexExtension, configure_pelican
 
@@ -86,29 +81,53 @@ class CurrencyMathTests(unittest.TestCase):
         render.assert_not_called()
         self.assertEqual(output, "<p>$20 and $30</p>")
 
-    def test_notebooks_use_same_rules_without_touching_code(self):
-        spec = importlib.util.spec_from_file_location(
-            "site_jupytext", Path(__file__).resolve().parents[1] / "my-plugins" / "pelican_jupytext.py"
-        )
-        module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
-        notebook = nbformat.v4.new_notebook(cells=[
-            nbformat.v4.new_markdown_cell(r"Pay $20 or $30. Literal \$x\$. Formula $x+1$."),
-            nbformat.v4.new_code_cell("print('$code$')", outputs=[
-                nbformat.v4.new_output("stream", name="stdout", text="$output$")
-            ]),
-        ])
-        with TemporaryDirectory() as directory:
-            path = Path(directory) / "note.ipynb"
-            nbformat.write(notebook, path)
-            reader = module.JupytextMarkdownReader(DEFAULT_CONFIG.copy())
-            with patch("pelican_katex.markdown.render_latex", return_value='<span class="katex">x+1</span>') as render:
-                output, _ = reader._read_notebook("note.md", str(path), {"title": "Notebook"})
+    def test_markdown_notebook_preserves_code_and_saved_outputs(self):
+        source = r'''Pay $20 or $30. Literal \$x\$. Formula $x+1$.
+
+```python {format=html id=example}
+print('$code$')
+```
+<!-- nb-output id="example" hash="example" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">$output$</pre>
+</div>
+<!-- /nb-output -->
+'''
+        markdown = Markdown(extensions=['markdown_notebook_fences', 'extra', CurrencyKatexExtension()])
+        with patch("pelican_katex.markdown.render_latex", return_value='<span class="katex">x+1</span>') as render:
+            output = markdown.convert(source)
         render.assert_called_once_with("x+1", {"displayMode": False})
         soup = BeautifulSoup(output, "html.parser")
         self.assertIn("Pay $20 or $30. Literal $x$.", soup.get_text())
         self.assertIn("$code$", soup.get_text())
         self.assertIn("$output$", soup.get_text())
+
+    def test_math_html_is_preserved_without_reprocessing_its_text(self):
+        rendered = ('<span class="katex"><math xmlns="http://www.w3.org/1998/Math/MathML">'
+                    '<annotation encoding="application/x-tex">x_1 &amp; **literal**</annotation>'
+                    '</math><span aria-hidden="true">x_1</span></span>')
+        with patch("pelican_katex.markdown.render_latex", return_value=rendered):
+            output = Markdown(extensions=["extra", CurrencyKatexExtension()]).convert("Before $x_1$ after.")
+        self.assertIn(rendered, output)
+        self.assertNotIn("<strong>", output)
+
+    def test_inline_math_attributes_keep_the_tree_path(self):
+        with patch("pelican_katex.markdown.render_latex", return_value='<span class="katex">x</span>'):
+            output = Markdown(extensions=["extra", CurrencyKatexExtension()]).convert("Formula $x${#eq .numbered}.")
+        soup = BeautifulSoup(output, 'html.parser')
+        self.assertEqual(soup.select_one('#eq')['class'], ['katex', 'numbered'])
+        self.assertEqual(soup.get_text(), 'Formula x.')
+
+    def test_math_in_headings_links_and_footnotes_matches_tree_path(self):
+        source = '## The $x_1$ heading\n\nSee [$x_1$](https://example.com) and a footnote[^1].\n\n[^1]: Value $x_1$.'
+        rendered = '<span class="katex"><span>x_1</span></span>'
+        results = []
+        for stash in [False, True]:
+            md = Markdown(extensions=['extra', 'toc', CurrencyKatexExtension(stash_html=stash)])
+            with patch("pelican_katex.markdown.render_latex", return_value=rendered):
+                output = md.convert(source)
+            results.append((str(BeautifulSoup(output, 'html.parser')), md.toc_tokens))
+        self.assertEqual(*results)
 
 
 if __name__ == "__main__":

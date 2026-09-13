@@ -11,7 +11,7 @@ Gradient descent is an optimisation algorithm used to minimise a cost function. 
 
 In pseudocode, one step of Gradient Descent looks like this:
 
-```
+```text
 guess = some guess
 d = derivate @ guess
 cur guess = cur guess - alpha * d
@@ -29,14 +29,14 @@ We know from the [Power Rule](Power%20Rule) that the derivate of $x^2 = 2x$: $\f
 
 So if we started with a guess of 5, one step of gradient descent would look like:
 
-```
+```text
 d = 2 * 5
 5 - 0.001 * 10 = 4.99
 ```
 
 Now our guess is at 4.9. A bit closer to 0. We can take another step:
 
-```
+```text
 d = 2 * 4.99 = 9.98
 guess = 4.99 - 0.001 * 9.98 = 4.98
 ```

@@ -20,7 +20,7 @@ paper_authors: Xiangyi Li, Wenbo Chen, Yimin Liu, Shenghan Zheng, Xiaokun Chen, 
 
 [Agent Skills](../../permanent/agent-skill.md) are structured packages of Markdown files and scripts that augment [AI Agents](../../permanent/ai-agents.md)' capabilities. They usually look something like this:
 
-```
+```text
 ~/.claude/skills/some-skill/
 ├── SKILL.md
 └── scripts/

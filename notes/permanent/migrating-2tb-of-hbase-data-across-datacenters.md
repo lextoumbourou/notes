@@ -52,11 +52,11 @@ Okay, so now we know we're going to use CopyTable, let's get setup for using it 
 
 Since CopyTable is simply a MapReduce job, you are required to run an instance of resource manager and an instance of a node manager. These can be started on a node as follows:
 
-```
+```bash
 /bin/yarn resourcemanager start
 ```
 
-```
+```bash
 /bin/yarn nodemanager start
 ```
 
@@ -77,7 +77,7 @@ So, with that in mind you'll need to ensure that you can resolve the ZooKeeper h
 
 Since we are sending the data to a remote cluster, I mapped the internet IP address to the internal address from my remote cluster in the hosts file on each node:
 
-```
+```text
 > vi /etc/hosts
 zookeeper.internal 50.23.23.12
 region1.internal 50.23.23.12
@@ -100,7 +100,7 @@ This article assumes you have already configured HBase on your destination clust
 
 CopyTable requires that the destination cluster has the same column-family configuration as the source. You can see how your source in configured using ``describe`` from the shell.
 
-```
+```text
 hbase(main):005:0> describe 'my_table'
 Table my_table is ENABLED
 my_table
@@ -119,7 +119,7 @@ alse', BLOCKSIZE => '65536', REPLICATION_SCOPE => '0'}
 
 Which translates directing into a create table command on the destination cluster:
 
-```
+```text
 hbase(main):005:0> create 'my_table', 'a', 'i', 'r'
 ```
 
@@ -133,7 +133,7 @@ To run the migration, the premise is simple: copy up all the data, then copy up 
 
 For our requirements, nothing particularly complex is required here and was all done with a bash script. Just store the time that the job was started, then run CopyTable for each table, then copy up the data that's changed since the job was started. Something like this:
 
-```
+```bash
 TABLES="
 table1
 table2

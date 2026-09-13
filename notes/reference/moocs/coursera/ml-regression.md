@@ -46,7 +46,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
 
 * Function that takes a square matric and convert it to a number. Formula looks like:
 
-```
+```text
 [a c]
 [b d] == a*d - c*b
 ```

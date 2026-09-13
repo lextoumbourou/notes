@@ -47,7 +47,7 @@ print(Vector3.new(1, 1, 1) - Vector3.new(1, 1, 1)) -- 0, 0, 0
 
 We can scale a vector by multiplying it by a scalar ([Vector Scaling](Vector Scaling.md)).
 
-```
+```lua
 print(Vector3.new(1, 1, 1) * 2) -- 2, 2, 2
 ```
 

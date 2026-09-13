@@ -84,7 +84,7 @@ The <font color="#A92C21">right</font>, <font color="#89CC4C">up</font>, and <fo
 
 You can also access each vector using their respective properties:
 
-```
+```lua
 print(CFrame.Position)
 print(CFrame.RightVector)
 print(CFrame.UpVector)

@@ -26,7 +26,7 @@ First things first, you'll need to...
 
 ``WITH`` queries lets you build a temporary table for use in a subsequent query, also known as "Common Table Expressions" or CTEs. Here's an example where I build a table which uses the [VALUES](http://www.postgresql.org/docs/9.1/static/sql-values.html) command to return a single row with a number:
 
-```
+```postgresql
 WITH bottles_of_beer AS (
    VALUES (99)
 )
@@ -55,7 +55,7 @@ A ``WITH RECURSIVE`` query let's your perform an operation on the output of a ``
 
 Let's see if we can use that information to rewrite a query that counts down from 99 to 1:
 
-```
+```postgresql
 WITH RECURSIVE bottles_of_beer(n) AS (              -- See #1
     VALUES (99)                                     -- See #2
   UNION ALL                                         -- See #3
@@ -73,7 +73,7 @@ Let's break it down:
 
 Finally, we can use the [``||`` string concatention operator](http://www.postgresql.org/docs/9.1/static/functions-string.html), to do the whole bottles of beer song:
 
-```
+```postgresql
 WITH RECURSIVE bottles_of_beer(n) AS (
     VALUES (99)
   UNION ALL
@@ -82,7 +82,7 @@ WITH RECURSIVE bottles_of_beer(n) AS (
 SELECT n::text || ' bottles of beer on the wall' from bottles_of_beer;
 ```
 
-```
+```text
  column1
 --------------------------------
  99 bottles of beer on the wall
@@ -105,7 +105,7 @@ Joins in ``WIH RECURSIVE`` queries can be used to join data from a table against
 
 Firstly let's create the table to represent our data relationship:
 
-```
+```postgresql
 CREATE TABLE category (
     id integer,
     name varchar(256),
@@ -116,7 +116,7 @@ CREATE TABLE category (
 
 Next, we'll add the example categories in our diagram:
 
-```
+```postgresql
 INSERT INTO category (id, name, parent_id) VALUES
     (1, 'Shoes', NULL),
     (2, 'Sports', 1),
@@ -126,7 +126,7 @@ INSERT INTO category (id, name, parent_id) VALUES
 
 Since we have learned the basics of building recursive queries, we can firstly define the non-recursive part:
 
-```
+```postgresql
 SELECT id, name, parent_id FROM categories WHERE id = 3;
 ```
 
@@ -134,7 +134,7 @@ which simply grabs the ``Nike Air`` category by id.
 
 Let's put that in a CTE:
 
-```
+```postgresql
 WITH RECURSIVE category_tree AS (
    SELECT id, name, parent_id FROM categories WHERE id = 3
 )
@@ -144,7 +144,7 @@ Now we decide on the union operator, in this example I'll use ``UNION`` to remov
 
 Now here's where it gets interesting: defining the recursive part. Here we'll join the output from the base query to the ``category`` table until there's nothing more to be joined:
 
-```
+```postgresql
     SELECT category.id, category.name, category.parent_id
         FROM category
         JOIN category_tree ON (category_tree.parent_id = category.id)
@@ -154,7 +154,7 @@ So, when the ``Nike Air`` category is first returned, we'll grab a row from the 
 
 Now, let's put it all together:
 
-```
+```postgresql
 WITH RECURSIVE category_tree AS (
    SELECT id, name, parent_id FROM category WHERE id = 3
      UNION
@@ -167,7 +167,7 @@ SELECT * FROM category_tree;
 
 Go ahead and run that. Does it work? Here's what was returned for me:
 
-```
+```text
  id |     name     | parent_id
 ----+--------------+-----------
   3 | Nike Air     |         2
@@ -184,7 +184,7 @@ Okay, challenge number 2, let's go the other way: **start at the top-level retur
 
 There's nothing new here, we just simply change our base query to start by selecting our top-level parent then join any category with a parent id that matches our current result's id. Like so:
 
-```
+```postgresql
 WITH RECURSIVE top_level AS (
     SELECT id, name, parent_id
         FROM category WHERE id = 1
@@ -200,7 +200,7 @@ Go ahead and run that. I'll wait...
 
 Here's what was returned for me:
 
-```
+```postgresql
 SELECT * FROM top_level;
  id |     name     | parent_id
 ----+--------------+-----------
@@ -227,13 +227,13 @@ As already covered, the ``UNION`` statement basically tells Postgres what to do 
 
 So let's try creating the messed up data relationship, by creating an infinite recursive loop.
 
-```
+```postgresql
 UPDATE category SET parent_id = 3 WHERE id = 1;
 ```
 
 Then run the same query from the last section:
 
-```
+```postgresql
 WITH RECURSIVE category_tree AS (
     SELECT id, name, parent_id
         FROM category WHERE id = 3
@@ -249,7 +249,7 @@ If you're playing along at home, you'll notice that query never completes and yo
 
 We can combat this problem by using ``UNION`` instead of ``UNION ALL`` to discards duplicate rows:
 
-```
+```postgresql
 WITH RECURSIVE top_category AS (
     SELECT id, name, parent_id
         FROM category WHERE id = 3
@@ -263,7 +263,7 @@ SELECT * FROM top_category;
 
 Now when the query goes to join the ``Shoes`` row with ``Nike Air``, it finds a duplicate row, since we are discarding dupe, there's nothing left to join so we return. Voilà:
 
-```
+```text
  id |     name     | parent_id
 ----+--------------+-----------
   3 | Rebook Pumps |         2

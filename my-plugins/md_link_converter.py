@@ -26,7 +26,16 @@ def convert_md_links(instance):
             slug = slugify(file_stem)
             return f'<a href="{slug}.html">{link_text}</a>'
 
-        instance._content = html_links.sub(replace_link, instance._content)
+        original = instance._content
+        instance._content = html_links.sub(replace_link, original)
+        prepared = instance.metadata.get('_site_toc_headings')
+        if prepared is not None and prepared[0] == original:
+            # This rewrite only changes link destinations. Keep captured
+            # heading fragments aligned with the same change in the body.
+            instance.metadata['_site_toc_headings'] = (
+                instance._content,
+                [html_links.sub(replace_link, heading) for heading in prepared[1]],
+            )
     except Exception as e:
         logger.error('Exception occurred: %s', e, exc_info=True)
 

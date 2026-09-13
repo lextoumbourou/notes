@@ -15,7 +15,7 @@ modified: 2023-04-08 00:00
     * Flat line
     * No mode / multiple modes
 
-```
+```text
 x-bar = sum(x) / n
 mu = sum(x) / N
 ```

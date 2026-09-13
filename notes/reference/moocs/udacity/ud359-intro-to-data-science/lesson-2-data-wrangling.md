@@ -17,7 +17,7 @@ status: draft
     * json
 * pandas syntax overview
 
-```
+```python
 import pandas
 
 baseball_data = pandas.read_csv('file.csv')
@@ -49,7 +49,7 @@ baseball_data.to_csv('new_file.csv')
     * May over or under emphasis certain values and trends
 * Example of imputation with pandas
 
-```
+```python
 from pandas import *
 import numpy
 

@@ -11,7 +11,7 @@ Attachment defines a point and orientation relative to a parent BasePart.
 
 Roblox stores the offset in the `CFrame` property.
 
-```
+```lua
 local attachment = Instance.new('Attachment')
 attachment.Parent = game.Workspace.Part
 print(attachment.CFrame)

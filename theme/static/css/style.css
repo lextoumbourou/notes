@@ -758,6 +758,7 @@ html[data-theme="dark"] .theme-icon-moon { display: none; }
 
 .prose-body code:not(pre code) {
   font-family: var(--font-mono);
+  overflow-wrap: anywhere;
   font-size: 0.88em;
   background: var(--g-code-bg);
   color: var(--g-code-fg);
@@ -1012,15 +1013,16 @@ ul.pagination li { display: inline; margin-right: 8px; }
 .katex-display>.katex>.katex-html { overflow: scroll; }
 
 /* ============================================================
-   Jupyter notebook output
+   Notebook output
    ============================================================ */
 .cell { margin-bottom: 1em; }
 .input_area { overflow-x: auto; }
 .output_wrapper { margin-top: 0.5em; }
-.output_area { overflow-x: auto; }
-.output_html { overflow-x: auto; }
+.output_area, .nb-output { overflow-x: auto; }
+.output_html, .nb-output-html { overflow-x: auto; }
 .output_png img { max-width: 100%; height: auto; }
-.output_text pre { overflow-x: auto; }
+.output_text pre, .nb-output pre { overflow-x: auto; }
+.prose-body .footnote { overflow-wrap: anywhere; }
 .prompt, div.input_prompt, div.output_prompt { display: none; }
 div.output_subarea { max-width: 100% !important; }
 div.input_area > div.highlight { overflow: auto; }
