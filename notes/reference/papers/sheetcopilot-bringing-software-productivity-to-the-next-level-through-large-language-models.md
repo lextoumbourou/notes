@@ -139,7 +139,7 @@ Early work was [Flash Fill](Flash%20Fill): which automates string processing tas
 NLyze [12]: [Nlyze: Interactive programming by natural language for spreadsheet data analysis and manipulation](Nlyze:%20Interactive%20programming%20by%20natural%20language%20for%20spreadsheet%20data%20analysis%20and%20manipulation)
 - utilizes a translation algorithm to convert a user’s natural language instruction to a ranked set of likely programs.
 
-Inspired by the success of [Codex](Codex) and [AlphaCode](AlphaCode), one recent study: [Flame: A small language model for spreadsheet formulas](Flame:%20A%20small%20language%20model%20for%20spreadsheet%20formulas) focused on generating formulas given textual descriptions.
+Inspired by the success of [Codex Cheatsheet](Codex) and [AlphaCode](AlphaCode), one recent study: [Flame: A small language model for spreadsheet formulas](Flame:%20A%20small%20language%20model%20for%20spreadsheet%20formulas) focused on generating formulas given textual descriptions.
 
 They compared the performance of several state-of-the-art LLMs:
 - GPT-3
