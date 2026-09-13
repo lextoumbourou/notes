@@ -1,7 +1,7 @@
 ---
 title: Prim's Algorithm
 date: 2025-02-15 00:00
-modified: 2025-02-15 00:00
+modified: 2026-09-13 10:39
 status: draft
 ---
 
@@ -18,7 +18,7 @@ $$
 &\textbf{PRIM-MST}(G) \\
 &\quad 1. \quad vs = vertices(G) \color{purple}{\text{ // get all vertices in G}} \\
 &\quad 2. \quad T = \text{new Graph(FIRST}(vs), {}) \color{purple}\text{ // create a new output Graph which starts with the first element in G} \\
-&\quad 3. \quad \textbf{while } (|T| < |G|) \textbf{ do} \color{purple}\text{ // repeat until all nodes are in output Graph} \\
+&\quad 3. \quad \textbf{while}\  (|T| < |G|) \ \textbf{do} \color{purple}\text{ // repeat until all nodes are in output Graph} \\
 &\quad \quad\quad \color{purple}\text{  } \\
 &\quad \quad\quad \color{purple}\text{  // get all possible edges to nodes not in the graph} \\
 &\quad 4. \quad\quad L = {e \mid e \in edges(G) \text{ and FROM}(e) \in T \text{ and TO}(e) \in G \text{ and TO}(e) \notin T} \\

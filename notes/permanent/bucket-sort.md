@@ -2,7 +2,7 @@
 category: note
 title: Bucket Sort
 date: 2025-02-15 00:00
-modified: 2025-02-15 00:00
+modified: 2026-09-13 10:39
 summary: a distribution-based sorting algorithm that works by dividing elements into buckets
 tags:
 - ComputerScience
@@ -18,7 +18,7 @@ $$
 &\textbf{BUCKETSORT}(A) \\
 &\quad 1. \quad n = A.length \\
 &\quad 2. \quad \text{buckets } B[0 \dots n - 1] \\
-&\quad 3. \quad \textbf{for } i = 1 \text{ to } n \textbf{ do} \\
+&\quad 3. \quad \textbf{for}\  i = 1 \text{ to } n \ \textbf{do} \\
 &\quad 4. \quad\quad \text{insert } A[i] \text{ into bucket } B[ \ \lfloor \ n \times A[i] \ \rfloor \ ] \\
 &\quad 5. \quad \text{sort each bucket} \\
 &\quad 6. \quad \text{concatenate sorted buckets}

@@ -2,7 +2,7 @@
 category: essay
 title: "Understanding Australia's CGT Rule Changes"
 date: 2026-07-18 12:11
-modified: 2026-07-18 12:11
+modified: 2026-09-13 10:39
 status: draft
 tags:
   - Tax
@@ -16,7 +16,7 @@ I'm just a lay person making sense of the new law, not even an accountant or any
 
 Under the existing system, an individual, trust or partnership that held an eligible asset for more than 12 months generally received a 50% CGT discount. Half of the capital gain was added to taxable income and taxed at the person's marginal rate.
 
-So if I bought a single stock of COMPANY for $100 and sold it for $200. That's would be $100 added to my taxable income. But if I held it for over a year, I would only add $50 to my taxable income.
+So if I bought a single stock of COMPANY for &#36;100 and sold it for &#36;200. That's would be &#36;100 added to my taxable income. But if I held it for over a year, I would only add &#36;50 to my taxable income.
 
 The idea of the CGT discount, introduced by the Howard Government in 1999, was presumably to encourage long-term holding over short term speculation.
 
@@ -26,7 +26,7 @@ However, if you only made a profit on par with inflation (2-3% per year) you act
 
 From 1 July 2027, the 50% discount will be replaced with an inflation-based discount. The cost base will be indexed, so tax is directed at the gain above inflation: the real gain.
 
-So, if you sold $100, but you held for 20 years, with inflation at 3.5% per year, the cost base of $100 would be adjust to $200 and you'd technically pay no tax.
+So, if you sold &#36;100, but you held for 20 years, with inflation at 3.5% per year, the cost base of &#36;100 would be adjust to &#36;200 and you'd technically pay no tax.
 
 However, the reform also introduces a 30% minimum tax on relevant capital gains (regardless of your tax rate). It applies only to gains arising after 1 July 2027, rather than retrospectively rewriting the tax treatment of gains that accrued before the start date. Investors in new builds will be able to choose between the former 50% discount and the new arrangement.
 
