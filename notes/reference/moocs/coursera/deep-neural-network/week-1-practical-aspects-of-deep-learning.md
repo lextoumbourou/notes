@@ -1,6 +1,7 @@
 ---
 title: "Improving Deep Neural Networks - Week 1"
 date: 2017-09-30 00:00
+modified: 2026-09-13 10:39
 parent: deep-neural-network
 category: reference/moocs
 link: https://www.coursera.org/learn/deep-neural-network
@@ -72,8 +73,8 @@ tags:
 * L1 norm = $\frac{\lambda}{2m}||w||_ {1}$
     * L1 norm will generally make the weights sparse, allowing you to compress the model, though doesn't always work well in practise.
 * L2 norm in NNs, refers to the sum of the weight matrix or norm of the matrix:
-    * $J(w^{[1]},b^{[1]},w^{[L]},b^{[L]})=\
-  \frac{1}{m} \sum\limits_{i=1}^{n} L(\hat{y}^{(i)}, y^{(i)}) +\
+    * $J(w^{[1]},b^{[1]},w^{[L]},b^{[L]})=
+  \frac{1}{m} \sum\limits_{i=1}^{n} L(\hat{y}^{(i)}, y^{(i)}) +
   \frac{\lambda}{2m} \sum\limits_{l=1}^{L}||W{[l]}||^2$
         * "Squared norm is the sum of the i sum of j, of each of the elements of that matrix, squared."
             * $||W^{[l]}||_ {F}^{2} = \sum\limits_{i=1}^{n[l-1]} \sum\limits_{i=1}^{n[l]} (w_{ij}^{[l]})^2$

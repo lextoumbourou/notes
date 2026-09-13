@@ -1,6 +1,7 @@
 ---
 title: The Art of Game Design - A Book Of Lenses (2nd Edition) by Jesse Schell
 date: 2021-02-28 00:00
+modified: 2026-09-13 10:39
 category: reference/books
 cover: /_media/the-art-of-game-design-cover.jpeg
 summary: Notes from Jesse Schell's comprehensive guide to game design.
@@ -849,8 +850,8 @@ I tried to read this book really carefully and take a lot of notes.
       * If players weren't told the prob of lighting bolt attack and missed 3 times, they may assume it has a 0% chance of hitting.
       * Even with perfect information, players won't necessarily choose option with highest EV
         * Psychologists [Kahneman and Tversky](Kahneman and Tversky) ask subjects which game they want to play:
-          * Game A: 66% chance of winning $2400, 33% chance of winning $2500 and 1% chance of $0 (EV = $2409)
-          * Game B: 100% chance of winning $2400 (EV = $2400)
+          * Game A: 66% chance of winning &#36;2400, 33% chance of winning &#36;2500 and 1% chance of &#36;0 (EV = &#36;2409)
+          * Game B: 100% chance of winning &#36;2400 (EV = &#36;2400)
         * Only 18% picked A, even though it was better than B.
         * Why? People seek out options that create the most pleasure and avoid pain
         * Not only are people will to pay a price to avoid regret, they are willing to take risks.
@@ -2235,12 +2236,12 @@ I tried to read this book really carefully and take a lot of notes.
 * Decisions made about how the game will make money (in game ads, subscriptions vs micro transactions) will have big impact on game design and vice versa: game design will have impact on profitability.
 * Know your business model
   * Retail:
-    * When a consumer buys a $50 title, here's how the money flows:
+    * When a consumer buys a &#36;50 title, here's how the money flows:
       * ![Retail business](../_media/retail-business.png)
       * Platform holder: Sony, Nintendo, Microsoft etc make money by "taxing" publishers for each title.
       * Retailer takes so much: it's a low-margin business and they have to cut every corner to survive
       * Publisher takes a big cut because they're taking on a lot of the risk. Titles that aren't sold have to be rebought off the publisher.
-      * Markdown reserve: when a title has to be marked down to sell, the publisher has to absorb some of this cost (around $3 a unit)
+      * Markdown reserve: when a title has to be marked down to sell, the publisher has to absorb some of this cost (around &#36;3 a unit)
   * Direct download
     * Consumer buys game from distributor. Distrbutor takes clip and developer keeps the rest
     * Deciding on how much to spend on marketing and advertising one of the most challenging aspects of self publishing

@@ -1,7 +1,7 @@
 ---
 title: Kruskal's Algorithm
 date: 2025-02-15 00:00
-modified: 2025-02-15 00:00
+modified: 2026-09-13 10:39
 status: draft
 ---
 
@@ -19,12 +19,12 @@ $$
 &\quad 1. \quad E = \text{edges}(G) \color{purple}{\text{ // get all edges in G}} \\
 &\quad 2. \quad \text{sort } E \text{ by weight} \color{purple}{\text{ // sort edges in ascending order}} \\
 &\quad 3. \quad T = \text{new Graph}({}, {}) \color{purple}\text{ // create an empty output Graph} \\
-&\quad 4. \quad \textbf{for } e \in E \textbf{ do} \color{purple}\text{ // iterate through sorted edges} \\
-&\quad \quad\quad \textbf{if } \text{not cycle}(T, e) \textbf{ then} \color{purple}\text{ // check if adding e forms a cycle} \\
+&\quad 4. \quad \textbf{for}\  e \in E \ \textbf{do} \color{purple}\text{ // iterate through sorted edges} \\
+&\quad \quad\quad \textbf{if}\  \text{not cycle}(T, e) \ \textbf{then} \color{purple}\text{ // check if adding e forms a cycle} \\
 &\quad \quad\quad \quad \text{addEdge}(T, e) \color{purple}\text{ // add edge to MST} \\
 &\quad \quad\quad \quad \text{addVertex}(T, FROM(e)) \color{purple}\text{ // add the first node} \\
 &\quad \quad\quad \quad \text{addVertex}(T, TO(e)) \color{purple}\text{ // add the second node} \\
-&\quad 5. \quad \textbf{return } T \color{purple}\text{ // return the final MST}
+&\quad 5. \quad \textbf{return}\  T \color{purple}\text{ // return the final MST}
 \end{aligned}
 $$
 
