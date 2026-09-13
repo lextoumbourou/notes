@@ -51,7 +51,7 @@ Clip to 0 and 1, giving you the best estimate of true human-defined correctness 
 
 Now, you can plug that into their formula for confidence interval:
 
-```
+```python
 def confidence_interval(p, q0, q1, n, m0, m1, alpha=0.05):
     """Compute the adjusted (1-alpha) confidence interval."""
     z = norm.ppf(1 - alpha/2)

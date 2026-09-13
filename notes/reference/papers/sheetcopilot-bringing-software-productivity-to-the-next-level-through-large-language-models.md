@@ -254,7 +254,7 @@ Combined they allow them to control spreadsheets with natural language.
 
 Start with **General role description**. Here, the [Role (Prompt Engineering)](../../../../permanent/role-prompt-engineering.md) serve as an anchor for enabling language models to understand the context. 
 
-```
+```text
 You are a spreadsheet agent who can find proper action APIs from the API document based on language instructions.
 ```
 
@@ -262,7 +262,7 @@ Provide [Atomic Actions](../../permanent/atomic-actions.md). Aka the API docs.
 
 Provide the LMs with the interface information needed for task planning.
 
-```
+```text
 Here is the API document:
 Write # Args: (range: str, value: str) Usage: Write value into a range. The string in value also can be Excel formulas.
 AutoFill # Args: (source: str, desctination: str) Usage: Auto fill the desctination range with the source range.
@@ -273,7 +273,7 @@ Set of [Output Requirements](Output%20Requirements)
 
 Show the format required.
 
-```
+```text
 Requirements:
 1. The user will show you the headers and row numbers of sheets for your reference.
 2. Please provide step-by-step solutions with explanations.
@@ -286,7 +286,7 @@ Requirements:
 
 Show Multi-round interaction example between a user and an assistant.
 
-```
+```text
 # One shot example
 Instruction: In column D, calculate the profit for each week. Then format the numbers with Accounting Number Format.
 Step 1. Create a new column D

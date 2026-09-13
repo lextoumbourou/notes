@@ -173,9 +173,31 @@ class _HeadingScanner(HTMLParser):
             self.template_depth = max(0, self.template_depth - 1)
 
 
+NBSP_TEXT_RE = re.compile(r'(?:(?<=^)|(?<=>))[^<]*\xa0[^<]*(?=<|$)')
+
+
+def _prepared_ranges(content, prepared, header_re):
+    if prepared is None or header_re.pattern != TOC_DEFAULT['TOC_HEADERS']:
+        return None
+    source, headings = prepared
+    if content._content != source:
+        return None
+    ranges, previous = [], 0
+    for heading in headings:
+        start = source.find(heading, previous)
+        if start < 0:
+            return None
+        previous = start + len(heading)
+        ranges.append((start, previous))
+    return ranges
+
+
 def generate_toc(content):
     if isinstance(content, contents.Static):
         return
+    prepared = content.metadata.pop('_site_toc_headings', None)
+    if hasattr(content, '_site_toc_headings'):
+        delattr(content, '_site_toc_headings')
     settings = content.settings[TOC_KEY]
     if content.metadata.get('toc_run', settings['TOC_RUN']) != 'true':
         return
@@ -186,19 +208,24 @@ def generate_toc(content):
     except re.error:
         logger.error("TOC_HEADERS '%s' is not a valid re", settings['TOC_HEADERS'])
         raise
-    scanner = _HeadingScanner(content._content, header_re)
-    try:
-        scanner.feed(content._content)
-        scanner.close()
-    except (AssertionError, ValueError):
-        return _generate_toc_legacy(content)
-    # A partial or overlapping fragment could change the old parser's behavior.
-    if scanner.fallback_reason or scanner.current:
-        logger.debug('Using legacy TOC parser: %s', scanner.fallback_reason or 'unclosed heading')
-        return _generate_toc_legacy(content)
+    ranges = _prepared_ranges(content, prepared, header_re)
+    use_prepared = ranges is not None
+    replacements = []
+    if ranges is None:
+        scanner = _HeadingScanner(content._content, header_re)
+        try:
+            scanner.feed(content._content)
+            scanner.close()
+        except (AssertionError, ValueError):
+            return _generate_toc_legacy(content)
+        # A partial or overlapping fragment could change the old parser's behavior.
+        if scanner.fallback_reason or scanner.current:
+            logger.debug('Using legacy TOC parser: %s', scanner.fallback_reason or 'unclosed heading')
+            return _generate_toc_legacy(content)
+        ranges, replacements = scanner.ranges, scanner.replacements
 
     entries, all_ids = [], set()
-    for start, end in scanner.ranges:
+    for start, end in ranges:
         # Retain BeautifulSoup's heading text/entity handling and serialization.
         soup = BeautifulSoup(content._content[start:end], 'html.parser')
         header = soup.find(header_re)
@@ -208,15 +235,20 @@ def generate_toc(content):
         anchor = unique(header.attrs.get('id') or slugify(text, ()), all_ids)
         header.attrs['id'] = anchor
         entries.append({'level': int(header.name[1]), 'anchor': anchor, 'text': text})
-        scanner.replacements.append((start, end, header.decode(formatter='html')))
+        replacements.append((start, end, header.decode(formatter='html')))
     if entries:
         content.toc = entries
     pieces, previous = [], 0
-    for start, end, replacement in sorted(scanner.replacements):
+    for start, end, replacement in sorted(replacements):
         pieces.extend((content._content[previous:start], replacement))
         previous = end
     pieces.append(content._content[previous:])
     content._content = ''.join(pieces)
+    if use_prepared:
+        # Only generated Markdown HTML uses this path. Raw HTML, including
+        # script/style blocks, stays with the scanner's context-aware handling.
+        content._content = NBSP_TEXT_RE.sub(
+            lambda match: match.group().replace('\xa0', '&nbsp;'), content._content)
 
 
 def register():

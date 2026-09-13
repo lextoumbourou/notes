@@ -25,7 +25,7 @@ modified: 2023-04-08 00:00
 * Variance:
     * Mean of squared deviations
 
-```
+```text
 sum(each deviation_from_the_mean**2) / sample_count
 ```
 

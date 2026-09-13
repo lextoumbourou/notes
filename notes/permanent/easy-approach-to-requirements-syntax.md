@@ -9,14 +9,14 @@ status: draft
 
 Think of the generic requirements system. It would usually consistent of something like this:
 
-```
+```text
 <Optional preconditions>
 <Optional trigger> the <system name> shall <system response>
 ```
 
 Example of a user clicking on a profile:
 
-```
+```text
 Pre: The user is logged in
 Trigger: They click on the profile button
 System: The user profile drop down.

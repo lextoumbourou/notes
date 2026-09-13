@@ -52,6 +52,7 @@ MARKDOWN = {
         "markdown.extensions.extra",
         "markdown.extensions.meta",
         "markdown.extensions.toc",
+        "markdown_toc_headings",
     ],
     "extension_configs": {
         "markdown_notebook_fences": {},
@@ -64,7 +65,9 @@ MARKDOWN = {
         "markdown.extensions.meta": {},
         "markdown.extensions.toc": {
             "permalink": False,
+            "marker": "",
         },
+        "markdown_toc_headings": {},
     },
     "output_format": "html5",
 }
@@ -72,8 +75,7 @@ MARKDOWN = {
 PLUGINS = [
     "pelican_alias",
     "currency_katex",
-    "frontmark",
-    "pelican_jupytext",
+    "markdown_reader",
     "subcategory",
     "md_link_converter",
     "bluesky_comments",

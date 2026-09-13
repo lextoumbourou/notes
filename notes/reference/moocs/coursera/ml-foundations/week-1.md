@@ -130,7 +130,7 @@ parent: ml-foundations
 
 * Basic operations
 
-```
+```pycon
 >>> # View dataset
 >>> sf
 +------------+-----------+---------------+-----+

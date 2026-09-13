@@ -78,12 +78,26 @@ callout extension. Blocks without the required `[!` marker skip the expensive
 regex search; matching, nesting, folding and HTML generation use the original
 processor. The adapter can be removed when the dependency includes this precheck.
 
-The TOC plugin scans for heading fragments and parses only those fragments with
-BeautifulSoup. This preserves heading text and anchor rules while avoiding a full
-HTML tree and rewrite for every article. HTML outside headings keeps its original
-serialization, apart from nonbreaking-space entities needed to preserve generated
-social previews. Malformed or ambiguous markup uses the original full-document
-parser.
+The TOC plugin reuses headings captured during Markdown rendering when possible.
+The reader passes them with the rendered source, and link conversion keeps both
+in sync. Articles with raw HTML or fenced code, custom heading
+rules, unknown later Markdown processors or other intervening HTML edits retain
+the HTML scanner. Both paths parse heading fragments with BeautifulSoup to keep
+existing labels, anchors and serialization. Nonbreaking-space handling preserves
+social previews; malformed or ambiguous markup retains the full-document parser.
+Markdown's separate `[TOC]` marker search is disabled because the theme renders
+the navigation. Restore its `marker` setting if inline TOCs are needed later.
+
+Executable articles use Obsidian's Markdown Notebook plugin. Python cells and
+their saved `nb-output` blocks live together in the `.md` file, with plots stored
+in `notes/_media/`. Run cells in Obsidian to refresh their outputs, and give each
+generated image descriptive alt text. The `notebook.python` frontmatter setting
+selects the interpreter relative to the article's directory.
+
+Pelican's local `markdown_reader` renders these files as ordinary Markdown and
+passes captured headings to the TOC plugin. Builds display the saved outputs
+without executing code or loading the Jupytext/nbconvert reader. TF-IDF and
+CBIS-DDSM no longer need paired `.ipynb` files.
 
 The sidebar plugin caches recent-article lists for each generator during a build,
 avoiding repeated filtering and sorting on every page. Tag and category pages
@@ -103,8 +117,16 @@ Math uses the local `currency_katex` adapter around `pelican-katex`. Inline
 closing `$` must not be followed by a digit. Ordinary prices such as `$20 and
 $30` remain prose. Write `\$` for an ambiguous literal dollar, and use backticks
 for shell variables. Existing `$$...$$` display math and KaTeX options are
-preserved. These rules also apply to paired notebook Markdown cells; code is
-left untouched. The adapter changes delimiter recognition, not the renderer.
+preserved. Markdown Notebook code and stored outputs are left untouched. The
+adapter changes delimiter recognition, not the renderer.
+
+Rendered KaTeX HTML is stored in Markdown's HTML stash, avoiding XML parsing and
+repeated tree walks over generated MathML and SVG. Currency rules, preambles and
+renderer options are preserved. Formulas with inline attribute lists retain the
+element-tree path so IDs and classes still attach correctly. Extensions that
+need to inspect math elements can use `CurrencyKatexExtension(stash_html=False)`.
+HTML serialization can differ in attribute order and SVG whitespace while the
+rendered formulas and their accessible MathML remain the same.
 
 Run the Markdown extension, TOC, sidebar and build-failure tests with:
 

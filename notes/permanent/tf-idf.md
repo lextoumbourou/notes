@@ -2,25 +2,16 @@
 category: note
 title: TF-IDF
 date: 2023-04-09 00:00
-modified: 2025-12-20 00:00
-summary: A word numerisation technique that weights terms by their importance to a document.
+modified: 2026-09-13 13:08
+summary: A word numerisation technique that weights terms by their importance to a
+  document.
 cover: /_media/tf-idf-cover.png
 hide_cover_in_article: true
 tags:
 - NaturalLanguageProcessing
-jupyter:
-  jupytext:
-    cell_metadata_filter: -all
-    formats: ipynb,md
-    text_representation:
-      extension: .md
-      format_name: markdown
-      format_version: '1.3'
-      jupytext_version: 1.18.1
-  kernelspec:
-    display_name: Python 3 (ipykernel)
-    language: python
-    name: python3
+notebook:
+  markdownLinks: true
+  python: ../../.venv/bin/python
 ---
 
 **TF-IDF** (Term Frequency - Inverse Document Frequency) is a word numerisation technique in NLP which weights terms by their importance in the document relative to a corpus. The idea is that:
@@ -29,7 +20,7 @@ jupyter:
 2. Words that appear frequently across all documents (like "the", "is", and "and") have less signal and are weighted lower.
 
 An alternative numerisation approach to the [Bag-of-Words Model](bag-of-words-model.md), which simply counts word frequency in a text - TF-IDF includes context about how important each word is compared to the corpus as a whole.
-#### Step-by-step
+#### Step-by-step {id="step-by-step"}
 
 **1. Term Frequency (TF)**
 
@@ -68,7 +59,7 @@ Otherwise, longer documents would naturally have higher TF-IDF magnitudes.
 
 Scikit-learn provides `TfidfVectorizer`, which can convert a collection of text documents into a matrix of TF-IDF features. Here we visualise a heatmap of 4 simple texts to illustrate TF-IDF in effect:
 
-```python
+```python {format=image id=tf-idf-scores-heatmap}
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -96,3 +87,6 @@ plt.title("TF-IDF Scores Heatmap")
 plt.xticks(rotation=45)
 plt.show()
 ```
+<!-- nb-output id="tf-idf-scores-heatmap" hash="fdcd75226170cf9e" format="image" -->
+![Heatmap of TF-IDF scores for 15 words across four example documents, with darker blue cells showing higher scores.](../_media/tf-idf-scores-heatmap.png)
+<!-- /nb-output -->

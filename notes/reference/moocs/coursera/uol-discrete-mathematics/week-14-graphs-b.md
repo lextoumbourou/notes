@@ -114,7 +114,7 @@ modified: 2023-04-08 00:00
     * Let G be a graph and s a source vertex.
     * The following pseudocode calculates the shortest distance and previous vertex from s to every other node in the graph.
 
-```
+```text
 Unvisited = {}
 for each vertex v in G:
     shortest_distanced[v] = Infinity

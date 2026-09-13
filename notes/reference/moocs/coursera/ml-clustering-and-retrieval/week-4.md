@@ -195,7 +195,7 @@ Use whatever info we have at start time. If none, assign cluster centres randoml
 
 ##### Datapoint 0
 
-```
+```text
 In [4]: print 1/3. * multivariate_normal.pdf([10, 5], mean=[3, 4], cov=[3, 0](3,%200))
 4.2506655934e-06
 
@@ -216,7 +216,7 @@ L / sum 0.007 | 0.938 | 0.055
 
 ##### Datapoint 1
 
-```
+```text
 In [11]: print 1/3. * multivariate_normal.pdf([2, 1], mean=[3, 4], cov=[3, 0](3,%200))
 0.00334005398012
 
@@ -246,7 +246,7 @@ L / sum 0.8123348521971447 | 0.15343023491465782 | 0.034234912888197
 
 ##### Datapoint 2
 
-```
+```text
 In [18]: print 1/3. * multivariate_normal.pdf([3, 7], mean=[3, 4], cov=[3, 0](3,%200))
 0.00394580754895
 
@@ -276,7 +276,7 @@ L / sum 0.23360370656979415 | 0.01623159175090619 | 0.7501647016792996
 
 ##### Full responsibility matrix
 
-```
+```text
                  Cluster A | Cluster B | Cluster C
 Data point 0  |  0.007     | 0.938     | 0.055
 Data point 1  |  0.812     | 0.153     | 0.034
@@ -288,7 +288,7 @@ Soft counts   |  1.053     | 1.108     | 0.839
 
 Get cluster weights by adding up soft counts and using to normalise
 
-```
+```text
                  Cluster A | Cluster B | Cluster C | Sum
 Soft counts   |  1.053     | 1.108     | 0.839     | 1.053 + 1.108 + 0.839 = 3
 Normalized    |  0.351     | 0.369     | 0.280
@@ -298,7 +298,7 @@ Normalized    |  0.351     | 0.369     | 0.280
 
 Get means by adding "fractional parts" of all data points using cluster responsibilities
 
-```
+```text
 = 0.007 * (10, 5) + 0.812 * (2, 1) + 0.234 * (3, 7)
 = (0.07, 0.035) + (1.624, 0.812) + (0.702, 1.638)
 = (2.396, 2.485)
@@ -306,14 +306,14 @@ Get means by adding "fractional parts" of all data points using cluster responsi
 
 Then divide sum by the soft count.
 
-```
+```text
 = (2.396, 2.485) / 1.053 
 = (2.275, 2.36)
 ```
 
 Then repeat for other clusters to get new mean estimates
 
-```
+```text
 New means    | X        | Y
 
 Cluster A    | 2.275    | 2.360
@@ -325,7 +325,7 @@ Cluster C    | 3.418    | 6.626
 
 Compute difference from the mean like so: ``data point i - cluster mean k``
 
-```
+```text
 # point 0
 = (10, 5) - (2.275, 2.360) = (7.725, 2.640)
 
@@ -338,7 +338,7 @@ Compute difference from the mean like so: ``data point i - cluster mean k``
 
 Then compute the "outer products" which are two-by-two matrices:
 
-```
+```text
 = [7.725](7.725) * [7.725,2.640](7.725,2.640) = [59.676,20.394](59.676,20.394)
 
 = [-0.275](-0.275) * [-0.275,-1.360](-0.275,-1.360) = [0.076,0.374](0.076,0.374)
@@ -348,14 +348,14 @@ Then compute the "outer products" which are two-by-two matrices:
 
 Then take the weighted average using cluster responsibilities:
 
-```
+```text
 =  0.007 * [59.676,20.394](59.676,20.394) + 0.812*[0.076,0.374](0.076,0.374) + 0.234*[0.526,3.364](0.526,3.364)
 = (0.602, 1.234), (1.234, 6.589)
 ```
 
 Normalise with soft count (??)
 
-```
+```text
 = ((0.602, 1.234), (1.234, 6.589)) / 1.053
 = ((0.572, 1.172), (1.172, 6.257))
 ```

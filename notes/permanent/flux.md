@@ -14,20 +14,20 @@ This article walks through a demonstration of Flux, from absolute scratch, assum
 Let's firstly initialise a project using Maven that we can use to test Flux.
 
 
-```
+```bash
 mvn archetype:generate -DgroupId=com.example.reactive -DartifactId=reactive-quotes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
 ```
 
 Then, I'm going to use Java version 17, and add **Project Reactor** to `pom.xml`
 
-```
+```xml
 <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
 </properties>
 ```
 
-```
+```xml
 <dependencies>
     <dependency>
         <groupId>junit</groupId>
@@ -75,7 +75,7 @@ public class App
 
 Then run it like so:
 
-```
+```bash
 mvn clean package
 mvn exec:java -Dexec.mainClass="com.example.reactive.App"
 ```
@@ -100,7 +100,7 @@ quotes.subscribe(quote -> System.out.println("Quote: " + quote));
 
 You should now see the quotes logged to stdout:
 
-```
+```text
 [INFO] --- exec:3.6.2:java (default-cli) @ reactive-quotes ---
 Starting KP Quotes App...
 Quote: You never see an old man eating a Twix.
@@ -124,7 +124,7 @@ quotes.subscribe(
 
 You won't see the error, but you should see the final line:
 
-```
+```text
 All quote emitted!
 ```
 
@@ -146,7 +146,7 @@ Flux<String> uppercased = quotes.map(String::toUpperCase);
 uppercased.subscribe(quote -> System.out.println("Quote: " + quote));
 ```
 
-```
+```text
 Starting KP Quotes App...
 Quote: YOU NEVER SEE AN OLD MAN EATING A TWIX.
 Quote: I FIND THAT IF YOU JUST TALK, YOUR MOUTH COMES UP WITH STUFF.

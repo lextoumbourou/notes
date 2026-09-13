@@ -6,6 +6,8 @@ from unittest.mock import patch
 
 from bs4 import BeautifulSoup
 from jinja2.filters import do_striptags
+from markdown import Markdown
+from markdown.postprocessors import Postprocessor
 from pelican import contents
 
 
@@ -15,6 +17,12 @@ spec = importlib.util.spec_from_file_location(
 toc = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(toc)
 
+link_spec = importlib.util.spec_from_file_location(
+    "site_md_links", Path(__file__).resolve().parents[1] / "my-plugins" / "md_link_converter.py"
+)
+md_links = importlib.util.module_from_spec(link_spec)
+link_spec.loader.exec_module(md_links)
+
 
 def make_content(html, **metadata):
     return SimpleNamespace(
@@ -23,6 +31,98 @@ def make_content(html, **metadata):
 
 
 class TocTests(unittest.TestCase):
+    def assert_matches_scanner(self, source, **metadata):
+        markdown = Markdown(extensions=['extra', 'toc', 'markdown_toc_headings'])
+        html = markdown.convert(source)
+        original = make_content(html, **metadata)
+        optimized = make_content(html, **metadata)
+        if markdown.site_toc_headings is not None:
+            optimized.metadata['_site_toc_headings'] = (html, markdown.site_toc_headings)
+        toc.generate_toc(original)
+        toc.generate_toc(optimized)
+        self.assertEqual(optimized._content, original._content)
+        self.assertEqual(getattr(optimized, 'toc', None), getattr(original, 'toc', None))
+        self.assertNotIn('_site_toc_headings', optimized.metadata)
+        return markdown, optimized
+
+    def test_prepared_headings_preserve_exact_html_and_navigation(self):
+        for source in [
+            '# Title\n\n## Repeated\n\nParagraph.\n\n## Repeated',
+            '## An *emphasized* [link](other.md) &amp; `code`',
+            '# Title {#custom .heading}\n\n## Another {#custom}',
+            '## A\xa0B\n\nText\xa0with\xa0spaces.\n\n![Alt\xa0text](a.png "Title\xa0text")',
+            'No headings, but\xa0nonbreaking spaces and `inline code`.',
+            '## References\n\nAn example[^1].\n\n[^1]: A footnote.',
+        ]:
+            with self.subTest(source=source):
+                markdown, _ = self.assert_matches_scanner(source)
+                self.assertIsNotNone(markdown.site_toc_headings)
+
+    def test_raw_html_and_fenced_code_keep_the_scanner(self):
+        for source in [
+            '## Heading\n\n<div><h2>Raw heading</h2></div>',
+            '<script>const space = "\xa0";</script>\n\n## Heading',
+            '<p>Text</p></p>\n\n## Heading',
+            '## Example\n\n```python\nprint("hello")\n```',
+        ]:
+            with self.subTest(source=source):
+                markdown, _ = self.assert_matches_scanner(source)
+                self.assertIsNone(markdown.site_toc_headings)
+
+    def test_changed_html_or_custom_headers_fall_back(self):
+        markdown = Markdown(extensions=['toc', 'markdown_toc_headings'])
+        html = markdown.convert('# One\n\n## Two')
+        for body, metadata, headings in [
+            (html + '<h3>Added by another plugin</h3>', {}, markdown.site_toc_headings),
+            (html, {'toc_headers': '^h2$'}, markdown.site_toc_headings),
+            (html, {}, ['<h2>Missing fragment</h2>']),
+        ]:
+            with self.subTest(body=body, metadata=metadata):
+                original = make_content(body, **metadata)
+                optimized = make_content(body, **metadata)
+                optimized.metadata['_site_toc_headings'] = (html, headings)
+                toc.generate_toc(original)
+                with patch.object(toc._HeadingScanner, 'feed', autospec=True,
+                                  side_effect=toc._HeadingScanner.feed) as scan:
+                    toc.generate_toc(optimized)
+                    self.assertTrue(scan.called)
+                self.assertEqual(optimized._content, original._content)
+                self.assertEqual(optimized.toc, original.toc)
+
+    def test_markdown_reset_discards_previous_headings(self):
+        markdown = Markdown(extensions=['toc', 'markdown_toc_headings'])
+        markdown.convert('# Previous')
+        self.assertTrue(markdown.site_toc_headings)
+        markdown.reset()
+        self.assertIsNone(markdown.site_toc_headings)
+        markdown.convert('No headings.')
+        self.assertEqual(markdown.site_toc_headings, [])
+
+    def test_link_conversion_keeps_headings_and_body_aligned(self):
+        markdown = Markdown(extensions=['toc', 'markdown_toc_headings'])
+        html = markdown.convert('## [A link](other-note.md)\n\n[Another](third-note.md)')
+        original = make_content(html)
+        optimized = make_content(html)
+        optimized.metadata['_site_toc_headings'] = (html, markdown.site_toc_headings)
+        md_links.convert_md_links(original)
+        md_links.convert_md_links(optimized)
+        toc.generate_toc(original)
+        with patch.object(toc._HeadingScanner, 'feed', side_effect=AssertionError('Unexpected scan')):
+            toc.generate_toc(optimized)
+        self.assertEqual(optimized._content, original._content)
+        self.assertEqual(optimized.toc, original.toc)
+        self.assertIn('other-note.html', optimized._content)
+
+    def test_later_html_processors_keep_the_scanner(self):
+        class AddHeading(Postprocessor):
+            def run(self, text):
+                return text + '<h2>Added later</h2>'
+
+        markdown = Markdown(extensions=['toc', 'markdown_toc_headings'])
+        markdown.postprocessors.register(AddHeading(), 'late_heading', 0)
+        markdown.convert('# Original')
+        self.assertIsNone(markdown.site_toc_headings)
+
     def assert_matches_legacy(self, html, **metadata):
         original = make_content(html, **metadata)
         optimized = make_content(html, **metadata)

@@ -10,7 +10,7 @@ modified: 2023-04-08 00:00
 
 * Frequency table
 
-```
+```text
 Something | Frequency
 India     | 10
 China     | 14

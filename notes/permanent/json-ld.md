@@ -53,7 +53,7 @@ In a triple store (like [GraphDB](GraphDB.md) and [Fuseki](Fuseki.md)).
 
 For example:
 
-```
+```sparql
 SELECT ?book ?authorName WHERE {
     ?book a schema:Book ;
         schema:name "The Great Gatsby" ;

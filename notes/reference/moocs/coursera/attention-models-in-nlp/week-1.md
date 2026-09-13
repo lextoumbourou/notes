@@ -378,7 +378,7 @@ Then, the add operation pops the first 2 selects off the stack and replaces with
 
 The `n_in` argument to `tl.Select` tells us how many things to pop off the stack and replace with the index.
 
-```
+```python
 tl.Select([0], n_in=2)
 ```
 
@@ -386,7 +386,7 @@ takes 2 elements off the stack and replaces them with just the first.
 
 ```tl.Residual``` creates a skip connection around `Addition` in this example:
 
-```
+```python
 serial = tl.Serial(
     tl.Select([0, 1, 0, 1]),
     tl.Residual(Addition())

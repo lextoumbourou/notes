@@ -25,7 +25,7 @@ In RDF, data points are defined as triples in the form: `<subject> <predicate> <
 
 Jumping straight into an example, here's how I might represent information about myself in this form:
 
-```
+```text
 <Lex> <is a> <person>
 <Lex> <has occupation> <Software Engineer>
 <Lex> <has pet> <Doggo>
@@ -33,7 +33,7 @@ Jumping straight into an example, here's how I might represent information about
 
 Then let's also define some triples for my dog, Doggo:
 
-```
+```text
 <Doggo> <is a> <dog>
 <Doggo> <has breed> <Staghound>
 <Doggo> <is aged> 6
@@ -43,7 +43,7 @@ A key detail of RDF is that Subjects and Predicates must be represented as an IR
 
 These IRIs serve as globally unique identifiers for resources (the "R" in RDF). For instance, I could describe myself using my website's URL and reference schema.org's standardised definition of a person, so that other people would know I was a person.
 
-```
+```text
 <https://notesbylex.com/Lex> <rdf:type> <http://schema.org/Person>
 ```
 
@@ -77,7 +77,7 @@ The simplest serialisation format, expressing each triple on a separate line usi
 
 The example earlier was an of how I might express myself using N-Triples format:
 
-```
+```turtle
 <https://example.org/person#lex> <https://example.org/hasName> "Lex" .
 <https://example.org/person#lex> <https://example.org/hasOccupation> "software engineer" .
 <https://example.org/person#lex> <https://example.org/hasPet> <https://example.org/dog#Doggo> .
