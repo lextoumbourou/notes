@@ -177,7 +177,7 @@ modified: 2023-04-08 00:00
         * Prove:
             * P(n): the sequence f_n = 1/\sqrt{5}(r_1^{n} -r_2^{n}) verifies the Fibonacci recurrence, where:
                 * $r_1 = (1 + \sqrt{5}) / 2$
-                * $r_2 = (1 - \sqrt{5}) / 2$ are the roots of $r^2 - r - 1 = 0$$
+                * $r_2 = (1 - \sqrt{5}) / 2$ are the roots of $r^2 - r - 1 = 0$
             * First, verify for P(2):
                 * $f_1 + f_0 = 1 / \sqrt{5}(r_1 - r_2) = 1/\sqrt{5} (\sqrt{5}) = 1 = f_2$
                 * because $f_2 = 1/\sqrt{5}(r_1^2 - r_2^2) = 1$

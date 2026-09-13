@@ -134,7 +134,10 @@ Nodes are arranged in a line, with each node connected to adjacent nodes.
 
 ```mermaid
 graph LR
-A((Node A)) --- B((Node B)) --- C((Node C)) --- D((Node D)) --- E((Node E))
+A((Node A)) --- B((Node B))
+B --- C((Node C))
+C --- D((Node D))
+D --- E((Node E))
 
 classDef busNode fill:#7A976B,stroke:#1B3D2F,stroke-width:2px;
 class A,B,C,D,E busNode;
@@ -178,9 +181,14 @@ A grid-like structure resembling city blocks.
 
 ```mermaid
 graph TD
-A((Node A)) --- B((Node B)) --- C((Node C))
-A --- D((Node D)) --- E((Node E)) --- C
-D --- F((Node F)) --- G((Node G)) --- E
+A((Node A)) --- B((Node B))
+B --- C((Node C))
+A --- D((Node D))
+D --- E((Node E))
+E --- C
+D --- F((Node F))
+F --- G((Node G))
+G --- E
 
 classDef gridNode fill:#b98b99,stroke:#1B3D2F,stroke-width:2px;
 class A,B,C,D,E,F,G gridNode;

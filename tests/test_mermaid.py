@@ -22,6 +22,11 @@ class RendererTests(unittest.TestCase):
         self.environment = patch.dict(os.environ, {"MERMAID_RENDERER": "mmdr"})
         self.environment.start()
         self.addCleanup(self.environment.stop)
+        # Pelican deduplicates log messages when imported before this module.
+        # Each case should check its own logging regardless of test import order.
+        filters = patch.object(renderer.logger, "filters", [])
+        filters.start()
+        self.addCleanup(filters.stop)
 
     def test_native_success_does_not_start_browser(self):
         with patch.object(renderer, "render_native", return_value=SVG), \

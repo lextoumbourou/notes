@@ -56,8 +56,8 @@ Netlify's `setup.sh` invokes the same build and installation step.
 
 The native renderer has different diagram layouts and styling from Mermaid CLI.
 Chained flowchart edges use the official CLI because mmdr v0.3.1 can misread their
-node definitions while still returning valid SVG. On the current corpus, 17
-diagrams use Rust and two use the official CLI.
+node definitions while still returning valid SVG. Write one edge per line to
+avoid this limitation. All 19 diagrams in the current corpus use Rust.
 If it fails to render a diagram, the build logs a warning and tries the existing
 Mermaid CLI. If both fail, the build exits with an error before search indexing.
 The fallback still needs Node and Puppeteer/Chromium. A successful SVG can still
@@ -84,6 +84,14 @@ HTML tree and rewrite for every article. HTML outside headings keeps its origina
 serialization, apart from nonbreaking-space entities needed to preserve generated
 social previews. Malformed or ambiguous markup uses the original full-document
 parser.
+
+Math uses the local `currency_katex` adapter around `pelican-katex`. Inline
+`$...$` requires non-whitespace immediately inside both delimiters, and its
+closing `$` must not be followed by a digit. Ordinary prices such as `$20 and
+$30` remain prose. Write `\$` for an ambiguous literal dollar, and use backticks
+for shell variables. Existing `$$...$$` display math and KaTeX options are
+preserved. These rules also apply to paired notebook Markdown cells; code is
+left untouched. The adapter changes delimiter recognition, not the renderer.
 
 Run the Markdown extension, TOC and build-failure tests with:
 

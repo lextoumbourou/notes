@@ -71,7 +71,7 @@ MARKDOWN = {
 
 PLUGINS = [
     "pelican_alias",
-    "pelican_katex",
+    "currency_katex",
     "frontmark",
     "pelican_jupytext",
     "subcategory",

@@ -16,34 +16,10 @@ from markdown import Markdown
 from nbconvert import HTMLExporter
 from pelican import signals
 from pelican.readers import BaseReader
-from pelican_katex.rendering import render_latex
+from currency_katex import CurrencyKatexExtension
 
 log = logging.getLogger(__name__)
 
-
-def render_latex_in_html(html_content):
-    """Replace $$...$$ and $...$ with KaTeX-rendered HTML."""
-    def replace_display_math(match):
-        latex = match.group(1)
-        try:
-            return render_latex(latex, {"displayMode": True})
-        except Exception as e:
-            log.warning(f"KaTeX failed to render display math: {e}")
-            return match.group(0)
-
-    def replace_inline_math(match):
-        latex = match.group(1)
-        try:
-            return render_latex(latex, {"displayMode": False})
-        except Exception as e:
-            log.warning(f"KaTeX failed to render inline math: {e}")
-            return match.group(0)
-
-    # Render display math first ($$...$$), then inline ($...$)
-    # Use negative lookbehind/ahead to avoid matching $$ as two $
-    content = re.sub(r'\$\$(.*?)\$\$', replace_display_math, html_content, flags=re.DOTALL)
-    content = re.sub(r'(?<!\$)\$(?!\$)(.*?)(?<!\$)\$(?!\$)', replace_inline_math, content, flags=re.DOTALL)
-    return content
 
 YAML_FRONTMATTER_PATTERN = re.compile(r'^---\s*\n(.*?)\n---\s*\n', re.DOTALL)
 
@@ -157,14 +133,8 @@ class JupytextMarkdownReader(BaseReader):
             elif cell.cell_type == 'code':
                 cell_info.append(('code', cell))
 
-        # Convert all markdown together so footnotes resolve
-        combined_markdown = '\n\n'.join(all_markdown)
-        md_converter = Markdown(extensions=['footnotes', 'tables', 'fenced_code'])
-        combined_html = md_converter.convert(combined_markdown)
-
-        # Now we need to split the HTML back to match individual cells
-        # Since footnotes may have moved references around, we'll use a different approach:
-        # Convert each markdown cell individually, but append all footnote definitions to each
+        # Convert each markdown cell individually, appending all footnote
+        # definitions so references across cells still resolve.
         footnote_defs = self._extract_footnote_definitions(all_markdown)
 
         html_parts = []
@@ -174,7 +144,9 @@ class JupytextMarkdownReader(BaseReader):
                 md_content = all_markdown[cell_data]
                 if footnote_defs:
                     md_content = md_content + '\n\n' + footnote_defs
-                md_conv = Markdown(extensions=['footnotes', 'tables', 'fenced_code'])
+                md_conv = Markdown(extensions=[
+                    'footnotes', 'tables', 'fenced_code', CurrencyKatexExtension()
+                ])
                 cell_html = md_conv.convert(md_content)
                 # Remove duplicate footnote sections (keep only in last cell)
                 if cell_data < len(all_markdown) - 1:
@@ -188,9 +160,6 @@ class JupytextMarkdownReader(BaseReader):
                 html_parts.append(code_html)
 
         content = '\n'.join(html_parts)
-
-        # Render LaTeX math expressions with KaTeX
-        content = render_latex_in_html(content)
 
         # Build metadata from YAML frontmatter
         metadata = {}

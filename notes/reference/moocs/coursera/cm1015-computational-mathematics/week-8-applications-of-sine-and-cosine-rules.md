@@ -37,7 +37,7 @@ status: draft
     * $c = a \sin(\gamma) / \sin(\alpha) = 8 \times 0.97 / 0.848 = 9.15cm$
 * Generic triangle example
         ![Generic triangle example](../../../../_media/week-8-applications-of-sine-and-cosine-rules-generic-triangle-1.png)
-    * $a = 6cm$, $b = 4cm, $c = 3cm, $\alpha = ?$
+    * $a = 6cm$, $b = 4cm$, $c = 3cm$, $\alpha = ?$
     * Use cosine rule: $a^2 = b^2 + c^2 -2bc \cos(\alpha)$
     * $\cos(\alpha) = \frac{b^2 + c^2 - a^2}{2bc} = {16 + 9  -36}{24} = -0.458$
     * $\alpha = cos^{-1}(-0.458) = 117.3°$

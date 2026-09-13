@@ -322,7 +322,7 @@ g : B → C is defined by the following table.
 * f(x)
     * $D_f = A = \{1, 2, 3, 4, 5, 6\}$
     * $\text{Co-D}_f = B = \{a, b, c, d\}$
-    * $R_f: \{a, b, c, d\}$$
+    * $R_f: \{a, b, c, d\}$
         * set of all actual outputs, which is also co-domain.
 * $g(x)$
     * $D_g = B = \{a, b, c, d\}$
