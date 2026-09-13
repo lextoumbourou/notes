@@ -71,7 +71,14 @@ callout extension. Blocks without the required `[!` marker skip the expensive
 regex search; matching, nesting, folding and HTML generation use the original
 processor. The adapter can be removed when the dependency includes this precheck.
 
-Run the Markdown extension and build-failure tests with:
+The TOC plugin scans for heading fragments and parses only those fragments with
+BeautifulSoup. This preserves heading text and anchor rules while avoiding a full
+HTML tree and rewrite for every article. HTML outside headings keeps its original
+serialization, apart from nonbreaking-space entities needed to preserve generated
+social previews. Malformed or ambiguous markup uses the original full-document
+parser.
+
+Run the Markdown extension, TOC and build-failure tests with:
 
 ```bash
 uv run python -m unittest discover -s tests -v
