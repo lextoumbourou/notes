@@ -80,6 +80,7 @@ PLUGINS = [
     "pelican_cite",
     "pelican_graph_view",
     "toc",
+    "sidebar",
 ]
 
 GRAPH_VIEW = {"include_hidden": True}

@@ -85,6 +85,12 @@ serialization, apart from nonbreaking-space entities needed to preserve generate
 social previews. Malformed or ambiguous markup uses the original full-document
 parser.
 
+The sidebar plugin caches recent-article lists for each generator during a build,
+avoiding repeated filtering and sorting on every page. Tag and category pages
+keep their own collections, and equal dates retain posts-first ordering. Only
+article data is cached; links and active-page highlighting still render per page.
+Each rebuild creates a fresh cache, including development auto-reload.
+
 Pygments is pinned to 2.21.0 for its cached plugin discovery. Pelican 4.12.0
 declares `pygments<2.20.0`, so `pyproject.toml` includes an explicit uv override
 for the tested version. Use `uv sync` and the build scripts so this override is
@@ -100,7 +106,7 @@ for shell variables. Existing `$$...$$` display math and KaTeX options are
 preserved. These rules also apply to paired notebook Markdown cells; code is
 left untouched. The adapter changes delimiter recognition, not the renderer.
 
-Run the Markdown extension, TOC and build-failure tests with:
+Run the Markdown extension, TOC, sidebar and build-failure tests with:
 
 ```bash
 uv run python -m unittest discover -s tests -v
