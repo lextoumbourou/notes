@@ -1,7 +1,7 @@
 ---
 title: "Learning Transferable Visual Models From Natural Language Supervision"
 date: 2024-10-12 00:00
-modified: 2024-10-12 00:00
+modified: 2026-09-13 10:34
 status: draft
 aliases:
 - "Radford et al, 2020"
@@ -17,7 +17,7 @@ They benchmark n over 30 different existing computer vision datasets, across tas
 
 The code and pre-trained model weights at https://github.com/OpenAI/CLIP.
 
-![](../../../_media/Learning%20Transferable%20Visual%20Models%20From%20Natural%20Language%20Supervision-fig-1.png)
+![CLIP trains image and text encoders to match paired images and captions. For zero-shot classification, it compares an image embedding with text embeddings of prompted class names.](../_media/learning-transferable-visual-models-from-natural-language-supervision-fig-1.png)
 *Figure 1. CLIP overview*
 
 ## Related Papers

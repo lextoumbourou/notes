@@ -137,7 +137,7 @@ def render_svg(source):
     if renderer != "mmdr":
         raise RenderError("MERMAID_RENDERER must be mmdr or mmdc")
     if needs_official_renderer(source):
-        logger.warning("Mermaid CLI required for chained flowchart edges (mmdr v%s compatibility)", VERSION)
+        logger.info("Mermaid CLI required for chained flowchart edges (mmdr v%s compatibility)", VERSION)
         return render_official(source)
     try:
         return render_native(source)

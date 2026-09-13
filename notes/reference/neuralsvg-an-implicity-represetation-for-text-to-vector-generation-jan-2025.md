@@ -1,7 +1,7 @@
 ---
 title: "NeuralSVG: An Implicit Representation for Text-to-Vector Generation (Jan 2025)"
 date: 2025-01-10 00:00
-modified: 2025-01-10 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -118,7 +118,7 @@ They train it on a dataset
 - Successfully generates ordered representations that build complexity progressively
 
 ![Figure 6 & 7: Qualitative comparisons with VectorFusion and SVGDreamer, including shape outline visualizations.](../_media/neuralsvg-an-implicity-represetation-for-text-to-vector-generation-fig-6.png)
-![](../_media/neuralsvg-an-implicity-represetation-for-text-to-vector-generation-fig-7.png)
+![Vector outline comparisons for a fox playing cello, a child unrolling toilet paper and a howling wolf. NeuralSVG produces recognizable layered shapes with 16 paths, compared with tangled outlines from VectorFusion and SVGDreamer.](../_media/neuralsvg-an-implicity-represetation-for-text-to-vector-generation-fig-7.png)
 
 > [!question] What key advantage does NeuralSVG demonstrate in the experiments?
 > a) It requires more shapes than other methods

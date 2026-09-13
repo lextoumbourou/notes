@@ -1,7 +1,7 @@
 ---
 title: "Week 9: Function and Cartesian Coordinates"
 date: 2023-06-28 00:00
-modified: 2023-06-28 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -14,7 +14,7 @@ status: draft
     * Show how to graphically represent a function.
 * [Function](../../../../permanent/function.md)
     * A function f(x) links elements x,y of two sets X and Y.
-        ![](../../../../_media/week-9-function-cartesian-coordinates-function.png)
+        ![Function from X to Y: 1 maps to D, while 2 and 3 both map to C. Each element of X has exactly one output.](../../../../_media/week-9-function-cartesian-coordinates-function.png)
     * f(x) tells you what to do with input x.
     * Example: $f(x) = 2x + 4$
         * multiple by 2 and add 4
@@ -32,24 +32,24 @@ status: draft
         * Codomain also called image of the function.
     * [Surjective Function](../../../../permanent/surjective-function.md)
         * to each $y \in Y$ at least one $x \in X$
-          ![](../../../../_media/week-9-function-cartesian-coordinates-surjective.png)
+          ![Surjective function: 1 maps to D, 2 to B, and both 3 and 4 to C, so every element of codomain Y is reached.](../../../../_media/week-9-function-cartesian-coordinates-surjective.png)
     * [Injective Function](../../../../permanent/injective-function.md)
         * to each $x \in X$ only one distinct $y \in Y$
-          ![](../../../../_media/week-9-function-cartesian-coordinates-injective.png)
+          ![Injective function: 1 maps to D, 2 to B and 3 to A. Outputs are distinct, while C in the codomain is unused.](../../../../_media/week-9-function-cartesian-coordinates-injective.png)
     * [Bijective Function](Bijective%20Function)
         * Injective + Surjective (one-to-one)
-          ![](../../../../_media/week-9-function-cartesian-coordinates-bijective.png)
+          ![Bijective function mapping 1 to D, 2 to B, 3 to C and 4 to A, pairing every domain element with a unique codomain element.](../../../../_media/week-9-function-cartesian-coordinates-bijective.png)
 * [Cartesian Coordinates](../../../../../../permanent/cartesian-coordinates.md)
     * A of coordinates which is commonly used to graphically represent the range of a function.
     * Contains 2 perpendicular axes, $x, y$ to map and label points on the plane
-      ![](../../../../_media/week-9-function-cartesian-coordinates-cartesian.png)
+      ![Cartesian plane with quadrants I through IV, the origin at (0, 0), and point P at (3, 5) in quadrant I.](../../../../_media/week-9-function-cartesian-coordinates-cartesian.png)
     * For point P in the above example, the projection on the x and y axes give a numeric pair, that is used to describe the point.
         * x is the length of the projection on the x-axis.
         * y is the length of the projection on the y-axis.
         * generic point on y-axis $P(0, y)$
         * generic point on x-axis $P(x, 0)$
     * Distance between P and Q:
-        ![](../../../../_media/week-9-function-cartesian-coordinates-cartesians-coordinates.png)
+        ![Points P(x1, y1) and Q(x2, y2) form a right triangle with horizontal distance x2 minus x1, vertical distance y2 minus y1 and hypotenuse d.](../../../../_media/week-9-function-cartesian-coordinates-cartesians-coordinates.png)
         * Can use Pythagoras theorem: $d_{PQ} = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^{2}}$
 * Examples:
     * $f(x) = -2x + 4$ Domain $R$.
@@ -64,12 +64,12 @@ status: draft
 | f(x)   | -2 (1) + 4 = 2 | 0      | -2      | -4      |
 | coords | (1, 2)          | (2, 0) | (3, -2) | (4, -4) |
 
-![](../../../../_media/week-9-function-cartesian-coordinates-function-1.png)
+![Graph of y = minus 2x plus 4, a descending straight line crossing the y-axis at 4 and the x-axis at 2.](../../../../_media/week-9-function-cartesian-coordinates-function-1.png)
 * Intersection with y-axis $\rightarrow$ $x=0 \rightarrow y_0 = f(0) = -2(0) + 4 = 4$
 * Intersection with x-axis $\rightarrow y = 0 -> f(x_0) = 0$
 * Solve $-2x_0 + 4 = 0 \rightarrow 2 x_0 = 4 \rightarrow x_o = 2$
 * The angle that the straight line makes with x-axis
-    ![](../../../../_media/week-9-function-cartesian-coordinates-right-triangle.png)
+    ![A right triangle under a descending line shows vertical side a, horizontal side b, and the acute and obtuse angles the line makes with the x-axis.](../../../../_media/week-9-function-cartesian-coordinates-right-triangle.png)
     * $\beta = 180 - \alpha$
     $tan(\beta) = a/b = 4/2 = 2$
 * [Slope-Intercept Form](../../../../../../permanent/Slope-Intercept%20Form.md) for a straight line: $y = mx + n$
@@ -125,7 +125,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * Change in distance: $\Delta x = 1400 - 400 = 1000m$
         * Change in time: $\Delta y = 70 - 20 = 50s$
         * Speed $v = \frac{\Delta x}{\Delta y} = \frac{1000}{50} = 20ms^{-1}$
-        ![](../../../../_media/week-9-function-cartesian-coordinates-distance-time.png)
+        ![Distance-time graph rising linearly from 0 metres at 0 seconds to 1800 metres at 90 seconds, representing a constant speed of 20 metres per second.](../../../../_media/week-9-function-cartesian-coordinates-distance-time.png)
     * Tip: use at least half the length of the line to make the gradient.
 * [Instantaneous Speed](Instantaneous%20Speed)
     * One critism of checks on average speed: the vehicle can hit a top speed above the speed limit, and then travel slowly for part of it to meet average speed limits.
@@ -177,14 +177,14 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * Displacement is plotted on the y-axis (vertical axis).
         * Time is plotted on the x-axis (horizontal axis).
         * Here we see the displacement-time graph for a car travelling along a straight road. The car is travelling at a constant velocity between $t = 0$ and $t = 20s$, as seen from the first straight-line section of the graph.
-            ![](../../../../_media/week-9-function-cartesian-coordinates-displacement-time.png)
+            ![Displacement-time graph of a car travelling from 0 to 120 metres in 20 seconds, stopping until 30 seconds, then returning to its starting point at 60 seconds.](../../../../_media/week-9-function-cartesian-coordinates-displacement-time.png)
         * The horizontal section of the graph between t = 20s and t = 30s shows the displacement of the car remians constant.
         * Therefore, the carm ust be stionary.
         * After t =30s, teh graph is still a sraight line but has a negative slope.
         * The dosplacement is getting smaller.
         * The car must therefore be returning at a constant velocity.
         * You can determine the velocity of an object from the gradient of its displacement-time (s-t) graph. If th e graph is no a straigh line, draw a tangent to the graph, then calcualte the gradient of this tangent for the instantaneous velicty, as illustrated in Fig 4.
-            ![](../../../../_media/week-9-function-cartesian-coordinates-velocity.png)
+            ![Tangent to a displacement-time curve. Velocity at the contact point is the tangent's gradient, delta s divided by delta t.](../../../../_media/week-9-function-cartesian-coordinates-velocity.png)
         * Example: use figure 3 to find velocity of the car at t = 10s and t = 40s
             * Step 1. Identify the equation needed and how to obtrain the values from the graph:
                 * $\text{ Velocity } v = \frac{\Delta s}{\Delta t}$
@@ -207,7 +207,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
     * A function where $x$ appears with a power equal or less than two.
     * For example, consider the function $f(x) = x^2 - 4x$, $D = \mathbb{R}$
         * It appears like a parabola on a graph.
-            ![](../../../../_media/week-9-function-cartesian-coordinates-parabola.png)
+            ![Upward-opening parabola crossing the x-axis at 0 and 4, with its minimum at (2, minus 4).](../../../../_media/week-9-function-cartesian-coordinates-parabola.png)
     * You can make the plot using a simple table, evaluating the function for different inputs.
         * $-3, (-3)^2 - 12 = 21$,
         * $-2, (-2)^2 - 4 = 21$
@@ -232,7 +232,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
     * Intersection with y-axis $\rightarrow x=0 \rightarrow = y_0 = f(0) = (0)^3 - 4(0) = 0$
     * Intersection with x-axis $\rightarrow = y = 0 \rightarrow f(x_0) = 0$
     * Solve ${x_0}^3-4x_0=x_0({x_0}^2-4)=0 \rightarrow x_0 = 0, x_0 = \pm 2$
-        ![](../../../../_media/week-9-function-cartesian-coordinates-cube.png)
+        ![Graph of y = x cubed minus 4x, crossing the x-axis at minus 2, 0 and 2, with a local maximum left of the origin and a local minimum right of it.](../../../../_media/week-9-function-cartesian-coordinates-cube.png)
     * Note: vertical line intersects the curve in only one point: single-valued functions.
     * Higher order polynomials $f(x) = ax^n + bx^{n-1} + ... + cx + d$
         * Example in factorised form: $f(x) = (x+2)(x+1)(x-1)(x-2)(x-3) n =5 D = R$
@@ -241,7 +241,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
     * $f(x) = P(x) / Q(x)$
     * $f(x) = x/(x^2-1)$
         * Domain: $R\{-1, 1\}$
-    ![](../../../../_media/week-9-function-cartesian-coordinates-fractional.png)
+    ![Graph of f(x) = x divided by (x squared minus 1), with vertical asymptotes at x = minus 1 and x = 1, both excluded from the domain.](../../../../_media/week-9-function-cartesian-coordinates-fractional.png)
     * This specific function has two vertical asymptotes in x equal minus 1 and x equal 1, which are indicated by the dashed blue lines on the plot.
 
 ## Essential reading

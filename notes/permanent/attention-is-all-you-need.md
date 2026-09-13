@@ -1,7 +1,7 @@
 ---
 title: Attention Is All You Need
 date: 2023-12-04 00:00
-modified: 2023-12-04 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -98,7 +98,7 @@ The output is computed as a weighted sum of the values, where the weight assigne
 
 #### Scaled Dot-Product Attention
 
-![](../../../_media/attention-is-all-you-need-scaled-dot-product-attention.png)
+![Scaled dot-product attention: multiply Q and K, scale the result, optionally mask it, apply softmax, then multiply the attention weights by V.](../_media/attention-is-all-you-need-scaled-dot-product-attention.png)
 *Partial Figure 2 from paper Attention Is All Your Need*
 
 We call our particular attention [Scaled-Dot Product Attention](scaled-dot-product-attention.md).

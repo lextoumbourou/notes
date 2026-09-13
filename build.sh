@@ -2,30 +2,23 @@
 
 set -euo pipefail
 
+build_started_at=$SECONDS
+report_build_time() {
+    build_exit_status=$?
+    build_elapsed=$((SECONDS - build_started_at))
+    if [ "$build_exit_status" -eq 0 ]; then
+        printf 'Build completed in %ss.\n' "$build_elapsed"
+    else
+        printf 'Build failed after %ss (exit %s).\n' "$build_elapsed" "$build_exit_status" >&2
+    fi
+}
+trap report_build_time EXIT
+
 if [ "${MERMAID_RENDERER:-mmdr}" = "mmdr" ]; then
     uv run python scripts/install_mmdr.py
 fi
 
-# Check for control characters in notes files
-echo "Checking for control characters in notes files..."
-found_control_chars=false
-
-# Find all text files in notes directory
-while IFS= read -r -d '' file; do
-    # Check for control characters using grep with Perl regex
-    # Pattern matches: \x00-\x08, \x0B-\x0C, \x0E-\x1F
-    if grep -Pq '[\x00-\x08\x0B-\x0C\x0E-\x1F]' "$file" 2>/dev/null; then
-        echo "Warning: Control characters found in: $file"
-        found_control_chars=true
-    fi
-done < <(find ./notes/ -type f \( -name "*.md" -o -name "*.rst" -o -name "*.txt" \) -print0)
-
-if [ "$found_control_chars" = true ]; then
-    echo "Control characters detected in one or more files. Please review and clean them before building."
-    exit 1
-fi
-
-echo "No control characters found. Proceeding with build..."
+uv run python scripts/check_control_characters.py ./notes/
 ENV=local PYTHONPATH="${PYTHONPATH:+$PYTHONPATH:}." \
   uv run pelican ./notes/ --output=output/ --fatal errors
 

@@ -1,7 +1,7 @@
 ---
 title: "Neural Machine Translation by Jointly Learning to Align and Translate (Sep 2014)"
 date: 2024-10-28 00:00
-modified: 2024-10-28 00:00
+modified: 2026-09-13 10:34
 summary: improve the Encoder/Decoder alignment with an Attention Mechanism
 cover: /_media/neural-machine-translation-by-jointly-learning-to-align-and-translate-sep-2014-fig-1.png
 hide_cover_in_article: true
@@ -24,7 +24,7 @@ However, this approach struggles with longer sentences, as the encoder has to dr
 
 The authors proposed modifying the encoder to output a sequence with one hidden representation per input word, then adding a search mechanism to the decoder, allowing it to find the most relevant information in the input sequence to predict each word in the output sequence.
 
-![](../../_media/rnn-encoder-decoder-with-attention.png)
+![RNN encoder-decoder translating an English sentence into French. Attention combines encoder states into a separate context vector for each output token.](../../_media/rnn-encoder-decoder-with-attention.png)
 
 They likened the modification to the human notion of "attention", calling it an [Attention Mechanism](../../permanent/attention-mechanism.md). Though not the first Machine Learning paper to propose applying human-like attention to model architectures [^2], this approach was very influential in NLP, leading to a lot of research eventually converging on an entirely attention-based architecture called the [Transformer](../../permanent/transformer.md).
 

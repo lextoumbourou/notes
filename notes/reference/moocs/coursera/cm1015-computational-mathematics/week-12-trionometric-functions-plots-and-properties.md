@@ -1,7 +1,7 @@
 ---
 title: week-12-trionometric-functions-plots-and-properties
 date: 2023-08-06 00:00
-modified: 2023-08-06 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -69,4 +69,4 @@ status: draft
 | $\cos x$   | $2\pi$ | $\frac{1}{2\pi}$ | 1         |
 | $2 \cos x$ | $\pi$ | $\frac{1}{\pi}$ | 1         |
 
-![](../../../../journal/_media/week-12-trionometric-functions-plots-and-properties-amplitude-cos.png)
+![Graphs of cos x and cos 2x, both with amplitude 1. Cos x completes one cycle over 2 pi, while cos 2x completes one over pi.](../../../../_media/week-12-trionometric-functions-plots-and-properties-amplitude-cos.png)

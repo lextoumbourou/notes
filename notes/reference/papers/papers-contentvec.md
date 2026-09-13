@@ -2,7 +2,7 @@
 title: ContentVec
 date: 2023-12-01 00:00
 category: paper
-modified: 2023-12-01 00:00
+modified: 2026-09-13 10:34
 status: draft
 summary: training a representation of speech that disentangles content information from speaker information
 tag: 
@@ -337,7 +337,7 @@ The final loss
 is the superposition of the prediction and contrastive losses:
 L = Lpred + λLcontr.
 
-![](../../_media/papers-contentvec-fig-2.png)
+![Conceptual curve of speaker information across ContentVec layers. Contrastive loss sharply reduces speaker information, which is reintroduced in the predictor to match the teachers.](../../_media/papers-contentvec-fig-2.png)
 
 As can be observed, although CONTENTVEC requires
 speaker labels to identify speaker information, speaker labels are only used in pre-training the speaker embedding

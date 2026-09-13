@@ -68,7 +68,7 @@ class RendererTests(unittest.TestCase):
             with self.subTest(source=source), \
                  patch.object(renderer, "render_native") as native, \
                  patch.object(renderer, "render_official", return_value=SVG) as official, \
-                 self.assertLogs(renderer.logger, "WARNING"):
+                 self.assertLogs(renderer.logger, "INFO"):
                 self.assertEqual(renderer.render_svg(source), SVG)
                 native.assert_not_called()
                 official.assert_called_once_with(source)
@@ -164,6 +164,7 @@ class BuildScriptTests(unittest.TestCase):
                                     env=env, capture_output=True, text=True)
             self.assertEqual(result.returncode, 7, result.stdout + result.stderr)
             self.assertFalse((directory / "pagefind-ran").exists())
+            self.assertRegex(result.stderr, r"Build failed after \d+s \(exit 7\)\.\n$")
 
 
 if __name__ == "__main__":

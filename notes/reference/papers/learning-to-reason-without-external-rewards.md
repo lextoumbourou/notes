@@ -1,7 +1,7 @@
 ---
 title: Learning to Reason without External Rewards
 date: 2025-05-28 00:00
-modified: 2025-05-28 00:00
+modified: 2026-09-13 10:34
 cover: /_media/rlif-cover.png
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3lqlfvwvszm2a
 mastodon_post: https://fedi.notesbylex.com/@lex/114587542716347545
@@ -21,7 +21,7 @@ Another very interesting paper on the topic of reward modelling, that continues 
 
 This paper proposes a new RL training method that doesn't rely on reward models ([RLHF](../../permanent/reinforcement-learning-from-human-feedback.md)) like ChatGPT, selected high-quality ground truth examples (RLVR) like DeepSeek R1, or even verifiable generated data (Self-Play) like [AbsoluteZero](absolute-zero-reinforced-self-play-reasoning-with-zero-data.md), to develop complex reasoning capability (thinking mode).
 
-![](../../_media/rlif-cover.png)
+![Reinforcement Learning from Internal Feedback loop: a model answers human-defined tasks, evaluates its responses and uses its own feedback to update its policy.](../../_media/rlif-cover.png)
 
 
 Turns out we can just use the model's internal sense of confidence as the reward signal to train a reasoning model 🤯
@@ -32,7 +32,7 @@ They introduce a new paradigm, "Reinforcement Learning from Internal Feedback" (
 
 If this approach scales, it could unlock the ability to generally improve reasoning LLMs in domains where high-quality ground truth isn't available or not verifiable (i.e., any domain other than math and code) and provide evidence that pre-trained LLMs "possess richer latent behavioural priors than previously recognised."
 
-![](../../_media/intuitor-fig2.png)
+![Intuitor pipeline: a policy generates several outputs, a frozen reference model supplies self-certainty reward scores, and the rewards are normalized into advantages.](../../_media/intuitor-fig2.png)
 
 
 Interesting, indeed.

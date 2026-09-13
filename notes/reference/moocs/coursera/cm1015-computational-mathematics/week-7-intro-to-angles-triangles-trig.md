@@ -1,7 +1,7 @@
 ---
 title: Week 7 - Intro To Angles, Triangles and Trigomonetry
 date: 2023-05-29 00:00
-modified: 2023-05-29 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -14,13 +14,13 @@ status: draft
         * Degree is a sexagesimal [Number Base](../../../../permanent/number-bases.md).
             * 1 minute is $\frac{1}{60}$ of a degree, 1 second of $\frac{1}{60}$ of a min
     * [Radians](../../../../permanent/radians.md)
-        ![](../../../../journal/_media/week-7-radians.png)
+        ![One radian subtends an arc whose length equals the circle's radius r. A full circumference of 2 pi r therefore subtends 2 pi radians.](../../../../_media/week-7-radians.png)
     * $r \rightarrow 1 \text{ radian} \Rightarrow \text{ (circ) } 2\pi r \rightarrow 2 \pi \text{ radians }$
     * $360\deg = 2\pi \text{ radians }$
     * $\text{ radians } = \text{ degrees } \times \pi / 180$
 * [[Triangle]]
     * A polygon with 3 sides.
-    * ![](../../../../journal/_media/week-7-triangles.png)
+    * ![Triangle ABC with sides a, b and c opposite angles alpha, beta and gamma, and perpendicular height h from C to side AB.](../../../../_media/week-7-triangles.png)
         * Property #1: sum of angles is equal to 180*
             * $\alpha + \beta + \gamma = 180°$
         * Property #2: surface area = (side c * height) / 2
@@ -29,19 +29,19 @@ status: draft
             * $P = a + b + c$
     * Types of triangle
         * Triangle: right triangle.
-            * ![](../../../../journal/_media/week-7-right-triangle.png)
+            * ![Right triangle ABC with a right angle at A. The other two angles, alpha and beta, add to 90 degrees.](../../../../_media/week-7-right-triangle.png)
         * Isosceles.
             * 2 sides of the same length, which implies to adjacent angles are equal.
-              ![](../../../../journal/_media/week-7-intro-to-angles-triangles-trig-isosceles.png)
+              ![Isosceles triangle ABC with equal sides AC and BC, both labelled a, and equal base angles alpha at A and B.](../../../../_media/week-7-intro-to-angles-triangles-trig-isosceles.png)
         * Equilateral
             * All sides are equal to 60 degrees
-                ![](../../../../journal/_media/week-7-intro-to-angles-triangles-trig-equilateral.png)
+                ![Equilateral triangle with three 60-degree angles, illustrating that 3 alpha equals 180 degrees.](../../../../_media/week-7-intro-to-angles-triangles-trig-equilateral.png)
         * [Similar triangles](../../../../permanent/similar-triangles.md)
             * Similar triangles rescale one (zoom in or out) and will coincide with the other.
             * Same angle, proportinal sides: AB/EG = AC/EF = BC/GF
-                 ![](../../../../_media/week-7-intro-to-angles-triangles-trig-similar.png)
+                 ![Similar triangles ABC and EGF, with matching coloured angles showing A corresponds to E, B to G and C to F.](../../../../_media/week-7-intro-to-angles-triangles-trig-similar.png)
  * [[Right Triangle]]
-     * ![](../../../../journal/_media/week-7-intro-to-angles-triangles-trig-right-triangle.png)
+     * ![Right triangle with angle theta at A, opposite side a, adjacent side b and hypotenuse h. The angle at B is 90 degrees minus theta.](../../../../_media/week-7-intro-to-angles-triangles-trig-right-triangle.png)
      * SOH CAH TOA
      * Opposite / Hypotenuse = $\cos(90 - \theta) = Sin(\theta)$
          * SOH
@@ -61,7 +61,7 @@ status: draft
          * [[Sine rule]]
              * $a / \sin(\theta) = b / \sin(90 - \theta) = h = h / \sin(90)$
              * Applies to a general triangle:
-                 ![](../../../../journal/_media/week-7-intro-to-angles-triangles-trig-sine-rule.png)
+                 ![Triangle ABC illustrating the sine rule: a divided by sin alpha equals b divided by sin beta equals c divided by sin gamma.](../../../../_media/week-7-intro-to-angles-triangles-trig-sine-rule.png)
             * Generalised Pythagoras Theorem: $a^2 = b^2 + c^2 - 2bc \cos(\alpha)$ also known as [Law Of Cosines](../../../../permanent/law-of-cosines.md).
 
 ## Reading

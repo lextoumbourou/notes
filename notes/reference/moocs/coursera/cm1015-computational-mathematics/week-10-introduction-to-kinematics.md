@@ -1,7 +1,7 @@
 ---
 title: "Week 10: Introduction to Kinematics"
 date: 2023-07-03 00:00
-modified: 2023-07-03 00:00
+modified: 2026-09-13 10:34
 status: draft
 ---
 
@@ -64,10 +64,10 @@ status: draft
     * Uniform motion is one-dimensional motion with constant velocity.
     * We can example how our velocity changes with respect to time.
     * If the velocity does not change from its initial value, $v(t)$ remains at the initial value $v_0$.
-        ![](../../../../_media/week-10-introduction-to-kinematics-velocity-unchanged.png)
+        ![Velocity-time graph showing a horizontal line at v0, representing constant velocity.](../../../../_media/week-10-introduction-to-kinematics-velocity-unchanged.png)
 
     * Alternatively, here, the velocity increases over time
-      ![](../../../../_media/week-10-introduction-to-kinematics-s0.png)
+      ![Position-time graphs starting at s0, with straight lines of positive and negative slope illustrating motion at constant velocity in opposite directions.](../../../../_media/week-10-introduction-to-kinematics-s0.png)
 
       * We can mark out different points in time and calculate the velocity: $s(t) = s_0 + v_0t$
           * $s(t)$ - represents the position of the object at time $t$.
@@ -85,7 +85,7 @@ status: draft
             * $v_0$ = Initial velocity
             * $at$ = acceleration by time.
     * Can see our position as a function of time on a graph.
-        ![](../../../../_media/week-10-introduction-to-kinematics-velocity.png)
+        ![Position-time curve with positive initial velocity and positive constant acceleration, becoming steeper as time increases.](../../../../_media/week-10-introduction-to-kinematics-velocity.png)
     * Equation to describe the position: $S(t) = S_0 + V_0 t + \frac{1}{2} {o_t}^2$
 * Two key equations:
     * 1. $v(t) = v_0 - gt$

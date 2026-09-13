@@ -2,7 +2,7 @@
 category: note
 title: Gradient Descent
 date: 2015-10-10 00:00
-modified: 2024-04-04 00:00
+modified: 2026-09-13 10:34
 summary: an optimisation algorithm to minimise a cost function
 status: draft
 ---
@@ -23,7 +23,7 @@ For example, given a simple function $y = x^2$, we can use Gradient Descent to f
 
 If we plot the function, we can see that the minimum of the function is 0.
 
-![](../../../_media/gradient-descent-y-x-squared.png)
+![Parabola y = x squared, with its minimum at the origin and values rising to 25 at x = minus 5 and x = 5.](../_media/gradient-descent-y-x-squared.png)
 
 We know from the [Power Rule](Power%20Rule) that the derivate of $x^2 = 2x$: $\frac{d}{dx} x^2 = 2x$.
 

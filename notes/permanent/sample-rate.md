@@ -2,7 +2,7 @@
 category: note
 title: Sample Rate
 date: 2023-10-08 00:00
-modified: 2023-10-08 00:00
+modified: 2026-09-13 10:34
 summary: A measure of how accurately the source signal was digitally represented
 cover: /_media/sample-rate-cover.png
 hide_cover_in_article: true
@@ -76,7 +76,7 @@ Since the true sound wave has to be inferred from digital samples, the sound wil
 
 The figure below shows an example of a 15Hz sine wave over a minute. As you can see, we can only accurately reconstruct the original sine wave if we sample enough points. However, after a certain number of samples, we can rebuild the sound wave perfectly; more samples do not help.
 
-![](../_media/sample-rate-examples.png)
+![The same continuous waveform sampled at 15, 150 and 1500 Hz. Higher sampling rates place progressively more sample points along the wave.](../_media/sample-rate-examples.png)
 
 Real sound waves are more complex than simple sine waves, so more samples are needed to capture that complexity. However, the important detail is that more samples are not necessarily better. We can accurately represent all audio we perceive at any sample rate above 40kHz.
 
