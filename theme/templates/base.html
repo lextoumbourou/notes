@@ -102,9 +102,9 @@
           <a class="nav-tab" href="#" data-tab="tags">Tags</a>
         </div>
 
-        {% set recent_posts = articles | selectattr("category.name", "equalto", "posts") | list %}
-        {% set recent_notes = articles | rejectattr("category.name", "equalto", "posts") | list %}
-        {% set all_recent = (recent_posts + recent_notes) | sort(attribute='date', reverse=True) %}
+        {# Prepare each distinct article collection once per build. #}
+        {# Render links below so the active page is always current. #}
+        {% set all_recent = articles | recent_articles %}
 
         <ul class="nav-note-list" id="nav-recent">
           {% for article in all_recent[:10] %}
