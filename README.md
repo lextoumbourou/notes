@@ -85,6 +85,13 @@ serialization, apart from nonbreaking-space entities needed to preserve generate
 social previews. Malformed or ambiguous markup uses the original full-document
 parser.
 
+Pygments is pinned to 2.21.0 for its cached plugin discovery. Pelican 4.12.0
+declares `pygments<2.20.0`, so `pyproject.toml` includes an explicit uv override
+for the tested version. Use `uv sync` and the build scripts so this override is
+applied. The site tests and full output comparison pass; highlighting tokens
+can change while code text stays identical. Remove the override when Pelican's
+dependency range permits 2.21.0.
+
 Math uses the local `currency_katex` adapter around `pelican-katex`. Inline
 `$...$` requires non-whitespace immediately inside both delimiters, and its
 closing `$` must not be followed by a digit. Ordinary prices such as `$20 and

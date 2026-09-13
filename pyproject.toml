@@ -24,10 +24,16 @@ dependencies = [
     "prometheus-client>=0.23.1",
     "pybtex==0.26.1",
     "pydicom>=3.0.1",
+    "pygments==2.21.0",
     "scikit-learn>=1.7.2",
     "pelican-alias>=1.1",
     "mcp>=2,<3",
 ]
+
+[tool.uv]
+# Pelican 4.12.0 caps Pygments below 2.20. Pin the tested version to use its
+# plugin-discovery cache; remove this override when Pelican raises the cap.
+override-dependencies = ["pygments==2.21.0"]
 
 [tool.uv.sources]
 feedgenerator = { git = "https://github.com/lextoumbourou/feedgenerator.git" }
