@@ -1,8 +1,8 @@
 ---
 title: Qwen3.8-Max
 date: 2026-08-03 14:55
-modified: 2026-08-03 22:16
-category: news
+modified: 2026-09-23 06:08
+category: model
 summary: "A new frontier model from the Qwen team"
 tags:
   - ModelRelease

@@ -1,8 +1,11 @@
 ---
 title: Attention Is All You Need
 date: 2023-12-04 00:00
-modified: 2026-09-13 10:34
+modified: 2026-09-22 09:04
 status: draft
+tags:
+- MachineLearning
+- LargeLanguageModels
 ---
 
 Shell page for [Attention Is All You Need](https://arxiv.org/abs/1706.03762) by Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin.
@@ -116,7 +119,7 @@ In practice, they compute the attention function on a set of queries simultaneou
 
 The keys and values are also packed together into matrices $K$ and $V$ . We compute the matrix of outputs as:
 
-$\text{Attention}(Q, K, V ) = \frac{\text{softmax}(Q @ K^{T})}{\sqrt{d_k}}$
+$\operatorname{Attention}(Q,K,V) = \operatorname{softmax}\left(\frac{QK^{T}}{\sqrt{d_k}}\right)V$
 
 The two most commonly used attention functions are [Additive Attention](Additive%20Attention), and [Dot-Product Attention](Dot-Product%20Attention).
 

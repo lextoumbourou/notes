@@ -1,8 +1,8 @@
 ---
 title: Seedance 2.5
 date: 2026-08-02 09:01
-modified: 2026-08-04 08:28
-category: news
+modified: 2026-09-23 06:08
+category: model
 status: hidden
 summary: "ByteDance's audio-video generation model for longer clips, flexible referencing and targeted editing."
 tags:

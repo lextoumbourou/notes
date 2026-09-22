@@ -1,8 +1,8 @@
 ---
 title: Kimi K3
 date: 2026-07-17 00:00
-modified: 2026-08-03 21:41
-category: news
+modified: 2026-09-23 06:08
+category: model
 summary: "Moonshot AI's 2.8T open-weight frontier model for coding and knowledge work."
 tags:
   - ModelRelease
