@@ -2,7 +2,7 @@
 title: "Coding Harness"
 date: 2026-09-22 06:50
 modified: 2026-09-22 06:50
-status: draft
+status: hidden
 summary: "The coding harness is the software layer for the agent that includes the control loop, the tool interface and context-management strategy."
 source: https://arxiv.org/abs/2609.20804v1
 tags:

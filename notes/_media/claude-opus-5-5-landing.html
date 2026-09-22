@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Opus 5.5: a field guide summary</title>
+<meta name="description" content="A short editorial summary of Claude Opus 5.5: availability, benchmarks with effort settings, pricing in USD per million tokens, and caveats.">
+<style>
+:root{--bg:#f6f0e4;--ink:#1c1a17;--mute:#554f47;--acc:#a3432a;--rule:#cdc2af;--soft:#efe6d6}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:1.0625rem/1.6 "Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;overflow-x:hidden}
+.w{max-width:72rem;margin:0 auto;padding:0 clamp(1.25rem,4vw,3rem)}
+a{color:var(--acc);text-underline-offset:.18em;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:2px;text-decoration:none}
+code{font:.88em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--soft);padding:.08em .35em;border-radius:3px}
+.sans{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.lbl{font:600 .72rem/1.3 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.skip{position:absolute;left:-999px;top:.5rem;background:var(--ink);color:var(--bg);padding:.5rem .8rem}
+.skip:focus{left:.5rem}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1.5rem;padding-top:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--ink)}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1.25rem}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover{color:var(--acc)}
+.stage{position:relative;display:grid;place-items:center;padding:clamp(2.5rem,7vw,5rem) 0 clamp(2rem,5vw,3.5rem);overflow:hidden}
+.stage svg{position:absolute;top:50%;left:50%;width:min(94vw,42rem);height:auto;transform:translate(-50%,-50%)}
+h1{position:relative;margin:0;text-align:center;font-weight:400;line-height:.82}
+h1 span{display:block}
+.kick{font:600 clamp(.8rem,2vw,1rem)/1 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.4em;text-transform:uppercase;margin-bottom:1.1rem;padding-left:.4em}
+.opus{font-size:clamp(3.4rem,13vw,8.5rem);letter-spacing:-.02em}
+.num{font-size:clamp(6.5rem,31vw,19rem);font-style:italic;color:var(--acc);letter-spacing:-.04em}
+.dek{max-width:40rem;margin:0 auto;text-align:center;font-size:clamp(1.15rem,2.4vw,1.4rem);line-height:1.45}
+.dek em{color:var(--acc);font-style:italic}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));margin:clamp(2rem,5vw,3rem) 0 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.facts div{padding:1rem 1.1rem 1.1rem;border-left:1px solid var(--rule)}
+.facts div:first-child{border-left:0}
+.facts dt{margin-bottom:.3rem}
+.facts dd{margin:0;font-size:1.6rem;line-height:1.1}
+.facts small{display:block;font:.78rem/1.35 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--mute);margin-top:.3rem}
+section{padding:clamp(2.75rem,7vw,4.5rem) 0;border-bottom:1px solid var(--rule)}
+.split{display:grid;gap:1.5rem 3rem}
+@media(min-width:52rem){.split{grid-template-columns:14rem 1fr}}
+h2{margin:0;font-weight:400;font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.05;letter-spacing:-.01em}
+h2 .n{display:block;font:600 .75rem/1 system-ui,-apple-system,sans-serif;letter-spacing:.14em;color:var(--acc);margin-bottom:.8rem}
+h3{font-weight:400;font-style:italic;font-size:1.3rem;margin:0 0 .5rem}
+p{margin:0 0 1rem;max-width:40rem}
+.claim{display:grid;gap:0;border-top:1px solid var(--ink)}
+@media(min-width:44rem){.claim{grid-template-columns:1fr 1fr}.claim>div+div{border-left:1px solid var(--rule)}}
+.claim>div{padding:1.25rem 1.25rem 1.25rem 0}
+@media(min-width:44rem){.claim>div+div{padding-left:1.5rem}}
+.big{font-size:clamp(3rem,8vw,4.5rem);line-height:1;color:var(--acc);font-style:italic}
+dl.spec{margin:0;display:grid;grid-template-columns:minmax(7rem,11rem) 1fr;border-top:1px solid var(--ink)}
+dl.spec dt,dl.spec dd{padding:.75rem 0;border-bottom:1px solid var(--rule);margin:0}
+dl.spec dd{padding-left:1rem}
+.tw{overflow-x:auto;margin:0 0 1.5rem}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+caption{text-align:left;padding-bottom:.75rem}
+th,td{padding:.7rem .5rem;border-bottom:1px solid var(--rule);vertical-align:top;text-align:left}
+thead th{border-bottom:1px solid var(--ink);font:600 .72rem/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+td.r,th.r{text-align:right}
+th[scope=row]{font-weight:400}
+.bar{display:block;height:3px;background:var(--rule);margin-top:.35rem}
+.bar i{display:block;height:3px;background:var(--ink)}
+.hi .bar i{background:var(--acc)}
+.hi{font-weight:700}
+.up{color:var(--acc);font-family:system-ui,-apple-system,sans-serif;font-size:.9rem}
+.note{border-left:3px solid var(--acc);padding:.2rem 0 .2rem 1.1rem;margin:1.5rem 0;max-width:40rem}
+.warn{background:var(--ink);color:var(--bg);padding:clamp(1.5rem,4vw,2.25rem);margin-top:2rem;display:grid;gap:1rem}
+@media(min-width:44rem){.warn{grid-template-columns:auto 1fr;align-items:start}}
+.warn .lbl{color:#e9a489}
+.warn p{margin:0}
+.price td.r{font-size:1.25rem}
+.cols{display:grid;gap:1.5rem 2.5rem;margin-top:1.5rem}
+@media(min-width:44rem){.cols{grid-template-columns:repeat(3,1fr)}}
+.cols div{border-top:1px solid var(--ink);padding-top:.8rem}
+.cols p{font-size:.98rem}
+ol.src{margin:0;padding:0;list-style:none;counter-reset:s;border-top:1px solid var(--ink)}
+ol.src li{counter-increment:s;display:grid;grid-template-columns:2.25rem 1fr;padding:.8rem 0;border-bottom:1px solid var(--rule)}
+ol.src li::before{content:counter(s,decimal-leading-zero);font:600 .8rem/1.9 system-ui,-apple-system,sans-serif;color:var(--acc)}
+ol.src span{display:block;font-size:.9rem;color:var(--mute)}
+footer{padding:2rem 0 3rem;font-size:.95rem;color:var(--mute)}
+footer p{max-width:48rem}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<div class="w top">
+<span class="lbl">NotesByLex · Technology field guide</span>
+<nav aria-label="Sections"><ul class="sans" style="font-size:.9rem">
+<li><a href="#claims">Claims</a></li>
+<li><a href="#context">Context</a></li>
+<li><a href="#benchmarks">Benchmarks</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#sources">Sources</a></li>
+</ul></nav>
+</div>
+<div class="w">
+<div class="stage">
+<svg viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+<g fill="none" stroke="#cdc2af" stroke-width="1">
+<circle cx="300" cy="300" r="286"/>
+<circle cx="300" cy="300" r="230"/>
+<circle cx="300" cy="300" r="174" stroke-dasharray="2 6"/>
+<line x1="0" y1="300" x2="600" y2="300"/>
+<line x1="300" y1="0" x2="300" y2="600" stroke-dasharray="2 6"/>
+</g>
+<path d="M300 14 A286 286 0 0 1 571.99 211.62" fill="none" stroke="#a3432a" stroke-width="2"/>
+<circle cx="571.99" cy="211.62" r="6" fill="#a3432a"/>
+<g stroke="#1c1a17" stroke-width="1">
+<line x1="300" y1="4" x2="300" y2="24"/><line x1="596" y1="300" x2="576" y2="300"/>
+<line x1="300" y1="596" x2="300" y2="576"/><line x1="4" y1="300" x2="24" y2="300"/>
+</g>
+</svg>
+<h1><span class="kick">Claude</span><span class="opus">Opus</span><span class="num">5.5</span></h1>
+</div>
+<p class="dek">Anthropic's first Claude 5.5 model improves on Opus 5 in coding, computer use and knowledge work, at a <em>lower price per token</em>.</p>
+<dl class="facts">
+<div><dt class="lbl">Released</dt><dd>22 Sep 2026</dd><small>Available as of 23 Sep 2026</small></div>
+<div><dt class="lbl">Context window</dt><dd>1M tokens</dd><small>Separate limit from output</small></div>
+<div><dt class="lbl">Max output</dt><dd>128K tokens</dd><small>Per the API model listing</small></div>
+<div><dt class="lbl">Input / output</dt><dd>$4 / $20</dd><small>USD per million tokens</small></div>
+</dl>
+</div>
+</header>
+
+<main id="main">
+<section id="claims" aria-labelledby="h-claims">
+<div class="w split">
+<h2 id="h-claims"><span class="n">01 · The claims</span>What Anthropic says, and what a demo can show</h2>
+<div>
+<div class="claim">
+<div>
+<p class="lbl">Anthropic's claim</p>
+<p class="big">40%</p>
+<p><strong>cheaper than Opus 5</strong> on typical workloads at default settings. The figure includes using fewer tokens per task, so it is <strong>not a guaranteed discount on every request</strong>; savings depend on the workload.</p>
+<p>Anthropic also says Opus 5.5 approaches Claude Fable 5.1 on most work, with lower running costs.</p>
+</div>
+<div>
+<p class="lbl">The source article's demo</p>
+<p>The original article includes a small example that makes <strong>one request without caching</strong>. It illustrates an API call. A single request cannot verify the benchmark results or the 40% savings figure, and no test results from it are reported here.</p>
+<p style="color:var(--mute);font-size:.95rem">Treat vendor figures as vendor figures until you measure your own workload.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="context" aria-labelledby="h-context">
+<div class="w split">
+<h2 id="h-context"><span class="n">02 · Availability</span>Where it runs, and how it thinks</h2>
+<div>
+<dl class="spec">
+<dt class="lbl">Platforms</dt><dd>Claude, the Claude API, AWS, Google Cloud and Microsoft Azure (as of 23 September 2026)</dd>
+<dt class="lbl">API identifier</dt><dd><code>claude-opus-5-5</code></dd>
+<dt class="lbl">Modalities</dt><dd>Text and image input, text output, tool use</dd>
+<dt class="lbl">Limits</dt><dd>1M-token context window; 128K maximum output tokens</dd>
+<dt class="lbl">Thinking</dt><dd>Adaptive thinking always on; default effort <code>medium</code></dd>
+</dl>
+<p class="note">The two limits are different ceilings, not a promise of 1M input tokens plus 128K output in every request. Effort is adjustable, but there is no separate non-thinking mode; the model still decides how much reasoning each request needs. <a href="https://platform.claude.com/docs/en/about-claude/models/overview">Model documentation</a></p>
+</div>
+</div>
+</section>
+
+<section id="benchmarks" aria-labelledby="h-bench">
+<div class="w split">
+<h2 id="h-bench"><span class="n">03 · Benchmarks</span>Reported gains over Opus 5</h2>
+<div>
+<div class="tw">
+<table>
+<caption class="lbl">Anthropic system card, Table 8.1.A. Scores in percent unless marked Elo.</caption>
+<thead><tr><th scope="col">Benchmark</th><th scope="col" class="r">Opus 5</th><th scope="col" class="r">Opus 5.5</th><th scope="col" class="r">Change</th></tr></thead>
+<tbody>
+<tr><th scope="row">SWE-bench Pro</th><td class="r">79.2%<span class="bar" aria-hidden="true"><i style="width:79.2%"></i></span></td><td class="r hi">89.9%<span class="bar" aria-hidden="true"><i style="width:89.9%"></i></span></td><td class="r up">+10.7 pts</td></tr>
+<tr><th scope="row">Terminal-Bench 4.0 <span class="lbl">(xhigh)</span></th><td class="r">52.3%<span class="bar" aria-hidden="true"><i style="width:52.3%"></i></span></td><td class="r hi">66.4%<span class="bar" aria-hidden="true"><i style="width:66.4%"></i></span></td><td class="r up">+14.1 pts</td></tr>
+<tr><th scope="row">OSWorld 2.0, strict success</th><td class="r">37.2%<span class="bar" aria-hidden="true"><i style="width:37.2%"></i></span></td><td class="r hi">48.7%<span class="bar" aria-hidden="true"><i style="width:48.7%"></i></span></td><td class="r up">+11.5 pts</td></tr>
+<tr><th scope="row">GDPval-AA v2.1</th><td class="r">1708 Elo</td><td class="r hi">1846 Elo</td><td class="r up">+138 Elo</td></tr>
+</tbody>
+</table>
+</div>
+<div class="cols">
+<div><h3>Effort settings</h3><p>Default evaluation uses adaptive thinking at <code>max</code> effort, averaged over five trials. Terminal-Bench 4.0 uses <code>xhigh</code>. Both are higher than the API default of <code>medium</code>.</p></div>
+<div><h3>Safeguards on</h3><p>Launch results include production safeguards, with fallback models handling some restricted tasks.</p></div>
+<div><h3>Not a clean sweep</h3><p>The same table puts GPT-6 Astra ahead on Terminal-Bench-Science 0.1 and AutomationBench. Other developers' results use their own published setups, not an identical coding harness.</p></div>
+</div>
+<div class="warn" role="note" aria-label="Prompt-injection limitation">
+<p class="lbl">Limitation</p>
+<p>Despite improved prompt-injection resistance overall, the system card reports Opus 5.5 is <strong>more susceptible to malicious instructions hidden inside text a user pastes into their own message</strong>. Better benchmarks do not remove the need to separate instructions from untrusted content.</p>
+</div>
+<p style="margin-top:1.25rem"><a href="https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=174">Read Table 8.1.A in the system card (PDF)</a></p>
+</div>
+</div>
+</section>
+
+<section id="pricing" aria-labelledby="h-price">
+<div class="w split">
+<h2 id="h-price"><span class="n">04 · Pricing</span>Tokens, caches and the real saving</h2>
+<div>
+<div class="tw">
+<table class="price">
+<caption class="lbl">Standard Claude API prices, checked 23 September 2026. USD per million tokens.</caption>
+<thead><tr><th scope="col">Usage</th><th scope="col" class="r">USD / 1M tokens</th></tr></thead>
+<tbody>
+<tr><th scope="row">Uncached input</th><td class="r">$4.00</td></tr>
+<tr><th scope="row">Cached input read</th><td class="r" style="color:var(--acc)">$0.20</td></tr>
+<tr><th scope="row">Cache write, 5 minutes</th><td class="r">$5.00</td></tr>
+<tr><th scope="row">Cache write, 1 hour</th><td class="r">$8.00</td></tr>
+<tr><th scope="row">Output, including thinking tokens</th><td class="r">$20.00</td></tr>
+</tbody>
+</table>
+</div>
+<p class="note"><strong>Versus Opus 5:</strong> input and output are 20% cheaper; cache reads are 60% cheaper. Reusing a large context can matter more than the headline input price suggests. <a href="https://platform.claude.com/docs/en/about-claude/pricing">Pricing documentation</a></p>
+<div class="cols">
+<div><h3>Opt in</h3><p>Caching requires <code>cache_control</code>, for automatic caching or explicit breakpoints.</p></div>
+<div><h3>512 tokens</h3><p>The minimum cacheable prefix length.</p></div>
+<div><h3>5 minutes</h3><p>Default lifetime, refreshed on reuse. A one-hour cache costs more to create. <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching">Caching docs</a></p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="sources" aria-labelledby="h-src">
+<div class="w split">
+<h2 id="h-src"><span class="n">05 · Sources</span>Go to the primary documents</h2>
+<ol class="src">
+<li><div><a href="https://www.anthropic.com/claude-opus-5-5">Claude Opus 5.5 announcement</a><span>Anthropic · release on 22 September 2026</span></div></li>
+<li><div><a href="https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=174">Claude Opus 5.5 System Card, Table 8.1.A</a><span>Benchmarks, effort settings, prompt-injection findings (PDF)</span></div></li>
+<li><div><a href="https://platform.claude.com/docs/en/about-claude/models/overview">Models overview</a><span>Identifier, context window, maximum output</span></div></li>
+<li><div><a href="https://platform.claude.com/docs/en/about-claude/pricing">Pricing</a><span>Per-token prices and cache rates</span></div></li>
+<li><div><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-caching">Prompt caching</a><span>cache_control, minimum prefix, cache lifetimes</span></div></li>
+</ol>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="w">
+<p>Summary written by <strong>NotesByLex</strong>, an independent publication. Not affiliated with, sponsored by or endorsed by Anthropic. Figures are as reported by Anthropic and the article's sources on 23 September 2026; check the linked documents for current details.</p>
+<p><a href="#main">Back to top</a></p>
+</div>
+</footer>
+</body>
+</html>

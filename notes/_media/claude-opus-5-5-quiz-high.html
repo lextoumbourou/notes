@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Opus 5.5 Quiz Show 64</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:#1a0a34;color:#fff;font-family:"Arial Black","Arial Bold",Impact,sans-serif;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+#scan{position:fixed;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,#0000 0 2px,#0003 2px 3px),radial-gradient(#0000 60%,#0008)}
+#fx{position:fixed;inset:0;pointer-events:none;opacity:0}
+#ui{position:fixed;inset:0;margin:auto;max-width:880px;display:flex;flex-direction:column;gap:8px;overflow-y:auto;padding:max(10px,env(safe-area-inset-top)) 10px max(10px,env(safe-area-inset-bottom))}
+#hud{display:flex;gap:8px;align-items:center}
+.chip{font:inherit;font-size:14px;color:#fff;background:#000a;border:3px solid #fff;border-radius:99px;padding:4px 12px;text-shadow:2px 2px 0 #000}
+#sc{color:#ffe14a;margin-left:auto}
+#snd{cursor:pointer}
+#gap{flex:1;min-height:30px}
+.panel{background:linear-gradient(#3346e0ee,#141c78ee);border:4px solid #fff;border-radius:20px;padding:12px 16px;box-shadow:0 6px 0 #0009,inset 0 4px 0 #fff4,inset 0 -6px 0 #0004;text-shadow:2px 2px 0 #000}
+.q{margin:0;font-size:clamp(17px,2.8vw,26px);line-height:1.25}
+#fb p,.sub,.tip{font-family:"Trebuchet MS",Verdana,sans-serif;font-weight:700;font-size:clamp(14px,2vw,18px);line-height:1.35;margin:.4em 0}
+.tip{opacity:.85;font-size:clamp(12px,1.7vw,15px)}
+#fb h2{margin:0;font-size:clamp(22px,4vw,34px);letter-spacing:2px}
+.good{background:linear-gradient(#1fb34aee,#0b5e24ee)}
+.bad{background:linear-gradient(#e8262aee,#6e0c10ee)}
+#ans{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#ans.one{grid-template-columns:1fr;max-width:420px;width:100%;margin:0 auto}
+.b{display:flex;align-items:center;gap:10px;width:100%;font:inherit;font-size:clamp(14px,2vw,17px);line-height:1.2;color:#fff;text-align:left;text-shadow:2px 2px 0 #000;background:linear-gradient(#fff5,#fff0 45%,#0003),var(--c,#e8262a);border:3px solid #fff;border-radius:16px;padding:9px 12px;box-shadow:0 5px 0 #0009;cursor:pointer;transition:transform .12s}
+.b:active{transform:translateY(3px);box-shadow:0 2px 0 #0009}
+.k{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;font-size:19px;background:radial-gradient(circle at 35% 30%,#fff9,#fff0 45%),var(--c,#e8262a);border:3px solid #0007;box-shadow:inset 0 -3px 0 #0005}
+.sel,.b:focus-visible{outline:4px solid #ffe14a;outline-offset:2px;transform:scale(1.02)}
+.ok{--c:#1fb34a!important;animation:pop .5s}
+.no{--c:#666!important;opacity:.85}
+.gone{display:none}
+.nx{margin-top:6px;justify-content:center;--c:#2a5cff}
+.logo{text-align:center;font-size:clamp(40px,10vw,76px);line-height:.95;background:linear-gradient(#fffbd0,#ffd000 45%,#ff6a00 55%,#ffb000);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(3px 4px 0 #000);text-shadow:none;letter-spacing:2px}
+.logo small{display:block;font-size:.42em;letter-spacing:4px}
+.big{text-align:center;font-size:30px;color:#ffe14a;margin:.2em 0;letter-spacing:3px}
+.blink{text-align:center;color:#ffe14a;animation:bl 1s steps(2) infinite;margin:.3em 0 0}
+@keyframes bl{50%{opacity:0}}
+@keyframes pop{40%{transform:scale(1.07)}}
+@media(max-width:620px){#ans{grid-template-columns:1fr}.b{padding:8px 10px}.k{width:30px;height:30px;font-size:16px}}
+</style>
+</head>
+<body>
+<canvas id="c" aria-hidden="true"></canvas><div id="scan"></div><div id="fx"></div>
+<main id="ui">
+  <div id="hud"><span class="chip" id="qn">READY?</span><span class="chip" id="sc">★ 0</span><button class="chip" id="snd" aria-label="Toggle sound">♪ ON</button></div>
+  <section id="card" class="panel" aria-live="polite"></section>
+  <div id="gap"></div>
+  <section id="fb" class="panel" aria-live="polite" hidden></section>
+  <div id="ans"></div>
+</main>
+<script>
+const Q=[
+{q:"Anthropic says Opus 5.5 is about 40% cheaper than Opus 5 on typical workloads. Where does that saving come from?",
+a:["Lower per-token prices plus fewer tokens used per task","Thinking tokens are no longer billed at all","A much smaller context window than Opus 5","Prompt caching is now free for every request"],
+x:"Input and output prices fell 20%, and the model tends to finish tasks with fewer tokens. Thinking tokens are still billed at the $20 output rate."},
+{q:"What changed about thinking in Opus 5.5?",
+a:["Adaptive thinking is always on; you tune effort but cannot turn it off","Thinking is off by default and must be switched on","Effort is locked at max and cannot be changed","Thinking only works when accessed through AWS"],
+x:"Adaptive thinking is always enabled, with medium effort by default. You can adjust effort, but the separate non-thinking mode is gone."},
+{q:"Which limits does the API list for Opus 5.5?",
+a:["1M-token context window and 128K max output tokens","128K context window and 1M max output tokens","200K context window and 64K max output tokens","1M context window and unlimited output tokens"],
+x:"It takes up to 1M tokens of context and can write up to 128K output tokens. It accepts text and images, outputs text, and supports tool use."},
+{q:"You run Opus 5.5 at default API settings and score below the published benchmarks. What is the likeliest reason?",
+a:["The benchmarks used max or xhigh effort, above the medium default","The benchmark table was actually measured on Opus 5","Default API settings switch off tool use","The published scores came from one lucky trial"],
+x:"Reported results used adaptive thinking at max effort (xhigh for Terminal-Bench 4.0), averaged over five trials. The API default is medium, so default runs can score lower."},
+{q:"How should you read the benchmark comparisons with other developers' models?",
+a:["Carefully: each vendor used its own setup, and Opus 5.5 does not win every test","As a controlled test with one identical coding harness","As proof that Opus 5.5 leads every single benchmark","As independent results from a neutral third party"],
+x:"GPT-6 Astra leads on Terminal-Bench-Science 0.1 and AutomationBench, and rival scores use their own published setups, so it is not a like-for-like comparison."},
+{q:"What security caveat does the system card raise?",
+a:["It is more easily fooled by malicious instructions hidden in text a user pastes into their own message","It can no longer be trusted to use tools at all","Its prompt injection resistance got worse in every scenario","It now ignores system prompts completely"],
+x:"Overall prompt injection resistance improved, but pasted content inside the user's own message is a weak spot. You still need to separate instructions from untrusted content."},
+{q:"Which price change makes reusing a large context especially attractive?",
+a:["Cache reads are 60% cheaper, at $0.20 per million tokens","Output is 60% cheaper, at $8 per million tokens","Cache writes no longer cost anything","Uncached input dropped to $0.20 per million tokens"],
+x:"Cached reads cost $0.20/M versus $4.00/M uncached. Input and output fell 20%, but cache reads fell 60%, so reused context saves more than the headline price suggests."},
+{q:"Which statement about prompt caching is true?",
+a:["You opt in with cache_control, and the prefix must be at least 512 tokens","Caching happens automatically on every request with no setup","The default cache lasts one hour and never refreshes","A one-hour cache costs the same to create as a five-minute one"],
+x:"Caching needs cache_control (automatic or explicit breakpoints). The default five-minute lifetime refreshes on reuse, and a one-hour write costs $8.00/M versus $5.00/M."}
+];
+const $=id=>document.getElementById(id),cv=$('c'),g=cv.getContext('2d'),card=$('card'),ans=$('ans'),fbx=$('fb'),fx=$('fx');
+const PC=[[40,90,255],[30,180,70],[255,196,0],[232,38,42]],PX=[-4.5,-1.5,1.5,4.5],L='ABCD',FOG=[26,10,52],
+PAL=[[255,70,170],[70,200,255],[255,225,60],[120,255,120]];
+let W,H,FL,CX,CY,C,mode='title',qi=0,score=0,order=[],cor=0,pick=-1,sel=0,kb=false,evT=-9,evOk=0,qT=0,parts=[],cp=[0,7,18],ct=[0,2,-2],last=0,snd=1,AC,lock=0;
+const P=[];
+/* ---------- tiny 3D engine ---------- */
+const sub=(a,b)=>[a[0]-b[0],a[1]-b[1],a[2]-b[2]],dot=(a,b)=>a[0]*b[0]+a[1]*b[1]+a[2]*b[2],
+crs=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],nrm=a=>{const l=Math.hypot(...a)||1;return a.map(v=>v/l)},
+q=(v,c,o={})=>P.push({v,c,...o}),
+tf=(x,y,z,r=0)=>{const c=Math.cos(r),n=Math.sin(r);return p=>[x+p[0]*c+p[2]*n,y+p[1],z+p[2]*c-p[0]*n]};
+function box(T,x,y,z,w,h,d,c,o){const v=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]].map(a=>T([x+a[0]*w,y+a[1]*h,z+a[2]*d]));
+[[0,3,2,1],[4,5,6,7],[0,4,7,3],[1,2,6,5],[3,7,6,2],[0,1,5,4]].forEach(f=>q(f.map(i=>v[i]),c,o))}
+function cyl(T,x,y,z,r,h,n,cs,ctp,o){const b=[],t=[];for(let i=0;i<n;i++){const a=i/n*6.283,cx=x+Math.cos(a)*r,cz=z+Math.sin(a)*r;b.push(T([cx,y,cz]));t.push(T([cx,y+h,cz]))}
+for(let i=0;i<n;i++){const j=(i+1)%n;q([b[i],t[i],t[j],b[j]],cs,o)}if(ctp)q(t.slice().reverse(),ctp,o)}
+function disc(T,r,n,c,z=0,o={}){const v=[];for(let i=0;i<n;i++){const a=i/n*6.283;v.push(T([Math.cos(a)*r,Math.sin(a)*r,z]))}q(v,c,{d:1,...o})}
+function cone(ap,c,r,n,col){const b=[];for(let i=0;i<n;i++){const a=i/n*6.283;b.push([c[0]+Math.cos(a)*r,c[1],c[2]+Math.sin(a)*r])}for(let i=0;i<n;i++)q([ap,b[i],b[(i+1)%n]],col,{d:1,e:1,a:.13})}
+function star(T,R,c){const F=[],B=[],h=.2;for(let i=0;i<10;i++){const a=i/10*6.283+1.571,r=i%2?R*.45:R,x=Math.cos(a)*r,y=Math.sin(a)*r;F.push(T([x,y,h]));B.push(T([x,y,-h]))}
+const cf=T([0,0,h*1.8]),cb=T([0,0,-h*1.8]);for(let i=0;i<10;i++){const j=(i+1)%10;q([cf,F[i],F[j]],c);q([cb,B[j],B[i]],c);q([F[i],B[i],B[j],F[j]],c.map(v=>v*.8))}
+[-1,1].forEach(s=>box(T,s*.2,.12,h*1.5,.06,.15,.05,[20,20,40]))}
+function pr(p){const d=sub(p,C.p),z=dot(d,C.f);return z>.3?[CX+dot(d,C.r)*FL/z,CY-dot(d,C.u)*FL/z,z]:0}
+function draw(){const Lt=nrm([.4,.9,.6]),R=[];
+for(const o of P){const v=o.v,n=nrm(crs(sub(v[1],v[0]),sub(v[2],v[0])));if(!o.d&&dot(n,sub(C.p,v[0]))<=0)continue;
+let zs=0,pts=[];for(const p of v){const a=pr(p);if(!a){pts=0;break}pts.push(a);zs+=a[2]}if(!pts)continue;zs/=v.length;
+const l=o.e?1.1:.45+.7*Math.max(0,o.d?Math.abs(dot(n,Lt)):dot(n,Lt)),f=Math.min(1,Math.max(0,(zs-10)/24))*(o.e?.4:1);
+R.push({z:zs+(o.b||0),pts,a:o.a||1,col:'rgb('+o.c.map((c,i)=>Math.min(255,c*l)*(1-f)+FOG[i]*f|0)+')'})}
+R.sort((a,b)=>b.z-a.z);g.lineWidth=.7;g.lineJoin='round';
+for(const r of R){g.globalAlpha=r.a;g.fillStyle=g.strokeStyle=r.col;g.beginPath();r.pts.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1]));g.closePath();g.fill();if(r.a==1)g.stroke()}g.globalAlpha=1}
+function txt(s,p,sz,col){const a=pr(p);if(!a)return;const px=sz*FL/a[2];g.font=`900 ${px}px "Arial Black",Impact,sans-serif`;g.textAlign='center';g.textBaseline='middle';
+g.lineWidth=Math.max(1,px/7);g.strokeStyle='#000';g.strokeText(s,a[0],a[1]);g.fillStyle=col;g.fillText(s,a[0],a[1])}
+/* ---------- the studio ---------- */
+function scene(t){P.length=0;const I=tf(0,0,0),fb=mode=='fb',since=t-evT,cheer=fb&&evOk||mode=='end'&&score>=Q.length/2,fl=fb&&since<2;
+for(let i=-6;i<6;i++)for(let j=-5;j<8;j++){const x=i*1.6,z=j*1.6;q([[x,0,z],[x,0,z+1.6],[x+1.6,0,z+1.6],[x+1.6,0,z]],(i+j)&1?[80,44,160]:[34,18,92],{b:1e3})}
+box(I,0,4,-7.6,10,4,.4,[70,36,130]);box(I,0,4.6,-7.1,4.2,2.1,.1,[12,18,70],{e:1});
+for(let k=0;k<24;k++){const u=k/6;let x,y;if(u<1){x=-4.4+u*8.8;y=6.9}else if(u<2){x=4.4;y=6.9-(u-1)*4.6}else if(u<3){x=4.4-(u-2)*8.8;y=2.3}else{x=-4.4;y=2.3+(u-3)*4.6}
+box(I,x,y,-7,.14,.14,.1,(k+(t*8|0))%3?[255,230,120]:[255,60,160],{e:1})}
+for(const s of[-1,1])for(let k=0;k<8;k++){const on=(k+(t*6|0))%2;box(I,s*6.6,.5+k,-6.4,.42,.42,.42,fl?(on?(evOk?[80,255,120]:[255,60,60]):[40,20,40]):PAL[(k+(t*3|0))%4],{e:on||!fl?1:0})}
+cyl(I,0,0,-3,3.2,.3,12,[190,40,120],[255,190,60],{b:20});
+for(const s of[-1,1])for(let r=0;r<3;r++){const bx=s*(7.6+r*1.2);box(I,bx,(r+1)*.35,1.2,.6,(r+1)*.35,3.4,[90,70,150],{b:30});
+for(let c=0;c<4;c++){const z=-1.2+c*1.6,y=(r+1)*.7+(cheer?Math.abs(Math.sin(t*9+c*2+r))*.4:Math.sin(t*2+c+r)*.04);
+box(I,bx,y+.4,z,.28,.4,.25,PAL[(c+r*2+(s>0))%4]);box(I,bx,y+1.02,z,.22,.22,.22,[240,190,150])}}
+const sp=fb?[PX[cor],1.4,1.5]:[0,.3,-3];for(const s of[-1,1]){const ap=[s*5+Math.sin(t+s)*.5,9.5,0];box(I,ap[0],ap[1]+.3,ap[2],.35,.35,.35,[60,60,75]);cone(ap,sp,1.3,8,[255,250,200])}
+// host
+const sh=fb&&!evOk&&since<1.6?Math.sin(t*24)*.45*(1-since/1.6):0,jmp=cheer?Math.abs(Math.sin(t*7))*.4:0,arm=cheer?1:0,
+talk=mode=='title'||mode=='q'&&t-qT<2?Math.abs(Math.sin(t*16)):cheer?.8:0,
+B=tf(0,.3+jmp+Math.sin(t*2)*.04,-3,Math.sin(t*.7)*.2+(fb?PX[cor]*.05:0)),Hd=p=>B(tf(0,2.95,0,sh)(p));
+[-1,1].forEach(s=>{box(B,s*.3,.62,0,.22,.62,.24,[40,40,100]);box(B,s*.3,.08,.08,.24,.08,.32,[25,25,30]);
+box(B,s*.87,1.75+arm*1.1,0,.19,.52,.19,[220,40,60]);box(B,s*.87,1.15+arm*2.3,0,.16,.16,.16,[255,200,150])});
+box(B,0,1.8,0,.66,.6,.36,[220,40,60]);box(B,0,1.85,.37,.16,.52,.02,[245,245,245]);box(B,0,2.3,.4,.24,.08,.03,[255,210,0],{e:1});
+if(!arm){box(B,.87,1.4,.25,.05,.2,.05,[70,70,80]);box(B,.87,1.66,.25,.1,.1,.1,[30,30,30])}
+box(Hd,0,0,0,.46,.45,.42,[255,200,150]);box(Hd,0,.5,-.04,.5,.12,.48,[90,50,20]);
+[-1,1].forEach(s=>box(Hd,s*.18,.1,.43,.07,.11,.02,[20,20,30]));box(Hd,0,-.02,.46,.06,.08,.05,[240,170,130]);
+box(Hd,0,-.22,.43,.17,.03+talk*.07,.02,[140,20,40]);
+// podiums
+PX.forEach((x,k)=>{let top=PC[k],e=0,up=0;
+if(fb){if(k==cor){e=1;top=(t*6|0)%2?[255,255,210]:[90,255,130];up=.15}else if(k==pick)top=[90,90,90];else top=top.map(v=>v*.4)}
+else if(mode=='q'&&kb&&k==sel){up=.1+Math.sin(t*6)*.05;e=1}
+cyl(I,x,0,1.5,.85,1.3+up,8,[210,210,230],null);cyl(I,x,.5,1.5,.9,.3,8,top,null,{e});cyl(I,x,1.3+up,1.5,1,.12,8,top,top,{e});
+if(fb&&k==cor)cyl(I,x,1.45,1.5,.8,8,8,[120,255,160],null,{e:1,a:.22,d:1})});
+star(tf(0,9,-6.8,t*1.5),1,[255,215,0]);
+for(let k=0;k<6;k++){const a=k/6*6.283+t*.4,T=tf(Math.cos(a)*8,6+Math.sin(t*2+k)*.3,-3+Math.sin(a)*3.5,t*3+k);disc(T,.45,8,[255,190,0]);disc(T,.3,8,[255,235,120],.02);disc(T,.3,8,[255,235,120],-.02)}
+parts.forEach(o=>disc(tf(o.x,o.y,o.z,o.r),.12,4,o.c,0,{e:1}))}
+function size(){const s=Math.sqrt(76800/(innerWidth*innerHeight));W=cv.width=Math.round(innerWidth*s);H=cv.height=Math.round(innerHeight*s);FL=Math.min(W*.85,H*1.1);CX=W/2;CY=H*(W<H?.44:.48)}
+function frame(ms){const t=ms/1000,dt=Math.min(.05,t-last);last=t;let p,l;
+if(mode=='title'){const a=Math.sin(t*.2)*1.1;p=[Math.sin(a)*12,5.5+Math.sin(t*.4),-3+Math.cos(a)*13];l=[0,2.5,-3]}
+else if(mode=='fb'){const x=PX[cor];p=[x*.4,3.6,9.5];l=[x*.5,1.8,-.5]}
+else if(mode=='end'){p=[Math.sin(t*.4)*5,3.2,7.5];l=[0,2.8,-3]}
+else{p=[Math.sin(t*.35)*1.2,4.2,11];l=[0,2,-1.5]}
+if(W<H){p[2]+=4;p[1]+=1.5}
+const k=Math.min(1,dt*2.5);for(let i=0;i<3;i++){cp[i]+=(p[i]-cp[i])*k;ct[i]+=(l[i]-ct[i])*k}
+const f=nrm(sub(ct,cp)),r=nrm(crs(f,[0,1,0]));C={p:cp,f,r,u:crs(r,f)};
+parts=parts.filter(o=>{o.vy=Math.max(o.vy-5*dt,-2.2);o.x+=o.vx*dt;o.y+=o.vy*dt;o.z+=o.vz*dt;o.r+=dt*6;return o.y>0});
+scene(t);const gr=g.createLinearGradient(0,0,0,H);gr.addColorStop(0,'#05020f');gr.addColorStop(1,'rgb(26,10,52)');g.fillStyle=gr;g.fillRect(0,0,W,H);draw();
+txt(mode=='title'?'OPUS 5.5':mode=='end'?score+'/'+Q.length:'Q'+(qi+1),[0,4.6,-6.95],mode=='title'?1.1:2.1,'#ffe14a');
+if(mode!='title')PX.forEach((x,k)=>txt(L[k],[x,1,2.45],.6,'#fff'));
+requestAnimationFrame(frame)}
+/* ---------- game flow ---------- */
+function beep(f,d=.08,ty='square'){if(!snd)return;try{AC=AC||new(window.AudioContext||window.webkitAudioContext);const n=AC.currentTime;
+f.forEach((h,i)=>{const o=AC.createOscillator(),v=AC.createGain(),s=n+i*d;o.type=ty;o.frequency.value=h;v.gain.setValueAtTime(.05,s);v.gain.exponentialRampToValueAtTime(.001,s+d*1.6);o.connect(v);v.connect(AC.destination);o.start(s);o.stop(s+d*1.7)})}catch(e){}}
+function flash(c){fx.style.transition='none';fx.style.background=c;fx.style.opacity=.45;void fx.offsetWidth;fx.style.transition='opacity .7s';fx.style.opacity=0}
+function confetti(){for(let i=0;i<90;i++)parts.push({x:(Math.random()-.5)*14,y:8+Math.random()*5,z:-4+Math.random()*7,vx:Math.random()-.5,vy:0,vz:Math.random()-.5,r:Math.random()*6,c:PAL[i%4]})}
+const act=fn=>{const n=Date.now();if(n-lock>250){lock=n;fn()}},now=()=>performance.now()/1000;
+function hi(){[...ans.children].forEach((b,i)=>b.classList.toggle('sel',kb&&mode=='q'&&i==sel))}
+function menu(html,label,fn){card.innerHTML=html;fbx.hidden=true;ans.className='one';ans.innerHTML=`<button class="b" id="go"><span class="k">▶</span><span>${label}</span></button>`;$('go').onclick=()=>act(fn)}
+function render(){const d=Q[qi],o=[0,1,2,3];for(let i=3;i>0;i--){const j=Math.random()*(i+1)|0;[o[i],o[j]]=[o[j],o[i]]}
+order=o;cor=o.indexOf(0);mode='q';pick=-1;sel=0;qT=now();$('qn').textContent=`QUESTION ${qi+1}/${Q.length}`;fbx.hidden=true;
+card.innerHTML=`<p class="q">${d.q}</p>`;ans.className='';
+ans.innerHTML=o.map((a,k)=>`<button class="b" data-k="${k}" style="--c:rgb(${PC[k]})"><span class="k">${L[k]}</span><span>${d.a[a]}</span></button>`).join('');
+hi();if(kb)ans.children[0].focus({preventScroll:true});beep([520,660],.07)}
+function answer(k){if(mode!='q')return;pick=k;mode='fb';evT=now();evOk=k==cor;
+if(evOk){score++;confetti();beep([523,659,784,1047],.08)}else beep([300,220,150],.14,'sawtooth');
+flash(evOk?'#3f6':'#f33');[...ans.children].forEach((b,i)=>b.classList.add(i==cor?'ok':i==k?'no':'gone'));$('sc').textContent='★ '+score;
+fbx.className='panel '+(evOk?'good':'bad');fbx.hidden=false;
+fbx.innerHTML=`<h2>${evOk?'CORRECT!':'WHOOPS!'}</h2><p>${Q[qi].x}</p><button class="b nx" id="nx">${qi<Q.length-1?'NEXT ▶':'RESULTS ▶'}</button>`;
+$('nx').onclick=()=>act(next);$('nx').focus({preventScroll:true})}
+function next(){if(++qi<Q.length)render();else end()}
+function start(){qi=0;score=0;$('sc').textContent='★ 0';render()}
+function end(){mode='end';$('qn').textContent='RESULTS';const n=Q.length,r=score==n?'SUPERSTAR!':score>=6?'GREAT RUN!':score>=4?'NOT BAD!':'KEEP PRACTICING!';
+menu(`<div class="logo" style="font-size:clamp(32px,8vw,60px)">${r}</div><p class="big">${'★'.repeat(score)}<span style="opacity:.3">${'★'.repeat(n-score)}</span></p><p class="sub">You scored ${score} out of ${n} on Claude Opus 5.5. ${score==n?'Flawless! You know your context windows from your cache reads.':'Play again to collect every star.'}</p>`,'PLAY AGAIN',start);
+if(score>=n/2){confetti();beep([392,523,659,784,1047],.1)}else beep([392,330,262],.15,'triangle')}
+function title(){mode='title';$('qn').textContent='READY?';
+menu(`<div class="logo">OPUS 5.5<small>QUIZ SHOW 64</small></div><p class="sub">${Q.length} questions about Anthropic's Claude Opus 5.5. Pick the right podium and collect stars!</p><p class="tip">Keyboard: 1-4 or A-D to answer, arrows + Enter to choose, M toggles sound. Phone: just tap.</p><p class="blink">PRESS START</p>`,'START',start)}
+function toggleSound(){snd=!snd;$('snd').textContent='♪ '+(snd?'ON':'OFF')}
+ans.onclick=e=>{const b=e.target.closest('[data-k]');if(b)act(()=>answer(+b.dataset.k))};
+ans.addEventListener('focusin',e=>{const b=e.target.closest('[data-k]');if(b){sel=+b.dataset.k;hi()}});
+$('snd').onclick=toggleSound;
+addEventListener('pointerdown',()=>{kb=false;hi()});
+addEventListener('keydown',e=>{const k=e.key.toLowerCase();if(k=='m')return toggleSound();if(k=='tab'){kb=true;return}
+let n='1234'.indexOf(k);if(n<0)n='abcd'.indexOf(k);
+if(mode=='q'){if(n>=0&&k.length==1){e.preventDefault();kb=true;return act(()=>answer(n))}
+const m={arrowleft:-1,arrowright:1,arrowup:-2,arrowdown:2}[k];
+if(m){e.preventDefault();kb=true;sel=(sel+m+4)%4;ans.children[sel].focus({preventScroll:true});hi();beep([440],.03);return}
+if(k=='enter'||k==' '){e.preventDefault();kb=true;act(()=>answer(sel))}}
+else if(k=='enter'||k==' '){e.preventDefault();kb=true;act(mode=='fb'?next:start)}});
+addEventListener('resize',size);size();title();requestAnimationFrame(frame);
+</script>
+</body>
+</html>

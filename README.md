@@ -94,6 +94,20 @@ in `notes/_media/`. Run cells in Obsidian to refresh their outputs, and give eac
 generated image descriptive alt text. The `notebook.python` frontmatter setting
 selects the interpreter relative to the article's directory.
 
+Model demos can use [Notebook HTML](libraries/notebook-html/README.md) to save a
+completed model response and display it as an interactive notebook output. Keep
+the vendor SDK call in the article, then call `render_anthropic_html(response,
+"../_media/example.html")`. The helper stores HTML and usage, and keeps scripts
+inside a sandboxed frame. It does not issue API calls. `load_html(path)` displays
+an existing result without generating again. Build its downloadable wheel in a
+temporary directory, then copy it into `notes/_media/` (uv puts a `.gitignore`
+in its build output directory):
+
+```bash
+uv build --wheel libraries/notebook-html --out-dir /tmp/notebook-html-dist
+cp /tmp/notebook-html-dist/notesbylex_notebook_html-0.1.1-py3-none-any.whl notes/_media/
+```
+
 Pelican's local `markdown_reader` renders these files as ordinary Markdown and
 passes captured headings to the TOC plugin. Builds display the saved outputs
 without executing code or loading the Jupytext/nbconvert reader. TF-IDF and

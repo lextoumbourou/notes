@@ -18,4 +18,4 @@ See also [Multi-Agent Systems](multi-agent-systems.md).
 Papers:
 
 * [The Landscape of Emerging AI Agent Architectures for Reasoning, Planning, and Tool Calling: A Survey](../../../permanent/the-landscape-of-emerging-ai-agent-architectures-for-reasoning-planning-and-tool-calling-a-survey.md)
-* [ReAct](../../../permanent/react-agent.md)
+* [ReAct](react-agent.md)

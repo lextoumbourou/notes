@@ -27,7 +27,7 @@ The paper's findings are not mind-blowing: the right harness depends on the mode
 
 The authors build a lightweight harness from scratch, since many off-the-shelf harnesses have intermingled components, making them hard to test in isolation.
 
-The harness follows the [ReAct](../../../permanent/react-agent.md) loop: reasoning, action and observation. They also include fixed components like workspace access controls and stuck detection.
+The harness follows the [ReAct](react-agent.md) loop: reasoning, action and observation. They also include fixed components like workspace access controls and stuck detection.
 
 ### Planning
 
