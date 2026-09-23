@@ -1,13 +1,14 @@
 ---
 title: NVIDIA Nemotron 3
 date: 2025-12-15 00:00
-modified: 2026-09-23 06:08
+modified: 2026-09-24 07:49
 status: hidden
 category: model
 summary: NVIDIA's family of open-weight reasoning models, combining Mamba, attention and mixture-of-experts layers for efficient agent workloads.
 tags:
   - ModelRelease
   - OpenWeightLLM
+  - ReasoningModels
 ---
 
 **NVIDIA Nemotron 3** is a family of open-weight models for reasoning, coding and agent tasks, [announced on 15 December 2025](https://research.nvidia.com/labs/nemotron/Nemotron-3/). Nano launched first, with Super and Ultra following in 2026.

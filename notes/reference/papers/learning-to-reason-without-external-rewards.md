@@ -1,7 +1,7 @@
 ---
 title: Learning to Reason without External Rewards
 date: 2025-05-28 00:00
-modified: 2026-09-13 10:34
+modified: 2026-09-24 07:49
 cover: /_media/rlif-cover.png
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3lqlfvwvszm2a
 mastodon_post: https://fedi.notesbylex.com/@lex/114587542716347545
@@ -12,6 +12,7 @@ tags:
 - ReinforcementLearning
 - RewardModeling
 - LargeLanguageModels
+- ReasoningModels
 paper_title: "Learning to Reason without External Rewards"
 paper_url: https://arxiv.org/abs/2505.19590v1
 paper_authors: Xuandong Zhao, Zhewei Kang, Aosong Feng, Sergey Levine, Dawn Song

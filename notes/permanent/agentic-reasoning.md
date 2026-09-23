@@ -2,7 +2,7 @@
 category: note
 title: Agentic Reasoning
 date: 2024-08-25 00:00
-modified: 2024-08-25 00:00
+modified: 2026-09-24 07:34
 summary: an approach to utilising LLMs that involve multi-state interactions.
 cover: /_media/agentic-reasoning-overview.png
 hide_cover_in_article: true
@@ -14,6 +14,8 @@ tags:
 **Agentic Reasoning** refers to strategies in which [Large Language Models](large-language-models.md) can route between states like planning, reflecting, observing, and utilising tools, allowing them to take actions and handle much more complex tasks. Unlike traditional LLM approaches focusing on single-turn responses, agentic reasoning involves multi-step interactions, enabling the model to dynamically adjust its behaviour based on context and goals.
 
 LLMs are called [AI Agents](ai-agents.md) within this framework. Agents can take on different roles or states, like planning actions, using tools, reflecting on their own outputs, and storing information for long-term use. In [Multi-Agent Systems](multi-agent-systems.md), an agent can collaborate with other agents.
+
+[LLM Reasoning](llm-reasoning.md) can be part of an agentic system. Generating intermediate reasoning tokens alone does not make a system agentic.
 
 ![agentic-reasoning-overview.png](../_media/agentic-reasoning-overview.png)
 

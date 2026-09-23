@@ -1,12 +1,13 @@
 ---
 title: Qwen3.8-Max
 date: 2026-08-03 14:55
-modified: 2026-09-23 06:08
+modified: 2026-09-24 07:49
 category: model
 summary: "A new frontier model from the Qwen team"
 tags:
   - ModelRelease
   - OpenWeightLLM
+  - ReasoningModels
 ---
 
 **Qwen3.8-Max** is a new 2.4T-parameter [Mixture of Experts Model](mixture-of-experts-model.md) from the Qwen team at Alibaba Cloud, with 95 billion active parameters.

@@ -2,8 +2,10 @@
 title: "GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models"
 date: 2024-10-12 00:00
 category: paper
-modified: 2024-10-12 00:00
+modified: 2026-09-24 07:49
 status: draft
+tags:
+- ReasoningModels
 ---
 
 Notes from paper [GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models](https://arxiv.org/abs/2410.05229) by Iman Mirzadeh, Keivan Alizadeh, Hooman Shahrokhi, Oncel Tuzel, Samy Bengio and Mehrdad Farajtabar

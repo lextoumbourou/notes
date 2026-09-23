@@ -1,8 +1,10 @@
 ---
 title: Absolute Zero Reasoner
 date: 2025-05-12 00:00
-modified: 2025-05-12 00:00
+modified: 2026-09-24 07:49
 status: draft
+tags:
+- ReasoningModels
 ---
 
 

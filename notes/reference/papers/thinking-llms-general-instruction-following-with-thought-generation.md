@@ -1,10 +1,11 @@
 ---
 title: "Thinking LLMs: General Instruction Following with Thought Generation (Oct 2024)"
 date: 2024-10-16 00:00
-modified: 2024-10-16 10:00
+modified: 2026-09-24 07:49
 tags:
 - AgenticReasoning
 - System2Prompting
+- ReasoningModels
 cover: /_media/thinking-llms-general-instruction-following-with-thought-generation-cover.png
 hide_cover_in_article: true
 summary: a prompting and fine-tuning method that enables LLMs to engage in a "thinking" process before generating responses

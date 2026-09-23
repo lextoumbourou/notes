@@ -1,12 +1,13 @@
 ---
 title: Kimi K3
 date: 2026-07-17 00:00
-modified: 2026-09-23 06:08
+modified: 2026-09-24 07:49
 category: model
 summary: "Moonshot AI's 2.8T open-weight frontier model for coding and knowledge work."
 tags:
   - ModelRelease
   - OpenWeightLLM
+  - ReasoningModels
 ---
 
 **Kimi K3** is a new 2.8-trillion-parameter native multimodal flagship [Mixture of Experts Model](mixture-of-experts-model.md) from Beijing-based Moonshot AI. It is by far the largest open-weight model released to date.

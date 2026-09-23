@@ -1,8 +1,10 @@
 ---
 title: Group Relative Policy Optimisation
 date: 2025-01-31 00:00
-modified: 2025-01-31 00:00
+modified: 2026-09-24 07:49
 status: draft
+tags:
+- ReasoningModels
 ---
 
 Group Relative Policy Optimization (GRPO) is a reinforcement learning algorithm to improve the reasoning capabilities of LLMs.

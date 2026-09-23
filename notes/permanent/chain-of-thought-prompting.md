@@ -1,16 +1,17 @@
 ---
 title: Chain-of-Thought Prompting
 date: 2024-09-29 00:00
-modified: 2024-09-29 00:00
+modified: 2026-09-24 07:49
 status: draft
 tags:
 - LargeLanguageModels
 - LLMReasoning
+- ReasoningModels
 ---
 
 **Chain-of-Thought Prompting** is a [Few-Shot Prompting](few-shot-prompting.md) technique where model is given examples of step-by-step reasoning rather than standard question and answer examples, encouraging the model to think through a problem before returning an answer.
 
-Part of the [Planning](planning.md) category of [Agentic Reasoning](agentic-reasoning.md) design patterns.
+A technique for eliciting [LLM Reasoning](llm-reasoning.md), which can also support [Planning](planning.md) in [Agentic Reasoning](agentic-reasoning.md) systems.
 
 Described in paper [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](../../../reference/chain-of-thought-prompting-elicits-reasoning-in-large-language-models.md).
 

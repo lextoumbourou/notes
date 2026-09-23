@@ -1,19 +1,20 @@
 ---
 title: "Large Language Models are Zero-Shot Reasoners (May 2022)"
 date: 2025-01-08 00:00
-modified: 2025-01-08 00:00
+modified: 2026-09-24 07:49
 summary: improve zero-shot prompt performance of LLMs by adding “Let’s think step by step” before each answer
 category: reference/papers
 tags:
 - LargeLanguageModels
 - PromptingTechniques
+- ReasoningModels
 cover: /_media/large-language-models-are-zero-shot-reasoners-cover.png
 hide_cover_in_article: true
 ---
 
 ## Overview
 
-Language models have shown impressive capabilities in few-shot learning, where they learn from a handful of examples. However, this paper from early 2023 shows that large language models (LLMs) can perform complex reasoning tasks with zero examples - they just need to be asked to [Think Step-by-Step](../../permanent/think-step-by-step.md)
+Language models have shown impressive capabilities in few-shot learning, where they learn from a handful of examples. However, this paper, [first released in May 2022](https://arxiv.org/abs/2205.11916), shows that large language models (LLMs) can perform complex reasoning tasks with zero examples - they just need to be asked to [Think Step-by-Step](../../permanent/think-step-by-step.md)
 
 ## Background
 

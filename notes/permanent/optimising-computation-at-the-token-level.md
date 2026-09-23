@@ -1,12 +1,13 @@
 ---
 title: "Optimising Computation At The Token-Level"
 date: 2025-07-21 00:00
-modified: 2025-07-27 00:00
+modified: 2026-09-24 07:49
 summary: Optimising computation at the token-level
 tags:
 - LargeLanguageModels
 - LatentReasoning
 - TestTimeScaling
+- ReasoningModels
 cover: /_media/mor-article-cover.png
 hide_cover_in_article: true
 category: reference/papers

@@ -2,7 +2,7 @@
 title: Claude Opus 5.5
 slug: claude-opus-5-5
 date: 2026-09-22 00:00
-modified: 2026-09-23 12:20
+modified: 2026-09-24 07:49
 category: model
 summary: Anthropic's Opus 5.5 improves coding and computer use while cutting token prices. Includes a runnable example that turns this article into an N64-style quiz gameshow.
 cover: /_media/claude-opus-5-5-cover.jpg
@@ -10,6 +10,7 @@ cover_credits: Photo by <a href="https://unsplash.com/@daniel_rtsn?utm_source=un
 tags:
   - ModelRelease
   - Claude
+  - ReasoningModels
 notebook:
   timeout: 600000
   outputLimit: 200
