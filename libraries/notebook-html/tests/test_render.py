@@ -4,7 +4,7 @@ from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 import unittest
 
-from notebook_html import load_html, read_article, render_anthropic_html, render_html
+from notebook_html import load_html, read_article, render_anthropic_html, render_openai_html, render_html
 
 PAGE = '<!doctype html><html lang="en"><body><script>window.ready=true</script>Quiz</body></html>'
 
@@ -46,6 +46,36 @@ class RenderingTests(unittest.TestCase):
             with self.subTest(text=text), self.assertRaises(ValueError):
                 render_html(text, self.path)
         self.assertEqual(self.path.read_text(), 'original')
+
+    def test_openai_saves_final_text_and_billing_details_only(self):
+        response = {
+            'model': 'gpt-6-sol', 'status': 'completed',
+            'reasoning': {'effort': 'high'}, 'service_tier': 'default',
+            'output': [
+                {'type': 'reasoning', 'encrypted_content': 'secret'},
+                {'type': 'message', 'content': [{'type': 'output_text', 'text': PAGE}]},
+            ],
+            'usage': {'input_tokens': 2000, 'input_tokens_details': {
+                'cached_tokens': 500, 'cache_write_tokens': 1000},
+                'output_tokens': 100, 'output_tokens_details': {'reasoning_tokens': 60}},
+        }
+        render_openai_html(response, self.path)
+        self.assertEqual(self.path.read_text(), PAGE)
+        record = json.loads(self.path.with_suffix('.json').read_text())
+        self.assertEqual(record['reasoning_effort'], 'high')
+        self.assertEqual(record['usage'], response['usage'])
+        self.assertNotIn('secret', json.dumps(record))
+
+    def test_incomplete_or_refused_openai_response_preserves_artifacts(self):
+        self.path.write_text('original')
+        self.path.with_suffix('.json').write_text('original receipt')
+        for status in ('incomplete', 'failed', 'cancelled', None, 'completed'):
+            with self.subTest(status=status), self.assertRaises(ValueError):
+                render_openai_html({'status': status, 'output': [
+                    {'type': 'message', 'content': [{'type': 'refusal', 'refusal': 'No'}]},
+                ]}, self.path)
+        self.assertEqual(self.path.read_text(), 'original')
+        self.assertEqual(self.path.with_suffix('.json').read_text(), 'original receipt')
 
     def test_json_response_and_fenced_html(self):
         render_anthropic_html({'model': 'test', 'stop_reason': 'end_turn', 'usage': {},

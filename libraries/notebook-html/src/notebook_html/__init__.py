@@ -9,7 +9,10 @@ from pathlib import Path
 import re
 from typing import Any
 
-__all__ = ["HTMLPreview", "read_article", "render_html", "render_anthropic_html", "load_html"]
+__all__ = [
+    "HTMLPreview", "read_article", "render_html", "render_anthropic_html",
+    "render_openai_html", "load_html",
+]
 
 
 def read_article(path: str | Path, *, before: str = "Hands-on example") -> str:
@@ -99,6 +102,39 @@ def render_anthropic_html(
         "model": _field(message, "model"),
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "stop_reason": reason,
+        "usage": usage,
+    }
+    receipt = json.dumps(record, indent=2) + "\n"
+    preview = render_html(text, path, height=height, title=title)
+    Path(path).with_suffix(".json").write_text(receipt, encoding="utf-8")
+    return preview
+
+
+def render_openai_html(
+    response: Any, path: str | Path, *, height: int = 900, title: str = "Generated HTML"
+) -> HTMLPreview:
+    """Save a completed Responses API result's text and usage, excluding reasoning."""
+    status = _field(response, "status")
+    if status != "completed":
+        raise ValueError(f"OpenAI response is incomplete (status={status!r})")
+    text = "\n".join(
+        _field(block, "text", "")
+        for item in _field(response, "output", [])
+        if _field(item, "type") == "message"
+        for block in _field(item, "content", [])
+        if _field(block, "type") == "output_text"
+    )
+    usage = _field(response, "usage", {})
+    if hasattr(usage, "model_dump"):
+        usage = usage.model_dump(mode="json")
+    reasoning = _field(response, "reasoning", {})
+    record = {
+        "provider": "openai",
+        "model": _field(response, "model"),
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "status": status,
+        "reasoning_effort": _field(reasoning, "effort"),
+        "service_tier": _field(response, "service_tier"),
         "usage": usage,
     }
     receipt = json.dumps(record, indent=2) + "\n"

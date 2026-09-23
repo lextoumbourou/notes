@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "notesbylex-notebook-html"
-version = "0.1.1"
+version = "0.1.2"
 description = "Save model-generated HTML and display it in Markdown Notebook or Jupyter."
 readme = "README.md"
 requires-python = ">=3.10"

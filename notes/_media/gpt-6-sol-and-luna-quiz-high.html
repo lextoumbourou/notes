@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Million Token Show</title>
+<style>
+:root{font-family:Trebuchet MS,Arial,sans-serif;color:#fff;background:#101028}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;padding:18px;background:radial-gradient(circle at 50% 0,#413b83 0,#1b1941 43%,#101028 100%)}
+button{font:inherit;cursor:pointer}button:focus-visible{outline:3px solid #ffe76c;outline-offset:3px}
+.game{max-width:920px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.brand{font-size:12px;font-weight:900;letter-spacing:.22em;color:#8ef3ef}.tag{border:2px solid #8ef3ef;padding:6px 10px;font:700 11px monospace;color:#8ef3ef;transform:rotate(2deg)}
+h1{margin:0 0 15px;font-size:clamp(30px,6vw,62px);line-height:.97;letter-spacing:-.055em;text-transform:uppercase;color:#ffe36e;text-shadow:3px 3px #ec688e,6px 6px #39275c,9px 9px #100d2a}
+.hud{display:flex;align-items:center;gap:15px;padding:10px 14px;background:#10122e;border:3px solid #7772af;box-shadow:5px 5px 0 #09091b;font:800 13px monospace}.hud strong{color:#ffe36e}.pips{display:flex;flex:1;justify-content:center;gap:5px}.pip{width:clamp(12px,3vw,28px);height:11px;background:#333354;border:2px solid #65628c;transform:skew(-12deg)}.pip.done{background:#66eac9;border-color:#c8fff0}.pip.now{background:#ffe36e;border-color:#fff5bc}
+.stage{height:245px;margin-top:13px;position:relative;overflow:hidden;perspective:700px;border:4px solid #7772af;background:radial-gradient(ellipse at 50% 92%,#7665aa 0,#292453 50%,#131533 90%);box-shadow:7px 7px 0 #09091b}
+.stage:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#fff9 1px,transparent 2px);background-size:43px 36px;opacity:.3}.sign{position:absolute;top:13px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#251d50;border:2px solid #c5a8ef;padding:4px 13px;color:#ffdb75;font:900 11px monospace;letter-spacing:.18em;z-index:3}
+.beam{position:absolute;top:-35px;width:240px;height:240px;background:linear-gradient(#fff9d448,transparent);clip-path:polygon(46% 0,54% 0,100% 100%,0 100%);opacity:.6}.beam.a{left:3%;transform:rotate(-19deg)}.beam.b{right:3%;transform:rotate(19deg)}
+.floor{position:absolute;left:-20%;bottom:-91px;width:140%;height:210px;transform:rotateX(64deg);transform-origin:center bottom;background:repeating-linear-gradient(90deg,transparent 0 47px,#b29bcf77 48px 50px),repeating-linear-gradient(0deg,#44346d 0 47px,#b29bcf77 48px 50px);border-top:6px solid #db89d0}
+.podium{position:absolute;bottom:14px;width:155px;height:59px;z-index:2;clip-path:polygon(12% 0,88% 0,100% 23%,100% 78%,82% 100%,18% 100%,0 78%,0 23%);display:grid;place-items:center;font:900 15px monospace;letter-spacing:.13em;text-shadow:2px 2px #242044}
+.sol{left:12%;background:linear-gradient(#ffe36e 0 30%,#c86d54 31% 76%,#854175 77%)}.luna{right:12%;background:linear-gradient(#a1f0ed 0 30%,#5b78ca 31% 76%,#3b397d 77%)}
+.head{position:absolute;bottom:77px;width:69px;height:70px;z-index:2;clip-path:polygon(24% 0,76% 0,100% 24%,100% 76%,76% 100%,24% 100%,0 76%,0 24%);background:radial-gradient(circle at 35% 46%,#353054 0 3px,transparent 4px),radial-gradient(circle at 65% 46%,#353054 0 3px,transparent 4px),#ffda60;border:5px solid #fff1a1}.head:after{content:"";position:absolute;left:40%;top:64%;width:20%;height:5px;border-bottom:3px solid #563852;border-radius:50%}.solhead{left:calc(12% + 43px)}.lunahead{right:calc(12% + 43px);background:radial-gradient(circle at 35% 46%,#252e64 0 3px,transparent 4px),radial-gradient(circle at 65% 46%,#252e64 0 3px,transparent 4px),#8de9ec;border-color:#d3ffff}
+.cube{position:absolute;z-index:2;left:calc(50% - 39px);top:78px;width:78px;height:78px;transform-style:preserve-3d;animation:float 3s ease-in-out infinite}.face{position:absolute;width:78px;height:78px;display:grid;place-items:center;border:4px solid #ffe89a;background:#ee6891;color:#fff;font:900 49px monospace;text-shadow:3px 3px #773870;box-shadow:inset -9px -9px #a84082}.front{transform:translateZ(39px)}.right{transform:rotateY(90deg) translateZ(39px);background:#7a69d2}.topface{transform:rotateX(90deg) translateZ(39px);background:#ffdc69}
+@keyframes float{0%,100%{transform:translateY(0) rotateX(-16deg) rotateY(-25deg)}50%{transform:translateY(-11px) rotateX(-12deg) rotateY(-10deg)}}
+.panel{position:relative;z-index:4;margin:-5px 8px 25px;padding:clamp(20px,4vw,34px);background:#25254e;border:4px solid #aaa0d5;box-shadow:7px 7px 0 #0b0a20,inset 0 4px #494675;min-height:245px}.eyebrow{font:900 12px monospace;letter-spacing:.15em;color:#8ef3ef;text-transform:uppercase}.panel h2{margin:10px 0 22px;font-size:clamp(22px,3.4vw,32px);line-height:1.2}.panel p{line-height:1.55;color:#e2e0fa}.choices{display:grid;grid-template-columns:1fr 1fr;gap:11px}.choice{display:flex;align-items:flex-start;gap:11px;width:100%;min-height:71px;padding:13px;text-align:left;color:#fff;background:#343560;border:2px solid #7779b5;box-shadow:3px 3px 0 #13132e;font-weight:700;line-height:1.35}.choice:hover:not(:disabled),.choice.cursor{background:#474b83;border-color:#ffe36e}.choice:disabled{cursor:default}.choice.good{background:#205d5b;border-color:#86f4c8}.choice.bad{background:#733c62;border-color:#ff9ab3}.letter{flex:none;display:grid;place-items:center;width:25px;height:25px;background:#ffe36e;color:#302449;font:900 15px monospace;clip-path:polygon(15% 0,85% 0,100% 50%,85% 100%,15% 100%,0 50%)}
+.feedback{margin-top:19px;padding:15px 17px;background:#173f48;border-left:5px solid #86f4c8}.feedback.wrong{background:#53324f;border-color:#ff9ab3}.feedback strong{color:#ffe36e;text-transform:uppercase;letter-spacing:.08em}.feedback p{margin:6px 0 0}.action{margin-top:18px;padding:13px 24px;border:3px solid #fff0a0;background:#ffe36e;color:#292047;box-shadow:4px 4px 0 #a34f82;font-weight:900;text-transform:uppercase;letter-spacing:.06em}.action:hover{background:#fff1aa;transform:translateY(-2px)}.hint{font:12px monospace;color:#bfbce1!important}.finalscore{font:900 clamp(45px,9vw,80px) monospace;color:#ffe36e;text-shadow:4px 4px #a34f82}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:620px){body{padding:12px}.tag{display:none}.hud{gap:7px;font-size:11px;padding:9px}.stage{height:195px}.sign{font-size:9px}.floor{bottom:-105px}.podium{width:104px;height:48px;font-size:12px}.sol{left:5%}.luna{right:5%}.head{width:51px;height:53px;bottom:61px}.solhead{left:calc(5% + 26px)}.lunahead{right:calc(5% + 26px)}.cube{top:68px}.choices{grid-template-columns:1fr}.choice{min-height:54px}.panel{margin-left:2px;margin-right:7px}}
+@media(prefers-reduced-motion:reduce){.cube{animation:none;transform:rotateX(-16deg) rotateY(-25deg)}}
+</style>
+</head>
+<body>
+<main class="game">
+  <header class="top"><span class="brand">★ LOW-POLY LEARNING ARENA ★</span><span class="tag">SOLO PLAYER · 8 ROUNDS</span></header>
+  <h1>The Million<br>Token Show</h1>
+  <div class="hud"><span id="round">ROUND 00/08</span><div class="pips" id="pips" aria-hidden="true"></div><span>SCORE <strong id="score">00</strong></span></div>
+  <div class="stage" aria-hidden="true">
+    <div class="beam a"></div><div class="beam b"></div><div class="sign">GPT 6 SOL + LUNA</div><div class="floor"></div>
+    <div class="head solhead"></div><div class="head lunahead"></div>
+    <div class="podium sol">SOL</div><div class="podium luna">LUNA</div>
+    <div class="cube"><div class="face front">?</div><div class="face right">6</div><div class="face topface">★</div></div>
+  </div>
+  <section class="panel" id="panel" aria-label="Quiz game"></section>
+  <div class="sr" id="announcement" role="status" aria-live="polite"></div>
+</main>
+<script>
+const questions=[
+  {cat:"Opening night",q:"What happened on the day GPT 6 Sol and Luna were released?",a:["Claude Opus 5.5 also launched.","GPT 5.6 Terra was discontinued.","OpenAI removed reasoning controls.","The models became text-only."],correct:0,why:"Sol and Luna arrived on 22 September 2026, the same day as Claude Opus 5.5."},
+  {cat:"Context check",q:"Which limits apply to both Sol and Luna?",a:["1,050,000-token context; 922,000 maximum input; 128,000 maximum output.","922,000-token context; 128,000 maximum input; unlimited output.","128,000-token context; 922,000 maximum output.","1,050,000-token maximum output; no input limit."],correct:0,why:"Both have a 1,050,000-token context window, with limits of 922,000 input and 128,000 output tokens."},
+  {cat:"Reasoning rules",q:"For tools with reasoning enabled, which setup matches the article?",a:["Use the Responses API; medium is the default reasoning effort.","Use only the Chat Completions API; max is the default.","Tools require reasoning effort set to none.","Reasoning is always adaptive and cannot be turned off."],correct:0,why:"Use the Responses API for tools with reasoning enabled. Medium is the API default, and unlike Opus 5.5, these models still offer none."},
+  {cat:"Benchmark board",q:"Which reported DeepSWE v1.1 result is highest?",a:["Sol at 68.8%.","Luna at 66.6%.","Opus 5.5 at 74.2%.","All three tie at 74.2%."],correct:2,why:"Opus 5.5 leads the reported results at 74.2%. These are developer reports, not tests run with an identical coding harness."},
+  {cat:"Workflow wager",q:"What is the reported AutomationBench trade-off between Sol and Opus 5.5?",a:["Sol costs less per attempted task but succeeds less often.","Sol costs more per task and succeeds more often.","They have identical success rates and costs.","Sol has no reported cost per task."],correct:0,why:"Sol scored 33.2% at $0.27 per attempted task; Opus 5.5 scored 40.0% at $1.28. Effort labels differ across providers, and cost per attempt is not cost per success."},
+  {cat:"Comparison trap",q:"Why should Sol's 60.5% and Opus 5.5's 48.7% OSWorld figures NOT be ranked directly?",a:["They measure different metrics and use different task setups.","Both figures measure API latency, not computer use.","Sol was tested on DeepSWE instead.","The figures use different currencies."],correct:0,why:"Sol's 60.5% is partial credit. Opus's 48.7% is strict success, and Anthropic says its updated tasks and setup prevent direct comparison."},
+  {cat:"Price is right",q:"At standard rates for requests with at most 272K input tokens, which comparison is correct?",a:["Sol is half Opus 5.5's uncached input and output price; cache reads cost the same.","Sol and Opus have identical uncached input prices.","Sol's cache reads cost half as much as Opus's.","Sol's output costs twice as much as Opus's."],correct:0,why:"Sol is $2 versus $4 per million uncached input tokens and $10 versus $20 for output. Both charge $0.20 per million cached input reads."},
+  {cat:"Cache finale",q:"Which statement about GPT 6 caching and long inputs is accurate?",a:["A cacheable prefix needs at least 1,024 visible tokens; above 272K input, higher rates apply to the whole request.","Any repeated passage guarantees a cache hit.","Higher long-input rates apply only to tokens beyond 272K.","Cache writes are free and entries last just five minutes."],correct:0,why:"A prefix needs 1,024 visible tokens, and cache entries last at least 30 minutes after the latest write or reuse. Above 272K input, input and cache rates double and output rates rise 1.5x for the whole request."}
+];
+const panel=document.getElementById("panel"),round=document.getElementById("round"),scoreEl=document.getElementById("score"),pips=document.getElementById("pips"),announcement=document.getElementById("announcement");
+let mode="intro",index=0,score=0,locked=false,cursor=-1;
+function render(){
+  round.textContent=mode==="play"?`ROUND ${String(index+1).padStart(2,"0")}/08`:mode==="end"?"SHOW COMPLETE":"ROUND 00/08";
+  scoreEl.textContent=String(score).padStart(2,"0");
+  pips.innerHTML=questions.map((_,n)=>`<i class="pip ${mode==="end"||n<index?"done":mode==="play"&&n===index?"now":""}"></i>`).join("");
+  if(mode==="intro"){
+    panel.innerHTML=`<div class="eyebrow">★ Welcome, contestant ★</div><h2>Eight rounds. Two new models. One giant context window.</h2><p>Put your reading skills on the podium. Choose an answer to reveal a quick explanation, then move to the next round.</p><button class="action" data-go="start">Start the show ▶</button><p class="hint">Phone: tap answers · Keyboard: 1-4, or arrows + Enter</p>`;
+    return;
+  }
+  if(mode==="end"){
+    const rank=score>=7?"TOKEN TITAN":score>=4?"CACHE CLIMBER":"ROOKIE RUNNER";
+    panel.innerHTML=`<div class="eyebrow">★ Final scoreboard ★</div><h2>${rank}!</h2><div class="finalscore">${score} / ${questions.length}</div><p>The arena is yours. Want another shot at a perfect run?</p><button class="action" data-go="retry">Play again ↻</button>`;
+    return;
+  }
+  const item=questions[index];
+  panel.innerHTML=`<div class="eyebrow">Round ${index+1} / ${questions.length} · ${item.cat}</div><h2 id="question" tabindex="-1">${item.q}</h2><div class="choices">${item.a.map((text,n)=>`<button class="choice ${locked?(n===item.correct?"good":n===cursor?"bad":""):""}" data-choice="${n}" ${locked?"disabled":""}><span class="letter">${"ABCD"[n]}</span><span>${text}</span></button>`).join("")}</div>${locked?`<div class="feedback ${cursor===item.correct?"":"wrong"}"><strong>${cursor===item.correct?"Correct!":"Not quite!"}</strong><p>${item.why}</p></div><button class="action" data-go="next">${index===questions.length-1?"See final score":"Next round"} ▶</button>`:`<p class="hint">Tap an answer, press 1-4, or use arrows + Enter.</p>`}`;
+}
+function choose(n){
+  if(mode!=="play"||locked||n<0||n>3)return;
+  cursor=n;locked=true;if(n===questions[index].correct)score++;
+  render();announcement.textContent=(n===questions[index].correct?"Correct. ":"Not quite. ")+questions[index].why;
+  panel.querySelector("[data-go]").focus();
+}
+function advance(){
+  if(mode==="intro"||mode==="end"){mode="play";index=0;score=0}
+  else if(locked){index++;if(index===questions.length)mode="end"}
+  else return;
+  locked=false;cursor=-1;render();
+  announcement.textContent=mode==="play"?`Round ${index+1}. ${questions[index].q}`:`Final score: ${score} out of ${questions.length}.`;
+  (panel.querySelector("#question")||panel.querySelector("[data-go]")).focus();
+}
+panel.addEventListener("click",e=>{
+  const answer=e.target.closest("[data-choice]"),go=e.target.closest("[data-go]");
+  if(answer)choose(Number(answer.dataset.choice));else if(go)advance();
+});
+document.addEventListener("keydown",e=>{
+  if(e.altKey||e.ctrlKey||e.metaKey)return;
+  if(mode==="play"&&!locked){
+    if(/^[1-4]$/.test(e.key)){e.preventDefault();choose(Number(e.key)-1)}
+    else if(e.key==="ArrowDown"||e.key==="ArrowRight"||e.key==="ArrowUp"||e.key==="ArrowLeft"){
+      e.preventDefault();cursor=(cursor+(e.key==="ArrowUp"||e.key==="ArrowLeft"?3:1))%4;
+      panel.querySelectorAll("[data-choice]").forEach((b,n)=>b.classList.toggle("cursor",n===cursor));
+      panel.querySelectorAll("[data-choice]")[cursor].focus();
+    }else if(e.key==="Enter"&&cursor>=0){e.preventDefault();choose(cursor)}
+  }else if(e.key==="Enter"||e.key===" "){e.preventDefault();advance()}
+});
+render();
+</script>
+</body>
+</html>
