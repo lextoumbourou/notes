@@ -1,7 +1,7 @@
 ---
 title: LLM Reasoning
 date: 2025-07-28 00:00
-modified: 2026-09-24 08:19
+modified: 2026-09-24 09:27
 summary: How LLMs use intermediate reasoning tokens, from chain-of-thought prompting to trained reasoning models, and how this relates to other forms of reasoning.
 cover: /_media/llm-reasoning-chess-knights-hassan-pasha.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@hpzworkz">Hassan Pasha</a> on <a href="https://unsplash.com/photos/black-and-white-chess-knights-7SjEuEF06Zw">Unsplash</a>
@@ -14,9 +14,9 @@ Reasoning, in the context of [LLMs](large-language-models.md), refers to the pro
 
 However, there are also approaches where the outputs are invisible to the user and the model reasons internally. One example is [Latent Reasoning](latent-reasoning.md), which performs intermediate reasoning in hidden representations rather than generating a text token for each step [@haoTrainingLargeLanguage2026].
 
-A landmark paper in the development of LLM reasoning was [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](../../../reference/chain-of-thought-prompting-elicits-reasoning-in-large-language-models.md), first released in January 2022. The researchers showed that giving the model examples with intermediate reasoning steps substantially improved its ability on a range of arithmetic, commonsense and symbolic reasoning tasks [@weiChainOfThoughtPrompting2022].
+A landmark paper in the development of LLM reasoning was [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](../../../reference/chain-of-thought-prompting-elicits-reasoning-in-large-language-models.md), first released in January 2022. The researchers showed that giving the model examples with intermediate reasoning steps substantially improved its ability on a range of arithmetic, commonsense and symbolic reasoning tasks [@weiChainofThoughtPromptingElicits2022].
 
-Later that year, [Large Language Models are Zero-Shot Reasoners (May 2022)](../reference/papers/large-language-models-are-zero-shot-reasoners-may-2022.md) showed that simply prompting the model with "Let's think step by step" before giving an answer could substantially improve its performance on a range of maths and logic tasks, without providing worked examples [@kojimaZeroShotReasoners2022].
+Later that year, [Large Language Models are Zero-Shot Reasoners (May 2022)](../reference/papers/large-language-models-are-zero-shot-reasoners-may-2022.md) showed that simply prompting the model with "Let's think step by step" before giving an answer could substantially improve its performance on a range of maths and logic tasks, without providing worked examples [@kojimaLargeLanguageModels2022].
 
 Later, OpenAI trained its o1 models specifically to reason before giving an answer, using reinforcement learning. The first releases, o1-preview and o1-mini, arrived in September 2024. The o1 API release in December 2024 added a reasoning-effort control, allowing developers to influence how much reasoning the model performs [@openaiO1Model] [@openaiAPIChangelog]. See also [OpenAI o1 System Card](../../../permanent/openai-o1-system-card.md).
 
