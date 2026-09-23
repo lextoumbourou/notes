@@ -29,6 +29,10 @@ source .env/bin/activate
 
 ### Run setup script
 
+Netlify installs Python before running `setup.sh`. Its `PYTHON_VERSION` is set
+to `3.12` in `netlify.toml`, matching `.python-version` and the minimum version
+in `pyproject.toml`. Keep these settings aligned when changing Python versions.
+
 ```
 ./setup.sh
 ```
