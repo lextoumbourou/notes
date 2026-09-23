@@ -7,7 +7,7 @@ tags:
 - AIApproaches
 ---
 
-**Symbolic AI** is an approach to AI which utilises logical reasoning over knowledge-based systems to achieve inference. Considered an alternative to Machine Learning, which utilises statistical models to learn from data.
+**Symbolic AI** is an approach to AI that utilises logical reasoning over knowledge-based systems to achieve inference. Considered an alternative to Machine Learning, which utilises statistical models to learn from data.
 
 Key topics:
 - [Logical Reasoning](logical-reasoning.md)

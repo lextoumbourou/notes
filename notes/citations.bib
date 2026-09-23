@@ -149,6 +149,18 @@
   file = {/Users/lex/code/zotero/storage/KDF6SEQJ/Bito et al. - 2025 - Evaluating Position Bias in Large Language Model Recommendations.pdf;/Users/lex/code/zotero/storage/NVR8XHH4/2508.html}
 }
 
+@misc{brownLanguageModelsAre2020a,
+  title = {Language {{Models}} Are {{Few-Shot Learners}}},
+  author = {Brown, Tom B. and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and Agarwal, Sandhini and {Herbert-Voss}, Ariel and Krueger, Gretchen and Henighan, Tom and Child, Rewon and Ramesh, Aditya and Ziegler, Daniel M. and Wu, Jeffrey and Winter, Clemens and Hesse, Christopher and Chen, Mark and Sigler, Eric and Litwin, Mateusz and Gray, Scott and Chess, Benjamin and Clark, Jack and Berner, Christopher and McCandlish, Sam and Radford, Alec and Sutskever, Ilya and Amodei, Dario},
+  year = 2020,
+  publisher = {arXiv},
+  doi = {10.48550/ARXIV.2005.14165},
+  urldate = {2026-09-23},
+  abstract = {Recent work has demonstrated substantial gains on many NLP tasks and benchmarks by pre-training on a large corpus of text followed by fine-tuning on a specific task. While typically task-agnostic in architecture, this method still requires task-specific fine-tuning datasets of thousands or tens of thousands of examples. By contrast, humans can generally perform a new language task from only a few examples or from simple instructions - something which current NLP systems still largely struggle to do. Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches. Specifically, we train GPT-3, an autoregressive language model with 175 billion parameters, 10x more than any previous non-sparse language model, and test its performance in the few-shot setting. For all tasks, GPT-3 is applied without any gradient updates or fine-tuning, with tasks and few-shot demonstrations specified purely via text interaction with the model. GPT-3 achieves strong performance on many NLP datasets, including translation, question-answering, and cloze tasks, as well as several tasks that require on-the-fly reasoning or domain adaptation, such as unscrambling words, using a novel word in a sentence, or performing 3-digit arithmetic. At the same time, we also identify some datasets where GPT-3's few-shot learning still struggles, as well as some datasets where GPT-3 faces methodological issues related to training on large web corpora. Finally, we find that GPT-3 can generate samples of news articles which human evaluators have difficulty distinguishing from articles written by humans. We discuss broader societal impacts of this finding and of GPT-3 in general.},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords = {Computation and Language (cs.CL),FOS: Computer and information sciences}
+}
+
 @misc{chenSANAVideoEfficientVideo2025,
   title = {{{SANA-Video}}: {{Efficient Video Generation}} with {{Block Linear Diffusion Transformer}}},
   shorttitle = {{{SANA-Video}}},
@@ -338,6 +350,23 @@
   file = {/Users/lex/code/zotero/storage/7AKAHCIP/Grenander - 1952 - On empirical spectral analysis of stochastic processes.pdf}
 }
 
+@misc{haoTrainingLargeLanguage2026,
+  title = {Training {{Large Language Models}} to {{Reason}} in a {{Continuous Latent Space}}},
+  author = {Hao, Shibo and Sukhbaatar, Sainbayar and Su, DiJia and Li, Xian and Hu, Zhiting and Weston, Jason and Tian, Yuandong},
+  year = 2026,
+  month = aug,
+  number = {arXiv:2412.06769},
+  eprint = {2412.06769},
+  primaryclass = {cs.CL},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2412.06769},
+  urldate = {2026-09-23},
+  abstract = {Large language models (LLMs) are typically constrained to reason in the language space, where they express the reasoning process through a chain-of-thought (CoT) to solve complex problems. However, the language space may not always be optimal for reasoning. Most word tokens primarily ensure textual coherence and are not essential for reasoning, while some critical tokens require complex planning and pose challenges to LLMs. To explore the potential of reasoning beyond language, we introduce a new paradigm called Coconut (Chain of Continuous Thought). Coconut utilizes the last hidden state of the LLM as a representation of the reasoning state, termed "continuous thought." Instead of decoding this state into words, we feed it back to the model as the next input embedding directly in the continuous space. This latent reasoning paradigm enables an advanced reasoning pattern, where continuous thoughts can encode multiple alternative next steps, allowing the model to perform a breadth-first search (BFS) rather than committing prematurely to a single deterministic path as in CoT. Coconut outperforms CoT on logical reasoning tasks that require substantial search during planning and achieves a better trade-off between accuracy and efficiency.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Computation and Language},
+  file = {/Users/lex/code/zotero/storage/G46UJJ7R/Hao et al. - 2026 - Training Large Language Models to Reason in a Continuous Latent Space.pdf;/Users/lex/code/zotero/storage/HVNNTPV3/2412.html}
+}
+
 @incollection{heathCurrentStatusDigital1998,
   title = {Current {{Status}} of the {{Digital Database}} for {{Screening Mammography}}},
   booktitle = {Digital {{Mammography}}},
@@ -439,6 +468,18 @@
   isbn = {978-1-61729-627-7},
   lccn = {TK5105.888 .K46 2020},
   keywords = {Testing,User interfaces (Computer systems),Web sites}
+}
+
+@misc{kojimaLargeLanguageModels2022,
+  title = {Large {{Language Models}} Are {{Zero-Shot Reasoners}}},
+  author = {Kojima, Takeshi and Gu, Shixiang Shane and Reid, Machel and Matsuo, Yutaka and Iwasawa, Yusuke},
+  year = 2022,
+  publisher = {arXiv},
+  doi = {10.48550/ARXIV.2205.11916},
+  urldate = {2026-09-23},
+  abstract = {Pretrained large language models (LLMs) are widely used in many sub-fields of natural language processing (NLP) and generally known as excellent few-shot learners with task-specific exemplars. Notably, chain of thought (CoT) prompting, a recent technique for eliciting complex multi-step reasoning through step-by-step answer examples, achieved the state-of-the-art performances in arithmetics and symbolic reasoning, difficult system-2 tasks that do not follow the standard scaling laws for LLMs. While these successes are often attributed to LLMs' ability for few-shot learning, we show that LLMs are decent zero-shot reasoners by simply adding "Let's think step by step" before each answer. Experimental results demonstrate that our Zero-shot-CoT, using the same single prompt template, significantly outperforms zero-shot LLM performances on diverse benchmark reasoning tasks including arithmetics (MultiArith, GSM8K, AQUA-RAT, SVAMP), symbolic reasoning (Last Letter, Coin Flip), and other logical reasoning tasks (Date Understanding, Tracking Shuffled Objects), without any hand-crafted few-shot examples, e.g. increasing the accuracy on MultiArith from 17.7\% to 78.7\% and GSM8K from 10.4\% to 40.7\% with large InstructGPT model (text-davinci-002), as well as similar magnitudes of improvements with another off-the-shelf large model, 540B parameter PaLM. The versatility of this single prompt across very diverse reasoning tasks hints at untapped and understudied fundamental zero-shot capabilities of LLMs, suggesting high-level, multi-task broad cognitive capabilities may be extracted by simple prompting. We hope our work not only serves as the minimal strongest zero-shot baseline for the challenging reasoning benchmarks, but also highlights the importance of carefully exploring and analyzing the enormous zero-shot knowledge hidden inside LLMs before crafting finetuning datasets or few-shot exemplars.},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords = {Artificial Intelligence (cs.AI),Computation and Language (cs.CL),FOS: Computer and information sciences,Machine Learning (cs.LG)}
 }
 
 @misc{labanLLMsCorruptYour2026,
@@ -643,6 +684,25 @@
   file = {/Users/lex/code/zotero/storage/869HQQVR/Neal - 2019 - On the Bias-Variance Tradeoff Textbooks Need an Update.pdf;/Users/lex/code/zotero/storage/2ACAFFFA/1912.html}
 }
 
+@misc{openaiAPIChangelog,
+  title = {Changelog \textbar{} {{OpenAI API}}},
+  journal = {OpenAI Developers},
+  urldate = {2026-09-23},
+  abstract = {See all of the latest features and updates to the OpenAI API.},
+  howpublished = {https://developers.openai.com/api/docs/changelog},
+  langid = {english},
+  file = {/Users/lex/code/zotero/storage/CTK62S9Y/changelog.html}
+}
+
+@misc{openaiO1Model,
+  title = {O1 {{Model}}},
+  journal = {OpenAI Developers},
+  urldate = {2026-09-23},
+  howpublished = {https://developers.openai.com/api/docs/models/o1},
+  langid = {english},
+  file = {/Users/lex/code/zotero/storage/DVJECEVM/o1.html}
+}
+
 @misc{panavasHANDBOOKmdBenchmarkLongContext2026,
   title = {{{HANDBOOK}}.Md: {{A Benchmark}} for {{Long-Context Agentic Instruction Following}}},
   shorttitle = {{{HANDBOOK}}.Md},
@@ -831,6 +891,18 @@
   copyright = {Creative Commons Attribution 4.0 International},
   keywords = {Artificial Intelligence (cs.AI),Computation and Language (cs.CL),FOS: Computer and information sciences},
   file = {/Users/lex/code/zotero/storage/FKCIK5KG/Wang et al. - 2022 - Self-Consistency Improves Chain of Thought Reasoning in Language Models.pdf}
+}
+
+@misc{weiChainofThoughtPromptingElicits2022,
+  title = {Chain-of-{{Thought Prompting Elicits Reasoning}} in {{Large Language Models}}},
+  author = {Wei, Jason and Wang, Xuezhi and Schuurmans, Dale and Bosma, Maarten and Ichter, Brian and Xia, Fei and Chi, Ed and Le, Quoc and Zhou, Denny},
+  year = 2022,
+  publisher = {arXiv},
+  doi = {10.48550/ARXIV.2201.11903},
+  urldate = {2026-09-23},
+  abstract = {We explore how generating a chain of thought -- a series of intermediate reasoning steps -- significantly improves the ability of large language models to perform complex reasoning. In particular, we show how such reasoning abilities emerge naturally in sufficiently large language models via a simple method called chain of thought prompting, where a few chain of thought demonstrations are provided as exemplars in prompting. Experiments on three large language models show that chain of thought prompting improves performance on a range of arithmetic, commonsense, and symbolic reasoning tasks. The empirical gains can be striking. For instance, prompting a 540B-parameter language model with just eight chain of thought exemplars achieves state of the art accuracy on the GSM8K benchmark of math word problems, surpassing even finetuned GPT-3 with a verifier.},
+  copyright = {Creative Commons Attribution 4.0 International},
+  keywords = {Artificial Intelligence (cs.AI),Computation and Language (cs.CL),FOS: Computer and information sciences}
 }
 
 @article{wikipediaOrphanProcess,
