@@ -703,6 +703,23 @@
   file = {/Users/lex/code/zotero/storage/DVJECEVM/o1.html}
 }
 
+@misc{ouyangTrainingLanguageModels2022,
+  title = {Training Language Models to Follow Instructions with Human Feedback},
+  author = {Ouyang, Long and Wu, Jeff and Jiang, Xu and Almeida, Diogo and Wainwright, Carroll L. and Mishkin, Pamela and Zhang, Chong and Agarwal, Sandhini and Slama, Katarina and Ray, Alex and Schulman, John and Hilton, Jacob and Kelton, Fraser and Miller, Luke and Simens, Maddie and Askell, Amanda and Welinder, Peter and Christiano, Paul and Leike, Jan and Lowe, Ryan},
+  year = 2022,
+  month = mar,
+  number = {arXiv:2203.02155},
+  eprint = {2203.02155},
+  primaryclass = {cs.CL},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2203.02155},
+  urldate = {2026-09-24},
+  abstract = {Making language models bigger does not inherently make them better at following a user's intent. For example, large language models can generate outputs that are untruthful, toxic, or simply not helpful to the user. In other words, these models are not aligned with their users. In this paper, we show an avenue for aligning language models with user intent on a wide range of tasks by fine-tuning with human feedback. Starting with a set of labeler-written prompts and prompts submitted through the OpenAI API, we collect a dataset of labeler demonstrations of the desired model behavior, which we use to fine-tune GPT-3 using supervised learning. We then collect a dataset of rankings of model outputs, which we use to further fine-tune this supervised model using reinforcement learning from human feedback. We call the resulting models InstructGPT. In human evaluations on our prompt distribution, outputs from the 1.3B parameter InstructGPT model are preferred to outputs from the 175B GPT-3, despite having 100x fewer parameters. Moreover, InstructGPT models show improvements in truthfulness and reductions in toxic output generation while having minimal performance regressions on public NLP datasets. Even though InstructGPT still makes simple mistakes, our results show that fine-tuning with human feedback is a promising direction for aligning language models with human intent.},
+  archiveprefix = {arXiv},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Computation and Language,Computer Science - Machine Learning},
+  file = {/Users/lex/code/zotero/storage/VCXV7LU6/Ouyang et al. - 2022 - Training language models to follow instructions with human feedback.pdf;/Users/lex/code/zotero/storage/HCQV4MIK/2203.html}
+}
+
 @misc{panavasHANDBOOKmdBenchmarkLongContext2026,
   title = {{{HANDBOOK}}.Md: {{A Benchmark}} for {{Long-Context Agentic Instruction Following}}},
   shorttitle = {{{HANDBOOK}}.Md},
@@ -735,6 +752,20 @@
   howpublished = {https://idrc.ocadu.ca/about/philosophy/},
   langid = {canadian},
   file = {/Users/lex/code/zotero/storage/TJCDTJZW/philosophy.html}
+}
+
+@misc{rafailovDirectPreferenceOptimization2023,
+  title = {Direct {{Preference Optimization}}: {{Your Language Model}} Is {{Secretly}} a {{Reward Model}}},
+  shorttitle = {Direct {{Preference Optimization}}},
+  author = {Rafailov, Rafael and Sharma, Archit and Mitchell, Eric and Ermon, Stefano and Manning, Christopher D. and Finn, Chelsea},
+  year = 2023,
+  publisher = {arXiv},
+  doi = {10.48550/ARXIV.2305.18290},
+  urldate = {2026-09-24},
+  abstract = {While large-scale unsupervised language models (LMs) learn broad world knowledge and some reasoning skills, achieving precise control of their behavior is difficult due to the completely unsupervised nature of their training. Existing methods for gaining such steerability collect human labels of the relative quality of model generations and fine-tune the unsupervised LM to align with these preferences, often with reinforcement learning from human feedback (RLHF). However, RLHF is a complex and often unstable procedure, first fitting a reward model that reflects the human preferences, and then fine-tuning the large unsupervised LM using reinforcement learning to maximize this estimated reward without drifting too far from the original model. In this paper we introduce a new parameterization of the reward model in RLHF that enables extraction of the corresponding optimal policy in closed form, allowing us to solve the standard RLHF problem with only a simple classification loss. The resulting algorithm, which we call Direct Preference Optimization (DPO), is stable, performant, and computationally lightweight, eliminating the need for sampling from the LM during fine-tuning or performing significant hyperparameter tuning. Our experiments show that DPO can fine-tune LMs to align with human preferences as well as or better than existing methods. Notably, fine-tuning with DPO exceeds PPO-based RLHF in ability to control sentiment of generations, and matches or improves response quality in summarization and single-turn dialogue while being substantially simpler to implement and train.},
+  copyright = {Creative Commons Attribution 4.0 International},
+  keywords = {Artificial Intelligence (cs.AI),Computation and Language (cs.CL),FOS: Computer and information sciences,Machine Learning (cs.LG)},
+  file = {/Users/lex/code/zotero/storage/L2P63ZI7/Rafailov et al. - 2023 - Direct Preference Optimization Your Language Model is Secretly a Reward Model.pdf}
 }
 
 @article{ramamoorthyTestingLargeSoftware1975,

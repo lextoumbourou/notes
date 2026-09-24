@@ -64,10 +64,10 @@ Clearly, copyright infringement checks aren't baked into the framework yet.
 
 ## Base Model
 
-The authors contribute a new domain-specialised code model adapted from the [Qwen3.5-27B](../../permanent/qwen35-27b.md) backbone, called **GameCoder-27B**. They train it via a three-stage pipeline that follows the standard modern [LLM Training Recipe](../../permanent/llm-training-pipeline.md):
+The authors contribute a new domain-specialised code model adapted from the [Qwen3.5-27B](../../permanent/qwen35-27b.md) backbone, called **GameCoder-27B**. They train it via a three-stage pipeline that follows the standard modern [LLM Training Pipeline](../../permanent/llm-training-pipeline.md):
 
 * [Continual Pre-Training (CPT)](../../permanent/continual-pre-training-cpt.md) (that is, pre-training on an already trained model) - on a corpus of open-source Phaser and JavaScript/TypeScript game repositories from GitHub, alongside a collection of docs and tutorials. This builds the model's familiarity with game loops, physics systems, asset management, and state management.
-* [Supervised Fine-Tuning](../../permanent/fine-tuning.md) on a collection of game generation prompts and corresponding solutions, with the prompts coming from `gpt-codex5.1` and the solutions from `minimax2.5`.
+* [Fine-Tuning](../../permanent/fine-tuning.md) on a collection of game generation prompts and corresponding solutions, with the prompts coming from `gpt-codex5.1` and the solutions from `minimax2.5`.
 * And finally, a [Reinforcement Learning (RL)](../../permanent/reinforcement-learning.md) step, done at the component level, rewarding unit test pass rate and execution success on gameplay logic, either in a single file or at the function level: stuff like collision detection functions, state-machine transitions, and so on. The idea here is to make the model strong at the component level, since they intend for a downstream agent to assemble those building blocks into a full multi-file project.
 
 At the time of writing, it seems the weights for GameCoder-27B are not publicly available.
