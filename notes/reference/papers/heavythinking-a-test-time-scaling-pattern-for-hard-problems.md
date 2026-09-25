@@ -2,7 +2,7 @@
 title: "Heavy Thinking: A Test-Time Scaling Pattern for Hard Problems"
 date: 2026-05-17 00:00
 category: paper
-modified: 2026-09-24 07:49
+modified: 2026-09-25 17:35
 tags:
 - AgenticReasoning
 - TestTimeScaling
@@ -33,7 +33,7 @@ The outputs are stored in a **Serialised Memory Cache**, where they are pruned a
 
 In **Stage 2**, which they call **Sequential Deliberation**, the same or another LLM analyses the set of outputs from the previous step and performs meta-analysis to derive a final answer. This can be an iterative process in which the LLM deliberates across multiple steps and optionally includes the deliberation outputs in the parallel reasoning traces at each iteration (they call this **Iterative Deliberation**).
 
-![Figure 1. The overview framework of heavy thinking in LLMs test time scaling](_media/heavyskill/figure-1.png)
+![Figure 1. The overview framework of heavy thinking in LLMs test time scaling](../../_media/heavyskill/figure-1.png)
 
 *Figure 1. The overview framework of heavy thinking in LLMs test time scaling [@wangHeavySkillHeavyThinking2026].*
 
@@ -58,13 +58,13 @@ By default, the same model is used for both stages, although in theory different
 
 On STEM benchmarks, accuracy after deliberation (they call this **Heavy-Mean@K**) consistently outperforms simply averaging results (**Mean@K**) across models. In other words, the deliberation step usually improves upon the average single-reasoning trajectory.
 
-Heavy thinking also often beats majority voting (which they call **Vote@K**). Even when only a few models found the right answer, the deliberation step could reason to the correct answer, despite the majority getting it wrong.
+Heavy thinking also often beats majority voting (which they call **Vote@K**), the approach behind [Self-Consistency](self-consistency-improves-chain-of-thought-reasoning-in-language-models.md). You can think of heavy thinking as self-consistency with the vote replaced by an LLM that reads the reasoning. Even when only a few models found the right answer, the deliberation step could reason to the correct answer, despite the majority getting it wrong.
 
 Even more surprisingly, they report that stronger models can approach the upper bound when only one model gets the right answer (**Pass@K**). In other words, if just one of the parallel attempts found the right answer, a strong deliberation model would identify it.
 
 The strongest results appear on difficult reasoning benchmarks such as **AIME25**, **BeyondAIME**, **HMMT25-Feb**, and **GPQA-Diamond**. On harder benchmarks, the advantage over voting becomes more pronounced.
 
-![Table 1. Overview performance of heavy mode on STEM tasks](_media/heavyskill/table-1.png)
+![Table 1. Overview performance of heavy mode on STEM tasks](../../_media/heavyskill/table-1.png)
 
 *Table 1. Overview performance of heavy mode on STEM tasks (Heavy Mean@4 compared to basic TTS metrics) [@wangHeavySkillHeavyThinking2026].*
 
@@ -82,7 +82,7 @@ Deliberation can sometimes recover correct answers even when they are not the ma
 
 The authors describe the deliberation model as acting like an implicit verifier. It compares trajectories, identifies inconsistencies, and seeks the strongest reasoning path.
 
-![Figure 2. The pass rate distribution of heavy thinking in different pass rates of parallel reasoning](_media/heavyskill/figure-2.png)
+![Figure 2. The pass rate distribution of heavy thinking in different pass rates of parallel reasoning](../../_media/heavyskill/figure-2.png)
 
 *Figure 2. The pass rate distribution of heavy thinking in different pass rates of parallel reasoning [@wangHeavySkillHeavyThinking2026].*
 

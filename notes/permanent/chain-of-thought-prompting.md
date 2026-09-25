@@ -13,6 +13,6 @@ tags:
 
 A technique for eliciting [LLM Reasoning](llm-reasoning.md), which can also support [Planning](planning.md) in [Agentic Reasoning](agentic-reasoning.md) systems.
 
-Described in paper [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](../../../reference/chain-of-thought-prompting-elicits-reasoning-in-large-language-models.md).
+Described in paper [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](../reference/papers/chain-of-thought-prompting-elicits-reasoning-in-large-language-models.md).
 
 ![chain-of-thought-prompting.png](../_media/chain-of-thought-prompting.png)

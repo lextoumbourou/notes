@@ -2,6 +2,7 @@
 category: note
 title: Emergent Gameplay
 date: 2021-01-16 00:00
+modified: 2026-09-25 20:19
 tags:
   - GameDesign
 summary: Strategic actions that aren't in the rules but arise naturally from playing the game.
@@ -9,8 +10,8 @@ summary: Strategic actions that aren't in the rules but arise naturally from pla
 
 Strategic actions that are "not part of the rules" but "that emerge naturally as the game is played". You can encourage emergent gameplay by adding more verbs, adding verbs that can act on many objects (ie guns that can shoot people and locks), goals that can be achieved in multiple ways, many subjects (ie characters, pieces on the board) and side effects that change constraints (ie moving a checkers piece limits the available moves for an opponent).
 
-Related to [Emergent Complexity](emergent-complexity.md) and [Meaningful Choices in Games](meaningful-choices-in-games.md)
+Related to [Emergent Complexity](emergent-complexity.md) and [Meaningful Choices in Games](meaningful-choices-in-games.md). See [Emergence](emergence.md) for the general idea.
 
 References:
 
-* [The Art of Game Design - A Book of Lenses (2nd Edition)](The Art of Game Design - A Book of Lenses (2nd Edition)) (Chapter 12. Some Elements Are Game Mechanics)
+* [The Art of Game Design - A Book Of Lenses (2nd Edition) by Jesse Schell](../reference/books/the-art-of-game-design-a-book-of-lenses-2nd-edition.md) (Chapter 12. Some Elements Are Game Mechanics)
