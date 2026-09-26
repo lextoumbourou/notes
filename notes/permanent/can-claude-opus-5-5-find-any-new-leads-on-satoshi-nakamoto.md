@@ -2,7 +2,7 @@
 title: Can Claude Opus 5.5 find any new leads on Satoshi Nakamoto?
 slug: can-claude-opus-5-5-find-any-new-leads-on-satoshi-nakamoto
 date: 2026-09-27 00:00
-modified: 2026-09-27 07:16
+modified: 2026-09-27 09:16
 summary: Let's see if Claude can find anything that the New York Times missed.
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mwh7an5vce2a
 mastodon_post: https://fedi.notesbylex.com/@lex/117339402789103571
@@ -33,7 +33,7 @@ To that end, it's notable that the High Court judge in [COPA v Wright](https://w
 
 Like many others who've used it, I've found that [Claude Opus 5.5](claude-opus-5-5.md) is an insanely capable model at so many tasks. I thought it might be an interesting experiment to put its data analysis capabilities to the test, and see whether it could learn anything new about the mystery of Satoshi Nakamoto that others may have missed.
 
-I gave Opus 5.5 xHigh a [git repo](https://github.com/lextoumbourou/opus-satoshi-research) to work from and the prompt below. The prompt uses a technique from this [Latent Space Engineering](https://blog.fsck.com/2026/01/30/Latent-Space-Engineering/) article about gassing up the agent to put it in a good "frame of mind".
+I gave Claude Opus 5.5, running at `xhigh` (extra high) effort, a [git repo](https://github.com/lextoumbourou/opus-satoshi-research) to work from and the prompt below. The prompt uses a technique from this [Latent Space Engineering](https://blog.fsck.com/2026/01/30/Latent-Space-Engineering/) article about gassing up the agent to put it in a good "frame of mind".
 
 ```text
 You are an extremely capable agent. Likely more capable than any single individual and potentially more capable than a team. You are world-class at a range of research, investigative and data collation tasks, and can probably spot patterns that others have missed.
@@ -55,7 +55,7 @@ Some ground rules:
 - At the end of your research, you will summarise your findings into the article I linked earlier. I will tell you when to do that.
 ```
 
-After the initial research, I gave it a few steers, including to read [Jens Ducrée's research paper](https://arxiv.org/abs/2206.10257v14) and to follow a few leads another instance of Opus 5.5 had found in an earlier attempt, plus a random Hacker News comment thread about the NYT article, which had a few ideas. Claude spent about six and a half hours on the research, in a single session, and used about 620M tokens (mostly re-reading its own growing context), costing about $184 at API prices.
+After the initial research, I gave it a few steers, including to read [Jens Ducrée's research paper](https://arxiv.org/abs/2206.10257v14) and to follow a few leads another instance of Opus 5.5 had found in an earlier attempt, plus a random Hacker News comment thread about the NYT article, which had a few ideas. Claude spent about six and a half hours on the research, in a single session, and burned through about 620M tokens.
 
 ## Opus' findings
 
