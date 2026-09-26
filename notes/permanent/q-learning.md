@@ -103,11 +103,11 @@ env.close()
 
 The code above will show a visual representation of the agent exploring and slowly updating its policy. Early episodes often show random-looking behaviour:
 
-<video controls loop><source src="../_media/taxi_q_learning-episode-0.mp4" type="video/mp4"></video>
+<video controls loop><source src="../_media/taxi-q-learning-episode-0.mp4" type="video/mp4"></video>
 
 After training is completed, the final episodes demonstrate much more efficient behaviour:
 
-<video controls loop><source src="../_media/taxi_q_learning-episode-9999.mp4" type="video/mp4"></video>
+<video controls loop><source src="../_media/taxi-q-learning-episode-9999.mp4" type="video/mp4"></video>
 
 As you can see, the taxi can pick the passengers up and drop them off at the destination directly.
 

@@ -13,6 +13,6 @@ They develop a benchmark called Asynchronous WikiHow (AsyncHow), which contains 
 
 They find that LLMs perform poorly without specific guidance on solving these tasks.
 
-To address this, they introduce a novel prompting technique called [Plan Like a Graph](Plan%20Like%20a%20Graph.md) (PLaG), which incorporates graph representations into the prompts.
+To address this, they introduce a novel prompting technique called [Plan Like a Graph](plan-like-a-graph.md) (PLaG), which incorporates graph representations into the prompts.
 
 PLaG significantly improves LLM performance, but the study also reveals that LLMs struggle with complex planning tasks, highlighting limitations in their ability to simulate digital devices. The paper concludes by discussing the implications of these findings and potential future directions for research.

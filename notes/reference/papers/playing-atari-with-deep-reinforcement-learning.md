@@ -7,7 +7,7 @@ category: reference/papers
 tags:
 - ReinforcementLearning
 - GamePlayingAI
-cover: /_media/pacman_state_1.png
+cover: /_media/pacman-state-1.png
 hide_cover_in_article: true
 ---
 
@@ -108,7 +108,7 @@ plt.axis("off")
 plt.imsave(PUBLIC_MEDIA_DIR / "pacman_state_1.png", state)
 ```
 
-![Pacman state at the state of the game](../../_media/pacman_state_1.png)
+![Pacman state at the state of the game](../../_media/pacman-state-1.png)
 
 We can take an action in the game, by passing one of the actions represented as an integer into `step(action: int)`. Where 0 is noopt, and 1, 2, 3, 4 is up, right, left, down, respectively.
 
@@ -123,7 +123,7 @@ plt.axis("off")
 plt.imsave(PUBLIC_MEDIA_DIR / "pacman_state_2.png", state)
 ```
 
-![Pacman state in ALE after moving right for 100 frames](../../_media/pacman_state_2.png)
+![Pacman state in ALE after moving right for 100 frames](../../_media/pacman-state-2.png)
 
 We can use the RecordVideo wrapper to record a video of the agent exploring the space with a random policy.
 
@@ -149,7 +149,7 @@ while not done:
 env.close()
 ```
 
-<video controls loop><source src="../../_media/pacman_ale/rl-video-episode-0.mp4" type="video/mp4"></video>
+<video controls loop><source src="../../_media/pacman-ale/rl-video-episode-0.mp4" type="video/mp4"></video>
 
 ### Preprocessing
 
@@ -167,7 +167,7 @@ obs, _ = env.reset()
 plt.imsave(PUBLIC_MEDIA_DIR / "pacman_preprocessed.png", obs, cmap="grey")
 ```
 
-![Pacman after preprocessing](../../_media/pacman_preprocessed.png)
+![Pacman after preprocessing](../../_media/pacman-preprocessed.png)
 
 Now we can stack the last N timesteps together, which is how a single observation is recognised.
 
@@ -177,7 +177,7 @@ env = wrappers.FrameStackObservation(env, stack_size=4)
 
 Which might look something like this:
 
-![Environment observation](../../_media/pacman_frame_stack_3d_layered.png)
+![Environment observation](../../_media/pacman-frame-stack-3d-layered.png)
 
 ### Epsilon-greedy policy
 

@@ -9,7 +9,7 @@ status: draft
 
 ## Overview
 
-This paper proposes [NeuralSVG](../permanent/neuralsvg.md), a new approach for generating [Vector Graphics](../permanent/vector-graphics.md) from text prompts. Where previous attempts have over-parameterised outputs and treat layered structure as a secondary goal, NeuralSVG, an approach inspired by [Neural Radiance Fields](../permanent/Neural%20Radiance%20Fields.md), encodes the entire scene into the weights of a small neural network and uses a dropout-based regularisation to encourage a meaningful layout structure. It also supports inference-time control, allowing users to adapt the generated SVG using prompts.
+This paper proposes [NeuralSVG](../permanent/neuralsvg.md), a new approach for generating [Vector Graphics](../permanent/vector-graphics.md) from text prompts. Where previous attempts have over-parameterised outputs and treat layered structure as a secondary goal, NeuralSVG, an approach inspired by [Neural Radiance Fields](../permanent/neural-radiance-fields.md), encodes the entire scene into the weights of a small neural network and uses a dropout-based regularisation to encourage a meaningful layout structure. It also supports inference-time control, allowing users to adapt the generated SVG using prompts.
 
 ![Figure 1: Example outputs showing diverse SVG generations from text prompts ("A peacock", "A fountain pen", "A punk rocker", "The girl with a pearl earring"). Each example shows ordered and editable shapes. The rightmost example demonstrates dynamic background color conditioning.](../_media/neuralsvg-an-implicity-represetation-for-text-to-vector-generation-fig-1.png)
 
@@ -23,7 +23,7 @@ This paper proposes [NeuralSVG](../permanent/neuralsvg.md), a new approach for g
 
 ### 2. Dropout Regularisation:
 
-Uses [Dropout-based Techniques](../permanent/Dropout-based%20Techniques.md):
+Uses [Dropout-based Techniques](../permanent/dropout-based-techniques.md):
 
 - Random truncation of shapes during training
 - Encourages meaningful ordering and standalone semantic meaning

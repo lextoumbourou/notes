@@ -9,4 +9,4 @@ status: draft
 
 BERT is pre-trained on unlabelled text with [Masked Language Modelling](masked-language-modelling.md), where some tokens are hidden and the model predicts them from the context on both sides, plus a next sentence prediction task. The pre-trained model can then be fine-tuned for downstream tasks like classification or question answering.
 
-It inspired many follow-ups, including [RoBERTa](RoBERTa.md), and the masked prediction idea was carried over to speech in models like [HuBERT](hubert.md) and [w2v-BERT](w2v-bert.md).
+It inspired many follow-ups, including [RoBERTa](roberta.md), and the masked prediction idea was carried over to speech in models like [HuBERT](hubert.md) and [w2v-BERT](w2v-bert.md).

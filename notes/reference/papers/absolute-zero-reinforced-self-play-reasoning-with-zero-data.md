@@ -19,7 +19,7 @@ paper_authors: Andrew Zhao, Yiran Wu, Yang Yue, Tong Wu, Quentin Xu, Yang Yue, M
 
 This paper introduces the [Absolute Zero Reasoner](../../permanent/absolute-zero-reasoner.md).
 
-The idea is to train a reasoning model (from a foundation Qwen-2.5-7B* model) without needing any human-annotated data. Previous [DeepSeek-R1-Zero](../../permanent/DeepSeek-R1-Zero.md) approach learned CoT reasoning just from input/output pairs, but this goes a step further and proposes the inputs and outputs to solve.
+The idea is to train a reasoning model (from a foundation Qwen-2.5-7B* model) without needing any human-annotated data. Previous [DeepSeek-R1-Zero](../../permanent/deepseek-r1-zero.md) approach learned CoT reasoning just from input/output pairs, but this goes a step further and proposes the inputs and outputs to solve.
 
 ![absolute-zero-comparison.png](../../_media/absolute-zero-comparison.png)
 

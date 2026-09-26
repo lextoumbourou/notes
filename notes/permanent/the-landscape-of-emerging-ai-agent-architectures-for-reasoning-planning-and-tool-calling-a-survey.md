@@ -73,12 +73,12 @@ Among the community, there is a current debate on whether [Single-Agent Systems]
     * Two primary categories
         * vertical and horizontal
     * These categories represent two ends of a spectrum, where most existing architectures fall somewhere between these two extremes.
-* [Vertical Architectures](Vertical%20Architectures.md)
+* [Vertical Architectures](vertical-architectures.md)
     * One agent is leader. Other agents report to them.
     * In some configurations, reporting agents may communicate exclusively with the lead agent.
     * Leader can be defined with a shared conversation between all agents.
     * The defining features of vertical architectures include having a lead agent and a clear division of labor between the collaborating agents.
-* [Horizontal Architectures](Horizontal%20Architectures.md)
+* [Horizontal Architectures](horizontal-architectures.md)
     * In this structure, all the agents are treated as equals and are part of one group discussion about the task.
     * Communication between agents occurs in a shared thread where each agent can see all messages from the others.
     * Agents also can volunteer to complete certain tasks or call tools, meaning they do not need to be assigned by a leading agent.
@@ -109,7 +109,7 @@ These methods let the model break a task down into sub tasks, select one plan fr
 
 Most agent patterns have a dedicated planning step, which uses one or more of the techniques to create a plan before executing actions.
 
-For example, [Plan Like a Graph](Plan%20Like%20a%20Graph.md) is an approach that represents plans as directed graphs, with multiple steps being executed in parallel. Can achieve a big performance increase on tasks with many independent subtasks that may benefit from async execution.
+For example, [Plan Like a Graph](plan-like-a-graph.md) is an approach that represents plans as directed graphs, with multiple steps being executed in parallel. Can achieve a big performance increase on tasks with many independent subtasks that may benefit from async execution.
 
 ### The Importance of Effective Tool Calling
 
@@ -134,7 +134,7 @@ Then, each agent works independently on solving each task using their own indepe
 
 ## [Single-Agent Architectures](single-agent-architectures.md)
 
-In this section, we highlight some notable single agent methods such as [ReAct](react-agent.md), [RAISE](raise.md), [Reflexion](reflexion.md), [AutoGPT + P](autogpt-+-p.md), and [Language Agent Tree Search](language-agent-tree-search.md).
+In this section, we highlight some notable single agent methods such as [ReAct](react-agent.md), [RAISE](raise.md), [Reflexion](reflexion.md), [AutoGPT + P](autogpt-plus-p.md), and [Language Agent Tree Search](language-agent-tree-search.md).
 
 Each of these methods contain a dedicated stage for reasoning about the problem before any action is taken to advance the goal.
 
@@ -156,7 +156,7 @@ We find that single agent architectures are especially useful when the task requ
     * This cycle can repeat until the task is complete.
     * When applied to a diverse set of language and decision-making tasks, the ReAct method demonstrates improved effectiveness compared to zero-shot prompting on the same tasks
     * It also provides improved human interoperability and trustworthiness because the entire thought process of the model is recorded.
-    * When evaluated on the [HotpotQA](HotpotQA.md) dataset, the ReAct method only hallucinated 6% of the time, compared to 14% using the chain of thought (CoT) method.
+    * When evaluated on the [HotpotQA](hotpotqa.md) dataset, the ReAct method only hallucinated 6% of the time, compared to 14% using the chain of thought (CoT) method.
     * ReAct method is not without limitations.
     * While intertwining reasoning, observation and action improves trustworthiness, the model can repetitively generate the same thoughts and actions and fail to create new thoughts to provoke finishing the task and exiting ReAct loop.
     * Incorporating human feedback during the execution of task which increases effectiveness and applicability to real-world scenarios.
@@ -167,7 +167,7 @@ We find that single agent architectures are especially useful when the task requ
 * [Reflexion](reflexion.md)
     * Reflexion is a single-agent pattern that uses self-reflection through linguistic feedback [23]. By utilizing metrics such as success state, current trajectory, and persistent memory, this method uses an LLM evaluator to provide specific and relevant feedback to the agent.
     * This results in an improved success rate as well as reduced hallucination compared to Chain-of-Thought and ReAct. Despite these advancements, the Reflexion authors identify various limitations of the pattern. Primarily, Reflexion is susceptible to “non-optimal local minima solutions”. It also uses a sliding window for long-term memory, rather than a database. This means that the volume of long-term memory is limited by the token limit of the language model. Finally, the researchers identify that while Reflexion surpasses other single-agent patterns, there are still opportunities to improve performance on tasks that require a significant amount of diversity, exploration, and reasoning.
-* [AutoGPT + P](autogpt-+-p.md)
+* [AutoGPT + P](autogpt-plus-p.md)
     * AutoGPT + P (Planning) is a method that addresses reasoning limitations for agents that command robots in natural language. 
     * AutoGPT+P combines object detection and Object Affordance Mapping (OAM) with a planning system driven by a LLM. This allows the agent to explore the environment for missing objects, propose alternatives, or ask the user for assistance with reaching its goal.
     * AutoGPT+P starts by using an image of a scene to detect the objects present. A language model then uses those objects to select which tool to use, from four options: Plan Tool, Partial Plan Tool, Suggest Alternative Tool, and Explore Tool. These tools allow the robot to not only generate a full plan to complete the goal, but also to explore the environment, make assumptions, and create partial plans.

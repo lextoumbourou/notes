@@ -81,8 +81,8 @@ Distance to negative samples
 </td>
 </tr>
 <tr>
-<td><img src="../../_media/drifting-models-01_dist_pos.png"></td>
-<td><img src="../../_media/drifting-models-02a_dist_neg_raw.png"></td>
+<td><img src="../../_media/drifting-models-01-dist-pos.png"></td>
+<td><img src="../../_media/drifting-models-02a-dist-neg-raw.png"></td>
 </tr>
 </table>
 
@@ -97,7 +97,7 @@ dist_neg += np.eye(N) * 1e6
 
 **dist_neg_masked** - Self-distances are masked so samples don't repel themselves:
 
-<img src="../../_media/drifting-models-02b_dist_neg_masked.png">
+<img src="../../_media/drifting-models-02b-dist-neg-masked.png">
 
 ### 3. Compute weights via Softmax
 
@@ -125,7 +125,7 @@ This bidirectional normalisation helps prevent any single sample from dominating
 
 **A** - Combined attention matrix (positives on left, negatives on right):
 
-<img src="../../_media/drifting-models-03_attention.png">
+<img src="../../_media/drifting-models-03-attention.png">
 
 Finally, we split back into positive and negative attention:
 
@@ -140,8 +140,8 @@ A_neg = A[:, N_pos:]  # [N, N_neg]
 <td><strong>A_neg</strong> - Attention to negatives (self masked)</td>
 </tr>
 <tr>
-<td><img src="../../_media/drifting-models-04a_A_pos.png"></td>
-<td><img src="../../_media/drifting-models-04b_A_neg.png"></td>
+<td><img src="../../_media/drifting-models-04a-a-pos.png"></td>
+<td><img src="../../_media/drifting-models-04b-a-neg.png"></td>
 </tr>
 </table>
 
@@ -171,8 +171,8 @@ This cross-weighting ensures that if you're strongly attracted to positives, you
 <td><strong>W_neg</strong> - Cross-weighted negatives</td>
 </tr>
 <tr>
-<td><img src="../../_media/drifting-models-05a_W_pos.png"></td>
-<td><img src="../../_media/drifting-models-05b_W_neg.png"></td>
+<td><img src="../../_media/drifting-models-05a-w-pos.png"></td>
+<td><img src="../../_media/drifting-models-05b-w-neg.png"></td>
 </tr>
 </table>
 
@@ -191,7 +191,7 @@ The final drift vector is the difference - attraction toward positives minus rep
 V = drift_pos - drift_neg
 ```
 
-<img src="../../_media/drifting-models-06_drift_vectors.png">
+<img src="../../_media/drifting-models-06-drift-vectors.png">
 
 When the generated distribution matches the data distribution, the attraction and repulsion cancel and $\mathbf{V} = 0$. The paper shows this is a necessary condition for equilibrium (though the converse is not strictly proven).
 

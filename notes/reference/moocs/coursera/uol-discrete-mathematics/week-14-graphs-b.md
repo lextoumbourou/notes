@@ -304,7 +304,7 @@ Suppose that 7 sites are connected in a network. The number of other sites to wh
 Degree of each vertex = n - 1 = 7
 Number of edges = 8 * 7 / 2 = 28
 
-![week-14-problem-sheet-q10-k_8.png](../../../../_media/week-14-problem-sheet-q10-k_8.png)
+![week-14-problem-sheet-q10-k_8.png](../../../../_media/week-14-problem-sheet-q10-k-8.png)
 
 3. The degree of each vertex of complete graph K_n = n -1. It will have n(n-1) / 2 edges.
 

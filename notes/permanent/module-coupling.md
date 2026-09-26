@@ -78,7 +78,7 @@ If you must use a global environment, ideally, it would be immutable.
 
 **Control Coupling** is when a module communicates information, perhaps via flags, to another to influence its execution.
 
-![Diagram to represent Control Coupling](../_media/control-coupling%20(1).png)
+![Diagram to represent Control Coupling](../_media/control-coupling-1.png)
 
 For example, if **Module A** passes flags to **Module B** to change the mathematical operations that **Module B** performs.
 
@@ -92,7 +92,7 @@ Data coupling is preferred over control coupling.
 
 **Hybrid Coupling** occurs when different subsets of the range of values of a data item are used for separate and unrelated purposes.
 
-![Diagram to represent Hybrid Coupling](../_media/hybrid-coupling%20(1).png)
+![Diagram to represent Hybrid Coupling](../_media/hybrid-coupling-1.png)
 
 It is a rare type of coupling but sometimes the only option, especially in limited memory environments (microcontrollers). You should avoid it unless you know what you're doing.
 

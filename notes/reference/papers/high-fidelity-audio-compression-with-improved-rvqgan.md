@@ -67,14 +67,14 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
 * Generative modelling of high-resolution audio is difficult because:
     * high dimensionality (~44,100 samples per second of audio)
         * See [SampleRNN: An Unconditional End-to-End Neural Audio Generation Model](../../permanent/samplernn-an-unconditional-end-to-end-neural-audio-generation-model.md)
-        * [MelGAN](../../permanent/MelGAN.md)
+        * [MelGAN](../../permanent/melgan.md)
     * Structure at different time-scales with short and long term dependencies.
 * Common mitigations:
     * audio generation is typically divided into two stages:
         * 1. predicting audio conditioned on some intermediate representation such as mel-spectrograms see:
             * [SampleRNN: An Unconditional End-to-End Neural Audio Generation Model](../../permanent/samplernn-an-unconditional-end-to-end-neural-audio-generation-model.md)
             * Deep voice 3: Scaling text-to-speech with convolutional sequence learning
-            * [MelGAN](../../permanent/MelGAN.md)
+            * [MelGAN](../../permanent/melgan.md)
             * Waveglow: A flow-based generative network for speech synthesis
         * 2. predicting the intermediate representation given some conditioning information, such as text
             * [Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions](../../permanent/natural-tts-synthesis-by-conditioning-wavenet-on-mel-spectrogram-predictions.md)
@@ -82,7 +82,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
     * Can be interpret this as a [Hierarchical Generative Model](../../permanent/hierarchical-generative-model.md) with observed intermediate variables.
 * Alternate formulation is to learn the intermediate variables using a [Variational Auto-Encoder](../../permanent/variational-auto-encoder.md) framework with a learned conditional prior to predict the latent variables given some conditioning.
     * This formulation, with continuous latent variables and training an expressive prior using normalizing flows has been quite successful for speech synthesis.
-        * [VITS](../../permanent/VITS.md)
+        * [VITS](../../permanent/vits.md)
         * Naturalspeech: End-to-end text to speech synthesis with human-level quality.
 * Closely related idea:
     * train the same varitional-autoencoder with discrete latent variables using VQ-VAE: [Neural Discrete Representation Learning](../neural-discrete-representation-learning.md)
@@ -112,7 +112,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
     * Identify a critical issue in existing models which don’t utilize the full bandwidth due to codebook collapse (where a fraction of the codes are unused) and fix it using improved codebook learning techniques.
     * Identify side-effect of quantizer dropout - a technique designed to allow a single model to support variable bitrates, actually hurts the full-bandwidth audio quality and propose a solution to mitigate it.
     * We make impactful design changes to existing neural audio codecs by adding:
-        * [Periodic Inductive Biases](../../permanent/Periodic%20Inductive%20Biases.md)
+        * [Periodic Inductive Biases](../../permanent/periodic-inductive-biases.md)
         * [Multi-scale STFT Discriminator](../../permanent/multi-scale-stft-discriminator.md)
         * Multi-scale Mel Loss
     * Provide thorough ablations and intuitions to motivate them.
@@ -124,7 +124,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
 
 [Generative Adversarial Network](../../permanent/generative-adversarial-network.md) models are a solution to generate high-quality audio with fast inference speeds, due to the feedforward (parallel) generator:
 
-* [MelGAN](../../permanent/MelGAN.md)
+* [MelGAN](../../permanent/melgan.md)
         - Successfully trains a GAN-based spectrogram inversion (neural vocoding) model
         - Introduces:
             - Multi-scale Waveform Discriminator (MSD)
@@ -135,7 +135,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
     * adding an auxiliary mel-reconstruction loss for fast training
 * univnet
     * introduces a multi-resolution spectrogram discriminator (MRSD) to generate audio with sharp spectrograms
-* [BigVGAN](../../permanent/BigVGAN.md)
+* [BigVGAN](../../permanent/bigvgan.md)
     * Improve HifiGAN recipe by introducing a periodic inductive bias using the [Snake Activation Function](../../permanent/snake-activation-function.md)
         * [Neural networks fail to learn periodic functions and how to fix it](../../permanent/neural-networks-fail-to-learn-periodic-functions-and-how-to-fix-it.md)
     * Replaces the MSD in HifiGAN with the MRSD to improve audio quality and reduce pitch, periodicity artifacts
@@ -144,7 +144,7 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
 The GAN-based learning techniques have been used for vocoding, but they also work for [Neural Audio Codec](../../permanent/neural-audio-codec.md).
 
 Improved RVQGAN model closely follows the BigVGAN training recipe, with a few key changes:
-* Uses a new multi-band, multi-scale [STFT Discriminator](../../permanent/STFT%20Discriminator.md) that alleviates aliasing artifacts
+* Uses a new multi-band, multi-scale [STFT Discriminator](../../permanent/stft-discriminator.md) that alleviates aliasing artifacts
 * A multi-scale mel-reconstruction loss that better models quick transients.
 
 Neural audio compression models: VQ-VAEs have been the dominant paradigm to train neural audio codecs.
@@ -161,7 +161,7 @@ This model used the original architecture from [Neural Discrete Representation L
 
 [Encodec](../../permanent/encodec.md)
 * Follows the SoundStream recipe, with a few modifications that lead to improved quality:
-    * uses a multi-scale [STFT Discriminator](../../permanent/STFT%20Discriminator.md) with a multi-scale spectral reconstruction loss
+    * uses a multi-scale [STFT Discriminator](../../permanent/stft-discriminator.md) with a multi-scale spectral reconstruction loss
     * Also use a loss balancer to adjust loss weights based on the varying scale of gradients coming from the discriminator.
 
 Propose method shares these ideas:
@@ -466,7 +466,7 @@ Biggest impact: relu activation for the snake activation
 
 This change resulted in much better SI-SDR and other metrics.
 
-Similar to the results in [BigVGAN](../../permanent/BigVGAN.md), find periodic inductive bias for snake activation helpful for waveform generation.
+Similar to the results in [BigVGAN](../../permanent/bigvgan.md), find periodic inductive bias for snake activation helpful for waveform generation.
 
 For our final model, we use the largest decoder dimension (1536), and the snake activation.
 

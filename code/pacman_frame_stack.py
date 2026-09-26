@@ -69,6 +69,6 @@ ax.view_init(elev=250, azim=0, roll=-90)
 
 # Save the figure
 plt.tight_layout()
-plt.savefig(Path("notes/_media") / "pacman_frame_stack_3d_layered.png")
+plt.savefig(Path("notes/_media") / "pacman-frame-stack-3d-layered.png")
 
 plt.close()

@@ -15,7 +15,7 @@ $$
 
 Where:
 
-* $Y$ is the [Dependent Variable](Dependent%20Variable.md).
+* $Y$ is the [Dependent Variable](dependent-variable.md).
 * $\beta_0$ is the intercept.
 * *$\beta_1, \beta_2, \ldots, \beta_n$ are the coefficients.
 * $X_1, X_2, \ldots, X_n$ are the independent variables.

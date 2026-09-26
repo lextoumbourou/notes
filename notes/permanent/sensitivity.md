@@ -7,5 +7,5 @@ status: draft
 
 Refers to true positive rate.
 
-Vs [Specificity](Specificity.md) which is true negative rate. The probability of a truly negative test result, returning the correct answer.
+Vs [Specificity](specificity.md) which is true negative rate. The probability of a truly negative test result, returning the correct answer.
 

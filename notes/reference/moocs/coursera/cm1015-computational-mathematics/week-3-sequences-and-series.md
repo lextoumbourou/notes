@@ -40,7 +40,7 @@ status: draft
 * Fibonacci Sequence:
     * Most common definition by recursion: $a_0 = 0, a_1 = 1, a_n = a_{n-1} + a_{n-2}$
         * 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
-    * One of the reasons for this sequence importance, is that the ratio between a sequence value and its previous value is known as the [Golden Ratio](../../../../permanent/Golden%20Ratio.md).
+    * One of the reasons for this sequence importance, is that the ratio between a sequence value and its previous value is known as the [Golden Ratio](../../../../permanent/golden-ratio.md).
         * $\frac{a_n}{a_{n-1}} \rightarrow \phi = \frac{1 + \sqrt{5}}{2} = 1.618$
 * Fibonacci Spiral
     * If you take the sequence of squares whose sides are given by the number of an element in the sequence.

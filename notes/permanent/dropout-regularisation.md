@@ -11,4 +11,4 @@ It stops the network from relying too heavily on any single neuron, which encour
 
 It was described in the paper [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](https://jmlr.org/papers/v15/srivastava14a.html) by Srivastava et al. (2014).
 
-The idea has inspired a number of other techniques. See [Dropout-based Techniques](Dropout-based%20Techniques.md).
+The idea has inspired a number of other techniques. See [Dropout-based Techniques](dropout-based-techniques.md).

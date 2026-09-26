@@ -6,7 +6,7 @@ status: draft
 
 # Lesson 5: MapReduce
 
-* [MapReduce](../../../../permanent/MapReduce.md)
+* [MapReduce](../../../../permanent/mapreduce.md)
     * Only suitable for reaaaaally big data
         * All the books ever written
     * Process

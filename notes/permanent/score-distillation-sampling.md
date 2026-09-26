@@ -5,7 +5,7 @@ modified: 2025-01-11 00:00
 status: draft
 ---
 
-**Score Distillation Sampling** (SDS) represents a fundamental breakthrough in how we can use diffusion models beyond just generating images. At its core, SDS transforms a diffusion model into a differentiable loss function that can guide optimisation of any differentiable generator. It was introduced in the [DreamFusion: Text-to-3D Using 2D Diffusion](../reference/papers/dreamfusion-text-to-3d-using-2D-diffusion.md) paper.
+**Score Distillation Sampling** (SDS) represents a fundamental breakthrough in how we can use diffusion models beyond just generating images. At its core, SDS transforms a diffusion model into a differentiable loss function that can guide optimisation of any differentiable generator. It was introduced in the [DreamFusion: Text-to-3D Using 2D Diffusion](../reference/papers/dreamfusion-text-to-3d-using-2d-diffusion.md) paper.
 
 ## SDS vs Traditional Diffusion Sampling
 

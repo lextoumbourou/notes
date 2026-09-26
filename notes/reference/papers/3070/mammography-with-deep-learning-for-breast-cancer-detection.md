@@ -37,7 +37,7 @@ aliases:
 * [Magnetic Resonance Imaging (MRI)](../../../permanent/magnetic-resonance-imaging-mri.md)
     * Uses magnetic fields and radio waves to image soft tissue without ionizing radiation.
     * Effective for dense breasts and high-risk patients.
-    * Tends to have lower [Specificity](../../../permanent/Specificity.md) (more false positives)
+    * Tends to have lower [Specificity](../../../permanent/specificity.md) (more false positives)
 * [Positron Emission Tomography (PET)](../../../permanent/positron-emission-tomography-pet.md)
     * Detects gamma rays emitted by radiotracers to map metabolic activity and identify malignant lesions.
     * Creates 3d images of internal body.

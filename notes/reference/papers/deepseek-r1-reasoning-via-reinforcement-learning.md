@@ -15,7 +15,7 @@ paper_year: 2025
 doi: 10.48550/arXiv.2501.12948
 ---
 
-DeepSeek train a model, [DeepSeek-R1-Zero](../../permanent/DeepSeek-R1-Zero.md), using large-scale reinforcement learning (RL) *without* supervised fine-tuning (SFT) as a preliminary step, and find it demonstrates remarkable reasoning capabilities [@deepseek-aiDeepSeekR1IncentivizingReasoning2025].
+DeepSeek train a model, [DeepSeek-R1-Zero](../../permanent/deepseek-r1-zero.md), using large-scale reinforcement learning (RL) *without* supervised fine-tuning (SFT) as a preliminary step, and find it demonstrates remarkable reasoning capabilities [@deepseek-aiDeepSeekR1IncentivizingReasoning2025].
 
 However, R1-Zero has problems like poor readability and language mixing. So they build DeepSeek-R1, which adds multi-stage training and cold-start data before RL. DeepSeek-R1 achieves performance comparable to OpenAI-o1-1217 on reasoning tasks.
 

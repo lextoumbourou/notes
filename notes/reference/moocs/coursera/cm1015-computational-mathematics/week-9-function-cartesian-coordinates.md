@@ -72,7 +72,7 @@ status: draft
     ![A right triangle under a descending line shows vertical side a, horizontal side b, and the acute and obtuse angles the line makes with the x-axis.](../../../../_media/week-9-function-cartesian-coordinates-right-triangle.png)
     * $\beta = 180 - \alpha$
     $tan(\beta) = a/b = 4/2 = 2$
-* [Slope-Intercept Form](../../../../permanent/Slope-Intercept%20Form.md) for a straight line: $y = mx + n$
+* [Slope-Intercept Form](../../../../permanent/slope-intercept-form.md) for a straight line: $y = mx + n$
     * With $m = tan(\alpha)$, In our case $n=4$, $m=tan(\alpha) = -\tan(\beta) = -2$
 
 ## Quiz

@@ -12,7 +12,7 @@ Introduces a new world model called **SANA-WM**, that is camera-controlled and c
 
 Video is not my area of expertise, but nonetheless, I wanted to have a crack at understanding all the details.
  
-The architecture builds on their earlier work by Nvidia with [SANA-Video](SANA-Video.md).
+The architecture builds on their earlier work by Nvidia with [SANA-Video](sana-video.md).
 
 At only 2.6B parameters, they can train it in only 15 days on only 64 H100 GPUs, using on 213K public video clips as training data.
 

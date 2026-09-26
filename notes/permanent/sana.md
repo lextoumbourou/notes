@@ -9,4 +9,4 @@ status: draft
 
 It's built on the [Linear Diffusion Transformer](linear-diffusion-transformer.md), which uses [Linear Attention](linear-attention.md) instead of standard attention.
 
-From paper [Sana - Efficient High-Resolution Image Synthesis With Linear Diffusion Transformers](sana-efficient-high-resolution-image-synthesis-with-linear-diffusion-transformers.md). It's also the base for later models like [SANA-Video](SANA-Video.md) and [Sana-WM: 60-second camera-controlled videos on a single GPU](sana-wm-efficient-minute-scale-world-modeling-with-hybrid-linear-diffusion-transformer.md).
+From paper [Sana - Efficient High-Resolution Image Synthesis With Linear Diffusion Transformers](sana-efficient-high-resolution-image-synthesis-with-linear-diffusion-transformers.md). It's also the base for later models like [SANA-Video](sana-video.md) and [Sana-WM: 60-second camera-controlled videos on a single GPU](sana-wm-efficient-minute-scale-world-modeling-with-hybrid-linear-diffusion-transformer.md).

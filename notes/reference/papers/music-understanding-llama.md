@@ -20,7 +20,7 @@ Contributors
 * Chenshuo Sun
 * Ying Shan
 
-Introduces [Music Understanding LLaMA (MU-LLaMA)](../../permanent/Music%20Understanding%20LLaMA%20%28MU-LLaMA%29.md).
+Introduces [Music Understanding LLaMA (MU-LLaMA)](../../permanent/music-understanding-llama-mu-llama.md).
 
 A model capable of answering questions relating to musical audio and also captioning.
 

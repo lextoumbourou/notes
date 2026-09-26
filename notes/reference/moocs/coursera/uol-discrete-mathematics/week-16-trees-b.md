@@ -106,7 +106,7 @@ modified: 2026-09-26 08:50
 
 Consider the following graph, G, with 4 vertices, $x$, $y$, $z$ and $w$.
 
-![week-16-peer-graded-graph-G](../../../../_media/week-16-peer-graded-graph-G.png)
+![week-16-peer-graded-graph-G](../../../../_media/week-16-peer-graded-graph-g.png)
 
 1. Find the degree sequence of the graph $G$.
 

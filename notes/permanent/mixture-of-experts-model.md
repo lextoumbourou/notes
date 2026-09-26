@@ -5,4 +5,4 @@ modified: 2024-10-15 00:00
 status: hidden
 ---
 
-**Mixture of Experts Model** are models with a router component that sends request to a subset of layers. [Mixtral 8x7B](mixtral-8x7B.md) is an example.
+**Mixture of Experts Model** are models with a router component that sends request to a subset of layers. [Mixtral 8x7B](mixtral-8x7b.md) is an example.

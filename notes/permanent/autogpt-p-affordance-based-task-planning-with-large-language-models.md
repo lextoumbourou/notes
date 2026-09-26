@@ -7,7 +7,7 @@ status: draft
 
 ## Overview
 
-This research paper proposes [AutoGPT + P](autogpt-+-p.md), a system that allows users to interact with robots using natural language.
+This research paper proposes [AutoGPT + P](autogpt-plus-p.md), a system that allows users to interact with robots using natural language.
 
 AutoGPT+P uses affordances, which represent the actions that an object or environment can offer to an agent, to dynamically capture the initial state of a task planning problem.
 

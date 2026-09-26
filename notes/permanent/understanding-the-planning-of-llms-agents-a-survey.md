@@ -21,7 +21,7 @@ The authors categorise existing research into five directions:
 Each section discusses the motivation, key approaches, and limitations of the respective direction.
 
 The survey also presents a detailed analysis of LLM-based agents' planning abilities, highlighting challenges like:
-* [Hallucinations](Hallucinations.md)
+* [Hallucinations](hallucinations.md)
 * Feasibility of Plans
 * Efficiency of Plans
 * Multi-Modal Environmental Feedback

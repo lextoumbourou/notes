@@ -12,13 +12,13 @@ category: reference/papers
 
 ---
 
-This paper introduces [Mixtral 8x7B](../../permanent/mixtral-8x7B.md), a [Mixture of Experts Model](../../permanent/mixture-of-experts-model.md) (SMoE) language model.
+This paper introduces [Mixtral 8x7B](../../permanent/mixtral-8x7b.md), a [Mixture of Experts Model](../../permanent/mixture-of-experts-model.md) (SMoE) language model.
 
 The model uses an SMoE approach where each layer comprises eight "experts", and a router network selects two experts to process each token. Thanks to this, despite having 47B parameters, it only uses 13B active parameters during inference, which makes it more computationally efficient than other models (although it doesn't save any memory).
 
 It outperforms Llama 2 70B and GPT-3.5 on many benchmarks, particularly in mathematics, code generation, and multilingual tasks.
 
-They also present [Mixtral 8x7B – Instruct](../../permanent/mixtral-8x7B-instruct.md), a chat model fine-tuned to follow instructions, which outperforms other chat models like GPT-3.5 Turbo and Llama 2 70B – chat.
+They also present [Mixtral 8x7B – Instruct](../../permanent/mixtral-8x7b-instruct.md), a chat model fine-tuned to follow instructions, which outperforms other chat models like GPT-3.5 Turbo and Llama 2 70B – chat.
 
 The base and instruct models are released under the Apache 2.0 license, making them freely available for academic and commercial use.
 

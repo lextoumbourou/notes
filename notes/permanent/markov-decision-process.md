@@ -35,7 +35,7 @@ The **state space** (or **observation space**) encompasses all possible states a
 
 Frozen Lake has 16 possible states in the standard 4×4 grid. You can access the observation space via `env.observation_space` in the gymnasium.
 
-![frozenlake_state_screenshots_4x4.png](../_media/frozenlake_state_screenshots_4x4.png)
+![frozenlake_state_screenshots_4x4.png](../_media/frozenlake-state-screenshots-4x4.png)
 
 ### Actions
 

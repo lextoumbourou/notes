@@ -25,7 +25,7 @@ We show how to (i) use CNNs to learn a context-rich vocabulary of image constitu
 
 Our approach is readily applied to conditional synthesis tasks, where both non-spatial information, such as object classes, and spatial information, such as segmentations, can control the generated image.
 
-In particular, we present the first results on semantically-guided synthesis of megapixel images with transformers and obtain the state of the art among autoregressive models on class-conditional [ImageNet](ImageNet.md).
+In particular, we present the first results on semantically-guided synthesis of megapixel images with transformers and obtain the state of the art among autoregressive models on class-conditional [ImageNet](imagenet.md).
 
 
 

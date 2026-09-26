@@ -9,7 +9,7 @@ status: draft
 
 It does not require fine-tuning and is an example of a [Single Agent System](single-agent-system.md).
 
-![Self-refine example](../_media/animation_oldstyle_oneloop.gif)
+![Self-refine example](../_media/animation-oldstyle-oneloop.gif)
 
 *Image from https://selfrefine.info*
 

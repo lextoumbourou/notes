@@ -7,7 +7,7 @@ status: draft
 
 So-VITS-SVC is an open-source project that has spawned many, many forks. It is a [Singing Voice Conversion](singing-voice-conversion.md) model that uses [SoftVC](softvc.md) content encoder to extract speech features from source audio.
 
-The feature vectors are fed into [VITS](VITS.md) without the need for conversion to a text-based intermediate representation.
+The feature vectors are fed into [VITS](vits.md) without the need for conversion to a text-based intermediate representation.
 
 Therefore, the pitch and intonation of the original audio are preserved.
 

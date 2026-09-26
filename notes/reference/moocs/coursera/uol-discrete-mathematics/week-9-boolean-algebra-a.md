@@ -97,7 +97,7 @@ modified: 2026-09-26 08:50
 
     * Proof of distributivity of + over .
         * A truth table to prove the distributivity of + over . using truth tables.
-          ![proof-of-distributivity-for-.-and-+](../../../../_media/proof-of-distributivity-for-.-and-+.png)
+          ![proof-of-distributivity-for-.-and-+](../../../../_media/proof-of-distributivity-for-dot-and-plus.png)
     * Principle of duality
         * Starting with a Boolean relation, we can build another equivalent Boolean relation by:
             * changing each **OR (+)** sign to an **AND (.)** sign

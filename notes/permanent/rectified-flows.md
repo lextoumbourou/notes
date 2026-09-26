@@ -9,4 +9,4 @@ status: draft
 
 Straight paths mean you can generate samples in far fewer steps than a typical [Diffusion Models](diffusion-models.md). It's closely related to [Flow Matching](flow-matching.md).
 
-Used in [SANA-Video](SANA-Video.md).
+Used in [SANA-Video](sana-video.md).

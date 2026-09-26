@@ -17,7 +17,7 @@ Here is a Mel Spectrogram of the audio of a Trumpet
 ![Melspectrogram example of a Trumpet](../_media/melspectrogram-example.png)
 
 <audio controls>
-  <source src="_media/trumpet_example.mp3" type="audio/mpeg">
+  <source src="_media/trumpet-example.mp3" type="audio/mpeg">
 </audio>
 
 The process of generating a Mel Spectrogram works like this:

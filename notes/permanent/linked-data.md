@@ -7,4 +7,4 @@ status: draft
 
 **Linked Data** is a structure for data that allows for linking between data. It was coined in 2006, in a design note about the [Semantic Web](semantic-web.md) project. The idea was to build on existing web technologies like [HTTP](http.md), [RDF](rdf.md) and [URI](uri.md)s, but extend to make them Machine Readable.
 
-[Wikidata](Wikidata.md) is a key example of a Linked Data implementation.
+[Wikidata](wikidata.md) is a key example of a Linked Data implementation.

@@ -108,7 +108,7 @@ modified: 2023-04-09 00:00
     ![week-15-kruskals-step1.webp](../../../../_media/week-15-kruskals-step1.webp)
 
     * Step 2.
-    ![week-15-kruskal's-step-2.webp](../../../../_media/week-15-kruskal's-step-2.webp)
+    ![week-15-kruskal's-step-2.webp](../../../../_media/week-15-kruskals-step-2.webp)
 
     * And so on...
 * [Prim's Algorithm](../../../../permanent/prims-algorithm.md)

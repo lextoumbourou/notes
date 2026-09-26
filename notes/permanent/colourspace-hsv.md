@@ -17,7 +17,7 @@ Value (V) is the maximum value among a specific colour's red, green, and blue co
 
 The HSV colour space is an inverted cone, where hue relates to the angle, saturation to the radius, and value to the height from the origin. White is at the origin, and white is at the furthest point along the value axis.
 
-![Diagram of HSV Colour Space by Mathworks](../_media/HSV-img.png)
+![Diagram of HSV Colour Space by Mathworks](../_media/hsv-img.png)
 
 Image from [Understanding Color Spaces and Color Space Conversion](https://au.mathworks.com/help/images/understanding-color-spaces-and-color-space-conversion.html) by [Mathworks](https://au.mathworks.com/).
 

@@ -47,7 +47,7 @@ Here are some examples of the keywords and the generated captions, followed by t
 
 ![Examples of keyword-to-caption augmentation, showing audio keywords, raw T5 captions and edited captions that replace gendered references with gender-neutral language.](../../_media/large-scale-contrastive-language-audio-pre-training-with-feature-fusion-and-keyword-to-caption-augmentation-captions-debias.png)
 
-### 4. [Laion Audio 630K](../../permanent/laion-audio-630K.md)
+### 4. [Laion Audio 630K](../../permanent/laion-audio-630k.md)
 
 Finally, Laion Audio 630k was released: a large text/audio dataset scraped from the internet. They collect 633 526 text/audio pairs, amounting to 4,325.39 hours of audio.
 
@@ -105,7 +105,7 @@ However, they all share limitations:
 
 ## Training Dataset
 
-[Laion Audio 630K](../../permanent/laion-audio-630K.md)
+[Laion Audio 630K](../../permanent/laion-audio-630k.md)
 
 * 630K+ audio-text pairs.
 
@@ -160,7 +160,7 @@ After training, embeddings are then used for upstream tasks:
 
 They experiment with two models for audio encoders:
 
-[PANNs](../../permanent/PANNs.md)
+[PANNs](../../permanent/panns.md)
 
 * a CNN-based audio classification model with seven downsampling CNN blocks and seven upsampling blocks.
 

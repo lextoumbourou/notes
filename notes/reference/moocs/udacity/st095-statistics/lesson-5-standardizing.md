@@ -10,7 +10,7 @@ modified: 2023-04-08 00:00
 
 * If concerned with proportion less than or greater than a certain value, we should use relative frequencies
 * Smaller bins can provide more accurate details on histograms, but bin sizes too small, can hide shape of distribution
-<img src="/_media/st095-statistics/too_small_bin.png"></img>
+<img src="/_media/st095-statistics/too-small-bin.png"></img>
 * Continuous distribution
     * An equation that allows you to calculate proportion between any two values on x-axis of distribution
 * Area of normally proportionally distributed data will always be "1" or 100%

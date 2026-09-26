@@ -13,4 +13,4 @@ $$
 
 Higher scores mean easier text. Scores around 60 to 70 are considered plain English, while scores below 30 are very difficult to read. The Flesch-Kincaid Grade Level is a related formula that maps the same inputs to a US school grade.
 
-Because it only counts surface features, it can't tell whether the text actually makes sense. See [Cloze procedure: A new tool for measuring readability](cloze-procedure%20a-new-tool-for-measuring-readability.md) for an approach that tests real readers instead.
+Because it only counts surface features, it can't tell whether the text actually makes sense. See [Cloze procedure: A new tool for measuring readability](cloze-procedure-a-new-tool-for-measuring-readability.md) for an approach that tests real readers instead.

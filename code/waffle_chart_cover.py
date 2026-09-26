@@ -10,4 +10,4 @@ fig = plt.figure(
     values=[30, 16, 4],
     colors=[Theme.COLOR_1, Theme.COLOR_2, Theme.COLOR_3]
 )
-plt.savefig('notes/_media/waffle_cover.png', dpi=25, bbox_inches='tight')
+plt.savefig('notes/_media/waffle-cover.png', dpi=25, bbox_inches='tight')

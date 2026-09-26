@@ -127,12 +127,12 @@ modified: 2026-09-26 08:50
         * Can see function is increasing.
         * Passes through coordinate (1, 0)
 
-            ![log_2_graph](../../../../_media/log_2_graph.png)
+            ![log_2_graph](../../../../_media/log-2-graph.png)
 
         * Logarithm function with b > 1
             * $\log_{2} \ {x}$
 
-                ![log_base_greater_than_one](../../../../_media/log_base_greater_than_one.png)
+                ![log_base_greater_than_one](../../../../_media/log-base-greater-than-one.png)
 
             * Can see the curves are symmetric with respect to red line y = x.
                 * This is expected as logarthim is inverse of exponential function.
@@ -144,7 +144,7 @@ modified: 2026-09-26 08:50
             * Example where b < 1
                 * *$log_{\frac{1}{2}} \ x$
 
-                ![log_base_less_than_one](../../../../_media/log_base_less_than_one.png)
+                ![log_base_less_than_one](../../../../_media/log-base-less-than-one.png)
 
                 * Can also infer these properties:
                     * Domain: $(0, \infty)$ ($\mathbb{R}^{+}$)
@@ -156,7 +156,7 @@ modified: 2026-09-26 08:50
     * $\ln \ x = \log_e x$ where $e = 2.71828$
     * $\ln e = log_e e = 1$
     * Graph shows it is an increasing function:
-        * ![log_e_x](../../../../_media/log_e_x.png)
+        * ![log_e_x](../../../../_media/log-e-x.png)
 
 ## The floor function and ceiling functions
 
@@ -315,7 +315,7 @@ g : B → C is defined by the following table.
 
 1. Draw arrow diagrams to represent the function f and g.
 
-    ![week-4-fx-gx.drawio](../../../../_media/week-4-fx-gx.drawio.png)
+    ![week-4-fx-gx.drawio](../../../../_media/week-4-fx-gx-drawio.png)
 
 2. List the domain; the co-domain and the range of f and g.
 
@@ -361,7 +361,7 @@ Given a function $f$ defined by $f(x) = \lfloor x \rfloor$ where $f : \mathbb{R}
 
 1. Plot the graph of a the function $f(x)$ where $x \in [-3, 3]$
 
-    ![FloorGraph.drawio](../../../../_media/FloorGraph.drawio.png)
+    ![FloorGraph.drawio](../../../../_media/floor-graph-drawio.png)
 
 2. Find $floor(\pi)$, $floor(-2.5)$, $floor(-1)$
 

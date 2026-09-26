@@ -24,4 +24,4 @@ fig.set_facecolor('#EEEEEE')
 fig.patch.set_alpha(0.0)
 
 # Save the figure as a PNG file
-plt.savefig('notes/_media/waffle_example_2020_pres.png', dpi=100, bbox_inches='tight')
+plt.savefig('notes/_media/waffle-example-2020-pres.png', dpi=100, bbox_inches='tight')

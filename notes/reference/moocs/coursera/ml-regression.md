@@ -280,7 +280,7 @@ Notes taken during [ML Regression](https://www.coursera.org/learn/ml-regression)
   * Step 3: Take the gradient of the RSS:
     * ``-2 * H_vector_transposed * (y_vector - H_vector * w_vector)``
 
-      ![Gradient of RSS Notes](../../_media/gradient-of-RSS-notes.png)
+      ![Gradient of RSS Notes](../../_media/gradient-of-rss-notes.png)
 
   * Step 4: Approach 1, closed-form solution: solve for W.
     * Set result to 0 and solve.

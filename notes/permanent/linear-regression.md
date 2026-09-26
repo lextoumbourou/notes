@@ -24,7 +24,7 @@ Linear Regression is about finding the line that best fits the data. This line c
 
 {plot with line goes here}
 
-The [Slope-Intercept Form](Slope-Intercept%20Form.md) of a linear equation is $y = mx + b$, where $y$ = the dependant variable and $x$ is the independent variable. The job of linear regression is to calculate $m$ and $b$. In Linear Regression, b is referred to as the bias term, and $m$ as the weight.
+The [Slope-Intercept Form](slope-intercept-form.md) of a linear equation is $y = mx + b$, where $y$ = the dependant variable and $x$ is the independent variable. The job of linear regression is to calculate $m$ and $b$. In Linear Regression, b is referred to as the bias term, and $m$ as the weight.
 
 How do we calculate the bias and weight terms? Using the amazing [Gradient Descent](gradient-descent.md) algorithm.
 

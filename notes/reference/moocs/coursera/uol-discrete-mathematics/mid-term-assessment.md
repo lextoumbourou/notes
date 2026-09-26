@@ -80,7 +80,7 @@ $$
 
 Draw a Venn Diagram to show this information.
 
-![discrete-midterm-2022.drawio (2)](../../../../_media/discrete-midterm-2022.drawio%20(2).png)
+![discrete-midterm-2022.drawio (2)](../../../../_media/discrete-midterm-2022-drawio-2.png)
 
 ---
 
