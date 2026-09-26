@@ -694,14 +694,16 @@ html[data-theme="dark"] .theme-icon-moon { display: none; }
 }
 .prose-body h3 {
   font-weight: 600;
-  font-size: 19px;
+  font-size: 22px;
+  line-height: 1.35;
   color: var(--g-heading);
   margin: 28px 0 10px;
   scroll-margin-top: 24px;
 }
 .prose-body h4 {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 19px;
+  line-height: 1.4;
   color: var(--g-heading);
   margin: 22px 0 8px;
 }
@@ -754,6 +756,12 @@ html[data-theme="dark"] .theme-icon-moon { display: none; }
   line-height: 1.6;
   margin: 0 0 22px;
   overflow-x: auto;
+}
+
+/* Prompts and other plain text preserve line breaks while fitting the column. */
+.prose-body .plain-text pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .prose-body code:not(pre code) {

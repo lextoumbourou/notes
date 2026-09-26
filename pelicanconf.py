@@ -1,6 +1,7 @@
 import os
 
 from functools import partial
+from code_block_formatter import CodeBlockFormatter
 
 MARKUP = ("md",)
 
@@ -60,6 +61,7 @@ MARKDOWN = {
         "markdown_fast_callouts": {},
         "markdown.extensions.codehilite": {
             "css_class": "highlight",
+            "pygments_formatter": CodeBlockFormatter,
         },
         "markdown.extensions.extra": {},
         "markdown.extensions.meta": {},
