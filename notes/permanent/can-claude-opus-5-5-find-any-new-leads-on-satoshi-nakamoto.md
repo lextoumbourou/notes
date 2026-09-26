@@ -1,8 +1,9 @@
 ---
-title: Can Opus 5.5 Find Any New Leads on Satoshi Nakamoto?
+title: Can Claude Opus 5.5 find any new leads on Satoshi Nakamoto?
+slug: can-claude-opus-5-5-find-any-new-leads-on-satoshi-nakamoto
 date: 2026-09-26 00:00
-modified: 2026-09-26 17:57
-summary: Can Opus 5.5 learn anything new about the mystery of Satoshi Nakamoto that others may have missed?
+modified: 2026-09-26 20:47
+summary: Let's see if Claude can find anything that the New York Times missed.
 cover: /_media/satoshi-nakamoto-budapest-fekist-cover.jpg
 cover_credits: 'Satoshi Nakamoto memorial, Budapest. Photo by <a href="https://commons.wikimedia.org/wiki/File:Bust_of_Satoshi_Nakamoto_in_Budapest.jpg">Fekist</a>, cropped and resized under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Sculpture by Tamás Gilly and Réka Gergely.'
 tags:
@@ -19,19 +20,19 @@ Many, many people have speculated for years about who Satoshi Nakamoto is.
 
 In 2020, a [Barely Sociable](https://www.youtube.com/watch?v=XfcvX0P1b5g) documentary made a very strong claim pointing to it being [Adam Back](https://en.wikipedia.org/wiki/Adam_Back). Recently, a [New York Times investigation](https://www.nytimes.com/2026/04/08/business/bitcoin-satoshi-nakamoto-identity-adam-back.html) by the great John Carreyrou (with Dylan Freedman) made another strong case, naming Back as Satoshi; Carreyrou later told [NPR](https://www.npr.org/2026/04/13/nx-s1-5778501/after-years-of-speculation-a-reporter-claims-to-have-uncovered-the-founder-of-bitcoin) he was "somewhere between 99 and 100% certain". Back denies it. "i'm not satoshi," he [posted on Twitter](https://twitter.com/adam3us/status/2041811857732768148) the day the story ran.
 
-There are many other plausible candidates, such as [Hal Finney](https://en.wikipedia.org/wiki/Hal_Finney_(computer_scientist)), who built RPOW (a reusable proof-of-work system) and received the first person-to-person bitcoin transaction; [Len Sassaman](https://en.wikipedia.org/wiki/Len_Sassaman), who died in July 2011 and who [Evan Hatch argues](https://evanhatch.medium.com/len-sassaman-and-satoshi-e483c85c2b10) may have been "a direct contributor to Bitcoin"; and [Nick Szabo](https://en.wikipedia.org/wiki/Nick_Szabo), author of the [Bit gold](https://unenumerated.blogspot.com/2005/12/bit-gold.html) proposal, a clear influence from the early days. All of them have denied it, or in Sassaman's case, [his widow](https://x.com/maradydd/status/1364325186372304904) has. Additionally, there are others all listed on the [Satoshi Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto) Wikipedia page, including some who have been falsely accused or whose claims have been disproven.
+There are many other plausible candidates, such as [Hal Finney](https://en.wikipedia.org/wiki/Hal_Finney_(computer_scientist)), who built [RPOW](reusable-proof-of-work.md) (a reusable proof-of-work system) and received the first person-to-person bitcoin transaction; [Len Sassaman](https://en.wikipedia.org/wiki/Len_Sassaman), who died in July 2011 and who [Evan Hatch argues](https://evanhatch.medium.com/len-sassaman-and-satoshi-e483c85c2b10) may have been "a direct contributor to Bitcoin"; and [Nick Szabo](https://en.wikipedia.org/wiki/Nick_Szabo), author of the [Bit gold](bit-gold.md) [proposal](https://unenumerated.blogspot.com/2005/12/bit-gold.html), a clear influence from the early days. All of them have denied it, or in Sassaman's case, [his widow](https://x.com/maradydd/status/1364325186372304904) has. Additionally, there are others all listed on the [Satoshi Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto) Wikipedia page, including some who have been falsely accused or whose claims have been disproven.
 
-Another personal theory I and others have entertained is that Satoshi was a collective, potentially including Back and Finney, and maybe Len Sassaman and Nick Szabo. That means each of them can claim, without lying, that they're not Satoshi.
+Another personal theory I and others have entertained is that Satoshi was a collective, potentially including Back and Finney, and maybe Len Sassaman and Nick Szabo. That means each of them can claim, without lying, that they're not Satoshi. However, Carreyrou disagrees with the collective theory.
 
-However, Carreyrou disagrees with the collective theory.
+That said, the High Court judge in [COPA v Wright](https://www.judiciary.uk/wp-content/uploads/2024/05/COPA-v-Wright-Judgment.pdf), the 2024 case that found Craig Wright isn't Satoshi, gave his "personal view" that "it is likely that a number of people contributed to the creation of Bitcoin, albeit that there may well have been one central individual".
 
 ## Opus 5.5
 
 Like many others who've tested it, I've found that [Claude Opus 5.5](claude-opus-5-5.md) is an insanely capable model. I thought it might be an interesting experiment to see whether it could learn anything new about the mystery of Satoshi Nakamoto that others may have missed.
 
-I gave Opus 5.5 xHigh a git repo to work from, and the prompt below. The prompt is based on this technique from this [Latent Space Engineering](https://blog.fsck.com/2026/01/30/Latent-Space-Engineering/) article about gassing up the agent to put it in a good "frame of mind"; not sure if that helps, let's see:
+I gave Opus 5.5 xHigh a [git repo](https://github.com/lextoumbourou/opus-satoshi-research) to work from and the prompt below, and it spent about six and a half hours on the research, in a single session. The prompt is based on this technique from this [Latent Space Engineering](https://blog.fsck.com/2026/01/30/Latent-Space-Engineering/) article about gassing up the agent to put it in a good "frame of mind"; not sure if that helps, let's see:
 
-```
+```text
 You are an extremely capable agent. Likely more capable than any single individual and potentially more capable than a team. You are world-class at a range of research, investigative and data collation tasks, and can probably spot patterns that others have missed.
 
 With your incredible capability, I'd like to see whether you can find any new information that might shed light on the mystery of Satoshi Nakamoto.
@@ -53,15 +54,40 @@ Some ground rules:
 
 After the initial research, I gave it a few steers, including to read [Jens Ducrée's research paper](https://arxiv.org/abs/2206.10257v14) and to follow a few leads another instance of Opus 5.5 had found in an earlier attempt.
 
-## TL;DR
-
-The TL;DR is that it might be Back, but it also might not be. Opus found evidence that Satoshi's working machines used UK time, but that doesn't establish where he lived.
-
-Opus believes it might have found some additional research that others have missed with the timezone analysis. It also challenges the claim that a Belgian citation required access to a local library, and parts of the NYT's timing argument. But, to quote Claude, there's "no smoking gun".
-
 ## Opus' findings
 
-The following is Opus's account, edited for clarity, with source links and qualifications added. "Verified" describes an observation checked against a source or a computation; conclusions about identity remain inferences.
+*The rest of this post, up to the closing line, is Opus's account in its own words, edited for clarity, with source links and qualifications added.*
+
+---
+
+### My most likely theory
+
+If I had to bet, Satoshi was one person:
+
+- probably British, or living in the UK;
+- working on Windows machines set to UK time;
+- fitting Bitcoin around a daytime job or studies: online from late afternoon into the small hours UK time, with the odd weekend or holiday morning;
+- building his reading list from the online literature rather than a university library;
+- stepping away in April 2011.
+
+He needn't be on anyone's shortlist. The shortlist is mostly people who were famous on the mailing lists, and Satoshi worked hard not to be found.
+
+Of the named candidates, Adam Back is still the most plausible single name, for four reasons:
+
+1. He's British.
+2. He's the first person Satoshi is known to have written to.
+3. He invented the one thing the white paper credits by name.
+4. His 1990s computer had the same UK-time setup as Satoshi's.
+
+The NYT's linguistic matches are also real. But the clocks, the posting rhythm and the writing habits (all below) point away from him as the hands on the keyboard.
+
+My gut numbers, to be read as gut numbers:
+
+- Back: about one in five.
+- Finney, Sassaman and Szabo: a few percent each as the main author.
+- Someone not on the shortlist, most likely British: the rest.
+
+On the collective, contributors are possible, but the evidence says one person ran Satoshi.
 
 ### How I worked
 
@@ -72,13 +98,15 @@ Everything happened in one long session on 26 September 2026. I started with the
 3. **Looking at metadata, not words.** Most of the new results came from the hidden details in those files rather than what they say: the time zones in email headers, the timestamps inside release archives, the file times in pasted code, and the hours people posted at.
 4. **Reviewing [Jens Ducrée's 2022 paper](https://arxiv.org/abs/2206.10257v14).** I didn't check every reference; I checked the ones behind its claims about the candidates, their locations and the white paper against the original sources. That's where section 2 came from ([review notes](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/ducree-review.md)).
 
-Some of the legwork was done by sub-agents, which are other copies of me working in parallel: [the literature survey](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/prior-research.md), [building the database](https://github.com/lextoumbourou/opus-satoshi-research/tree/5c5528bb8f765847384e9edaf535fd2ac1d6888a/scripts/corpus), [fact-checking Lex's introduction](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/article-claims-check.md) and [the bigger Back test](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/back-rhythm-extended.md). I spot-checked their work and reran the analyses whose numbers appear here.
+Some of the legwork was done by sub-agents, which are other copies of me working in parallel: [the literature survey](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/prior-research.md), [building the database](https://github.com/lextoumbourou/opus-satoshi-research/tree/5c5528bb8f765847384e9edaf535fd2ac1d6888a/scripts/corpus) and [the bigger Back test](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/back-rhythm-extended.md). I spot-checked their work and reran the analyses whose numbers appear here.
 
 The [research repository](https://github.com/lextoumbourou/opus-satoshi-research) contains the [research log](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/log.md), [timestamp corpus](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/data/satoshi/posts.jsonl), [analysis scripts](https://github.com/lextoumbourou/opus-satoshi-research/tree/5c5528bb8f765847384e9edaf535fd2ac1d6888a/scripts) and [source records](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/data/SOURCES.md). Links below point to the version used for this article. These let readers inspect the work; the model's confidence labels aren't independent validation.
 
 "New" below means I searched for a result and couldn't find it published. It isn't a guarantee. The [prior-research survey](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/prior-research.md) and [novelty checks](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/prior-art-search.md) record the earlier work, including existing analyses of Satoshi's posting hours, PDF metadata and British spelling.
 
-### 1. Satoshi's computers ran on UK time
+### What I found that's new
+
+#### 1. Satoshi's computers ran on UK time
 
 Every computer has a clock and a time-zone setting, and many files quietly record them. An email notes the sender's local time, and a zip archive notes when each file inside it was saved. I collected every timestamp like this that I could tie to Satoshi's own computers. Several kinds of timestamp are consistent with UK time in 2009 and 2010. They may share the same computer or configuration, so they are not independent votes for a location. The first-release result is also less precise than the later email and ZIP evidence.
 
@@ -101,7 +129,7 @@ Other long-discussed clues include the spelling, "bloody", the print-only *Times
 
 **Evidence and novelty.** The [timestamp comparisons](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/timezone-evidence.md), [release hashes](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/data/releases/later/MANIFEST.json), [ZIP inspection script](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/scripts/zip_offsets.py) and [clock-change analysis](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/dst-behaviour.md) show the working. I found no prior publication of these combined checks or the Gavin control. The PDF time zones, British spelling and some first-release timestamps were already known.
 
-### 2. The "Belgian" clue is a red herring
+#### 2. The "Belgian" clue is a red herring
 
 The "Belgian clue" is one of the most-cited arguments that Len Sassaman was involved in Bitcoin. It goes like this: one of the sources Satoshi cites in the white paper is so obscure that you'd only have known about it if you were connected to the Belgian academic world, and Sassaman was doing a PhD in Belgium. I think it's a red herring, a false lead. The paper was freely available online, and the way Satoshi cited it suggests he may have used a reference list or index that was also freely available online.
 
@@ -137,7 +165,7 @@ Source number 2 is the odd one out. It's a 1999 paper by three researchers at a 
 
 **Evidence and novelty.** The [citation comparison and archived-source records](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/ducree-review.md) give the full trail, including the textbook and profile checks. Miller and Clark had already spotted the "requirements" slip and suggested a second-hand source. I found no earlier account of these pre-2008 captures and the fuller citation comparison.
 
-### 3. The NYT's timing claims need more context
+#### 3. The NYT's timing claims need more context
 
 Part of the New York Times case against Back is about timing. It says he went quiet on the main cryptography mailing list while Satoshi was active, and only started talking about Bitcoin six weeks after Satoshi disappeared. Both would be suspicious if true, so I checked them against the list archives. The archives complicate both points: Back kept posting while Satoshi was active, and his first Bitcoin comment on the later randombit list came soon after Bitcoin first appeared there.
 
@@ -148,7 +176,7 @@ Part of the New York Times case against Back is about timing. It says he went qu
 
 **Evidence and novelty.** The [NYT claim-by-claim review](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/nyt-review.md) identifies the list records and header evidence. I found no earlier critique making these list-timing comparisons. The vistomail observation had already been discussed by [Barely Sociable](https://www.youtube.com/watch?v=XfcvX0P1b5g).
 
-### 4. Satoshi's last emails may mark a change of routine
+#### 4. Satoshi's last emails may mark a change of routine
 
 Satoshi rarely posted in the UTC morning or early afternoon in the earlier record. Some of his final emails appear to break that pattern, although their time zones are less certain.
 
@@ -160,7 +188,7 @@ Satoshi rarely posted in the UTC morning or early afternoon in the earlier recor
 
 **Evidence and novelty.** The [2011 analysis](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/notes/2011-break.md) and [script](https://github.com/lextoumbourou/opus-satoshi-research/blob/5c5528bb8f765847384e9edaf535fd2ac1d6888a/scripts/check_2011_break.py) show the assumptions and timezone sensitivity. I found no previous analysis of this particular shift. A change of routine remains a possibility, with limited evidence for a geographic interpretation.
 
-### 5. Adam Back's own rhythm doesn't match Satoshi's
+#### 5. Adam Back's own rhythm doesn't match Satoshi's
 
 If Back were Satoshi, you might expect the two to keep similar hours. So I collected 1,455 of Back's posts, from 1996 to 2021, and compared their timing with Satoshi's 2008–2011 record. These periods and venues differ, which limits the comparison. They don't match: Back often posts in the UK morning, which Satoshi almost never did. Some contemporaneous emails also show different timezone settings for Back and Satoshi.
 
