@@ -17,4 +17,4 @@ he program employs two neural networks:
 
 These networks are trained using a combination of supervised learning, where they learn from human expert games, and reinforcement learning, where they improve their performance by playing against themselves.
 
-AlphaGo’s uses [Monte Carlo Tree Search](../../../permanent/monte-carlo-tree-search.md) to explore possible game sequences by combining the information from the neural networks with traditional Monte-Carlo rollouts, creating a powerful and efficient search engine.
+AlphaGo’s uses [Monte Carlo Tree Search](monte-carlo-tree-search.md) to explore possible game sequences by combining the information from the neural networks with traditional Monte-Carlo rollouts, creating a powerful and efficient search engine.

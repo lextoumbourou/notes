@@ -1,6 +1,7 @@
 ---
 title: Week 20 - Combinatorics B
 date: 2022-02-25 00:00
+modified: 2026-09-26 08:50
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
@@ -53,7 +54,7 @@ parent: uol-discrete-mathematics
             * $\binom{n}{k-1}$ subsets of k elements that contain a
             * $\binom{n}{k}$ subsets of k elements of T that don't contain a
         * Hence, $\binom{n+1}{k} = \binom{n}{k-1} + \binom{n}{k}$
-    * It's the basis for geometic arrangements of the binomial coefficients in a triangle. This is called [Pascal's Triangle](permanent/pascals-triangle.md).
+    * It's the basis for geometic arrangements of the binomial coefficients in a triangle. This is called Pascal's Triangle.
     * Pascal's triangle is a number triangle with numbers arranged in staggered rows such that $a_{n,r}$ is the binomial coefficients of $\binom{n}{r}$
 
       ![week-20-pascals-triangle](../../../../_media/week-20-pascals-triangle.png)

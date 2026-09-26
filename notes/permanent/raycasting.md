@@ -2,6 +2,7 @@
 category: note
 title: Raycasting
 date: 2020-11-05 00:00
+modified: 2026-09-26 08:55
 tags:
   - ComputerGraphics 
 summary: A rendering technique that casts rays for each vertical slice of the screen.
@@ -13,4 +14,4 @@ In the Roblox Engine, a similar concept is given the name raycasting ([Roblox Ra
 
 References:
 
-* [Lode's Computer Graphics Tutorial](../reference/articles/Lode's Computer Graphics Tutorial.md) (Raycasting)
+* [Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/raycasting.html) (Raycasting)

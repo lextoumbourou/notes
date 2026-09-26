@@ -4,7 +4,7 @@ date: 2022-12-05 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## Lesson 5.1 The basics
@@ -67,7 +67,7 @@ modified: 2023-04-08 00:00
             * $x . x' = 0$
         * distinct elements
             * $0 \ne 1$
-* [Basic Theorems of Boolean Algebra](permanent/basic-theorems-of-boolean-algebra)
+* Basic Theorems of Boolean Algebra
     * Using the 6 axioms of Boolean algebra, we can find these useful theorems for analysing and designing circuits
         * theorem 1: idempotent laws
             * $x + x = x$
@@ -97,7 +97,7 @@ modified: 2023-04-08 00:00
 
     * Proof of distributivity of + over .
         * A truth table to prove the distributivity of + over . using truth tables.
-          ![proof-of-distributivity-for-.-and-+](../../../../journal/_media/proof-of-distributivity-for-.-and-+.png)
+          ![proof-of-distributivity-for-.-and-+](../../../../_media/proof-of-distributivity-for-.-and-+.png)
     * Principle of duality
         * Starting with a Boolean relation, we can build another equivalent Boolean relation by:
             * changing each **OR (+)** sign to an **AND (.)** sign
@@ -137,13 +137,13 @@ $$
 
 ### 5.105 Boolean functions
 
-* [Boolean Function](permanent/boolean-function.md)
+* [Boolean Function](../../../../permanent/boolean-function.md)
     * A boolean function defines a mapping from one or multiple Boolean input values to a Boolean output value.
     * For $n$ Boolean input values, there are $2^n$ possible combinations.
         * For example, a 3-input function $f$ can be completely defined with an 8-row truth table.
     * Algebraic forms
         * There is only one way to represent a Boolean function in a truth table.
-        ![boolean-function-truth-table](../../../../journal/_media/boolean-function-truth-table.png)
+        ![boolean-function-truth-table](../../../../_media/boolean-function-truth-table.png)
         * In algebraic form, a function can be expressed in a variety of ways:
             * For example these are both algebraic representations of the same truth table:
                 * $f(x) = x + x' . y$
@@ -152,10 +152,10 @@ $$
         * The two most common standardised forms:
             * sum-of-products form
             * product-of-sums form
-            * [Sum-of-Products Form](permanent/sum-of-products-formm.md):
+            * [Sum-of-Products Form](../../../../permanent/sum-of-products-form.md):
                 * Variables built using the `AND` operator, are summed together using the `OR` operator.
                 * Example: $f(x, y, z) = xy + xz + yz$
-            * [Product-of-Sums Form](permanent/product-of-sums-form.md)
+            * [Product-of-Sums Form](../../../../permanent/product-of-sums-form.md)
                 * Variables built using the `OR` operator, are multiplied together using the `AND` operator.
                 * Example: $f(x, y, z) = (x + y)(x + z)(y + z)$
             * The sum-of-products form is easier to use so it's used by the course.

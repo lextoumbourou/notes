@@ -2,6 +2,7 @@
 category: note
 title: Sigmoid Function
 date: 2021-07-03 00:00
+modified: 2026-09-26 08:55
 cover: /_media/sigmoid-plot.png
 tags:
   - MachineLearning
@@ -11,7 +12,7 @@ aliases:
 summary: Squeezes any number into a range between 0 and 1.
 ---
 
-The Sigmoid function, also known as the [Logistic Function](../../../permanent/logistic-function.md), squeezes numbers into a probability-like range between 0 and 1.[^1] Used in [Binary Classification](Binary%20Classification) model architectures to compute loss on discrete labels, that is, labels that are either 1 or 0 (hotdog or not hotdog). The equation is:
+The Sigmoid function, also known as the [Logistic Function](logistic-function.md), squeezes numbers into a probability-like range between 0 and 1.[^1] Used in Binary Classification model architectures to compute loss on discrete labels, that is, labels that are either 1 or 0 (hotdog or not hotdog). The equation is:
 
 $$S(x) = \frac{1}{1 + e^{-x}}$$
 
@@ -19,7 +20,7 @@ Intuitively, when `x` is infinity ($e^{-\infty}=0$), the Sigmoid becomes $\frac{
 
 [@foxMachineLearningClassification]
 
-It is named Sigmoid because of its S-like [Function Shape](Function%20Shape). Its name combines the lowercase sigma character and the suffix *[-oid](https://www.dictionary.com/browse/-oid)*, which means *similar to*.
+It is named Sigmoid because of its S-like Function Shape. Its name combines the lowercase sigma character and the suffix *[-oid](https://www.dictionary.com/browse/-oid)*, which means *similar to*.
 
 It can be described and plotted in Python, as follows:
 

@@ -1,11 +1,12 @@
 ---
 title: Pigeonhole Principal
 date: 2023-12-23 00:00
-modified: 2023-12-23 00:00
+modified: 2026-09-26 08:55
 status: draft
 aliases:
   - Dirichlet Drawer Principle
 ---
+
 
 A obvious little principle that turns out to be quite useful.
 
@@ -29,7 +30,7 @@ Examples:
 
 ---
 
-## [[Generalised Pigeonhole Principle]]
+## Generalised Pigeonhole Principle
 
 Generalised principle: if there are $N$ objects to be placed in $k$ boxes, there is at least one box containing at least $[N/k]$ (ceiling) objects.
 

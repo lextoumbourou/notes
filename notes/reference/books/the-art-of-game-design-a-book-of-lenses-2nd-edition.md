@@ -1,7 +1,7 @@
 ---
 title: The Art of Game Design - A Book Of Lenses (2nd Edition) by Jesse Schell
 date: 2021-02-28 00:00
-modified: 2026-09-13 10:39
+modified: 2026-09-26 08:50
 category: reference/books
 cover: /_media/the-art-of-game-design-cover.jpeg
 summary: Notes from Jesse Schell's comprehensive guide to game design.
@@ -276,7 +276,7 @@ I tried to read this book really carefully and take a lot of notes.
 * Players appreciate unifying themes on an unconscious level:
   * "Players know they like a game, but they can’t quite say why. Often, the reason is that all of the elements are reinforcing a theme that is interest- ing or important to them. " -pg 66
 * Reading:
-  * [The Plenitude](The Plenitude) by [Rich Gold](Rich Gold). Theming is just one of the many topics in this treasure trove of wisdom by the designer of the Nintendo Power Glove.*
+  * The Plenitude by Rich Gold. Theming is just one of the many topics in this treasure trove of wisdom by the designer of the Nintendo Power Glove.*
 * Key takeaway:
   * Games with unified themes, that ideally deeply resonate with players, are the best kinds of games.
 
@@ -314,12 +314,12 @@ I tried to read this book really carefully and take a lot of notes.
   * Brainstorm in categories for the elemental tetrad and mix and match.
   * Find a partner, but be wearly of brainstorming in big groups. Usually better to brainstorm in small groups then combine ideas in a larger group.
 * Reading:
-  * [What It Is and Picture This](What It Is and Picture This) by [Lynda Barry](Lynda Barry)
-  * [Fifty Secrets of Magic Craftsmanship](Fifty Secrets of Magic Craftsmanship) by [Savador Dali](Savador Dali)
-  * [Prototyping a Game in 7 Days](Prototyping a Game in 7 Days) by [Kyle Gray](Kyle Gray) [Kyle Gabler](Kyle Gabler) [Matt Kucic](Matt Kucic) and [Shalin Shodhan](Shalin Shodhan)
-  * [The Origins of Conciousness in the Breakdown of the Bicameral Mind](The Origins of Conciousness in the Breakdown of the Bicameral Mind) by [Julian Jaynes](Julian Jaynes) (Chapter 1)
-  * [Groupthink: The Brainstorming Myth](Groupthink: The Brainstorming Myth) by [Jonah Lehrer](Jonah Lehrer)
-  * [Catching the Big Fish](Catching the Big Fish)
+  * What It Is and Picture This by Lynda Barry
+  * Fifty Secrets of Magic Craftsmanship by Salvador Dali
+  * Prototyping a Game in 7 Days by Kyle Gray Kyle Gabler Matt Kucic and Shalin Shodhan
+  * The Origins of Consciousness in the Breakdown of the Bicameral Mind by Julian Jaynes (Chapter 1)
+  * Groupthink: The Brainstorming Myth by Jonah Lehrer
+  * Catching the Big Fish
 * Key takeways:
   * Seek inspiration outside of games for the types of experiences you want to shar with your players.
   * Start with a clear problem statement for your game and expect to iterate on the problem statement as you learn more.
@@ -337,12 +337,12 @@ I tried to read this book really carefully and take a lot of notes.
     * Can the game become profitable?
     * Does the game meet my community and social goals?
     * Do playtesters enjoy the game?
-* [Rule of Loop](../../permanent/Rule of Loop.md): the more times you test and improve, the better the game will be.
+* [Rule of Loop](../../permanent/rule-of-loop.md): the more times you test and improve, the better the game will be.
   * Ideally game can be iterated on quickly, but if not, innovation is require to figure out how to prototype it.
    * How can I make every loop count?
     * How can I loop fast?
-* [Winston Royce](Winston Royce) wrote the paper that was the foundation for Waterfall, though didn't use the word and actually advocated for iterative development.
-* [Barry Boehm](Barry Boehm) in 1986 presented the spiral model of software development:
+* Winston Royce wrote the paper that was the foundation for Waterfall, though didn't use the word and actually advocated for iterative development.
+* Barry Boehm in 1986 presented the spiral model of software development:
   * Create basic design.
   * Assess risks in design.
   * Build prototypes to mitigate risks.
@@ -373,12 +373,12 @@ I tried to read this book really carefully and take a lot of notes.
   * At the end of prototyping, as well as risk assessment, check how you feel about game
      * Am I passionate about how great game can be or can I be?
 * Reading:
-  * [Sketching User Experiences](Sketching User Experiences) by [Billl Buxton](Billl Buxton)
-  * [Have Paper, Will Prototype](Have Paper, Will Prototype) by [Bill Lucas](Bill Lucas)
-  * [The Kodold Guide to Board Game Design](The Kodold Guide to Board Game Design) by [Mike Selinker](Mike Selinker)
-  * [Less Talk, More Rock](Less Talk, More Rock) by [Superbrothers](Superbrothers)
-  * [Agile Software Developer](Agile Software Developer) on Wikipedia
-  * [The 4Fs of Game Design: Fail Faster, and Follow the Fun](The 4Fs of Game Design: Fail Faster, and Follow the Fun) by [Jason Vandenberghe](Jason Vandenberghe)
+  * Sketching User Experiences by Bill Buxton
+  * Have Paper, Will Prototype by Bill Lucas
+  * The Kobold Guide to Board Game Design by Mike Selinker
+  * Less Talk, More Rock by Superbrothers
+  * Agile Software Developer on Wikipedia
+  * The 4Fs of Game Design: Fail Faster, and Follow the Fun by Jason Vandenberghe
 * Key takeaways:
       *Game design requires a lot of prototyping. You cannot be sure of the limitations of your designs until you do a lot of prototyping.
       * Prototyping can help answer the question about the true problem you're trying to solve.
@@ -387,7 +387,7 @@ I tried to read this book really carefully and take a lot of notes.
 ### Chapter 9: The Game Is Made for a Player
 
 * Good designs find way to project themselves into the minds of players.
-* When creating something aimed at large groups of players, we consider ways we can group people aka [demographics](demographics).
+* When creating something aimed at large groups of players, we consider ways we can group people aka demographics.
 * Game industry usually breaks players of ages down as follows:
   * 0-3 - infant / toddler
     * Interested in toys.
@@ -426,7 +426,7 @@ I tried to read this book really carefully and take a lot of notes.
     * games with strong social components: golf, tennis, bridge, online multiplayer games, Facebook games etc.
 * All play activities are connected to childhood, since childhood is centered around play. To create games for someone of a particular age, you must be in tune with the games and themes that were popular when they were children.
 * Gender differences show up sharply in purchasing preferences of games.
-* [Raph Koster](Raph Koster) in [Theory of Run](Theory of Run) suggests the core of winning games is mastering abstract formal systems, which is generally preferred by males to females.
+* Raph Koster in Theory of Fun suggests the core of winning games is mastering abstract formal systems, which is generally preferred by males to females.
   * However, that is not the only gameplay experience available: story, creativity, learning and socialisation are experiences enjoyed by females.
 * 5 things males like in games:
   * Mastery - even if not important or useful. Females prefer skills with interesting purpose
@@ -448,7 +448,7 @@ I tried to read this book really carefully and take a lot of notes.
     * If I were in their place, what would I want to see?
     * What would they like a dislike about the game?
 * "Psycographics" is about grouping people by interests instead of how they look including lifestyle choices and the things they enjoy
-* [Marc LeBlanc](Marc LeBlanc) list of 8 primary game pleasures:
+* Marc LeBlanc list of 8 primary game pleasures:
   * Sensation
     * Delivered through game aesthetics
     * Usually about the "pleasure of the toy"
@@ -469,7 +469,7 @@ I tried to read this book really carefully and take a lot of notes.
   * Submission
     * Submitting to game world
     * Good games make suspending disbelief effortless
-* Taxonomy of player types by [Richard Bartle](Richard Bartle)
+* Taxonomy of player types by Richard Bartle
   * Achievers - want to achieve goals of the game
   * Explorers - want to discover and explore breadth of game
   * Socialities - pleasure of fellowship
@@ -494,8 +494,8 @@ I tried to read this book really carefully and take a lot of notes.
     * What pleasures are missing?
   * Go through list of known pleasures and consider how well it's delivered.
 * Reading:
-  * [Designing Virtual Worlds](Designing Virtual Worlds) by [Richard R. Bartle](Richard R. Bartle)
-  * [Pleasures of the Brain](Pleasures of the Brain) by [Morten L. Kringelbach](Morten L. Kringelbach) and [Kent C. Berridge](Kent C. Berridge)
+  * Designing Virtual Worlds by Richard R. Bartle
+  * Pleasures of the Brain by Morten L. Kringelbach and Kent C. Berridge
 * Key takeaway:
   * Understanding the key demographics and their interests is important, but equally import is thinking about the types of things that give your players pleasure.
 
@@ -513,7 +513,7 @@ I tried to read this book really carefully and take a lot of notes.
   * Our brains have the capacity to focus attention selectively.
     * Example:
       * "Cocktail party effect" - can drown out noise of lots of conversations and focus on just one.
-  * [Mihaly Csikszentmihalyi](Mihaly Csikszentmihalyi) wrote about flow: "a feeling of complete and energized focus in an activity, with a high level of enjoyment and fulfillment"
+  * Mihaly Csikszentmihalyi wrote about flow: "a feeling of complete and energized focus in an activity, with a high level of enjoyment and fulfillment"
   * Key components necessary to create flow state for player:
     * Clear goals
       * If goals are unclear, we aren't sure whether our current action is useful.
@@ -541,7 +541,7 @@ I tried to read this book really carefully and take a lot of notes.
   * Imagination is an important human skill for problem solving and "filling in the details"
   * It's also used for communication - ie story telling.
 * Reading
-  * [Flow: The Psychology of Optimal Experience](Flow: The Psychology of Optimal Experience) by [Mihaly Csikszentmihaly](Mihaly Csikszentmihaly)
+  * Flow: The Psychology of Optimal Experience by Mihaly Csikszentmihalyi
 
 ### Chapter 11: The Player's Mind is Driven By The Player's Motivation
 
@@ -552,7 +552,7 @@ I tried to read this book really carefully and take a lot of notes.
   * ![Maslows' Hierarchy of Needs](../_media/maslows-hierarchy-of-needs.png)
   * Most games fulfill achievement and mastery needs, so even higher levels.
 * More needs
-  * [Edward Deci](Edward Deci) and [Richard Ryan](Richard Ryan) developed self-determination theory
+  * Edward Deci and Richard Ryan developed self-determination theory
   * Suggest we have 3 core needs:
     * **Competance** - being good at something
     * **Autonomy** - ability to do things your way
@@ -592,9 +592,9 @@ I tried to read this book really carefully and take a lot of notes.
     * Do they care about the judgement?
     * Does the judgement make them want to improve?
 * Reading
-  * [Glued to Games](Glued to Games) by [Scott Rigby](Scott Rigby) and [Richard M. Ryan](Richard M. Ryan) an insightful guide to the relationship between self-determination theory and what makes games work.
-  * [Punished by Rewards](Punished by Rewards) by [Alfie Kohn](Alfie Kohn). This book is an excellent overview of the vast body of research about the downsides of extrinsic rewards.
-  * [Understanding Motivation and Emotion](Understanding Motivation and Emotion) by [Johnmarshall Reeve](Johnmarshall Reeve) -college-level textbook about the world of psychological research on the subject.
+  * Glued to Games by Scott Rigby and Richard M. Ryan an insightful guide to the relationship between self-determination theory and what makes games work.
+  * Punished by Rewards by Alfie Kohn. This book is an excellent overview of the vast body of research about the downsides of extrinsic rewards.
+  * Understanding Motivation and Emotion by Johnmarshall Reeve -college-level textbook about the world of psychological research on the subject.
 
 ### Chapter 12: Some Elements Are Game Mechanics
 
@@ -849,7 +849,7 @@ I tried to read this book really carefully and take a lot of notes.
     * Human element of expected value
       * If players weren't told the prob of lighting bolt attack and missed 3 times, they may assume it has a 0% chance of hitting.
       * Even with perfect information, players won't necessarily choose option with highest EV
-        * Psychologists [Kahneman and Tversky](Kahneman and Tversky) ask subjects which game they want to play:
+        * Psychologists Kahneman and Tversky ask subjects which game they want to play:
           * Game A: 66% chance of winning $2400, 33% chance of winning $2500 and 1% chance of $0 (EV = $2409)
           * Game B: 100% chance of winning $2400 (EV = $2400)
         * Only 18% picked A, even though it was better than B.
@@ -876,10 +876,10 @@ I tried to read this book really carefully and take a lot of notes.
       * What's the relationship between chance and skill in the game? Can random elements feel like exercise of a skill?
     * Risk and randomess can add spice to game, but too much can overwhelm everything else.
   * Reading
-    * [Game Mechanics: Advanced Game Design](Game Mechanics: Advanced Game Design) by [Ernest Adams](Ernest Adams) and [Joris Dormans](Joris Dormans)
-    * [The Oxford Book of Board Games](The Oxford Book of Board Games) by [David Parlett](David Parlett)
-    * [Uncertainty in Games](Uncertainty in Games) by [Greg Costikyan](Greg Costikyan)
-    * [The Unfinished Game](The Unfinished Game) by [Keith Devlin](Keith Devlin)
+    * Game Mechanics: Advanced Game Design by Ernest Adams and Joris Dormans
+    * The Oxford Book of Board Games by David Parlett
+    * Uncertainty in Games by Greg Costikyan
+    * The Unfinished Game by Keith Devlin
 
 ### Chapter 13: Game Mechanics Must Be In Balance
 

@@ -1,7 +1,7 @@
 ---
 title: "Week 15: Limits and differentiation"
 date: 2023-09-03 00:00
-modified: 2026-09-13 10:34
+modified: 2026-09-26 08:50
 status: draft
 ---
 
@@ -52,7 +52,7 @@ Formalises the idea that if $f(x)$ gets arbitrarily close to value $L$, the clos
 
 If limit is finite and coincides with the value of the function in x_0, i.e. if $f(x_0) = lim_{x \rightarrow x0} \ f(x) = L$
 
-the function is said to be a [Continuous Function](Continuous%20Function) in $x_0$, if the value exists and is its limit, and the limit is finite.
+the function is said to be a Continuous Function in $x_0$, if the value exists and is its limit, and the limit is finite.
 
 A function is continuous, if you can draw it with a pencil without living the pencil.
 
@@ -72,7 +72,7 @@ Limit exists if and only if $\lim_{x \rightarrow x_0^{-}} f(x) = \lim_{x \righta
 
 Here, we can see that the limit is 1 from either side.
 
-[Discontinuous Function](Discontinuous%20Function)
+Discontinuous Function
 
 $$
 y = f(x) = \begin{equation}
@@ -103,7 +103,7 @@ $\lim f(x) = 0 = \lim f(x) \neq f(0) = 1$
 
 ## Lesson 8.3 Derivative of a function
 
-[Derivative](../../../../../../permanent/derivative.md)
+[Derivative](../../../../permanent/derivative.md)
 
 Directly connected to the concept of slope or gradient of a function
 
@@ -126,7 +126,7 @@ Derivative;
 
 $f'(x) = \frac{df}{dx} = \lim_{\triangle x \rightarrow 0} \frac{f(x + \triangle{x}) - f(x)}{\triangle x}$
 
-[Derivative](../../../../../../permanent/derivative.md) from first principles.
+[Derivative](../../../../permanent/derivative.md) from first principles.
 
 * $f(x) = x$
     * $f'(x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h} = \frac{x + h - x}{h} = \frac{h}{h} = 1$
@@ -141,7 +141,7 @@ $f'(x) = \frac{df}{dx} = \lim_{\triangle x \rightarrow 0} \frac{f(x + \triangle{
 
 Croft, A. and R. Davison, Foundation maths. (Harlow: Pearson, 2016) 6th edition. Chapter 34 and 35.
 
-[Gradient Function](Gradient%20Function)
+[Derivative](../../../../permanent/derivative.md)
 
 If we have a function $y = f(x)$ and want its slope, or gradient at sevenl points.
 

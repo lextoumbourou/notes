@@ -1,6 +1,7 @@
 ---
 title: Week 1 - Welcome
 date: 2015-10-07 00:00
+modified: 2026-09-26 08:50
 category: reference/moocs
 status: draft
 parent: ml-foundations
@@ -25,11 +26,11 @@ parent: ml-foundations
 * Case Study 4: Product recommendation
     * Data:
         * past purchases
-    * ML Method: [Matrix Factorization](Matrix%20Factorization)
+    * ML Method: Matrix Factorization
 * Case Study 5: Visual product recommender
     * Data:
         * input images (shoes)
-    * ML Method: [Deep Learning](Deep%20Learning)
+    * ML Method: Deep Learning
 
 ## 2. Regression
 

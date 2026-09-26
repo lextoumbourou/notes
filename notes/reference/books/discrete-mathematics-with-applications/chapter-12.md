@@ -1,16 +1,17 @@
 ---
 title: Discrete Mathematics with Applications - Chapter 12
 date: 2022-10-11 00:00
+modified: 2026-09-26 08:50
 category: reference/books
 status: draft
 ---
 
 ## Chapter 12. Boolean Algebra and Combinatorial Circuits
 
-* 1854: [George Boole](George Boole)'s book [An Investigation of the Laws of Thought](An Investigation of the Laws of Thought)
+* 1854: George Boole's book An Investigation of the Laws of Thought
     * Was the foundation for Symoblic Logic and Boolean Algebra.
     * Didn't have much application until...
-* 1938: [Claude E. Shannon](Claude E. Shannon) used boolean algebra to analyze electrical circuits.
+* 1938: Claude E. Shannon used boolean algebra to analyze electrical circuits.
 * [Boolean Algebra](../../../permanent/boolean-algebra.md)
     * Mathematical system
     * *"it consists of a nonempty set S with one or more operations defined on S, and a set of axioms that the elements of S satisfy."*

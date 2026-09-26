@@ -15,7 +15,7 @@ These notes are incomplete.
 
 ## Overview
 
-[Large Language Models](../../permanent/large-language-models.md)s produces errors, like "factual inaccuracies, biases, and reasoning failures". We refer to these errors as [Hallucinations](../../../../permanent/Hallucinations.md).
+[Large Language Models](../../permanent/large-language-models.md)s produces errors, like "factual inaccuracies, biases, and reasoning failures". We refer to these errors as [Hallucinations](../../permanent/Hallucinations.md).
 
 Recent work has shown that LLMs encode information in their internal states about the truthfulness of their outputs. This information can be used to detect errors.
 

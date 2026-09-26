@@ -58,7 +58,7 @@ status: draft
          * In base 10 subtraction, you "borrow" from the adjacent left column.
          * Same in base 2, except you get a 2 from the adjacent column.
 
-           ![Example of non-integer base2 subtraction](_media/week-2-non-integer-conversion-base2-subtraction.png)
+           ![Example of non-integer base2 subtraction](../../../../_media/week-2-non-integer-conversion-base2-subtraction.png)
 
      * Multiplication
          * Same as decimal

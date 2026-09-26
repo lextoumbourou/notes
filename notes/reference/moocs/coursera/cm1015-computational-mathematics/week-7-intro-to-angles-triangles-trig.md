@@ -1,11 +1,11 @@
 ---
 title: Week 7 - Intro To Angles, Triangles and Trigomonetry
 date: 2023-05-29 00:00
-modified: 2026-09-13 10:34
+modified: 2026-09-26 08:50
 status: draft
 ---
 
-* [[Angle]]
+* Angle
     * Measure of separation of 2 [Ray](../../../../permanent/ray.md) emanating from a vertex v.
     * Measured in degrees or [Radians](../../../../permanent/radians.md).
     * Types of angle
@@ -18,7 +18,7 @@ status: draft
     * $r \rightarrow 1 \text{ radian} \Rightarrow \text{ (circ) } 2\pi r \rightarrow 2 \pi \text{ radians }$
     * $360\deg = 2\pi \text{ radians }$
     * $\text{ radians } = \text{ degrees } \times \pi / 180$
-* [[Triangle]]
+* Triangle
     * A polygon with 3 sides.
     * ![Triangle ABC with sides a, b and c opposite angles alpha, beta and gamma, and perpendicular height h from C to side AB.](../../../../_media/week-7-triangles.png)
         * Property #1: sum of angles is equal to 180*
@@ -40,7 +40,7 @@ status: draft
             * Similar triangles rescale one (zoom in or out) and will coincide with the other.
             * Same angle, proportinal sides: AB/EG = AC/EF = BC/GF
                  ![Similar triangles ABC and EGF, with matching coloured angles showing A corresponds to E, B to G and C to F.](../../../../_media/week-7-intro-to-angles-triangles-trig-similar.png)
- * [[Right Triangle]]
+ * Right Triangle
      * ![Right triangle with angle theta at A, opposite side a, adjacent side b and hypotenuse h. The angle at B is 90 degrees minus theta.](../../../../_media/week-7-intro-to-angles-triangles-trig-right-triangle.png)
      * SOH CAH TOA
      * Opposite / Hypotenuse = $\cos(90 - \theta) = Sin(\theta)$
@@ -49,7 +49,7 @@ status: draft
          * CAH
      * Opposite / Adjacent = $\sin(\theta) \ cos(\theta) = \tan(\theta)$
          * TOA
-     * [Pythagoras Theorem](../../../../permanent/pythagoras-theorem.md)
+     * [Pythagorean Theorem](../../../../permanent/pythagorean-theorem.md)
          * $a^2 + b^2 = h^2$
      * From 1) and 2) it follows: $h^2 \sin^2(\theta) + h^2 \cos^2(\theta) = h^2$
          * We can rewrite as: $\sin^2(\theta) + \cos^2(\theta) = 1$
@@ -58,7 +58,7 @@ status: draft
      * What if $\theta \rightarrow 0$?
          * Hypotenuse will slowly collapse on adjacent side. $h$ will coincide with $b$ and $a$ will go to 0.
          * This means: $\cos(\theta) = \sin(90) = 1$, $\sin(0) = \cos(90) = 0$
-         * [[Sine rule]]
+         * [Law of Sines](../../../../permanent/law-of-sines.md)
              * $a / \sin(\theta) = b / \sin(90 - \theta) = h = h / \sin(90)$
              * Applies to a general triangle:
                  ![Triangle ABC illustrating the sine rule: a divided by sin alpha equals b divided by sin beta equals c divided by sin gamma.](../../../../_media/week-7-intro-to-angles-triangles-trig-sine-rule.png)

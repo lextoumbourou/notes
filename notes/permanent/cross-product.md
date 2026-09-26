@@ -23,7 +23,7 @@ The Cross Product operation works as follows:
 
     $\begin{bmatrix}a_1 \\ a_2 \\ a_3\end{bmatrix} \times \begin{bmatrix}b_1 \\ b_2 \\ b_3\end{bmatrix} = \begin{bmatrix} ? \\ ? \\ ? \end{bmatrix}$
 
-2. For the first component of the new vector, exclude the top rows of the input vectors. Then, calculate the 2d [Matrix Determinate](Matrix Determinate.md) of the matrix created by the bottom two rows of each matrix.
+2. For the first component of the new vector, exclude the top rows of the input vectors. Then, calculate the 2d [Matrix Determinate](matrix-determinate.md) of the matrix created by the bottom two rows of each matrix.
 
     $\det\left( \begin{bmatrix} \\ a_2 \\ a_3\end{bmatrix} \times \begin{bmatrix} \\ b_2 \\ b_3\end{bmatrix} \right) = \begin{bmatrix}\mathbf{a_2b_3 - a_3b_2} \\ \\ \end{bmatrix}$
 

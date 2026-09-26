@@ -15,13 +15,13 @@ These are my notes from the paper [Regression Shrinkage and Selection via the La
 
 The paper introduces a method for estimating coefficients of a [Linear Regression](../../permanent/linear-regression.md) model called [Lasso](../../permanent/lasso.md) or **Least Absolute Shrinkage and Selection Operator**.
 
-It builds on [Ordinary Least Squares](../../../../permanent/ordinary-least-squares.md) by ensuring the sum of the absolute values of the coefficients is below some value $t$.
+It builds on [Ordinary Least Squares](../../permanent/ordinary-least-squares.md) by ensuring the sum of the absolute values of the coefficients is below some value $t$.
 
 $$
 (\hat{\alpha}, \hat{\beta}) = \arg \min \left\{ \sum_{i=1}^{N} \left( y_i - \alpha - \sum_{j} \beta_j x_{ij} \right)^2 \right\} \quad \text{subject to} \quad \sum_{j} |\beta_j| \leq t.
 $$
 
-Unlike alternative methods [Variable Subset Selection](../../../../permanent/variable-subset-selection.md) it tends to generalise better, and [Ridge Regression](../../../../permanent/ridge-regression.md) tends to make more interpretable models, since it typically makes some coefficients exactly 0 and prioritises key features, making models more interpretable, i.e. we can understand which coefficients impact the outcome the most.
+Unlike alternative methods [Variable Subset Selection](../../permanent/variable-subset-selection.md) it tends to generalise better, and [Ridge Regression](../../permanent/ridge-regression.md) tends to make more interpretable models, since it typically makes some coefficients exactly 0 and prioritises key features, making models more interpretable, i.e. we can understand which coefficients impact the outcome the most.
 
 ## Lasso Algorithm
 
@@ -51,6 +51,6 @@ $$
 \sum_{i=1}^{N} \left( y_i - \alpha - \sum_{j} c_j \hat{\beta_j} x_{ij} \right)^2 \quad \text{subject to} \quad c_j \geq 0, \quad \sum_j c_j \leq t.
 $$
 
-A drawback of the garotte is that depends on both the sign and the magnitude of the [Ordinary Least Squares](../../../../permanent/ordinary-least-squares.md) estimates.
+A drawback of the garotte is that depends on both the sign and the magnitude of the [Ordinary Least Squares](../../permanent/ordinary-least-squares.md) estimates.
 
 In overfit or highly correlated settings where the OLS estimates behave poorly, the garotte may suffer as a result. In contrast, the Lasso avoids the explicit use of the OLS estimates.

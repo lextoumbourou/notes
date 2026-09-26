@@ -1,6 +1,7 @@
 ---
 title: "fastai - Lesson 3 - Deep Learning for Coders (2020)"
 date: 2021-06-27 00:00
+modified: 2026-09-26 09:18
 category: reference/moocs
 cover: /_media/fastai-2020-lesson-3-cover.png
 summary: "Notes taken from the Deep Learning for Coders (2020) - Lesson 3 video"
@@ -51,7 +52,7 @@ Notes taken from watching the [Lesson 3 - Deep Learning for Coders (2020)](https
     * Models can only reflect data used to train them
         * Healthy skin example from [Actionable Auditing: Investigating the Impact of Publicly Naming Biased Performance Results of Commecial AI Products](https://www.media.mit.edu/publications/actionable-auditing-investigating-the-impact-of-publicly-naming-biased-performance-results-of-commercial-ai-products/) by Deb Raji:
             * When you search for "healthy skin" it returns results of young, white woman touching their face.
-                ![Healthy skin example](journal/_media/healthy-skin-example.png)
+                ![Healthy skin example](../../../../_media/healthy-skin-example.png)
 * Think carefully about types of data you'll see in practice, and make sure it's in the source data.
 * If nothing else, make sure test set reflects the data your model will see
 * Lots of issues you'll see when deploying models covered in [Building Machine Learning Powered Applications](https://www.amazon.com/Building-Machine-Learning-Powered-Applications/dp/149204511X) by Emmanual Ameisen.
@@ -63,7 +64,7 @@ Notes taken from watching the [Lesson 3 - Deep Learning for Coders (2020)](https
     * Low-res images
     * Bears will be in positions no one would bother uploading to the net
     * Would need to be really fast returning results
-    * Extra: would have to be really careful about [Type 2 Errors (False Negatives)](permanent/type-2-errors.md).
+    * Extra: would have to be really careful about Type 2 Errors (False Negatives).
 * [Out-of-Domain](../../../../permanent/out-of-domain-data.md) data
     * Data that is given to a model that is different to the data it was trained on.
 * [Domain Shift](../../../../permanent/domain-shift.md)

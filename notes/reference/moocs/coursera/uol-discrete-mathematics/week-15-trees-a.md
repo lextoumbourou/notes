@@ -38,7 +38,7 @@ modified: 2023-04-09 00:00
 
       ![week-15-tree-not-tree-examples.png](../../../../_media/week-15-tree-not-tree-examples.png)
 
-* A disconnected graph containing no cycles is called a [Forest](../../../../../../permanent/forest.md).
+* A disconnected graph containing no cycles is called a [Forest](../../../../permanent/forest.md).
 
   ![week-15-forest.webp](../../../../_media/week-15-forest.webp)
 

@@ -29,7 +29,7 @@ VALL-E can generate speech in anyone's voice with only a 3-second sample of the 
 
 **Use RVQ tokens as an intermediate representation of speech**
 
-VALL-E uses an intermediate representation of speech instead of modelling audio directly, which makes it a *cascading TTS system*. The key insight in this paper, as was the theme of many audio papers in 2023, is utilising a [RVQ](../public/notes/permanent/residual-vector-quantisation.md) audio codec, which compresses audio into discrete *"acoustic"* tokens (they use the [Encodec](https://github.com/facebookresearch/encodec) RVQ implementation).
+VALL-E uses an intermediate representation of speech instead of modelling audio directly, which makes it a *cascading TTS system*. The key insight in this paper, as was the theme of many audio papers in 2023, is utilising a [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md) audio codec, which compresses audio into discrete *"acoustic"* tokens (they use the [Encodec](https://github.com/facebookresearch/encodec) RVQ implementation).
 
 **TTS as a language model problem**
 

@@ -14,7 +14,7 @@ category: reference/papers
 
 [FLUX.1: Kontext](../../permanent/flux1-kontext.md) is Black Forest Labs’ new text‑to‑image and image‑to‑image model, focused on image editing.
 
-To create Kontext, they start from a [FLUX.1](../../../../permanent/flux1.md) base checkpoint, make a few small architectural tweaks and fine‑tune with edit‑focused data.
+To create Kontext, they start from a [FLUX.1](../../permanent/flux1.md) base checkpoint, make a few small architectural tweaks and fine‑tune with edit‑focused data.
 
 They also introduce [KontextBench](../../permanent/kontextbench.md), 1 026 image‑prompt pairs across five tasks (local, global, text, style, character edits) designed to test both single‑turn quality and multi‑turn stability.
 

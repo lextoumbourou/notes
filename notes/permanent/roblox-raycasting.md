@@ -2,6 +2,7 @@
 category: note
 title: Roblox Raycasting
 date: 2020-11-07 00:00
+modified: 2026-09-26 08:55
 tags:
   - Roblox
 summary: A method of detecting nearby objects in 3D space.
@@ -13,4 +14,4 @@ Roblox named it after the concept of [Raycasting](raycasting.md) in computer gra
 
 #### References
 
-* [Intro to Raycasting](Intro to Raycasting)
+* Intro to Raycasting

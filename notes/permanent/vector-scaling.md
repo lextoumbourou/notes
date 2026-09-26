@@ -2,6 +2,7 @@
 category: note
 title: Vector Scaling
 date: 2020-11-08 00:00
+modified: 2026-09-26 08:50
 cover: /_media/vector-scaling-visual.png
 summary: Multiplying each value in a vector by the same value
 tags:
@@ -13,7 +14,7 @@ tags:
 
 $$2 \begin{bmatrix} u_1 \\ u_2 \end{bmatrix} = \begin{bmatrix} 2 * u_1 \\ 2 * u_2 \end{bmatrix}$$
 
-The amount you scale the vector is often referred to as the [[Scalar]].
+The amount you scale the vector is often referred to as the [Scalar](scalar.md).
 
 It can be visualised as growing or shrinking the arrow that represents the vector (see cover image).
 

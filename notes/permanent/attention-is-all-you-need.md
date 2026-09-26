@@ -1,7 +1,7 @@
 ---
 title: Attention Is All You Need
 date: 2023-12-04 00:00
-modified: 2026-09-22 09:04
+modified: 2026-09-26 08:55
 status: draft
 tags:
 - MachineLearning
@@ -18,14 +18,14 @@ This paper proposes a revolutionary architecture called [Transformer](transforme
 
 The model achieved:
 
-* 28.4 [Bilingual Evaluation Understudy](../../../permanent/bilingual-evaluation-understudy.md) on the [WMT 2014 English-to-German](WMT%202014%20English-to-German) translation task, improving over the existing best results, including ensembles. by over 2 [BLEU](BLEU).
- * On [WMT 2014 English-to-French](WMT%202014%20English-to-French) translation task, the model establishes a new single-model state-of-the-art BLEU score of 41.8 after 3.8 days of training on eight GPUs. That was a fraction of the training codes from literature.
+* 28.4 [Bilingual Evaluation Understudy](bilingual-evaluation-understudy.md) on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles. by over 2 [BLEU Score](bleu-score.md).
+ * On WMT 2014 English-to-French translation task, the model establishes a new single-model state-of-the-art BLEU score of 41.8 after 3.8 days of training on eight GPUs. That was a fraction of the training codes from literature.
 
 They also show the Transformer generalised well to other tasks.
 
 ## Introduction
 
-[Recurrent Neural Networks](../../../permanent/recurrent-neural-networks.md), [LSTM](lstm.md) and [Gated Recurrent Neural Networks](Gated%20Recurrent%20Neural%20Networks) were the go-to models for state-of-the-art performance in sequence modelling tasks, like building a [Language Model](language-model.md) and models for [Machine Translation](Machine%20Translation).
+[Recurrent Neural Networks](recurrent-neural-networks.md), [LSTM](lstm.md) and [Gated Recurrent Neural Networks](gated-recurrent-neural-networks.md) were the go-to models for state-of-the-art performance in sequence modelling tasks, like building a [Language Model](language-model.md) and models for [Machine Translation](machine-translation.md).
 
 All these model "factor computation along the symbol positions of the input and output sequences". They aliging the positions to steps in computation time, they generate a sequence of hidden states, $h_t$, which are calculated as functions of the previous hidden states $h_{t-1}$ and input position $t$.
 
@@ -39,7 +39,7 @@ Transformer allows for more parallelisation and can reach a new state of the art
 
 ## Background
 
-The goal of reducing sequential computation was explored in [Convolutional Neural Network](convolutional-neural-network.md) architectures like [Extended Neural GPU](../../../permanent/extended-neural-gpu.md), [ByteNet](ByteNet) and [ConvS2S](ConvS2S), which aimed to use CNNs to compute the hidden representations in parallel for all input and output positions.
+The goal of reducing sequential computation was explored in [Convolutional Neural Network](convolutional-neural-network.md) architectures like [Extended Neural GPU](extended-neural-gpu.md), ByteNet and ConvS2S, which aimed to use CNNs to compute the hidden representations in parallel for all input and output positions.
 
 In these models, the number of operations required to relate signals from two arbitrary input or output positions grows
 in the distance between positions, linearly for ConvS2S and logarithmically for ByteNet.
@@ -65,7 +65,7 @@ Most competitive neural sequence transduction models have an [Encoder-Decoder](e
 
 Then we feed $\mathbf{z}$ into a decoder, which generates an output sequence $y_1, ..., y_m$ one element at a time.
 
-At each step the model is [Auto-Regressive](Auto-Regressive), in that it takes the previously generates symbols as input when generating the next token.
+At each step the model is Auto-Regressive, in that it takes the previously generates symbols as input when generating the next token.
 
 ### Encoder and Decoder Stacks
 
@@ -79,7 +79,7 @@ Each layer has two sub-layers:
 
 They employ a residual connection around each of the two sub-layers, followed by layer normalisation.
 
-The output of the sublayer uses [Layer Norm](../../../permanent/layer-norm.md) is `LayerNorm(x + Sublayer(x))` where Sublayer is the function implemented by the sub-layer itself.
+The output of the sublayer uses [Layer Norm](layer-norm.md) is `LayerNorm(x + Sublayer(x))` where Sublayer is the function implemented by the sub-layer itself.
 
 All sublayers produce outputs of dimension $d_{\text{model}} = 512$
 
@@ -121,7 +121,7 @@ The keys and values are also packed together into matrices $K$ and $V$ . We comp
 
 $\operatorname{Attention}(Q,K,V) = \operatorname{softmax}\left(\frac{QK^{T}}{\sqrt{d_k}}\right)V$
 
-The two most commonly used attention functions are [Additive Attention](Additive%20Attention), and [Dot-Product Attention](Dot-Product%20Attention).
+The two most commonly used attention functions are Additive Attention, and Dot-Product Attention.
 
 Dot-product attention is identical to our algorithm, except for the scaling factor of $\sqrt{d_k}$.
 

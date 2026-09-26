@@ -10,7 +10,7 @@ tags:
   - DataVisualisation
 ---
 
-A **Waffle Chart** is a [Data Visualisation](../../../permanent/data-visualisation.md) where data points are represented as squares on a 2D grid. It's used for displaying the proportion or count of each category, for example, showing voting results across a population.
+A **Waffle Chart** is a [Data Visualisation](data-visualisation.md) where data points are represented as squares on a 2D grid. It's used for displaying the proportion or count of each category, for example, showing voting results across a population.
 
 For example, this Waffle Chart shows the 2020 Presidential Election Electoral College Results, highlighting the closeness of the contest and giving a sense of proportion.
 

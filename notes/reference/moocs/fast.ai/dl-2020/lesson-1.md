@@ -1,6 +1,7 @@
 ---
 title: "fastai - Lesson 1 - Deep Learning for Coders (2020)"
 date: 2021-06-10 00:00
+modified: 2026-09-26 09:18
 category: reference/moocs
 cover: /_media/fastai-2020-lesson-1-cover.png
 summary: "Notes taken from the Deep Learning for Coders (2020) - Lesson 1 video"
@@ -42,7 +43,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
 * Note: Deep Learning a type of neural network learning (a deep one)
 * In 1943, neurophysiologist, Warren McCulloch, and logician, Walter Pitts created model of artificial neuron
 * Declared that since brain activity had an "all-or-nothing" characteristic, they could be treated as "propositional logic"
-* In 1950s, Frank Rosenblatt made some subtle changes to model and oversaw the creation of the [Mark 1 Perceptron](permanent/mark-1-perceptron.md)
+* In 1950s, Frank Rosenblatt made some subtle changes to model and oversaw the creation of the Mark 1 Perceptron
 
     ![Mark 1 Perceptron](../../../../_media/mark-1-perceptron.jpeg)
 
@@ -128,17 +129,17 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
  ## 53:45 Neural networks & image classification
 
  * Is there is a function so flexibilty that the weights can do anything? Yes, a neural network.
- * Mathematical proof called [Universal Approximation Theory](permanent/universal-approximation-theory.md)
+ * Mathematical proof called Universal Approximation Theory
      * Function can solve any problem to any level of accuracy if you just find the right set of weights (in theory)
 * [Stochasic Gradient Descent](../../../../permanent/stochasic-gradient-descent.md)
     * The "mechanism of altering weights to maximise performance" that Arthur Samuel referred to.
     * Course will look at exactly how it works.
 * Terminology used nowadays as compared to Samuel's:
-    * Functional form of model is [Architecture](Architecture)
-    * Weights are called [Parameters](Parameters)
-    * Predictions calculated from [Independant Variable](Independant Variable), which is the data that doesn't include the labels
-    * Results of model are called [Predictions](Predictions)
-    * Loss depends on having [Predictions](Predictions) and correct [Labels](Labels)
+    * Functional form of model is Architecture
+    * Weights are called Parameters
+    * Predictions calculated from Independant Variable, which is the data that doesn't include the labels
+    * Results of model are called Predictions
+    * Loss depends on having Predictions and correct Labels
 
 ## 58:57 Limitations of Machine Learning
 
@@ -157,7 +158,7 @@ Notes taken from watching the [Lesson 1 - Deep Learning for Coders (2020)](https
         * predictive policing model predicts where arrests are likely to occur.
         * more police therefore go to the area, which leads to more arrests.
         * that is fed into model, which creates more arrests.
-    * Consider that predicting arrests is an example of where [Metrics Are Proxies](permanent/Metrics Are Proxies.md) for what you care about: reducing crime.
+    * Consider that predicting arrests is an example of where [Proxy Metrics](../../../../permanent/proxy-metrics.md) for what you care about: reducing crime.
         * Sometimes the difference between proxy and what you are actually trying to do can be significant
 
 ## 01:04:14 Dogs and Cats Notebook review

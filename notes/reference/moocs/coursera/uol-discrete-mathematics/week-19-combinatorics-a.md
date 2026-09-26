@@ -4,7 +4,7 @@ date: 2022-02-18 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## Lesson 10.1 The basics of Combinatorics
@@ -47,7 +47,7 @@ modified: 2023-04-08 00:00
             * The number ways to do both task 1 and 2 can be represented as: $|AxB| = |A| \cdot |B|$
                 * The cardinality of the cross product of A and B.
             * In other words: the num elements in the Cartesian product of these sets is the product of number of elements in each set.
-* [Addition Rule](permanent/addition-rule.md)
+* [Addition Principle](../../../../permanent/combinatorics-addition-principle.md)
     * Suppose a task 1 can be done n ways and a task 2 can be done in m ways.
     * Assume that both tasks are independent, that is, performing task 1 doesn't mean performing task 2 and vice versa.
     * In this case, the number of ways of executing task 1 or task 2 is equal to n + m.
@@ -69,7 +69,7 @@ modified: 2023-04-08 00:00
         * The number of labels with one letter only is 26
         * Using the product rule the number of labels with a letter folowed by 2 digits is 26 x 10 x10
         * Using the sum rule the total number of labels is 26 + 26>10.10 = 2,626.
-* [Subtraction Rule](permanent/subtraction-rule.md)
+* Subtraction Rule
     * Suppose a task can be done either in one of $n_1$ ways or in one of $n_2$ ways.
     * Then the total number of ways to do the task is $n_1 + n_2$ minus the number of ways common to the two different ways.
     * Also known as the principle of inclusion-exclusion.
@@ -82,7 +82,7 @@ modified: 2023-04-08 00:00
             * Number of bit trings of length 8 that start with a 1 bit and end with bits 00 is 2^5 = 32
             * Using substraction rule:
                 * the number of bit strings either starting with a 1 or ending with 00 is 128 + 64 - 32 = 160.
-* [Division Rule](permanent/division-rule.md)
+* Division Rule
     * Suppose a tak can be done using a procedure that can be carried out in n ways, for every way w, exactly d of the n ways correspond to w.
         * Then this task can be done $n/d$ ways
     * In terms of sets: if the finite set A is the union of n pair-wise disjoint subsets each with d elements, the $n = |A| / d$

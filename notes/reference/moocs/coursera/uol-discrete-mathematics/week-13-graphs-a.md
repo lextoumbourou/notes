@@ -4,7 +4,7 @@ date: 2022-12-19 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-09 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## 7.1 - Introduction to graph theory: basic concepts
@@ -57,7 +57,7 @@ modified: 2023-04-09 00:00
 
         ![week-13-edges-denoted.png](../../../../_media/week-13-edges-denoted.png)
 
-* [Adjacency](permanent/graph-adjacency.md)
+* Adjacency
     * Two vertices are said to be adjacent if they are endpoints of the same edge.
     * Two edges are said adjacent if they share the same vertex.
     * If a vertex v is an endpoint of an edge e, then we say that e and v are incident.
@@ -72,8 +72,8 @@ modified: 2023-04-09 00:00
 
         ![week-13-loops-and-parallel-edges.png](../../../../_media/week-13-loops-and-parallel-edges.png)
 
-    * $v_2$ and $v_5$ are linked with 2 edged: (e_6 and e_8). e_6 and e_8 are considered [Parallel Edges](permanent/parallel-edges.md).
-    * $v_1$ is linked by $e_9$. We call the edge $e_9$ a [Loop](permanent/graph-loop.md).
+    * $v_2$ and $v_5$ are linked with 2 edged: (e_6 and e_8). e_6 and e_8 are considered Parallel Edges.
+    * $v_1$ is linked by $e_9$. We call the edge $e_9$ a Loop.
 * [Directed Graphs](../../../../permanent/directed-graphs.md)
     * Aka digraph.
     * Graph where edges have a direction.
@@ -85,7 +85,7 @@ modified: 2023-04-09 00:00
 
 ## Lesson 7.105 Walks and paths in a graph
 
-* Definition of a [Graph Walk](permanent/graph-walk.md)
+* Definition of a Graph Walk
     * Sequences of vertices and edges of a graph.
         * Vertices and edges can be repeated.
     * A walk of length k in a graph is a succession of $k$ (not necessarily different) edges of form:
@@ -98,22 +98,22 @@ modified: 2023-04-09 00:00
 
         ![week-13-graph-walk2.png](../../../../_media/week-13-graph-walk2.png)
 
-* [Graph Trail](permanent/graph-trail.md)
+* Graph Trail
     * A trail is a walk where no edge is repeated.
     * In a trail, vertices can be repeated but no edge is repeated.
 
       ![week-13-trail.png](../../../../_media/week-13-trail.png)
 
-* [Graph Circuit](permanent/graph-circuit.md)
+* Graph Circuit
     * A circuit is a closed trail.
     * Circuits can have repeated vertices only.
 
       ![week-13-circuit.png](../../../../_media/week-13-circuit.png)
 
-* [Graph Path](permanent/graph-path.md)
+* Graph Path
     * A path is a trail in which neither vertices nor edges are repeated.
     * Length of path is given in number of edges it contains.
-* [Graph Cycle](permanent/graph-cycle.md)
+* Graph Cycle
     * Closed path consisting of edges and vertices where a vertex is reachable from itself.
       ![week-13-graph-cycle.png](../../../../_media/week-13-graph-cycle.png)
 
@@ -121,7 +121,7 @@ modified: 2023-04-09 00:00
     * Is there a walk that passes each of the 7 bridges once.
     * He made a network linked with lines that shows:
         * No walk that uses each edge exactly once (even if we allow the walk to start and finish in diff places)
-* [Euler's Path](permanent/eulers-path.md)
+* Euler's Path
     * A Eulerian path in a graph is a path that uses each edge precisely once.
         * If the path exists, the graph is called traversable.
 
@@ -160,7 +160,7 @@ modified: 2023-04-09 00:00
       ![week-13-not-strongly-connected.png](../../../../_media/week-13-not-strongly-connected.png)
 
       * No direct path from v_4 to any of the other 3 vertices.
-* [Transitive Closure](permanent/transitive-closure)
+* [Transitive Closure](../../../../permanent/transitive-closure.md)
     * Given a digraph G, the transitive closure of G is the digraph G* such that: G* has the same verticies as G
     * If G has a directed path from $u$ to $v$ ($u \ge v$), G* has a directed edge from $u$ to $v$.
 
@@ -170,7 +170,7 @@ modified: 2023-04-09 00:00
 
 ## Lesson 7.107 - The degree sequence of a graph
 
-* [Degree of Vertices](permanent/degree-of-vertices.md)
+* Degree of Vertices
     * The number of edges incident on v.
     * A loop contributes twice to the degree.
     * An isolated vertex has a degree of 0.
@@ -182,7 +182,7 @@ modified: 2023-04-09 00:00
       * Out-deg (v): number of edges for which v is the initial vertex.
       * deg(v) = Out-deg(v) + In-deg(v)
       * A loop contributes twice to the degree, as it contributes 1 to both in-degree and out-degree.
-* [Degree Sequence of a Graph](permanent/degree-sequence-of-a-graph.md)
+* Degree Sequence of a Graph
     * Given an undirected graph G, a degree sequence is a monotonic nonincreasing sequence of the vertex degress of all the vertices G.
 
       ![week-13-degree-sequence.png](../../../../_media/week-13-degree-sequence.png)
@@ -208,7 +208,7 @@ modified: 2023-04-09 00:00
 
 ## 7.109 - Special graphs: simple, r-regular and complete graphs
 
-* [Simple Graph](permanent/simple-graph.md)
+* [Simple Graph](../../../../permanent/simple-graph.md)
     * A graph without loops and parallel edges.
 
       ![week-13-simple-graph.png](../../../../_media/week-13-simple-graph.png)
@@ -227,7 +227,7 @@ modified: 2023-04-09 00:00
             * Yes, it can be done.
               ![week-13-simple-graph-solution.png](../../../../_media/week-13-simple-graph-solution.png)
 
-* [Regular Graph](permanent/regular-graph.md) and [R-Regular Graph](permanent/r-regular-graph.md)
+* Regular Graph and R-Regular Graph
     * A graph is regular if all local degrees are the same number.
     * A graph G where all vertices the same degree, $r$, is called a r-regular graph.
 
@@ -249,11 +249,11 @@ modified: 2023-04-09 00:00
     * Can we construct a 4-regular graph with 5 vertices?
         * 3x5 = 15
         * Sum is odd, so cannot great a regular graph.
-* [Complete Graph](permanent/complete-graph.md)
-    * A [Simple Graph](permanent/simple-graph.md) where every pair of vertices are adjacent (linked with an edge).
+* [Complete Graph](../../../../permanent/complete-graph.md)
+    * A [Simple Graph](../../../../permanent/simple-graph.md) where every pair of vertices are adjacent (linked with an edge).
     * A vertex on its own is a complete graph.
 
-      ![week-13-complete-graph.png.png)
+      ![week-13-complete-graph.png](../../../../_media/week-13-complete-graph.png)
 
     * A complete graph with n vertices, k_n, has these properties:
         * Every vertex has a degree $(n-1)$

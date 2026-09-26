@@ -4,7 +4,7 @@ date: 2022-01-14 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## 7.201 Isomorphic Graphs
@@ -27,7 +27,7 @@ modified: 2023-04-08 00:00
 
 ## 7.203 Bipartite graphs
 
-* [Bipartite Graph](permanent/bipartite-graph.md)
+* Bipartite Graph
     * A graph $G(V, E)$ is called a bi-partite graph.
     * If the set of vertices V can be partitioned in 2 no-empty disjoint sets $V_1$ and $V_2$ in such a way that each edge $e$ in $G$ has one endpoint in $V_1$ and another endpoint in $V_2$.
     * Example:
@@ -69,13 +69,13 @@ modified: 2023-04-08 00:00
 
 ## 7.205 The adjacency matrix of a graph
 
-* [Adjaceny List](permanent/adjaceny-list.md) of a graph.
+* Adjaceny List of a graph.
     * So far a graph has been represented by a set of vertices and a set of edges.
     * Adjaceny list of a graph G is a list of all vertices in G and their corresponding individual adjacent vertices.
 
     ![week-14-adjaceny-matrix.png](../../../../_media/week-14-adjaceny-matrix.png)
 
-* [Adjacent Matrix](permanent/adjacent-matrix.md) of a graph.
+* Adjacent Matrix of a graph.
     * A graph can also be represented by its adjacency matrix.
 
     ![week-14-adjaceny-matrix-1.png](../../../../_media/week-14-adjaceny-matrix-1.png)
@@ -263,7 +263,7 @@ Find a Hamiltonian circuit in the following graph:
 
 ![week-14-problem-sheet-q7.png](../../../../_media/week-14-problem-sheet-q7.png)
 
-![week-14-problem-sheet-q7-hamiltonian](../../../../journal/_media/week-14-problem-sheet-q7-hamiltonian.png)
+![week-14-problem-sheet-q7-hamiltonian](../../../../_media/week-14-problem-sheet-q7-hamiltonian.png)
 
 ## Question 8
 
@@ -273,7 +273,7 @@ Given the following directed graph:
 
 Find the transitive closure, G*, of the graph G.
 
-To find the [Transitive Closure](permanent/transitive-closure.md) of G, we need to add missing edges if there are any. It's constructed like this:
+To find the [Transitive Closure](../../../../permanent/transitive-closure.md) of G, we need to add missing edges if there are any. It's constructed like this:
 
 1. Take the starting point as the graph G.
 2. Check if there is a directed path between and 2 vertices of G. For example, a directed path from vertex u to v.
@@ -290,12 +290,12 @@ Suppose that 7 sites are connected in a network. The number of other sites to wh
 1. This might describe some kind of remote office, with a head office with direct connectivity to each suboffice, then 3 countries with 1-3 sites. Each country has connectivity to other offices and head office.
 2. It has 7 vertices.
 3. The sum of degrees is twice the number of edges: $\frac{7 + 4 + 3 + 3 + 2 + 2 +1}{2} = 11$
-4. It is impossible to construct a [Simple Graph](permanent/simple-graph.md), as there are n vertices and for a simple graph, the degree of each vertices is at most n-1 or 6. We have a vertice with 7 connections.
+4. It is impossible to construct a [Simple Graph](../../../../permanent/simple-graph.md), as there are n vertices and for a simple graph, the degree of each vertices is at most n-1 or 6. We have a vertice with 7 connections.
 5. It is impossible to construct a network with 9 sites, with 5 connections as that would result in $9 \ x \ 5 = 45$ which is an odd number. A degree sequence must be even.
 
 ## Question 10
 
-1. What is a [Complete Graph](permanent/complete-graph.md)?
+1. What is a [Complete Graph](../../../../permanent/complete-graph.md)?
 
    A graph where each vertice is adjacent (linked with an edge)
 

@@ -31,8 +31,8 @@ The order of elements in a stack will then just be reflected by the order of the
 element is pushed before another in the stack then there will be a pointer from the node corresponding to latter to
 the node corresponding to the former. So we have the following picture:
 
-![Linked list example](../../../_media/linked-list-stack-as-linked-list.png)
+![Linked list example](../_media/linked-list-stack-as-linked-list.png)
 
-## [Doubly Linked List](../../../permanent/doubly-linked-list.md)
+## [Doubly Linked List](doubly-linked-list.md)
 
 A variant of Linked List where nodes also contain a reference to the previous node `x.prev`.

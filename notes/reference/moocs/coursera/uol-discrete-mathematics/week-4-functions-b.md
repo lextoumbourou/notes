@@ -4,7 +4,7 @@ date: 2022-11-02 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-09 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## 2.201 Function composition
@@ -58,7 +58,7 @@ modified: 2023-04-09 00:00
       ![Inverse Function](../../../../_media/inverse-function.png)
   * Example 2: Let $f(x) = 2x$
 
-    ![inverse-example-2](_media/inverse-example-2.png)
+    ![inverse-example-2](../../../../_media/inverse-example-2.png)
     * Exercise: The following function $f: R \rightarrow R \text{ with } f(x) = 2x + 3$ find the inverse function, $f^{-1}$
         * We know it's injective and surjective.
         * $f(x) = y$
@@ -102,13 +102,13 @@ modified: 2023-04-09 00:00
             * called "exponential growth"
         * if base < 1, then function is decreasing
             * called "exponential decay"
-        * it is [Injective](Injective) and [Surjective](Surjective), hence, it has an inverse function.
-* [Logarithmic Functions](permanent/logarithmic-functions.md)
+        * it is [Injective Function](../../../../permanent/injective-function.md) and [Surjective Function](../../../../permanent/surjective-function.md), hence, it has an inverse function.
+* [Logarithms](../../../../permanent/logarithms.md)
     * Logarithmic function with base b where b > 0 and $b \ne 1$ is defined as follows:
         * $\log_bx = y$ if and only if $x = b^y$
         * $\log_bx$ is inverse of exponential function $b^x$.
             * The exponent in the exponential becomes what the log is equal to.
-    * [Laws of Logarithms](reference/laws-of-logarithms.md)
+    * [Logarithm Properties](../../../../permanent/logarithm-properties.md)
         * $\log_b m * n = log_bm + log_bn$
         * $\log_b\frac{m}{n} = log_b m -log_bn$
         * $\log_b m^n = n \ log_b \ m$
@@ -160,7 +160,7 @@ modified: 2023-04-09 00:00
 
 ## The floor function and ceiling functions
 
-* [Floor function](permanent/floor-function.md)
+* Floor function
     * Takes a real number x as input and returns the largest integer that is less than or equal to $x$
     * Function domain and range: $\mathbb{R} \rightarrow \mathbb{Z}$.
     * Denoted as $|\_x\_|$
@@ -172,7 +172,7 @@ modified: 2023-04-09 00:00
           * floor(1.99) = 1
           * floor(-1.1) = -2
           * floor(-1.99) = -2
-* [Ceiling function](permanent/ceiling-function.md)
+* Ceiling function
     * The opposite of the floor function.
     * A function $R \rightarrow Z$
     * Takes real number x as input and returns smallest integer greater than or equal to x.

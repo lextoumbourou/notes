@@ -20,6 +20,6 @@ Luhmann collected up to 25 notes on a single topic.
 
 [@ahrensHowTakeSmart2017] *(pg. 122-125)*
 
-An example of how Zettlekasten has [Emergent Complexity](Emergent Complexity.md). In that, it's a simple methodology that can lead to rich and complex topics.
+An example of how Zettlekasten has [Emergent Complexity](emergent-complexity.md). In that, it's a simple methodology that can lead to rich and complex topics.
 
 Cover is an example of an index card in Luhmann's slipbox from [online database](http://ds.ub.uni-bielefeld.de/viewer/search/-/MD_AUTHOR_UNTOKENIZED:"Luhmann,U005C+Niklas"/1/-/-/) maintained by the University of Bielefeld .

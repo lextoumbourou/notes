@@ -13,7 +13,7 @@ We subtract one [Vector](vector.md) from another by subtracting the correspondin
 
 $$\vec{a} - \vec{b} = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix} - \begin{bmatrix} b_1 \\ b_2 \end{bmatrix} = \begin{bmatrix} a_1 - b_1 \\ a_2 - b_2 \end{bmatrix} $$
 
-Another way to think of vector subtraction, is [Vector Addition](Vector Addition.md) with the negative of a vector: $\vec{a} - \vec{b} = \vec{a} + (-\vec{b})$
+Another way to think of vector subtraction, is [Vector Addition](vector-addition.md) with the negative of a vector: $\vec{a} - \vec{b} = \vec{a} + (-\vec{b})$
 
 We can visualize Vector subtraction as follows:
 
@@ -23,6 +23,6 @@ We can visualize Vector subtraction as follows:
 
 ![Vector subtraction visual example](../_media/vector-subtract-example.gif)
 
-Like [Vector Addition](Vector Addition.md), we can only subtract two vectors with the same number of dimensions.
+Like [Vector Addition](vector-addition.md), we can only subtract two vectors with the same number of dimensions.
 
 [@3blue1brownVectorsChapterEssence2016]

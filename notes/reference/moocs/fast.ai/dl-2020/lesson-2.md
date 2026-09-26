@@ -1,6 +1,7 @@
 ---
 title: "fastai - Lesson 2 - Deep Learning for Coders (2020)"
 date: 2021-06-17 00:00
+modified: 2026-09-26 09:18
 category: reference/moocs
 cover: /_media/fastai-2020-lesson-2-cover.png
 summary: "Notes taken from the Deep Learning for Coders (2020) - Lesson 2 video"
@@ -33,7 +34,7 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
 ## 00:04:50 - valid_pct
 
 * `valid_pct`
-    * Get 20% of data and put aside for validation (test whether [Overfitting](permanent/overfitting.md))
+    * Get 20% of data and put aside for validation (test whether Overfitting)
 
 ## 00:05:44 - Learner
 
@@ -198,8 +199,8 @@ Notes taken from watching the [Lesson 2 - Deep Learning for Coders (2020)](https
         * see p-value not < 0.05 and conclude no relationship exists
             * Could simply be that you don't have enough data
             * How to check: use opposite null hypothesis (there is relationship between R and temp) and see if you have enough data. If not, then you don't have enough data full stop
-    * Turns out, the graph in the paper shows a [Univariate Relationship](Univariate%20Relationship) relationship between temp and R, since it's easier to visualise
-        * However, in the paper they did a [Multivariate Relationship](Multivariate%20Relationship) model including Temperature, Relative Humidity, GDP per Capita, Population Density in the model
+    * Turns out, the graph in the paper shows a Univariate Relationship relationship between temp and R, since it's easier to visualise
+        * However, in the paper they did a Multivariate Relationship model including Temperature, Relative Humidity, GDP per Capita, Population Density in the model
             * Therefore can be more confident in your results
                 * Intuition: if all those values were the different but temp was the same, there still would be relationship
     * p-value does not tell if practically important, however, the model does seem to be important: 2 cities with different climates but is the same in every other way, would have very different R results:

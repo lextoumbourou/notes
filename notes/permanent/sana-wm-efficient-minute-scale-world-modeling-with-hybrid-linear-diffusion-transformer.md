@@ -1,7 +1,7 @@
 ---
 title: "Sana-WM: 60-second camera-controlled videos on a single GPU"
 date: 2026-05-19 00:00
-modified: 2026-05-19 00:00
+modified: 2026-09-26 08:55
 status: draft
 tags:
 - CameraControlledWorldModelling
@@ -28,11 +28,11 @@ They consider distilling the long-video model from a short-video teacher, but cl
 
 ## Related Work
 
-SANA-WM is a type of **generative simulator** that generates observations given actions or conditions, unlike Representation-centric models like [[JEPA]] and [[I-JEPA]] that learns abstract visual features without generating actual pixels. Generative simulators tend to be more compute-intensive as they have to synthesise every pixel.
+SANA-WM is a type of **generative simulator** that generates observations given actions or conditions, unlike Representation-centric models like JEPA and I-JEPA that learns abstract visual features without generating actual pixels. Generative simulators tend to be more compute-intensive as they have to synthesise every pixel.
 
-Pure [[Softmax Attention]], though it can be accelerated by techniques like [FlashAttention](FlashAttention.md), the memory and compute still grow exponetionall with context length, as every token needs to attend to every other token. And KV cache becomes prohibitively large at the minute scale.
+Pure [Scaled-Dot Product Attention](scaled-dot-product-attention.md), though it can be accelerated by techniques like FlashAttention, the memory and compute still grow exponetionall with context length, as every token needs to attend to every other token. And KV cache becomes prohibitively large at the minute scale.
 
-Plücker rays encode 3D lines (the ray from a camera through apxiel) using both its direction vector and [[Moment Vector]] ([Image Moments](../../../permanent/image-moments.md)) - giving a compact per-pixel represetation of exactly where the camrea is and where it's looking. It's a natural way to inject fine-grained camera geometry into a model.
+Plücker rays encode 3D lines (the ray from a camera through apxiel) using both its direction vector and Moment Vector ([Image Moments](image-moments.md)) - giving a compact per-pixel represetation of exactly where the camrea is and where it's looking. It's a natural way to inject fine-grained camera geometry into a model.
 
 ## Method
 

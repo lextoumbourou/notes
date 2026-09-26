@@ -23,7 +23,7 @@ parent: data-structures-optimizing-performance
 * [Linear Probing](../../../../permanent/linear-probing.md)
     * When you get a collision, just put the element in the next free slot.
     * Could potential result in slower inserts when hash table gets full.
-* [Random Probing](../../../../../../permanent/random-probing.md)
+* [Random Probing](../../../../permanent/random-probing.md)
     * Randomly place element somewhere on collision.
 * [Separate Chaining](../../../../permanent/separate-chaining.md)
     * Keep a list of elements at index locations. Just add elements to list on collision.
@@ -46,7 +46,7 @@ parent: data-structures-optimizing-performance
 ## Core: Overview
 
 * Generate valid words for misspelled words.
-* [Edit Distance](../../../../../../permanent/edit-distance.md) of words:
+* [Edit Distance](../../../../permanent/edit-distance.md) of words:
     * Start with ``speel``
     * Close == altered as little as possible.
     * Possible transformations:

@@ -15,7 +15,7 @@ $$
 
 It was the inspiration behind [Lasso](lasso.md).
 
-Similar to [Variable Subset Selection](../../../permanent/variable-subset-selection.md) but less sensitive to small pertubations in data, because penalise all co-efficients instead of co-efficients not selected.
+Similar to [Variable Subset Selection](variable-subset-selection.md) but less sensitive to small pertubations in data, because penalise all co-efficients instead of co-efficients not selected.
 
 The Lasso doesn't require explicit calculation of the least squares solution, so it can be used in cases where p>n, scenarios in which the non-negative garrote breaks down. However, because it applies an L_1 norm penalty, it can't be formulated as efficiently as a quadratic program.
 

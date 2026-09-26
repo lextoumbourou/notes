@@ -2,7 +2,7 @@
 title: ContentVec
 date: 2023-12-01 00:00
 category: paper
-modified: 2026-09-13 10:34
+modified: 2026-09-26 08:55
 status: draft
 summary: training a representation of speech that disentangles content information from speaker information
 tag: 
@@ -11,13 +11,14 @@ tag:
   - AudioEngineering
 ---
 
+
 These are my notes from the paper [ContentVec: An Improved Self-Supervised Speech Representation by Disentangling Speakers](https://arxiv.org/abs/2204.09224) by Kaizhi Qian, Yang Zhang, Heting Gao, Junrui Ni, Cheng-I Lai, David Cox, Mark Hasegawa-Johnson, Shiyu Chang
 
 ## Abstract
 
-ContentVec is a method for building an [Embedding](../../permanent/embedding.md) representation of speech, that "disentangles" content information from speech. This representation is useful for many downstream tasks like [Voice Conversion](../../../voice-conversion.md).
+ContentVec is a method for building an [Embedding](../../permanent/embedding.md) representation of speech, that "disentangles" content information from speech. This representation is useful for many downstream tasks like [Voice Conversion](../../permanent/voice-conversion.md).
 
-Typically [Speaker Disentanglement](../../../../permanent/speaker-disentanglement.md) is hard because it causes content loss. ContentVec fixes this. They modify the [HuBERT](../../permanent/hubert.md) framework, and incorporates disentangling mechanisms to regularise the teachers (masked prediction labels) and the student (learned representations).
+Typically [Speaker Disentanglement](../../permanent/speaker-disentanglement.md) is hard because it causes content loss. ContentVec fixes this. They modify the [HuBERT](../../permanent/hubert.md) framework, and incorporates disentangling mechanisms to regularise the teachers (masked prediction labels) and the student (learned representations).
 
 ![Figure 1](../../_media/papers-contentvec-fig1.png)
 
@@ -42,7 +43,7 @@ Papers tries to answer 2 question:
 
 For the first question, they propose ContentVec, an SSL framework that is adapted from the HUBERT training paradigm.
 
-The key idea of HUBERT is that by having some relatively poor speech representations, such as [Mel-frequency Cepstral Coefficients](Mel-frequency%20Cepstral%20Coefficients), serve as the
+The key idea of HUBERT is that by having some relatively poor speech representations, such as Mel-frequency Cepstral Coefficients, serve as the
 teacher labels for the masked prediction task, one can derive speech representations (which are sometimes referred to as students) that are far better than the teachers in many aspects, including content preservation. This inspires us that by combining HUBERT’s teacher-student framework with speaker disentanglement techniques, we could potentially restore the content loss caused by the latter.
 
 This has led us to the design of CONTENTVEC, which incorporates into HUBERT three disentangling mechanisms:
@@ -73,7 +74,7 @@ more powerful content processing directly on speech.
 
 ### 2. Related Work
 
-[Voice Conversion](../../../voice-conversion.md) is among the first research areas where speaker disentanglement is explored.
+[Voice Conversion](../../permanent/voice-conversion.md) is among the first research areas where speaker disentanglement is explored.
 
 The general trend follows the analysis-synthesis framework, where the analysis stage learns a speaker-independent speech representation that only preserves the content, and the synthesis stage uses the speaker-independent speech representation and the speaker-related variations to synthesize the conversion results.
 

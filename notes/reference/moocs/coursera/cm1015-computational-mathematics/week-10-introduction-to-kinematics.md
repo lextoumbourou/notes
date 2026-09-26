@@ -1,7 +1,7 @@
 ---
 title: "Week 10: Introduction to Kinematics"
 date: 2023-07-03 00:00
-modified: 2026-09-13 10:34
+modified: 2026-09-26 08:50
 status: draft
 ---
 
@@ -56,7 +56,7 @@ status: draft
 
 ## Uniform and uniformly accelerated motion, review and examples
 
-* [Uniform Motion](Uniform%20Motion)
+* Uniform Motion
     * So far, we have looked one-dimensional motion: motion along the line.
     * Have looked at 2 forms of motion:
         * Uniform motion
@@ -77,7 +77,7 @@ status: draft
           * $t$: This is the time that has elapsed. Time is usually measured in seconds (s)
           * So you know where an object started, and you know its constant speed, can figure out where it will be in time.
       * $S(t) = S_0 + {V_0}t$
-* [Uniform Accelerating Motion](Uniform%20Accelerating%20Motion)
+* [Kinematic Formulas](../../../../permanent/kinematic-formulas.md)
     * Here the velocity is no longer constant.
         * If acceleration is positive, velocity will increase in time.
         * If acceleration is negative, velocity will decrease in time.
@@ -112,11 +112,11 @@ status: draft
 
 ## Topic 5 live webinar: intervals and graphs
 
-* [Closed Interval](Closed%20Interval)
+* Closed Interval
     * $a \le x \le b$
     * Endpoints are included in the range
-* [Open Interval](Open%20Interval)
+* Open Interval
     * $a \lt x \lt b$
     * Endpoints are not included
-* [Semiclosed Range](Semiclosed%20Range)
+* Semiclosed Range
     * $a \le x \lt b$

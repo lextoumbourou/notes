@@ -82,4 +82,4 @@ Real sound waves are more complex than simple sine waves, so more samples are ne
 
 ## Bit Rate
 
-[Bit Rate](../../../permanent/bit-rate.md) is the number of bits per second required to store or transport the audio signal. For uncompressed audio, that is simply the number of bits per sample x sample rate. For mono audio with a bit depth of 16, and a sample rate of 44,100Hz, we could calculate it as: 16 bits x 44,100Hz = 705,600 bits/s.
+[Bit Rate](bit-rate.md) is the number of bits per second required to store or transport the audio signal. For uncompressed audio, that is simply the number of bits per sample x sample rate. For mono audio with a bit depth of 16, and a sample rate of 44,100Hz, we could calculate it as: 16 bits x 44,100Hz = 705,600 bits/s.

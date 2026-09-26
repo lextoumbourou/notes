@@ -1,20 +1,20 @@
 ---
 title: Sequence
 date: 2023-08-31 00:00
-modified: 2023-08-31 00:00
+modified: 2026-09-26 08:55
 status: draft
 ---
 
 A sequence is a set of numbers written in a specific order.
 
-[Arithmetic Sequence](Arithmetic%20Sequence)
+[Arithmetic Sequence](arithmetic-sequence.md)
 
 When you calculate a sequence by adding a fixed amount to the previous term, it's called an **arithmetic progression** or **arithmetic sequence**.
 
 The fixed amount added each time is called the When you calculate a sequence by adding a fixed amount to the previous term, it's called an **arithmetic progression** or **arithmetic sequence**.
-        * [Common Difference](Common%20Difference)
+        * [Common Difference](common-difference.md)
             * The fixed amount added each time is **common difference**.
-        * [First Term](First%20Term)
+        * [First Term](first-term.md)
             * The starting point is called the **first term**.
         * For example, start at 1 and add 6 each time: 1, 7, 13, 19, ...
             * 1 is first term

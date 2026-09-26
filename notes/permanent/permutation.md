@@ -64,7 +64,7 @@ $3-2 = 1! = 1$
 
 $6/1 = 6$
 
-## [Permutation with Repetition](../../../permanent/permutation-with-repetition.md)
+## [Permutation with Repetition](permutation-with-repetition.md)
 
 Consider this problem:
 

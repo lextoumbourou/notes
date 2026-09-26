@@ -5,7 +5,7 @@ doi: "10.1038/s41597-023-02100-7"
 citekey: "nguyen2023vindrmammo"
 date: 2025-10-20 00:00
 category: paper
-modified: 2025-10-20 00:00
+modified: 2026-09-26 09:40
 status: draft
 tags:
 - BreastCancerDetection
@@ -16,7 +16,7 @@ tags:
 
 ## Summary
 
-[VinDr-Mammo](../../permanent/vindr-mammo.md) is a large-scale Vietnamese full-field digital [Mammography](../../permanent/mammography.md) (FFDM), which consists of 5,000 exams (20,000 images) created to support [Computer-Aided Detection (CADe)](../../../../permanent/computer-aided-detection-cade.md) and [Computer-Aided Diagnosis (CADx)](../../../../permanent/computer-aided-diagnosis.md) research.
+[VinDr-Mammo](../../permanent/vindr-mammo.md) is a large-scale Vietnamese full-field digital [Mammography](../../permanent/mammography.md) (FFDM), which consists of 5,000 exams (20,000 images) created to support [Computer-Aided Detection (CADe)](../../permanent/computer-aided-detection-cade.md) and [Computer-Aided Diagnosis (CADx)](../../permanent/computer-aided-diagnosis.md) research.
 
 Contains 4 standard views for each patient (L/R CC and MLO) and provides:
 
@@ -102,7 +102,7 @@ VinDr-Mammo addresses several key gaps in mammography AI research:
 1. **Scale & diversity:**  
     * Largest *public* FFDM dataset with rich annotation detail.
 2. **Population representation:**  
-    * Introduces Southeast Asian data—critical given known domain shift across ethnicities, vendors, and clinical pipelines.
+    * Introduces Southeast Asian data, critical given known domain shift across ethnicities, vendors, and clinical pipelines.
 3. **Realistic screening distribution:**  
     * Mix of diagnostic + screening exams, and clinically realistic prevalence.
 4. **Bounding-box–level lesion annotations:**  
@@ -120,7 +120,7 @@ Limitations:
 
 | Feature              | INbreast                  | VinDr-Mammo                                 |
 | -------------------- | ------------------------- | ------------------------------------------- |
-| Size                 | **115 cases**             | **5,000 exams** — *~40× larger*             |
+| Size                 | **115 cases**             | **5,000 exams** - *~40× larger*             |
 | Population           | Portuguese                | Vietnamese (underrepresented population)    |
 | Annotation precision | Pixel-accurate contours   | Bounding boxes (faster + scalable)          |
 | Pathology labels     | Included for many lesions | Not available                               |

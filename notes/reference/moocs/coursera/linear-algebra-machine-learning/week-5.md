@@ -1,6 +1,7 @@
 ---
 title: "Week 5 - What are eigenvalues and eigenvectors?"
 date: 2021-10-04 00:00
+modified: 2026-09-26 08:50
 category: reference/moocs
 status: draft
 parent: linear-algebra-machine-learning
@@ -35,7 +36,7 @@ parent: linear-algebra-machine-learning
         ![Highlighted vectors after scaling](../../../../_media/laml-vectors-after-scaling.png)
 
     * The vectors that point in the same direction we refer to as [Eigenvector](../../../../permanent/eigenvector.md).
-    * The vectors that point in the same direction and whose size does not change are said to have [Eigenvalues](Eigenvalues) 1.
+    * The vectors that point in the same direction and whose size does not change are said to have [Eigenvalue](../../../../permanent/eigenvalue.md) 1.
         * In the above example, the vertical Eigenvector doubles in length, with an Eigenvalue of 2.
     * In a pure sheer operation, only the horizontal vector is unchanged. So the transformation has 1 Eigenvector.
     * In a rotation, there are no Eigenvectors.
@@ -46,14 +47,14 @@ parent: linear-algebra-machine-learning
 
 * Recap (00:00-00:18):
     * [Eigenvector](../../../../permanent/eigenvector.md) lie along the same span before and after applying a linear transform to a space.
-    * [Eigenvalues](Eigenvalues) are the amount we stretch each of those vectors in the process.
+    * [Eigenvalue](../../../../permanent/eigenvalue.md) are the amount we stretch each of those vectors in the process.
 * 3 special Eigen-cases (00:18-02:15)
     * Uniform scaling
         * Scale by the same amount in each direction.
         * All vectors are Eigenvectors.
     * 180° rotation
         * In regular rotation, there are no Eigenvectors. However, in 180° rotation, all vectors become [Eigenvector](../../../../permanent/eigenvector.md) pointing in the opposite direction.
-            * Since they are pointing in the opposite direction, we say they have [Eigenvalues](Eigenvalues) of -1.
+            * Since they are pointing in the opposite direction, we say they have [Eigenvalue](../../../../permanent/eigenvalue.md) of -1.
 
                 ![180 degree rotation Eigenvectors](../../../../_media/laml-180-rotation-eigenvectors.png)
 
@@ -77,15 +78,15 @@ parent: linear-algebra-machine-learning
     * A is an n-dimensional transform.
     * To find the solution of the express, we can rewrite:
         * $(A - \lambda I)x = 0$
-            * The $I$ is an $n \times n$ [Identity Matrix](permanent/Identity Matrix.md) that allows us to subtract a matrix by a scalar, which would otherwise not be defined.
+            * The $I$ is an $n \times n$ [Identity Matrix](../../../../permanent/identity-matrix.md) that allows us to subtract a matrix by a scalar, which would otherwise not be defined.
         * For the left-hand side to be 0, either:
             * Contents of the bracket are 0.
             * x is 0
         * We are not interested in the 2nd case as it means it has no length or direction. We call it a "trivial solution."
-        * We can test if a matrix operation results in 0 output by calculating its [Matrix Determinate](permanent/Matrix Determinate.md): $det(A - \lambda I) = 0$
+        * We can test if a matrix operation results in 0 output by calculating its [Matrix Determinate](../../../../permanent/matrix-determinate.md): $det(A - \lambda I) = 0$
         * We can apply it to an arbitrary 2x2 matrix: $A = \begin{bmatrix}a & b \\ c & d \end{bmatrix}$ as follows: $det(\begin{bmatrix}a & b \\ c & d \end{bmatrix} - \begin{bmatrix}\lambda & 0 \\ 0 & \lambda \end{bmatrix}) = 0$
-        * Evaluating that gives us the [Characteristic Polynomial](Characteristic Polynomial): $\lambda^{2} - (a+d) \lambda + ad - bc = 0$
-        * Our [Eigenvalues](Eigenvalues) are the solution to this equation. We can then plug the solutions into the original expression.
+        * Evaluating that gives us the Characteristic Polynomial: $\lambda^{2} - (a+d) \lambda + ad - bc = 0$
+        * Our [Eigenvalue](../../../../permanent/eigenvalue.md) are the solution to this equation. We can then plug the solutions into the original expression.
 * Applying to a simple vertical scaling transformation (04:36-07:53):
     * Give vertical scaling matrix: $A = \begin{bmatrix}1 & 0 \\ 0 & 2\end{bmatrix}$
     * We calculate the determinate of $A - I\lambda$: $det \left( \begin{bmatrix}1 - \lambda & 0 \\ 0 & 2 - \lambda \end{bmatrix} \right)$ as $(1-\lambda)(2-\lambda)$ which equals $0$
@@ -120,10 +121,10 @@ parent: linear-algebra-machine-learning
 
         * If you wanted to apply it millions of times, the operation could be expensive.
     * Can instead square $T$ to get the same result: $v_2 = {T^2} v_0$ or to the power of any $n$: $v_n = {T^n} v_0$
-    * If T was is a [Diagonal Matrices](Diagonal Matrices), where all terms along the leading diagonal are 0, you can simply square the non-zero values as: $T^{n} = \begin{bmatrix}a^n & 0 & 0 \\ 0 & b^n & 0 \\ 0 & 0 & c^n\end{bmatrix}$
+    * If T was is a [Diagonal Matrix](../../../../permanent/diagonal-matrix.md), where all terms along the leading diagonal are 0, you can simply square the non-zero values as: $T^{n} = \begin{bmatrix}a^n & 0 & 0 \\ 0 & b^n & 0 \\ 0 & 0 & c^n\end{bmatrix}$
     * When all terms except those along diagonal are 0.
-    * If the matrix isn't diagonal, you can construct a Diagonal Matrix using [Eigenanalysis](Eigenanalysis).
-* Constructing a [Diagonal Matrix](Diagonal Matrix)
+    * If the matrix isn't diagonal, you can construct a Diagonal Matrix using Eigenanalysis.
+* Constructing a [Diagonal Matrix](../../../../permanent/diagonal-matrix.md)
     * Plug in Eigenvectors as columns: $C = \begin{bmatrix}x_1 & x_2 & x_3 \\ . & . & . \\ . & . & . \\ . & . & .\end{bmatrix}$
     * Create a diagonal matrix from that: $D = \begin{bmatrix} \lambda_1 & 0 & 0 \\ 0 & \lambda_2 & 0 \\ 0 & 0 & \lambda_3 \end{bmatrix}$
     * We then want to convert back to the original transformation, which we can use the inverse.
@@ -158,7 +159,7 @@ parent: linear-algebra-machine-learning
 
 ### Introduction to PageRank
 
-* [PageRank](PageRank) (00:00-07:20)
+* [PageRank](../../../../permanent/pagerank.md) (00:00-07:20)
     * Ranks websites by importance based on the importance of pages that link to them.
         * Central assumption: "the importance of a website is related it links to and from other websites."
     * Model represents a model mini internet:
@@ -184,9 +185,9 @@ parent: linear-algebra-machine-learning
     * Applying repeated means, we are solving iteratively until $r$ stops changing.
     * This means that $r$ is an Eigenvector of matrix $L$, with an Eigenvalue of 1.
         * We might assume that we could apply the Diagonalisation method, but we would first need to know all the Eigenvalues, which is what we're trying to find.
-    * Though there are many approaches for efficiently calculating Eigenvectors, randomly multiplying a randomly selected initial guest vector by a matrix, called the [Power Method](Power Method), is still very effective.
+    * Though there are many approaches for efficiently calculating Eigenvectors, randomly multiplying a randomly selected initial guest vector by a matrix, called the Power Method, is still very effective.
         * The power method will only give you one Eigenvector for an n by n webpage system, the vector you get will be the one you're looking for with an Eigenvalue of 1.
-        * The graph for the whole internet will be very [Sparse Matrix](Sparse Matrix). Algorithms exist that allow us to perform efficient matrix multiplication.
+        * The graph for the whole internet will be very Sparse Matrix. Algorithms exist that allow us to perform efficient matrix multiplication.
 * The damping factor $D$ (07:20-08:24)
     * Adds an additional term to formula: $r^{i+1}=d\left( {L_r}^{i} \right) + \frac{1-d}{n}$
     * It's the probability that a random web surfer will type a URL instead of clicking

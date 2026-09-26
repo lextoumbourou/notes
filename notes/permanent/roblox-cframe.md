@@ -2,6 +2,7 @@
 category: note
 title: Roblox CFrame
 date: 2021-10-19 00:00
+modified: 2026-09-26 08:55
 cover: /_media/roblox-cframe-cover.png
 summary: In Roblox, a CFrame (coordinate frame) is an object that encodes position and rotation in 3D space.
 tags:
@@ -17,14 +18,14 @@ You can create a CFrame with the `new()` constructor, which accepts a set of 3d 
 local cframe = CFrame.new(0, 10, 0)
 ```
 
-`CFrame` is a property of [Roblox Part](Roblox Part). You can move a Part by assigning a new the CFrame to it:
+`CFrame` is a property of Roblox Part. You can move a Part by assigning a new the CFrame to it:
 
 ```lua
 local part = Instance.new('Part')
 part.CFrame = CFrame.new(0, 10, 0)
 ```
 
-Note that it's the same as assigning a [Roblox Vector3](permanent/Roblox Vector3.md) to the `Position` property.
+Note that it's the same as assigning a [Roblox Vector3](roblox-vector3.md) to the `Position` property.
 
 ```lua
 part.Position = Vector3.new(0, 10, 0)

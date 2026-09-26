@@ -1,7 +1,7 @@
 ---
 title: Week 3 - Sequences and Series
 date: 2023-04-22 00:00
-modified: 2023-04-22 00:00
+modified: 2026-09-26 08:50
 status: draft
 ---
 
@@ -40,12 +40,12 @@ status: draft
 * Fibonacci Sequence:
     * Most common definition by recursion: $a_0 = 0, a_1 = 1, a_n = a_{n-1} + a_{n-2}$
         * 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144
-    * One of the reasons for this sequence importance, is that the ratio between a sequence value and its previous value is known as the [Golden Ratio](../../../../../../permanent/Golden%20Ratio.md).
+    * One of the reasons for this sequence importance, is that the ratio between a sequence value and its previous value is known as the [Golden Ratio](../../../../permanent/Golden%20Ratio.md).
         * $\frac{a_n}{a_{n-1}} \rightarrow \phi = \frac{1 + \sqrt{5}}{2} = 1.618$
 * Fibonacci Spiral
     * If you take the sequence of squares whose sides are given by the number of an element in the sequence.
     * If you join 2 opposite sides of the square with an arccos circumference, you obtain the Fibonacci spiral, which is observed throughout nature.
-        ![Fibonacci Spiral](../../../../journal/_media/week-3-sequences-and-series-fib-spiral.png)
+        ![Fibonacci Spiral](../../../../_media/week-3-sequences-and-series-fib-spiral.png)
 
 ## Essential Reading / Topic 2
 
@@ -56,12 +56,12 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
         * 1, 3, 5, 7, 9
         * -1, -2, -3, -4
     * There doesn't need to be a rule that relates numbers in the sequence.
-    * Every number in the sequence is called a [Term (Sequence)](Term%20(Sequence)) of the sequence.
+    * Every number in the sequence is called a term of the sequence.
         * The "number of terms" in the first sequence is five, and the number of terms in the 2nd is four.
     * We can use `...` to indicate the sequence continues.
-        * [Finite Sequence](Finite%20Sequence)
+        * Finite Sequence
             * Sequences that have a finite number of terms are **finite sequences**
-        * [Infinite Sequence](Infinite%20Sequence)
+        * Infinite Sequence
             * Sequences that have an infinite number are **infinite sequences**
 * Notation
     * Subscript notation is used for different terms in a sequence.
@@ -75,11 +75,11 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
         * etc
     * What is a finite sequence? A sequence that has a finite number of terms.
     * Write down the first five temrs of the sequencs given by:
-* [Arithmetic Sequence](Arithmetic%20Sequence) (pg. 12.2)
+* [Arithmetic Sequence](../../../../permanent/arithmetic-sequence.md) (pg. 12.2)
     * When you calculate a sequence by adding a fixed amount to the previous term, it's called an **arithmetic progression** or **arithmetic sequence**.
-        * [Common Difference](Common%20Difference)
+        * [Common Difference](../../../../permanent/common-difference.md)
             * The fixed amount added each time is **common difference**.
-        * [First Term](First%20Term)
+        * [First Term](../../../../permanent/first-term.md)
             * The starting point is called the **first term**.
         * For example, start at 1 and add 6 each time: 1, 7, 13, 19, ...
             * 1 is first term
@@ -156,7 +156,7 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
                 * $ar^{11-1} = (4)(2)^{11-1} = 4096$
         * 4. A geometric progression is given by $2, -1, \frac{1}{2}, -\frac{1}{4}$
             * $-\frac{1}{2}$
-* [Infinite Sequences](Infinite%20Sequences)
+* Infinite Sequences
     * A sequence that continues indefinitely.
     * Use ... to indicate it: $1, 2, 3, 4, 5, ...$
     * You can also have a sequence where the terms get closer to a fixed value. Ie: $1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \frac{1}{5}, ...$
@@ -199,7 +199,7 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
             * $\displaystyle{\lim_{k \to \infty}} (7 + \frac{3}{k^2}) = 7$
         * i) $x_k = \frac{k+1}{k}, k = 1, 2, 3, ...$
             * $\displaystyle{\lim_{k \to \infty}} (\frac{k + 1}{k}) = 1$
-* [Series and Sigma Notation](Series%20and%20Sigma%20Notation)
+* Series and Sigma Notation
     * [Series](../../../../permanent/series.md)
         * If the terms of a sequence are added, the result is called series.
         * For example, if you add the term: 1, 2, 3, 4, 5 you get: 1 + 2 + 3 + 4 + 5
@@ -257,8 +257,8 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
                 * 3. Write out fully what is meant by:
                     * $\sum\limits_{k=1}^{3} \frac{(-1)^k}{k}$
                     * $\frac{-1^{1}}{1} + \frac{(-1)^2}{2} + \frac{(-1)^3}{3} = -1 + \frac{1}{2} + \frac{-1}{3}$
-* [Arithmetic Series](Arithmetic%20Series)
-    * When we add the terms of an [Arithmetic Sequence](Arithmetic%20Sequence), it's called an Arithmetic Series.
+* Arithmetic Series
+    * When we add the terms of an [Arithmetic Sequence](../../../../permanent/arithmetic-sequence.md), it's called an Arithmetic Series.
     * There is a formula we can use to find the sum of an arithmetic series:
         * The sum of the first $n$ terms of an arithmetic series with first term $a$ and common difference $d$ is denoted by $S_n$ and given by:
             * $S_n = \frac{n}{2} (2a + (n-1)d)$
@@ -310,8 +310,8 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
             * $0 - 39 = 78d$
             * $-39/78 = d$
             * $d = -(\frac{1}{2})$
-* [Geometric Series](Geometric%20Series)
-    * When terms of a [Geometric Sequence](Geometric%20Sequence) are added.
+* Geometric Series
+    * When terms of a [Geometric Progressions](../../../../permanent/geometric-progressions.md) are added.
     * The formula for a geometric series is: $S_n = \frac{a(1-r^n)}{1-r}$
         * Where $n$ = term of sequence, $a$ = first term and $r$ = common ratio (although cannot be equal to 1).
     * Example: Use formula to find S_n, where n=5, a =2 and r = 3:
@@ -320,7 +320,7 @@ Croft, A. and R. Davison Foundation maths. (Harlow: Pearson, 2016) 6th edition. 
         * $S_5 = \frac{2 - 486}{-2}$
         * $S_5 = \frac{-484}{-2}$
         * $S_5 = 242$
-* [Infinite Geometric Series](Infinite%20Geometric%20Series)
+* Infinite Geometric Series
     * When the terms of an infinite sequence are added we obtain an infinite series.
         * This only works when the sum is finite.
     * The case where a geometric series with a common ratio between -1 and 1:

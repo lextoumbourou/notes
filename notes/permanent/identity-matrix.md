@@ -2,10 +2,11 @@
 category: note
 title: Identity Matrix
 date: 2021-09-18 00:00
+modified: 2026-09-26 09:40
 tags:
   - LinearAlgebra
 cover: /_media/identity-matrix.png
-summary: A square matrix with 1s on the diagonal and 0s elsewhere — multiplying by it leaves any matrix unchanged.
+summary: "A square matrix with 1s on the diagonal and 0s elsewhere: multiplying by it leaves any matrix unchanged."
 ---
 
 When you multiply a matrix $(A)$ by the Identity Matrix $(I)$, you get the original matrix back.
@@ -34,10 +35,10 @@ In this [Matrix Multiplication](matrix-multiplication.md) example, we can see ho
 
 ![Identity matrix example 1](../_media/identity-matrix-1.gif)
 
-Multiplying a matrix by its [Inverse Matrix](Inverse Matrix) will return the identity matrix.
+Multiplying a matrix by its [Matrix Inverse](matrix-inverse.md) will return the identity matrix.
 
 When we multiply the Identity Matrix by another Identity Matrix, the result is the same matrix.
 
-All the rows and columns in the Identity Matrix have [Linear Independence](Linear Independence).
+All the rows and columns in the Identity Matrix have Linear Independence.
 
 [@dyeMathematicsMachineLearning]

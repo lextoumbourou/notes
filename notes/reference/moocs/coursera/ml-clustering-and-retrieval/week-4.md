@@ -13,7 +13,7 @@ status: draft
     * Rarely in situation with clear cut cluster differences which [K-Means](../../../../permanent/k-means.md) implies.
     * Often have overlapping clusters, yet k-means does hard assignment.
     * Also, cluster centers may not be most important point: may want to take into account shape of cluster.
-* [Mixture Model](../../../../../../permanent/mixture-model.md)
+* [Mixture Model](../../../../permanent/mixture-model.md)
       * Can provide "soft assignment" of observations to clusters.
     * Example: 54% fashion, 30% beauty, 16% travel etc.
     * Can account for cluster shape, not just focused on cluster center.
@@ -75,7 +75,7 @@ status: draft
 
 ### Mixture of Gaussians
 
-* Special case of mixture model: [Gaussian Mixture Model](../../../../../../permanent/gaussian-mixture-model.md)
+* Special case of mixture model: [Gaussian Mixture Model](../../../../permanent/gaussian-mixture-model.md)
 * Each class of images has a multi variable gaussian distribution of the different colour values.
 * Since we initially don't know the image classes, we just have a bunch of gaussians over the entire dataset space.
 * Question: how are you going to model the colour distribution across the entire dataset?

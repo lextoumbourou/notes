@@ -2,6 +2,7 @@
 category: note
 title: Roblox Vector3
 date: 2021-08-29 00:00
+modified: 2026-09-26 08:55
 tags:
   - Roblox
 summary: Roblox's 3D vector type.
@@ -33,7 +34,7 @@ The `Size` property describes the size of each side of a rectangular prism.
 game.Workspace.Part.Size = Vector3.new(0)
 ```
 
-We can perform [Vector Addition](Vector Addition.md) by adding two Vector3 instances.
+We can perform [Vector Addition](vector-addition.md) by adding two Vector3 instances.
 
 ```lua
 print(Vector3.new(1, 1, 1) + Vector3.new(2, 2, 2)) -- 3, 3 ,3
@@ -45,13 +46,13 @@ We can perform [Vector Subtraction](vector-subtraction.md) by subtracting two Ve
 print(Vector3.new(1, 1, 1) - Vector3.new(1, 1, 1)) -- 0, 0, 0
 ```
 
-We can scale a vector by multiplying it by a scalar ([Vector Scaling](Vector Scaling.md)).
+We can scale a vector by multiplying it by a scalar ([Vector Scaling](vector-scaling.md)).
 
 ```lua
 print(Vector3.new(1, 1, 1) * 2) -- 2, 2, 2
 ```
 
-The [Vector Magnitude](Vector Magnitude) is available via the `Magnitude` property. It's equivalent to the function:
+The [Vector Magnitude](vector-magnitude.md) is available via the `Magnitude` property. It's equivalent to the function:
 
 ```lua
 function vectorMagnitude(vector)
@@ -73,7 +74,7 @@ Note: there is a slight difference due to the imprecision of floating-point numb
 
 A use case for this is to calculate the distance between 2 vectors by subtracting them and calculating the magnitude of the returned vector.
 
-The `Unit` property returns a [Unit Vector](Unit Vector), which is a new vector with a Magnitude of 1 in the direction of the original vector
+The `Unit` property returns a Unit Vector, which is a new vector with a Magnitude of 1 in the direction of the original vector
 
 Equivalent to:
 
@@ -92,8 +93,8 @@ print(game.Workspace.Part.Position.Unit)
 ---  0.57735025882721, 0.57735025882721, 0.57735025882721
 ```
 
-We can perform a [Linear Interpolation](Linear Interpolation) between 2 vectors using `lerp`. Helpful in placing things in between 2 parts.
+We can perform a Linear Interpolation between 2 vectors using `lerp`. Helpful in placing things in between 2 parts.
 
-Lastly, `Dot` performs the [Dot Product](Dot Product.md) between 2 vectors. `Cross` returns the [Cross Product](Cross Product.md) between 2 vectors.
+Lastly, `Dot` performs the [Dot Product](dot-product.md) between 2 vectors. `Cross` returns the [Cross Product](cross-product.md) between 2 vectors.
 
 [@robloxVector3]

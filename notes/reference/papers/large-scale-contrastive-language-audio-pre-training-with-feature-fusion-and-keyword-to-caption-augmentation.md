@@ -160,7 +160,7 @@ After training, embeddings are then used for upstream tasks:
 
 They experiment with two models for audio encoders:
 
-[PANNs](../../../../permanent/PANNs.md)
+[PANNs](../../permanent/PANNs.md)
 
 * a CNN-based audio classification model with seven downsampling CNN blocks and seven upsampling blocks.
 
@@ -265,7 +265,7 @@ Tokenise the text with a maximum token length of 77
 
 #### Optimiser
 
-Use the [Adam](../../../../permanent/adam.md) optimiser with β1 = 0.99, β2 = 0.9 with a warm-up and cosine learning rate decay at a basic learning rate of 10-4.
+Use the [Adam](../../permanent/adam.md) optimiser with β1 = 0.99, β2 = 0.9 with a warm-up and cosine learning rate decay at a basic learning rate of 10-4.
 
 #### Batch sizes
 

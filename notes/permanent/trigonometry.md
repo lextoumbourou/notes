@@ -1,7 +1,7 @@
 ---
 title: Trigonometry
 date: 2023-08-12 00:00
-modified: 2023-08-12 00:00
+modified: 2026-09-26 08:55
 status: draft
 ---
 
@@ -17,7 +17,7 @@ The angles of a triangle are a measure of the distance between each side.
 
 In every triangle, the sum of all 3 angles adds to 180°.
 
-One type of triangle that usually makes sense to understand first is the [[right-angle triangle]]. This is where one angle is 90°.
+One type of triangle that usually makes sense to understand first is the right-angle triangle. This is where one angle is 90°.
 
 In a right triangle, we can examine the 2 other angles. We name the sides of the triangle specials names that help us:
 

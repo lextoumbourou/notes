@@ -1,7 +1,7 @@
 ---
 title: "Large Language Models are Zero-Shot Reasoners (May 2022)"
 date: 2025-01-08 00:00
-modified: 2026-09-24 07:49
+modified: 2026-09-26 08:50
 summary: improve zero-shot prompt performance of LLMs by adding “Let’s think step by step” before each answer
 category: reference/papers
 tags:
@@ -77,7 +77,7 @@ While this approach requires two prompting steps instead of one, it eliminates t
 ## Results
 
 The researchers tested this approach on various tasks including:
-- Arithmetic reasoning (MultiArith, [[GSM8K]])
+- Arithmetic reasoning (MultiArith, GSM8K)
 - Symbolic reasoning (Last Letter, Coin Flip)
 - Commonsense reasoning
 - Logical reasoning

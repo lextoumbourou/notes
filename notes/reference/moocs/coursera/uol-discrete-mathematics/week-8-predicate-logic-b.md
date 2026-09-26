@@ -4,7 +4,7 @@ date: 2022-11-29 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## 4.201 De Morgan's law for quantifiers
@@ -18,7 +18,7 @@ modified: 2023-04-08 00:00
         * The negation of S can be verified **if there is at least one** computer not connected to the network.
         * The negation of P can be verified **if all university computers** are not operating on Linux.
     * De Morgan's laws formalise these intuitions.
-* [De Morgan's Law for Quantifiers](De Morgan's Law for Quantifiers)
+* [De Morgan's Laws](../../../../permanent/de-morgans-laws.md)
     * The rules for negating quantifiers can be summarised as:
         * $\neg \forall x \ P(x) \equiv \exists x \ \neg P(x)$
         * $\neg \exists x \ P(x) \equiv \forall x \ \neg P(x)$
@@ -40,7 +40,7 @@ modified: 2023-04-08 00:00
             * It is not the case that there is a student in CS who didn't take a course in ML
             * $\neg (\exists x \ Q(x)) \equiv \forall x \ \neg Q(x)$
             * This implies that: "every student in CS has taken a ML course."
-* [Negating Nested Quantifiers](Negating Nested Quantifiers)
+* Negating Nested Quantifiers
     * For nested quantifiers: apply De Morgan's laws from left to right.
     * Example
         * Let $P(x, y, z)$ denote propositional function of variables: x, y and z.
@@ -52,10 +52,10 @@ modified: 2023-04-08 00:00
 
 ## 4.203 Rules of inference
 
-* [Argument (Logic)](../../../../permanent/Argument (Logic).md)
+* [Argument (Logic)](../../../../permanent/argument-logic.md)
     * An argument in Propositional Logic is a sequence of [Proposition](../../../../permanent/proposition.md)lled the conclusion
     * The other propositions in the argument are called premises or hypotheses.
-* [Valid Argument](../../../../permanent/Valid Argument.md)
+* [Valid Argument](../../../../permanent/valid-argument.md)
     * An argument is valid if the truth of all its premises implies the truth of the conclusion.
     * Example 1
         * "If you have access to the internet, you can order a book on ML"
@@ -87,13 +87,13 @@ modified: 2023-04-08 00:00
             | 1 | 1 | 1 |
 
 * In row 2, the premise is true, but the conclusion is false.
-* [Rules of Inference](../../../../permanent/Rules of Inference.md)
+* [Rules of Inference](../../../../permanent/rules-of-inference.md)
     * Building blocks in constructing incrementally complex valid arguments.
     * We can use truth table to figure out if argument is True or False but it's too laborious when you have lots of vars.
         * If you have 8 propositional variables, you would need a truth table with $2^8$ rows.
     * Rules of inference provide simpler way of proving the validity of arguments.
         * Every rule of inference can be proved using a **tautology**.
-* [Modus ponens](Modus ponens)
+* [Modus ponens](../../../../permanent/modus-ponens.md)
     * Tautology: $(p \land (p \rightarrow q)) \rightarrow q$
     * The rule of inference:
         * $p \rightarrow q$ (if the conditional statement p implies q is true)
@@ -105,7 +105,7 @@ modified: 2023-04-08 00:00
             * "If it is snowing, I will study D.M."
             * "It is snowing"
             * Therefore: "I will study Discrete Maths"
-* [Modus tollens](Modus tollens)
+* Modus tollens
     * Tautology: $(\neg q \land (p \rightarrow q)) \rightarrow \neg p$
     * The rule of inference:
         * $\neg q$
@@ -129,7 +129,7 @@ modified: 2023-04-08 00:00
             * "I will study Programming."
             * "I will study Discrete Maths"
             * Therefore: "I will study Programming and Discrete Maths"
-* [Simplification](Simplification)
+* Simplification
     * Tautology: $(p \land q) \rightarrow p$
     * The rule of inference:
         * $p \land q$
@@ -139,7 +139,7 @@ modified: 2023-04-08 00:00
             * $q$: I will study Programming.
             * I will study Discrete Math and programming.
             * Therefore: "I will study Discrete Math"
-* [Addition](Addition)
+* Addition
     * Tautology: $p \rightarrow (p \lor q)$
     * The rule of inference:
         * $p$
@@ -149,7 +149,7 @@ modified: 2023-04-08 00:00
             * $q$: "I will study Discrete Math"
             * "I will visit Paris"
             * Therefore: "I will visit Paris or I will study Discrete Math"
-* [Hypothetical syllogism](Hypothetical syllogism)
+* Hypothetical syllogism
     * Tautology: $((p \rightarrow q) \land (q \rightarrow r)) \rightarrow (p \rightarrow r)$
     * The rule of inference:
         * $p \rightarrow q$
@@ -161,7 +161,7 @@ modified: 2023-04-08 00:00
             * If it is snowing, I will study Discrete Math.
             * If I study Discrete Math, I will pass the quizzes.
             * Therefore: if it is snowing, I will pass the quizzes.
-* [Disjunctive syllogism](Disjunctive syllogism)
+* Disjunctive syllogism
     * Tautology: $((p \lor q) \land \neg p) \rightarrow q$
     * The rule of inference:
         * $p \lor q$
@@ -173,7 +173,7 @@ modified: 2023-04-08 00:00
         * "I will study Discrete Maths or I will study Art"
         * "I will not study Discrete Maths"
         * Therefore: "I will study art"
-* [Resolution](Resolution)
+* Resolution
     * Tautology: $((p \lor q) \land (\neg p \lor r)) \rightarrow (q \lor r)$
     * The rule of inference:
         * $p \lor q$
@@ -186,7 +186,7 @@ modified: 2023-04-08 00:00
         * "It is raining or it is snowing."
         * "It is not raining or it is cold."
         * Therefore: "It is snowing or it is cold."
-* [Building Valid Arguments](Building Valid Arguments)
+* Building Valid Arguments
     * To build a valid argument, we need to follow these steps:
         * If initially written as English, transform into argument form by choosing a variable for each simple proposition.
         * Start with the hypothesis of the argument
@@ -218,7 +218,7 @@ modified: 2023-04-08 00:00
         * 6. $r \rightarrow s$ - Hypothesis.
         * 7. $\therefore s$ - Modus ponens 5, 6
         * Conclusion: we will need to make popcorn.
-* [Logical Fallacies](Logical Fallacies)
+* Logical Fallacies
     * A fallacy is the use of incorrect argument when reasoning
     * Formal fallacies can be expressed in propositional logic and proved to be incorrect.
     * Some of the widely use formal fallacies are:
@@ -242,18 +242,18 @@ modified: 2023-04-08 00:00
 
 ## 4.205 Rules of inference with quantifiers
 
-* [Rules of Inference with Quantifiers](Rules of Inference with Quantifiers)
+* Rules of Inference with Quantifiers
     * Previously introduced rules of inference for propositions.
     * Now describe important rules of inference for statements involving quantifiers.
     * These rules of inference remove or reintroduce quantifiers within a statement.
-* [Universal Instantiation (UI)](Universal Instantiation (UI))
+* Universal Instantiation (UI)
     * The rule of inference:
         * $\forall P(x)$
         * $\therefore P(c)$
     * Example:
         * All comp science students study discrete maths.
         * $\therefore$ Therefore, John, who is a computer science student, studies discrete math.
-* [Universal Generalization (UG)](Universal Generalization (UG))
+* Universal Generalization (UG)
     * The rule of inference:
         * $P(c)$ for an arbitrary element of the domain.
         * $\forall x P(x)$
@@ -262,7 +262,7 @@ modified: 2023-04-08 00:00
             * Let c be an arbitrary element in DS.
             * c studies ML.
             * $\therefore$ Therefore $\forall x \in  \text{DS}$, $x$ studies ML.
-* [Existential Instantiation (EI)](Existential Instantiation (EI))
+* Existential Instantiation (EI)
     * The rule of inference:
         * $\exists x \ P(x)$
         * $\therefore P(c)$ for some element of the domain.
@@ -270,7 +270,7 @@ modified: 2023-04-08 00:00
         * DS = {all data science students}
         * There exists a student of data science who uses Python Pandas Library.
         * Therefore, there is a student $c$ who is using Pandas.
-* [Existential Generalization (EG)](Existential Generalization (EG))
+* Existential Generalization (EG)
     * The rule of inference:
             * $P(c)$ for some element of the domain.
             * Therefore, $\exists x P(x)$
@@ -278,7 +278,7 @@ modified: 2023-04-08 00:00
         * DS = {all data science students}
         * John, a student of data science, got a A in ML.
         * Therefore, there exists someone in DS who got an A in ML.
-* [Universal Modus Ponens](Universal Modus Ponens)
+* Universal Modus Ponens
     * The rule of inference:
         * $\forall x P(x) \rightarrow Q(x)$
         * $P(a)$ for some element of the domain.
@@ -288,7 +288,7 @@ modified: 2023-04-08 00:00
         * Every computer science student studying data science will study ML.
         * John is a computer science student studying data sciecnce.
         * Therefore, John will study ML.
-* [Universal Modus Tollens](Universal Modus Tollens)
+* Universal Modus Tollens
     * The rule of inference:
         * $\forall x P(x) \rightarrow Q(x)$
         * $\neg Q(a)$ for some element of the domain.
@@ -569,7 +569,7 @@ Indicate whether each of the following arguments is valid or invalid and justify
 A Ferrari is a good car.
 $\therefore$ A Ferrari is not cheap
 
-This is a valid argument using [Universal Modus Ponens](Universal Modus Ponens) or [Universal Instantiation (UI)](Universal Instantiation (UI))
+This is a valid argument using Universal Modus Ponens or Universal Instantiation (UI)
 
 2. No good cars are cheap.
 A BMW is not cheap.

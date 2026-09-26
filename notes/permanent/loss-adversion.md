@@ -11,4 +11,4 @@ Schell describes Kahneman and Tversky's Prospect Theory as applied to games, in 
 
 References:
 
-* [](The Art of Game Design - A Book of Lenses (2nd Edition)#Chapter%2012%20Some%20Elements%20Are%20Game%20Mechanics)
+* [The Art of Game Design - A Book Of Lenses (2nd Edition) by Jesse Schell](../reference/books/the-art-of-game-design-a-book-of-lenses-2nd-edition.md#Chapter%2012%20Some%20Elements%20Are%20Game%20Mechanics)

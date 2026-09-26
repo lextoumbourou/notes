@@ -25,7 +25,7 @@ If there's an odd number of nodes at any level, the last node is typically dupli
 
 Merkle Proofs, a capability enabled by Merkle Trees, allows us to verify a specific transaction or piece of data is included in a dataset by only checking a small number of hashes rather than the entire set. You only need to hash values from the leaf to the node to verify that a transaction (for example) exists in the ledger.
 
-In the [Bitcoin Paper](../../../permanent/bitcoin-a-peer-to-peer-electronic-cash-system.md), Nakamoto described a method to reclaim disk space by hashing transactions into a tree structure with only the Merkle root stored in the block header. The Merkle Root used in Bitcoin also enables "simple payment verification", a feature allowing clients to verify transactions without downloading the entire blockchain.
+In the [Bitcoin Paper](bitcoin-a-peer-to-peer-electronic-cash-system.md), Nakamoto described a method to reclaim disk space by hashing transactions into a tree structure with only the Merkle root stored in the block header. The Merkle Root used in Bitcoin also enables "simple payment verification", a feature allowing clients to verify transactions without downloading the entire blockchain.
 
 ![merkle-tree-in-bitcoin.png](../_media/merkle-tree-in-bitcoin.png)
 

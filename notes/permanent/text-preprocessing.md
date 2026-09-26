@@ -1,17 +1,17 @@
 ---
 title: Text Preprocessing
 date: 2025-11-03 00:00
-modified: 2025-11-03 00:00
+modified: 2026-09-26 08:55
 status: draft
 ---
 
 For classical NLP, there are a number of text preprocessing techniques that are worth knowing.
 
-## [Tokenisation](../../../permanent/tokenisation.md)
+## [Tokenisation](tokenisation.md)
 
-Tokenisation is the process of splitting text (or audio - [Audio Tokenisation](../../../permanent/audio-tokenization.md), or images [Image Tokenisation](../../../permanent/image-tokenisation.md)) into discrete units called tokens.
+Tokenisation is the process of splitting text (or audio - [Audio Tokenisation](audio-tokenization.md), or images [Image Tokenisation](image-tokenisation.md)) into discrete units called tokens.
 
-Modern tokenisers, like the OpenAI's tiktoken, operate at the subword level, splitting text into small units called token, some of which are individual words, others parts of word, or even single character. In tiktoken's case, the algorithm is called [Byte Pair Encoding](Byte%20Pair%20Encoding.md), which operates across pairs of bytes.
+Modern tokenisers, like the OpenAI's tiktoken, operate at the subword level, splitting text into small units called token, some of which are individual words, others parts of word, or even single character. In tiktoken's case, the algorithm is called Byte Pair Encoding, which operates across pairs of bytes.
 
 ```python
 import tiktoken
@@ -45,7 +45,7 @@ for token_id in tokens:
 <!-- /nb-output -->
 
 Subword tokenisers are not the only game in town for NLP.
-### [Word Tokenisation](../../../permanent/word-tokenisation.md)
+### [Word Tokenisation](word-tokenisation.md)
 
 Word tokens, as you might expect, operate at the word limit. That means they're likely limited to a vocbulary, and any word outside of the voculablry might be replaced with a *unknown word*. 
 
@@ -64,7 +64,7 @@ print(tokens)
 </div>
 <!-- /nb-output -->
 
-### [Sentence Segmentation](../../../permanent/sentence-segmentation.md)
+### [Sentence Segmentation](sentence-segmentation.md)
 
 Sentence Segmentation is a technique for tokenisation where we split a text into sentences, typically using punctuation as split tokens.
 
@@ -113,7 +113,7 @@ pprint.pprint(sentences)
 
 We can see that the sentence tokeniser has split sentences based on punctuation.
 
-## [Text Normalisation](Text%20Normalisation.md)
+## Text Normalisation
 
 Once a word has been tokenised, a number of other techniques exist for normalising tokens.
 
@@ -137,7 +137,7 @@ print(stemmer.stem("driving"))
 </div>
 <!-- /nb-output -->
 
-### [Lemmatisation](../../../permanent/lemmatisation.md)
+### [Lemmatisation](lemmatisation.md)
 
 Lemmatisation is the process of replacing synatically similar words with the same token. It tends to be a much more sophistocated algorithmn than a stemming algorithm, and often uses surrounding context of a word to determine synoms and such.
 

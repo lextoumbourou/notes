@@ -2,10 +2,12 @@
 title: Karnaugh Map
 aliases: K-Map
 date: 2022-12-24 00:00
+modified: 2026-09-26 08:55
 status: draft
 ---
 
-A Karnaugh Map or K-Map is a way to graphically represent [Boolean Function](Boolean%20Function)s.
+
+A Karnaugh Map or K-Map is a way to graphically represent [Boolean Function](boolean-function.md)s.
 
 At the time of writing, I can't describe them in words, only example.
 

@@ -40,7 +40,7 @@ Child: My parent is 1
 ```
 
 So, to prevent the child from becoming an orphan, our parent process
-can call the [wait System Call](wait System Call).
+can call the wait System Call.
 
 `wait(2)` effectively waits for its children to exit and then collects information about them. The system call is available in Python as `os.wait()`, which returns a tuple containing the child's PID and exit status indication.
 

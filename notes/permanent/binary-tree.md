@@ -7,7 +7,7 @@ status: draft
 
 A **binary tree** is a tree in which every node has no more than two children.
 
-![Binary Tree vs Not a Binary Tree](../../../_media/binary-tree-vs-not.png)
+![Binary Tree vs Not a Binary Tree](../_media/binary-tree-vs-not.png)
 
 ## [Complete Binary Tree](complete-binary-tree.md)
 

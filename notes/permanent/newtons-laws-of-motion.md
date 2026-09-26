@@ -2,6 +2,7 @@
 category: note
 title: Newton's Laws Of Motion
 date: 2020-12-27 00:00
+modified: 2026-09-26 08:58
 tags:
   - Physics
 summary: An object at rest stays at rest, F=ma, and every action has an equal and opposite reaction.

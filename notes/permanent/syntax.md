@@ -1,7 +1,7 @@
 ---
 title: Syntax
 date: 2026-01-08 00:00
-modified: 2026-01-08 00:00
+modified: 2026-09-26 08:55
 status: draft
 tags:
 - NaturalLanguageProcessing
@@ -66,7 +66,7 @@ We can think of constituency as operating at the "phrase-level", grouping words 
 
 When we combine "phrase-level constituencts" into sentences, we have a new set of categories called "sentence-level constructions".
 
-## [Sentence-Level Constructions](Sentence-Level%20Constructions.md)
+## Sentence-Level Constructions
 
 These are sets of phrase-level constituents that combine together to create a new set of categories. Some of the categories include:
 

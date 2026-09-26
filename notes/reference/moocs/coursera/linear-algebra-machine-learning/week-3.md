@@ -1,6 +1,7 @@
 ---
 title: "Week 3 - Matrices in Linear Algebra: Objects that operate on Vectors"
 date: 2021-09-22 00:00
+modified: 2026-09-26 08:50
 category: reference/moocs
 status: draft
 parent: linear-algebra-machine-learning
@@ -135,7 +136,7 @@ parent: linear-algebra-machine-learning
 
     We can call the matrix $A$, vector $r$ and output $s$: $A r = s$
 
-* [Inverse Matrix](permanent/inverse-matrix.md) (00:59-02:04)
+* [Matrix Inverse](../../../../permanent/matrix-inverse.md) (00:59-02:04)
     * Can we find another matrix that, when multiplied by A, gives us the identity matrix? $A^{-1} A = I$
         * We consider the "inverse" of $A$ since it reverses A and gives you the identity matrix.
     * We can then add the inverse to both sides of the expression: $A^{-1} A r = A^{-1}s$.
@@ -154,7 +155,7 @@ parent: linear-algebra-machine-learning
 
         $\begin{bmatrix}1 & 1 & 3\\ 0 & 1 & 1 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}a \\ b \\ c\end{bmatrix} = \begin{bmatrix}15 \\ 6 \\ 2 \end{bmatrix}$
 
-        We know we have what's called a [Triangular Matrix](Triangular Matrix), which is a matrix where everything below the "body diagonal" is 0. We have reduced the matrix to [Row Echelon Form](Row Echelon Form).
+        We know we have what's called a Triangular Matrix, which is a matrix where everything below the "body diagonal" is 0. We have reduced the matrix to Row Echelon Form.
 
         We can take c from each of the rows.
 
@@ -166,14 +167,14 @@ parent: linear-algebra-machine-learning
 
         $\begin{bmatrix}1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1\end{bmatrix}\begin{bmatrix}a \\ b \\ c\end{bmatrix} = \begin{bmatrix}5 \\ 4 \\ 2 \end{bmatrix}$
 
-    * So we've first done [Elimination](Elimination) to get to triangular form.
-    * Then do [Back Substitution](Back Substitution) to get a solution to the problem.
+    * So we've first done Elimination to get to triangular form.
+    * Then do Back Substitution to get a solution to the problem.
     * This is one of the most computationally efficient ways to solve the problem.
     * However, we have solved the problem, but we haven't solved it in a general way.
 
 ### Going from Gaussian Elimination to finding the inverse matrix
 
-* Using [Elimination](Elimination) to find the [Inverse Matrix](Inverse Matrix) (00:00-07:26)
+* Using Elimination to find the [Matrix Inverse](../../../../permanent/matrix-inverse.md) (00:00-07:26)
     * Here, we have a 3x3 matrix $A$ multiplied by its inverse $B$, which equals the identity matrix.
 
         $A \cdot B = I$
@@ -210,7 +211,7 @@ parent: linear-algebra-machine-learning
 
 ### Determinates and inverses
 
-* [Matrix Determinate](../../../../permanent/Matrix Determinate.md) (00:00-05:36)
+* [Matrix Determinate](../../../../permanent/matrix-determinate.md) (00:00-05:36)
   * A matrix like this scales space: $\begin{bmatrix}a & 0 \\ 0 & d\end{bmatrix}$ by a factor of $ad$.
   * $ab$ is called the "determinate" of the transformation matrix.
 

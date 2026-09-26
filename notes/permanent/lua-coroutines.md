@@ -2,6 +2,7 @@
 category: note
 title: Lua Coroutines
 date: 2021-01-18 00:00
+modified: 2026-09-26 08:58
 tags:
   - Lua
 summary: Functions that can pause and resume execution, similar to Python generators.
@@ -9,7 +10,7 @@ summary: Functions that can pause and resume execution, similar to Python genera
 
 Coroutines in Lua are related to [Python Generators](python-generator.md). They allow a function to be written to return intermittantly using the `yield()` function call on the `coroutine` table. The coroutine is created by passing a function to the `coroutine.create(f)` function. It returns a value of type `thread`, which can then be passed to `coroutine.resume(t)`, which will run the code until the next `coroutine.yield` call or `return`.
 
-Calls to `resume` are run in [protected mode (Lua)](protected%20mode%20(Lua)), which means errors won't be raised, but returned as a string to the caller.
+Calls to `resume` are run in protected mode, which means errors won't be raised, but returned as a string to the caller.
 
 The Roblox API includes a `coroutine.wrap(f)` function, which returns a function that can be called without requiring `resume`.
 

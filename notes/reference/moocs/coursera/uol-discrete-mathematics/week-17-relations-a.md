@@ -4,7 +4,7 @@ date: 2022-02-04 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## Lesson 9.1 Understanding the concept of relations
@@ -211,7 +211,7 @@ $$
         * Same example as above.
         * Note that all the values in the diagonal are 1.
           ![week-17-reflexive-matrix](../../../../_media/week-17-reflexive-matrix.png)
-* Definition of [Symmetry](Symmetry)
+* Definition of Symmetry
     * A relation is said to be symmetric if and only if:
         * $\forall a, b \in S$, if $a \ R \ b$ then $b \ R \ a$.
     * Proof: let $a, b \in Z$ with $a \ R \ b$:

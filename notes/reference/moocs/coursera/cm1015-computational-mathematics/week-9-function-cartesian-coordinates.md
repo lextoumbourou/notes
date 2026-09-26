@@ -1,7 +1,7 @@
 ---
 title: "Week 9: Function and Cartesian Coordinates"
 date: 2023-06-28 00:00
-modified: 2026-09-13 10:34
+modified: 2026-09-26 08:50
 status: draft
 ---
 
@@ -19,7 +19,7 @@ status: draft
     * Example: $f(x) = 2x + 4$
         * multiple by 2 and add 4
         * this function is mapping of real numbers to real numbers $f(x): R \rightarrow R$
-    * [Domain of a Function](../../../../permanent/function-domain.md):
+    * [Function Domain](../../../../permanent/domain-of-a-function.md):
         * Elements of X on which f is defined.
         * Example:
             * Range excluding endpoints: $-4 < 4 < 4$ or $(-4, 4)$
@@ -36,10 +36,10 @@ status: draft
     * [Injective Function](../../../../permanent/injective-function.md)
         * to each $x \in X$ only one distinct $y \in Y$
           ![Injective function: 1 maps to D, 2 to B and 3 to A. Outputs are distinct, while C in the codomain is unused.](../../../../_media/week-9-function-cartesian-coordinates-injective.png)
-    * [Bijective Function](Bijective%20Function)
+    * [Bijective Function](../../../../permanent/bijective-function.md)
         * Injective + Surjective (one-to-one)
           ![Bijective function mapping 1 to D, 2 to B, 3 to C and 4 to A, pairing every domain element with a unique codomain element.](../../../../_media/week-9-function-cartesian-coordinates-bijective.png)
-* [Cartesian Coordinates](../../../../../../permanent/cartesian-coordinates.md)
+* [Cartesian Coordinates](../../../../permanent/cartesian-coordinates.md)
     * A of coordinates which is commonly used to graphically represent the range of a function.
     * Contains 2 perpendicular axes, $x, y$ to map and label points on the plane
       ![Cartesian plane with quadrants I through IV, the origin at (0, 0), and point P at (3, 5) in quadrant I.](../../../../_media/week-9-function-cartesian-coordinates-cartesian.png)
@@ -72,7 +72,7 @@ status: draft
     ![A right triangle under a descending line shows vertical side a, horizontal side b, and the acute and obtuse angles the line makes with the x-axis.](../../../../_media/week-9-function-cartesian-coordinates-right-triangle.png)
     * $\beta = 180 - \alpha$
     $tan(\beta) = a/b = 4/2 = 2$
-* [Slope-Intercept Form](../../../../../../permanent/Slope-Intercept%20Form.md) for a straight line: $y = mx + n$
+* [Slope-Intercept Form](../../../../permanent/Slope-Intercept%20Form.md) for a straight line: $y = mx + n$
     * With $m = tan(\alpha)$, In our case $n=4$, $m=tan(\alpha) = -\tan(\beta) = -2$
 
 ## Quiz
@@ -99,7 +99,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
 
 #### Motion 3.1 Distance and speed
 
-* [Calculating Average Speed](Calculating%20Average%20Speed)
+* Calculating Average Speed
     * The average speed $v$ of an object can be calculate from the distance x tranvelled and the time t taken using the equation:
         * $\text{ average speed } = \frac{\text{ distance travelled }}{\text{ time taken }}$
         * Can be written algebrically as: $v = \frac{\Delta x }{\Delta t}$
@@ -114,7 +114,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
                 * $v = \frac{2500}{82} = 30.49ms^{-1}$
                 * $v = 30ms^{-1}$ (2 s.f.)
             * Since 30ms > 22ms, the driver exceeded the average speed limit.
-* [Distance-time Graphs](Distance-time%20Graphs)
+* Distance-time Graphs
     * Graphs of distance against time are used to represent the motion of objects.
         * Distance is plotted on the y-axis (vertical axis).
         * Time is plotted on the x-axis (horizontal axis)
@@ -127,7 +127,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * Speed $v = \frac{\Delta x}{\Delta y} = \frac{1000}{50} = 20ms^{-1}$
         ![Distance-time graph rising linearly from 0 metres at 0 seconds to 1800 metres at 90 seconds, representing a constant speed of 20 metres per second.](../../../../_media/week-9-function-cartesian-coordinates-distance-time.png)
     * Tip: use at least half the length of the line to make the gradient.
-* [Instantaneous Speed](Instantaneous%20Speed)
+* Instantaneous Speed
     * One critism of checks on average speed: the vehicle can hit a top speed above the speed limit, and then travel slowly for part of it to meet average speed limits.
     * Instantaneous Speed is speed of car over short interval of time.
     * Insantaneous pseed is found by drawing the tangent to the distance-time graph, then determining the gradient of this tanger.
@@ -153,7 +153,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * Use Figure 3 to determine tM instantaneous speed of the object at time t = 80 s.
 * 3.2 Displacement and velocity
     * Where a swimmer does one 2 laps, returning to their original position, their displacement is 0.
-    * A displacement $s$ is a [Vector](../../../../permanent/vector.md) quantity, unlike distance, which is a [Scalar](Scalar).
+    * A displacement $s$ is a [Vector](../../../../permanent/vector.md) quantity, unlike distance, which is a [Scalar](../../../../permanent/scalar.md).
     * Average velocity $v$ of an object can be calculated from the change in displacement and the time taken.
             * $\text{average velocity} = \frac{\text{ change in displacement }}{\text{ time taken }}$
             * We can write it in algebraic form as: $v = \frac{ \Delta s } { \Delta t }$
@@ -226,7 +226,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
         * Intersection with y-axis: $\rightarrow x=0 \rightarrow y_0 = f(0) = a(0)^2 + (0) +c$
         * Intersection with x-axis: $\rightarrow y=0 \rightarrow f(x_0) = {ax_0}^2 + bx_0 + c = 0$
         * Solve ${ax_0}^2 + bx_0 + c = 0 \rightarrow x_0 = (-b \pm \sqrt(b^2 - 4ac) ) / (2a)$
-* [Cubic Function](Cubic%20Function)
+* Cubic Function
     * $f(x) = ax^3 + bx^2 + cx + d$
     * Ex: $x^3 - 4x$, $D=R$
     * Intersection with y-axis $\rightarrow x=0 \rightarrow = y_0 = f(0) = (0)^3 - 4(0) = 0$
@@ -237,7 +237,7 @@ Bone, G., G. Chadha and N. Saunders A Level Physics A for OCR Year 1 and AS stud
     * Higher order polynomials $f(x) = ax^n + bx^{n-1} + ... + cx + d$
         * Example in factorised form: $f(x) = (x+2)(x+1)(x-1)(x-2)(x-3) n =5 D = R$
             * We can set x to value to make the parenthesis equal to 0, to find the intersection points.
-* [Fraction](Fraction)
+* Fraction
     * $f(x) = P(x) / Q(x)$
     * $f(x) = x/(x^2-1)$
         * Domain: $R\{-1, 1\}$

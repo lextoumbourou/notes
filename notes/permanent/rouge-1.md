@@ -8,4 +8,4 @@ tags:
 - Metrics
 ---
 
-See [ROUGE: A Package for Automatic Evaluation of Summaries](../../../reference/papers/rouge-a-package-for-automatic-evaluation-of-summaries.md)
+See [ROUGE: A Package for Automatic Evaluation of Summaries](../reference/papers/rouge-a-package-for-automatic-evaluation-of-summaries.md)

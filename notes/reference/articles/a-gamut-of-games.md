@@ -1,7 +1,7 @@
 ---
 title: A gamut of games
 date: 2025-05-31 00:00
-modified: 2025-05-31 00:00
+modified: 2026-09-26 09:40
 status: draft
 ---
 
@@ -9,7 +9,7 @@ status: draft
 
 ## Backgammon
 
-[BKG8.9](../../../../permanent/bkg89.md)
+[BKG9.8](../../permanent/bkg89.md)
 
 * First effort at building a strong backgammon program was undertaken by Hans Berliner of Carnegie Mellon University.
 * In 1979, his program BKG9.8 played an exhibition match against newly crowned world champion Luigi Villa.
@@ -17,11 +17,11 @@ status: draft
 * However, a lot of the success was attributed to random chance, which is part of the nature of backgammon.
 * “There was no doubt that BKG9.8 played well, but down the line Villa played better. He made the technically correct plays almost all the time, whereas the program did not make the best play in eight out of 73 non-forced situations.” (Berliner, 1980)
 
-[NEUROGAMMON](NEUROGAMMON.md)
+NEUROGAMMON
 
 * Neural network approach that won first place in the 1989 Computer Olympiad.
 
-[TD-Gammon](TD-Gammon.md)
+TD-Gammon
 
 * Next program was TD-Gammon, which used a neural network trained via "temporal difference" learning from self-play games.
 * Similar to [Deep Q-Network (DQN)](../../permanent/deep-q-networks.md), it takes input as the current board position and outputs an estimated score for the position.
@@ -49,14 +49,14 @@ Checkers History
 
 Chess
 
-* Progress in chess was influenced by Ken Thompson, equating [Search Depth](Search%20Depth.md) with chess-program performance.
+* Progress in chess was influenced by Ken Thompson, equating Search Depth with chess-program performance.
 * Various milestones:
   * **CHESS 4.6** (1978–80) from Northwestern University
   * **BELLE** (1980–82), first U.S. master title
   * **CRAY BLITZ** (1983–84), on a Cray supercomputer
   * **HITECH** and **WAYCOOL** (mid-80s), hardware-based machines
   * **CHIPTEST → DEEP THOUGHT → DEEP BLUE** (1987 onward)
-* [Deep Blue](Deep%20Blue.md)
+* Deep Blue
     * Deep Blue beat world champion Garry Kasparov in a 6-game match in 1997.
     * Deep Blue used special-purpose VLSI chess chips to evaluate \~200 million positions per second.
     * “Considering the formidable computing power that DEEP BLUE used... one can only admire the human champions for withstanding the technological onslaught for so long.” (Schaeffer, 2001)
@@ -64,7 +64,7 @@ Chess
 
 ## Othello
 
-* First major Othello program was Paul Rosenbloom’s **IAGO** (1982), achieving strong early results but only played two games against world-class humans—both losses.
+* First major Othello program was Paul Rosenbloom’s **IAGO** (1982), achieving strong early results but only played two games against world-class humans, both losses.
 * **BILL** (Kai-Fu Lee and Sanjoy Mahajan, 1990) improved significantly, combining deep search and evaluation-function tuning.
 * The best program was **LOGISTELLO** (Michael Buro), which dominated the 1990s.
   * Played and won 6-0 against world champion Takeshi Murakami in 1997, proving computers had surpassed humans.
@@ -77,7 +77,7 @@ Chess
 
 * Early programs emerged in the 1980s.
 * **CRAB** won the first Computer Olympiad in 1989, followed by **TYLER** and **TSP**.
-* [MAVEN](MAVEN.md)
+* MAVEN
     * Algorithmic approach to playing Scrabble by Brian Sheppard.
     * By late 1990s, consistently beat top human players.
     * Beat world champion Joel Sherman and runner-up Matt Graham 6–3 in 1998.
@@ -122,7 +122,7 @@ Chess
 ## Other Games
 
 * Superhuman performance in less common games like **Awari** and **Lines of Action**.
-  * Awari nearly solved—databases for all positions with ≤38 stones.
+  * Awari nearly solved: databases for all positions with ≤38 stones.
   * **MONA** (Lines of Action) won a world mail-play championship.
 * Perfect play (solved) achieved in:
   * **Nine Men’s Morris**, **Connect-4**, **Qubic**, **Go Moku**, **8×8 Domineering**.
@@ -132,7 +132,7 @@ Chess
 
 * Go will continue to challenge researchers for decades.
 * New games like **Octi** designed to resist computer strategies (high branching, capability changes).
-* AI in modern interactive games (e.g., Quake, Baldur’s Gate, SimCity) is shallow—graphics over intelligence.
+* AI in modern interactive games (e.g., Quake, Baldur’s Gate, SimCity) is shallow: graphics over intelligence.
 * Potential for game AI to evolve toward human-level interaction, driven by the commercial gaming industry.
 * "Computer games are the ideal application for developing human-level AI." (Laird & van Lent, 2000)
 * "Games are ideal domains for exploring the capabilities of computational intelligence. The rules are fixed, the scope of the problem is constrained, and the interactions of the players are well defined." (Schaeffer, 2001)

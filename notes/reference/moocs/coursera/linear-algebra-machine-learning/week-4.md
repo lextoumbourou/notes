@@ -4,7 +4,7 @@ date: 2021-09-23 00:00
 category: reference/moocs
 status: draft
 parent: linear-algebra-machine-learning
-modified: 2023-04-09 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## Matrices make linear mappings
@@ -109,7 +109,7 @@ modified: 2023-04-09 00:00
 
 ### Orthogonal matrices
 
-* [Matrix Transpose](Matrix Transpose) (00:15-01:08)
+* Matrix Transpose (00:15-01:08)
     * An operation where we interchange the rows and columns of a matrix.
     * ${A^{T}}_{ij} = A_{ji}$
     * $\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix}^{T} = \begin{bmatrix}1 & 3 \\ 2 & 4\end{bmatrix}$
@@ -120,7 +120,7 @@ modified: 2023-04-09 00:00
             $a_i \cdot a_j = 1, i = k$
         * When you multiple one of these matrices by their transpose, the identity matrix is returned.
             * That means $A^{T}$ is a valid identity for these examples.
-        * A matrix composed of these is called [Orthogonal Matrix](permanent/orthogonal-matrix.md).
+        * A matrix composed of these is called [Orthogonal Matrix](../../../../permanent/orthogonal-matrix.md).
         * The transpose of these matrices is another orthogonal matrix.
         * The determinant of these is 1 or -1.
         * In Data Science, we want an orthonormal basis set where ever possible.

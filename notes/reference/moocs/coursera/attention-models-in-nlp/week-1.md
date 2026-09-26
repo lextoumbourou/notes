@@ -1,6 +1,7 @@
 ---
 title: Natural Language Processing with NLP - Week 1
 date: 2022-10-04 00:00
+modified: 2026-09-26 08:50
 status: draft
 category: reference/moocs
 parent: attention-models-in-nlp
@@ -19,7 +20,7 @@ Notes from [Natural Language Processing Specialization](https://www.coursera.org
 
 ## Week Introduction
 
-* Week covers the problem of [Machine Translation](Machine Translation) using attention.
+* Week covers the problem of [Machine Translation](../../../../permanent/machine-translation.md) using attention.
 * We know that an LSTM works for short to medium sequences, but for longer sequences faces problems of vanishing gradients.
 * By adding an attention mechanism, the decoder can get access to all relevant parts of input sentence regardless of length.
 * Many types of attention, but this week focuses on simple attention.
@@ -39,7 +40,7 @@ Notes from [Natural Language Processing Specialization](https://www.coursera.org
     * English to German for this week's assignment.
 * [Seq2Seq model by Google in 2014](https://arxiv.org/abs/1409.3215).
     * Takes a sequence of words (or any sequence you can encode as tokens) and return another sequence.
-    * Works by mapping variable length sequences to fixed length memory called [Embedding Space](Embedding Space).
+    * Works by mapping variable length sequences to fixed length memory called [Embedding](../../../../permanent/embedding.md).
     * Inputs and outputs don't need to be the same length.
     * [LSTM](../../../../permanent/lstm.md) and [Gated Recurrent Unit](../../../../permanent/gated-recurrent-unit.md) architectures can deal with vanishing and exploding gradients.
     * How it works
@@ -189,7 +190,7 @@ Notes from [Natural Language Processing Specialization](https://www.coursera.org
 * To avoid this problem, you can use ground-truth words as inputs to the decoder.
     * This means, even if the model makes a wrong prediction, it pretends as if the model has made a correct one.
 * It's common to slowly start using decoder outputs over time, so that you are eventually no longer feeding in the target words.
-    * This is called: [Curriculum Learning](Curriculum Learning).
+    * This is called: Curriculum Learning.
 
 ## NMT Model with Attention
 
@@ -275,13 +276,13 @@ Seq2seq refresher:
 2. You now have a probability distribution over all words and symbols in target vocabulary.
 3. The final output of the model depends on how you choose the words from the distribution.
 
-Simplest approach is [Greedy Decoding](Greedy Decoding): select the most probable word at each step.
+Simplest approach is Greedy Decoding: select the most probable word at each step.
 
 The downsides to this approach is that the greedy decoder can give you repeated tokens for the most common words. Though it works for shorter sequences in practice.
 
-Another approach is [Random sampling](Random sampling) from the distribution. However, it can return results that are too random. You can mitigate this a bit by assigining higher weights to more probable words.
+Another approach is Random sampling from the distribution. However, it can return results that are too random. You can mitigate this a bit by assigining higher weights to more probable words.
 
-[Temperature](Temperature) that can be tuned if you want more or less randomness in predictions.
+[Temperature Scaling](../../../../permanent/temperature-scaling.md) that can be tuned if you want more or less randomness in predictions.
 
 A lower temperature setting will give you a more confident yet conservative set of outputs. Higher temperature gives you a more "excited", random network.
 
@@ -293,9 +294,9 @@ Both of these methods don't always produce the most convincing outputs, compared
 
 ## Beam Search
 
-* Beam Search finds the best sequences over a fixed window size known as [Beam Width](Beam Width).
+* Beam Search finds the best sequences over a fixed window size known as Beam Width.
 * The methods covered earlier only consider single word probabilities at a time. However, the most probable translation given an input usually isn't the one that selects the most probable word at each step. Especially at the start of a sequence, choosing the most probable word can lead to an overall worse translation.
-* Given infinite compute power, you could calculate probabilities of each possible output sequence and choose the best. In practice, you can use [Beam Search](Beam Search).
+* Given infinite compute power, you could calculate probabilities of each possible output sequence and choose the best. In practice, you can use [Beam Search](../../../../permanent/beam-search.md).
 * Beam search finds the most likely output sentence by chooing a number of best sequences based on conditional probabilities at each step.
 * Step by step:
     1. At each step, calculate the probability of multiple possible sequences.

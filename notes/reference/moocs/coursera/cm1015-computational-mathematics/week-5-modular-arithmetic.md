@@ -1,14 +1,14 @@
 ---
 title: Week 5 - Modular Arithmetic
 date: 2023-05-22 00:00
-modified: 2023-05-22 00:00
+modified: 2026-09-26 08:50
 status: draft
 ---
 
-* [Modular Arithmetic](../../../../../../permanent/modular-arithmetic.md)
+* [Modular Arithmetic](../../../../permanent/modular-arithmetic.md)
     * Think of it as a way to "classify integers", an arithmetic over integers.
     * Originally formulated by mathematician and physicist Carl F. Gauss, a system of arithmetic for integers.
-    * Numerous applications from number theory to library and bank classifications systems to [Cryptography](../../../../../../permanent/cryptography.md).
+    * Numerous applications from number theory to library and bank classifications systems to [Cryptography](../../../../permanent/cryptography.md).
         * Basic notion congruence between integers
         * Two numbers a and b are congruent "mod 2" if they have the same remainder when divided by 2.
         * Congruent symbol: $\equiv$
@@ -43,7 +43,7 @@ status: draft
                 * $50 \mid 200$
                 * $36 \nmid 200$
         * A divisor of $n$ is called a **trivial divisor of n** if it is either 1 or $n$ itself.
-        * [[Trivial Divisor]]
+        * Trivial Divisor
             * A trivial divisor of $n$ is $1$ or $n$ itself.
             * A non-trivial divisor is a divisor of $n$ that is neither 1 or $n$.
             * Example:

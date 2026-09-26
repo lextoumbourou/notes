@@ -2,6 +2,7 @@
 category: note
 title: Roblox Attachment
 date: 2021-12-12 00:00
+modified: 2026-09-26 08:55
 summary: An object that describes a point and orientation relative to a BasePart
 tags:
   - Roblox
@@ -52,6 +53,6 @@ There are many items that you can parent directly to an `Attachment` instead of 
 * `Sound` objects allow audio to play directly from the `Attachment`'s location.
 * `PointLight` and `SpotLight` allow light to shine from a specific point on a Part.
 
-[Roblox Constraint](Roblox Constraint) objects rely on Attachments.
+[Roblox Constraints](roblox-constraint.md) objects rely on Attachments.
 
-The [Roblox Accessory](Roblox Accessory) system utilizes attachments to position accessories on a character's body parts.
+The Roblox Accessory system utilizes attachments to position accessories on a character's body parts.

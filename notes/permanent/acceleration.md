@@ -5,7 +5,7 @@ modified: 2024-05-17 00:00
 status: draft
 ---
 
-In physics, acceleration is a [Vector Quantity](../../../permanent/vector-quantity.md) that represents the rate of change of an object's [Velocity](../../../permanent/velocity.md) over time.
+In physics, acceleration is a [Vector Quantity](vector-quantity.md) that represents the rate of change of an object's [Velocity](velocity.md) over time.
 
 $$
 \text{Acceleration} = \frac{\text{Final Velocity - Initial Velocity}}{\text{Time Interval}}

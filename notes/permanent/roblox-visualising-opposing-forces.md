@@ -24,6 +24,6 @@ See [Vector Addition](vector-addition.md).
 
 ![y-axis bodyforce](../_media/bodyforce-yaxis-equal-net-forces.gif)
 
-Related to [Newtons Laws Of Motion](Newtons Laws Of Motion.md).
+Related to [Newton's Laws Of Motion](newtons-laws-of-motion.md).
 
 [@robloxBodyMover]

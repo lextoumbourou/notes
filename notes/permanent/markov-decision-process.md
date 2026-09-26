@@ -2,7 +2,7 @@
 category: note
 title: "Markov Decision Process (MDP)"
 date: 2025-03-29 00:00
-modified: 2025-03-29 00:00
+modified: 2026-09-26 08:55
 summary: A mathematical framework for modelling decision-making under uncertainty
 cover: /_media/action-frozen-lake.png
 hide_cover_in_article: true
@@ -11,6 +11,7 @@ aliases:
 tags:
 - ReinforcementLearning
 ---
+
 
 A **Markov Decision Process (MDP)** is a mathematical framework for modelling decision-making problems where outcomes are partly random and partly controlled by a decision-maker. The goal is to find an optimal policy that maximizes cumulative reward over time.
 
@@ -133,7 +134,7 @@ Various algorithms can solve MDPs by finding the optimal policy or value functio
 
 ### Dynamic Programming Methods
 
-* **[Value Iteration](Value%20Iteration.md)**
+* **Value Iteration**
     * An iterative algorithm that computes the optimal state-value function by repeatedly applying the Bellman optimality equation.
     * Converges to the optimal value function, from which an optimal policy can be derived.
 

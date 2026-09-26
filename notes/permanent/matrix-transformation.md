@@ -2,11 +2,13 @@
 category: note
 title: Matrix Transformation
 date: 2021-11-01 00:00
+modified: 2026-09-26 08:55
 tags:
   - LinearAlgebra
 cover: /_media/transformation-matrix-cover.png
 summary: A matrix as a transformation of a space.
 ---
+
 
 We can think of a matrix as a transformation of a [Vector](vector.md) or all vectors in space.
 
@@ -22,9 +24,9 @@ In this example, we perform a 90° rotation of vector $\begin{bmatrix}2 \\ 2\end
 
 ![Rotation matrix product with vector](../_media/transformation-matrix-example.gif)
 
-To describe a transformation as a matrix, we only need to record where the [Basis Vectors](Basis Vectors.md) land as columns of a new matrix: $\begin{bmatrix}\color{red}{a} && \color{green}{b} \\ \color{red}{c} && \color{green}{d}\end{bmatrix}$
+To describe a transformation as a matrix, we only need to record where the [Basis Vectors](basis-vectors.md) land as columns of a new matrix: $\begin{bmatrix}\color{red}{a} && \color{green}{b} \\ \color{red}{c} && \color{green}{d}\end{bmatrix}$
 
-For example, a [Shear Transformation](Shear Transformation) keeps the $\hat{i}$ basis vector fixed, and slants the $\hat{j}$ basis vector. We can record that as: $\begin{bmatrix}\color{red}{1} && \color{green}{1} \\ \color{red}{0} && \color{green}{2}\end{bmatrix}$
+For example, a [Sheer Transformation](lintrans-shear.md) keeps the $\hat{i}$ basis vector fixed, and slants the $\hat{j}$ basis vector. We can record that as: $\begin{bmatrix}\color{red}{1} && \color{green}{1} \\ \color{red}{0} && \color{green}{2}\end{bmatrix}$
 
 ![Transformed basis vectors](../_media/trans-basis.gif)
 

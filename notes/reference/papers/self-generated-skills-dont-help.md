@@ -47,7 +47,7 @@ They test several LLMs with their respective agent harnesses and find that Gemin
 
 ![skillsbench-fig-1.png](../../_media/skillsbench-fig-1.png)
 
-The paper provides a concrete definition of a skill, contrasting it with other agentic paradigms like [Few-Shot Examples](../../permanent/few-shot-examples.md), [Retrieval Augmented Generation](../../permanent/retrieval-augmented-generation.md) and [Tool Documentation](../../../../permanent/tool-documentation.md).
+The paper provides a concrete definition of a skill, contrasting it with other agentic paradigms like [Few-Shot Examples](../../permanent/few-shot-examples.md), [Retrieval Augmented Generation](../../permanent/retrieval-augmented-generation.md) and [Tool Documentation](../../permanent/tool-documentation.md).
 According to the paper, a Skill is an artifact that satisfies four criteria:
 
 - **Procedural**: It teaches *how* to do something (workflows, step-by-step procedures) rather than just stating facts

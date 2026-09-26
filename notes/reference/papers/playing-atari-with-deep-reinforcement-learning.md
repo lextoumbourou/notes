@@ -27,7 +27,7 @@ In this article, I'm going to walk through the architecture they described in th
 
 The paper describes a [CNN](../../permanent/convolutional-neural-network.md) architecture that inputs game frames as raw pixels, and outputs predicted future rewards (i.e. the game score) for each available action (i.e. move up, move left, etc).
 
-A naive approach to processing frames from the games could be to process a sequential batch of frames at each training step. However, these frames would be strongly correlated. Instead, they used a technique, from a 1993 attempt to train a robotic policy using neural networks, called [Experience Replay](../../../../permanent/experience-replay.md), which effectively stores a history of game states, their corresponding score (rewards) from action taken, and samples from this each training step.
+A naive approach to processing frames from the games could be to process a sequential batch of frames at each training step. However, these frames would be strongly correlated. Instead, they used a technique, from a 1993 attempt to train a robotic policy using neural networks, called [Experience Replay](../../permanent/experience-replay.md), which effectively stores a history of game states, their corresponding score (rewards) from action taken, and samples from this each training step.
 
 In practice, the agent plays randomly for a bit, gets the rewards throughout the game, and then uses a neural network to predict the rewards. As the model trains, the agent increasingly uses the model to take the optimal action, which balances exploiting and exploring.
 
@@ -181,7 +181,7 @@ Which might look something like this:
 
 ### Epsilon-greedy policy
 
-A key component of Reinforcement Learning is the tradeoff between **exploring** and **exploiting**. The is, we need to ensure that the model takes enough random actions to examine the space adequately, but also follows the policy it is learning at times, so that it makes progress when going in the correct direction (see [Exploration-Exploitation Dilemma](../../../../permanent/exploration-exploitation-dilemma.md)).
+A key component of Reinforcement Learning is the tradeoff between **exploring** and **exploiting**. The is, we need to ensure that the model takes enough random actions to examine the space adequately, but also follows the policy it is learning at times, so that it makes progress when going in the correct direction (see [Exploration-Exploitation Dilemma](../../permanent/exploration-exploitation-dilemma.md)).
 
 They set an epislon parameter which slowly anneals (changes throughout training), starting at 1, always selecting random, and gradually going to 0.1, where only 10% of the time we are going random, the rest we are using the highest reward action, as predicted by the model so far.
 
@@ -281,7 +281,7 @@ An interesting point to note here is that we use a target network. The papers me
 
 Basically, keeping a separate copy of the weights it prevents the "moving target" problem where Q-value updates chase a constantly shifting target, which can lead to oscillations or divergence in training. By keeping the target network fixed for many steps, the optimization becomes more stable, similar to how freezing parts of a network helps in transfer learning.
 
-The loss is [Huber Loss](../../../../permanent/huber-loss.md) between the actual rewards, discounted into the future, and the predicted discounted rewards. Huber Loss is specifically chosen over Mean Squared Error (MSE) because it's less sensitive to outlier rewards that can occur in games with large, sparse reward signals. For small errors, Huber Loss behaves like MSE, providing strong gradients, but for large errors, it behaves like Mean Absolute Error, reducing the impact of extreme values that might destabilize training.
+The loss is [Huber Loss](../../permanent/huber-loss.md) between the actual rewards, discounted into the future, and the predicted discounted rewards. Huber Loss is specifically chosen over Mean Squared Error (MSE) because it's less sensitive to outlier rewards that can occur in games with large, sparse reward signals. For small errors, Huber Loss behaves like MSE, providing strong gradients, but for large errors, it behaves like Mean Absolute Error, reducing the impact of extreme values that might destabilize training.
 
 Since only one action is taken in each experience step, we mask out the loss for the other actions.
 

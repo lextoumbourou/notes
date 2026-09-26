@@ -57,7 +57,7 @@ private class TreeNode<E> {
 
 ## Core: Pre-Order Traversals
 
-* [Pre-order Tree Traversal](../../../../../../permanent/pre-order-tree-traversal.md)
+* [Pre-order Tree Traversal](../../../../permanent/pre-order-tree-traversal.md)
     * (aka depth first search):
         1. Visit yourself
         2. Visit all of your left subtree.

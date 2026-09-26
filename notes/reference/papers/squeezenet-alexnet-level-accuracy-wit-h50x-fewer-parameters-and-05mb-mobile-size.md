@@ -43,7 +43,7 @@ aliases:
 ### 5. **Model compression compatibility**
 * Further 10× reduction achieved using **Deep Compression** (Han et al., 2016): pruning + quantization + Huffman coding → < 0.5 MB final model.
 
-![squeeze-net-fig1.png](../../../../_media/squeeze-net-fig1.png)
+![squeeze-net-fig1.png](../../_media/squeeze-net-fig1.png)
 
 ## Comparison to Typical CNN (AlexNet)
 

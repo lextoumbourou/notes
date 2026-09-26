@@ -8,7 +8,7 @@ summary: "Since any vectors can be Basis Vectors, it's useful to understand how 
 cover: /_media/changing-basis-cover.png
 ---
 
-The use of coordinates to define vectors implies an agreement about which [Basis Vectors](permanent/Basis Vectors.md) we use. In 2d space, we commonly use the standard basis vectors:
+The use of coordinates to define vectors implies an agreement about which [Basis Vectors](basis-vectors.md) we use. In 2d space, we commonly use the standard basis vectors:
 
 $\hat{i}=\begin{bmatrix}1 \\ 0\end{bmatrix}$, $\hat{j}=\begin{bmatrix}0 \\ 1\end{bmatrix}$.
 
@@ -34,6 +34,6 @@ If we wish to perform a transformation described in our Basis, for example, a ro
 2. Perform the translation.
 3. Convert the vector back into our friend's Basis by applying the inverse of the transformation.
 
-In notation, if we have vector $\vec{v}$ described in our friend's Basis $A$, we can apply [Matrix Transformation](permanent/Matrix Transformation.md) $M$, described in our Basis, as follows:
+In notation, if we have vector $\vec{v}$ described in our friend's Basis $A$, we can apply [Matrix Transformation](matrix-transformation.md) $M$, described in our Basis, as follows:
 
 $A^{-1}MA \ \vec{v}$

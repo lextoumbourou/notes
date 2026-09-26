@@ -1,7 +1,7 @@
 ---
 title: "Week 8: Applications of Sine and Cosine Rules"
 date: 2023-06-10 00:00
-modified: 2026-09-13 10:34
+modified: 2026-09-26 08:50
 status: draft
 ---
 
@@ -11,7 +11,7 @@ status: draft
     * We have a right-triangle with hypothenuse $h$ and 2 other sides that have the same length.
     
         ![Right-triangle example with 2 other sides that have the same length](../../../../_media/week-8-applications-of-sine-and-cosine-rules-right-triangle.png)
-    * Since it's an [[Isosceles Triangle]], meaning on angle is 90°, we know that the 2 angles adjacent to h are equal, which means they're 45°.
+    * Since it's an Isosceles Triangle, meaning on angle is 90°, we know that the 2 angles adjacent to h are equal, which means they're 45°.
     * Pythagoras theorem gives us $a^2 + b^2 = 2a^2 = h^2$
         * That means, $2a^2 = h^2$
         * Which means $a = h / \sqrt(2)$

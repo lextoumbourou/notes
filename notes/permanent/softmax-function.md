@@ -2,6 +2,7 @@
 category: note
 title: Softmax Function
 date: 2021-07-08 00:00
+modified: 2026-09-26 08:55
 cover: /_media/softmax-table.png
 tags:
   - MachineLearning
@@ -9,15 +10,15 @@ tags:
 summary: Converts a vector of numbers into probabilities that sum to 1.
 ---
 
-The Softmax [Activation Function](activation-function.md) converts a vector of numbers into a vector of probabilities that sum to 1. It's applied to a model's outputs (or [Logits](Logits)) in [Multi-class Classification](Multi-class Classification).
+The Softmax [Activation Function](activation-function.md) converts a vector of numbers into a vector of probabilities that sum to 1. It's applied to a model's outputs (or Logits) in Multi-class Classification.
 
-It is the multi-class extension of the [Sigmoid Activation Function](Sigmoid Activation Function.md).
+It is the multi-class extension of the [Sigmoid](sigmoid-function.md).
 
  The equation is:
 
  $$\sigma(\vec{z})_{i} = \frac{e^{z_i}}{\sum\limits_{j=1}^{K}e^{z_j}}$$
 
- The intuition for it is that $e^{x_i}$ is always positive and increases fast, amplifying more significant numbers. Therefore, it tends to find a single result and is less useful for problems where you are unsure if inputs will always contain a label. For that, use multiple binary columns with the [Sigmoid Activation Function](Sigmoid Activation Function.md).
+ The intuition for it is that $e^{x_i}$ is always positive and increases fast, amplifying more significant numbers. Therefore, it tends to find a single result and is less useful for problems where you are unsure if inputs will always contain a label. For that, use multiple binary columns with the [Sigmoid](sigmoid-function.md).
 
  [@howardDeepLearningCoders2020] *(pg. 223-227)*
 
@@ -87,6 +88,6 @@ df
 </div>
 <!-- /nb-output -->
 
-Softmax is part of the [Categorical Cross-Entropy Loss](categorical-cross-entropy-loss.md), applied before passing results to [Negative Log-Likelihood](permanent/Negative Log-Likelihood.md) function.
+Softmax is part of the [Categorical Cross-Entropy Loss](categorical-cross-entropy-loss.md), applied before passing results to [Negative Log-Likelihood](negative-log-likelihood.md) function.
 
 [Temperature Scaling](temperature-scaling.md) can be applied to the logits to adjust the distribution sharpness (how confident it is about high values) or make it flatter and more diverse.

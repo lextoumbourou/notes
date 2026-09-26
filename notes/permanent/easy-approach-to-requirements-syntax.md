@@ -1,11 +1,12 @@
 ---
 title: Easy Approach to Requirements Syntax (EARS)
 date: 2024-02-15 00:00
-modified: 2024-02-15 00:00
+modified: 2026-09-26 08:55
 status: draft
 ---
 
-**Easy Approach to Requirements Syntax** or **EARS** is a streamlined approach to writing requirements structured around five patterns, described in paper [[EARS (Easy Approach to Requirements Syntax]]
+
+**Easy Approach to Requirements Syntax** or **EARS** is a streamlined approach to writing requirements structured around five patterns, described in paper EARS (Easy Approach to Requirements Syntax).
 
 Think of the generic requirements system. It would usually consistent of something like this:
 

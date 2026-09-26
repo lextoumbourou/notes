@@ -1,7 +1,7 @@
 ---
 title: "How to Correctly Report LLM-as-a-Judge Evaluations"
 date: 2025-11-29 00:00
-modified: 2026-07-31 00:00
+modified: 2026-09-26 08:55
 status: draft
 category: paper
 summary: "A bias-correction method and confidence interval for LLM-as-a-judge evaluations."
@@ -20,7 +20,7 @@ code: https://github.com/UW-Madison-Lee-Lab/LLM-judge-reporting
 
 *My notes for the paper How to Correctly Report LLM-as-a-Judge Evaluations* [@leeHowCorrectlyReport2025]
 
-The paper describes a way to calculate a confidence interval for [LLM-Judge](LLM-Judge.md) evaluations. It works something like this: you have your eval set of input prompts, an model under test, and a way to evaluate your outputs as true / false (this paper doesn't handle multiple criteria but I guess you could do this for each output criterion).
+The paper describes a way to calculate a confidence interval for [LLM-as-a-Judge](../../permanent/llm-as-a-judge.md) evaluations. It works something like this: you have your eval set of input prompts, an model under test, and a way to evaluate your outputs as true / false (this paper doesn't handle multiple criteria but I guess you could do this for each output criterion).
 
 Compute your outputs given your inputs, then compute judge labels for your inputs.
 

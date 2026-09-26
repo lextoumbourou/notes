@@ -1,7 +1,7 @@
 ---
 title: Feature Vector
 date: 2026-05-26 00:00
-modified: 2026-05-26 00:00
+modified: 2026-09-26 08:55
 status: draft
 aliases:
 - Feature Vectors
@@ -146,9 +146,9 @@ Now we have a feature vector with the same feature values as the dogs, and we ca
 
 We can plot both in the same space to see which breeds land closest to each adoptee:
 
-![[../../../_media/feature-vector-scatter.png]]
+![](../_media/feature-vector-scatter.png)
 
-We could simply take each feature from the dog vector, and subtract it from the person preference vector, and remove the negative term (aka the [Absolute Value](../../../from-evernote/Maths/Absolute%20Value.md)) and find the dog with the smaller distance. That distance measure is called [Manhattan Distance](../../../permanent/manhattan-distance.md).
+We could simply take each feature from the dog vector, and subtract it from the person preference vector, and remove the negative term (aka the [Absolute Value](absolute-value.md)) and find the dog with the smaller distance. That distance measure is called [Manhattan Distance](manhattan-distance.md).
 
 ```python
 dogs_indexed = dogs.set_index('breed')

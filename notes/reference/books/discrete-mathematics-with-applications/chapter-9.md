@@ -17,14 +17,14 @@ status: draft
         * Elder is left, and other is right.
     * Subtree at left child $v$ is the **left subtree** rooted in $v$
     * Subtree at right child $w$ is the **right subtree** rooted in $w$
-    ![chapter-9-subtree-example](../../../journal/_media/chapter-9-subtree-example.png)
+    ![chapter-9-subtree-example](../../../_media/chapter-9-subtree-example.png)
 
 ### 9.6 Binary Search Trees
 
 * Binary trees that contain items of the same kind are called: "homogeneous trees"
-* [Binary Search Tree](../../../../../permanent/binary-search-tree.md)
+* [Binary Search Tree](../../../permanent/binary-search-tree.md)
     * A homogeneous binary tree where every item of the left subtree of each vertex $v$ is less than $v$, and every item on the right is greater than $v$.
-    * ![chapter-9-binary-search-tree](_media/chapter-9-binary-search-tree.png)
+    * ![chapter-9-binary-search-tree](../../../_media/chapter-9-binary-search-tree.png)
     * Binary search trees worst case is h + .1 comparisons (although according to the answer it's actually h)
 
 ### Exercise 9.6
@@ -33,7 +33,7 @@ Construct a binary search tree for each set.
 
 5. 8, 5, 2, 3, 13, 21
 
-![chapter-9-q5](_media/chapter-9-q5.png)
+![chapter-9-q5](../../../_media/chapter-9-q5.png)
 
 6. 5, 2, 13, 17, 3, 11
 

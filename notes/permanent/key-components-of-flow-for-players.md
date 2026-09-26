@@ -17,4 +17,4 @@ Schell says that the key components that promote [Flow State](flow-state.md) for
 
 References:
 
-* [The Art of Game Design - A Book of Lenses (2nd Edition)](The Art of Game Design - A Book of Lenses (2nd Edition)) (Chapter 10. The Experience Is in the Player's Mind)
+* [The Art of Game Design - A Book Of Lenses (2nd Edition) by Jesse Schell](../reference/books/the-art-of-game-design-a-book-of-lenses-2nd-edition.md) (Chapter 10. The Experience Is in the Player's Mind)

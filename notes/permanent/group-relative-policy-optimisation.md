@@ -11,4 +11,4 @@ Group Relative Policy Optimization (GRPO) is a reinforcement learning algorithm 
 
 Introduced in the DeepSeekMath paper in the context of mathematical reasoning.
  
-GRPO modifies [Proximal Policy Optimization](../../../permanent/proximal-policy-optimization.md) (PPO) by eliminating the need for a value function model.
+GRPO modifies [Proximal Policy Optimization](proximal-policy-optimization.md) (PPO) by eliminating the need for a value function model.

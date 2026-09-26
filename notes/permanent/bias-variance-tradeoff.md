@@ -17,7 +17,7 @@ The trade-off implies there is a level of model complexity that minimises expect
 
 ![A U-shaped total error curve produced by decreasing squared bias and increasing variance as model complexity grows.](../_media/bias-variance-tradeoff-fortmann-roe-2012.png)
 
-Note that the error here refers to [Mean-Squared Error](../../../permanent/mean-squared-error.md). Because MSE squares prediction errors, expanding its expected value produces a squared bias term.
+Note that the error here refers to [Mean-Squared Error](mean-squared-error.md). Because MSE squares prediction errors, expanding its expected value produces a squared bias term.
 
 ---
 

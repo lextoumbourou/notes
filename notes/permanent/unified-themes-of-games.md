@@ -11,4 +11,4 @@ Schell says that the best games have unified themes in which every element of th
 
 References:
 
-* [The Art of Game Design - A Book of Lenses (2nd Edition)](The%20Art%20of%20Game%20Design%20-%20A%20Book%20of%20Lenses%20(2nd%20Edition)) (Chapter 6. The Elements Support a Theme)
+* [The Art of Game Design - A Book Of Lenses (2nd Edition) by Jesse Schell](../reference/books/the-art-of-game-design-a-book-of-lenses-2nd-edition.md) (Chapter 6. The Elements Support a Theme)

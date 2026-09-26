@@ -17,4 +17,4 @@ A hyperplane is a subspace where the dimension is one less than the ambient spac
 
 *Image from <a href="https://deepai.org">https://deepai.org/machine-learning-glossary-and-terms/hyperplane</a>*
 
-In machine learning, hyperplanes can be used as decision boundaries for classification tasks. For example, a [Support Vector Machine](../../../permanent/support-vector-machine.md) is optimised to find the hyperplane that maximises the distance between the nearest points of each class.
+In machine learning, hyperplanes can be used as decision boundaries for classification tasks. For example, a [Support Vector Machine](support-vector-machine.md) is optimised to find the hyperplane that maximises the distance between the nearest points of each class.

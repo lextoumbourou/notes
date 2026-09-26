@@ -2,12 +2,13 @@
 category: note
 title: Matrix Inverse
 date: 2021-09-21 00:00
-modified: 2021-11-13 00:00
+modified: 2026-09-26 08:55
 tags:
   - LinearAlgebra
 cover: /_media/matrix-inverse-cover.png
 summary: A matrix that reverses a transformation.
 ---
+
 
 The inverse of a [Matrix Transformation](matrix-transformation.md) is a matrix that reverses the transformation.
 
@@ -17,7 +18,7 @@ For example, if our matrix transform did a 90° anticlockwise rotation, the inve
 
 We represent the inverse of a matrix $A$ as $A^{-1}$.
 
-When you multiply a matrix by its inverse, you get the [Identity Matrix](Identity Matrix.md) back: $A \cdot A^{-1} = I$
+When you multiply a matrix by its inverse, you get the [Identity Matrix](identity-matrix.md) back: $A \cdot A^{-1} = I$
 
 It's the equivalent of the reciprocal of a number in scalar math, ie $10 * \frac{1}{10} = 1$ or $10 \cdot 10^{-1} = 1$
 
@@ -37,13 +38,13 @@ We can also use the [`np.linalg.inv`](https://numpy.org/doc/stable/reference/gen
 
 {% notebook permanent/notebooks/matrix-inverse.ipynb %}
 
-The $ad-bc$ part of the expression is the [Matrix Determinate](Matrix Determinate.md).
+The $ad-bc$ part of the expression is the [Matrix Determinate](matrix-determinate.md).
 
-For a larger matrix, we can use [Gaussian Elimination](Gaussian Elimination) to invert a matrix.
+For a larger matrix, we can use Gaussian Elimination to invert a matrix.
 
 [@dyeMathematicsMachineLearning]
 
-A matrix with a determinate of 0: $|A| = 0$ is referred to as a [Singular Matrix](Singular Matrix) and has no inverse.
+A matrix with a determinate of 0: $|A| = 0$ is referred to as a Singular Matrix and has no inverse.
 
 We can only calculate the inverse of a square matrix.
 

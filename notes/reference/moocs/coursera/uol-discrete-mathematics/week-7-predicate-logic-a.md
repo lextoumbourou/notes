@@ -4,7 +4,7 @@ date: 2022-11-22 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-09 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## 4.101 Introduction to predicate logic
@@ -56,7 +56,7 @@ modified: 2023-04-09 00:00
 
 ## 4.105 Quantification
 
-* [Quantification](permanent/quantification.md)
+* [Quantifiers](../../../../permanent/logical-quantifiers.md)
     * Quantification expresses the extent to which a predicate is true over a range of elements
     * They express the meaning of the words **all** and **some**.
     * Two most important ones:
@@ -110,7 +110,7 @@ modified: 2023-04-09 00:00
         * Let's evaluate the truth value of S:
             * When $b^2 >= 4ac, S \text{ is true , as } P(-b \mp \sqrt(b^2 - 4ac)) / 2a = 0$
             * When $b^2 < 4ac, S\text{ is false }$ as there is no real number x that can satisfy the predicate.
-* [Uniqueness quantifier](permanent/uniqueness-quantifier.md)
+* Uniqueness quantifier
     * Special case of "existential quantifier".
     * The uniqueness quantifier of prediction P of x is the proposition:
         * There exists a unique value of x in the universe such that P of x is true.

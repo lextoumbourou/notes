@@ -5,7 +5,7 @@ doi: "10.1016/j.acra.2011.09.014"
 citekey: "10.1016/j.acra.2011.09.014"
 date: 2025-10-16 00:00
 category: paper
-modified: 2025-10-16 00:00
+modified: 2026-09-26 09:40
 status: draft
 tags:
 - BreastCancerDetection
@@ -59,7 +59,7 @@ Device used was MammoNovation Siemens full-field digital mammography (as opposed
 
 * 56 biopsy-confirmed cases: 45 malignant, 11 benign.  
 * Strong inter-radiologist consensus ensured annotation precision.  
-* The high-resolution contours enable **pixel-level segmentation** evaluation—superior to DDSM’s coarse ROIs.  
+* The high-resolution contours enable **pixel-level segmentation** evaluation, superior to DDSM’s coarse ROIs.  
 * Provides distributions by BI-RADS class, lesion type, breast density, and age.  
 * Demonstrates natural clinical diversity (including difficult cases and post-surgery exams), increasing model robustness potential.
 
@@ -86,8 +86,8 @@ Device used was MammoNovation Siemens full-field digital mammography (as opposed
 
 ### Related
 
-* [CBIS-DDSM Mammography Dataset](../../permanent/cbis-ddsm-mammography-dataset.md) — CBIS-DDSM dataset, modernized from DDSM with improved segmentations and standardized splits.  
-* [Wang, L. (2024)](../../../../reference/papers/3070/mammography-with-deep-learning-for-breast-cancer-detection.md) — review of deep learning methods using mammography datasets.
+* [CBIS-DDSM Mammography Dataset](../../permanent/cbis-ddsm-mammography-dataset.md) - CBIS-DDSM dataset, modernized from DDSM with improved segmentations and standardized splits.  
+* [Wang, L. (2024)](3070/mammography-with-deep-learning-for-breast-cancer-detection.md) - review of deep learning methods using mammography datasets.
 
 ### Reference
 

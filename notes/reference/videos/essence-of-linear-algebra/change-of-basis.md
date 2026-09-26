@@ -1,6 +1,7 @@
 ---
 title: Change of basis
 date: 2021-12-13 00:00
+modified: 2026-09-26 08:55
 category: reference/videos
 cover: /_media/3blue-change-of-basis-cover.png
 summary: "Notes from [Change of basis | Chapter 13, Essence of linear algebra](https://www.youtube.com/watch?v=P2LTAUO1TdA) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series."
@@ -42,7 +43,7 @@ The natural question to ask is: how do you translate between coordinate systems?
 
 If we had vector $\begin{bmatrix}-1 \\ 2\end{bmatrix}$ in our friends basis vectors, we could translate to ours by scaling each by her basis vectors: $-1\vec{b}_1 + 2\vec{b}_2$ or $-1\begin{bmatrix}2 \\ 1\end{bmatrix} + 2\begin{bmatrix}-1 \\ 1\end{bmatrix}$.
 
-Note that this is identical to performing [Matrix-vector Multiplication](permanent/matrix-vector-multiplication.md): $\begin{bmatrix}2 && -1 \\ 1 && 1\end{bmatrix}\begin{bmatrix}-1 \\ 2\end{bmatrix}$, since we know that a matrix whose columns represent the basis vectors can be thought of as a transformation that moves the standard basis vectors to another set of basis vectors.
+Note that this is identical to performing [Matrix Multiplication](../../../permanent/matrix-multiplication.md): $\begin{bmatrix}2 && -1 \\ 1 && 1\end{bmatrix}\begin{bmatrix}-1 \\ 2\end{bmatrix}$, since we know that a matrix whose columns represent the basis vectors can be thought of as a transformation that moves the standard basis vectors to another set of basis vectors.
 
 You can think of the process as first describing the vector that we "thought she meant," in other words, the vector that would express in our coordinate system, and then moving it into her coordinate system.
 

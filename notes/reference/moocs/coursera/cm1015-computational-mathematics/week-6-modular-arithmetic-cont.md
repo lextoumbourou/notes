@@ -1,7 +1,7 @@
 ---
 title: Week 6 - Modular Arithmetic Continued
 date: 2023-05-22 00:00
-modified: 2023-05-22 00:00
+modified: 2026-09-26 08:50
 status: draft
 ---
 
@@ -18,7 +18,7 @@ status: draft
 * Division with modular arithmetic
     * Division more complex.
     * If you had 4/12 (mod 6), it's not defined. As 12 is congruent to 0.
-    * So, you first calculate [[Multiplicative Inverse]].
+    * So, you first calculate Multiplicative Inverse.
         * Multiplicative inverse of $m^{-1}$ of integer m: $m \times m^{-1} = 1 \text{(mod k)}$
         * Then define a/b (mod k) as $a \times b^{-1}$
         * Then you just apply multiplication rule.

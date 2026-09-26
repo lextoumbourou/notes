@@ -15,4 +15,4 @@ This is related to Schell's idea about [Triangularity In Game Design](triangular
 
 References:
 
-* [The Art of Game Design - A Book of Lenses (2nd Edition)](The Art of Game Design - A Book of Lenses (2nd Edition)) (Chapter 13. Game Mechanics Must Be In Balance)
+* [The Art of Game Design - A Book Of Lenses (2nd Edition) by Jesse Schell](../reference/books/the-art-of-game-design-a-book-of-lenses-2nd-edition.md) (Chapter 13. Game Mechanics Must Be In Balance)

@@ -21,13 +21,13 @@ Because the [Softmax Function](softmax-function.md) tends to force a single sign
 
 In PyTorch, the function is called `torch.functional.nll_loss`, although it doesn't take the log, as it expects outputs from a `LogSoftmax` activation layer.
 
-Referred to as [Log Loss](../../../permanent/log-loss.md) in binary classification problems.
+Referred to as [Log Loss](log-loss.md) in binary classification problems.
 
 Code example:
 
 {% notebook permanent/notebooks/negative-log-likelihood.ipynb %}
 
-Negative Log-Likelihood is the 2nd part of the [Categorical Cross-Entropy Loss](Categorical Cross-Entropy Loss.md).
+Negative Log-Likelihood is the 2nd part of the [Categorical Cross-Entropy Loss](categorical-cross-entropy-loss.md).
 
 ---
 

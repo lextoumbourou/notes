@@ -11,4 +11,4 @@ Schell says to create an effective online game community create situations in wh
 
 References:
 
-* [The Art of Game Design - A Book of Lenses (2nd Edition)](The%20Art%20of%20Game%20Design%20-%20A%20Book%20of%20Lenses%20(2nd%20Edition)) (Chapter 24. Other Players Sometimes Form Communities)
+* [The Art of Game Design - A Book Of Lenses (2nd Edition) by Jesse Schell](../reference/books/the-art-of-game-design-a-book-of-lenses-2nd-edition.md) (Chapter 24. Other Players Sometimes Form Communities)

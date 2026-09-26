@@ -4,7 +4,7 @@ date: 2022-01-07 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00
+modified: 2026-09-26 10:00
 ---
 
 ## 6.201 Recursive definitions
@@ -66,8 +66,10 @@ modified: 2023-04-08 00:00
 * Infinite Sequence
     * Function from the set of positive integers to set of real numbers.
 * It can be useful to formalise the problem as sequence before solving it.
-* Example: [[Towers of Hanoi]]
-    * ![[week-12-hanoi-tower.png]]
+* Example: [Towers of Hanoi](../../../../permanent/towers-of-hanoi.md)
+    * ![Towers of Hanoi: a stack of discs on spoke A, smallest on top, with empty spokes B and C.](../../../../_media/week-12-hanoi-tower.png)
+
+      *Source: [Discrete Mathematics](https://www.coursera.org/learn/uol-discrete-mathematics/) by the University of London on Coursera.*
       * Want to get discs from spoke A to C.
       * Can only move one disk at a time.
       * You cannot place a larger disc on a smaller one.
@@ -78,7 +80,7 @@ modified: 2023-04-08 00:00
           * Then, move last (and largest) disc from A to C by 1 move.
           * Then, remove the n-1 discs again from B to C by $a_{n-1}$ moves.
           * Thus, total moves is $a_n = 2a_{n-1} + 1$
-* [Linear Recurrence](permanent/linear-recurrence.md)
+* [Linear Recurrence](../../../../permanent/linear-recurrence.md)
     * In which each term of a sequence is a linear function of earlier terms in the sequence.
     * Two types of linear recurrence:
         * Linear homogeneous recurrence:

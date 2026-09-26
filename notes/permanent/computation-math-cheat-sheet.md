@@ -1,7 +1,7 @@
 ---
 title: Computational Math Cheat Sheet
 date: 2023-08-31 00:00
-modified: 2026-09-13 10:34
+modified: 2026-09-26 08:55
 status: draft
 ---
 
@@ -422,7 +422,7 @@ $A^{-1} = \frac{1}{\det(A)} \begin{bmatrix}d & -b \\ -c & a\end{bmatrix}$
 
 "swap a and b", "negate -b and -c"
 
-[Solving Systems of Equations using Inverse Matrix](Solving%20Systems%20of%20Equations%20using%20Inverse%20Matrix)
+Solving Systems of Equations using Inverse Matrix
 
 3x + 8y = 5
 4x + 11y = 7

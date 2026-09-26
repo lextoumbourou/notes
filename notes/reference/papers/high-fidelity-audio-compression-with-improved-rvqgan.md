@@ -2,7 +2,7 @@
 title: High-Fidelity Audio Compression with Improved RVQGAN
 date: 2023-12-18 00:00
 category: paper
-modified: 2026-09-13 10:34
+modified: 2026-09-26 08:55
 status: draft
 ---
 
@@ -18,12 +18,12 @@ The author's make the weights and code available on GitHub [.dac](https://github
 
 ## Main Contributions
 
-The authors use a encoder/decoder convolution architecture with [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md), which was originally used in [SoundStream](../../../../permanent/soundstream.md) and later [Encodec](../../permanent/encodec.md). The architecture is called Improved RVQGAN, although it's commonly referred to as DAC, based on the repository name.
+The authors use a encoder/decoder convolution architecture with [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md), which was originally used in [SoundStream](../../permanent/soundstream.md) and later [Encodec](../../permanent/encodec.md). The architecture is called Improved RVQGAN, although it's commonly referred to as DAC, based on the repository name.
 
 Improved RVQGAN makes these architectural and training improvements:
 
 * Replace [Leaky ReLU](../../permanent/leaky-relu.md) with the [Snake Activation Function](../../permanent/snake-activation-function.md) which is helps to with the periodic nature of audio.
-* Two changes to Vector Quantisation operation based on ideas from [Improved VQGAN](../../../../permanent/improved-vqgan.md):
+* Two changes to Vector Quantisation operation based on ideas from [Improved VQGAN](../../permanent/improved-vqgan.md):
     * Project the query embedding into low-dimensional space before performing the nearest neighbour lookup for codes (64d to 8d), this decouples code lookup and code embedding. We can think of it as using the principle components to do the lookup.
 
       ```python
@@ -41,9 +41,9 @@ Improved RVQGAN makes these architectural and training improvements:
 * They continue to use multiple loss functions, but include multi-scale mel loss.
 
 They use multiple loss functions:
-* [Frequency Domain Reconstruction Loss](Frequency%20Domain%20Reconstruction%20Loss)
-* [Adversarial Loss](Adversarial%20Loss)
-* [Codebook Learning](Codebook%20Learning)
+* Frequency Domain Reconstruction Loss
+* Adversarial Loss
+* [Codebook](../../permanent/codebook.md)
 * Weighting it 15, 2, 1, 1, 0.25, respectively.
 
 ---
@@ -66,55 +66,55 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
 
 * Generative modelling of high-resolution audio is difficult because:
     * high dimensionality (~44,100 samples per second of audio)
-        * See [SampleRNN: An Unconditional End-to-End Neural Audio Generation Model](../../../../permanent/samplernn-an-unconditional-end-to-end-neural-audio-generation-model.md)
-        * [Generative adversarial networks for conditional waveform synthesis](Generative%20adversarial%20networks%20for%20conditional%20waveform%20synthesis)
+        * See [SampleRNN: An Unconditional End-to-End Neural Audio Generation Model](../../permanent/samplernn-an-unconditional-end-to-end-neural-audio-generation-model.md)
+        * [MelGAN](../../permanent/MelGAN.md)
     * Structure at different time-scales with short and long term dependencies.
 * Common mitigations:
     * audio generation is typically divided into two stages:
         * 1. predicting audio conditioned on some intermediate representation such as mel-spectrograms see:
-            * [SampleRNN: An Unconditional End-to-End Neural Audio Generation Model](../../../../permanent/samplernn-an-unconditional-end-to-end-neural-audio-generation-model.md)
-            * [Deep voice 3: Scaling text-to-speech with convolutional sequence learning](Deep%20voice%203:%20Scaling%20text-to-speech%20with%20convolutional%20sequence%20learning)
-            * [Generative adversarial networks for conditional waveform synthesis](Generative%20adversarial%20networks%20for%20conditional%20waveform%20synthesis)
-            * [Waveglow: A flow-based generative network for speech synthesis](Waveglow:%20A%20flow-based%20generative%20network%20for%20speech%20synthesis)
+            * [SampleRNN: An Unconditional End-to-End Neural Audio Generation Model](../../permanent/samplernn-an-unconditional-end-to-end-neural-audio-generation-model.md)
+            * Deep voice 3: Scaling text-to-speech with convolutional sequence learning
+            * [MelGAN](../../permanent/MelGAN.md)
+            * Waveglow: A flow-based generative network for speech synthesis
         * 2. predicting the intermediate representation given some conditioning information, such as text
-            * [Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions](../../../../permanent/natural-tts-synthesis-by-conditioning-wavenet-on-mel-spectrogram-predictions.md)
-            * [Fastspeech 2: Fast and high-quality end-to-end text to speech](Fastspeech%202:%20Fast%20and%20high-quality%20end-to-end%20text%20to%20speech)
-    * Can be interpret this as a [Hierarchical Generative Model](../../../../permanent/hierarchical-generative-model.md) with observed intermediate variables.
-* Alternate formulation is to learn the intermediate variables using a [Variational Auto-Encoder](../../../../permanent/variational-auto-encoder.md) framework with a learned conditional prior to predict the latent variables given some conditioning.
+            * [Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions](../../permanent/natural-tts-synthesis-by-conditioning-wavenet-on-mel-spectrogram-predictions.md)
+            * Fastspeech 2: Fast and high-quality end-to-end text to speech
+    * Can be interpret this as a [Hierarchical Generative Model](../../permanent/hierarchical-generative-model.md) with observed intermediate variables.
+* Alternate formulation is to learn the intermediate variables using a [Variational Auto-Encoder](../../permanent/variational-auto-encoder.md) framework with a learned conditional prior to predict the latent variables given some conditioning.
     * This formulation, with continuous latent variables and training an expressive prior using normalizing flows has been quite successful for speech synthesis.
-        * [Conditional variational autoencoder with adversar- ial learning for end-to-end text-to-speech](Conditional%20variational%20autoencoder%20with%20adversar-%20ial%20learning%20for%20end-to-end%20text-to-speech)
-        * [Naturalspeech: End-to-end text to speech synthesis with human-level quality.](Naturalspeech:%20End-to-end%20text%20to%20speech%20synthesis%20with%20human-level%20quality.)
+        * [VITS](../../permanent/VITS.md)
+        * Naturalspeech: End-to-end text to speech synthesis with human-level quality.
 * Closely related idea:
-    * train the same varitional-autoencoder with discrete latent variables using VQ-VAE: [Neural discrete representation learning. Advances in neural information processing systems](Neural%20discrete%20representation%20learning.%20Advances%20in%20neural%20information%20processing%20systems)
-* [Discrete Latent Variables](Discrete%20Latent%20Variables) could be a better choice since expressive priors can be trained using powerful autoregressive models that have been developed for modelling distributions over discrete variables.
-    * See: [Wavenet: A generative model for raw audio](Wavenet:%20A%20generative%20model%20for%20raw%20audio)
+    * train the same varitional-autoencoder with discrete latent variables using VQ-VAE: [Neural Discrete Representation Learning](../neural-discrete-representation-learning.md)
+* Discrete Latent Variables could be a better choice since expressive priors can be trained using powerful autoregressive models that have been developed for modelling distributions over discrete variables.
+    * See: [WaveNet: A Generative Model for Raw Audio](../../permanent/wavenet-a-generative-model-for-raw-audio.md)
     * We know that [Transformer](../../permanent/transformer.md) language models can scale with data and learn complex distributions like text, images, audio, music, etc
 * Modelling the prior is straightforward but modelling the discrete latent codes using a quantized auto-encoder remains a challenge.
 * Learning discrete codes can be interpreted as a lossy compression task:
     * audio signal is compressed into a discrete latent space by vector-quantizing the representations of an autoencoder using a fixed length codebook.
-* An [Audio Compression Model](../../../../permanent/audio-compression-model.md) needs to satisfy the following properties:
+* An [Audio Compression Model](../../permanent/audio-compression-model.md) needs to satisfy the following properties:
     * Reconstruct audio with high fidelity and free of artifacts
     * Achieve high level of compression along with temporal downscaling to learn a compact representation that discards low-level imperceptible details while preserving high-level structure:
-        * [Advances in neural information processing systems](Advances%20in%20neural%20information%20processing%20systems)
-        * [Generating Diverse High-Fidelity Images with VQ-VAE-2](../../../../permanent/generating-diverse-high-fidelity-images-with-vq-vae-2.md)
+        * Advances in neural information processing systems
+        * [Generating Diverse High-Fidelity Images with VQ-VAE-2](../../permanent/generating-diverse-high-fidelity-images-with-vq-vae-2.md)
     * Handle all types of audio such as speech, music, environmental sounds, different audio encodings (such as mp3) as well as different sampling rates using a single universal model.
-* Some audio compression models like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../permanent/encodec.md) partially satisfy these properties but suffer from issues that plauge GAN models:
+* Some audio compression models like [SoundStream](../../permanent/soundstream.md) and [Encodec](../../permanent/encodec.md) partially satisfy these properties but suffer from issues that plauge GAN models:
     * have audio artifacts such as tonal artifacts
-        * See [Upsampling artifacts in neural audio synthesis](Upsampling%20artifacts%20in%20neural%20audio%20synthesis)
+        * See Upsampling artifacts in neural audio synthesis
     * Pitch and periodicty artifacts
-        * See [Chunked Autoregressive GAN for Conditional Waveform Synthesis](../../../../permanent/chunked-autoregressive-gan-for-conditional-waveform-synthesis.md)
+        * See [Chunked Autoregressive GAN for Conditional Waveform Synthesis](../../permanent/chunked-autoregressive-gan-for-conditional-waveform-synthesis.md)
     * Not doing a good job of modelling high-frequencies
     * These models are often tailored to a specific type of audio signal, like speech or music and struggle to model generic sounds
 * They make the following contributions:
-    * Introduce [Improved RVQGAN](Improved%20RVQGAN) a high fidelity universal audio compression model, that:
+    * Introduce Improved RVQGAN a high fidelity universal audio compression model, that:
         * can compress 44.1 KHz audio into discrete codes at 8 kbps bitrate (~90x compression) with minimal loss in quality and fewer artifacts.
             * outperforms state-of-the-art methods by a large margin even at lower bitrates (higher compression) when evaluated with both quantitative metrics and qualitative listening tests.
     * Identify a critical issue in existing models which don’t utilize the full bandwidth due to codebook collapse (where a fraction of the codes are unused) and fix it using improved codebook learning techniques.
     * Identify side-effect of quantizer dropout - a technique designed to allow a single model to support variable bitrates, actually hurts the full-bandwidth audio quality and propose a solution to mitigate it.
     * We make impactful design changes to existing neural audio codecs by adding:
-        * [Periodic Inductive Biases](../../../../permanent/Periodic%20Inductive%20Biases.md)
-        * [Multi-scale STFT Discriminator](../../../../permanent/multi-scale-stft-discriminator.md)
-        * [Multi-scale Mel Loss](Multi-scale%20Mel%20Loss)
+        * [Periodic Inductive Biases](../../permanent/Periodic%20Inductive%20Biases.md)
+        * [Multi-scale STFT Discriminator](../../permanent/multi-scale-stft-discriminator.md)
+        * Multi-scale Mel Loss
     * Provide thorough ablations and intuitions to motivate them.
 * Proposed method: universal audio compression model, capable of handling speech, music, environmental sounds, different sampling rates and audio encoding formats.
 
@@ -122,46 +122,46 @@ The audio signal is compressed into a discrete latent space using [Residual Vect
 
 ### High fidelity neural audio synthesis
 
-[Generative Adversarial Network](../../../../permanent/generative-adversarial-network.md) models are a solution to generate high-quality audio with fast inference speeds, due to the feedforward (parallel) generator:
+[Generative Adversarial Network](../../permanent/generative-adversarial-network.md) models are a solution to generate high-quality audio with fast inference speeds, due to the feedforward (parallel) generator:
 
-* [MelGAN](../../../../permanent/MelGAN.md)
+* [MelGAN](../../permanent/MelGAN.md)
         - Successfully trains a GAN-based spectrogram inversion (neural vocoding) model
         - Introduces:
-            - [Multi-scale Waveform Discriminator](Multi-scale%20Waveform%20Discriminator) (MSD)
+            - Multi-scale Waveform Discriminator (MSD)
                 - penalize structure at different audio resolutions
             - feature matching loss that minimises L1 distance between discriminator feature maps of real and synthetic audio.
 * [HiFi-GAN](../../permanent/hifigan.md)
     * Introduce a multi-period waveform discriminator (MPD) for high fidelity synthesis
     * adding an auxiliary mel-reconstruction loss for fast training
-* [univnet](../../../../permanent/univnet.md)
+* univnet
     * introduces a multi-resolution spectrogram discriminator (MRSD) to generate audio with sharp spectrograms
-* [BigVGAN](../../../../permanent/BigVGAN.md)
+* [BigVGAN](../../permanent/BigVGAN.md)
     * Improve HifiGAN recipe by introducing a periodic inductive bias using the [Snake Activation Function](../../permanent/snake-activation-function.md)
-        * [Neural networks fail to learn periodic functions and how to fix it](../../../../permanent/neural-networks-fail-to-learn-periodic-functions-and-how-to-fix-it.md)
+        * [Neural networks fail to learn periodic functions and how to fix it](../../permanent/neural-networks-fail-to-learn-periodic-functions-and-how-to-fix-it.md)
     * Replaces the MSD in HifiGAN with the MRSD to improve audio quality and reduce pitch, periodicity artifacts
-        * See [Chunked Autoregressive GAN for Conditional Waveform Synthesis](../../../../permanent/chunked-autoregressive-gan-for-conditional-waveform-synthesis.md)
+        * See [Chunked Autoregressive GAN for Conditional Waveform Synthesis](../../permanent/chunked-autoregressive-gan-for-conditional-waveform-synthesis.md)
 
-The GAN-based learning techniques have been used for vocoding, but they also work for [Neural Audio Compression](Neural%20Audio%20Compression).
+The GAN-based learning techniques have been used for vocoding, but they also work for [Neural Audio Codec](../../permanent/neural-audio-codec.md).
 
-[Improved RVQGAN](Improved%20RVQGAN) model closely follows the BigVGAN training recipe, with a few key changes:
-* Uses a new multi-band, multi-scale [STFT Discriminator](../../../../permanent/STFT%20Discriminator.md) that alleviates aliasing artifacts
+Improved RVQGAN model closely follows the BigVGAN training recipe, with a few key changes:
+* Uses a new multi-band, multi-scale [STFT Discriminator](../../permanent/STFT%20Discriminator.md) that alleviates aliasing artifacts
 * A multi-scale mel-reconstruction loss that better models quick transients.
 
 Neural audio compression models: VQ-VAEs have been the dominant paradigm to train neural audio codecs.
 
-First VQ-VAE based speech codec was proposed in [Low bit-rate speech coding with vq-vae and a wavenet decoder](Low%20bit-rate%20speech%20coding%20with%20vq-vae%20and%20a%20wavenet%20decoder) operating at 1.6 kbps
+First VQ-VAE based speech codec was proposed in Low bit-rate speech coding with vq-vae and a wavenet decoder operating at 1.6 kbps
 
-This model used the original architecture from [Neural discrete representation learning](Neural%20discrete%20representation%20learning) with a convolutional encoder and an autoregressive [Wavenet](../../permanent/wavenet.md) decoder.
+This model used the original architecture from [Neural Discrete Representation Learning](../neural-discrete-representation-learning.md) with a convolutional encoder and an autoregressive [Wavenet](../../permanent/wavenet.md) decoder.
 
-[SoundStream](../../../../permanent/soundstream.md)
+[SoundStream](../../permanent/soundstream.md)
 * one of the first audio compression models that can handle diverse audio types with varying bitrates on a single model.
 * Use a fully causal convolutional encoder and decoder network, and perform [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md)
 * The model is trained using the VQ-GAN formulation by adding adversarial and feature matching losses along with the multi-scale spectral reconstruction loss
-    * See [Taming Transformers for High-Resolution Image Synthesis](../../../../permanent/taming-transformers-for-high-resolution-image-synthesis.md)
+    * See [Taming Transformers for High-Resolution Image Synthesis](../../permanent/taming-transformers-for-high-resolution-image-synthesis.md)
 
 [Encodec](../../permanent/encodec.md)
 * Follows the SoundStream recipe, with a few modifications that lead to improved quality:
-    * uses a multi-scale [STFT Discriminator](STFT%20Discriminator) with a multi-scale spectral reconstruction loss
+    * uses a multi-scale [STFT Discriminator](../../permanent/STFT%20Discriminator.md) with a multi-scale spectral reconstruction loss
     * Also use a loss balancer to adjust loss weights based on the varying scale of gradients coming from the discriminator.
 
 Propose method shares these ideas:
@@ -170,7 +170,7 @@ Propose method shares these ideas:
 * Adversarial, perceptual losses.
 
 Has these differences:
-* Introduce periodic inductive bias using [Snake Activations](Snake%20Activations)
+* Introduce periodic inductive bias using [Snake Activation Function](../../permanent/snake-activation-function.md)
 * Improve codebook learning by projecting encodings into a low-dimensional space.
 * Obtain a stable training recipe using best practices for adversarial and perceptual loss design, with fixed loss weights and without needing a sophisticated loss balancer.
 
@@ -183,20 +183,20 @@ Allows model to outperform Encodec with 3x lower bitrate.
 Language modelling of natural signals
 
 Neural language models have demonstrated great success in diverse tasks such as open-ended text generation with in-context learning capabilities.
-* See [Language models are few shot learners](Language%20models%20are%20few%20shot%20learners).
+* See [Brown et al., 2020: Language Models are Few-Shot Learners](../../permanent/brown-et-al-2020-language-models-are-few-shot-learners.md).
 
 [Self-Attention](../../permanent/self-attention.md) allows it to complex, long-range dependencies. However, has quadratic computational cost with the length of the sequence. Bad for natural signals like images, audio with high dimensionality. Instead they need a compact mapping into a discrete representation space.
 
-Mapping usually learned with [VQ-GAN](../../../../permanent/vq-gan.md), followed by training autoregressive Transformer on discrete tokens.
-* [Taming Transformers for High-Resolution Image Synthesis](../../../../permanent/taming-transformers-for-high-resolution-image-synthesis.md).
-* [Vector-quantized image modeling with improved vqgan](Vector-quantized%20image%20modeling%20with%20improved%20vqgan)
+Mapping usually learned with [VQ-GAN](../../permanent/vq-gan.md), followed by training autoregressive Transformer on discrete tokens.
+* [Taming Transformers for High-Resolution Image Synthesis](../../permanent/taming-transformers-for-high-resolution-image-synthesis.md).
+* [Improved VQGAN](../../permanent/improved-vqgan.md)
 
 This approach has shown success across image, audio, video and music domains
 
 Codecs like SoundStream and EnCodec have already been used in generative audio models:
-* AudioLM [a language modeling approach to audio generation](a%20language%20modeling%20approach%20to%20audio%20generation)
-* MusicLM [Musiclm: Generating music from text](Musiclm:%20Generating%20music%20from%20text)
-* VALL-E [Neural codec language models are zero-shot text to speech synthesizers](Neural%20codec%20language%20models%20are%20zero-shot%20text%20to%20speech%20synthesizers)
+* AudioLM [AudioLM: a Language Modeling Approach to Audio Generation](../../permanent/audiolm-a-language-modeling-approach-to-audio-generation.md)
+* MusicLM [MusicLM: Generating Music From Text](paper-musiclm-generating-music-from-text.md)
+* VALL-E [Neural Codec Language Models are Zero-Shot Text-to-Speech Synthesizers](neural-codec-language-models-are-zero-shot-text-to-speech-synthesizers.md)
 
 DAC is a drop-in replacement for the audio tokenization model used in these methods with
 * highly superior audio fidelity
@@ -204,15 +204,15 @@ DAC is a drop-in replacement for the audio tokenization model used in these meth
 
 ## The Improved RVQGAN Model
 
-Like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../permanent/encodec.md), uses an RVQGAN architecture which is built on framework of [VQ-GAN](../../../../permanent/vq-gan.md) models
+Like [SoundStream](../../permanent/soundstream.md) and [Encodec](../../permanent/encodec.md), uses an RVQGAN architecture which is built on framework of [VQ-GAN](../../permanent/vq-gan.md) models
 
-* Architecture: Full Convolutional [Encoder-Decoder](../../permanent/encoder-decoder.md) like [SoundStream](../../../../permanent/soundstream.md)
+* Architecture: Full Convolutional [Encoder-Decoder](../../permanent/encoder-decoder.md) like [SoundStream](../../permanent/soundstream.md)
 * Goal: time-based downscaling with a chosen striding factor
 * Special techniques:
     * Quantise the encoding with [Residual Vector Quantisation](../../permanent/residual-vector-quantization.md)
         * "recursively quantises residuals following an initial quantisation step with a distinct codebook"
 * Apply quantizer dropout, so that some of the later codebooks are not always used, which comes from SoundStream.
-* Loss: [Frequency Domain Reconstruction Loss](Frequency%20Domain%20Reconstruction%20Loss) and adversarial and perceptual losses.
+* Loss: Frequency Domain Reconstruction Loss and adversarial and perceptual losses.
 * Inputs:
      * Audio signal with sampling rate $fs$ (Hz)
      * Encoding striding factor $M$
@@ -223,7 +223,7 @@ Like [SoundStream](../../../../permanent/soundstream.md) and [Encodec](../../per
 
 Note: target bitrate is upper bound, since all models support variable bitrates.
 
-Table 1 shows [Improved RVQGAN](Improved%20RVQGAN) again baseline comparing compression factors and frame rate of latent codes.
+Table 1 shows Improved RVQGAN again baseline comparing compression factors and frame rate of latent codes.
 
 ![Comparison of the proposed codec, EnCodec and SoundStream: the proposed codec compresses 44.1 kHz audio to 8 kbps using nine codebooks, a compression factor of 91.16.](../../_media/high-fidelity-audio-compression-with-improved-rvqgan-table1.png)
 
@@ -255,7 +255,7 @@ Vector quantisation (VQ) is commonly used to train discrete auto-encoders, but t
     * due to poor initialization, leading to a significant portion of the codebook being unused.
 * This reduction in effective codebook size leads to an implicit reduction in target bitrate, which translates to poor reconstruction quality
 * To mitigate this, recent audio codec methods use kmeans clustering to initialize the codebook vectors, and manually employ randomized restarts [9] when certain codebooks are unused for several batches.
-    * See [Jukebox: A generative model for music](Jukebox:%20A%20generative%20model%20for%20music)
+    * See Jukebox: A generative model for music
 
 However, they find that the EnCodec model trained at 24kbps target bitrate, as well as our proposed model with the same codebook learning method (Proposed w/ EMA) still suffers from codebook under-utilization (Figure 1).
 
@@ -268,11 +268,11 @@ To address this issue, use two key techniques to improve codebook usage:
 Intuitively, this can be interpreted as a code lookup using only the principal components of the input vector that maximally explain the variance in the data.
 
 The L2-normalization of the encoded and codebook vectors converts euclidean distance to cosine similarity, which is helpful for stability and quality [44].
-See [Vector-quantized image modeling with improved vqgan](Vector-quantized%20image%20modeling%20with%20improved%20vqgan)]
+See [Improved VQGAN](../../permanent/improved-vqgan.md)]
 
 These two tricks along with the overall model recipe significantly improve codebook usage, and therefore bitrate efficiency (Figure 1) and reconstruction quality (Table 2), while being simpler to implement.
 
-Our model can be trained using the original VQ-VAE codebook and commitment losses. See [Neural discrete representation learning](Neural%20discrete%20representation%20learning)
+Our model can be trained using the original VQ-VAE codebook and commitment losses. See [Neural Discrete Representation Learning](../neural-discrete-representation-learning.md)
 
 The equations for the modified codebook learning procedure are written in Appendix A.
 
@@ -292,14 +292,14 @@ What they do is only apply the dropout operation 50% of the time.
 Now they have the best of both worlds: at lower bitrates, the audio can be constructed well, but at maximum bitrates they get close to optimal reconstruction.
 
 They found this techinque causes the quantized codes to learn most-significant to least significant bits of information with each additional quantizer. When the codes are reconstructed with $1 . . . Nq$ codebooks, we can see each codebook adds increasing amounts of fine-scale detail.
-This interaction is useful to understand when training hierarchical generative models, like [AudioLM](../../permanent/audiolm.md), [VALL-E](../../permanent/vall-e.md) and [MusicLM](MusicLM). Could consider partitioning the codes into "coarse" tokens (most significant codes) and "fine" tokens (higher detail, but less significant).
+This interaction is useful to understand when training hierarchical generative models, like [AudioLM](../../permanent/audiolm.md), [VALL-E](../../permanent/vall-e.md) and [MusicLM](../../permanent/musiclm.md). Could consider partitioning the codes into "coarse" tokens (most significant codes) and "fine" tokens (higher detail, but less significant).
 
 #### 3.4 Discriminator design
 
 Like prior work, we use multi-scale (MSD) and multi-period waveform discriminators (MPD) which lead to improved audio fidelity
 
 However, spectrograms of generated audio can still appear blurry, exhibiting over-smoothing artifacts in high frequencies
-* See [A neural vocoder with multi-resolution spectrogram discriminators for high-fidelity waveform generation](A%20neural%20vocoder%20with%20multi-resolution%20spectrogram%20discriminators%20for%20high-fidelity%20waveform%20generation)
+* See A neural vocoder with multi-resolution spectrogram discriminators for high-fidelity waveform generation
 
 The multi-resolution spectrogram discriminator (MRSD) was proposed in UnivNet to fix these artifacts and BigVGAN [21] found that it also helps to reduce pitch and periodicity artifacts
 
@@ -345,8 +345,8 @@ Train on dataset of speech, music, and environmental sounds.
 
 For speech:
 * [DAPS dataset](https://ieeexplore.ieee.org/document/6981922)
-* Clean speech segments from [DNS Challenge 4](Icassp 2022 deep noise suppression challenge)
-* [Common Voice](Common voice: A massively-multilingual speech corpus) dataset
+* Clean speech segments from DNS Challenge 4
+* Common Voice dataset
 * [VCTK](https://datashare.ed.ac.uk/handle/10283/3443) dataset
 
 For music:
@@ -466,7 +466,7 @@ Biggest impact: relu activation for the snake activation
 
 This change resulted in much better SI-SDR and other metrics.
 
-Similar to the results in [BigVGAN](Bigvgan: A universal neural vocoder with large-scale training), find periodic inductive bias for snake activation helpful for waveform generation.
+Similar to the results in [BigVGAN](../../permanent/BigVGAN.md), find periodic inductive bias for snake activation helpful for waveform generation.
 
 For our final model, we use the largest decoder dimension (1536), and the snake activation.
 

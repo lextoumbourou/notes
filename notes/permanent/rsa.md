@@ -2,7 +2,7 @@
 category: note
 title: RSA
 date: 2025-03-01 00:00
-modified: 2025-03-01 00:00
+modified: 2026-09-26 09:40
 summary: a public-key encryption system reliant on the practical difficulty of factorising large numbers
 tags:
 - Cryptography  
@@ -19,11 +19,11 @@ However, RSA is a slow algorithm typically not used for directly encrypting user
 
 To create a private and public key, we use the following steps:
 
-1. Select two large prime numbers, $p$ and $q$. (In practice, each should be hundreds or thousands of bits long—commonly 2048 bits or more—to ensure security.)
+1. Select two large prime numbers, $p$ and $q$. (In practice, each should be hundreds or thousands of bits long, commonly 2048 bits or more, to ensure security.)
 2. Calculate $N = p \times q$ (the modulus).
 3. Calculate [Euler's Totient Function](eulers-totient-function.md): $\phi(N) = (p-1)(q-1)$
 4. Choose a public key $e$ that is relatively prime to $\phi(N)$. Two numbers are relatively prime when their greatest common divisor (GCD) is 1. (A common choice is $e = 65537$, a [Fermat Prime](fermat-prime.md). It has only two 1's in its binary representation, greatly reducing exponentiation time.)
-5. Compute the private key $d$ as the modular multiplicative inverse of $e$ modulo $\phi(N)$. This means finding a value $d$ where: $(d \times e) \mod \phi(N) = 1$. This can be calculated using the [Extended Euclidean Algorithm](../../../permanent/extended-euclidean-algorithm.md).
+5. Compute the private key $d$ as the modular multiplicative inverse of $e$ modulo $\phi(N)$. This means finding a value $d$ where: $(d \times e) \mod \phi(N) = 1$. This can be calculated using the [Extended Euclidean Algorithm](extended-euclidean-algorithm.md).
 
 $N$ and $e$ are **public key** components, represented as $(N, e)$.
 

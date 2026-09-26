@@ -1,12 +1,14 @@
 ---
 title: Reliance on Metrics is a Fundamental Challenge for AI
 date: 2021-06-12 00:00
+modified: 2026-09-26 08:55
 tags:
   - ML Ethics
 category: reference/papers
 status: draft
 summary: Notes from paper Reliance on Metrics is a Fundamental Challenge for AI by Rachel Thomas and David Uminsky
 ---
+
 
 * Data-driven companies heavily rely on metrics for decision making
 * Metrics also play a central role in ML, therefore, the risks are maximised there.
@@ -20,7 +22,7 @@ summary: Notes from paper Reliance on Metrics is a Fundamental Challenge for AI 
 
 * Paper finds supporting principles:
     * [Proxy Metrics](../../permanent/proxy-metrics.md) what you really care about
-    * Metrics can and will be gamed: aka [Metric hacking](Metric hacking)
+    * Metrics can and will be gamed: aka [Metric Hacking](../../permanent/metric-hacking.md)
     * Metrics tend to overemphasis short-term concerns
     * Many online metrics are gathered in highly addictive environment
 * Paper proposes framework for healthier use of metrics:

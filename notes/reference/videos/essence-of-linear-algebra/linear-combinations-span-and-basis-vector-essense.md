@@ -1,6 +1,7 @@
 ---
 title: Linear combinations, span, and basis vectors
 date: 2021-10-23 00:00
+modified: 2026-09-26 08:55
 category: reference/videos
 summary: Notes from [Linear combinations, span, and basis vectors](https://www.youtube.com/watch?v=fNk_zzaMoSs) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
 cover: /_media/linear-comb-basis-vectors.png
@@ -30,7 +31,7 @@ Also, any set of vectors to consider is both vectors have a magnitude of 0, whic
 
 Anytime we're scaling two vectors and adding them, we call it a [Linear Combination](../../../permanent/linear-combination.md) of vectors.
 
-The [Span](Span) of vectors $\vec{v}$ and $\vec{w}$ is the set of all possible linear combinations in this expression $a\vec{v} + b\vec{w}$ where $a$ and $b$ are real numbers.
+The [Vector Span](../../../permanent/vector-span.md) of vectors $\vec{v}$ and $\vec{w}$ is the set of all possible linear combinations in this expression $a\vec{v} + b\vec{w}$ where $a$ and $b$ are real numbers.
 
 When dealing with collections of vectors, we commonly represent them as points in space. Where the point sits at the tip of the vector.
 

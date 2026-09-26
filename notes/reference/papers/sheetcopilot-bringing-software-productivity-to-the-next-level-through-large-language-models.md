@@ -1,7 +1,7 @@
 ---
 title: "SheetCopilot: Bringing Software Productivity to the Next Level through Large Language Models"
 date: 2024-08-15 00:00
-modified: 2024-08-15 00:00
+modified: 2026-09-26 09:18
 category: reference/papers
 cover: /_media/sheetscopilot-cover.png
 hide_cover_in_article: true
@@ -34,23 +34,23 @@ Being able to control software using natural language is something we've been pu
 
 Other papers have researched LLMs augmented with tools:
 
-* 24: [ART: Automatic multi-step reasoning and tool-use for large language models](../../../../permanent/automatic-multi-step-reasoning-and-tool-use-for-large-language-models.md)
-* 25: [Toolformer: Language models can teach themselves to use tools](Toolformer:%20Language%20models%20can%20teach%20themselves%20to%20use%20tools)
-* 20: [Completing tasks by connecting foundation models with millions of apis](Completing%20tasks%20by%20connecting%20foundation%20models%20with%20millions%20of%20apis)
-* 26: [Solving ai tasks with chatgpt and its friends in huggingface](Solving%20ai%20tasks%20with%20chatgpt%20and%20its%20friends%20in%20huggingface)
-* 2: [Do as i can, not as i say: Grounding language in robotic affordances](Do%20as%20i%20can,%20not%20as%20i%20say:%20Grounding%20language%20in%20robotic%20affordances)
-* 27: [Vipergpt: Visual inference via python execution for reasoning](Vipergpt:%20Visual%20inference%20via%20python%20execution%20for%20reasoning)
+* 24: [ART: Automatic multi-step reasoning and tool-use for large language models](../../permanent/automatic-multi-step-reasoning-and-tool-use-for-large-language-models.md)
+* 25: Toolformer: Language models can teach themselves to use tools
+* 20: Completing tasks by connecting foundation models with millions of apis
+* 26: Solving ai tasks with chatgpt and its friends in huggingface
+* 2: Do as i can, not as i say: Grounding language in robotic affordances
+* 27: Vipergpt: Visual inference via python execution for reasoning
 
 And reasoning abilities:
 
-* 32: [React: Synergizing reasoning and acting in language models](React:%20Synergizing%20reasoning%20and%20acting%20in%20language%20models)
+* 32: [ReAct: Synergizing Reasoning and Acting in Language Models](../../permanent/react-synergizing-reasoning-and-acting-in-language-models.md)
 * 18: [Large Language Models are Zero-Shot Reasoners (May 2022)](large-language-models-are-zero-shot-reasoners-may-2022.md)
-* 30: [Chain of thought prompting elicits reasoning in large language models](Chain%20of%20thought%20prompting%20elicits%20reasoning%20in%20large%20language%20models)
-* 31: [Mm-react: Prompting chatgpt for multimodal reasoning and action](Mm-react:%20Prompting%20chatgpt%20for%20multimodal%20reasoning%20and%20action)
+* 30: [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](chain-of-thought-prompting-elicits-reasoning-in-large-language-models.md)
+* 31: [MM-REACT Prompting ChatGPT for Multimodal Reasoning and Action](mm-react-prompting-chatgpt-for-multimodal-reasoning-and-action.md)
 
 The ability to have LLMs work alongside existing software tools has not been thoroughly explored.
 
-But we know from papers like [Augmented language models: a survey](Augmented%20language%20models:%20a%20survey) that LLMs that could use existing software tools could unlock massive potential.
+But we know from papers like Augmented language models: a survey that LLMs that could use existing software tools could unlock massive potential.
 
 The lack of a standardised framework for model-application interaction and lack of comprehensive benchmarks for evaluating performance, has hindered this.
 
@@ -59,18 +59,18 @@ There are a few challenges to get LLMs to play nice with apps:
 1. Converting application state and functionality into a text form that can be comprehended by models.
     1. We want a way where we can systematically represent software and interfaces and logic through natural language.
 2. Safely allowing models to generate software commands and params: need mechanisms to validate, debug and reject or revise model outputs to stop bad operations or states.
-    1. See [On the origin of hallucinations in conversational models: Is it the datasets or the models?](On%20the%20origin%20of%20hallucinations%20in%20conversational%20models:%20Is%20it%20the%20datasets%20or%20the%20models?) and [ Augmenting large-language models with chemistry tools](%20Augmenting%20large-language%20models%20with%20chemistry%20tools).
+    1. See On the origin of hallucinations in conversational models: Is it the datasets or the models? and Augmenting large-language models with chemistry tools.
 3. Giving models the means of monitoring software state changes, exceptions and errors in multi-step tasks to ensure the models respond correctly.
 
 To achieve this, need a diverse dataset that captures "ambiguity of real-world language use".
 
-In addition, enabling LLMs to direct complex software also requires curating datasets that capture the diversity and ambiguity of real-world language use, as well as developing automated techniques to reliably evaluate model performance at scale. See [Can large language models be an alternative to human evaluations?](Can%20large%20language%20models%20be%20an%20alternative%20to%20human%20evaluations?)
+In addition, enabling LLMs to direct complex software also requires curating datasets that capture the diversity and ambiguity of real-world language use, as well as developing automated techniques to reliably evaluate model performance at scale. See Can large language models be an alternative to human evaluations?
 
 The spreadsheet is a "robust application platform" and therefore a good candidate for investigation of control via natural language.
 
 They propose a general framework for enabling application control via LLM, and an agent they call [SheetCopilot Agent](../../permanent/sheetcopilot-agent.md).
 
-![papers-sheet-copilot-fig-1.png](../../../../_media/papers-sheet-copilot-fig-1.png)
+![papers-sheet-copilot-fig-1.png](../../_media/papers-sheet-copilot-fig-1.png)
 *Figure 1. from SheetCopilot*
 
 As we can see, SheetCopilot understands spreadsheet editing commands in natural language.
@@ -96,50 +96,50 @@ They present three primary contributions to the goal of achieving sophisticated 
 ### Tool-augmented Large Language Models 
 
 Paper that explored the internalised knowledge of LLMs:
-* [On the opportunities and risks of foundation models](On%20the%20opportunities%20and%20risks%20of%20foundation%20models)
+* On the opportunities and risks of foundation models
     
 Papers utilising prompt engineering to create steps for household robotic tasks:
-* 14: [Language models as zeroshot planners: Extracting actionable knowledge for embodied agents](Language%20models%20as%20zeroshot%20planners:%20Extracting%20actionable%20knowledge%20for%20embodied%20agents)
-* 3: [Do as i can, not as i say: Grounding language in robotic affordances.](Do%20as%20i%20can,%20not%20as%20i%20say:%20Grounding%20language%20in%20robotic%20affordances.)
-* 16: [Inner monologue: Embodied reasoning through planning with language models](Inner%20monologue:%20Embodied%20reasoning%20through%20planning%20with%20language%20models)
-* 15: [ Grounded decoding: Guiding text generation with grounded models for robot control](%20Grounded%20decoding:%20Guiding%20text%20generation%20with%20grounded%20models%20for%20robot%20control)
-* 8: [Palm-e: An embodied multimodal language model](Palm-e:%20An%20embodied%20multimodal%20language%20model)
+* 14: Language models as zeroshot planners: Extracting actionable knowledge for embodied agents
+* 3: Do as i can, not as i say: Grounding language in robotic affordances.
+* 16: Inner monologue: Embodied reasoning through planning with language models
+* 15: Grounded decoding: Guiding text generation with grounded models for robot control
+* 8: Palm-e: An embodied multimodal language model
 
 These papers have used *auxiliary* models to "ground LLMs in real world":
-* 3:  [Do as i can, not as i say: Grounding language in robotic affordances](Do%20as%20i%20can,%20not%20as%20i%20say:%20Grounding%20language%20in%20robotic%20affordances)
-* 16: [Embodied reasoning through planning with language models](Embodied%20reasoning%20through%20planning%20with%20language%20models)
-* 15: [Grounded decoding: Guiding text generation with grounded models for robot control](Grounded%20decoding:%20Guiding%20text%20generation%20with%20grounded%20models%20for%20robot%20control)
+* 3:  Do as i can, not as i say: Grounding language in robotic affordances
+* 16: Embodied reasoning through planning with language models
+* 15: Grounded decoding: Guiding text generation with grounded models for robot control
 
 Trained LLMs via mixing visual-language data and embodied data:
-* [Palm-e: An embodied multimodal language model](Palm-e:%20An%20embodied%20multimodal%20language%20model)
+* Palm-e: An embodied multimodal language model
 
-Another promising direction is to connect LLMs with external tools ([Toolformer: Language models can teach themselves to use tools](Toolformer:%20Language%20models%20can%20teach%20themselves%20to%20use%20tools))
-- such as a web browser: [Webgpt: Browser-assisted question-answering with human feedback](Webgpt:%20Browser-assisted%20question-answering%20with%20human%20feedback)
-- HuggingFace model hub: [Solving ai tasks with chatgpt and its friends in huggingface](Solving%20ai%20tasks%20with%20chatgpt%20and%20its%20friends%20in%20huggingface)
-- chemical software: [Chemcrow: Augmenting large-language models with chemistry tools](Chemcrow:%20Augmenting%20large-language%20models%20with%20chemistry%20tools)
-- PowerPoint: [Taskmatrix. ai: Completing tasks by connecting foundation models with millions of apis](Taskmatrix.%20ai:%20Completing%20tasks%20by%20connecting%20foundation%20models%20with%20millions%20of%20apis) 
+Another promising direction is to connect LLMs with external tools (Toolformer: Language models can teach themselves to use tools)
+- such as a web browser: Webgpt: Browser-assisted question-answering with human feedback
+- HuggingFace model hub: Solving ai tasks with chatgpt and its friends in huggingface
+- chemical software: Chemcrow: Augmenting large-language models with chemistry tools
+- PowerPoint: Taskmatrix. ai: Completing tasks by connecting foundation models with millions of apis 
 * even a tool library:
-    * [Art: Automatic multi-step reasoning and tool-use for large language models](Art:%20Automatic%20multi-step%20reasoning%20and%20tool-use%20for%20large%20language%20models)
+    * Art: Automatic multi-step reasoning and tool-use for large language models
 
-All these papers use LLMs to generate [Action Sequences](Action%20Sequences) which are then parsed into API calls of tools.
+All these papers use LLMs to generate Action Sequences which are then parsed into API calls of tools.
 
 This paper is targeted at spreadsheet manipulation - a common demand.
 
 ### Natural Language Processing (NLP) for Spreadsheets
 
 Studies that have investigated the feasibility of using NLP methods to guide the manipulation of Excel sheets:
-* 12: [Interactive programming by natural language for spreadsheet data analysis and manipulation](Interactive%20programming%20by%20natural%20language%20for%20spreadsheet%20data%20analysis%20and%20manipulation)
-* 11: [Automating string processing in spreadsheets using input-output examples](Automating%20string%20processing%20in%20spreadsheets%20using%20input-output%20examples)
-* 28: [Fidex: Filtering spreadsheet data using examples](Fidex:%20Filtering%20spreadsheet%20data%20using%20examples)
-* 6: [Spreadsheetcoder: Formula prediction from semi-structured context.](Spreadsheetcoder:%20Formula%20prediction%20from%20semi-structured%20context.)
-* 17: [Flame: A small language model for spreadsheet formulas](Flame:%20A%20small%20language%20model%20for%20spreadsheet%20formulas)
+* 12: Interactive programming by natural language for spreadsheet data analysis and manipulation
+* 11: Automating string processing in spreadsheets using input-output examples
+* 28: Fidex: Filtering spreadsheet data using examples
+* 6: Spreadsheetcoder: Formula prediction from semi-structured context.
+* 17: Flame: A small language model for spreadsheet formulas
 
-Early work was [Flash Fill](Flash%20Fill): which automates string processing tasks using program synthesis by example.
+Early work was Flash Fill: which automates string processing tasks using program synthesis by example.
 
-NLyze [12]: [Nlyze: Interactive programming by natural language for spreadsheet data analysis and manipulation](Nlyze:%20Interactive%20programming%20by%20natural%20language%20for%20spreadsheet%20data%20analysis%20and%20manipulation)
+NLyze [12]: Nlyze: Interactive programming by natural language for spreadsheet data analysis and manipulation
 - utilizes a translation algorithm to convert a user’s natural language instruction to a ranked set of likely programs.
 
-Inspired by the success of [Codex Cheatsheet](Codex) and [AlphaCode](AlphaCode), one recent study: [Flame: A small language model for spreadsheet formulas](Flame:%20A%20small%20language%20model%20for%20spreadsheet%20formulas) focused on generating formulas given textual descriptions.
+Inspired by the success of Codex and AlphaCode, one recent study: Flame: A small language model for spreadsheet formulas focused on generating formulas given textual descriptions.
 
 They compared the performance of several state-of-the-art LLMs:
 - GPT-3
@@ -151,9 +151,9 @@ In this paper, we aim to address this gap by benchmarking the capability of LLMs
 ## 3. Dataset and Evaluation
 
 Early research focused on limited subsets of tasks like formula generation and lacked comprehensive, standardised means of evaluation.
-* 12: [Nlyze: Interactive programming by natural language for spreadsheet data analysis and manipulation](Nlyze:%20Interactive%20programming%20by%20natural%20language%20for%20spreadsheet%20data%20analysis%20and%20manipulation)
-* 6: [Spreadsheetcoder: Formula prediction from semi-structured context.](Spreadsheetcoder:%20Formula%20prediction%20from%20semi-structured%20context.)
-* 17: [Flame: A small language model for spreadsheet formulas](Flame:%20A%20small%20language%20model%20for%20spreadsheet%20formulas)
+* 12: Nlyze: Interactive programming by natural language for spreadsheet data analysis and manipulation
+* 6: Spreadsheetcoder: Formula prediction from semi-structured context.
+* 17: Flame: A small language model for spreadsheet formulas
     
 They made a high-quality evaluation benchmark as a foundation for assessing the spreadsheet control capabilities of LLM-based agents.
 
@@ -205,7 +205,7 @@ These sheets represent common uses such as analysing sales data, calculating fin
 
 The seed tasks cannot be directly used since their original sheets differ from the evaluation sheets. We propose collecting a core dataset by adapting and simplifying the seed tasks to bridge this gap.
 
-Adaptation. Inspired by [Self-Instruct: Aligning Language Models with Self-Generated Instructions](../../../../permanent/self-instruct-aligning-language-models-with-self-generated-instructions.md), we prompt an LLM to adapt the seed tasks according to the detailed descriptions of the evaluation sheets.
+Adaptation. Inspired by [Self-Instruct: Aligning Language Models with Self-Generated Instructions](../../permanent/self-instruct-aligning-language-models-with-self-generated-instructions.md), we prompt an LLM to adapt the seed tasks according to the detailed descriptions of the evaluation sheets.
 
 Specifically, GPT-4 is prompted to change the manipulated elements in the seed tasks to generate new tasks compatible with the evaluation sheets.
 
@@ -237,14 +237,14 @@ To assess an LLM-generated solution, we evaluate the consistency of the necessar
 
 Inputs spreadsheets and user tasks as plain English, and generates a plan to modify the spreadsheet.
 
-Example of [In-Context Learning](../../permanent/in-context-learning.md), aka solve the problem through [Prompt Engineering](../../../../permanent/prompt-engineering.md).
+Example of [In-Context Learning](../../permanent/in-context-learning.md), aka solve the problem through [Prompt Engineering](../../permanent/prompt-engineering.md).
 
 The core concepts:
 
-- 1. [Atomic Actions](Atomic%20Atoms)
+- 1. [Atomic Actions](../../permanent/atomic-actions.md)
     - abstraction of spreadsheet software functionalities.
     - set of virtual APIs representing common spreadsheet functions.
-- 2. [State Machine-Based Task Planner](State%20Machine-Based%20Task%20Planner)
+- 2. State Machine-Based Task Planner
     - handles "multi-turn interaction between the language models and the spreadsheets"
 
 Combined they allow them to control spreadsheets with natural language.
@@ -252,7 +252,7 @@ Combined they allow them to control spreadsheets with natural language.
 
 #### Prompt Template
 
-Start with **General role description**. Here, the [Role (Prompt Engineering)](../../../../permanent/role-prompt-engineering.md) serve as an anchor for enabling language models to understand the context. 
+Start with **General role description**. Here, the [Role (Prompt Engineering)](../../permanent/role-prompt-engineering.md) serve as an anchor for enabling language models to understand the context. 
 
 ```text
 You are a spreadsheet agent who can find proper action APIs from the API document based on language instructions.
@@ -269,7 +269,7 @@ AutoFill # Args: (source: str, desctination: str) Usage: Auto fill the desctinat
 ...
 ```
 
-Set of [Output Requirements](Output%20Requirements)
+Set of Output Requirements
 
 Show the format required.
 
@@ -341,7 +341,7 @@ On the code LMs side, the existing training corpus [10, 13, 5] for code LMs hard
 
 Therefore, we advocate a more software-agnostic approach that does not rely on embedded programming language support.
 
-### [State Machine-based Task Planning](State%20Machine-based%20Task%20Planning)
+### State Machine-based Task Planning
 
 Complicated enough spreadsheet tasks need > 10 steps.
 
@@ -354,17 +354,17 @@ Complicated enough spreadsheet tasks need > 10 steps.
         * Each step changes the sheet state.
             * Correct step $T + 1$ relies on perfectly understanding how the sheet state changes after the previous T steps.
 * Alternative?
-    * Propose a [State Machine-Based Task Planner](State%20Machine-Based%20Task%20Planner) which revises the plan according to feedback from either LMs or software.
+    * Propose a State Machine-Based Task Planner which revises the plan according to feedback from either LMs or software.
     * Example of [Closed-loop Planning](../../permanent/closed-loop-planning.md)
         
 * Our planner is divided into 4 stages: observing, proposing, revising and acting stages:
-    * [Observing Stage](Observing%20Stage)
+    * Observing Stage
         * In this stage, they add a description of the sheet state to the query, including:
             * name of each column
             * total number of rows
                 * this allows LMs to determine atomic action arguments..
         * This allows LMs to generate solutions in a closed-loop manner by observing the previous actions’ consequences without implicitly modeling sheet states.
-    * [Proposing Stage](Proposing%20Stage)
+    * Proposing Stage
         * Concatenate:
             * system prompt P
             * initial task instruction I
@@ -381,7 +381,7 @@ Complicated enough spreadsheet tasks need > 10 steps.
                     * try again.
                 * incorrectly determining action parameters.
                     * in this case, include the docs.
-    * [Revising Stage](Revising%20Stage)
+    * Revising Stage
         * Two ways are adopted to revise a proposed atomic action:
             * feedback-based one and a retrieval-based one
         * Feedback-based
@@ -393,19 +393,19 @@ Complicated enough spreadsheet tasks need > 10 steps.
                     * if the LM uses an atomic action with wrong arguments, a detailed document containing the argument descriptions and usage examples of this action is provided in the new prompt to enhance the probability of the LM correctly determining the atomic action arguments. This process resembles how a human programmer behaves when encountering less familiar APIs.
         * Special case:
             * A special case in the revision stage is that after being supplied with more information about the initially proposed atomic action, the LM suddenly finds that it has chosen a wrong action and decides to return to the revising stage.
-    * [Acting Stage](Acting%20Stage)
+    * Acting Stage
         * After the proposing and revising stages, the atomic action $A_t+1$ is submitted to the spreadsheet software for execution: $S_{t + 1} = \text{SpreadSheetEnv}(A_{t+1}, S_{t})$
         * We update the planning history $H_t$ if the execution succeeds: $H_{t+1} = H_t \cup {A_t+1, S_t+1}$.
         * If the software reports a run-time error, the state machine will return to the proposing stage to prompt
 
 ### Hallucination Mitigation
 
-* [Output Formatting Checks](Output%20Formatting%20Checks)
+* Output Formatting Checks
     * The underlying functions of atomic actions require precisely formatted planning results. 
     * However, we found that LLMs probably generate semantically correct yet inadmissible action plans as shown in Fig. 1.
     * They wrap actions with special tokens (e.g. `@`) and detect the tokens in the output to check whether the output is correctly formatted.
     * Therefore, we require LMs to wrap actions with special tokens (e.g. @) and detect the tokens in the output to check whether the output is correctly formatted.
-* [Atomic Action Disambiguation](Atomic%20Action%20Disambiguation)
+* Atomic Action Disambiguation
     * The internalized knowledge in LMs is likely to be confused with the atomic action definitions in the document.
     * Due to this conflict, LMs are prone to self-delusion, which means that it hallucinates undefined actions or adds illegal action arguments [23, 14].
     * To tackle this problem, the atomic action names are substituted with a set of synonyms that are far away from the official names in an embedding space. For instance, Write and SetConditionalFormat are substituted with RangeInputValue and FormatWithRules, respectively (See the details in the appendix).

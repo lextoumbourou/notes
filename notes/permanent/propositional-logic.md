@@ -41,7 +41,7 @@ An operator that negates a proposition.
 * $p$ = I will pass my exam.
 * $\neg \ p$ = I will NOT pass my exam.
 
-In [Boolean Algebra](Boolean%20Algebra), it's equivalent to $1 - T(p)$
+In [Boolean Algebra](boolean-algebra.md), it's equivalent to $1 - T(p)$
 
 Truth table
 

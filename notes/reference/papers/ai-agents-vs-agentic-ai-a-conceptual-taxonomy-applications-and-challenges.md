@@ -2,14 +2,14 @@
 title: "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges"
 date: 2025-05-24 00:00
 category: paper
-modified: 2025-05-24 00:00
+modified: 2026-09-26 08:55
 status: draft
 paper_title: "AI Agents vs. Agentic AI: A Conceptual Taxonomy, Applications and Challenges"
 paper_url: https://arxiv.org/abs/2505.10468v3
 paper_authors: Ranjan Sapkota, Konstantinos I. Roumeliotis, Manoj Karkee
 ---
 
-This paper provides a comprehensive literature review to distinguish between [AI Agents](../../permanent/ai-agents.md) and [Agentic AI](Agentic%20AI.md). It highlights different examples of each to help illustrate the differences. Since my writing is very taxonomy-focused, I appreciate these papers, which help clarify and understand topics.
+This paper provides a comprehensive literature review to distinguish between [AI Agents](../../permanent/ai-agents.md) and [Agentic AI](../../permanent/agentic-ai.md). It highlights different examples of each to help illustrate the differences. Since my writing is very taxonomy-focused, I appreciate these papers, which help clarify and understand topics.
 
 ## [AI Agents](../../permanent/ai-agents.md)
 
@@ -17,10 +17,10 @@ AI Agents are systems designed for narrow task-specific automation. Nowadays, th
 
 Uses like email filtering, enterprise search, scheduling assistants.
 
-## [Agentic AI](Agentic%20AI)
+## [Agentic AI](../../permanent/agentic-ai.md)
 
 Which I guess is what people usually mean by [Agentic Reasoning](../../permanent/agentic-reasoning.md). It's about collections of AI Agents working together to achieve much more complete tasks, which includes coordinating agents' communication, planning, breaking tasks into sub-tasks, and dynamic allocation.
 
-## [Generative AI](Generative%20AI.md)
+## Generative AI
 
 Generative AI is a foundational precursor to both AI Agents and Agentic AI. While generative models (primarily LLMs and LIMs) can produce novel content, they are fundamentally reactive and lack the autonomy, goal pursuit, or tool-use capabilities inherent in AI Agents. They need to be prompted.

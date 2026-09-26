@@ -56,4 +56,4 @@ status: draft
 
 # Problem Set 4: Fuzzer
 
-* Adding random bytes to an MP3 to try to break ``afplayer``: [fuzzer.py](fuzzer.py)
+* Adding random bytes to an MP3 to try to break ``afplayer``: fuzzer.py

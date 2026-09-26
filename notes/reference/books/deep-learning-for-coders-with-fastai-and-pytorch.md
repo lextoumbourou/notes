@@ -1,8 +1,10 @@
 ---
 title: "Deep Learning for Coders with Fastai and Pytorch: AI Applications Without a PhD"
 date: 2021-05-30 00:00
+modified: 2026-09-26 08:55
 status: draft
 ---
+
 
 ## Chapter 1. Your Deep Learning Journey
 
@@ -101,13 +103,13 @@ status: draft
         * In PyTorch, the `nll_loss` function doesn't take the log. It expects it to be already taken.
     * Consider gradient of `cross_entropy(a, b)` is `softmax(a)-b`
     * When `softmax(a)` is final activation, gradient is the same as diff between prediction and target
-        * So it's the same a [Root mean-squared error - L2 Loss](../../permanent/Root mean-squared error - L2 Loss.md) in regression.
+        * So it's the same a [Root Mean-Squared Error](../../permanent/root-mean-squared-error.md) in regression.
         * Because gradient is linear, don't see sudden jumps or exponential increases in gradients
 * Model Interpretation
     * [Confusion Matrix](../../permanent/confusion-matrix.md) (pg. 232)
     * `most_confused` method for showing the items with highest loss (pg. 232-233)
 * Improving the model
-    * [Learning Rate Finder](Learning Rate Finder) (pg. 233-236)
+    * Learning Rate Finder (pg. 233-236)
         * Created by researcher Leslie Smith in 2015
         * Steps:
             * Train a model starting with a very small learning rate
@@ -116,13 +118,13 @@ status: draft
             * When it doesn't get better, select learning rate order of magnitude less than min
     * Unfreezing and Transfer Learning (pg. 236-239)
         * CNN is many linear layers with non-linear activation function in between.
-        * At the end is a last linear layer with a final activation like the [Softmax Activation Function](../../permanent/Softmax Activation Function.md).
+        * At the end is a last linear layer with a final activation like the [Softmax Activation Function](../../permanent/softmax-activation-function.md).
         * In transfer learning, we start by replacing the last layer with one that has correct number of outputs for task.
         * Since we don't want to lose the learned weights in the earlier layers, we start by freezing those layers to just train the last layer.
     * Discriminative Learning Rates (pg. 239-241)
         * Earlier layers should in theory need less training, since they've learned abstract concepts like edge and gradients.
         * Set different (lower) learning rates for earlier layers.
-        * In fastai, you can pass a [Python slice object](Python slice object) anywhere that accepts a single learning rate.
+        * In fastai, you can pass a Python slice object anywhere that accepts a single learning rate.
         * First value of slice is learning rate at start and last is final layer.
             * Layers in between have values that are evenly distanced between the 2 learning rates.
     * Selecting number of epochs (pg. 241-242)
@@ -133,12 +135,12 @@ status: draft
             * Architectures like Resnet have small number of common varients: `18`, `34`, `50`, `101` simply because these happen to be the numbers that have pretrained models available.
         * Deeper architectures require more memory and therefore smaller batch sizes.
         * Bigger models aren't always better: start small and scale up.
-        * Can use [mixed precision training](mixed precision training) to reduce memory size.
+        * Can use mixed precision training to reduce memory size.
             * Use less-precise numbers (half-precision floating point, also called fp16) where possible during training.
 
 ## Chapter 6. Other Computer Vision Problems
 
-* [Multi-label Classification](Multi-label Classification) *(pg. 248-249)*
+* Multi-label Classification *(pg. 248-249)*
     * Use when you dataset can include a number of true labels (or even none).
     * Can also be useful when you expect to see images that have none of your target classes.
         * A commonly reported problem with a simple solution that isn't widely applied.

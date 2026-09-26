@@ -4,7 +4,7 @@ date: 2022-03-01 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## 9.201 Equivalence relations and equivalence classes
@@ -27,7 +27,7 @@ modified: 2023-04-08 00:00
             * Transitive as if $a \ R \ b$ and $b \ R \ c$ then $a \ R \ c$, $\forall a, b, c \in Z$
             * Not symmetric as $2 \leq 3$ but $3 \not \lt 2, \forall a, b \in Z$
         * This is not equivalence.
-* Definition of [Equivalence Class](permanent/equivalence-class.md)
+* Definition of Equivalence Class
     * Let R be an equivalence relation on a set S. Then, the equivalence class of a \in S is:
         * a subset of S containing all the elements related to a through R.
         * $|a| = \{x: x \in S \text { and } x \ R \ a\}$
@@ -47,7 +47,7 @@ modified: 2023-04-08 00:00
 
 ### 9.203 Partial and total order
 
-* Definition of a [Partial Order](permanent/partial-order.md).
+* Definition of a [Partial Order](../../../../permanent/partial-order.md).
     * Let $R$ be a relation on elements in set $S$. $R$ is a partial order if and only if $R$ is:
         * reflexive
         * anti-symmetric
@@ -68,7 +68,7 @@ modified: 2023-04-08 00:00
             * transitive as if $a \text{ divides } b$ and $b \text{ divides } c$ then $a \text{ divides } c$, $\forall a, b ,c \in Z+$
             * anti-symmetric as if $a \text{ divides } b$ and $b \text{ divides } a$ then $a = b$, $\forall a, b \in Z+$
         * Therefore, R is a partial order.
-* Definition of a [Total Order](permanent/total-order.md)
+* Definition of a [Total Order](../../../../permanent/total-order.md)
     * Let R be a relation on elements in a set S.
     * R is a total order if and only if:
         * R is a partial order
@@ -343,7 +343,7 @@ X is related to Y whenever $X \subseteq Y$
 
 1. Draw the relationship digraph.
 
-![week-18-problem-sheet-relationship-bigraph](../../../../journal/_media/week-18-problem-sheet-relationship-bigraph.png)
+![week-18-problem-sheet-relationship-bigraph](../../../../_media/week-18-problem-sheet-relationship-bigraph.png)
 
 2. Determine whether or not $R$ is reflexive, symmetric, antisymmetric or transitive. Give a brief justification for each of your answers.
 
@@ -370,7 +370,7 @@ $x$ is related to $y$ whenever $(x, y) \in A$
 
 1. Draw the relationship digraph
 
-![week-18-problem-sheet-q9-digraph](../../../../journal/_media/week-18-problem-sheet-q9-digraph.png)
+![week-18-problem-sheet-q9-digraph](../../../../_media/week-18-problem-sheet-q9-digraph.png)
 
 2. Determine whether or not $R$ is reflexive, symmetric, antisymmetric or transitive. Give brief justification of each answer.
 

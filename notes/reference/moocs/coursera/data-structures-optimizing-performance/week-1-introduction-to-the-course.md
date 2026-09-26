@@ -6,11 +6,11 @@ status: draft
 parent: data-structures-optimizing-performance
 ---
 
-* [Flesch Reading Ease](../../../../../../permanent/flesch-reading-ease.md)
+* [Flesch Reading Ease](../../../../permanent/flesch-reading-ease.md)
     * Score is a measure of text readability
         * Formula: `206.835 - 1.015 * (# words / # sentences) - 84.6 * (# syllables / # words)`
         
-* [Interned Strings](../../../../../../permanent/interned-strings.md)
+* [Interned Strings](../../../../permanent/interned-strings.md)
     * Allow the language to treat 2 duplicate strings as the same object in memory.
 
 ```java

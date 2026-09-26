@@ -4,7 +4,7 @@ date: 2022-01-28 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## 8.201 Rooted trees
@@ -55,7 +55,7 @@ modified: 2023-04-08 00:00
 
             ![week-16-max-nodes-per-level](../../../../_media/week-16-max-nodes-per-level.png)
 
-* [Isomorphic Trees](permanent/isomorphic-trees.md)
+* [Isomorphism](../../../../permanent/graph-isomorphism.md)
     * 2 trees $T_1$ and $T_2$ are isomorphic if there is a bijection: $f: V(T_1) \rightarrow V(T_2)$ which preserves adjacency and non-adjacency.
     * That is, if uv is an edge in $E(T_1)$ and $f(u)f(v)$ is in $E(T_2)$
     * Notation

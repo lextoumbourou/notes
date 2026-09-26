@@ -1,6 +1,7 @@
 ---
 title: The Bits and Bytes of Computer Networking
 date: 2023-03-25 00:00
+modified: 2026-09-26 10:00
 category: reference/moocs
 slug: computer-networking
 summary: "Notes from [The Bits and Bytes of Computer Networking](https://www.coursera.org/learn/computer-networking)"
@@ -13,27 +14,27 @@ At the time of taking the course, I had previously learned all the concepts, how
 
 ## Week 1
 
-* [TCP/IP](tcp-ip)
+* [TCP/IP](../../../../permanent/tcp-ip.md)
     * Transmission Control Protocol
     * Internet Protocol
-* [[NAT]]
+* [NAT](../../../../permanent/network-address-translation.md)
     * Network Address Translation.
-* [TCP/IP Five-Layer Network Model](../../../../../../permanent/tcp-ip-5-layer-network-model.md)
-    * [Physical Layer](../../../../../../permanent/physical-layer.md)
+* [TCP/IP Five-Layer Network Model](../../../../permanent/tcp-ip-5-layer-network-model.md)
+    * [Physical Layer](../../../../permanent/physical-layer.md)
         * Physical devices like network cables, ports, cards etc
         * Includes specifications for the network cables.
-    * [Link Layer](../../../../../../permanent/data-link-layer.md)
+    * [Link Layer](../../../../permanent/data-link-layer.md)
         * Ethernet / Wi-Fi
         * Defines a common way of interpretting signals from physical so network devices can communicate.
         * Switches live here.
-    * [Network Layer](../../../../../../permanent/network-layer.md)
+    * [Network Layer](../../../../permanent/network-layer.md)
         * IP
         * Aka the internet layer.
         * Routers
-    * [Transport Layer](../../../../../../permanent/transport-layer.md)
+    * [Transport Layer](../../../../permanent/transport-layer.md)
         * TCP/UDP
         * Figures out which client or server programs should get the data.
-    * [Application Layer](../../../../../../permanent/application-layer.md)
+    * [Application Layer](../../../../permanent/application-layer.md)
         * HTTP / SMTP etc
 * Internetwork
     * A collection of networks.
@@ -44,15 +45,17 @@ At the time of taking the course, I had previously learned all the concepts, how
 
 ## Week 2
 
-* [[Subnetting]]
+* [Subnetting](../../../../permanent/subnetting.md)
     * Address classes let us break total space of global IP addresses into smaller subnetworks.
     * The individual subnets have own gateway router's serving as ingress and egreess point.
-* [[Subnet Masks]]
+* Subnet Masks
     * 32-bit numbers written out as four octets in decimal.
     * Without subnets, we could use some of those four bytes of ip to identify the network, and the others to identify the host.
     * Subnetting let's use kinda break it down even further:
-      ![[it-support-subnet-example.png]]
-    * Introduce a [[Subnet Id]]
+      ![The IP address 10.0.1.10 split into a network ID (10.0), a subnet ID (1) and a host ID (10).](../../../../_media/it-support-subnet-example.png)
+
+      *Source: [The Bits and Bytes of Computer Networking](https://www.coursera.org/learn/computer-networking) by Google on Coursera.*
+    * Introduce a Subnet Id
         * Some of the bits can represent the subnet id.
     * At internet level, core routers only care about the network id.
         * They use it to send the datagram across to other gateway router for the network.
@@ -69,7 +72,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Submask in binary: 11111111 11111111 11111111 11100000
         * That leaves us with 5 0s for host ids and 27 for the network (32 all up)
         * Another way to write the subnet is: 9.100.100.100/27
-* [[Basic Binary Math]]
+* Basic Binary Math
     * Normal numbering system is base 10.
     * Binary is considered base 2.
     * To find number of representations you can fit in an N-bit binary number: 8-bit = 2^8 = 256
@@ -100,7 +103,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * =
         * 00001001 . 0110 0100 . 01100100 . 0000 0000
         * Result: 9.100.100.0
-* [[CIDR]]
+* [CIDR](../../../../permanent/cidr.md)
     * **Classless** Inter-Domain Routing
         * In other words, removes the Class A/B/C system.
     * As internet grew, traditional subnetting couldn't keep up.
@@ -116,7 +119,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Also the netmask: 255.255.255.0
     * Allows for arbitrary network sizes, can use /23 or /22.
 * Routing
-    * [[Router]]
+    * Router
         * Network device that forwards traffic depending on destination address.
         * Basic routing:
             * 1. Receive data packet.
@@ -128,28 +131,28 @@ At the time of taking the course, I had previously learned all the concepts, how
             * Then creates a new data-link header with a new checksum value for the datagram.
                 * Decrements the TTL field (TTL is usually 64).
             * Then sends to the destination mac address.
-    * [[Routing Tables]]
+    * Routing Tables
         * Most basic routing table would have 4 columns:
             * Destination network - definition of network (one column if CIDR notation).
             * Next hop - where to forward traffic for this network.
             * Total hops - how many hops to get to the network.
             * Interface - which interface on the device to use.
-    * [[Interior Gateway Protocols]]
-        * [[Routing Protocols]]
+    * Interior Gateway Protocols
+        * Routing Protocols
             * Protocols routers use to share information with other routers.
             * Fall into 2 main categories:
                 * Interior Gateway Protocols
                 * Exterior Gateway Protocols
-            * [[Interior Gateway Protocols]]
-                * Used by routers to share info within a single [[Autonomous System]]
+            * Interior Gateway Protocols
+                * Used by routers to share info within a single Autonomous System
                     * Autonomous System: a collection of networks under the control of a single network operator.
                         * Ie a single corporation with multiple offices with their own LANs.
                 * Interior can be split into 2 further categories:
-                    * [[Distance-vector protocols]]
+                    * Distance-vector protocols
                         * An older standard.
                         * Has a routing table which includes every network known to it and how far away they are.
                         * Routers can send contents of their routing tables to each other, to share information about distance to nodes.
-                    * [[Link state routing protocols]]
+                    * Link state routing protocols
                         * Each routers shares info about the state of their interfaces:
                             * Interfaces can be direct connections to other routers or networks.
                         * Info about each router is propagated to every other router on autonomous system.
@@ -157,14 +160,14 @@ At the time of taking the course, I had previously learned all the concepts, how
                             * So each router can be decisions about the best path to each network.
                             * Requires more memory and compute to operate.
     * Exterior Gateways, Autonomous Systems and the IANA
-        * Routers use [[Exterior Gateway Protocols]] when they need to share info across orgs.
+        * Routers use Exterior Gateway Protocols when they need to share info across orgs.
         * The IANA or the Internet Assigned Numbers Authority is a nonprofit organization that helps manage things like IP address allocation
         * Along with managing IP address allocation, the IANA is also responsible for ASN or Autonomous System Number allocation
-        * [[ASN]]
+        * ASN
             * A number assigned to individual autonomous systems.
             * Like IPs, they're 32 bit numbers, but they are referred to as a a single decimal number, not split into readable bits.
             * For example, AS19604 is the ASN assigned to IBM.
-        * Their is only one exterior gateway protocol in use today: [[Border Gateway Protocol]]
+        * Their is only one exterior gateway protocol in use today: Border Gateway Protocol
     * Non-Routable Address Space
         * IP is a single 32-bit number.
         * Single 32-bit number can represent 4,294,967,295 unique numbers.
@@ -180,16 +183,16 @@ At the time of taking the course, I had previously learned all the concepts, how
 
 ### The Transport Layer
 
-* [[../../../../../../permanent/transport-layer|Transport Layer]]
+* [Transport Layer](../../../../permanent/transport-layer.md)
     * Responsibilities:
         * Multiplexing and demultiplexing.
         * Establishing long running connections.
         * Data integrity through error checking and data verification.
-    * [[Multiplexing]]
+    * Multiplexing
         * Nodes on a network can deliver traffic toward many receiving services.
-    * [[Demultiplexing]]
+    * Demultiplexing
         * Taking traffic aimed at the same node and delivering to proper receiving service.
-    * [[Port]]
+    * Port
         * 16-bit number used to direct traffic to specific services on a networked device.
         * Ports allow a single server to host many networked applications.
         * Common ports:
@@ -223,27 +226,27 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Datagram encapsulates a TCP segment in payload section.
 * TCP Control Flags and the Three-Way Handshake
     * TCP uses control flags to establish connections.
-        * [[URG]]
+        * URG
             * Urgent.
             * 1 = segment is considered urgent and urgent fieldh as more info.
-        * [[ACK]]
+        * ACK
             * Acknowledged.
             * 1 = means that acknowledgement number should be examined.
-        * [[PSH]]
+        * PSH
             * Push
             * 1 = transmitting device wants receiving device to push buffered data to application receiving end.
                 * buffer means that certain data is held somewhere before being sent somewhere else.
-        * [[RST]]
+        * RST
             * Reset.
             * One of sides in connection hasn't recovered correctly and needs to start from scratch.
-        * [[SYN]]
+        * SYN
             * Synchronise.
             * used when first establishing TCP connection
                 * makes sure receiving end knows to examine sequence number field
-        * [[FIN]]
+        * FIN
             * Finish
             * When 1, transmitting computer has no more data to send.
-* [[Three-Way Handshake]]
+* Three-Way Handshake
     * Computer A send TCP segment to Computer B with a SYN flag sent to establish connection.
     * Computer B responds with a TCP segment where both SYN and ACK are sent to acknowledge.
     * Computer A send ACK flag, which is an acknowledgement. Then starts sending data.
@@ -276,14 +279,14 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Sequence numbers allows for resending parts of data.
         * But this is a lot of overhead.
     * Connectionless
-        * Most common is [[UDP]]
+        * Most common is [UDP](../../../../permanent/user-datagram-protocol.md)
         * Common use case is video streaming: if you lose a few frames, it's not the end of the world.
 * Categories of ports:
-    * [[System Ports]]
+    * System Ports
         * 1 - 1023. Common apps like FTP, Telnet
-    * [[User ports]]
+    * User ports
         * 1024 - 49151
-    * [[Ephemeral Ports]]
+    * Ephemeral Ports
         * 49152 - 55536
         * Temporary ports for transfer.
 * Firewalls
@@ -294,7 +297,7 @@ At the time of taking the course, I had previously learned all the concepts, how
 ### The Application Layer
 
 * The payload section is the data that the applications are actually trying to send.
-* [[../../../../../../permanent/osi-model|OSI Model]]
+* [OSI Model](../../../../permanent/osi-model.md)
     * A 7 layer networking model.
         * Application
         * Presentation
@@ -319,7 +322,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Root name servers
             * 13 total.
             * They direct queries to appropriate TLD name server.
-            * Distributed across the globe using [[AnyCast]].
+            * Distributed across the globe using AnyCast.
             * Not actual servers, more services.
         * TLD name servers
             * Last past or any domain name (.com part of url)
@@ -330,9 +333,9 @@ At the time of taking the course, I had previously learned all the concepts, how
         * How long name server should cache entry before discarding it.
         * Used to be really long - 1 day - due to having limited bandwidth.
         * Shorter now.
-* [[AnyCast]]
+* AnyCast
     * A technique used to route traffic to different destinations based on factors like location, congestion or link health
-* [[DNS and UDP]]
+* DNS and UDP
     * DNS uses UDP instead of TCP.
     * Why?
         * A single response can fit inside a single UDP protocol.
@@ -367,7 +370,7 @@ At the time of taking the course, I had previously learned all the concepts, how
     * FQDN - fully-qualified domain name (the entire domain).
         * Max characters is 255.
     * Registrar
-        * Company that has an agreement with [[ICANN]] to sell domain names.
+        * Company that has an agreement with ICANN to sell domain names.
 * DNS Zones
     * Hierarchical concept.
     * Each authoritative name server is responsible for their zone.
@@ -384,7 +387,7 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Fixed allocation
         * A manual list of MACs to IPs.
 * DHCP in action
-    * [[DHCP Discovery]]
+    * DHCP Discovery
         * Four step process:
             * 1. DHCPDISCOVER
                 * DHCP client sends a DHCP discover message.
@@ -402,23 +405,23 @@ At the time of taking the course, I had previously learned all the concepts, how
                 * Client confirms that it wants the IP from the server.
             * 4. DHCPACK
                 * DHCP server confirms network configuration.
-    * Configuration is called [[DHCP Lease]].
+    * Configuration is called DHCP Lease.
         * When lease expires, client needs to request another configuration.
         * Also happens when client disconnects.
-* [[Network Address Translation]]
+* [Network Address Translation](../../../../permanent/network-address-translation.md)
     * No specific standards, vendors implement them differently.
-    * [[IP Masquerading]]
+    * IP Masquerading
         * Router rewrites IP address field when passing through internal network, masking the true IP.
 * NAT and the Transport Layer
     * When considering return traffic, one way that a
     * With one-to-many NAT, we've talked about how hundreds, even thousands of computers can all have their outbound traffic translated via NAT to a single IP.
     * NAT rewrites the IPs of internal nodes to a single IP.
     * But how does it deal with return traffic to the IPs?
-        * [[Port Preservation]]
+        * Port Preservation
             * Keep track of the original source by opening the same port on the router.
-        * [[Port Forwarding]]
+        * Port Forwarding
             * An approach where a request for a certain port is always routed to a certain node.
-* [[VPN]]
+* VPN
     * A technology that allows for extension of private or local network to hosts that might not work on the same local network.
     * A tunnelling protocol.
         * Employees create a "tunnel" to their network.
@@ -444,23 +447,23 @@ At the time of taking the course, I had previously learned all the concepts, how
 ## Week 5
 
 * POTS and Dial-up
-    * [[Public Switched Telephone Network (PSTN)]]
+    * Public Switched Telephone Network (PSTN)
         * Sometimes referred to as plain-old telephone system (or POTS)
     * Students from Duke University figured out that you can exchange data over the telephone network.
         * They created a digital bulletin system Usenet.
-    * [[../../../../journal/ai-art/stable-diffusion/models]]
+    * Modem
         * Stands for modulator demodulator
         * Take data and turn them into audible wavelengths to be transmitted over phone lines.
         * Similar to how line coding turns one and zeros into modulating electrial chages across Ethernet cables.
-    * [[Baud Rate]]
+    * Baud Rate
         * A a measurement of how many bits per second can be passed alone a phone line.
         * 110 p/s was about the rate in the late 1950s.
         * By the time Usenet was developed, it's more like 300 bits.
         * By early 90s, it was around 14.4 kilo bits per second.
-* [[Broadband]]
+* Broadband
     * Few definitions, but usually means anything that isn't dial-up.
     * Refers to connections that are always on.
-    * [[T-Carrier Technology]]
+    * T-Carrier Technology
         * Allowed lots of phone calls to travel along a single cable.
         * Invented by AT&T.
         * Transmission System 1 or T1 for short.
@@ -470,21 +473,21 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Further improved to allow multiple T1s via single link
         * AT3 line is 28 T1s all multiplexed, achieving a total throughput speed of 44.736 megabits per second.
         * Surpassed by modern broadband.
-    * [[Digital Subscriber Lines]]
+    * Digital Subscriber Lines
         * Telephone companies found that they can transmit more data on copper lines than needed for voice.
         * By using freq that voice didn't use, they could send more data *and* not interfere with voices.
         * DSL uses their own modems, known as DSLAMs or digital subscribed line access multiplexers.
             * Connection is established when DSLAM is powered on, and torned down when turned off, unlike dial-up.
         * Most 2 common types of DSL:
-            * [[ADSL]]
+            * ADSL
                 * Asymmetric Digital Subscriber Line.
                     * ADSL connections have diff speeds for incoming and outbound data
-            * [[SDSL]]
+            * SDSL
                 * Symmetric Digital Sub Line.
                 * Downloads and uploads are the same bandwidth.
                 * Most have upper cap as 1.544 megabits per second.
                 * Further development of SDSL: HDSL that can beyond upper cap.
-* [[Cable Broadband]]
+* Cable Broadband
     * First cable TV was developed in 1940s.
         * Used to provide TV to remote towns out of range of TV tower.
     * Cable television expanded slowly until 1984 when the Cable Communications Policy Act was passed.
@@ -493,24 +496,24 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Cable internet uses shared bandwidth technology, users in block or subdivision in suburb share bandwidth.
         * Can impact performance at bust times.
         * Although mostly cable operators update networks to avoid that happening.
-    * Connections managed by [[Cable model]]
+    * Connections managed by Cable model
         * Device that lives at the edge of consumer network to connect to cable modem termination system or CMTS
-* [[Fiber Connections]]
+* Fiber Connections
     * Core of internet uses fibre for connections for a long time.
         * Allows for faster speeds without degredation.
     * Maximum distance an electrical signal can travel across a copper cable before it degrades too much and requires a repeater is thousands of feet.
         * Fiber connections can travel many miles before signal degrades.
     * More expensive than using copper cables
-    * [[FTTX ]]
+    * FTTX
         * Stands for fiber to the x
         * FTTN - fibre to the neighbourhood.
         * FTTB - fibre to the building.
         * FTTH - fibre to the home.
         * FTTP - fibre to premise. Either FTTH or FTTB.
-    * [[ONT]]
+    * ONT
         * Cable doesn't use modems, so demarcation point known as optical network terminator or ONT.
         * ONT converts data from fiber network protocols to be compatible with twisted pair copper networks.
-* [[Point to Point Protocol (PPP)]]
+* Point to Point Protocol (PPP)
     * byte-oriented protocol broadly used for high-traffic data transmissions
     * At the Data Link layer to trasnit data between 2 devices on same network.
     * Options:
@@ -527,7 +530,7 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Sub-protocols for PPP
         * Network Control Protocol (NCP)
         * Link Control Protocol (LCP)
-    * Data is sent in [[PPP Frame]].
+    * Data is sent in PPP Frame.
         * File format has the following fields:
             * Flag - single byte to mark beginning of the frame.
             * Address is a single byte for broadcast address.
@@ -539,7 +542,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * Process by which each layer takes data from previous layer and adds headers and trailers for next layer to interpret.
         * When sent to endpoint, process is reversed de-encapsulation.
     * PPP can be hard to manage with direct links required, so PPP over Ethernet was invented.
-    * [[Point to Point Protocol over Ethernet (PPPoE)]]
+    * Point to Point Protocol over Ethernet (PPPoE)
         * A method for encapsulating PPP frames inside an ethernet frame.
             * Tunnels packets over the DSL connection service provider's IP network and from there to the rest of the Internet
         * A common use case is PPPoE using DSL services where a PPPoE modem-router connects to the DSL service or when a PPPoE DSL modem is connected to a PPPoE-only router using an Ethernet cable.
@@ -548,12 +551,12 @@ At the time of taking the course, I had previously learned all the concepts, how
             * Adds extra step called the discovery stage.
                 * The discovery stage establishes a session ID to identify the hardware address.
                 * This stage ensures data gets routed to the correct place.
-* [[Wide Area Network Technologies]]
+* Wide Area Network Technologies
     * Used when you need office to office communication over the internet.
-    * Area between each demarcation point and the ISP's actual core network is called a [[Local Loop]]
+    * Area between each demarcation point and the ISP's actual core network is called a Local Loop
     * Physical versus software-based WANs
-        * [[WAN router]]
-            * Aka [[Border Routers]] or [[Edge Routers]].
+        * WAN router
+            * Aka Border Routers or Edge Routers.
             * Hardware devices that act as intermediate systems to route data amongst the LAN member groups of a WAN (also called WAN endpoints) using a private connection.
             * Facilitate an organization’s access to a carrier network.
             * Include a digital modem interface for the WAN, which works at the OSI link layer, and an Ethernet interface for the LAN.
@@ -589,17 +592,17 @@ At the time of taking the course, I had previously learned all the concepts, how
                 * High level data control (HLDC)
                 * Packet over Sync Optical Network (SONET)
                 * Multipprotocol Label Sitching (MPLS)
-* [[Point-to-Point VPNs]]
+* Point-to-Point VPNs
     * A point to point VPN also called a site to site VPN establishes a VPN tunnel between two sites. This operates a lot like the way that a traditional VPN setup lets individual users act as if they're on the network they're connecting to. It's just that the VPN tunneling logic is handled by network devices at either side so that users don't all have to establish their own connections.
-* [[Introduction to Wireless Networking Technologies]]
+* Introduction to Wireless Networking Technologies
     * Most common spec for how wireless devices communicate is defined by IEEEE 802.11 standards.
         * Aka 802.11 family.
         * Make up technology called: Wi-Fi.
     * Communicate with each other through radio waves.
         * Different 802.11 standards use the same basic protocol, but might operate at diff frequency bands.
-    * [[Frequency Band]]
+    * Frequency Band
         * A certain section of the radio spectrum that's been agreed upon to be used for certain communications.
-    * [[FM Broadcast Band]]
+    * FM Broadcast Band
         * A specific frequency band.
         * In North America, between 88 and 108 megahertz.
     * Wi-Fi networks operate on a few different frequency bands:
@@ -607,7 +610,7 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Common 802.11 specifications in order of adoption: 802.11b, 802.11a, 802.11g, 802.11n and 802.11ac
         * Improvements are usually higher speeds or more simulatenous users.
     * 802.11 protocol define both the physical and the data link layers.
-    * [[Wireless Access Point]]
+    * Wireless Access Point
             * A device that briges the wireless and wired portions of a network.
     * 802.11 frame has a number of fields:
         * First 2 octets = frame control field.
@@ -630,7 +633,7 @@ At the time of taking the course, I had previously learned all the concepts, how
             * Payload of the protocols further up the stack.
         * Frame check sequence field
             * Contains a checksum for cyclical redundancy check, like how ethernet does it.
-* [[Wi-Fi 6]]
+* Wi-Fi 6
     * Formely known as 802.11ax
     * One of the biggest improvements in Wi-Fi tech:
         * Higher data rates
@@ -651,7 +654,7 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Wi-Fi 6E extends Wi-Fi 6 into 6 GHz
         * Additional certification for Wi-Fi 6 that adds a 3rd 6 Ghz band.
         * Wi-Fi 6E has more channels to use to broadcast: includes 14 more 80MHz channels and 7 more 160Mhz channels.
-* [[Wi-Fi Standards]]
+* Wi-Fi Standards
     * Many wireless tech that uses various frequencies: Wi-Fi, Z-Wave, ZigBee, Thread, Bluetooth, and Near Field Communication (NFC).
     * Radio and microwave frequency bands each have specific ranges that are divided into channels.
     * Wi-Fi uses 2.4 GHz and 5 GHz microwave radio frequency band ranges.
@@ -683,7 +686,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * frequency bands
         * channels
     * Countries can impose different regulations on channel usage, power limitations, and Wi-Fi ranges.
-    * [[Dynamic Frequency Selection (DFS)]]
+    * Dynamic Frequency Selection (DFS)
         * A technology required to prevent 5 GHz Wi-Fi signals from interfering with local radar and satellite communications.
 * Wireless Network Configurations
     * Ad-hoc networks
@@ -696,29 +699,29 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Mesh networks
         * Similar to ad-hoc networks, lots of devices communicate with each other forming a mesh.
         * Mostly, you're find mesh networks are made up of WAPs, that each communicate on a wired network.
-* [[Wireless Channels]]
+* Wireless Channels
     * Individual, smaller sections of the overall frequency band used by a wireless network.
-    * Addresses the problem of [[Collision Domains]]
+    * Addresses the problem of Collision Domains
         * On wired network, switches have mostly addressed this problem.
     * 2.4Ghz band is actually 2.4Ghz to 2.5Ghz
         * Between these is a series of channels that can be used.
         * Each country has slightly different standards.
     * Most WAPs perform analysis of which channels are most congested and adjust accordingly.
-* [[Wireless Security]]
+* Wireless Security
     * Wired links give you some inherent privacy that you don't get with wireless.
-    * [[WEP]]
+    * WEP
         * A standard to fix this.
         * Wired Equivalent Privacy.
         * Only provides a low-level of security: same as sending unencrypted data on wired network.
         * Only uses 40 bits for encryption key.
         * Replaced by WPA.
-    * [[WPA]]
+    * WPA
         * Uses 128-bit key.
         * Surprased by WPA2
-    * [[WPA2]]
+    * WPA2
         * Uses 256-bit key.
     * Also using MAC address filtering is a good idea to prevent rouge devices on network.
-* [[WPA3]]
+* WPA3
     * Two versions: WPA3-Personal and WPA3-Enterprise
     * WPA3-Personal
         * Natural password selection
@@ -745,11 +748,11 @@ At the time of taking the course, I had previously learned all the concepts, how
 
 ### Introduction to Troubleshooting and the Future of Networking
 
-* [[Error Detection]]
+* Error Detection
     * Ability for protocol or program to determine if something went wrong.
-* [[Error Recovery]]
+* Error Recovery
     * Ability for protocol or program to attempt to fix an error.
-* [[Internet Control Message Protocol]]
+* Internet Control Message Protocol
     * Mainly used by router or remote host to communicate why a transmission failed.
     * ICMP packet:
         * Header with a few fields.
@@ -766,15 +769,15 @@ At the time of taking the course, I had previously learned all the concepts, how
     * ICMP wasn't designed for people to use, but two useful tools are that utilise ICMP are:
         * Ping
         * Traceroute
-* [[Ping]]
-    * Sends a special type of [[Internet Control Message Protocol]] called [[Echo Request]].
-    * [[Echo Request]]
+* Ping
+    * Sends a special type of Internet Control Message Protocol called Echo Request.
+    * Echo Request
         * Includes just a destination.
         * Message equivalent to: "Hey, are you there?"
-        * If destination is up, it will send back an ICMP message in reply, called an ICMP [[Echo Reply]] message.
+        * If destination is up, it will send back an ICMP message in reply, called an ICMP Echo Reply message.
     * Usage: `ping $destination_address`
         * Usually outputs how long the round trip took, TTL remaining and how large ICMP request is in bytes.
-* [[Traceroute]]
+* Traceroute
     * Since communicates across network cross many intermediary nodes.
     * Traceroute can be used to see paths between two nodes.
     * Works using a manipulation of TTL field at IP level:
@@ -789,17 +792,17 @@ At the time of taking the course, I had previously learned all the concepts, how
     * Similar tools:
         * mtr on Linux
         * pathping on Window
-* [[Netcat]]
+* Netcat
     * At the command-line: `nc`
     * 2 mandatory arguments: host and port.
     * -v flag gives verbose info.
     * `-z` zero output mode.
-    * [[Test-NetConnection]]
-        * A Windows tool with similar functionality to [[Netcat]].
+    * Test-NetConnection
+        * A Windows tool with similar functionality to Netcat.
 
 ### Digging into DNS
 
-* [[nslookup]]
+* nslookup
     * Most common tool for troubleshooting name resolution issues.
     * Basic example: `nslookup google.com`:
 
@@ -853,7 +856,7 @@ At the time of taking the course, I had previously learned all the concepts, how
         * the TTL left, if it's a cached response
         * the serial number of the zone file the request was made against.
     * Returns `A` records by default, but can be configured to return other types of records.
-* [[Public DNS Servers]]
+* Public DNS Servers
     * ISP will nearly always give you acess to a recursive name server, and for most people this is all they're need for internet access.
     * Most business run their own DNS sserver for resolving internal hosts.
         * Useful to have backup DNS server.
@@ -862,22 +865,22 @@ At the time of taking the course, I had previously learned all the concepts, how
         * 4.2.2.6 is also common.
         * 8.8.8.8 is a DNS server provided by Google and officially documented.
     * Always do your research: a bad DNS server can hijack outbound DNS requests.
-* [[DNS Registrar]]
-        * A company that has an agreement with [[ICANN]] to sell domains.
+* DNS Registrar
+        * A company that has an agreement with ICANN to sell domains.
         * Was originally just one company: [Network Solutions Inc](https://en.wikipedia.org/wiki/Network_Solutions) that operated entire .com space.
             * Later expanded to other companies (appeared NSI went wholesale).
         * Once you have a domain name, you can have configure your own name servers to be authoritive.
         * Domain names can be transferred from a registrar to another, usually using unique strings in TXT records.
         * Domains are leased for some duration. After that, anyone can take over the domain name if it isn't renewed.
-* [[Hosts File]]
+* Hosts File
     * Original method of aliasing ip addresses with hostnames.
     * Each line contains an ip and the corresponding host name.
     * The reason that they still exists is for the loopback host.
     * Examined before DNS resolution occurs, so can be useful troubleshooting.
-* [[Loopback Host]]
+* Loopback Host
     * A way of sending traffic to yourself.
     * For ipv4: 127.0.0.1
-* [[IPv6]]
+* IPv6
     * A 32-bit size of an ip address was chosen, but this has not given us enough to support the explosion of the internet: IPv6 is a protocol to deal with this.
     * 128-bit binary number.
         * Two to the power of 128 would produce a 39-digit long number.
@@ -893,57 +896,57 @@ At the time of taking the course, I had previously learned all the concepts, how
                 * 2001:db8:0:0:0:ff00:12:3456 -> 2001:db8::ff00:12:3456
     * Loopback address is 31 0s with a 1 at the end.
         * 0000:0000:0000:0000:0000:0000:0000:0001 -> ::1
-    * Any address that begins with ff00 is for [[Multicast]]
+    * Any address that begins with ff00 is for Multicast
         * A way of addressing groups of hosts at once.
-    * Addresses beginning with FE80:: are used for [[Link Local unicast address]]
+    * Addresses beginning with FE80:: are used for Link Local unicast address
         * Allow for local network segment communication
         * Configured based on Mac address.
         * Similar to how DHCP works.
     * IPv6 allocated first 64 bit for network id, and 2nd 64 bits for host id.
-    * You can still split network up for admin purposes: uses same [[CIDR]] notation as IPv4.
-* [[IPv6 Headers]]
-    * 1. [[Version Field]]
+    * You can still split network up for admin purposes: uses same [CIDR](../../../../permanent/cidr.md) notation as IPv4.
+* IPv6 Headers
+    * 1. Version Field
         * First field in IPv6 header is a Version field.
         * 4-bit field that defines what version of an IP is in use.
-    * 2. [[Traffic Class Field]]
+    * 2. Traffic Class Field
         * An 8-bit field that defines the type of traffic contained in the IP datagram
         * Allows for different classes of traffic to receive diff priorities.
-    * 3. [[Flow Label Field]]
+    * 3. Flow Label Field
         * A 20-bit field used in conjuction wth Traffic class field to make decisions about quality of service level for specific datagram.
-    * 4. [[Payload Length Field]]
+    * 4. Payload Length Field
         * 16-bit field that defines how long data payload section is.
-    * 5. [[Next Header]]
+    * 5. Next Header
         * Since IPv6 addresses are 4x as long as IPv4, they aim to keep header payload small.
         * To do that, the next header field allows for a chain of extra optional fields. Each optional field includes its own Next Header field.
-    * 6. [[Hop Limit Field]]
+    * 6. Hop Limit Field
         * 8-bit field identical in purpose to TTL field in IPv4 header.
     * 6. Source Address
     * 7. Destination Address.
     * If the next header field specified another header, it would follow. If not, a data payload, the same length as specified in the payload length field is next.
 * IPv6 and IPv4 together
     * IPv6 needs to work alongside IPv4 to allow for gradual migration.
-    * [[IPv4 Mapped Address Space]]
+    * IPv4 Mapped Address Space
         * IPv6 specification sets aside IPv6 addresses that can be correlated to IPv4 address.
         * Any address that begins with 80 zeros, followed by 16 ones is part of it.
         * 192.168.1.1 == 0:0:0:0:0:fff:c0a8:0101
         * This let's IPv4 traffic to travel over IPv6 network.
-    * [[IPv6 Tunnels]]
+    * IPv6 Tunnels
         * Consist of an IPv6 tunnel server on either end of a connection.
         * Take incoming IPv6 traffic and encapsulate in IPv4 datagrams.
         * IPv6 tunnel server deencapsulates and passes it along network.
         * Types of tunnels:
-            * [[6in4/manual protocol]]
+            * 6in4/manual protocol
                 * Encapsulates IPv6 packets inside an IPv4 packet
                 * No additional headers to configure the setup of the tunnel endpoints
                 * This protocol often will not function if the host uses network address translation (NAT) technology to map its IPv4 address.
-            * [[Tunnel Setup Protocol (TSP)]]
+            * Tunnel Setup Protocol (TSP)
                 * Specifies rules for negotiating the setup parameters between tunnel endpoints.
                 * This allows for a variety of tunnel encapsulation methods and wider deployment than is possible with the 6in4/manual protocol.
-            * [[Anything in Anything (AYIYA)]]
+            * Anything in Anything (AYIYA)
                 * protocol defines a method for encapsulating any protocol in any other protocol.
                 * AYIYA was developed for tunnel brokers, a service which provides a network tunnel.
                     * Specifies the encapsulation, identification, checksum, security, and management operations that can be used once the tunnel is established.
                     * A key advantage: provides a stable tunnel through an IPv4 NAT.
                     * It allows users behind a NAT or a dynamic address to maintain connectivity even when roaming between networks.
-    * [[IPv6 Broker]]
+    * IPv6 Broker
         * Companies that provide IPv6 tunnelling endpoints.

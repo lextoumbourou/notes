@@ -29,7 +29,7 @@ The algorithm uses three key hyper-parameters:
 - **Discount Factor** $\gamma$ (0 to 1) – how much it values future rewards versus immediate ones. Higher values mean the agent is more forward-thinking.
 - **Exploration Rate** $\epsilon$ (0 to 1) – how often it chooses a random action over the current best action. This parameter is typically decreased over time as the agent learns.
 
-The $\epsilon$ parameter balances the trade-off between **exploration and exploitation**, managing how much the agent tries new things versus sticking to what it already thinks is best. See also the [Exploration-Exploitation Dilemma](../../../permanent/exploration-exploitation-dilemma.md) in A/B testing.
+The $\epsilon$ parameter balances the trade-off between **exploration and exploitation**, managing how much the agent tries new things versus sticking to what it already thinks is best. See also the [Exploration-Exploitation Dilemma](exploration-exploitation-dilemma.md) in A/B testing.
 
 ## Q-Learning in Practice: Taxi
 

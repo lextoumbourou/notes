@@ -1,6 +1,7 @@
 ---
 title: Week 3 - Functions A
 date: 2022-10-23 00:00
+modified: 2026-09-26 08:50
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
@@ -86,7 +87,7 @@ parent: uol-discrete-mathematics
 
         * Domain of function f(x) is set of real numbers.
         * Range of function is set of positive numbers.
-* [Exponential Functions](permanent/exponential-functions.md)
+* [Exponential Function](../../../../permanent/exponential-function.md)
     * If base $b$ in $f(x) = b^x$, $b > 1$ then function is increasing and represents growth shown in this graph:
 
       ![Example of exponential growth function](../../../../_media/exponential-growth-function.png)
@@ -121,7 +122,7 @@ parent: uol-discrete-mathematics
 
         ![Injective function example](../../../../_media/injective-function.png)
 
-    * You can show a function is not injective by finding two different inputs $a$ and $b$ with the same [Function Image](permanent/function-image.md).
+    * You can show a function is not injective by finding two different inputs $a$ and $b$ with the same Function Image.
     * An example with a linear function:
         * To show function $f: R -> R$ with $f(x) = 2x + 3$ is an injective function, we must show that $\text{ if } f(a) = f(b) \text{ then } a = b$
             * $f(a) = f(b)$ => $2a + 3 = 2b + 3$ => $2a = 2b$ => $a = b$ => f is injective.

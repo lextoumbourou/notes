@@ -1,7 +1,7 @@
 ---
 title: "Lesson 2: Displacement Velocity And Time"
 date: 2023-08-13 00:00
-modified: 2023-08-13 00:00
+modified: 2026-09-26 08:55
 status: draft
 ---
 
@@ -9,7 +9,7 @@ Notes from [Lesson 2: Displacement, velocity, and time](https://www.khanacademy.
 
 ## Intro to vectors and scalars
 
-* [Vector](../../../../permanent/vector.md) has a magnitude/size AND distance. A [Scalar](Scalar) only has a distance.
+* [Vector](../../../../permanent/vector.md) has a magnitude/size AND distance. A [Scalar](../../../../permanent/scalar.md) only has a distance.
 * [Displacement](../../../../permanent/displacement.md)
     * In physics, we call distance "displacement".
     * Displacement is a vector quantity.
@@ -27,7 +27,7 @@ Notes from [Lesson 2: Displacement, velocity, and time](https://www.khanacademy.
 * [Frame of Reference](../../../../permanent/frame-of-reference.md)
     * Point of view for which you're measuring from.
 
-    ![lesson-2-displacement-velocity-and-time-frame-of-ref](../../../../journal/_media/lesson-2-displacement-velocity-and-time-frame-of-ref.png)
+    ![lesson-2-displacement-velocity-and-time-frame-of-ref](../../../../_media/lesson-2-displacement-velocity-and-time-frame-of-ref.png)
 
 ## What is displacement
 

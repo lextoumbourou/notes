@@ -1,6 +1,7 @@
 ---
 title: Week 1 - Linear Classifiers & Logistic Regression
 date: 2016-07-04 00:00
+modified: 2026-09-26 08:50
 category: reference/moocs
 parent: ml-classification
 status: draft
@@ -182,7 +183,7 @@ $$Score(\mathbf{x_i}) = w_0 h_0(\mathbf{x_i}) + .. + W_d h_D(\mathbf{x_i}) = \ma
 * Categorical inputs (gender, country of birth, postcode) need to be encoded in order to be multiplied via coefficient.
 * One way to encode categorical inputs: 1-hot encoding. Basically, for a table of features, all are 0 except 1 (hence 1-hot):
 
-         x       h[1](x)    h[2](x)
+         x       h_1(x)     h_2(x)
         ---------------------------
         Male       0          1
         Female     1          0

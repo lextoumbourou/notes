@@ -4,7 +4,7 @@ date: 2022-12-19 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-08 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## 6.101 Introduction to proofs
@@ -56,7 +56,7 @@ modified: 2023-04-08 00:00
                 * We have succeeded in providing the contrapositive: if n is odd then $n^2$ is odd.
 * Proof by contradiction
     * A proof by contradiction is based on assuming that the statement we want to prove is false, and then showing that this assumption leads to a false proposition.
-    * We start by assuming that $\neg p$ is true and then use: [Axiom](Axiom)s, definitions and [Theorem](Theorem)s, together with **rules of inference** to show that $\neg p$ is also false. We can conclude that it was wrong to assume that p is false, so it must be true.
+    * We start by assuming that $\neg p$ is true and then use: axioms, definitions and theorems, together with **rules of inference** to show that $\neg p$ is also false. We can conclude that it was wrong to assume that p is false, so it must be true.
     * Example
         * Let's give a direct proof of the theorem: "There are infinitely many prime numbers"
         * Proof

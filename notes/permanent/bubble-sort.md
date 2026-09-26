@@ -83,4 +83,4 @@ The lower bound best case is still linear, as we must look at every element once
 \end{algorithm}
 ```
 
-See [Sorting Algorithm](../../../permanent/sorting-algorithm.md).
+See [Sorting Algorithm](sorting-algorithm.md).

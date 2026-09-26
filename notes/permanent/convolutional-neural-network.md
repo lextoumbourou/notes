@@ -8,7 +8,7 @@ aliases:
 
 A **Convolutional Neural Network (CNN)** is a particular type of neural network that learns feature engineer via filters (aka kernels) optimisation.
 
-Typically a CNN contains multiple combinations of a [Convolutional Layer](convolutional-layer.md) and a [Pooling Layer](../../../permanent/pooling-layer.md).
+Typically a CNN contains multiple combinations of a [Convolutional Layer](convolutional-layer.md) and a [Pooling Layer](pooling-layer.md).
 
 ## Convolutional Layer
 

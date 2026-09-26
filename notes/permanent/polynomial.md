@@ -25,8 +25,8 @@ These are non-polynomial expressions:
 
 ---
 
-A [Polynomial Function](../../../permanent/polynomial-function.md) is the mapping produced by evaluating a polynomial expression. For example, the expression $2x^2 + 2x + 1$ defines the function $f(x) = 2x^2 + 2x + 1$.
+A [Polynomial Function](polynomial-function.md) is the mapping produced by evaluating a polynomial expression. For example, the expression $2x^2 + 2x + 1$ defines the function $f(x) = 2x^2 + 2x + 1$.
 
 ---
 
-[Polynomial Time](../../../permanent/polynomial-time.md) in [Complexity Analysis](complexity-analysis.md) describes an algorithm whose running time is *bounded* by $O(n^k)$ for some constant $k$ that > 1 - really meaning **polynomial bounded time**. So it includes constant, logarithmic, linear and other running times bounded above by a polynomial, but not running times that grow exponentially like: $\Theta(2^n)$
+[Polynomial Time](polynomial-time.md) in [Complexity Analysis](complexity-analysis.md) describes an algorithm whose running time is *bounded* by $O(n^k)$ for some constant $k$ that > 1 - really meaning **polynomial bounded time**. So it includes constant, logarithmic, linear and other running times bounded above by a polynomial, but not running times that grow exponentially like: $\Theta(2^n)$

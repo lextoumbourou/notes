@@ -36,6 +36,6 @@ $x = \frac{-6 \pm \sqrt{-84}}{6}$
 
 Since there is no real number solution to $\sqrt{-84}$, the quadratic does not have a real number solution (imaginary numbers are required).
 
-The Quadratci Formula is an alternate to solving quadratic formulas by [[../journal/permanent/factoring-quadractics]].
+The Quadratci Formula is an alternate to solving quadratic formulas by [Factoring Quadratics](factoring-quadractics.md).
 
 Source [Khan Academy - The quadratic formula](https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:quadratic-functions-equations/x2f8bb11595b61c86:quadratic-formula-a1/v/using-the-quadratic-formula)

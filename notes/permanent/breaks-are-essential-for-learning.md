@@ -13,4 +13,4 @@ Talking a walk, shower or nap supports learning and thinking.
 
 References:
 
-* [How to Take Smart Notes](How%20to%20Take%20Smart%20Notes) (9. Separate and Interlock Tasks)
+* [How to Take Smart Notes](../reference/books/how-to-take-smart-notes.md) (9. Separate and Interlock Tasks)

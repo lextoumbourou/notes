@@ -56,7 +56,7 @@ Therefore, $TP=1$, $FP=0$, $FN=2$ and $TN=1$.
 
 ## Precision
 
-[Precision](../../../permanent/precision.md) asks: of everything the model predicted as positive, how many predictions were correct?
+[Precision](precision.md) asks: of everything the model predicted as positive, how many predictions were correct?
 
 $$
 \operatorname{Precision} = \frac{TP}{TP + FP}
@@ -66,7 +66,7 @@ Prioritise precision when false positives are particularly costly. For example, 
 
 ## Recall
 
-[Recall](../../../permanent/recall.md) asks: of all the examples that were actually positive, how many did the model find?
+[Recall](recall.md) asks: of all the examples that were actually positive, how many did the model find?
 
 $$
 \operatorname{Recall} = \frac{TP}{TP + FN}
@@ -76,7 +76,7 @@ Prioritise recall when false negatives are particularly costly. For example, an 
 
 ## F1 score
 
-The [F1-Score](../../../permanent/f1-score.md) is the harmonic mean of precision and recall:
+The [F1-Score](f1-score.md) is the harmonic mean of precision and recall:
 
 $$
 F_1 = 2 \times \frac{\operatorname{Precision} \times \operatorname{Recall}}{\operatorname{Precision} + \operatorname{Recall}}

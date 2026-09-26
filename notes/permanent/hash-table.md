@@ -19,7 +19,7 @@ A **hash table** is a key-value pair data structure that provides constant time 
 
 *Diagram by [Jorge Stolfi via Wikipedia](https://en.wikipedia.org/wiki/Hash_table#/media/File:Hash_table_3_1_1_0_1_0_0_SP.svg)*
 
-It's considered a [Linear Data Structure](../../../permanent/linear-data-structure.md) as elements in the array are stored sequentially.
+It's considered a [Linear Data Structure](linear-data-structure.md) as elements in the array are stored sequentially.
 
 Two keys can produce the same index, called a collision, depending on the implementation. There are multiple common techniques to resolve hash collisions:
 
@@ -50,6 +50,6 @@ Hash tables typically have these core operations:
 
 Under good conditions, these operations take an average $O(1)$ time, making hash tables extremely efficient for storing and retrieving data.
 
-## [Load Factor](../../../permanent/load-factor.md)
+## [Load Factor](load-factor.md)
 
 The load factor of a hash table is calculated by storing the number of stored key by the number of buckets.

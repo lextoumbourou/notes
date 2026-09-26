@@ -1,7 +1,7 @@
 ---
 title: Test-Driven Development
 date: 2023-11-13 00:00
-modified: 2023-11-13 00:00
+modified: 2026-09-26 08:55
 status: draft
 ---
 
@@ -13,7 +13,7 @@ Test-Driven Development (TDD) is an approach to software development where we wr
 
 TDD for me is a useful tool, some problems are much much easier to write tests first. Particularly when you have examples of the inputs and outputs readily available.
 
-## [[The Three Laws of TDD]]
+## The Three Laws of TDD
 
 If you want to get particularly dogmatic about it, [3 laws of TDD are according to Robert Martin](http://butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd) are:
 

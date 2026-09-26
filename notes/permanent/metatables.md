@@ -2,12 +2,14 @@
 category: note
 title: Metatables
 date: 2021-02-14 00:00
+modified: 2026-09-26 08:55
 tags:
   - Lua
 summary: A table attached to another table to define its custom behaviour, via metamethods like __add and __index.
 ---
 
-In Lua, since everything is a table, metatables are a paradigm that lets you change the behaviour of a table, using another table. For example, you can define the behaviour when 2 tables are added together using the `+` operator by defining a metatable with an `__add` method. This is similar to the concept of [magic methods (Python)](magic methods (Python)), though in Python magic methods are defined on instance's class.
+
+In Lua, since everything is a table, metatables are a paradigm that lets you change the behaviour of a table, using another table. For example, you can define the behaviour when 2 tables are added together using the `+` operator by defining a metatable with an `__add` method. This is similar to the concept of magic methods (Python), though in Python magic methods are defined on instance's class.
 
 In this example, I'm defining addition as the sum of all keys in the left-most table
 

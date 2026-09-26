@@ -59,7 +59,7 @@ So now we have: <span style="color: red;">**Residual**</span> <span style="color
 
 ## Training
 
-We can train a model like this by performing the encode and decode audio during training and calculating various forms of reconstruction loss, including a GAN-style discriminator. This example is the architecture described in the [SoundStream](../../../permanent/soundstream.md) paper:
+We can train a model like this by performing the encode and decode audio during training and calculating various forms of reconstruction loss, including a GAN-style discriminator. This example is the architecture described in the [SoundStream](soundstream.md) paper:
 
 ![SoundStream architecture](../_media/residual-vector-quantization-fig-2%201.png)
 

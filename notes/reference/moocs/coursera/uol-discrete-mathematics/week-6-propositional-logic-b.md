@@ -4,7 +4,7 @@ date: 2022-11-15 00:00
 category: reference/moocs
 status: draft
 parent: uol-discrete-mathematics
-modified: 2023-04-09 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## 2.202 Logical implication
@@ -142,7 +142,7 @@ modified: 2023-04-09 00:00
 
 ## 3.206 Laws of prospositional logic
 
-* [Laws of Propositional Logic](permanent/laws-of-propositional-logic.md)
+* [Laws of Logic](../../../../permanent/laws-of-logic.md)
     * Propositional logic is an algebra involving multiple laws. These are some of the laws:
 
     | | Disjunction | Conjunction |
@@ -160,7 +160,7 @@ modified: 2023-04-09 00:00
 
     * Laws of propositional logic 2
 
-         ![equivalence-table](../../../../journal/_media/equivalence-table.png)
+         ![equivalence-table](../../../../_media/equivalence-table.png)
 
 * Equivalence Proof
     * Example the equivalence between $\neg (p \land (\neg p \lor q))$ and $(\neg p \lor \neg q)$

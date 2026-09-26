@@ -2,7 +2,7 @@
 title: On the Measure of Intelligence (2019)
 date: 2024-10-22 00:00
 category: paper
-modified: 2026-09-13 10:34
+modified: 2026-09-26 08:55
 summary: a shift in how we evaluate artificatial intelligence
 cover: _media/on-the-measure-of-intelligence-2019-fig3.png
 status: draft
@@ -18,10 +18,10 @@ To make progress towards AGI, we need better ways to define and evaluate intelli
 
 AI is typically measured by comparing performance at specific tasks, like games. However, solely measuring skills at a task doesn't measure intelligence, because the capability in a skill is determined by prior knowledge. With unlimited priors or unlimited training data allow experimenters to “buy” arbitrary levels of skills for a system, in a way that masks the system’s own generalisation power.
 
-In this paper, a new formal definition of intelligence based on [[../../../../permanent/algorithm Information Theory|Algorithm Information Theory]] is described where they describe intelligence based on [Skill-Acquisition Efficiency](../../../../permanent/Skill-acquisition%20Efficiency.md). They show that generalisation difficulty, priors, and experience, as
+In this paper, a new formal definition of intelligence based on [Algorithmic Information Theory](../../permanent/algorithm%20Information%20Theory.md) is described where they describe intelligence based on [Skill-Acquisition Efficiency](../../permanent/Skill-acquisition%20Efficiency.md). They show that generalisation difficulty, priors, and experience, as
 critical pieces to be accounted for in characterising intelligent systems, and they create guidelines for general AI benchmarks.
 
-With these guidelines, they propose a new benchmark [Abstraction and Reasoning Corpus](../../../../permanent/abstraction-and-reasoning-corpus.md) which is "built upon an explicit set of priors designed to be as close as possible to innate human priors", and can be used to measure a "human-like form of general fluid intelligence", which gives more fair comparisons between AI systems and humans.
+With these guidelines, they propose a new benchmark [Abstraction and Reasoning Corpus](../../permanent/abstraction-and-reasoning-corpus.md) which is "built upon an explicit set of priors designed to be as close as possible to innate human priors", and can be used to measure a "human-like form of general fluid intelligence", which gives more fair comparisons between AI systems and humans.
 
 ## 1.1 Need for "actionable" definition
 
@@ -75,7 +75,7 @@ This spectrum aligns with the hierarchical structure of cognitive abilities in p
 
 ### Formalizing Intelligence Measurement
 
-Using [[Algorithmic Information Theory]], Chollet provides a formal definition of intelligence that quantifies:
+Using [Algorithmic Information Theory](../../permanent/algorithm%20Information%20Theory.md), Chollet provides a formal definition of intelligence that quantifies:
 
 * Generalisation difficulty
 * Prior knowledge
@@ -88,11 +88,11 @@ This formalisation allows for more rigorous comparisons between AI systems and e
 
 ### Abstraction and Reasoning Corpus (ARC)
 
-To implement his ideas, Chollet introduces the [[Abstraction and Reasoning Corpus]] (ARC), a benchmark designed to evaluate general intelligence in both AI systems and humans. Key features of ARC include:
+To implement his ideas, Chollet introduces the [Abstraction and Reasoning Corpus](../../permanent/abstraction-and-reasoning-corpus.md) (ARC), a benchmark designed to evaluate general intelligence in both AI systems and humans. Key features of ARC include:
 
 * Abstract visual reasoning tasks
 * Novel problems in the evaluation set
-* Explicit [[Core Knowledge]] priors
+* Explicit [Core Knowledge](../../permanent/core-knowledge.md) priors
 * Limited training examples
 
 ![ARC task with three examples of reconstructing blacked-out regions in symmetric coloured grids, followed by a test grid whose missing patch must be inferred.](../../_media/on-the-measure-of-intelligence-2019-fig4.png)

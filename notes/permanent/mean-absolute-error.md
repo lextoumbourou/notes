@@ -4,7 +4,7 @@ title: Mean Absolute Error
 date: 2016-02-03 00:00
 tags:
   - MachineLearning
-summary: The average absolute difference between predictions and labels — less sensitive to outliers than RMSE.
+summary: The average absolute difference between predictions and labels, less sensitive to outliers than RMSE.
 ---
 
 Mean Absolute Error (MAE) is a metric for assessing [Regression](regression.md) predictions. Simply take the average of the absolute error between all labels and predictions in the test set:
@@ -17,7 +17,7 @@ Step-by-step:
 2. Take the absolute values of the errors
 3. Take the mean of all values.
 
- It's also known as [L1 Loss](l1-loss.md) or [L1 Penalty](../../../permanent/l1-penalty.md) because it takes the [L1 Norm](../../../permanent/l1-norm.md) of the error vector
+ It's also known as [L1 Loss](l1-loss.md) or [L1 Penalty](l1-penalty.md) because it takes the [L1 Norm](l1-norm.md) of the error vector
 
 An alternative to [Root Mean-Squared Error](root-mean-squared-error.md).
 

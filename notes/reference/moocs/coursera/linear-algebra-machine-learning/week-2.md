@@ -4,7 +4,7 @@ date: 2021-09-12 00:00
 category: reference/moocs
 status: draft
 parent: linear-algebra-machine-learning
-modified: 2023-04-09 00:00
+modified: 2026-09-26 08:50
 ---
 
 ## Intro
@@ -24,7 +24,7 @@ modified: 2023-04-09 00:00
 * [Vector Magnitude](../../../../permanent/vector-magnitude.md) (0:35-2:54)
     * A vector can be described in terms of its unit vectors. In this example, they're $\hat{i}$ and $\hat{j}$:
         $r = a\hat{i} + b\hat{i}$
-    * From [Pythagoras Theorem](permanent/pythagoras-theorem.md), we can calculate the magnitude (size) of the vector as $\|r\| = \sqrt{a^2 + b^2}$
+    * From [Pythagorean Theorem](../../../../permanent/pythagorean-theorem.md), we can calculate the magnitude (size) of the vector as $\|r\| = \sqrt{a^2 + b^2}$
     * Vectors are mostly written as column vectors: $\begin{bmatrix} a \\ b \end{bmatrix}$
     * Doesn't matter if our vector contains dimensions in space or things with different physicals units like time and price: we define the size of a vector through the square root of the sums of the squares of its components.
 * [Dot Product](../../../../permanent/dot-product.md) (02:54-10:00)
@@ -59,7 +59,7 @@ modified: 2023-04-09 00:00
 
 ### Projection
 
-* [Scalar Projection](permanent/scalar-projection.md) (00:00-04:04)
+* [Scalar Projection](../../../../permanent/scalar-projection.md) (00:00-04:04)
     * Scalar projection is the amount one vector "goes along" another.
         * Draw a line straight down from the tip of vector $s$ onto vector $\vec{r}$. How far along $\vec{r}$ does it land?
 
@@ -75,7 +75,7 @@ modified: 2023-04-09 00:00
     * So the dot product is: "the projection of s onto r" * "size of r": $|r| \times \text{projection}$
     * You can rearrange the expression to: $\frac{r.s}{|r|} = |s|\cos\theta$, to get the scalar projection.
     * That explains why the [Dot Product](../../../../permanent/dot-product.md) is also called the "Projection Product".
-* [vector-projection](permanent/vector-projection.md) (04:04-05:52)
+* [Vector Projection](../../../../permanent/vector-projection.md) (04:04-05:52)
     * Allows you to include the direction of $r$ into the scalar projection.
     * Defined to be $\vec{r} \frac{\vec{r} \cdot \vec{s}}{|r||r|}$
     * Or $\vec{r} \frac{\vec{r} \cdot \vec{s}}{\vec{r} \cdot \vec{r}}$
@@ -84,7 +84,7 @@ modified: 2023-04-09 00:00
 
 ### Changing basis
 
-* [Coordinate System](Coordinate System) (00:00 - 03:35)
+* Coordinate System (00:00 - 03:35)
     * Coordinate system is defined by 2 vectors called the [Basis Vectors](../../../../permanent/basis-vectors.md). In the image, they're $\hat{e}_1 = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$ and $\hat{e}_2 = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$.
 
         ![Basic vectors](../../../../_media/laml-basic-vectors.png)

@@ -2,7 +2,7 @@
 title: "U-Net: Convolutional Networks for Biomedical Image Segmentation"
 date: 2024-10-11 00:00
 category: paper
-modified: 2024-10-11 00:00
+modified: 2026-09-26 08:55
 status: draft
 tags:
 - ImageSegmentation
@@ -12,7 +12,7 @@ Notes from paper [U-Net: Convolutional Networks for Biomedical Image Segmentatio
 
 ## Overview
 
-Proposes an [Convolutional Neural Network](../../permanent/convolutional-neural-network.md) called [U-Net](U-Net) for biomedical [Image Segmentation](../../permanent/image-segmentation.md).
+Proposes an [Convolutional Neural Network](../../permanent/convolutional-neural-network.md) called [U-Net](../../permanent/u-net.md) for biomedical [Image Segmentation](../../permanent/image-segmentation.md).
 
 The U-Net architecture is characterised by its contracting path and expansive path. It effectively learns robust and invariant segmentations from limited training data.
 

@@ -2,7 +2,7 @@
 category: note
 title: Dot Product
 date: 2021-08-11 00:00
-modified: 2021-12-02 19:00
+modified: 2026-09-26 08:50
 cover: /_media/dot-product-cover.png
 summary: An operation between 2 vectors that returns a number.
 tags:
@@ -61,7 +61,7 @@ We use the dot product throughout game development. For example, it can tell us 
 
 We also use the dot product throughout data science.
 
-We use them in [Recommendation Engines](Recommendation Engines).
+We use them in Recommendation Engines.
 
 For example, we can find a vector for each user that represents their movie preferences. One column could describe how much they like scary movies, another for how much they like comedy movies, and so on.
 
@@ -69,7 +69,7 @@ Then for each item, we can create a vector that represents its characteristics. 
 
 Then, we can take the dot product between a user and each item to determine how likely the user is to enjoy it. The further from 1 each item is, the less likely a user is to like it.
 
-In Machine Learning, we can train a model on a dataset of preference information, often a dataset of user ratings, to learn these vectors. In this context, the vectors are referred to as [Embeddings](Embeddings).
+In Machine Learning, we can train a model on a dataset of preference information, often a dataset of user ratings, to learn these vectors. In this context, the vectors are referred to as [Embedding](embedding.md).
 
 Simple Python example:
 

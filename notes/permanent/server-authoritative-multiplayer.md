@@ -2,6 +2,7 @@
 category: note
 title: Server Authoritative Multiplayer
 date: 2021-06-24 00:00
+modified: 2026-09-26 08:55
 cover: /_media/hal-9000.png
 tags:
   - MultiplayerArchitecture
@@ -10,7 +11,7 @@ summary: A multiplayer architecture where the server is the single source of tru
 
 A typical multiplayer game architecture where the server has authority over the game state. The server keeps track of players' positions, the resources they own, scores, etc., and validates any changes the client requests to the game.
 
-It's a design decision made over relayed multiplayer, or [Client Authoritative](Client Authoritative), where one client has authority and reconciles all game messages.
+It's a design decision made over relayed multiplayer, or Client Authoritative, where one client has authority and reconciles all game messages.
 
 The trade-off with this architecture is that it introduces a latency penalty for every game action, as clients must pass requests through the server. Game engines like the one in Roblox work around this by allowing clients to modify certain parts of the state without server permission, like their own character movement and movement of some game objects, etc.
 

@@ -1,7 +1,7 @@
 ---
 title: JSON-LD
 date: 2025-09-14 00:00
-modified: 2025-09-14 00:00
+modified: 2026-09-26 08:58
 status: draft
 tags:
 - LinkedData
@@ -47,7 +47,7 @@ When loaded into a semantic datbase, the JSON-LD is turned into **RDF Triples** 
 
 Step 3. Stored in Semantic Database
 
-In a triple store (like [GraphDB](GraphDB.md) and [Fuseki](Fuseki.md)).
+In a triple store (like GraphDB and Fuseki).
 * Each triple is stored in the graph.
 * You can query it with [SPARQL](sparql.md).
 

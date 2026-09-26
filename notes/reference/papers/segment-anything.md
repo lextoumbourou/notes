@@ -17,4 +17,4 @@ The authors introduce three interconnected components:
 * a segmentation model called [Segment Anything Model](../../permanent/segment-anything-model.md)
 * a data engine for collecting [SA-1B Dataset](../../permanent/sa-1b-dataset.md), a dataset of over one billion masks.
 
-The paper talks about the importance of [Prompt Engineering](../../../../permanent/prompt-engineering.md) to achieve [Zero-Shot Transfer](../../permanent/zero-shot-transfer.md).
+The paper talks about the importance of [Prompt Engineering](../../permanent/prompt-engineering.md) to achieve [Zero-Shot Transfer](../../permanent/zero-shot-transfer.md).

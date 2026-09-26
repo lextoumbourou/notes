@@ -5,7 +5,7 @@ modified: 2025-09-21 00:00
 status: draft
 ---
 
-**XPath** is a query language for [XML](../../../permanent/xml.md) that kinda resembles using a file-system. It was another standard defined by the W3C, and is commonly used in web scraping frameworks.
+**XPath** is a query language for [XML](xml.md) that kinda resembles using a file-system. It was another standard defined by the W3C, and is commonly used in web scraping frameworks.
 
 Imagine you had this XML document, a list of classic albums:
 
