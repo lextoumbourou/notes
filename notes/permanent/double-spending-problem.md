@@ -1,7 +1,8 @@
 ---
 title: Double-Spending Problem
 date: 2025-03-02 00:00
-modified: 2026-09-26 08:50
+modified: 2026-09-26 12:41
+status: draft
 summary: How blockchain technology solves the fundamental challenge of preventing digital currency from being spent twice.
 tags:
 - cryptocurrency
