@@ -2,8 +2,11 @@
 title: Can Claude Opus 5.5 find any new leads on Satoshi Nakamoto?
 slug: can-claude-opus-5-5-find-any-new-leads-on-satoshi-nakamoto
 date: 2026-09-27 00:00
-modified: 2026-09-27 06:59
+modified: 2026-09-27 07:16
 summary: Let's see if Claude can find anything that the New York Times missed.
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mwh7an5vce2a
+mastodon_post: https://fedi.notesbylex.com/@lex/117339402789103571
+hn_post: https://news.ycombinator.com/item?id=49860574
 cover: /_media/satoshi-nakamoto-budapest-fekist-cover.jpg
 cover_credits: 'Satoshi Nakamoto memorial, Budapest. Photo by <a href="https://commons.wikimedia.org/wiki/File:Bust_of_Satoshi_Nakamoto_in_Budapest.jpg">Fekist</a>, cropped and resized under <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Sculpture by Tamás Gilly and Réka Gergely.'
 tags:
