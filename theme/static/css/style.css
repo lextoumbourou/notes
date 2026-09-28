@@ -1018,7 +1018,7 @@ ul.pagination li { display: inline; margin-right: 8px; }
    Katex
    ============================================================ */
 .katex-display>.katex { text-align: left !important; }
-.katex-display>.katex>.katex-html { overflow: scroll; }
+.katex-display>.katex>.katex-html { overflow: auto; }
 
 /* ============================================================
    Notebook output
