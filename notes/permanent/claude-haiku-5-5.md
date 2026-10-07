@@ -2,7 +2,7 @@
 title: Claude Haiku 5.5
 slug: claude-haiku-5-5
 date: 2026-10-08 06:20
-modified: 2026-10-08 07:07
+modified: 2026-10-08 07:15
 category: model
 cover: /_media/claude-haiku-5-5-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@zmachacek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Zdeněk Macháček</a> on <a href="https://unsplash.com/photos/blue-hummingbird-331x7yqD-3k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -14,7 +14,7 @@ tags:
 
 New Haiku model just dropped: Haiku 5.5, released 7 October 2026 [@anthropicClaudeHaiku55].
 
-Feels like a lifetime since Anthropic updated Haiku. Turns out Haiku 4.5 came out on 15 October 2025, almost exactly a year ago [@anthropicClaudeHaiku45].
+Feels like a lifetime since Anthropic updated Haiku. Turns out Haiku 4.5 came out on 15 October 2025, almost exactly a year ago - which *is* practically a lifetime in AI terms [@anthropicClaudeHaiku45].
 
 Clearly priced to compete directly with [GPT-6 Luna](gpt-6-luna.md), which is a great, cheap model that's been my go-to when I need a cost-efficient option.
 
@@ -36,7 +36,9 @@ As of 8 October 2026 [@anthropicClaudeHaiku55Docs] [@openaiGPT6Luna].
 
 ## Pricing and Cache Settings
 
-Standard prices in **USD per million tokens**, verified on **8 October 2026**. Luna's threshold is 272K input tokens. On both, a prompt over the threshold pays the higher rate for the whole request [@anthropicPricing] [@openaiAPIPricing].
+Haiku's price per token goes up 5x over 100K. Luna also has an increase for larger context sizes, but only 2x (1.5x for output) and its threshold is 272K input tokens. On both, a prompt over the threshold pays the higher rate for the whole request [@anthropicPricing] [@openaiAPIPricing].
+
+Prices in USD per million tokens, as of 8 October 2026.
 
 | Usage | Haiku 5.5, up to 100K | Haiku 5.5, over 100K | Luna, up to 272K | Luna, over 272K |
 |---|---:|---:|---:|---:|
@@ -45,7 +47,7 @@ Standard prices in **USD per million tokens**, verified on **8 October 2026**. L
 | Cache write | $0.125 (5 min), $0.20 (1 hour) | $0.625 (5 min), $1.00 (1 hour) | $0.125 | $0.25 |
 | Output, including reasoning | $0.50 | $2.50 | $0.50 | $0.75 |
 
-The same launch halved Claude Sonnet 5.5's cache-read price, from $0.20 to $0.10 per million tokens [@anthropicClaudeHaiku55].
+Also, of note, the same launch halved Claude Sonnet 5.5's cache-read price, from $0.20 to $0.10 per million tokens [@anthropicClaudeHaiku55].
 
 ## Tokenisers
 
