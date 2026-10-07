@@ -81,5 +81,5 @@ Anthropic's announcement compares Haiku 5.5 with GPT-6 Luna, and as you might ex
 | Terminal-Bench 4.0 | 39.2% | 16.4% | 0.0% | 70.6% |
 | FrontierCode 1.1, Main | 46.4% | 42.4% | n/a | 52.1% |
 
-Overall, Luna is still the cheaper model, but potentially the performance gains might be worth the extra token cost.
+Overall, Luna is still the cheaper model, but potentially the performance gains from Haiku might be worth the extra token cost.
 
