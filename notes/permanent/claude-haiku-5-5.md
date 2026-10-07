@@ -2,11 +2,14 @@
 title: Claude Haiku 5.5
 slug: claude-haiku-5-5
 date: 2026-10-08 06:20
-modified: 2026-10-08 07:17
+modified: 2026-10-08 07:21
 category: model
 cover: /_media/claude-haiku-5-5-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@zmachacek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Zdeněk Macháček</a> on <a href="https://unsplash.com/photos/blue-hummingbird-331x7yqD-3k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 summary: New Haiku-class model - this time an actual new Haiku model.
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mxculxc7ts2e
+mastodon_post: https://fedi.notesbylex.com/@lex/117401704030170984
+threads_post: https://www.threads.com/@lexisoninsta/post/DeNTh3Jj124
 tags:
   - ModelRelease
   - Claude
