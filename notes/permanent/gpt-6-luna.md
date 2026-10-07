@@ -2,8 +2,7 @@
 title: GPT-6 Luna
 slug: gpt-6-luna
 date: 2026-09-25 06:50
-modified: 2026-09-25 06:50
-status: draft
+modified: 2026-10-08 06:32
 category: model
 summary: OpenAI's GPT-6 Luna brings lower token prices, a million-token context window and adjustable reasoning to inexpensive automated workflows.
 tags:
