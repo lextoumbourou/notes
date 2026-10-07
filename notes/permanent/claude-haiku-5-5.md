@@ -2,7 +2,7 @@
 title: Claude Haiku 5.5
 slug: claude-haiku-5-5
 date: 2026-10-08 06:20
-modified: 2026-10-08 07:15
+modified: 2026-10-08 07:17
 category: model
 cover: /_media/claude-haiku-5-5-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@zmachacek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Zdeněk Macháček</a> on <a href="https://unsplash.com/photos/blue-hummingbird-331x7yqD-3k?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -36,7 +36,7 @@ As of 8 October 2026 [@anthropicClaudeHaiku55Docs] [@openaiGPT6Luna].
 
 ## Pricing and Cache Settings
 
-Haiku's price per token goes up 5x over 100K. Luna also has an increase for larger context sizes, but only 2x (1.5x for output) and its threshold is 272K input tokens. On both, a prompt over the threshold pays the higher rate for the whole request [@anthropicPricing] [@openaiAPIPricing].
+Haiku's price per token goes up 5x over 100K. Luna also has an increase for larger context sizes, but only 2x/1.5x input/output, and its threshold is 272K input tokens. On both, a prompt over the threshold pays the higher rate for the whole request [@anthropicPricing] [@openaiAPIPricing].
 
 Prices in USD per million tokens, as of 8 October 2026.
 
@@ -77,4 +77,5 @@ Anthropic's announcement compares Haiku 5.5 with GPT-6 Luna, and as you might ex
 | Terminal-Bench 4.0 | 39.2% | 16.4% | 0.0% | 70.6% |
 | FrontierCode 1.1, Main | 46.4% | 42.4% | n/a | 52.1% |
 
+Overall, Luna is still the cheaper model, but potentially the performance gains might be worth the extra token cost.
 
