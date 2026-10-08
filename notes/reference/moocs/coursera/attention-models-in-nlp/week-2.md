@@ -172,7 +172,7 @@ $$
 
 ## Multi-head Attention
 
-* One improve that can be made on the attention mechanisms discussed so far is [Multi-Head Attention](../../../../permanent/multi-head-attention.md).
+* One improve that can be made on the attention mechanisms discussed so far is [Multi-head Attention](../../../../permanent/multi-head-attention.md).
     * Apply multiple versions of Scaled-Dot Product Attention in parallel.
     * Then apply a transformations many times.
     * Different sets of representation, allows model to return multiple relationships betweens words in query and key matrice.

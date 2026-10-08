@@ -3,7 +3,7 @@ title: "Lesson 6: Normal Distribution"
 date: 2013-08-30 00:00
 parent: st095-statistics
 status: draft
-modified: 2023-04-08 00:00
+modified: 2026-10-05 13:07
 ---
 
 # Lesson 6: Normal Distribution
@@ -19,6 +19,6 @@ modified: 2023-04-08 00:00
     * 99.7% within 3
 * z-table let's you approximate the proportion less than the z-score on a standardized distribution
     * Example:
-        1. Find the z-score of a value on x-axis: ```(mu - x) / std_dev```
+        1. Find the z-score of a value on x-axis: ```(x - mu) / std_dev```
         2. Find the proportion value on a [z-table](http://lilt.ilstu.edu/dasacke/eco148/ztable.htm)
     * Only works on a normal distribution
