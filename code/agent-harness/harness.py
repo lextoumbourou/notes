@@ -7,7 +7,7 @@ A tiny agent harness, built piece by piece in
 
 "Building an Agent Harness From Scratch" on notesbylex.com.
 
-    uv run harness.py [working_dir] "your task"
+uv run harness.py [working_dir] "your task"
 
 Not really intended for serious work, but then again, wtf not!
 """
@@ -21,7 +21,41 @@ from itertools import islice
 import pathlib
 import subprocess
 import sys
-from typing import Callable, Protocol, get_type_hints
+import textwrap
+from typing import Any, Callable, Literal, NotRequired, Protocol, TypedDict, get_type_hints
+
+
+class ToolCall(TypedDict):
+    id: str
+    name: str
+    arguments: str
+
+
+class ToolSpec(TypedDict):
+    name: str
+    description: str
+    parameters: dict[str, Any]
+
+
+class TextMessage(TypedDict):
+    role: Literal["system", "user"]
+    content: str
+
+
+class ToolResult(TypedDict):
+    role: Literal["tool"]
+    tool_call_id: str
+    content: str
+
+
+class ModelReply(TypedDict):
+    role: Literal["assistant"]
+    content: str
+    tool_calls: NotRequired[list[ToolCall]]
+    output_items: NotRequired[list[dict[str, Any]]]
+
+
+Message = TextMessage | ToolResult | ModelReply
 
 # ---------------------------------------------------------------- extension surfaces
 
@@ -41,13 +75,13 @@ def find_context(base_dir: pathlib.Path) -> str:
     )
 
 
-def read_frontmatter(path: pathlib.Path) -> dict:
+def read_frontmatter(path: pathlib.Path) -> dict[str, str]:
     """Return the `key: value` lines between a file's opening `---` markers.
     Enough for name and description, which fit on one line."""
     lines = path.read_text().splitlines()
     if not lines or lines[0].strip() != "---":
         return {}
-    meta = {}
+    meta: dict[str, str] = {}
     for line in lines[1:]:
         if line.strip() == "---":
             return meta
@@ -97,7 +131,7 @@ def build_system_prompt(base_dir: pathlib.Path) -> str:
 
 # ---------------------------------------------------------------- tools
 
-def _truncate(text: str, limit: int = 25_000) -> str:
+def truncate_text(text: str, limit: int = 25_000) -> str:
     return text if len(text) <= limit else text[:limit] + "\n...[truncated]"
 
 
@@ -114,9 +148,12 @@ def tool_bash(cmd: str, *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
     result = subprocess.run(
         cmd, shell=True, cwd=base_dir, capture_output=True, text=True, timeout=120
     )
-    return _truncate(
-        f"exit={result.returncode}\nstdout:\n{result.stdout}\nstderr:\n{result.stderr}"
-    )
+    output = [f"exit={result.returncode}"]
+    if result.stdout:
+        output.append("stdout:\n" + textwrap.indent(result.stdout.rstrip("\n"), "  "))
+    if result.stderr:
+        output.append("stderr:\n" + textwrap.indent(result.stderr.rstrip("\n"), "  "))
+    return truncate_text("\n".join(output))
 
 
 def tool_read_file(path: str, offset: int = 0, limit: int = 2000,
@@ -129,7 +166,7 @@ def tool_read_file(path: str, offset: int = 0, limit: int = 2000,
         line_ending = "\r\n"
         numbered = (f"{i:4}: {line.rstrip(line_ending)}"
                     for i, line in enumerate(lines, offset + 1))
-        return _truncate("\n".join(numbered))
+        return truncate_text("\n".join(numbered))
 
 
 def tool_write_file(path: str, content: str,
@@ -153,7 +190,7 @@ def tool_search_replace(path: str, search: str, replace: str,
     return "OK"
 
 
-TOOLS = {
+TOOLS: dict[str, Callable[..., str]] = {
     "bash": tool_bash,
     "read_file": tool_read_file,
     "write_file": tool_write_file,
@@ -161,7 +198,7 @@ TOOLS = {
 }
 
 
-def schema(name: str, f) -> dict:
+def schema(name: str, f) -> ToolSpec:
     """A provider-neutral tool description derived from a function."""
     params = {key: param for key, param in inspect.signature(f).parameters.items()
               if key != "base_dir"}
@@ -247,11 +284,11 @@ def ask_user(tool_name: str, args: dict, reason: str) -> bool:
 
 # ---------------------------------------------------------------- context
 
-def estimate_tokens(messages: list[dict]) -> int:
-    return sum(len(json.dumps(m)) for m in messages) // 4
+def estimate_tokens(messages: list[Message]) -> int:
+    return sum(len(json.dumps(m.get("output_items", m))) for m in messages) // 4
 
 
-def compact(messages: list[dict], model: Model, keep: int = 6) -> list[dict]:
+def compact(messages: list[Message], model: Model, keep: int = 6) -> list[Message]:
     """Swap the middle of the conversation for a summary, keeping the system
     prompt, the task and the most recent messages."""
     if keep < 1:
@@ -269,7 +306,7 @@ def compact(messages: list[dict], model: Model, keep: int = 6) -> list[dict]:
     }], tools=[])
     if not summary.get("content"):
         return messages
-    note = {
+    note: TextMessage = {
         "role": "user",
         "content": (
             f"<summary_of_earlier_work>\n{summary['content']}\n"
@@ -284,11 +321,11 @@ def compact(messages: list[dict], model: Model, keep: int = 6) -> list[dict]:
 class Model(Protocol):
     cost: float
 
-    def complete(self, messages: list[dict], tools: list[dict]) -> dict: ...
+    def complete(self, messages: list[Message], tools: list[ToolSpec]) -> ModelReply: ...
 
 
-class ChatCompletionsModel:
-    """Chat Completions, with cost tracking. Swap this for another model."""
+class ResponsesModel:
+    """OpenAI Responses adapter. Swap this for another model provider."""
 
     def __init__(
         self, client, name: str = "gpt-6-luna",
@@ -300,38 +337,40 @@ class ChatCompletionsModel:
         self.output_price = output_price / 1e6
         self.cost = 0.0
 
-    def complete(self, messages: list[dict], tools: list[dict]) -> dict:
-        api_messages = []
+    def complete(self, messages: list[Message], tools: list[ToolSpec]) -> ModelReply:
+        api_input = []
         for message in messages:
-            if message["role"] == "assistant" and message.get("tool_calls"):
-                api_messages.append({
-                    **message,
-                    "tool_calls": [
-                        {"id": call["id"], "type": "function",
-                         "function": {"name": call["name"], "arguments": call["arguments"]}}
-                        for call in message["tool_calls"]
-                    ],
-                })
+            if message["role"] == "tool":
+                api_input.append({"type": "function_call_output",
+                                  "call_id": message["tool_call_id"], "output": message["content"]})
+            elif message["role"] == "assistant" and "output_items" in message:
+                api_input.extend(message["output_items"])
             else:
-                api_messages.append(message)
-        response = self.client.chat.completions.create(
+                api_input.append({"role": message["role"], "content": message["content"]})
+        response = self.client.responses.create(
             model=self.name,
-            messages=api_messages,
-            tools=[{"type": "function", "function": tool} for tool in tools] or None,
-            reasoning_effort="none",  # Chat Completions needs this for tool calls on GPT-6 Luna
+            input=api_input,
+            tools=[{"type": "function", **tool, "strict": False} for tool in tools],
+            reasoning={"effort": "low"},
         )
+        if response.status != "completed":
+            raise RuntimeError(f"model response was {response.status}")
         usage = response.usage
         if usage:
             self.cost += (
-                usage.prompt_tokens * self.input_price
-                + usage.completion_tokens * self.output_price
+                usage.input_tokens * self.input_price
+                + usage.output_tokens * self.output_price
             )
-        message = response.choices[0].message
-        reply = {"role": "assistant", "content": message.content or ""}
-        if message.tool_calls:
+        reply: ModelReply = {
+            "role": "assistant",
+            "content": response.output_text,
+            "output_items": [item.model_dump(exclude_none=True) for item in response.output],
+        }
+        calls = [item for item in response.output if item.type == "function_call"]
+        if calls:
             reply["tool_calls"] = [
-                {"id": call.id, "name": call.function.name, "arguments": call.function.arguments}
-                for call in message.tool_calls
+                {"id": call.call_id, "name": call.name, "arguments": call.arguments}
+                for call in calls
             ]
         return reply
 
@@ -354,7 +393,7 @@ def run_tool(policy: Policy, task: str, name: str, args: dict, base_dir: pathlib
             "Do not retry this; find another way or ask the user."
         )
     try:
-        return _truncate(str(TOOLS[name](**args, base_dir=base_dir)))
+        return truncate_text(str(TOOLS[name](**args, base_dir=base_dir)))
     except Exception as error:
         return f"ERROR: {type(error).__name__}: {error}"
 
@@ -364,7 +403,7 @@ def run(task: str, base_dir: pathlib.Path, model: Model, policy: Policy, max_tur
     base_dir = base_dir.resolve()
     if not base_dir.is_dir():
         raise NotADirectoryError(base_dir)
-    messages = [
+    messages: list[Message] = [
         {"role": "system", "content": f"{SYSTEM_PROMPT}\n\n{build_system_prompt(base_dir)}"},
         {"role": "user", "content": task},
     ]
@@ -405,7 +444,7 @@ if __name__ == "__main__":
     working_dir = pathlib.Path(args.pop(0) if len(args) > 1 else "agent-harness-working")
     # Ask for gzip: some installs of the new SDK fail to decode brotli responses.
     client = openai.OpenAI(default_headers={"Accept-Encoding": "gzip"})
-    model = ChatCompletionsModel(client)
+    model = ResponsesModel(client)
     policy = partial(classify_tool_call, client)
     print(run(" ".join(args), working_dir, model, policy))
     print(f"cost=${model.cost:.4f}", file=sys.stderr)

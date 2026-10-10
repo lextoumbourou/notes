@@ -1,7 +1,7 @@
 ---
 title: Building an Agent Harness From Scratch
 date: 2026-10-08 13:50
-modified: 2026-10-10 20:32
+modified: 2026-10-11 08:14
 summary: Basically just while loops.
 category: essay
 tags:
@@ -13,48 +13,47 @@ notebook:
   cwd: ../../code
 ---
 
-In this article, I want to walk through the process of building a modern agentic harness from scratch, from first principles. Along the way, I want to share research and opinions that I've come across about different patterns for building harnesses.
+In this article, I want to walk through the process of building a modern agentic harness from scratch, starting with the simplest possible agent loop. Along the way, I'll share research and opinions I've come across about different approaches to building harnesses.
 
-By the end of the article, we'll understand exactly what goes into a modern agent harness, and have all the skills to build our own.
+By the end of the article, you'll understand exactly what goes into a modern agent harness, and have all the skills to build your own.
 
 The topic of agent harness building seemed to have exploded in popularity in 2026, both as an active area of development for many people and organisations, and an active area for research.
 
 Almost all my colleagues and peers are thinking about harnesses in their work - either directly, through building their own agentic products and services, or indirectly, as they tune and experiment with their own coding agents - like Claude Code or Codex - that they use on a daily basis.
 
 > [!notes]
-> A **coding harness** is a specific type of harness that develops software, but nowadays it seems all agentic harnesses are converging on being a coding harness.
+> A **coding harness** is a specific type of harness that develops software, but nowadays it seems all agentic harnesses are converging on being a coding harness, so I'll use them interchangeably.
 
-Additionally, the community seems to be heading towards a consensus about how to think about harnesses: that is, simpler is better - as the models get more capable, the harness should get simpler.
+Additionally, in recent months, the community seems to be heading towards a consensus about how to think about harnesses, which is roughly the idea that as LLMs get more capable, the harness should get simpler.
 
 ## What Is An Agent Harness?
 
-The **harness** is everything in [AI Agent](ai-agent.md) that isn't the model.
+The **harness** is everything in an [AI Agent](ai-agent.md) that isn't the model.
 
 The simplest possible harness we can conceive of is a loop where we:
 
-- builds context.
-- calls an LLM.
-- runs some tools (or finishes if the task is done).
-- adds the result back into context [@willisonAgentMayFinally2025].
+- build context.
+- call an LLM.
+- run some tools (or finish if the task is done).
+- add the result back into context [@willisonAgentMayFinally2025].
 
-[![The agent loop as four coloured blocks joined by arrows: context, then model, then tools, then result, which feeds back into context, round a while True loop.](../_media/agent-harness/agent-harness-loop-colour.png)](../_media/agent-harness/agent-harness-loop-colour.png)
+[![The agent loop as four coloured blocks joined by arrows: context, then model, then tools, then result, which feeds back into context.](../_media/agent-harness/agent-harness-loop-colour.png)](../_media/agent-harness/agent-harness-loop-colour.png)
 
-Here are a few lines of Python that show you what I mean:
+Here are a few lines of Python that sketch the simplest possible agent loop:
 
 ```python {run=false}
 while True:
     reply = model(context)
     if not reply.tool_call:
         break
-        
+
     result = run_tool(reply.tool_call)
     context.append(result)
 ```
 
+Of course, in the real world, there are a few more things to think about. You need to make sure the agent can be run safely, with safety checks and sandboxing. You need to give the user the ability to extend their harness with extra skills and tools. There's typically an interface, either in the terminal or browser. Some agents can orchestrate sub-agents, and so on.
 
-Of course, in the real world, there are a few more things to think about. You need to make sure the agent can be run safely, with safety checks and sandboxing; you need to give the user the ability to extend their harness with extra skills and tools; there's a user interface; some agents can orchestrate sub-agents, and so on.
-
-However, even so, the core of a harness is pretty straightforward. A study of eleven production coding harnesses, including Claude Code, Codex CLI, Gemini CLI and Pi, boiled almost every harness down to 7 core parts [@barbasteHarnessEngineeringAnatomy2026]:
+However, even with all those considerations, the core of a harness is pretty straightforward. A study of eleven production coding harnesses, including Claude Code, Codex CLI, Gemini CLI and Pi, compared them across seven aspects of harness design [@barbasteHarnessEngineeringAnatomy2026]:
 
 1. the loop
 2. the LLM integration
@@ -64,9 +63,15 @@ However, even so, the core of a harness is pretty straightforward. A study of el
 6. orchestration (running several agents or tasks together)
 7. extension surfaces (places users can plug in their own tools and skills)
 
-Let's use those pieces as our guide, building them one piece at a time.
+[![A central agent loop connects context, model, tools and result. Surrounding notes show LLM integration, a context management strategy, safety controls, orchestration and extension surfaces.](../_media/agent-harness/agent-harness-seven-parts.png)](../_media/agent-harness/agent-harness-seven-parts.png)
 
-Firstly, since I'm Python PEP8-pilled, I'll add all the imports I need to the top of the blog post - at least where the code begins.
+I'll use those pieces as our guide, building them one piece at a time.
+
+Note that the [Barbaste et al., 2026](harness-engineering-anatomy-architecture-and-evolution-of-coding-agents.md) paper I've linked there also includes a minimal agent, which has been an inspiration for this blog post.
+
+---
+
+Firstly, the imports. I'll stick to the standard library, though I will import the OpenAI client to save a few lines of API-calling code.
 
 ```python
 import html
@@ -77,43 +82,71 @@ from itertools import islice
 import pathlib
 import subprocess
 import sys
-from typing import Callable, Protocol, get_type_hints
+import textwrap
+from tempfile import TemporaryDirectory
+from typing import Any, Callable, Literal, NotRequired, Protocol, TypedDict, get_type_hints
 
 import openai
 ```
-<!-- nb-output hash="7fb87e532301ba7d" format="html" -->
+<!-- nb-output hash="da4887270359ac24" format="html" -->
 
 <!-- /nb-output -->
 
-I'll set the base dir to a subfolder of this notes repo, [`code/agent-harness-working`](https://github.com/lextoumbourou/notes/tree/main/code/agent-harness-working), which has an `AGENTS.md` and two example skills. When the finished harness runs on the command line, the path can be overridden by an argument.
+We've already looked at a basic loop, so we'll skip over that part for now, and come back at the end when we put it all together.
 
-```python
-BASE_DIR = pathlib.Path("./agent-harness-working")
-```
-<!-- nb-output hash="fccfe1fdb86ceff8" format="html" -->
-
-<!-- /nb-output -->
-
-We'll come back to the loop - we've already looked at the basic, lets get all the building blocks in place, and then take another pass at it.
+So first on our list is the model.
 
 ## Model
 
-Firstly, an agentic harness nothing without the model. Incredibly, intelligent APIs are a dime-a-dozen - and there's many to chooes from. Most agents are usually not bound to a particular model, and the ability to switch models is a handy property of a harness.
+Modern agentic AI is only possible thanks to the incredible magic of language models. Nowadays, intelligence is available in so many different places, and since the capabilities of new LLMs are constantly on an upward trajectory, it's useful to be as model-agnostic as possible, making it easy to switch.
 
-So it's nice to have a wrapper abstraction that allows us to hide the specific vendor client implementation, and just plug a generic model into the mix.
-
-I'm going to keep things simple, and just write a basic model implementation, but in the real-world, there's some additional considerations that take up lines of code, like handling sreaming responses and errors.
-
-Here's a basic model wrapper, with a GPT-6 Luna implementation:
+So, it's typical to have a wrapper abstraction that allows us to hide the specific vendor client implementation, and just plug a generic model into the mix.
 
 ```python
+class ToolCall(TypedDict):
+    id: str
+    name: str
+    arguments: str
+
+class ToolSpec(TypedDict):
+    name: str
+    description: str
+    parameters: dict[str, Any]
+
+class TextMessage(TypedDict):
+    role: Literal["system", "user"]
+    content: str
+
+class ToolResult(TypedDict):
+    role: Literal["tool"]
+    tool_call_id: str
+    content: str
+
+class ModelReply(TypedDict):
+    role: Literal["assistant"]
+    content: str
+    tool_calls: NotRequired[list[ToolCall]]
+    output_items: NotRequired[list[dict[str, Any]]]
+
+Message = TextMessage | ToolResult | ModelReply
+
 class Model(Protocol):
     cost: float
 
-    def complete(self, messages: list[dict], tools: list[dict]) -> dict: ...
+    def complete(self, messages: list[Message], tools: list[ToolSpec]) -> ModelReply: ...
+```
+<!-- nb-output hash="29d8dd949c3aea0c" format="html" -->
 
+<!-- /nb-output -->
 
-class ChatCompletionsModel:
+There are some themes that you would likely want to factor into your wrapper, like the fact that most modern LLMs support reasoning ([LLM Reasoning](llm-reasoning.md)), also, you'll likely want to handle things like streaming responses, and dealing with errors and so forth.
+
+Here's a basic model wrapper, with a GPT-6 Luna implementation using the Responses API. The `output_items` field keeps the API's reasoning, text and function call items together for the next turn [@openaiResponsesFunctionCalling]:
+
+```python
+class ResponsesModel:
+    """OpenAI Responses adapter. Swap this for another model provider."""
+
     def __init__(
         self, client, name: str = "gpt-6-luna",
         input_price: float = 0.10, output_price: float = 0.50,
@@ -124,76 +157,163 @@ class ChatCompletionsModel:
         self.output_price = output_price / 1e6
         self.cost = 0.0
 
-    def complete(self, messages: list[dict], tools: list[dict]) -> dict:
-        api_messages = []
+    def complete(self, messages: list[Message], tools: list[ToolSpec]) -> ModelReply:
+        api_input = []
         for message in messages:
-            if message["role"] == "assistant" and message.get("tool_calls"):
-                api_messages.append({
-                    **message,
-                    "tool_calls": [
-                        {"id": call["id"], "type": "function",
-                         "function": {"name": call["name"], "arguments": call["arguments"]}}
-                        for call in message["tool_calls"]
-                    ],
-                })
+            if message["role"] == "tool":
+                api_input.append({"type": "function_call_output",
+                                  "call_id": message["tool_call_id"], "output": message["content"]})
+            elif message["role"] == "assistant" and "output_items" in message:
+                api_input.extend(message["output_items"])
             else:
-                api_messages.append(message)
-        response = self.client.chat.completions.create(
+                api_input.append({"role": message["role"], "content": message["content"]})
+        response = self.client.responses.create(
             model=self.name,
-            messages=api_messages,
-            tools=[{"type": "function", "function": tool} for tool in tools] or None,
-            reasoning_effort="none",
+            input=api_input,
+            tools=[{"type": "function", **tool, "strict": False} for tool in tools],
+            reasoning={"effort": "low"},
         )
+        if response.status != "completed":
+            raise RuntimeError(f"model response was {response.status}")
         usage = response.usage
         if usage:
             self.cost += (
-                usage.prompt_tokens * self.input_price
-                + usage.completion_tokens * self.output_price
+                usage.input_tokens * self.input_price
+                + usage.output_tokens * self.output_price
             )
-        message = response.choices[0].message
-        reply = {"role": "assistant", "content": message.content or ""}
-        if message.tool_calls:
+        reply: ModelReply = {
+            "role": "assistant",
+            "content": response.output_text,
+            "output_items": [item.model_dump(exclude_none=True) for item in response.output],
+        }
+        calls = [item for item in response.output if item.type == "function_call"]
+        if calls:
             reply["tool_calls"] = [
-                {"id": call.id, "name": call.function.name, "arguments": call.function.arguments}
-                for call in message.tool_calls
+                {"id": call.call_id, "name": call.name, "arguments": call.arguments}
+                for call in calls
             ]
         return reply
 ```
-<!-- nb-output hash="6a88df716e56cbfe" format="html" -->
+
+<!-- nb-output hash="f96606e3e9c54f25" format="html" -->
 
 <!-- /nb-output -->
 
+> [!note]
+> The tool schemas below have optional arguments, so this adapter sets `strict=False` to keep them optional. The Responses API otherwise tries to make tool schemas strict [@openaiResponsesFunctionCalling].
 
-## Tools
-
-In a lot of ways, the tools are main building block of an agentic harness. They allow the model to act and receive feedback from the world. The use of tools also points to one of the biggest shifts - with more practioners advocating for just a handful of tools, in some cases, like Mini-Swe-Agent just use: bash.
-
-The paradigm of [Tool Use](tool-use.md) in LLM-based agentic reasoning dates back to 2022-2023, with papers like TALM: Tool Augmented Language Models [@parisiTALMToolAugmented2022], PAL: Program-aided Language Models [@gaoPALProgramaidedLanguage2022] and Toolformer [@schickToolformerLanguageModels2023] demonstrating that tool use has the capacity to unlock massive agentic potential for LLM-based agents. Later in 2023, OpenAI introduced function calling, which gave us a schema for structured tool definitions, and a way of returning tool outputs to the model [@openaiFunctionCallingOther2023], which was soon adopted - at least the idea, by other vendors.
-
-In my implementation, I'm going to follow [Pi.dev](https://pi.dev/) approach and implement just four tools: read, write, edit and bash.
-
-I've also include a truncation in their outputs to ensure we don't exhaust the context window:
+And give that a little test run:
 
 ```python
-def _truncate(text: str, limit: int = 25_000) -> str:
-    return text if len(text) <= limit else text[:limit] + "\n...[truncated]"
+client = openai.OpenAI()
+model = ResponsesModel(client)
+reply = model.complete([{"role": "user", "content": "What is 1+1?"}], tools=[])
+print(reply["content"])
+```
+<!-- nb-output hash="369dd2362722489a" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">2
+</pre>
+</div>
+<!-- /nb-output -->
 
+Model is easy enough - now for implementing the tools.
+## Tools
+
+In a lot of ways, the tools are the most interesting part of the agentic harness. They allow the model to act and receive feedback from the world.
+
+The paradigm of [Tool Use](tool-use.md) in LLM-based agentic reasoning dates back to 2022-2023, with papers like:
+
+- TALM: Tool Augmented Language Models [@parisiTALMToolAugmented2022]
+- PAL: Program-aided Language Models [@gaoPALProgramaidedLanguage2022]
+- Toolformer [@schickToolformerLanguageModels2023]
+
+Each demonstrates how tools can extend the capabilities of LLM-based agents.
+
+Later in 2023, OpenAI introduced function calling, which gave us a schema for structured tool definitions, and a way of returning tool outputs to the model [@openaiFunctionCallingOther2023], which was soon adopted - at least the idea, by other vendors.
+
+Harness use of tools also points to one of the biggest shifts, with more practitioners advocating for simpler harnesses and fewer tools. Garry Tan describes [Thin Harnesses](thin-harnesses.md) as systems that run the loop, handle files, manage context and enforce safety, while skills and deterministic tools do the rest [@tanThinHarnessFat2026]. At one extreme, [mini-SWE-agent](https://github.com/SWE-agent/mini-swe-agent) uses only bash.
+
+In my implementation, I'm going to follow [Pi.dev](https://pi.dev/) approach and implement just four tools: `read`, `write`, `edit` and `bash`.
+
+Firstly, it's good practice to truncate your outputs, so that a rogue log in a process doesn't exhaust the context budget:
+
+```python
+def truncate_text(text: str, limit: int = 25_000) -> str:
+    return text if len(text) <= limit else text[:limit] + "\n...[truncated]"
+```
+<!-- nb-output hash="9529fe25f5d66f9a" format="html" -->
+
+<!-- /nb-output -->
+
+```python
+print(truncate_text("This is some long winded text...", limit=15))
+```
+<!-- nb-output hash="96ef4f14634b256b" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">This is some lo
+...[truncated]
+</pre>
+</div>
+<!-- /nb-output -->
+
+When we talk about tool use, there are two aspects: creating the code that executes the tools and registering the tools that are available to the model.
+
+I'll start with the former. Firstly, the bash tool:
+
+```python
+def tool_bash(cmd: str, *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
+    """Run a shell command from the working directory."""
+    result = subprocess.run(
+        cmd, shell=True, cwd=base_dir, capture_output=True, text=True, timeout=120
+    )
+    output = [f"exit={result.returncode}"]
+    if result.stdout:
+        output.append("stdout:\n" + textwrap.indent(result.stdout.rstrip("\n"), "  "))
+    if result.stderr:
+        output.append("stderr:\n" + textwrap.indent(result.stderr.rstrip("\n"), "  "))
+    return truncate_text("\n".join(output))
+```
+<!-- nb-output hash="32ffc8d1f98ef5c7" format="html" -->
+
+<!-- /nb-output -->
+
+It's a simple process that delegates to `subprocess.run`. In practice, we might want to run this process, or the entire agent, in a sandbox like Docker Agent.
+
+The notebook runs from `public/code`, so the example workspace is `agent-harness-working`:
+
+```python
+BASE_DIR = pathlib.Path("agent-harness-working")
+print(tool_bash("ls", base_dir=BASE_DIR))
+```
+<!-- nb-output hash="87e5a8bf00dad75e" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">exit=0
+stdout:
+  AGENTS.md
+  data
+</pre>
+</div>
+<!-- /nb-output -->
+
+
+Before the file tools, a helper rejects paths that resolve outside the working directory. Bash is still unrestricted by this check.
+
+```python
 def _workspace_path(path: str, base_dir: pathlib.Path) -> pathlib.Path:
     root = base_dir.resolve()
     target = (root / path).resolve()
     if not target.is_relative_to(root):
         raise ValueError("path is outside the working directory")
     return target
+```
+<!-- nb-output hash="90499c327ab269dd" format="html" -->
 
-def tool_bash(cmd: str, *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
-    """Run a shell command from the working directory."""
-    result = subprocess.run(
-        cmd, shell=True, cwd=base_dir, capture_output=True, text=True, timeout=120
-    )
-    return _truncate(
-        f"exit={result.returncode}\nstdout:\n{result.stdout}\nstderr:\n{result.stderr}"
-    )
+<!-- /nb-output -->
 
+The read tool returns numbered lines. You can choose how many lines to skip and how many to return:
+
+```python
 def tool_read_file(path: str, offset: int = 0, limit: int = 2000,
                    *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
     """Read numbered lines from a file in the working directory."""
@@ -204,14 +324,57 @@ def tool_read_file(path: str, offset: int = 0, limit: int = 2000,
         line_ending = "\r\n"
         numbered = (f"{i:4}: {line.rstrip(line_ending)}"
                     for i, line in enumerate(lines, offset + 1))
-        return _truncate("\n".join(numbered))
+        return truncate_text("\n".join(numbered))
+```
+<!-- nb-output hash="13048af54c0a2a5d" format="html" -->
 
+<!-- /nb-output -->
+
+```python
+print(tool_read_file("AGENTS.md", limit=5, base_dir=BASE_DIR))
+```
+<!-- nb-output hash="344ed6493394514d" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">   1: # AGENTS file for Lex's Simple Agent Harness
+   2:
+   3: This is the working directory for the harness built in the post &quot;An Agent Harness in one blog post&quot; on notesbylex.com. The harness loads this file into context at the start of every session.
+   4:
+   5: ## Environment
+</pre>
+</div>
+<!-- /nb-output -->
+
+The write tool saves text to a file. This example uses a temporary folder so it cleans up after itself:
+
+```python
 def tool_write_file(path: str, content: str,
                     *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
     """Write a file in the working directory."""
     _workspace_path(path, base_dir).write_text(content)
     return f"wrote {len(content.encode())} bytes"
+```
+<!-- nb-output hash="0cbf15140e509001" format="html" -->
 
+<!-- /nb-output -->
+
+```python
+with TemporaryDirectory(dir=BASE_DIR) as tmp:
+    demo_dir = pathlib.Path(tmp)
+    print(tool_write_file("demo.txt", "Hello, agent!\n", base_dir=demo_dir))
+    print((demo_dir / "demo.txt").read_text(), end="")
+```
+<!-- nb-output hash="dd700ae7702e504e" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">wrote 14 bytes
+</pre>
+<pre class="nb-stream-stdout">Hello, agent!
+</pre>
+</div>
+<!-- /nb-output -->
+
+Finally, the edit tool replaces an exact string, but only when it appears once:
+
+```python
 def tool_search_replace(path: str, search: str, replace: str,
                         *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
     """Replace one exact match in a file in the working directory."""
@@ -224,22 +387,45 @@ def tool_search_replace(path: str, search: str, replace: str,
         return f"ERROR: search string occurs {count}x"
     p.write_text(text.replace(search, replace, 1))
     return "OK"
+```
+<!-- nb-output hash="bcc6d689c18c0497" format="html" -->
 
-TOOLS = {
+<!-- /nb-output -->
+
+```python
+with TemporaryDirectory(dir=BASE_DIR) as tmp:
+    demo_dir = pathlib.Path(tmp)
+    tool_write_file("demo.txt", "Hello, world!\n", base_dir=demo_dir)
+    print(tool_search_replace("demo.txt", "world", "agent", base_dir=demo_dir))
+    print(tool_read_file("demo.txt", base_dir=demo_dir))
+```
+<!-- nb-output hash="41981f967fa429d9" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">OK
+</pre>
+<pre class="nb-stream-stdout">   1: Hello, agent!
+</pre>
+</div>
+<!-- /nb-output -->
+
+Now register the four tools by name:
+
+```python
+TOOLS: dict[str, Callable[..., str]] = {
     "bash": tool_bash,
     "read_file": tool_read_file,
     "write_file": tool_write_file,
     "search_replace": tool_search_replace,
 }
 ```
-<!-- nb-output hash="4dc5485bfa5e8480" format="html" -->
+<!-- nb-output hash="92ebe9f05e2a44eb" format="html" -->
 
 <!-- /nb-output -->
 
 And map them into the OpenAI-friendly format. Rather than writing a JSON schema for every tool by hand, I'll read each function's arguments:
 
 ```python
-def schema(name: str, f) -> dict:
+def schema(name: str, f) -> ToolSpec:
     params = {key: param for key, param in inspect.signature(f).parameters.items()
               if key != "base_dir"}
     types = get_type_hints(f)
@@ -255,7 +441,7 @@ def schema(name: str, f) -> dict:
 
 print(json.dumps(schema("read_file", tool_read_file), indent=2))
 ```
-<!-- nb-output hash="b99fc987a84f9001" format="html" -->
+<!-- nb-output hash="49539ee1c18ad12c" format="html" -->
 <div class="nb-output">
 <pre class="nb-stream-stdout">{
   &quot;name&quot;: &quot;read_file&quot;,
@@ -283,19 +469,49 @@ print(json.dumps(schema("read_file", tool_read_file), indent=2))
 </div>
 <!-- /nb-output -->
 
+Finally, let's check that OpenAI can call a tool. I'll give it only Bash and ask it to run `pwd` once:
+
+```python
+messages: list[Message] = [
+    {"role": "user", "content": "Call the bash tool once with `pwd`, then report the result."}
+]
+reply = model.complete(messages, tools=[schema("bash", tool_bash)])
+calls = reply.get("tool_calls", [])
+assert len(calls) == 1, f"Expected one tool call, got {calls!r}"
+
+call = calls[0]
+arguments = json.loads(call["arguments"])
+assert call["name"] == "bash" and arguments == {"cmd": "pwd"}, call
+result = TOOLS[call["name"]](**arguments, base_dir=BASE_DIR)
+print(result)
+
+messages.extend([reply, {"role": "tool", "tool_call_id": call["id"], "content": result}])
+print(model.complete(messages, tools=[])["content"])
+```
+<!-- nb-output hash="3e68a89e348657bb" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">exit=0
+stdout:
+  /Users/lex/code/private-notes/public/code/agent-harness-working
+</pre>
+<pre class="nb-stream-stdout">`pwd` returned `/Users/lex/code/private-notes/public/code/agent-harness-working`.
+</pre>
+</div>
+<!-- /nb-output -->
+
 ## Context & Memory
 
 Even with a big context window, a long task will eventually overflow it, so we need some strategy for dealing with that. There are a few typical approaches: we could truncate the old context, or we could call an LLM to summarise the conversation so far. [An Empirical Study of Harness Design for Coding Agents](an-empirical-study-of-harness-design-for-coding-agents.md) explored different methods of [Context Management](context-management.md), and found the right technique mostly depends on the model itself: context management mattered more as the context window shrank, mostly by preventing overflow failures [@fanEmpiricalStudyHarness2026]. The more context the model has, the less the approach matters, which is no surprise.
 
 Here, we're going to use the common approach of asking the model to summarise. I'll estimate tokens as characters divided by four, which is rough but fine for deciding when to compact. When we do, the system prompt and the task stay, the recent messages stay, and everything in the middle gets swapped for a summary.
 
-There's one gotcha. In the OpenAI format, a tool result has to follow the assistant message that called the tool, so we can't cut the conversation between the two:
+There's one gotcha. In the Responses API, a tool result has to keep the `call_id` of the function call that requested it, so we can't cut the conversation between the two [@openaiResponsesFunctionCalling]:
 
 ```python
-def estimate_tokens(messages: list[dict]) -> int:
-    return sum(len(json.dumps(m)) for m in messages) // 4
+def estimate_tokens(messages: list[Message]) -> int:
+    return sum(len(json.dumps(m.get("output_items", m))) for m in messages) // 4
 
-def compact(messages: list[dict], model: Model, keep: int = 6) -> list[dict]:
+def compact(messages: list[Message], model: Model, keep: int = 6) -> list[Message]:
     if keep < 1:
         raise ValueError("keep must be positive")
     split = max(2, len(messages) - keep)
@@ -311,7 +527,7 @@ def compact(messages: list[dict], model: Model, keep: int = 6) -> list[dict]:
     }], tools=[])
     if not summary.get("content"):
         return messages
-    note = {
+    note: TextMessage = {
         "role": "user",
         "content": (
             f"<summary_of_earlier_work>\n{summary['content']}\n"
@@ -320,7 +536,7 @@ def compact(messages: list[dict], model: Model, keep: int = 6) -> list[dict]:
     }
     return head + [note] + tail
 ```
-<!-- nb-output hash="7b393dceeda3b339" format="html" -->
+<!-- nb-output hash="6d71bec4928db63c" format="html" -->
 
 <!-- /nb-output -->
 
@@ -390,7 +606,7 @@ def classify_tool_call(client, user_request: str, tool_name: str, args: dict) ->
         return "allow", reason
     return "ask", reason
 ```
-<!-- nb-output hash="3ac4dd9872d1c5f9" format="html" -->
+<!-- nb-output hash="78e5cd4b78418e96" format="html" -->
 
 <!-- /nb-output -->
 
@@ -447,7 +663,7 @@ def ask_user(tool_name: str, args: dict, reason: str) -> bool:
         return False
     return answer.strip().lower() in ("y", "yes")
 ```
-<!-- nb-output hash="de2ccb383c744f88" format="html" -->
+<!-- nb-output hash="26dded34710cc23a" format="html" -->
 
 <!-- /nb-output -->
 
@@ -487,10 +703,10 @@ def find_context(base_dir: pathlib.Path) -> str:
 
 print(find_context(BASE_DIR))
 ```
-<!-- nb-output hash="6f9db053b876b291" format="html" -->
+<!-- nb-output hash="63df9a7740482e79" format="html" -->
 <div class="nb-output">
 <pre class="nb-stream-stdout">&lt;project_instructions path=&quot;agent-harness-working/AGENTS.md&quot;&gt;
-# AGENTS file for Lex&#x27;s Simple Agent Harness
+# AGENTS file for Lex's Simple Agent Harness
 
 This is the working directory for the harness built in the post &quot;An Agent Harness in one blog post&quot; on notesbylex.com. The harness loads this file into context at the start of every session.
 
@@ -498,7 +714,7 @@ This is the working directory for the harness built in the post &quot;An Agent H
 
 - Python 3.11 or newer, standard library only unless a skill says otherwise.
 - Run commands from this directory. Files to work on live in `data/`.
-- Skills live in `.agents/skills/&amp;lt;name&amp;gt;/SKILL.md`. Read a skill&#x27;s full file before following it, and resolve its relative paths against the skill&#x27;s folder.
+- Skills live in `.agents/skills/&amp;lt;name&amp;gt;/SKILL.md`. Read a skill's full file before following it, and resolve its relative paths against the skill's folder.
 
 ## How to work
 
@@ -515,6 +731,8 @@ This is the working directory for the harness built in the post &quot;An Agent H
 </div>
 <!-- /nb-output -->
 
+### Loading Skills in Context
+
 Skills are folders with a `SKILL.md` file, whose frontmatter has a `name` and a `description` saying what the skill does and when to use it [@agentSkillsSpecification]. They load by progressive disclosure: only each skill's name, description and location go into the system prompt, and the model reads the full `SKILL.md` with its file tool when a task matches the description [@earendilPiSkills]. That keeps a long list of skills cheap.
 
 We'll look in `.agents/skills/`, a convention for harnesses, read each skill's frontmatter, and skip any skill without a description, since the model has nothing to choose it by:
@@ -522,13 +740,13 @@ We'll look in `.agents/skills/`, a convention for harnesses, read each skill's f
 ```python
 SKILLS_DIR = pathlib.Path(".agents/skills")
 
-def read_frontmatter(path: pathlib.Path) -> dict:
+def read_frontmatter(path: pathlib.Path) -> dict[str, str]:
     """Return the `key: value` lines between a file's opening `---` markers.
     Enough for name and description, which fit on one line."""
     lines = path.read_text().splitlines()
     if not lines or lines[0].strip() != "---":
         return {}
-    meta = {}
+    meta: dict[str, str] = {}
     for line in lines[1:]:
         if line.strip() == "---":
             return meta
@@ -552,7 +770,7 @@ def find_skills(base_dir: pathlib.Path) -> list[dict]:
 
 print(find_skills(BASE_DIR))
 ```
-<!-- nb-output hash="ee6a240ebdf247ab" format="html" -->
+<!-- nb-output hash="d52db22ccdc85e23" format="html" -->
 <div class="nb-output">
 <pre class="nb-stream-stdout">[{'name': 'release-notes', 'description': 'Write short release notes from a git history. Use when the user asks for release notes, a changelog entry, or a summary of what changed between two git refs or over a period of time.', 'location': PosixPath('agent-harness-working/.agents/skills/release-notes/SKILL.md')}, {'name': 'summarise-csv', 'description': 'Summarise a CSV file (row count, columns, totals and the biggest groups). Use when the user asks what is in a CSV, wants quick stats, or asks for a breakdown of a CSV by one of its columns.', 'location': PosixPath('agent-harness-working/.agents/skills/summarise-csv/SKILL.md')}]
 </pre>
@@ -637,7 +855,7 @@ def run_tool(policy: Policy, task: str, name: str, args: dict, base_dir: pathlib
             "Do not retry this; find another way or ask the user."
         )
     try:
-        return _truncate(str(TOOLS[name](**args, base_dir=base_dir)))
+        return truncate_text(str(TOOLS[name](**args, base_dir=base_dir)))
     except Exception as error:
         return f"ERROR: {type(error).__name__}: {error}"
 
@@ -646,7 +864,7 @@ def run(task: str, base_dir: pathlib.Path, model: Model, policy: Policy, max_tur
     base_dir = base_dir.resolve()
     if not base_dir.is_dir():
         raise NotADirectoryError(base_dir)
-    messages = [
+    messages: list[Message] = [
         {"role": "system", "content": f"{SYSTEM_PROMPT}\n\n{build_system_prompt(base_dir)}"},
         {"role": "user", "content": task},
     ]
@@ -677,7 +895,7 @@ def run(task: str, base_dir: pathlib.Path, model: Model, policy: Policy, max_tur
             messages.append({"role": "tool", "tool_call_id": call["id"], "content": result})
     return f"Stopped: hit {max_turns} turns."
 ```
-<!-- nb-output hash="59e1304d98221744" format="html" -->
+<!-- nb-output hash="247a6550672321fa" format="html" -->
 
 <!-- /nb-output -->
 
@@ -697,17 +915,19 @@ if __name__ == "__main__":
     working_dir = pathlib.Path(args.pop(0) if len(args) > 1 else "agent-harness-working")
     # Ask for gzip: some installs of the new SDK fail to decode brotli responses.
     client = openai.OpenAI(default_headers={"Accept-Encoding": "gzip"})
-    model = ChatCompletionsModel(client)
+    model = ResponsesModel(client)
     policy = partial(classify_tool_call, client)
     print(run(" ".join(args), working_dir, model, policy))
     print(f"cost=${model.cost:.4f}", file=sys.stderr)
 ```
 
-It starts with an inline script header, so `uv run` installs the OpenAI SDK for you (the Decisions API needs version 3.26 or later), and the key comes from `OPENAI_API_KEY`. There's also a [`test_harness.py`](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/test_harness.py) with 19 tests that use a fake model and a fake classifier, so they run in a fraction of a second without touching the network.
+It starts with an inline script header, so `uv run` installs the OpenAI SDK for you (the Decisions API needs version 3.26 or later), and the key comes from `OPENAI_API_KEY`. There's also a [`test_harness.py`](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/test_harness.py) with 19 tests that use a fake model, a mocked Responses API client and a fake classifier, so they run in a fraction of a second without touching the network.
 
 ## Testing it
 
 Time to see if it works. I ran three tasks from the `code` folder of the notes repo on 10 October 2026, using the example working directory.
+
+These runs used the earlier Chat Completions adapter. The Responses API adapter above was checked on 11 October 2026 with a text reply and a tool call round trip.
 
 First, a task that should trigger a skill:
 

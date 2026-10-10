@@ -1,4 +1,8 @@
-"""Tests for harness.py that never touch the network: python3 -m unittest test_harness"""
+# /// script
+# requires-python = ">=3.11"
+# dependencies = ["openai>=3.26"]
+# ///
+"""Tests for harness.py that never touch the network: uv run test_harness.py"""
 import json
 import pathlib
 import tempfile
@@ -6,6 +10,9 @@ import unittest
 from functools import partial
 from types import SimpleNamespace
 from unittest import mock
+
+import httpx2
+from openai import OpenAI
 
 import harness
 
@@ -104,7 +111,7 @@ class ToolsTest(unittest.TestCase):
     def test_bash_runs_from_the_supplied_working_directory(self):
         with tempfile.TemporaryDirectory() as tmp:
             result = harness.tool_bash("pwd", base_dir=pathlib.Path(tmp))
-            self.assertIn(f"stdout:\n{pathlib.Path(tmp).resolve()}\n", result)
+            self.assertEqual(result, f"exit=0\nstdout:\n  {pathlib.Path(tmp).resolve()}")
 
     def test_search_replace_rejects_empty_search(self):
         with self.assertRaises(ValueError):
@@ -148,25 +155,47 @@ class ContextTest(unittest.TestCase):
 
 
 class ModelAdapterTest(unittest.TestCase):
-    def test_chat_completions_adapter_translates_tools_and_replies(self):
-        api_call = SimpleNamespace(id="call_1", function=SimpleNamespace(
-            name="read_file", arguments='{"path":"data.txt"}'))
-        response = SimpleNamespace(
-            usage=SimpleNamespace(prompt_tokens=100, completion_tokens=20),
-            choices=[SimpleNamespace(message=SimpleNamespace(content=None, tool_calls=[api_call]))],
-        )
-        create = mock.Mock(return_value=response)
-        client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
-        model = harness.ChatCompletionsModel(client)
-        messages = [{"role": "user", "content": "Read data"},
-                    tool_call("read_file", path="data.txt"),
-                    {"role": "tool", "tool_call_id": "call_read_file", "content": "data"}]
-        reply = model.complete(messages, [harness.schema("read_file", harness.tool_read_file)])
-        request = create.call_args.kwargs
-        self.assertEqual(request["messages"][1]["tool_calls"][0]["function"]["name"], "read_file")
-        self.assertEqual(request["tools"][0]["function"]["name"], "read_file")
+    def test_responses_client_preserves_output_items_and_call_ids(self):
+        requests = []
+
+        def respond(request):
+            requests.append(json.loads(request.content))
+            output = (
+                [{"type": "reasoning", "id": "rs_1", "summary": []},
+                 {"type": "function_call", "id": "fc_1", "call_id": "call_1",
+                  "name": "read_file", "arguments": '{"path":"data.txt"}',
+                  "status": "completed"}]
+                if len(requests) == 1 else
+                [{"type": "message", "id": "msg_2", "role": "assistant",
+                  "content": [{"type": "output_text", "text": "Done", "annotations": []}],
+                  "status": "completed"}]
+            )
+            return httpx2.Response(200, json={
+                "id": f"resp_{len(requests)}", "object": "response", "created_at": 0,
+                "model": "gpt-6-luna", "status": "completed", "output": output,
+                "usage": {"input_tokens": 100, "output_tokens": 20, "total_tokens": 120},
+            })
+
+        client = OpenAI(api_key="test", http_client=httpx2.Client(
+            transport=httpx2.MockTransport(respond)))
+        self.addCleanup(client.close)
+        model = harness.ResponsesModel(client)
+        tools = [harness.schema("read_file", harness.tool_read_file)]
+        reply = model.complete([{"role": "user", "content": "Read data"}], tools)
+        final = model.complete([{"role": "user", "content": "Read data"}, reply,
+                                {"role": "tool", "tool_call_id": "call_1", "content": "data"}],
+                               tools)
+
+        self.assertEqual([item["type"] for item in requests[1]["input"][1:]],
+                         ["reasoning", "function_call", "function_call_output"])
+        self.assertEqual(requests[1]["input"][-1]["call_id"], "call_1")
+        self.assertEqual(requests[0]["tools"][0]["name"], "read_file")
+        self.assertFalse(requests[0]["tools"][0]["strict"])
+        self.assertEqual(requests[0]["reasoning"], {"effort": "low"})
         self.assertEqual(reply["tool_calls"][0]["name"], "read_file")
-        self.assertAlmostEqual(model.cost, 0.00002)
+        self.assertEqual(reply["tool_calls"][0]["id"], "call_1")
+        self.assertEqual(final["content"], "Done")
+        self.assertAlmostEqual(model.cost, 0.00004)
 
 
 class LoopTest(unittest.TestCase):
@@ -179,7 +208,7 @@ class LoopTest(unittest.TestCase):
         self.assertEqual(answer, "It printed hi.")
         tool_result = model.sent[1][-1]
         self.assertEqual(tool_result["role"], "tool")
-        self.assertIn("stdout:\nhi", tool_result["content"])
+        self.assertIn("stdout:\n  hi", tool_result["content"])
 
     def test_accepts_a_policy_without_an_openai_client(self):
         model = FakeModel([tool_call("bash", cmd="echo hi"), {"role": "assistant", "content": "done"}])

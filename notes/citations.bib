@@ -602,7 +602,7 @@
 }
 
 @misc{leeHowCorrectlyReport2025,
-  title = {How to {{Correctly Report LLM-as-a-Judge Evaluations}}},
+  title = {How to {{Correctly Report LLM}}-as-a-{{Judge Evaluations}}},
   author = {Lee, Chungpa and Zeng, Thomas and Jeong, Jongwon and Sohn, Jy-yong and Lee, Kangwook},
   year = 2025,
   publisher = {arXiv},
@@ -767,7 +767,7 @@
 }
 
 @misc{nakamotoBitcoinPeertoPeerElectronic2008,
-  title = {Bitcoin: A {{Peer-to-Peer Electronic Cash System}}},
+  title = {Bitcoin: A {{Peer}}-to-{{Peer Electronic Cash System}}},
   author = {Nakamoto, Satoshi},
   year = 2008,
   urldate = {2026-09-26}
@@ -1328,12 +1328,12 @@
 }
 
 @misc{willisonAgentMayFinally2025,
-  title = {I think ``agent'' may finally have a widely enough agreed upon definition to be useful jargon now},
+  title = {I think “agent” may finally have a widely enough agreed upon definition to be useful jargon now},
   author = {Willison, Simon},
-  year = {2025},
+  year = 2025,
+  month = sep,
   url = {https://simonwillison.net/2025/Sep/18/agents/},
-  urldate = {2026-10-08},
-  note = {Simon Willison's Weblog, 18 September 2025. Accessed 8 October 2026}
+  urldate = {2026-10-11}
 }
 
 @misc{schmidImportanceAgentHarness2026,
@@ -1354,10 +1354,14 @@
 }
 
 @misc{tanThinHarnessFat2026,
-  title = {Thin Harness, Fat Skills},
+  type = {Tweet},
+  title = {Thin {{Harness}}, {{Fat Skills}}},
   author = {Tan, Garry},
-  year = {2026},
-  note = {Article on X. Accessed 8 October 2026}
+  year = 2026,
+  month = apr,
+  journal = {Twitter},
+  url = {https://x.com/garrytan/status/2042925773300908103},
+  urldate = {2026-10-10},
 }
 
 @misc{suttonBitterLesson2019,
@@ -1396,14 +1400,17 @@
 }
 
 @misc{barbasteHarnessEngineeringAnatomy2026,
-  title = {Harness Engineering: Anatomy, Architecture, and Evolution of Coding Agents -- A Source-Code Study of Eleven Systems},
+  title = {Harness {{Engineering}}: {{Anatomy}}, {{Architecture}}, and {{Evolution}} of {{Coding Agents}} -- {{A Source-Code Study}} of {{Eleven Systems}}},
+  shorttitle = {Harness {{Engineering}}},
   author = {Barbaste, Paul and Darrigol, Tristan and Vu, Germain and Wiltberger, Tom},
-  year = {2026},
-  url = {https://arxiv.org/abs/2609.00006v1},
-  eprint = {2609.00006},
-  archiveprefix = {arXiv},
-  urldate = {2026-10-08},
-  note = {arXiv preprint 2609.00006v1, submitted 15 July 2026}
+  year = 2026,
+  month = sep,
+  publisher = {arXiv},
+  doi = {10.48550/ARXIV.2609.00006},
+  urldate = {2026-10-10},
+  abstract = {An agent is a model plus a harness -- the runtime that couples an LLM to the world through a loop, tools, context management, safety controls, orchestration, and extension surfaces. Harness engineering, named as a discipline in early 2026, is the design and evolution of that runtime. This paper gives the young discipline its most comprehensive empirical foundation to date: a source-code anatomy of eleven production coding harnesses (Claude Code, Codex CLI, Gemini CLI, Mistral Vibe, OpenHands, Aider, Mini-SWE-Agent, Hermes, Pi, OpenCode, OpenClaw), plus Omnigent, the first meta-harness, analyzed as a contrast point. We define what a harness is, map its seven canonical subsystems with the minimal and maximal implementation of each, and dissect all eleven systems along those subsystems. The audit yields 13 cross-cutting observations and a catalog of 29 recurring design patterns. Two absences survive a threefold corpus expansion: across roughly four million lines of Python, TypeScript, and Rust, no agent runtime imports a general-purpose agentic framework, and none retrieves code with vector embeddings; the field runs on hand-rolled async loops and deterministic retrieval. SKILL.md skills lead MCP in adoption (9/11 vs. 8/11), and ACP ships in six systems with a new third role: harness hosting. Because the original eight systems were re-pinned rather than replaced, the study also contains a controlled longitudinal sample -- the same harnesses source-diffed across one quarter -- showing convergence becoming imitation and behavioral policy migrating from prompt prose to configuration. These threads converge on the paper's thesis: in the first half of 2026 the coding harness completed a turn from tool to platform. The paper closes with 18 design recommendations and a 90-line minimum-viable-harness scaffold.},
+  copyright = {Creative Commons Attribution 4.0 International},
+  keywords = {68T42,D.2.11; D.2.6; I.2.11; I.2.2,FOS: Computer and information sciences,Multiagent Systems (cs.MA),Software Engineering (cs.SE)}
 }
 
 @misc{sghaierDontBlameLarge2026,
@@ -1569,39 +1576,54 @@
 }
 
 @misc{schickToolformerLanguageModels2023,
-  title = {Toolformer: Language Models Can Teach Themselves to Use Tools},
-  author = {Schick, Timo and Dwivedi-Yu, Jane and Dess{\`i}, Roberto and Raileanu, Roberta and Lomeli, Maria and Zettlemoyer, Luke and Cancedda, Nicola and Scialom, Thomas},
+  title = {Toolformer: {{Language Models Can Teach Themselves}} to {{Use Tools}}},
+  shorttitle = {Toolformer},
+  author = {Schick, Timo and {Dwivedi-Yu}, Jane and Dess{\`i}, Roberto and Raileanu, Roberta and Lomeli, Maria and Zettlemoyer, Luke and Cancedda, Nicola and Scialom, Thomas},
   year = 2023,
-  eprint = {2302.04761},
-  archiveprefix = {arXiv},
-  url = {https://arxiv.org/abs/2302.04761}
+  publisher = {arXiv},
+  doi = {10.48550/ARXIV.2302.04761},
+  urldate = {2026-10-10},
+  abstract = {Language models (LMs) exhibit remarkable abilities to solve new tasks from just a few examples or textual instructions, especially at scale. They also, paradoxically, struggle with basic functionality, such as arithmetic or factual lookup, where much simpler and smaller models excel. In this paper, we show that LMs can teach themselves to use external tools via simple APIs and achieve the best of both worlds. We introduce Toolformer, a model trained to decide which APIs to call, when to call them, what arguments to pass, and how to best incorporate the results into future token prediction. This is done in a self-supervised way, requiring nothing more than a handful of demonstrations for each API. We incorporate a range of tools, including a calculator, a Q\textbackslash\&amp;A system, two different search engines, a translation system, and a calendar. Toolformer achieves substantially improved zero-shot performance across a variety of downstream tasks, often competitive with much larger models, without sacrificing its core language modeling abilities.},
+  copyright = {arXiv.org perpetual, non-exclusive license},
+  keywords = {Computation and Language (cs.CL),FOS: Computer and information sciences}
 }
 
 @misc{gaoPALProgramaidedLanguage2022,
-  title = {{PAL}: Program-aided Language Models},
+  title = {{{PAL}}: {{Program}}-Aided {{Language Models}}},
+  shorttitle = {{{PAL}}},
   author = {Gao, Luyu and Madaan, Aman and Zhou, Shuyan and Alon, Uri and Liu, Pengfei and Yang, Yiming and Callan, Jamie and Neubig, Graham},
   year = 2022,
-  eprint = {2211.10435},
-  archiveprefix = {arXiv},
-  url = {https://arxiv.org/abs/2211.10435}
+  publisher = {arXiv},
+  doi = {10.48550/ARXIV.2211.10435},
+  urldate = {2026-10-10},
+  abstract = {Large language models (LLMs) have recently demonstrated an impressive ability to perform arithmetic and symbolic reasoning tasks, when provided with a few examples at test time ("few-shot prompting"). Much of this success can be attributed to prompting methods such as "chain-of-thought'', which employ LLMs for both understanding the problem description by decomposing it into steps, as well as solving each step of the problem. While LLMs seem to be adept at this sort of step-by-step decomposition, LLMs often make logical and arithmetic mistakes in the solution part, even when the problem is decomposed correctly. In this paper, we present Program-Aided Language models (PAL): a novel approach that uses the LLM to read natural language problems and generate programs as the intermediate reasoning steps, but offloads the solution step to a runtime such as a Python interpreter. With PAL, decomposing the natural language problem into runnable steps remains the only learning task for the LLM, while solving is delegated to the interpreter. We demonstrate this synergy between a neural LLM and a symbolic interpreter across 13 mathematical, symbolic, and algorithmic reasoning tasks from BIG-Bench Hard and other benchmarks. In all these natural language reasoning tasks, generating code using an LLM and reasoning using a Python interpreter leads to more accurate results than much larger models. For example, PAL using Codex achieves state-of-the-art few-shot accuracy on the GSM8K benchmark of math word problems, surpassing PaLM-540B which uses chain-of-thought by absolute 15\% top-1. Our code and data are publicly available at http://reasonwithpal.com/ .},
+  copyright = {Creative Commons Zero v1.0 Universal},
+  keywords = {Artificial Intelligence (cs.AI),Computation and Language (cs.CL),FOS: Computer and information sciences}
 }
 
 @misc{parisiTALMToolAugmented2022,
-  title = {{TALM}: Tool Augmented Language Models},
+  title = {{{TALM}}: {{Tool Augmented Language Models}}},
+  shorttitle = {{{TALM}}},
   author = {Parisi, Aaron and Zhao, Yao and Fiedel, Noah},
   year = 2022,
-  eprint = {2205.12255},
-  archiveprefix = {arXiv},
-  url = {https://arxiv.org/abs/2205.12255}
+  publisher = {arXiv},
+  doi = {10.48550/ARXIV.2205.12255},
+  urldate = {2026-10-10},
+  abstract = {Transformer based language models (LMs) demonstrate increasing performance with scale across a wide variety of tasks. Scale alone however cannot enable models to solve tasks that require access to ephemeral, changing, or private data that was unavailable at training time. Many useful tasks may also benefit from LMs being able to access APIs that read or modify state. In this work, we present Tool Augmented Language Models (TALM), combining a text-only approach to augment language models with non-differentiable tools, and an iterative "self-play" technique to bootstrap performance starting from few tool demonstrations. TALM exhibits strong performance on both a knowledge-heavy QA task and a reasoning oriented math task with simple tools. At a given model scale, TALM significantly outperforms non-augmented LMs. We further demonstrate that TALM successfully performs out-of-distribution inferences on both QA and math tasks, where non-augmented LMs fail. Our results suggest that Tool Augmented Language Models are a promising direction to enrich LMs' capabilities, with less dependence on scale.},
+  copyright = {Creative Commons Attribution 4.0 International},
+  keywords = {Artificial Intelligence (cs.AI),Computation and Language (cs.CL),FOS: Computer and information sciences}
 }
 
 @misc{openaiFunctionCallingOther2023,
-  title = {Function Calling and Other {API} Updates},
+  title = {Function Calling and Other {{API}} Updates},
   author = {{OpenAI}},
   year = 2023,
+  month = jun,
+  journal = {OpenAI},
   url = {https://openai.com/index/function-calling-and-other-api-updates/},
   urldate = {2026-10-10},
-  note = {Published 13 June 2023. Accessed 10 October 2026}
+  abstract = {We're announcing updates including more steerable API models, function calling capabilities, longer context, and lower prices.},
+  langid = {american}
 }
 
 @inproceedings{yangSWEagentAgentComputerInterfaces2024,
@@ -1610,4 +1632,30 @@
   booktitle = {The Thirty-eighth Annual Conference on Neural Information Processing Systems},
   year = 2024,
   url = {https://arxiv.org/abs/2405.15793}
+}
+
+@misc{FunctionCallingOpenAI,
+  title = {Function Calling \textbar{} {{OpenAI API}}},
+  journal = {OpenAI Developers},
+  urldate = {2026-10-10},
+  abstract = {Learn how function calling enables large language models to connect to external data and systems.},
+  howpublished = {https://developers.openai.com/api/docs/guides/function-calling},
+  langid = {english},
+}
+
+@misc{openaiResponsesFunctionCalling,
+  title = {Function calling},
+  author = {{OpenAI}},
+  journal = {OpenAI Developers},
+  url = {https://developers.openai.com/api/docs/guides/function-calling},
+  urldate = {2026-10-11},
+  note = {Living documentation. Accessed 11 October 2026}
+}
+
+@misc{sweagentMiniSWEAgent,
+  title = {mini-SWE-agent},
+  author = {{SWE-agent}},
+  url = {https://github.com/SWE-agent/mini-swe-agent},
+  urldate = {2026-10-11},
+  note = {Repository. Accessed 11 October 2026}
 }

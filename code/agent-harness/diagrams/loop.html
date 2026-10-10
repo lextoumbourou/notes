@@ -1,0 +1,56 @@
+<!doctype html><meta charset="utf-8">
+<style>
+@font-face{font-family:Shantell;src:url(../../../theme/static/fonts/shantell-sans-latin-wght-normal.woff2);font-weight:300 800}
+html,body{margin:0;background:#FBFAF6}
+svg{display:block}
+.lbl{font-family:Shantell;font-weight:800;fill:#141414;text-anchor:middle;dominant-baseline:central}
+.small{font-family:Shantell;font-weight:700;fill:#141414;font-size:40px;text-anchor:middle;dominant-baseline:central}
+.arrow{stroke:#141414;stroke-width:20;stroke-linecap:butt;fill:none}
+.head{fill:#141414}
+</style>
+<svg id="d" width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+<rect width="1920" height="1080" fill="#FBFAF6"/>
+<defs>
+  <marker id="h" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.6" markerHeight="2.6" orient="auto-start-reverse"><path class="head" d="M0,0 L10,5 L0,10 z"/></marker>
+</defs>
+
+<!-- blocks: cut paper, flat fill, a touch of rotation; sized to their words by the script below -->
+<g transform="rotate(-1.5 960 190)"><rect x="760" y="130" width="400" height="120" fill="#A9D6FF"/></g>
+<text class="lbl" x="960" y="190" font-size="76">context</text>
+
+<g transform="rotate(1.5 1500 540)"><rect x="1300" y="480" width="400" height="120" fill="#FF6FAE"/></g>
+<text class="lbl" x="1500" y="540" font-size="76">model</text>
+
+<g transform="rotate(-1 960 890)"><rect x="760" y="830" width="400" height="120" fill="#FFE84D"/></g>
+<text class="lbl" x="960" y="890" font-size="76">tools</text>
+
+<g transform="rotate(1 420 540)"><rect x="220" y="480" width="400" height="120" fill="#2DD4BF"/></g>
+<text class="lbl" x="420" y="540" font-size="76">result</text>
+
+<!-- chunky arrows, clockwise -->
+<line class="arrow" x1="1190" y1="290" x2="1345" y2="425" marker-end="url(#h)"/>
+<line class="arrow" x1="1370" y1="655" x2="1205" y2="800" marker-end="url(#h)"/>
+<line class="arrow" x1="740" y1="805" x2="575" y2="660" marker-end="url(#h)"/>
+<line class="arrow" x1="565" y1="430" x2="725" y2="290" marker-end="url(#h)"/>
+</svg>
+<script>
+// Size each cut-paper block to its words: even padding, same rotation.
+document.fonts.ready.then(() => {
+  const PAD_X = 48, PAD_Y = 30;
+  document.querySelectorAll('#d g[transform]').forEach(g => {
+    const rect = g.querySelector('rect');
+    const cx = +rect.getAttribute('x') + rect.getAttribute('width') / 2;
+    const cy = +rect.getAttribute('y') + rect.getAttribute('height') / 2;
+    const texts = [...document.querySelectorAll('#d text.lbl')].filter(t => {
+      const b = t.getBBox(); return Math.abs(b.x + b.width / 2 - cx) < 40 && Math.abs(b.y + b.height / 2 - cy) < 80;
+    });
+    if (!texts.length) return;
+    const bs = texts.map(t => t.getBBox());
+    const x0 = Math.min(...bs.map(b => b.x)), x1 = Math.max(...bs.map(b => b.x + b.width));
+    const y0 = Math.min(...bs.map(b => b.y)), y1 = Math.max(...bs.map(b => b.y + b.height));
+    rect.setAttribute('x', x0 - PAD_X); rect.setAttribute('width', x1 - x0 + PAD_X * 2);
+    rect.setAttribute('y', y0 - PAD_Y); rect.setAttribute('height', y1 - y0 + PAD_Y * 2);
+  });
+  document.body.dataset.ready = '1';
+});
+</script>
