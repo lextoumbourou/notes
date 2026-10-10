@@ -1,5 +1,5 @@
 ---
-title: Agent Harness
+title: An Agent Harness in one blog post
 date: 2026-10-08 13:50
 modified: 2026-10-08 16:46
 status: draft
@@ -9,16 +9,16 @@ tags:
 - AgenticReasoning
 ---
 
-The **agent harness** is everything in [AI Agents](ai-agents.md) that isn't the model.
+The **agent harness** is everything in [AI Agents](ai-agents.md) that isn't the model. T
 
-It typically operates as a loop where:
+At it's most basic, it's a loop that: 
 
-- The harness prepares the model context.
-- The harness calls the LLM with the context.
-- The LLM decides on whether to call a tool or end.
-- Some tool is called, and the results are fed into context.
+- prepares some context.
+- calls an LLM with that context.
+- runs some tools.
+- adds the result back into context
 
-The core it is something like these few lines of Python: 
+Here are a few lines of Python that show you what I mean:
 
 ```python
 while True:
@@ -30,9 +30,7 @@ while True:
     context.append(result)
 ```
 
-Of course, real harnesses turn out to be a lot bigger than that, because have to do a bunch of extra stuff, like safety checks, support extensions, orchestiation.
-
-A study of eleven production coding harnesses, including Claude Code, Codex CLI, Gemini CLI and Pi, lists about 7 parts to the typically harness project [@barbasteHarnessEngineeringAnatomy2026]:
+Of course, in the real world, there's a few more things that to think about: safety checks, extensions, user interfaces, orchestrating multiple agents. A study of eleven production coding harnesses, including Claude Code, Codex CLI, Gemini CLI and Pi, lists 7 parts that make up the typically harness project [@barbasteHarnessEngineeringAnatomy2026]:
 
 1. the loop
 2. the LLM integration
@@ -42,11 +40,79 @@ A study of eleven production coding harnesses, including Claude Code, Codex CLI,
 6. orchestration (running several agents or tasks together)
 7. extension surfaces (places users can plug in their own tools and skills)
 
-The paper closes with a 90-line minimum viable harness. 90 lines isn't much, so I'm literally going to test that in this blog post, with a real-call to OpenAI.
+Sometimes people distinguish between Agent Harnesses and [Coding Harness](coding-harness.md) - although nowadays all agentic harness seem to be converging on coding harnesses.
 
-For coding agents specifically, the harness is called a [Coding Harness](coding-harness.md) - although most agentic harness seem to be coding harnesses these days.
+In this article, let's put together an agent harness that's extremely simple but does nearly everything a modern harness does. It's a surprisingly simple task.
 
-The same eleven-harness study found that none of them imports a general-purpose agent framework: they all run hand-written loops [@barbasteHarnessEngineeringAnatomy2026]. Studying the same harnesses again a quarter later, the authors saw them converging, to the point of copying each other.
+Btw, you can run this whole blog post yourself, either by opening the file in Obsidian and running it with my [Obsidian Markdown Notebook](obsidian-markdown-notebook-code-execution-with-outputs-stored-in-the-file.md) plugin, or from the command line with the plugin's `nb-run` CLI. You just need Node, [uv](https://docs.astral.sh/uv/) and an OpenAI key:
+
+```console
+$ curl -LO https://raw.githubusercontent.com/lextoumbourou/notes/main/notes/permanent/agent-harness.md
+$ curl -LO https://github.com/lextoumbourou/obsidian-markdown-notebook/releases/latest/download/cli.js
+$ OPENAI_API_KEY=sk-... uv run --with openai node cli.js agent-harness.md
+```
+
+Firstly, I'm going to import some libraries.
+
+```python
+import pathlib
+
+import openai
+```
+
+I'll set the base dir to a subfolder of this notes repo, so we can actually see what was build in this notebook:
+
+```python
+BASE_DIR = pathlib.
+```
+
+## Extension Surfaces
+
+An agents will typically read it's context from a `AGENTS.md` file, s we'll want a way to discover any user-provide context.
+
+```python
+AGENTS_FILE = "AGENTS.md"
+
+def find_context(base_dir: pathlib.Path | None):
+    context = []
+    base_dir = base_dir or pathlib.Path.cwd()
+    for path in base_dir.iterdir():
+        agent_file = path / AGENTS_FILE
+        if (agent_file).exists():
+            context.append(agentfile.read_text())
+    return context
+```
+
+We'll also want to find any skills and create a dictionary of skills to their name and description, which will be used by the LLM to determine if it should be loaded:
+
+```python
+def find_skills(base_dir: pathlib.Path | None):
+    # Search for .skills directory, and parse them.
+```
+
+So now we've got our user-provided AGENTS context, and our user provided skill catalog.
+
+## Orchestration
+
+We'll skip this step for now. In theory, the agent could simply spin up new copies of itself, but for the purposes of this simple blog post, we'll assume a single-agent design.
+
+## Safety Controls
+
+What we want to do is to have a way that we can check that each command is safe to run, and ask the user before running any command that could potentially be dangerous. OpenAI has released their new Decisions API, and this seems like a potential use case. We'll pass in the context, and the command that we're running, and has it return, ok or deny for each tool call before running.
+
+It's not a perfect solution, but this is likely where a lot of the LOC of a harness is going to live. For Anthropic and OpenAI, getting this right is their bread and butter.
+
+```python
+<to do> write a simple function that classifies the request using decisions API
+```
+
+## Context & Memory
+
+In the age of limited context LLMs, we're going to need some strategy for dealing with context overflow. Typically, there's a few approaches. We could truncate the old context, we could call an LLM to summarise the conversation, or 
+
+## Loops
+
+The loop is easy. It's just a while loop. 
 
 At the small end is Pi, Mario Zechner's coding agent. It gives the model four tools (read, write, edit and bash), and its system prompt and tool definitions together come to under 1,000 tokens [@zechnerWhatLearnedBuilding2025]. Pi reached 1.0 on 1 October 2026 and its makers still describe it as minimal [@earendilPi102026].
 
