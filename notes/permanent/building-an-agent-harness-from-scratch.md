@@ -697,7 +697,9 @@ for request, tool, args, expected in EXAMPLES:
 
 All five came out as labelled in two runs against `gpt-6-luna` on 10 October 2026, and again in the notebook run on 11 October using OpenAI Python 3.28.0.
 
-The force-push is the interesting one: its risk score fell below the cut-off, and only the authorisation question stopped it. A classifier can still get these calls wrong, so I wouldn't treat it as a security boundary. For real work, I'd run the harness in a sandbox too.
+The force-push is the interesting one: its risk score fell below the cut-off, and only the authorisation question stopped it. My first wording asked whether the request authorised "this exact action", which marked `ls -la` as unauthorised (43%) for "What files are in this folder?". Borrowing Codex's idea that a necessary step towards the user's goal counts as authorised fixed that without letting the others through.
+
+A classifier can still get these calls wrong, so I wouldn't treat it as a security boundary. For real work, I'd run the harness in a sandbox too.
 
 When the classifier says "ask", we'll ask at the terminal. If there's nobody there to answer, like in a script or CI, the answer is no, which is what Pi's permission gate does too [@earendilPiSecurity]:
 
