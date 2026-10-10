@@ -10,7 +10,7 @@ tags:
 - ReasoningModels
 cover: /_media/mor-article-cover.png
 hide_cover_in_article: true
-category: reference/papers
+category: paper
 alias: mixture-of-recursions-learning-dynamic-recursive-depths-for-adaptive-token-level-computation.html
 paper_title: "Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation"
 paper_url: https://arxiv.org/pdf/2507.10524

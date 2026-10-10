@@ -1,7 +1,7 @@
 ---
 title: Cross product introduction
 date: 2021-12-04 00:00
-category: reference/videos
+category: talk
 cover: /_media/khan-cross-product-intro.png
 summary: "Notes from [Cross product introduction](https://www.youtube.com/watch?v=pJzmiywagfY) by Khan Academy."
 ---

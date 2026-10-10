@@ -1,7 +1,7 @@
 ---
 title: Eigenvectors and Eigenvalues
 date: 2022-01-08 00:00
-category: reference/videos
+category: talk
 cover: /_media/3blue-eigen-cover.png
 summary: "Notes from [Eigenvectors and eigenvalues](https://www.youtube.com/watch?v=PFDu9oVAE-g) by Khan Academy."
 hide_cover_in_article: true

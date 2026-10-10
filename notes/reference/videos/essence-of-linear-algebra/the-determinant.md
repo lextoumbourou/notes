@@ -1,7 +1,7 @@
 ---
 title: The determinant
 date: 2021-11-04 00:00
-category: reference/videos
+category: talk
 summary: Notes from [The determinant](https://www.youtube.com/watch?v=Ip3X9LOh2dk) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.
 cover: /_media/3blue-determinant-cover.png
 status: draft

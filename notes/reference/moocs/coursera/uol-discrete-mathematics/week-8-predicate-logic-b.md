@@ -1,7 +1,7 @@
 ---
 title: Week 8 - Predicate Logic B
 date: 2022-11-29 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 modified: 2026-09-26 08:50

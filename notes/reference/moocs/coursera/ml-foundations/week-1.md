@@ -2,7 +2,7 @@
 title: Week 1 - Welcome
 date: 2015-10-07 00:00
 modified: 2026-09-26 08:50
-category: reference/moocs
+category: course
 status: draft
 parent: ml-foundations
 ---

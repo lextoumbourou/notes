@@ -1,7 +1,7 @@
 ---
 title: How to Take Smart Notes
 date: 2021-06-07 00:00
-category: reference/books
+category: book
 cover: /_media/how-to-take-smart-notes.jpeg
 summary: Notes from Sönke Ahrens' guide to the Zettelkasten note-taking system.
 ---

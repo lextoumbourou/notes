@@ -1,7 +1,7 @@
 ---
 title: Week 2 - Non-Personalized and Stereotype-Based Recommenders
 date: 2017-03-04 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: recommender-systems-introduction
 ---

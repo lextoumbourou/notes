@@ -1,7 +1,7 @@
 ---
 title: Final Exam
 date: 2023-03-06 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 ---

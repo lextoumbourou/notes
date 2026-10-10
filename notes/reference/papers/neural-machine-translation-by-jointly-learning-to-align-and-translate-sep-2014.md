@@ -5,7 +5,7 @@ modified: 2026-09-13 10:34
 summary: improve the Encoder/Decoder alignment with an Attention Mechanism
 cover: /_media/neural-machine-translation-by-jointly-learning-to-align-and-translate-sep-2014-fig-1.png
 hide_cover_in_article: true
-category: reference/papers
+category: paper
 tags:
 - AttentionMechanism
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Lesson 5: Testing in Practice"
 date: 2014-12-14 00:00
-category: reference/moocs
+category: course
 parent: uol-discrete-mathematics
 status: draft
 ---

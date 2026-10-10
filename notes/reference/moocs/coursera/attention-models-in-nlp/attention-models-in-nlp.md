@@ -1,7 +1,7 @@
 ---
 title: Natural Language Processing with NLP
 date: 2022-06-19 00:00
-category: reference/moocs
+category: course
 slug: attention-models-in-nlp
 status: draft
 ---

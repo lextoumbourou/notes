@@ -1,7 +1,7 @@
 ---
 title: Discrete Mathematics Course Notes
 date: 2023-03-06 00:00
-category: reference/moocs
+category: course
 slug: uol-discrete-mathematics
 cover: /_media/discrete-maths.png
 summary: "Notes from [Discrete Mathematics by University of London](https://www.coursera.org/learn/uol-discrete-mathematics)"

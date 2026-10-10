@@ -1,7 +1,7 @@
 ---
 title: "Week 4 - Special applications: Face recognition & Neural style transfer"
 date: 2017-11-29 00:00
-category: reference/moocs
+category: course
 parent: convolutional-neural-networks 
 status: draft
 ---
@@ -107,7 +107,7 @@ status: draft
 * Use pretrained ConvNet (eg VGG).
 * Calculate the difference between the activations on the generated image and the source using an element wise sum of square of differences:
 
-	$\text{J\_content}(C, G) = ||a^{[l](c)} - a^{[l](G)}||^2$.
+	$\text{J\_content}(C, G) = ||a^{[C](c)} - a^{[l](G)}||^2$.
 
 ### Style Cost function
 

@@ -3,7 +3,7 @@ title: "Vibe-Coding Mathematical Discoveries"
 date: 2025-05-18 00:00
 modified: 2025-05-18 00:00
 summary: "Using evolutionary algorithms with LLM-coding agents"
-category: reference/papers
+category: paper
 tags:
 - AgenticReasoning
 - LargeLanguageModels

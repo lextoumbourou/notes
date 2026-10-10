@@ -2,7 +2,7 @@
 title: Linear combinations, span, and basis vectors
 date: 2021-10-23 00:00
 modified: 2026-09-26 08:55
-category: reference/videos
+category: talk
 summary: Notes from [Linear combinations, span, and basis vectors](https://www.youtube.com/watch?v=fNk_zzaMoSs) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
 cover: /_media/linear-comb-basis-vectors.png
 status: draft

@@ -1,7 +1,7 @@
 ---
 title: Week 2 - Learning Linear Classifiers
 date: 2016-07-04 00:00
-category: reference/moocs
+category: course
 parent: ml-classification
 status: draft
 ---

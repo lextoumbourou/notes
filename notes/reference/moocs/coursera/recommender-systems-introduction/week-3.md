@@ -1,7 +1,7 @@
 ---
 title: Week 3 - Content-Based Filtering -- Part I
 date: 2017-03-04 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: recommender-systems-introduction
 ---

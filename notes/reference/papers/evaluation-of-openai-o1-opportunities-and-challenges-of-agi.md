@@ -2,7 +2,7 @@
 title: "Evaluation of OpenAI o1: Opportunities and Challenges of AGI"
 date: 2024-10-14 00:00
 modified: 2026-09-24 07:49
-category: reference/papers
+category: paper
 cover: /_media/o1-preview-fig-1.png
 summary: a comprehensive evaluation of o1-preview across many tasks and domains.
 tags:

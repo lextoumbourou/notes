@@ -1,7 +1,7 @@
 ---
 title: Cross Products
 date: 2021-12-05 00:00
-category: reference/videos
+category: talk
 summary: Notes from [Cross products | Chapter 10, Essence of linear algebra](https://www.youtube.com/watch?v=eu6i7WJeinw)) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series.
 status: draft
 parent: essence-of-linear-algebra

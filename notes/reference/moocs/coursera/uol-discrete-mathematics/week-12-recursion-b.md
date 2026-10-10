@@ -1,7 +1,7 @@
 ---
 title: Week 12 - Recursion B
 date: 2022-01-07 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 modified: 2026-09-26 10:00

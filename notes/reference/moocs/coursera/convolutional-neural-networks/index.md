@@ -2,7 +2,7 @@
 title: Convolutional Neural Network (Coursera) 
 date: 2017-11-29 00:00
 link: https://www.coursera.org/learn/convolutional-neural-networks
-category: reference/moocs
+category: course
 slug: convolutional-neural-networks
 ---
 

@@ -2,7 +2,7 @@
 title: Red Hat System Administration III - Unit 15 - Caching Only DNS Server
 date: 2013-08-10 00:00
 type: course
-category: reference
+category: course
 status: draft
 tags:
   - Linux

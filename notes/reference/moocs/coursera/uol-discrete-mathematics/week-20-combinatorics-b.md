@@ -2,7 +2,7 @@
 title: Week 20 - Combinatorics B
 date: 2022-02-25 00:00
 modified: 2026-09-26 08:50
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 ---

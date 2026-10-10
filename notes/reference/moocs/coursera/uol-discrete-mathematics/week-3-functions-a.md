@@ -2,7 +2,7 @@
 title: Week 3 - Functions A
 date: 2022-10-23 00:00
 modified: 2026-09-26 08:50
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 ---

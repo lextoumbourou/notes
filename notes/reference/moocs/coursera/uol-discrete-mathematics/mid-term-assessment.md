@@ -1,7 +1,7 @@
 ---
 title: Mid-Term Assessment
 date: 2022-12-12 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning Foundations: A Case Study Approach"
 date: 2015-10-07 00:00
-category: reference/moocs
+category: course
 slug: ml-foundations
 summary: "Notes from Coursera's Machine Learning Foundations: A Case Study Approach by Emily Fox and Carlos Guestrin"
 ---

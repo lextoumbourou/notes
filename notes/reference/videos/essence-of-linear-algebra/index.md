@@ -1,7 +1,7 @@
 ---
 title: Essence of Linear Algebra
 date: 2022-01-14 00:00
-category: reference/videos
+category: talk
 slug: essence-of-linear-algebra
 summary: "Notes from 3Blue1Brown's video series, [Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)"
 cover: /_media/vectors-3blue1brown-cover.png

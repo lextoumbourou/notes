@@ -1,5 +1,5 @@
 ---
-category: note
+category: essay
 title: Document Your Documentation
 date: 2022-06-18 00:00
 tags:

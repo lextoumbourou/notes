@@ -3,7 +3,7 @@ title: "Improving Deep Neural Networks: Hyperparameter tuning, Regularization an
 date: 2017-09-30 00:00
 slug: deep-neural-network
 link: https://www.coursera.org/learn/deep-neural-network
-category: reference/moocs
+category: course
 ---
 
 Notes from Coursera's [Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization](https://www.coursera.org/learn/deep-neural-network) by Andrew Ng, Younes Bensouda Mourri and Kian Katanforoosh

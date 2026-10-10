@@ -3,7 +3,7 @@ title: Week 1 - Number Bases
 date: 2023-04-18 00:00
 modified: 2023-04-18 00:00
 status: draft
-category: reference/moocs
+category: course
 parent: cm1015-computational-mathematics
 ---
 

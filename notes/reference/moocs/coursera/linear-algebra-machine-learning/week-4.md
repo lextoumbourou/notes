@@ -1,7 +1,7 @@
 ---
 title: "Week 4 - Matrices make linear mappings"
 date: 2021-09-23 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: linear-algebra-machine-learning
 modified: 2026-09-26 08:50

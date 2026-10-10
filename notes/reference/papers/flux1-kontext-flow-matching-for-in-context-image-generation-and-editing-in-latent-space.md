@@ -5,7 +5,7 @@ modified: 2025-05-31 00:00
 status: draft
 tags:
 - ImageEditing
-category: reference/papers
+category: paper
 ---
 
 *My WIP summary of paper [FLUX.1 Kontext: Flow Matching for In‑Context Image Generation and Editing in Latent Space](https://cdn.sanity.io/files/gsvmb6gz/production/880b072208997108f87e5d2729d8a8be481310b5.pdf) by Black Forest Labs*

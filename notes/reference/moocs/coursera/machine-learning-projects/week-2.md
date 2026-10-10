@@ -2,7 +2,7 @@
 title: Structuring Machine Learning Projects (Coursera) - Week 2
 date: 2017-09-30 00:00
 link: 
-category: reference/moocs
+category: course
 status: draft
 parent: machine-learning-projects
 ---

@@ -2,7 +2,7 @@
 title: "fastai - Lesson 1 - Deep Learning for Coders (2020)"
 date: 2021-06-10 00:00
 modified: 2026-09-26 09:18
-category: reference/moocs
+category: course
 cover: /_media/fastai-2020-lesson-1-cover.png
 summary: "Notes taken from the Deep Learning for Coders (2020) - Lesson 1 video"
 parent: fast-ai-2020

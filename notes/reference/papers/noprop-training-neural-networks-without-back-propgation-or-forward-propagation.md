@@ -2,7 +2,7 @@
 title: "NoProp: Training Neural Networks Without Back-Propagation or Forward-Propagation"
 date: 2025-05-15 00:00
 modified: 2025-05-15 00:00
-category: reference/papers
+category: paper
 summary: "an alternative training method to backprop that does local layer learning"
 tags:
 - MachineLearning

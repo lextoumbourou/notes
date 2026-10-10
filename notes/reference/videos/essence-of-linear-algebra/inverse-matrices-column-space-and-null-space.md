@@ -1,7 +1,7 @@
 ---
 title: Inverse matrices, column space, and null space
 date: 2021-11-12 00:00
-category: reference/videos
+category: talk
 summary: Notes from [Inverse matrices, column space, and null space](https://www.youtube.com/watch?v=uQhTuRlWMxw) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
 cover: /_media/linear-system-cover.png
 status: draft

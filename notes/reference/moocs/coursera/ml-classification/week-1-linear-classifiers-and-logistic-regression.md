@@ -2,7 +2,7 @@
 title: Week 1 - Linear Classifiers & Logistic Regression
 date: 2016-07-04 00:00
 modified: 2026-09-26 08:50
-category: reference/moocs
+category: course
 parent: ml-classification
 status: draft
 ---

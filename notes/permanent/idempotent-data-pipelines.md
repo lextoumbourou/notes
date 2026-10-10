@@ -1,5 +1,5 @@
 ---
-category: note
+category: essay
 title: Idempotent Data Pipelines
 date: 2022-07-17 00:00
 tags:

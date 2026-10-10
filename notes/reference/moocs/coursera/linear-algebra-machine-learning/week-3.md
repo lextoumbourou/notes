@@ -2,7 +2,7 @@
 title: "Week 3 - Matrices in Linear Algebra: Objects that operate on Vectors"
 date: 2021-09-22 00:00
 modified: 2026-09-26 08:50
-category: reference/moocs
+category: course
 status: draft
 parent: linear-algebra-machine-learning
 ---

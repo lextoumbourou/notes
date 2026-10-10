@@ -1,7 +1,7 @@
 ---
 title: "UOL Discrete Maths - Week 1 - Sets A"
 date: 2022-10-10 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 ---

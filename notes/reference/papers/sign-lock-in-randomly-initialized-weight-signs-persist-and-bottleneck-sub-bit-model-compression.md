@@ -10,7 +10,7 @@ tags:
 - ModelCompression
 - Quantisation
 - AIAgents
-category: reference/papers
+category: paper
 ---
 
 This paper focuses on improving the compression of the sign bit (+/-) in weight matrices.

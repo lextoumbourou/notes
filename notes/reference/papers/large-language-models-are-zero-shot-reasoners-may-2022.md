@@ -3,7 +3,7 @@ title: "Large Language Models are Zero-Shot Reasoners (May 2022)"
 date: 2025-01-08 00:00
 modified: 2026-09-26 08:50
 summary: improve zero-shot prompt performance of LLMs by adding “Let’s think step by step” before each answer
-category: reference/papers
+category: paper
 tags:
 - LargeLanguageModels
 - PromptingTechniques

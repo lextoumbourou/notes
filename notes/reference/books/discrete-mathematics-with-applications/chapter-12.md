@@ -2,7 +2,7 @@
 title: Discrete Mathematics with Applications - Chapter 12
 date: 2022-10-11 00:00
 modified: 2026-09-26 08:50
-category: reference/books
+category: book
 status: draft
 ---
 

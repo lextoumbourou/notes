@@ -6,7 +6,7 @@ summary: "The surprisingly difficult ordeal of sending a decade-old MacBook to a
 hide_graph: true
 cover: /_media/shipping-laptop-uganda-cover.png
 hide_cover_in_article: true
-category: story
+category: essay
 mastodon_post: https://fedi.notesbylex.com/@lex/116620242773553317
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mmhtdrhxbc25
 hn_post: https://news.ycombinator.com/item?id=48241997

@@ -1,7 +1,7 @@
 ---
 title: "Basic geometry: language and labels"
 date: 2020-11-04 00:00
-category: reference/videos
+category: talk
 cover: /_media/basic-geometry-cover.png
 summary: "Notes from Khan Academy video Basic geometry: language and labels"
 modified: 2023-04-09 00:00

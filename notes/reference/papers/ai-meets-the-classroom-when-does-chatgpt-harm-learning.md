@@ -2,7 +2,7 @@
 title: "AI Meets the Classroom: When Does ChatGPT Harm Learning?"
 date: 2024-10-13 00:00
 modified: 2026-05-06 00:00
-category: reference/papers
+category: paper
 summary: LLMs can help and also hinder learning outcomes
 cover: /_media/ai-meets-the-classroom-when-does-ChatGPT-harm-learning-fig-1.png
 tags:

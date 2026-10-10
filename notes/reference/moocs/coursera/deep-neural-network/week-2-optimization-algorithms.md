@@ -2,7 +2,7 @@
 title: "Improving Deep Neural Networks: - Week 2"
 date: 2017-09-30 00:00
 parent: deep-neural-network
-category: reference/moocs
+category: course
 link: https://www.coursera.org/learn/deep-neural-network
 status: draft
 ---

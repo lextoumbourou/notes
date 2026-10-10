@@ -1,7 +1,7 @@
 ---
 title: Discrete Mathematics with Applications
 date: 2022-10-11 00:00
-category: reference/books
+category: book
 status: draft
 modified: 2023-04-09 00:00
 ---

@@ -1,7 +1,7 @@
 ---
 title: Week 15 - Trees A
 date: 2022-01-21 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 modified: 2023-04-09 00:00

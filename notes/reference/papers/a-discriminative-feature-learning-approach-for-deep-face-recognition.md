@@ -2,7 +2,7 @@
 title: "A Discriminative Feature Learning Approach for Deep Face Recognition"
 date: 2022-05-18 00:00
 modified: 2026-09-26 08:50
-category: reference/papers
+category: paper
 summary: "Notes from paper [A Discriminative Feature Learning Approach for Deep Face Recognition](https://ydwen.github.io/papers/WenECCV16.pdf) by Yandong Wen, Kaipeng Zhang, Zhifeng Li, and Yu Qiao"
 cover: /_media/center-loss-fig-3.png
 ---

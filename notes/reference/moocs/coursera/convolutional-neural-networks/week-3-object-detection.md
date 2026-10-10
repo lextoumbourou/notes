@@ -1,7 +1,7 @@
 ---
 title: "Week 3 - Object detection"
 date: 2017-11-29 00:00
-category: reference/moocs
+category: course
 parent: convolutional-neural-networks 
 status: draft
 ---

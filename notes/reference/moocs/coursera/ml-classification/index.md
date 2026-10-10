@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning: Classification"
 date: 2016-07-04 00:00
-category: reference/moocs
+category: course
 slug: ml-classification
 cover: /_media/ml-classification-cover.png
 ---

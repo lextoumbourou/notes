@@ -2,7 +2,7 @@
 title: Discrete Mathematics with Applications - Chapter 6
 date: 2023-02-26 00:00
 modified: 2026-09-26 09:40
-category: reference/books
+category: book
 status: draft
 ---
 

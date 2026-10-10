@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Recommender Systems: Non-Personalized and Content-Based"
 date: 2017-03-04 00:00
-category: reference/moocs
+category: course
 slug: recommender-systems-introduction
 ---
 

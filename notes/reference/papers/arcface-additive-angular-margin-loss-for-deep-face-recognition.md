@@ -1,7 +1,7 @@
 ---
 title: "ArcFace: Additive Angular Margin Loss for Deep Face Recognition"
 date: 2022-05-01 00:00
-category: reference/papers
+category: paper
 summary: "Notes from paper [ArcFace: Additive Angular Margin Loss for Deep Face Recognition](https://arxiv.org/pdf/1801.07698.pdf) by Jiankang Deng, Jia Guo, Niannan Xue, Stefanos Zafeiriou"
 cover: /_media/arcface-cover.jpg
 tags:

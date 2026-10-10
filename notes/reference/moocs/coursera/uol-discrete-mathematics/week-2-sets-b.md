@@ -1,7 +1,7 @@
 ---
 title: Week 2 - Sets B
 date: 2022-10-15 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 ---

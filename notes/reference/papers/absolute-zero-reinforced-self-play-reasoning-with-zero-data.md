@@ -5,7 +5,7 @@ modified: 2025-05-12 00:00
 summary: learn to reason without any human-annotated data.
 cover: "/_media/absolute-zero.png"
 hide_cover_in_article: true
-category: reference/papers
+category: paper
 aliases:
 - AbsoluteZero
 tags:

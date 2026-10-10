@@ -1,7 +1,7 @@
 ---
 title: Deep Learning for Coders (2020)
 date: 2021-08-28 00:00
-category: reference/moocs
+category: course
 cover: /_media/fastai-2020-lesson-1-cover.png
 slug: fast-ai-2020
 summary: "Notes from the [Deep Learning for Coders (2020)](https://course.fast.ai) video series by Jeremy Howard and Sylvain Gugger ([fast.ai](https://www.fast.ai/))"

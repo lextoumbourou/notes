@@ -1,7 +1,7 @@
 ---
 title: Introduction to Linear Algebra and to Mathematics for Machine Learning
 date: 2018-04-10 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: linear-algebra-machine-learning
 ---

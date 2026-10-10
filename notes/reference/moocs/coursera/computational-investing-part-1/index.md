@@ -1,7 +1,7 @@
 ---
 title: Computational Investing Part I (Coursera)
 date: 2013-11-27 00:00
-category: reference/moocs
+category: course
 slug: computational-investing-part-1
 tags:
   - MOOC

@@ -1,7 +1,7 @@
 ---
 title: Data Structures and Performance
 date: 2016-10-04 00:00
-category: reference/moocs
+category: course
 slug: data-structures-optimizing-performance
 summary: Course notes from Data Structures and Performance on Coursera
 ---

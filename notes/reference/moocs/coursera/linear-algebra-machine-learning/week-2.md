@@ -1,7 +1,7 @@
 ---
 title: Week 2 - Vectors are objects that move around space
 date: 2021-09-12 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: linear-algebra-machine-learning
 modified: 2026-09-26 08:50

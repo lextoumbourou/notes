@@ -2,7 +2,7 @@
 title: "SheetCopilot: Bringing Software Productivity to the Next Level through Large Language Models"
 date: 2024-08-15 00:00
 modified: 2026-09-26 09:18
-category: reference/papers
+category: paper
 cover: /_media/sheetscopilot-cover.png
 hide_cover_in_article: true
 status: draft

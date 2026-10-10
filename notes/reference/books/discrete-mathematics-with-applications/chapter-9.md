@@ -1,7 +1,7 @@
 ---
 title: Discrete Mathematics with Applications - Chapter 9
 date: 2023-03-06 00:00
-category: reference/books
+category: book
 status: draft
 ---
 

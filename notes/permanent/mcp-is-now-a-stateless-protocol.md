@@ -3,7 +3,7 @@ title: MCP is Now a Stateless Protocol
 date: 2026-08-05 00:00
 modified: 2026-08-08 10:33
 video: in-production
-category: note
+category: essay
 summary: "A new MCP specification that removes handshakes and mandatory sessions."
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mseo5dw3mf2g
 mastodon_post: https://fedi.notesbylex.com/@lex/117045465323546775

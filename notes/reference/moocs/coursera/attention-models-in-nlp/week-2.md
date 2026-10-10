@@ -2,7 +2,7 @@
 title: Natural Language Processing with NLP - Week 2
 date: 2022-10-07 00:00
 status: draft
-category: reference/moocs
+category: course
 parent: attention-models-in-nlp
 ---
 

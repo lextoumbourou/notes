@@ -1,7 +1,7 @@
 ---
 title: Linear Transformations and Matrices
 date: 2021-10-26 00:00
-category: reference/videos
+category: talk
 summary: Notes from [Linear transformations and matrices](https://www.youtube.com/watch?v=kYB8IZa5AuE) by 3Blue1Brown from the [Essence of linear algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) series
 cover: /_media/cover-linear-transformations.png
 status: draft

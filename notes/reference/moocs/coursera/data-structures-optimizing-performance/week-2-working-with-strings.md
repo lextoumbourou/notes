@@ -1,7 +1,7 @@
 ---
 title: "Week 2 - Working with Strings"
 date: 2016-10-04 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: data-structures-optimizing-performance
 ---

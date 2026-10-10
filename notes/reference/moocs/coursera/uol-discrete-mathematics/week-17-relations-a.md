@@ -1,7 +1,7 @@
 ---
 title: Week 17 - Relations A
 date: 2022-02-04 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 modified: 2026-09-26 08:50

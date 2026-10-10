@@ -2,7 +2,7 @@
 title: "Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation"
 date: 2023-12-13 00:00
 modified: 2026-09-13 10:34
-category: reference/papers
+category: paper
 cover: /_media/cover-clap-paper.png
 summary: Notes from paper [Large-scale Contrastive Language-Audio Pre-training with Feature Fusion and Keyword-to-Caption Augmentation](https://arxiv.org/abs/2211.06687) by Yusong Wu, Ke Chen, Tianyu Zhang, Yuchen Hui, Taylor Berg-Kirkpatrick, Shlomo Dubnov
 hide_cover_in_article: true

@@ -1,7 +1,7 @@
 ---
 title: "Fast.ai: Deep Learning 2018"
 date: 2018-08-13 00:00
-category: reference/moocs
+category: course
 slug: fast-ai-deep-learning-2018
 summary: Course notes from fastai's Deep Learning 2018
 ---

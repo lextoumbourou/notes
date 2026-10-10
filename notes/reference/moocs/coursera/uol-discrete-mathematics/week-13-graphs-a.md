@@ -1,7 +1,7 @@
 ---
 title: Week 13 - Graphs A
 date: 2022-12-19 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 modified: 2026-09-26 08:50

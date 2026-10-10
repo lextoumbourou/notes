@@ -4,7 +4,7 @@ date: 2021-06-12 00:00
 modified: 2026-09-26 08:55
 tags:
   - ML Ethics
-category: reference/papers
+category: paper
 status: draft
 summary: Notes from paper Reliance on Metrics is a Fundamental Challenge for AI by Rachel Thomas and David Uminsky
 ---

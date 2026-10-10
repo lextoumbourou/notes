@@ -2,7 +2,7 @@
 title: Genetic Algorithms
 date: 2025-09-07 00:00
 modified: 2025-09-07 00:00
-category: permanent
+category: note
 summary: "an optimisation technique inspired by natural selection"
 aliases:
 - Genetic Algorithm

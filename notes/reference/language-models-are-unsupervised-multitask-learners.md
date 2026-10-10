@@ -3,7 +3,7 @@ title: "Language Models are Unsupervised Multitask Learners"
 date: 2025-07-05 00:00
 modified: 2026-09-26 08:55
 status: draft
-category: reference
+category: paper
 ---
 
 **Language Models are Unsupervised Multitask Learners** is the 2019 OpenAI paper by Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei and Ilya Sutskever, which introduced GPT-2.

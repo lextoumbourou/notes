@@ -2,7 +2,7 @@
 title: The Bits and Bytes of Computer Networking
 date: 2023-03-25 00:00
 modified: 2026-09-26 10:00
-category: reference/moocs
+category: course
 slug: computer-networking
 summary: "Notes from [The Bits and Bytes of Computer Networking](https://www.coursera.org/learn/computer-networking)"
 status: draft

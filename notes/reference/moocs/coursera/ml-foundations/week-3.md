@@ -1,7 +1,7 @@
 ---
 title: "Week 3 - Classification: Analyzing Sentiment"
 date: 2015-10-07 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: ml-foundations
 ---

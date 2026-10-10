@@ -1,7 +1,7 @@
 ---
 title: "Week 1 - Introduction to the Course"
 date: 2016-10-04 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: data-structures-optimizing-performance
 ---

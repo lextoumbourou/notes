@@ -9,7 +9,7 @@ tags:
 cover: /_media/thinking-llms-general-instruction-following-with-thought-generation-cover.png
 hide_cover_in_article: true
 summary: a prompting and fine-tuning method that enables LLMs to engage in a "thinking" process before generating responses
-category: reference/papers
+category: paper
 ---
 
 *These are my notes from the paper [Thinking LLMs: General Instruction Following with Thought Generation](https://arxiv.org/abs/2410.10630) (Oct 2024) by Tianhao Wu, Janice Lan, Weizhe Yuan, Jiantao Jiao, Jason Weston and Sainbayar Sukhbaatar.*

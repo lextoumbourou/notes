@@ -3,7 +3,7 @@ title: "Playing Atari with Deep Reinforcement Learning"
 date: 2025-05-05 00:00
 modified: 2025-05-05 00:00
 summary: "a classic paper applying neural networks to RL for game playing"
-category: reference/papers
+category: paper
 tags:
 - ReinforcementLearning
 - GamePlayingAI

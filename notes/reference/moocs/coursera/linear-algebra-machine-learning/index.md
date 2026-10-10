@@ -1,7 +1,7 @@
 ---
 title: Mathematics for Machine Learning
 date: 2021-09-12 00:00
-category: reference/moocs
+category: course
 slug: linear-algebra-machine-learning
 summary: "Notes from Coursera's Mathematics for Machine Learning: Linear Algebra by Imperial College London"
 ---

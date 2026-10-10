@@ -2,7 +2,7 @@
 title: Structuring Machine Learning Projects (Coursera) 
 date: 2017-09-30 00:00
 link: 
-category: reference/moocs
+category: course
 slug: machine-learning-projects
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Week 5 - Propositional Logic A
 date: 2022-11-08 00:00
-category: reference/moocs
+category: course
 status: draft
 parent: uol-discrete-mathematics
 modified: 2023-04-08 00:00
