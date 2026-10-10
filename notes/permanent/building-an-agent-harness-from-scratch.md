@@ -1,7 +1,7 @@
 ---
 title: Building an Agent Harness From Scratch
 date: 2026-10-08 13:50
-modified: 2026-10-11 09:13
+modified: 2026-10-11 09:18
 summary: Basically just while loops.
 category: essay
 tags:
@@ -77,18 +77,19 @@ Firstly, the imports. I'll stick to the standard library, though I will import t
 import html
 import inspect
 import json
-from functools import partial
-from itertools import islice
 import pathlib
 import subprocess
 import sys
 import textwrap
+from functools import partial
+from itertools import islice
+from pprint import pprint
 from tempfile import TemporaryDirectory
 from typing import Any, Callable, Literal, NotRequired, Protocol, TypedDict, get_type_hints
 
 import openai
 ```
-<!-- nb-output hash="da4887270359ac24" format="html" -->
+<!-- nb-output hash="329169100642af57" format="html" -->
 
 <!-- /nb-output -->
 
@@ -439,32 +440,18 @@ def schema(name: str, f) -> ToolSpec:
                        "additionalProperties": False},
     }
 
-print(json.dumps(schema("read_file", tool_read_file), indent=2))
+pprint(schema("read_file", tool_read_file), sort_dicts=False)
 ```
-<!-- nb-output hash="49539ee1c18ad12c" format="html" -->
+<!-- nb-output hash="fc76062610cb4460" format="html" -->
 <div class="nb-output">
-<pre class="nb-stream-stdout">{
-  &quot;name&quot;: &quot;read_file&quot;,
-  &quot;description&quot;: &quot;Read numbered lines from a file in the working directory.&quot;,
-  &quot;parameters&quot;: {
-    &quot;type&quot;: &quot;object&quot;,
-    &quot;properties&quot;: {
-      &quot;path&quot;: {
-        &quot;type&quot;: &quot;string&quot;
-      },
-      &quot;offset&quot;: {
-        &quot;type&quot;: &quot;integer&quot;
-      },
-      &quot;limit&quot;: {
-        &quot;type&quot;: &quot;integer&quot;
-      }
-    },
-    &quot;required&quot;: [
-      &quot;path&quot;
-    ],
-    &quot;additionalProperties&quot;: false
-  }
-}
+<pre class="nb-stream-stdout">{'name': 'read_file',
+ 'description': 'Read numbered lines from a file in the working directory.',
+ 'parameters': {'type': 'object',
+                'properties': {'path': {'type': 'string'},
+                               'offset': {'type': 'integer'},
+                               'limit': {'type': 'integer'}},
+                'required': ['path'],
+                'additionalProperties': False}}
 </pre>
 </div>
 <!-- /nb-output -->
@@ -808,11 +795,22 @@ def find_skills(base_dir: pathlib.Path) -> list[dict]:
         })
     return skills
 
-print(find_skills(BASE_DIR))
+pprint(find_skills(BASE_DIR), sort_dicts=False)
 ```
-<!-- nb-output hash="d52db22ccdc85e23" format="html" -->
+<!-- nb-output hash="c77baed1d33cc8da" format="html" -->
 <div class="nb-output">
-<pre class="nb-stream-stdout">[{'name': 'release-notes', 'description': 'Write short release notes from a git history. Use when the user asks for release notes, a changelog entry, or a summary of what changed between two git refs or over a period of time.', 'location': PosixPath('agent-harness-working/.agents/skills/release-notes/SKILL.md')}, {'name': 'summarise-csv', 'description': 'Summarise a CSV file (row count, columns, totals and the biggest groups). Use when the user asks what is in a CSV, wants quick stats, or asks for a breakdown of a CSV by one of its columns.', 'location': PosixPath('agent-harness-working/.agents/skills/summarise-csv/SKILL.md')}]
+<pre class="nb-stream-stdout">[{'name': 'release-notes',
+  'description': 'Write short release notes from a git history. Use when the '
+                 'user asks for release notes, a changelog entry, or a summary '
+                 'of what changed between two git refs or over a period of '
+                 'time.',
+  'location': PosixPath('agent-harness-working/.agents/skills/release-notes/SKILL.md')},
+ {'name': 'summarise-csv',
+  'description': 'Summarise a CSV file (row count, columns, totals and the '
+                 'biggest groups). Use when the user asks what is in a CSV, '
+                 'wants quick stats, or asks for a breakdown of a CSV by one '
+                 'of its columns.',
+  'location': PosixPath('agent-harness-working/.agents/skills/summarise-csv/SKILL.md')}]
 </pre>
 </div>
 <!-- /nb-output -->
