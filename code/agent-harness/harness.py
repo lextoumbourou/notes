@@ -264,6 +264,8 @@ def classify_tool_call(client, user_request: str, tool_name: str, args: dict) ->
         )
         answers = {answer.name: answer for answer in decision.answers}
         risk, authorized = answers["risk"].score, answers["authorized"].probability
+        if not (0 <= risk <= len(RISK_LEVELS) - 1 and 0 <= authorized <= 1):
+            raise ValueError("invalid classifier answer")
     except Exception as error:  # an outage, a refusal or a missing answer
         return "ask", f"classifier unavailable ({type(error).__name__})"
     reason = f"risk {risk:.2f} of 3, authorised {authorized:.0%}"

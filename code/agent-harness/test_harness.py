@@ -143,6 +143,11 @@ class SafetyTest(unittest.TestCase):
     def test_api_failure_falls_back_to_asking(self):
         self.assertEqual(self.decide(fake_client(error=TimeoutError())), "ask")
 
+    def test_invalid_classifier_answer_falls_back_to_asking(self):
+        for risk in (None, float("nan"), 4):
+            with self.subTest(risk=risk):
+                self.assertEqual(self.decide(fake_client(risk=risk)), "ask")
+
     def test_nobody_at_the_terminal_means_no(self):
         with mock.patch("sys.stdin", SimpleNamespace(isatty=lambda: False)):
             self.assertFalse(harness.ask_user("bash", {"cmd": "rm -rf build"}, "risky"))
