@@ -1,7 +1,7 @@
 ---
 title: Building an Agent Harness From Scratch
 date: 2026-10-08 13:50
-modified: 2026-10-11 09:01
+modified: 2026-10-11 09:13
 summary: Basically just while loops.
 category: essay
 tags:
@@ -501,7 +501,7 @@ stdout:
 
 ## Context & Memory
 
-Even with a giant modern context window of 1M+ tokens, a long task will eventually overflow it, so we're going to want some strategy for managing our context. There are a few typical approaches: we could truncate the old context, or we could call an LLM to summarise the conversation so far. [An Empirical Study of Harness Design for Coding Agents](an-empirical-study-of-harness-design-for-coding-agents.md) explored different methods of [Context Management](context-management.md), and found the right technique mostly depends on the model itself: context management mattered more as the context window shrank, mostly by preventing overflow failures [@fanEmpiricalStudyHarness2026]. The more context the model has, the less the approach matters, which is no surprise.
+Even with a giant modern context window of 1M+ tokens, a long task will eventually overflow it, so we're going to want some strategy for managing our context. There are a few typical approaches. We could truncate the old context, or we could call an LLM to summarise the conversation so far. [Fan et al., 2026](an-empirical-study-of-harness-design-for-coding-agents.md) tested a few different methods, and found the right technique mostly depends on the model itself: context management mattered more as the context window shrank, mostly by preventing overflow failures [@fanEmpiricalStudyHarness2026]. The more context the model has, the less the approach matters, which is no surprise.
 
 Here, we're going to use the common approach of asking the model to summarise. The rough token to character heuristic is about a 1 to 4 token to character ratio, which we'll use for deciding when to compact. When we do, the system prompt and the task stay, the recent messages stay, and everything in the middle gets swapped for a summary.
 
@@ -576,9 +576,11 @@ user: Show me what you've built.
 </div>
 <!-- /nb-output -->
 
-The downside to summarisation is that you also invalidate your cache, as your entire conversation prefix is wiped. So it should be used with caution.
+The downside to summarisation is that it changes your conversation prefix, so the next call may reuse less of the prompt cache [@openaiPromptCaching]. So it should be used with caution.
 
-Memory is another topic that we could consider. It's common for an agent to dump Markdown files out as it "learns" things, which get loaded into context next time. Our harness actually gets a basic version of this for free: the model can update `AGENTS.md` with `write_file`, and `find_context` loads it at the start of every session.
+Memory is another topic that we could consider. It's common for an agent to dump Markdown files out as it "learns" things, which get loaded into context next time. Going even further, some agents like OpenClaw have a process called "Dreaming" ([Dreams](dreams.md)), which reviews short-term memories on a schedule and promotes useful ones into `MEMORY.md` [@openclawDreaming].
+
+Our harness actually gets a basic version of persistent context for free: the model can update `AGENTS.md` with `write_file`, and `find_context` loads it at the start of every session. We could also introduce a `MEMORY.md` file as additional context - I'll leave that as an exercise to the reader (or not).
 
 ## Safety Controls
 
