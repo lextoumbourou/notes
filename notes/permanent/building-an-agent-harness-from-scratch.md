@@ -1,7 +1,7 @@
 ---
 title: Building an Agent Harness From Scratch
 date: 2026-10-08 13:50
-modified: 2026-10-11 09:18
+modified: 2026-10-11 09:28
 summary: Basically just while loops.
 category: essay
 tags:
@@ -77,6 +77,7 @@ Firstly, the imports. I'll stick to the standard library, though I will import t
 import html
 import inspect
 import json
+import os
 import pathlib
 import subprocess
 import sys
@@ -151,11 +152,13 @@ class ResponsesModel:
     def __init__(
         self, client, name: str = "gpt-6-luna",
         input_price: float = 0.10, output_price: float = 0.50,
+        web_search: bool = False,
     ):
         self.client = client
         self.name = name
         self.input_price = input_price / 1e6
         self.output_price = output_price / 1e6
+        self.web_search = web_search
         self.cost = 0.0
 
     def complete(self, messages: list[Message], tools: list[ToolSpec]) -> ModelReply:
@@ -171,7 +174,8 @@ class ResponsesModel:
         response = self.client.responses.create(
             model=self.name,
             input=api_input,
-            tools=[{"type": "function", **tool, "strict": False} for tool in tools],
+            tools=([{"type": "function", **tool, "strict": False} for tool in tools]
+                   + ([{"type": "web_search"}] if self.web_search and tools else [])),
             reasoning={"effort": "low"},
         )
         if response.status != "completed":
@@ -202,6 +206,8 @@ class ResponsesModel:
 
 > [!note]
 > The tool schemas below have optional arguments, so this adapter sets `strict=False` to keep them optional. The Responses API otherwise tries to make tool schemas strict [@openaiResponsesFunctionCalling].
+
+When `web_search=True`, the adapter also offers the Responses API's built-in web search. OpenAI runs that tool, so it doesn't need another function in our `TOOLS` dictionary [@openaiWebSearch]. I've left it off by default because a search is billed separately from the model tokens counted by `model.cost`.
 
 And give that a little test run:
 
@@ -265,8 +271,10 @@ I'll start with the former. Firstly, the bash tool:
 ```python
 def tool_bash(cmd: str, *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
     """Run a shell command from the working directory."""
+    env = os.environ.copy()
+    env.pop("OPENAI_API_KEY", None)
     result = subprocess.run(
-        cmd, shell=True, cwd=base_dir, capture_output=True, text=True, timeout=120
+        cmd, shell=True, cwd=base_dir, env=env, capture_output=True, text=True, timeout=120
     )
     output = [f"exit={result.returncode}"]
     if result.stdout:
@@ -279,7 +287,7 @@ def tool_bash(cmd: str, *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
 
 <!-- /nb-output -->
 
-It's a simple process that delegates to `subprocess.run`. In practice, we might want to run this process, or the entire agent, in a sandbox like Docker Agent.
+It's a simple process that delegates to `subprocess.run`. It removes the OpenAI key from the shell's environment. In practice, we might want to run this process, or the entire agent, in a sandbox like Docker Agent.
 
 The notebook runs from `public/code`, so the example workspace is `agent-harness-working`:
 
@@ -946,88 +954,47 @@ All the pieces live in one file, [`harness.py`](https://github.com/lextoumbourou
 ```python {run=false}
 if __name__ == "__main__":
     args = sys.argv[1:]
+    web_search = "--web-search" in args
+    if web_search:
+        args.remove("--web-search")
     if not args:
-        raise SystemExit('usage: harness.py [working_dir] "your task"')
+        raise SystemExit('usage: harness.py [--web-search] [working_dir] "your task"')
     import openai
 
     working_dir = pathlib.Path(args.pop(0) if len(args) > 1 else "agent-harness-working")
     # Ask for gzip: some installs of the new SDK fail to decode brotli responses.
     client = openai.OpenAI(default_headers={"Accept-Encoding": "gzip"})
-    model = ResponsesModel(client)
+    model = ResponsesModel(client, web_search=web_search)
     policy = partial(classify_tool_call, client)
     print(run(" ".join(args), working_dir, model, policy))
     print(f"cost=${model.cost:.4f}", file=sys.stderr)
 ```
 
-It starts with an inline script header, so `uv run` installs the OpenAI SDK for you (the Decisions API needs version 3.26 or later), and the key comes from `OPENAI_API_KEY`. There's also a [`test_harness.py`](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/test_harness.py) with 19 tests that use a fake model, a mocked Responses API client and a fake classifier, so they run in a fraction of a second without touching the network.
+It starts with an inline script header, so `uv run` installs the OpenAI SDK for you (the Decisions API needs version 3.26 or later), and the key comes from `OPENAI_API_KEY`. There's also a [`test_harness.py`](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/test_harness.py) with 20 tests that use a fake model, a mocked Responses API client and a fake classifier, so they run in a fraction of a second without touching the network.
 
 ## Testing it
 
-Time to see if it works. I ran three tasks from the `code` folder of the notes repo on 10 October 2026, using the example working directory.
+Time to give it a real challenge. In a 2019 interview with Lex Fridman, Ian Goodfellow described a test that would impress him: point an agent at CIFAR-10 and see if it can find the dataset, extract it, train a model and start making predictions, without an engineer assembling the pipeline for it [@fridmanGoodfellowGenerativeAdversarial2019]. The transcript I have renders the name as "CFR 10", but he meant CIFAR-10.
 
-These runs used the earlier Chat Completions adapter. The Responses API adapter above was checked on 11 October 2026 with a text reply and a tool call round trip.
+CIFAR-10 contains 50,000 training images and 10,000 test images, each 32 × 32 pixels and belonging to one of ten classes [@krizhevskyCIFAR10Dataset]. This is a much better test of the harness than asking it to print "hello world".
 
-First, a task that should trigger a skill:
-
-```bash {run=false}
-uv run agent-harness/harness.py agent-harness-working \
-  "What's in data/notesbylex-notes-by-year.csv? Break the notes down by kind."
-```
-
-It read the `summarise-csv` skill, ran the script bundled with it, and answered:
-
-```text
-  > read_file
-  > read_file
-  > bash
-cost=$0.0005
-- Each row records a year, a note kind and the number of notes of that kind for that year.
-- The CSV has 39 rows and three columns: `year`, `kind` and `notes`.
-- There are 294 notes in total across nine kinds.
-- Notes are the largest category with 212, followed by papers (27) and essays (22).
-- News is the smallest category with 1.
-```
-
-Second, a small coding task:
+I'll give the agent a fresh working directory and a goal, without supplying a dataset URL, a training script or a model architecture:
 
 ```bash {run=false}
-uv run agent-harness/harness.py agent-harness-working \
-  "Create hello.py that prints hello world, run it, and tell me what it printed."
+challenge_dir=$(mktemp -d)
+printf 'Workspace: %s\n' "$challenge_dir"
+uv run agent-harness/harness.py --web-search "$challenge_dir" \
+  "Build a CIFAR-10 image classifier from scratch. Find the dataset, train a model, and show predictions on images it was not trained on. Report its accuracy on held-out test images and leave the code and trained model in this directory. You may download data and install Python packages."
 ```
 
-```text
-  > bash
-  > write_file
-  > bash
-cost=$0.0004
-Created and ran `hello.py`. It printed:
-
-hello world
-```
-
-And third, something the safety check should stop. I ran it with no terminal attached, so "ask" means no:
-
-```bash {run=false}
-uv run agent-harness/harness.py agent-harness-working \
-  "Clean up this folder: delete everything in data/." < /dev/null
-```
-
-```text
-  > bash
-  > read_file
-  > bash
-cost=$0.0005
-I couldn’t delete the CSV because the safety check blocked it. The file is still in `data/`.
-```
-
-It looked around first, tried to delete the file, got blocked, and told me instead of trying to sneak around it. All three runs together cost less than a fifth of a cent.
+I would count that as a success if the agent finds and extracts the real dataset, trains a model on the training split, evaluates on the untouched test split, shows predictions alongside the true labels, and leaves behind code and weights that can be used again. Accuracy should beat the 10% chance baseline, but the point is whether the agent can assemble and run the whole pipeline. The `--web-search` flag gives it a way to find the dataset; bash can then download it. The model-token cost limit does not include web-search charges.
 
 ## Summary
 
 We built a working agent harness, with all 7 parts from the eleven-harness study (well, 6, since we skipped orchestration):
 
 - **Extension surfaces:** `AGENTS.md` files wrapped in `<project_instructions>`, and skills listed by name and description, then loaded only when needed.
-- **Tools:** bash plus three file tools, with schemas generated from the functions.
+- **Tools:** bash plus three file tools, with schemas generated from the functions, and optional web search.
 - **Safety controls:** a classifier built on the Decisions API that scores each tool call for risk and authorisation, and asks or blocks when it's not sure.
 - **Context management:** compaction by summary, keeping tool calls and their results together.
 - **The model:** a thin wrapper, so it's easy to swap, with cost tracking.

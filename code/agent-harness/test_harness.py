@@ -113,6 +113,14 @@ class ToolsTest(unittest.TestCase):
             result = harness.tool_bash("pwd", base_dir=pathlib.Path(tmp))
             self.assertEqual(result, f"exit=0\nstdout:\n  {pathlib.Path(tmp).resolve()}")
 
+    def test_bash_does_not_inherit_the_openai_key(self):
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.dict(
+            "os.environ", {"OPENAI_API_KEY": "private-test-value"}
+        ):
+            result = harness.tool_bash("printenv OPENAI_API_KEY", base_dir=pathlib.Path(tmp))
+        self.assertIn("exit=1", result)
+        self.assertNotIn("private-test-value", result)
+
     def test_search_replace_rejects_empty_search(self):
         with self.assertRaises(ValueError):
             harness.tool_search_replace("file.txt", "", "new")
@@ -162,6 +170,8 @@ class ModelAdapterTest(unittest.TestCase):
             requests.append(json.loads(request.content))
             output = (
                 [{"type": "reasoning", "id": "rs_1", "summary": []},
+                 {"type": "web_search_call", "id": "ws_1", "status": "completed",
+                  "action": {"type": "search", "query": "CIFAR-10"}},
                  {"type": "function_call", "id": "fc_1", "call_id": "call_1",
                   "name": "read_file", "arguments": '{"path":"data.txt"}',
                   "status": "completed"}]
@@ -179,7 +189,7 @@ class ModelAdapterTest(unittest.TestCase):
         client = OpenAI(api_key="test", http_client=httpx2.Client(
             transport=httpx2.MockTransport(respond)))
         self.addCleanup(client.close)
-        model = harness.ResponsesModel(client)
+        model = harness.ResponsesModel(client, web_search=True)
         tools = [harness.schema("read_file", harness.tool_read_file)]
         reply = model.complete([{"role": "user", "content": "Read data"}], tools)
         final = model.complete([{"role": "user", "content": "Read data"}, reply,
@@ -187,10 +197,12 @@ class ModelAdapterTest(unittest.TestCase):
                                tools)
 
         self.assertEqual([item["type"] for item in requests[1]["input"][1:]],
-                         ["reasoning", "function_call", "function_call_output"])
+                         ["reasoning", "web_search_call", "function_call",
+                          "function_call_output"])
         self.assertEqual(requests[1]["input"][-1]["call_id"], "call_1")
         self.assertEqual(requests[0]["tools"][0]["name"], "read_file")
         self.assertFalse(requests[0]["tools"][0]["strict"])
+        self.assertEqual(requests[0]["tools"][-1], {"type": "web_search"})
         self.assertEqual(requests[0]["reasoning"], {"effort": "low"})
         self.assertEqual(reply["tool_calls"][0]["name"], "read_file")
         self.assertEqual(reply["tool_calls"][0]["id"], "call_1")

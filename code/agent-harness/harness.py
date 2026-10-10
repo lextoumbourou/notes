@@ -16,6 +16,7 @@ from __future__ import annotations
 import html
 import inspect
 import json
+import os
 from functools import partial
 from itertools import islice
 import pathlib
@@ -145,8 +146,10 @@ def _workspace_path(path: str, base_dir: pathlib.Path) -> pathlib.Path:
 
 def tool_bash(cmd: str, *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
     """Run a shell command from the working directory."""
+    env = os.environ.copy()
+    env.pop("OPENAI_API_KEY", None)
     result = subprocess.run(
-        cmd, shell=True, cwd=base_dir, capture_output=True, text=True, timeout=120
+        cmd, shell=True, cwd=base_dir, env=env, capture_output=True, text=True, timeout=120
     )
     output = [f"exit={result.returncode}"]
     if result.stdout:
@@ -330,11 +333,13 @@ class ResponsesModel:
     def __init__(
         self, client, name: str = "gpt-6-luna",
         input_price: float = 0.10, output_price: float = 0.50,
+        web_search: bool = False,
     ):
         self.client = client
         self.name = name
         self.input_price = input_price / 1e6
         self.output_price = output_price / 1e6
+        self.web_search = web_search
         self.cost = 0.0
 
     def complete(self, messages: list[Message], tools: list[ToolSpec]) -> ModelReply:
@@ -350,7 +355,8 @@ class ResponsesModel:
         response = self.client.responses.create(
             model=self.name,
             input=api_input,
-            tools=[{"type": "function", **tool, "strict": False} for tool in tools],
+            tools=([{"type": "function", **tool, "strict": False} for tool in tools]
+                   + ([{"type": "web_search"}] if self.web_search and tools else [])),
             reasoning={"effort": "low"},
         )
         if response.status != "completed":
@@ -437,14 +443,17 @@ def run(task: str, base_dir: pathlib.Path, model: Model, policy: Policy, max_tur
 
 if __name__ == "__main__":
     args = sys.argv[1:]
+    web_search = "--web-search" in args
+    if web_search:
+        args.remove("--web-search")
     if not args:
-        raise SystemExit('usage: harness.py [working_dir] "your task"')
+        raise SystemExit('usage: harness.py [--web-search] [working_dir] "your task"')
     import openai
 
     working_dir = pathlib.Path(args.pop(0) if len(args) > 1 else "agent-harness-working")
     # Ask for gzip: some installs of the new SDK fail to decode brotli responses.
     client = openai.OpenAI(default_headers={"Accept-Encoding": "gzip"})
-    model = ResponsesModel(client)
+    model = ResponsesModel(client, web_search=web_search)
     policy = partial(classify_tool_call, client)
     print(run(" ".join(args), working_dir, model, policy))
     print(f"cost=${model.cost:.4f}", file=sys.stderr)
