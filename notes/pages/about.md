@@ -1,10 +1,10 @@
 ---
 title: About
 date: 2021-05-27 00:00
-modified: 2025-07-27 00:00
+modified: 2026-10-10 15:30
 ---
 
-Welcome to my rendered collections of notes.
+Hi, I'm Lex Toumbourou. I'm a machine learning engineer and software developer based in Brisbane, Australia, currently a Staff MLE at Canva. These are my working notes that I've been collecting over the last decade+ using the Zettelkasten method.
 
 You can find the source on [GitHub](https://github.com/lextoumbourou/notes).
 
@@ -18,9 +18,7 @@ I intend to be flexible with the topics this blog explores; it's what I'm intere
 
 I don't know how useful the notes' contents will be to others. However, I've made them public because it helps me motivate myself to create these notes, and you never know.
 
-### About me
-
-I'm a generalist software developer currently living in Brisbane, Australia. At the time of writing, I'm a Senior MLE at Canva.
+### More about me
 
 I have a long career in software and, before that, operations, spanning around 20 years in total. In the most recent part of my career, I've been making products with data and ML, except for a few years working on the Roblox game [Splash](https://www.roblox.com/games/4936591712/SPLASH-Skate-Music#!/game-instances), so you will find game design and Roblox content scattered throughout the blog. However, I'm now back to focusing on ML.
 
