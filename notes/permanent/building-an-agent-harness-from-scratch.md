@@ -579,7 +579,7 @@ Our harness actually gets a basic version of persistent context for free: the mo
 
 ## Safety Controls
 
-Since we're talking about an agent that can arbitrarily execute any command on your computer, safety is obviously going to be a pretty damn important consideration. There are two main approaches to limiting the blast radius for an agent:
+Since we're talking about an agent that can arbitrarily execute any command on your computer, safety is obviously going to be a pretty damn important consideration. There are two main approaches to making it safer:
 
 1. Run it in a sandbox, so we control exactly what it can see and do.
 2. Introduce a classification layer so that a command is checked before it runs, and we can ask the user for permission if there's anything that looks suss.
@@ -908,7 +908,9 @@ Policy = Callable[[str, str, dict], tuple[str, str]]
 
 def run_tool(policy: Policy, task: str, name: str, args: dict, base_dir: pathlib.Path) -> str:
     decision, reason = policy(task, name, args)
-    if decision == "deny" or (decision == "ask" and not ask_user(name, args, reason)):
+    if decision == "ask" and ask_user(name, args, reason):
+        decision = "allow"
+    if decision != "allow":
         return (
             f"BLOCKED by the safety check ({reason}). "
             "Do not retry this; find another way or ask the user."

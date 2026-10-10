@@ -239,6 +239,11 @@ class LoopTest(unittest.TestCase):
         self.assertIn("BLOCKED", model.sent[1][-1]["content"])
         self.assertNotIn("should-not-run\n", model.sent[1][-1]["content"])
 
+    def test_an_unknown_policy_result_is_not_run(self):
+        policy = mock.Mock(return_value=("unknown", "invalid decision"))
+        result = harness.run_tool(policy, "Say hi", "bash", {"cmd": "echo should-not-run"}, self.dir)
+        self.assertIn("BLOCKED", result)
+
     def test_stops_at_the_turn_limit(self):
         model = FakeModel([tool_call("read_file", path="nope")] * 3)
         self.assertEqual(harness.run("Loop forever", self.dir, model, fake_policy(), max_turns=3),

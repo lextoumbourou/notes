@@ -395,7 +395,9 @@ Policy = Callable[[str, str, dict], tuple[str, str]]
 
 def run_tool(policy: Policy, task: str, name: str, args: dict, base_dir: pathlib.Path) -> str:
     decision, reason = policy(task, name, args)
-    if decision == "deny" or (decision == "ask" and not ask_user(name, args, reason)):
+    if decision == "ask" and ask_user(name, args, reason):
+        decision = "allow"
+    if decision != "allow":
         return (
             f"BLOCKED by the safety check ({reason}). "
             "Do not retry this; find another way or ask the user."
