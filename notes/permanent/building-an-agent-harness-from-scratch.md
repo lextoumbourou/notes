@@ -1,7 +1,7 @@
 ---
 title: Building an Agent Harness From Scratch
 date: 2026-10-08 13:50
-modified: 2026-10-11 08:14
+modified: 2026-10-11 09:01
 summary: Basically just while loops.
 category: essay
 tags:
@@ -501,9 +501,9 @@ stdout:
 
 ## Context & Memory
 
-Even with a big context window, a long task will eventually overflow it, so we need some strategy for dealing with that. There are a few typical approaches: we could truncate the old context, or we could call an LLM to summarise the conversation so far. [An Empirical Study of Harness Design for Coding Agents](an-empirical-study-of-harness-design-for-coding-agents.md) explored different methods of [Context Management](context-management.md), and found the right technique mostly depends on the model itself: context management mattered more as the context window shrank, mostly by preventing overflow failures [@fanEmpiricalStudyHarness2026]. The more context the model has, the less the approach matters, which is no surprise.
+Even with a giant modern context window of 1M+ tokens, a long task will eventually overflow it, so we're going to want some strategy for managing our context. There are a few typical approaches: we could truncate the old context, or we could call an LLM to summarise the conversation so far. [An Empirical Study of Harness Design for Coding Agents](an-empirical-study-of-harness-design-for-coding-agents.md) explored different methods of [Context Management](context-management.md), and found the right technique mostly depends on the model itself: context management mattered more as the context window shrank, mostly by preventing overflow failures [@fanEmpiricalStudyHarness2026]. The more context the model has, the less the approach matters, which is no surprise.
 
-Here, we're going to use the common approach of asking the model to summarise. I'll estimate tokens as characters divided by four, which is rough but fine for deciding when to compact. When we do, the system prompt and the task stay, the recent messages stay, and everything in the middle gets swapped for a summary.
+Here, we're going to use the common approach of asking the model to summarise. The rough token to character heuristic is about a 1 to 4 token to character ratio, which we'll use for deciding when to compact. When we do, the system prompt and the task stay, the recent messages stay, and everything in the middle gets swapped for a summary.
 
 There's one gotcha. In the Responses API, a tool result has to keep the `call_id` of the function call that requested it, so we can't cut the conversation between the two [@openaiResponsesFunctionCalling]:
 
@@ -539,6 +539,44 @@ def compact(messages: list[Message], model: Model, keep: int = 6) -> list[Messag
 <!-- nb-output hash="6d71bec4928db63c" format="html" -->
 
 <!-- /nb-output -->
+
+Let's use an artificially short conversation to see what compaction does:
+
+```python
+short_conversation: list[Message] = [
+    {"role": "system", "content": "You are a coding agent."},
+    {"role": "user", "content": "Write a CSV reader in reader.py."},
+    {"role": "assistant", "content": "I'll use Python's csv module."},
+    {"role": "user", "content": "An empty file should produce an empty list."},
+    {"role": "assistant", "content": "I added read_rows(path) and handled empty files."},
+    {"role": "user", "content": "Keep the API to one public function."},
+    {"role": "assistant", "content": "The only public function is read_rows(path)."},
+    {"role": "user", "content": "Show me what you've built."},
+]
+
+compacted = compact(short_conversation, model, keep=2)
+print(f"{len(short_conversation)} messages -> {len(compacted)} messages")
+for message in compacted:
+    print(f"{message['role']}: {message['content']}")
+```
+<!-- nb-output hash="aab71711cefcb39c" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">8 messages -&gt; 5 messages
+system: You are a coding agent.
+user: Write a CSV reader in reader.py.
+user: &lt;summary_of_earlier_work&gt;
+- **File:** `reader.py`
+- **Goal:** Implement a CSV reader.
+- **Requirements:** An empty file should return an empty list, and the module should expose only one public function.
+- **Unresolved:** The function’s exact name, signature, and row representation have not been confirmed. `read_rows(path)` was previously suggested, but no code was shown or verified.
+&lt;/summary_of_earlier_work&gt;
+assistant: The only public function is read_rows(path).
+user: Show me what you've built.
+</pre>
+</div>
+<!-- /nb-output -->
+
+The downside to summarisation is that you also invalidate your cache, as your entire conversation prefix is wiped. So it should be used with caution.
 
 Memory is another topic that we could consider. It's common for an agent to dump Markdown files out as it "learns" things, which get loaded into context next time. Our harness actually gets a basic version of this for free: the model can update `AGENTS.md` with `write_file`, and `find_context` loads it at the start of every session.
 
