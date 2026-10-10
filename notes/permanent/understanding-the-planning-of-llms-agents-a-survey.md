@@ -9,7 +9,7 @@ Notes from paper [Understanding the planning of LLM agents: A survey](https://ar
 
 ## Overview
 
-A survey that explores the planning capabilities of [Large Language Models](large-language-models.md)s used as [AI Agents](ai-agents.md).
+A survey that explores the planning capabilities of [Large Language Models](large-language-models.md)s used as [AI Agents](ai-agent.md).
 
 The authors categorise existing research into five directions:
 * Task Decomposition

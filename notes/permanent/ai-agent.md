@@ -1,8 +1,10 @@
 ---
-title: AI Agents
+title: AI Agent
 date: 2024-10-06 00:00
 modified: 2024-10-06 00:00
 status: hidden
+aliases:
+- AI Agents
 tags:
 - AgenticReasoning
 ---

@@ -9,9 +9,9 @@ paper_url: https://arxiv.org/abs/2505.10468v3
 paper_authors: Ranjan Sapkota, Konstantinos I. Roumeliotis, Manoj Karkee
 ---
 
-This paper provides a comprehensive literature review to distinguish between [AI Agents](../../permanent/ai-agents.md) and [Agentic AI](../../permanent/agentic-ai.md). It highlights different examples of each to help illustrate the differences. Since my writing is very taxonomy-focused, I appreciate these papers, which help clarify and understand topics.
+This paper provides a comprehensive literature review to distinguish between [AI Agents](../../permanent/ai-agent.md) and [Agentic AI](../../permanent/agentic-ai.md). It highlights different examples of each to help illustrate the differences. Since my writing is very taxonomy-focused, I appreciate these papers, which help clarify and understand topics.
 
-## [AI Agents](../../permanent/ai-agents.md)
+## [AI Agents](../../permanent/ai-agent.md)
 
 AI Agents are systems designed for narrow task-specific automation. Nowadays, they are driven by [Large Language Models](../../permanent/large-language-models.md) or Large Vision Models. Still, in earlier systems, they were based on symbolic reasoning, rule-based logic or scripted behaviours. They can operate with limited autonomy, which is sufficient to get the job done.
 

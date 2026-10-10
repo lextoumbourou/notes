@@ -6,7 +6,7 @@ modified: 2024-10-04 00:00
 status: draft
 ---
 
-Paper proposes [Reflexion](../../permanent/reflexion.md), a framework for training large language models as [AI Agents](../../permanent/ai-agents.md) that can interact with their environment.
+Paper proposes [Reflexion](../../permanent/reflexion.md), a framework for training large language models as [AI Agents](../../permanent/ai-agent.md) that can interact with their environment.
 
 It uses a linguistic feedback mechanism, which allows agents to learn from their mistakes by verbally reflecting on their experiences and storing this information in their memory.
 

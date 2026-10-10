@@ -16,7 +16,7 @@ paper_url: https://arxiv.org/pdf/2607.25398
 paper_authors: Liudas Panavas, Sebastian Minus, Bradley Monton, Derek Ray, Suhaas Garre, Sushant Mehta and Edwin Chen
 ---
 
-[HANDBOOK.md](https://github.com/surge-ai/handbook) is a new benchmark from researchers at Surge AI that tests [AI Agents](../../permanent/ai-agents.md)' ability to follow long company policies during realistic tasks [@panavasHANDBOOKmdBenchmarkLongContext2026].
+[HANDBOOK.md](https://github.com/surge-ai/handbook) is a new benchmark from researchers at Surge AI that tests [AI Agents](../../permanent/ai-agent.md)' ability to follow long company policies during realistic tasks [@panavasHANDBOOKmdBenchmarkLongContext2026].
 
 Each of its 65 [Long-Horizon Tasks](../../permanent/long-horizon-tasks.md) puts an agent inside a simulated company environment containing files and mock services such as email, Slack, calendars, Jira, and Shopify.
 

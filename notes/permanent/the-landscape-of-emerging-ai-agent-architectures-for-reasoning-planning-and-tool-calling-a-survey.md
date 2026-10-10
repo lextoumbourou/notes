@@ -37,7 +37,7 @@ Among the community, there is a current debate on whether [Single-Agent Systems]
 ![](../_media/the-landscape-of-emerging-ai-agent-architectures-for-reasoning-planning-and-tool-calling-a-survey-fig-1.png)
 ### 1.1 Taxonomy
 
-* [AI Agents](ai-agents.md)
+* [AI Agents](ai-agent.md)
     * Powered by [Language Model](language-model.md)s.
     * Can plan and take actions to execute goals over multiple iterations.
     * Can be part of [Single-Agent Systems](single-agent-systems.md) or [Multi-Agent Systems](multi-agent-systems.md).
@@ -92,7 +92,7 @@ Agents extend LMs to solve real problems. They need good problem-solving capabil
 
 [Reasoning](reasoning.md)
 * A fundamental building block of human cognition. It lets us make decisions, solve problems and make sense of the world.
-* [AI Agents](ai-agents.md) must have strong ability to reason to handle complex environments and make decisions.
+* [AI Agents](ai-agent.md) must have strong ability to reason to handle complex environments and make decisions.
 
 Need a tight synergy between "acting" and "reasoning" to allow new tasks to be learned quickly and enable robust decision making, even under previously unseen circumstances, or information uncertainties. See [ReAct: Synergizing Reasoning and Acting in Language Models](react-synergizing-reasoning-and-acting-in-language-models.md).
 

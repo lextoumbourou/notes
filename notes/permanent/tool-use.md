@@ -9,4 +9,4 @@ status: draft
 
 Typically, the model outputs a structured tool call, the system runs the tool, and the result is fed back into the model's context so it can continue. [ReAct: Synergizing Reasoning and Acting in Language Models](react-synergizing-reasoning-and-acting-in-language-models.md) is an early example of interleaving reasoning with actions like this [@yaoReActSynergizingReasoning2023]. [MCP](mcp.md) is a protocol for connecting models to tools and data sources.
 
-Tool use is the clearest point where LLMs become [AI Agents](ai-agents.md), since they can take actions in the world rather than just returning text.
+Tool use is the clearest point where LLMs become [AI Agents](ai-agent.md), since they can take actions in the world rather than just returning text.
