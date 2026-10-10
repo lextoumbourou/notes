@@ -12,7 +12,7 @@ from html.parser import HTMLParser
 import logging
 import re
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment
 
 from pelican import contents, signals
 from pelican.utils import slugify
@@ -54,6 +54,16 @@ def init_default_config(pelican):
         pelican.settings = update_settings(pelican.settings)
 
 
+
+def _display_html(header):
+    """Heading markup for the ToC: rendered maths kept, its MathML twin dropped."""
+    clone = BeautifulSoup(str(header), 'html.parser').find(header.name)
+    for node in clone.select('.katex-mathml, script, style'):
+        node.decompose()
+    for comment in clone.find_all(string=lambda s: isinstance(s, Comment)):
+        comment.extract()
+    return clone.decode_contents()
+
 def _generate_toc_legacy(content):
     if isinstance(content, contents.Static):
         return
@@ -82,7 +92,8 @@ def _generate_toc_legacy(content):
         anchor = unique(raw_id, all_ids)
         header.attrs['id'] = anchor
         level = int(header.name[1])  # h2 -> 2
-        entries.append({'level': level, 'anchor': anchor, 'text': text})
+        entries.append({'level': level, 'anchor': anchor, 'text': text,
+                        'html': _display_html(header)})
 
     if entries:
         content.toc = entries
@@ -234,7 +245,8 @@ def generate_toc(content):
         text = header.get_text()
         anchor = unique(header.attrs.get('id') or slugify(text, ()), all_ids)
         header.attrs['id'] = anchor
-        entries.append({'level': int(header.name[1]), 'anchor': anchor, 'text': text})
+        entries.append({'level': int(header.name[1]), 'anchor': anchor, 'text': text,
+                        'html': _display_html(header)})
         replacements.append((start, end, header.decode(formatter='html')))
     if entries:
         content.toc = entries

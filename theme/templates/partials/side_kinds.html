@@ -1,0 +1,14 @@
+{# The colour key: every kind, its count, and its page. Finished kinds first. #}
+{% set kind_order = ['essay', 'project', 'note', 'paper', 'model', 'course', 'book', 'talk', 'news'] %}
+<section class="side-block">
+  <h2 class="side-heading">Kinds</h2>
+  <ul class="kind-key">
+    {% for k in kind_order %}
+      {% for cat, cat_articles in categories %}
+        {% if cat.name == k %}
+        <li><a href="{{ SITEURL }}/{{ cat.url }}"{% if category is defined and category and category.name == k %} aria-current="page"{% endif %}><span class="kind kind-{{ k }}">{{ k }}</span></a> <span class="topic-n">{{ cat_articles | count }}</span></li>
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  </ul>
+</section>

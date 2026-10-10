@@ -1,7 +1,10 @@
 {% extends "article_list.html" %}
 
-{% block title %}{{ category }} - {{ SITENAME }}{% endblock %}
+{% block title %}{{ category | capitalize }} - {{ SITENAME }}{% endblock %}
 
 {% block content_title %}
-<h2>{{ category }}</h2>
+<header class="list-head">
+  <h1 class="list-title"><span data-sketch="swipe" data-sketch-color="--hl-yellow" data-sketch-draw="on">{{ category.name | capitalize }}</span></h1>
+  <p class="list-meta">Everything filed as {{ category }}. See also <a href="/essays.html">Essays</a> and <a href="/notes.html">Notes</a>.</p>
+</header>
 {% endblock %}

@@ -1,64 +1,27 @@
 {% extends "base.html" %}
 
 {% set home_page = pages | selectattr("slug", "equalto", "index") | list | first %}
-{% set currently_page = pages | selectattr("slug", "equalto", "currently") | list | first %}
 
-{% if home_page %}
-{% block graph_css %}<link rel="stylesheet" href="/static/graph.css" />{% endblock %}
-{% block graph_js %}
-<script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/pixi.js@7/dist/pixi.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@23/dist/tween.umd.js"></script>
-<script src="/static/graph.js"></script>
-{% endblock %}
-{% endif %}
 
-{% block body_class %}{% if home_page %}page-article{% endif %}{% endblock %}
+
+{% block body_class %}{% if home_page %}page-home{% else %}page-list{% endif %}{% endblock %}
 
 {% block right_panel %}
 {% if home_page %}
-<aside id="site-right-panel">
+<aside class="page-side" aria-label="Explore" data-sketch="vline">
 
-  {% if tags %}
-  <div class="panel-card">
-    <div class="panel-card-head">
-      <p class="panel-heading">Topics</p>
-      <span class="panel-card-meta">{{ tags | list | length }}</span>
-    </div>
-    {% set max_count = tags | map(attribute=1) | map('count') | max %}
-    <div class="home-tag-cloud">
-      {% for tag, tag_articles in tags | sort_by_article_count %}
-        {% if loop.index <= 25 %}
-        {% set count = tag_articles | count %}
-        {% set size = (12 + (count / max_count) * 6) | round(1) %}
-        <a href="{{ SITEURL }}/{{ tag.url }}" class="cloud-tag" style="font-size:{{ size }}px">
-          {{ tag }}<span class="cloud-n">{{ count }}</span>
-        </a>
-        {% endif %}
-      {% endfor %}
-    </div>
-    {% if tags | list | length > 25 %}
-    <a href="/tags.html" class="panel-see-more">See all {{ tags | list | length }} topics →</a>
-    {% endif %}
-  </div>
-  {% endif %}
+  {% include 'partials/side_topics.html' %}
 
   {% if SOCIAL is defined and SOCIAL %}
-  <div class="panel-card">
-    <div class="panel-card-head">
-      <p class="panel-heading">Socials</p>
-    </div>
-    <div class="socials-list">
+  <section class="side-block">
+    <h2 class="side-heading">Find me on</h2>
+    <ul class="socials-list">
       {% for icon, name, url in SOCIAL %}
-      <a href="{{ url }}" target="_blank" rel="noopener">
-        <span class="social-ico">{{ icon }}</span> {{ name }}
-      </a>
+      <li><a href="{{ url }}" rel="me noopener">{% include 'icons/' ~ (name | lower) ~ '.svg' ignore missing %}<span>{{ name }}</span></a></li>
       {% endfor %}
-      <a href="{{ SITEURL }}/feeds/all.atom.xml">
-        <span class="social-ico">⌁</span> RSS
-      </a>
-    </div>
-  </div>
+      <li><a href="{{ SITEURL }}/feeds/all.atom.xml">{% include 'icons/rss.svg' %}<span>RSS</span></a></li>
+    </ul>
+  </section>
   {% endif %}
 
 </aside>
@@ -66,111 +29,63 @@
 {% endblock %}
 
 {% block content %}
-<section id="content">
+<section class="home-wrap">
 
 {% if home_page %}
 <div class="home">
 
-  {# Hero #}
-  <section class="home-hero{% if not (HERO_PORTRAIT is defined and HERO_PORTRAIT) %} home-hero-full{% endif %}">
-    <div class="hero-text">
-      {% if HERO_TITLE is defined and HERO_TITLE %}
-      <h1 class="hero-title">{{ HERO_TITLE }}</h1>
-      {% endif %}
-      {% if HERO_LEDE is defined and HERO_LEDE %}
-      <p class="hero-lede">{{ HERO_LEDE }}</p>
-      {% endif %}
-      <p class="hero-bio">{{ home_page.content | striptags | truncate(500, True, '…') }}</p>
-      <div class="hero-actions">
-        <a href="/pages/about.html" class="btn-ghost">Learn more</a>
-      </div>
-    </div>
-    {% if HERO_PORTRAIT is defined and HERO_PORTRAIT %}
-    <div class="hero-portrait">
-      <img src="{{ HERO_PORTRAIT }}" alt="{{ AUTHOR }}" />
-    </div>
+  <section class="home-intro">
+    {% if HERO_LEDE is defined and HERO_LEDE %}
+    <h1 class="home-title"><span data-sketch="swipe" data-sketch-color="--hl-teal" data-sketch-draw="on">{{ HERO_LEDE }}</span></h1>
     {% endif %}
+    <p class="home-bio">{{ home_page.content | striptags | truncate(500, True, '…') }}</p>
+    <p class="home-more"><a href="/pages/about.html">More about me{% include 'icons/arrow.svg' %}</a></p>
   </section>
 
-  {# Recently tended #}
-  {% set all_recent = (articles | sort(attribute='date', reverse=True))[:12] %}
-  {% if all_recent %}
-  <section id="recently-tended" class="recent">
+  {% set essays = articles | selectattr('category.name', 'in', ['essay', 'project']) | sort(attribute='date', reverse=True) | list %}
+  {% if essays %}
+  <section class="essays" aria-labelledby="essays-heading">
     <header class="section-head">
-      <h2>Recent notes</h2>
-      <p>Notes sorted by date. <a href="/notes.html">All notes →</a></p>
+      <h2 id="essays-heading">Essays</h2>
+      <a href="/essays.html">All essays{% include 'icons/arrow.svg' %}</a>
     </header>
-    <ol class="timeline">
-      {% for article in all_recent %}
-      <li class="tl-row">
-        <span class="tl-date">{{ article.date.strftime('%b %-d, %Y') }}</span>
-        <span class="tl-kind tl-kind-{{ article.category.name }}">{{ article.category.name }}</span>
-        <a class="tl-title" href="/{{ article.url }}">{{ article.title }}</a>
+    <ol class="essay-list">
+      {% for article in essays[:10] %}
+      <li class="essay">
+        {% if article.cover %}<img class="essay-cover" src="{{ article.cover }}" alt="" loading="lazy" />{% endif %}
+        <a class="essay-title" href="/{{ article.url }}">{{ article.title }}</a>
+        {% if article.summary %}<p class="essay-dek">{{ article.summary | striptags }}</p>{% endif %}
+        <span class="essay-date"><time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %Y') }}</time></span>
       </li>
       {% endfor %}
     </ol>
   </section>
   {% endif %}
 
-  <footer class="home-foot">
-    <div>© {{ now().year if now is defined else '2026' }} {{ AUTHOR }} · <a href="/pages/about.html">About</a></div>
-    <div>Built with <a href="https://getpelican.com">Pelican</a></div>
-  </footer>
+  {% set recent_notes = (articles | rejectattr('category.name', 'in', ['essay', 'project']) | sort(attribute='date', reverse=True) | list)[:12] %}
+  {% if recent_notes %}
+  <section class="recent" aria-labelledby="recent-heading">
+    <header class="section-head">
+      <h2 id="recent-heading">Notes</h2>
+      <a href="/notes.html">All notes{% include 'icons/arrow.svg' %}</a>
+    </header>
+    <ol class="note-rows">
+      {% for article in recent_notes %}
+      <li class="note-row">
+        <time class="note-row-date" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %-d, %Y') }}</time>
+        <span class="kind kind-{{ article.category.name | replace('/', '-') }}">{{ article.category.name.split('/') | last }}</span>
+        <a class="note-row-title" href="/{{ article.url }}">{{ article.title }}</a>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
 
 </div>
 
 {% else %}
 
-{# Fallback: article list #}
-{% if articles_page.has_other_pages() %}
-    {% include 'pagination.html' %}
-{% endif %}
-
-<ul class="articles">
-{% for article in articles_page.object_list %}
-<li>
-  <article class="post">
-    <div class="article-content">
-      <h2>
-        <a href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
-      </h2>
-
-      <div class="article-meta">
-        <span class="created">{{ article.date|strftime('%b %d, %Y') }}</span>
-        <span class="category">
-          <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category}}</a>{%- for cat in article.subcategories -%}/<a href="{{ SITEURL }}/{{cat.url}}">{{cat.shortname}}</a>{% endfor %}
-        </span>
-        <span class="info">
-            {% if article.tags %}
-            {% for t in article.tags %}
-            &nbsp;<a href="{{ SITEURL }}/{{ t.url }}" class="tags">{{ t }}</a>
-            {% endfor %}
-            {% endif %}
-        </span>
-      </div>
-
-      <div class="article-summary">
-        {% if article.cover %}
-        <div class="cover-image">
-          <img src="{{ article.cover }}" />
-        </div>
-        {% endif %}
-        <div class="article-summary-text">
-          {{ article.summary }}
-          <div class="article-link">
-            <a href="{{ SITEURL}}/{{ article.url }}">Read More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
-</li>
-{% endfor %}
-</ul>
-
-{% if articles_page.has_other_pages() %}
-    {% include 'pagination.html' %}
-{% endif %}
+{% include 'note_list.html' %}
 
 {% endif %}
 

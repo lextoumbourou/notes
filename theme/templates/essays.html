@@ -1,19 +1,20 @@
 {% extends "base.html" %}
 
-{% block title %}{{ subcategory }} - {{ SITENAME }}{% endblock %}
+{% block title %}Essays - {{ SITENAME }}{% endblock %}
 
 {% block body_class %}page-list{% endblock %}
 
 {% block right_panel %}{% include 'partials/list_side.html' %}{% endblock %}
 
 {% block content %}
+{% set finished = articles | selectattr('category.name', 'in', ['essay', 'project']) | sort(attribute='date', reverse=True) | list %}
 <section class="list-page">
   <header class="list-head">
-    <h1 class="list-title"><span data-sketch="swipe" data-sketch-color="--hl-yellow" data-sketch-draw="on">{{ subcategory.shortname }}</span></h1>
-    <p class="list-meta">Notes in {{ subcategory }}</p>
+    <h1 class="list-title"><span data-sketch="swipe" data-sketch-color="--hl-teal" data-sketch-draw="on">Essays</span></h1>
+    <p class="list-meta">{{ finished | count }} essays and project write-ups. The working notes are on the <a href="/notes.html">Notes</a> page.</p>
   </header>
   <ol class="note-list">
-  {% for article in articles %}
+  {% for article in finished %}
   <li class="note-item">
     <article>
       <h2 class="note-item-title"><a href="/{{ article.url }}">{{ article.title }}</a></h2>

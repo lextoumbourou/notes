@@ -24,6 +24,10 @@ md_links = importlib.util.module_from_spec(link_spec)
 link_spec.loader.exec_module(md_links)
 
 
+def plain_toc(content):
+    return [{k: v for k, v in entry.items() if k != "html"} for entry in content.toc]
+
+
 def make_content(html, **metadata):
     return SimpleNamespace(
         _content=html, metadata=metadata, settings={"TOC": toc.TOC_DEFAULT.copy()}
@@ -141,7 +145,8 @@ class TocTests(unittest.TestCase):
             '<h2 id="same">First</h2><h3 id="same">Second</h3>'
             '<h4 id="same_1">Third</h4><h5></h5><h6></h6>'
         )
-        self.assertEqual(content.toc, [
+        self.assertEqual(content.toc[0]["html"], "Hello <em>world</em> &amp; friends")
+        self.assertEqual(plain_toc(content), [
             {"level": 1, "anchor": "hello world & friends", "text": "Hello world & friends"},
             {"level": 2, "anchor": "same", "text": "First"},
             {"level": 3, "anchor": "same_1", "text": "Second"},
@@ -173,7 +178,15 @@ class TocTests(unittest.TestCase):
             '<!-- <h2>Comment</h2> --><script>"<h2>Script</h2>"</script>'
             '<style>/* <h2>Style</h2> */</style><h2>Real</h2>'
         )
-        self.assertEqual(content.toc, [{"level": 2, "anchor": "real", "text": "Real"}])
+        self.assertEqual(plain_toc(content), [{"level": 2, "anchor": "real", "text": "Real"}])
+
+    def test_display_html_keeps_rendered_maths_only(self):
+        content = self.assert_matches_legacy(
+            '<h2>Why <span class="katex"><span class="katex-mathml"><math><mi>d</mi></math></span>'
+            '<span class="katex-html" aria-hidden="true">d</span></span>?</h2>'
+        )
+        self.assertNotIn("katex-mathml", content.toc[0]["html"])
+        self.assertIn('class="katex-html"', content.toc[0]["html"])
 
     def test_nonbreaking_spaces_preserve_generated_previews(self):
         html = '<p>Before <span class="katex">Set\xa0of\xa0days</span></p><h2>Math</h2>'

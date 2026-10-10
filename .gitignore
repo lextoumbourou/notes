@@ -15,3 +15,12 @@ media
 .aider*
 .claude
 .tools/
+
+# Impeccable working files (mockups, screenshots, build state). Keep config,
+# design.json and surfaces/ so later design sessions start from the brand.
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/build/
+.impeccable/prompts/
+.impeccable/questions/
+.impeccable/hook.cache.json

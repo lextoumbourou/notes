@@ -1,0 +1,15 @@
+{% if tags %}
+<section class="side-block">
+  <h2 class="side-heading">Topics</h2>
+  <ul class="topic-list">
+    {% for t, tag_articles in tags | sort_by_article_count %}
+      {% if loop.index <= 24 %}
+      <li><a href="{{ SITEURL }}/{{ t.url }}"{% if tag is defined and tag and tag.name == t.name %} aria-current="page"{% endif %}>{{ t }}</a> <span class="topic-n">{{ tag_articles | count }}</span></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  {% if tags | list | length > 24 %}
+  <p class="side-more"><a href="/tags.html">All {{ tags | list | length }} topics{% include 'icons/arrow.svg' %}</a></p>
+  {% endif %}
+</section>
+{% endif %}

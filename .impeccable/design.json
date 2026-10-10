@@ -1,0 +1,737 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-10T04:40:28+00:00",
+  "title": "Design System: NotesByLex",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Off-white Paper",
+        "canonical": "#FBFAF6",
+        "oklch": "oklch(98.5% 0.005 95)",
+        "theme": "light",
+        "tonalRamp": [
+          "#0C0B09",
+          "#252421",
+          "#40403D",
+          "#5E5E5A",
+          "#7E7D7A",
+          "#9F9E9B",
+          "#C5C4C0",
+          "#EFEEEA"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Second Sheet",
+        "canonical": "#F2F0E8",
+        "oklch": "oklch(95.4% 0.011 95)",
+        "theme": "light",
+        "tonalRamp": [
+          "#0D0B06",
+          "#26241E",
+          "#414039",
+          "#5F5E57",
+          "#7F7D76",
+          "#A09E97",
+          "#C6C4BC",
+          "#F1EFE7"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Marker Ink",
+        "canonical": "#141414",
+        "oklch": "oklch(19.1% 0.000 90)",
+        "theme": "light",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#7D7D7D",
+          "#9E9E9E",
+          "#C4C4C4",
+          "#EEEEEE"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#383836",
+        "oklch": "oklch(34.0% 0.003 107)",
+        "theme": "light",
+        "tonalRamp": [
+          "#0B0B0A",
+          "#242422",
+          "#40403E",
+          "#5E5E5B",
+          "#7D7D7B",
+          "#9E9E9C",
+          "#C4C4C2",
+          "#EFEFEC"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Pencil Grey",
+        "canonical": "#5C5B57",
+        "oklch": "oklch(47.1% 0.006 95)",
+        "theme": "light",
+        "tonalRamp": [
+          "#0C0B08",
+          "#252421",
+          "#41403C",
+          "#5F5E5A",
+          "#7E7D79",
+          "#9F9E9A",
+          "#C5C4BF",
+          "#F0EEEA"
+        ]
+      },
+      "rule-soft": {
+        "role": "neutral",
+        "displayName": "Faint Rule",
+        "canonical": "#DCD9CF",
+        "oklch": "oklch(88.5% 0.014 93)",
+        "theme": "light",
+        "tonalRamp": [
+          "#0D0B05",
+          "#26241C",
+          "#424038",
+          "#605E55",
+          "#807D74",
+          "#A19E95",
+          "#C7C4BA",
+          "#F1EEE4"
+        ]
+      },
+      "highlighter-yellow": {
+        "role": "secondary",
+        "displayName": "Highlighter Yellow",
+        "canonical": "#FFE84D",
+        "oklch": "oklch(92.4% 0.168 101)",
+        "theme": "light",
+        "tonalRamp": [
+          "#0F0B00",
+          "#2A2400",
+          "#484007",
+          "#6A5E02",
+          "#8E7E02",
+          "#B2A023",
+          "#DDC613",
+          "#FFF198"
+        ]
+      },
+      "highlighter-pink": {
+        "role": "secondary",
+        "displayName": "Highlighter Pink",
+        "canonical": "#FF6FAE",
+        "oklch": "oklch(73.4% 0.186 355)",
+        "theme": "light",
+        "tonalRamp": [
+          "#1F000C",
+          "#480026",
+          "#760143",
+          "#A61362",
+          "#CC4082",
+          "#F364A4",
+          "#FDA6C7",
+          "#FFE7EF"
+        ]
+      },
+      "highlighter-teal": {
+        "role": "secondary",
+        "displayName": "Highlighter Teal",
+        "canonical": "#2DD4BF",
+        "oklch": "oklch(78.5% 0.133 182)",
+        "theme": "light",
+        "tonalRamp": [
+          "#00100C",
+          "#002B26",
+          "#074A42",
+          "#196C61",
+          "#239081",
+          "#22B6A4",
+          "#40E0CA",
+          "#BAFFF2"
+        ]
+      },
+      "mark-ink": {
+        "role": "neutral",
+        "displayName": "Mark Ink",
+        "canonical": "#141414",
+        "oklch": "oklch(19.1% 0.000 90)",
+        "theme": "light",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#242424",
+          "#404040",
+          "#5D5D5D",
+          "#7D7D7D",
+          "#9E9E9E",
+          "#C4C4C4",
+          "#EEEEEE"
+        ]
+      },
+      "link": {
+        "role": "primary",
+        "displayName": "Deep Garden Teal",
+        "canonical": "#0A6E63",
+        "oklch": "oklch(48.4% 0.084 183)",
+        "theme": "light",
+        "tonalRamp": [
+          "#000F0C",
+          "#022B26",
+          "#0B4A43",
+          "#076D62",
+          "#388E82",
+          "#5CB0A3",
+          "#83D6C9",
+          "#BCFEF2"
+        ]
+      },
+      "link-hover": {
+        "role": "primary",
+        "displayName": "Forest Teal",
+        "canonical": "#064C45",
+        "oklch": "oklch(37.5% 0.064 184)",
+        "theme": "light",
+        "tonalRamp": [
+          "#00100D",
+          "#002B27",
+          "#034A44",
+          "#2D6962",
+          "#4E8A82",
+          "#70ACA3",
+          "#95D2C9",
+          "#BFFDF3"
+        ]
+      },
+      "tag-bg": {
+        "role": "neutral",
+        "displayName": "Mint Tag",
+        "canonical": "#D5F2ED",
+        "oklch": "oklch(93.9% 0.031 184)",
+        "theme": "light",
+        "tonalRamp": [
+          "#000F0D",
+          "#112926",
+          "#2D4542",
+          "#4A6460",
+          "#69847F",
+          "#8AA5A0",
+          "#AFCBC6",
+          "#D9F6F1"
+        ]
+      },
+      "tag-fg": {
+        "role": "neutral",
+        "displayName": "Mint Tag Text",
+        "canonical": "#0B4F48",
+        "oklch": "oklch(38.6% 0.064 184)",
+        "theme": "light",
+        "tonalRamp": [
+          "#00100D",
+          "#002B27",
+          "#034B44",
+          "#2D6962",
+          "#4E8A82",
+          "#6FACA3",
+          "#95D2C9",
+          "#BFFDF3"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate (dark paper)",
+        "canonical": "#1B2023",
+        "oklch": "oklch(24.0% 0.009 234)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#080C0F",
+          "#202528",
+          "#3B4144",
+          "#595F62",
+          "#787E82",
+          "#999FA3",
+          "#BEC5C9",
+          "#E9F0F4"
+        ]
+      },
+      "slate-2": {
+        "role": "neutral",
+        "displayName": "Slate Second Sheet",
+        "canonical": "#242A2E",
+        "oklch": "oklch(28.1% 0.011 237)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#070C0F",
+          "#1F2529",
+          "#3A4145",
+          "#585F63",
+          "#777E83",
+          "#98A0A5",
+          "#BEC5CB",
+          "#E8F0F5"
+        ]
+      },
+      "chalk": {
+        "role": "primary",
+        "displayName": "Chalk (dark ink)",
+        "canonical": "#EEEBE3",
+        "oklch": "oklch(94.0% 0.011 90)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#0D0B06",
+          "#26241E",
+          "#424039",
+          "#605D57",
+          "#807D76",
+          "#A19E97",
+          "#C7C4BC",
+          "#F1EEE6"
+        ]
+      },
+      "chalk-2": {
+        "role": "neutral",
+        "displayName": "Soft Chalk",
+        "canonical": "#CFCBC2",
+        "oklch": "oklch(84.3% 0.013 87)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#0E0B06",
+          "#27241D",
+          "#433F38",
+          "#615D55",
+          "#817D75",
+          "#A29E95",
+          "#C8C4BB",
+          "#F2EEE5"
+        ]
+      },
+      "chalk-muted": {
+        "role": "neutral",
+        "displayName": "Chalk Pencil",
+        "canonical": "#A9A79F",
+        "oklch": "oklch(72.8% 0.012 95)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#0D0B06",
+          "#26241E",
+          "#414039",
+          "#5F5E56",
+          "#7F7D76",
+          "#A09E97",
+          "#C6C4BC",
+          "#F1EFE6"
+        ]
+      },
+      "slate-rule": {
+        "role": "neutral",
+        "displayName": "Slate Rule",
+        "canonical": "#363D41",
+        "oklch": "oklch(35.5% 0.012 233)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#070C0F",
+          "#1F2529",
+          "#3A4145",
+          "#575F63",
+          "#777F83",
+          "#98A0A5",
+          "#BDC6CA",
+          "#E7F0F5"
+        ]
+      },
+      "chalk-yellow": {
+        "role": "secondary",
+        "displayName": "Chalk Yellow",
+        "canonical": "#E9D54F",
+        "oklch": "oklch(86.6% 0.152 101)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#0F0B00",
+          "#2A2401",
+          "#484007",
+          "#6A5E02",
+          "#8E7E01",
+          "#B1A022",
+          "#DAC63D",
+          "#FFF198"
+        ]
+      },
+      "chalk-pink": {
+        "role": "secondary",
+        "displayName": "Chalk Pink",
+        "canonical": "#F07BB0",
+        "oklch": "oklch(73.0% 0.155 353)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#1F000E",
+          "#480028",
+          "#760046",
+          "#9A2D65",
+          "#C04F85",
+          "#E572A7",
+          "#FDA5CA",
+          "#FFE7F0"
+        ]
+      },
+      "chalk-teal": {
+        "role": "secondary",
+        "displayName": "Chalk Teal",
+        "canonical": "#3FD3C0",
+        "oklch": "oklch(78.6% 0.125 183)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#00100C",
+          "#002B26",
+          "#004B43",
+          "#0E6C62",
+          "#159182",
+          "#00B7A5",
+          "#4EDECB",
+          "#BDFEF2"
+        ]
+      },
+      "chalk-link": {
+        "role": "primary",
+        "displayName": "Chalk Link Teal",
+        "canonical": "#6FE0D0",
+        "oklch": "oklch(83.6% 0.106 183)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#000F0D",
+          "#002B26",
+          "#074A43",
+          "#196C62",
+          "#239083",
+          "#3DB4A5",
+          "#69DBCB",
+          "#BAFFF3"
+        ]
+      },
+      "chalk-link-hover": {
+        "role": "primary",
+        "displayName": "Chalk Link Hover",
+        "canonical": "#B2F3EA",
+        "oklch": "oklch(91.8% 0.066 185)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#000F0D",
+          "#002B27",
+          "#004B45",
+          "#2A6A63",
+          "#4C8A83",
+          "#6DACA4",
+          "#93D3CA",
+          "#BCFEF5"
+        ]
+      },
+      "slate-tag-bg": {
+        "role": "neutral",
+        "displayName": "Slate Tag",
+        "canonical": "#1F3A37",
+        "oklch": "oklch(32.6% 0.034 187)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#000F0D",
+          "#0E2927",
+          "#2A4642",
+          "#486461",
+          "#678480",
+          "#88A6A2",
+          "#ADCCC7",
+          "#D6F6F2"
+        ]
+      },
+      "slate-tag-fg": {
+        "role": "neutral",
+        "displayName": "Slate Tag Text",
+        "canonical": "#B2EFE6",
+        "oklch": "oklch(90.8% 0.063 185)",
+        "theme": "dark",
+        "tonalRamp": [
+          "#000F0D",
+          "#002B27",
+          "#064A44",
+          "#2E6962",
+          "#4F8A82",
+          "#70ACA3",
+          "#96D2C9",
+          "#C0FDF4"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Marker Display",
+        "purpose": "Note and list page titles; carries the one title swipe."
+      },
+      "headline": {
+        "displayName": "Marker Headline",
+        "purpose": "Prose H2, home lede H1, post-article section headings."
+      },
+      "title": {
+        "displayName": "Marker Title",
+        "purpose": "Prose H3, References, Notes archive year headings."
+      },
+      "side-heading": {
+        "displayName": "Sidebar Heading",
+        "purpose": "Sidebar block headings. Never swiped."
+      },
+      "hand-label": {
+        "displayName": "Hand Label",
+        "purpose": "Note kinds, graph labels, scribbles."
+      },
+      "body": {
+        "displayName": "Reading Sans",
+        "purpose": "All running prose at a 42rem measure."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Home introduction under the lede H1."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Bylines, dates, counts; tabular numerals."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Search excerpts, cover credits, image captions."
+      },
+      "code": {
+        "displayName": "Code Mono",
+        "purpose": "Code blocks and inline code."
+      }
+    },
+    "shadows": [],
+    "sketch": [
+      {
+        "name": "box",
+        "value": "rough.rectangle strokeWidth 1.6, roughness 1.1, bowing 0.8, stroke ink",
+        "purpose": "Code blocks, callouts, search box. Fallback: 1.5px ink border."
+      },
+      {
+        "name": "line",
+        "value": "rough.line strokeWidth 2, roughness 1.4, bowing 0.6, stroke ink",
+        "purpose": "Rule under the top bar. Fallback: 2px ink border-bottom."
+      },
+      {
+        "name": "vline",
+        "value": "rough.line strokeWidth 1.6, roughness 1.2, bowing 0.4, stroke ink",
+        "purpose": "Sidebar rule. Fallback: 1.5px ink border-left (border-top when stacked)."
+      },
+      {
+        "name": "swipe",
+        "value": "rough.line strokeWidth 7, roughness 1.2, bowing 1.4, single stroke, highlighter colour",
+        "purpose": "The one title swipe per page."
+      },
+      {
+        "name": "underline",
+        "value": "rough.line strokeWidth 4, roughness 1.2, bowing 1.4, single stroke, ink",
+        "purpose": "Wordmark underline (logo) only."
+      },
+      {
+        "name": "graph-node",
+        "value": "soft rough box strokeWidth 1.5 (current 2), roughness 1.1, solid fill paper (current highlighter pink)",
+        "purpose": "Knowledge graph nodes; edges strokeWidth 1.3, roughness 1.2, bowing 1.6 as curved doodle arrows."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All transitions."
+      },
+      {
+        "name": "swipe-draw-on",
+        "value": "stroke-dashoffset 700ms ease-out, 150ms delay, once",
+        "purpose": "The one authored motion: the title swipe drawing on at load. Skipped under reduced motion."
+      },
+      {
+        "name": "nav-underlay",
+        "value": "background-size 220ms ease-out",
+        "purpose": "Yellow underlay sliding under nav links."
+      },
+      {
+        "name": "arrow-nudge",
+        "value": "transform translateX(2px) 160ms ease-out",
+        "purpose": "Hand-drawn more arrow on link hover."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack-sidebar",
+        "value": "1080px"
+      },
+      {
+        "name": "mobile",
+        "value": "760px"
+      },
+      {
+        "name": "page-max",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Top Bar Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Marker wordmark with its black underline, Essays · Notes · Topics · About, yellow highlighter underlay on hover and current page.",
+      "html": "<nav class=\"ds-bar\"><a class=\"ds-wordmark\" href=\"#\">NotesByLex</a><a class=\"ds-nav\" href=\"#\">Essays</a><a class=\"ds-nav\" href=\"#\" aria-current=\"page\">Notes</a><a class=\"ds-nav\" href=\"#\">Topics</a><a class=\"ds-nav\" href=\"#\">About</a></nav>",
+      "css": ".ds-bar{display:flex;align-items:center;gap:22px;padding:14px 20px;border-bottom:2px solid var(--ink,#141414);background:var(--paper,#FBFAF6);font-family: var(--font-sans, \"Atkinson Hyperlegible Next\", system-ui, sans-serif);} .ds-wordmark{font-family: var(--font-hand, \"Shantell Sans\", \"Segoe Print\", cursive);font-weight:700;font-size:1.9rem;line-height:1;color:var(--ink,#141414);text-decoration:none;border-bottom:3px solid var(--ink,#141414);padding-bottom:4px;margin-right:22px} .ds-wordmark:hover{color:var(--link,#0A6E63)} .ds-nav{font-size:1.05rem;color:var(--ink,#141414);text-decoration:none;padding:4px 0;background:linear-gradient(var(--hl-yellow,#FFE84D),var(--hl-yellow,#FFE84D)) no-repeat left 85%/0 .42em;transition:background-size 220ms cubic-bezier(0.16,1,0.3,1)} .ds-nav:hover,.ds-nav[aria-current=\"page\"]{background-size:100% .42em} .ds-nav[aria-current=\"page\"]{font-weight:700} .ds-nav:focus-visible,.ds-wordmark:focus-visible{outline:2.5px solid var(--focus,#0A6E63);outline-offset:3px;border-radius:3px}"
+    },
+    {
+      "name": "Sketched Search",
+      "kind": "input",
+      "refersTo": "search-box",
+      "description": "Search field in a sketched box (CSS fallback shown); fills with faint teal on focus.",
+      "html": "<label class=\"ds-search\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m20 20-3.5-3.5\"/></svg><input placeholder=\"Search notes...\"><kbd class=\"ds-kbd\">/</kbd></label>",
+      "css": ".ds-search{display:flex;align-items:center;gap:8px;width:280px;padding:8px 12px;border:1.5px solid var(--ink,#141414);border-radius:4px;color:var(--ink,#141414);font-family: var(--font-sans, \"Atkinson Hyperlegible Next\", system-ui, sans-serif);} .ds-search input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:1rem;color:inherit;outline:none} .ds-search input::placeholder{color:var(--muted,#5C5B57)} .ds-search:focus-within{background:color-mix(in srgb,var(--hl-teal,#2DD4BF) 10%,transparent)} .ds-search:focus-within .ds-kbd{display:none} .ds-kbd{font-family:var(--font-mono,ui-monospace,monospace);font-size:.75rem;color:var(--muted,#5C5B57);border:1px solid var(--rule-soft,#DCD9CF);border-radius:3px;padding:0 5px}"
+    },
+    {
+      "name": "Topic Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Mint pill for topics; teal on hover, pink when current.",
+      "html": "<a class=\"ds-tag\" href=\"#\">MachineLearning</a> <a class=\"ds-tag ds-tag-current\" href=\"#\">LargeLanguageModels</a>",
+      "css": ".ds-tag{display:inline-flex;align-items:center;min-height:30px;padding:0 12px;border-radius:999px;background:var(--tag-bg,#D5F2ED);color:var(--tag-fg,#0B4F48);font-size:.94rem;text-decoration:none;font-family: var(--font-sans, \"Atkinson Hyperlegible Next\", system-ui, sans-serif);} .ds-tag:hover{background:color-mix(in srgb,var(--hl-teal,#2DD4BF) 45%,var(--tag-bg,#D5F2ED))} .ds-tag-current{background:color-mix(in srgb,var(--hl-pink,#FF6FAE) 45%,var(--tag-bg,#D5F2ED))} .ds-tag:focus-visible{outline:2.5px solid var(--focus,#0A6E63);outline-offset:3px}"
+    },
+    {
+      "name": "Title with Swipe",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "The page title in marker with the one highlighter swipe under its last line (static approximation of the rough.js stroke).",
+      "html": "<h1 class=\"ds-title\"><span>Scaled-Dot Product Attention</span></h1>",
+      "css": ".ds-title{font-family: var(--font-hand, \"Shantell Sans\", \"Segoe Print\", cursive);font-weight:700;font-size:2.6rem;line-height:1.1;margin:0;color:var(--ink,#141414)} .ds-title span{display:inline;padding-bottom:4px;background:linear-gradient(var(--hl-teal,#2DD4BF),var(--hl-teal,#2DD4BF)) no-repeat left bottom/100% 7px;border-radius:0 0 4px 2px}"
+    },
+    {
+      "name": "Prose Link and Highlight",
+      "kind": "custom",
+      "refersTo": "body",
+      "description": "Calm body column: underlined teal prose links and the ==highlight== mark.",
+      "html": "<p class=\"ds-prose\">Scores are divided by <mark class=\"ds-mark\">the square root of the dimension</mark> before the softmax, as in <a href=\"#\">Self-Attention</a>.</p>",
+      "css": ".ds-prose{font-family: var(--font-sans, \"Atkinson Hyperlegible Next\", system-ui, sans-serif);font-size:1.125rem;line-height:1.65;color:var(--ink,#141414);max-width:42rem} .ds-prose a{color:var(--link,#0A6E63);text-decoration:underline;text-decoration-thickness:1.5px;text-decoration-color:color-mix(in srgb,var(--hl-teal,#2DD4BF) 85%,transparent);text-underline-offset:3px} .ds-prose a:hover{color:var(--link-hov,#064C45);background:color-mix(in srgb,var(--hl-teal,#2DD4BF) 18%,transparent);text-decoration-color:currentColor} .ds-prose a:focus-visible{outline:2.5px solid var(--focus,#0A6E63);outline-offset:3px} .ds-mark{color:#141414;background:linear-gradient(100deg,transparent .2em,color-mix(in srgb,var(--hl-yellow,#FFE84D) 92%,transparent) .35em,color-mix(in srgb,var(--hl-yellow,#FFE84D) 80%,transparent) 92%,transparent 98%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:.05em .3em;margin:0 -.15em;border-radius:.6em .3em .8em .25em}"
+    },
+    {
+      "name": "Note Kind Labels",
+      "kind": "chip",
+      "refersTo": "kind-paper",
+      "description": "Category labels lettered in marker; papers yellow, models pink, essays teal, others plain.",
+      "html": "<span class=\"ds-kind ds-kind-paper\">paper</span> <span class=\"ds-kind ds-kind-model\">model</span> <span class=\"ds-kind ds-kind-essay\">essay</span> <span class=\"ds-kind\">note</span>",
+      "css": ".ds-kind{font-family: var(--font-hand, \"Shantell Sans\", \"Segoe Print\", cursive);font-weight:700;font-size:1.05rem;line-height:1.2;color:var(--ink,#141414);padding:0 .3em;border-radius:.5em .25em .6em .2em} .ds-kind-paper{background:color-mix(in srgb,var(--hl-yellow,#FFE84D) 85%,transparent);color:#141414} .ds-kind-model{background:color-mix(in srgb,var(--hl-pink,#FF6FAE) 70%,transparent);color:#141414} .ds-kind-essay{background:color-mix(in srgb,var(--hl-teal,#2DD4BF) 60%,transparent);color:#141414}"
+    },
+    {
+      "name": "Callout",
+      "kind": "card",
+      "refersTo": "callout",
+      "description": "Outlined callout (CSS fallback for the sketched box) with a marker title and teal stroked icon; no fill.",
+      "html": "<div class=\"ds-callout\"><div class=\"ds-callout-title\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 8v5M12 16.5v.01\"/></svg>Note</div><p>Body text in the calm sans.</p></div>",
+      "css": ".ds-callout{border:1.5px solid var(--ink,#141414);border-radius:3px;padding:16px 20px 4px;font-family: var(--font-sans, \"Atkinson Hyperlegible Next\", system-ui, sans-serif);font-size:1.125rem;line-height:1.65;color:var(--ink,#141414)} .ds-callout-title{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-family: var(--font-hand, \"Shantell Sans\", \"Segoe Print\", cursive);font-weight:700;font-size:1.35rem;line-height:1.3} .ds-callout-title svg{color:var(--link,#0A6E63)} .ds-callout p{margin:0 0 12px}"
+    },
+    {
+      "name": "Scribble",
+      "kind": "custom",
+      "refersTo": "scribble",
+      "description": "Lex's margin note, only where he writes > [!scribble]: teal marker, tilted, with a drawn arrow. Placeholder text only.",
+      "html": "<aside class=\"ds-scribble\"><svg width=\"46\" height=\"22\" viewBox=\"0 0 46 22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M44 18C33 21 18 19 6 7\"/><path d=\"M5 15 5 6 14 5\"/></svg><p>[scribble text]</p></aside>",
+      "css": ".ds-scribble{width:15rem;font-family: var(--font-hand, \"Shantell Sans\", \"Segoe Print\", cursive);font-weight:600;font-size:1.2rem;line-height:1.3;color:var(--link,#0A6E63);transform:rotate(-3deg)} .ds-scribble svg{display:block;margin:0 0 4px -4px} .ds-scribble p{margin:0}"
+    },
+    {
+      "name": "More Link with Drawn Arrow",
+      "kind": "button",
+      "refersTo": "nav-link",
+      "description": "Underlined link ending in the authored hand-drawn arrow, which nudges right on hover.",
+      "html": "<a class=\"ds-more\" href=\"#\">All notes<svg class=\"ds-arrow\" aria-hidden=\"true\" viewBox=\"0 0 24 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M2 8.6c5.2-.9 11.4-.3 19.2-.7\"/><path d=\"M15.4 3.2c2 1.9 3.9 3.3 5.9 4.7-2.2 1.3-4 2.9-5.6 4.9\"/></svg></a>",
+      "css": ".ds-more{font-family: var(--font-sans, \"Atkinson Hyperlegible Next\", system-ui, sans-serif);font-size:1rem;color:var(--link,#0A6E63);text-underline-offset:3px;text-decoration-thickness:1.5px} .ds-more:hover{color:var(--link-hov,#064C45)} .ds-more:focus-visible{outline:2.5px solid var(--focus,#0A6E63);outline-offset:3px;border-radius:3px} .ds-arrow{display:inline-block;width:1.15em;height:.8em;margin-left:.3em;vertical-align:-.05em;overflow:visible;transition:transform 160ms cubic-bezier(0.16,1,0.3,1)} .ds-more:hover .ds-arrow{transform:translateX(2px)}"
+    },
+    {
+      "name": "Essay List",
+      "kind": "card",
+      "refersTo": "essay-row",
+      "description": "Finished pieces set like a contents page, same on home and the Essays page: optional 132px 4:3 cover thumbnail, bold sans title, summary dek, month-year date right-aligned, dashed separators.",
+      "html": "<ol class=\"ds-essays\"><li class=\"ds-essay ds-has-cover\"><svg class=\"ds-essay-cover\" viewBox=\"0 0 4 3\" aria-hidden=\"true\"><rect width=\"4\" height=\"3\" fill=\"#DCD9CF\"/></svg><a class=\"ds-essay-title\" href=\"#\">[Essay title]</a><p class=\"ds-essay-dek\">[Summary from the essay frontmatter]</p><time class=\"ds-essay-date\">Sep 2026</time></li><li class=\"ds-essay\"><a class=\"ds-essay-title\" href=\"#\">[Essay title]</a><p class=\"ds-essay-dek\">[Summary]</p><time class=\"ds-essay-date\">Aug 2026</time></li></ol>",
+      "css": ".ds-essays{list-style:none;margin:0;padding:0;max-width:42rem;font-family: var(--font-sans, \"Atkinson Hyperlegible Next\", system-ui, sans-serif);} .ds-essay{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:20px;padding:16px 0;border-bottom:1px dashed color-mix(in srgb,var(--ink,#141414) 30%,transparent)} .ds-essay-title{grid-column:1;font-weight:700;font-size:1.35rem;line-height:1.3;color:var(--ink,#141414);text-decoration:none;text-wrap:balance} .ds-essay-title:hover{text-decoration:underline;text-decoration-color:var(--hl-teal,#2DD4BF);text-decoration-thickness:2px;text-underline-offset:4px} .ds-essay-title:focus-visible{outline:2.5px solid var(--focus,#0A6E63);outline-offset:3px} .ds-essay-dek{grid-column:1;margin:4px 0 0;color:var(--ink-2,#383836);line-height:1.5;font-size:1.125rem} .ds-essay-date{grid-column:2;grid-row:1;align-self:baseline;font-size:.94rem;color:var(--muted,#5C5B57);font-variant-numeric:tabular-nums;white-space:nowrap} .ds-has-cover{grid-template-columns:132px minmax(0,1fr) auto;grid-template-rows:auto auto 1fr} .ds-essay-cover{grid-column:1;grid-row:1 / span 3;width:132px;aspect-ratio:4 / 3;border-radius:3px;margin-right:18px} .ds-has-cover .ds-essay-title,.ds-has-cover .ds-essay-dek{grid-column:2} .ds-has-cover .ds-essay-date{grid-column:3}"
+    },
+    {
+      "name": "Note Rows (year archive)",
+      "kind": "custom",
+      "refersTo": "note-row",
+      "description": "Compact working-note rows under a marker year heading with a count: date, kind chip, title.",
+      "html": "<section><h2 class=\"ds-year\">2026 <span class=\"ds-count\">48</span></h2><ol class=\"ds-rows\"><li class=\"ds-row\"><time class=\"ds-row-date\">Oct 8</time><span class=\"ds-chip ds-chip-model\">model</span><a class=\"ds-row-title\" href=\"#\">[Note title]</a></li><li class=\"ds-row\"><time class=\"ds-row-date\">Sep 19</time><span class=\"ds-chip ds-chip-paper\">paper</span><a class=\"ds-row-title\" href=\"#\">[Note title]</a></li><li class=\"ds-row\"><time class=\"ds-row-date\">Aug 5</time><span class=\"ds-chip\">note</span><a class=\"ds-row-title\" href=\"#\">[Note title]</a></li></ol></section>",
+      "css": ".ds-year{font-family: var(--font-hand, \"Shantell Sans\", \"Segoe Print\", cursive);font-weight:700;font-size:1.75rem;margin:0 0 4px;color:var(--ink,#141414)} .ds-count{font-family:var(--font-mono,ui-monospace,monospace);font-size:.75rem;font-weight:400;color:var(--muted,#5C5B57)} .ds-rows{list-style:none;margin:0;padding:0;max-width:42rem;font-family: var(--font-sans, \"Atkinson Hyperlegible Next\", system-ui, sans-serif);} .ds-row{display:grid;grid-template-columns:4.5rem 4.5rem minmax(0,1fr);gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px dashed color-mix(in srgb,var(--ink,#141414) 30%,transparent)} .ds-row-date{font-size:.94rem;color:var(--muted,#5C5B57);font-variant-numeric:tabular-nums;white-space:nowrap} .ds-row-title{color:var(--ink,#141414);text-decoration:none;font-size:1.1rem;line-height:1.35} .ds-row-title:hover{text-decoration:underline;text-decoration-color:var(--hl-teal,#2DD4BF);text-decoration-thickness:2px} .ds-row-title:focus-visible{outline:2.5px solid var(--focus,#0A6E63);outline-offset:3px} .ds-chip{justify-self:start;font-family: var(--font-hand, \"Shantell Sans\", \"Segoe Print\", cursive);font-weight:700;font-size:1.05rem;line-height:1.2;color:var(--ink,#141414);padding:0 .3em;border-radius:.5em .25em .6em .2em} .ds-chip-paper{background:color-mix(in srgb,var(--hl-yellow,#FFE84D) 85%,transparent);color:#141414} .ds-chip-model{background:color-mix(in srgb,var(--hl-pink,#FF6FAE) 70%,transparent);color:#141414}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Napkin Zine",
+    "overview": "**Creative North Star: \"The Napkin Zine\"**\n\nNotesByLex reads like a friend's napkin explanation bound into a technical zine. The frame is lettered and sketched: a marker wordmark, hand-drawn rules, wobbly rough.js outlines around code, search and graph nodes, and a single highlighter swipe under the page title. The reading column stays calm: an off-white page, a hyperlegible sans at a comfortable 42rem measure, and teal links underlined like any well-behaved text. Light mode is marker on paper; dark mode is chalk on slate.\n\nThe world refuses the three-column docs app shell and the cream-card blog. There are no cards inside cards and no drop shadows; structure comes from drawn lines, dashed rules and whitespace. Colour arrives as highlighter (yellow, pink, teal) laid over ink, never as filled panels. The hand appears in the frame and, only where Lex writes one, in a scribble margin note; the design never writes in his voice.",
+    "keyCharacteristics": [
+      "Shantell Sans lettering for every heading, the wordmark, graph labels, note kinds and scribbles; Atkinson Hyperlegible Next for everything you read at length.",
+      "Sketched outlines (rough.js) with a plain CSS border or rule as the fallback, hidden once the sketch has drawn.",
+      "One highlighter swipe per page, under the main title, drawn on once at load.",
+      "Highlighter as the only fill colour: `==marks==`, note kinds, the current graph node, the active page number.",
+      "Flat paper; depth comes from line weight, not shadow."
+    ],
+    "rules": [
+      {
+        "name": "The Highlighter Not Paint Rule",
+        "body": "Yellow, pink and teal are laid over ink as marks, underlays and swipes. They never fill a panel, card or band.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Teals Rule",
+        "body": "The bright highlighter teal decorates (swipes, underlines, fills); the deepened link teal carries text. Never set text in the highlighter.",
+        "section": "colors"
+      },
+      {
+        "name": "The Same Ink Rule",
+        "body": "Text on a highlighter is always mark ink, in both themes.",
+        "section": "colors"
+      },
+      {
+        "name": "The Marker Frames, Sans Reads Rule",
+        "body": "Shantell Sans is for headings, the wordmark and short labels. Running prose, lists, tables and metadata are always Atkinson Hyperlegible Next.",
+        "section": "typography"
+      },
+      {
+        "name": "The Bought Hand Rule",
+        "body": "The hand is a marker font, not a personal handwriting font. Do not imitate Lex's handwriting.",
+        "section": "typography"
+      },
+      {
+        "name": "The Drawn Line Rule",
+        "body": "Separate things with a drawn or dashed line, or with space. Never with a shadow, and never with a filled card.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Fallback Rule",
+        "body": "Every sketched element carries a plain CSS border or rule that matches its geometry; the sketch layer hides it only after drawing. The page must read correctly with JavaScript off.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** put exactly one highlighter swipe on a page, under the main title only, drawn on once at load.",
+      "**Do** keep links in running prose underlined; underline link lists on hover only.",
+      "**Do** keep the wordmark's black sketched underline; it is the logo.",
+      "**Do** make the home lede the H1 and keep the nav as Essays · Notes · Topics · About, with the wordmark as the home link.",
+      "**Do** give essays the room (cover thumbnail when the essay has one, title, summary dek, month-year date) and keep notes as compact rows with no images; essays come first on home and look the same there as on the Essays page, and the Notes page excludes essays.",
+      "**Do** give every sketched element a CSS border or rule fallback of the same geometry.",
+      "**Do** set text on highlighter fills in mark ink (#141414) in both themes.",
+      "**Do** keep light mode as marker on paper and dark mode as chalk on slate, and meet WCAG 2.2 AA in both."
+    ],
+    "donts": [
+      "**Don't** mix essays into the Notes archive or paginate it; it is one year-grouped page.",
+      "**Don't** put swipes on section, sidebar or list headings (\"they're a bit busy being on every title\").",
+      "**Don't** add read-tracking marks such as visited ticks or progress (\"My viewers don't need to track that\").",
+      "**Don't** write copy in Lex's voice; scribbles appear only where Lex writes `> [!scribble]`.",
+      "**Don't** use em dashes in any prose the design adds.",
+      "**Don't** use box shadows, cards inside cards, or highlighter-filled panels.",
+      "**Don't** set running text in Shantell Sans or in the bright highlighter teal.",
+      "**Don't** use a handwriting font that imitates Lex's own hand."
+    ]
+  }
+}

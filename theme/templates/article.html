@@ -5,84 +5,59 @@
 {% block body_class %}page-article{% endblock %}
 
 {% block right_panel %}
-<aside id="site-right-panel">
+{% if (article.toc and article.toc | length > 1) or article.graph_backlinks or article.graph_html %}
+<aside class="page-side" aria-label="About this note" data-sketch="vline">
 
-  {% if article.toc %}
-  <div class="panel-card">
-    <div class="panel-card-head">
-      <p class="panel-heading">On this page</p>
-    </div>
+  {% if article.toc and article.toc | length > 1 %}
+  <section class="side-block">
+    <h2 class="side-heading">On this page</h2>
     <ul class="toc-list">
-      <li class="toc-h1">
-        <a href="#">{{ article.title }}</a>
-      </li>
       {% for entry in article.toc %}
       <li class="toc-h{{ entry.level }}">
-        <a href="#{{ entry.anchor }}" data-anchor="{{ entry.anchor }}">{{ entry.text }}</a>
+        <a href="#{{ entry.anchor }}" data-anchor="{{ entry.anchor }}">{{ entry.html | default(entry.text) }}</a>
       </li>
       {% endfor %}
     </ul>
-  </div>
-  {% endif %}
-
-  {% if article.graph_html is defined and article.graph_html %}
-  <div class="panel-card">
-    <div class="panel-card-head">
-      <p class="panel-heading">Graph</p>
-      <span class="panel-card-meta graph-node-count"></span>
-    </div>
-    {{ article.graph_html }}
-    <div class="graph-legend">
-      <span class="graph-legend-dot graph-legend-self"></span>Current
-      <span class="graph-legend-dot graph-legend-linked"></span>Linked note
-    </div>
-  </div>
+  </section>
   {% endif %}
 
   {% if article.graph_backlinks is defined and article.graph_backlinks %}
-  <div class="panel-card">
-    <div class="panel-card-head">
-      <p class="panel-heading">Linked from</p>
-      <span class="panel-card-meta">{{ article.graph_backlinks | length }}</span>
-    </div>
+  <section class="side-block">
+    <h2 class="side-heading">Linked from</h2>
     <ul class="backlinks-list">
       {% for bl in article.graph_backlinks %}
-      <li><a href="/{{ bl.slug }}.html">{{ bl.title }}</a></li>
+      <li><a href="/{{ bl.slug }}.html"><i data-lucide="file-text" aria-hidden="true"></i><span>{{ bl.title }}</span></a></li>
       {% endfor %}
     </ul>
-  </div>
+  </section>
+  {% endif %}
+
+  {% if article.graph_html is defined and article.graph_html %}
+  <section class="side-block">
+    <h2 class="side-heading">In the knowledge graph</h2>
+    <div class="sketch-graph" data-slug="{{ article.slug }}"></div>
+    <p class="sg-more" hidden><a href="/graph.html"><span data-count></span> more connections in the full graph{% include 'icons/arrow.svg' %}</a></p>
+  </section>
   {% endif %}
 
 </aside>
+{% endif %}
 {% endblock %}
 
 {% block content %}
-<section id="content">
-  <div class="article-content-wrap"{% if article.status == 'draft' %} data-pagefind-ignore{% endif %}>
+<article class="note"{% if article.status == 'draft' %} data-pagefind-ignore{% endif %}>
 
-    <div class="article-crumbs">
-      <a href="/">Home</a>
-      <span>/</span>
-      {%- if article.parent -%}
-      <a href="{{ SITEURL }}/{{ article.parent }}.html">{{ article.parent }}</a>
-      {%- else -%}
-      <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>{%- for subcategory in article.subcategories -%}<span>/</span><a href="{{ SITEURL }}/{{subcategory.url}}">{{subcategory.shortname}}</a>{% endfor %}
-      {%- endif -%}
-    </div>
+    <h1 class="note-title"><span data-sketch="swipe" data-sketch-color="--hl-teal" data-sketch-draw="on">{{ article.title }}</span></h1>
 
-    <h1 class="article-title-heading">{{ article.title }}</h1>
-
-    <div class="article-meta">
-      <time>{{ article.date|strftime('%b %-d, %Y') }}</time>
-      {% if article.tags %}
-      <span class="dot">·</span>
-      {% endif %}
-    </div>
+    <p class="note-byline">
+      {{ AUTHOR }} · <time datetime="{{ article.date.isoformat() }}">{{ article.date|strftime('%b %-d, %Y') }}</time>
+      {%- if article.modified and article.modified.date() != article.date.date() %} · revised <time datetime="{{ article.modified.isoformat() }}">{{ article.modified|strftime('%b %-d, %Y') }}</time>{% endif %}
+    </p>
 
     {% if article.tags %}
-    <div class="article-tags">
+    <div class="note-tags">
       {% for t in article.tags %}
-      <a href="{{ SITEURL }}/{{ t.url }}" class="article-tag">{{ t }}</a>
+      <a href="{{ SITEURL }}/{{ t.url }}" class="tag">{{ t }}</a>
       {% endfor %}
     </div>
     {% endif %}
@@ -95,21 +70,20 @@
     {% endif %}
 
     <div class="prose-body">
-      <div class="cover-image">
-        {% if article.cover and not article.hide_cover_in_article %}
-        <img src="{{ article.cover }}" />
+      {% if article.cover and not article.hide_cover_in_article %}
+      <figure class="cover-image">
+        <img src="{{ article.cover }}" alt="" />
         {% if article.cover_credits is defined and article.cover_credits %}
-        <p class="cover-credits">{{ article.cover_credits }}</p>
+        <figcaption class="cover-credits">{{ article.cover_credits }}</figcaption>
         {% endif %}
-        {% endif %}
-      </div>
+      </figure>
+      {% endif %}
 
       {{ article.content }}
     </div>
 
     {% if article.youtube_video_id %}
-    <hr>
-    <h3>Video</h3>
+    <h2 class="note-after-heading">Video</h2>
     <p>I've made a YouTube video for this article.</p>
     <div class="youtube-embed">
       <iframe src="https://www.youtube.com/embed/{{ article.youtube_video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -117,8 +91,7 @@
     {% endif %}
 
     {% if article.bluesky_post or article.mastodon_post or article.hn_post %}
-    <hr>
-    <h3>Comments</h3>
+    <h2 class="note-after-heading">Comments</h2>
     <p>Reply to this post on
       {%- if article.bluesky_post %} <a href="{{ article.bluesky_post }}" target="_blank" rel="noopener">Bluesky</a>{% endif %}
       {%- if article.bluesky_post and article.mastodon_post %} or{% endif %}
@@ -144,6 +117,5 @@
     <oom-comments mastodon="{{ article.mastodon_post }}"></oom-comments>
     {% endif %}
 
-  </div>
-</section>
+</article>
 {% endblock %}

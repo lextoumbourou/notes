@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -19,18 +18,20 @@
     <meta name="color-scheme" content="light dark">
     <script>
       (function () {
-        var saved = localStorage.getItem('notesbylex-theme');
+        var saved = null;
+        try { saved = localStorage.getItem('notesbylex-theme'); } catch (e) {}
         var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
         document.documentElement.dataset.theme = saved || (prefersDark ? 'dark' : 'light');
       })();
     </script>
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    <link rel="preload" href="/theme/fonts/shantell-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/theme/fonts/atkinson-hyperlegible-next-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css" crossorigin="anonymous">
     {% if article is defined %}
-    <link rel="stylesheet" href="/static/graph.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/css/glightbox.min.css" />
     {% endif %}
     {% block graph_css %}{% endblock %}
     {% for css_url in EXTRA_CSS_URLS | default([]) %}
@@ -50,119 +51,61 @@
     <meta property="og:title" content="{{ SITENAME }}" />
     <meta property="og:description" content="{{ SITE_DESCRIPTION | default('') }}" />
     {% endif %}
+    <link rel="alternate" type="application/atom+xml" title="{{ SITENAME }}" href="{{ SITEURL }}/feeds/all.atom.xml" />
 
     {% block scripts %}
-      <script type="text/javascript" src="https://unpkg.com/lucide@latest"></script>
+      <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
     {% endblock %}
-    <noscript>
-      <style>
-        div.article_body { opacity: 1; }
-        ul.articles { opacity: 1; }
-      </style>
-    </noscript>
   </head>
 
   <body class="{% block body_class %}{% endblock %}">
-    <div class="page-wrapper">
+    <a class="skip-link" href="#content">Skip to content</a>
 
-      <nav id="site-nav">
-        <div class="nav-brand">
-          <div class="nav-brand-mark" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M4 5h11l5 5v9H4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              <path d="M15 5v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              <path d="M7 13h8M7 16h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div>
-            <a href="/" class="nav-brand-name">{{ SITENAME }}</a>
-          </div>
-        </div>
+    <header class="site-bar" data-sketch="line">
+      <a href="/" class="wordmark" aria-label="NotesByLex home"{% if page_name == "index" %} aria-current="page"{% endif %}><span data-sketch="underline" data-sketch-color="--ink">NotesByLex</span></a>
 
-        <nav class="nav-quick">
-          <a href="/" {% if page_name == "index" %}class="active"{% endif %}>Home</a>
-          <a href="/pages/about.html" {% if output_file == 'pages/about.html' %}class="active"{% endif %}>About</a>
-          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
-            <svg class="theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
-            <svg class="theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
-          </button>
-        </nav>
-
-        <div class="nav-search" id="nav-search">
-          <div class="nav-search-input-wrap">
-            <svg class="nav-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="search" id="nav-search-input" class="nav-search-field" placeholder="Search notes…" autocomplete="off" />
-            <kbd class="nav-search-kbd">/</kbd>
-          </div>
-          <ul class="nav-search-results" id="nav-search-results" hidden></ul>
-        </div>
-
-        <div class="nav-tabs" id="nav-tabs">
-          <a class="nav-tab active" href="#" data-tab="recent">Recent</a>
-          <a class="nav-tab" href="#" data-tab="tags">Tags</a>
-        </div>
-
-        {# Prepare each distinct article collection once per build. #}
-        {# Render links below so the active page is always current. #}
-        {% set all_recent = articles | recent_articles %}
-
-        <ul class="nav-note-list" id="nav-recent">
-          {% for article in all_recent[:10] %}
-          <li class="{% if article.url == output_file %}active{% elif loop.index > 3 %}nav-recent-extra{% endif %}">
-            <a href="/{{ article.url }}">
-              <span class="nav-note-title">{{ article.title }}</span>
-              <span class="nav-note-date">{{ article.date.strftime('%b %-d, %Y') }}</span>
-            </a>
-          </li>
-          {% endfor %}
-          {% if all_recent | length > 10 %}
-          <li><a href="/notes.html" class="nav-see-more">See more →</a></li>
-          {% endif %}
-        </ul>
-
-        <ul class="nav-note-list" id="nav-tags" style="display:none">
-          {% for tag, tag_articles in tags | sort_by_article_count %}
-          {% if loop.index <= 20 %}
-          <li{% if loop.index > 3 %} class="nav-tag-extra"{% endif %}>
-            <a href="{{ SITEURL }}/{{ tag.url }}">
-              <span class="nav-note-title" style="display:flex;justify-content:space-between">
-                <span>{{ tag }}</span>
-                <span style="font-family:var(--font-mono);font-size:11px;color:var(--g-muted)">{{ tag_articles | count }}</span>
-              </span>
-            </a>
-          </li>
-          {% endif %}
-          {% endfor %}
-          {% if tags | list | length > 20 %}
-          <li><a href="/tags.html" class="nav-see-more">See all {{ tags | list | length }} topics →</a></li>
-          {% endif %}
-        </ul>
-
-        <script>
-          document.querySelectorAll('#nav-tabs .nav-tab').forEach(function(tab) {
-            tab.addEventListener('click', function(e) {
-              e.preventDefault();
-              document.querySelectorAll('#nav-tabs .nav-tab').forEach(t => t.classList.remove('active'));
-              this.classList.add('active');
-              var which = this.dataset.tab;
-              document.getElementById('nav-recent').style.display = which === 'recent' ? '' : 'none';
-              document.getElementById('nav-tags').style.display  = which === 'tags'   ? '' : 'none';
-            });
-          });
-        </script>
+      <nav class="site-nav" aria-label="Site">
+        <a href="/essays.html" {% if page_name == "essays" or (article is defined and article.category.name in ['essay', 'project']) %}aria-current="page"{% endif %}>Essays</a>
+        <a href="/notes.html" {% if page_name == "notes" %}aria-current="page"{% endif %}>Notes</a>
+        <a href="/tags.html" {% if page_name == "tags" %}aria-current="page"{% endif %}>Topics</a>
+        <a href="/pages/about.html" {% if output_file == 'pages/about.html' %}aria-current="page"{% endif %}>About</a>
       </nav>
 
-      <div id="site-content">
-        <div id="header"></div>
+      <div class="site-tools">
+        <div class="search" id="nav-search" role="search">
+          <label class="search-box" data-sketch="box">
+            <svg class="search-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7.5"/><path d="M21 21l-4.6-4.6"/></svg>
+            <span class="visually-hidden">Search notes</span>
+            <input type="search" id="nav-search-input" placeholder="Search notes…" autocomplete="off" />
+            <kbd class="search-kbd" aria-hidden="true">/</kbd>
+          </label>
+          <ul class="search-results" id="nav-search-results" hidden></ul>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme">
+          <svg class="theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 13.2A8.5 8.5 0 1 1 10.8 3.5a6.6 6.6 0 0 0 9.7 9.7z"/></svg>
+          <svg class="theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="page">
+      <main id="content" class="page-main" tabindex="-1">
         {% block content %}
         {% endblock %}
-      </div>{% block right_panel %}{% endblock %}
-
+      </main>
+      {% block right_panel %}{% endblock %}
     </div>
 
+    <footer class="site-foot">
+      <p>© {{ now().year if now is defined else '2026' }} {{ AUTHOR }}</p>
+      <p><a href="/pages/about.html">About</a> · <a href="{{ SITEURL }}/feeds/all.atom.xml">RSS</a> · Built with <a href="https://getpelican.com">Pelican</a></p>
+    </footer>
+
+    <script src="/theme/js/rough.min.js" defer></script>
+    <script src="/theme/js/sketch.js" defer></script>
     {% if article is defined %}
     <script src="/theme/js/toc.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.3.1/dist/js/glightbox.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".prose-body img").forEach(function (img) {
@@ -177,16 +120,12 @@
         GLightbox({ selector: ".glightbox" });
       });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/pixi.js@7/dist/pixi.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tweenjs/tween.js@23/dist/tween.umd.js"></script>
-    <script src="/static/graph.js"></script>
     {% endif %}
     {% block graph_js %}{% endblock %}
     {% for js_url in EXTRA_JS_URLS | default([]) %}
     <script src="{{ js_url }}"></script>
     {% endfor %}
-    <script>lucide.createIcons();</script>
+    <script>if (window.lucide) lucide.createIcons();</script>
     <script>
     (function () {
       var toggle = document.getElementById('theme-toggle');
@@ -204,9 +143,11 @@
         var root = document.documentElement;
         var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
         root.dataset.theme = next;
-        localStorage.setItem('notesbylex-theme', next);
+        try { localStorage.setItem('notesbylex-theme', next); } catch (e) {}
         describeTheme();
+        document.dispatchEvent(new CustomEvent('themechange'));
 
+        // The full-site graph page draws to WebGL with resolved colours.
         if (document.querySelector('.graph-canvas canvas')) {
           window.location.reload();
         }
@@ -229,6 +170,15 @@
         } catch(e) { return null; }
       }
 
+      function message(text) {
+        results.innerHTML = '';
+        var li = document.createElement('li');
+        li.className = 'search-empty';
+        li.textContent = text;
+        results.appendChild(li);
+        results.hidden = false;
+      }
+
       var debounce;
       input.addEventListener('input', function() {
         clearTimeout(debounce);
@@ -236,23 +186,20 @@
         if (!q) { results.hidden = true; results.innerHTML = ''; return; }
         debounce = setTimeout(async function() {
           var pf = await loadPagefind();
-          if (!pf) return;
+          if (!pf) { message('Search is unavailable right now. Try again after a reload.'); return; }
           var res = await pf.search(q);
           var items = await Promise.all(res.results.slice(0, 8).map(r => r.data()));
+          if (!items.length) { message('No notes match “' + q + '”.'); return; }
           results.innerHTML = '';
-          if (!items.length) {
-            results.innerHTML = '<li class="nav-search-empty">No results</li>';
-          } else {
-            items.forEach(function(item) {
-              var li = document.createElement('li');
-              var a = document.createElement('a');
-              a.href = item.url;
-              a.innerHTML = '<span class="nav-search-title">' + (item.meta && item.meta.title ? item.meta.title : item.url) + '</span>' +
-                            '<span class="nav-search-excerpt">' + (item.excerpt || '') + '</span>';
-              li.appendChild(a);
-              results.appendChild(li);
-            });
-          }
+          items.forEach(function(item) {
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.href = item.url;
+            a.innerHTML = '<span class="search-title">' + (item.meta && item.meta.title ? item.meta.title : item.url) + '</span>' +
+                          '<span class="search-excerpt">' + (item.excerpt || '') + '</span>';
+            li.appendChild(a);
+            results.appendChild(li);
+          });
           results.hidden = false;
         }, 200);
       });

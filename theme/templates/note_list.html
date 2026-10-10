@@ -1,0 +1,26 @@
+{% if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+{% endif %}
+
+<ol class="note-list">
+{% for article in articles_page.object_list %}
+<li class="note-item">
+  <article>
+    <h2 class="note-item-title"><a href="/{{ article.url }}">{{ article.title }}</a></h2>
+    <p class="note-item-meta">
+      <time datetime="{{ article.date.isoformat() }}">{{ article.date|strftime('%b %-d, %Y') }}</time>
+      {% if not (category is defined and category.name == article.category.name) %}<a class="kind kind-{{ article.category.name | replace('/', '-') }}" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category.name.split('/') | last }}</a>{% endif %}
+      {% for t in article.tags %}<a href="{{ SITEURL }}/{{ t.url }}" class="tag{% if tag and tag.name == t.name %} is-current{% endif %}">{{ t }}</a>{% endfor %}
+    </p>
+    <div class="note-item-body">
+      {% if article.cover %}<img class="note-item-cover" src="{{ article.cover }}" alt="" loading="lazy" />{% endif %}
+      <div class="note-item-summary">{{ article.summary }}</div>
+    </div>
+  </article>
+</li>
+{% endfor %}
+</ol>
+
+{% if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+{% endif %}

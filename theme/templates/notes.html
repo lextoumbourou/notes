@@ -1,8 +1,31 @@
-{% extends "article_list.html" %}
+{% extends "base.html" %}
 
-{% block content_title %}
-<div class="list-page-header">
-  <h1 class="list-page-title">All Notes</h1>
-  <p class="list-page-meta">{{ articles | count }} notes, sorted by date</p>
-</div>
+{% block title %}Notes - {{ SITENAME }}{% endblock %}
+
+{% block body_class %}page-list{% endblock %}
+
+{% block right_panel %}{% include 'partials/list_side.html' %}{% endblock %}
+
+{% block content %}
+{% set notes = articles | rejectattr('category.name', 'in', ['essay', 'project']) | sort(attribute='date', reverse=True) | list %}
+<section class="list-page">
+  <header class="list-head">
+    <h1 class="list-title"><span data-sketch="swipe" data-sketch-color="--hl-teal" data-sketch-draw="on">Notes</span></h1>
+    <p class="list-meta">{{ notes | count }} working notes, newest first. Essays and projects have <a href="/essays.html">their own page</a>.</p>
+  </header>
+  {% for year, year_notes in notes | groupby('date.year') | sort(attribute='grouper', reverse=True) %}
+  <section class="year" aria-labelledby="y{{ year }}">
+    <h2 class="year-heading" id="y{{ year }}">{{ year }} <span class="topic-n">{{ year_notes | count }}</span></h2>
+    <ol class="note-rows">
+      {% for article in year_notes | sort(attribute='date', reverse=True) %}
+      <li class="note-row">
+        <time class="note-row-date" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %-d') }}</time>
+        <span class="kind kind-{{ article.category.name | replace('/', '-') }}">{{ article.category.name.split('/') | last }}</span>
+        <a class="note-row-title" href="/{{ article.url }}">{{ article.title }}</a>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endfor %}
+</section>
 {% endblock %}

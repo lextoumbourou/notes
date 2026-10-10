@@ -3,5 +3,8 @@
 {% block title %}{{ tag }} - {{ SITENAME }}{% endblock %}
 
 {% block content_title %}
-<h2>Notes tagged {{ tag }}</h2>
+<header class="list-head">
+  <h1 class="list-title"><span data-sketch="swipe" data-sketch-color="--hl-pink" data-sketch-draw="on">{{ tag }}</span></h1>
+  <p class="list-meta">Notes tagged {{ tag }} · <a href="/tags.html">all topics</a></p>
+</header>
 {% endblock %}

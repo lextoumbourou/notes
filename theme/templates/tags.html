@@ -1,11 +1,16 @@
 {% extends "base.html" %}
 
-{% block title %}Tags - {{ SITENAME }}{% endblock %}
+{% block title %}Topics - {{ SITENAME }}{% endblock %}
+
+{% block body_class %}page-list{% endblock %}
 
 {% block content %}
-<section id="content">
-  <h1 class="tags-page-title">Tags</h1>
-  <div class="tag-cloud">
+<section class="list-page">
+  <header class="list-head">
+    <h1 class="list-title"><span data-sketch="swipe" data-sketch-color="--hl-yellow" data-sketch-draw="on">Topics</span></h1>
+    <p class="list-meta">{{ tags | list | length }} topics, sized by how many notes use them</p>
+  </header>
+  <ul class="tag-cloud">
     {% set counts = tags | map(attribute=1) | map('count') | list %}
     {% set min_count = counts | min %}
     {% set max_count = counts | max %}
@@ -13,10 +18,8 @@
     {% for tag, articles in tags | sort %}
       {% set count = articles | count %}
       {% set weight = ((count - min_count) / range * 4) | round | int %}
-      <a href="{{ SITEURL }}/{{ tag.url }}"
-         class="tag-cloud-item tag-weight-{{ weight }}"
-         title="{{ count }} note{% if count != 1 %}s{% endif %}">{{ tag }}</a>
+      <li><a href="{{ SITEURL }}/{{ tag.url }}" class="tag-cloud-item tag-weight-{{ weight }}">{{ tag }} <span class="topic-n">{{ count }}</span></a></li>
     {% endfor %}
-  </div>
+  </ul>
 </section>
 {% endblock %}

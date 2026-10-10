@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - {{ SITENAME }}{% endblock %}
+
+{% block body_class %}page-static{% endblock %}
+
+{% block content %}
+<article class="note">
+  <h1 class="note-title"><span data-sketch="swipe" data-sketch-color="--hl-teal" data-sketch-draw="on">{{ page.title }}</span></h1>
+  <div class="prose-body">
+    {{ page.content }}
+  </div>
+</article>
+{% endblock %}

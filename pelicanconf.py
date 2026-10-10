@@ -40,7 +40,9 @@ STATIC_PATHS = ["_media"]
 DRAFT_URL = "{slug}.html"
 DRAFT_SAVE_AS = "{slug}.html"
 
-USE_FOLDER_AS_CATEGORY = True
+# Notes without a category are idea notes, whatever folder they sit in.
+USE_FOLDER_AS_CATEGORY = False
+DEFAULT_CATEGORY = "note"
 
 ENV = os.environ.get("ENV", "prod")
 
@@ -49,6 +51,7 @@ MARKDOWN = {
         "markdown_notebook_fences",
         "markdown_mermaid",
         "markdown_fast_callouts",
+        "markdown_highlight",
         "markdown.extensions.codehilite",
         "markdown.extensions.extra",
         "markdown.extensions.meta",
@@ -59,6 +62,7 @@ MARKDOWN = {
         "markdown_notebook_fences": {},
         "markdown_mermaid": {},
         "markdown_fast_callouts": {},
+        "markdown_highlight": {},
         "markdown.extensions.codehilite": {
             "css_class": "highlight",
             "pygments_formatter": CodeBlockFormatter,
@@ -91,13 +95,13 @@ GRAPH_VIEW = {"include_hidden": True}
 
 PUBLICATIONS_SRC = "notes/citations.bib"
 
-BIBLIOGRAPHY_START = '<section id="bib"><h4>References</h4>'
+BIBLIOGRAPHY_START = '<section id="bib"><h2>References</h2>'
 BIBLIOGRAPHY_END = "</section>"
 
 DEFAULT_PAGINATION = 10
 
-DIRECT_TEMPLATES = ["index", "notes", "tags", "categories", "archives"]
-PAGINATED_TEMPLATES = {"index": None, "notes": None, "tag": None, "category": None, "author": None}
+DIRECT_TEMPLATES = ["index", "notes", "essays", "tags", "categories", "archives"]
+PAGINATED_TEMPLATES = {"index": None, "tag": None, "category": None, "author": None}
 
 JINJA_FILTERS = {
     "sort_by_article_count": partial(
