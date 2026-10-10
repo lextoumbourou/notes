@@ -10,20 +10,19 @@
 }
 html, body { margin: 0; background: #FBFAF6; }
 svg { display: block; }
-.title, .label, .part {
+.label, .part {
   font-family: Shantell, cursive;
   font-weight: 800;
   fill: #141414;
   text-anchor: middle;
   dominant-baseline: middle;
 }
-.title { font-size: 72px; }
 .label { font-size: 76px; }
 .part { font-size: 55px; }
 .arrow { fill: none; stroke: #141414; stroke-width: 18; stroke-linecap: butt; }
 .link { fill: none; stroke: #5C5B57; stroke-width: 7; stroke-dasharray: 16 15; }
 </style>
-<svg id="d" width="1920" height="1260" viewBox="0 0 1920 1260" role="img" aria-labelledby="title description" xmlns="http://www.w3.org/2000/svg">
+<svg id="d" width="1920" height="1160" viewBox="0 100 1920 1160" role="img" aria-labelledby="title description" xmlns="http://www.w3.org/2000/svg">
   <title id="title">Seven parts of an agent harness</title>
   <desc id="description">A central agent loop passes through context, model, tools and result. A context management strategy feeds context; LLM integration connects to the model; safety controls guard tools; extension surfaces add capabilities; orchestration coordinates the loop.</desc>
   <rect width="1920" height="1260" fill="#FBFAF6"/>
@@ -32,8 +31,6 @@ svg { display: block; }
       <path d="M0 0 L10 5 L0 10Z" fill="#141414"/>
     </marker>
   </defs>
-
-  <text class="title" x="960" y="92">one loop, seven parts</text>
 
   <!-- Dotted links show which part of the loop each surrounding system affects. -->
   <path class="link" d="M590 224 Q680 222 772 274"/>
