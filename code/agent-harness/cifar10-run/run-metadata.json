@@ -8,7 +8,7 @@
   "web_search": true,
   "harness_sha256": "202698aebe564e01d2ebbce89d2e0d17d07648470485dc1bcd9542d922d53469",
   "trace_runner_sha256": "4a0398a482a0c2c76ca4619cf34f3216cbc75c9c83ce25457d271ac394aa66a8",
-  "source_commit": "3b345758",
+  "source_commit": "48ff0337",
   "preallowed_network_hosts": [
     "www.cs.toronto.edu",
     "cave.cs.toronto.edu"

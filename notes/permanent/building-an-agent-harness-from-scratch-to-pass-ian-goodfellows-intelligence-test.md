@@ -12,9 +12,6 @@ cover: /_media/agent-harness/bertie-the-brain-illustration.jpg
 cover_credits: Illustration by <a href="https://commons.wikimedia.org/wiki/File:Bertie_the_Brain_Illustration.jpg">InclusiveGameLab</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
 notebook:
   cwd: ../../code
-title-as-link-text-ignore:
-- harness-engineering-anatomy-architecture-and-evolution-of-coding-agents
-- "[reasoning](llm-reasoning.md)"
 ---
 
 The topic of agent harness building has exploded in popularity in 2026, both as an area of development and of research.
@@ -57,7 +54,7 @@ while True:
 
 Of course, in the real world, there's more to think about. The agent needs safety checks and sandboxing. Users need a way to extend their harness with extra skills and tools. There's typically an interface, either in the terminal or browser. Some agents can orchestrate sub-agents, and so on.
 
-Even so, the core of a harness is pretty straightforward. A [study of eleven production coding harnesses](harness-engineering-anatomy-architecture-and-evolution-of-coding-agents.md), including Claude Code, Codex CLI, Gemini CLI and Pi, compared them across seven aspects of harness design [@barbasteHarnessEngineeringAnatomy2026]:
+Even so, the core of a harness is pretty straightforward. [Barbaste et al., 2026](harness-engineering-anatomy-architecture-and-evolution-of-coding-agents.md) studied eleven production coding harnesses, including Claude Code, Codex CLI, Gemini CLI and Pi, and compared them across seven aspects of harness design [@barbasteHarnessEngineeringAnatomy2026]:
 
 1. the loop
 2. the LLM integration
@@ -99,9 +96,9 @@ We've already seen a basic loop, so we'll come back to it at the end, when we pu
 
 ## Model
 
-Modern agentic AI is only possible thanks to the incredible magic of language models. Since the capabilities of new LLMs are constantly on an upward trajectory, it's useful to be as model-agnostic as possible, making it easy to switch.
+Modern agentic AI is only possible thanks to the incredible magic of language models. Since the capabilities of new LLMs are constantly on an upward trajectory and the space is very competitive, today's best model may not be next month's, so it's useful to be as model-agnostic as possible, making it easy to switch.
 
-So, it's typical to hide the vendor's client behind a wrapper, and just plug a generic model into the mix.
+So, it's typical to hide the vendor's client behind a wrapper, and just plug a generic model into the mix. I've also added a `cost` field to track what the task has cost so far.
 
 ```python
 class ToolCall(TypedDict):
@@ -140,7 +137,7 @@ class Model(Protocol):
 
 <!-- /nb-output -->
 
-Your wrapper will likely also need to handle [reasoning](llm-reasoning.md), which most modern LLMs support, along with streaming responses, errors and so forth.
+Your wrapper will likely also need to handle reasoning ([LLM Reasoning](llm-reasoning.md)), which most modern LLMs support, along with streaming responses, errors and so forth.
 
 Here's a basic model wrapper for GPT-6 Luna, using the Responses API. The `output_items` field keeps the API's reasoning, text and function call items together for the next turn [@openaiResponsesFunctionCalling]. The rest of the harness passes this provider state through untouched:
 
@@ -1022,7 +1019,7 @@ This run used only the original prompt, with no further instructions. I pre-allo
 
 This was actually my second run. The first reached 81.41% after 12 epochs, but needed a nudge, and its [partial terminal log](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-terminal-log.txt) didn't show the model's prompts and responses. So I ran it again from scratch, with the small [`trace_run.py`](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/trace_run.py) wrapper in place of `harness.py`. It records those exchanges outside the agent's working directory, without adding anything to the prompt.
 
-Here's the fresh run's [complete model and tool transcript](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/transcript.md), [raw JSONL trace](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/trace.jsonl), [terminal capture](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/terminal.txt), and [saved code, model and verification](https://github.com/lextoumbourou/notes/tree/main/code/agent-harness/cifar10-run). The harness truncated one tool result after 25,000 characters of repetitive download progress, but its training and test output is intact. The run used [this version of `harness.py`](https://github.com/lextoumbourou/notes/blob/3b345758/code/agent-harness/harness.py); I've tidied the code a little since.
+Here's the fresh run's [complete model and tool transcript](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/transcript.md), [raw JSONL trace](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/trace.jsonl), [terminal capture](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/terminal.txt), and [saved code, model and verification](https://github.com/lextoumbourou/notes/tree/main/code/agent-harness/cifar10-run). The harness truncated one tool result after 25,000 characters of repetitive download progress, but its training and test output is intact. The run used [this version of `harness.py`](https://github.com/lextoumbourou/notes/blob/48ff0337/code/agent-harness/harness.py); I've tidied the code a little since.
 
 The harness estimated **$0.0160 in model-token costs for this run**, excluding the safety classifier calls. Web search was enabled, but the agent didn't use it.
 
