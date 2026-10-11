@@ -215,6 +215,9 @@ hr {
   gap: clamp(16px, 3vw, 44px);
   padding: 14px max(var(--gutter), calc((100vw - 1280px) / 2 + var(--gutter)));
   border-bottom: 2px solid var(--ink);
+  /* Lift the bar's stacking context (isolated by [data-sketch]) above the
+     page, so the search results are not painted under later sketched content. */
+  z-index: 50;
 }
 .site-bar.is-sketched { border-bottom-color: transparent; }
 

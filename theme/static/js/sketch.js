@@ -450,6 +450,16 @@
       new ResizeObserver(function () {
         if (window.innerWidth !== lastWidth) { lastWidth = window.innerWidth; redrawSoon(); }
       }).observe(document.body);
+      // The search box widens on focus on narrow screens; redraw its outline to fit.
+      var box = document.querySelector(".search-box[data-sketch]");
+      if (box) {
+        var boxWidth = box.offsetWidth;
+        new ResizeObserver(function () {
+          if (box.offsetWidth === boxWidth) return;
+          boxWidth = box.offsetWidth;
+          targets.forEach(function (t, i) { if (t[0] === box) drawOne(box, t[1], i); });
+        }).observe(box);
+      }
     }
     document.addEventListener("themechange", drawAll);
   }
