@@ -3,6 +3,8 @@
   publish = "output"
 
 [build.environment]
+  # Build with the public SITEURL; build.sh defaults to local.
+  ENV = "prod"
   # Match .python-version and pyproject.toml before setup.sh runs.
   PYTHON_VERSION = "3.12"
   PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "true"

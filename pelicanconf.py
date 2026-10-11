@@ -124,3 +124,5 @@ TIMEZONE = "Australia/Brisbane"
 SITEURL = "https://notesbylex.com"
 if ENV == "local":
     SITEURL = "http://localhost:8000"
+# RELATIVE_URLS rewrites SITEURL per page, but Open Graph tags need absolute URLs.
+SITE_ABSOLUTE_URL = SITEURL

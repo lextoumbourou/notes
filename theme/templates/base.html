@@ -41,13 +41,13 @@
 
     {% if article is defined %}
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}" />
+    <meta property="og:url" content="{{ SITE_ABSOLUTE_URL }}/{{ article.url }}" />
     <meta property="og:title" content="{{ article.title | replace("\"", "&quot;") }}" />
-    <meta property="og:description" content="{{ article.content | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
-    <meta property="og:image" content="{{ SITEURL }}{{ article.cover }}" />
+    <meta property="og:description" content="{{ (article.summary if 'summary' in article.metadata else article.content) | striptags | replace("\"", "&quot;") | truncate(196, False, '...') }}" />
+    <meta property="og:image" content="{{ SITE_ABSOLUTE_URL }}{{ article.cover }}" />
     {% else %}
     <meta property="og:type" content="page" />
-    <meta property="og:url" content="{{ SITEURL }}" />
+    <meta property="og:url" content="{{ SITE_ABSOLUTE_URL }}" />
     <meta property="og:title" content="{{ SITENAME }}" />
     <meta property="og:description" content="{{ SITE_DESCRIPTION | default('') }}" />
     {% endif %}

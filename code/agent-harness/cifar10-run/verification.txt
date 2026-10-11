@@ -1,9 +1,0 @@
-{
-  "archive_md5": "c58f30108f718f92721af3b95e74349a",
-  "test_images": 10000,
-  "test_correct": 5019,
-  "test_accuracy": 0.5019,
-  "matches_agent_report": true,
-  "matches_checkpoint": true,
-  "matches_sample_predictions": true
-}

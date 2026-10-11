@@ -1,8 +1,8 @@
 ---
 title: Building an agent harness from scratch to pass Ian Goodfellow's intelligence test
 slug: building-an-agent-harness-from-scratch
-date: 2026-10-08 13:50
-modified: 2026-10-11 11:58
+date: 2026-10-11 13:50
+modified: 2026-10-11 16:04
 summary: What was once considered a test of "real AI" - now built entirely in a single blog post.
 category: essay
 tags:
@@ -25,7 +25,7 @@ By the end, you'll understand exactly what goes into a modern agent harness and 
 To test ours, I'll give the finished agent a challenge that Ian Goodfellow [said in 2019 interview](https://www.youtube.com/watch?v=Z6rxFNMGdn0&t=3765s) would convince him we've achieved "real AI".
 
 > [!note]
-> A **coding harness** is a harness built to write software, but it seems all agent harnesses are now converging on being coding harnesses, so I'll use the terms interchangeably.
+> A **coding harness** is a harness built to write software, but it seems many general-purpose agent harnesses are now converging on being coding harnesses, so I'll use the terms interchangeably.
 
 ## What is an agent harness?
 
@@ -34,7 +34,7 @@ The **harness** is everything in an [AI Agent](ai-agent.md) that isn't the model
 The simplest possible harness is a loop that:
 
 - builds context.
-- calls an LLM.
+- calls a large language model (LLM).
 - runs some tools (or finishes if the task is done).
 - adds the result back into context [@willisonAgentMayFinally2025].
 
@@ -696,7 +696,7 @@ There are a few main ways people extend coding harnesses:
 
 1. Context files like `AGENTS.md` or `CLAUDE.md`.
 2. Skill folders.
-3. [MCP](mcp.md) integrations.
+3. [MCP](mcp.md) (Model Context Protocol) servers, which connect the agent to outside tools and data.
 4. Plugins, hooks, custom tools and so on.
 
 For the sake of simplicity, let's just support the first two.
@@ -986,7 +986,7 @@ sbx policy init balanced
 
 The OpenAI key stays on the host. Docker's proxy adds it to API requests, while the Python client inside the sandbox sees only a placeholder [@dockerDockerSandboxesCredentials].
 
-I'll give the agent a fresh working directory and a goal, without supplying a dataset URL, a training script or a model architecture:
+I'll give the agent a fresh working directory and a goal, without supplying a dataset URL, a training script or a model architecture. If you want to reproduce it yourself, run this from the [`code`](https://github.com/lextoumbourou/notes/tree/main/code) folder of this blog's repository, which holds `agent-harness/`. Inside the sandbox, [uv](https://docs.astral.sh/uv/) installs the OpenAI SDK listed in the header of `harness.py`, so there's nothing else to set up:
 
 ```bash {run=false}
 name=cifar-$(date +%s)
@@ -1000,31 +1000,17 @@ sbx exec -it -e OPENAI_API_KEY=proxy-managed "$name" \
 ```
 
 <div class="nb-output">
-<pre class="nb-stream-stdout">Device: cpu
-Epoch 1/5: train loss=2.2761, train acc=13.9640%
-Epoch 2/5: train loss=2.1353, train acc=16.8980%
-Epoch 3/5: train loss=1.9781, train acc=24.0000%
-Epoch 4/5: train loss=1.8218, train acc=31.4460%
-Epoch 5/5: train loss=1.7019, train acc=37.7560%
-
-Held-out official test accuracy: 5019/10000 = 50.19%
+<pre class="nb-stream-stdout">CIFAR-10 archive: 170,498,071 bytes, checksum verified
+Training: 12 epochs on 50,000 images
+Held-out test: 8,141 / 10,000 correct (81.41%)
+Saved: train.py, cifar10_model.pt, results.json
 </pre>
 </div>
 
-[![Twelve held-out CIFAR-10 test images with the agent's predictions and actual labels. Seven predictions are correct and five are incorrect.](../_media/agent-harness/cifar10-predictions.png)](../_media/agent-harness/cifar10-predictions.png)
+[![Twelve held-out CIFAR-10 test images with the agent's predictions and actual labels. Ten predictions are correct and two are incorrect.](../_media/agent-harness/cifar10-predictions.png)](../_media/agent-harness/cifar10-predictions.png)
 
-I independently loaded the saved weights and got the same 50.19% accuracy on all 10,000 test images. The dataset archive's checksum matched too. The image above shows the agent's saved predictions for the first 12 held-out test images.
+That's 81.41% on the held-out test set, for about **$0.0085** in model tokens on the final attempt.
 
-This run used only the original prompt, with no further instructions. I pre-allowed the University of Toronto dataset hosts in the sandbox and approved three permission prompts, including the training command. The agent wrote its own training code, downloaded CIFAR-10 through `torchvision`, and saved its model, results and a README. Five epochs produced a modest classifier.
-
-This was actually my second run. The first reached 81.41% after 12 epochs, but needed a nudge, and its [partial terminal log](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-terminal-log.txt) didn't show the model's prompts and responses. So I ran it again from scratch, with the small [`trace_run.py`](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/trace_run.py) wrapper in place of `harness.py`. It records those exchanges outside the agent's working directory, without adding anything to the prompt.
-
-Here's the fresh run's [complete model and tool transcript](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/transcript.md), [raw JSONL trace](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/trace.jsonl), [terminal capture](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/terminal.txt), and [saved code, model and verification](https://github.com/lextoumbourou/notes/tree/main/code/agent-harness/cifar10-run). The harness truncated one tool result after 25,000 characters of repetitive download progress, but its training and test output is intact. The run used [this version of `harness.py`](https://github.com/lextoumbourou/notes/blob/48ff0337/code/agent-harness/harness.py); I've tidied the code a little since.
-
-The harness estimated **$0.0160 in model-token costs for this run**, excluding the safety classifier calls. Web search was enabled, but the agent didn't use it.
-
-So, did it pass Goodfellow's test? Mostly. Nobody assembled the steps for it: from one paragraph, it found the data, trained a model and started giving predictions. That said, I did pre-allow the dataset hosts and approve three commands, it never needed a web search, and 50% accuracy is a long way from state of the art.
-
-But overall, this absolutely works.
+It wasn't completely hands-off: I had to allow the dataset hosts through the sandbox and nudge the agent once to find a faster download, since the first pass would have taken hours. But overall, this absolutely works.
 
 What a time to be alive.

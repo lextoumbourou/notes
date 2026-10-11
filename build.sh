@@ -19,7 +19,7 @@ if [ "${MERMAID_RENDERER:-mmdr}" = "mmdr" ]; then
 fi
 
 uv run python scripts/check_control_characters.py ./notes/
-ENV=local PYTHONPATH="${PYTHONPATH:+$PYTHONPATH:}." \
+ENV="${ENV:-local}" PYTHONPATH="${PYTHONPATH:+$PYTHONPATH:}." \
   uv run pelican ./notes/ --output=output/ --fatal errors
 
 echo "Building search index with pagefind..."
