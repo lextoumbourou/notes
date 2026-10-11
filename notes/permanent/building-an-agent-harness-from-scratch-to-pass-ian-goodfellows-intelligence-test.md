@@ -1030,7 +1030,7 @@ Then gave more details:
 
 [Here's the timestamped interview](https://youtu.be/Z6rxFNMGdn0?t=3765s).
 
-We have all the pieces in place to solve exactly that. I thought it would be an interesting experiment to see whether this agent that we build entirely within this blog post could pass this test.
+We have all the pieces in place to solve exactly that. I thought it would be an interesting experiment to see whether this agent that we build entirely within this blog post could pass this test, to thoroughly impress Ian Goodfellow in 2019.
 
 CIFAR-10 contains 50,000 training images and 10,000 test images, each 32 × 32 pixels and belonging to one of ten classes [@krizhevskyCIFAR10Dataset].
 
