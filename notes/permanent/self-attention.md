@@ -1,7 +1,7 @@
 ---
 title: Self-Attention
 date: 2024-01-30 00:00
-modified: 2026-10-12 07:15
+modified: 2026-10-12 09:19
 summary: A method of computing a token representation that includes the context of surrounding tokens.
 cover: /_media/scaled-dot-product-attention.png
 hide_cover_in_article: true
@@ -16,7 +16,9 @@ video: planned
 
 It became the core building block of the [Transformer](transformer.md) architecture, introduced in the paper [Attention Is All You Need](attention-is-all-you-need.md).
 
-In language models, we typically convert tokens (words or pieces of words) into a sequence of embeddings. However, some token embeddings will be ambiguous without the surrounding context.
+In this note, we'll build self-attention step by step in PyTorch, following one example sentence the whole way through.
+
+In language models, we typically convert tokens (words or pieces of words) into a sequence of embeddings (a vector of numbers per token). However, some token embeddings will be ambiguous without the surrounding context.
 
 Consider the word "minute" in these two sentences:
 
@@ -36,7 +38,7 @@ The specific formulation from the Transformer paper is [Scaled Dot-Product Atten
 
 Let's see how to compute it step by step.
 
-## Self-Attention Step-by-step
+## Self-Attention Step by Step
 
 ### 0. Prepare Input
 
@@ -44,7 +46,7 @@ Though this step is technically not part of self-attention itself, we represent 
 
 The positional encoding represents each token's position in the sequence. Without it, self-attention would treat the tokens as an unordered set, so "It took one minute" and "minute one took It" would look the same.
 
-The dimensions of this input are batch, time, and embedding size. For example, with a batch size of 1, four input words (assuming word-level tokenisation) and an embedding dimension of 1024, the embeddings would have a shape of: `(1, 4, 1024)`. In practice, we typically process many passages at once as a batch, but the calculation is the same for each one.
+The dimensions of this input are batch, tokens, and embedding size. For example, with a batch size of 1, four input words (assuming word-level tokenisation) and an embedding dimension of 1024, the embeddings would have a shape of: `(1, 4, 1024)`. In practice, we typically process many passages at once as a batch, but the calculation is the same for each one.
 
 [![Each of the four tokens It, took, one and minute has a token embedding vector and a positional encoding vector. Adding them gives one row of X per token: four vectors of 1024 numbers, stacked in a batch of one, with shape (1, 4, 1024) for batch, tokens and embedding size.](../_media/self-attention/self-attention-step-0.png)](../_media/self-attention/self-attention-step-0.png)
 
@@ -91,7 +93,7 @@ In the decoder part of the Transformer, and in decoder-only models like GPT, the
 We can use the [tril](https://pytorch.org/docs/stable/generated/torch.tril.html) function (short for "triangle, lower") to create a lower-triangular matrix of ones, covering each token and the tokens before it. Comparing it with `== 0` gives a mask where `True` marks the future positions, then [masked_fill](https://pytorch.org/docs/stable/generated/torch.Tensor.masked_fill.html) replaces those positions with `float("-inf")`.
 
 ```python {run=false}
-attn_mask = torch.tril(torch.ones(*scores.shape)) == 0
+attn_mask = torch.tril(torch.ones_like(scores)) == 0
 scores = torch.masked_fill(scores, attn_mask, float("-inf"))
 ```
 
@@ -145,7 +147,7 @@ class SingleHeadAttention(nn.Module):
         value = self.value_proj(X)
 
         scores = query @ key.transpose(2, 1)
-        # Scaling from Scaled Dot-Product Attention, not covered in the steps above.
+        # Scaling from Scaled Dot-Product Attention (not in the steps).
         scores = scores / math.sqrt(key.shape[-1])
 
         attn_mask = torch.tril(torch.ones_like(scores)) == 0
