@@ -14,31 +14,32 @@ notebook:
   cwd: ../../code
 title-as-link-text-ignore:
 - harness-engineering-anatomy-architecture-and-evolution-of-coding-agents
+- "[reasoning](llm-reasoning.md)"
 ---
 
-The topic of agent harness building has exploded in popularity in 2026, both as an active area of development for many people and organisations, and an active area for research.
+The topic of agent harness building has exploded in popularity in 2026, both as an area of development and of research.
 
-Almost all my colleagues and peers are thinking about harnesses in their work - either directly, through building their own agentic products and services, or indirectly, as they tune and experiment with their own coding agents - like Claude Code or Codex - that they use on a daily basis.
+Almost all my colleagues and peers are thinking about harnesses - either directly, by building agentic products and services, or indirectly, by tuning and experimenting with the coding agents they use every day, like Claude Code or Codex.
 
-In this article, I want to walk through the process of building a modern agentic harness from scratch, starting with the simplest possible agent loop. Along the way, I'll share research and opinions I've come across about different approaches to building harnesses.
+In this article, I want to walk through building a modern agent harness from scratch, starting with the simplest possible loop. Along the way, I'll share research and opinions I've come across about different approaches to building harnesses.
 
-To test whether the agent works, I'll give the finished agent a challenge Ian Goodfellow [described in 2019](https://www.youtube.com/watch?v=Z6rxFNMGdn0&t=3765s) that would convince him we've achieved "real AI".
+By the end, you'll understand exactly what goes into a modern agent harness and have the skills to build your own.
 
-By the end of the article, you'll understand exactly what goes into a modern agent harness, and have all the skills to build your own.
+To test ours, I'll give the finished agent a challenge that Ian Goodfellow [said in 2019](https://www.youtube.com/watch?v=Z6rxFNMGdn0&t=3765s) would convince him we've achieved "real AI".
 
 > [!note]
-> A **coding harness** is a specific type of harness that develops software, but nowadays it seems all agentic harnesses are converging on being a coding harness, so I'll use the terms interchangeably.
+> A **coding harness** is a harness built to write software, but it seems all agent harnesses are now converging on being coding harnesses, so I'll use the terms interchangeably.
 
 ## What is an agent harness?
 
 The **harness** is everything in an [AI Agent](ai-agent.md) that isn't the model.
 
-The simplest possible harness we can conceive of is a loop where we:
+The simplest possible harness is a loop that:
 
-- build context.
-- call an LLM.
-- run some tools (or finish if the task is done).
-- add the result back into context [@willisonAgentMayFinally2025].
+- builds context.
+- calls an LLM.
+- runs some tools (or finishes if the task is done).
+- adds the result back into context [@willisonAgentMayFinally2025].
 
 [![The agent loop as four coloured blocks joined by arrows: context, then model, then tools, then result, which feeds back into context.](../_media/agent-harness/agent-harness-loop-colour.png)](../_media/agent-harness/agent-harness-loop-colour.png)
 
@@ -54,9 +55,9 @@ while True:
     context.append(result)
 ```
 
-Of course, in the real world, there are a few more things to think about. You need to make sure the agent runs safely, with safety checks and sandboxing. You need to give the user the ability to extend their harness with extra skills and tools. There's typically an interface, either in the terminal or browser. Some agents can orchestrate sub-agents, and so on.
+Of course, in the real world, there's more to think about. The agent needs safety checks and sandboxing. Users need a way to extend their harness with extra skills and tools. There's typically an interface, either in the terminal or browser. Some agents can orchestrate sub-agents, and so on.
 
-However, even with all those considerations, the core of a harness is pretty straightforward. A [study of eleven production coding harnesses](harness-engineering-anatomy-architecture-and-evolution-of-coding-agents.md), including Claude Code, Codex CLI, Gemini CLI and Pi, compared them across seven aspects of harness design [@barbasteHarnessEngineeringAnatomy2026]:
+Even so, the core of a harness is pretty straightforward. A [study of eleven production coding harnesses](harness-engineering-anatomy-architecture-and-evolution-of-coding-agents.md), including Claude Code, Codex CLI, Gemini CLI and Pi, compared them across seven aspects of harness design [@barbasteHarnessEngineeringAnatomy2026]:
 
 1. the loop
 2. the LLM integration
@@ -68,11 +69,11 @@ However, even with all those considerations, the core of a harness is pretty str
 
 [![A central agent loop connects context, model, tools and result. Surrounding notes show LLM integration, a context management strategy, safety controls with sandboxing, orchestration and extension surfaces.](../_media/agent-harness/agent-harness-seven-parts.png)](../_media/agent-harness/agent-harness-seven-parts.png)
 
-I'll use those as our guide, building them one piece at a time. The paper also includes a minimal agent, which has been an inspiration for this blog post.
+I'll use those as our guide, building one piece at a time. The paper also includes a minimal agent, which inspired this post.
 
 ---
 
-Firstly, the imports. I'll stick to the standard library, though I will import the OpenAI client to save a few lines of API-calling code.
+First, the imports. I'll stick to the standard library, apart from the OpenAI client, which saves writing our own API calls.
 
 ```python
 import html
@@ -94,15 +95,13 @@ import openai
 
 <!-- /nb-output -->
 
-We've already looked at a basic loop, so we'll skip over that part for now, and come back at the end when we put it all together.
-
-So first on our list is the model.
+We've already seen a basic loop, so we'll come back to it at the end, when we put it all together. First on our list is the model.
 
 ## Model
 
 Modern agentic AI is only possible thanks to the incredible magic of language models. Since the capabilities of new LLMs are constantly on an upward trajectory, it's useful to be as model-agnostic as possible, making it easy to switch.
 
-So, it's typical to have a wrapper abstraction that allows us to hide the specific vendor client implementation, and just plug a generic model into the mix.
+So, it's typical to hide the vendor's client behind a wrapper, and just plug a generic model into the mix.
 
 ```python
 class ToolCall(TypedDict):
@@ -141,9 +140,9 @@ class Model(Protocol):
 
 <!-- /nb-output -->
 
-There are some themes that you would likely want to factor into your wrapper, like the fact that most modern LLMs support reasoning ([LLM Reasoning](llm-reasoning.md)). You'll also likely want to handle things like streaming responses, errors and so forth.
+Your wrapper will likely also need to handle [reasoning](llm-reasoning.md), which most modern LLMs support, along with streaming responses, errors and so forth.
 
-Here's a basic model wrapper, with a GPT-6 Luna implementation using the Responses API. The `output_items` field keeps the API's reasoning, text and function call items together for the next turn [@openaiResponsesFunctionCalling]. It's provider state, which the rest of the harness passes through untouched:
+Here's a basic model wrapper for GPT-6 Luna, using the Responses API. The `output_items` field keeps the API's reasoning, text and function call items together for the next turn [@openaiResponsesFunctionCalling]. The rest of the harness passes this provider state through untouched:
 
 ```python
 class ResponsesModel:
@@ -205,7 +204,7 @@ class ResponsesModel:
 <!-- /nb-output -->
 
 > [!note]
-> The tool schemas below have optional arguments, so this adapter sets `strict=False` to keep them optional. The Responses API otherwise tries to make tool schemas strict [@openaiResponsesFunctionCalling].
+> The tool schemas below have optional arguments, so this adapter sets `strict=False`. Otherwise, the Responses API tries to make them strict [@openaiResponsesFunctionCalling].
 
 And give that a little test run:
 
@@ -222,29 +221,29 @@ print(reply["content"])
 </div>
 <!-- /nb-output -->
 
-Model is easy enough - now for implementing the tools.
+That's the model done - now for the tools.
 
 ## Tools
 
-In a lot of ways, the tools are the most interesting part of the agentic harness. They allow the model to act and receive feedback from the world.
+In a lot of ways, tools are the most interesting part of the harness. They let the model act on the world and get feedback from it.
 
-The paradigm of [Tool Use](tool-use.md) in LLM-based agentic reasoning dates back to 2022-2023, with papers like:
+[Tool Use](tool-use.md) in LLMs dates back to 2022-2023, with papers like:
 
 - TALM: Tool Augmented Language Models [@parisiTALMToolAugmented2022]
 - PAL: Program-aided Language Models [@gaoPALProgramaidedLanguage2022]
 - Toolformer [@schickToolformerLanguageModels2023]
 
-Each demonstrates how tools can extend the capabilities of LLM-based agents.
+Each showed how tools can extend what LLMs can do.
 
 Later in 2023, OpenAI introduced function calling, which gave us a schema for structured tool definitions and a way of returning tool outputs to the model [@openaiFunctionCallingOther2023]. Other vendors soon adopted the idea.
 
-Tool use seems to be the area of harness design with the most contention and change in recent months. The community seems to be heading toward a consensus: as LLMs get more capable, the harness should get simpler, with fewer tools. Garry Tan describes [Thin Harnesses](thin-harnesses.md) as systems that run the loop, handle files, manage context and enforce safety, while skills and deterministic tools do the rest [@tanThinHarnessFat2026]. At one extreme, [mini-SWE-agent](https://github.com/SWE-agent/mini-swe-agent) uses only bash.
+Tool use has seen the most debate and change in harness design in recent months. The community seems to be heading toward a consensus: as LLMs get more capable, the harness should get simpler, with fewer tools. Garry Tan describes [Thin Harnesses](thin-harnesses.md) as systems that run the loop, handle files, manage context and enforce safety, while skills and deterministic tools do the rest [@tanThinHarnessFat2026]. At one extreme, [mini-SWE-agent](https://github.com/SWE-agent/mini-swe-agent) uses only bash.
 
-In my implementation, I'm going to follow the approach of [Pi](https://pi.dev/), a minimal open-source harness, and implement just four tools: read, write, edit and bash. I'll call them `read_file`, `write_file`, `search_replace` and `bash`.
+I'll follow [Pi](https://pi.dev/), a minimal open-source harness, and implement just four tools: read, write, edit and bash. I'll call them `read_file`, `write_file`, `search_replace` and `bash`.
 
-When we talk about tool use, there are two aspects: creating the code that executes the tools and registering the tools that are available to the model.
+Tool use has two parts: the code that runs each tool, and registering the tools with the model.
 
-I'll start with the former. It's good practice to truncate tool outputs, so that a rogue log in a process doesn't exhaust the context budget. The loop will run every tool result through this:
+I'll start with the former. It's good practice to truncate tool outputs, so a runaway log doesn't exhaust the context budget. The loop will run every tool result through this:
 
 ```python
 def truncate_text(text: str, limit: int = 25_000) -> str:
@@ -265,7 +264,7 @@ print(truncate_text("This is some long winded text...", limit=15))
 </div>
 <!-- /nb-output -->
 
-Now the bash tool, with a few goodies for stability like handling timeouts:
+Now the bash tool. I'll write a simple tool that delegates to `subprocess.run`, which means it can run anything on your machine. We'll come back to that in safety controls. I've also included a timeout so a hung command can't stall the agent:
 
 ```python
 def tool_bash(cmd: str, timeout: int = 120, *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
@@ -286,7 +285,6 @@ def tool_bash(cmd: str, timeout: int = 120, *, base_dir: pathlib.Path = pathlib.
 
 <!-- /nb-output -->
 
-It's a simple process that delegates to `subprocess.run`, which means it can run anything on your machine. We'll come back to that in safety controls.
 
 The examples use a small workspace folder, `agent-harness-working`:
 
@@ -305,7 +303,7 @@ stdout:
 <!-- /nb-output -->
 
 
-Before the file tools, a helper rejects paths that resolve outside the working directory. Bash is still unrestricted by this check.
+Before the file tools, here's a helper that rejects paths outside the working directory. It doesn't restrict bash.
 
 ```python
 def _workspace_path(path: str, base_dir: pathlib.Path) -> pathlib.Path:
@@ -385,7 +383,7 @@ def tool_search_replace(path: str, search: str, replace: str,
 
 <!-- /nb-output -->
 
-Let's try the write and edit tools together. This example uses a temporary folder so it cleans up after itself:
+Let's try the write and edit tools together, in a temporary folder that cleans up after itself:
 
 ```python
 with TemporaryDirectory(dir=BASE_DIR) as tmp:
@@ -417,7 +415,7 @@ TOOLS: dict[str, Callable[..., str]] = {
 
 <!-- /nb-output -->
 
-And describe them in the JSON schema format that tool-calling APIs expect. Rather than writing a JSON schema for every tool by hand, I'll read each function's arguments:
+Then describe them in the JSON schema format that tool-calling APIs expect. Rather than writing each schema by hand, I'll build it from the function's arguments:
 
 ```python
 def schema(name: str, f) -> ToolSpec:
@@ -450,7 +448,7 @@ pprint(schema("read_file", tool_read_file), sort_dicts=False)
 </div>
 <!-- /nb-output -->
 
-Finally, let's check that OpenAI can call a tool. I'll give it only Bash and ask it to run `pwd` once:
+Finally, let's check that OpenAI can call a tool. I'll give it only bash and ask it to run `pwd` once:
 
 ```python
 messages: list[Message] = [
@@ -477,11 +475,14 @@ stdout:
 
 ## Context & memory
 
-Even with a giant modern context window of 1M+ tokens, a long task will eventually overflow it, so we're going to want some strategy for [Context Management](context-management.md). There are a few typical approaches. We could truncate the old context, or we could call an LLM to summarise the conversation so far. [Fan et al., 2026](an-empirical-study-of-harness-design-for-coding-agents.md) tested a few different methods, and found the right technique mostly depends on the model itself: context management mattered more as the context window shrank, mostly by preventing overflow failures [@fanEmpiricalStudyHarness2026]. The more context the model has, the less the approach matters, which is no surprise.
+Even with a giant modern context window of 1M+ tokens, a long task will eventually overflow it, so we need a strategy for [Context Management](context-management.md). The typical approaches are to truncate the old context or to have an LLM summarise the conversation so far. [Fan et al., 2026](an-empirical-study-of-harness-design-for-coding-agents.md) tested a few methods and found the right one depends largely on the model: context management mattered more as the context window shrank, mostly by preventing overflow failures [@fanEmpiricalStudyHarness2026]. Unsurprisingly, the more context the model has, the less the approach matters.
 
-Here, we're going to use the common approach of asking the model to summarise. A rough rule of thumb is about four characters per token, which we'll use for deciding when to compact. When we do, the system prompt and the task stay, the recent messages stay, and everything in the middle gets swapped for a summary.
+We'll use the common approach of asking the model to summarise. To decide when to compact, we'll estimate about four characters per token, a rough rule of thumb. When we do, the system prompt, the task and the recent messages stay, and everything in the middle gets swapped for a summary.
 
-We'll wrap the summary in a `<summary_of_earlier_work>` tag. Anthropic's prompting guide recommends XML tags whenever a prompt mixes instructions, context and inputs, because wrapping each kind of content in its own tag stops the model mixing them up [@anthropicPromptingBestPractices]. There is no magic tag name, just descriptive ones used consistently.
+We'll wrap the summary in a `<summary_of_earlier_work>` tag.
+
+> [!note]
+> Anthropic's prompting guide recommends XML tags whenever a prompt mixes instructions, context and inputs, so the model doesn't mix them up [@anthropicPromptingBestPractices]. There's no magic tag name, just descriptive ones used consistently.
 
 There's one gotcha. In the Responses API, a tool result has to keep the `call_id` of the function call that requested it, so we can't cut the conversation between the two [@openaiResponsesFunctionCalling]:
 
@@ -552,28 +553,28 @@ user: Show me what you've built.
 </div>
 <!-- /nb-output -->
 
-The downside to summarisation is that it changes your conversation prefix, so the next call may reuse less of the prompt cache [@openaiPromptCaching]. So it should be used with caution.
+The downside to summarisation is that it changes the conversation prefix, so the next call may reuse less of the prompt cache [@openaiPromptCaching]. It's best used sparingly.
 
-[Memory](memory.md) is another topic that we could consider. It's common for an agent to dump Markdown files out as it "learns" things, which get loaded into context next time. Going even further, some agents like OpenClaw have a process called "Dreaming" ([Dreams](dreams.md)), which reviews short-term memories on a schedule and promotes useful ones into `MEMORY.md` [@openclawDreaming].
+[Memory](memory.md) is another topic to consider. It's common for an agent to dump out Markdown files as it "learns" things, which get loaded into context next time. Going further, some agents like OpenClaw have a process called "Dreaming" ([Dreams](dreams.md)), which reviews short-term memories on a schedule and promotes useful ones into `MEMORY.md` [@openclawDreaming].
 
-Our harness actually gets a basic version of persistent context for free: the model can update `AGENTS.md` with `write_file`, and the harness loads it at the start of every session (more on that in extension surfaces). We could also introduce a `MEMORY.md` file as additional context - I'll leave that as an exercise to the reader (or not).
+Our harness actually gets a basic version of persistent context for free: the model can update `AGENTS.md` with `write_file`, and the harness loads it at the start of every session (more on that in extension surfaces). We could also add a `MEMORY.md` file - I'll leave that as an exercise for the reader (or not).
 
 ## Safety controls
 
-Since we're talking about an agent that can arbitrarily execute any command on your computer, safety is obviously going to be a pretty damn important consideration. There are two main approaches to making it safer:
+Since this agent can run any command on your computer, safety is obviously pretty damn important. There are two main ways to make it safer:
 
 1. Run it in a sandbox, so we control exactly what it can see and do.
-2. Introduce a classification layer so that a command is checked before it runs, and we can ask the user for permission if there's anything that looks suss.
+2. Add a classification layer that checks each command before it runs, and asks the user for permission if anything looks suss.
 
-Docker Sandboxes is one example of the first approach: it runs an agent in a microVM with access to a chosen workspace and a network policy [@dockerDockerSandboxesArchitecture]. These two approaches can also be combined.
+Docker Sandboxes is one example of the first approach: it runs an agent in a microVM with access to a chosen workspace and a network policy [@dockerDockerSandboxesArchitecture]. You can also combine the two.
 
-However, I thought it might be interesting to explore typed decisions for the classification layer ([Decision Models](decision-models.md)). TypeSafe AI's Jev is one example, but OpenAI has released their new Decisions API, which seems like a potential use case - and saves me adding another API key and/or client lib. The Decisions API answers typed questions about some input: a `predicate` returns a probability, and a `score` rates the input against ordered levels [@openaiDecisionsGuide].
+For this post, I thought it would be interesting to explore typed decisions ([Decision Models](decision-models.md)) for the classification layer. TypeSafe AI's Jev is one example, but OpenAI's new Decisions API looks like a good fit - and saves me adding another API key and/or client lib. It answers typed questions about some input: a `predicate` returns a probability, and a `score` rates the input against ordered levels [@openaiDecisionsGuide].
 
-To create a basic safety classification, we'll pass in the user's request and the proposed tool call, and have it return `allow`, `ask` or `deny`. An `ask` result needs the user's permission; a `deny` result blocks the call. This is a simplified version of Codex's "guardian" reviewer that scores each action for risk (`low`, `medium`, `high` or `critical`) and for whether the user authorised it, before it is allowed to run [@openaiCodexGuardianPolicy]. With a `score` and a `predicate`, one Decisions call can ask both of Codex's questions.
+For a basic safety classifier, we'll pass in the user's request and the proposed tool call, and get back `allow`, `ask` or `deny`. `ask` needs the user's permission; `deny` blocks the call. It's a simplified version of Codex's "guardian" reviewer, which scores each action for risk (`low`, `medium`, `high` or `critical`) and for whether the user authorised it, before letting it run [@openaiCodexGuardianPolicy]. With a `score` and a `predicate`, one Decisions call can ask both of Codex's questions.
 
-It's not a perfect solution, but this is likely where a lot of a harness's code is going to live. For Anthropic and OpenAI, getting this right is their bread and butter.
+It's not perfect, but this is likely where a lot of a harness's code will live. For Anthropic and OpenAI, getting it right is their bread and butter.
 
-The `read_file` tool skips classification in this example, though reading a sensitive file can still matter. Anything the classifier can't answer falls back to asking the user:
+In this example, `read_file` skips classification, though reading a sensitive file can still matter. If the classifier can't answer, we fall back to asking the user:
 
 ```python
 RISK_LEVELS = [
@@ -671,7 +672,7 @@ The force-push is the interesting one: its risk score fell below the cut-off, an
 
 A classifier can still get these calls wrong, so I wouldn't treat it as a security boundary. For real work, I'd run the harness in a sandbox too.
 
-When the classifier says "ask", we'll ask at the terminal. If there's nobody there to answer, like in a script or CI, the answer is no, which is what Pi's permission gate does too [@earendilPiSecurity]:
+When the classifier says "ask", we'll ask at the terminal. If nobody is there to answer, like in a script or CI, the answer is no, which is what Pi's permission gate does too [@earendilPiSecurity]:
 
 ```python
 def ask_user(tool_name: str, args: dict, reason: str) -> bool:
@@ -690,11 +691,11 @@ def ask_user(tool_name: str, args: dict, reason: str) -> bool:
 
 ## Orchestration
 
-We'll skip this step for now. In theory, the agent could simply spin up new copies of itself, but for the purposes of this simple blog post, we'll assume a single-agent design.
+We'll skip this one. In theory, the agent could spin up new copies of itself, but to keep this post simple, we'll stick to a single agent.
 
 ## Extension surfaces
 
-There are a few main ways that people can extend coding harnesses:
+There are a few main ways people extend coding harnesses:
 
 1. Context files like `AGENTS.md` or `CLAUDE.md`.
 2. Skill folders.
@@ -705,7 +706,7 @@ For the sake of simplicity, let's just support the first two.
 
 ### Loading AGENTS.md into context
 
-Pi wraps each context file in a `<project_instructions>` tag that records where it came from [@earendilPiSkills], so we'll do the same. Only the path needs escaping, since it sits inside an attribute. The file's contents go in as written, so code and Markdown in it reach the model unchanged:
+Pi wraps each context file in a `<project_instructions>` tag that records where it came from [@earendilPiSkills], so we'll do the same. Only the path needs escaping, since it sits inside an attribute. The file's contents go in as written:
 
 ```python
 AGENTS_FILE = "AGENTS.md"
@@ -772,9 +773,9 @@ description: Evaluate a trained image classifier on held-out images. Use when as
 5. Keep model selection and tuning on training or validation data. Do not choose a model using the test labels.
 ```
 
-This is just an example of how skills work. I did not include it in the fresh CIFAR-10 sandbox below.
+It's just here to show how skills work. I didn't include it in the CIFAR-10 sandbox below.
 
-We'll look in `.agents/skills/`, a convention for harnesses, read each skill's frontmatter, and skip any skill without a description, since the model has nothing to choose it by:
+We'll look in `.agents/skills/`, a common harness convention, read each skill's frontmatter, and skip any skill without a description, since the model has nothing to choose it by:
 
 ```python
 SKILLS_DIR = pathlib.Path(".agents/skills")
@@ -859,7 +860,7 @@ Resolve relative paths in a skill against the skill's folder.
 </div>
 <!-- /nb-output -->
 
-So now we've got our user-provided AGENTS context, and our user-provided skill catalog. Both go into the system prompt after some basic instructions, each in its own section:
+Now we've got the user's `AGENTS.md` context and skill catalog. Both go into the system prompt after some basic instructions, each in its own section:
 
 ```python
 SYSTEM_PROMPT = (
@@ -973,11 +974,11 @@ He then went into more detail:
 
 [Here's the timestamped interview](https://youtu.be/Z6rxFNMGdn0?t=3765s).
 
-We have all the pieces in place to solve exactly that. I thought it would be an interesting experiment to see whether the agent we built entirely within this blog post could pass the test, and thoroughly impress the Ian Goodfellow of 2019.
+We have all the pieces in place to try exactly that. I thought it'd be an interesting experiment to see whether the agent we built entirely in this post could pass the test, and thoroughly impress the Ian Goodfellow of 2019.
 
 CIFAR-10 contains 50,000 training images and 10,000 test images, each 32 × 32 pixels and belonging to one of ten classes [@krizhevskyCIFAR10Dataset].
 
-Since the agent will be downloading data and running code it wrote itself, I ran it in a Docker Sandbox. I used Docker's `sbx` CLI to give the agent a temporary workspace, with the harness code mounted read-only [@dockerDockerSandboxesUsage]. On a Mac, the one-time setup is:
+Since the agent will download data and run code it wrote itself, I ran it in a Docker Sandbox, using Docker's `sbx` CLI to give it a temporary workspace with the harness code mounted read-only [@dockerDockerSandboxesUsage]. On a Mac, the one-time setup is:
 
 ```bash {run=false}
 brew trust docker/tap
@@ -1015,15 +1016,15 @@ Held-out official test accuracy: 5019/10000 = 50.19%
 
 [![Twelve held-out CIFAR-10 test images with the agent's predictions and actual labels. Seven predictions are correct and five are incorrect.](../_media/agent-harness/cifar10-predictions.png)](../_media/agent-harness/cifar10-predictions.png)
 
-I independently loaded the saved weights and got the same 50.19% accuracy on all 10,000 test images. The dataset archive's checksum matched too. I rendered the agent's saved predictions against the first 12 held-out test images above.
+I independently loaded the saved weights and got the same 50.19% accuracy on all 10,000 test images. The dataset archive's checksum matched too. The image above shows the agent's saved predictions for the first 12 held-out test images.
 
-This run used only the original prompt. I pre-allowed the University of Toronto dataset hosts in the sandbox and approved three permission prompts, including the training command. I gave the agent no further instructions. It wrote its own training code, downloaded CIFAR-10 through `torchvision`, and saved its model, results and a README. Five epochs produced a modest classifier.
+This run used only the original prompt, with no further instructions. I pre-allowed the University of Toronto dataset hosts in the sandbox and approved three permission prompts, including the training command. The agent wrote its own training code, downloaded CIFAR-10 through `torchvision`, and saved its model, results and a README. Five epochs produced a modest classifier.
 
-This was actually my second run. The first reached 81.41% after 12 epochs, but needed a nudge, and its [partial terminal log](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-terminal-log.txt) didn't show the model's prompts and responses. So I ran it again from scratch, with the small [`trace_run.py`](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/trace_run.py) wrapper in place of `harness.py`. It records those exchanges outside the agent's working directory, and doesn't add instructions to the prompt.
+This was actually my second run. The first reached 81.41% after 12 epochs, but needed a nudge, and its [partial terminal log](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-terminal-log.txt) didn't show the model's prompts and responses. So I ran it again from scratch, with the small [`trace_run.py`](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/trace_run.py) wrapper in place of `harness.py`. It records those exchanges outside the agent's working directory, without adding anything to the prompt.
 
 Here's the fresh run's [complete model and tool transcript](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/transcript.md), [raw JSONL trace](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/trace.jsonl), [terminal capture](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-run/terminal.txt), and [saved code, model and verification](https://github.com/lextoumbourou/notes/tree/main/code/agent-harness/cifar10-run). The harness truncated one tool result after 25,000 characters of repetitive download progress, but its training and test output is intact. The run used [this version of `harness.py`](https://github.com/lextoumbourou/notes/blob/3b345758/code/agent-harness/harness.py); I've tidied the code a little since.
 
-The harness estimated **$0.0160 in model-token costs for this run**. This excludes the safety classifier calls. Web search was enabled but the agent didn't use it.
+The harness estimated **$0.0160 in model-token costs for this run**, excluding the safety classifier calls. Web search was enabled, but the agent didn't use it.
 
 So, did it pass Goodfellow's test? Mostly. Nobody assembled the steps for it: from one paragraph, it found the data, trained a model and started giving predictions. That said, I did pre-allow the dataset hosts and approve three commands, it never needed a web search, and 50% accuracy is a long way from state of the art.
 
