@@ -1,8 +1,8 @@
 ---
-title: Building an agent harness from scratch to take Ian Goodfellow's intelligence test
+title: Building an agent harness from scratch to pass Ian Goodfellow's intelligence test
 slug: building-an-agent-harness-from-scratch
 date: 2026-10-08 13:50
-modified: 2026-10-11 10:27
+modified: 2026-10-11 10:33
 summary: Basically just while loops.
 category: essay
 tags:
@@ -16,6 +16,8 @@ notebook:
 
 In this article, I want to walk through the process of building a modern agentic harness from scratch, starting with the simplest possible agent loop. Along the way, I'll share research and opinions I've come across about different approaches to building harnesses.
 
+To see whether it actually works, I'll give the finished agent a challenge Ian Goodfellow described in 2019: find the CIFAR-10 dataset, train a model and make predictions without a prewritten pipeline.
+
 By the end of the article, you'll understand exactly what goes into a modern agent harness, and have all the skills to build your own.
 
 The topic of agent harness building seemed to have exploded in popularity in 2026, both as an active area of development for many people and organisations, and an active area for research.
@@ -25,7 +27,7 @@ Almost all my colleagues and peers are thinking about harnesses in their work - 
 > [!notes]
 > A **coding harness** is a specific type of harness that develops software, but nowadays it seems all agentic harnesses are converging on being a coding harness, so I'll use them interchangeably.
 
-Additionally, in recent months, the community seems to be heading towards a consensus about how to think about harnesses, which is roughly the idea that as LLMs get more capable, the harness should get simpler.
+Additionally, in recent months, the community seems to be heading toward a consensus on how to think about harnesses: as LLMs get more capable, the harness should get simpler.
 
 ## What is an agent harness?
 
@@ -1020,9 +1022,13 @@ In a 2019 interview with Lex Fridman, Ian Goodfellow was asked what test of inte
 
 > "... you could just point an agent at the [CIFAR-10] problem and it downloads and extracts the data and trains a model and starts giving you predictions."
 
-Fridman then suggested typing a paragraph describing the task and letting the agent work out what to search for and download. [Here's the timestamped interview](https://youtu.be/Z6rxFNMGdn0?t=3858).
+Then gave more details:
 
-So, I thought it would be an interesting experiment to see whether we could pass this test with this agent we built entirely in the blog post.
+> "...you type in a paragraph explaining what you want it to do and it figures out what web searches it should run and downloads all the whole unnecessary ingredients"
+
+[Here's the timestamped interview](https://youtu.be/Z6rxFNMGdn0?t=3858).
+
+We have all the pieces in place to solve exactly that. I thought it would be an interesting experiment to see whether this agent that we build entirely within this blog post could pass this test.
 
 CIFAR-10 contains 50,000 training images and 10,000 test images, each 32 × 32 pixels and belonging to one of ten classes [@krizhevskyCIFAR10Dataset].
 
