@@ -104,7 +104,7 @@ parent: attention-models-in-nlp
 
 ## Scaled and Dot-Product Attention
 
-* The main operation in a transformer is [Scaled-Dot Product Attention](../../../../permanent/scaled-dot-product-attention.md).
+* The main operation in a transformer is [Scaled Dot-Product Attention](../../../../permanent/scaled-dot-product-attention.md).
 * Recall that it has queries, keys and values.
 * The attention layer outputs context vectors for each query.
     * These are weighted sums of the value $V$.
@@ -173,10 +173,10 @@ $$
 ## Multi-head Attention
 
 * One improve that can be made on the attention mechanisms discussed so far is [Multi-head Attention](../../../../permanent/multi-head-attention.md).
-    * Apply multiple versions of Scaled-Dot Product Attention in parallel.
+    * Apply multiple versions of Scaled Dot-Product Attention in parallel.
     * Then apply a transformations many times.
     * Different sets of representation, allows model to return multiple relationships betweens words in query and key matrice.
-    ![Plot embeddings in Scaled-Dot Product Attention](../../../../_media/attention-plot-embeddings.png)
+    ![Plot embeddings in Scaled Dot-Product Attention](../../../../_media/attention-plot-embeddings.png)
 
     ![Multi-head attention](../../../../_media/attention-multi-head.png)
 

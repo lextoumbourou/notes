@@ -104,7 +104,7 @@ The output is computed as a weighted sum of the values, where the weight assigne
 ![Scaled dot-product attention: multiply Q and K, scale the result, optionally mask it, apply softmax, then multiply the attention weights by V.](../_media/attention-is-all-you-need-scaled-dot-product-attention.png)
 *Partial Figure 2 from paper Attention Is All Your Need*
 
-We call our particular attention [Scaled-Dot Product Attention](scaled-dot-product-attention.md).
+We call our particular attention [Scaled Dot-Product Attention](scaled-dot-product-attention.md).
 
 The input consists of queries and keys of dimension $dk$, and values of dimension $dv$.
 

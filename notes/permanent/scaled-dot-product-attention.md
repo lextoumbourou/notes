@@ -1,5 +1,5 @@
 ---
-title: Scaled-Dot Product Attention
+title: Scaled Dot-Product Attention
 date: 2024-03-13 00:00
 modified: 2026-05-25 00:00
 summary: The specific self-attention formulation from the Transformer paper, distinguished by scaling scores by the square root of the attention dimension.
@@ -10,7 +10,7 @@ tags:
 category: note
 ---
 
-Scaled-Dot Product Attention is the specific formulation of [Self-Attention](self-attention.md) introduced in [Attention Is All You Need](attention-is-all-you-need.md) [@vaswaniAttentionAllYou2017]. It is used in the [Transformer](transformer.md) architecture and in most subsequent large language models.
+Scaled Dot-Product Attention is the specific formulation of [Self-Attention](self-attention.md) introduced in [Attention Is All You Need](attention-is-all-you-need.md) [@vaswaniAttentionAllYou2017]. It is used in the [Transformer](transformer.md) architecture and in most subsequent large language models.
 
 The mechanism is identical to standard dot-product self-attention, with one addition: scores are divided by the square root of the attention dimension before the softmax ($\color{red}{\sqrt{d_k}}$).
 
@@ -22,24 +22,12 @@ As the attention dimension $d_k$ grows, the dot products between query and key v
 
 Dividing by $\sqrt{d_k}$ keeps the scores in a stable range without changing their relative ordering, since all scores are scaled by the same factor [@vaswaniAttentionAllYou2017].
 
-```python
+```python {run=false}
 scores = query @ key.transpose(2, 1)
 scores = scores / math.sqrt(attention_dim)  # the "scaled" part
 scores = softmax(scores, dim=-1)
 out = scores @ value
 ```
-<!-- nb-output hash="b5f297cab6711434" format="html" status="error" -->
-<div class="nb-status-error">Execution failed</div>
-<div class="nb-output">
-<pre class="nb-stream-stderr">Traceback (most recent call last):
-  File &quot;&lt;stdin&gt;&quot;, line 2, in &lt;module&gt;
-  File &quot;/var/folders/m9/jlntzhk17ms42d1rwzzkrmzm0000gn/T/nb_setup_1791324496852.py&quot;, line 69, in __nb_run__
-    exec(compile(tree, '&lt;nb&gt;', 'exec'), __nb_globals__)
-  File &quot;&lt;nb&gt;&quot;, line 1, in &lt;module&gt;
-NameError: name 'query' is not defined
-</pre>
-</div>
-<!-- /nb-output -->
 
 ## Why $\sqrt{d_k}$?
 

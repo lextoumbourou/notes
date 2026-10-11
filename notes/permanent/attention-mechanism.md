@@ -36,4 +36,4 @@ A useful side benefit was that the computed weights were interpretable, enabling
 
 ## Architecture
 
-Many variants of attention followed [@bahdanauNeuralMachineTranslation2016]. The most significant was [Scaled-Dot Product Attention](scaled-dot-product-attention.md) introduced in [Attention Is All You Need](attention-is-all-you-need.md), which replaced recurrence entirely and formed the basis of the [Transformer](transformer.md) architecture.
+Many variants of attention followed [@bahdanauNeuralMachineTranslation2016]. The most significant was [Scaled Dot-Product Attention](scaled-dot-product-attention.md) introduced in [Attention Is All You Need](attention-is-all-you-need.md), which replaced recurrence entirely and formed the basis of the [Transformer](transformer.md) architecture.
