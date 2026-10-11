@@ -9,7 +9,7 @@ aliases:
 - Agent Skills
 ---
 
-**Agent Skills** are structured packages of Markdown files and scripts that augment [AI Agents](ai-agents.md)' capabilities. They usually look something like this:
+**Agent Skills** are structured packages of Markdown files and scripts that augment [AI Agents](ai-agent.md)' capabilities. They usually look something like this:
 
 ```text
 ~/.claude/skills/some-skill/

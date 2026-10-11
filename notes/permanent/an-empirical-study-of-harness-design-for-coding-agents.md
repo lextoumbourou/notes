@@ -13,6 +13,8 @@ paper_url: https://arxiv.org/abs/2609.20804v1
 paper_authors: Run-Ze Fan, Zihao Zhang, Simin Ma, Yebowen Hu, Shouju Wang, Kaiqiang Song, Fei Liu, Hamed Zamani and Xiaoyang Wang
 paper_year: 2026
 doi: 10.48550/arXiv.2609.20804
+aliases:
+- Fan et al., 2026
 ---
 
 A paper that evaluates the effectiveness of individual components of a [Coding Harness](coding-harness.md) [@fanEmpiricalStudyHarness2026]. They vary aspects of the agent, including whether it gets explicit planning scaffolding, the tools it has available and the context management strategy, to help understand which parts help a coding agent, and under what conditions.

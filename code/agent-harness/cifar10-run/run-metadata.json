@@ -1,0 +1,16 @@
+{
+  "prompt": "Build a CIFAR-10 image classifier from scratch. Find the dataset, train a model, and show predictions on images it was not trained on. Report its accuracy on held-out test images and leave the code and trained model in this directory. You may download data and install Python packages.",
+  "sandbox": "cifar-harness-traced-20261011",
+  "working_directory": "/private/tmp/cifar-harness-traced-20261011/work",
+  "trace": "/private/tmp/cifar-harness-traced-20261011/logs/trace.jsonl",
+  "terminal": "/private/tmp/cifar-harness-traced-20261011/logs/terminal.typescript",
+  "model": "gpt-6-luna",
+  "web_search": true,
+  "harness_sha256": "202698aebe564e01d2ebbce89d2e0d17d07648470485dc1bcd9542d922d53469",
+  "trace_runner_sha256": "4a0398a482a0c2c76ca4619cf34f3216cbc75c9c83ce25457d271ac394aa66a8",
+  "source_commit": "3b345758",
+  "preallowed_network_hosts": [
+    "www.cs.toronto.edu",
+    "cave.cs.toronto.edu"
+  ]
+}

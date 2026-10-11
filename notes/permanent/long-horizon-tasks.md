@@ -9,6 +9,6 @@ tags:
 - AIAgents
 ---
 
-Long-horizon tasks require [AI Agents](ai-agents.md) to maintain context, make decisions, use tools and recover from errors across many steps.
+Long-horizon tasks require [AI Agents](ai-agent.md) to maintain context, make decisions, use tools and recover from errors across many steps.
 
 They are tasks performed through a [Long-Horizon Workflow](long-horizon-workflow.md).

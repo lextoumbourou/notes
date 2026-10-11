@@ -1,0 +1,82 @@
+{
+  "dataset": "CIFAR-10 official split",
+  "train_images": 50000,
+  "test_images": 10000,
+  "epochs": 5,
+  "test_correct": 5019,
+  "test_accuracy": 0.5019,
+  "sample_test_predictions": [
+    {
+      "index": 0,
+      "true": "cat",
+      "predicted": "cat",
+      "confidence": 0.1997
+    },
+    {
+      "index": 1,
+      "true": "ship",
+      "predicted": "ship",
+      "confidence": 0.4982
+    },
+    {
+      "index": 2,
+      "true": "ship",
+      "predicted": "ship",
+      "confidence": 0.4847
+    },
+    {
+      "index": 3,
+      "true": "airplane",
+      "predicted": "ship",
+      "confidence": 0.6076
+    },
+    {
+      "index": 4,
+      "true": "frog",
+      "predicted": "frog",
+      "confidence": 0.692
+    },
+    {
+      "index": 5,
+      "true": "frog",
+      "predicted": "frog",
+      "confidence": 0.4948
+    },
+    {
+      "index": 6,
+      "true": "automobile",
+      "predicted": "truck",
+      "confidence": 0.4266
+    },
+    {
+      "index": 7,
+      "true": "frog",
+      "predicted": "deer",
+      "confidence": 0.3039
+    },
+    {
+      "index": 8,
+      "true": "cat",
+      "predicted": "dog",
+      "confidence": 0.3885
+    },
+    {
+      "index": 9,
+      "true": "automobile",
+      "predicted": "automobile",
+      "confidence": 0.5346
+    },
+    {
+      "index": 10,
+      "true": "airplane",
+      "predicted": "airplane",
+      "confidence": 0.4834
+    },
+    {
+      "index": 11,
+      "true": "truck",
+      "predicted": "automobile",
+      "confidence": 0.5252
+    }
+  ]
+}

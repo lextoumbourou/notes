@@ -2,7 +2,7 @@
 title: "Context Management"
 date: 2026-09-22 07:15
 modified: 2026-09-22 07:15
-status: draft
+status: hidden
 summary: "Strategies for managing the information available to a language model within its context window."
 source: https://arxiv.org/abs/2609.20804v1
 tags:

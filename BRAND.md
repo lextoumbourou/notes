@@ -59,6 +59,16 @@ Light is **marker on paper**, dark is **chalk on slate**. Define every colour fr
 - **Sketched knowledge graph.** The sidebar draws the note's neighbours from real link data: notes linking in above, links out below, curved doodle arrows, the current note filled `hl-pink`.
 - **Highlights.** Obsidian's `==text==` renders as a `hl-yellow` felt-tip mark.
 
+## Diagrams
+
+- **Colourful but simple.** Draw concepts as cut-paper blocks: flat rectangles filled with a highlighter colour, no outlines, each turned a degree or two, sized to their words with even padding.
+- **Chunky ink arrows.** Thick straight `ink` arrows with solid heads join the blocks. Small `hand` labels sit beside an arrow when it needs a name (for example "tool call").
+- **Colour means something.** Reuse the kind colours where they fit (an LLM or model step is `hl-pink`), and otherwise give each step its own highlighter so the loop reads at a glance. No more than five colours in one diagram.
+- **Type.** Block labels in `hand` (Shantell Sans 800), dark `mark-ink` on every fill; code in `mono`.
+- **Ground.** Diagrams sit on `paper`, so they read as a sheet in either theme.
+- **Words.** Labels quote the article; never invent them.
+- The agent loop in the Agent Harness post is the reference example; its editable source lives in the vault.
+
 ## Links
 
 - Links in running prose are always underlined (1.5px, `hl-teal` underline, `link` text).
