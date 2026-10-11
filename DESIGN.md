@@ -325,6 +325,9 @@ A sidebar graph of the note's neighbours drawn with rough.js: notes linking in s
 ### Title swipe (signature)
 One highlighter stroke (7px, bowed) under the last line of the page's main title, as wide as that line, drawn on once at load (700ms, ease-out, 150ms delay) and static under reduced motion. Teal on notes, pages, home and All notes; yellow on category and Topics pages; pink on tag pages.
 
+### Diagrams
+Cut-paper blocks: flat highlighter-filled rectangles with no stroke, rotated 1 to 2 degrees, sized to their Shantell Sans 800 labels (48px horizontal and 30px vertical padding at 1920 by 1080), joined by straight ink arrows 20px thick with solid triangular heads. Arrow labels in Shantell Sans 700. Kind colours carry over (LLM or model steps in highlighter pink); at most five fills per diagram; mark ink on every fill; paper ground. Reference: `notes/_media/agent-harness/agent-harness-loop-colour.png`.
+
 ## Do's and Don'ts
 
 ### Do:

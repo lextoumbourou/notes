@@ -10,7 +10,7 @@ tags:
 - AgenticReasoning
 ---
 
-**Coding agents** are [AI Agents](ai-agents.md) that use language models and tools to perform software-engineering tasks, such as investigating issues, editing code and running tests. A [Coding Harness](coding-harness.md) supplies their control loop, action interface and context-management policy.
+**Coding agents** are [AI Agents](ai-agent.md) that use language models and tools to perform software-engineering tasks, such as investigating issues, editing code and running tests. A [Coding Harness](coding-harness.md) supplies their control loop, action interface and context-management policy.
 
 Examples include [SWE-agent](swe-agent.md) and [OpenHands](openhands.md).
 
