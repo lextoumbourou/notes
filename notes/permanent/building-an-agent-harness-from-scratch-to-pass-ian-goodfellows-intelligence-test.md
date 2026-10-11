@@ -16,6 +16,7 @@ bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mxleu7oroh2p
 mastodon_post: https://fedi.notesbylex.com/@lex/117420862398590684
 threads_post: https://www.threads.com/@lexisoninsta/post/DeWBHCdGyjC
 linkedin_post: https://www.linkedin.com/feed/update/urn:li:share:7514935206538276864
+hn_post: https://news.ycombinator.com/item?id=50041006
 ---
 
 The topic of agent harness building has exploded in popularity in 2026, both as an area of development and of research.
