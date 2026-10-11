@@ -2,7 +2,7 @@
 title: Building an agent harness from scratch to pass Ian Goodfellow's intelligence test
 slug: building-an-agent-harness-from-scratch
 date: 2026-10-11 13:50
-modified: 2026-10-11 16:04
+modified: 2026-10-11 18:40
 summary: What was once considered a test of "real AI" - now built entirely in a single blog post.
 category: essay
 tags:
@@ -12,6 +12,10 @@ cover: /_media/agent-harness/bertie-the-brain-illustration.jpg
 cover_credits: Illustration by <a href="https://commons.wikimedia.org/wiki/File:Bertie_the_Brain_Illustration.jpg">InclusiveGameLab</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
 notebook:
   cwd: ../../code
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mxleu7oroh2p
+mastodon_post: https://fedi.notesbylex.com/@lex/117420862398590684
+threads_post: https://www.threads.com/@lexisoninsta/post/DeWBHCdGyjC
+linkedin_post: https://www.linkedin.com/feed/update/urn:li:share:7514935206538276864
 ---
 
 The topic of agent harness building has exploded in popularity in 2026, both as an area of development and of research.
@@ -22,7 +26,7 @@ In this article, I want to walk through building a modern agent harness from scr
 
 By the end, you'll understand exactly what goes into a modern agent harness and have the skills to build your own.
 
-To test ours, I'll give the finished agent a challenge that Ian Goodfellow [said in 2019 interview](https://www.youtube.com/watch?v=Z6rxFNMGdn0&t=3765s) would convince him we've achieved "real AI".
+To test ours, I'll give the finished agent a challenge that Ian Goodfellow [said in a 2019 interview](https://www.youtube.com/watch?v=Z6rxFNMGdn0&t=3765s) would convince him we've achieved "real AI".
 
 > [!note]
 > A **coding harness** is a harness built to write software, but it seems many general-purpose agent harnesses are now converging on being coding harnesses, so I'll use the terms interchangeably.
@@ -1008,6 +1012,8 @@ Saved: train.py, cifar10_model.pt, results.json
 </div>
 
 [![Twelve held-out CIFAR-10 test images with the agent's predictions and actual labels. Ten predictions are correct and two are incorrect.](../_media/agent-harness/cifar10-predictions.png)](../_media/agent-harness/cifar10-predictions.png)
+
+The agent built a small CNN with six convolutional layers and trained it from random initialisation on the sandbox's CPU. Here's the [training script](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-first-run/train.py) and [results](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-first-run/results.json).
 
 That's 81.41% on the held-out test set, for about **$0.0085** in model tokens on the final attempt.
 

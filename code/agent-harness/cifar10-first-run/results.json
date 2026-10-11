@@ -1,0 +1,96 @@
+{
+  "dataset": "CIFAR-10",
+  "seed": 42,
+  "epochs": 12,
+  "device": "cpu",
+  "heldout_test_images": 10000,
+  "test_accuracy": 0.8141,
+  "test_correct": 8141,
+  "best_epoch_test_accuracy": 0.8141,
+  "sample_predictions": [
+    {
+      "test_index": 0,
+      "actual": "cat",
+      "predicted": "cat",
+      "confidence": 0.9024,
+      "correct": true
+    },
+    {
+      "test_index": 1,
+      "actual": "ship",
+      "predicted": "ship",
+      "confidence": 0.9987,
+      "correct": true
+    },
+    {
+      "test_index": 2,
+      "actual": "ship",
+      "predicted": "ship",
+      "confidence": 0.9598,
+      "correct": true
+    },
+    {
+      "test_index": 3,
+      "actual": "airplane",
+      "predicted": "ship",
+      "confidence": 0.9139,
+      "correct": false
+    },
+    {
+      "test_index": 4,
+      "actual": "frog",
+      "predicted": "frog",
+      "confidence": 0.993,
+      "correct": true
+    },
+    {
+      "test_index": 5,
+      "actual": "frog",
+      "predicted": "frog",
+      "confidence": 0.8054,
+      "correct": true
+    },
+    {
+      "test_index": 6,
+      "actual": "automobile",
+      "predicted": "truck",
+      "confidence": 0.6611,
+      "correct": false
+    },
+    {
+      "test_index": 7,
+      "actual": "frog",
+      "predicted": "frog",
+      "confidence": 0.5255,
+      "correct": true
+    },
+    {
+      "test_index": 8,
+      "actual": "cat",
+      "predicted": "cat",
+      "confidence": 0.8671,
+      "correct": true
+    },
+    {
+      "test_index": 9,
+      "actual": "automobile",
+      "predicted": "automobile",
+      "confidence": 0.6126,
+      "correct": true
+    },
+    {
+      "test_index": 10,
+      "actual": "airplane",
+      "predicted": "airplane",
+      "confidence": 0.5032,
+      "correct": true
+    },
+    {
+      "test_index": 11,
+      "actual": "truck",
+      "predicted": "truck",
+      "confidence": 1.0,
+      "correct": true
+    }
+  ]
+}
