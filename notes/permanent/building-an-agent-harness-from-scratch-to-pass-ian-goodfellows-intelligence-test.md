@@ -22,7 +22,7 @@ In this article, I want to walk through building a modern agent harness from scr
 
 By the end, you'll understand exactly what goes into a modern agent harness and have the skills to build your own.
 
-To test ours, I'll give the finished agent a challenge that Ian Goodfellow [said in 2019](https://www.youtube.com/watch?v=Z6rxFNMGdn0&t=3765s) would convince him we've achieved "real AI".
+To test ours, I'll give the finished agent a challenge that Ian Goodfellow [said in 2019 interview](https://www.youtube.com/watch?v=Z6rxFNMGdn0&t=3765s) would convince him we've achieved "real AI".
 
 > [!note]
 > A **coding harness** is a harness built to write software, but it seems all agent harnesses are now converging on being coding harnesses, so I'll use the terms interchangeably.
@@ -877,7 +877,7 @@ def build_system_prompt(base_dir: pathlib.Path) -> str:
 
 Now it's time to put all the pieces together.
 
-Every tool call goes through the safety check first. A blocked call isn't an error: the model gets told it was blocked, so it can find another way or ask. Anything else that goes wrong, like malformed arguments or an unknown tool, also goes back to the model as an error message. And there are two limits, turns and cost, because a loop that never stops is the classic agent bug:
+Every tool call goes through the safety check first. A blocked call isn't an error: the model gets told it was blocked, so it can find another way or ask. Anything else that goes wrong, like malformed arguments or an unknown tool, also goes back to the model as an error message. And there are two limits, turns and cost, because a loop that never stops could cost us a lot of money.
 
 ```python
 Policy = Callable[[str, str, dict], tuple[str, str]]
@@ -971,7 +971,7 @@ He then went into more detail:
 
 [Here's the timestamped interview](https://youtu.be/Z6rxFNMGdn0?t=3765s).
 
-We have all the pieces in place to try exactly that. I thought it'd be an interesting experiment to see whether the agent we built entirely in this post could pass the test, and thoroughly impress the Ian Goodfellow of 2019.
+Since we have all the pieces in place to try exactly that, I thought it'd be an interesting experiment to see whether the agent we built entirely in this post could pass the test, and thoroughly impress the Ian Goodfellow of 2019.
 
 CIFAR-10 contains 50,000 training images and 10,000 test images, each 32 × 32 pixels and belonging to one of ten classes [@krizhevskyCIFAR10Dataset].
 
