@@ -1,8 +1,11 @@
 """Keep prices as prose while using pelican-katex for math rendering."""
 
+from xml.etree import ElementTree
+
 from markdown.extensions import Extension
 from markdown.extensions.attr_list import AttrListTreeprocessor
 from markdown.inlinepatterns import InlineProcessor
+from markdown.util import AtomicString
 from pelican import signals
 from pelican_katex import plugin as upstream
 from pelican_katex import markdown as upstream_markdown
@@ -26,14 +29,12 @@ class CurrencyKatexPattern(KatexPattern):
         self.stash_html = stash_html
 
     def handleMatch(self, match, data):
-        # Inline attribute lists need a real element to attach their attributes.
-        # The tree path is also available for extensions that inspect math nodes.
-        if not self.stash_html or AttrListTreeprocessor.INLINE_RE.match(data[match.end():]):
-            return super().handleMatch(match, data)
-
-        # Preserve pelican-katex's whitespace, preamble and renderer semantics.
+        # Unlike upstream, math may open after punctuation such as "(" or a quote,
+        # but still not inside a word ("US$5", "a$x$"), which keeps currency and
+        # identifiers as prose. Consume one character so the parser moves on.
         preceding = match.group("preceding")
-        if not preceding and match.start() > 0:
+        before = data[match.start() - 1] if match.start() > 0 else ""
+        if not preceding and before and (before.isalnum() or before == "\\"):
             return None, match.start() + 1, match.start() + 1
         start, end = match.start() + len(preceding), match.end()
         latex = match.group("latex")
@@ -43,6 +44,17 @@ class CurrencyKatexPattern(KatexPattern):
             return "", start, end
 
         rendered = upstream_markdown.render_latex(latex, {"displayMode": display})
+
+        # Inline attribute lists need a real element to attach their attributes.
+        # The tree path is also available for extensions that inspect math nodes.
+        if not self.stash_html or AttrListTreeprocessor.INLINE_RE.match(data[match.end():]):
+            node = ElementTree.fromstring(rendered)
+            upstream_markdown.revert_xmlns_resolution(node)
+            for elem in node.iter():
+                if elem.text is not None:
+                    elem.text = AtomicString(elem.text)
+            return node, start, end
+
         # KaTeX already produced HTML. Store it like fenced-code output rather
         # than parsing XML and repeatedly walking its MathML and SVG descendants.
         return self.md.htmlStash.store(rendered), start, end

@@ -35,6 +35,16 @@ class CurrencyMathTests(unittest.TestCase):
             with self.subTest(source=source):
                 self.assertEqual(self.render(source, []), '<p>' + source + '</p>')
 
+    def test_math_after_opening_punctuation(self):
+        self.render(r'Divide by ($\sqrt{d_k}$), the policy [$\pi$] or "$x$".', [
+            (r"\sqrt{d_k}", False), (r"\pi", False), ("x", False)
+        ])
+
+    def test_currency_after_punctuation_or_letters_stays_prose(self):
+        for source in ["(costs $5 and $10)", "US$5 and US$10", "a$x$ stays text"]:
+            with self.subTest(source=source):
+                self.assertEqual(self.render(source, []), '<p>' + source + '</p>')
+
     def test_currency_next_to_real_math(self):
         self.render("Pay $100, then calculate $x+1$ and $100$.", [
             ("x+1", False), ("100", False)
