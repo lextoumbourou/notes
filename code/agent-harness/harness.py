@@ -144,12 +144,14 @@ def _workspace_path(path: str, base_dir: pathlib.Path) -> pathlib.Path:
     return target
 
 
-def tool_bash(cmd: str, *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
-    """Run a shell command from the working directory."""
+def tool_bash(cmd: str, timeout: int = 120, *, base_dir: pathlib.Path = pathlib.Path(".")) -> str:
+    """Run a shell command from the working directory. Timeout is in seconds (max 3600)."""
+    if not 1 <= timeout <= 3600:
+        raise ValueError("timeout must be between 1 and 3600 seconds")
     env = os.environ.copy()
     env.pop("OPENAI_API_KEY", None)
     result = subprocess.run(
-        cmd, shell=True, cwd=base_dir, env=env, capture_output=True, text=True, timeout=120
+        cmd, shell=True, cwd=base_dir, env=env, capture_output=True, text=True, timeout=timeout
     )
     output = [f"exit={result.returncode}"]
     if result.stdout:
@@ -199,6 +201,8 @@ TOOLS: dict[str, Callable[..., str]] = {
     "write_file": tool_write_file,
     "search_replace": tool_search_replace,
 }
+
+WEB_SEARCH_TOOL = {"type": "web_search"}
 
 
 def schema(name: str, f) -> ToolSpec:
@@ -358,7 +362,7 @@ class ResponsesModel:
             model=self.name,
             input=api_input,
             tools=([{"type": "function", **tool, "strict": False} for tool in tools]
-                   + ([{"type": "web_search"}] if self.web_search and tools else [])),
+                   + ([WEB_SEARCH_TOOL] if self.web_search else [])),
             reasoning={"effort": "low"},
         )
         if response.status != "completed":

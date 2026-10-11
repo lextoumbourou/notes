@@ -19,12 +19,13 @@ svg { display: block; }
 }
 .label { font-size: 76px; }
 .part { font-size: 55px; }
+.detail { font-size: 38px; }
 .arrow { fill: none; stroke: #141414; stroke-width: 18; stroke-linecap: butt; }
 .link { fill: none; stroke: #5C5B57; stroke-width: 7; stroke-dasharray: 16 15; }
 </style>
 <svg id="d" width="1920" height="1160" viewBox="0 100 1920 1160" role="img" aria-labelledby="title description" xmlns="http://www.w3.org/2000/svg">
   <title id="title">Seven parts of an agent harness</title>
-  <desc id="description">A central agent loop passes through context, model, tools and result. A context management strategy feeds context; LLM integration connects to the model; safety controls guard tools; extension surfaces add capabilities; orchestration coordinates the loop.</desc>
+  <desc id="description">A central agent loop passes through context, model, tools and result. A context management strategy feeds context; LLM integration connects to the model; safety controls, including sandboxing, guard tools; extension surfaces add capabilities; orchestration coordinates the loop.</desc>
   <rect width="1920" height="1260" fill="#FBFAF6"/>
   <defs>
     <marker id="arrowhead" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2.5" markerHeight="2.5" orient="auto-start-reverse">
@@ -69,9 +70,10 @@ svg { display: block; }
   <text class="part" x="1540" y="189">LLM</text>
   <text class="part" x="1540" y="245">integration</text>
 
-  <g transform="rotate(1 1660 955)"><rect x="1450" y="880" width="420" height="150" fill="#FFB866"/></g>
-  <text class="part" x="1660" y="929">safety</text>
-  <text class="part" x="1660" y="985">controls</text>
+  <g transform="rotate(1 1660 955)"><rect x="1450" y="870" width="420" height="175" fill="#FFB866"/></g>
+  <text class="part" x="1660" y="914">safety</text>
+  <text class="part" x="1660" y="963">controls</text>
+  <text class="part detail" x="1660" y="1010">sandboxing</text>
 
   <g transform="rotate(-1 270 955)"><rect x="50" y="880" width="440" height="150" fill="#BDEB7A"/></g>
   <text class="part" x="270" y="929">extension</text>

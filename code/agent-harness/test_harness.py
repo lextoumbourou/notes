@@ -86,6 +86,9 @@ class ToolsTest(unittest.TestCase):
         params = harness.schema("read_file", harness.tool_read_file)["parameters"]
         self.assertEqual(params["properties"]["offset"], {"type": "integer"})
         self.assertEqual(params["required"], ["path"])
+        bash_params = harness.schema("bash", harness.tool_bash)["parameters"]
+        self.assertEqual(bash_params["properties"]["timeout"], {"type": "integer"})
+        self.assertEqual(bash_params["required"], ["cmd"])
 
     def test_read_file_numbers_lines_from_the_offset(self):
         with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False) as f:
@@ -213,6 +216,8 @@ class ModelAdapterTest(unittest.TestCase):
         self.assertEqual(reply["tool_calls"][0]["id"], "call_1")
         self.assertEqual(final["content"], "Done")
         self.assertAlmostEqual(model.cost, 0.00004)
+        model.complete([{"role": "user", "content": "Find CIFAR-10"}], [])
+        self.assertEqual(requests[-1]["tools"], [harness.WEB_SEARCH_TOOL])
 
 
 class LoopTest(unittest.TestCase):
