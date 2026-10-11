@@ -20,6 +20,8 @@ To test whether the agent works, I'll give the finished agent a challenge Ian Go
 
 By the end of the article, you'll understand exactly what goes into a modern agent harness, and have all the skills to build your own.
 
+---
+
 The topic of agent harness building seemed to have exploded in popularity in 2026, both as an active area of development for many people and organisations, and an active area for research.
 
 Almost all my colleagues and peers are thinking about harnesses in their work - either directly, through building their own agentic products and services, or indirectly, as they tune and experiment with their own coding agents - like Claude Code or Codex - that they use on a daily basis.

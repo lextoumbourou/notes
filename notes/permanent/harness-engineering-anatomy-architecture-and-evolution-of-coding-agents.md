@@ -48,7 +48,7 @@ The interface and session storage sit across these parts. The paper does not cou
 
 ## Takeaways
 
-The seven parts are a useful checklist for the [Building an Agent Harness From Scratch](building-an-agent-harness-from-scratch.md). The paper's recommendations in Section 16 suggest a few practical choices [@barbasteHarnessEngineeringAnatomy2026]:
+The seven parts are a useful checklist for the [Building an agent harness from scratch to pass Ian Goodfellow's intelligence test](building-an-agent-harness-from-scratch-to-pass-ian-goodfellows-intelligence-test.md). The paper's recommendations in Section 16 suggest a few practical choices [@barbasteHarnessEngineeringAnatomy2026]:
 
 - Start with a simple loop and a small tool set. Add tools or more elaborate turn handling in response to problems you observe.
 - Keep the model interface small, but allow provider-specific settings. A common API does not make caching, reasoning controls and other model features identical.

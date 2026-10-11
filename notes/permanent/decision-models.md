@@ -15,4 +15,4 @@ A **decision model** takes some input and answers questions whose possible outpu
 
 OpenAI's [Decisions API](https://developers.openai.com/api/docs/guides/decisions) offers a similar interface with `choice`, `score` and `predicate` questions, currently using GPT-6 Luna [@openaiDecisionsGuide]. A similar interface does not establish that the underlying models work the same way.
 
-See [Building an Agent Harness From Scratch](building-an-agent-harness-from-scratch.md) for a tool safety example, and [How Jev Works](https://www.youtube.com/watch?v=2j6bs_SAk0s) for my explainer.
+See [Building an agent harness from scratch to pass Ian Goodfellow's intelligence test](building-an-agent-harness-from-scratch-to-pass-ian-goodfellows-intelligence-test.md) for a tool safety example, and [How Jev Works](https://www.youtube.com/watch?v=2j6bs_SAk0s) for my explainer.

@@ -13,4 +13,4 @@ A **thin harness** keeps the agent runtime focused on the model loop, file acces
 
 Source: [Garry Tan, "Thin Harness, Fat Skills"](https://x.com/garrytan/status/2042925773300908103).
 
-Related: [Building an Agent Harness From Scratch](building-an-agent-harness-from-scratch.md).
+Related: [Building an agent harness from scratch to pass Ian Goodfellow's intelligence test](building-an-agent-harness-from-scratch-to-pass-ian-goodfellows-intelligence-test.md).

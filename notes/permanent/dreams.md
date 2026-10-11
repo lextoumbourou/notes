@@ -15,4 +15,4 @@ It also writes a **Dream Diary** to `DREAMS.md`. The “Dreams” tab shows the 
 
 Source: [OpenClaw's Dreaming documentation](https://docs.openclaw.ai/concepts/dreaming).
 
-Related: [Memory](memory.md), [Building an Agent Harness From Scratch](building-an-agent-harness-from-scratch.md).
+Related: [Memory](memory.md), [Building an agent harness from scratch to pass Ian Goodfellow's intelligence test](building-an-agent-harness-from-scratch-to-pass-ian-goodfellows-intelligence-test.md).
