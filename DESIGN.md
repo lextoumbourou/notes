@@ -328,6 +328,17 @@ One highlighter stroke (7px, bowed) under the last line of the page's main title
 ### Diagrams
 Cut-paper blocks: flat highlighter-filled rectangles with no stroke, rotated 1 to 2 degrees, sized to their Shantell Sans 800 labels (48px horizontal and 30px vertical padding at 1920 by 1080), joined by straight ink arrows 20px thick with solid triangular heads. Arrow labels in Shantell Sans 700. Kind colours carry over (LLM or model steps in highlighter pink); at most five fills per diagram; mark ink on every fill; paper ground. Reference: `notes/_media/agent-harness/agent-harness-loop-colour.png`.
 
+For tensors and maths, the same flat paper, drawn to match the code:
+- **Vectors** are a row of flat square cells in one highlighter, with an ellipsis cell standing in for the hidden dimensions. Never draw every dimension.
+- **Matrices follow the code's layout.** In PyTorch-style code each token is a row, so stack one vector per token, labelled with the token in Shantell Sans 700 beside it. Do not switch to textbook column vectors when the article's code uses rows.
+- **One colour per tensor, kept across a series** (in the self-attention set: X lime, query yellow, key orange, value teal, output pink). The colour follows the tensor from diagram to diagram.
+- **Score and weight tables** are flat second-sheet cells with Atkinson Hyperlegible Mono numbers, row and column labels as tokens, and the axis names (query, key) in pencil grey. Show magnitude with one highlighter mixed in proportion to the value, never a multi-colour heat map. Highlight a single cell only when the prose points at it.
+- **The batch is drawn gently**: a second sheet just behind the tensor, labelled "batch" in pencil grey, with the full shape in mono below, for example `(1, 4, 1024)`.
+- **Sums** gather their inputs with plain ink lines (no heads) into a Shantell Sans "+", then one arrow to the result. Arrowheads that meet at one point pile up.
+- **Captions** sit at the bottom in Shantell Sans 700, one plain sentence; code goes beneath in mono, set exactly as it appears in the article.
+- **Legibility on a phone**: nothing below 30px at 1920 by 1080, and numbers at 46px or more, because a phone shows the image at about a fifth of its size.
+- **A step-by-step series carries one worked example throughout** with consistent numbers, so the scores in one diagram produce the weights in the next. Reference: `notes/_media/self-attention/`.
+
 ## Do's and Don'ts
 
 ### Do:
