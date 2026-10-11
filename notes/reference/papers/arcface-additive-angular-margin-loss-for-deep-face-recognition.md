@@ -214,7 +214,7 @@ Use face verification datasets (LFW, CFP-FP, and AgeDB-30) to check improvements
 * They solve it with a strategy called "parallel acceleration":
     1. Get feature $x$ (face embeddings are aggregated into one feature matrix (batch size 8 * 64 (as there are 8 GPUs) $\times$ feat dim 512))
         * The size of the feature matrix is only 1MB, so the communication cost between GPUs is negligible.
-    2. Get similarity score matrix ($score = xW)$. They copy the feature matrix into each GPU and concurrently multiply the feature matrix by the centre sub-matrix (1M/8) to get the similarity score submatrix
+    2. Get similarity score matrix ($score = xW$). They copy the feature matrix into each GPU and concurrently multiply the feature matrix by the centre sub-matrix (1M/8) to get the similarity score submatrix
     3. Get the gradient on Centre ($dW$). Transpose the feature matrix on each GPU and multiply the transposed feature matrix by the gradient sub-matrix of the similarity score.
     4. Get the gradient on the feature ($x$) by concurrently multiplying the gradient sub-matrix of similarity score by the transposed centre sub-matrix and sum up the outputs from 8 GPU cards to get the gradient on feature x.
 
