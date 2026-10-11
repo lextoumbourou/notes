@@ -26,9 +26,9 @@ and
 
 > "The size was **minute**."
 
-The word **minute** means very different things in each sentence - it's literally a different word, pronounced MIN-it and my-NOOT (English is weird like that), yet both use the same token and therefore the same embedding. The context of the words "took" and "size" tells us which version of minute we're using - whether it relates to time or size, respectively. We want a way to enrich each token representation with information about important surrounding tokens.
+The word **minute** means very different things in each sentence - it's literally a different word, pronounced MIN-it and my-NOOT (English is weird like that), yet both use the same token and therefore the same embedding. The context of the words "took" and "size" tells us which version of minute we're using - whether it relates to time or size, respectively.
 
-We could simply take a weighted sum of all the surrounding tokens. However, how do we compute the weights? Could we use a neural network to calculate the weights for each other token in the sequence to get the most useful average representation? That's exactly what self-attention does.
+With that in mind, we need more than one embedding per token: we need to enrich each token's representation with information from the important tokens around it. We could simply take a weighted sum of all the surrounding tokens. However, how do we compute the weights? Could we use a neural network to calculate the weights for each other token in the sequence to get the most useful average representation? That's exactly what self-attention does.
 
 Self-attention uses two learned projections, called the "queries" and "keys" - or, as I argue shortly, `proj1` and `proj2` - to score every token against every other token. Then, a softmax converts the scores to weights. A third projection, the values (or `proj_final`), gives the vectors that are combined using those weights. All the weights in the attention module are learned alongside the rest of the network.
 
@@ -88,14 +88,14 @@ In the code, `transpose(2, 1)` swaps the last two dimensions of key (tokens and 
 
 In the decoder part of the Transformer, and in decoder-only models like GPT, the model must not "see" future tokens: when predicting the next token, it can only rely on the tokens before it. To achieve this, we mask the scores before applying the softmax. The mask sets the scores for future tokens to negative infinity (-inf), which become zeros after the softmax, blocking any information flow from future tokens.
 
-We can use the [tril](https://pytorch.org/docs/stable/generated/torch.tril.html) function to create a lower-triangular matrix of ones, covering each token and the tokens before it. Comparing it with `== 0` gives a mask where `True` marks the future positions, then [masked_fill](https://pytorch.org/docs/stable/generated/torch.Tensor.masked_fill.html) replaces those positions with `float("-inf")`.
+We can use the [tril](https://pytorch.org/docs/stable/generated/torch.tril.html) function (short for "triangle, lower") to create a lower-triangular matrix of ones, covering each token and the tokens before it. Comparing it with `== 0` gives a mask where `True` marks the future positions, then [masked_fill](https://pytorch.org/docs/stable/generated/torch.Tensor.masked_fill.html) replaces those positions with `float("-inf")`.
 
 ```python {run=false}
 attn_mask = torch.tril(torch.ones(*scores.shape)) == 0
 scores = torch.masked_fill(scores, attn_mask, float("-inf"))
 ```
 
-[![In the decoder, every score above the diagonal of the table is replaced with negative infinity, so each token only sees itself and earlier tokens.](../_media/self-attention/self-attention-step-3.png)](../_media/self-attention/self-attention-step-3.png)
+[![How the mask is built: torch.ones_like(scores) gives a four by four matrix of ones; torch.tril keeps the ones on and below the diagonal and sets the rest to 0; comparing with == 0 gives attn_mask, which is True for every future position above the diagonal. torch.masked_fill(scores, attn_mask, float("-inf")) then replaces those positions in the scores with negative infinity, so each token only sees itself and earlier tokens.](../_media/self-attention/self-attention-step-3.png)](../_media/self-attention/self-attention-step-3.png)
 
 ### 4. Compute Softmax to convert scores into weights
 
@@ -104,6 +104,9 @@ Next, softmax converts each row of scores into weights between 0 and 1 that sum 
 ```python {run=false}
 weights = softmax(scores, dim=-1)
 ```
+
+> [!note]
+> A token's score against itself isn't automatically the highest: query and key are different projections, so in our example **minute** gives "took" more weight than itself. The first row is 1 only because "It" has no earlier tokens to attend to.
 
 [![Softmax turns each row of scores into weights that add up to 1. The masked positions become 0, and the minute row becomes 0.07, 0.52, 0.13 and 0.28.](../_media/self-attention/self-attention-step-4.png)](../_media/self-attention/self-attention-step-4.png)
 
