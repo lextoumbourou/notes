@@ -2,7 +2,7 @@
 title: Building an agent harness from scratch to pass Ian Goodfellow's intelligence test
 slug: building-an-agent-harness-from-scratch
 date: 2026-10-08 13:50
-modified: 2026-10-11 10:33
+modified: 2026-10-11 10:40
 summary: Basically just while loops.
 category: essay
 tags:
@@ -16,7 +16,7 @@ notebook:
 
 In this article, I want to walk through the process of building a modern agentic harness from scratch, starting with the simplest possible agent loop. Along the way, I'll share research and opinions I've come across about different approaches to building harnesses.
 
-To see whether it actually works, I'll give the finished agent a challenge Ian Goodfellow described in 2019: find the CIFAR-10 dataset, train a model and make predictions without a prewritten pipeline.
+To test whether the agent works, I'll give the finished agent a challenge Ian Goodfellow [described in 2019](https://www.youtube.com/watch?v=Z6rxFNMGdn0&t=3765s) that would convince him we've achieved "real AI".
 
 By the end of the article, you'll understand exactly what goes into a modern agent harness, and have all the skills to build your own.
 
@@ -1026,7 +1026,7 @@ Then gave more details:
 
 > "...you type in a paragraph explaining what you want it to do and it figures out what web searches it should run and downloads all the whole unnecessary ingredients"
 
-[Here's the timestamped interview](https://youtu.be/Z6rxFNMGdn0?t=3858).
+[Here's the timestamped interview](https://youtu.be/Z6rxFNMGdn0?t=3765s).
 
 We have all the pieces in place to solve exactly that. I thought it would be an interesting experiment to see whether this agent that we build entirely within this blog post could pass this test.
 
@@ -1061,12 +1061,8 @@ I independently loaded the saved weights and got the same 81.41% accuracy on all
 
 Here's the [terminal log from the final run](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-terminal-log.txt). The harness printed tool names and the final answer, but did not save the full model and tool transcript.
 
+The harness estimated **$0.0085 in model-token costs for that final continuation**. This isn't the total cost of the experiment: the earlier attempts were interrupted, and the counter doesn't include web search or the safety classifier calls.
+
 But overall, this absolutely works.
-
-## Summary
-
-We built a working agent harness, with all 7 parts from the eleven-harness study (well, 6, since we skipped orchestration).
-
-The agent that was built entirely from code achieved a goal that Goodfellow said would impress him just 7 years ago.
 
 What a time to be alive.
