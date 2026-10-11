@@ -24,3 +24,5 @@ ENV="${ENV:-local}" PYTHONPATH="${PYTHONPATH:+$PYTHONPATH:}." \
 
 echo "Building search index with pagefind..."
 npx pagefind --site output --output-path output/pagefind
+
+uv run python scripts/check_execution_failures.py output/

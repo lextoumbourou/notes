@@ -146,6 +146,10 @@ need to inspect math elements can use `CurrencyKatexExtension(stash_html=False)`
 HTML serialization can differ in attribute order and SVG whitespace while the
 rendered formulas and their accessible MathML remain the same.
 
+After building, `build.sh` fails if any page contains an `Execution failed`
+notebook block. Fix the code, or mark the block `{run=false}` and remove its
+stored output.
+
 Run the Markdown extension, TOC, sidebar and build-failure tests with:
 
 ```bash

@@ -80,8 +80,10 @@ class ControlCharacterTests(unittest.TestCase):
                 (root / "notes").mkdir()
                 (root / "scripts").mkdir()
                 (root / "bin").mkdir()
+                (root / "output").mkdir()
                 (root / "notes" / "note.md").write_bytes(b"First\nBad\x1b" if bad else b"Clean\n\tNote\r\n")
                 shutil.copy2(SCRIPT, root / "scripts" / SCRIPT.name)
+                shutil.copy2(ROOT / "scripts" / "check_execution_failures.py", root / "scripts")
                 commands = {
                     "uv": '#!/bin/sh\nshift\nif [ "$1" = python ]; then\nshift\nexec ' + shlex.quote(sys.executable) + ' "$@"\nfi\ntouch pelican-ran\n',
                     "npx": '#!/bin/sh\ntouch pagefind-ran\necho "Pagefind finished"\n',
@@ -101,7 +103,7 @@ class ControlCharacterTests(unittest.TestCase):
                     self.assertIn("note.md':2: control character U+001B", result.stderr)
                     self.assertRegex(result.stderr, r"Build failed after \d+s \(exit 1\)\.\n$")
                 else:
-                    self.assertRegex(result.stdout, r"Pagefind finished\nBuild completed in \d+s\.\n$")
+                    self.assertRegex(result.stdout, r"Pagefind finished\nChecking built pages for failed code block runs\.\.\.\nNo failed code block runs found\.\nBuild completed in \d+s\.\n$")
 
 
 if __name__ == "__main__":
