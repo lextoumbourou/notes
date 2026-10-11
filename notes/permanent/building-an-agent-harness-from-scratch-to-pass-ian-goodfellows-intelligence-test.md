@@ -558,7 +558,7 @@ The downside to summarisation is that it changes the conversation prefix, so the
 
 [Memory](memory.md) is another topic to consider. It's common for an agent to dump out Markdown files as it "learns" things, which get loaded into context next time. Going further, some agents like OpenClaw have a process called "Dreaming" ([Dreams](dreams.md)), which reviews short-term memories on a schedule and promotes useful ones into `MEMORY.md` [@openclawDreaming].
 
-Our harness actually gets a basic version of persistent context for free: the model can update `AGENTS.md` with `write_file`, and the harness loads it at the start of every session (more on that in extension surfaces). We could also add a `MEMORY.md` file - I'll leave that as an exercise for the reader (or not).
+Our harness actually gets a basic version of persistent context for free. The model can update `AGENTS.md` with `write_file`, and the harness loads it at the start of every session (more on that in extension surfaces). We could also add a `MEMORY.md` file - I'll leave that as an exercise for the reader (or not).
 
 ## Safety controls
 
@@ -567,9 +567,9 @@ Since this agent can run any command on your computer, safety is obviously prett
 1. Run it in a sandbox, so we control exactly what it can see and do.
 2. Add a classification layer that checks each command before it runs, and asks the user for permission if anything looks suss.
 
-Docker Sandboxes is one example of the first approach: it runs an agent in a microVM with access to a chosen workspace and a network policy [@dockerDockerSandboxesArchitecture]. You can also combine the two.
+Docker Sandboxes is one example of the first approach. It runs an agent in a microVM with access to a chosen workspace and a network policy [@dockerDockerSandboxesArchitecture]. You can also combine the two.
 
-For this post, I thought it would be interesting to explore typed decisions ([Decision Models](decision-models.md)) for the classification layer. TypeSafe AI's Jev is one example, but OpenAI's new Decisions API looks like a good fit - and saves me adding another API key and/or client lib. It answers typed questions about some input: a `predicate` returns a probability, and a `score` rates the input against ordered levels [@openaiDecisionsGuide].
+For this post, I thought it would be interesting to explore typed decisions ([Decision Models](decision-models.md)) for the classification layer. TypeSafe AI's Jev is one example, but OpenAI's new Decisions API looks like a good fit - and saves me adding another API key and/or client lib. It answers typed questions about some input, where a `predicate` returns a probability and a `score` rates the input against ordered levels [@openaiDecisionsGuide].
 
 For a basic safety classifier, we'll pass in the user's request and the proposed tool call, and get back `allow`, `ask` or `deny`. `ask` needs the user's permission; `deny` blocks the call. It's a simplified version of Codex's "guardian" reviewer, which scores each action for risk (`low`, `medium`, `high` or `critical`) and for whether the user authorised it, before letting it run [@openaiCodexGuardianPolicy]. With a `score` and a `predicate`, one Decisions call can ask both of Codex's questions.
 
@@ -669,7 +669,7 @@ for request, cmd, expected in EXAMPLES:
 
 All five came out as labelled in all four runs I've done against `gpt-6-luna`, including the notebook run above.
 
-The force-push is the interesting one: its risk score fell below the cut-off, and only the authorisation question stopped it. My first wording asked whether the request authorised "this exact action", which marked `ls -la` as unauthorised (43%) for "What files are in this folder?". Borrowing Codex's idea that a necessary step towards the user's goal counts as authorised fixed that without letting the risky calls through.
+The force-push is the interesting one. Its risk score fell below the cut-off, so only the authorisation question stopped it. My first wording asked whether the request authorised "this exact action", which marked `ls -la` as unauthorised (43%) for "What files are in this folder?". Borrowing Codex's idea that a necessary step towards the user's goal counts as authorised fixed that without letting the risky calls through.
 
 A classifier can still get these calls wrong, so I wouldn't treat it as a security boundary. For real work, I'd run the harness in a sandbox too.
 
@@ -755,7 +755,7 @@ This is the working directory for the harness built in the post &quot;An Agent H
 
 ### Loading skills into context
 
-Skills are folders with a `SKILL.md` file, whose frontmatter has a `name` and a `description` saying what the skill does and when to use it [@agentSkillsSpecification]. They load by progressive disclosure: only each skill's name, description and location go into the system prompt, and the model reads the full `SKILL.md` with its file tool when a task matches the description [@earendilPiSkills]. That keeps a long list of skills cheap.
+Skills are folders with a `SKILL.md` file, whose frontmatter has a `name` and a `description` saying what the skill does and when to use it [@agentSkillsSpecification]. They load by progressive disclosure. That is, only each skill's name, description and location go into the system prompt. The model reads the full `SKILL.md` with its file tool when a task matches the description [@earendilPiSkills]. That keeps a long list of skills cheap.
 
 For the example workspace, I added one skill that fits the CIFAR-10 challenge at the end of this post:
 
@@ -1013,10 +1013,10 @@ Saved: train.py, cifar10_model.pt, results.json
 
 [![Twelve held-out CIFAR-10 test images with the agent's predictions and actual labels. Ten predictions are correct and two are incorrect.](../_media/agent-harness/cifar10-predictions.png)](../_media/agent-harness/cifar10-predictions.png)
 
-The agent built a small CNN with six convolutional layers and trained it from random initialisation on the sandbox's CPU. Here's the [training script](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-first-run/train.py) and [results](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-first-run/results.json).
-
 That's 81.41% on the held-out test set, for about **$0.0085** in model tokens on the final attempt.
 
-It wasn't completely hands-off: I had to allow the dataset hosts through the sandbox and nudge the agent once to find a faster download, since the first pass would have taken hours. But overall, this absolutely works.
+The agent built a small CNN with six convolutional layers and trained it from random initialisation on the sandbox's CPU. Here's the [training script](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-first-run/train.py) and [results](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-first-run/results.json).
+
+It wasn't completely hands-off. I had to allow the dataset hosts through the sandbox and nudge the agent once to find a faster download, since the first pass would have taken hours. But overall, this absolutely works.
 
 What a time to be alive.
