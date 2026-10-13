@@ -2,10 +2,13 @@
 title: "Muse Wonder: Opus 5.5 quality model that supports audio"
 slug: muse-wonder
 date: 2026-10-13 06:34
-modified: 2026-10-13 11:40
+modified: 2026-10-13 12:59
 category: model
 cover: /_media/muse-wonder-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@samuelqyx?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Quek</a> on <a href="https://unsplash.com/photos/silhouette-of-a-person-looking-at-the-milky-way-cD4pt47I4JY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mxpzy6snmy26
+mastodon_post: https://fedi.notesbylex.com/@lex/117431356149010859
+threads_post: https://www.threads.com/@lexisoninsta/post/DeayhOAlMSk
 linkedin_post: https://www.linkedin.com/posts/lextoumbourou_shared-some-notes-on-metas-new-frontier-share-7515580697181360128-k4KN/
 summary: Meta's new frontier model can listen to audio, and costs the same per token as Claude Opus 5.5 while using fewer tokens.
 aliases:
