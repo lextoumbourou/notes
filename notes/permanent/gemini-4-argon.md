@@ -45,7 +45,7 @@ As of 14 October 2026 [@googleGeminiAPIGemini4Argon] [@googleDeepMindGemini4Argo
 
 ## Pricing and Cache Settings
 
-Argon launches at half price. From 1 December 2026 the price doubles, which makes it exactly the same per token as Muse Wonder and Opus 5.5.
+It's half price until the end of November. From 1 December, it doubles to the same price as Opus 5.5 and Muse Wonder.
 
 Prices in USD per million tokens, as of 14 October 2026.
 
@@ -59,11 +59,11 @@ Prices in USD per million tokens, as of 14 October 2026.
 
 Gemini pricing from Google [@googleGeminiAPIPricing]; Muse Wonder and Opus 5.5 as of 13 October 2026, from the [Muse Wonder](muse-wonder.md) article.
 
-There's no long-context tier listed, and no free tier. Caching is implicit only, like Muse Wonder, so there's nothing to mark and no write price [@googleGeminiAPIPricing]. Google also offers Flex at the batch price and Priority at 1.8 times the standard price [@googleGeminiAPIPricing].
+There's no free tier and no extra charge for long prompts. Caching happens automatically, like Muse Wonder, so there's no cache write price [@googleGeminiAPIPricing].
 
 ## Tokenisers
 
-I counted the same six files from the [Muse Wonder](muse-wonder.md) article with Gemini's `countTokens` endpoint on 14 October 2026. The Opus and Muse Wonder counts are from 13 October; none of the files changed in between.
+I counted the tokens in the same six files I used for [Muse Wonder](muse-wonder.md).
 
 | Sample | Opus 5.5 | Muse Wonder | Gemini 4 Argon | Opus ÷ Argon |
 |---|---:|---:|---:|---:|
@@ -74,7 +74,7 @@ I counted the same six files from the [Muse Wonder](muse-wonder.md) article with
 | Python rendering script | 15,708 | 10,119 | 12,199 | 1.29 |
 | Generated HTML game | 11,393 | 7,762 | 9,242 | 1.23 |
 
-On prose, Argon's tokeniser is within about 6% of Muse Wonder's. On code and HTML it uses 16 to 21% more tokens. Either way, it's well ahead of Opus, which needs 1.2 to 1.6 times as many tokens for the same text.
+For prose, Argon uses about the same number of tokens as Muse Wonder. For code and HTML, it uses a bit more (16 to 21%). Both are well ahead of Opus, which needs 1.2 to 1.6 times as many tokens for the same text.
 
 ## Cost Per Task
 
