@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Muse Wonder Showdown 64</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#08041f;color:#fff;font-family:Arial Black,Arial,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.18) 4px);pointer-events:none;z-index:9}
+button{font:inherit;cursor:pointer}.wrap{max-width:980px;margin:auto;padding:12px}
+.top{display:flex;justify-content:space-between;gap:8px;align-items:center}.logo{font-size:clamp(22px,5vw,46px);line-height:.9;color:#ffe600;text-shadow:4px 4px #e6007e,-3px -2px #00cfff;letter-spacing:-1px;transform:skew(-6deg)}
+.logo small{display:block;font-size:.32em;color:#fff;text-shadow:2px 2px #333;letter-spacing:3px}
+.hud{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.pill{background:#22105e;border:3px solid #fff;box-shadow:4px 4px #000;padding:7px 10px;font-size:13px}
+.pill b{color:#ffe600}
+.scene{height:300px;perspective:700px;overflow:hidden;position:relative;background:linear-gradient(#13075c 45%,#5b1685 70%,#15052e);border:5px solid #fff;box-shadow:8px 8px #000;margin-top:12px}
+.scene:before{content:"MUSE WONDER";position:absolute;left:50%;top:24px;transform:translateX(-50%);font-size:clamp(24px,6vw,56px);color:#ffea00;text-shadow:4px 4px #f0f,-4px 3px #0ff;white-space:nowrap;opacity:.9}
+.star{position:absolute;width:18px;height:18px;background:#ff0;clip-path:polygon(50% 0,65% 35%,100% 50%,65% 65%,50% 100%,35% 65%,0 50%,35% 35%);animation:spin 3s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.world{position:absolute;inset:0;transform-style:preserve-3d;animation:sway 6s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotateY(-5deg)}to{transform:rotateY(5deg)}}
+.floor{position:absolute;width:760px;height:360px;left:50%;bottom:-90px;background:repeating-linear-gradient(0deg,#00b7eb 0 4px,transparent 4px 45px),repeating-linear-gradient(90deg,#e600ff 0 4px,transparent 4px 55px),#18094d;transform:translateX(-50%) rotateX(68deg);transform-origin:bottom}
+.host{position:absolute;left:50%;top:92px;transform:translateX(-50%);text-align:center;animation:bob 1.3s ease-in-out infinite alternate;z-index:2}
+@keyframes bob{to{transform:translateX(-50%) translateY(-8px)}}
+.head{width:92px;height:82px;margin:auto;background:linear-gradient(135deg,#ffd166 55%,#f49f0a);border:5px solid #111;display:grid;place-items:center;font-size:27px;color:#111;box-shadow:inset -12px -12px rgba(0,0,0,.18)}
+.body{width:110px;height:58px;background:linear-gradient(90deg,#e60023 50%,#ff5d73 50%);border:5px solid #111;margin:-3px auto 0;clip-path:polygon(15% 0,85% 0,100% 100%,0 100%)}
+.podiums{position:absolute;bottom:18px;left:0;right:0;display:flex;justify-content:center;gap:clamp(18px,8vw,90px);z-index:2}
+.pod{text-align:center;filter:drop-shadow(7px 8px #000)}
+.pod i{display:block;width:66px;height:52px;margin:auto;background:#00d5ff;border:4px solid #111;transform:skewY(-4deg);font-style:normal;padding-top:12px;color:#001}
+.pod span{display:block;width:82px;height:45px;background:#4720a8;border:4px solid #111;margin-top:-3px}
+.pod.you i{background:#ffe600}.pod.you{transform:scale(1.18)}
+.say{position:absolute;right:4%;top:78px;max-width:220px;background:#fff;color:#111;border:4px solid #111;padding:9px;font-family:Arial;font-weight:bold;font-size:14px;box-shadow:5px 5px #000;z-index:3}
+.say:after{content:"";position:absolute;left:-14px;top:35px;border:7px solid transparent;border-right-color:#111}
+.panel{background:#17094b;border:5px solid #fff;box-shadow:8px 8px #000;padding:16px;margin-top:14px;position:relative}
+.timer{height:16px;background:#111;border:3px solid #fff;margin-bottom:12px}.timer i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#00ff66,#ffe600,#ff2222);transition:width .2s linear}
+.q{font-size:clamp(20px,3.6vw,31px);line-height:1.15;min-height:72px}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:14px}
+.ans{text-align:left;color:#fff;border:4px solid #111;box-shadow:5px 5px #000;padding:15px;min-height:70px;font-size:clamp(14px,2.5vw,18px);line-height:1.25}
+.ans:active{transform:translate(3px,3px);box-shadow:2px 2px #000}.ans:focus-visible,.big:focus-visible{outline:4px solid #fff;outline-offset:3px}
+.ans:nth-child(1){background:#0057ff}.ans:nth-child(2){background:#009b32}.ans:nth-child(3){background:#d9a400;color:#111}.ans:nth-child(4){background:#c4007a}
+.ans .k{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#fff;color:#111;border:3px solid #111;margin-right:8px}
+.ans.good{background:#00c853!important;color:#fff}.ans.bad{background:#d50000!important;color:#fff}.ans:disabled{opacity:.9;cursor:default}
+.explain{display:none;background:#fff8b5;color:#111;border:4px solid #111;padding:13px;margin-top:14px;font-family:Arial;font-weight:bold;line-height:1.45;box-shadow:5px 5px #000}
+.explain.show{display:block}.explain b{font-family:Arial Black}
+.row{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:14px;flex-wrap:wrap}
+.big{background:#ffe600;color:#111;border:4px solid #111;box-shadow:5px 5px #000;padding:13px 20px;font-size:18px}
+.big:active{transform:translate(3px,3px);box-shadow:2px 2px #000}.hint{font-family:Arial;font-size:13px;font-weight:bold;color:#cde}
+.overlay{position:absolute;inset:0;background:rgba(5,0,30,.82);display:grid;place-items:center;text-align:center;padding:20px;z-index:5}
+.overlay h1{font-size:clamp(34px,8vw,72px);line-height:.9;color:#ffe600;text-shadow:5px 5px #e6007e;margin:0}
+.blink{animation:blink 1s steps(2) infinite;color:#0ff}@keyframes blink{50%{opacity:0}}
+.hide{display:none!important}.burst{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:4}
+.bit{position:absolute;width:16px;height:16px;animation:fall 1s ease-in forwards}@keyframes fall{to{transform:translateY(260px) rotate(540deg);opacity:0}}
+@media(max-width:620px){.answers{grid-template-columns:1fr}.scene{height:260px}.say{display:none}.podiums{gap:28px}.q{min-height:0}.hud{font-size:11px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+<div class="logo">SHOWDOWN 64<small>MUSE WONDER EDITION</small></div>
+<div class="hud"><div class="pill">SCORE <b id="score">0</b></div><div class="pill">ROUND <b id="round">-/8</b></div><div class="pill">STREAK <b id="streak">0</b></div></div>
+</header>
+
+<section class="scene" aria-label="3D game show stage">
+<i class="star" style="left:8%;top:16%"></i><i class="star" style="right:10%;top:20%;animation-delay:.7s"></i><i class="star" style="left:20%;top:48%"></i>
+<div class="world"><div class="floor"></div>
+<div class="host"><div class="head">^_^</div><div class="body"></div></div>
+<div class="podiums"><div class="pod"><i>CPU</i><span></span></div><div class="pod you"><i>YOU</i><span></span></div><div class="pod"><i>CPU</i><span></span></div></div>
+</div>
+<div class="say" id="say">Welcome to the show. Pick the right answer, player!</div>
+<div class="burst" id="burst"></div>
+
+<div class="overlay" id="startBox"><div><h1>MUSE<br>WONDER<br>SHOWDOWN 64</h1><p>8 questions. One champion. Low polygons, high stakes.</p><button class="big" id="startBtn">▶ PRESS START</button><p class="blink">INSERT COIN - NO COIN NEEDED</p></div></div>
+<div class="overlay hide" id="endBox"><div><h1 id="endTitle">FINISH!</h1><p id="endText"></p><button class="big" id="againBtn">↻ PLAY AGAIN</button></div></div>
+</section>
+
+<main class="panel">
+<div class="timer"><i id="timebar"></i></div>
+<div class="q" id="question">Press START to play.</div>
+<div class="answers" id="answers"></div>
+<div class="explain" id="explain"></div>
+<div class="row"><span class="hint">Phone: tap an answer. Keyboard: 1 to 4 or A to D, then Enter for Next.</span><button class="big hide" id="nextBtn">NEXT ▶</button></div>
+</main>
+<p class="hint" style="text-align:center">Built only from the article. No saves, no network, just glorious 64 bit judgement.</p>
+</div>
+
+<script>
+const Q=[
+{q:"Which model can you actually call through the API?",a:["Both Muse Wonder models","Only Muse Wonder","Only Muse Wonder Full","Neither model"],c:1,e:"Only Muse Wonder is on the API. Muse Wonder Full is limited to Muse Code subscriptions on the Power Usage and Maximum Usage plans, with no per token price."},
+{q:"What do Active Memory and Active Focus mean in Meta's pitch?",a:["Faster images and shorter prompts","Memory carries context across chats, Focus sticks with long tasks","Both names describe cheaper caching","Memory deletes context, Focus avoids check ins"],c:1,e:"Active Memory means carrying context about you across conversations. Active Focus means staying with a long task, working through blockers and checking in before important actions."},
+{q:"Per token, how does Muse Wonder compare with Claude Opus 5.5?",a:["Wonder costs exactly the same, including cache reads","Wonder is always half the price","Opus is cheaper on every line","Only their output prices match"],c:0,e:"The listed rates match exactly: input is $4, cache read is $0.20 and output is $20 per million tokens. That direct match is why the article compares them head to head."},
+{q:"Which input advantage does Muse Wonder list over Opus 5.5?",a:["It only accepts text","It accepts text, images, video, audio and PDF","Opus accepts video but Wonder does not","Both accept exactly the same inputs"],c:1,e:"Muse Wonder lists text, images, video, audio and PDF as input. Opus 5.5 lists text and images. Meta still warns users to check audio support on the surface they are using."},
+{q:"How is Meta's caching different from Opus caching?",a:["Meta requires cache breakpoints","Opus caching is always automatic and free","Meta caching is implicit, with no separate cache write price listed","Both use the same cache control setting"],c:2,e:"Meta caching runs implicitly on every request, with no breakpoints to mark and no separate cache write price listed. On Opus, you opt in with cache_control and pay a cache write price."},
+{q:"Why can Muse Wonder be cheaper per task despite a lower Intelligence Index score?",a:["It uses half the output tokens and costs $4.52 versus $5.98 per task","It has a lower price per token","It skips reasoning entirely","Opus uses fewer tokens on every task"],c:0,e:"Artificial Analysis scored Wonder 52 and Opus 58. But Wonder used 130M output tokens versus 260M for Opus, so Wonder cost $4.52 per index task compared with $5.98."},
+{q:"Where does Muse Wonder beat Opus 5.5 in Meta's scorecard?",a:["OSWorld, ProgramBench and Terminal-Bench","Legal work, memory and long horizon software engineering","Only the Artificial Analysis index","It wins every benchmark listed"],c:1,e:"Wonder's wins include Harvey LAB legal work, MemoryBench and long horizon software work such as DeepSWE and SWE-Marathon. Opus still wins OSWorld, Terminal-Bench, ProgramBench and the Artificial Analysis index."},
+{q:"Why should some benchmark margins be treated with caution?",a:["All scores came from independent common tests","Several caveats apply, including Meta internal tests and mixed harnesses","The model card lists no sources at all","Only Opus scores were estimated"],c:1,e:"The Personal Superintelligence Index and MemoryBench are Meta internal evaluations. The SWE-Marathon row also mixes harnesses for some rivals, and competitor runs by Meta are described as best effort."}
+];
+let i=0,score=0,streak=0,locked=true,timer=null,left=20;
+const $=id=>document.getElementById(id),answers=$("answers"),question=$("question"),explain=$("explain"),next=$("nextBtn");
+function tone(f,d=.12){try{let c=new(window.AudioContext||window.webkitAudioContext)(),o=c.createOscillator(),g=c.createGain();o.frequency.value=f;o.type="square";g.gain.value=.06;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+d)}catch(e){}}
+function confetti(){let b=$("burst");b.innerHTML="";for(let n=0;n<28;n++){let s=document.createElement("i");s.className="bit";s.style.left=Math.random()*100+"%";s.style.top="-20px";s.style.background=["#ff0","#0ff","#f0f","#0f6"][n%4];s.style.clipPath=n%2?"polygon(50% 0,100% 100%,0 100%)":"none";b.appendChild(s)}setTimeout(()=>b.innerHTML="",1100)}
+function startTimer(){clearInterval(timer);left=20;$("timebar").style.width="100%";timer=setInterval(()=>{left-=.2;$("timebar").style.width=Math.max(0,left/20*100)+"%";if(left<=0){clearInterval(timer);pick(-1)}},200)}
+function renderQ(){
+ locked=false;explain.className="explain";next.classList.add("hide");
+ $("round").textContent=(i+1)+"/8";$("score").textContent=score;$("streak").textContent=streak;
+ question.textContent="Q"+(i+1)+". "+Q[i].q;$("say").textContent="Question "+(i+1)+" is live. Choose wisely!";
+ answers.innerHTML="";
+ Q[i].a.forEach((t,n)=>{let b=document.createElement("button");b.className="ans";b.innerHTML='<span class="k">'+"ABCD"[n]+"</span>"+t;b.onclick=()=>pick(n);answers.appendChild(b)});
+ startTimer();answers.children[0].focus({preventScroll:true});
+}
+function pick(n){
+ if(locked)return;locked=true;clearInterval(timer);
+ let ok=n===Q[i].c,btns=[...answers.children];
+ btns.forEach((b,x)=>{b.disabled=true;if(x===Q[i].c)b.classList.add("good");else if(x===n)b.classList.add("bad")});
+ if(ok){let pts=100+Math.ceil(left)*5;score+=pts;streak++;tone(880);setTimeout(()=>tone(1320),110);confetti();$("say").textContent="Correct! The crowd goes mildly polygonal!"}else{streak=0;tone(160,.25);$("say").textContent=n<0?"Time up! The correct answer lights up green.":"Not quite. The green answer is the winner."}
+ $("score").textContent=score;$("streak").textContent=streak;
+ explain.innerHTML="<b>"+(ok?"CORRECT. ":"ANSWER: "+"ABCD"[Q[i].c]+". ")+"</b>"+Q[i].e;explain.classList.add("show");
+ next.textContent=i===Q.length-1?"SEE RESULTS ▶":"NEXT ▶";next.classList.remove("hide");next.focus({preventScroll:true});
+}
+function nextQ(){i++;i<Q.length?renderQ():finish()}
+function finish(){
+ $("round").textContent="8/8";question.textContent="Game complete. Final score: "+score;
+ answers.innerHTML="";explain.className="explain";next.classList.add("hide");$("say").textContent="That is the show. Thanks for playing!";
+ $("endTitle").textContent=score>=900?"🏆 GRAND CHAMPION":score>=600?"⭐ STAR PLAYER":"GAME OVER";
+ $("endText").textContent="You scored "+score+" points. Article verdict: Opus 5.5 looks stronger overall at the same token price, but Muse Wonder may cost less per task and suits long running agent work where memory matters.";
+ $("endBox").classList.remove("hide");tone(660);setTimeout(()=>tone(990),130);
+}
+function start(){i=0;score=0;streak=0;$("startBox").classList.add("hide");$("endBox").classList.add("hide");renderQ();tone(523);setTimeout(()=>tone(784),110)}
+$("startBtn").onclick=start;$("againBtn").onclick=start;next.onclick=nextQ;
+document.addEventListener("keydown",e=>{
+ let k=e.key.toLowerCase();
+ if(!$("startBox").classList.contains("hide")&&(k==="enter"||k===" ")){e.preventDefault();start();return}
+ if(!$("endBox").classList.contains("hide")&&(k==="enter"||k===" ")){e.preventDefault();start();return}
+ if(!locked&&["1","2","3","4","a","b","c","d"].includes(k))pick("1234abcd".indexOf(k)%4);
+ else if(locked&&!next.classList.contains("hide")&&(k==="enter"||k===" ")){e.preventDefault();nextQ()}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,657 @@
+{
+  "model": "muse-wonder-1.0",
+  "run_at": "2026-10-13 08:00 AEST",
+  "prompt": "Which one of these sound classes is this recording? Reply with only the label, exactly as written.\n\ndog\nrooster\npig\ncow\nfrog\ncat\nhen\ninsects\nsheep\ncrow\nrain\nsea_waves\ncrackling_fire\ncrickets\nchirping_birds\nwater_drops\nwind\npouring_water\ntoilet_flush\nthunderstorm\ncrying_baby\nsneezing\nclapping\nbreathing\ncoughing\nfootsteps\nlaughing\nbrushing_teeth\nsnoring\ndrinking_sipping\ndoor_wood_knock\nmouse_click\nkeyboard_typing\ndoor_wood_creaks\ncan_opening\nwashing_machine\nvacuum_cleaner\nclock_alarm\nclock_tick\nglass_breaking\nhelicopter\nchainsaw\nsiren\ncar_horn\nengine\ntrain\nchurch_bells\nairplane\nfireworks\nhand_saw",
+  "results": [
+    {
+      "file": "1-100032-A-0.wav",
+      "truth": "dog",
+      "answer": "dog",
+      "correct": true,
+      "seconds": 5.9,
+      "usage": {
+        "completion_tokens": 386,
+        "prompt_tokens": 267,
+        "total_tokens": 653,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 375,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-208757-A-2.wav",
+      "truth": "pig",
+      "answer": "pig",
+      "correct": true,
+      "seconds": 24.5,
+      "usage": {
+        "completion_tokens": 1590,
+        "prompt_tokens": 267,
+        "total_tokens": 1857,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1579,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-15689-A-4.wav",
+      "truth": "frog",
+      "answer": "frog",
+      "correct": true,
+      "seconds": 15.7,
+      "usage": {
+        "completion_tokens": 1020,
+        "prompt_tokens": 267,
+        "total_tokens": 1287,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1009,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-18074-A-6.wav",
+      "truth": "hen",
+      "answer": "hen",
+      "correct": true,
+      "seconds": 20.0,
+      "usage": {
+        "completion_tokens": 1279,
+        "prompt_tokens": 267,
+        "total_tokens": 1546,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1268,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-121951-A-8.wav",
+      "truth": "sheep",
+      "answer": "sheep",
+      "correct": true,
+      "seconds": 19.6,
+      "usage": {
+        "completion_tokens": 1334,
+        "prompt_tokens": 267,
+        "total_tokens": 1601,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1322,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-17367-A-10.wav",
+      "truth": "rain",
+      "answer": "rain",
+      "correct": true,
+      "seconds": 10.7,
+      "usage": {
+        "completion_tokens": 965,
+        "prompt_tokens": 267,
+        "total_tokens": 1232,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 954,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-17150-A-12.wav",
+      "truth": "crackling_fire",
+      "answer": "crackling_fire",
+      "correct": true,
+      "seconds": 22.7,
+      "usage": {
+        "completion_tokens": 1568,
+        "prompt_tokens": 267,
+        "total_tokens": 1835,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1554,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-100038-A-14.wav",
+      "truth": "chirping_birds",
+      "answer": "chirping_birds",
+      "correct": true,
+      "seconds": 17.1,
+      "usage": {
+        "completion_tokens": 1266,
+        "prompt_tokens": 267,
+        "total_tokens": 1533,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1252,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-137296-A-16.wav",
+      "truth": "wind",
+      "answer": "sea_waves",
+      "correct": false,
+      "seconds": 9.6,
+      "usage": {
+        "completion_tokens": 728,
+        "prompt_tokens": 267,
+        "total_tokens": 995,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 715,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-20736-A-18.wav",
+      "truth": "toilet_flush",
+      "answer": "toilet_flush",
+      "correct": true,
+      "seconds": 18.7,
+      "usage": {
+        "completion_tokens": 1274,
+        "prompt_tokens": 267,
+        "total_tokens": 1541,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1261,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-187207-A-20.wav",
+      "truth": "crying_baby",
+      "answer": "crying_baby",
+      "correct": true,
+      "seconds": 9.5,
+      "usage": {
+        "completion_tokens": 587,
+        "prompt_tokens": 267,
+        "total_tokens": 854,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 573,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-104089-A-22.wav",
+      "truth": "clapping",
+      "answer": "clapping",
+      "correct": true,
+      "seconds": 18.4,
+      "usage": {
+        "completion_tokens": 1388,
+        "prompt_tokens": 267,
+        "total_tokens": 1655,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1376,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-19111-A-24.wav",
+      "truth": "coughing",
+      "answer": "coughing",
+      "correct": true,
+      "seconds": 26.7,
+      "usage": {
+        "completion_tokens": 2387,
+        "prompt_tokens": 267,
+        "total_tokens": 2654,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 2374,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 0,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-1791-A-26.wav",
+      "truth": "laughing",
+      "answer": "laughing",
+      "correct": true,
+      "seconds": 21.1,
+      "usage": {
+        "completion_tokens": 1495,
+        "prompt_tokens": 267,
+        "total_tokens": 1762,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1482,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-20545-A-28.wav",
+      "truth": "snoring",
+      "answer": "dog",
+      "correct": false,
+      "seconds": 14.9,
+      "usage": {
+        "completion_tokens": 1224,
+        "prompt_tokens": 267,
+        "total_tokens": 1491,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1213,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-101336-A-30.wav",
+      "truth": "door_wood_knock",
+      "answer": "door_wood_knock",
+      "correct": true,
+      "seconds": 20.2,
+      "usage": {
+        "completion_tokens": 1427,
+        "prompt_tokens": 267,
+        "total_tokens": 1694,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1412,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-137-A-32.wav",
+      "truth": "keyboard_typing",
+      "answer": "dog",
+      "correct": false,
+      "seconds": 14.5,
+      "usage": {
+        "completion_tokens": 1266,
+        "prompt_tokens": 267,
+        "total_tokens": 1533,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1255,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-101404-A-34.wav",
+      "truth": "can_opening",
+      "answer": "can_opening",
+      "correct": true,
+      "seconds": 19.1,
+      "usage": {
+        "completion_tokens": 1413,
+        "prompt_tokens": 267,
+        "total_tokens": 1680,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1400,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-100210-A-36.wav",
+      "truth": "vacuum_cleaner",
+      "answer": "vacuum_cleaner",
+      "correct": true,
+      "seconds": 21.0,
+      "usage": {
+        "completion_tokens": 1330,
+        "prompt_tokens": 267,
+        "total_tokens": 1597,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1316,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-21934-A-38.wav",
+      "truth": "clock_tick",
+      "answer": "clock_tick",
+      "correct": true,
+      "seconds": 35.6,
+      "usage": {
+        "completion_tokens": 2310,
+        "prompt_tokens": 267,
+        "total_tokens": 2577,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 2298,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-172649-A-40.wav",
+      "truth": "helicopter",
+      "answer": "rain",
+      "correct": false,
+      "seconds": 27.8,
+      "usage": {
+        "completion_tokens": 1990,
+        "prompt_tokens": 267,
+        "total_tokens": 2257,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1979,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-31482-A-42.wav",
+      "truth": "siren",
+      "answer": "siren",
+      "correct": true,
+      "seconds": 13.4,
+      "usage": {
+        "completion_tokens": 945,
+        "prompt_tokens": 267,
+        "total_tokens": 1212,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 933,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-18527-A-44.wav",
+      "truth": "engine",
+      "answer": "engine",
+      "correct": true,
+      "seconds": 20.3,
+      "usage": {
+        "completion_tokens": 1327,
+        "prompt_tokens": 267,
+        "total_tokens": 1594,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1316,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-13571-A-46.wav",
+      "truth": "church_bells",
+      "answer": "dog",
+      "correct": false,
+      "seconds": 19.2,
+      "usage": {
+        "completion_tokens": 1396,
+        "prompt_tokens": 267,
+        "total_tokens": 1663,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1385,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    },
+    {
+      "file": "1-115545-A-48.wav",
+      "truth": "fireworks",
+      "answer": "fireworks",
+      "correct": true,
+      "seconds": 17.2,
+      "usage": {
+        "completion_tokens": 1193,
+        "prompt_tokens": 267,
+        "total_tokens": 1460,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 1181,
+          "rejected_prediction_tokens": null,
+          "text_tokens": null
+        },
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 102,
+          "image_tokens": null,
+          "text_tokens": null
+        }
+      }
+    }
+  ]
+}

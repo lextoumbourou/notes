@@ -1,0 +1,20 @@
+{
+  "provider": "openai",
+  "model": "muse-wonder-1.0",
+  "generated_at": "2026-10-12T21:40:13.694497+00:00",
+  "status": "completed",
+  "reasoning_effort": "high",
+  "service_tier": "auto",
+  "usage": {
+    "input_tokens": 1858,
+    "input_tokens_details": {
+      "cache_write_tokens": null,
+      "cached_tokens": 0
+    },
+    "output_tokens": 5835,
+    "output_tokens_details": {
+      "reasoning_tokens": 1296
+    },
+    "total_tokens": 7693
+  }
+}
