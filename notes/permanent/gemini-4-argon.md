@@ -21,11 +21,9 @@ Google's new frontier model, **Gemini 4 Argon** is finally here.
 
 Seems to be competitive-ish on the benchmarks, maybe a tad behind Claude on coding tasks.
 
-Notably it can write up to **1M tokens in a single response**, which, as far as I can tell, is a first for a publicly available frontier model.
-
-It isn't one ordinary response, though. They say it uses "long decode" - it runs in the background on the Interactions API, and Google's servers generate the output in 64K "hops" and join them together. The first 64K takes about 10 minutes, a run can last up to 24 hours, and you pay for every token in every hop. Without long decode, the limit is 65,536 [@googleGeminiAPILongDecode] [@googleGeminiAPIGemini4Argon].
-
 Google say it's a brand new model. Apparently "not a modification or a fine-tune of a prior model" -  built as a sparse [Mixture-of-Experts](mixture-of-experts.md) transformer. The parameter count isn't disclosed [@googleDeepMindGemini4ArgonModelCard].
+
+Notably it can write up to **1M tokens in a single response**, which, as far as I can tell, is a first for a publicly available frontier model. However, the 1M tokens doesn't work in a normal responses, it uses a thing called "long decode", which runs as a background job via the Interactions API, and Google's servers generate the output in 64K "hops" and join them together. The first 64K takes about 10 minutes, a run can last up to 24 hours, and you pay for every token in every hop. Without long decode, the limit is 65,536 [@googleGeminiAPILongDecode] [@googleGeminiAPIGemini4Argon].
 
 Like Muse Wonder, it takes audio directly, alongside text, images, video and PDFs. So of the three models compared here, two can listen, and Opus 5.5 still can't [@googleGeminiAPIGemini4Argon] [@anthropicModelsOverview].
 
@@ -176,6 +174,11 @@ Argon counts about 30 audio tokens per second, more than twice Muse Wonder's 12.
 ## Testing video
 
 I also sent two of my own phone videos, scaled down to 720p with the location metadata stripped, and asked each question three times at the default thinking level.
+
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-items:start;max-width:520px">
+<figure style="margin:0"><video controls playsinline preload="metadata" poster="../_media/gemini-4-argon-video-beach.jpg" style="width:100%;height:auto;display:block"><source src="../_media/gemini-4-argon-video-beach.mp4" type="video/mp4"></video><figcaption style="font-size:0.85em;text-align:center">Doggo at the beach (5 seconds)</figcaption></figure>
+<figure style="margin:0"><video controls playsinline preload="metadata" poster="../_media/gemini-4-argon-video-muscle-ups.jpg" style="width:100%;height:auto;display:block"><source src="../_media/gemini-4-argon-video-muscle-ups.mp4" type="video/mp4"></video><figcaption style="font-size:0.85em;text-align:center">3 muscle-ups (17 seconds)</figcaption></figure>
+</div>
 
 The first is a 5-second clip of my dog walking through the waves at the beach. Asked "What is this a video of?", Argon got it every time: "a black dog walking in the ocean", "a black dog playing in the ocean" (it noticed her red collar), and "A dog on the beach biting the waves". Asked "What breed of dog is in the video?", it said a black Labrador or Labrador mix twice and a Pit Bull once. She's a Bull Arab and Staghound cross, which is admittedly a hard one.
 
