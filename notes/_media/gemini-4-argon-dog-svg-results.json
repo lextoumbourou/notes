@@ -1,0 +1,98 @@
+{
+ "model": "gemini-4-argon",
+ "run_at": "2026-10-14 06:45 AEST",
+ "runs": [
+  {
+   "prompt": "Recreate this photo as an SVG, as close to the original as you can.",
+   "system": "Return a complete, self-contained SVG document.",
+   "files": [
+    "dog-1024.jpg"
+   ],
+   "thinking": "high",
+   "seconds": 237.5,
+   "usage": {
+    "promptTokenCount": 1167,
+    "candidatesTokenCount": 17174,
+    "totalTokenCount": 21288,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 65
+     },
+     {
+      "modality": "IMAGE",
+      "tokenCount": 1102
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 17174
+     }
+    ],
+    "thoughtsTokenCount": 2947
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon",
+   "variant": "from_photo"
+  },
+  {
+   "prompt": "Draw this as an SVG, as close to a photo as you can.\n\nA portrait-orientation photo of a scruffy, black and grey dog standing on wet golden sand at the beach on a sunny day. The dog faces the camera, with its head turned slightly towards the left of the frame. It has a white muzzle and grey whiskers, a big black nose, brown eyes, one ear pricked up and one flopped over, and its mouth is open in a happy pant with a long pink tongue hanging out. It wears a red collar with a small round red tag, and has a white patch on its chest. Its legs are long and thin, the front-left paw is white, and the paws are slightly blurred. Its shadow stretches away to the right across the sand. Behind it, white foamy waves wash up the shore, then a band of teal-green sea meets a bright blue sky with scattered white clouds.",
+   "system": "Return a complete, self-contained SVG document.",
+   "files": [],
+   "thinking": "high",
+   "seconds": 294.3,
+   "usage": {
+    "promptTokenCount": 236,
+    "candidatesTokenCount": 20976,
+    "totalTokenCount": 26738,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 236
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 20976
+     }
+    ],
+    "thoughtsTokenCount": 5526
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon",
+   "variant": "from_text_v1_no_breed"
+  },
+  {
+   "prompt": "Draw this as an SVG, as close to a photo as you can.\n\nA portrait-orientation photo of a brindle Bull Arab and Staghound cross standing on wet golden sand at the beach on a sunny day. The dog faces the camera, with its head turned slightly towards the left of the frame. It has a white muzzle and grey whiskers, a big black nose, brown eyes, one ear pricked up and one flopped over, and its mouth is open in a happy pant with a long pink tongue hanging out. It wears a red collar with a small round red tag, and has a white patch on its chest. Its legs are long and thin, the front-left paw is white, and the paws are slightly blurred. Its shadow stretches away to the right across the sand. Behind it, white foamy waves wash up the shore, then a band of teal-green sea meets a bright blue sky with scattered white clouds.",
+   "system": "Return a complete, self-contained SVG document.",
+   "files": [],
+   "thinking": "high",
+   "seconds": 321.9,
+   "usage": {
+    "promptTokenCount": 237,
+    "candidatesTokenCount": 23179,
+    "totalTokenCount": 29785,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 237
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 23179
+     }
+    ],
+    "thoughtsTokenCount": 6369
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon",
+   "variant": "from_text",
+   "run_at": "2026-10-14 08:22 AEST",
+   "note": "Description revised to name the breed. The SVG's section comments contained '----', which is invalid XML, so browsers would not render it; those dashes were replaced with '==' and nothing else was changed. An earlier attempt with this prompt lost its connection while reading the response."
+  }
+ ]
+}

@@ -1,0 +1,1263 @@
+{
+ "model": "gemini-4-argon",
+ "run_at": "2026-10-14 06:55 AEST",
+ "prompt": "Which one of these sound classes is this recording? Reply with only the label, exactly as written.\n\ndog\nrooster\npig\ncow\nfrog\ncat\nhen\ninsects\nsheep\ncrow\nrain\nsea_waves\ncrackling_fire\ncrickets\nchirping_birds\nwater_drops\nwind\npouring_water\ntoilet_flush\nthunderstorm\ncrying_baby\nsneezing\nclapping\nbreathing\ncoughing\nfootsteps\nlaughing\nbrushing_teeth\nsnoring\ndrinking_sipping\ndoor_wood_knock\nmouse_click\nkeyboard_typing\ndoor_wood_creaks\ncan_opening\nwashing_machine\nvacuum_cleaner\nclock_alarm\nclock_tick\nglass_breaking\nhelicopter\nchainsaw\nsiren\ncar_horn\nengine\ntrain\nchurch_bells\nairplane\nfireworks\nhand_saw",
+ "thinking": "default",
+ "results": [
+  {
+   "file": "1-100032-A-0.wav",
+   "truth": "dog",
+   "answer": "dog",
+   "correct": true,
+   "muse_answer": "dog",
+   "seconds": 4.5,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 5,
+    "totalTokenCount": 384,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 5
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-208757-A-2.wav",
+   "truth": "pig",
+   "answer": "pig",
+   "correct": true,
+   "muse_answer": "pig",
+   "seconds": 4.6,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 5,
+    "totalTokenCount": 400,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 5
+     }
+    ],
+    "thoughtsTokenCount": 16
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-15689-A-4.wav",
+   "truth": "frog",
+   "answer": "frog",
+   "correct": true,
+   "muse_answer": "frog",
+   "seconds": 4.7,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 5,
+    "totalTokenCount": 384,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 5
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-18074-A-6.wav",
+   "truth": "hen",
+   "answer": "hen",
+   "correct": true,
+   "muse_answer": "hen",
+   "seconds": 4.2,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 5,
+    "totalTokenCount": 408,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 5
+     }
+    ],
+    "thoughtsTokenCount": 24
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-121951-A-8.wav",
+   "truth": "sheep",
+   "answer": "sheep",
+   "correct": true,
+   "muse_answer": "sheep",
+   "seconds": 5.3,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 5,
+    "totalTokenCount": 384,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 5
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-17367-A-10.wav",
+   "truth": "rain",
+   "answer": "clapping",
+   "correct": false,
+   "muse_answer": "rain",
+   "seconds": 3.9,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 6,
+    "totalTokenCount": 410,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 6
+     }
+    ],
+    "thoughtsTokenCount": 25
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-17150-A-12.wav",
+   "truth": "crackling_fire",
+   "answer": "crackling_fire",
+   "correct": true,
+   "muse_answer": "crackling_fire",
+   "seconds": 3.8,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 8,
+    "totalTokenCount": 406,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 8
+     }
+    ],
+    "thoughtsTokenCount": 19
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-100038-A-14.wav",
+   "truth": "chirping_birds",
+   "answer": "chirping_birds",
+   "correct": true,
+   "muse_answer": "chirping_birds",
+   "seconds": 4.1,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 8,
+    "totalTokenCount": 387,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 8
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-137296-A-16.wav",
+   "truth": "wind",
+   "answer": "helicopter",
+   "correct": false,
+   "muse_answer": "sea_waves",
+   "seconds": 4.5,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 5,
+    "totalTokenCount": 414,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 5
+     }
+    ],
+    "thoughtsTokenCount": 30
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-20736-A-18.wav",
+   "truth": "toilet_flush",
+   "answer": "pouring_water",
+   "correct": false,
+   "muse_answer": "toilet_flush",
+   "seconds": 3.8,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 7,
+    "totalTokenCount": 386,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 7
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-187207-A-20.wav",
+   "truth": "crying_baby",
+   "answer": "crying_baby",
+   "correct": true,
+   "muse_answer": "crying_baby",
+   "seconds": 4.1,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 8,
+    "totalTokenCount": 406,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 8
+     }
+    ],
+    "thoughtsTokenCount": 19
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-104089-A-22.wav",
+   "truth": "clapping",
+   "answer": "clapping",
+   "correct": true,
+   "muse_answer": "clapping",
+   "seconds": 10.4,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 6,
+    "totalTokenCount": 409,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 6
+     }
+    ],
+    "thoughtsTokenCount": 24
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-19111-A-24.wav",
+   "truth": "coughing",
+   "answer": "coughing",
+   "correct": true,
+   "muse_answer": "coughing",
+   "seconds": 4.0,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 6,
+    "totalTokenCount": 403,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 6
+     }
+    ],
+    "thoughtsTokenCount": 18
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-1791-A-26.wav",
+   "truth": "laughing",
+   "answer": "laughing",
+   "correct": true,
+   "muse_answer": "laughing",
+   "seconds": 5.2,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 6,
+    "totalTokenCount": 402,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 6
+     }
+    ],
+    "thoughtsTokenCount": 17
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-20545-A-28.wav",
+   "truth": "snoring",
+   "answer": "snoring",
+   "correct": true,
+   "muse_answer": "dog",
+   "seconds": 4.5,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 6,
+    "totalTokenCount": 385,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 6
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-101336-A-30.wav",
+   "truth": "door_wood_knock",
+   "answer": "door_wood_knock",
+   "correct": true,
+   "muse_answer": "door_wood_knock",
+   "seconds": 4.5,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 9,
+    "totalTokenCount": 388,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 9
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-137-A-32.wav",
+   "truth": "keyboard_typing",
+   "answer": "keyboard_typing",
+   "correct": true,
+   "muse_answer": "dog",
+   "seconds": 4.6,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 7,
+    "totalTokenCount": 393,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 7
+     }
+    ],
+    "thoughtsTokenCount": 7
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-101404-A-34.wav",
+   "truth": "can_opening",
+   "answer": "can_opening",
+   "correct": true,
+   "muse_answer": "can_opening",
+   "seconds": 4.9,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 7,
+    "totalTokenCount": 386,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 7
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-100210-A-36.wav",
+   "truth": "vacuum_cleaner",
+   "answer": "vacuum_cleaner",
+   "correct": true,
+   "muse_answer": "vacuum_cleaner",
+   "seconds": 3.6,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 7,
+    "totalTokenCount": 386,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 7
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-21934-A-38.wav",
+   "truth": "clock_tick",
+   "answer": "clock_tick",
+   "correct": true,
+   "muse_answer": "clock_tick",
+   "seconds": 4.9,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 7,
+    "totalTokenCount": 386,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 7
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-172649-A-40.wav",
+   "truth": "helicopter",
+   "answer": "helicopter",
+   "correct": true,
+   "muse_answer": "rain",
+   "seconds": 4.6,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 5,
+    "totalTokenCount": 397,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 5
+     }
+    ],
+    "thoughtsTokenCount": 13
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-31482-A-42.wav",
+   "truth": "siren",
+   "answer": "crying_baby",
+   "correct": false,
+   "muse_answer": "siren",
+   "seconds": 4.1,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 8,
+    "totalTokenCount": 417,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 8
+     }
+    ],
+    "thoughtsTokenCount": 30
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-18527-A-44.wav",
+   "truth": "engine",
+   "answer": "engine",
+   "correct": true,
+   "muse_answer": "engine",
+   "seconds": 3.8,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 5,
+    "totalTokenCount": 384,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 5
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-13571-A-46.wav",
+   "truth": "church_bells",
+   "answer": "church_bells",
+   "correct": true,
+   "muse_answer": "dog",
+   "seconds": 4.7,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 7,
+    "totalTokenCount": 386,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 7
+     }
+    ]
+   },
+   "finish": "STOP"
+  },
+  {
+   "file": "1-115545-A-48.wav",
+   "truth": "fireworks",
+   "answer": "thunderstorm",
+   "correct": false,
+   "muse_answer": "fireworks",
+   "seconds": 4.4,
+   "usage": {
+    "promptTokenCount": 379,
+    "candidatesTokenCount": 6,
+    "totalTokenCount": 446,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 228
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 6
+     }
+    ],
+    "thoughtsTokenCount": 61
+   },
+   "finish": "STOP"
+  }
+ ],
+ "describe_followups": [
+  {
+   "truth": "rain",
+   "file": "1-17367-A-10.wav",
+   "try": 1,
+   "text": "A large crowd of people is clapping and applauding continuously.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 16,
+    "totalTokenCount": 267,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 16
+     }
+    ],
+    "thoughtsTokenCount": 46
+   }
+  },
+  {
+   "truth": "rain",
+   "file": "1-17367-A-10.wav",
+   "try": 2,
+   "text": "The recording features the continuous sound of applause from a crowd.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 16,
+    "totalTokenCount": 221,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 16
+     }
+    ]
+   }
+  },
+  {
+   "truth": "rain",
+   "file": "1-17367-A-10.wav",
+   "try": 3,
+   "text": "The audio features loud, continuous applause from a large crowd.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 16,
+    "totalTokenCount": 263,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 16
+     }
+    ],
+    "thoughtsTokenCount": 42
+   }
+  },
+  {
+   "truth": "wind",
+   "file": "1-137296-A-16.wav",
+   "try": 1,
+   "text": "A loud, continuous, low-frequency rumble or hum persists throughout the clip. This sound is consistent with the interior noise of an airplane in flight.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 34,
+    "totalTokenCount": 239,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 34
+     }
+    ]
+   }
+  },
+  {
+   "truth": "wind",
+   "file": "1-137296-A-16.wav",
+   "try": 2,
+   "text": "This is a recording of a machine humming and rattling. It seems to be a large machine, like a train or a plane.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 30,
+    "totalTokenCount": 235,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 30
+     }
+    ]
+   }
+  },
+  {
+   "truth": "wind",
+   "file": "1-137296-A-16.wav",
+   "try": 3,
+   "text": "This is a sound of an airplane engine roaring. It seems that the sound is recorded from inside the cabin.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 29,
+    "totalTokenCount": 254,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 29
+     }
+    ],
+    "thoughtsTokenCount": 20
+   }
+  },
+  {
+   "truth": "toilet_flush",
+   "file": "1-20736-A-18.wav",
+   "try": 1,
+   "text": "The recording opens with a sharp impact noise, followed by a deep thudding sound that leads into the sound of churning and splashing water.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 32,
+    "totalTokenCount": 237,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 32
+     }
+    ]
+   }
+  },
+  {
+   "truth": "toilet_flush",
+   "file": "1-20736-A-18.wav",
+   "try": 2,
+   "text": "At the beginning of the recording, the sound of an object hitting the water can be heard, followed by the continuous sound of water splashing.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 32,
+    "totalTokenCount": 237,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 32
+     }
+    ]
+   }
+  },
+  {
+   "truth": "toilet_flush",
+   "file": "1-20736-A-18.wav",
+   "try": 3,
+   "text": "Water is splashing, sloshing, and gurgling loudly, as if being stirred or poured in a container.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 28,
+    "totalTokenCount": 281,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 28
+     }
+    ],
+    "thoughtsTokenCount": 48
+   }
+  },
+  {
+   "truth": "siren",
+   "file": "1-31482-A-42.wav",
+   "try": 1,
+   "text": "In this audio clip, someone is playing a wind instrument in a reverberant space.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 21,
+    "totalTokenCount": 226,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 21
+     }
+    ]
+   }
+  },
+  {
+   "truth": "siren",
+   "file": "1-31482-A-42.wav",
+   "try": 2,
+   "text": "In this recording, we hear a person repeatedly blowing a kazoo or party horn.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 21,
+    "totalTokenCount": 226,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 21
+     }
+    ]
+   }
+  },
+  {
+   "truth": "siren",
+   "file": "1-31482-A-42.wav",
+   "try": 3,
+   "text": "The audio includes the sound of an instrument being played, which is accompanied by a flute.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 22,
+    "totalTokenCount": 227,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 22
+     }
+    ]
+   }
+  },
+  {
+   "truth": "fireworks",
+   "file": "1-115545-A-48.wav",
+   "try": 1,
+   "text": "Fireworks are popping, crackling, and exploding in the sky.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 17,
+    "totalTokenCount": 222,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 17
+     }
+    ]
+   }
+  },
+  {
+   "truth": "fireworks",
+   "file": "1-115545-A-48.wav",
+   "try": 2,
+   "text": "Fireworks explode in the sky in the distance, creating a rumbling sound.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 20,
+    "totalTokenCount": 225,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 20
+     }
+    ]
+   }
+  },
+  {
+   "truth": "fireworks",
+   "file": "1-115545-A-48.wav",
+   "try": 3,
+   "text": "This audio snippet showcases the sound of something shattering and breaking, potentially glass. The acoustic quality of the recording is good, capturing the sharp and sudden nature of the event clearly.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 39,
+    "totalTokenCount": 244,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 39
+     }
+    ]
+   }
+  },
+  {
+   "truth": "silence",
+   "file": "silence.wav",
+   "try": 1,
+   "text": "Someone blows into a harmonica.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 11,
+    "totalTokenCount": 216,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 11
+     }
+    ]
+   }
+  },
+  {
+   "truth": "silence",
+   "file": "silence.wav",
+   "try": 2,
+   "text": "A young man speaks in a calm and gentle tone, accompanied by the sounds of keyboard typing.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 23,
+    "totalTokenCount": 228,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 23
+     }
+    ]
+   }
+  },
+  {
+   "truth": "silence",
+   "file": "silence.wav",
+   "try": 3,
+   "text": "A man is talking clearly over the sounds of a vehicle engine and a car horn honking in the background.",
+   "usage": {
+    "promptTokenCount": 205,
+    "candidatesTokenCount": 26,
+    "totalTokenCount": 231,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 54
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 151
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 26
+     }
+    ]
+   }
+  }
+ ]
+}

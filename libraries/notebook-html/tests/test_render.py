@@ -4,7 +4,8 @@ from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 import unittest
 
-from notebook_html import load_html, read_article, render_anthropic_html, render_openai_html, render_html
+from notebook_html import (load_html, read_article, render_anthropic_html, render_gemini_html,
+                           render_openai_html, render_html)
 
 PAGE = '<!doctype html><html lang="en"><body><script>window.ready=true</script>Quiz</body></html>'
 
@@ -76,6 +77,31 @@ class RenderingTests(unittest.TestCase):
                 ]}, self.path)
         self.assertEqual(self.path.read_text(), 'original')
         self.assertEqual(self.path.with_suffix('.json').read_text(), 'original receipt')
+
+    def test_gemini_joins_stream_chunks_and_drops_thoughts(self):
+        half = len(PAGE) // 2
+        chunks = [
+            {'candidates': [{'content': {'parts': [{'text': 'private', 'thought': True}]}}]},
+            {'candidates': [{'content': {'parts': [{'text': PAGE[:half]}]}}]},
+            SimpleNamespace(
+                candidates=[SimpleNamespace(content=SimpleNamespace(parts=[SimpleNamespace(text=PAGE[half:], thought=None)]),
+                                            finish_reason=SimpleNamespace(value='STOP'))],
+                usage_metadata=SimpleNamespace(model_dump=lambda **kw: {'prompt_token_count': 10, 'thoughts_token_count': 5}),
+                model_version='gemini-4-argon'),
+        ]
+        render_gemini_html(iter(chunks), self.path)
+        self.assertEqual(self.path.read_text(), PAGE)
+        record = json.loads(self.path.with_suffix('.json').read_text())
+        self.assertEqual(record['model'], 'gemini-4-argon')
+        self.assertEqual(record['usage']['thoughts_token_count'], 5)
+        self.assertNotIn('private', json.dumps(record))
+
+    def test_incomplete_gemini_response_preserves_page(self):
+        self.path.write_text('original')
+        for reason in ('MAX_TOKENS', 'SAFETY', None):
+            with self.subTest(reason=reason), self.assertRaises(ValueError):
+                render_gemini_html({'candidates': [{'content': {'parts': [{'text': PAGE}]}, 'finishReason': reason}]}, self.path)
+        self.assertEqual(self.path.read_text(), 'original')
 
     def test_json_response_and_fenced_html(self):
         render_anthropic_html({'model': 'test', 'stop_reason': 'end_turn', 'usage': {},

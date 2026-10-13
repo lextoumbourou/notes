@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ARGON 64: The 3D AI Specs Gameshow!</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    width: 100%; height: 100%; overflow: hidden;
+    background: #070514;
+    font-family: "Courier New", Courier, monospace;
+    color: #fff;
+  }
+  #app {
+    position: relative; width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  canvas#stage3d {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    image-rendering: pixelated; image-rendering: crisp-edges;
+    z-index: 1;
+  }
+  /* CRT Scanline & N64 Vignette Overlay */
+  .crt-overlay {
+    position: absolute; inset: 0; pointer-events: none; z-index: 2;
+    background:
+      linear-gradient(rgba(18,16,16,0) 50%, rgba(0,0,0,0.28) 50%),
+      radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.65) 100%);
+    background-size: 100% 4px, 100% 100%;
+  }
+  /* Top N64 HUD */
+  .hud {
+    position: relative; z-index: 5;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 12px; gap: 8px;
+    background: linear-gradient(180deg, rgba(12,18,56,0.92), rgba(6,8,28,0.75));
+    border-bottom: 3px solid #ffcc00;
+    box-shadow: 0 4px 0 #000;
+  }
+  .hud-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .badge {
+    background: #141d52; border: 2px solid #5588ff;
+    padding: 3px 8px; font-weight: 900; font-size: 14px;
+    color: #ffea55; text-shadow: 2px 2px 0 #000;
+    box-shadow: inset 1px 1px 0 rgba(255,255,255,0.25), 2px 2px 0 #000;
+  }
+  .badge.star { border-color: #ffcc00; color: #fff; }
+  .btn-sfx {
+    background: #2b1854; color: #7ef9ff; border: 2px solid #7ef9ff;
+    padding: 4px 8px; font-family: inherit; font-weight: 900; font-size: 12px;
+    cursor: pointer; text-shadow: 1px 1px 0 #000; box-shadow: 2px 2px 0 #000;
+  }
+  .btn-sfx:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 #000; }
+
+  /* Host Speech Banner */
+  .host-banner {
+    position: relative; z-index: 5;
+    margin: 4px auto 0; max-width: 680px; width: calc(100% - 20px);
+    background: rgba(15, 8, 36, 0.85);
+    border: 2px solid #ff55aa;
+    padding: 6px 12px; text-align: center;
+    font-weight: 900; font-size: 13px; color: #ffccf0;
+    text-shadow: 1px 1px 0 #000;
+    box-shadow: 3px 3px 0 #000;
+  }
+  .host-name { color: #00ffcc; margin-right: 6px; }
+
+  /* Bottom N64 Gameshow Card */
+  .panel-wrap {
+    position: relative; z-index: 5;
+    width: 100%; max-width: 780px; margin: 0 auto;
+    padding: 6px 10px 10px;
+    max-height: 68vh; display: flex; flex-direction: column;
+  }
+  .card {
+    background: linear-gradient(180deg, rgba(16,28,84,0.95) 0%, rgba(8,12,42,0.97) 100%);
+    border: 3px solid #fff;
+    outline: 3px solid #000;
+    box-shadow: inset 0 0 0 3px #2850b8, 0 6px 0 rgba(0,0,0,0.85);
+    padding: 12px 14px;
+    overflow-y: auto;
+  }
+  .q-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 6px; font-size: 12px; font-weight: 900;
+    color: #7ef9ff; text-transform: uppercase; letter-spacing: 0.5px;
+    text-shadow: 1px 1px 0 #000;
+  }
+  .q-text {
+    font-size: 16px; font-weight: 900; line-height: 1.3;
+    color: #ffffff; text-shadow: 2px 2px 0 #000;
+    margin-bottom: 10px;
+  }
+  .options-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .opt-btn {
+    display: flex; align-items: center; gap: 8px;
+    text-align: left; font-family: inherit; font-size: 13px; font-weight: 900;
+    line-height: 1.25; color: #fff;
+    background: linear-gradient(180deg, #24388f, #15215c);
+    border: 2px solid #88aaff;
+    padding: 8px 10px; cursor: pointer;
+    text-shadow: 1px 1px 0 #000;
+    box-shadow: 3px 3px 0 #000;
+    transition: transform 0.06s;
+  }
+  .opt-btn:hover:not(:disabled) {
+    background: linear-gradient(180deg, #324ec2, #1f328a);
+    border-color: #ffee55;
+  }
+  .opt-btn:active:not(:disabled) { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #000; }
+  .opt-btn:disabled { cursor: default; }
+  .opt-btn.correct {
+    background: linear-gradient(180deg, #1b7a34, #0d451b);
+    border-color: #55ff77; color: #eafff0;
+  }
+  .opt-btn.wrong {
+    background: linear-gradient(180deg, #911d2c, #520d16);
+    border-color: #ff6677; color: #ffe5e8;
+  }
+  .opt-btn.dimmed { opacity: 0.55; }
+
+  .n64-key {
+    flex-shrink: 0; width: 24px; height: 24px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 900; color: #fff;
+    border: 2px solid rgba(255,255,255,0.85);
+    box-shadow: 1px 1px 0 #000; text-shadow: 1px 1px 0 #000;
+  }
+  .k-0 { background: #0066dd; }
+  .k-1 { background: #009944; }
+  .k-2 { background: #dd9900; }
+  .k-3 { background: #cc2222; }
+
+  .explain-box {
+    margin-top: 10px; padding: 9px 11px;
+    background: rgba(5, 10, 28, 0.92);
+    border-left: 4px solid #ffcc00;
+    border-top: 1px solid #4466aa; border-right: 1px solid #4466aa; border-bottom: 1px solid #4466aa;
+    font-size: 13px; line-height: 1.35; color: #e2eeff;
+    text-shadow: 1px 1px 0 #000;
+  }
+  .explain-status {
+    font-weight: 900; font-size: 14px; margin-bottom: 3px; display: block;
+  }
+  .status-ok { color: #44ff77; }
+  .status-bad { color: #ff5566; }
+
+  .action-row {
+    margin-top: 10px; display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    flex-wrap: wrap;
+  }
+  .hint-keys { font-size: 11px; color: #99bbff; font-weight: 700; }
+  .cta-btn {
+    background: linear-gradient(180deg, #ffdd22, #cc8800);
+    color: #110b00; border: 2px solid #fff;
+    padding: 8px 16px; font-family: inherit; font-size: 14px; font-weight: 900;
+    cursor: pointer; text-transform: uppercase;
+    box-shadow: 3px 3px 0 #000;
+  }
+  .cta-btn:hover { filter: brightness(1.08); }
+  .cta-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #000; }
+
+  @media (max-width: 600px) {
+    .options-grid { grid-template-columns: 1fr; gap: 6px; }
+    .q-text { font-size: 14px; margin-bottom: 8px; }
+    .opt-btn { padding: 7px 9px; font-size: 12px; }
+    .explain-box { font-size: 12px; padding: 7px 9px; }
+    .card { padding: 10px; }
+    .badge { font-size: 12px; padding: 2px 6px; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <canvas id="stage3d"></canvas>
+  <div class="crt-overlay"></div>
+
+  <div class="hud">
+    <div class="hud-group">
+      <div class="badge" style="border-color:#ff44aa;color:#7ef9ff;">ARGON 64</div>
+      <div class="badge star" id="hud-stars">STARS: 0/8</div>
+      <div class="badge" id="hud-score">PTS: 0000</div>
+    </div>
+    <div class="hud-group">
+      <div class="badge" id="hud-round">STAGE: TITLE</div>
+      <button class="btn-sfx" id="btn-sfx" type="button">SFX: ON</button>
+    </div>
+  </div>
+
+  <div class="host-banner" id="host-banner">
+    <span class="host-name">POLY-HOST 64:</span>
+    <span id="host-line">Welcome to Gemini 4 Argon Arena! Press START or [SPACE] to play!</span>
+  </div>
+
+  <div class="panel-wrap">
+    <div class="card" id="quiz-card"></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  // 8 Questions testing understanding of the Gemini 4 Argon article (Zero em dashes)
+  const QUESTIONS = [
+    {
+      cat: "Round 1: Launch & Architecture",
+      hostAsk: "Question 1! How did Google build and roll out Gemini 4 Argon?",
+      q: "Which statement accurately describes Gemini 4 Argon's architecture and initial rollout?",
+      opts: [
+        "It is a fine-tune of Gemini 3.1 Pro released first on the free tier",
+        "It is a new sparse Mixture-of-Experts model first given to Fairwind Program cyber defenders",
+        "It is a dense 2-trillion-parameter model launched a week before Meta's Muse Wonder",
+        "It is an open-weight model exclusive to Google AI Ultra subscribers"
+      ],
+      ans: 1,
+      exp: "Google announced Argon on 30 September for 'trusted cyber defenders' in its Fairwind Program before making it broadly available on 13 October (a day after Meta's Muse Wonder). It is built from scratch as a sparse Mixture-of-Experts (MoE) transformer with an undisclosed parameter count."
+    },
+    {
+      cat: "Round 2: Modalities & Output Limits",
+      hostAsk: "Let's check the spec sheet! Watch out for input types and long decode!",
+      q: "How do Argon's input modalities and maximum output tokens compare in the specification table?",
+      opts: [
+        "Argon and Muse Wonder accept direct audio input (while Opus 5.5 cannot), and Argon reaches 1M output tokens with 'long decode'",
+        "All three models accept audio and video, and Argon defaults to 1M output tokens on every call",
+        "Argon supports real-time voice via the Live API and generates both images and audio",
+        "Argon is limited to 64K output tokens, whereas Claude Opus 5.5 reaches 1M output tokens"
+      ],
+      ans: 0,
+      exp: "Like Muse Wonder, Argon accepts text, images, video, audio, and PDFs (while Claude Opus 5.5 still cannot take audio). Argon has no Live API and no audio or image output. Its default max output is 65,536 tokens, expanding up to 1,048,576 (1M) tokens with 'long decode'."
+    },
+    {
+      cat: "Round 3: Pricing & Caching",
+      hostAsk: "Time to talk tokens and dollars! Check the calendar for December 1st!",
+      q: "What happens to Gemini 4 Argon's API pricing and caching settings?",
+      opts: [
+        "It stays permanently half the price of Muse Wonder and charges $5.00 per million tokens for cache writes",
+        "It launches at half price ($2/$10 per 1M input/output) until 30 Nov 2026, then doubles on 1 Dec to match Muse Wonder and Opus 5.5",
+        "It includes a free tier and an explicit cache-write discount, but charges extra above 200K context",
+        "It costs 1.8 times as much as Claude Opus 5.5 unless requests are sent through the Batch API"
+      ],
+      ans: 1,
+      exp: "Argon launches at half price ($2.00 uncached input / $10.00 output per 1M tokens) through 30 November 2026. From 1 December 2026, rates double to $4.00 / $20.00, matching Muse Wonder and Opus 5.5. Caching is implicit only with no write price, no free tier, and no long-context tier."
+    },
+    {
+      cat: "Round 4: Tokeniser Efficiency",
+      hostAsk: "Six sample files went into countTokens! How hungry is each tokeniser?",
+      q: "When counting tokens across the six sample files, how did Argon's tokeniser compare with Muse Wonder and Claude Opus 5.5?",
+      opts: [
+        "Argon used 30% fewer tokens than Muse Wonder on code, while tying Opus 5.5 on prose",
+        "Opus 5.5 was the most efficient overall, needing 25% fewer tokens than Argon on every file",
+        "Argon was within ~6% of Muse Wonder on prose, used 16-21% more on code/HTML, and beat Opus 5.5 across all files",
+        "All three models produced identical token counts because they share the same vocabulary"
+      ],
+      ans: 2,
+      exp: "On prose samples, Argon's token count was within about 6% of Muse Wonder's. On code and HTML, Argon used 16% to 21% more tokens than Muse Wonder. However, both were far ahead of Claude Opus 5.5, which needed 1.23 to 1.58 times as many tokens as Argon."
+    },
+    {
+      cat: "Round 5: Cost Per Task & Intelligence Index",
+      hostAsk: "Artificial Analysis put all three models to the test! What did the bill look like?",
+      q: "What did Artificial Analysis find when running its Intelligence Index v4.3 across the three models?",
+      opts: [
+        "Argon (at 'high' effort) scored 53 using 110M output tokens for $1.99/task at launch price, about $4 once December pricing starts",
+        "Argon scored 58 (the highest) but used 260M output tokens, making it the most expensive per task",
+        "Muse Wonder used the fewest output tokens (50M) and had the lowest cost per task at $0.99",
+        "All three models ran at 'max' effort and tied at a score of 55"
+      ],
+      ans: 0,
+      exp: "Running at its top effort level of 'high', Argon scored 53 (vs 52 for Muse Wonder and 58 for Opus 5.5 at 'max'), using 110M output tokens. At launch prices Argon cost $1.99 per task; after rates double in December, it will cost roughly $4 per task, close to Muse Wonder ($4.52)."
+    },
+    {
+      cat: "Round 6: Model Card Benchmarks",
+      hostAsk: "19 benchmarks on Google's model card! Where does Argon shine brightest?",
+      q: "In Google's model card benchmark comparison, where did Argon achieve its largest leads, and where did Opus 5.5 still win?",
+      opts: [
+        "Argon won Terminal-Bench 4.0 by 20 points, while Opus 5.5 won GraphWalks and LVBench",
+        "Argon led on 14 of 19 rows with huge margins on long context (GraphWalks) and legal work (Harvey), while Opus 5.5 won Terminal-Bench 4.0 and PostTrainBench",
+        "GPT-6 Astra won 14 of 19 benchmarks, leaving Argon ahead only on CWE-bench v1",
+        "Argon swept all 19 rows on the model card without losing or tying a single benchmark"
+      ],
+      ans: 1,
+      exp: "Argon took top score on 14 of 19 rows, posting huge margins on GraphWalks BFS 256K-1M (84.2 vs Opus's 66.8) and Harvey's Legal Agent Benchmark (19.6 vs Opus's 3.8). Opus 5.5 still won Terminal-Bench 4.0 (66.4 vs 57.4) and PostTrainBench (49.3 vs 45.3)."
+    },
+    {
+      cat: "Round 7: Cross-Card Comparison",
+      hostAsk: "Google didn't list Muse Wonder on its card, except one benchmark lines up!",
+      q: "Why is DeepSWE v1.1 notable when comparing Google's model card with Meta's Muse Wonder card?",
+      opts: [
+        "It is the only shared benchmark where baseline scores for Opus 5.5, Fable 5.1, and GPT-6 Astra match across both cards, with Muse Wonder (78.8) edging out Argon (77.9)",
+        "It is the only benchmark where both cards report a 100% score for Claude Fable 5.1",
+        "Google and Meta reported completely different scores for Opus 5.5 on DeepSWE v1.1, making comparison impossible",
+        "Argon beat Muse Wonder by 15 points on DeepSWE v1.1 while losing on Terminal-Bench 4.0-AA"
+      ],
+      ans: 0,
+      exp: "Most benchmark names or setups differ between Google's and Meta's cards (such as Terminal-Bench 4.0 vs 4.0-AA). DeepSWE v1.1 is the exception: both cards report identical scores for Opus 5.5 (74.2), Fable 5.1 (67.4), and GPT-6 Astra (74.1), and Muse Wonder (78.8) edges out Argon (77.9)."
+    },
+    {
+      cat: "Round 8: Safety & Frontier Framework",
+      hostAsk: "Final Round! Let's check Argon's refusal rates and Frontier Safety results!",
+      q: "What two findings stood out in Gemini 4 Argon's safety documentation?",
+      opts: [
+        "Unjustified refusals rose by 9.6 percentage points, and it failed all 15 situational-awareness challenges",
+        "It shipped with no cyber guardrails for general API users because it showed zero biological or cyber capability",
+        "Unjustified refusals fell by 9.6 percentage points vs Gemini 3.1 Pro, and it passed 14 of 15 stealth/situational-awareness challenges while requiring bio and cyber safeguards",
+        "It replaced safety filters with explicit cache-write locks and disabled code generation"
+      ],
+      ans: 2,
+      exp: "Google reports that unjustified refusals on benign or borderline prompts dropped by 9.6 percentage points compared with Gemini 3.1 Pro. In Frontier Safety evaluations, Argon passed 14 of 15 stealth and situational-awareness challenges, and shipped with safeguards because Google could not rule out critical bio or cybersecurity capability thresholds."
+    }
+  ];
+
+  // Game State
+  const state = {
+    mode: "title", // "title" | "question" | "answered" | "done"
+    qIndex: 0,
+    selected: null,
+    stars: 0,
+    score: 0,
+    results: [], // boolean per question
+    sfxOn: true,
+    hostMood: "idle", // "idle" | "talk" | "happy" | "sad" | "victory"
+    moodTimer: 0,
+    particles: []
+  };
+
+  // Web Audio Synthesizer (Retro N64 sound effects, no external assets)
+  let audioCtx = null;
+  function playTone(freqs, dur = 0.09, type = "square", vol = 0.08) {
+    if (!state.sfxOn) return;
+    try {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if (audioCtx.state === "suspended") audioCtx.resume();
+      const now = audioCtx.currentTime;
+      freqs.forEach((f, idx) => {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(f, now + idx * dur);
+        gain.gain.setValueAtTime(vol, now + idx * dur);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + (idx + 1) * dur);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now + idx * dur);
+        osc.stop(now + (idx + 1) * dur);
+      });
+    } catch (e) {}
+  }
+
+  function sfxStart() { playTone([330, 440, 554, 659, 880], 0.07, "square", 0.09); }
+  function sfxCorrect() { playTone([523.25, 659.25, 783.99, 1046.5], 0.08, "triangle", 0.12); }
+  function sfxWrong() { playTone([220, 196, 164.8], 0.14, "sawtooth", 0.1); }
+  function sfxNext() { playTone([440, 660], 0.06, "square", 0.07); }
+  function sfxFanfare() { playTone([523, 659, 784, 659, 784, 1046], 0.1, "square", 0.1); }
+
+  // DOM Elements
+  const cardEl = document.getElementById("quiz-card");
+  const starsEl = document.getElementById("hud-stars");
+  const scoreEl = document.getElementById("hud-score");
+  const roundEl = document.getElementById("hud-round");
+  const hostLineEl = document.getElementById("host-line");
+  const sfxBtn = document.getElementById("btn-sfx");
+
+  sfxBtn.addEventListener("click", () => {
+    state.sfxOn = !state.sfxOn;
+    sfxBtn.textContent = state.sfxOn ? "SFX: ON" : "SFX: OFF";
+    if (state.sfxOn) sfxNext();
+  });
+
+  function updateHud() {
+    starsEl.textContent = `STARS: ${state.stars}/${QUESTIONS.length}`;
+    scoreEl.textContent = `PTS: ${String(state.score).padStart(4, "0")}`;
+    if (state.mode === "title") roundEl.textContent = "STAGE: TITLE";
+    else if (state.mode === "done") roundEl.textContent = "STAGE: FINALE";
+    else roundEl.textContent = `Q: ${state.qIndex + 1}/${QUESTIONS.length}`;
+  }
+
+  function spawnConfetti(isWin) {
+    state.particles = [];
+    const colors = isWin
+      ? ["#ffea00", "#00ff88", "#00e5ff", "#ff44cc", "#ffffff"]
+      : ["#ff2244", "#ff8800", "#aa2233"];
+    for (let i = 0; i < 42; i++) {
+      const a = Math.random() * Math.PI * 2;
+      const spd = 1.5 + Math.random() * 4.5;
+      state.particles.push({
+        x: 0, y: 38, z: -20,
+        vx: Math.cos(a) * spd,
+        vy: 2 + Math.random() * 4.5,
+        vz: Math.sin(a) * spd,
+        rot: Math.random() * 6,
+        color: colors[i % colors.length],
+        life: 80 + Math.random() * 40
+      });
+    }
+  }
+
+  // Single Shared Question / Screen Renderer
+  function renderScreen() {
+    updateHud();
+
+    if (state.mode === "title") {
+      hostLineEl.textContent = "Welcome to ARGON 64! Test your knowledge of Google's Gemini 4 Argon vs Muse Wonder & Claude Opus 5.5!";
+      cardEl.innerHTML = `
+        <div class="q-header">
+          <span>NINTENDO-64 STYLE STUDIO QUIZ</span>
+          <span>8 QUESTIONS</span>
+        </div>
+        <div class="q-text">
+          Step up to the 3D podium! Answer 8 questions covering Gemini 4 Argon's architecture, 1M long decode, pricing, tokenisers, benchmarks, and safety evaluations.
+        </div>
+        <div class="action-row">
+          <span class="hint-keys">CONTROLS: Touch / Click or Keys [1-4], [A-D], [SPACE / ENTER]</span>
+          <button class="cta-btn" id="btn-start" type="button">PRESS START</button>
+        </div>
+      `;
+      document.getElementById("btn-start").addEventListener("click", startGame);
+      return;
+    }
+
+    if (state.mode === "done") {
+      const pct = Math.round((state.stars / QUESTIONS.length) * 100);
+      let rank = "CYBER DEFENDER ULTRA";
+      if (state.stars < 8 && state.stars >= 6) rank = "LONG-DECODE PRO";
+      else if (state.stars < 6 && state.stars >= 4) rank = "TOKEN COUNTER";
+      else if (state.stars < 4) rank = "CACHE MISS ROOKIE";
+
+      hostLineEl.textContent = `Show's over! You collected ${state.stars} of ${QUESTIONS.length} Power Stars! Rank: ${rank}!`;
+      cardEl.innerHTML = `
+        <div class="q-header">
+          <span>FINAL TOURNAMENT RESULTS</span>
+          <span>ACCURACY: ${pct}%</span>
+        </div>
+        <div class="q-text">
+          You scored ${state.score} points (${state.stars}/${QUESTIONS.length} Stars) and earned the title: <span style="color:#ffea55">${rank}</span>!
+        </div>
+        <div class="explain-box">
+          <span class="explain-status status-ok">KEY TAKEAWAYS RECAP:</span>
+          Gemini 4 Argon is a new sparse MoE model accepting text, images, video, audio, and PDFs, with up to 1M output tokens via long decode. It launches at half price ($2/$10) until 1 Dec 2026, uses far fewer tokens than Opus 5.5, leads 14 of 19 Google model-card benchmarks (while Muse Wonder edges it out on DeepSWE v1.1), and drops unjustified refusals by 9.6 percentage points.
+        </div>
+        <div class="action-row">
+          <span class="hint-keys">Press [SPACE] or [ENTER] to play again</span>
+          <button class="cta-btn" id="btn-restart" type="button">PLAY AGAIN</button>
+        </div>
+      `;
+      document.getElementById("btn-restart").addEventListener("click", startGame);
+      return;
+    }
+
+    // Active Question or Answered State
+    const item = QUESTIONS[state.qIndex];
+    const isAnswered = state.mode === "answered";
+    const keyLabels = ["A", "B", "C", "D"];
+
+    const optsHtml = item.opts.map((optText, idx) => {
+      let cls = "opt-btn";
+      if (isAnswered) {
+        if (idx === item.ans) cls += " correct";
+        else if (idx === state.selected) cls += " wrong";
+        else cls += " dimmed";
+      }
+      return `
+        <button class="${cls}" data-idx="${idx}" type="button" ${isAnswered ? "disabled" : ""}>
+          <span class="n64-key k-${idx}">${keyLabels[idx]}</span>
+          <span>${optText}</span>
+        </button>
+      `;
+    }).join("");
+
+    let explainHtml = "";
+    if (isAnswered) {
+      const correct = state.selected === item.ans;
+      const statusText = correct
+        ? "CORRECT! +1 POWER STAR & +1000 PTS!"
+        : `BUZZER! Correct answer was [${keyLabels[item.ans]}].`;
+      const nextLabel = state.qIndex + 1 < QUESTIONS.length ? "NEXT QUESTION" : "FINAL SCORE";
+      explainHtml = `
+        <div class="explain-box">
+          <span class="explain-status ${correct ? "status-ok" : "status-bad"}">${statusText}</span>
+          ${item.exp}
+        </div>
+        <div class="action-row">
+          <span class="hint-keys">Press [SPACE] or [ENTER] to continue</span>
+          <button class="cta-btn" id="btn-next" type="button">${nextLabel}</button>
+        </div>
+      `;
+    } else {
+      explainHtml = `
+        <div class="action-row" style="margin-top:8px;">
+          <span class="hint-keys">Tap an option or press [1-4] / [A-D]</span>
+        </div>
+      `;
+    }
+
+    cardEl.innerHTML = `
+      <div class="q-header">
+        <span>${item.cat}</span>
+        <span>STAR #${state.qIndex + 1} OF ${QUESTIONS.length}</span>
+      </div>
+      <div class="q-text">${item.q}</div>
+      <div class="options-grid">${optsHtml}</div>
+      ${explainHtml}
+    `;
+
+    if (!isAnswered) {
+      cardEl.querySelectorAll(".opt-btn").forEach(btn => {
+        btn.addEventListener("click", () => submitAnswer(Number(btn.dataset.idx)));
+      });
+    } else {
+      document.getElementById("btn-next").addEventListener("click", nextStep);
+    }
+  }
+
+  function startGame() {
+    sfxStart();
+    state.mode = "question";
+    state.qIndex = 0;
+    state.selected = null;
+    state.stars = 0;
+    state.score = 0;
+    state.results = [];
+    state.hostMood = "talk";
+    state.moodTimer = 50;
+    hostLineEl.textContent = QUESTIONS[0].hostAsk;
+    renderScreen();
+  }
+
+  function submitAnswer(idx) {
+    if (state.mode !== "question") return;
+    state.selected = idx;
+    state.mode = "answered";
+    const item = QUESTIONS[state.qIndex];
+    const isCorrect = idx === item.ans;
+    state.results.push(isCorrect);
+    if (isCorrect) {
+      state.stars += 1;
+      state.score += 1000;
+      state.hostMood = "happy";
+      hostLineEl.textContent = "BINGO! 1,048,576 tokens of pure brilliance!";
+      sfxCorrect();
+    } else {
+      state.hostMood = "sad";
+      hostLineEl.textContent = "OOF! That triggered a safety guardrail! Check the explanation below!";
+      sfxWrong();
+    }
+    state.moodTimer = 120;
+    spawnConfetti(isCorrect);
+    renderScreen();
+  }
+
+  function nextStep() {
+    if (state.mode !== "answered") return;
+    if (state.qIndex + 1 < QUESTIONS.length) {
+      sfxNext();
+      state.qIndex += 1;
+      state.selected = null;
+      state.mode = "question";
+      state.hostMood = "talk";
+      state.moodTimer = 50;
+      hostLineEl.textContent = QUESTIONS[state.qIndex].hostAsk;
+      renderScreen();
+    } else {
+      sfxFanfare();
+      state.mode = "done";
+      state.hostMood = "victory";
+      spawnConfetti(true);
+      renderScreen();
+    }
+  }
+
+  // Keyboard Support (1-4, A-D, Enter/Space)
+  window.addEventListener("keydown", (e) => {
+    const key = e.key.toUpperCase();
+    if (state.mode === "title" && (key === " " || key === "ENTER")) {
+      e.preventDefault();
+      startGame();
+    } else if (state.mode === "question") {
+      const map = { "1": 0, "2": 1, "3": 2, "4": 3, "A": 0, "B": 1, "C": 2, "D": 3 };
+      if (map[key] !== undefined) {
+        e.preventDefault();
+        submitAnswer(map[key]);
+      }
+    } else if (state.mode === "answered" && (key === " " || key === "ENTER")) {
+      e.preventDefault();
+      nextStep();
+    } else if (state.mode === "done" && (key === " " || key === "ENTER")) {
+      e.preventDefault();
+      startGame();
+    }
+  });
+
+  // ============================================================================
+  // N64 LOW-POLY 3D SOFTWARE RENDERER
+  // ============================================================================
+  const canvas = document.getElementById("stage3d");
+  const ctx = canvas.getContext("2d", { alpha: false });
+
+  // Internal N64 low-res buffer size (dynamically matched to aspect ratio)
+  let W = 360, H = 240;
+  function resizeCanvas() {
+    const aspect = window.innerWidth / Math.max(1, window.innerHeight);
+    H = 220;
+    W = Math.max(240, Math.min(480, Math.round(H * aspect)));
+    canvas.width = W;
+    canvas.height = H;
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  // 3D Math Helpers
+  function rotY(v, a) {
+    const c = Math.cos(a), s = Math.sin(a);
+    return { x: v.x * c + v.z * s, y: v.y, z: -v.x * s + v.z * c };
+  }
+  function rotX(v, a) {
+    const c = Math.cos(a), s = Math.sin(a);
+    return { x: v.x, y: v.y * c - v.z * s, z: v.y * s + v.z * c };
+  }
+  function rotZ(v, a) {
+    const c = Math.cos(a), s = Math.sin(a);
+    return { x: v.x * c - v.y * s, y: v.x * s + v.y * c, z: v.z };
+  }
+
+  // Build Low-Poly 3D Primitives
+  function createBox(w, h, d, colors) {
+    const hw = w / 2, hh = h / 2, hd = d / 2;
+    const v = [
+      { x: -hw, y: -hh, z: -hd }, { x: hw, y: -hh, z: -hd },
+      { x: hw, y: hh, z: -hd },   { x: -hw, y: hh, z: -hd },
+      { x: -hw, y: -hh, z: hd },  { x: hw, y: -hh, z: hd },
+      { x: hw, y: hh, z: hd },    { x: -hw, y: hh, z: hd }
+    ];
+    const f = [
+      { idx: [0, 1, 2, 3], col: colors[0] }, // front
+      { idx: [5, 4, 7, 6], col: colors[1] || colors[0] }, // back
+      { idx: [4, 0, 3, 7], col: colors[2] || colors[0] }, // left
+      { idx: [1, 5, 6, 2], col: colors[3] || colors[0] }, // right
+      { idx: [3, 2, 6, 7], col: colors[4] || colors[0] }, // top
+      { idx: [4, 5, 1, 0], col: colors[5] || colors[0] }  // bottom
+    ];
+    return { v, f };
+  }
+
+  function createOctahedron(r, colA, colB) {
+    const v = [
+      { x: 0, y: r, z: 0 },  { x: 0, y: -r, z: 0 },
+      { x: -r, y: 0, z: 0 }, { x: r, y: 0, z: 0 },
+      { x: 0, y: 0, z: -r }, { x: 0, y: 0, z: r }
+    ];
+    const f = [
+      { idx: [0, 4, 3], col: colA }, { idx: [0, 3, 5], col: colB },
+      { idx: [0, 5, 2], col: colA }, { idx: [0, 2, 4], col: colB },
+      { idx: [1, 3, 4], col: colB }, { idx: [1, 5, 3], col: colA },
+      { idx: [1, 2, 5], col: colB }, { idx: [1, 4, 2], col: colA }
+    ];
+    return { v, f };
+  }
+
+  const hostHeadMesh = createBox(22, 18, 16, ["#ffbb00", "#cc7700", "#dd9900", "#dd9900", "#ffdd44", "#995500"]);
+  const hostScreenMesh = createBox(18, 13, 2, ["#10183b", "#10183b", "#10183b", "#10183b", "#10183b", "#10183b"]);
+  const hostBodyMesh = createBox(16, 20, 12, ["#3366ff", "#1c3b99", "#254ec2", "#254ec2", "#5588ff", "#102060"]);
+  const hostHandMesh = createOctahedron(5.5, "#ffffff", "#bbbbff");
+  const podiumMesh = createBox(28, 22, 20, ["#9922aa", "#551166", "#771888", "#771888", "#cc44ee", "#330844"]);
+  const starGemMesh = createOctahedron(6, "#ffee00", "#ff9900");
+  const pillarMesh = createBox(14, 70, 14, ["#1b2c6b", "#111b44", "#152355", "#152355", "#3355aa", "#090f26"]);
+
+  // Background stars
+  const bgStars = Array.from({ length: 45 }, () => ({
+    x: Math.random(),
+    y: Math.random() * 0.55,
+    s: Math.random() < 0.3 ? 2 : 1,
+    phase: Math.random() * 6.28
+  }));
+
+  let tick = 0;
+
+  function render3D() {
+    tick++;
+    if (state.moodTimer > 0) state.moodTimer--;
+    else if (state.mode === "question") state.hostMood = "idle";
+
+    // 1. N64 Gradient Sky & Horizon
+    const skyGrad = ctx.createLinearGradient(0, 0, 0, H * 0.65);
+    skyGrad.addColorStop(0, "#050214");
+    skyGrad.addColorStop(0.6, "#160b38");
+    skyGrad.addColorStop(1, "#2c1254");
+    ctx.fillStyle = skyGrad;
+    ctx.fillRect(0, 0, W, H);
+
+    // Twinkling pixel stars
+    for (const st of bgStars) {
+      const bright = Math.sin(tick * 0.06 + st.phase) > 0 ? "#ffffff" : "#8877cc";
+      ctx.fillStyle = bright;
+      ctx.fillRect((st.x * W) | 0, (st.y * H) | 0, st.s, st.s);
+    }
+
+    // Sweeping N64 Studio Spotlights
+    ctx.save();
+    ctx.globalCompositeOperation = "lighter";
+    for (let i = 0; i < 3; i++) {
+      const ang = Math.sin(tick * 0.02 + i * 2.1) * 0.45;
+      const bx = W * (0.2 + i * 0.3);
+      ctx.fillStyle = i === 1 ? "rgba(0, 220, 255, 0.09)" : "rgba(255, 60, 180, 0.09)";
+      ctx.beginPath();
+      ctx.moveTo(bx, H * 0.62);
+      ctx.lineTo(bx + Math.sin(ang - 0.18) * 180, 0);
+      ctx.lineTo(bx + Math.sin(ang + 0.18) * 180, 0);
+      ctx.closePath();
+      ctx.fill();
+    }
+    ctx.restore();
+
+    // Camera setup
+    let camX = Math.sin(tick * 0.012) * 14;
+    let camY = 30 + Math.sin(tick * 0.02) * 3;
+    let camZ = -132;
+    if (state.mode === "title") {
+      camX = Math.sin(tick * 0.02) * 36;
+      camZ = -142;
+    } else if (state.mode === "answered") {
+      camZ = -112;
+      camY = 33;
+    }
+
+    const fov = 210;
+    const horizonY = H * 0.38; // Position stage in upper viewport above the card
+
+    function project(pt) {
+      const rx = pt.x - camX;
+      const ry = pt.y - camY;
+      const rz = pt.z - camZ;
+      if (rz <= 8) return null;
+      const scale = fov / rz;
+      return {
+        x: W * 0.5 + rx * scale,
+        y: horizonY - ry * scale,
+        z: rz
+      };
+    }
+
+    const polyQueue = [];
+
+    function pushMesh(mesh, pos, rot, scale = 1) {
+      const tv = mesh.v.map(v => {
+        let p = { x: v.x * scale, y: v.y * scale, z: v.z * scale };
+        if (rot.z) p = rotZ(p, rot.z);
+        if (rot.x) p = rotX(p, rot.x);
+        if (rot.y) p = rotY(p, rot.y);
+        return { x: p.x + pos.x, y: p.y + pos.y, z: p.z + pos.z };
+      });
+
+      for (const face of mesh.f) {
+        const pts = [];
+        let zSum = 0;
+        let valid = true;
+        for (const i of face.idx) {
+          const pr = project(tv[i]);
+          if (!pr) { valid = false; break; }
+          pts.push(pr);
+          zSum += pr.z;
+        }
+        if (!valid) continue;
+
+        // Backface culling (2D cross product in screen space)
+        const ax = pts[1].x - pts[0].x, ay = pts[1].y - pts[0].y;
+        const bx = pts[2].x - pts[0].x, by = pts[2].y - pts[0].y;
+        if (ax * by - ay * bx > 0) continue;
+
+        polyQueue.push({
+          pts,
+          z: zSum / pts.length,
+          col: face.col
+        });
+      }
+    }
+
+    // 2. Checkered 3D Stage Floor Tiles
+    const tileS = 22;
+    for (let gx = -3; gx <= 2; gx++) {
+      for (let gz = -2; gz <= 2; gz++) {
+        const x0 = gx * tileS, x1 = (gx + 1) * tileS;
+        const z0 = gz * tileS - 20, z1 = (gz + 1) * tileS - 20;
+        const corners = [
+          project({ x: x0, y: 0, z: z0 }),
+          project({ x: x1, y: 0, z: z0 }),
+          project({ x: x1, y: 0, z: z1 }),
+          project({ x: x0, y: 0, z: z1 })
+        ];
+        if (corners.some(c => !c)) continue;
+        const isEven = (gx + gz) & 1;
+        let col = isEven ? "#1f184d" : "#110c30";
+        if (gx >= -1 && gx <= 0 && gz === -1) {
+          col = isEven ? "#352885" : "#22185c";
+        }
+        polyQueue.push({
+          pts: corners,
+          z: (corners[0].z + corners[2].z) * 0.5 + 15,
+          col
+        });
+      }
+    }
+
+    // 3. Background Studio Pillars & Floating N64 Gems
+    pushMesh(pillarMesh, { x: -58, y: 35, z: 22 }, { x: 0, y: 0.3, z: 0 });
+    pushMesh(pillarMesh, { x: 58, y: 35, z: 22 }, { x: 0, y: -0.3, z: 0 });
+    pushMesh(starGemMesh, { x: -58, y: 78 + Math.sin(tick * 0.06) * 4, z: 22 }, { x: 0, y: tick * 0.05, z: 0 }, 1.2);
+    pushMesh(starGemMesh, { x: 58, y: 78 + Math.cos(tick * 0.06) * 4, z: 22 }, { x: 0, y: -tick * 0.05, z: 0 }, 1.2);
+
+    // 4. Contestant Podium & Earned Star Gems Arc
+    pushMesh(podiumMesh, { x: 0, y: 11, z: -26 }, { x: 0, y: Math.sin(tick * 0.015) * 0.08, z: 0 });
+    for (let i = 0; i < QUESTIONS.length; i++) {
+      const earned = i < state.results.length && state.results[i];
+      const tried = i < state.results.length && !state.results[i];
+      const angle = ((i - 3.5) / 4) * 0.95;
+      const gx = Math.sin(angle) * 52;
+      const gz = -15 + Math.cos(angle) * 12;
+      const gy = 54 + Math.sin(tick * 0.07 + i) * 2.5;
+      if (earned) {
+        pushMesh(starGemMesh, { x: gx, y: gy, z: gz }, { x: 0.2, y: tick * 0.08 + i, z: 0 }, 0.85);
+      } else if (tried) {
+        const redGem = createOctahedron(4, "#ff3355", "#991122");
+        pushMesh(redGem, { x: gx, y: gy, z: gz }, { x: 0, y: tick * 0.03, z: 0 }, 0.75);
+      } else {
+        const dimGem = createOctahedron(3.5, "#334477", "#1d2747");
+        pushMesh(dimGem, { x: gx, y: gy, z: gz }, { x: 0, y: tick * 0.02, z: 0 }, 0.65);
+      }
+    }
+
+    // 5. Animated 3D Host ("POLY-HOST 64")
+    let hostBounce = Math.sin(tick * 0.08) * 2.5;
+    let headYaw = Math.sin(tick * 0.03) * 0.22;
+    let headPitch = Math.sin(tick * 0.05) * 0.08;
+    let headRoll = 0;
+
+    if (state.hostMood === "happy" || state.hostMood === "victory") {
+      hostBounce = Math.abs(Math.sin(tick * 0.22)) * 11;
+      headYaw = tick * 0.16;
+    } else if (state.hostMood === "sad") {
+      hostBounce = -2;
+      headPitch = 0.28;
+      headRoll = Math.sin(tick * 0.35) * 0.22;
+    } else if (state.hostMood === "talk") {
+      hostBounce = Math.abs(Math.sin(tick * 0.18)) * 5;
+      headYaw = Math.sin(tick * 0.12) * 0.3;
+    }
+
+    const hy = 29 + hostBounce;
+    pushMesh(hostBodyMesh, { x: 0, y: hy - 7, z: -12 }, { x: 0, y: headYaw * 0.4, z: 0 });
+    pushMesh(hostHeadMesh, { x: 0, y: hy + 13, z: -12 }, { x: headPitch, y: headYaw, z: headRoll });
+    pushMesh(hostScreenMesh, { x: Math.sin(headYaw) * 8, y: hy + 13, z: -12 - Math.cos(headYaw) * 7.5 }, { x: headPitch, y: headYaw, z: headRoll });
+
+    // Floating Poly Hands
+    const handY = hy - 2 + Math.sin(tick * 0.12) * 4;
+    pushMesh(hostHandMesh, { x: -19, y: handY, z: -18 }, { x: tick * 0.04, y: tick * 0.05, z: 0 });
+    pushMesh(hostHandMesh, { x: 19, y: handY + 2, z: -18 }, { x: -tick * 0.04, y: tick * 0.05, z: 0 });
+
+    // 6. 3D Confetti Particles
+    for (let i = state.particles.length - 1; i >= 0; i--) {
+      const p = state.particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.z += p.vz;
+      p.vy -= 0.14; // gravity
+      p.life--;
+      if (p.life <= 0 || p.y < 0) {
+        state.particles.splice(i, 1);
+        continue;
+      }
+      const pr = project(p);
+      if (pr) {
+        polyQueue.push({
+          pts: [
+            { x: pr.x - 3, y: pr.y - 3 },
+            { x: pr.x + 3, y: pr.y - 2 },
+            { x: pr.x + 2, y: pr.y + 3 }
+          ],
+          z: pr.z,
+          col: p.color
+        });
+      }
+    }
+
+    // Painter's Algorithm Depth Sort (back to front)
+    polyQueue.sort((a, b) => b.z - a.z);
+
+    // Draw Sorted Polygons
+    ctx.lineWidth = 1;
+    for (const poly of polyQueue) {
+      ctx.fillStyle = poly.col;
+      ctx.strokeStyle = "rgba(0,0,0,0.45)";
+      ctx.beginPath();
+      ctx.moveTo(poly.pts[0].x, poly.pts[0].y);
+      for (let i = 1; i < poly.pts.length; i++) {
+        ctx.lineTo(poly.pts[i].x, poly.pts[i].y);
+      }
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+    }
+
+    // Draw Host Animated Pixel Eyes on top of the screen when facing camera
+    if (Math.cos(headYaw) > 0.35) {
+      const faceCenter = project({
+        x: Math.sin(headYaw) * 9,
+        y: hy + 13.5,
+        z: -12 - Math.cos(headYaw) * 8.5
+      });
+      if (faceCenter) {
+        ctx.fillStyle = state.hostMood === "sad" ? "#ff4466" : "#00ffcc";
+        const eyeOff = 5;
+        ctx.fillRect((faceCenter.x - eyeOff - 2) | 0, (faceCenter.y - 3) | 0, 3, 4);
+        ctx.fillRect((faceCenter.x + eyeOff - 1) | 0, (faceCenter.y - 3) | 0, 3, 4);
+        // Mouth bar
+        const mouthH = (state.hostMood === "talk" || state.hostMood === "happy") && (tick & 4) ? 3 : 1;
+        ctx.fillRect((faceCenter.x - 4) | 0, (faceCenter.y + 3) | 0, 8, mouthH);
+      }
+    }
+
+    requestAnimationFrame(render3D);
+  }
+
+  renderScreen();
+  requestAnimationFrame(render3D);
+})();
+</script>
+</body>
+</html>

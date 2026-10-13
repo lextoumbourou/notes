@@ -11,7 +11,7 @@ from typing import Any
 
 __all__ = [
     "HTMLPreview", "read_article", "render_html", "render_anthropic_html",
-    "render_openai_html", "load_html",
+    "render_openai_html", "render_gemini_html", "load_html",
 ]
 
 
@@ -139,6 +139,49 @@ def render_openai_html(
     }
     receipt = json.dumps(record, indent=2) + "\n"
     preview = render_html(text, path, height=height, title=title)
+    Path(path).with_suffix(".json").write_text(receipt, encoding="utf-8")
+    return preview
+
+
+def _gemini(value: Any, name: str, default: Any = None) -> Any:
+    """Read an SDK attribute (snake_case) or a REST JSON field (camelCase)."""
+    head, *rest = name.split("_")
+    camel = head + "".join(part.title() for part in rest)
+    found = _field(value, name)
+    return found if found is not None else _field(value, camel, default)
+
+
+def render_gemini_html(
+    response: Any, path: str | Path, *, height: int = 900, title: str = "Generated HTML"
+) -> HTMLPreview:
+    """Save a completed Gemini generate_content result's text and usage, excluding thoughts.
+
+    Accepts one response, its decoded JSON, or the chunks of generate_content_stream.
+    """
+    chunks = [response] if isinstance(response, Mapping) or hasattr(response, "candidates") else list(response)
+    text, reason, usage, model = [], None, {}, None
+    for chunk in chunks:
+        for candidate in (_gemini(chunk, "candidates") or [])[:1]:
+            content = _gemini(candidate, "content") or {}
+            text += [_gemini(part, "text") or "" for part in (_gemini(content, "parts") or [])
+                     if not _gemini(part, "thought")]
+            reason = _gemini(candidate, "finish_reason") or reason
+        usage = _gemini(chunk, "usage_metadata") or usage
+        model = _gemini(chunk, "model_version") or model
+    reason = getattr(reason, "value", reason)
+    if reason != "STOP":
+        raise ValueError(f"Gemini response is incomplete (finish_reason={reason!r})")
+    if hasattr(usage, "model_dump"):
+        usage = usage.model_dump(mode="json", exclude_none=True)
+    record = {
+        "provider": "gemini",
+        "model": model,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "finish_reason": reason,
+        "usage": usage,
+    }
+    receipt = json.dumps(record, indent=2) + "\n"
+    preview = render_html("".join(text), path, height=height, title=title)
     Path(path).with_suffix(".json").write_text(receipt, encoding="utf-8")
     return preview
 

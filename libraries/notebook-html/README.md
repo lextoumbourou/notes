@@ -61,6 +61,33 @@ cache reads, cache writes and reasoning-token counts when reported. It excludes
 reasoning content and rejects incomplete or refused responses before overwriting
 the saved page. It does not call the API or calculate prices.
 
+For Gemini, install `google-genai` and version 0.1.3 of this helper, then set
+`GEMINI_API_KEY` in the notebook process's environment:
+
+```python
+from google import genai
+from google.genai import types
+from notebook_html import render_gemini_html
+
+client = genai.Client()  # keep a reference, or the stream's connection closes
+stream = client.models.generate_content_stream(
+    model="gemini-4-argon",
+    contents="Make a small interactive quiz about caching.",
+    config=types.GenerateContentConfig(
+        system_instruction="Return a complete, self-contained HTML document.",
+        thinking_config=types.ThinkingConfig(thinking_level="high"),
+        max_output_tokens=65_536,
+    ),
+)
+render_gemini_html(stream, "quiz.html")
+```
+
+`render_gemini_html` accepts a completed response, its decoded JSON, or the
+chunks of `generate_content_stream`. It joins the answer text, skips thought
+parts and rejects any finish reason other than `STOP` before overwriting the
+saved page. The receipt keeps the model version and the final usage metadata,
+including thinking and cached tokens when reported.
+
 For another provider, extract its final text and use the shared renderer:
 
 ```python

@@ -1,0 +1,24 @@
+{
+  "provider": "gemini",
+  "model": "gemini-4-argon",
+  "generated_at": "2026-10-13T20:57:38.214909+00:00",
+  "finish_reason": "STOP",
+  "usage": {
+    "candidates_token_count": 14240,
+    "candidates_tokens_details": [
+      {
+        "modality": "TEXT",
+        "token_count": 14240
+      }
+    ],
+    "prompt_token_count": 2631,
+    "prompt_tokens_details": [
+      {
+        "modality": "TEXT",
+        "token_count": 2631
+      }
+    ],
+    "thoughts_token_count": 2622,
+    "total_token_count": 19493
+  }
+}

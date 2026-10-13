@@ -1,0 +1,72 @@
+{
+ "model": "gemini-4-argon",
+ "run_at": "2026-10-14 06:53 AEST",
+ "clip": "muse-wonder-transcription-clip.mp3",
+ "runs": [
+  {
+   "variant": "no_context",
+   "prompt": "Transcribe this recording verbatim. Two people are talking. Start a new line at every change of speaker, beginning with \"A:\" or \"B:\" (A is whoever speaks first). Keep filler words and short replies such as \"Right.\" Do not summarise or correct the speakers.",
+   "seconds": 14.2,
+   "text": "A: To understand the benchmark claims the paper makes later, we first need to look at the exact mechanisms Meta engineered to make these models act as agents, rather than just, you know, standard next-token predictors.\nB: Right. The distinction between a standard predictor and an agent is fundamental to the architecture discussed here. When you build an agentic system, your goal isn't just reacting to a single, isolated prompt.\nA: Right, yeah.\nB: You want to manage a complex state over time and execute these intricate workflows. The document actually positions reliable memory as the single most critical step toward useful personal and professional agents.\nA: And they call this specific approach active memory, right?\nB: Exactly, active memory.\nA: I will admit, um, my initial thought when I read that phrase was just assuming Meta scaled up the context window. I mean, it is so common in the field right now to just dump 100,000 tokens into a prompt.\nB: Oh, yeah, totally standard.\nA: And you just rely on the model's attention mechanism to like fish out whatever happens to be relevant to you at the time.\nB: Yeah, that brute-force context stuffing is a standard practice, for sure. But the paper explicitly defines active memory as a distinct capability. It's the ability to carry important context about a user across multiple, entirely separate conversations.\nA: Oh, interesting.",
+   "usage": {
+    "promptTokenCount": 2487,
+    "candidatesTokenCount": 309,
+    "totalTokenCount": 2796,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 236
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 2251
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 309
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "variant": "with_context",
+   "prompt": "Transcribe this recording verbatim. Two people are talking. Start a new line at every change of speaker, beginning with \"A:\" or \"B:\" (A is whoever speaks first). Keep filler words and short replies such as \"Right.\" Do not summarise or correct the speakers. The recording is from a podcast episode about Meta's Muse Wonder AI models.",
+   "seconds": 7.8,
+   "text": "A: To understand the benchmark claims the paper makes later, we first need to look at the exact mechanisms Meta engineered to make these models act as agents, rather than just, you know, standard next-token predictors.\nB: Right. The distinction between a standard predictor and an agent is fundamental to the architecture discussed here. When you build an agentic system, your goal isn't just reacting to a single, isolated prompt.\nA: Right. Yeah.\nB: You want to manage a complex state over time and execute these intricate workflows. The document actually positions reliable memory as the single most critical step toward useful personal and professional agents.\nA: And they call this specific approach active memory, right?\nB: Exactly. Active memory.\nA: I will admit, um, my initial thought when I read that phrase was just assuming Meta scaled up the context window. I mean, it is so common in the field right now to just dump 100,000 tokens into a prompt.\nB: Oh, yeah, totally standard.\nA: And you just rely on the model's attention mechanism to, like, fish out whatever happens to be relevant to you at the time.\nB: Yeah, that brute-force context stuffing is a standard practice, for sure. But the paper explicitly defines active memory as a distinct capability. It's the ability to carry important context about a user across multiple, entirely separate conversations.\nA: Oh, interesting.",
+   "usage": {
+    "promptTokenCount": 2503,
+    "candidatesTokenCount": 311,
+    "totalTokenCount": 2814,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 252
+     },
+     {
+      "modality": "AUDIO",
+      "tokenCount": 2251
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 311
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  }
+ ],
+ "note": "Clip sent as the published MP3 (Muse Wonder received the WAV it was cut from).",
+ "scores": {
+  "reference": "muse-wonder-transcription-results.json (corrected by ear)",
+  "no_context_errors": 1,
+  "with_context_errors": 1,
+  "error": "'its' transcribed as 'a' in 'context stuffing is its standard practice' (possibly a stutter)"
+ }
+}

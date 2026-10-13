@@ -1,0 +1,369 @@
+{
+ "model": "gemini-4-argon",
+ "run_at": "2026-10-14 08:13 AEST",
+ "thinking": "default",
+ "note": "Phone videos re-encoded to 720p H.264 with metadata (including GPS) stripped; black.mp4 is a 5-second black, silent control. Videos not published.",
+ "runs": [
+  {
+   "file": "beach.mp4",
+   "question": "What is this a video of?",
+   "run": 1,
+   "seconds": 10.1,
+   "text": "This video is of a black dog walking in the ocean. The dog is walking in the shallow end of the water as waves crash on the shore. The dog is sniffing the water as it walks. The sky is blue with some fluffy white clouds. The sand is light brown. The ocean is a dark blue-green color.",
+   "usage": {
+    "promptTokenCount": 564,
+    "candidatesTokenCount": 70,
+    "totalTokenCount": 634,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 58
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 506
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 70
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "file": "beach.mp4",
+   "question": "What is this a video of?",
+   "run": 2,
+   "seconds": 9.0,
+   "text": "This is a video of a black dog playing in the ocean. The dog is walking in the shallow water near the shore, and the waves are crashing around it. The dog has a red collar, and its tail is wagging. The sky is blue with some white clouds. The beach is sandy, and there is no one else around.",
+   "usage": {
+    "promptTokenCount": 564,
+    "candidatesTokenCount": 73,
+    "totalTokenCount": 637,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 58
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 506
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 73
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "file": "beach.mp4",
+   "question": "What is this a video of?",
+   "run": 3,
+   "seconds": 11.1,
+   "text": "A dog on the beach biting the waves.",
+   "usage": {
+    "promptTokenCount": 564,
+    "candidatesTokenCount": 13,
+    "totalTokenCount": 577,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 58
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 506
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 13
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "file": "beach.mp4",
+   "question": "What breed of dog is in the video?",
+   "run": 1,
+   "seconds": 11.2,
+   "text": "The dog in the video appears to be a black Labrador Retriever, or possibly a Labrador mix. It has a short, dense black coat, a stout build, and an otter-like tail, all of which are characteristic features of a Labrador Retriever. Additionally, Labs are well-known for their love of water, which matches the dog's playful behavior in the ocean waves.",
+   "usage": {
+    "promptTokenCount": 566,
+    "candidatesTokenCount": 80,
+    "totalTokenCount": 646,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 60
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 506
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 80
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "file": "beach.mp4",
+   "question": "What breed of dog is in the video?",
+   "run": 2,
+   "seconds": 8.7,
+   "text": "The dog in the video appears to be a Pit Bull, characterized by its medium build, short coat, and distinct facial structure.",
+   "usage": {
+    "promptTokenCount": 566,
+    "candidatesTokenCount": 30,
+    "totalTokenCount": 596,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 60
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 506
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 30
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "file": "beach.mp4",
+   "question": "What breed of dog is in the video?",
+   "run": 3,
+   "seconds": 10.5,
+   "text": "Based on its build, short black coat, and long tail, the dog in the video appears to be a black Labrador Retriever or a Labrador mix.",
+   "usage": {
+    "promptTokenCount": 566,
+    "candidatesTokenCount": 34,
+    "totalTokenCount": 690,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 60
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 506
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 34
+     }
+    ],
+    "thoughtsTokenCount": 90
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "file": "muscleups.mp4",
+   "question": "What exercise is demonstrated in the video?",
+   "run": 1,
+   "seconds": 11.6,
+   "text": "Here's a breakdown of the pullups performance:\n- The first repetition begins at 00:01, achieves its lowest point at 00:04, and finishes the repetition at 00:05.\n- Repetition 2 begins with the hips descending at 00:06, achieves its lowest point at 00:07, and finishes the repetition at 00:09.\n- Repetition 3 begins with the hips descending at 00:09, achieves its lowest point at 00:11, and finishes the repetition at 00:13.\n\nThe user successfully performed 3 completed reps.",
+   "usage": {
+    "promptTokenCount": 1817,
+    "candidatesTokenCount": 147,
+    "totalTokenCount": 1964,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 107
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 1710
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 147
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "file": "muscleups.mp4",
+   "question": "What exercise is demonstrated in the video?",
+   "run": 2,
+   "seconds": 12.4,
+   "text": "The video shows a user engaging in muscle-ups with the following repetition details: - Repetition 1 begins at 00:01, reaches its inflection point at 00:04, and finishes ascending at 00:05. - Repetition 2 begins at 00:05, reaches its inflection point at 00:07, and finishes ascending at 00:09. - Repetition 3 begins at 00:09, reaches its inflection point at 00:11, and finishes ascending at 00:12. The user successfully performed 3 completed reps.",
+   "usage": {
+    "promptTokenCount": 1817,
+    "candidatesTokenCount": 137,
+    "totalTokenCount": 1954,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 107
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 1710
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 137
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "file": "muscleups.mp4",
+   "question": "What exercise is demonstrated in the video?",
+   "run": 3,
+   "seconds": 10.8,
+   "text": "This video shows a person performing muscle-ups. Here's a breakdown of the repetitions: - Repetition 1 begins at 00:01, achieves its highest point at 00:04, and concludes the repetition at 00:05. - Repetition 2 begins at 00:06, achieves its highest point at 00:07, and concludes the repetition at 00:09. - Repetition 3 begins at 00:09, achieves its highest point at 00:11, and concludes the repetition at 00:13.  A final repetition starts at 00:13, reaches its inflection point at 00:14, and the video ends before completion. The user successfully performed 3 completed reps.",
+   "usage": {
+    "promptTokenCount": 1817,
+    "candidatesTokenCount": 175,
+    "totalTokenCount": 1992,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 107
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 1710
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 175
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "file": "black.mp4",
+   "question": "What is this a video of?",
+   "run": 1,
+   "seconds": 3.6,
+   "text": "There is nothing to see in this video. It is just a black screen for the duration of the clip.",
+   "usage": {
+    "promptTokenCount": 564,
+    "candidatesTokenCount": 26,
+    "totalTokenCount": 590,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 58
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 506
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 26
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "file": "black.mp4",
+   "question": "What is this a video of?",
+   "run": 2,
+   "seconds": 3.6,
+   "text": "It looks like the video you shared is completely black and doesn't show any visible content. If there's another video or specific details you'd like me to look at, please share!",
+   "usage": {
+    "promptTokenCount": 564,
+    "candidatesTokenCount": 44,
+    "totalTokenCount": 608,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 58
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 506
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 44
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  },
+  {
+   "file": "black.mp4",
+   "question": "What is this a video of?",
+   "run": 3,
+   "seconds": 3.5,
+   "text": "I'm sorry, it seems the video you uploaded is completely black. There is no visual information for me to analyze. Could you please re-upload the video or provide another one?",
+   "usage": {
+    "promptTokenCount": 564,
+    "candidatesTokenCount": 42,
+    "totalTokenCount": 606,
+    "promptTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 58
+     },
+     {
+      "modality": "VIDEO",
+      "tokenCount": 506
+     }
+    ],
+    "candidatesTokensDetails": [
+     {
+      "modality": "TEXT",
+      "tokenCount": 42
+     }
+    ]
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon"
+  }
+ ]
+}
