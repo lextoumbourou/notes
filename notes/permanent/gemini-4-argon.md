@@ -10,6 +10,7 @@ summary: The day has finally come.
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mxs7kqbrbb26
 mastodon_post: https://fedi.notesbylex.com/@lex/117436252405283257
 threads_post: https://www.threads.com/@lexisoninsta/post/DedBBcRDyUr
+linkedin_post: https://www.linkedin.com/posts/lextoumbourou_the-model-releases-keep-coming-today-google-share-7515917567945924609-roXR
 x_post: https://x.com/notesbylex_/status/2110154459888365910
 aliases:
 - Gemini 4 Argon
