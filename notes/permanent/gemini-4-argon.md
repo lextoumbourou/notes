@@ -78,7 +78,7 @@ For prose, Argon uses about the same number of tokens as Muse Wonder. For code a
 
 ## Cost Per Task
 
-Artificial Analysis ran its Intelligence Index on all three [@artificialAnalysisGemini4Argon] [@artificialAnalysisMuseWonder] [@artificialAnalysisClaudeOpus55]:
+Artificial Analysis tested all three on its Intelligence Index [@artificialAnalysisGemini4Argon] [@artificialAnalysisMuseWonder] [@artificialAnalysisClaudeOpus55]:
 
 | | Gemini 4 Argon (high) | Muse Wonder (max) | Claude Opus 5.5 (max) |
 |---|---:|---:|---:|
@@ -86,7 +86,7 @@ Artificial Analysis ran its Intelligence Index on all three [@artificialAnalysis
 | Output tokens used | 110M | 130M | 260M |
 | Cost per index task | $1.99 | $4.52 | $5.98 |
 
-Argon's cost is at the launch price. With every rate doubling in December, it would be roughly $4 per task, about the same as Muse Wonder. Argon's highest effort is `high`, while the other two ran at `max`.
+Argon is by far the cheapest per task, but that's at the launch price. From December, it'd be about $4 a task, roughly the same as Muse Wonder. Argon only goes up to `high` effort, while the other two ran at `max`.
 
 ## Benchmarks
 
