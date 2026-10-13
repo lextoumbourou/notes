@@ -2,7 +2,7 @@
 title: "Muse Wonder: Opus 5.5 quality model that supports audio"
 slug: muse-wonder
 date: 2026-10-13 06:34
-modified: 2026-10-13 10:50
+modified: 2026-10-13 11:10
 category: model
 cover: /_media/muse-wonder-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@samuelqyx?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Quek</a> on <a href="https://unsplash.com/photos/silhouette-of-a-person-looking-at-the-milky-way-cD4pt47I4JY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -101,24 +101,53 @@ I took 25 five-second clips from ESC-50, a sound classification dataset with 50 
 
 It got **20 of 25 right (80%)**. Guessing would get 2%, and human listeners in the original paper scored 81.3% [@piczakESCDatasetEnvironmental2015].
 
-| Clip | Listen | Muse Wonder's answer | Right? |
-|---|---|---|---|
-| [Pig](https://freesound.org/s/208757/) | <audio controls preload="none" src="../_media/muse-wonder-esc50-pig.mp3"></audio> | Pig | Yes |
-| [Crackling fire](https://freesound.org/s/17150/) | <audio controls preload="none" src="../_media/muse-wonder-esc50-crackling-fire.mp3"></audio> | Crackling fire | Yes |
-| [Laughing](https://freesound.org/s/1791/) | <audio controls preload="none" src="../_media/muse-wonder-esc50-laughing.mp3"></audio> | Laughing | Yes |
-| [Vacuum cleaner](https://freesound.org/s/100210/) | <audio controls preload="none" src="../_media/muse-wonder-esc50-vacuum-cleaner.mp3"></audio> | Vacuum cleaner | Yes |
-| [Siren](https://freesound.org/s/31482/) | <audio controls preload="none" src="../_media/muse-wonder-esc50-siren.mp3"></audio> | Siren | Yes |
-| [Wind](https://freesound.org/s/137296/) | <audio controls preload="none" src="../_media/muse-wonder-esc50-wind.mp3"></audio> | Sea waves | No |
-| [Keyboard typing](https://freesound.org/s/137/) | <audio controls preload="none" src="../_media/muse-wonder-esc50-keyboard-typing.mp3"></audio> | Dog | No |
-| [Snoring](https://freesound.org/s/20545/) | <audio controls preload="none" src="../_media/muse-wonder-esc50-snoring.mp3"></audio> | Dog | No |
-| [Helicopter](https://freesound.org/s/172649/) | <audio controls preload="none" src="../_media/muse-wonder-esc50-helicopter.mp3"></audio> | Rain | No |
-| [Church bells](https://freesound.org/s/13571/) | <audio controls preload="none" src="../_media/muse-wonder-esc50-church-bells.mp3"></audio> | Dog | No |
+| Clip | Muse Wonder's answer |
+|---|---|
+| [Pig](https://freesound.org/s/208757/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-pig.mp3"></audio> | Pig ✓ |
+| [Snoring](https://freesound.org/s/20545/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-snoring.mp3"></audio> | Dog ✗ |
+| [Siren](https://freesound.org/s/31482/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-siren.mp3"></audio> | Siren ✓ |
+| [Helicopter](https://freesound.org/s/172649/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-helicopter.mp3"></audio> | Rain ✗ |
+| [Laughing](https://freesound.org/s/1791/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-laughing.mp3"></audio> | Laughing ✓ |
 
-The clips are from ESC-50 (CC BY-NC 3.0), which took them from [Freesound](https://freesound.org) recordings.
+<details markdown="1">
+<summary>All 25 clips</summary>
 
-Three of the misses were "dog", the first label in the list. When I asked it to describe those clips instead, it often replied that "no recording was attached to your message", even though the audio was sent and billed. It said the same about five seconds of silence. So sometimes it doesn't hear the clip at all, and it doesn't tell you.
+| Clip | Muse Wonder's answer |
+|---|---|
+| [Dog](https://freesound.org/s/100032/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-dog.mp3"></audio> | Dog ✓ |
+| [Pig](https://freesound.org/s/208757/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-pig.mp3"></audio> | Pig ✓ |
+| [Frog](https://freesound.org/s/15689/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-frog.mp3"></audio> | Frog ✓ |
+| [Hen](https://freesound.org/s/18074/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-hen.mp3"></audio> | Hen ✓ |
+| [Sheep](https://freesound.org/s/121951/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-sheep.mp3"></audio> | Sheep ✓ |
+| [Rain](https://freesound.org/s/17367/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-rain.mp3"></audio> | Rain ✓ |
+| [Crackling fire](https://freesound.org/s/17150/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-crackling-fire.mp3"></audio> | Crackling fire ✓ |
+| [Chirping birds](https://freesound.org/s/100038/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-chirping-birds.mp3"></audio> | Chirping birds ✓ |
+| [Wind](https://freesound.org/s/137296/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-wind.mp3"></audio> | Sea waves ✗ |
+| [Toilet flush](https://freesound.org/s/20736/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-toilet-flush.mp3"></audio> | Toilet flush ✓ |
+| [Crying baby](https://freesound.org/s/187207/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-crying-baby.mp3"></audio> | Crying baby ✓ |
+| [Clapping](https://freesound.org/s/104089/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-clapping.mp3"></audio> | Clapping ✓ |
+| [Coughing](https://freesound.org/s/19111/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-coughing.mp3"></audio> | Coughing ✓ |
+| [Laughing](https://freesound.org/s/1791/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-laughing.mp3"></audio> | Laughing ✓ |
+| [Snoring](https://freesound.org/s/20545/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-snoring.mp3"></audio> | Dog ✗ |
+| [Door wood knock](https://freesound.org/s/101336/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-door-wood-knock.mp3"></audio> | Door wood knock ✓ |
+| [Keyboard typing](https://freesound.org/s/137/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-keyboard-typing.mp3"></audio> | Dog ✗ |
+| [Can opening](https://freesound.org/s/101404/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-can-opening.mp3"></audio> | Can opening ✓ |
+| [Vacuum cleaner](https://freesound.org/s/100210/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-vacuum-cleaner.mp3"></audio> | Vacuum cleaner ✓ |
+| [Clock tick](https://freesound.org/s/21934/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-clock-tick.mp3"></audio> | Clock tick ✓ |
+| [Helicopter](https://freesound.org/s/172649/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-helicopter.mp3"></audio> | Rain ✗ |
+| [Siren](https://freesound.org/s/31482/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-siren.mp3"></audio> | Siren ✓ |
+| [Engine](https://freesound.org/s/18527/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-engine.mp3"></audio> | Engine ✓ |
+| [Church bells](https://freesound.org/s/13571/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-church-bells.mp3"></audio> | Dog ✗ |
+| [Fireworks](https://freesound.org/s/115545/)<br><audio controls preload="none" style="width:100%;min-width:150px" src="../_media/muse-wonder-esc50-fireworks.mp3"></audio> | Fireworks ✓ |
 
-The audio itself is cheap, at about 13 tokens per second. The thinking costs more, at about 1,300 reasoning tokens per answer, so the 25 clips cost about US$0.69 ([raw results](../_media/muse-wonder-esc50-results.json)).
+</details>
+
+
+Clips from ESC-50 (CC BY-NC 3.0), originally from [Freesound](https://freesound.org).
+
+Three of the misses were "dog", the first label in the list. When I asked it to describe those clips, it often said "no recording was attached", even though the audio was sent. So sometimes it just doesn't hear the clip, and it doesn't tell you.
+
+The 25 clips cost about US$0.69, mostly in thinking ([raw results](../_media/muse-wonder-esc50-results.json)).
 
 ### Transcribing two speakers
 
@@ -145,11 +174,9 @@ Meta's model card compares both Muse Wonder models against Claude Fable 5.1, GPT
 | ProgramBench | 59.0 | 50.0 | **70.5** | 55.5 | 52.5 |
 | Artificial Analysis Intelligence Index | 56 | 52 | **58** | 53 | 53 |
 
-Even in Meta's own table, Opus 5.5 beats the API model on computer use (OSWorld), terminal coding, ProgramBench and the Artificial Analysis index. Muse Wonder's wins are on legal work (Harvey LAB), memory and long-horizon software engineering (DeepSWE, SWE-Marathon). Many of the biggest margins belong to Muse Wonder Full, which you can't call from the API.
+Even in Meta's own table, Opus 5.5 wins on computer use, terminal coding and ProgramBench. Muse Wonder wins on legal work, memory and long-running software tasks, though the biggest margins belong to Muse Wonder Full, which isn't on the API. Some of these benchmarks are Meta's own, and not every row used the same [Coding Harness](coding-harness.md) [@metaMuseWonderModelCard].
 
-A few caveats from the model card. The Personal Superintelligence Index and MemoryBench are Meta's own evaluations. The SWE-Marathon results for GPT-6 Astra and Fable 5.1 come from Codex and Claude Code respectively, so that row isn't a common-harness comparison (see [Coding Harness](coding-harness.md)), and Muse Wonder Full's SWE-Marathon score used `xhigh` effort rather than `max`. Competitor runs Meta did itself are described as "best-effort" [@metaMuseWonderModelCard].
-
-Overall, at the same price per token, Opus 5.5 still looks like the stronger general model, but Muse Wonder may be the cheaper one per task, and it's worth trying for long-running agent work where memory matters.
+Overall, Opus 5.5 still looks like the stronger model at the same price per token, but Muse Wonder may be cheaper per task, and it's worth trying for long-running agent work.
 
 ## Real example
 
