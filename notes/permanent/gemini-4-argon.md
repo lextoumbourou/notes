@@ -2,7 +2,7 @@
 title: "Gemini 4 Argon: Google's long-awaited new frontier model"
 slug: gemini-4-argon
 date: 2026-10-14 06:12
-modified: 2026-10-14 06:12
+modified: 2026-10-14 09:03
 category: model
 cover: /_media/gemini-4-argon-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@halacious?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hal Gatewood</a> on <a href="https://unsplash.com/photos/purple-and-pink-plasma-ball-OgvqXGL7XO4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -120,7 +120,7 @@ Second, Google say they can't rule out that Argon could give meaningful help to 
 
 People on [Hacker News](https://news.ycombinator.com/item?id=50073879) have been impressed by Argon's SVG drawings, so I tried it on a photo of my dog at the beach.
 
-I resized the photo to 1024 pixels on the long side, sent it with the system prompt "Return a complete, self-contained SVG document." and asked it to "Recreate this photo as an SVG, as close to the original as you can." Then, to test drawing without seeing anything, I had Claude write a short description of the photo, added her breed, and sent only that text.
+I sent it the photo and asked it to "Recreate this photo as an SVG, as close to the original as you can." Then, to see how it draws without seeing anything, I had Claude write a short description of the photo, added her breed and colouring, and sent only the text.
 
 <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:start">
 <figure style="margin:0"><a href="../_media/gemini-4-argon-dog-photo.jpg"><img src="../_media/gemini-4-argon-dog-photo.jpg" alt="My dog standing on the sand at the beach, mouth open, with waves behind" style="width:100%;height:auto;display:block"></a><figcaption style="font-size:0.85em;text-align:center">Photo</figcaption></figure>
@@ -135,17 +135,17 @@ I resized the photo to 1024 pixels on the long side, sent it with the system pro
 
 </details>
 
-Both used high thinking. The photo version took about 4 minutes and cost about US$0.20. The text version took about 5 minutes and cost about US$0.30 ([raw results](../_media/gemini-4-argon-dog-svg-results.json)).
+Both used high thinking, took 4 to 5 minutes, and cost US$0.20 to $0.30 each ([raw results](../_media/gemini-4-argon-dog-svg-results.json)).
 
 Getting her colouring right in the description made a big difference. Without it, Argon drew a cartoonish black and grey dog, and plain "brindle" gave her tiger stripes.
 
 ## Testing the audio
 
-I ran the same two audio tests from the [Muse Wonder](muse-wonder.md#testing-the-audio) article, with the same clips and prompts, at Argon's default thinking level.
+I ran the same two audio tests as in the [Muse Wonder](muse-wonder.md#testing-the-audio) article, with the same clips and prompts.
 
 ### Classifying sounds
 
-Argon got **20 of the 25** ESC-50 clips right, the same score as Muse Wonder, but with different misses [@piczakESCDatasetEnvironmental2015]:
+Argon got **20 of the 25** ESC-50 sound clips right, the same as Muse Wonder, but it missed different ones [@piczakESCDatasetEnvironmental2015]:
 
 | Clip | Argon's answer | Muse Wonder's answer |
 |---|---|---|
@@ -159,23 +159,21 @@ Argon got **20 of the 25** ESC-50 clips right, the same score as Muse Wonder, bu
 | Helicopter | Helicopter ✓ | Rain ✗ |
 | Church bells | Church bells ✓ | Dog ✗ |
 
-Argon's misses sound like genuine mishearings. Asked to describe the rain clip, it heard "a large crowd of people clapping" all three times, and it heard the siren as a wind instrument or a kazoo.
+Its misses sound like genuine mishearings. It heard the rain clip as "a large crowd of people clapping" every time, and the siren as a wind instrument or a kazoo.
 
-The surprise was the silent control. I sent five seconds of pure silence three times, and Argon described "someone blows into a harmonica", then "a young man speaks in a calm and gentle tone, accompanied by the sounds of keyboard typing", then a man talking over a car engine and horn. Muse Wonder said no recording was attached, so Argon will invent sounds when there are none.
+The surprise was silence. I sent five seconds of nothing, three times, and Argon heard "someone blows into a harmonica", then "a young man speaks in a calm and gentle tone, accompanied by the sounds of keyboard typing", then a man talking over a car engine and horn. Muse Wonder just said no recording was attached.
 
-It was also much cheaper and faster. Argon barely thought at its default setting (a median of 7 thinking tokens per clip, against about 1,300 for Muse Wonder) and took about 4.5 seconds per clip. All 25 cost about US$0.02 at the launch price, against US$0.69 for Muse Wonder ([raw results](../_media/gemini-4-argon-esc50-results.json)).
+It was also much cheaper and faster. Argon barely thought at its default setting, so each clip took about 4.5 seconds, and all 25 cost about US$0.02, against US$0.69 for Muse Wonder ([raw results](../_media/gemini-4-argon-esc50-results.json)).
 
 ### Transcribing two speakers
 
-I sent the same 75-second clip of two podcast hosts and asked for a verbatim transcript with a line for each speaker turn.
+I sent the same 75-second clip of two podcast hosts and asked for a transcript with a line for each speaker.
 
-Argon was basically perfect, with one word off in both runs (with and without a topic hint). It also caught the quiet "Right, yeah" and the "um" that WhisperX missed. Its one mistake was the same word Muse Wonder struggled with, which might just be a stutter in the audio. Each run cost under a cent at the launch price ([raw results](../_media/gemini-4-argon-transcription-results.json)).
-
-Argon counts about 30 audio tokens per second, more than twice Muse Wonder's 12.5, but the lower price more than makes up for it.
+Argon was basically perfect, getting one word wrong in each run. It even caught a quiet "Right, yeah" and an "um" that WhisperX missed. Its one mistake was the same word Muse Wonder struggled with, which might just be a stutter in the audio. Each run cost under a cent ([raw results](../_media/gemini-4-argon-transcription-results.json)).
 
 ## Testing video
 
-I also sent two of my own phone videos, scaled down to 720p with the location metadata stripped, and asked each question three times at the default thinking level.
+I also sent two of my own phone videos and asked each question three times.
 
 <div style="overflow:hidden">
 <table style="display:table;table-layout:fixed;width:100%">
@@ -203,21 +201,21 @@ I also sent two of my own phone videos, scaled down to 720p with the location me
 </table>
 </div>
 
-The exercise answers all used the same rep-by-rep template, ending in "The user successfully performed 3 completed reps", which suggests Google trained it specifically on exercise videos.
+The exercise answers all followed the same rep-by-rep template, ending with "The user successfully performed 3 completed reps", so I suspect Google trained it on workout videos.
 
-Argon counted about 97 video tokens per second at the default resolution, and all 12 questions cost about US$0.03 at the launch price ([raw results](../_media/gemini-4-argon-video-results.json)).
+All 12 questions cost about US$0.03 ([raw results](../_media/gemini-4-argon-video-results.json)).
 
 ## Real example
 
-As with [Muse Wonder](muse-wonder.md#real-example) and [Claude Opus 5.5](claude-opus-5-5.md#real-example), I asked Argon at high thinking to turn this article into a 3D gameshow with an N64 look.
+As with [Muse Wonder](muse-wonder.md#real-example) and [Claude Opus 5.5](claude-opus-5-5.md#real-example), I asked Argon to turn this article into a 3D gameshow that looks like an N64 game.
 
-This uses Google's [Gen AI Python SDK](https://github.com/googleapis/python-genai). The [Notebook HTML helper](../_media/notesbylex_notebook_html-0.1.3-py3-none-any.whl) saves the game and token usage, then renders it:
+This uses Google's [Gen AI Python SDK](https://github.com/googleapis/python-genai), and my [Notebook HTML helper](../_media/notesbylex_notebook_html-0.1.3-py3-none-any.whl) saves and shows the game:
 
 ```bash
 pip install google-genai ./notesbylex_notebook_html-0.1.3-py3-none-any.whl
 ```
 
-Set `GEMINI_API_KEY` in the environment used to launch Obsidian. Running the cell makes a paid request; the saved game plays without an API key or another model call.
+Set `GEMINI_API_KEY` in the environment used to launch Obsidian. Running the cell costs money, but the saved game plays for free.
 
 ```python {id=gemini-4-argon-quiz}
 from google import genai
@@ -1179,7 +1177,7 @@ render_gemini_html(stream, "../_media/gemini-4-argon-quiz-high.html")
 </div>
 <!-- /nb-output -->
 
-This game was generated on **14 October 2026** using **`gemini-4-argon` at high thinking**. It cost about **US$0.17** at the launch price, calculated from the [saved token usage](../_media/gemini-4-argon-quiz-high.json) and Google's standard API prices [@googleGeminiAPIPricing]:
+It used high thinking and cost about **US$0.17** at the launch price ([saved token usage](../_media/gemini-4-argon-quiz-high.json)) [@googleGeminiAPIPricing]:
 
 | Usage | Tokens | Cost, launch price (USD) | Cost from 1 December (USD) |
 |---|---:|---:|---:|
@@ -1187,12 +1185,12 @@ This game was generated on **14 October 2026** using **`gemini-4-argon` at high 
 | Output, including thinking | 16,862 | $0.1686 | $0.3372 |
 | **Total** | **19,493** | **$0.1739** | **$0.3477** |
 
-Of the output tokens, **2,622 were thinking tokens** and **14,240 were the HTML response**, about three times the size of Muse Wonder's game.
+Of the output tokens, **2,622 were thinking** and **14,240 were the game itself**, about three times the size of Muse Wonder's.
 
-For comparison, [Claude Opus 5.5](claude-opus-5-5.md#real-example) used 49,136 tokens and cost about **US$0.96**, and [Muse Wonder](muse-wonder.md#real-example) used 7,693 tokens for about **US$0.12**. Argon used fewer thinking tokens than either but wrote a much bigger game.
+For comparison, [Claude Opus 5.5](claude-opus-5-5.md#real-example) used 49,136 tokens (**US$0.96**) and [Muse Wonder](muse-wonder.md#real-example) used 7,693 (**US$0.12**). Argon thought less than either but wrote a much bigger game.
 
-The game was generated from an earlier draft of this article, before the SVG and audio sections were added.
+I made the game from an earlier draft of this article, before the SVG, audio and video sections.
 
-The 3D studio looks like an N64 game, with a blocky robot host, spinning stars and a pixelated stage. Right and wrong answers, scoring, the replay button, the keyboard controls and a 390-pixel phone layout all worked when I tested them. It's one small coding example, not a benchmark of overall ability.
+It looks like a proper N64 game, with a blocky robot host, spinning stars and a pixelated stage. Everything I tried worked, on desktop and phone. It's just one small coding example, though, not a benchmark.
 
 [Play the game in its own page](../_media/gemini-4-argon-quiz-high.html).
