@@ -110,11 +110,11 @@ Google doesn't compare it with Muse Wonder, and the two model cards mostly use d
 
 ## Safety
 
-Two things in the safety section stood out to me.
+Two things stood out to me in the model card.
 
-First, Google says Argon refuses less. Unjustified refusals on benign or borderline prompts fell by 9.6 percentage points compared with Gemini 3.1 Pro [@googleDeepMindGemini4ArgonModelCard], and Google says it "answers questions more directly with less hedging" [@kavukcuogluGemini4ArgonBuilt2026].
+First, it refuses less. Google says it wrongly refuses harmless or borderline prompts 9.6 percentage points less often than Gemini 3.1 Pro [@googleDeepMindGemini4ArgonModelCard], and "answers questions more directly with less hedging" [@kavukcuogluGemini4ArgonBuilt2026].
 
-Second, its Frontier Safety Framework results. Google say they can't rule out that Argon has reached its critical capability levels for biological risk or cybersecurity, so it shipped with safeguards it says bring the risk below those levels. It also passed 14 of 15 of Google's stealth and situational-awareness challenges, so Google couldn't rule out that early-warning threshold either [@googleDeepMindGemini4ArgonModelCard].
+Second, Google say they can't rule out that Argon could give meaningful help to someone trying to cause harm with biological weapons or cyberattacks, so it shipped with extra safeguards. It also passed 14 of 15 of Google's tests of stealth and situational awareness, which check whether a model could get around oversight [@googleDeepMindGemini4ArgonModelCard].
 
 ## Drawing SVGs
 
