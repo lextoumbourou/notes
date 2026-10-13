@@ -19,13 +19,13 @@ notebook:
 
 The model releases keep coming! Today, Google launched its long-awaited new frontier model, **Gemini 4 Argon**.
 
-It seems competitive-ish on the benchmarks, maybe a tad behind Claude on coding tasks.
+It tops most of the benchmarks on Google's own model card (14 of 19), as you'd expect. But Claude Opus 5.5 still leads on terminal coding, and on Artificial Analysis's independent index [@googleDeepMindGemini4ArgonModelCard] [@artificialAnalysisGemini4Argon].
 
 Google says it's a brand-new model architecture. Apparently, "not a modification or a fine-tune of a prior model". It's built as a sparse [Mixture-of-Experts](mixture-of-experts.md) transformer, but they don't disclose the parameter count [@googleDeepMindGemini4ArgonModelCard].
 
 Notably, it can write up to **1M tokens in a single response**, which, as far as I can tell, is a first for a publicly available frontier model. However, you need to use the "long decode" background job via the Interactions API, which generates the output in 64K "hops" and joins them together. Without it, the limit is 65,536 [@googleGeminiAPILongDecode] [@googleGeminiAPIGemini4Argon].
 
-Introductory prices are on par with [GPT 6 Sol and Luna](gpt-6-sol-and-luna.md), but after the introductory period, it's basically [Claude Opus 5.5](claude-opus-5-5.md) and [Muse Wonder](muse-wonder.md) prices [@googleGeminiAPIPricing].
+Introductory prices are on par with [GPT-6 Sol](gpt-6-sol.md), but after the introductory period, it's basically [Claude Opus 5.5](claude-opus-5-5.md) and [Muse Wonder](muse-wonder.md) prices [@googleGeminiAPIPricing].
 
 It supports audio and video, plus the usual multimodal suspects. I tested a few things, including video understanding, audio understanding and code generation. Very impressive results [@googleGeminiAPIGemini4Argon].
 
