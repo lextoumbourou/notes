@@ -90,7 +90,7 @@ Argon is by far the cheapest per task, but that's at the launch price. From Dece
 
 ## Benchmarks
 
-Google's model card compares Argon with Opus 5.5, Claude Fable 5.1 and GPT-6 Astra. A selection of rows [@googleDeepMindGemini4ArgonModelCard]:
+Google compares Argon with Opus 5.5, Claude Fable 5.1 and GPT-6 Astra. Here are some of the results [@googleDeepMindGemini4ArgonModelCard]:
 
 | Benchmark | Gemini 4 Argon | Opus 5.5 | Fable 5.1 | GPT-6 Astra |
 |---|---:|---:|---:|---:|
@@ -104,9 +104,9 @@ Google's model card compares Argon with Opus 5.5, Claude Fable 5.1 and GPT-6 Ast
 | LVBench (long video) | **91.7** | 83.7 | 79.7 | 87.5 |
 | CWE-bench v1 | **68.0** | 67.0 | 58.0 | **68.0** |
 
-Argon has the top score on 14 of Google's 19 rows. Opus 5.5 still wins terminal coding and PostTrainBench, and GPT-6 Astra wins FrontierSWE, Terminal-Bench Science and OSWorld-2.0. The biggest margins are on very long context (GraphWalks from 256K to 1M tokens) and legal work. The card links a methodology page for the settings used [@googleDeepMindGemini4ArgonModelCard].
+Argon comes top on 14 of Google's 19 benchmarks, with the biggest wins on very long context (GraphWalks, 256K to 1M tokens) and legal work. Opus 5.5 still wins on terminal coding and PostTrainBench, and GPT-6 Astra wins three, including OSWorld-2.0 [@googleDeepMindGemini4ArgonModelCard].
 
-Google doesn't compare with Muse Wonder, and most shared benchmark names don't line up. For example, Meta's card reports Opus 5.5 at 59.6 on Terminal-Bench 4.0-AA, while Google reports 66.4 on Terminal-Bench 4.0 [@metaMuseWonderModelCard]. DeepSWE v1.1 is the exception: both cards report identical scores for Opus 5.5, Fable 5.1 and GPT-6 Astra, and on that one Muse Wonder (78.8) edges out Argon (77.9).
+Google doesn't compare it with Muse Wonder, and the two model cards mostly use different benchmarks. The one they share is DeepSWE, where Muse Wonder (78.8) just beats Argon (77.9) [@metaMuseWonderModelCard].
 
 ## Safety
 
