@@ -139,6 +139,12 @@ Both used high thinking, took 4 to 5 minutes, and cost US$0.20 to $0.30 each ([r
 
 Getting her colouring right in the description made a big difference. Without it, Argon drew a cartoonish black and grey dog, and plain "brindle" gave her tiger stripes.
 
+And finally, in honour of Simon Willison's [pelican riding a bicycle](https://simonwillison.net/tags/pelican-riding-a-bicycle/) test, I asked it to "Generate an SVG of this dog riding a bicycle", with the same description:
+
+<figure style="margin:0 auto;max-width:360px"><a href="../_media/gemini-4-argon-dog-on-a-bike.svg"><img src="../_media/gemini-4-argon-dog-on-a-bike.svg" alt="Argon's SVG of my dog riding a bicycle along the beach" style="width:100%;height:auto;display:block"></a></figure>
+
+The bike actually works, and she's pedalling. That one took about 4 minutes and cost US$0.22.
+
 ## Testing the audio
 
 I ran the same two audio tests as in the [Muse Wonder](muse-wonder.md#testing-the-audio) article, with the same clips and prompts.

@@ -123,6 +123,36 @@
    "variant": "from_text",
    "run_at": "2026-10-14 08:50 AEST",
    "note": "Description revised to 'black brindle'. Streamed with the Gen AI SDK. Valid XML, published unchanged."
+  },
+  {
+   "prompt": "Generate an SVG of this dog riding a bicycle.\n\nHere is a description of a photo of her:\n\nA portrait-orientation photo of a black brindle Bull Arab and Staghound cross standing on wet golden sand at the beach on a sunny day. The dog faces the camera, with its head turned slightly towards the left of the frame. It has a white muzzle and grey whiskers, a big black nose, brown eyes, one ear pricked up and one flopped over, and its mouth is open in a happy pant with a long pink tongue hanging out. It wears a red collar with a small round red tag, and has a white patch on its chest. Its legs are long and thin, the front-left paw is white, and the paws are slightly blurred. Its shadow stretches away to the right across the sand. Behind it, white foamy waves wash up the shore, then a band of teal-green sea meets a bright blue sky with scattered white clouds.",
+   "system": "Return a complete, self-contained SVG document.",
+   "files": [],
+   "thinking": "high",
+   "seconds": 245.7,
+   "usage": {
+    "candidates_token_count": 15309,
+    "candidates_tokens_details": [
+     {
+      "modality": "TEXT",
+      "token_count": 15309
+     }
+    ],
+    "prompt_token_count": 244,
+    "prompt_tokens_details": [
+     {
+      "modality": "TEXT",
+      "token_count": 244
+     }
+    ],
+    "thoughts_token_count": 6589,
+    "total_token_count": 22142
+   },
+   "finish": "STOP",
+   "model_version": "gemini-4-argon",
+   "variant": "on_a_bike",
+   "run_at": "2026-10-14 09:20 AEST",
+   "note": "Pelican-on-a-bicycle style prompt with the black brindle description. Streamed with the Gen AI SDK. Valid XML, published unchanged."
   }
  ]
 }

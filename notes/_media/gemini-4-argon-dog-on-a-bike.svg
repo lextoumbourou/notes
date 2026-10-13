@@ -1,0 +1,527 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <!-- Sky & Sea Gradients -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e88e5"/>
+      <stop offset="65%" stop-color="#64b5f6"/>
+      <stop offset="100%" stop-color="#bbdefb"/>
+    </linearGradient>
+
+    <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#006978"/>
+      <stop offset="40%" stop-color="#0097a7"/>
+      <stop offset="85%" stop-color="#26c6da"/>
+      <stop offset="100%" stop-color="#80deea"/>
+    </linearGradient>
+
+    <!-- Wet Golden Sand Gradients -->
+    <linearGradient id="sandGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b5925b"/>
+      <stop offset="15%" stop-color="#cba358"/>
+      <stop offset="45%" stop-color="#dfba69"/>
+      <stop offset="75%" stop-color="#c99e4c"/>
+      <stop offset="100%" stop-color="#b38638"/>
+    </linearGradient>
+
+    <linearGradient id="wetSheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="35%" stop-color="#e0f7fa" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="65%" stop-color="#e0f7fa" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <linearGradient id="shadowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4a3515" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#5c421a" stop-opacity="0.38"/>
+      <stop offset="85%" stop-color="#6e4f20" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6e4f20" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Bicycle Metallic & Frame Gradients -->
+    <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8f9fa"/>
+      <stop offset="45%" stop-color="#adb5bd"/>
+      <stop offset="55%" stop-color="#495057"/>
+      <stop offset="100%" stop-color="#dee2e6"/>
+    </linearGradient>
+
+    <linearGradient id="bikeFrame" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff3b0"/>
+      <stop offset="50%" stop-color="#f4d58d"/>
+      <stop offset="100%" stop-color="#ca9d42"/>
+    </linearGradient>
+
+    <!-- Black Brindle Coat Pattern -->
+    <pattern id="brindle" width="100" height="100" patternUnits="userSpaceOnUse" patternTransform="rotate(-25)">
+      <rect width="100" height="100" fill="#181615"/>
+      <!-- Dark & Medium Brown Brindle Streaks -->
+      <path d="M-10,12 Q15,4 40,15 T90,10 M5,28 Q30,20 55,32 T105,25 M-5,48 Q25,38 50,49 T95,42 M10,68 Q35,58 65,70 T110,64 M0,88 Q25,78 55,90 T100,85" stroke="#3d2817" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M5,6 Q25,14 45,7 T85,16 M15,36 Q40,28 60,39 T100,32 M-10,58 Q15,65 40,56 T80,62 M20,78 Q45,70 70,82 T105,75 M-5,95 Q20,88 45,98" stroke="#634328" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Golden-Tan Highlight Hair Streaks -->
+      <path d="M12,18 Q28,12 42,20 M35,42 Q52,36 68,44 M8,62 Q24,56 38,64 M48,84 Q65,78 82,86 M72,14 Q85,8 98,16 M22,92 Q38,85 52,93" stroke="#8c6239" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <!-- Jet Black Tiger Stripes -->
+      <path d="M0,22 Q25,15 55,24 T95,18 M-5,42 Q20,33 50,44 T90,38 M10,62 Q35,52 65,64 T105,58 M-10,80 Q20,72 45,84 T95,78" stroke="#0c0b0a" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </pattern>
+
+    <!-- 3D Body Shading Overlay -->
+    <linearGradient id="bodyShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="40%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.45"/>
+    </linearGradient>
+
+    <linearGradient id="whiteFur" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="65%" stop-color="#f2f4f7"/>
+      <stop offset="100%" stop-color="#d0d7de"/>
+    </linearGradient>
+
+    <linearGradient id="tongueGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d94b68"/>
+      <stop offset="30%" stop-color="#ff758f"/>
+      <stop offset="75%" stop-color="#ff8fa3"/>
+      <stop offset="100%" stop-color="#ffb3c1"/>
+    </linearGradient>
+
+    <!-- Filters for Paws & Shadow Blur -->
+    <filter id="pawBlur" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3.2 1.8"/>
+    </filter>
+
+    <filter id="shadowBlur" x="-10%" y="-20%" width="120%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+    </filter>
+
+    <filter id="reflectionBlur" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3 8"/>
+    </filter>
+  </defs>
+
+  <!-- ==================== 1. SKY & CLOUDS ==================== -->
+  <rect width="800" height="430" fill="url(#skyGrad)"/>
+
+  <!-- Distant Fluffy Clouds -->
+  <g fill="#ffffff" opacity="0.92">
+    <!-- Left Cloud -->
+    <path d="M30,220 Q45,190 80,195 Q105,165 145,180 Q175,175 190,200 Q220,205 215,230 Q215,245 190,245 L35,245 Q10,245 15,225 Q20,215 30,220 Z"/>
+    <path d="M40,235 Q110,225 200,238 L190,245 L35,245 Z" fill="#dbe9f6"/>
+
+    <!-- Center Cloud (Behind dog's head for high contrast) -->
+    <path d="M230,285 Q245,250 285,255 Q315,215 365,230 Q405,215 435,245 Q475,240 490,270 Q515,280 505,305 L220,305 Q200,295 230,285 Z"/>
+    <path d="M235,295 Q360,280 495,298 L505,305 L220,305 Z" fill="#dbe9f6"/>
+
+    <!-- Upper Right Cloud -->
+    <path d="M550,145 Q570,115 605,122 Q635,95 675,112 Q710,108 725,135 Q755,140 748,165 L540,165 Q525,155 550,145 Z"/>
+    <path d="M550,156 Q645,146 740,160 L748,165 L540,165 Z" fill="#dbe9f6"/>
+
+    <!-- Horizon Haze Clouds -->
+    <path d="M620,345 Q640,325 670,330 Q700,310 735,325 Q765,325 775,348 L610,348 Z" opacity="0.75"/>
+    <path d="M-20,360 Q15,340 50,348 Q85,330 120,345 Q145,350 150,365 L-20,365 Z" opacity="0.75"/>
+  </g>
+
+  <!-- ==================== 2. TEAL-GREEN SEA & WAVES ==================== -->
+  <rect y="422" width="800" height="125" fill="url(#seaGrad)"/>
+
+  <!-- Distant Swells -->
+  <path d="M0,442 Q180,437 360,443 T800,440" stroke="#4dd0e1" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M0,468 Q240,462 480,470 T800,466" stroke="#b2ebf2" stroke-width="3" fill="none" opacity="0.7"/>
+  <path d="M120,466 Q220,460 320,467 M520,468 Q640,462 760,467" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.85"/>
+
+  <!-- Mid-water Broken Foam -->
+  <path d="M0,498 Q120,490 250,500 T520,496 T800,502 L800,520 L0,520 Z" fill="#4dd0e1" opacity="0.5"/>
+  <path d="M0,498 Q120,490 250,500 T520,496 T800,502" stroke="#ffffff" stroke-width="5" fill="none" opacity="0.9"/>
+
+  <!-- ==================== 3. WET GOLDEN SAND & SHORE FOAM ==================== -->
+  <rect y="518" width="800" height="482" fill="url(#sandGrad)"/>
+  <rect y="518" width="800" height="482" fill="url(#wetSheen)"/>
+
+  <!-- Subtle Sand Ripples -->
+  <g stroke="#a67c33" stroke-width="1.5" opacity="0.22" fill="none">
+    <path d="M40,680 Q180,672 320,682 T680,676"/>
+    <path d="M120,745 Q290,738 460,748 T780,740"/>
+    <path d="M20,835 Q220,825 420,838 T760,832"/>
+    <path d="M90,925 Q310,915 540,928 T790,920"/>
+  </g>
+
+  <!-- Wet Water Glaze Washing Up the Shore -->
+  <path d="M0,530 L800,530 L800,615 Q700,635 580,610 T340,622 T110,605 Q40,615 0,600 Z" fill="#80deea" opacity="0.28"/>
+  <path d="M0,600 Q40,615 110,605 T340,622 T580,610 Q700,635 800,615" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.55"/>
+
+  <!-- Main Foamy Waves Washing Up -->
+  <path d="M0,515 L800,515 L800,565 Q710,588 610,562 T410,575 T190,558 Q85,578 0,555 Z" fill="#26c6da" opacity="0.65"/>
+
+  <!-- White Lacy Sea Foam -->
+  <path d="M0,542 Q85,565 190,545 T410,562 T610,548 Q710,575 800,552 L800,572 Q710,595 610,569 T410,582 T190,565 Q85,585 0,562 Z" fill="#ffffff" opacity="0.95"/>
+  <path d="M0,522 Q130,538 260,524 T520,534 T800,525 L800,540 Q660,552 520,542 T260,535 T0,535 Z" fill="#e0f7fa" opacity="0.8"/>
+
+  <!-- Foam Bubbles & Lacy Cutouts -->
+  <g fill="#26c6da" opacity="0.5">
+    <ellipse cx="75" cy="563" rx="14" ry="4"/>
+    <ellipse cx="115" cy="566" rx="8" ry="3"/>
+    <ellipse cx="245" cy="558" rx="18" ry="4.5"/>
+    <ellipse cx="385" cy="570" rx="15" ry="4"/>
+    <ellipse cx="425" cy="573" rx="9" ry="3"/>
+    <ellipse cx="555" cy="562" rx="20" ry="5"/>
+    <ellipse cx="695" cy="572" rx="16" ry="4"/>
+    <ellipse cx="735" cy="570" rx="10" ry="3"/>
+  </g>
+  <g fill="#ffffff" opacity="0.85">
+    <circle cx="150" cy="575" r="3"/>
+    <circle cx="162" cy="578" r="2"/>
+    <circle cx="330" cy="585" r="3.5"/>
+    <circle cx="342" cy="588" r="2"/>
+    <circle cx="480" cy="582" r="3"/>
+    <circle cx="655" cy="585" r="4"/>
+    <circle cx="670" cy="589" r="2.5"/>
+  </g>
+
+  <!-- ==================== 4. WET SAND REFLECTION & STRETCHED SHADOW ==================== -->
+  <!-- Faint Vertical Reflection in Wet Sand -->
+  <g opacity="0.14" filter="url(#reflectionBlur)">
+    <ellipse cx="240" cy="895" rx="75" ry="35" fill="#181615"/>
+    <ellipse cx="520" cy="895" rx="75" ry="35" fill="#181615"/>
+    <path d="M290,855 L480,855 L450,965 L320,965 Z" fill="#181615"/>
+    <ellipse cx="350" cy="940" rx="45" ry="40" fill="#d90429"/>
+  </g>
+
+  <!-- Long Shadow Stretching Away to the Right Across the Sand -->
+  <g filter="url(#shadowBlur)">
+    <!-- Wheel Shadows -->
+    <ellipse cx="345" cy="852" rx="115" ry="22" transform="rotate(-3 345 852)" fill="url(#shadowGrad)"/>
+    <ellipse cx="635" cy="852" rx="125" ry="22" transform="rotate(-3 635 852)" fill="url(#shadowGrad)"/>
+    <!-- Frame & Dog Stretched Shadow -->
+    <path d="M240,855 L390,825 L680,785 L830,775 L830,845 L645,860 L520,858 L370,860 Z" fill="url(#shadowGrad)"/>
+    <!-- Dog Torso & Head Shadow Silhouette on Right -->
+    <path d="M470,830 Q610,775 755,755 Q795,742 825,750 Q805,775 785,785 Q820,795 835,810 Q775,825 695,832 Q580,845 485,848 Z" fill="url(#shadowGrad)"/>
+  </g>
+
+  <!-- ==================== 5. DOG FAR-SIDE LIMBS (BEHIND BICYCLE) ==================== -->
+  <!-- Front-Right Leg (Far side, gripping right handlebar) -->
+  <g>
+    <!-- Upper & Forearm -->
+    <path d="M350,445 Q335,495 318,508 L262,468 Q252,462 256,450 L312,482 Q322,470 330,440 Z" fill="url(#brindle)"/>
+    <path d="M350,445 Q335,495 318,508 L262,468 Q252,462 256,450 L312,482 Q322,470 330,440 Z" fill="#000000" opacity="0.28"/>
+    <!-- Blurred Front-Right Paw on Grip -->
+    <g filter="url(#pawBlur)">
+      <ellipse cx="252" cy="456" rx="16" ry="11" transform="rotate(-15 252 456)" fill="url(#brindle)"/>
+      <path d="M240,452 Q245,465 260,462" stroke="#5c4028" stroke-width="3" fill="none"/>
+    </g>
+  </g>
+
+  <!-- Back-Right Leg (Far side, pushing down pedal) -->
+  <g>
+    <!-- Far Thigh, Hock & Metatarsus -->
+    <path d="M465,555 Q425,625 415,658 L462,732 L422,808 L438,814 L484,734 Q488,726 480,718 L442,652 Q465,610 490,560 Z" fill="url(#brindle)"/>
+    <path d="M465,555 Q425,625 415,658 L462,732 L422,808 L438,814 L484,734 Q488,726 480,718 L442,652 Q465,610 490,560 Z" fill="#000000" opacity="0.3"/>
+    <!-- Far-side Pedal & Crank -->
+    <line x1="400" y1="760" x2="428" y2="816" stroke="url(#chrome)" stroke-width="7" stroke-linecap="round"/>
+    <rect x="408" y="812" width="38" height="9" rx="4" fill="#2b2d42" stroke="#adb5bd" stroke-width="1.5"/>
+    <!-- Blurred Back-Right Paw -->
+    <g filter="url(#pawBlur)">
+      <path d="M420,802 Q405,805 406,815 C408,822 435,822 440,814 C442,806 432,800 420,802 Z" fill="url(#brindle)"/>
+      <path d="M408,814 L425,815" stroke="#8c6239" stroke-width="2" fill="none"/>
+    </g>
+    <!-- Pedal Motion Lines -->
+    <path d="M398,822 Q422,834 448,822" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.65" stroke-linecap="round"/>
+  </g>
+
+  <!-- ==================== 6. BICYCLE (WHEELS, FRAME & HANDLEBARS) ==================== -->
+  <g id="bicycle">
+    <!-- FRONT WHEEL (Center: 240, 760) -->
+    <g transform="translate(240, 760)">
+      <!-- Spokes -->
+      <g stroke="#dee2e6" stroke-width="1.8" opacity="0.85">
+        <line x1="-88" y1="0" x2="88" y2="0"/>
+        <line x1="0" y1="-88" x2="0" y2="88"/>
+        <line x1="-62" y1="-62" x2="62" y2="62"/>
+        <line x1="-62" y1="62" x2="62" y2="-62"/>
+        <line x1="-81" y1="-34" x2="81" y2="34"/>
+        <line x1="-34" y1="-81" x2="34" y2="81"/>
+        <line x1="-81" y1="34" x2="81" y2="-34"/>
+        <line x1="-34" y1="81" x2="34" y2="-81"/>
+      </g>
+      <!-- Spinning Wheel Motion Blur Arcs -->
+      <path d="M-65,-25 A70,70 0 0,1 -25,-65" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round"/>
+      <path d="M65,25 A70,70 0 0,1 25,65" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round"/>
+      <path d="M-45,45 A64,64 0 0,0 45,45" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.4" stroke-linecap="round"/>
+      <!-- Rim, Whitewall & Tire -->
+      <circle r="82" fill="none" stroke="#adb5bd" stroke-width="4"/>
+      <circle r="86" fill="none" stroke="#f8f9fa" stroke-width="6"/>
+      <circle r="93" fill="none" stroke="#222428" stroke-width="11"/>
+      <!-- Classic Cruiser Fender -->
+      <path d="M-98,-20 A102,102 0 0,1 88,-50" fill="none" stroke="url(#bikeFrame)" stroke-width="10" stroke-linecap="round"/>
+      <path d="M-98,-20 A102,102 0 0,1 88,-50" fill="none" stroke="#d90429" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- REAR WHEEL (Center: 520, 760) -->
+    <g transform="translate(520, 760)">
+      <!-- Spokes -->
+      <g stroke="#dee2e6" stroke-width="1.8" opacity="0.85">
+        <line x1="-88" y1="0" x2="88" y2="0"/>
+        <line x1="0" y1="-88" x2="0" y2="88"/>
+        <line x1="-62" y1="-62" x2="62" y2="62"/>
+        <line x1="-62" y1="62" x2="62" y2="-62"/>
+        <line x1="-81" y1="-34" x2="81" y2="34"/>
+        <line x1="-34" y1="-81" x2="34" y2="81"/>
+        <line x1="-81" y1="34" x2="81" y2="-34"/>
+        <line x1="-34" y1="81" x2="34" y2="-81"/>
+      </g>
+      <!-- Spinning Wheel Motion Blur Arcs -->
+      <path d="M-65,-25 A70,70 0 0,1 -25,-65" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round"/>
+      <path d="M65,25 A70,70 0 0,1 25,65" stroke="#ffffff" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round"/>
+      <!-- Rim, Whitewall & Tire -->
+      <circle r="82" fill="none" stroke="#adb5bd" stroke-width="4"/>
+      <circle r="86" fill="none" stroke="#f8f9fa" stroke-width="6"/>
+      <circle r="93" fill="none" stroke="#222428" stroke-width="11"/>
+      <!-- Classic Cruiser Fender -->
+      <path d="M-75,-68 A102,102 0 0,1 102,5" fill="none" stroke="url(#bikeFrame)" stroke-width="10" stroke-linecap="round"/>
+      <path d="M-75,-68 A102,102 0 0,1 102,5" fill="none" stroke="#d90429" stroke-width="3" stroke-linecap="round"/>
+      <!-- Rear Hub -->
+      <circle r="9" fill="url(#chrome)" stroke="#495057" stroke-width="2"/>
+    </g>
+
+    <!-- Wet Sand & Water Spray Kicked Up by Tires -->
+    <g fill="#f4d58d" opacity="0.75">
+      <circle cx="348" cy="842" r="3.5"/>
+      <circle cx="362" cy="834" r="2.5"/>
+      <circle cx="372" cy="846" r="2"/>
+      <circle cx="628" cy="840" r="4"/>
+      <circle cx="645" cy="830" r="3"/>
+      <circle cx="658" cy="844" r="2.5"/>
+      <path d="M335,848 Q365,832 385,842" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.65" stroke-linecap="round"/>
+      <path d="M615,848 Q645,830 670,840" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.65" stroke-linecap="round"/>
+    </g>
+
+    <!-- BICYCLE FRAME (Classic Beach Cruiser) -->
+    <!-- Far Handlebar Bar (Behind stem) -->
+    <path d="M282,555 Q275,475 250,455" fill="none" stroke="url(#chrome)" stroke-width="9" stroke-linecap="round"/>
+    <!-- Right Handlebar Grip -->
+    <path d="M262,462 L240,450" stroke="#7f4f24" stroke-width="13" stroke-linecap="round"/>
+
+    <!-- Main Frame Tubes -->
+    <g stroke="url(#bikeFrame)" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <!-- Chainstay -->
+      <line x1="400" y1="760" x2="520" y2="760" stroke-width="11"/>
+      <!-- Seatstay -->
+      <path d="M520,760 Q488,680 452,605" stroke-width="10"/>
+      <!-- Seat Tube -->
+      <line x1="400" y1="760" x2="462" y2="582" stroke-width="13"/>
+      <!-- Curved Cruiser Down Tube -->
+      <path d="M400,760 Q330,720 292,620" stroke-width="14"/>
+      <!-- Curved Cruiser Top Tube -->
+      <path d="M454,605 Q375,615 286,582" stroke-width="13"/>
+      <!-- Secondary Cruiser Bar -->
+      <path d="M446,628 Q370,638 290,602" stroke="#d90429" stroke-width="6"/>
+      <!-- Head Tube -->
+      <line x1="295" y1="628" x2="282" y2="562" stroke-width="15"/>
+      <!-- Front Fork -->
+      <path d="M290,618 Q272,690 240,760" stroke-width="12"/>
+    </g>
+
+    <!-- Front Hub -->
+    <circle cx="240" cy="760" r="9" fill="url(#chrome)" stroke="#495057" stroke-width="2"/>
+
+    <!-- Seat Post & Vintage Leather Saddle -->
+    <line x1="458" y1="590" x2="466" y2="565" stroke="url(#chrome)" stroke-width="9" stroke-linecap="round"/>
+    <path d="M435,565 Q465,575 505,565 Q515,555 498,548 Q465,555 440,552 Q428,555 435,565 Z" fill="#6f3e18" stroke="#3d210b" stroke-width="2"/>
+
+    <!-- Sprocket & Chain Guard -->
+    <circle cx="400" cy="760" r="26" fill="url(#chrome)" stroke="#495057" stroke-width="3"/>
+    <circle cx="400" cy="760" r="18" fill="none" stroke="#6c757d" stroke-width="2" stroke-dasharray="6 4"/>
+    <path d="M372,750 A28,28 0 0,1 415,734 L520,748 L520,764 L395,768 Z" fill="url(#bikeFrame)" stroke="#d90429" stroke-width="2"/>
+  </g>
+
+  <!-- ==================== 7. DOG TORSO, TAIL & NEAR LEGS ==================== -->
+  <!-- Wagging Long Thin Tail -->
+  <g>
+    <path d="M492,550 Q545,532 585,485 Q608,455 618,430 Q622,422 614,420 Q602,435 575,472 Q535,515 482,532 Z" fill="url(#brindle)"/>
+    <path d="M492,550 Q545,532 585,485 Q608,455 618,430 Q622,422 614,420 Q602,435 575,472 Q535,515 482,532 Z" fill="url(#bodyShade)"/>
+    <!-- Tail Wag Motion Lines -->
+    <path d="M585,442 Q602,420 608,402" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.7" stroke-linecap="round"/>
+    <path d="M612,468 Q628,450 636,435" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.7" stroke-linecap="round"/>
+  </g>
+
+  <!-- Dog Torso (Deep sighthound chest, tucked waist, muscular shoulders) -->
+  <g>
+    <path d="M352,415 C325,440 322,495 345,525 C368,548 405,538 438,556 C460,568 488,568 500,548 C510,528 492,498 468,478 C438,452 415,425 395,395 Z" fill="url(#brindle)"/>
+    <path d="M352,415 C325,440 322,495 345,525 C368,548 405,538 438,556 C460,568 488,568 500,548 C510,528 492,498 468,478 C438,452 415,425 395,395 Z" fill="url(#bodyShade)"/>
+
+    <!-- White Patch on Chest -->
+    <path d="M338,430 C328,455 328,488 342,512 C352,518 364,510 368,495 C364,485 372,475 366,462 C368,450 360,435 348,425 Z" fill="url(#whiteFur)"/>
+    <!-- Subtle Fur Edges on Chest Patch -->
+    <path d="M342,430 L335,442 L344,448 L334,462 L345,470 L336,485 L348,495 L342,510" stroke="#ffffff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Back-Left Leg (Near side, long & thin, foot on raised pedal) -->
+  <g>
+    <!-- Near-side Crank & Raised Pedal -->
+    <line x1="400" y1="760" x2="372" y2="706" stroke="url(#chrome)" stroke-width="8" stroke-linecap="round"/>
+    <!-- Thigh, Knee, Hock & Thin Metatarsus -->
+    <path d="M465,535 C440,545 402,585 392,612 C386,626 398,635 412,648 L438,674 L376,700 L384,712 L456,682 C464,678 464,668 456,660 L424,622 C448,595 485,575 496,550 Z" fill="url(#brindle)"/>
+    <path d="M465,535 C440,545 402,585 392,612 C386,626 398,635 412,648 L438,674 L376,700 L384,712 L456,682 C464,678 464,668 456,660 L424,622 C448,595 485,575 496,550 Z" fill="url(#bodyShade)"/>
+    <!-- Pedal Platform -->
+    <rect x="352" y="704" width="38" height="9" rx="4" fill="#2b2d42" stroke="#adb5bd" stroke-width="1.5"/>
+    <!-- Blurred Back-Left Paw -->
+    <g filter="url(#pawBlur)">
+      <path d="M378,696 C362,695 352,702 354,710 C356,716 382,716 388,708 C392,702 386,697 378,696 Z" fill="url(#brindle)"/>
+      <!-- Faint White Toes Tip -->
+      <path d="M354,706 C354,712 364,714 368,710" fill="#e5e5e5"/>
+    </g>
+    <!-- Pedal Motion Lines -->
+    <path d="M348,692 Q368,680 392,690" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.7" stroke-linecap="round"/>
+  </g>
+
+  <!-- Near-Side Handlebar & Front-Left Leg (With White Paw!) -->
+  <g>
+    <!-- Near Handlebar Chrome Bar -->
+    <path d="M282,562 Q295,495 322,472" fill="none" stroke="url(#chrome)" stroke-width="10" stroke-linecap="round"/>
+    <!-- Left Handlebar Leather Grip -->
+    <path d="M306,464 L334,478" stroke="#7f4f24" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- Front-Left Leg (Long & thin upper arm & forearm) -->
+    <path d="M378,442 C392,455 408,495 404,515 C400,528 386,526 372,518 L322,482 L330,466 L380,496 C380,478 368,462 362,450 Z" fill="url(#brindle)"/>
+    <path d="M378,442 C392,455 408,495 404,515 C400,528 386,526 372,518 L322,482 L330,466 L380,496 C380,478 368,462 362,450 Z" fill="url(#bodyShade)"/>
+
+    <!-- WHITE FRONT-LEFT PAW (Slightly Blurred) -->
+    <g filter="url(#pawBlur)">
+      <!-- White Wrist & Knuckles Gripping Bar -->
+      <path d="M334,468 L318,458 C306,454 296,462 298,474 C300,484 316,486 326,482 L338,478 Z" fill="url(#whiteFur)"/>
+      <!-- Individual White Toes Curled Over Grip -->
+      <ellipse cx="304" cy="466" rx="6" ry="4" transform="rotate(-20 304 466)" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+      <ellipse cx="308" cy="472" rx="6.5" ry="4" transform="rotate(-20 308 472)" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+      <ellipse cx="314" cy="477" rx="6" ry="4" transform="rotate(-20 314 477)" fill="#ffffff" stroke="#ccc" stroke-width="1"/>
+      <!-- Pinkish Skin Tint on White Paw -->
+      <ellipse cx="318" cy="468" rx="7" ry="5" fill="#ffb3c1" opacity="0.35"/>
+    </g>
+    <!-- Paw Motion Blur Lines -->
+    <path d="M292,456 Q305,445 322,452" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.75" stroke-linecap="round"/>
+    <path d="M294,484 Q310,494 326,488" stroke="#ffffff" stroke-width="1.8" fill="none" opacity="0.65" stroke-linecap="round"/>
+  </g>
+
+  <!-- ==================== 8. NECK, RED COLLAR & HEAD ==================== -->
+  <g id="dog-head">
+    <!-- Neck Base -->
+    <path d="M342,385 L338,425 C355,438 385,430 402,405 L388,372 Z" fill="url(#brindle)"/>
+    <path d="M342,385 L338,425 C355,438 385,430 402,405 L388,372 Z" fill="url(#bodyShade)"/>
+
+    <!-- RED COLLAR & SMALL ROUND RED TAG -->
+    <path d="M333,408 Q364,424 398,396" fill="none" stroke="#b5001c" stroke-width="16" stroke-linecap="round"/>
+    <path d="M333,408 Q364,424 398,396" fill="none" stroke="#e61938" stroke-width="12" stroke-linecap="round"/>
+    <!-- Collar Highlight -->
+    <path d="M342,410 Q364,418 388,402" fill="none" stroke="#ff6b81" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+    <!-- Silver Ring -->
+    <circle cx="352" cy="420" r="5" fill="none" stroke="#e9ecef" stroke-width="2.5"/>
+    <!-- Small Round Red Tag -->
+    <circle cx="350" cy="432" r="8.5" fill="#d90429" stroke="#9e001a" stroke-width="1.5"/>
+    <circle cx="347" cy="429" r="2.5" fill="#ff8fa3" opacity="0.7"/>
+
+    <!-- PRICKED EAR (Dog's Right / Viewer's Left) -->
+    <g>
+      <!-- Outer Brindle Ear -->
+      <path d="M322,305 C310,272 302,235 308,205 C310,196 318,196 324,204 C338,225 348,262 350,295 Z" fill="url(#brindle)"/>
+      <!-- Inner Pinkish-Grey Ear -->
+      <path d="M324,296 C315,268 310,238 314,212 C325,230 336,262 340,292 Z" fill="#c99da3"/>
+      <path d="M324,296 C318,272 315,245 317,222 C324,238 331,265 334,292 Z" fill="#9e6b72" opacity="0.6"/>
+      <!-- Inner Ear Fur Wisps -->
+      <path d="M322,288 L330,278 M319,272 L328,264 M316,255 L324,248" stroke="#e5e5e5" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
+    </g>
+
+    <!-- FLOPPED EAR (Dog's Left / Viewer's Right) -->
+    <g>
+      <!-- Ear Base Rising & Folding Over -->
+      <path d="M372,292 C384,278 400,276 412,288 C425,302 436,325 432,340 C428,348 416,342 406,332 C396,320 388,315 378,316 Z" fill="url(#brindle)"/>
+      <path d="M372,292 C384,278 400,276 412,288 C425,302 436,325 432,340 C428,348 416,342 406,332 C396,320 388,315 378,316 Z" fill="url(#bodyShade)"/>
+      <!-- Crease Shadow Under Flopped Ear -->
+      <path d="M382,306 Q402,302 414,322" stroke="#0c0b0a" stroke-width="3" fill="none" opacity="0.7"/>
+    </g>
+
+    <!-- CRANIUM & CHEEKS (Turned slightly towards the left of the frame) -->
+    <path d="M320,295 C338,282 368,282 384,296 C400,312 404,342 392,368 C382,388 358,398 336,392 C314,386 304,365 306,340 C308,320 312,304 320,295 Z" fill="url(#brindle)"/>
+    <path d="M320,295 C338,282 368,282 384,296 C400,312 404,342 392,368 C382,388 358,398 336,392 C314,386 304,365 306,340 C308,320 312,304 320,295 Z" fill="url(#bodyShade)"/>
+
+    <!-- WHITE MUZZLE & BLAZE -->
+    <!-- White Blaze Between Eyes -->
+    <path d="M342,298 C344,312 340,326 332,336 C322,344 306,348 302,362 C298,376 312,388 328,390 C348,392 368,384 372,368 C374,356 360,344 352,334 C346,324 346,310 342,298 Z" fill="url(#whiteFur)"/>
+
+    <!-- Pinkish Bull-Arab Skin Undertone on Muzzle -->
+    <ellipse cx="328" cy="366" rx="24" ry="14" fill="#ffb3c1" opacity="0.32"/>
+
+    <!-- OPEN MOUTH (Happy Pant) -->
+    <!-- Lower Jaw & Chin -->
+    <path d="M312,374 C314,398 328,412 348,408 C366,404 378,386 376,368 Z" fill="url(#whiteFur)"/>
+    <!-- Inside Mouth Cavity -->
+    <path d="M310,368 C322,376 352,378 372,364 C374,384 362,402 344,404 C326,405 314,390 310,368 Z" fill="#591626"/>
+    <!-- Dark Flews / Smiling Lips -->
+    <path d="M304,368 C318,378 348,378 374,362 C378,366 374,376 368,382" fill="none" stroke="#181615" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M314,382 C318,396 332,404 348,402 C362,400 370,388 372,376" fill="none" stroke="#181615" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- White Lower Canine Teeth -->
+    <path d="M318,382 L321,374 L325,383 Z" fill="#ffffff"/>
+    <path d="M358,382 L361,373 L365,380 Z" fill="#ffffff"/>
+    <!-- Tiny Incisors -->
+    <path d="M328,386 L348,385" stroke="#ffffff" stroke-width="3" stroke-dasharray="3 2" stroke-linecap="round"/>
+
+    <!-- LONG PINK TONGUE HANGING OUT -->
+    <path d="M324,378 C320,395 310,415 312,432 C314,444 328,448 338,440 C348,430 352,406 352,382 C344,384 332,382 324,378 Z" fill="url(#tongueGrad)" stroke="#c93b5b" stroke-width="1"/>
+    <!-- Tongue Center Crease & Moist Highlight -->
+    <path d="M338,382 Q330,408 325,432" stroke="#d94b68" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <ellipse cx="325" cy="428" rx="5" ry="9" transform="rotate(12 325 428)" fill="#ffffff" opacity="0.45"/>
+
+    <!-- Upper Muzzle Pad Overlapping Mouth -->
+    <path d="M302,354 C300,368 312,376 326,374 C336,372 342,366 354,370 C364,372 374,366 372,356 C368,342 348,336 330,336 C314,336 304,344 302,354 Z" fill="url(#whiteFur)"/>
+
+    <!-- BIG BLACK NOSE -->
+    <g>
+      <path d="M306,348 C306,338 320,334 332,336 C344,338 348,348 344,358 C340,366 328,372 318,370 C310,368 305,358 306,348 Z" fill="#141414"/>
+      <!-- Nose Top Plane Highlight -->
+      <path d="M310,345 C314,338 326,337 336,340 C340,342 340,347 334,348 C324,349 314,349 310,345 Z" fill="#3a3a3a"/>
+      <ellipse cx="320" cy="342" rx="6" ry="2.5" fill="#ffffff" opacity="0.45"/>
+      <!-- Nostrils -->
+      <path d="M311,353 C313,349 318,350 318,355 C318,358 314,361 311,353 Z" fill="#000000"/>
+      <path d="M336,354 C334,350 329,351 329,356 C329,359 334,361 336,354 Z" fill="#000000"/>
+      <!-- Philtrum Line -->
+      <line x1="322" y1="368" x2="322" y2="375" stroke="#222" stroke-width="2"/>
+    </g>
+
+    <!-- BROWN EYES -->
+    <!-- Right Eye (Viewer's Left) -->
+    <g>
+      <path d="M312,324 C316,315 328,315 333,324 C328,331 316,331 312,324 Z" fill="#111111"/>
+      <circle cx="323" cy="323" r="6.5" fill="#7f4f24"/>
+      <circle cx="323" cy="323" r="3.5" fill="#111111"/>
+      <circle cx="321" cy="321" r="2" fill="#ffffff"/>
+      <path d="M319,326 A4.5,4.5 0 0,0 327,326" stroke="#b07d4f" stroke-width="1.5" fill="none"/>
+    </g>
+
+    <!-- Left Eye (Viewer's Right) -->
+    <g>
+      <path d="M354,325 C360,315 374,316 378,326 C372,334 358,333 354,325 Z" fill="#111111"/>
+      <circle cx="366" cy="324" r="7" fill="#7f4f24"/>
+      <circle cx="366" cy="324" r="3.8" fill="#111111"/>
+      <circle cx="364" cy="322" r="2.2" fill="#ffffff"/>
+      <path d="M362,327 A5,5 0 0,0 370,327" stroke="#b07d4f" stroke-width="1.5" fill="none"/>
+    </g>
+
+    <!-- Expressive Brow Ridges -->
+    <path d="M312,314 Q322,308 334,314" stroke="#0c0b0a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M354,314 Q366,308 378,316" stroke="#0c0b0a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+    <!-- GREY WHISKERS -->
+    <g stroke="#adb5bd" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.85">
+      <!-- Left Side Whiskers -->
+      <path d="M306,356 Q285,352 270,360"/>
+      <path d="M305,362 Q282,362 268,372"/>
+      <path d="M308,368 Q288,372 276,384"/>
+      <!-- Right Side Whiskers -->
+      <path d="M356,358 Q378,356 394,366"/>
+      <path d="M360,364 Q382,366 398,378"/>
+      <path d="M358,370 Q378,376 390,388"/>
+      <!-- Whisker Follicle Dots -->
+      <circle cx="306" cy="356" r="1" fill="#6c757d"/>
+      <circle cx="305" cy="362" r="1" fill="#6c757d"/>
+      <circle cx="356" cy="358" r="1" fill="#6c757d"/>
+      <circle cx="360" cy="364" r="1" fill="#6c757d"/>
+    </g>
+  </g>
+</svg>
