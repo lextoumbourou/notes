@@ -120,12 +120,13 @@ Second, Google say they can't rule out that Argon could give meaningful help to 
 
 People on [Hacker News](https://news.ycombinator.com/item?id=50073879) have been impressed by Argon's SVG drawings, so I tried it on a photo of my dog at the beach.
 
-I sent it the photo and asked it to "Recreate this photo as an SVG, as close to the original as you can." Then, to see how it draws without seeing anything, I had Claude write a short description of the photo, added her breed and colouring, and sent only the text.
+I sent it the photo and asked it to "Recreate this photo as an SVG, as close to the original as you can." Then, to see how it draws without seeing anything, I had Claude write a short description of the photo, added her breed and colouring, and sent only the text. And finally, in honour of Simon Willison's [pelican riding a bicycle](https://simonwillison.net/tags/pelican-riding-a-bicycle/) test, I asked it to "Generate an SVG of this dog riding a bicycle", with the same description.
 
-<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;align-items:start">
-<figure style="margin:0"><a href="../_media/gemini-4-argon-dog-photo.jpg"><img src="../_media/gemini-4-argon-dog-photo.jpg" alt="My dog standing on the sand at the beach, mouth open, with waves behind" style="width:100%;height:auto;display:block"></a><figcaption style="font-size:0.85em;text-align:center">Photo</figcaption></figure>
-<figure style="margin:0"><a href="../_media/gemini-4-argon-dog-from-photo.svg"><img src="../_media/gemini-4-argon-dog-from-photo.svg" alt="Argon's SVG drawn from the photo" style="width:100%;height:auto;display:block"></a><figcaption style="font-size:0.85em;text-align:center">SVG from the photo</figcaption></figure>
-<figure style="margin:0"><a href="../_media/gemini-4-argon-dog-from-text.svg"><img src="../_media/gemini-4-argon-dog-from-text.svg" alt="Argon's SVG drawn from a text description" style="width:100%;height:auto;display:block"></a><figcaption style="font-size:0.85em;text-align:center">SVG from the text</figcaption></figure>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;align-items:start">
+<figure style="margin:0"><a href="../_media/gemini-4-argon-dog-photo.jpg"><img src="../_media/gemini-4-argon-dog-photo.jpg" alt="My dog standing on the sand at the beach, mouth open, with waves behind" style="width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;margin:0"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">Photo</figcaption></figure>
+<figure style="margin:0"><a href="../_media/gemini-4-argon-dog-from-photo.svg"><img src="../_media/gemini-4-argon-dog-from-photo.svg" alt="Argon's SVG drawn from the photo" style="width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;margin:0"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">SVG from the photo</figcaption></figure>
+<figure style="margin:0"><a href="../_media/gemini-4-argon-dog-from-text.svg"><img src="../_media/gemini-4-argon-dog-from-text.svg" alt="Argon's SVG drawn from a text description" style="width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;margin:0"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">SVG from the text</figcaption></figure>
+<figure style="margin:0"><a href="../_media/gemini-4-argon-dog-on-a-bike.svg"><img src="../_media/gemini-4-argon-dog-on-a-bike.svg" alt="Argon's SVG of my dog riding a bicycle along the beach" style="width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block;margin:0"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">SVG from the text, on a bike</figcaption></figure>
 </div>
 
 <details markdown="1">
@@ -135,15 +136,11 @@ I sent it the photo and asked it to "Recreate this photo as an SVG, as close to 
 
 </details>
 
-Both used high thinking, took 4 to 5 minutes, and cost US$0.20 to $0.30 each ([raw results](../_media/gemini-4-argon-dog-svg-results.json)).
+All three used high thinking, took 4 to 5 minutes, and cost US$0.20 to $0.30 each ([raw results](../_media/gemini-4-argon-dog-svg-results.json)).
 
 Getting her colouring right in the description made a big difference. Without it, Argon drew a cartoonish black and grey dog, and plain "brindle" gave her tiger stripes.
 
-And finally, in honour of Simon Willison's [pelican riding a bicycle](https://simonwillison.net/tags/pelican-riding-a-bicycle/) test, I asked it to "Generate an SVG of this dog riding a bicycle", with the same description:
-
-<figure style="margin:0 auto;max-width:360px"><a href="../_media/gemini-4-argon-dog-on-a-bike.svg"><img src="../_media/gemini-4-argon-dog-on-a-bike.svg" alt="Argon's SVG of my dog riding a bicycle along the beach" style="width:100%;height:auto;display:block"></a></figure>
-
-The bike actually works, and she's pedalling. That one took about 4 minutes and cost US$0.22.
+On the bike, the frame actually works and she's pedalling.
 
 ## Testing the audio
 
