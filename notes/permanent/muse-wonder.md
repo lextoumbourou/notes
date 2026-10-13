@@ -2,7 +2,7 @@
 title: "Muse Wonder: Opus 5.5 quality model that supports audio"
 slug: muse-wonder
 date: 2026-10-13 06:34
-modified: 2026-10-13 11:10
+modified: 2026-10-13 11:40
 category: model
 cover: /_media/muse-wonder-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@samuelqyx?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Samuel Quek</a> on <a href="https://unsplash.com/photos/silhouette-of-a-person-looking-at-the-milky-way-cD4pt47I4JY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
@@ -24,6 +24,8 @@ Meta pitches them as "personal and professional agents", built around two featur
 
 - **Active Memory**, which carries context about you across conversations (see [Memory](memory.md)).
 - **Active Focus**, which sticks with a long task, works through blockers and checks in before important actions.
+
+Although, I'm pretty sure these features aren't available through the API (yet?) [@metaModelAPIModels].
 
 Only Muse Wonder is available in the API. Muse Wonder Full needs a Muse Code subscription (the Power Usage or Maximum Usage plan), so it has no per-token price [@metaBuildWithMuseWonder].
 
