@@ -7,6 +7,10 @@ category: model
 cover: /_media/gemini-4-argon-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@halacious?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Hal Gatewood</a> on <a href="https://unsplash.com/photos/purple-and-pink-plasma-ball-OgvqXGL7XO4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 summary: The day has finally come.
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mxs7kqbrbb26
+mastodon_post: https://fedi.notesbylex.com/@lex/117436252405283257
+threads_post: https://www.threads.com/@lexisoninsta/post/DedBBcRDyUr
+x_post: https://x.com/notesbylex_/status/2110154459888365910
 aliases:
 - Gemini 4 Argon
 tags:
@@ -138,9 +142,7 @@ I sent it the photo and asked it to "Recreate this photo as an SVG, as close to 
 
 All three used high thinking, took 4 to 5 minutes, and cost US$0.20 to $0.30 each ([raw results](../_media/gemini-4-argon-dog-svg-results.json)).
 
-Getting her colouring right in the description made a big difference. Without it, Argon drew a cartoonish black and grey dog, and plain "brindle" gave her tiger stripes.
-
-On the bike, the frame actually works and she's pedalling.
+Pretty, pretty good.
 
 ## Testing the audio
 
