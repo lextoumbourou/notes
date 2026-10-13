@@ -1,843 +1,869 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" width="100%" height="100%">
   <defs>
-    <!-- Sky & Sea Gradients -->
-    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2b6cb0"/>
-      <stop offset="55%" stop-color="#63b3ed"/>
-      <stop offset="100%" stop-color="#bae6fd"/>
-    </linearGradient>
-
-    <linearGradient id="seaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0f766e"/>
-      <stop offset="35%" stop-color="#14b8a6"/>
-      <stop offset="75%" stop-color="#2dd4bf"/>
-      <stop offset="100%" stop-color="#99f6e4"/>
-    </linearGradient>
-
-    <linearGradient id="sandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#a8895c"/>
-      <stop offset="8%" stop-color="#93b4bc"/>
-      <stop offset="16%" stop-color="#bfa065"/>
-      <stop offset="45%" stop-color="#d6a95a"/>
-      <stop offset="75%" stop-color="#c89643"/>
-      <stop offset="100%" stop-color="#b38032"/>
-    </linearGradient>
-
-    <linearGradient id="wetSheen" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#e0f2fe" stop-opacity="0.35"/>
-      <stop offset="40%" stop-color="#bae6fd" stop-opacity="0.15"/>
-      <stop offset="70%" stop-color="#fde68a" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#93c5fd" stop-opacity="0.3"/>
-    </linearGradient>
-
-    <linearGradient id="shadowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3b2610" stop-opacity="0.65"/>
-      <stop offset="60%" stop-color="#4a3219" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#5c3f20" stop-opacity="0.1"/>
-    </linearGradient>
-
-    <!-- Dog Coat Base Gradients (Lit from top-left) -->
-    <linearGradient id="brindleBaseTorso" x1="0%" y1="0%" x2="100%" y2="30%">
-      <stop offset="0%" stop-color="#d99b52"/>
-      <stop offset="35%" stop-color="#a86829"/>
-      <stop offset="75%" stop-color="#633915"/>
-      <stop offset="100%" stop-color="#3d220c"/>
-    </linearGradient>
-
-    <linearGradient id="brindleBaseHead" x1="10%" y1="0%" x2="90%" y2="80%">
-      <stop offset="0%" stop-color="#e0a458"/>
-      <stop offset="40%" stop-color="#ad6b2b"/>
-      <stop offset="80%" stop-color="#6e3f17"/>
-      <stop offset="100%" stop-color="#42250d"/>
-    </linearGradient>
-
-    <linearGradient id="brindleLegLeft" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#e3a962"/>
-      <stop offset="45%" stop-color="#a66729"/>
-      <stop offset="85%" stop-color="#593312"/>
-      <stop offset="100%" stop-color="#70441c"/>
-    </linearGradient>
-
-    <linearGradient id="brindleLegRight" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#c78a44"/>
-      <stop offset="40%" stop-color="#87501f"/>
-      <stop offset="85%" stop-color="#47280e"/>
-      <stop offset="100%" stop-color="#5c3615"/>
-    </linearGradient>
-
-    <linearGradient id="brindleHindLeg" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#8f5522"/>
-      <stop offset="50%" stop-color="#522e10"/>
-      <stop offset="100%" stop-color="#2e1908"/>
-    </linearGradient>
-
-    <linearGradient id="whiteFurChest" x1="0%" y1="10%" x2="100%" y2="40%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="45%" stop-color="#f8fafc"/>
-      <stop offset="80%" stop-color="#cbd5e1"/>
-      <stop offset="100%" stop-color="#94a3b8"/>
-    </linearGradient>
-
-    <linearGradient id="whiteMuzzle" x1="0%" y1="0%" x2="100%" y2="60%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="50%" stop-color="#f1f5f9"/>
-      <stop offset="85%" stop-color="#cbd5e1"/>
-      <stop offset="100%" stop-color="#94a3b8"/>
-    </linearGradient>
-
-    <linearGradient id="pinkSkinMuzzle" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#f8fafc" stop-opacity="0"/>
-      <stop offset="50%" stop-color="#fda4af" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#e11d48" stop-opacity="0.25"/>
-    </linearGradient>
-
-    <linearGradient id="earInner" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f3d1bf"/>
-      <stop offset="50%" stop-color="#d49982"/>
-      <stop offset="100%" stop-color="#8c533e"/>
-    </linearGradient>
-
-    <linearGradient id="tongueGrad" x1="20%" y1="0%" x2="80%" y2="100%">
-      <stop offset="0%" stop-color="#be123c"/>
-      <stop offset="25%" stop-color="#f43f5e"/>
-      <stop offset="60%" stop-color="#fb7185"/>
-      <stop offset="85%" stop-color="#fda4af"/>
-      <stop offset="100%" stop-color="#f43f5e"/>
-    </linearGradient>
-
-    <radialGradient id="noseGrad" cx="35%" cy="25%" r="70%">
-      <stop offset="0%" stop-color="#64748b"/>
-      <stop offset="25%" stop-color="#334155"/>
-      <stop offset="60%" stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#020617"/>
-    </radialGradient>
-
-    <radialGradient id="eyeIris" cx="45%" cy="45%" r="55%">
-      <stop offset="0%" stop-color="#1c1917"/>
-      <stop offset="30%" stop-color="#451a03"/>
-      <stop offset="65%" stop-color="#92400e"/>
-      <stop offset="88%" stop-color="#b45309"/>
-      <stop offset="100%" stop-color="#1c1917"/>
-    </radialGradient>
-
-    <linearGradient id="collarGrad" x1="0%" y1="0%" x2="100%" y2="20%">
-      <stop offset="0%" stop-color="#ef4444"/>
-      <stop offset="35%" stop-color="#dc2626"/>
-      <stop offset="75%" stop-color="#991b1b"/>
-      <stop offset="100%" stop-color="#450a0a"/>
-    </linearGradient>
-
-    <radialGradient id="tagGrad" cx="35%" cy="30%" r="65%">
-      <stop offset="0%" stop-color="#fca5a5"/>
-      <stop offset="30%" stop-color="#ef4444"/>
-      <stop offset="75%" stop-color="#b91c1c"/>
-      <stop offset="100%" stop-color="#7f1d1d"/>
-    </radialGradient>
-
-    <!-- Filters -->
-    <filter id="cloudBlur" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="14"/>
+    <!-- ================= FILTERS ================= -->
+    <!-- Cloud softness and organic edge -->
+    <filter id="cloud-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="4" seed="5" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="28" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+      <feGaussianBlur in="displaced" stdDeviation="6"/>
     </filter>
 
-    <filter id="cloudSoft" x="-10%" y="-10%" width="120%" height="120%">
-      <feGaussianBlur stdDeviation="5"/>
+    <!-- Sea foam lacy texture -->
+    <filter id="foam-texture" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="turbulence" baseFrequency="0.04 0.12" numOctaves="3" seed="11" result="turb"/>
+      <feDisplacementMap in="SourceGraphic" in2="turb" scale="12" xChannelSelector="R" yChannelSelector="G" result="rough"/>
+      <feGaussianBlur in="rough" stdDeviation="1.2"/>
     </filter>
 
-    <filter id="foamSoft" x="-5%" y="-5%" width="110%" height="110%">
-      <feGaussianBlur stdDeviation="1.5"/>
-    </filter>
-
-    <filter id="shadowBlur" x="-10%" y="-20%" width="130%" height="150%">
-      <feGaussianBlur stdDeviation="9"/>
-    </filter>
-
-    <filter id="reflectionBlur" x="-20%" y="-10%" width="140%" height="120%">
-      <feGaussianBlur stdDeviation="6 14"/>
-    </filter>
-
-    <filter id="pawBlur" x="-25%" y="-15%" width="150%" height="135%">
-      <feGaussianBlur stdDeviation="3.8"/>
-    </filter>
-
-    <filter id="ankleBlur" x="-20%" y="-10%" width="140%" height="120%">
-      <feGaussianBlur stdDeviation="1.6"/>
-    </filter>
-
-    <filter id="furSoft" x="-5%" y="-5%" width="110%" height="110%">
-      <feGaussianBlur stdDeviation="1.1"/>
-    </filter>
-
-    <filter id="sandGrain" x="0%" y="0%" width="100%" height="100%">
+    <!-- Sand micro-grain -->
+    <filter id="sand-grain" x="0%" y="0%" width="100%" height="100%">
       <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise"/>
-      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.055 0"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.45
+        0 0 0 0 0.32
+        0 0 0 0 0.18
+        0 0 0 0.08 0" in="noise" result="coloredNoise"/>
+      <feComposite operator="over" in="coloredNoise" in2="SourceGraphic"/>
     </filter>
 
-    <!-- Clip Paths for Dog Anatomy -->
-    <clipPath id="clipHindLeft">
-      <path d="M460,460 C450,510 435,560 422,610 C412,645 430,665 426,710 C422,755 415,800 412,830 L432,835 C438,800 445,745 454,705 C464,660 468,645 466,610 C464,575 488,525 495,470 Z"/>
-    </clipPath>
+    <!-- Cast shadow blur on sand -->
+    <filter id="shadow-blur" x="-15%" y="-25%" width="130%" height="150%">
+      <feGaussianBlur stdDeviation="14 9"/>
+    </filter>
 
-    <clipPath id="clipHindRight">
-      <path d="M490,440 C505,495 518,555 526,605 C532,640 515,665 512,715 C508,765 503,805 498,840 L520,843 C526,805 532,760 538,715 C544,665 562,645 556,600 C550,550 535,480 510,435 Z"/>
-    </clipPath>
+    <!-- Paw blur (as specified: "the paws are slightly blurred") -->
+    <filter id="paw-blur" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="4.5 5.5"/>
+    </filter>
 
-    <clipPath id="clipTorso">
-      <path d="M352,360 C338,405 322,455 328,515 C332,565 352,605 385,612 C420,620 452,595 478,560 C502,528 515,485 512,440 C508,402 480,382 458,365 Z"/>
-    </clipPath>
+    <!-- Lower leg transition blur -->
+    <filter id="ankle-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.8 2.2"/>
+    </filter>
 
-    <clipPath id="clipFrontLeftLeg">
-      <!-- Viewer's left leg -->
-      <path d="M332,525 C332,580 340,635 344,695 C347,745 346,795 344,855 L370,858 C370,795 372,745 374,695 C378,635 386,590 385,545 Z"/>
-    </clipPath>
+    <!-- Soft fur & muscle blending -->
+    <filter id="soft-blend" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2.5"/>
+    </filter>
 
-    <clipPath id="clipFrontRightLeg">
-      <!-- Viewer's right leg -->
-      <path d="M430,550 C432,605 436,655 438,715 C440,765 438,815 436,868 L462,870 C464,815 465,765 466,715 C468,655 476,600 478,540 Z"/>
-    </clipPath>
+    <filter id="deep-soft" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
 
-    <clipPath id="clipHead">
-      <path d="M355,192 C378,182 415,185 438,202 C455,215 462,245 456,275 C450,305 438,332 422,350 C402,372 345,368 332,338 C320,315 316,295 328,270 C335,252 336,228 345,208 Z"/>
-    </clipPath>
+    <!-- Organic fur edge displacement -->
+    <filter id="fur-edge" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="3" seed="3" result="furnoise"/>
+      <feDisplacementMap in="SourceGraphic" in2="furnoise" scale="3.5" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
 
-    <clipPath id="clipEarPricked">
-      <path d="M342,212 C332,182 325,140 334,108 C338,94 348,96 356,108 C372,130 388,162 396,192 Z"/>
-    </clipPath>
+    <!-- ================= GRADIENTS ================= -->
+    <!-- Sky & Ocean -->
+    <linearGradient id="sky-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#256bc4"/>
+      <stop offset="45%" stop-color="#458ee0"/>
+      <stop offset="85%" stop-color="#7bb6f0"/>
+      <stop offset="100%" stop-color="#a5d2f7"/>
+    </linearGradient>
 
-    <clipPath id="clipEarFlopped">
-      <path d="M432,198 C448,195 468,205 480,225 C492,245 502,275 492,292 C486,302 472,292 464,278 C455,262 448,248 438,238 Z"/>
-    </clipPath>
+    <linearGradient id="cloud-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#f2f6fa"/>
+      <stop offset="100%" stop-color="#c3d8ed"/>
+    </linearGradient>
+
+    <linearGradient id="sea-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a5250"/>
+      <stop offset="25%" stop-color="#116e68"/>
+      <stop offset="65%" stop-color="#229489"/>
+      <stop offset="100%" stop-color="#48b2a3"/>
+    </linearGradient>
+
+    <linearGradient id="surf-water" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3ca89b"/>
+      <stop offset="50%" stop-color="#75c4b8"/>
+      <stop offset="100%" stop-color="#b8dcd4"/>
+    </linearGradient>
+
+    <!-- Wet Golden Sand -->
+    <linearGradient id="sand-base" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#9e7f56"/>
+      <stop offset="12%" stop-color="#b59469"/>
+      <stop offset="28%" stop-color="#cfa974"/>
+      <stop offset="55%" stop-color="#c4995e"/>
+      <stop offset="80%" stop-color="#b08448"/>
+      <stop offset="100%" stop-color="#946b35"/>
+    </linearGradient>
+
+    <linearGradient id="wet-reflection" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#d4e7f0" stop-opacity="0.55"/>
+      <stop offset="40%" stop-color="#a8c9d8" stop-opacity="0.32"/>
+      <stop offset="80%" stop-color="#dfc398" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#c4995e" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="sun-glint-sand" cx="30%" cy="65%" r="55%">
+      <stop offset="0%" stop-color="#ebd0a4" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#d4ab6e" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#b08448" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Shadow Gradient -->
+    <linearGradient id="dog-shadow-grad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#24180c" stop-opacity="0.72"/>
+      <stop offset="35%" stop-color="#2e2011" stop-opacity="0.60"/>
+      <stop offset="75%" stop-color="#3d2c19" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#523c24" stop-opacity="0.15"/>
+    </linearGradient>
+
+    <!-- Dog Base Coat Gradients (Lit from Upper-Left) -->
+    <linearGradient id="coat-torso" x1="0%" y1="20%" x2="100%" y2="40%">
+      <stop offset="0%" stop-color="#332c27"/>
+      <stop offset="25%" stop-color="#211c19"/>
+      <stop offset="65%" stop-color="#14110f"/>
+      <stop offset="90%" stop-color="#0d0b0a"/>
+      <stop offset="100%" stop-color="#1c1917"/>
+    </linearGradient>
+
+    <linearGradient id="coat-head" x1="10%" y1="10%" x2="90%" y2="80%">
+      <stop offset="0%" stop-color="#362e29"/>
+      <stop offset="35%" stop-color="#1f1b18"/>
+      <stop offset="75%" stop-color="#12100e"/>
+      <stop offset="100%" stop-color="#0c0a09"/>
+    </linearGradient>
+
+    <linearGradient id="coat-leg-left" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#423830"/>
+      <stop offset="35%" stop-color="#241e1a"/>
+      <stop offset="75%" stop-color="#14110f"/>
+      <stop offset="100%" stop-color="#241d17"/>
+    </linearGradient>
+
+    <linearGradient id="coat-leg-right" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#29231e"/>
+      <stop offset="40%" stop-color="#171412"/>
+      <stop offset="85%" stop-color="#0d0b0a"/>
+      <stop offset="100%" stop-color="#1c1814"/>
+    </linearGradient>
+
+    <linearGradient id="coat-back-leg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1f1a17"/>
+      <stop offset="50%" stop-color="#110e0c"/>
+      <stop offset="100%" stop-color="#0a0807"/>
+    </linearGradient>
+
+    <!-- White Fur Gradients (Chest, Muzzle, Paw) -->
+    <linearGradient id="white-fur" x1="10%" y1="10%" x2="90%" y2="70%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#f5f2eb"/>
+      <stop offset="75%" stop-color="#ded8ce"/>
+      <stop offset="100%" stop-color="#b8b0a4"/>
+    </linearGradient>
+
+    <radialGradient id="muzzle-white" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f2eee6"/>
+      <stop offset="80%" stop-color="#d5cec4"/>
+      <stop offset="100%" stop-color="#9e958b"/>
+    </radialGradient>
+
+    <linearGradient id="muzzle-pinkish" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5eee6" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#e3ccc5" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#baa29c" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Nose & Eyes & Tongue -->
+    <radialGradient id="nose-grad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#42454a"/>
+      <stop offset="25%" stop-color="#222426"/>
+      <stop offset="70%" stop-color="#101112"/>
+      <stop offset="100%" stop-color="#050506"/>
+    </radialGradient>
+
+    <radialGradient id="eye-iris" cx="35%" cy="60%" r="55%">
+      <stop offset="0%" stop-color="#b8732a"/>
+      <stop offset="45%" stop-color="#874c16"/>
+      <stop offset="80%" stop-color="#4d2808"/>
+      <stop offset="100%" stop-color="#1f1003"/>
+    </radialGradient>
+
+    <linearGradient id="tongue-grad" x1="20%" y1="0%" x2="60%" y2="100%">
+      <stop offset="0%" stop-color="#9e2a45"/>
+      <stop offset="18%" stop-color="#d44d6a"/>
+      <stop offset="42%" stop-color="#ed6b86"/>
+      <stop offset="75%" stop-color="#fa8da4"/>
+      <stop offset="92%" stop-color="#ff9eb2"/>
+      <stop offset="100%" stop-color="#e8768d"/>
+    </linearGradient>
+
+    <linearGradient id="ear-inner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5c433e"/>
+      <stop offset="50%" stop-color="#3d2c29"/>
+      <stop offset="100%" stop-color="#1f1716"/>
+    </linearGradient>
+
+    <!-- Red Collar & Tag -->
+    <linearGradient id="collar-grad" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#f02b2b"/>
+      <stop offset="30%" stop-color="#d11919"/>
+      <stop offset="70%" stop-color="#9c0e0e"/>
+      <stop offset="100%" stop-color="#630808"/>
+    </linearGradient>
+
+    <radialGradient id="tag-grad" cx="35%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#ff6b6b"/>
+      <stop offset="25%" stop-color="#e61c1c"/>
+      <stop offset="75%" stop-color="#ab0f0f"/>
+      <stop offset="100%" stop-color="#6e0707"/>
+    </radialGradient>
+
+    <!-- Brindle Stripe Gradients -->
+    <linearGradient id="brindle-sun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c79256" stop-opacity="0.75"/>
+      <stop offset="50%" stop-color="#966532" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#593a1b" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <linearGradient id="brindle-mid" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8c5e30" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#63401f" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#3b2510" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="brindle-shadow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52371c" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#2b1c0d" stop-opacity="0.2"/>
+    </linearGradient>
   </defs>
 
   <!-- ================= 1. SKY & CLOUDS ================= -->
-  <rect x="0" y="0" width="800" height="365" fill="url(#skyGrad)"/>
+  <rect x="0" y="0" width="900" height="410" fill="url(#sky-grad)"/>
 
-  <!-- Distant soft clouds -->
-  <g filter="url(#cloudBlur)" opacity="0.85">
-    <ellipse cx="120" cy="110" rx="110" ry="38" fill="#ffffff"/>
-    <ellipse cx="180" cy="95" rx="85" ry="45" fill="#ffffff"/>
-    <ellipse cx="70" cy="125" rx="75" ry="25" fill="#e2e8f0"/>
-
-    <ellipse cx="580" cy="85" rx="130" ry="42" fill="#ffffff"/>
-    <ellipse cx="650" cy="70" rx="90" ry="35" fill="#ffffff"/>
-    <ellipse cx="510" cy="95" rx="80" ry="30" fill="#f8fafc"/>
-
-    <ellipse cx="340" cy="175" rx="95" ry="28" fill="#ffffff" opacity="0.7"/>
-    <ellipse cx="730" cy="195" rx="120" ry="32" fill="#ffffff" opacity="0.8"/>
-    <ellipse cx="90" cy="240" rx="140" ry="25" fill="#f1f5f9" opacity="0.6"/>
+  <!-- Scattered White Clouds -->
+  <g filter="url(#cloud-blur)" opacity="0.92">
+    <!-- Upper left cloud bank -->
+    <path d="M-40,140 Q30,90 110,115 Q160,70 240,95 Q300,110 320,155 Q240,175 120,170 Q20,175 -40,140 Z" fill="url(#cloud-grad)"/>
+    <!-- Center-right high cumulus -->
+    <path d="M480,85 Q540,35 620,60 Q690,25 770,65 Q840,55 880,105 Q920,135 850,155 Q720,165 600,150 Q500,140 480,85 Z" fill="url(#cloud-grad)"/>
+    <!-- Mid-horizon scattered clouds -->
+    <ellipse cx="380" cy="235" rx="95" ry="28" fill="url(#cloud-grad)"/>
+    <ellipse cx="430" cy="225" rx="70" ry="35" fill="#ffffff"/>
+    <path d="M60,275 Q140,240 220,265 Q280,255 310,285 Q220,305 110,295 Z" fill="url(#cloud-grad)" opacity="0.85"/>
+    <path d="M620,245 Q710,210 790,235 Q860,225 910,265 Q780,285 650,275 Z" fill="url(#cloud-grad)" opacity="0.9"/>
+    <!-- Distant low horizon clouds -->
+    <ellipse cx="180" cy="355" rx="160" ry="18" fill="#e6f2fc" opacity="0.7"/>
+    <ellipse cx="560" cy="345" rx="190" ry="22" fill="#e6f2fc" opacity="0.75"/>
+    <ellipse cx="820" cy="360" rx="140" ry="16" fill="#e6f2fc" opacity="0.7"/>
   </g>
 
-  <!-- Cloud highlights & structure -->
-  <g filter="url(#cloudSoft)" opacity="0.9">
-    <path d="M45,115 Q85,65 145,82 Q185,52 230,85 Q265,92 255,120 Q150,135 45,115 Z" fill="#ffffff"/>
-    <path d="M60,122 Q150,138 245,120 Q180,140 60,122 Z" fill="#cbd5e1" opacity="0.6"/>
+  <!-- ================= 2. TEAL-GREEN SEA & FOAMY WAVES ================= -->
+  <!-- Teal-green sea band -->
+  <path d="M0,392 Q450,388 900,392 L900,525 L0,525 Z" fill="url(#sea-grad)"/>
 
-    <path d="M460,92 Q505,48 565,65 Q615,35 675,65 Q725,68 715,102 Q590,118 460,92 Z" fill="#ffffff"/>
-    <path d="M480,98 Q590,115 705,100 Q600,122 480,98 Z" fill="#cbd5e1" opacity="0.5"/>
-
-    <path d="M580,210 Q640,180 700,192 Q755,175 790,205 Q690,222 580,210 Z" fill="#ffffff" opacity="0.85"/>
-    <path d="M180,265 Q240,245 290,258 Q335,248 370,268 Q275,278 180,265 Z" fill="#ffffff" opacity="0.65"/>
+  <!-- Distant ocean swell lines -->
+  <g opacity="0.45" stroke="#7be0d3" stroke-width="1.5" fill="none">
+    <path d="M20,408 Q180,405 340,409 M480,404 Q660,402 850,406"/>
+    <path d="M0,425 Q220,422 450,427 T900,424" stroke-width="2"/>
+    <path d="M120,445 Q390,440 680,446"/>
   </g>
 
-  <!-- Horizon haze -->
-  <rect x="0" y="310" width="800" height="55" fill="#e0f2fe" opacity="0.45"/>
-
-
-  <!-- ================= 2. TEAL-GREEN SEA & WAVES ================= -->
-  <rect x="0" y="352" width="800" height="150" fill="url(#seaGrad)"/>
-
-  <!-- Deep water swells and texture -->
-  <g opacity="0.4">
-    <path d="M0,360 Q200,357 400,361 T800,359 L800,365 L0,365 Z" fill="#0f5257"/>
-    <path d="M0,375 Q150,371 350,376 T800,373 L800,380 L0,380 Z" fill="#115e59"/>
-    <path d="M50,392 Q280,388 520,394 T800,390 L800,396 L0,396 Z" fill="#0d9488"/>
-    <path d="M0,415 Q220,410 460,417 T800,412 L800,422 L0,422 Z" fill="#0f766e"/>
+  <!-- Outer Breaking Wave (Mid-ground) -->
+  <g filter="url(#foam-texture)">
+    <!-- Wave shadow -->
+    <path d="M-20,472 Q150,462 320,470 T680,464 T920,472 L920,495 L-20,495 Z" fill="#0d5953" opacity="0.6"/>
+    <!-- White foamy crest -->
+    <path d="M-20,465 Q140,455 310,464 T660,458 T920,465 L920,485 Q750,492 580,482 T240,488 T-20,482 Z" fill="#f2faf9"/>
   </g>
 
-  <!-- Distant breaking wave line -->
-  <g filter="url(#foamSoft)">
-    <path d="M0,385 Q90,381 180,386 T360,383 T550,387 T800,382 L800,390 Q620,395 440,389 T150,392 L0,389 Z" fill="#f0fdfa" opacity="0.75"/>
-    <path d="M120,408 Q260,402 410,409 T720,405 L800,407 L800,416 Q610,414 420,418 T120,412 Z" fill="#ccfbf1" opacity="0.65"/>
+  <!-- Shallow Surf Zone -->
+  <path d="M0,480 L900,480 L900,610 L0,610 Z" fill="url(#surf-water)"/>
+
+  <!-- Mid-shore Turbulent Foam -->
+  <g filter="url(#foam-texture)" opacity="0.92">
+    <path d="M-30,515 Q120,505 270,518 Q440,530 610,512 Q760,498 930,515 L930,555 Q770,545 620,562 Q430,575 250,558 Q100,545 -30,560 Z" fill="#e8f7f5"/>
+    <path d="M-20,510 Q130,502 280,514 Q450,525 600,508 Q750,495 920,510 L920,532 Q750,520 600,535 Q450,545 280,532 Q130,520 -20,530 Z" fill="#ffffff"/>
   </g>
 
+  <!-- ================= 3. WET GOLDEN SAND & SWASH ================= -->
+  <!-- Base Wet Golden Sand -->
+  <path d="M0,550 L900,545 L900,1200 L0,1200 Z" fill="url(#sand-base)" filter="url(#sand-grain)"/>
 
-  <!-- ================= 3. WET GOLDEN SAND & FOAM WASH ================= -->
-  <rect x="0" y="455" width="800" height="545" fill="url(#sandGrad)"/>
+  <!-- Sunlit warmth on foreground sand -->
+  <rect x="0" y="550" width="900" height="650" fill="url(#sun-glint-sand)"/>
 
-  <!-- Sky reflection on wet upper sand -->
-  <rect x="0" y="455" width="800" height="190" fill="url(#wetSheen)"/>
+  <!-- Sky & Foam Reflections on Wet Sand -->
+  <path d="M0,550 L900,545 L900,880 L0,850 Z" fill="url(#wet-reflection)"/>
 
-  <!-- Subtle sand ripples and wet streaks -->
-  <g opacity="0.28">
-    <path d="M0,560 Q250,552 520,565 T800,558 L800,572 Q500,582 220,568 L0,575 Z" fill="#8c6229"/>
-    <path d="M0,630 Q180,638 420,625 T800,635 L800,645 Q450,638 180,648 L0,640 Z" fill="#a17434"/>
-    <path d="M0,715 Q320,702 610,718 T800,712 L800,728 Q580,735 290,718 L0,725 Z" fill="#8f6426"/>
-    <path d="M0,810 Q240,822 530,805 T800,818 L800,835 Q510,820 240,835 L0,822 Z" fill="#7d541c"/>
-    <path d="M0,920 Q380,905 680,925 T800,918 L800,942 Q420,925 120,940 L0,932 Z" fill="#704a16"/>
+  <!-- Wet sand subtle ripples and tonal variations -->
+  <g opacity="0.35" filter="url(#deep-soft)">
+    <path d="M-20,690 Q200,715 480,695 T920,710 L920,745 Q640,730 380,750 T-20,735 Z" fill="#876336"/>
+    <path d="M-20,820 Q280,845 550,825 T920,840 L920,880 Q580,865 290,885 T-20,860 Z" fill="#916b3b"/>
+    <path d="M40,980 Q360,960 720,995 T920,985 L920,1035 Q620,1045 310,1015 T40,1020 Z" fill="#7d592d"/>
+    <path d="M-30,1110 Q320,1095 680,1125 L920,1115 L920,1170 L-30,1160 Z" fill="#704e24"/>
   </g>
 
-  <!-- Main Foamy Waves Washing Up the Shore -->
-  <!-- Wave shadow/lip on sand -->
-  <path d="M0,498 Q85,508 175,495 T345,505 T525,492 T705,508 L800,498 L800,515 Q700,522 525,505 T345,518 T175,506 L0,512 Z" fill="#527978" opacity="0.45" filter="url(#foamSoft)"/>
+  <!-- Foreground Washing Wave (Swash) -->
+  <!-- Dark wet edge just ahead of the swash -->
+  <path d="M-20,625 Q140,655 310,638 Q490,620 670,652 Q790,672 920,645 L920,665 Q790,690 660,670 Q490,638 310,656 Q140,675 -20,645 Z" fill="#7a5a36" opacity="0.55" filter="url(#soft-blend)"/>
 
-  <!-- Midground crashing foam body -->
-  <g filter="url(#foamSoft)">
-    <path d="M0,425 Q110,418 220,428 T450,422 T680,430 L800,424 L800,468 Q690,478 560,462 T320,472 T110,458 L0,468 Z" fill="#e6fffa" opacity="0.85"/>
-    <path d="M0,432 Q140,424 275,435 T520,428 T740,436 L800,432 L800,458 Q660,465 510,452 T260,460 L0,452 Z" fill="#ffffff"/>
-    <!-- Turquoise water pockets inside foam -->
-    <ellipse cx="145" cy="448" rx="45" ry="6" fill="#14b8a6" opacity="0.5"/>
-    <ellipse cx="385" cy="445" rx="65" ry="8" fill="#0d9488" opacity="0.45"/>
-    <ellipse cx="635" cy="450" rx="55" ry="7" fill="#14b8a6" opacity="0.5"/>
-    <ellipse cx="755" cy="442" rx="35" ry="5" fill="#0d9488" opacity="0.4"/>
+  <!-- Translucent swash water body -->
+  <path d="M-20,550 L920,545 L920,645 Q790,672 670,652 Q490,620 310,638 Q140,655 -20,625 Z" fill="#c9e6e4" opacity="0.48"/>
+
+  <!-- Lacy foam patterns inside the swash -->
+  <g filter="url(#foam-texture)">
+    <path d="M-20,580 Q160,610 340,590 Q520,570 700,602 Q810,620 920,595 L920,642 Q790,668 670,648 Q490,616 310,634 Q140,651 -20,621 Z" fill="#e6f5f4" opacity="0.75"/>
+    <!-- Bright white leading foam edge -->
+    <path d="M-20,612 Q140,642 310,625 Q490,607 670,639 Q790,659 920,632 L920,648 Q790,674 670,654 Q490,622 310,640 Q140,658 -20,628 Z" fill="#ffffff"/>
+    <!-- Secondary foam ripples -->
+    <path d="M40,572 Q190,592 350,578 Q520,562 690,585 Q800,598 890,582" stroke="#ffffff" stroke-width="7" fill="none" opacity="0.8"/>
   </g>
 
-  <!-- Foreground shallow foamy wash swash -->
-  <g filter="url(#foamSoft)">
-    <path d="M0,465 Q95,458 190,472 T380,468 T575,475 T800,465 L800,502 Q705,512 525,495 T345,508 T175,496 L0,502 Z" fill="#f0fdfa" opacity="0.75"/>
-    <path d="M0,482 Q85,495 175,484 T345,496 T525,482 T705,498 L800,488 L800,500 Q705,510 525,494 T345,506 T175,495 L0,500 Z" fill="#ffffff" opacity="0.95"/>
-
-    <!-- Lacy foam trails & bubbles on wet sand -->
-    <path d="M25,525 Q95,535 165,522 T295,532 Q210,542 115,534 Z" fill="#ffffff" opacity="0.55"/>
-    <path d="M485,518 Q575,532 665,515 T790,525 Q700,538 565,528 Z" fill="#ffffff" opacity="0.6"/>
-    <path d="M260,542 Q340,552 435,540 Q360,556 260,542 Z" fill="#f8fafc" opacity="0.45"/>
+  <!-- Subtle shell/pebble/foam flecks on the wet sand -->
+  <g fill="#f7f2e8" opacity="0.6" filter="url(#soft-blend)">
+    <ellipse cx="140" cy="720" rx="8" ry="3"/>
+    <ellipse cx="165" cy="728" rx="5" ry="2"/>
+    <ellipse cx="740" cy="760" rx="12" ry="4"/>
+    <ellipse cx="780" cy="775" rx="6" ry="2.5"/>
+    <ellipse cx="220" cy="890" rx="7" ry="2.5"/>
+    <ellipse cx="640" cy="910" rx="9" ry="3"/>
+    <ellipse cx="120" cy="1040" rx="11" ry="3.5"/>
   </g>
 
-
-  <!-- ================= 4. REFLECTIONS & SHADOW ON SAND ================= -->
-  <!-- Subtle vertical wet-sand reflection under the dog -->
-  <g filter="url(#reflectionBlur)" opacity="0.22">
-    <ellipse cx="355" cy="915" rx="22" ry="55" fill="#f8fafc"/>
-    <ellipse cx="450" cy="925" rx="22" ry="55" fill="#3b230d"/>
-    <ellipse cx="420" cy="875" rx="18" ry="45" fill="#3b230d"/>
-    <ellipse cx="510" cy="885" rx="18" ry="45" fill="#3b230d"/>
-    <ellipse cx="415" cy="890" rx="75" ry="40" fill="#4a2c11"/>
+  <!-- ================= 4. CAST SHADOW ON SAND ================= -->
+  <!-- "Its shadow stretches away to the right across the sand." -->
+  <g filter="url(#shadow-blur)" style="mix-blend-mode: multiply;">
+    <!-- Shadow of back legs -->
+    <path d="M365,980 L650,945 L680,960 L375,995 Z" fill="url(#dog-shadow-grad)"/>
+    <path d="M495,995 L790,960 L825,978 L505,1010 Z" fill="url(#dog-shadow-grad)"/>
+    <!-- Shadow of front legs -->
+    <path d="M330,1065 L690,1015 L730,1035 L345,1082 Z" fill="url(#dog-shadow-grad)"/>
+    <path d="M455,1075 L820,1030 L850,1050 L470,1092 Z" fill="url(#dog-shadow-grad)"/>
+    <!-- Shadow of torso and head stretching off to the right edge -->
+    <path d="M620,945 Q730,930 850,950 L950,965 L950,1085 Q780,1075 650,1035 Q580,995 620,945 Z" fill="url(#dog-shadow-grad)"/>
+    <!-- Immediate contact shadow under paws -->
+    <ellipse cx="365" cy="985" rx="26" ry="9" fill="#1f1409" opacity="0.75"/>
+    <ellipse cx="498" cy="1002" rx="26" ry="9" fill="#1f1409" opacity="0.75"/>
+    <ellipse cx="332" cy="1074" rx="32" ry="11" fill="#1a1006" opacity="0.85"/>
+    <ellipse cx="462" cy="1082" rx="32" ry="11" fill="#1a1006" opacity="0.85"/>
   </g>
 
-  <!-- Dog's shadow stretching away to the right across the sand -->
-  <g filter="url(#shadowBlur)">
-    <!-- Rear legs & body shadow -->
-    <path d="M415,830 L780,805 L800,835 L505,848 Z" fill="url(#shadowGrad)"/>
-    <path d="M500,840 L800,820 L800,865 L510,852 Z" fill="url(#shadowGrad)"/>
-    <!-- Front legs & torso shadow -->
-    <path d="M352,882 L750,852 L800,885 L368,895 Z" fill="url(#shadowGrad)"/>
-    <path d="M442,892 L800,868 L800,945 L458,906 Z" fill="url(#shadowGrad)"/>
-    <!-- Core combined torso/head shadow mass on far right -->
-    <ellipse cx="675" cy="875" rx="155" ry="42" transform="rotate(-4 675 875)" fill="url(#shadowGrad)"/>
-  </g>
+  <!-- ================= 5. THE DOG: BACK LEGS ================= -->
+  <!-- Long and thin Staghound/Bull Arab back legs visible behind torso -->
+  <g id="back-legs">
+    <!-- Back-Left Leg (Viewer's left, tucked behind chest) -->
+    <g>
+      <path d="M342,695 C344,755 352,810 356,855 C358,885 354,930 352,968 L374,968 C375,930 378,885 382,850 C388,805 395,750 398,700 Z" fill="url(#coat-back-leg)" filter="url(#fur-edge)"/>
+      <!-- Brindle highlights on back-left leg -->
+      <g stroke="url(#brindle-mid)" stroke-linecap="round" fill="none" opacity="0.7">
+        <path d="M348,735 Q362,742 378,738" stroke-width="5"/>
+        <path d="M350,765 Q365,772 380,768" stroke-width="4"/>
+        <path d="M354,805 Q366,812 378,808" stroke-width="4.5"/>
+        <path d="M356,845 Q368,850 376,846" stroke-width="3.5"/>
+        <path d="M355,895 Q364,900 372,896" stroke-width="3"/>
+      </g>
+      <!-- Blurred Back-Left Paw -->
+      <g filter="url(#paw-blur)">
+        <path d="M350,958 C346,970 342,982 348,988 C356,994 374,992 380,985 C383,978 378,966 374,958 Z" fill="#1c1815"/>
+        <path d="M348,978 Q358,988 374,984" stroke="#59493b" stroke-width="4" fill="none"/>
+      </g>
+    </g>
 
-
-  <!-- ================= 5. THE DOG ================= -->
-
-  <!-- == 5A. TAIL & HINDQUARTERS (Background Layer of Dog) == -->
-  <!-- Tail tip peeking behind hip/legs -->
-  <path d="M505,465 C528,495 548,535 568,562 C572,568 564,574 556,566 C535,542 515,505 495,478 Z" fill="#3d220c"/>
-
-  <!--Tucked Staghound abdomen/flank -->
-  <path d="M440,565 C462,535 482,495 502,455 L465,440 C445,475 425,520 410,555 Z" fill="#4a2a10"/>
-
-  <!-- Back-Right Leg (Viewer's inner-right, further back) -->
-  <g clip-path="url(#clipHindLeft)">
-    <rect x="405" y="450" width="95" height="390" fill="url(#brindleHindLeg)"/>
-    <!-- Brindle stripes -->
-    <g fill="#1f1105" opacity="0.7" filter="url(#furSoft)">
-      <path d="M445,485 Q468,492 488,482 Q470,502 442,495 Z"/>
-      <path d="M438,515 Q462,525 482,512 Q465,532 435,525 Z"/>
-      <path d="M430,548 Q455,558 475,546 Q455,565 428,558 Z"/>
-      <path d="M422,580 Q448,590 468,578 Q448,598 420,590 Z"/>
-      <path d="M415,615 Q442,622 465,612 Q445,630 415,625 Z"/>
-      <path d="M422,650 Q445,658 462,648 Q445,665 422,660 Z"/>
-      <path d="M420,690 Q440,696 455,688 Q440,704 420,698 Z"/>
-      <path d="M418,735 Q435,742 448,734 Q435,748 418,742 Z"/>
+    <!-- Back-Right Leg (Viewer's right, muscular thigh curving down to thin hock) -->
+    <g>
+      <path d="M475,645 C508,675 518,735 512,795 C507,835 496,862 494,885 C492,915 492,950 490,982 L512,982 C515,950 516,912 520,882 C525,852 542,825 548,775 C554,715 538,655 515,620 Z" fill="url(#coat-back-leg)" filter="url(#fur-edge)"/>
+      <!-- Subtle rim bounce light from golden sand -->
+      <path d="M544,750 C540,805 524,845 518,880 C514,915 513,950 510,978" stroke="#4a3928" stroke-width="3.5" fill="none" opacity="0.6" filter="url(#soft-blend)"/>
+      <!-- Brindle stripes on back-right thigh -->
+      <g stroke="url(#brindle-shadow)" stroke-linecap="round" fill="none">
+        <path d="M495,705 Q520,715 542,702" stroke-width="6"/>
+        <path d="M498,735 Q522,745 544,732" stroke-width="5"/>
+        <path d="M502,768 Q524,776 542,765" stroke-width="5.5"/>
+        <path d="M500,802 Q518,810 534,800" stroke-width="4.5"/>
+        <path d="M495,840 Q510,846 522,838" stroke-width="4"/>
+      </g>
+      <!-- Blurred Back-Right Paw -->
+      <g filter="url(#paw-blur)">
+        <path d="M488,972 C483,984 480,998 488,1004 C498,1010 518,1008 524,998 C526,990 518,980 512,972 Z" fill="#171412"/>
+        <path d="M486,995 Q502,1004 518,998" stroke="#45382c" stroke-width="3.5" fill="none"/>
+      </g>
     </g>
   </g>
 
-  <!-- Back-Left Leg (Viewer's far-right) -->
-  <g clip-path="url(#clipHindRight)">
-    <rect x="485" y="430" width="80" height="420" fill="url(#brindleHindLeg)"/>
-    <!-- Highlight on outer thigh -->
-    <path d="M490,440 C505,495 518,555 526,605 L535,605 C528,550 515,490 500,440 Z" fill="#9c5e25" opacity="0.5" filter="url(#furSoft)"/>
-    <!-- Brindle stripes -->
-    <g fill="#1a0e04" opacity="0.75" filter="url(#furSoft)">
-      <path d="M495,465 Q520,475 538,462 Q522,485 495,475 Z"/>
-      <path d="M502,498 Q528,508 545,495 Q528,518 502,508 Z"/>
-      <path d="M510,532 Q535,542 552,528 Q535,552 510,542 Z"/>
-      <path d="M518,568 Q542,578 558,565 Q542,588 518,578 Z"/>
-      <path d="M522,602 Q545,612 560,600 Q545,622 522,612 Z"/>
-      <path d="M515,642 Q538,650 552,640 Q538,658 515,650 Z"/>
-      <path d="M510,685 Q530,692 544,682 Q530,700 510,692 Z"/>
-      <path d="M506,730 Q525,738 538,728 Q525,745 506,738 Z"/>
-      <path d="M502,775 Q520,782 532,772 Q520,788 502,782 Z"/>
+  <!-- ================= 6. THE DOG: TORSO, CHEST & FRONT LEGS ================= -->
+  <!-- Clip path for clean internal muscle & brindle layering on torso -->
+  <clipPath id="torso-clip">
+    <path d="M318,415 C285,465 270,535 278,605 C284,655 302,690 315,725 C345,745 375,755 405,752 C438,750 468,735 495,710 C515,675 532,625 530,565 C528,505 510,455 485,415 Z"/>
+  </clipPath>
+
+  <!-- Main Torso & Deep Chest -->
+  <g clip-path="url(#torso-clip)">
+    <path d="M260,400 L550,400 L550,770 L260,770 Z" fill="url(#coat-torso)"/>
+
+    <!-- Muscular Shoulder & Pectoral Shading -->
+    <ellipse cx="315" cy="565" rx="55" ry="110" fill="#3d332c" opacity="0.55" filter="url(#deep-soft)"/>
+    <ellipse cx="495" cy="575" rx="55" ry="115" fill="#090807" opacity="0.7" filter="url(#deep-soft)"/>
+    <path d="M350,620 Q405,665 460,615 L450,755 L355,755 Z" fill="#14110f" opacity="0.8" filter="url(#deep-soft)"/>
+
+    <!-- Rich Black-Brindle Coat Streaks on Torso -->
+    <g fill="none" stroke-linecap="round" filter="url(#soft-blend)">
+      <!-- Sunlit Left Shoulder Brindle -->
+      <path d="M275,465 Q305,480 338,472" stroke="url(#brindle-sun)" stroke-width="7"/>
+      <path d="M270,488 Q308,505 345,495" stroke="url(#brindle-sun)" stroke-width="5.5"/>
+      <path d="M268,512 Q305,532 348,518" stroke="url(#brindle-sun)" stroke-width="8"/>
+      <path d="M272,538 Q312,558 352,542" stroke="url(#brindle-sun)" stroke-width="6"/>
+      <path d="M274,565 Q315,585 350,572" stroke="url(#brindle-sun)" stroke-width="7.5"/>
+      <path d="M278,592 Q318,612 348,600" stroke="url(#brindle-sun)" stroke-width="6"/>
+      <path d="M282,618 Q318,638 346,628" stroke="url(#brindle-sun)" stroke-width="5"/>
+      <path d="M290,648 Q322,665 348,655" stroke="url(#brindle-mid)" stroke-width="6.5"/>
+      <path d="M300,678 Q328,692 355,682" stroke="url(#brindle-mid)" stroke-width="5.5"/>
+
+      <!-- Greyish/Tawny Staghound Ticking Highlights on Sunlit Shoulder -->
+      <path d="M282,498 Q305,510 328,504" stroke="#b8a996" stroke-width="2.5" opacity="0.6"/>
+      <path d="M280,550 Q308,565 332,558" stroke="#b8a996" stroke-width="2.5" opacity="0.55"/>
+      <path d="M286,605 Q312,620 335,612" stroke="#b8a996" stroke-width="2" opacity="0.5"/>
+
+      <!-- Shaded Right Shoulder Brindle -->
+      <path d="M465,475 Q498,490 525,472" stroke="url(#brindle-mid)" stroke-width="6.5"/>
+      <path d="M462,502 Q498,518 528,500" stroke="url(#brindle-mid)" stroke-width="7.5"/>
+      <path d="M458,530 Q495,548 530,528" stroke="url(#brindle-shadow)" stroke-width="6"/>
+      <path d="M455,558 Q495,578 532,558" stroke="url(#brindle-shadow)" stroke-width="8"/>
+      <path d="M452,588 Q492,608 528,588" stroke="url(#brindle-shadow)" stroke-width="6.5"/>
+      <path d="M450,618 Q488,636 522,618" stroke="url(#brindle-shadow)" stroke-width="7"/>
+      <path d="M448,648 Q482,665 512,648" stroke="url(#brindle-shadow)" stroke-width="5.5"/>
+      <path d="M442,678 Q475,692 502,678" stroke="url(#brindle-shadow)" stroke-width="6"/>
+    </g>
+
+    <!-- White Patch on Chest ("and has a white patch on its chest") -->
+    <g filter="url(#fur-edge)">
+      <!-- Soft shadow under chest fur -->
+      <path d="M388,495 C372,525 352,555 350,595 C348,635 365,675 382,712 C395,728 412,728 424,710 C442,672 455,632 452,592 C448,552 428,522 412,495 Z" fill="url(#white-fur)"/>
+      <!-- Skin spots / Ticking inside the white chest blaze -->
+      <g fill="#4a3f39" opacity="0.35" filter="url(#soft-blend)">
+        <ellipse cx="395" cy="545" rx="7" ry="11"/>
+        <ellipse cx="412" cy="575" rx="9" ry="13"/>
+        <ellipse cx="382" cy="605" rx="8" ry="12"/>
+        <ellipse cx="405" cy="635" rx="10" ry="14"/>
+        <ellipse cx="392" cy="672" rx="7" ry="10"/>
+        <ellipse cx="422" cy="615" rx="6" ry="9"/>
+      </g>
+      <!-- Bright sunlit fur tufts on left side of white patch -->
+      <path d="M388,505 C375,535 360,565 358,600 C356,635 372,670 388,702 C398,665 395,620 402,575 C405,545 398,520 388,505 Z" fill="#ffffff" opacity="0.7" filter="url(#soft-blend)"/>
     </g>
   </g>
 
+  <!-- Outer Fur Silhouette of Torso (for realistic wiry/short edge) -->
+  <path d="M318,415 C285,465 270,535 278,605 C284,655 302,690 315,725 M495,710 C515,675 532,625 530,565 C528,505 510,455 485,415" stroke="#241e1a" stroke-width="4" fill="none" filter="url(#fur-edge)"/>
+  <!-- Sunlit rim highlight on left shoulder -->
+  <path d="M305,435 C282,480 272,540 279,605 C283,640 295,672 308,700" stroke="#75604e" stroke-width="3" fill="none" opacity="0.65" filter="url(#fur-edge)"/>
 
-  <!-- == 5B. TORSO & CHEST == -->
-  <g clip-path="url(#clipTorso)">
-    <!-- Brindle Base -->
-    <rect x="315" y="355" width="205" height="270" fill="url(#brindleBaseTorso)"/>
-
-    <!-- Sunlit left shoulder highlight -->
-    <ellipse cx="342" cy="465" rx="32" ry="75" transform="rotate(-8 342 465)" fill="#f6c478" opacity="0.45" filter="url(#cloudSoft)"/>
-
-    <!-- Brindle Tiger Stripes on Shoulder, Ribs & Back -->
-    <g fill="#241306" opacity="0.78" filter="url(#furSoft)">
-      <!-- Left shoulder stripes -->
-      <path d="M322,405 Q348,418 372,408 Q348,428 320,416 Z"/>
-      <path d="M318,432 Q345,446 375,435 Q348,456 316,442 Z"/>
-      <path d="M315,458 Q345,472 372,462 Q342,482 315,470 Z"/>
-      <path d="M318,488 Q348,502 376,490 Q348,512 318,500 Z"/>
-      <path d="M322,518 Q352,532 378,518 Q352,542 322,528 Z"/>
-      <path d="M328,548 Q355,558 378,545 Q355,568 328,558 Z"/>
-
-      <!-- Right shoulder & rib stripes -->
-      <path d="M445,395 Q478,412 508,398 Q482,422 442,408 Z"/>
-      <path d="M442,425 Q478,442 512,426 Q482,452 440,438 Z"/>
-      <path d="M438,455 Q475,475 515,458 Q480,485 435,468 Z"/>
-      <path d="M435,485 Q472,505 512,488 Q475,515 432,498 Z"/>
-      <path d="M432,515 Q468,535 505,518 Q470,545 430,528 Z"/>
-      <path d="M428,545 Q462,562 495,548 Q465,572 425,558 Z"/>
-      <path d="M422,575 Q452,588 480,575 Q452,598 420,585 Z"/>
-    </g>
-
-    <!-- Lighter fawn/gold brindle hair streaks -->
-    <g fill="#f3be7a" opacity="0.45" filter="url(#furSoft)">
-      <path d="M322,420 Q348,432 368,422 Q348,438 322,428 Z"/>
-      <path d="M318,446 Q345,458 368,448 Q345,465 318,454 Z"/>
-      <path d="M320,475 Q348,488 370,478 Q348,494 320,482 Z"/>
-      <path d="M445,412 Q475,428 502,415 Q475,435 445,420 Z"/>
-      <path d="M440,442 Q472,458 502,445 Q472,465 440,450 Z"/>
-      <path d="M436,472 Q468,488 498,475 Q468,495 436,480 Z"/>
-    </g>
-
-    <!-- White Patch on Chest -->
-    <path d="M382,408 C368,425 360,458 358,495 C356,535 365,575 380,598 C395,610 412,608 424,592 C436,568 442,532 438,492 C434,452 424,422 408,408 Z" fill="url(#whiteFurChest)" filter="url(#furSoft)"/>
-
-    <!-- Furry jagged edges & subtle skin ticking on white chest patch -->
-    <path d="M378,415 L368,432 L374,438 L362,458 L370,465 L358,488 L366,495 L356,520 L365,528 L358,552 L368,560 L365,582 L382,602 L405,606 L422,594 L432,570 L424,562 L436,540 L428,532 L438,505 L430,498 L438,472 L428,465 L434,442 L422,435 L425,418 L402,406 Z" fill="url(#whiteFurChest)"/>
-
-    <!-- Subtle muscle definition & ticking spots on chest -->
-    <path d="M396,455 C394,495 395,545 392,585 C398,545 402,495 400,455 Z" fill="#94a3b8" opacity="0.45" filter="url(#furSoft)"/>
-    <g fill="#475569" opacity="0.3" filter="url(#furSoft)">
-      <ellipse cx="382" cy="468" rx="3" ry="5" transform="rotate(15 382 468)"/>
-      <ellipse cx="412" cy="485" rx="4" ry="6" transform="rotate(-10 412 485)"/>
-      <ellipse cx="375" cy="515" rx="3.5" ry="5"/>
-      <ellipse cx="418" cy="528" rx="3" ry="5.5"/>
-      <ellipse cx="388" cy="548" rx="4" ry="4"/>
-      <ellipse cx="408" cy="565" rx="3" ry="5"/>
-    </g>
-  </g>
-
-
-  <!-- == 5C. LONG THIN FRONT LEGS == -->
-  <!-- Front-Left Leg in frame (Dog's Right Leg) -->
-  <g clip-path="url(#clipFrontLeftLeg)">
-    <rect x="328" y="520" width="62" height="345" fill="url(#brindleLegLeft)"/>
+  <!-- ================= FRONT LEGS (Long & Thin) ================= -->
+  <!-- Viewer's Left Front Leg (Foreleg with White Paw) -->
+  <g id="front-leg-viewer-left">
+    <!-- Upper & Lower Leg Shaft -->
+    <path d="M290,655 C295,715 304,775 308,825 C311,865 314,915 316,965 C318,995 316,1025 314,1045 L348,1045 C348,1020 347,990 348,960 C350,910 352,860 356,820 C362,775 372,725 378,685 Z" fill="url(#coat-leg-left)" filter="url(#fur-edge)"/>
 
     <!-- Sunlit highlight down left edge of leg -->
-    <path d="M332,525 L348,525 L354,855 L342,855 Z" fill="#fde68a" opacity="0.4" filter="url(#furSoft)"/>
+    <path d="M294,675 C300,730 307,780 310,825 C313,870 316,920 318,965" stroke="#856d56" stroke-width="3.5" fill="none" opacity="0.7" filter="url(#soft-blend)"/>
 
-    <!-- Brindle stripes on leg -->
-    <g fill="#291607" opacity="0.72" filter="url(#furSoft)">
-      <path d="M332,542 Q358,552 384,540 Q360,562 332,552 Z"/>
-      <path d="M334,568 Q358,578 382,566 Q358,588 334,578 Z"/>
-      <path d="M335,595 Q358,605 380,592 Q358,614 335,604 Z"/>
-      <path d="M336,622 Q358,630 378,620 Q358,638 336,630 Z"/>
-      <path d="M338,648 Q358,656 376,646 Q358,664 338,656 Z"/>
-      <path d="M340,675 Q358,682 375,672 Q358,690 340,682 Z"/>
-      <path d="M342,702 Q358,708 374,700 Q358,716 342,708 Z"/>
-      <path d="M343,728 Q358,735 372,726 Q358,742 343,735 Z"/>
-      <path d="M344,755 Q358,762 372,752 Q358,768 344,762 Z"/>
-      <path d="M344,782 Q358,788 370,780 Q358,795 344,788 Z"/>
+    <!-- Knob of wrist/carpus joint -->
+    <ellipse cx="333" cy="968" rx="18" ry="14" fill="#29221c" filter="url(#soft-blend)"/>
+
+    <!-- Brindle Tiger Stripes down Foreleg -->
+    <g stroke-linecap="round" fill="none" filter="url(#soft-blend)">
+      <path d="M296,685 Q332,702 368,692" stroke="url(#brindle-sun)" stroke-width="7"/>
+      <path d="M298,712 Q332,728 365,718" stroke="url(#brindle-sun)" stroke-width="6"/>
+      <path d="M302,738 Q334,752 362,742" stroke="url(#brindle-sun)" stroke-width="6.5"/>
+      <path d="M304,765 Q334,778 358,768" stroke="url(#brindle-sun)" stroke-width="5.5"/>
+      <path d="M307,792 Q334,804 356,795" stroke="url(#brindle-sun)" stroke-width="6"/>
+      <path d="M309,818 Q334,828 354,820" stroke="url(#brindle-mid)" stroke-width="5"/>
+      <path d="M311,845 Q334,854 352,846" stroke="url(#brindle-mid)" stroke-width="5"/>
+      <path d="M312,872 Q332,880 350,872" stroke="url(#brindle-mid)" stroke-width="4.5"/>
+      <path d="M314,900 Q332,908 349,900" stroke="url(#brindle-mid)" stroke-width="4.5"/>
+      <path d="M315,928 Q332,935 348,928" stroke="url(#brindle-mid)" stroke-width="4"/>
+      <path d="M316,952 Q332,958 347,952" stroke="url(#brindle-mid)" stroke-width="4"/>
     </g>
 
-    <!-- White sock transition starting at ankle (y=795) -->
-    <path d="M340,798 Q352,790 362,802 Q368,794 374,800 L372,860 L342,860 Z" fill="url(#whiteFurChest)" filter="url(#furSoft)"/>
-  </g>
+    <!-- Transition into White Sock/Pastern (slightly blurred) -->
+    <g filter="url(#ankle-blur)">
+      <path d="M316,982 C324,978 338,980 348,984 L349,1042 L314,1042 Z" fill="url(#white-fur)"/>
+      <!-- Dark brindle overlap onto white sock -->
+      <path d="M315,975 Q325,995 335,982 Q342,992 348,980 L348,965 L315,965 Z" fill="#211b17"/>
+      <!-- Greyish-brown skin ticking on white pastern -->
+      <ellipse cx="332" cy="1008" rx="4" ry="7" fill="#6e5f53" opacity="0.4"/>
+      <ellipse cx="324" cy="1024" rx="3.5" ry="6" fill="#6e5f53" opacity="0.35"/>
+    </g>
 
-  <!-- Front-Right Leg in frame (Dog's Left Leg) -->
-  <g clip-path="url(#clipFrontRightLeg)">
-    <rect x="425" y="535" width="58" height="340" fill="url(#brindleLegRight)"/>
-
-    <!-- Subtle warm highlight on front of leg -->
-    <path d="M430,550 L444,550 L446,868 L434,868 Z" fill="#eab368" opacity="0.3" filter="url(#furSoft)"/>
-
-    <!-- Brindle stripes on leg -->
-    <g fill="#211205" opacity="0.78" filter="url(#furSoft)">
-      <path d="M430,558 Q455,568 476,555 Q455,578 430,568 Z"/>
-      <path d="M432,585 Q455,595 475,582 Q455,605 432,595 Z"/>
-      <path d="M433,612 Q455,622 472,610 Q455,632 433,622 Z"/>
-      <path d="M434,638 Q455,648 470,636 Q455,658 434,648 Z"/>
-      <path d="M435,665 Q455,674 468,662 Q455,682 435,674 Z"/>
-      <path d="M436,692 Q454,700 467,690 Q454,708 436,700 Z"/>
-      <path d="M437,718 Q454,726 466,716 Q454,734 437,726 Z"/>
-      <path d="M438,745 Q454,752 465,742 Q454,760 438,752 Z"/>
-      <path d="M438,772 Q453,778 464,770 Q453,786 438,778 Z"/>
-      <path d="M437,798 Q452,805 464,796 Q452,812 437,805 Z"/>
-      <path d="M436,825 Q452,832 463,822 Q452,838 436,832 Z"/>
+    <!-- Blurred White Front-Left Paw ("the front-left paw is white, and the paws are slightly blurred") -->
+    <g filter="url(#paw-blur)">
+      <path d="M314,1032 C308,1046 300,1062 306,1072 C312,1080 348,1082 356,1072 C362,1064 354,1046 349,1032 Z" fill="url(#white-fur)"/>
+      <!-- Bright sunlit top of white toes -->
+      <ellipse cx="316" cy="1062" rx="8" ry="12" fill="#ffffff"/>
+      <ellipse cx="330" cy="1065" rx="8" ry="13" fill="#f7f4ed"/>
+      <ellipse cx="344" cy="1063" rx="7" ry="11" fill="#e6e0d5"/>
+      <!-- Toe separations & dark nails/wet sand base -->
+      <path d="M322,1052 L320,1075 M337,1052 L337,1076" stroke="#8c7d70" stroke-width="2.5" opacity="0.6"/>
+      <path d="M306,1072 Q330,1082 356,1072" stroke="#785d3c" stroke-width="5" fill="none" opacity="0.65"/>
     </g>
   </g>
 
+  <!-- Viewer's Right Front Leg (Anatomical Left Foreleg) -->
+  <g id="front-leg-viewer-right">
+    <!-- Upper & Lower Leg Shaft -->
+    <path d="M432,685 C438,728 444,775 446,825 C448,870 448,918 449,968 C450,998 448,1028 446,1052 L480,1052 C480,1025 478,995 479,965 C481,915 484,865 488,820 C492,770 502,715 510,660 Z" fill="url(#coat-leg-right)" filter="url(#fur-edge)"/>
 
-  <!-- == 5D. SLIGHTLY BLURRED PAWS == -->
-  <!-- Ankle transition zone (mild blur to blend leg into blurred paw seamlessly) -->
-  <g filter="url(#ankleBlur)">
-    <path d="M412,818 L432,820 L430,838 L410,836 Z" fill="#3b210c"/>
-    <path d="M498,828 L520,830 L518,848 L496,846 Z" fill="#2e1908"/>
-    <path d="M344,835 L370,836 L371,862 L343,860 Z" fill="#e2e8f0"/>
-    <path d="M436,845 L462,846 L463,872 L435,870 Z" fill="#4f2d11"/>
-  </g>
+    <!-- Sunlit inner-left edge of right foreleg -->
+    <path d="M436,705 C441,750 446,790 447,830 C449,875 449,920 450,968" stroke="#6e5844" stroke-width="3" fill="none" opacity="0.55" filter="url(#soft-blend)"/>
 
-  <!-- Blurred Paws Group -->
-  <g filter="url(#pawBlur)">
-    <!-- Back-Left Paw (inner) -->
-    <path d="M410,828 C405,836 402,846 408,850 C416,854 428,854 434,848 C438,842 434,832 430,828 Z" fill="#2e1908"/>
-    <!-- Back-Right Paw (outer) -->
-    <path d="M496,838 C490,846 488,856 495,860 C504,864 516,864 522,858 C526,852 522,842 518,838 Z" fill="#241306"/>
+    <!-- Carpus / Wrist joint -->
+    <ellipse cx="464" cy="972" rx="18" ry="14" fill="#171311" filter="url(#soft-blend)"/>
 
-    <!-- Front-Left Paw (WHITE PAW) -->
-    <g>
-      <path d="M343,852 C336,865 332,880 338,890 C344,896 364,896 372,888 C377,880 374,865 370,852 Z" fill="#f8fafc"/>
-      <!-- White toes definition -->
-      <ellipse cx="342" cy="884" rx="6" ry="9" fill="#ffffff"/>
-      <ellipse cx="352" cy="887" rx="6.5" ry="10" fill="#f1f5f9"/>
-      <ellipse cx="362" cy="886" rx="6" ry="9.5" fill="#e2e8f0"/>
-      <ellipse cx="369" cy="882" rx="5" ry="8" fill="#cbd5e1"/>
-      <!-- Subtle toe shadows & dark nails -->
-      <path d="M346,878 L346,892 M357,878 L357,893 M366,877 L366,890" stroke="#94a3b8" stroke-width="1.5"/>
-      <circle cx="340" cy="891" r="2" fill="#475569"/>
-      <circle cx="351" cy="894" r="2" fill="#475569"/>
-      <circle cx="362" cy="893" r="2" fill="#475569"/>
+    <!-- Brindle Tiger Stripes down Right Foreleg -->
+    <g stroke-linecap="round" fill="none" filter="url(#soft-blend)">
+      <path d="M438,695 Q472,712 504,698" stroke="url(#brindle-mid)" stroke-width="7"/>
+      <path d="M440,722 Q472,738 500,725" stroke="url(#brindle-mid)" stroke-width="6"/>
+      <path d="M442,748 Q472,762 496,750" stroke="url(#brindle-mid)" stroke-width="6.5"/>
+      <path d="M444,775 Q470,788 492,778" stroke="url(#brindle-mid)" stroke-width="5.5"/>
+      <path d="M446,802 Q470,814 490,805" stroke="url(#brindle-mid)" stroke-width="6"/>
+      <path d="M447,828 Q468,838 487,830" stroke="url(#brindle-shadow)" stroke-width="5"/>
+      <path d="M448,855 Q468,865 485,856" stroke="url(#brindle-shadow)" stroke-width="5"/>
+      <path d="M448,882 Q468,890 483,882" stroke="url(#brindle-shadow)" stroke-width="4.5"/>
+      <path d="M449,910 Q466,918 481,910" stroke="url(#brindle-shadow)" stroke-width="4.5"/>
+      <path d="M449,938 Q466,945 480,938" stroke="url(#brindle-shadow)" stroke-width="4"/>
+      <path d="M450,965 Q465,972 479,965" stroke="url(#brindle-shadow)" stroke-width="4"/>
+      <path d="M449,995 Q464,1002 479,995" stroke="url(#brindle-shadow)" stroke-width="4"/>
+      <path d="M448,1022 Q464,1028 479,1022" stroke="url(#brindle-shadow)" stroke-width="4"/>
     </g>
 
-    <!-- Front-Right Paw (Brindle with slight white/sand glint at tips) -->
-    <g>
-      <path d="M435,862 C429,875 426,890 432,900 C438,906 458,906 466,898 C471,890 467,875 463,862 Z" fill="#47280e"/>
-      <!-- Toes definition -->
-      <ellipse cx="436" cy="894" rx="6" ry="9" fill="#6e3f17"/>
-      <ellipse cx="446" cy="897" rx="6.5" ry="10" fill="#593312"/>
-      <ellipse cx="456" cy="896" rx="6" ry="9.5" fill="#47280e"/>
-      <ellipse cx="463" cy="892" rx="5" ry="8" fill="#381f0a"/>
-      <path d="M440,888 L440,902 M451,888 L451,903 M460,887 L460,900" stroke="#241306" stroke-width="1.5"/>
+    <!-- Blurred Front-Right Paw -->
+    <g filter="url(#paw-blur)">
+      <path d="M446,1040 C440,1054 434,1070 440,1080 C448,1088 482,1088 490,1078 C495,1070 486,1054 480,1040 Z" fill="#1c1815"/>
+      <!-- Subtle brindle & light toes on paw -->
+      <ellipse cx="448" cy="1070" rx="7" ry="11" fill="#c9bfb3" opacity="0.75"/>
+      <ellipse cx="462" cy="1072" rx="8" ry="12" fill="#3b3129"/>
+      <ellipse cx="476" cy="1070" rx="7" ry="11" fill="#241e1a"/>
+      <path d="M454,1060 L453,1082 M469,1060 L469,1082" stroke="#0d0b0a" stroke-width="2.5" opacity="0.7"/>
+      <path d="M438,1080 Q465,1090 490,1078" stroke="#6e5233" stroke-width="5" fill="none" opacity="0.65"/>
     </g>
-
-    <!-- Wet sand/water contact ring around paws -->
-    <ellipse cx="355" cy="893" rx="24" ry="5" fill="#8c6229" opacity="0.55"/>
-    <ellipse cx="449" cy="903" rx="24" ry="5" fill="#7d541c" opacity="0.55"/>
   </g>
 
-
-  <!-- == 5E. RED COLLAR & ROUND RED TAG == -->
-  <g id="collar">
-    <!-- Collar shadow on neck/chest -->
-    <path d="M342,368 C362,398 422,405 458,376 L455,388 C418,418 360,410 340,378 Z" fill="#1e0c05" opacity="0.55" filter="url(#furSoft)"/>
+  <!-- ================= 7. RED COLLAR & ROUND RED TAG ================= -->
+  <!-- "It wears a red collar with a small round red tag" -->
+  <g id="collar-and-tag">
+    <!-- Drop shadow of collar and tag on neck/chest -->
+    <path d="M312,412 Q355,482 405,488 Q455,482 492,415 L496,435 Q455,502 405,508 Q355,502 308,432 Z" fill="#0d0907" opacity="0.65" filter="url(#soft-blend)"/>
+    <circle cx="399" cy="516" r="17" fill="#140d09" opacity="0.6" filter="url(#soft-blend)"/>
 
     <!-- Red Collar Strap -->
-    <path d="M342,358 C362,388 422,394 458,365 C462,372 460,380 456,384 C420,412 360,404 339,372 C337,366 339,360 342,358 Z" fill="url(#collarGrad)"/>
+    <path d="M314,402 C338,448 372,472 405,475 C438,472 468,448 488,405 L495,426 C472,468 440,494 405,496 C368,494 332,468 307,422 Z" fill="url(#collar-grad)"/>
 
-    <!-- Collar highlight & nylon texture stitch -->
-    <path d="M344,364 C364,392 420,398 456,370" fill="none" stroke="#fca5a5" stroke-width="1.5" opacity="0.5"/>
-    <path d="M341,370 C361,398 419,405 455,378" fill="none" stroke="#7f1d1d" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>
+    <!-- Sunlit top edge highlight on collar -->
+    <path d="M313,404 C337,448 370,472 403,475" stroke="#ff7373" stroke-width="2.5" fill="none" opacity="0.75"/>
+    <!-- Nylon webbing texture ridge -->
+    <path d="M310,413 C335,458 370,483 405,485 C440,483 470,458 492,415" stroke="#7a0909" stroke-width="1.5" stroke-dasharray="4 3" fill="none" opacity="0.6"/>
 
-    <!-- Metallic D-Ring / Split Ring -->
-    <ellipse cx="392" cy="396" rx="6" ry="8" transform="rotate(-12 392 396)" fill="none" stroke="#94a3b8" stroke-width="3"/>
-    <ellipse cx="392" cy="396" rx="6" ry="8" transform="rotate(-12 392 396)" fill="none" stroke="#f8fafc" stroke-width="1"/>
-
-    <!-- Tag shadow on white chest -->
-    <circle cx="394" cy="419" r="13" fill="#0f172a" opacity="0.35" filter="url(#furSoft)"/>
+    <!-- Metal D-Ring & Split Ring -->
+    <path d="M392,482 C392,496 404,496 404,482" stroke="#b8c2cc" stroke-width="4" fill="none"/>
+    <path d="M394,484 C394,493 402,493 402,484" stroke="#ffffff" stroke-width="1.2" fill="none"/>
+    <ellipse cx="397" cy="496" rx="4" ry="5" stroke="#9aa4ad" stroke-width="2.2" fill="none"/>
 
     <!-- Small Round Red Tag -->
-    <circle cx="391" cy="416" r="12.5" fill="url(#tagGrad)" stroke="#991b1b" stroke-width="0.8"/>
-    <!-- Metallic rim/shine on tag -->
-    <path d="M382,408 A11,11 0 0,1 398,406" fill="none" stroke="#fecaca" stroke-width="1.8" stroke-linecap="round" opacity="0.75"/>
-    <!-- Small hole & ring connection -->
-    <circle cx="391" cy="406" r="2" fill="#334155"/>
-    <path d="M391,399 L391,406" stroke="#e2e8f0" stroke-width="2.2" stroke-linecap="round"/>
+    <circle cx="396" cy="513" r="15.5" fill="url(#tag-grad)" stroke="#800808" stroke-width="1"/>
+    <!-- Metallic rim / bevel glint on the red tag -->
+    <path d="M384,504 A14,14 0 0,1 405,501" stroke="#ffabab" stroke-width="2" fill="none" opacity="0.85" stroke-linecap="round"/>
+    <circle cx="396" cy="501" r="2" fill="#2b1e19"/>
   </g>
 
+  <!-- ================= 8. THE DOG: HEAD, EARS, FACE & TONGUE ================= -->
+  <!-- "The dog faces the camera, with its head turned slightly towards the left of the frame.
+        It has a white muzzle and grey whiskers, a big black nose, brown eyes,
+        one ear pricked up and one flopped over, and its mouth is open in a happy pant
+        with a long pink tongue hanging out." -->
 
-  <!-- == 5F. EARS (One Pricked Up, One Flopped Over) == -->
-  <!-- Viewer's Left Ear (Dog's Right Ear): PRICKED UP -->
-  <g id="pricked-ear">
-    <!-- Outer ear base -->
-    <g clip-path="url(#clipEarPricked)">
-      <rect x="320" y="90" width="80" height="130" fill="url(#brindleBaseHead)"/>
-      <!-- Brindle stripes on outer edge -->
-      <g fill="#261407" opacity="0.8" filter="url(#furSoft)">
-        <path d="M325,125 Q345,132 365,122 Q345,140 325,132 Z"/>
-        <path d="M325,150 Q348,158 375,146 Q348,166 325,158 Z"/>
-        <path d="M328,175 Q352,182 382,172 Q352,190 328,182 Z"/>
+  <g id="dog-head">
+    <!-- Neck Base connecting Head to Collar -->
+    <path d="M322,355 L314,415 Q360,468 405,472 Q450,468 488,412 L472,345 Z" fill="url(#coat-head)" filter="url(#fur-edge)"/>
+
+    <!-- ================= EARS ================= -->
+    <!-- ONE EAR PRICKED UP (Viewer's Left / Dog's Right Ear) -->
+    <g id="ear-pricked">
+      <!-- Outer dark brindle ear structure standing up high -->
+      <path d="M338,205 C330,165 316,125 292,102 C282,94 274,100 272,114 C268,145 274,185 288,225 C295,242 308,252 322,250 Z" fill="#1c1815" filter="url(#fur-edge)"/>
+      <!-- Sunlit outer left rim of pricked ear -->
+      <path d="M290,104 C280,100 274,112 273,130 C272,160 278,195 290,225" stroke="#8c6845" stroke-width="4.5" fill="none" opacity="0.8" filter="url(#soft-blend)"/>
+      <!-- Inner Ear Pinna (dark pinkish-brown skin & fine hairs) -->
+      <path d="M326,210 C320,175 308,138 289,115 C283,110 279,116 278,128 C276,155 282,190 296,222 C304,234 316,232 326,210 Z" fill="url(#ear-inner)"/>
+      <!-- Inner ear cartilage ridges -->
+      <path d="M294,145 C292,170 296,195 306,215" stroke="#75554f" stroke-width="3.5" fill="none" opacity="0.6" filter="url(#soft-blend)"/>
+      <path d="M305,165 C304,185 308,202 315,214" stroke="#261a18" stroke-width="3" fill="none" opacity="0.7" filter="url(#soft-blend)"/>
+      <!-- Tuft of brindle hair overlapping inner ear base -->
+      <path d="M338,202 C328,195 318,205 310,225 L330,235 Z" fill="#29221d" filter="url(#fur-edge)"/>
+    </g>
+
+    <!-- ONE EAR FLOPPED OVER (Viewer's Right / Dog's Left Ear) -->
+    <g id="ear-flopped">
+      <!-- Shadow under the flopped ear against side of head -->
+      <path d="M452,205 C475,215 505,245 512,278 C515,292 495,302 478,288 C465,275 455,245 448,225 Z" fill="#070605" opacity="0.75" filter="url(#soft-blend)"/>
+      <!-- Base of ear rising slightly before folding over -->
+      <path d="M438,198 C458,185 482,186 498,202 C515,218 532,248 536,272 C538,282 530,288 520,284 C498,275 478,252 458,235 C448,226 440,212 438,198 Z" fill="#171412" filter="url(#fur-edge)"/>
+      <!-- Fold crease highlight & brindle flecking on flopped ear -->
+      <path d="M448,196 C468,188 486,192 502,208 C516,222 528,248 532,272" stroke="#453322" stroke-width="5" fill="none" opacity="0.7" filter="url(#soft-blend)"/>
+      <g stroke="url(#brindle-mid)" stroke-width="4" stroke-linecap="round" fill="none" filter="url(#soft-blend)">
+        <path d="M468,202 Q488,212 502,228"/>
+        <path d="M478,218 Q498,230 514,248"/>
+        <path d="M488,238 Q508,250 524,268"/>
+      </g>
+      <!-- Underside shadow of the fold -->
+      <path d="M455,222 C475,232 495,255 522,280" stroke="#080706" stroke-width="4" fill="none" filter="url(#soft-blend)"/>
+    </g>
+
+    <!-- ================= CRANIUM & CHEEKS ================= -->
+    <clipPath id="head-clip">
+      <path d="M332,195 C358,182 405,180 442,196 C468,208 482,242 480,278 C478,315 468,348 455,375 C435,412 405,432 372,430 C342,428 318,405 308,368 C298,332 296,295 302,262 C308,230 318,205 332,195 Z"/>
+    </clipPath>
+
+    <g clip-path="url(#head-clip)">
+      <!-- Base Head Shape -->
+      <rect x="285" y="175" width="210" height="270" fill="url(#coat-head)"/>
+
+      <!-- Brow & Cheekbone Volume Modeling -->
+      <!-- Sunlit left brow & cheek -->
+      <ellipse cx="335" cy="245" rx="38" ry="32" fill="#473a30" opacity="0.6" filter="url(#deep-soft)"/>
+      <ellipse cx="322" cy="315" rx="30" ry="42" fill="#3d3229" opacity="0.5" filter="url(#deep-soft)"/>
+      <!-- Shaded right cheek -->
+      <ellipse cx="458" cy="295" rx="35" ry="55" fill="#080706" opacity="0.7" filter="url(#deep-soft)"/>
+      <!-- Center forehead furrow -->
+      <path d="M385,190 L376,265" stroke="#0d0b0a" stroke-width="8" fill="none" opacity="0.6" filter="url(#soft-blend)"/>
+
+      <!-- Brindle Coat Pattern on Head, Forehead & Cheeks -->
+      <g fill="none" stroke-linecap="round" filter="url(#soft-blend)">
+        <!-- Forehead & Crown Brindle -->
+        <path d="M325,205 Q352,215 372,225" stroke="url(#brindle-sun)" stroke-width="5.5"/>
+        <path d="M318,220 Q348,228 368,238" stroke="url(#brindle-sun)" stroke-width="5"/>
+        <path d="M312,235 Q342,240 362,248" stroke="url(#brindle-sun)" stroke-width="6"/>
+        <path d="M438,208 Q412,218 392,228" stroke="url(#brindle-mid)" stroke-width="5.5"/>
+        <path d="M448,222 Q418,230 396,240" stroke="url(#brindle-mid)" stroke-width="5"/>
+        <path d="M456,238 Q425,244 402,252" stroke="url(#brindle-mid)" stroke-width="6"/>
+
+        <!-- Tawny Eyebrow Accents -->
+        <path d="M322,242 Q342,234 360,245" stroke="#b8844b" stroke-width="4.5" opacity="0.75"/>
+        <path d="M412,245 Q432,235 452,246" stroke="#8c5f30" stroke-width="4.5" opacity="0.65"/>
+
+        <!-- Left Cheek Brindle -->
+        <path d="M298,285 Q318,298 338,292" stroke="url(#brindle-sun)" stroke-width="5.5"/>
+        <path d="M298,305 Q318,318 336,312" stroke="url(#brindle-sun)" stroke-width="5"/>
+        <path d="M302,325 Q320,338 335,332" stroke="url(#brindle-sun)" stroke-width="4.5"/>
+
+        <!-- Right Cheek Brindle -->
+        <path d="M435,288 Q458,302 478,292" stroke="url(#brindle-mid)" stroke-width="5.5"/>
+        <path d="M432,308 Q455,322 476,312" stroke="url(#brindle-shadow)" stroke-width="6"/>
+        <path d="M428,328 Q452,342 472,332" stroke="url(#brindle-shadow)" stroke-width="5.5"/>
+        <path d="M425,348 Q448,360 468,350" stroke="url(#brindle-shadow)" stroke-width="5"/>
       </g>
     </g>
-    <!-- Inner ear (pinkish/tan cartilage & fine white hairs) -->
-    <path d="M346,198 C338,172 333,138 339,112 C342,104 348,105 354,115 C366,135 378,162 384,188 C372,192 358,196 346,198 Z" fill="url(#earInner)"/>
-    <!-- Inner ear folds & depth -->
-    <path d="M348,195 C344,172 342,145 346,125 C352,142 362,168 366,190 Z" fill="#7c422d" opacity="0.45" filter="url(#furSoft)"/>
-    <!-- Fine sunlit hairs overlapping inner ear -->
-    <path d="M335,145 L348,148 M336,160 L352,162 M339,175 L355,176 M342,188 L358,186" stroke="#f8fafc" stroke-width="1.5" stroke-linecap="round" opacity="0.65" filter="url(#furSoft)"/>
-    <!-- Sunlit rim on left edge of pricked ear -->
-    <path d="M342,210 C332,180 326,140 335,108" fill="none" stroke="#fde68a" stroke-width="2.5" opacity="0.7" filter="url(#furSoft)"/>
-  </g>
 
-  <!-- Viewer's Right Ear (Dog's Left Ear): FLOPPED OVER -->
-  <g id="flopped-ear">
-    <!-- Shadow under flopped ear on side of head -->
-    <path d="M435,215 C452,235 465,265 482,292 C465,295 450,275 432,252 Z" fill="#170c04" opacity="0.7" filter="url(#furSoft)"/>
+    <!-- Wiry/Scruffy Staghound Fur Outline around Cheeks & Crown -->
+    <path d="M332,195 C358,182 405,180 442,196 M302,262 C296,295 298,332 308,368 M478,278 C476,315 466,348 452,375" stroke="#241e1a" stroke-width="3.5" fill="none" filter="url(#fur-edge)"/>
+    <!-- Sunlit left cheek rim -->
+    <path d="M304,255 C297,288 298,322 306,352" stroke="#8c7258" stroke-width="2.5" fill="none" opacity="0.7" filter="url(#fur-edge)"/>
 
-    <g clip-path="url(#clipEarFlopped)">
-      <rect x="430" y="190" width="75" height="115" fill="url(#brindleLegRight)"/>
-      <!-- Fold highlight at top bend -->
-      <ellipse cx="458" cy="212" rx="22" ry="12" transform="rotate(25 458 212)" fill="#d99b52" opacity="0.6" filter="url(#furSoft)"/>
-      <!-- Brindle stripes on flopped ear -->
-      <g fill="#1c0f04" opacity="0.82" filter="url(#furSoft)">
-        <path d="M442,208 Q465,215 482,206 Q465,222 442,215 Z"/>
-        <path d="M448,228 Q472,235 492,225 Q472,244 448,236 Z"/>
-        <path d="M454,248 Q478,256 498,246 Q478,265 454,256 Z"/>
-        <path d="M462,268 Q482,276 498,268 Q482,284 462,276 Z"/>
+    <!-- ================= OPEN MOUTH, JAW & LONG PINK TONGUE ================= -->
+    <!-- "and its mouth is open in a happy pant with a long pink tongue hanging out." -->
+    <g id="mouth-and-tongue">
+      <!-- Lower Jaw / Chin Structure -->
+      <path d="M318,355 C322,395 338,428 368,434 C402,438 432,412 448,368 L438,348 L322,345 Z" fill="#1f1916" filter="url(#fur-edge)"/>
+      <!-- Scruffy white chin hair under lower jaw -->
+      <path d="M335,408 C350,432 385,436 410,418" stroke="#d9d2c7" stroke-width="5" fill="none" opacity="0.7" filter="url(#fur-edge)"/>
+
+      <!-- Dark Interior of Open Mouth (Happy Pant shape) -->
+      <path d="M322,342 C318,358 324,382 336,398 C348,414 365,422 384,422 C405,422 424,408 438,388 C448,372 452,354 444,342 Z" fill="#2b0f15"/>
+      <!-- Deep throat shadow -->
+      <ellipse cx="384" cy="368" rx="42" ry="24" fill="#170508"/>
+
+      <!-- Black & Pink Lip Flews / Corners of the Smile -->
+      <!-- Left corner of mouth (viewer's left) -->
+      <path d="M322,340 C316,354 320,375 332,392 C338,398 344,394 340,384 C334,370 332,354 334,342 Z" fill="#141212"/>
+      <path d="M328,358 C328,372 334,384 342,392" stroke="#c45a6e" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <!-- Right corner of mouth (viewer's right, wider visible cheek pocket) -->
+      <path d="M444,340 C452,355 446,378 432,395 C425,402 418,396 424,386 C432,372 436,356 432,342 Z" fill="#121010"/>
+      <path d="M438,355 C436,370 428,385 418,394" stroke="#b0485c" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+      <!-- Ridges on inner cheek gum -->
+      <path d="M425,365 L436,368 M420,375 L432,379" stroke="#240e12" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Lower Canine & Premolar Teeth Hints peeking beside tongue -->
+      <path d="M338,384 C339,374 344,372 347,382 C345,386 340,386 338,384 Z" fill="#f5efe4"/>
+      <path d="M334,368 C336,363 340,363 341,369 Z" fill="#e6dec8"/>
+      <path d="M422,386 C421,375 415,373 412,383 C415,388 420,388 422,386 Z" fill="#e8e0d2"/>
+      <path d="M427,370 C425,364 421,364 420,371 Z" fill="#d9d0c1"/>
+
+      <!-- LONG PINK TONGUE HANGING OUT -->
+      <!-- Drop shadow of tongue onto lower jaw and neck -->
+      <path d="M348,375 C344,405 342,438 354,458 C366,474 395,472 408,452 C418,432 418,402 416,375 Z" fill="#0f0708" opacity="0.55" filter="url(#soft-blend)"/>
+
+      <!-- Main Tongue Blade (curving slightly left/down) -->
+      <path d="M352,358 C348,378 342,405 344,432 C346,452 358,464 376,464 C394,464 408,450 412,428 C416,404 414,376 410,358 Z" fill="url(#tongue-grad)"/>
+
+      <!-- Tongue 3D Contour & Central Median Groove -->
+      <!-- Shaded upper arch under the muzzle -->
+      <path d="M350,356 Q380,372 412,356 L412,382 Q380,395 348,382 Z" fill="#821d35" opacity="0.65" filter="url(#soft-blend)"/>
+      <!-- Center groove of tongue -->
+      <path d="M382,365 C380,392 376,422 374,448" stroke="#c94b68" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.75" filter="url(#soft-blend)"/>
+      <path d="M380,365 C378,392 374,422 372,448" stroke="#ffb3c2" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+      <!-- Sunlit Glossy Wet Highlights on Tongue -->
+      <path d="M354,395 C351,415 352,435 360,448 C365,454 370,450 368,438 C365,422 366,405 368,392 Z" fill="#ffb8c7" opacity="0.65" filter="url(#soft-blend)"/>
+      <!-- Sharp wet specular glints -->
+      <path d="M357,412 C355,424 357,436 362,444" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.75"/>
+      <path d="M388,408 C387,420 385,432 381,442" stroke="#ffd4dd" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+      <ellipse cx="364" cy="450" rx="3" ry="1.8" fill="#ffffff" opacity="0.7"/>
+    </g>
+
+    <!-- ================= WHITE MUZZLE & BIG BLACK NOSE ================= -->
+    <!-- "with its head turned slightly towards the left of the frame.
+          It has a white muzzle and grey whiskers, a big black nose" -->
+    <g id="muzzle-and-nose">
+      <!-- Shadow under upper lips onto tongue -->
+      <path d="M318,342 C332,368 355,375 372,362 C390,376 418,372 442,344 L435,332 L322,332 Z" fill="#1f0a0e" opacity="0.75" filter="url(#soft-blend)"/>
+
+      <!-- White Muzzle Base (turned slightly left: center around x=374) -->
+      <path d="M376,245 C368,265 352,278 336,292 C320,306 312,326 318,345 C324,362 348,368 370,354 C374,351 378,351 382,354 C404,368 430,362 438,344 C446,325 436,302 418,288 C402,275 386,265 376,245 Z" fill="url(#muzzle-white)" filter="url(#fur-edge)"/>
+
+      <!-- Pinkish-grey skin undertone showing through short/wiry muzzle hair near lips -->
+      <path d="M322,325 C324,352 348,362 370,350 C375,346 378,346 383,350 C404,362 428,352 434,328 C422,315 340,315 322,325 Z" fill="url(#muzzle-pinkish)" filter="url(#soft-blend)"/>
+
+      <!-- Dark skin spots / roan ticking on white muzzle -->
+      <g fill="#423934" opacity="0.38" filter="url(#soft-blend)">
+        <ellipse cx="336" cy="318" rx="5" ry="3.5" transform="rotate(-15 336 318)"/>
+        <ellipse cx="348" cy="334" rx="4" ry="3"/>
+        <ellipse cx="330" cy="338" rx="4.5" ry="3"/>
+        <ellipse cx="412" cy="316" rx="6" ry="4" transform="rotate(20 412 316)"/>
+        <ellipse cx="422" cy="332" rx="5" ry="3.5"/>
+        <ellipse cx="404" cy="338" rx="4.5" ry="3"/>
+        <ellipse cx="376" cy="272" rx="3.5" ry="6"/>
+      </g>
+
+      <!-- Dark upper lip edge (philtrum & flews) -->
+      <path d="M318,342 C328,360 350,365 372,350 C375,348 377,348 380,350 C402,365 426,360 438,342" stroke="#1c1616" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+      <!-- Philtrum line under nose -->
+      <path d="M372,334 L373,351" stroke="#1c1616" stroke-width="3.5" stroke-linecap="round"/>
+
+      <!-- Wiry White Fur Tufts Bridging Muzzle & Eyes (Staghound coat trait) -->
+      <g stroke="#f2efe9" stroke-linecap="round" fill="none" opacity="0.85">
+        <path d="M368,268 L352,276 M365,274 L345,284 M360,282 L338,294" stroke-width="2.2"/>
+        <path d="M382,268 L398,276 M385,274 L406,284 M390,282 L414,294" stroke-width="2"/>
+        <path d="M375,242 L375,268" stroke-width="2.5"/>
+      </g>
+
+      <!-- BIG BLACK NOSE (Slightly left of head center due to head turn) -->
+      <g id="big-black-nose">
+        <!-- Nose drop shadow on white muzzle -->
+        <ellipse cx="373" cy="322" rx="35" ry="24" fill="#1a1412" opacity="0.55" filter="url(#soft-blend)"/>
+
+        <!-- Main Nose Shape -->
+        <path d="M338,300 C338,284 354,276 372,276 C392,276 408,284 408,302 C408,316 396,328 384,335 C378,339 368,339 362,335 C350,328 338,316 338,300 Z" fill="url(#nose-grad)"/>
+
+        <!-- Nostrils (deep black commas) -->
+        <!-- Left Nostril -->
+        <path d="M344,303 C344,294 353,290 360,295 C364,298 362,308 357,312 C353,310 344,309 344,303 Z" fill="#030303"/>
+        <path d="M346,304 C350,306 355,304 358,298" stroke="#2e3136" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <!-- Right Nostril -->
+        <path d="M402,304 C402,294 392,290 385,295 C380,298 382,308 387,313 C392,310 402,310 402,304 Z" fill="#030303"/>
+        <path d="M400,305 C395,307 390,305 387,298" stroke="#24272b" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+        <!-- Center septum groove -->
+        <path d="M372,296 L372,336" stroke="#050506" stroke-width="2.5" stroke-linecap="round"/>
+
+        <!-- Sunlit Wet Specular Highlights on Top of Big Black Nose -->
+        <ellipse cx="364" cy="285" rx="18" ry="6.5" transform="rotate(-6 364 285)" fill="#9ab5d1" opacity="0.45" filter="url(#soft-blend)"/>
+        <path d="M349,286 Q365,280 384,284" stroke="#e6f2ff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7" filter="url(#soft-blend)"/>
+        <!-- Pebbled leather texture dots on highlight -->
+        <g fill="#ffffff" opacity="0.75">
+          <circle cx="356" cy="285" r="1.3"/>
+          <circle cx="362" cy="283" r="1.5"/>
+          <circle cx="368" cy="284" r="1.2"/>
+          <circle cx="374" cy="284" r="1.4"/>
+          <circle cx="360" cy="287" r="1"/>
+          <circle cx="366" cy="287" r="1.2"/>
+        </g>
+        <!-- Subtle highlight on nostril wings -->
+        <path d="M342,296 Q348,289 356,291" stroke="#7c92a8" stroke-width="1.8" stroke-linecap="round" fill="none" opacity="0.5"/>
+        <path d="M404,297 Q398,290 390,292" stroke="#5c6e80" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.4"/>
+      </g>
+
+      <!-- GREY WHISKERS ("It has a white muzzle and grey whiskers") -->
+      <g id="grey-whiskers" fill="none" stroke-linecap="round">
+        <!-- Left Side Whiskers (Sunlit silver-grey, curving out over beach background) -->
+        <path d="M326,315 Q295,312 268,325" stroke="#b5b8bd" stroke-width="1.6" opacity="0.85"/>
+        <path d="M324,322 Q290,324 262,340" stroke="#c4c7cc" stroke-width="1.8" opacity="0.9"/>
+        <path d="M325,330 Q294,336 270,356" stroke="#adb0b5" stroke-width="1.5" opacity="0.85"/>
+        <path d="M328,338 Q302,348 282,368" stroke="#9ea1a6" stroke-width="1.4" opacity="0.8"/>
+        <path d="M334,344 Q314,358 298,376" stroke="#b5b8bd" stroke-width="1.2" opacity="0.75"/>
+        <!-- Fine short upper muzzle whiskers (left) -->
+        <path d="M332,304 Q308,298 288,305" stroke="#a6a9ae" stroke-width="1.2" opacity="0.75"/>
+
+        <!-- Right Side Whiskers (Grey, curving out to the right) -->
+        <path d="M424,314 Q456,310 484,322" stroke="#9ea1a6" stroke-width="1.6" opacity="0.85"/>
+        <path d="M428,322 Q462,322 492,338" stroke="#b0b3b8" stroke-width="1.8" opacity="0.9"/>
+        <path d="M428,330 Q460,335 486,354" stroke="#96999e" stroke-width="1.5" opacity="0.85"/>
+        <path d="M424,338 Q452,348 474,368" stroke="#8a8d91" stroke-width="1.4" opacity="0.8"/>
+        <path d="M418,345 Q440,358 458,376" stroke="#9ea1a6" stroke-width="1.2" opacity="0.75"/>
+        <!-- Fine short upper muzzle whiskers (right) -->
+        <path d="M418,304 Q444,298 465,305" stroke="#8f9296" stroke-width="1.2" opacity="0.75"/>
+
+        <!-- Chin Whiskers -->
+        <path d="M348,422 Q335,438 325,448" stroke="#9ea1a6" stroke-width="1.2" opacity="0.7"/>
+        <path d="M402,420 Q416,435 426,445" stroke="#8a8d91" stroke-width="1.2" opacity="0.65"/>
+      </g>
+    </g>
+
+    <!-- ================= BROWN EYES ================= -->
+    <!-- "brown eyes" -->
+    <g id="brown-eyes">
+      <!-- Viewer's Left Eye -->
+      <g transform="translate(338, 258)">
+        <!-- Eye socket shadow -->
+        <ellipse cx="0" cy="0" rx="18" ry="14" fill="#080706" opacity="0.8" filter="url(#soft-blend)"/>
+        <!-- Eyelid rim (black leather) -->
+        <path d="M-15,2 C-12,-9 0,-12 13,-4 C16,-2 16,4 12,7 C2,12 -10,9 -15,2 Z" fill="#0d0c0c"/>
+        <!-- Warm Brown Iris -->
+        <circle cx="0" cy="0" r="9.5" fill="url(#eye-iris)"/>
+        <!-- Pupil -->
+        <circle cx="-0.5" cy="0" r="4.5" fill="#050505"/>
+        <!-- Upper eyelid shadow on cornea -->
+        <path d="M-12,-4 Q0,-9 12,-3 L12,-10 L-12,-10 Z" fill="#080605" opacity="0.55"/>
+        <!-- Bright Sunny Sky Catchlight -->
+        <ellipse cx="-3.5" cy="-3.5" rx="3.2" ry="2.2" transform="rotate(-20 -3.5 -3.5)" fill="#ffffff"/>
+        <circle cx="3" cy="3.5" r="1.2" fill="#fce8c7" opacity="0.6"/>
+        <!-- Lower wet waterline glint -->
+        <path d="M-11,4 Q0,9 10,5" stroke="#75685e" stroke-width="1" fill="none" opacity="0.7"/>
+      </g>
+
+      <!-- Viewer's Right Eye -->
+      <g transform="translate(428, 258)">
+        <!-- Eye socket shadow -->
+        <ellipse cx="0" cy="0" rx="19" ry="14" fill="#080706" opacity="0.85" filter="url(#soft-blend)"/>
+        <!-- Eyelid rim -->
+        <path d="M-14,-4 C-1,-12 12,-9 16,2 C11,9 -2,12 -12,7 C-16,4 -16,-2 -14,-4 Z" fill="#0d0c0c"/>
+        <!-- Warm Brown Iris -->
+        <circle cx="0" cy="0" r="9.8" fill="url(#eye-iris)"/>
+        <!-- Pupil -->
+        <circle cx="-0.5" cy="0" r="4.6" fill="#050505"/>
+        <!-- Upper eyelid shadow on cornea -->
+        <path d="M-12,-3 Q0,-9 12,-4 L12,-10 L-12,-10 Z" fill="#080605" opacity="0.6"/>
+        <!-- Bright Sunny Sky Catchlight -->
+        <ellipse cx="-3.5" cy="-3.5" rx="3.4" ry="2.3" transform="rotate(-15 -3.5 -3.5)" fill="#ffffff"/>
+        <circle cx="3.2" cy="3.5" r="1.2" fill="#fce8c7" opacity="0.55"/>
+        <!-- Lower wet waterline glint -->
+        <path d="M-10,5 Q0,9 11,4" stroke="#635850" stroke-width="1" fill="none" opacity="0.65"/>
       </g>
     </g>
   </g>
 
-
-  <!-- == 5G. HEAD, WHITE MUZZLE & FACIAL FEATURES == -->
-  <!-- Neck connection under head -->
-  <path d="M344,315 C340,338 342,358 345,368 C375,392 425,395 456,370 C452,352 446,325 442,305 Z" fill="url(#brindleBaseHead)"/>
-  <!-- Neck brindle & white throat patch -->
-  <path d="M362,335 C362,355 368,372 375,382 C395,388 412,386 422,378 C425,365 424,345 420,330 Z" fill="url(#whiteMuzzle)" filter="url(#furSoft)"/>
-
-  <!-- Main Head Group -->
-  <g clip-path="url(#clipHead)">
-    <!-- Brindle skull & cheeks base -->
-    <rect x="310" y="180" width="160" height="195" fill="url(#brindleBaseHead)"/>
-
-    <!-- Sunlit left brow & cheek highlight -->
-    <ellipse cx="345" cy="235" rx="22" ry="45" transform="rotate(12 345 235)" fill="#fde68a" opacity="0.4" filter="url(#cloudSoft)"/>
-
-    <!-- Brindle stripes on skull, brows & cheeks -->
-    <g fill="#211105" opacity="0.8" filter="url(#furSoft)">
-      <!-- Forehead chevron stripes -->
-      <path d="M352,198 Q372,212 385,205 Q368,218 348,205 Z"/>
-      <path d="M432,202 Q408,216 392,206 Q410,222 435,210 Z"/>
-      <path d="M345,212 Q368,226 382,218 Q365,232 342,220 Z"/>
-      <path d="M438,216 Q412,230 395,220 Q412,236 440,225 Z"/>
-      <!-- Cheek stripes (right side of frame) -->
-      <path d="M415,262 Q438,272 458,260 Q438,280 412,270 Z"/>
-      <path d="M410,280 Q435,292 456,278 Q435,300 408,288 Z"/>
-      <path d="M405,298 Q430,310 450,296 Q430,318 402,305 Z"/>
-      <!-- Cheek stripes (left side of frame) -->
-      <path d="M320,260 Q335,268 348,262 Q335,275 318,268 Z"/>
-      <path d="M318,278 Q334,286 346,278 Q334,292 316,285 Z"/>
-    </g>
-
-    <!-- Lighter golden brindle accents on head -->
-    <g fill="#f6c478" opacity="0.45" filter="url(#furSoft)">
-      <path d="M348,206 Q368,218 380,212 Q368,224 346,212 Z"/>
-      <path d="M432,210 Q412,222 396,214 Q412,228 434,218 Z"/>
-      <path d="M412,272 Q435,282 454,270 Q435,288 410,278 Z"/>
-    </g>
-
-    <!-- White Blaze & White Muzzle -->
-    <!-- Blaze going up between eyes -->
-    <path d="M386,192 C384,210 380,228 372,245 C362,258 338,268 326,282 C318,298 320,322 332,338 C352,355 395,358 415,335 C422,320 418,295 405,275 C392,258 390,245 390,228 C390,212 392,198 386,192 Z" fill="url(#whiteMuzzle)" filter="url(#furSoft)"/>
-
-    <!-- Sharp furry overlay for muzzle volume -->
-    <path d="M385,205 C383,222 378,238 368,252 C355,266 335,274 326,288 C318,302 322,324 334,335 C354,350 392,352 410,332 C418,318 412,294 400,276 C388,260 388,242 388,225 Z" fill="url(#whiteMuzzle)"/>
-
-    <!-- Pinkish skin undertone around nose/lips -->
-    <ellipse cx="366" cy="312" rx="44" ry="30" fill="url(#pinkSkinMuzzle)"/>
-
-    <!-- Subtle muzzle bridge shading (turned slightly left) -->
-    <path d="M382,245 C378,262 376,278 378,295 C392,298 402,312 408,325 C414,310 408,288 396,272 C388,262 385,252 382,245 Z" fill="#94a3b8" opacity="0.4" filter="url(#furSoft)"/>
-
-    <!-- Dark ticking spots on white muzzle -->
-    <g fill="#334155" opacity="0.35" filter="url(#furSoft)">
-      <circle cx="342" cy="292" r="2.5"/>
-      <circle cx="335" cy="306" r="3"/>
-      <circle cx="346" cy="314" r="2"/>
-      <circle cx="392" cy="288" r="2.8"/>
-      <circle cx="398" cy="302" r="3.2"/>
-      <circle cx="388" cy="308" r="2"/>
-    </g>
+  <!-- ================= 9. FINAL PHOTOGRAPHIC FINISHING & ATMOSPHERE ================= -->
+  <!-- Subtle wet sand splash/water droplets near blurred paws -->
+  <g fill="#e8dec8" opacity="0.45" filter="url(#paw-blur)">
+    <circle cx="295" cy="1065" r="3"/>
+    <circle cx="368" cy="1078" r="2.5"/>
+    <circle cx="430" cy="1075" r="2.5"/>
+    <circle cx="502" cy="1082" r="3"/>
   </g>
-
-
-  <!-- == 5H. OPEN MOUTH, HAPPY PANT & LONG PINK TONGUE == -->
-  <g id="mouth-and-tongue">
-    <!-- Lower Jaw / Chin (dropped open in a pant) -->
-    <path d="M332,325 C332,352 342,378 362,386 C382,392 406,378 418,352 C424,338 426,322 422,312 Z" fill="#261509"/>
-    <!-- White fur on underside of chin -->
-    <path d="M340,348 C345,368 355,382 368,385 C385,388 402,376 410,358 Z" fill="#cbd5e1" filter="url(#furSoft)"/>
-
-    <!-- Dark Mouth Cavity -->
-    <path d="M332,312 C342,306 365,315 398,308 C410,305 420,304 424,312 C422,335 412,362 395,372 C375,382 350,375 338,352 C332,338 330,322 332,312 Z" fill="#1a090d"/>
-
-    <!-- Deep throat/palate shadow inside mouth -->
-    <path d="M342,318 C358,314 385,315 408,312 C406,332 395,348 375,352 C355,354 344,338 342,318 Z" fill="#4c0519"/>
-
-    <!-- Black/Pink Lip Flews (pulled back in a happy pant smile) -->
-    <!-- Right corner of mouth (viewer's right) -->
-    <path d="M398,312 C410,305 422,300 428,306 C432,312 426,328 418,342 C412,352 404,358 398,355 C406,345 414,330 416,318 C410,318 402,316 398,312 Z" fill="#1e1b18"/>
-    <!-- Pink inner lip corner -->
-    <path d="M414,315 C420,312 424,316 420,326 C416,335 410,344 404,346 C408,336 412,325 414,315 Z" fill="#e11d48" opacity="0.7"/>
-
-    <!-- Left corner of mouth (viewer's left) -->
-    <path d="M336,312 C328,308 324,312 326,324 C328,336 334,348 342,354 C338,342 334,328 336,312 Z" fill="#1e1b18"/>
-
-    <!-- Lower Gums & Teeth (visible beside tongue) -->
-    <path d="M340,345 C348,358 385,362 402,346 C398,356 385,366 368,366 C352,365 342,356 340,345 Z" fill="#f43f5e"/>
-    <!-- Lower Left Canine (viewer's left) -->
-    <path d="M342,344 C341,334 344,328 347,330 C350,332 350,340 349,347 Z" fill="#f8fafc"/>
-    <path d="M343,344 C343,338 345,334 347,335" fill="none" stroke="#cbd5e1" stroke-width="1"/>
-    <!-- Lower Right Canine (viewer's right) -->
-    <path d="M396,348 C398,337 402,331 405,333 C407,336 405,344 402,350 Z" fill="#f1f5f9"/>
-    <!-- Upper edge of teeth hint -->
-    <path d="M392,315 L395,321 L400,316 L404,320 L408,314" fill="#e2e8f0" opacity="0.8"/>
-
-    <!-- Upper Lip Pads (Flews) overhanging the open mouth -->
-    <path d="M356,312 C348,324 334,326 325,316 C322,310 324,302 330,298 C342,302 352,306 356,312 Z" fill="#f1f5f9"/>
-    <path d="M356,312 C368,326 392,328 408,314 C416,306 414,296 406,292 C390,302 370,308 356,312 Z" fill="#cbd5e1"/>
-    <!-- Dark lip rim on upper flews -->
-    <path d="M325,314 C334,325 348,324 356,312 C368,326 392,327 409,313" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round"/>
-
-    <!-- LONG PINK TONGUE HANGING OUT -->
-    <!-- Tongue shadow on lower jaw -->
-    <path d="M346,352 C344,378 348,408 364,414 C380,418 394,395 396,362 Z" fill="#0f172a" opacity="0.35" filter="url(#furSoft)"/>
-
-    <!-- Main Tongue Body -->
-    <path d="M352,324 C348,338 344,358 344,378 C344,398 350,412 364,414 C378,415 390,400 393,380 C396,360 394,342 398,326 C385,320 365,318 352,324 Z" fill="url(#tongueGrad)"/>
-
-    <!-- Tongue center groove & 3D contour -->
-    <path d="M373,324 C370,345 366,372 364,402" fill="none" stroke="#be123c" stroke-width="2.5" stroke-linecap="round" opacity="0.55" filter="url(#furSoft)"/>
-    <path d="M375,324 C372,345 368,372 366,402" fill="none" stroke="#fda4af" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-
-    <!-- Wet specular highlights on tongue -->
-    <g fill="#ffffff" opacity="0.65" filter="url(#furSoft)">
-      <path d="M354,348 C351,365 351,385 356,398 C358,385 358,365 354,348 Z"/>
-      <path d="M380,352 C378,370 375,388 370,402 C378,390 384,372 380,352 Z"/>
-      <ellipse cx="362" cy="404" rx="6" ry="3" transform="rotate(15 362 404)"/>
-      <!-- Taste bud texture dots -->
-      <circle cx="358" cy="382" r="1.2"/>
-      <circle cx="362" cy="390" r="1"/>
-      <circle cx="375" cy="385" r="1.2"/>
-      <circle cx="372" cy="394" r="1"/>
-    </g>
-  </g>
-
-
-  <!-- == 5I. BIG BLACK NOSE == -->
-  <g id="big-black-nose">
-    <!-- Soft shadow under nose -->
-    <ellipse cx="358" cy="306" rx="25" ry="12" fill="#0f172a" opacity="0.35" filter="url(#furSoft)"/>
-
-    <!-- Main Nose Leather (positioned slightly left for head turn) -->
-    <path d="M332,282 C332,270 346,265 360,266 C375,267 388,274 387,286 C386,298 376,306 368,311 C362,315 353,315 348,310 C340,303 332,294 332,282 Z" fill="url(#noseGrad)"/>
-
-    <!-- Left Nostril -->
-    <path d="M337,284 C339,278 346,277 350,282 C352,286 348,292 345,296 C343,292 342,288 337,284 Z" fill="#020617"/>
-    <path d="M339,283 C342,280 346,280 348,283" fill="none" stroke="#475569" stroke-width="1" opacity="0.6"/>
-
-    <!-- Right Nostril -->
-    <path d="M381,286 C379,280 371,278 366,283 C364,287 367,294 371,298 C373,294 375,289 381,286 Z" fill="#020617"/>
-    <path d="M379,285 C376,281 371,281 368,284" fill="none" stroke="#475569" stroke-width="1" opacity="0.6"/>
-
-    <!-- Center Philtrum Groove -->
-    <path d="M358,288 L356,313" stroke="#020617" stroke-width="2.2" stroke-linecap="round"/>
-    <path d="M359,290 L357,312" stroke="#475569" stroke-width="0.8" opacity="0.7"/>
-
-    <!-- Wet Specular Shine on Top of Nose -->
-    <path d="M342,272 C352,268 368,269 377,274 C372,278 352,277 342,272 Z" fill="#cbd5e1" opacity="0.65" filter="url(#furSoft)"/>
-    <ellipse cx="352" cy="272" rx="8" ry="2.5" fill="#ffffff" opacity="0.8"/>
-    <circle cx="366" cy="274" r="2" fill="#ffffff" opacity="0.7"/>
-  </g>
-
-
-  <!-- == 5J. BROWN EYES == -->
-  <g id="brown-eyes">
-    <!-- Viewer's Left Eye (Dog's Right Eye - slightly angled) -->
-    <g id="eye-left">
-      <!-- Brow ridge shadow -->
-      <path d="M336,232 C344,224 358,225 366,234 C358,230 344,229 336,232 Z" fill="#1f1105" opacity="0.75" filter="url(#furSoft)"/>
-      <!-- Dark eyeliner rim -->
-      <path d="M339,240 C343,231 356,230 364,239 C358,247 344,248 339,240 Z" fill="#0f172a"/>
-      <!-- Eyeball / Iris -->
-      <circle cx="352" cy="239" r="7.5" fill="url(#eyeIris)"/>
-      <!-- Pupil -->
-      <circle cx="351.5" cy="239" r="3.2" fill="#090a0f"/>
-      <!-- Upper eyelid shadow -->
-      <path d="M339,240 C343,231 356,230 364,239 C356,234 344,234 339,240 Z" fill="#020617" opacity="0.6"/>
-      <!-- Bright Sky Catchlight -->
-      <ellipse cx="349.5" cy="236.5" rx="2.2" ry="1.6" transform="rotate(-15 349.5 236.5)" fill="#ffffff"/>
-      <circle cx="354" cy="241.5" r="0.9" fill="#e0f2fe" opacity="0.8"/>
-      <!-- Lower lid wet rim highlight -->
-      <path d="M341,241 C346,246 356,246 362,240" fill="none" stroke="#94a3b8" stroke-width="0.7" opacity="0.6"/>
-    </g>
-
-    <!-- Viewer's Right Eye (Dog's Left Eye) -->
-    <g id="eye-right">
-      <!-- Brow ridge shadow -->
-      <path d="M402,235 C412,226 428,228 435,238 C426,233 412,232 402,235 Z" fill="#1f1105" opacity="0.75" filter="url(#furSoft)"/>
-      <!-- Dark eyeliner rim -->
-      <path d="M404,243 C410,233 424,233 431,243 C424,251 410,251 404,243 Z" fill="#0f172a"/>
-      <!-- Eyeball / Iris -->
-      <circle cx="417" cy="242" r="8" fill="url(#eyeIris)"/>
-      <!-- Pupil -->
-      <circle cx="416.5" cy="242" r="3.4" fill="#090a0f"/>
-      <!-- Upper eyelid shadow -->
-      <path d="M404,243 C410,233 424,233 431,243 C424,237 410,237 404,243 Z" fill="#020617" opacity="0.6"/>
-      <!-- Bright Sky Catchlight -->
-      <ellipse cx="414.5" cy="239.5" rx="2.4" ry="1.7" transform="rotate(-15 414.5 239.5)" fill="#ffffff"/>
-      <circle cx="419.5" cy="244.5" r="1" fill="#e0f2fe" opacity="0.8"/>
-      <!-- Lower lid wet rim highlight -->
-      <path d="M406,244 C412,249 423,249 429,243" fill="none" stroke="#94a3b8" stroke-width="0.7" opacity="0.6"/>
-    </g>
-  </g>
-
-
-  <!-- == 5K. GREY WHISKERS == -->
-  <g id="grey-whiskers" fill="none" stroke-linecap="round">
-    <!-- Left side whiskers (curving out into sunlit beach background) -->
-    <path d="M332,296 Q310,294 292,304" stroke="#94a3b8" stroke-width="1.3" opacity="0.85"/>
-    <path d="M332,296 Q310,294 292,304" stroke="#f1f5f9" stroke-width="0.6" opacity="0.9"/>
-
-    <path d="M330,302 Q306,304 286,318" stroke="#94a3b8" stroke-width="1.4" opacity="0.85"/>
-    <path d="M330,302 Q306,304 286,318" stroke="#f8fafc" stroke-width="0.7" opacity="0.9"/>
-
-    <path d="M331,308 Q310,314 294,330" stroke="#94a3b8" stroke-width="1.2" opacity="0.8"/>
-    <path d="M334,314 Q316,322 304,338" stroke="#cbd5e1" stroke-width="1.1" opacity="0.75"/>
-    <path d="M338,290 Q318,285 302,290" stroke="#cbd5e1" stroke-width="1" opacity="0.7"/>
-
-    <!-- Right side whiskers -->
-    <path d="M398,294 Q422,292 442,302" stroke="#94a3b8" stroke-width="1.3" opacity="0.85"/>
-    <path d="M398,294 Q422,292 442,302" stroke="#e2e8f0" stroke-width="0.6" opacity="0.85"/>
-
-    <path d="M402,300 Q428,302 450,316" stroke="#94a3b8" stroke-width="1.4" opacity="0.85"/>
-    <path d="M402,300 Q428,302 450,316" stroke="#f1f5f9" stroke-width="0.7" opacity="0.85"/>
-
-    <path d="M400,307 Q425,312 444,328" stroke="#94a3b8" stroke-width="1.2" opacity="0.8"/>
-    <path d="M395,313 Q418,322 434,338" stroke="#cbd5e1" stroke-width="1.1" opacity="0.75"/>
-    <path d="M394,288 Q416,284 434,290" stroke="#cbd5e1" stroke-width="1" opacity="0.7"/>
-
-    <!-- Chin & eyebrow tactile hairs -->
-    <path d="M352,378 Q344,392 336,398" stroke="#cbd5e1" stroke-width="1" opacity="0.6"/>
-    <path d="M385,380 Q395,392 404,396" stroke="#94a3b8" stroke-width="1" opacity="0.6"/>
-    <path d="M352,225 Q344,212 336,208" stroke="#cbd5e1" stroke-width="0.9" opacity="0.5"/>
-    <path d="M420,228 Q428,215 438,212" stroke="#94a3b8" stroke-width="0.9" opacity="0.5"/>
-  </g>
-
-
-  <!-- ================= 6. PHOTOGRAPHIC GRAIN & HIGHLIGHTS ================= -->
-  <!-- Specular water sparkles on wet sand and foam -->
-  <g fill="#ffffff" opacity="0.75">
-    <circle cx="115" cy="492" r="1.5"/>
-    <circle cx="122" cy="495" r="1"/>
-    <circle cx="245" cy="505" r="1.8"/>
-    <circle cx="280" cy="498" r="1.2"/>
-    <circle cx="535" cy="492" r="1.6"/>
-    <circle cx="548" cy="496" r="1.1"/>
-    <circle cx="672" cy="504" r="1.5"/>
-    <circle cx="190" cy="585" r="1.2" opacity="0.5"/>
-    <circle cx="620" cy="610" r="1.4" opacity="0.5"/>
-    <circle cx="285" cy="740" r="1.2" opacity="0.4"/>
-  </g>
-
-  <!-- Subtle sand photographic texture overlay -->
-  <rect x="0" y="455" width="800" height="545" filter="url(#sandGrain)" pointer-events="none"/>
 </svg>

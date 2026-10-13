@@ -17,15 +17,17 @@ notebook:
   outputLimit: 200
 ---
 
-Google's new frontier model, **Gemini 4 Argon** is finally here.
+The model releases keep coming! Today, Google launched its long-awaited new frontier model, **Gemini 4 Argon**.
 
-Seems to be competitive-ish on the benchmarks, maybe a tad behind Claude on coding tasks.
+It seems competitive-ish on the benchmarks, maybe a tad behind Claude on coding tasks.
 
-Google say it's a brand new model. Apparently "not a modification or a fine-tune of a prior model" -  built as a sparse [Mixture-of-Experts](mixture-of-experts.md) transformer. The parameter count isn't disclosed [@googleDeepMindGemini4ArgonModelCard].
+Google says it's a brand-new model architecture. Apparently, "not a modification or a fine-tune of a prior model". It's built as a sparse [Mixture-of-Experts](mixture-of-experts.md) transformer, but they don't disclose the parameter count [@googleDeepMindGemini4ArgonModelCard].
 
-Notably it can write up to **1M tokens in a single response**, which, as far as I can tell, is a first for a publicly available frontier model. However, the 1M tokens doesn't work in a normal responses, it uses a thing called "long decode", which runs as a background job via the Interactions API, and Google's servers generate the output in 64K "hops" and join them together. The first 64K takes about 10 minutes, a run can last up to 24 hours, and you pay for every token in every hop. Without long decode, the limit is 65,536 [@googleGeminiAPILongDecode] [@googleGeminiAPIGemini4Argon].
+Notably, it can write up to **1M tokens in a single response**, which, as far as I can tell, is a first for a publicly available frontier model. However, you need to use the "long decode" background job via the Interactions API, which generates the output in 64K "hops" and joins them together. Without it, the limit is 65,536 [@googleGeminiAPILongDecode] [@googleGeminiAPIGemini4Argon].
 
-Like Muse Wonder, it takes audio directly, alongside text, images, video and PDFs. So of the three models compared here, two can listen, and Opus 5.5 still can't [@googleGeminiAPIGemini4Argon] [@anthropicModelsOverview].
+Introductory prices are on par with [GPT 6 Sol and Luna](gpt-6-sol-and-luna.md), but after the introductory period, it's basically [Claude Opus 5.5](claude-opus-5-5.md) and [Muse Wonder](muse-wonder.md) prices [@googleGeminiAPIPricing].
+
+It supports audio and video, plus the usual multimodal suspects. I tested a few things, including video understanding, audio understanding and code generation. Very impressive results [@googleGeminiAPIGemini4Argon].
 
 ## Specs Argon vs Muse Wonder vs Opus 5.5
 
@@ -129,13 +131,13 @@ I resized the photo to 1024 pixels on the long side, sent it with the system pro
 <details markdown="1">
 <summary>The text description</summary>
 
-> A portrait-orientation photo of a brindle Bull Arab and Staghound cross standing on wet golden sand at the beach on a sunny day. The dog faces the camera, with its head turned slightly towards the left of the frame. It has a white muzzle and grey whiskers, a big black nose, brown eyes, one ear pricked up and one flopped over, and its mouth is open in a happy pant with a long pink tongue hanging out. It wears a red collar with a small round red tag, and has a white patch on its chest. Its legs are long and thin, the front-left paw is white, and the paws are slightly blurred. Its shadow stretches away to the right across the sand. Behind it, white foamy waves wash up the shore, then a band of teal-green sea meets a bright blue sky with scattered white clouds.
+> A portrait-orientation photo of a black brindle Bull Arab and Staghound cross standing on wet golden sand at the beach on a sunny day. The dog faces the camera, with its head turned slightly towards the left of the frame. It has a white muzzle and grey whiskers, a big black nose, brown eyes, one ear pricked up and one flopped over, and its mouth is open in a happy pant with a long pink tongue hanging out. It wears a red collar with a small round red tag, and has a white patch on its chest. Its legs are long and thin, the front-left paw is white, and the paws are slightly blurred. Its shadow stretches away to the right across the sand. Behind it, white foamy waves wash up the shore, then a band of teal-green sea meets a bright blue sky with scattered white clouds.
 
 </details>
 
-Both used high thinking on 14 October 2026. The photo version took about 4 minutes and 20,121 output tokens, including 2,947 thinking tokens, and cost about US$0.20. The text version took about 5 minutes and 29,548 output tokens, including 6,369 thinking tokens, for about US$0.30. Those are launch prices; both double in December ([raw results](../_media/gemini-4-argon-dog-svg-results.json)).
+Both used high thinking. The photo version took about 4 minutes and cost about US$0.20. The text version took about 5 minutes and cost about US$0.30 ([raw results](../_media/gemini-4-argon-dog-svg-results.json)).
 
-The text version also had a bug. Its section comments contained "----", which isn't allowed in XML, so browsers refused to show the image at all. I replaced those dashes and changed nothing else. Adding the breed made a big difference: without it, Argon drew a cuter, cartoonish black and grey dog. With it, "brindle" became literal tiger stripes.
+Getting her colouring right in the description made a big difference. Without it, Argon drew a cartoonish black and grey dog, and plain "brindle" gave her tiger stripes.
 
 ## Testing the audio
 
@@ -175,16 +177,33 @@ Argon counts about 30 audio tokens per second, more than twice Muse Wonder's 12.
 
 I also sent two of my own phone videos, scaled down to 720p with the location metadata stripped, and asked each question three times at the default thinking level.
 
-<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-items:start;max-width:520px">
-<figure style="margin:0"><video controls playsinline preload="metadata" poster="../_media/gemini-4-argon-video-beach.jpg" style="width:100%;height:auto;display:block"><source src="../_media/gemini-4-argon-video-beach.mp4" type="video/mp4"></video><figcaption style="font-size:0.85em;text-align:center">Doggo at the beach (5 seconds)</figcaption></figure>
-<figure style="margin:0"><video controls playsinline preload="metadata" poster="../_media/gemini-4-argon-video-muscle-ups.jpg" style="width:100%;height:auto;display:block"><source src="../_media/gemini-4-argon-video-muscle-ups.mp4" type="video/mp4"></video><figcaption style="font-size:0.85em;text-align:center">3 muscle-ups (17 seconds)</figcaption></figure>
+<div style="overflow:hidden">
+<table style="display:table;table-layout:fixed;width:100%">
+<colgroup><col style="width:40%"><col></colgroup>
+<thead><tr><th>Video</th><th>Argon's answers</th></tr></thead>
+<tbody>
+<tr><td style="vertical-align:top"><video controls playsinline preload="metadata" poster="../_media/gemini-4-argon-video-beach.jpg" style="width:100%;height:auto;display:block"><source src="../_media/gemini-4-argon-video-beach.mp4" type="video/mp4"></video><small style="display:block;margin-top:4px">Doggo at the beach, 5 seconds</small></td><td style="vertical-align:top">
+<p><strong>"What is this a video of?"</strong> ✓ 3 of 3</p>
+<ul><li>"a black dog walking in the ocean"</li><li>"a black dog playing in the ocean" (it noticed her red collar)</li><li>"A dog on the beach biting the waves"</li></ul>
+<p><strong>"What breed of dog is in the video?"</strong> ✗ 0 of 3</p>
+<ul><li>Black Labrador or Labrador mix (twice)</li><li>Pit Bull (once)</li></ul>
+<p>She's a black brindle Bull Arab and Staghound cross, which is admittedly a hard one.</p>
+</td></tr>
+<tr><td style="vertical-align:top"><video controls playsinline preload="metadata" poster="../_media/gemini-4-argon-video-muscle-ups.jpg" style="width:100%;height:auto;display:block"><source src="../_media/gemini-4-argon-video-muscle-ups.mp4" type="video/mp4"></video><small style="display:block;margin-top:4px">Me doing 3 muscle-ups, 17 seconds</small></td><td style="vertical-align:top">
+<p><strong>"What exercise is demonstrated in the video?"</strong> ✓ 2 of 3</p>
+<ul><li>Muscle-ups (twice)</li><li>Pull-ups (once)</li></ul>
+<p>Without being asked, it counted the reps every time, with a timestamp for each one, and got 3 every time. One run also noticed a fourth rep starting as the video ends.</p>
+</td></tr>
+<tr><td style="vertical-align:top"><div style="aspect-ratio:9/16;background:#000;width:100%"></div><small style="display:block;margin-top:4px">Control: black, silent, 5 seconds</small></td><td style="vertical-align:top">
+<p><strong>"What is this a video of?"</strong> ✓ 3 of 3</p>
+<ul><li>Said every time that the video was completely black</li></ul>
+<p>Unlike the silent audio clip, it didn't invent anything.</p>
+</td></tr>
+</tbody>
+</table>
 </div>
 
-The first is a 5-second clip of my dog walking through the waves at the beach. Asked "What is this a video of?", Argon got it every time: "a black dog walking in the ocean", "a black dog playing in the ocean" (it noticed her red collar), and "A dog on the beach biting the waves". Asked "What breed of dog is in the video?", it said a black Labrador or Labrador mix twice and a Pit Bull once. She's a Bull Arab and Staghound cross, which is admittedly a hard one.
-
-The second is a 17-second clip of me doing 3 muscle-ups. Asked "What exercise is demonstrated in the video?", it said muscle-ups twice and pull-ups once. Without being asked, it counted the reps every time, with timestamps for each one, and got 3 every time. One run also noticed a fourth rep starting as the video ends. The answers all used the same rep-by-rep template, ending in "The user successfully performed 3 completed reps", which suggests Google trained it specifically on exercise videos.
-
-As a control, I sent 5 seconds of black video with silent audio. Unlike the silent audio clip, Argon said every time that the video was completely black.
+The exercise answers all used the same rep-by-rep template, ending in "The user successfully performed 3 completed reps", which suggests Google trained it specifically on exercise videos.
 
 Argon counted about 97 video tokens per second at the default resolution, and all 12 questions cost about US$0.03 at the launch price ([raw results](../_media/gemini-4-argon-video-results.json)).
 
