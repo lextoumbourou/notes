@@ -2,7 +2,7 @@
 title: "Context Language Models"
 slug: context-language-models
 date: 2026-10-15 12:10
-modified: 2026-10-18 09:32
+modified: 2026-10-18 09:37
 category: paper
 summary: Language models that manage their own context.
 cover: /_media/context-language-models/context-as-a-file.png
@@ -18,11 +18,11 @@ paper_year: 2026
 code: https://github.com/facebookresearch/context-language-models
 ---
 
-A new paper from the University of Washington and Meta introduces **Context Language Models** (CLMs) [@shaoContextLanguageModels2026].
+A few-week-old paper from the University of Washington and Meta introduces **Context Language Models** (CLMs) [@shaoContextLanguageModels2026].
 
 The idea is to let the model manage its own context, which it receives as a file it can edit across agent turns. They call the technique, aptly, **Context As A File**.
 
-Basically, you mirror the context into storage space and give the model write access. The model can optionally use Bash to edit its context on each turn, and the updated context is provided back to the model on the next turn (keeping some parts intact, like the system prompt and so forth).
+Basically, they mirror the context into storage space and give the model write access. The model can optionally use Bash to edit its context on each turn, and the updated context is provided back to the model on the next turn (keeping some parts intact, like the system prompt and so forth).
 
 It's part of a broader movement towards [Thin Harnesses](thin-harnesses.md), handing more and more control over to the model. It seems even the context management policy isn't safe.
 
@@ -44,11 +44,15 @@ The [harness](https://github.com/facebookresearch/context-language-models) mirro
 
 *An illustrative edit, with made-up token counts. The `compact_turns` helper is modelled on one the model wrote for itself on [BrowseComp-Plus](browsecomp-plus.md) (Figure 3d in [@shaoContextLanguageModels2026]).*
 
-Given that freedom, they saw the model came up with some original strategies for managing its own context (Figure 3):
+Given that freedom, the model came up with some novel context management strategies, like using scoreboards to track its subagents, inventing a "notes" chat role, and writing its own helper for managing compaction. Pretty wild.
 
-- On a maths problem with subagents, it kept a scoreboard of their status and updated it with 163 in-place edits, while keeping its own context at 6 to 8K tokens.
-- It invented a new chat role, `notes`, for its own internal notes.
-- It defined a `compact_turns` helper function and reused it 37 times.
+## Multi-agent for free
+
+Since every context is just a file, [Multi-Agent Systems](multi-agent-systems.md) come almost for free. An agent swarm is several context files, each synced to its own model server. Starting a subagent means creating a context file, and killing it means deleting the file. There's no orchestration framework, just more files.
+
+The scoreboard above is one example. The orchestrating agent tracked its subagents with in-place edits to its own context, rather than a tool built for the job.
+
+On Software World, six GPT-5.6-Sol agents with a 272K context limit jointly optimise six interdependent Python repositories for over 24 hours, and are scored on four downstream packages they never see. At the same spend as a summary-based swarm, the CLM swarm gets a 65% greater downstream speedup. Subagents helped less on the single-repository EdgeBench, where CLM with up to five subagents scored 44.2 against 44.6 for CLM on its own.
 
 ## ContextBench
 
@@ -58,9 +62,9 @@ They also introduce [ContextBench](contextbench.md), four synthetic tasks that n
 
 *Figure 2 from [@shaoContextLanguageModels2026], CC BY 4.0. All methods use GPT-5.4 with a 32K context limit.*
 
-## The KV cache problem
+## Suffix Cache Reuse
 
-Context management can be made compute efficient generally, since a shorter context makes every later turn cheaper. They count the re-prefill cost from edits in a metric they call prefix-reuse FLOPs, and CLMs still come out cheaper than the baselines in most experiments.
+Context management can be made compute-efficient generally, since a shorter context makes every later turn cheaper. They count the re-prefill cost from edits in a metric they call prefix-reuse FLOPs, and CLMs still come out cheaper than the baselines in most experiments.
 
 **Suffix Cache Reuse** (SCR) goes further. If the context `A B C` becomes `A B' C`, standard prefix caching keeps `A` and recomputes `B'` and `C`. SCR also keeps the cached states for `C`, shifts their rotary position encodings to the new positions, and only prefills `B'`. It's an approximation, because those states were computed with `B` in front of them. On BrowseComp-Plus, SCR matched standard SGLang's accuracy using 65% of its FLOPs.
 
