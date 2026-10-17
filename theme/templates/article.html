@@ -49,6 +49,12 @@
 
     <h1 class="note-title"><span data-sketch="swipe" data-sketch-color="--hl-teal" data-sketch-draw="on">{{ article.title }}</span></h1>
 
+    {# Only a written summary, not Pelican's generated one, and not when the note opens with it. #}
+    {% set dek = (article.metadata.get('summary') or '')|striptags|trim %}
+    {% if dek and article.show_summary != false and dek|lower not in (article.content|striptags|lower)[:600] %}
+    <p class="note-dek">{{ dek }}</p>
+    {% endif %}
+
     <p class="note-byline">
       {{ AUTHOR }} · <time datetime="{{ article.date.isoformat() }}">{{ article.date|strftime('%b %-d, %Y') }}</time>
       {%- if article.modified and article.modified.date() != article.date.date() %} · revised <time datetime="{{ article.modified.isoformat() }}">{{ article.modified|strftime('%b %-d, %Y') }}</time>{% endif %}

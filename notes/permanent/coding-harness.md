@@ -1,7 +1,7 @@
 ---
 title: "Coding Harness"
 date: 2026-09-22 06:50
-modified: 2026-09-22 06:50
+modified: 2026-10-18 09:23
 status: hidden
 summary: "The coding harness is the software layer for the agent that includes the control loop, the tool interface and context-management strategy."
 source: https://arxiv.org/abs/2609.20804v1
@@ -15,3 +15,5 @@ The **coding harness** is the software layer for a [Coding Agents](coding-agents
 Source: [An Empirical Study of Harness Design for Coding Agents](https://arxiv.org/abs/2609.20804v1).
 
 Referenced in [An Empirical Study of Harness Design for Coding Agents](an-empirical-study-of-harness-design-for-coding-agents.md).
+
+See also [Thin Harnesses](thin-harnesses.md).

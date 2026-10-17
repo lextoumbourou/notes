@@ -22,6 +22,8 @@
         <time class="note-row-date" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %-d') }}</time>
         <span class="kind kind-{{ article.category.name | replace('/', '-') }}">{{ article.category.name.split('/') | last }}</span>
         <a class="note-row-title" href="/{{ article.url }}">{{ article.title }}</a>
+        {%- set dek = (article.metadata.get('summary') or '')|striptags|trim %}
+        {% if dek %}<p class="note-row-dek">{{ dek }}</p>{% endif %}
       </li>
       {% endfor %}
     </ol>

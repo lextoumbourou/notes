@@ -1,7 +1,7 @@
 ---
 title: Harness Engineering Anatomy, Architecture, and Evolution of Coding Agents
 date: 2026-10-11 00:00
-modified: 2026-10-11 07:09
+modified: 2026-10-18 09:23
 category: paper
 summary: A source-code comparison of eleven agent harnesses and the seven parts they have in common.
 tags:
@@ -57,3 +57,5 @@ The seven parts are a useful checklist for the [Building an agent harness from s
 - Keep orchestration optional until there is a task that benefits from parallel agents. Skills can add workflows without changing the core loop; MCP is useful for external integrations.
 
 The authors' 90-line example is an illustrative starting point, not production code. Their source-code study does not establish that a simpler harness performs better, or that stronger models always need less harness code. It shows what existing systems built and gives design suggestions to test against your own tasks (Sections 15 and 16) [@barbasteHarnessEngineeringAnatomy2026].
+
+See also [Thin Harnesses](thin-harnesses.md).

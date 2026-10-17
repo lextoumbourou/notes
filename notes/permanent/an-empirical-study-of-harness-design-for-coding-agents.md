@@ -1,7 +1,7 @@
 ---
 title: An Empirical Study of Harness Design for Coding Agents
 date: 2026-09-19 00:00
-modified: 2026-09-23 06:03
+modified: 2026-10-18 09:23
 category: paper
 summary: An ablation of planning, tools and context management configurations for coding agents.
 tags:
@@ -100,3 +100,5 @@ Static strategies include limiting the KV cache ([StreamingLLM](streamingllm.md)
 [ReSum](resum.md), [ACON](acon.md), [Sculptor](sculptor.md) and [MemAct](memact.md) explore learned or optimised context management. They are not all RL-trained: ReSum and Sculptor include training-free variants, while ACON optimises compression instructions without fine-tuning the agent.
 
 These mechanisms are usually presented as improvements. This paper asks how much that depends on the context budget and whether a particular model is helped or hindered by compaction.
+
+See also [Thin Harnesses](thin-harnesses.md), and [Context Language Models](context-language-models.md), which hand context management to the model itself.

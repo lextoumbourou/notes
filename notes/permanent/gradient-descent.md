@@ -2,7 +2,7 @@
 category: note
 title: Gradient Descent
 date: 2015-10-10 00:00
-modified: 2026-09-26 08:50
+modified: 2026-10-14 19:42
 summary: an optimisation algorithm to minimise a cost function
 status: draft
 ---
@@ -13,8 +13,8 @@ In pseudocode, one step of Gradient Descent looks like this:
 
 ```text
 guess = some guess
-d = derivate @ guess
-cur guess = cur guess - alpha * d
+d = derivative @ guess
+guess = guess - alpha * d
 ```
 
 Where `alpha` is some learning rate like 0.001.
@@ -25,7 +25,7 @@ If we plot the function, we can see that the minimum of the function is 0.
 
 ![Parabola y = x squared, with its minimum at the origin and values rising to 25 at x = minus 5 and x = 5.](../_media/gradient-descent-y-x-squared.png)
 
-We know from the [Power Rule](power-rule.md) that the derivate of $x^2 = 2x$: $\frac{d}{dx} x^2 = 2x$.
+We know from the [Power Rule](power-rule.md) that the derivative of $x^2$ is $2x$: $\frac{d}{dx} x^2 = 2x$.
 
 So if we started with a guess of 5, one step of gradient descent would look like:
 
@@ -34,7 +34,7 @@ d = 2 * 5
 5 - 0.001 * 10 = 4.99
 ```
 
-Now our guess is at 4.9. A bit closer to 0. We can take another step:
+Now our guess is at 4.99. A bit closer to 0. We can take another step:
 
 ```text
 d = 2 * 4.99 = 9.98
@@ -45,4 +45,4 @@ And now we're at 4.98. A bit closer again. If I run it for 10k steps and plot in
 
 ![Gradient Descent Guess](../_media/gradient-descent-guess.png)
 
-In Machine Learning, we'll typically compute the gradient with respect to the input features for every item in the dataset. When Gradient Descent is performed on a mini-batch (i.e. a subset of the data), it's referred to as [Stochastic Gradient Descent](stochastic-gradient-descent.md).
+In machine learning, we compute the gradient of the loss with respect to the model's parameters and use it to update those parameters. Full-batch gradient descent uses the whole training dataset for each update; [Stochastic Gradient Descent](stochastic-gradient-descent.md) uses one example at a time, and mini-batch SGD uses a subset of examples for each update.

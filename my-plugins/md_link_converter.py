@@ -1,10 +1,32 @@
 from pelican.utils import slugify
 from pelican import signals
 from pelican.generators import ArticlesGenerator
+from functools import lru_cache
+from urllib.parse import unquote
+import os
 import re
 from logging import getLogger
 
 logger = getLogger(__name__)
+
+
+@lru_cache(maxsize=None)
+def frontmatter_slug(path):
+    """The `slug:` from a linked note's frontmatter, so notes whose slug
+    differs from their filename still get the right URL."""
+    try:
+        with open(path, encoding='utf-8') as f:
+            if f.readline().strip() != '---':
+                return None
+            for line in f:
+                if line.strip() == '---':
+                    return None
+                key, sep, value = line.partition(':')
+                if sep and key.strip() == 'slug':
+                    return value.strip().strip('"\'') or None
+    except OSError:
+        return None
+    return None
 
 
 def convert_md_links(instance):
@@ -15,7 +37,9 @@ def convert_md_links(instance):
         # Find <a> tags with .md hrefs, excluding external URLs
         html_links = re.compile(r'<a href="(?!https?://)([^"]+\.md)">([^<]+)</a>')
 
-        # Replace the .md links with file_stem.html links
+        source_dir = os.path.dirname(getattr(instance, 'source_path', None) or '')
+
+        # Replace the .md links with slug.html links
         def replace_link(match):
             url_path = match.group(1)
             file_stem = url_path.split('/')[-1]
@@ -23,7 +47,8 @@ def convert_md_links(instance):
 
             link_text = match.group(2)
 
-            slug = slugify(file_stem)
+            target = os.path.normpath(os.path.join(source_dir, unquote(url_path)))
+            slug = frontmatter_slug(target) or slugify(file_stem)
             return f'<a href="{slug}.html">{link_text}</a>'
 
         original = instance._content

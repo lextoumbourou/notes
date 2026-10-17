@@ -498,6 +498,15 @@ a:hover .go-arrow { transform: translateX(2px); transition: transform 160ms var(
 }
 .note-title > span { display: inline-block; padding-bottom: 8px; }
 
+/* Opt-in summary under the title (show_summary: true), so the title can stay short. */
+.note-dek {
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--ink-2);
+  margin: -6px 0 14px;
+  text-wrap: balance;
+}
+
 .note-byline {
   margin: 0 0 14px;
   font-size: 1rem;
@@ -522,10 +531,14 @@ a:hover .go-arrow { transform: translateX(2px); transition: transform 160ms var(
 .tag:hover { color: var(--tag-fg); background: color-mix(in srgb, var(--hl-teal) 45%, var(--tag-bg)); }
 .tag.is-current { background: color-mix(in srgb, var(--hl-pink) 45%, var(--tag-bg)); }
 
+/* Source line for paper notes: set apart from the prose so it doesn't read as the first paragraph. */
 .paper-note-lede {
-  font-size: 1.05rem;
-  color: var(--ink-2);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--muted);
   margin: -8px 0 28px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed color-mix(in srgb, var(--ink) 30%, transparent);
   line-height: 1.55;
 }
 
@@ -942,7 +955,7 @@ oom-comments { padding: 0; }
 .note-row {
   display: grid;
   grid-template-columns: 7.5rem 4.5rem minmax(0, 1fr);
-  gap: 14px;
+  gap: 2px 14px;
   align-items: baseline;
   padding: 12px 0;
   border-bottom: 1px dashed color-mix(in srgb, var(--ink) 30%, transparent);
@@ -950,6 +963,8 @@ oom-comments { padding: 0; }
 .note-row-date { font-size: 0.94rem; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .note-row-title { color: var(--ink); text-decoration: none; font-size: 1.1rem; line-height: 1.35; }
 .note-row-title:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--hl-teal); text-decoration-thickness: 2px; }
+/* The note's written summary, under its title. */
+.note-row-dek { grid-column: 3; margin: 2px 0 0; font-size: 0.98rem; color: var(--ink-2); line-height: 1.45; text-wrap: pretty; }
 
 /* The kind of note, lettered by hand; papers, models and essays get a highlighter. */
 .kind {
@@ -1126,7 +1141,8 @@ ul.pagination li.gap { min-width: 24px; color: var(--muted); }
   .essay:has(.essay-cover) { grid-template-columns: 88px minmax(0, 1fr); grid-template-rows: auto auto auto 1fr; }
   .essay-cover { width: 88px; grid-row: 1 / span 4; margin-right: 14px; }
   .essay:has(.essay-cover) .essay-date { grid-column: 2; }
-  .note-row-title { grid-column: 1 / -1; }
+  .note-row-title,
+  .note-row-dek { grid-column: 1 / -1; }
 
   .note-item-cover { width: 88px; }
 

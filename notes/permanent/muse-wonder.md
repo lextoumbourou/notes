@@ -1,5 +1,5 @@
 ---
-title: "Muse Wonder: Opus 5.5 quality model that supports audio"
+title: "Muse Wonder"
 slug: muse-wonder
 date: 2026-10-13 06:34
 modified: 2026-10-13 12:59
@@ -10,9 +10,7 @@ bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mxpzy6snmy26
 mastodon_post: https://fedi.notesbylex.com/@lex/117431356149010859
 threads_post: https://www.threads.com/@lexisoninsta/post/DeayhOAlMSk
 linkedin_post: https://www.linkedin.com/posts/lextoumbourou_shared-some-notes-on-metas-new-frontier-share-7515580697181360128-k4KN/
-summary: Meta's new frontier model can listen to audio, and costs the same per token as Claude Opus 5.5 while using fewer tokens.
-aliases:
-- Muse Wonder
+summary: Opus 5.5 quality model that supports audio.
 tags:
   - ModelRelease
   - Meta
@@ -28,7 +26,7 @@ Meta pitches them as "personal and professional agents", built around two featur
 - **Active Memory**, which carries context about you across conversations (see [Memory](memory.md)).
 - **Active Focus**, which sticks with a long task, works through blockers and checks in before important actions.
 
-Although, I'm pretty sure these features aren't available through the API (yet?) [@metaModelAPIModels].
+Although I'm pretty sure these features aren't available through the API (yet?) [@metaModelAPIModels].
 
 Only Muse Wonder is available in the API. Muse Wonder Full needs a Muse Code subscription (the Power Usage or Maximum Usage plan), so it has no per-token price [@metaBuildWithMuseWonder].
 

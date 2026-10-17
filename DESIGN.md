@@ -249,7 +249,7 @@ Ink on warm off-white, with eight highlighters; dark mode swaps to chalk on slat
 - **Side heading** (700, 1.5rem, 1.15): sidebar block headings such as On this page and Linked from.
 - **Hand label** (600 to 700, about 1.05rem): note kinds, graph labels (15px, 600), scribbles (1.2rem, 600).
 - **Body** (400, 1.125rem, 1.65): prose at a 42rem measure; paragraphs use pretty wrapping.
-- **Lede** (400, 1.35rem, 1.45): home introduction. Essay titles use this size in sans bold (700, 1.3 line height).
+- **Lede** (400, 1.35rem, 1.45): home introduction. Essay titles use this size in sans bold (700, 1.3 line height). Articles show their written `summary` at this size in soft ink as a dek under the title, so titles can stay short; it is skipped when the note opens with the same text, or with `show_summary: false`. A paper note's "Notes on…" source line sits below the tags in small italic muted text above a dashed rule, so it never reads as the first paragraph.
 - **Meta** (400, 0.94rem to 1rem, tabular numerals): bylines, dates, counts, list meta. H4 to H6 drop to the sans at 1.35rem bold.
 - **Code** (400, 0.92rem, 1.6, mono): code blocks; inline code at 0.86em on the second sheet.
 
@@ -264,7 +264,7 @@ A single calm column with an optional sticky right sidebar. The page is capped a
 
 Rhythm is generous and vertical: 1.8em around code, callouts and blockquotes; 2.2em above H2; 56px before post-article sections; 36px between sidebar blocks. Lists of essays and notes are separated by dashed 1px rules, never boxes.
 
-The site has two sections. **Essays** are the finished pieces and get the room: title, summary and date. **Notes** are working notes and stay compact: one row each. Home runs lede H1, bio, an Essays section (up to 10), then a Notes section of the 12 most recent non-essay notes, 56px to 64px apart. List pages (Notes, Essays, tag and category pages) carry a sidebar with a Kinds key (each kind as its highlighter chip with a count, linking to its page, current kind underlined) and the top 24 Topics (current topic bold with a pink underline); article pages keep their own sidebar and never show Topics. The Notes page is one year-grouped archive of every non-essay note, newest first and not paginated; the Essays page (`essays.html`) lists essays and projects together.
+The site has two sections. **Essays** are the finished pieces and get the room: title, summary and date. **Notes** are working notes and stay compact: one row each, with the note's written summary in soft ink under its title. Home runs lede H1, bio, an Essays section (up to 10), then a Notes section of the 12 most recent non-essay notes, 56px to 64px apart. List pages (Notes, Essays, tag and category pages) carry a sidebar with a Kinds key (each kind as its highlighter chip with a count, linking to its page, current kind underlined) and the top 24 Topics (current topic bold with a pink underline); article pages keep their own sidebar and never show Topics. The Notes page is one year-grouped archive of every non-essay note, newest first and not paginated; the Essays page (`essays.html`) lists essays and projects together.
 
 Responsive: at 1080px and below the sidebar drops under the article at the measure width with a top rule instead of the side rule. At 760px and below the nav wraps to its own row, search collapses to its icon until focused, note rows stack date and kind above the title, essay dates drop under the summary, and scribbles stop floating.
 
