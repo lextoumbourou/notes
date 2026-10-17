@@ -24,6 +24,7 @@
         <a class="note-row-title" href="/{{ article.url }}">{{ article.title }}</a>
         {%- set dek = (article.metadata.get('summary') or '')|striptags|trim %}
         {% if dek %}<p class="note-row-dek">{{ dek }}</p>{% endif %}
+        {% if article.cover %}<img class="note-row-cover" src="{{ article.cover }}" alt="" loading="lazy" />{% endif %}
       </li>
       {% endfor %}
     </ol>
