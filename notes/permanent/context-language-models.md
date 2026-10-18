@@ -28,6 +28,8 @@ It's part of a broader movement towards [Thin Harnesses](thin-harnesses.md), han
 
 > "Our findings echo [The Bitter Lesson](https://www.incompleteideas.net/IncIdeas/BitterLesson.html) (Sutton, 2019): we should let LMs search for and learn better strategies that go far beyond existing human priors." [@shaoContextLanguageModels2026]
 
+With this newfound freedom, the model came up with some novel context management strategies, like using scoreboards to track its subagents, inventing a "notes" chat role, and writing its own helper for managing compaction. Pretty wild.
+
 Of course, the downside of letting the model edit context is that you may invalidate your KV cache (the model server's saved computation for the context so far) each turn, so the authors also propose a new caching policy to cut that cost, called **[Suffix Cache Reuse](suffix-cache-reuse.md)**.
 
 Out of the box, with no training, it beats existing context-management approaches on deep research and long-running coding tasks and usually uses less compute. They also demonstrate an online RL method for CLMs and show that the model can learn effective context-management strategies and internalise them in its weights.
@@ -43,8 +45,6 @@ The [harness](https://github.com/facebookresearch/context-language-models) mirro
 [![Two columns show the same context on consecutive turns. On turn 12, the pinned system prompt and task (1.2K tokens) sit above the file LIVE_CTX_MAIN.txt, which holds search results (5.1K), document 58939 (8.0K), a dead-end search (4.9K) and document 21544 (6.3K), 25.5K tokens in total. A pink model block and an arrow labelled "edits the file" run three lines of Python, s = open(ctx).read(), s = compact_turns(s), and open(ctx,"w").write(s). On turn 13, below the same pinned 1.2K, the file holds progress notes (0.6K), three one-line stubs "[Searched: ...]", "[Retrieved doc 58939]" and "[Searched: ...]" (0.1K each), and document 21544 unchanged (6.3K), 8.4K tokens in total.](../_media/context-language-models/context-as-a-file.png)](../_media/context-language-models/context-as-a-file.png)
 
 *An illustrative edit, with made-up token counts. The `compact_turns` helper is modelled on one the model wrote for itself on the [BrowseComp-Plus](browsecomp-plus.md) deep-research benchmark (Figure 3d in [@shaoContextLanguageModels2026]).*
-
-Given that freedom, the model came up with some novel context management strategies, like using scoreboards to track its subagents, inventing a "notes" chat role, and writing its own helper for managing compaction. Pretty wild.
 
 ## Multi-agent for free
 
