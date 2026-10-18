@@ -2,11 +2,16 @@
 title: "Context Language Models"
 slug: context-language-models
 date: 2026-10-15 12:10
-modified: 2026-10-18 12:10
+modified: 2026-10-18 12:44
 category: paper
 summary: Language models that manage their own context.
 cover: /_media/context-language-models/context-language-models-cover.jpg
 hide_cover_in_article: true
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3my4ldahyec2c
+mastodon_post: https://fedi.notesbylex.com/@lex/117459571593675764
+threads_post: https://www.threads.com/@lexisoninsta/post/Denn-6Mt5Gh
+linkedin_post: https://www.linkedin.com/feed/update/urn:li:share:7517373118999474176
+x_post: https://x.com/notesbylex_/status/2111648951795605823
 tags:
   - ContextManagement
   - LargeLanguageModels
