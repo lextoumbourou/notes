@@ -15,6 +15,7 @@ x_post: https://x.com/notesbylex_/status/2111648951795605823
 tags:
   - ContextManagement
   - LargeLanguageModels
+  - AgenticReasoning
 source: https://arxiv.org/abs/2609.37725v1
 paper_title: Context Language Models
 paper_url: https://arxiv.org/abs/2609.37725v1
