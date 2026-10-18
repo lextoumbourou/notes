@@ -877,8 +877,8 @@ oom-comments { padding: 0; }
 .home-more { margin: 0; }
 .home-more a { font-weight: 700; text-decoration-thickness: 2px; text-decoration-color: var(--hl-teal); }
 
-.essays { margin-top: 56px; }
-.recent { margin-top: 64px; }
+.latest { margin-top: 56px; }
+.latest-list { list-style: none; margin: 0; padding: 0; }
 
 /* Essays: the finished pieces, set like a contents page. */
 .essay-list { list-style: none; margin: 0; padding: 0; }
@@ -949,7 +949,9 @@ oom-comments { padding: 0; }
   line-height: 1.2;
 }
 .section-head h2 > span { display: inline-block; padding-bottom: 6px; }
-.section-head > a { font-size: 1rem; white-space: nowrap; }
+.section-head > a,
+.section-links a { font-size: 1rem; white-space: nowrap; }
+.section-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 20px; }
 
 .note-rows { list-style: none; margin: 0; padding: 0; }
 .note-row {
@@ -968,7 +970,13 @@ oom-comments { padding: 0; }
 /* A note with a cover shows it as a small thumbnail on the right. */
 .note-row:has(.note-row-cover) { grid-template-columns: 7.5rem 4.5rem minmax(0, 1fr) 112px; }
 .year .note-row:has(.note-row-cover) { grid-template-columns: 4.5rem 4.5rem minmax(0, 1fr) 112px; }
-.note-row-cover { grid-column: 4; grid-row: 1 / span 2; width: 112px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 3px; align-self: center; margin-left: 4px; }
+.note-row-cover { grid-column: 4; grid-row: 1 / span 2; width: 112px; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 3px; align-self: center; }
+/* Essays in the home feed: the same row, sized up so finished pieces stand out without moving the cover. */
+.note-row.is-essay { padding: 16px 0; }
+.note-row.is-essay:has(.note-row-cover) { grid-template-columns: 7.5rem 4.5rem minmax(0, 1fr) 132px; }
+.note-row.is-essay .note-row-title { font-weight: 700; font-size: var(--step-1); line-height: 1.3; text-wrap: balance; }
+.note-row.is-essay .note-row-dek { margin-top: 4px; font-size: 1rem; line-height: 1.5; }
+.note-row.is-essay .note-row-cover { width: 132px; }
 
 /* The kind of note, lettered by hand; papers, models and essays get a highlighter. */
 .kind {
@@ -1152,6 +1160,8 @@ ul.pagination li.gap { min-width: 24px; color: var(--muted); }
   .note-row:has(.note-row-cover) .note-row-title,
   .note-row:has(.note-row-cover) .note-row-dek { grid-column: 1 / 3; }
   .note-row-cover { grid-column: 3; grid-row: 1 / span 3; width: 80px; align-self: start; }
+  .note-row.is-essay:has(.note-row-cover) { grid-template-columns: auto minmax(0, 1fr) 96px; }
+  .note-row.is-essay .note-row-cover { width: 96px; }
 
   .note-item-cover { width: 88px; }
 

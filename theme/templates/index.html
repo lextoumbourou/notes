@@ -42,36 +42,21 @@
     <p class="home-more"><a href="/pages/about.html">More about me{% include 'icons/arrow.svg' %}</a></p>
   </section>
 
-  {% set essays = articles | selectattr('category.name', 'in', ['essay', 'project']) | sort(attribute='date', reverse=True) | list %}
-  {% if essays %}
-  <section class="essays" aria-labelledby="essays-heading">
+  {% set latest = (articles | sort(attribute='date', reverse=True) | list)[:20] %}
+  {% if latest %}
+  <section class="latest" aria-labelledby="latest-heading">
     <header class="section-head">
-      <h2 id="essays-heading">Essays</h2>
-      <a href="/essays.html">All essays{% include 'icons/arrow.svg' %}</a>
+      <h2 id="latest-heading">Latest</h2>
+      <span class="section-links">
+        <a href="/essays.html">All essays{% include 'icons/arrow.svg' %}</a>
+        <a href="/notes.html">All notes{% include 'icons/arrow.svg' %}</a>
+      </span>
     </header>
-    <ol class="essay-list">
-      {% for article in essays[:10] %}
-      <li class="essay">
-        {% if article.cover %}<img class="essay-cover" src="{{ article.cover }}" alt="" loading="lazy" />{% endif %}
-        <a class="essay-title" href="/{{ article.url }}">{{ article.title }}</a>
-        {% if article.summary %}<p class="essay-dek">{{ article.summary | striptags }}</p>{% endif %}
-        <span class="essay-date"><time datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %Y') }}</time></span>
-      </li>
-      {% endfor %}
-    </ol>
-  </section>
-  {% endif %}
-
-  {% set recent_notes = (articles | rejectattr('category.name', 'in', ['essay', 'project']) | sort(attribute='date', reverse=True) | list)[:12] %}
-  {% if recent_notes %}
-  <section class="recent" aria-labelledby="recent-heading">
-    <header class="section-head">
-      <h2 id="recent-heading">Notes</h2>
-      <a href="/notes.html">All notes{% include 'icons/arrow.svg' %}</a>
-    </header>
-    <ol class="note-rows">
-      {% for article in recent_notes %}
-      <li class="note-row">
+    {# One feed, newest first, on one grid: essays use the note row at a larger size, so covers stay in one column. #}
+    <ol class="latest-list">
+      {% for article in latest %}
+      {% set is_essay = article.category.name in ['essay', 'project'] %}
+      <li class="note-row{% if is_essay %} is-essay{% endif %}">
         <time class="note-row-date" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %-d, %Y') }}</time>
         <span class="kind kind-{{ article.category.name | replace('/', '-') }}">{{ article.category.name.split('/') | last }}</span>
         <a class="note-row-title" href="/{{ article.url }}">{{ article.title }}</a>
