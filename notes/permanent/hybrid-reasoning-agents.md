@@ -2,10 +2,12 @@
 title: Hybrid Reasoning Agents
 slug: hybrid-reasoning-agents
 date: 2026-10-19 07:50
-modified: 2026-10-20 09:30
+modified: 2026-10-20 09:36
 status: draft
 category: paper
 summary: Agents that think in latent space and act through text.
+cover: /_media/hybrid-reasoning-agents/hybrid-reasoning-agents-cover.jpg
+hide_cover_in_article: true
 tags:
   - ReasoningModels
   - AgenticReasoning
