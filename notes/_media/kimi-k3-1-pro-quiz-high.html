@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Frontier Frenzy 64</title>
+<style>
+:root{--yellow:#ffe45c;--cyan:#65e7ff;--ink:#080b20;--panel:#111a3d;--pink:#ff5f9e}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#080b20;color:#fff;font-family:ui-monospace,"Courier New",monospace}
+body{min-height:100vh;min-height:100dvh;overflow-x:hidden}
+button{font:inherit;touch-action:manipulation}
+button:focus-visible{outline:3px solid #fff;outline-offset:4px}
+#game{position:relative;min-height:100vh;min-height:100dvh;isolation:isolate}
+#game:after{content:"";position:fixed;inset:0;z-index:30;pointer-events:none;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.09) 3px 4px)}
+#scene{position:fixed;inset:0;z-index:-1;overflow:hidden;perspective:800px;background:linear-gradient(#101947 0%,#303375 47%,#e56887 48%,#29244f 70%,#090c21 100%)}
+#stars{position:absolute;inset:0 0 45%}
+.star{position:absolute;width:var(--s);height:var(--s);background:#fff7c2;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);animation:twinkle 1.8s steps(2) infinite}
+.sun{position:absolute;width:130px;height:130px;left:50%;top:17%;transform:translateX(-50%);border-radius:50%;background:repeating-linear-gradient(#ffe778 0 10px,#ffac72 10px 15px);box-shadow:0 0 40px #ff8b7588}
+.peaks{position:absolute;left:-5%;width:110%;height:35%;top:33%;clip-path:polygon(0 100%,0 70%,10% 25%,18% 68%,30% 5%,40% 70%,52% 20%,63% 74%,76% 0,88% 65%,100% 20%,100% 100%);background:#393568}
+.peaks.back{top:29%;background:#585083;transform:scaleX(-1);opacity:.8}
+.floor{position:absolute;width:1400px;height:900px;left:50%;top:56%;transform-origin:50% 0;transform:translateX(-50%) rotateX(63deg);background-color:#111736;background-image:linear-gradient(#384b7866 3px,transparent 3px),linear-gradient(90deg,#384b7866 3px,transparent 3px);background-size:70px 70px;border-top:8px solid #72d8dd}
+.disc{position:absolute;width:620px;height:330px;left:50%;top:45%;transform:translateX(-50%) rotateX(63deg);border-radius:50%;background:radial-gradient(circle,#f8d958 0 7%,#7148a8 8% 28%,#ef5f98 29% 33%,#26396a 34% 60%,#6de0e5 61% 64%,#121a38 65%);box-shadow:0 25px 0 #080b20}
+.cube{position:absolute;width:68px;height:68px;left:9%;top:18%;transform-style:preserve-3d;animation:spin 9s linear infinite}
+.cube i{position:absolute;inset:0;display:grid;place-items:center;background:#744fc4dd;border:3px solid #c8a9ff;color:#fff;font-size:34px;font-style:normal;font-weight:900}
+.cube i:nth-child(1){transform:translateZ(34px)}.cube i:nth-child(1):after{content:"K"}
+.cube i:nth-child(2){transform:rotateY(180deg) translateZ(34px)}
+.cube i:nth-child(3){transform:rotateY(90deg) translateZ(34px);background:#e34f91dd}
+.cube i:nth-child(4){transform:rotateY(-90deg) translateZ(34px);background:#e34f91dd}
+.cube i:nth-child(5){transform:rotateX(90deg) translateZ(34px);background:#49b9c9dd}
+.cube i:nth-child(6){transform:rotateX(-90deg) translateZ(34px);background:#49b9c9dd}
+.host{position:absolute;right:7%;top:16%;width:112px;height:190px;filter:drop-shadow(9px 10px 0 #090c21);animation:bob 1.8s steps(2) infinite;transform-origin:50% 100%}
+.head{position:absolute;left:14px;top:24px;width:84px;height:72px;background:#9be6df;clip-path:polygon(12% 0,88% 0,100% 18%,100% 84%,84% 100%,16% 100%,0 82%,0 18%);border-top:12px solid #6845a4}
+.eye{position:absolute;top:31px;width:12px;height:15px;background:#142044}.eye.e1{left:36px}.eye.e2{right:36px}
+.mouth{position:absolute;left:45px;top:70px;width:23px;height:7px;background:#e34f91}
+.host.joy .mouth{height:14px;clip-path:polygon(0 0,100% 0,80% 100%,20% 100%)}
+.host.sad .mouth{transform:rotate(180deg);clip-path:polygon(0 100%,50% 0,100% 100%)}
+.body{position:absolute;left:23px;top:99px;width:68px;height:65px;background:#6845a4;clip-path:polygon(15% 0,85% 0,100% 100%,0 100%)}
+.body:after{content:"64";position:absolute;inset:13px 12px;background:#ffe45c;color:#33275e;display:grid;place-items:center;font-weight:900}
+.arm{position:absolute;top:108px;width:22px;height:64px;background:#e34f91}.a1{left:3px;transform:rotate(18deg)}.a2{right:2px;transform:rotate(-18deg)}
+.host.joy .a1{transform:rotate(145deg);transform-origin:top}.host.joy .a2{transform:rotate(-145deg);transform-origin:top}
+.pod{position:absolute;top:48%;width:125px;height:90px;padding-top:28px;text-align:center;font-size:25px;font-weight:900;color:#ffe45c;background:#35477d;border:5px solid #6cdae2;box-shadow:12px 14px 0 #090c21;transform:skewY(-4deg)}
+.pod1{left:5%}.pod2{right:5%;transform:skewY(4deg)}
+#hud{position:relative;z-index:5;display:flex;gap:8px;align-items:stretch;max-width:1040px;margin:auto;padding:12px}
+.badge{background:#111a3dee;border:2px solid #627bb7;box-shadow:3px 3px 0 #070a1b;padding:8px 12px;min-width:110px;font-size:12px;color:#9eb7e8}
+.badge b{display:block;color:#fff;font-size:17px;margin-top:2px}
+#sound{margin-left:auto;min-width:94px;background:#263467;color:#aeeff5;border:2px solid #627bb7;box-shadow:3px 3px 0 #070a1b;cursor:pointer;font-size:12px;font-weight:900}
+#cabinet{position:relative;z-index:2;width:100%;max-width:980px;margin:auto;padding:clamp(105px,17vh,160px) 14px 28px}
+#screen{background:linear-gradient(145deg,#182451f5,#0c1230f8);border:4px solid #8bdce8;box-shadow:0 0 0 4px #28376c,9px 10px 0 #060818;padding:clamp(18px,4vw,34px);clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px)}
+.tag{display:inline-block;color:var(--yellow);background:#3b2c68;border-left:4px solid var(--pink);padding:5px 9px;font-size:12px;font-weight:900;letter-spacing:1px}
+h1{margin:15px 0 12px;line-height:1.08;text-wrap:balance}
+.big{font-size:clamp(35px,8vw,72px);letter-spacing:-3px;color:var(--yellow);text-shadow:3px 3px 0 #e34f91,6px 6px 0 #293263}
+.big span{color:var(--cyan)}
+.question{font-size:clamp(20px,3.5vw,30px)}
+.subtitle{color:#b9c9ed;line-height:1.55;max-width:720px}
+.progress{height:10px;background:#080d26;border:2px solid #35467d;margin-top:16px}.progress i{display:block;height:100%;background:repeating-linear-gradient(90deg,#ffe45c 0 16px,#f49b62 16px 20px);transition:width .25s}
+.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:20px 0 14px}
+.answer{display:flex;align-items:center;gap:11px;width:100%;min-height:62px;padding:11px;text-align:left;color:#fff;background:linear-gradient(#2b3b75,#19244e);border:2px solid #6886cb;box-shadow:inset 0 0 0 2px #101a3a,3px 3px 0 #070a1b;cursor:pointer;font-size:14px;font-weight:700;line-height:1.35}
+.answer:hover,.answer.sel{border-color:var(--yellow);box-shadow:inset 0 0 0 2px #6e5924,3px 3px 0 #070a1b;transform:translateY(-2px)}
+.key{display:grid;place-items:center;flex:0 0 34px;height:34px;color:#11152e;background:var(--cyan);border:2px solid #d4fbff;box-shadow:2px 2px 0 #080b20}
+.answer:nth-child(2) .key{background:#ff7aab}.answer:nth-child(3) .key{background:#ffe45c}.answer:nth-child(4) .key{background:#9ae583}
+.answer:disabled{cursor:default;opacity:.48;transform:none}
+.answer.correct:disabled{opacity:1;background:#17664f;border-color:#79f2ad}.answer.correct .key{background:#79f2ad}
+.answer.wrong:disabled{opacity:1;background:#762d4d;border-color:#ff85a9}.answer.wrong .key{background:#ff85a9}
+.explain{padding:13px 15px;background:#0a122e;border-left:5px solid var(--cyan);line-height:1.5;color:#d4e0f7;font-size:14px}
+.verdict{color:var(--yellow);font-size:20px;font-weight:900;margin:10px 0}
+.action{display:block;margin:20px auto 0;min-width:190px;min-height:48px;padding:11px 20px;background:var(--yellow);color:#1b2042;border:3px solid #fff3ae;box-shadow:0 5px 0 #b55c54,0 8px 0 #070a1b;cursor:pointer;font-weight:900}
+.action:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.action:active{transform:translateY(4px);box-shadow:0 1px 0 #b55c54}
+.help{text-align:center;color:#8298c7;font-size:11px;line-height:1.6;margin:17px 0 0}
+.result{text-align:center;font-size:18px;line-height:1.7}.result strong{color:var(--cyan);font-size:28px}
+#fx{position:fixed;inset:0;z-index:25;pointer-events:none;overflow:hidden}
+.bit{position:absolute;top:-20px;width:10px;height:16px;animation:fall 1.4s linear forwards}
+@keyframes spin{from{transform:rotateX(-18deg) rotateY(0)}to{transform:rotateX(-18deg) rotateY(360deg)}}
+@keyframes bob{50%{transform:translateY(-8px) rotate(2deg)}}
+@keyframes twinkle{50%{opacity:.25}}
+@keyframes fall{to{transform:translate(var(--x),110vh) rotate(720deg);opacity:.2}}
+@media(max-width:650px){
+ #hud{gap:5px;padding:8px}.badge{min-width:0;flex:1;padding:6px;font-size:9px}.badge b{font-size:13px}#sound{min-width:68px;font-size:10px}
+ #cabinet{padding:100px 9px 20px}.answers{grid-template-columns:1fr;gap:9px}.answer{font-size:13px;min-height:54px}
+ .pod{display:none}.host{right:-8px;top:72px;transform:scale(.63)}.cube{left:5%;top:105px;scale:.65}
+ #screen{padding:17px 14px}.big{letter-spacing:-2px}.help{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="game">
+  <div id="scene" aria-hidden="true">
+    <div id="stars"></div><div class="sun"></div>
+    <div class="peaks back"></div><div class="peaks"></div>
+    <div class="floor"></div><div class="disc"></div>
+    <div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="host" id="host"><div class="head"><i class="eye e1"></i><i class="eye e2"></i></div><div class="mouth"></div><div class="body"></div><div class="arm a1"></div><div class="arm a2"></div></div>
+    <div class="pod pod1">PLAYER</div><div class="pod pod2">K3.1</div>
+  </div>
+  <header id="hud">
+    <div class="badge">SCORE<b id="score">0000</b></div>
+    <div class="badge">ROUND<b id="round">--/8</b></div>
+    <div class="badge">STREAK<b id="streak">x0</b></div>
+    <button id="sound" aria-pressed="true" title="Toggle sound with M">SOUND ON</button>
+  </header>
+  <main id="cabinet"><section id="screen" aria-live="polite"></section></main>
+  <div id="fx" aria-hidden="true"></div>
+</div>
+<script>
+const Q=[
+ {cat:"MODEL BASICS",q:"What did Moonshot actually change to make Kimi K3.1 Pro?",o:["A new 2.8T architecture trained from scratch","Much more post-training on the same K3 model","A smaller context window designed for video","A dense model unrelated to K3"],a:1,e:"It is a post-trained version of K3. The underlying model still has 2.8 trillion total parameters, 104 billion active per token and a 1M-token context window. Moonshot used substantially more post-training compute, with reinforcement learning across hundreds of domains."},
+ {cat:"SPEC ATTACK",q:"Which specification bundle belongs to K3.1 Pro?",o:["104B total, 2.8B active, 128K context","2.8T total, 104B active, 1M-token context","2.8T total, every expert active, 131K context","A fully disclosed dense transformer"],a:1,e:"K3.1 Pro is a Mixture of Experts model with 2.8T total parameters and 104B active per token. It activates 16 of 896 experts and has a 1,048,576-token context window."},
+ {cat:"PRICE IS RIGHT",q:"How does standard K3.1 Pro API pricing compare?",o:["$2/M input and $10/M output, cheaper than K3","$4/M input and $20/M output, same as Highspeed","$3/M input and $15/M output, same as K3","$0.20/M for all input and output"],a:0,e:"Standard pricing is $2 per million input tokens and $10 per million output tokens, a third cheaper than K3 and about half Opus 5.5's price. Highspeed costs twice as much and is advertised as two to three times faster."},
+ {cat:"OPEN WEIGHTS",q:"What was true about the open weights on 24 October 2026?",o:["They were already public under MIT","No release had been promised","Release was promised by 4 November, with no licence named yet","The weights were public but the API was withdrawn"],a:2,e:"Moonshot promised full weights by 4 November 2026. As of 24 October it had not named their licence, and Artificial Analysis still listed the model as proprietary until the weights became public."},
+ {cat:"TERMS AND CONDITIONS",q:"Which statement best describes the API privacy terms?",o:["Customer content can never be used for training","Content may improve models by default, and Zero Data Retention has limits","ZDR automatically covers every upload and batch job","Deleting an account refunds the remaining balance"],a:1,e:"Moonshot's terms allow customer content to improve its services by default unless separately agreed. ZDR is described as available on request to enterprise customers, and does not cover File Upload API images and videos or Batch jobs."},
+ {cat:"CYBER SAFETY",q:"What happened after cyber data and tasks were removed for the open-weight release?",o:["xdev-bench-hard fell from 90.5% to 81.0%, still above K3's 33.3%","The score fell to zero while coding improved","It rose to 100%, ahead of every closed model","Moonshot did not measure the effect"],a:0,e:"On Moonshot's in-house pass@3 test, removal cost about 10 points: 90.5% became 81.0%. General coding ability retained much of the hacking skill, leaving the released model far above K3's 33.3%."},
+ {cat:"BENCHMARK BATTLE",q:"What is the fairest reading of Moonshot's benchmark table?",o:["K3.1 Pro beats every rival on every test","All 16 wins had complete rival scores","It has real wins, but missing scores, internal tests and harness differences matter","The benchmarks also prove its video skills"],a:2,e:"It topped 16 of 47 benchmarks, but 11 wins had at least one rival without a score and 3 were internal tests. It also trailed badly on some complete comparisons, and Moonshot used Claude Code for many coding runs while rival scores came from varied sources."},
+ {cat:"VIDEO CHALLENGE",q:"What did the article's video tests show?",o:["It identified the breed and muscle-ups perfectly","It described the beach and black control, but missed breed and exercise","It failed to notice the control video was black","Video used fewer tokens than Gemini and cost less"],a:1,e:"It correctly described the beach video and identified the black control 3 times out of 3, but went 0 for 3 on both breed and exercise. Video used about 860 tokens per second versus roughly 97 for Gemini, and File Upload videos are not covered by ZDR."}
+];
+const S={mode:"title",q:0,selected:0,chosen:null,score:0,streak:0,correct:0,gain:0,sound:true};
+const screenEl=document.getElementById("screen"),host=document.getElementById("host"),soundBtn=document.getElementById("sound");
+let ac;
+function tone(f,d=.08,delay=0,type="square"){
+ if(!S.sound)return;
+ setTimeout(()=>{try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();if(ac.state==="suspended")ac.resume();const o=ac.createOscillator(),g=ac.createGain(),t=ac.currentTime;o.type=type;o.frequency.value=f;g.gain.setValueAtTime(.035,t);g.gain.exponentialRampToValueAtTime(.001,t+d);o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+d)}catch(e){}},delay);
+}
+function confetti(n=24){
+ const fx=document.getElementById("fx"),colors=["#ffe45c","#65e7ff","#ff5f9e","#9ae583","#b491ff"];
+ for(let i=0;i<n;i++){const b=document.createElement("i");b.className="bit";b.style.left=Math.random()*100+"%";b.style.background=colors[i%colors.length];b.style.setProperty("--x",(Math.random()*240-120)+"px");b.style.animationDelay=Math.random()*.35+"s";fx.appendChild(b);setTimeout(()=>b.remove(),1900)}
+}
+function questionView(){
+ const q=Q[S.q],locked=S.mode==="feedback",ok=S.chosen===q.a;
+ return `<span class="tag">ROUND ${String(S.q+1).padStart(2,"0")} // ${q.cat}</span>
+ <h1 class="question">${q.q}</h1>
+ <div class="answers" role="group" aria-label="Answer choices">${q.o.map((o,i)=>{
+  const c=["answer",!locked&&i===S.selected?"sel":"",locked&&i===q.a?"correct":"",locked&&i===S.chosen&&i!==q.a?"wrong":""].join(" ");
+  return `<button class="${c}" data-i="${i}" ${locked?"disabled":""}><span class="key">${i+1}</span><span>${o}</span></button>`
+ }).join("")}</div>
+ ${locked?`<div class="verdict">${ok?`CORRECT! +${S.gain} POINTS`:"NOT QUITE!"}</div><div class="explain">${q.e}</div><button class="action" id="action">${S.q===Q.length-1?"SEE RESULTS":"NEXT ROUND"}</button>`:`<p class="help">Tap an answer, press 1-4, or use arrow keys and Enter.</p>`}
+ <div class="progress" aria-label="Quiz progress"><i style="width:${(S.q+1)/Q.length*100}%"></i></div>`;
+}
+function render(){
+ document.getElementById("score").textContent=String(S.score).padStart(4,"0");
+ document.getElementById("round").textContent=S.mode==="title"?"--/8":`${Math.min(S.q+1,8)}/8`;
+ document.getElementById("streak").textContent="x"+S.streak;
+ if(S.mode==="title")screenEl.innerHTML=`<span class="tag">MOONSHOT MANIA 64 PRESENTS</span><h1 class="big">FRONTIER<br><span>FRENZY</span></h1><p class="subtitle"><b>KIMI K3.1 PRO TRIVIA</b><br>Eight rounds stand between you and the cheap frontier intelligence crown. Test your knowledge of the article, build a streak and chase a perfect run.</p><button class="action" id="action">PRESS START</button><p class="help">KEYBOARD: 1-4 or ARROWS + ENTER<br>PHONE: TAP ANSWERS &nbsp; | &nbsp; M: SOUND</p>`;
+ else if(S.mode==="end"){
+  const rank=S.correct===8?"FRONTIER CHAMPION":S.correct>=6?"STAR CONTESTANT":S.correct>=4?"MODEL SCOUT":"RETRY ROOKIE";
+  screenEl.innerHTML=`<span class="tag">FINAL RESULTS</span><h1 class="big">${rank}</h1><div class="result">You answered <strong>${S.correct} / 8</strong> correctly.<br>Final score: <strong>${S.score}</strong><br><span class="subtitle">${S.correct===8?"Flawless victory. You know the specs, the caveats and the fine print.":S.correct>=6?"Great run. A little more fine print could take you to the top.":"The frontier moves fast. Another run will boost your high score."}</span></div><button class="action" id="action">PLAY AGAIN</button><p class="help">PRESS ENTER TO RESTART</p>`;
+ }else screenEl.innerHTML=questionView();
+ const happy=(S.mode==="feedback"&&S.chosen===Q[S.q].a)||(S.mode==="end"&&S.correct>=6);
+ host.classList.toggle("joy",happy);host.classList.toggle("sad",S.mode==="feedback"&&!happy);
+}
+function newGame(){
+ Object.assign(S,{mode:"q",q:0,selected:0,chosen:null,score:0,streak:0,correct:0,gain:0});
+ tone(330);tone(495,.09,80);tone(660,.12,160);render();
+}
+function answer(n){
+ if(S.mode!=="q"||n<0||n>3)return;
+ const ok=n===Q[S.q].a;S.chosen=n;S.mode="feedback";
+ if(ok){S.streak++;S.correct++;S.gain=100+(S.streak-1)*25;S.score+=S.gain;tone(523);tone(659,.09,80);tone(784,.15,160);confetti()}
+ else{S.streak=0;S.gain=0;tone(170,.2,0,"sawtooth");tone(120,.25,130,"sawtooth")}
+ render();
+}
+function next(){
+ if(S.mode==="title"||S.mode==="end"){newGame();return}
+ if(S.mode!=="feedback")return;
+ tone(400,.05);
+ if(S.q===Q.length-1){S.mode="end";render();confetti(55);tone(523);tone(659,.1,100);tone(1047,.25,210)}
+ else{S.q++;S.mode="q";S.selected=0;S.chosen=null;render()}
+ window.scrollTo({top:0,behavior:"auto"});
+}
+screenEl.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;b.dataset.i!==undefined?answer(+b.dataset.i):next()});
+screenEl.addEventListener("focusin",e=>{if(S.mode==="q"&&e.target.dataset.i!==undefined)S.selected=+e.target.dataset.i});
+function toggleSound(){S.sound=!S.sound;soundBtn.textContent=S.sound?"SOUND ON":"SOUND OFF";soundBtn.setAttribute("aria-pressed",S.sound);if(S.sound)tone(600)}
+soundBtn.addEventListener("click",toggleSound);
+document.addEventListener("keydown",e=>{
+ if(e.ctrlKey||e.metaKey||e.altKey)return;
+ if(e.key.toLowerCase()==="m"){toggleSound();return}
+ if(S.mode==="q"&&/^[1-4]$/.test(e.key)){e.preventDefault();answer(+e.key-1);return}
+ if(S.mode==="q"&&["ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(e.key)){
+  e.preventDefault();const d=["ArrowRight","ArrowDown"].includes(e.key)?1:3;S.selected=(S.selected+d)%4;tone(220,.025);render();return;
+ }
+ if(e.key==="Enter"||e.key===" "){e.preventDefault();S.mode==="q"?answer(S.selected):next()}
+});
+const stars=document.getElementById("stars");
+for(let i=0;i<48;i++){const s=document.createElement("i");s.className="star";s.style.left=Math.random()*100+"%";s.style.top=Math.random()*100+"%";s.style.setProperty("--s",(2+Math.random()*5)+"px");s.style.animationDelay=Math.random()*2+"s";stars.appendChild(s)}
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+{
+ "model": "kimi-k3.1-pro",
+ "endpoint": "https://api.moonshot.ai/v1/chat/completions",
+ "run_at": "2026-10-24 09:17 AEST",
+ "runs": [
+  {
+   "variant": "from-photo",
+   "prompt": "Recreate this photo as an SVG, as close to the original as you can.",
+   "system": "Return a complete, self-contained SVG document.",
+   "files": [
+    "gemini-4-argon-dog-photo.jpg"
+   ],
+   "reasoning_effort": "high",
+   "max_completion_tokens": 65536,
+   "seconds": 202.7,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 16595,
+    "prompt_tokens": 1168,
+    "total_tokens": 17763,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 4274,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 1139,
+     "cached_tokens": null,
+     "image_tokens": null,
+     "text_tokens": null
+    }
+   },
+   "reasoning_chars": 14963,
+   "svg_bytes": 28618,
+   "check": "ok"
+  },
+  {
+   "variant": "from-text",
+   "prompt": "Draw this as an SVG, as close to a photo as you can.\n\nA portrait-orientation photo of a black brindle Bull Arab and Staghound cross standing on wet golden sand at the beach on a sunny day. The dog faces the camera, with its head turned slightly towards the left of the frame. It has a white muzzle and grey whiskers, a big black nose, brown eyes, one ear pricked up and one flopped over, and its mouth is open in a happy pant with a long pink tongue hanging out. It wears a red collar with a small round red tag, and has a white patch on its chest. Its legs are long and thin, the front-left paw is white, and the paws are slightly blurred. Its shadow stretches away to the right across the sand. Behind it, white foamy waves wash up the shore, then a band of teal-green sea meets a bright blue sky with scattered white clouds.",
+   "system": "Return a complete, self-contained SVG document.",
+   "files": [],
+   "reasoning_effort": "high",
+   "max_completion_tokens": 65536,
+   "seconds": 179.7,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 13029,
+    "prompt_tokens": 298,
+    "total_tokens": 13327,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 2037,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 256,
+     "cached_tokens": null,
+     "image_tokens": null,
+     "text_tokens": null
+    }
+   },
+   "reasoning_chars": 7622,
+   "svg_bytes": 27868,
+   "check": "ok"
+  },
+  {
+   "variant": "on-a-bike",
+   "prompt": "Generate an SVG of this dog riding a bicycle\n\nA portrait-orientation photo of a black brindle Bull Arab and Staghound cross standing on wet golden sand at the beach on a sunny day. The dog faces the camera, with its head turned slightly towards the left of the frame. It has a white muzzle and grey whiskers, a big black nose, brown eyes, one ear pricked up and one flopped over, and its mouth is open in a happy pant with a long pink tongue hanging out. It wears a red collar with a small round red tag, and has a white patch on its chest. Its legs are long and thin, the front-left paw is white, and the paws are slightly blurred. Its shadow stretches away to the right across the sand. Behind it, white foamy waves wash up the shore, then a band of teal-green sea meets a bright blue sky with scattered white clouds.",
+   "system": "Return a complete, self-contained SVG document.",
+   "files": [],
+   "reasoning_effort": "high",
+   "max_completion_tokens": 65536,
+   "seconds": 79.9,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 6004,
+    "prompt_tokens": 293,
+    "total_tokens": 6297,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 310,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 256,
+     "cached_tokens": null,
+     "image_tokens": null,
+     "text_tokens": null
+    }
+   },
+   "reasoning_chars": 1334,
+   "svg_bytes": 14239,
+   "check": "ok"
+  }
+ ]
+}

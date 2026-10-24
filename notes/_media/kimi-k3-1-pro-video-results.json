@@ -1,0 +1,356 @@
+{
+ "model": "kimi-k3.1-pro",
+ "endpoint": "https://api.moonshot.ai/v1/chat/completions",
+ "effort": "default (max)",
+ "upload": "Files API, purpose=video, referenced as ms://<file-id>, deleted after the run",
+ "run_at": "2026-10-24 09:15 AEST",
+ "videos": {
+  "beach": "gemini-4-argon-video-beach.mp4",
+  "muscle-ups": "gemini-4-argon-video-muscle-ups.mp4",
+  "black": "5-second black, silent 1280x720 clip made with ffmpeg (not published)"
+ },
+ "runs": [
+  {
+   "video": "beach",
+   "question": "What is this a video of?",
+   "attempt": 1,
+   "seconds": 9.7,
+   "answer": "A black dog wearing a red collar wades through the shallow ocean surf, occasionally lowering its head toward the water as waves wash onto the sandy beach on a sunny day.",
+   "reasoning_chars": 795,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 223,
+    "prompt_tokens": 4467,
+    "total_tokens": 4690,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 174,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 4448,
+     "cached_tokens": null,
+     "image_tokens": null,
+     "text_tokens": null
+    }
+   }
+  },
+  {
+   "video": "beach",
+   "question": "What is this a video of?",
+   "attempt": 2,
+   "seconds": 10.1,
+   "answer": "A black dog wearing a red collar wades through the foamy surf on a sandy beach, sniffing at the shallow water as waves roll in on a sunny, blue-sky day.",
+   "reasoning_chars": 888,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 249,
+    "prompt_tokens": 4467,
+    "total_tokens": 4716,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 196,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 4448,
+     "cached_tokens": null,
+     "image_tokens": null,
+     "text_tokens": null
+    }
+   }
+  },
+  {
+   "video": "beach",
+   "question": "What is this a video of?",
+   "attempt": 3,
+   "seconds": 10.9,
+   "answer": "A black dog wearing a red collar wades and plays in the shallow ocean surf on a sunny beach as waves wash onto the sand.",
+   "reasoning_chars": 714,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 203,
+    "prompt_tokens": 4467,
+    "total_tokens": 4670,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 161,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 4448,
+     "cached_tokens": null,
+     "image_tokens": null,
+     "text_tokens": null
+    }
+   }
+  },
+  {
+   "video": "beach",
+   "question": "What breed of dog is in the video?",
+   "attempt": 1,
+   "seconds": 47.8,
+   "answer": "The dog looks most like a black **Staffordshire Bull Terrier or a similar pit bull\u2013type mix**, based on its muscular build, short coat, and broad head. The exact breed can\u2019t be confirmed from the video alone.",
+   "reasoning_chars": 12114,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 2962,
+    "prompt_tokens": 4469,
+    "total_tokens": 7431,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 2899,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 4448,
+     "cached_tokens": null,
+     "image_tokens": null,
+     "text_tokens": null
+    }
+   }
+  },
+  {
+   "video": "beach",
+   "question": "What breed of dog is in the video?",
+   "attempt": 2,
+   "seconds": 9.1,
+   "answer": "The dog appears to be a **black Labrador Retriever**, though a Labrador mix is possible and the exact breed can\u2019t be confirmed from the video alone.",
+   "reasoning_chars": 1742,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 434,
+    "prompt_tokens": 4469,
+    "total_tokens": 4903,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 388,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 0,
+     "cached_tokens": 4448,
+     "image_tokens": null,
+     "text_tokens": null
+    },
+    "cached_tokens": 4448
+   }
+  },
+  {
+   "video": "beach",
+   "question": "What breed of dog is in the video?",
+   "attempt": 3,
+   "seconds": 34.1,
+   "answer": "The dog appears to be a **pit bull\u2013type dog**, most resembling a **Staffordshire Bull Terrier or American Bully**. Its stocky build, broad head, and short black coat fit that group, though the exact breed can\u2019t be confirmed from the video alone.",
+   "reasoning_chars": 8430,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 2096,
+    "prompt_tokens": 4469,
+    "total_tokens": 6565,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 2024,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 0,
+     "cached_tokens": 4448,
+     "image_tokens": null,
+     "text_tokens": null
+    },
+    "cached_tokens": 4448
+   }
+  },
+  {
+   "video": "muscle-ups",
+   "question": "What exercise is demonstrated in the video?",
+   "attempt": 1,
+   "seconds": 34.8,
+   "answer": "The man is performing **kipping pull-ups**\u2014using a swinging leg and hip motion for momentum while pulling himself up on the overhead bar.",
+   "reasoning_chars": 4882,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 1267,
+    "prompt_tokens": 13599,
+    "total_tokens": 14866,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 1223,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 13491,
+     "cached_tokens": 88,
+     "image_tokens": null,
+     "text_tokens": null
+    },
+    "cached_tokens": 88
+   }
+  },
+  {
+   "video": "muscle-ups",
+   "question": "What exercise is demonstrated in the video?",
+   "attempt": 2,
+   "seconds": 48.6,
+   "answer": "The video demonstrates **kipping chest-to-bar pull-ups**. He uses a swinging motion and drives his knees and hips to help pull his chest up toward the overhead bar.",
+   "reasoning_chars": 9846,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 2682,
+    "prompt_tokens": 13599,
+    "total_tokens": 16281,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 2633,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 13491,
+     "cached_tokens": 88,
+     "image_tokens": null,
+     "text_tokens": null
+    },
+    "cached_tokens": 88
+   }
+  },
+  {
+   "video": "muscle-ups",
+   "question": "What exercise is demonstrated in the video?",
+   "attempt": 3,
+   "seconds": 17.4,
+   "answer": "The man is performing **pull-ups on an overhead bar**, using a pronounced swinging or **kipping motion** to generate momentum rather than doing strict pull-ups.",
+   "reasoning_chars": 3008,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 844,
+    "prompt_tokens": 13599,
+    "total_tokens": 14443,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 797,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 13491,
+     "cached_tokens": 88,
+     "image_tokens": null,
+     "text_tokens": null
+    },
+    "cached_tokens": 88
+   }
+  },
+  {
+   "video": "black",
+   "question": "What is this a video of?",
+   "attempt": 1,
+   "seconds": 8.3,
+   "answer": "The provided video frames are entirely black, with no visible people, objects, or scenery. It appears to be a black screen or an unrendered video, so I can\u2019t determine a specific subject.",
+   "reasoning_chars": 71,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 73,
+    "prompt_tokens": 12131,
+    "total_tokens": 12204,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 17,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 12112,
+     "cached_tokens": null,
+     "image_tokens": null,
+     "text_tokens": null
+    }
+   }
+  },
+  {
+   "video": "black",
+   "question": "What is this a video of?",
+   "attempt": 2,
+   "seconds": 11.2,
+   "answer": "The video appears to be entirely black, with no visible people, objects, text, or action in the provided frames. It may be a blank video or the result of a recording or upload issue.",
+   "reasoning_chars": 844,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 234,
+    "prompt_tokens": 12131,
+    "total_tokens": 12365,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 179,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 12112,
+     "cached_tokens": null,
+     "image_tokens": null,
+     "text_tokens": null
+    }
+   }
+  },
+  {
+   "video": "black",
+   "question": "What is this a video of?",
+   "attempt": 3,
+   "seconds": 3.4,
+   "answer": "The video appears to be a black screen throughout. The frames provided show no visible people, objects, scenery, text, or other details, so its subject cannot be determined.",
+   "reasoning_chars": 113,
+   "finish": "stop",
+   "usage": {
+    "completion_tokens": 74,
+    "prompt_tokens": 12131,
+    "total_tokens": 12205,
+    "completion_tokens_details": {
+     "accepted_prediction_tokens": null,
+     "audio_tokens": null,
+     "reasoning_tokens": 24,
+     "rejected_prediction_tokens": null,
+     "text_tokens": null
+    },
+    "prompt_tokens_details": {
+     "audio_tokens": null,
+     "cache_write_tokens": 0,
+     "cached_tokens": 12112,
+     "image_tokens": null,
+     "text_tokens": null
+    },
+    "cached_tokens": 12112
+   }
+  }
+ ]
+}

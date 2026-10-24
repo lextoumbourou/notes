@@ -1,0 +1,20 @@
+{
+  "provider": "openai",
+  "model": "kimi-k3.1-pro",
+  "generated_at": "2026-10-24T00:32:39.219654+00:00",
+  "status": "completed",
+  "reasoning_effort": null,
+  "service_tier": "default",
+  "usage": {
+    "input_tokens": 5499,
+    "input_tokens_details": {
+      "cache_write_tokens": 5376,
+      "cached_tokens": 0
+    },
+    "output_tokens": 15143,
+    "output_tokens_details": {
+      "reasoning_tokens": 8678
+    },
+    "total_tokens": 20642
+  }
+}
