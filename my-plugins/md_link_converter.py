@@ -34,8 +34,9 @@ def convert_md_links(instance):
         return
 
     try:
-        # Find <a> tags with .md hrefs, excluding external URLs
-        html_links = re.compile(r'<a href="(?!https?://)([^"]+\.md)">([^<]+)</a>')
+        # Find <a> tags with .md hrefs, excluding external URLs. A section
+        # anchor (note.md#heading) is kept and moved onto the .html link.
+        html_links = re.compile(r'<a href="(?!https?://)([^"#]+\.md)(#[^"]*)?">([^<]+)</a>')
 
         source_dir = os.path.dirname(getattr(instance, 'source_path', None) or '')
 
@@ -45,11 +46,12 @@ def convert_md_links(instance):
             file_stem = url_path.split('/')[-1]
             file_stem = file_stem[:-3]  # Remove .md from the file stem
 
-            link_text = match.group(2)
+            anchor = match.group(2) or ''
+            link_text = match.group(3)
 
             target = os.path.normpath(os.path.join(source_dir, unquote(url_path)))
             slug = frontmatter_slug(target) or slugify(file_stem)
-            return f'<a href="{slug}.html">{link_text}</a>'
+            return f'<a href="{slug}.html{anchor}">{link_text}</a>'
 
         original = instance._content
         instance._content = html_links.sub(replace_link, original)

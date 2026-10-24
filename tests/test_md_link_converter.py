@@ -36,6 +36,21 @@ class MdLinkConverterTests(unittest.TestCase):
             html = self.convert(notes, '<a href="plain-note.md">Plain</a> <a href="missing-note.md">Gone</a>')
             self.assertEqual(html, '<a href="plain-note.html">Plain</a> <a href="missing-note.html">Gone</a>')
 
+    def test_keeps_a_section_anchor(self):
+        with TemporaryDirectory() as tmp:
+            notes = Path(tmp)
+            (notes / "a-long-filename-for-an-essay.md").write_text(
+                '---\ntitle: An essay\nslug: short-essay\n---\n\nBody.\n'
+            )
+            html = self.convert(
+                notes,
+                '<a href="a-long-filename-for-an-essay.md#drawing-svgs">SVGs</a> <a href="plain-note.md#real-example">Example</a>',
+            )
+            self.assertEqual(
+                html,
+                '<a href="short-essay.html#drawing-svgs">SVGs</a> <a href="plain-note.html#real-example">Example</a>',
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
