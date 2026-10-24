@@ -1,7 +1,7 @@
 ---
 title: Kimi K3.1 Pro
 date: 2026-10-24 09:30
-modified: 2026-10-24 16:45
+modified: 2026-10-24 17:30
 category: model
 cover: /_media/kimi-k3-1-pro-cover.jpg
 cover_credits: Photo by <a href="https://www.pexels.com/@petraryan">Petra Ryan</a> on <a href="https://www.pexels.com/photo/striking-black-and-white-crescent-moon-36716322/">Pexels</a>
@@ -28,7 +28,7 @@ Same model as Kimi K3: a 2.8-trillion-parameter [Mixture of Experts Model](mixtu
 
 Interestingly, they reduced its cybersecurity capability through data removal: they traced the capability back to entries in the training corpus and RL environments, and removed them. Presumably that also means it's less effective at writing secure software.
 
-At $2 per million input tokens and $10 per million output, it's on par with [GPT-6 Sol](gpt-6-sol.md) and [Gemini 4 Argon](gemini-4-argon.md)'s launch price. They also released **K3.1 Pro Highspeed**, which Moonshot says runs two to three times faster, at twice the price [@moonshotaiKimiK31Pro2026] [@moonshotaiModelInferencePricing].
+At $2 per million input tokens and $10 per million output, it's on par with [GPT-6 Sol](gpt-6-sol.md) and [Gemini 4 Argon](gemini-4-argon.md)'s launch price. They also released **K3.1 Pro Highspeed**, which Moonshot says runs two to three times faster, at twice the price [@moonshotaiModelInferencePricing].
 
 Basically, now we have an absurd number of options for cheap frontier intelligence.
 
@@ -46,9 +46,8 @@ Compared with Opus 5.5, the effort levels and context window are roughly on par.
 | Context window | 1,048,576 tokens | 1M tokens |
 | Maximum output | 131,072 by default, up to 1,048,576 | 128K tokens |
 | Effort levels | `low`, `high`, `max` (default); always thinks | `low` to `max` |
-| Weights | Promised by 4 November 2026 | Closed |
 
-As of 24 October 2026 [@moonshotaiKimiK31ProQuickstart] [@moonshotaiKimiK31Pro2026]. The architecture is K3's: Moonshot describes K3.1 Pro as "a post-trained version of Kimi K3".
+As of 24 October 2026 [@moonshotaiKimiK31ProQuickstart]. The architecture is K3's.
 
 ## Availability
 
@@ -72,7 +71,6 @@ Prices in USD per million tokens, as of 24 October 2026.
 | Model | Input | Cache read | Cache write | Output, including reasoning |
 |---|---:|---:|---:|---:|
 | **Kimi K3.1 Pro** | **$2.00** | **$0.20** | **$2.00** (5 min), **$4.00** (1 hour) | **$10.00** |
-| Kimi K3.1 Pro Highspeed | $4.00 | $0.20 | $4.00 (5 min), $8.00 (1 hour) | $20.00 |
 | Kimi K3 | $3.00 | $0.30 | $3.00 (5 min), $6.00 (1 hour) | $15.00 |
 | [GPT-6 Sol](gpt-6-sol.md) | $2.00 | $0.20 | $2.50 | $10.00 |
 | [Gemini 4 Argon](gemini-4-argon.md), to 30 Nov | $2.00 | $0.10 | Implicit caching only | $10.00 |
@@ -80,24 +78,24 @@ Prices in USD per million tokens, as of 24 October 2026.
 | [Muse Wonder](muse-wonder.md) | $4.00 | $0.20 | Implicit caching only | $20.00 |
 | [Claude Opus 5.5](claude-opus-5-5.md) | $4.00 | $0.20 | $5.00 (5 min), $8.00 (1 hour) | $20.00 |
 
-Standard tiers, from each provider's pricing page [@moonshotaiModelInferencePricing] [@openaiAPIPricing] [@googleGeminiAPIPricing] [@metaModelAPIPricing] [@anthropicPricing].
+Standard tiers. Kimi from Moonshot [@moonshotaiModelInferencePricing]; the others from each provider's pricing page, as cited in the linked articles.
 
-Kimi caches automatically, for five minutes by default, and a five-minute cache write costs the same as uncached input, so there's no penalty for it [@moonshotaiModelInferencePricing].
+Kimi caches automatically, for five minutes by default, and a five-minute cache write costs the same as uncached input, so there's no penalty for it.
 
 ## Tokenisers
 
 K3.1 Pro uses K3's tokeniser: Moonshot's own 163,584-token vocabulary, loaded with OpenAI's open-source tiktoken library [@moonshotaiKimiK3HuggingFace]. Here are the counts for the same six files as in my other model articles:
 
-| Sample | Opus 5.5 | Muse Wonder | Gemini 4 Argon | Kimi K3.1 Pro | Opus ÷ Kimi |
-|---|---:|---:|---:|---:|---:|
-| Survey summary (prose) | 9,992 | 6,064 | 6,323 | 6,050 | 1.65 |
-| AudioLM summary (prose) | 8,024 | 4,946 | 5,072 | 4,932 | 1.63 |
-| Ansible tutorial (prose and commands) | 6,086 | 4,109 | 4,337 | 4,016 | 1.52 |
-| [GPT 6 Sol and Luna](gpt-6-sol-and-luna.md) article (prose and code) | 13,847 | 8,990 | 10,411 | 8,938 | 1.55 |
-| Python rendering script | 15,708 | 10,119 | 12,199 | 10,079 | 1.56 |
-| Generated HTML game | 11,393 | 7,762 | 9,242 | 7,737 | 1.47 |
+| Sample | Opus 5.5 | Gemini 4 Argon | Kimi K3.1 Pro |
+|---|---:|---:|---:|
+| Survey summary (prose) | 9,992 | 6,323 | 6,050 |
+| AudioLM summary (prose) | 8,024 | 5,072 | 4,932 |
+| Ansible tutorial (prose and commands) | 6,086 | 4,337 | 4,016 |
+| [GPT 6 Sol and Luna](gpt-6-sol-and-luna.md) article (prose and code) | 13,847 | 10,411 | 8,938 |
+| Python rendering script | 15,708 | 12,199 | 10,079 |
+| Generated HTML game | 11,393 | 9,242 | 7,737 |
 
-It's almost identical to Muse Wonder's, while Opus needs 1.47 to 1.65 times as many tokens for the same text. So the price gap with Opus is even wider than the table above suggests.
+It's about the same as Argon on prose and a little leaner on code, while Opus needs 1.47 to 1.65 times as many tokens for the same text. So the price gap with Opus is even wider than the table above suggests.
 
 ## Cost Per Task
 
@@ -120,12 +118,8 @@ Some of Moonshot's own results [@moonshotaiKimiK31Pro2026]:
 |---|---:|---:|---:|---:|
 | Terminal-Bench 4.0 | 65.7 | **66.4** | 58.2 | 42.3 |
 | SWE-Marathon v1.1 | **51.7** | 46.3 | 42.5 | 40.0 |
-| DeepSWE v1.1 | 75.5 | 74.2 | 74.1 | **77.0** |
 | ProgramBench | 31.5 | **65.0** | 50.0 | 29.1 |
-| BenchCAD, with tools | 92.7 | **96.2** | 95.9 | 81.6 |
 | OfficeQA Pro v2 | **64.4** | 62.2 | 54.4 | 40.4 |
-| OSWorld V2.1 | 79.6 | **81.8** | 75.8 | 69.3 |
-| Humanity's Last Exam, with tools | **70.0** | 67.7 | 57.2 | 58.8 |
 | HLE-Diamond | 39.4 | 60.9 | **65.8** | 21.6 |
 | ExploitBench | 74.7 | 91.0 | **100** | Not reported |
 
@@ -145,7 +139,7 @@ On their in-house exploit benchmark, xdev-bench-hard, the same pipeline without 
 
 *Moonshot's internal xdev-bench-hard results, pass@3 [@moonshotaiKimiK31Pro2026].*
 
-Moonshot's stated aim is to not "release open weights that would extend the absolute frontier of cyber capability", and its own ExploitBench numbers back that up: 74.7 for K3.1 Pro, against 91.0 for Opus 5.5 and 100 for GPT-6 Astra [@moonshotaiKimiK31Pro2026].
+Moonshot's stated aim is to not "release open weights that would extend the absolute frontier of cyber capability", and its own ExploitBench numbers back that up: 74.7 for K3.1 Pro, against 91.0 for Opus 5.5 and 100 for GPT-6 Astra.
 
 ## Drawing SVGs
 
@@ -197,13 +191,7 @@ Not quite as good as Argon at video understanding, and about ten times the price
 
 As with [Claude Opus 5.5](claude-opus-5-5.md#real-example), [Muse Wonder](muse-wonder.md#real-example) and [Gemini 4 Argon](gemini-4-argon.md#real-example), I asked it at high effort to turn this article into a 3D gameshow with an N64 look, using the same prompt.
 
-Kimi's API supports OpenAI's Responses API, so the call is the same as the Muse Wonder example with a different `base_url` [@moonshotaiKimiK31ProQuickstart]. The [Notebook HTML helper](../_media/notesbylex_notebook_html-0.1.3-py3-none-any.whl) saves the game and token usage, then renders it:
-
-```bash
-pip install openai ./notesbylex_notebook_html-0.1.3-py3-none-any.whl
-```
-
-Set `MOONSHOT_API_KEY` in the environment used to launch Obsidian. Running the cell makes a paid request; the saved game plays without an API key or another model call.
+Kimi's API supports OpenAI's Responses API, so the call is the same as the Muse Wonder example with a different `base_url` [@moonshotaiKimiK31ProQuickstart]. The [Notebook HTML helper](../_media/notesbylex_notebook_html-0.1.3-py3-none-any.whl) saves the game and token usage, then renders it. To rerun it, `pip install openai` and the helper, and set `MOONSHOT_API_KEY`; the saved game plays without either.
 
 ```python {id=kimi-k3-1-pro-quiz}
 import os
@@ -425,7 +413,7 @@ render();
 </div>
 <!-- /nb-output -->
 
-Generated on **24 October 2026** with **`kimi-k3.1-pro` at high effort**, for about **US$0.16** at Moonshot's standard prices ([saved token usage](../_media/kimi-k3-1-pro-quiz-high.json)) [@moonshotaiModelInferencePricing]:
+Generated on **24 October 2026** with **`kimi-k3.1-pro` at high effort**, for about **US$0.16** at Moonshot's standard prices ([saved token usage](../_media/kimi-k3-1-pro-quiz-high.json)):
 
 | Usage | Tokens | Estimated cost (USD) |
 |---|---:|---:|
