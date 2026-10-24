@@ -1,11 +1,12 @@
 ---
 title: Kimi K3.1 Pro
 date: 2026-10-24 09:30
-modified: 2026-10-24 17:30
+modified: 2026-10-24 18:10
 category: model
 cover: /_media/kimi-k3-1-pro-cover.jpg
 cover_credits: Photo by <a href="https://www.pexels.com/@petraryan">Petra Ryan</a> on <a href="https://www.pexels.com/photo/striking-black-and-white-crescent-moon-36716322/">Pexels</a>
 summary: One of the world's most intelligent models is (soon-to-be) open weight.
+linkedin_post: https://www.linkedin.com/posts/lextoumbourou_one-of-the-worlds-most-intelligent-frontier-share-7519684462063034370-5W2C/
 aliases:
 - Kimi K3.1 Pro
 tags:
@@ -16,23 +17,23 @@ notebook:
   outputLimit: 200
 ---
 
-Another frontier open-weight (or soon to be) model drops.
+One of the world's most intelligent frontier models is (soon-to-be) open weight.
 
 Moonshot AI releases a new post-trained version of their [Kimi K3](kimi-k3.md) model: **Kimi K3.1 Pro**.
 
-Same model as Kimi K3: a 2.8-trillion-parameter [Mixture of Experts Model](mixture-of-experts-model.md), with 104 billion active parameters per token and a 1M-token context window. But Moonshot says it used "substantially larger post-training compute", running reinforcement learning across hundreds of domains at once [@moonshotaiKimiK31Pro2026].
+Same underlying model as Kimi K3 from July: a 2.8T-param [Mixture of Experts Model](mixture-of-experts-model.md), with 104B active per token. 1M-token context window. But "substantially larger post-training compute" was applied across a bunch of domains [@moonshotaiKimiK31Pro2026]. The open weights are due by 4 November.
 
 ![Bar chart of the Artificial Analysis Intelligence Index: Claude Opus 5.5 58, Claude Sonnet 5.5 56, Muse Wonder Full 56 (no public API), Kimi K3.1 Pro 55, Claude Fable 5.1 53, GPT-6 Astra 53, Gemini 4 Argon 53, Muse Wonder 52, GPT-6.1 Sol 52, Grok 4.7 46, MiMo-V2.6-Pro 46, DeepSeek V4.1 Flash 1017 45 and GLM-5.3 45](../_media/kimi-k3-1-pro-ai-analysis.png)
 
 *Artificial Analysis Intelligence Index, 23 October 2026, top 13 models [@artificialAnalysisKimiK31Pro]. Muse Wonder Full has no public API.*
 
-Interestingly, they reduced its cybersecurity capability through data removal: they traced the capability back to entries in the training corpus and RL environments, and removed them. Presumably that also means it's less effective at writing secure software.
+Their approach to reducing cybersecurity risk is interesting. As post-training scaled up, Moonshot saw the model get steadily better at hacking (similar story to other frontier models). So they traced it back to cyber content in the training corpus and RL environments, and removed it before training the open-weight release.
 
 At $2 per million input tokens and $10 per million output, it's on par with [GPT-6 Sol](gpt-6-sol.md) and [Gemini 4 Argon](gemini-4-argon.md)'s launch price. They also released **K3.1 Pro Highspeed**, which Moonshot says runs two to three times faster, at twice the price [@moonshotaiModelInferencePricing].
 
 Basically, now we have an absurd number of options for cheap frontier intelligence.
 
-I ran a few tests. It's not quite as good as Argon at video understanding, nor at SVGs.
+I ran a few tests. Not quite as good at video understanding as Argon, nor as good at SVGs, but its tokeniser is efficient: about a third fewer tokens than Claude for the same text, and a bit fewer than Argon on code.
 
 ## Specs K3.1 Pro vs Opus 5.5
 
