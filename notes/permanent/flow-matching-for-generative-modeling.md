@@ -11,11 +11,11 @@ Instead of training the flow by simulating an ODE, Flow Matching trains a neural
 
 Flow matching is now used in large image models such as [FLUX.1](flux1.md).
 
-![](../_media/flow-matching-for-generative-modeling-title.png)
-![](../_media/flow-matching-for-generative-modeling-title-1.png)
+![arXiv listing for Flow Matching for Generative Modeling by Lipman, Chen, Ben-Hamu, Nickel and Le, with the abstract.](../_media/flow-matching-for-generative-modeling-title.png)
+![Title block of the Flow Matching for Generative Modeling paper, with authors from Meta AI (FAIR) and the Weizmann Institute of Science.](../_media/flow-matching-for-generative-modeling-title-1.png)
 
-![](../_media/flow-matching-for-generative-modeling-fig-1.png)
+![Figure 1 from the paper: a grid of unconditional ImageNet-128 samples from a CNF trained with Flow Matching and Optimal Transport paths.](../_media/flow-matching-for-generative-modeling-fig-1.png)
 
-![](../_media/flow-matching-for-generative-modeling-fig-3.png)
+![Figure 3 from the paper: diffusion trajectories curve and overshoot on their way to the target point, while OT trajectories are straight lines.](../_media/flow-matching-for-generative-modeling-fig-3.png)
 
-![](../_media/flow-matching-for-generative-modeling-fig-4.png)
+![Figure 4 from the paper: a Gaussian turning into a 2D checkerboard under score matching, Flow Matching with diffusion paths and Flow Matching with OT paths; the OT path forms the checkerboard earliest and samples well with fewer function evaluations.](../_media/flow-matching-for-generative-modeling-fig-4.png)

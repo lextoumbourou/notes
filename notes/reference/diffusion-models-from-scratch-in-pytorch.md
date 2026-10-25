@@ -9,7 +9,7 @@ Notes from [Diffusion models from scratch in PyTorch](https://www.youtube.com/wa
 
 How to implement [Denoising Diffusion Model](../permanent/denoising-diffusion-model.md)
 
-![](../_media/diffusion-models-from-scratch-in-pytorch-gan-types.png)
+![The generative learning trilemma from the NVIDIA Developer Blog: GANs give high-quality samples and fast sampling, diffusion models give quality and mode coverage, and VAEs and normalising flows give fast sampling and diversity.](../_media/diffusion-models-from-scratch-in-pytorch-gan-types.png)
 
 Recap:
 

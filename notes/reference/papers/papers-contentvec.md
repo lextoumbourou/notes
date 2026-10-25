@@ -241,16 +241,16 @@ CONTENTVEC: An Improved Self-Supervised Speech Representation by Disentangling S
 Utterance
 !
 Transform 1 Speech Rep.
-Network " ⋅ Masking !$ ! %$ !
+Network " ⋅ Masking !\$ ! %\$ !
 Transform 2 Speech Rep.
-Network " ⋅ Masking !$ "
-ℒ#$%&
+Network " ⋅ Masking !\$ "
+ℒ#\$%&
 Utterance ! Voice
 Convertor
 Pretrained
 HuBERT '-means
 Predictor p ⋅
-%$ " Predictor p ⋅
+%\$ " Predictor p ⋅
 Spk. embedding
 ( ! ℒ'()*
 Teacher

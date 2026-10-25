@@ -161,7 +161,7 @@ Use semantic tokens and acoustic tokens:
     - Allow for reconstructing the audio waveform at high quality.
     - "high-quality audio synthesis"
 
-![](../_media/audiolm-a-language-modeling-approach-to-audio-generation-fig1.png)
+![AudioLM tokenisers: a waveform goes into SoundStream, whose residual vector quantiser produces acoustic tokens, and into w2v-BERT, whose intermediate layer is clustered with k-means into semantic tokens.](../_media/audiolm-a-language-modeling-approach-to-audio-generation-fig1.png)
 Make SoundStream produce embeddings at 50 Hz (one every 20 ms) for input waveforms at 16 kHz.
 
 This is a 16000 / 50 = 320-fold reduction in the [Sample Rate](sample-rate.md).

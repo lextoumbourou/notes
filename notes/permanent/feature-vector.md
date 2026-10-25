@@ -146,7 +146,7 @@ Now we have a feature vector with the same feature values as the dogs, and we ca
 
 We can plot both in the same space to see which breeds land closest to each adoptee:
 
-![](../_media/feature-vector-scatter.png)
+![Scatter plot of dog breeds and adoptees by activity (x) and kid-friendliness (y): Basset Hound, Chihuahua, Border Collie and Golden Retriever as circles, adoptees Alice, Bob and Carol as stars, with Alice on top of the Golden Retriever.](../_media/feature-vector-scatter.png)
 
 We could simply take each feature from the dog vector, and subtract it from the person preference vector, and remove the negative term (aka the [Absolute Value](absolute-value.md)) and find the dog with the smaller distance. That distance measure is called [Manhattan Distance](manhattan-distance.md).
 

@@ -12,7 +12,7 @@ The target audience of this podcast is a relatively technical person somewhat fa
 This is one of the earliest papers about diffusion models and was released in 2015. Please speak about it in past tense.
 -->
 
-![](../_media/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-arxiv.png)
+![arXiv listing for Deep Unsupervised Learning using Nonequilibrium Thermodynamics by Sohl-Dickstein, Weiss, Maheswaranathan and Ganguli, with the abstract.](../_media/deep-unsupervised-learning-using-nonequilibrium-thermodynamics-arxiv.png)
 
 ## Overview
 

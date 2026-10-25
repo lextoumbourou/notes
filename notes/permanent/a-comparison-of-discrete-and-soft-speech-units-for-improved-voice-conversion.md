@@ -68,7 +68,7 @@ Audio samples are available at [ubisoft-laforge.github.io/speech/soft-vc](https:
 
 In this section, we describe the voice conversion system we use to compare discrete and soft speech units. Figure 1 shows an overview of the architecture. The system consists of three components: a content encoder, an acoustic model, and a vocoder. The content encoder extracts discrete or soft speech units from input audio (illustrated in Figure 1a and 1b, respectively). Next, the acoustic model translates the speech units into a target spectrogram. Finally, the spectrogram is converted into an audio waveform by the vocoder.
 
-![](../_media/softvc-fig-1.png)
+![Figure 1 from the paper: the voice conversion system (content encoder, acoustic model, vocoder), with a discrete content encoder that k-means clusters features into speech units and a soft content encoder that predicts those units from a linear projection.](../_media/softvc-fig-1.png)
 
 ### 2.1. Content Encoders
 

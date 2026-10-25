@@ -9,13 +9,13 @@ Learning useful representations without supervision remains a key challenge in m
 
 
 
-![](../_media/neural-discrete-representation-learning-title.png)
+![Title and abstract of Neural Discrete Representation Learning by van den Oord, Vinyals and Kavukcuoglu of DeepMind.](../_media/neural-discrete-representation-learning-title.png)
 
-![](../_media/neural-discrete-representation-learning-fig1.png)
-![](../_media/neural-discrete-representation-learning-fig-2.png)
+![Figure 1 from the paper: the VQ-VAE encoder output is mapped to its nearest codebook embedding before the decoder, and the gradient is copied straight through from decoder to encoder.](../_media/neural-discrete-representation-learning-fig1.png)
+![Figure 2 from the paper: eight ImageNet images beside slightly blurrier VQ-VAE reconstructions from a 32x32 latent space with 512 codes.](../_media/neural-discrete-representation-learning-fig-2.png)
 
-![](../_media/neural-discrete-representation-learning-fig6.png)
+![Figure 6 from the paper: an original speech waveform, its reconstruction with the same speaker id, and its reconstruction with a different speaker id.](../_media/neural-discrete-representation-learning-fig6.png)
 
-![](../_media/neural-discrete-representation-learning-fig4.png)
+![Figure 4 from the paper: 128x128 frames of DeepMind Lab corridors sampled from a VQ-VAE with a PixelCNN prior.](../_media/neural-discrete-representation-learning-fig4.png)
 
-![](../_media/neural-discrete-representation-learning-3-3-prior.png)
+![Section 3.3 of the paper: the prior over discrete latents is uniform during training, then a PixelCNN (images) or WaveNet (audio) is fitted over the latents for ancestral sampling.](../_media/neural-discrete-representation-learning-3-3-prior.png)

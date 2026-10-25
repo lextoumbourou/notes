@@ -34,7 +34,7 @@ Among the community, there is a current debate on whether [Single-Agent Systems]
 * [Multi-Agent Systems](multi-agent-systems.md)
     * Thrive more when collaboration and multiple distinct execution paths are required.
 
-![](../_media/the-landscape-of-emerging-ai-agent-architectures-for-reasoning-planning-and-tool-calling-a-survey-fig-1.png)
+![Figure 1 from the survey: a single-agent architecture beside multi-agent vertical (agents reporting to a lead) and horizontal (peer) architectures, noting that agents have personas and reasoning, planning and tool-calling abilities.](../_media/the-landscape-of-emerging-ai-agent-architectures-for-reasoning-planning-and-tool-calling-a-survey-fig-1.png)
 ### 1.1 Taxonomy
 
 * [AI Agents](ai-agent.md)

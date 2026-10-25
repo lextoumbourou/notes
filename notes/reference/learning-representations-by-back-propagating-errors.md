@@ -9,4 +9,4 @@ These are my notes on paper [Learning representations by back-propagating errors
 
 This is the paper that described the pivotal algorithm [Backpropagation](../permanent/backpropagation.md), which is used to train neural networks.
 
-![](../_media/learning-representations-by-back-propagating-errors-title.png)
+![Title and abstract of Learning representations by back-propagating errors by Rumelhart, Hinton and Williams.](../_media/learning-representations-by-back-propagating-errors-title.png)

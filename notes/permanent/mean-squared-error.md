@@ -15,4 +15,4 @@ More popular than [Mean Absolute Error](mean-absolute-error.md) as it significan
 
 The derivative of the MSE loss function with respect to a specific weight $w_j$ is given by:
 
-$∂MSE/∂w_j = -2/N \times Σ(y_i - ŷ_i) \times x_ij$
+$\partial MSE/\partial w_j = -2/N \times \sum(y_i - \hat{y}_i) \times x_{ij}$
