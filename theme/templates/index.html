@@ -10,6 +10,7 @@
 {% if home_page %}
 <aside class="page-side" aria-label="Explore" data-sketch="vline">
 
+  {% include 'partials/side_kinds.html' %}
   {% include 'partials/side_topics.html' %}
 
   {% if SOCIAL is defined and SOCIAL %}
@@ -47,10 +48,7 @@
   <section class="latest" aria-labelledby="latest-heading">
     <header class="section-head">
       <h2 id="latest-heading">Latest</h2>
-      <span class="section-links">
-        <a href="/essays.html">All essays{% include 'icons/arrow.svg' %}</a>
-        <a href="/notes.html">All notes{% include 'icons/arrow.svg' %}</a>
-      </span>
+      <a href="/notes.html">All posts{% include 'icons/arrow.svg' %}</a>
     </header>
     {# One feed, newest first, on one grid: essays use the note row at a larger size, so covers stay in one column. #}
     <ol class="latest-list">
@@ -58,7 +56,7 @@
       {% set is_essay = article.category.name in ['essay', 'project'] %}
       <li class="note-row{% if is_essay %} is-essay{% endif %}">
         <time class="note-row-date" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %-d, %Y') }}</time>
-        <span class="kind kind-{{ article.category.name | replace('/', '-') }}">{{ article.category.name.split('/') | last }}</span>
+        <a class="kind kind-{{ article.category.name | replace('/', '-') }}" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category.name.split('/') | last }}</a>
         <a class="note-row-title" href="/{{ article.url }}">{{ article.title }}</a>
         {%- set dek = (article.metadata.get('summary') or '')|striptags|trim %}
         {% if dek %}<p class="note-row-dek">{{ dek }}</p>{% endif %}

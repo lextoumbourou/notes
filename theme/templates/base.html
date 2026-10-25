@@ -65,8 +65,7 @@
       <a href="/" class="wordmark" aria-label="NotesByLex home"{% if page_name == "index" %} aria-current="page"{% endif %}><span data-sketch="underline" data-sketch-color="--ink">NotesByLex</span></a>
 
       <nav class="site-nav" aria-label="Site">
-        <a href="/essays.html" {% if page_name == "essays" or (article is defined and article.category.name in ['essay', 'project']) %}aria-current="page"{% endif %}>Essays</a>
-        <a href="/notes.html" {% if page_name == "notes" %}aria-current="page"{% endif %}>Notes</a>
+        <a href="/notes.html" {% if page_name == "notes" %}aria-current="page"{% endif %}>All posts</a>
         <a href="/tags.html" {% if page_name == "tags" %}aria-current="page"{% endif %}>Topics</a>
         <a href="/pages/about.html" {% if output_file == 'pages/about.html' %}aria-current="page"{% endif %}>About</a>
       </nav>

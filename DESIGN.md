@@ -216,7 +216,7 @@ Ink on warm off-white, with eight highlighters; dark mode swaps to chalk on slat
 - **Kraft Tan** (highlighter-tan): the `book` kind, muted like book cloth so it reads apart from course orange. Dark: chalk-tan.
 - **Highlighter Sky** (highlighter-sky): the `note` kind, at 60% strength because notes are most rows. Dark: chalk-sky.
 - **Highlighter Violet** (highlighter-violet): the `news` note kind only. Dark: chalk-violet.
-- **Highlighter Teal** (highlighter-teal): title swipe on notes, pages, the home lede and All notes; link underline colour; list hover underlines; `essay` note kind. Dark: chalk-teal. Never used as text colour; text teal is the deepened link token.
+- **Highlighter Teal** (highlighter-teal): title swipe on notes, pages, the home lede and All posts; link underline colour; list hover underlines; `essay` note kind. Dark: chalk-teal. Never used as text colour; text teal is the deepened link token.
 
 ### Neutral
 - **Off-white Paper** (paper): page background. Dark: **Slate** (slate).
@@ -245,7 +245,7 @@ Ink on warm off-white, with eight highlighters; dark mode swaps to chalk on slat
 ### Hierarchy
 - **Display** (700, fluid 2.3rem to 3.6rem, 1.1): note and list page titles, balanced wrap. Home uses the headline size for its lede-as-title.
 - **Headline** (700, fluid 1.9rem to 2.4rem, 1.2): prose H2, home H1 lede, Recent notes, Video and Comments headings.
-- **Title** (700, 1.75rem, 1.25): prose H3, References heading, year headings on the Notes archive.
+- **Title** (700, 1.75rem, 1.25): prose H3, References heading, year headings on the All posts archive.
 - **Side heading** (700, 1.5rem, 1.15): sidebar block headings such as On this page and Linked from.
 - **Hand label** (600 to 700, about 1.05rem): note kinds, graph labels (15px, 600), scribbles (1.2rem, 600).
 - **Body** (400, 1.125rem, 1.65): prose at a 42rem measure; paragraphs use pretty wrapping.
@@ -264,7 +264,7 @@ A single calm column with an optional sticky right sidebar. The page is capped a
 
 Rhythm is generous and vertical: 1.8em around code, callouts and blockquotes; 2.2em above H2; 56px before post-article sections; 36px between sidebar blocks. Lists of essays and notes are separated by dashed 1px rules, never boxes.
 
-The site has two sections. **Essays** are the finished pieces and get the room: title, summary and date. **Notes** are working notes and stay compact: one row each, with the note's written summary in soft ink under its title and, when the note has a cover, a small 4:3 thumbnail on the right (112px, 80px on mobile). Home runs lede H1, bio, then one Latest feed of the 20 newest pieces of any kind, newest first, 56px below the bio: every entry uses the note row's grid (date, kind chip, title and summary, cover on the right), and essays and projects are sized up within it (bold title at essay size, summary at body size, a 132px cover, 96px on mobile), so finished pieces stand out by size while covers stay in one column. Its header links to both All essays and All notes. List pages (Notes, Essays, tag and category pages) carry a sidebar with a Kinds key (each kind as its highlighter chip with a count, linking to its page, current kind underlined) and the top 24 Topics (current topic bold with a pink underline); article pages keep their own sidebar and never show Topics. The Notes page is one year-grouped archive of every non-essay note, newest first and not paginated; the Essays page (`essays.html`) lists essays and projects together.
+The site has two sections. **Essays** are the finished pieces and get the room: title, summary and date. **Notes** are working notes and stay compact: one row each, with the note's written summary in soft ink under its title and, when the note has a cover, a small 4:3 thumbnail on the right (112px, 80px on mobile). Home runs lede H1, bio, then one Latest feed of the 20 newest pieces of any kind, newest first, 56px below the bio: every entry uses the note row's grid (date, kind chip, title and summary, cover on the right), and essays and projects are sized up within it (bold title at essay size, summary at body size, a 132px cover, 96px on mobile), so finished pieces stand out by size while covers stay in one column. Its header links to All posts, and every kind chip in a feed row links to its kind page. Home's sidebar runs the Kinds key, then Topics, then Find me on. List pages (All posts, Essays, tag and category pages) carry a sidebar with a Kinds key (each kind as its highlighter chip with a count, linking to its page, current kind underlined) and the top 24 Topics (current topic bold with a pink underline); article pages keep their own sidebar and never show Topics. The All posts page (`notes.html`, URL kept for old links) is one year-grouped archive of every piece of any kind, newest first and not paginated, with essays and projects sized up as on home; the Essays page (`essays.html`) lists essays and projects together.
 
 Responsive: at 1080px and below the sidebar drops under the article at the measure width with a top rule instead of the side rule. At 760px and below the nav wraps to its own row, search collapses to its icon until focused, note rows stack date and kind above the title, essay dates drop under the summary, and scribbles stop floating.
 
@@ -284,7 +284,7 @@ Hand-drawn rough.js outlines are the primary form: rectangles with slight bowing
 ## Components
 
 ### Top bar
-- **Style:** wordmark left in Shantell Sans 700 (1.6rem to 2.1rem) with a black sketched underline (the logo), nav (Essays · Notes · Topics · About, with Essays pointing at `essays.html`, which lists essays and projects), then sketched search and theme toggle at the right; a sketched 2px ink rule beneath.
+- **Style:** wordmark left in Shantell Sans 700 (1.6rem to 2.1rem) with a black sketched underline (the logo), nav (All posts · Topics · About; `essays.html` still lists essays and projects, linked from the All posts intro rather than the nav), then sketched search and theme toggle at the right; a sketched 2px ink rule beneath.
 - **Nav states:** ink text; hover and current page slide in a yellow highlighter underlay at 42% of the line height (220ms ease-out); current page is bold.
 - **Mobile:** nav wraps to a full-width row; search collapses to its icon.
 
@@ -323,7 +323,7 @@ Category labels in note rows and list meta, lettered in Shantell Sans 700. The k
 A sidebar graph of the note's neighbours drawn with rough.js: notes linking in sit above the current note, notes it links out to sit below, in rows that fit the column; a dense side switches to pairs either side of a central trunk. Nodes are soft sketched boxes filled with paper and labelled in Shantell Sans; the current note is filled highlighter pink with a 2px stroke. Edges are curved doodle arrows showing link direction. Hover turns a node's outline and label link teal. Overflow becomes a "more connections" link with the hand-drawn arrow.
 
 ### Title swipe (signature)
-One highlighter stroke (7px, bowed) under the last line of the page's main title, as wide as that line, drawn on once at load (700ms, ease-out, 150ms delay) and static under reduced motion. Teal on notes, pages, home and All notes; yellow on category and Topics pages; pink on tag pages.
+One highlighter stroke (7px, bowed) under the last line of the page's main title, as wide as that line, drawn on once at load (700ms, ease-out, 150ms delay) and static under reduced motion. Teal on notes, pages, home and All posts; yellow on category and Topics pages; pink on tag pages.
 
 ### Diagrams
 Cut-paper blocks: flat highlighter-filled rectangles with no stroke, rotated 1 to 2 degrees, sized to their Shantell Sans 800 labels (48px horizontal and 30px vertical padding at 1920 by 1080), joined by straight ink arrows 20px thick with solid triangular heads. Arrow labels in Shantell Sans 700. Kind colours carry over (LLM or model steps in highlighter pink); at most five fills per diagram; mark ink on every fill; paper ground. Reference: `notes/_media/agent-harness/agent-harness-loop-colour.png`.
@@ -345,14 +345,14 @@ For tensors and maths, the same flat paper, drawn to match the code:
 - **Do** put exactly one highlighter swipe on a page, under the main title only, drawn on once at load.
 - **Do** keep links in running prose underlined; underline link lists on hover only.
 - **Do** keep the wordmark's black sketched underline; it is the logo.
-- **Do** make the home lede the H1 and keep the nav as Essays · Notes · Topics · About, with the wordmark as the home link.
-- **Do** give essays the room (cover thumbnail when the essay has one, title, summary dek, month-year date) and keep notes as compact rows, with at most a small cover thumbnail on the right; on home, essays and notes share one newest-first Latest feed on the note row's grid, essays sized up, and the Notes page excludes essays.
+- **Do** make the home lede the H1 and keep the nav as All posts · Topics · About, with the wordmark as the home link.
+- **Do** give essays the room (cover thumbnail when the essay has one, title, summary dek, month-year date) and keep notes as compact rows, with at most a small cover thumbnail on the right; on home and the All posts page, every kind shares one newest-first feed on the note row's grid, essays sized up.
 - **Do** give every sketched element a CSS border or rule fallback of the same geometry.
 - **Do** set text on highlighter fills in mark ink (#141414) in both themes.
 - **Do** keep light mode as marker on paper and dark mode as chalk on slate, and meet WCAG 2.2 AA in both.
 
 ### Don't:
-- **Don't** mix essays into the Notes archive or paginate it; it is one year-grouped page.
+- **Don't** split the All posts archive by kind or paginate it; it is one year-grouped page, filtered through kind pages.
 - **Don't** put swipes on section, sidebar or list headings ("they're a bit busy being on every title").
 - **Don't** add read-tracking marks such as visited ticks or progress ("My viewers don't need to track that").
 - **Don't** write copy in Lex's voice; scribbles appear only where Lex writes `> [!scribble]`.

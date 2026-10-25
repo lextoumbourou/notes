@@ -13,7 +13,7 @@ This brand book is the readable version of `PRODUCT.md` (who it is for, purpose,
 
 ## Content fundamentals
 
-- **Lex's words, unedited.** All prose is Lex's own. Never write, reword or "improve" copy in his voice, and never invent quotes, scribbles or claims. Interface labels (Notes, Topics, All essays) are the only words the design supplies, and they stay plain and third person.
+- **Lex's words, unedited.** All prose is Lex's own. Never write, reword or "improve" copy in his voice, and never invent quotes, scribbles or claims. Interface labels (All posts, Topics, Essays) are the only words the design supplies, and they stay plain and third person.
 - **Voice.** Plain, curious, first person, unpretentious, honest about uncertainty. Real examples from the site: "These are my working notes that I've been collecting over the last decade+ using the Zettelkasten method." and "I don't know how useful the notes' contents will be to others. However, I've made them public because it helps me motivate myself to create these notes, and you never know."
 - **Punctuation.** Never use em dashes. Use commas, parentheses, colons or separate sentences.
 - **Casing.** Sentence case for interface labels and headings the design adds. Note titles keep the casing Lex gave them.
@@ -79,9 +79,9 @@ Light is **marker on paper**, dark is **chalk on slate**. Define every colour fr
 
 - One calm column at the `measure`, with an optional sticky `sidebar` (360px) beside it, inside `page-max` (1280px) and a fluid `gutter`.
 - Home: the lede as H1, a short bio, **Essays** (cover thumbnail, title, summary, month and year, matching the Essays page), then **Notes** (12 compact rows: date, kind, title, no images).
-- Navigation: Essays · Notes · Topics · About, with the wordmark as home.
-- List pages (Notes, Essays, tags, categories) have a sidebar: a Kinds key that doubles as the colour legend, then Topics. Articles keep On this page, Linked from and the graph instead.
-- The Notes page is one year-grouped archive of every working note. The Essays page lists essays and projects together, with no kind chips.
+- Navigation: All posts · Topics · About, with the wordmark as home.
+- List pages (All posts, Essays, tags, categories) have a sidebar: a Kinds key that doubles as the colour legend, then Topics. Articles keep On this page, Linked from and the graph instead.
+- The All posts page is one year-grouped archive of every piece, essays included and sized up. The Essays page lists essays and projects together, with no kind chips.
 - Note kinds: `note` (`hl-sky`, lighter), `paper` (`hl-yellow`), `model` (`hl-pink`), `news` (`hl-violet`), `course` (`hl-orange`), `talk` (`hl-lime`), `book` (`hl-tan`); finished kinds `essay` and `project` (`hl-teal`).
 - Below 1080px the sidebar moves under the article; below 760px the nav wraps and rows stack.
 
@@ -89,7 +89,7 @@ Light is **marker on paper**, dark is **chalk on slate**. Define every colour fr
 
 - **Interface icons:** Lucide (`file-text` beside backlinks; callout icons), stroke style, inheriting colour.
 - **Social icons:** Simple Icons glyphs for Bluesky, Mastodon, LinkedIn, GitHub and RSS, filled with `ink`.
-- **The "more" arrow:** one authored hand-drawn SVG arrow after "All essays", "All notes" and similar links, in `link`. Never a text glyph such as →.
+- **The "more" arrow:** one authored hand-drawn SVG arrow after "All posts", "All topics" and similar links, in `link`. Never a text glyph such as →.
 - No emoji, no decorative icon tiles.
 
 ## Motion

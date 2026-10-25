@@ -1,26 +1,27 @@
 {% extends "base.html" %}
 
-{% block title %}Notes - {{ SITENAME }}{% endblock %}
+{% block title %}All posts - {{ SITENAME }}{% endblock %}
 
 {% block body_class %}page-list{% endblock %}
 
 {% block right_panel %}{% include 'partials/list_side.html' %}{% endblock %}
 
 {% block content %}
-{% set notes = articles | rejectattr('category.name', 'in', ['essay', 'project']) | sort(attribute='date', reverse=True) | list %}
+{% set notes = articles | sort(attribute='date', reverse=True) | list %}
 <section class="list-page">
   <header class="list-head">
-    <h1 class="list-title"><span data-sketch="swipe" data-sketch-color="--hl-teal" data-sketch-draw="on">Notes</span></h1>
-    <p class="list-meta">{{ notes | count }} working notes, newest first. Essays and projects have <a href="/essays.html">their own page</a>.</p>
+    <h1 class="list-title"><span data-sketch="swipe" data-sketch-color="--hl-teal" data-sketch-draw="on">All posts</span></h1>
+    <p class="list-meta">{{ notes | count }} posts of every kind, newest first. Filter by kind in the sidebar, or see just the <a href="/essays.html">essays</a>.</p>
   </header>
   {% for year, year_notes in notes | groupby('date.year') | sort(attribute='grouper', reverse=True) %}
   <section class="year" aria-labelledby="y{{ year }}">
     <h2 class="year-heading" id="y{{ year }}">{{ year }} <span class="topic-n">{{ year_notes | count }}</span></h2>
     <ol class="note-rows">
       {% for article in year_notes | sort(attribute='date', reverse=True) %}
-      <li class="note-row">
+      {% set is_essay = article.category.name in ['essay', 'project'] %}
+      <li class="note-row{% if is_essay %} is-essay{% endif %}">
         <time class="note-row-date" datetime="{{ article.date.isoformat() }}">{{ article.date.strftime('%b %-d') }}</time>
-        <span class="kind kind-{{ article.category.name | replace('/', '-') }}">{{ article.category.name.split('/') | last }}</span>
+        <a class="kind kind-{{ article.category.name | replace('/', '-') }}" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category.name.split('/') | last }}</a>
         <a class="note-row-title" href="/{{ article.url }}">{{ article.title }}</a>
         {%- set dek = (article.metadata.get('summary') or '')|striptags|trim %}
         {% if dek %}<p class="note-row-dek">{{ dek }}</p>{% endif %}
