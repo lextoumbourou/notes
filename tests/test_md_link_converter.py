@@ -29,12 +29,21 @@ class MdLinkConverterTests(unittest.TestCase):
             html = self.convert(notes, '<a href="a-long-filename-for-an-essay.md">An essay</a>')
             self.assertEqual(html, '<a href="short-essay.html">An essay</a>')
 
+    def test_uses_the_linked_notes_title_like_pelican(self):
+        with TemporaryDirectory() as tmp:
+            notes = Path(tmp)
+            (notes / "week-1-practical-aspects.md").write_text(
+                '---\ntitle: "Improving Deep Neural Networks - Week 1"\n---\n\nBody.\n'
+            )
+            html = self.convert(notes, '<a href="week-1-practical-aspects.md">Week 1</a>')
+            self.assertEqual(html, '<a href="improving-deep-neural-networks-week-1.html">Week 1</a>')
+
     def test_falls_back_to_the_filename(self):
         with TemporaryDirectory() as tmp:
             notes = Path(tmp)
-            (notes / "plain-note.md").write_text("---\ntitle: Plain\n---\n\nBody.\n")
-            html = self.convert(notes, '<a href="plain-note.md">Plain</a> <a href="missing-note.md">Gone</a>')
-            self.assertEqual(html, '<a href="plain-note.html">Plain</a> <a href="missing-note.html">Gone</a>')
+            (notes / "untitled-note.md").write_text("---\ndate: 2026-01-01\n---\n\nBody.\n")
+            html = self.convert(notes, '<a href="untitled-note.md">Untitled</a> <a href="missing-note.md">Gone</a>')
+            self.assertEqual(html, '<a href="untitled-note.html">Untitled</a> <a href="missing-note.html">Gone</a>')
 
     def test_keeps_a_section_anchor(self):
         with TemporaryDirectory() as tmp:

@@ -1,5 +1,6 @@
 from pelican.utils import slugify
 from pelican import signals
+from pelican.settings import DEFAULT_CONFIG
 from pelican.generators import ArticlesGenerator
 from functools import lru_cache
 from urllib.parse import unquote
@@ -65,7 +66,7 @@ def convert_md_links(instance):
             link_text = match.group(3)
 
             target = os.path.normpath(os.path.join(source_dir, unquote(url_path)))
-            slug = target_slug(target, file_stem, instance.settings)
+            slug = target_slug(target, file_stem, getattr(instance, 'settings', None) or DEFAULT_CONFIG)
             return f'<a href="{slug}.html{anchor}">{link_text}</a>'
 
         original = instance._content
