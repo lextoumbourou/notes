@@ -1,7 +1,7 @@
 ---
 title: Self-Attention
 date: 2024-01-30 00:00
-modified: 2026-10-12 09:19
+modified: 2026-10-26 07:24
 summary: A method of computing a token representation that includes the context of surrounding tokens.
 cover: /_media/scaled-dot-product-attention.png
 hide_cover_in_article: true
@@ -137,6 +137,7 @@ from torch.nn.functional import softmax
 class SingleHeadAttention(nn.Module):
     def __init__(self, embedding_dim, attention_dim):
         super().__init__()
+        self.attention_dim = attention_dim
         self.query_proj = nn.Linear(embedding_dim, attention_dim, bias=False)
         self.key_proj = nn.Linear(embedding_dim, attention_dim, bias=False)
         self.value_proj = nn.Linear(embedding_dim, attention_dim, bias=False)
@@ -148,7 +149,7 @@ class SingleHeadAttention(nn.Module):
 
         scores = query @ key.transpose(2, 1)
         # Scaling from Scaled Dot-Product Attention (not in the steps).
-        scores = scores / math.sqrt(key.shape[-1])
+        scores = scores / math.sqrt(self.attention_dim)
 
         attn_mask = torch.tril(torch.ones_like(scores)) == 0
         scores = torch.masked_fill(scores, attn_mask, float("-inf"))

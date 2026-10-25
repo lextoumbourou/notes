@@ -1,7 +1,7 @@
 ---
 title: Scaled Dot-Product Attention
 date: 2024-03-13 00:00
-modified: 2026-05-25 00:00
+modified: 2026-10-26 07:30
 summary: The specific self-attention formulation from the Transformer paper, distinguished by scaling scores by the square root of the attention dimension.
 cover: /_media/scaled-dot-product-attention.png
 tags:
@@ -34,10 +34,10 @@ out = scores @ value
 Well, because it's the [Standard Deviation](standard-deviation.md) of the [Dot Product](dot-product.md).
 
 - If you suppose the components of $q$ and $k$ are independent, each with mean 0 and variance 1 (standardise [Normal Distribution](normal-distribution.md))
-- Then q*k = \sum(qiki) os the sum of d_k terms
-- So the sum has mean 0 and variance d_k, which means a standard deviation of √d_k.
-- Dividing by by √d_k brings the variance back to 1 whatever the head size is. The softmax then sees inputs of the same scale at d_k = 64 or d_k = 1024.
-- Dividing by d_k would shrink the scores too much and flatten the attention towards uniform. Dividing by √d_k is the exact correction for how the spread grows.
+- Then $q \cdot k = \sum\limits_{i=1}^{d_k} q_i k_i$ is the sum of $d_k$ terms
+- So the sum has mean 0 and variance $d_k$, which means a standard deviation of $\sqrt{d_k}$.
+- Dividing by $\sqrt{d_k}$ brings the variance back to 1 whatever the head size is. The softmax then sees inputs of the same scale at $d_k = 64$ or $d_k = 1024$.
+- Dividing by $d_k$ would shrink the scores too much and flatten the attention towards uniform. Dividing by $\sqrt{d_k}$ is the exact correction for how the spread grows.
 
 
 ---
