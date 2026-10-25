@@ -1,7 +1,7 @@
 ---
 title: Essense of linear algebra
 date: 2021-04-06 00:00
-category: talk
+category: course
 cover: /_media/vectors-3blue1brown-cover.png
 status: draft
 parent: essence-of-linear-algebra

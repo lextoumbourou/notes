@@ -1,5 +1,5 @@
 ---
-category: note
+category: essay
 title: "Imagen 4 is faster, but GPT is still the GOAT"
 date: 2025-05-21 00:00
 modified: 2025-05-21 00:00

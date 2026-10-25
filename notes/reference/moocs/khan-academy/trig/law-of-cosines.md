@@ -1,7 +1,7 @@
 ---
 title: Law of cosines (Khan Academy)
 date: 2021-09-04 00:00
-category: talk
+category: course
 summary: Notes from the Khan Academy video series on the Law of Cosines
 cover: /_media/khan-academy-law-of-cosines-cover.png
 ---
