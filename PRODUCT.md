@@ -21,7 +21,13 @@ What Lex actually teaches is how to learn: he learns in public by teaching conce
 ## Operating Context
 
 - Notes are written in Obsidian in Lex's private vault, then published into this Pelican site and deployed to notesbylex.com via Netlify.
-- Content kinds (Pelican categories). Finished pieces, listed under Essays: `essay` (pieces Lex would post on Hacker News) and `project` (write-ups of things he built). Working notes, listed under Notes: `note` (idea notes, the bulk; the default when a note has no category), `paper` (paper summaries), `model` (model and model-family notes), `course`, `book`, `talk` (notes from courses, books, and talks or videos) and `news`.
+- Content kinds (Pelican categories), all listed together under All posts. Finished pieces, sized up in lists and gathered on `essays.html`: `essay` (pieces Lex would post on Hacker News) and `project` (write-ups of things he built). Working notes: `note` (idea notes, the bulk; the default when a note has no category), `paper` (paper summaries), `model` (model and model-family notes), `course` (courses and video lessons), `book`, `talk` (recorded talks) and `news`.
+- What makes an essay: it contributes new knowledge. It is not a summary of something, or an idea someone else had; it is Lex's experience, information collated in a way only he would, or an opinion or story. Tests for a borderline note:
+  - **Could only Lex have written it?** A paper summary or an explanation of someone else's idea fails; his experiment, opinion or synthesis passes.
+  - **It stands alone.** A reader arriving cold from a search or a share gets something complete without following links. Notes can be fragments that lean on the graph; essays can't.
+  - **It has a point.** It answers a question, makes a claim or tells a story with an ending.
+  - **A more specific kind wins unless Lex's contribution is the point.** Model notes include his testing and paper notes his opinions, but they stay `model` and `paper`. It is an essay when what he did or thinks is the main thing (the FLUX.1 Kontext experiment).
+  - **Length doesn't decide it.** A 600-word opinion can be an essay; a 3,000-word dataset write-up is a note.
 - Articles are the source for NotesByLex YouTube videos; posts are shared to Bluesky, Mastodon, Threads and LinkedIn, and replies there appear on the article as comments.
 - Readers arrive mid-graph far more often than at the home page.
 
