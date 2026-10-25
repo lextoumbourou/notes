@@ -1,5 +1,5 @@
 ---
-category: note
+category: essay
 title: Migrating TB HBase datasets across datacenters
 date: 2016-06-19 00:00
 tags:
