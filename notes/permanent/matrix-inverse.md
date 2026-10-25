@@ -7,6 +7,8 @@ tags:
   - LinearAlgebra
 cover: /_media/matrix-inverse-cover.png
 summary: A matrix that reverses a transformation.
+notebook:
+  markdownLinks: true
 ---
 
 
@@ -36,8 +38,41 @@ $\begin{bmatrix}1 & 3 \\ 2 & 4 \end{bmatrix} \begin{bmatrix}-2 & 1.5 \\ 1 & -0.5
 
 We can also use the [`np.linalg.inv`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.inv.html) method in Numpy to find the inverse.
 
-{% notebook permanent/notebooks/matrix-inverse.ipynb %}
+```python
+import numpy as np
+```
+<!-- nb-output hash="d37e32faa7933d9c" format="html" -->
 
+<!-- /nb-output -->
+
+```python
+m = np.array([[1, 3], [2, 4]])
+```
+<!-- nb-output hash="ef296739f12bcaa5" format="html" -->
+
+<!-- /nb-output -->
+
+```python
+m_inv = np.linalg.inv(m); m_inv
+```
+<!-- nb-output hash="e27120551d26c00e" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">array([[-2. ,  1.5],
+       [ 1. , -0.5]])
+</pre>
+</div>
+<!-- /nb-output -->
+
+```python
+m @ m_inv
+```
+<!-- nb-output hash="90b6f09419a0c744" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">array([[1., 0.],
+       [0., 1.]])
+</pre>
+</div>
+<!-- /nb-output -->
 The $ad-bc$ part of the expression is the [Matrix Determinate](matrix-determinate.md).
 
 For a larger matrix, we can use Gaussian Elimination to invert a matrix.

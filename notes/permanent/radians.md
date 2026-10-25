@@ -6,6 +6,8 @@ tags:
   - Trigonometry
 cover: /_media/radian-cover.png
 summary: A measurement of an angle in radiuses
+notebook:
+  markdownLinks: true
 ---
 
 A radian is a measurement of an angle.
@@ -24,4 +26,29 @@ We can then divide both sides by $\pi$ to find one radian: $\text{radian} = \fra
 
 Most programming languages provide simple functions for converting between radians and degrees.
 
- {% notebook permanent/notebooks/radian.ipynb %}
+```python
+import math
+```
+<!-- nb-output hash="3aa44c43711b31ae" format="html" -->
+
+<!-- /nb-output -->
+
+```python
+math.radians(360)
+```
+<!-- nb-output hash="1bbd0abc8cd874a9" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">6.283185307179586
+</pre>
+</div>
+<!-- /nb-output -->
+
+```python
+math.degrees(1)
+```
+<!-- nb-output hash="a838543df45892ae" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">57.29577951308232
+</pre>
+</div>
+<!-- /nb-output -->

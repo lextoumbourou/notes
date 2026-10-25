@@ -7,6 +7,8 @@ cover: /_media/dot-product-cover.png
 summary: An operation between 2 vectors that returns a number.
 tags:
   - LinearAlgebra
+notebook:
+  markdownLinks: true
 ---
 
 A dot product is an operation between 2 vectors with equal dimensions that returns a number.
@@ -73,8 +75,36 @@ In Machine Learning, we can train a model on a dataset of preference information
 
 Simple Python example:
 
-{% notebook permanent/notebooks/dot-product-examples.ipynb cells[0:2] %}
+```python
+def dot_product(a, b):
+    return sum(a*b for a, b in zip(a, b))
+```
+<!-- nb-output hash="916728cff47118a9" format="html" -->
 
+<!-- /nb-output -->
+
+```python
+A = [1, 2, 3]
+B = [4, 5, 6]
+
+dot_product(A, B)
+```
+<!-- nb-output hash="92d158197a381bcf" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">32
+</pre>
+</div>
+<!-- /nb-output -->
 Numpy example:
 
-{% notebook permanent/notebooks/dot-product-examples.ipynb cells[2:4] %}
+```python
+import numpy as np
+
+np.dot(A, B)
+```
+<!-- nb-output hash="a96e291743078fb9" format="html" -->
+<div class="nb-output">
+<pre class="nb-stream-stdout">np.int64(32)
+</pre>
+</div>
+<!-- /nb-output -->
