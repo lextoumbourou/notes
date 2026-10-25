@@ -48,6 +48,7 @@ ENV = os.environ.get("ENV", "prod")
 
 MARKDOWN = {
     "extensions": [
+        "markdown_notebook_embed",
         "markdown_notebook_fences",
         "markdown_mermaid",
         "markdown_fast_callouts",
@@ -59,6 +60,7 @@ MARKDOWN = {
         "markdown_toc_headings",
     ],
     "extension_configs": {
+        "markdown_notebook_embed": {"content_dir": "notes"},
         "markdown_notebook_fences": {},
         "markdown_mermaid": {},
         "markdown_fast_callouts": {},

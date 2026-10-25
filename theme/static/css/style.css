@@ -834,6 +834,29 @@ html[data-theme="dark"] .prose-body .callout[data-callout="question"] .callout-i
 div.output_subarea { max-width: 100% !important; }
 div.input_area > div.highlight { overflow: auto; }
 
+/* {% notebook %} embeds (markdown_notebook_embed.py): nbconvert's JupyterLab markup, styled like
+   the site's code blocks and Markdown Notebook outputs, without Jupyter's prompts. */
+.notebook-embed .jp-InputPrompt,
+.notebook-embed .jp-OutputPrompt,
+.notebook-embed .jp-Collapser { display: none; }
+.notebook-embed .jp-OutputArea { margin: -1em 0 1.8em; }
+.notebook-embed .jp-OutputArea-output { overflow-x: auto; }
+.notebook-embed .jp-OutputArea-output + .jp-OutputArea-output,
+.notebook-embed .jp-OutputArea-child + .jp-OutputArea-child { margin-top: 6px; }
+.notebook-embed .jp-OutputArea-output pre {
+  margin: 0;
+  padding: 12px 16px;
+  background: var(--code-bg);
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  overflow-x: auto;
+}
+.notebook-embed .jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"] pre { background: color-mix(in srgb, var(--hl-pink) 18%, var(--code-bg)); }
+.notebook-embed .jp-RenderedImage img { max-width: 100%; height: auto; }
+.notebook-embed .jp-RenderedHTMLCommon table { margin: 0; }
+
 /* DataFrames and legacy table classes */
 table.dataframe { border-collapse: collapse; font-size: 0.86rem; width: auto; max-width: 100%; margin: 0 0 22px; }
 table.dataframe th, table.dataframe td { border: 1px solid var(--rule-soft); padding: 6px 10px; text-align: left; white-space: nowrap; }
