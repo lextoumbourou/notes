@@ -5,28 +5,43 @@ from functools import lru_cache
 from urllib.parse import unquote
 import os
 import re
+import yaml
 from logging import getLogger
 
 logger = getLogger(__name__)
 
 
 @lru_cache(maxsize=None)
-def frontmatter_slug(path):
-    """The `slug:` from a linked note's frontmatter, so notes whose slug
-    differs from their filename still get the right URL."""
+def frontmatter(path):
+    """A linked note's frontmatter, or {} when it has none or can't be read."""
     try:
         with open(path, encoding='utf-8') as f:
             if f.readline().strip() != '---':
-                return None
+                return {}
+            lines = []
             for line in f:
                 if line.strip() == '---':
-                    return None
-                key, sep, value = line.partition(':')
-                if sep and key.strip() == 'slug':
-                    return value.strip().strip('"\'') or None
-    except OSError:
-        return None
-    return None
+                    break
+                lines.append(line)
+        meta = yaml.safe_load(''.join(lines))
+    except (OSError, yaml.YAMLError):
+        return {}
+    return meta if isinstance(meta, dict) else {}
+
+
+def target_slug(path, file_stem, settings):
+    """The slug Pelican gives a linked note: its `slug:`, else its title
+    slugified as Pelican does it, else (no title) its filename."""
+    meta = frontmatter(path)
+    if meta.get('slug'):
+        return str(meta['slug'])
+    source = meta.get('title') if settings.get('SLUGIFY_SOURCE', 'title') == 'title' else None
+    return slugify(
+        str(source or file_stem),
+        regex_subs=settings.get('SLUG_REGEX_SUBSTITUTIONS', []),
+        preserve_case=settings.get('SLUGIFY_PRESERVE_CASE', False),
+        use_unicode=settings.get('SLUGIFY_USE_UNICODE', False),
+    )
 
 
 def convert_md_links(instance):
@@ -50,7 +65,7 @@ def convert_md_links(instance):
             link_text = match.group(3)
 
             target = os.path.normpath(os.path.join(source_dir, unquote(url_path)))
-            slug = frontmatter_slug(target) or slugify(file_stem)
+            slug = target_slug(target, file_stem, instance.settings)
             return f'<a href="{slug}.html{anchor}">{link_text}</a>'
 
         original = instance._content

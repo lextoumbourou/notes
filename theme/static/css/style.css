@@ -528,7 +528,7 @@ a:hover .go-arrow { transform: translateX(2px); transition: transform 160ms var(
   text-decoration: none;
   white-space: nowrap;
 }
-.tag:hover { color: var(--tag-fg); background: color-mix(in srgb, var(--hl-teal) 45%, var(--tag-bg)); }
+a.tag:hover { color: var(--tag-fg); background: color-mix(in srgb, var(--hl-teal) 45%, var(--tag-bg)); }
 .tag.is-current { background: color-mix(in srgb, var(--hl-pink) 45%, var(--tag-bg)); }
 
 /* Source line for paper notes: set apart from the prose so it doesn't read as the first paragraph. */

@@ -61,9 +61,11 @@
     </p>
 
     {% if article.tags %}
+    {# Tag pages exist only for tags on published notes, so a draft's other tags stay unlinked. #}
+    {% set live_tags = tags | map('first') | map(attribute='name') | list %}
     <div class="note-tags">
       {% for t in article.tags %}
-      <a href="{{ SITEURL }}/{{ t.url }}" class="tag">{{ t }}</a>
+      {% if t.name in live_tags %}<a href="{{ SITEURL }}/{{ t.url }}" class="tag">{{ t }}</a>{% else %}<span class="tag">{{ t }}</span>{% endif %}
       {% endfor %}
     </div>
     {% endif %}
