@@ -5,6 +5,7 @@ from tempfile import TemporaryDirectory
 import unittest
 
 from frontmark.reader import FrontmarkReader
+from bs4 import BeautifulSoup
 from pelican.settings import DEFAULT_CONFIG
 
 
@@ -16,6 +17,36 @@ spec.loader.exec_module(reader_module)
 
 
 class MarkdownReaderTests(unittest.TestCase):
+    def test_notebook_input_default_reaches_renderer_and_resets_between_notes(self):
+        settings = copy.deepcopy(DEFAULT_CONFIG)
+        settings['MARKDOWN']['extensions'] = ['extra', 'markdown_notebook_fences']
+        reader = reader_module.SiteMarkdownReader(settings)
+        with TemporaryDirectory() as directory:
+            path = Path(directory, 'example.md')
+            path.write_text('''---
+title: Folded source
+notebook:
+  input: collapsed
+---
+
+```python
+print(1)
+```
+<div class="nb-output">1</div>
+
+```python {input=show}
+print(2)
+```
+''')
+            html, metadata = reader.read(str(path))
+            page = BeautifulSoup(html, 'html.parser')
+            self.assertEqual(len(page.select('details.nb-input')), 1)
+            self.assertIsNone(page.select_one('.nb-output').find_parent('details'))
+            self.assertEqual(metadata['notebook']['input'], 'collapsed')
+            path.write_text('---\ntitle: Normal source\n---\n\n```python\nprint(3)\n```')
+            html, _ = reader.read(str(path))
+            self.assertNotIn('<details', html)
+
     def test_frontmatter_and_saved_outputs_match_frontmark(self):
         settings = copy.deepcopy(DEFAULT_CONFIG)
         settings['MARKDOWN']['extensions'] = ['extra', 'toc', 'markdown_notebook_fences', 'markdown_toc_headings']

@@ -647,6 +647,10 @@ a.tag:hover { color: var(--tag-fg); background: color-mix(in srgb, var(--hl-teal
 .prose-body blockquote:has(> .callout:only-child) { padding: 0; }
 .prose-body blockquote:has(> .callout:only-child)::before { content: none; }
 
+/* Collapsible prose, such as quoted prompts. Notebook inputs have their own spacing. */
+.prose-body details:not(.nb-input) { margin: 1.5em 0; }
+.prose-body details:not(.nb-input) > summary { cursor: pointer; }
+
 /* Code */
 .prose-body div.highlight,
 .prose-body > pre {
@@ -822,6 +826,11 @@ html[data-theme="dark"] .prose-body .callout[data-callout="question"] .callout-i
 #bib p, #bib li { margin: 0 0 0.7em; }
 
 /* Notebook output */
+.nb-input { margin: 0 0 1.5em; }
+.nb-input > summary { cursor: pointer; color: var(--ink-2); }
+.nb-input > summary:hover { color: var(--ink); }
+.nb-input > .highlight { margin-top: 0.75em; }
+.nb-input + .nb-output { margin-top: 0; }
 .cell { margin-bottom: 1em; }
 .input_area { overflow-x: auto; }
 .output_wrapper { margin-top: 0.5em; }

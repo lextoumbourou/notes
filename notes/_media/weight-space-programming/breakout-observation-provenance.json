@@ -1,0 +1,23 @@
+{
+  "source": "https://rikiyat.github.io/blog/weight-space-programming/assets/which_game/breakout.gif",
+  "gif_sha256": "aa38350549f578757f6c743244e6e7dd8c6910ce45a3c5d711d7ec35bc02934b",
+  "displayed_frame_indices_zero_based": [
+    19,
+    20
+  ],
+  "method": "Exact solid-colour tile decoding; five channels reconstructed with NumPy.",
+  "caveat": "Not a released raw environment observation. History uses the preceding displayed frame; game-step spacing is unknown.",
+  "shape": [
+    10,
+    10,
+    5
+  ],
+  "channel_nonzero_counts": [
+    3,
+    1,
+    22,
+    36,
+    4
+  ],
+  "network_execution": false
+}

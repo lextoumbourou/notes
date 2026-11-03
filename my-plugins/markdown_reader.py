@@ -5,6 +5,14 @@ from pelican import signals
 
 
 class SiteMarkdownReader(FrontmarkReader):
+    def _parse(self, text):
+        metadata, content = super()._parse(text)
+        notebook = metadata.get('notebook')
+        # Frontmark removes YAML before Markdown sees the document. Pass the
+        # display default to the fence renderer without rewriting the source.
+        self._md.notebook_input = notebook.get('input') if isinstance(notebook, dict) else None
+        return metadata, content
+
     def read(self, source_path):
         content, metadata = super().read(source_path)
         headings = getattr(self._md, 'site_toc_headings', None)
