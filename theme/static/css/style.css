@@ -707,6 +707,19 @@ a.tag:hover { color: var(--tag-fg); background: color-mix(in srgb, var(--hl-teal
   border-bottom: 2px solid var(--ink);
   white-space: nowrap;
 }
+/* Image rows: a table of images gets equal columns, so header length doesn't size the images. */
+.prose-body table:has(td img) {
+  display: table;
+  table-layout: fixed;
+}
+.prose-body table:has(td img) th {
+  white-space: normal;
+}
+.prose-body table:has(td img) td img {
+  width: 100%;
+  max-height: none;
+  margin: 0;
+}
 
 /* Images and covers */
 .prose-body img {
