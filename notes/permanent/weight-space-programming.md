@@ -1,10 +1,11 @@
 ---
 title: Weight-Space Programming
+video: in-production
+youtube_video: https://www.youtube.com/watch?v=ZyIsa8adqU0
 date: 2026-11-03 00:00
-modified: 2026-11-04 06:45
+modified: 2026-11-08 18:26
 summary: Can frontier LLMs write, read and edit neural network weights directly?
-cover: /_media/weight-space-programming/mark-i-perceptron-navy-1960.jpg
-cover_credits: Mark I Perceptron at the Cornell Aeronautical Laboratory, released by the U.S. Navy on 24 June 1960. National Museum of the U.S. Navy, <a href="https://commons.wikimedia.org/wiki/File:330-PSA-80-60_(USN_710739)_(20897323365).jpg">Wikimedia Commons</a>, public domain.
+cover: /_media/weight-space-programming/weight-space-programming-cover.jpg
 tags:
   - LLMs
   - Interpretability
@@ -50,22 +51,22 @@ For the rest of the post, I want to take a closer look at the results and try to
 
 ### Game-playing network
 
-The model receives the game state as a 10 × 10 grid with five labelled binary channels:
+The LLM is attempting to read the weights of a game-playing model. Let's take a close look at that model.
 
-- **Agent:** cells occupied by the player-controlled object.
-- **Moving objects:** cells occupied by other moving objects.
-- **Reward targets:** cells containing objects that give a reward.
-- **Obstacles:** walls and other cells that block the agent or end the episode.
-- **Previous frame:** cells occupied by the agent or moving objects in the previous game step.
+The game-playing model receives the game state as a 10×10 grid with five labelled binary channels. The first channel describes the player-controlled agent, the next the moving objects, the third the reward targets, the fourth obstacles, and the final channel shows the previous game step.
 
-Each channel is a 10 × 10 mask of zeros and ones, and together they have shape `(10, 10, 5)`, flattened into 500 inputs for the small `500 → 32 → 32 → 5` network.
+Each channel is a mask of zeros and ones.
 
+The whole 10x10x5 grid is then flattened into an array of 500 inputs for the small `500 → 32 → 32 → 5` network.
+
+<!-- audio: skip -->
 Here's a frame from the authors' Breakout animation, split into those channels using NumPy:
 
 [![The authors' Breakout animation frame and five reconstructed binary channels. The agent channel marks a three-cell paddle on row 8; the moving-object channel marks a ball at row 6, column 5; reward targets occupy the top three playable rows; obstacles mark the border. The history illustration uses the preceding displayed GIF frame, which may differ from the preceding game step.](../_media/weight-space-programming/breakout-observation-example.png)](../_media/weight-space-programming/breakout-observation-example.svg)
 
 *Reconstructed from frames 19 and 20 of the [authors’ animation](https://rikiyat.github.io/blog/weight-space-programming/assets/which_game/breakout.gif). Coloured cells are 1; pale cells are 0. The history channel uses the preceding GIF frame, which may not match the previous game step.*
 
+<!-- audio: skip -->
 We can also inspect the agent channel for a [reconstructed example](../_media/weight-space-programming/breakout-observation-example.npz):
 
 ```python {id=breakout-input-example}
@@ -103,6 +104,7 @@ print(state[:, :, 0])  # Channel 0: the player-controlled paddle.
 
 Note that Astra wasn't actually given an input game-state example. It was told the input format, the channel meanings and which output meant each action.
 
+<!-- audio: skip -->
 Here's the authors' original prompt, with line wrapping added. I've left out the 17,253 numerical weights, but they're in the [full Breakout prompt](https://github.com/RikiyaT/lm_understand-logs/blob/4d09ba6d6a7e891dd8063974dfe81b3d78e3494f/exp1_which_game/runs/breakout/prompt.txt).
 
 *Prompt: Takehi et al., CC BY 4.0 [@takehi2026weightspaceLogs].*
@@ -182,10 +184,11 @@ For Breakout, the model figured out the largest agent weights sit on row 8, the 
 
 To me, this is a pretty incredible result.
 
-But others, like [Sean Goedecke](https://www.seangoedecke.com/llms-are-not-superhuman-at-reading-and-writing-neural-network-weights/), have argued that it's not “superhuman” AI research [@goedecke2026Weights]. With labelled inputs, a human researcher could reveal the same patterns with a few lines of NumPy.
+But others, like [Sean Goedecke](https://www.seangoedecke.com/llms-are-not-superhuman-at-reading-and-writing-neural-network-weights/) have argued that it's not “superhuman” AI research [@goedecke2026Weights]. With labelled inputs, a human researcher could reveal the same patterns with a few lines of NumPy.
 
 I've done that below, following his example. I reshaped the first-layer weights back into the grid and plotted the strength of the connections for each cell and channel.
 
+<!-- audio: skip -->
 The code downloads all four checkpoints and rounds the weights to three decimal places to match what Astra received.
 
 ```python {id=game-weight-plots}
@@ -265,6 +268,7 @@ The last column is a control: the same prompt with the numerical weights removed
 
 Each test used a fresh session at `high` effort with tools disabled. The authors accept Frogger for their Freeway-style road-crossing game, so I did too.
 
+<!-- audio: skip -->
 The [Opus responses](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/main/game-identification/results/opus-original-game-results.json), [Sol, Terra, Sonnet and Haiku responses](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/main/game-identification/results/four-model-game-results.json), and [Argon, Muse and Kimi responses](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/main/game-identification/results/three-model-api-results.json) include the answers, scores and usage. The [experiments repo](https://github.com/lextoumbourou/weight-space-programming-experiments) has the runner and scoring code.
 
 ### Language model test
@@ -273,7 +277,7 @@ The language-model test seems much harder.
 
 Astra got four transformer blocks from the middle of a language model, with no input or output layer and no labels on the 384 dimensions. It could use Python to analyse the weights, but couldn't run the blocks.
 
-It found a head that looks one character back, then used products of the weight matrices to find later heads that copy earlier text. Lots of copying heads suggested code. This approach was apparently already described in *A Mathematical Framework for Transformer Circuits* [@elhage2021mathematical], which is on my reading list for sure.
+It found a head that looks one character back, then used products of the weight matrices to find later heads that copy earlier text. Lots of copying heads suggested code. Also worth noting that this approach was apparently already described in the paper *A Mathematical Framework for Transformer Circuits* [@elhage2021mathematical].
 
 ---
 
@@ -317,20 +321,20 @@ In the 50-pass run, each pass let Astra test the model on a batch of practice pr
 
 The results suggest the edit helped the model finish its answers instead of repeating itself until it exhausted its token budget.
 
-I still say this is utterly mind-blowing, but it's important to note that it's more of a bug fix rather than a new capability.
+I still say this is utterly mind-blowing, but it's important to note that it's more of a bug fix rather than introducing a new capability.
 
 ## Failure cases and limitations
 
 The authors also tried improving **Gemma 3 270M**, which rarely looped. Astra couldn't find a way to meaningfully improve its maths scores.
 
-They also asked Astra to identify which of two models had been fine-tuned to be sycophantic. It failed in all four weight-only attempts. When it could inspect attention patterns from runs on texts it wrote itself, it identified the sycophant in all three pairs. It saw the attention patterns, not the models' answers.
+They also asked Astra to identify which of two models had been fine-tuned to be sycophantic (i.e. always going with the answer you suggest). It failed in all four weight-only attempts. When it could inspect attention patterns from runs on texts it wrote itself, it identified the sycophant in all three pairs. It saw the attention patterns, not the models' answers.
 
 ## Conclusions
 
-This seems like a step towards more interpretable models and an incredible finding. At the time of writing, there's been quite a lot of excitement about this technique, and [some pushback](https://honnibal.dev/blog/astra-read-write-misleading) on how the approach was reported [@honnibal2026Misleading]. But to my mind, this is still one of the most exciting discoveries of the LLM era.
+This seems like a step towards more interpretable models. At the time of writing, there's been quite a lot of excitement about this technique, and [some pushback](https://honnibal.dev/blog/astra-read-write-misleading) on how the approach was reported [@honnibal2026Misleading].
 
-Whether it's a step towards [Recursive Self Improvement](recursive-self-improvement.md) is less clear. A lot depends on whether these techniques continue to scale as frontier models become more capable.
+Whether it's a step towards [Recursive Self Improvement](recursive-self-improvement.md) or whether models are going to be editing and building themselves in the future is not clear. A lot of what the model does when reading and editing weights is based on fairly well-established techniques. The Qwen edit, for example, is a stronger version of a known weight orthogonalisation technique used to switch off refusal in chat models [@arditiRefusalLanguageModels2024].
 
-The [Kimi K3.1 Pro](kimi-k3-1-pro.md) approach to reducing cybersecurity capability was to remove cyber-related content from its mid-training data and cyber tasks from its RL environments [@moonshotaiKimiK31Pro2026]. If these techniques continue to scale, could a larger model edit the relevant weights directly?
+And the way it writes networks is actually quite close to how a researcher might have built a machine learning model in the 1990s - well before the deep learning era. The Go script hand-codes stones, liberties and groups in danger, the kind of features rule-based Go programs relied on for decades.
 
-And continuing down that road, I wonder if some of the enormous appetite for training compute could shift towards inference-driven model development. What would that mean for the valuations of hardware manufacturers focused on training compute?
+But all that said, this is still one of the most exciting discoveries of the LLM era, and I'm keen to see more exploration into this technique.
