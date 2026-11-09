@@ -2,8 +2,8 @@
 title: "Fable 5.2 One-Shotted My Nephew's Dream Game"
 slug: fable-5-2-one-shotted-my-nephews-dream-game
 date: 2026-11-10 06:50
-modified: 2026-11-10 09:20
-summary: "LLMs can make complete games that are fun, another insane milestone"
+modified: 2026-11-10 10:00
+summary: "LLMs can make complete multi-level games that are fun."
 cover: /_media/aidens-revenge/title.jpg
 category: essay
 tags:
@@ -15,9 +15,11 @@ tags:
 
 ---
 
-My nephews and I had been playing [Teenage Mutant Ninja Turtles: Shredder's Revenge](https://store.playstation.com/en-au/product/EP1470-CUSA30992_00-TMNTSRDOTEMUSIEE) on my old PS4 whenever they visited. It's a recreation of the OG beat 'em up arcade game I used to play for hours on a solo arcade machine at my local pool.
+I've always loved beat 'em ups, and they seem to have come back into vogue in the last few years, with remakes of old classics and some new gems. When my nephews come to visit, I use their visits as an excuse to try them out.
 
-One day, my younger nephew, Aiden, came to me with a proposal. Since I "knew about computers", could I make him his own TMNT-style game for his birthday?
+Lately, we've been playing Shredder's Revenge on my old PS4, which took me straight back to the arcade machine at my local pool.
+
+One day, my younger nephew, Aiden, came to me with a proposal. Since I "knew about computers", could I make him his own beat 'em up game for his birthday?
 
 He had already drawn up the game design docs. There were to be 5 selectable heroes based on the family - including our dog, Doggo - each with their own special powers based on their interests. He had 12 bosses drawn up and a loose outline of a story. One objective would be to rescue their puppy, Pudding, and Mum and Dad would be special characters you could unlock.
 
