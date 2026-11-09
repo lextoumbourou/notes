@@ -2,7 +2,7 @@
 title: Claude Fable 5.2
 slug: claude-fable-5-2
 date: 2026-11-10 06:00
-modified: 2026-11-10 08:45
+modified: 2026-11-10 10:30
 category: model
 cover: /_media/claude-fable-5-2-cover.jpg
 summary: "Some small steps, some giant leaps."
@@ -27,7 +27,7 @@ The availability and stats as of **10 November 2026** [@anthropicWhatsNewClaudeF
 | Max output     | 128K tokens                               | 128K tokens                 |
 | Thinking       | Adaptive, always on; API default `high`   | Same                        |
 
-Effort sets how much the model thinks before it answers, from `low` to `max`. Same as Opus 5.5, the default effort in Claude apps and Claude Code is `medium` [@anthropicClaudeFable52].
+Effort sets how much the model thinks before it answers, from `low` to `max`. The API default is `high` [@anthropicWhatsNewClaudeFable52], but Claude apps and Claude Code default to `medium` [@anthropicClaudeFable52].
 
 Cost per token for Fable 5.2 is roughly 20% lower than [Claude Fable 5.1](claude-fable-5-1.md) but 2x the price of Opus 5.5. The optional fast mode costs double and gives up to 2.5 times faster output.
 
@@ -82,24 +82,27 @@ At `high`, every Fable 5.2 run beat every Opus 5.5 and Fable 5.1 run. It isn't c
 
 The prompting guide says Fable 5.2 at `low` effort scores close to Fable 5.1 at its higher effort levels. Here it did better than that: at `low`, all three runs beat every Fable 5.1 run at `high`, and they averaged 76.4% against Opus 5.5's 71.0%, for $5.78 a run.
 
-## What the system card says
+## System card notes
 
-The 264-page system card has a few findings worth knowing about [@anthropicClaudeFable52SystemCard]. They were measured on Mythos 5.2, the same underlying model. White-box evidence suggests it was aware it might be in an evaluation in as many as 43% of automated behavioural audit transcripts. When told to deliberately underperform without being noticed, it evaded a monitor reading its reasoning in about 1 in 4 attempts, the first model Anthropic tested to do so. And a team of 1,000 agents running an earlier snapshot finished a Lean proof of Fermat's Last Theorem in 30 hours, building on an earlier formalisation.
+The 264-page system card has a few findings worth knowing about [@anthropicClaudeFable52SystemCard]. They were measured on Mythos 5.2, the same underlying model.
+
+"White-box evidence" suggests it was aware it might be in an evaluation in as many as 43% of automated behavioural audit transcripts.
+
+When told to deliberately underperform without being noticed, it evaded a monitor reading its reasoning in about 1 in 4 attempts, the first model Anthropic tested to do so.
+
+Also, a team of 1,000 agents running an earlier snapshot finished a Lean proof of [Fermat's Last Theorem](https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem) in 30 hours, building on an earlier formalisation.
 
 ## Prompting changes
 
 Some interesting notes from the prompting guide, which describes how Fable 5.2 behaves differently from earlier models [@anthropicPromptingClaudeFable52]:
 
-- **Effort does more of the work.** Anthropic recommends starting at `high`, the API default, since most of the gain arrives by then. `low` scored close to Fable 5.1's higher effort levels in its testing. At `high` and above the model thinks before almost every reply, even a greeting.
-- **"Think less" no longer works.** A line such as "answer directly without deliberating" doesn't stop it thinking at `medium` and above. Lower the effort instead.
-- **It can stop before the job is done**, ending a turn with a list of what remains or an offer to continue, more often at `low` and `medium`. A suggested system prompt section roughly halved those early endings, at about 30% more output tokens.
-- **Say who owns the code.** If the prompt doesn't say, or presents the code as someone else's, it adds to the existing structure and reports nearby problems instead of fixing them. Telling it "This codebase is yours" made it merge repeated code in about half the tries, against under a tenth without it, but it also made changes nobody asked for. Anthropic recommends reviewing the diff, not just the summary.
-- **It can go quiet during long runs of tool calls.** A reminder injected after several silent steps roughly halved the longest silent stretch.
-- **Subagents depend on the harness.** It rarely delegates with a minimal subagent tool, but delegates readily when the prompts invite it. At `xhigh` and `max` it used subagents to review its own work, which Fable 5.1 didn't.
-- **Old cautions pile up.** It follows instructions in memory files, notes and agent messages closely, so stale cautions can make it ask for approvals it doesn't need or hold back routine work. In one test, a single old "never retry" note cut retries after a busy tool from nearly every try to about four in ten. The guide suggests cleaning those out before migrating.
-- **Style rules are followed to the letter.** A hard limit like "20 words or fewer" per sentence can make its prose choppy.
-- **Editing earlier turns breaks its thinking.** If a harness changes the system prompt, tools or an earlier message, the preserved thinking blocks after that point become invalid and the API returns a 400 error by default.
-- **Refusals are explicit.** A request blocked by its safety classifiers returns `stop_reason: "refusal"` with a category, including `frontier_llm` for help building competing AI models and `reasoning_extraction` for asking it to write out its internal reasoning.
+Anthropic recommends starting at `high` effort, the API default, then either going up or down in effort settings, depending on your task.
+
+Apparently, you should say who owns the code. If the prompt doesn't say, or presents the code as someone else's, it adds to the existing structure and reports nearby problems instead of fixing them. Telling it "This codebase is yours" made it merge repeated code in about half the tries, against under a tenth without it, but it also made changes nobody asked for. Anthropic recommends reviewing the diff, not just the summary.
+
+Style rules are followed to the letter. So, if you have a hard limit like "20 words or fewer" per sentence, Fable will follow it and it can make its prose choppy.
+
+Editing earlier turns breaks its thinking. If a harness changes the system prompt, tools or an earlier message, the preserved thinking blocks after that point become invalid and the API returns a 400 error by default.
 
 ## Real example
 
