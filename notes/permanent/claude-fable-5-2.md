@@ -2,7 +2,7 @@
 title: Claude Fable 5.2
 slug: claude-fable-5-2
 date: 2026-11-10 06:00
-modified: 2026-11-10 10:30
+modified: 2026-11-10 11:00
 category: model
 cover: /_media/claude-fable-5-2-cover.jpg
 summary: "Some small steps, some giant leaps."
@@ -64,6 +64,19 @@ The other big jump is the **Remote Labor Index**, which gives the model real fre
 | RoboDojo Sim (robotics)            | **64.9** | 27.6 | 39.4 | 29.8 |
 
 *All results are reported by Anthropic. RoboDojo Sim is from the announcement, with every model run by Anthropic on the same internal harness at its highest effort; it is not in the system card. The rest are from Table 8.1.A of the system card. Fable 5.2 results use max effort averaged over five trials, except FrontierCode (best effort per model: xhigh for Fable, max for Opus 5.5 and GPT-6 Astra) and the Remote Labor Index (default effort). GPT-6 Astra figures come from OpenAI's published results or leaderboards, except OSWorld, which Anthropic ran itself through OpenAI's API.*
+
+### Independent results
+
+[Artificial Analysis](https://artificialanalysis.ai/) puts Fable 5.2 at the top of its Intelligence Index with 65, ahead of Opus 5.5 at 59 [@artificialAnalysisClaudeFable52] [@artificialAnalysisClaudeOpus55]. But look at the cost: a crazy $26.54 per Index task, the most expensive of the 73 models it has costed, against $10.04 for Opus 5.5. It's also one of the slowest, at 44.1 minutes per task.
+
+| Artificial Analysis | Fable 5.2 (max) | Opus 5.5 (max) |
+|---|---:|---:|
+| Intelligence Index | **65** | 59 |
+| Cost per Index task | $26.54 | **$10.04** |
+| Time per Index task | 44.1 min | **25.1 min** |
+| Output tokens to run the Index | 275M | **218M** |
+
+*Intelligence Index v5.0.1, checked 10 November 2026. Cost per task is each evaluation's token cost divided by its number of tasks, weighted by the evaluation's weight in the Index.*
 
 ## Weight-Space Programming: writing the weights of an MNIST classifier
 
