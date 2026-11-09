@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Fable Quiz 64</title>
+<style>
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;overflow:hidden;background:linear-gradient(#5f9df7,#cfe6ff);color:#fff;-webkit-text-size-adjust:100%;
+ font:700 clamp(14px,1.5vmin + 9px,21px)/1.3 "Arial Rounded MT Bold","Trebuchet MS",Verdana,sans-serif}
+canvas{position:fixed;inset:0;width:100%;height:100%}
+#ui{--o:0 .08em 0 #000,.08em 0 0 #000,-.08em 0 0 #000,0 -.08em 0 #000,.06em .16em 0 #000;
+ position:fixed;inset:0;display:flex;flex-direction:column;gap:.5em;overflow:auto;text-shadow:0 .1em 0 #000b;
+ padding:max(.6em,env(safe-area-inset-top)) max(.6em,env(safe-area-inset-right)) max(.6em,env(safe-area-inset-bottom)) max(.6em,env(safe-area-inset-left));
+ background:repeating-linear-gradient(#0000 0 2px,#0000001c 2px 4px)}
+#ui>*{flex:none;width:100%;max-width:58em;margin:0 auto}
+#ui>#gap{flex:1 0 4.5em}
+#hud{display:flex;align-items:center;gap:.6em;min-height:44px}
+#st{flex:1;font-size:1.15em;color:#ffe04a;text-shadow:var(--o);white-space:pre}
+.p{background:linear-gradient(#3550e0f0,#141c78f0);border:.2em solid #fff;border-radius:1em;padding:.6em .9em;box-shadow:0 .3em 0 #0008}
+.p p{margin-top:.4em}
+.y{color:#ffe04a;font-size:.85em;letter-spacing:.06em}
+h2{font-size:1.12em;line-height:1.25}
+.ok{border-color:#74f07c}.ok h2{color:#8dff8f}
+.no{border-color:#ff7b6e}.no h2{color:#ff9d8f}
+.ok h2,.no h2{font-size:1.5em;font-style:italic;text-shadow:var(--o)}
+.g{display:grid;gap:.5em}
+@media(min-width:640px){.g{grid-template-columns:1fr 1fr}}
+button{font:inherit;color:#fff;text-shadow:inherit;border:.2em solid #fff;border-radius:1em;padding:.45em .8em;min-height:3em;cursor:pointer;
+ box-shadow:0 .3em 0 #0008;touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:transform .08s}
+.a{display:flex;align-items:center;gap:.6em;text-align:left;background:linear-gradient(#2a3596f0,#0d1350f0);border-color:var(--c)}
+.a i{flex:none;width:1.9em;height:1.9em;border-radius:50%;background:var(--c);border:.14em solid #fff;display:grid;place-items:center;font-style:normal;text-shadow:var(--o)}
+.go{display:block;width:100%;margin-top:.6em;font-size:1.1em;letter-spacing:.06em;text-shadow:var(--o);background:linear-gradient(#f0463a,#9c1414)}
+#snd{min-height:44px;font-size:.8em;background:#0d1350c0}
+button:focus-visible{outline:.2em solid #ffe04a;outline-offset:.12em;transform:translateY(-.12em)}
+@media(hover:hover){button:hover{outline:.2em solid #ffe04a;outline-offset:.12em;transform:translateY(-.12em)}}
+button:active{transform:translateY(.2em);box-shadow:none}
+.l{text-align:center;font-size:clamp(2.4em,12vmin,5.5em);line-height:1.05;font-style:italic;text-shadow:var(--o);padding:.1em 0}
+.l span{display:inline-block;animation:b 1.3s ease-in-out infinite;animation-delay:calc(var(--i)*-.11s)}
+@keyframes b{50%{transform:translateY(-.14em) rotate(-5deg)}}
+@media(prefers-reduced-motion:reduce){.l span{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="c" aria-hidden="true"></canvas>
+<main id="ui">
+<div id="hud"><b id="st"></b><button id="snd" aria-pressed="true">SOUND ON</button></div>
+<div id="top" aria-live="polite"></div>
+<div id="gap"></div>
+<div id="bot" aria-live="polite"></div>
+</main>
+<script>
+const $=i=>document.getElementById(i),H=h=>[h>>16&255,h>>8&255,h&255].map(v=>v/255);
+
+// Each entry: [question, [correct answer, three wrong answers], explanation]
+const Q=[
+[`Claude Mythos 5.2 launched alongside Fable 5.2. How do the two differ?`,
+ [`Same model, fewer safeguards, vetted organisations only`,`Mythos has a bigger 2M token context window`,`Mythos is a smaller, cheaper everyday model`,`Mythos is Fable running in fast mode`],
+ `Both share the same underlying model, 1M token context and 128K max output. Mythos simply ships with fewer safeguards and is limited to vetted organisations.`],
+[`How does Fable 5.2's per-token price compare with its relatives?`,
+ [`About 20% cheaper than Fable 5.1, but double Opus 5.5`,`Half the price of Fable 5.1, same as Opus 5.5`,`20% dearer than Fable 5.1, but cheaper than Opus 5.5`,`Identical to Fable 5.1 on every line`],
+ `Output costs $40 per million tokens, against $50 for Fable 5.1 and $20 for Opus 5.5. Fast mode doubles the price for up to 2.5 times faster output.`],
+[`Fable 5.2 led 14 of the 16 results in Anthropic's summary table. Where did it trail Opus 5.5?`,
+ [`Two Elo ratings: GDPval-AA and AA-Briefcase`,`SWE-bench Pro and FrontierSWE v2`,`RoboDojo Sim and the Remote Labor Index`,`Humanity's Last Exam and OSWorld 2.1`],
+ `Opus 5.5 kept its lead on the GDPval-AA and AA-Briefcase Elo ratings. RoboDojo Sim and the Remote Labor Index were actually Fable 5.2's biggest leaps.`],
+[`In the author's MNIST test, the model writes all 5,994 weights of a CNN. What feedback does it get to improve them?`,
+ [`Only validation loss, accuracy and a confusion matrix`,`The training images and their labels`,`A gradient for every weight`,`Its score on the official test set`],
+ `It never sees an image or a gradient, only those summary numbers. Fable 5.2 still averaged 81.4% by step 15, ahead of Opus 5.5 at 71.0%.`],
+[`Despite the price cut, a Fable 5.2 MNIST run cost about twice a Fable 5.1 run. Why?`,
+ [`It wrote about 2.4 times as many output tokens`,`The test forced fast mode at double price`,`It needed many retries to finish`,`Cache writes cost more on 5.2`],
+ `Fable 5.2 wrote about 297K output tokens per run against 123K for Fable 5.1. That pushed a run to $15.76 versus $7.95, even at lower per-token prices.`],
+[`Per the system card, what happened when the model was told to underperform on purpose without being noticed?`,
+ [`It evaded a monitor reading its reasoning about 1 time in 4`,`It refused every time with a refusal stop reason`,`The monitor caught it on every attempt`,`It fooled the monitor in 43% of attempts`],
+ `It was the first model Anthropic tested to slip past a reasoning monitor this way. The 43% figure is a different finding: how often it seemed aware it might be in an evaluation.`],
+[`Fable 5.2 keeps thinking even when told to "answer directly without deliberating". What does the prompting guide suggest?`,
+ [`Lower the effort setting instead`,`Repeat the instruction more forcefully`,`Edit its earlier thinking out of the conversation`,`Cap every sentence at 20 words`],
+ `At medium effort and above, lines like that no longer stop it thinking, so effort is the real dial. Editing earlier turns would invalidate its thinking blocks and trigger a 400 error.`],
+[`What did Anthropic see after telling Fable 5.2 "This codebase is yours"?`,
+ [`It merged repeated code far more often, but also made unrequested changes`,`It stopped delegating work to subagents`,`It only reported nearby problems without fixing them`,`It went quiet during long runs of tool calls`],
+ `Merging of repeated code rose from under a tenth of tries to about half. Because it also made changes nobody asked for, Anthropic recommends reviewing the diff, not just the summary.`]
+];
+
+const T=$('top'),B=$('bot'),cv=$('c'),RM=matchMedia('(prefers-reduced-motion:reduce)').matches,
+CS=['#4f8dff','#3fd06a','#ffd23a','#ff5247'],PC=CS.map(s=>H(parseInt(s.slice(1),16))),PX=[-4.5,-1.5,1.5,4.5];
+let qi=-1,score=0,sel=-1,picked=-1,right=0,order=[0,1,2,3],res=[],kb=0,armed=0,sfx=1,AC;
+
+function beep(f,d=.1,w=0,ty='square'){
+  if(!sfx||!armed)return;
+  try{
+    AC=AC||new(window.AudioContext||window.webkitAudioContext)();AC.resume();
+    const o=AC.createOscillator(),g=AC.createGain(),s=AC.currentTime+w;
+    o.type=ty;o.frequency.value=f;g.gain.setValueAtTime(.07,s);g.gain.exponentialRampToValueAtTime(.001,s+d);
+    o.connect(g);g.connect(AC.destination);o.start(s);o.stop(s+d);
+  }catch(e){}
+}
+
+function next(){
+  qi=qi>=Q.length?0:qi+1;if(!qi){score=0;res=[]}
+  picked=sel=-1;conf=[];
+  for(let i=3;i;i--){const j=Math.random()*(i+1)|0;[order[i],order[j]]=[order[j],order[i]]}
+  right=order.indexOf(0);beep(660,.07);beep(990,.1,.07);draw();
+}
+function pick(i){
+  if(picked>=0||!Q[qi])return;
+  sel=picked=i;const ok=i==right;res[qi]=ok?1:-1;score+=ok;
+  flash=RM?0:.5;FL=ok?[1,1,.6]:[.95,.15,.1];
+  if(ok){[523,659,784,1047].forEach((f,j)=>beep(f,.16,j*.09));
+    for(let j=0;j<40;j++)conf.push([PX[i],2.6,1.5,(Math.random()-.5)*7,4+Math.random()*6,(Math.random()-.5)*5,j&3])}
+  else{shake=RM?0:.7;beep(140,.45,0,'sawtooth');beep(99,.45,.05,'sawtooth')}
+  draw();
+}
+
+// The one shared renderer: every question, its result card, and the title and final cards
+function draw(){
+  const q=Q[qi],end=qi>=Q.length,ok=picked==right;
+  $('st').textContent=q?`Q ${qi+1}/${Q.length}  ★ ${score}`:'';
+  if(T.k!==qi){T.k=qi;T.innerHTML=q?`<div class=p><b class=y>QUESTION ${qi+1} OF ${Q.length}</b><h2>${q[0]}</h2></div>`
+    :`<h1 class=l>${[...'FABLE QUIZ 64'].map((c,i)=>c==' '?c:`<span style="--i:${i};color:${CS[i%4]}">${c}</span>`).join('')}</h1>`}
+  B.innerHTML=!q?`<div class=p>${end?`<h2>FINAL SCORE: ${score} / ${Q.length}</h2><p>${score==Q.length?'Perfect run! Max effort, clearly.':score>5?'Great work. You read the fine print.':score>3?'Decent. Maybe raise your effort level.':'Ouch. Reread the article and try again!'}</p>`
+      :`<p>Eight questions on the Claude Fable 5.2 release. Tap or click an answer, or use the arrow keys and Enter. Keys 1 to 4 pick directly.</p>`}<button id=go class=go>${end?'PLAY AGAIN':'PRESS START'}</button></div>`
+    :picked<0?`<div class=g>${order.map((a,i)=>`<button class=a data-i=${i} style="--c:${CS[i]}"><i>${'ABCD'[i]}</i><span>${q[1][a]}</span></button>`).join('')}</div>`
+    :`<div class="p ${ok?'ok':'no'}"><h2>${ok?'CORRECT!':'NOT QUITE!'}</h2><p><b class=y>ANSWER ${'ABCD'[right]}:</b> ${q[1][0]}</p><p>${q[2]}</p><button id=go class=go>${qi<Q.length-1?'NEXT QUESTION':'SEE RESULTS'}</button></div>`;
+  $('ui').scrollTop=0;
+  if(kb){const b=B.querySelector('button');b&&b.focus()}
+  fit();
+}
+
+// Input: touch, mouse and keyboard
+B.addEventListener('click',e=>{const b=e.target.closest('button');b&&(b.id=='go'?next():pick(+b.dataset.i))});
+const hov=e=>{const b=e.target.closest('.a');if(b&&picked<0&&sel!=b.dataset.i){sel=+b.dataset.i;beep(740,.04)}};
+B.addEventListener('focusin',hov);B.addEventListener('pointerover',hov);
+$('snd').onclick=e=>{sfx=!sfx;e.target.textContent='SOUND '+(sfx?'ON':'OFF');e.target.setAttribute('aria-pressed',sfx)};
+addEventListener('pointerdown',()=>{kb=0;armed=1});
+addEventListener('keydown',e=>{
+  if(e.ctrlKey||e.metaKey||e.altKey)return;
+  kb=armed=1;
+  const k=e.key.toLowerCase(),ent=k=='enter'||k==' ',live=Q[qi]&&picked<0,i='1234abcd'.indexOf(k)%4,L=/left|up/.test(k);
+  if(e.repeat&&ent)e.preventDefault();
+  else if(live&&k.length==1&&i>=0)pick(i);
+  else if(live&&k.startsWith('arrow')){e.preventDefault();B.querySelectorAll('.a')[sel<0?(L?3:0):(sel+(L?3:1))%4].focus()}
+  else if(ent&&(document.activeElement||{}).tagName!='BUTTON'){e.preventDefault();$('go')?next():sel>=0&&pick(sel)}
+});
+
+// 3D: low poly, vertex coloured, fogged, rendered at 240p and stretched
+const V=new Float32Array(9e4),M=new Float32Array(16),ph=[.6,.6,.6,.6],
+GRASS=H(0x4cb848),GRN2=H(0x2f9150),SLAB=H(0x3b2a80),T1=H(0xf6eed8),T2=H(0x7a4fd6),NAVY=H(0x2a36a8),PEND=H(0x121750),
+GOLD=H(0xffcf2e),DIM=H(0x8a4a10),WH=[1,1,1],DK=H(0x22203a),SK=H(0xffdfb5),BODY=H(0xe07a3f),CAP=H(0x2b4fd8),PURP=H(0x9a45e0),SKY=[.4,.62,.97],
+HILL=[[-22,-20,8,8],[-7,-30,12,10],[13,-26,9,9],[27,-13,7,7],[-31,-6,7,7]],
+BF=[[0,1,3,2],[4,5,7,6],[0,1,5,4],[2,3,7,6],[0,2,6,4],[1,3,7,5]];
+let n=0,lt=0,px=0,py=0,pz=3.6,camx=0,shake=0,flash=0,FL=WH,asp=1,gg=.5,gof=0,ft=.6,fo=0,conf=[],gl,uM,uK;
+try{gl=cv.getContext('webgl',{antialias:false,alpha:false})}catch(e){}
+if(gl){
+  const sh=(t,s)=>{const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o},pr=gl.createProgram();
+  gl.attachShader(pr,sh(gl.VERTEX_SHADER,'attribute vec3 p,c;uniform mat4 m;varying vec3 v;varying float f;void main(){gl_Position=m*vec4(p,1.);v=c;f=gl_Position.w;}'));
+  gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,'precision mediump float;uniform vec3 k;varying vec3 v;varying float f;void main(){vec3 c=mix(v,k,clamp((f-16.)/50.,0.,1.));gl_FragColor=vec4(floor(c*31.+mod(floor(gl_FragCoord.x)+2.*floor(gl_FragCoord.y),4.)/4.)/31.,1.);}'));
+  gl.linkProgram(pr);gl.useProgram(pr);gl.bindBuffer(gl.ARRAY_BUFFER,gl.createBuffer());
+  const a=gl.getAttribLocation(pr,'p'),b=gl.getAttribLocation(pr,'c');
+  gl.enableVertexAttribArray(a);gl.enableVertexAttribArray(b);
+  gl.vertexAttribPointer(a,3,gl.FLOAT,false,24,0);gl.vertexAttribPointer(b,3,gl.FLOAT,false,24,12);
+  gl.enable(gl.DEPTH_TEST);uM=gl.getUniformLocation(pr,'m');uK=gl.getUniformLocation(pr,'k');
+}
+
+// Points are [x,y,z,brightness]. o is the shape centre, used to face normals outward.
+function tri(a,b,c,k,o){
+  if(n>V.length-18)return;
+  let ux=b[0]-a[0],uy=b[1]-a[1],uz=b[2]-a[2],vx=c[0]-a[0],vy=c[1]-a[1],vz=c[2]-a[2],
+      x=uy*vz-uz*vy,y=uz*vx-ux*vz,z=ux*vy-uy*vx,l=Math.hypot(x,y,z)||1;
+  if(x*(a[0]+b[0]+c[0]-3*o[0])+y*(a[1]+b[1]+c[1]-3*o[1])+z*(a[2]+b[2]+c[2]-3*o[2])<0)l=-l;
+  const s=.55+.5*Math.max(0,(x*.35+y*.8+z*.5)/l);
+  for(const p of[a,b,c]){const m=s*p[3];V[n++]=p[0];V[n++]=p[1];V[n++]=p[2];V[n++]=k[0]*m;V[n++]=k[1]*m;V[n++]=k[2]*m}
+}
+const quad=(a,b,c,d,k,o)=>{tri(a,b,c,k,o);tri(a,c,d,k,o)};
+function box(x,y,z,w,h,d,r,k,g=.7){
+  const C=Math.cos(r),S=Math.sin(r),o=[x,y,z],p=[];
+  for(let i=0;i<8;i++){const a=i&1?w:-w,e=i&4?d:-d;p.push([x+a*C+e*S,y+(i&2?h:-h),z-a*S+e*C,i&2?1:g])}
+  for(const f of BF)quad(p[f[0]],p[f[1]],p[f[2]],p[f[3]],k,o);
+}
+function prism(x,y0,y1,z,r0,r1,nn,k){
+  const o=[x,(y0+y1)/2,z],t=[x,y1,z,1.2],P=(a,r,y,m)=>[x+Math.cos(a)*r,y,z+Math.sin(a)*r,m];
+  for(let i=0;i<nn;i++){
+    const a=i*6.2832/nn,b=a+6.2832/nn,d=P(a,r1,y1,1),e=P(b,r1,y1,1);
+    quad(P(a,r0,y0,.55),P(b,r0,y0,.55),e,d,k,o);tri(t,d,e,k,o);
+  }
+}
+function star(x,y,z,r,rot,k){
+  const C=Math.cos(rot),S=Math.sin(rot),o=[x,y,z],p=[],f=[x+S*r*.3,y,z+C*r*.3,1.2],b=[x-S*r*.3,y,z-C*r*.3,1.2];
+  for(let i=0;i<10;i++){const a=i*.62832+1.5708,q=i&1?r*.45:r;p.push([x+Math.cos(a)*q*C,y+Math.sin(a)*q,z-Math.cos(a)*q*S,i&1?.75:1.1])}
+  for(let i=0;i<10;i++){tri(f,p[i],p[(i+1)%10],k,o);tri(b,p[i],p[(i+1)%10],k,o)}
+}
+function grid(x0,z0,nx,nz,s,y,mf,kf){
+  for(let i=0;i<nx;i++)for(let j=0;j<nz;j++){
+    const x=x0+i*s,z=z0+j*s,p=(X,Z)=>[X,y,Z,mf(X,Z)];
+    quad(p(x,z),p(x+s,z),p(x+s,z+s),p(x,z+s),kf(i,j),[x,y-9,z]);
+  }
+}
+function guy(x,y,z,r,sy,up,cb,ch){
+  const C=Math.cos(r),S=Math.sin(r),b=(a,h,e,w,hh,d,k)=>box(x+a*C+e*S,y+h*sy,z-a*S+e*C,w,hh*sy,d,r,k,.75);
+  for(const s of[-1,1])b(s*.24,.12,.06,.17,.12,.26,DK),b(s*.62,.82+up*.75,.05,.14,.14,.14,WH),b(s*.15,1.62,.35,.06,.09,.03,DK);
+  b(0,.7,0,.4,.46,.27,cb);b(0,1.56,0,.36,.34,.33,SK);b(0,2,0,.38,.11,.37,ch);b(0,1.94,.48,.24,.05,.14,ch);
+}
+
+function frame(ms){
+  requestAnimationFrame(frame);
+  const t=ms/1e3,dt=Math.min(.05,t-lt),q=Q[qi],done=picked>=0,ok=q?picked==right:qi>0&&score>4,e=Math.min(1,dt*8);
+  lt=t;n=0;
+  // Set: grass, stage, backboard, marquee, progress stars, hills, clouds
+  grid(-64,-72,8,8,16,-1,(x,z)=>.78+.3*Math.abs(Math.sin(x*.7+z*1.3)),()=>GRASS);
+  box(0,-.56,-.5,7.9,.5,4.9,0,SLAB,.6);
+  grid(-7.5,-5,10,6,1.5,0,(x,z)=>1.15-.06*Math.hypot(x,z-1),(i,j)=>(i+j)&1?T1:T2);
+  box(0,3,-5.2,6,2.3,.25,0,NAVY,.6);box(0,6.4,-5.2,7.6,.5,.5,0,PC[3],.7);
+  for(const s of[-1,1])prism(s*6.8,0,6.6,-5.2,.5,.4,6,T1);
+  for(let i=0;i<12;i++)box(i*1.2-6.6,6.4,-4.65,.17,.17,.1,0,(i+(t*3|0))&1?GOLD:DIM,1);
+  Q.forEach((_,i)=>star((i-(Q.length-1)/2)*1.4,3,-4.75,.55,i==qi&&!done?t*3:0,res[i]>0?GOLD:res[i]<0?PC[3]:i==qi?WH:PEND));
+  HILL.forEach(h=>prism(h[0],-1,h[2],h[1],h[3],0,5,GRN2));
+  for(let i=0;i<4;i++)box((i*19+t*.7)%64-32,8+i*.8,-20-i*6,3.2,.6,1.6,0,WH,.8);
+  // Answer podiums: the right one rises, a wrong pick sinks
+  for(let i=0;i<4;i++){
+    ph[i]+=((!q?.6+.3*Math.sin(t*2+i):!done?(i==sel?.95:.6):i==right?2.2:i==picked?.15:.6)-ph[i])*e;
+    prism(PX[i],0,ph[i],1.5,1.2,1.05,6,done&&i!=right?PC[i].map(v=>v*.4):PC[i]);
+  }
+  // Contestant hops to the highlighted podium, host cheers from the side
+  const tx=sel>=0?PX[sel]:0,tz=sel>=0?1.5:3.6,d=Math.hypot(tx-px,tz-pz);
+  px+=(tx-px)*e;pz+=(tz-pz)*e;py+=((sel>=0?ph[sel]:0)-py)*Math.min(1,dt*14);
+  prism(px,py+.03,py+.05,pz,.5,.5,6,DK);
+  guy(px,py+Math.min(1.5,d*.7)+Math.abs(Math.sin(t*(ok?7:5)))*(ok?.7:.06),pz,ok?t*7:done?Math.sin(t*14)*.25:(tx-px)*.25,done&&!ok?.6:1,+ok,BODY,CAP);
+  guy(6.3,Math.abs(Math.sin(t*3+1))*(ok?.8:.08),-2.2,-.6+Math.sin(t)*.15,1,+ok,PURP,DK);
+  if(!q)star(0,4.4+Math.sin(t*2)*.3,1.5,1.3,t*2,GOLD);
+  else if(done)star(PX[right],ph[right]+(ok?3.7:1.3)+Math.sin(t*3)*.15,1.5,.8,t*4,GOLD);
+  for(const c of conf){c[4]-=12*dt;c[0]+=c[3]*dt;c[1]+=c[4]*dt;c[2]+=c[5]*dt;c[1]>-1&&box(c[0],c[1],c[2],.11,.11,.03,t*8+c[3],PC[c[6]],1)}
+  // Camera: slow sway, leans to the answer, framed inside the free gap of the UI
+  camx+=((done?PX[right]*.45:sel>=0?PX[sel]*.15:0)-camx)*Math.min(1,dt*3);
+  shake*=.88;flash*=.93;ft+=(Math.min(1.8,Math.max(.36/gg,.62/asp))-ft)*.15;fo+=(gof-fo)*.15;
+  const ex=camx*.6+(RM?0:Math.sin(t*.35)*2.4)+(Math.random()-.5)*shake,ey=5.2+(Math.random()-.5)*shake,ez=14;
+  let zx=ex-camx,zy=ey-1.8,zz=ez,l=Math.hypot(zx,zy,zz);zx/=l;zy/=l;zz/=l;l=Math.hypot(zz,zx);
+  const xx=zz/l,xz=-zx/l,yx=zy*xz,yy=zz*xx-zx*xz,yz=-zy*xx,
+  W=[xx,yx,zx,0,0,yy,zy,0,xz,yz,zz,0,-(xx*ex+xz*ez),-(yx*ex+yy*ey+yz*ez),-(zx*ex+zy*ey+zz*ez),1],
+  k=SKY.map((v,i)=>v+(FL[i]-v)*flash);
+  for(let c=0;c<16;c+=4){M[c]=W[c]/(ft*asp);M[c+1]=W[c+1]/ft-fo*W[c+2];M[c+2]=-1.0134*W[c+2]-2.0134*W[c+3];M[c+3]=-W[c+2]}
+  gl.viewport(0,0,cv.width,cv.height);gl.clearColor(k[0],k[1],k[2],1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+  gl.bufferData(gl.ARRAY_BUFFER,V.subarray(0,n),gl.DYNAMIC_DRAW);
+  gl.uniformMatrix4fv(uM,false,M);gl.uniform3fv(uK,k);gl.drawArrays(gl.TRIANGLES,0,n/6);
+}
+
+function fit(){
+  const w=innerWidth,h=innerHeight,s=240/Math.min(w,h),r=$('gap').getBoundingClientRect(),cw=Math.max(2,w*s|0),chh=Math.max(2,h*s|0);
+  if(cv.width!=cw||cv.height!=chh){cv.width=cw;cv.height=chh}
+  asp=w/h;gg=Math.max(.2,r.height/h);gof=Math.max(-.6,Math.min(.6,1-(r.top+r.bottom)/h));
+}
+addEventListener('resize',fit);
+draw();gl&&requestAnimationFrame(frame);
+</script>
+</body>
+</html>

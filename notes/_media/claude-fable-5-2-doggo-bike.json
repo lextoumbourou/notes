@@ -1,0 +1,23 @@
+{
+  "provider": "anthropic",
+  "model": "claude-fable-5-2",
+  "generated_at": "2026-11-09T22:19:05.878010+00:00",
+  "stop_reason": "end_turn",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "inference_geo": "global",
+    "input_tokens": 505,
+    "output_tokens": 70463,
+    "output_tokens_details": {
+      "thinking_tokens": 48181
+    },
+    "server_tool_use": null,
+    "service_tier": "standard",
+    "speed": "standard"
+  }
+}

@@ -39,6 +39,10 @@ def _document(text: str) -> str:
     fence = re.fullmatch(r"```(?:html)?\s*\n(.*?)\n```", text, flags=re.I | re.S)
     if fence:
         text = fence[1].strip()
+    # Some models add a sentence before or after the document. Keep only the document itself.
+    document = re.search(r"<!doctype\s+html\s*>.*</html>", text, flags=re.I | re.S)
+    if document:
+        text = document[0]
     if not re.match(r"<!doctype\s+html\s*>\s*<html\b", text, flags=re.I):
         raise ValueError("Expected a complete HTML document starting with <!doctype html>")
     if not text.lower().endswith("</html>"):

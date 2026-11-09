@@ -108,7 +108,8 @@ load_html("quiz.html")
 All renderers accept `height=900` and `title="Generated HTML"`. The preview uses
 `srcdoc`, so it survives exporting Markdown without a running server. JavaScript
 runs in a sandboxed iframe without same-origin access, storage, forms or popups.
-Use self-contained HTML that does not need those features. This is display
+Use self-contained HTML that does not need those features. If the model adds a sentence before or after the document, only the part from
+`<!doctype html>` to the last `</html>` is saved (from 0.1.4). This is display
 isolation, not an HTML sanitizer; standalone HTML runs as a normal web page.
 
 `read_article("note.md")` excludes YAML frontmatter and reads up to the hidden

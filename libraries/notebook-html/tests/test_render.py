@@ -43,10 +43,14 @@ class RenderingTests(unittest.TestCase):
 
     def test_invalid_html_cannot_overwrite_page(self):
         self.path.write_text('original')
-        for text in ('', '<!doctype html><html><body>unfinished', 'Here is your page: ' + PAGE):
+        for text in ('', '<!doctype html><html><body>unfinished', 'Here is your page, no document.'):
             with self.subTest(text=text), self.assertRaises(ValueError):
                 render_html(text, self.path)
         self.assertEqual(self.path.read_text(), 'original')
+
+    def test_prose_around_the_document_is_dropped(self):
+        render_html('Here is your page:\n\n' + PAGE + '\n\nOpen it in a browser.', self.path)
+        self.assertEqual(self.path.read_text(), PAGE)
 
     def test_openai_saves_final_text_and_billing_details_only(self):
         response = {
