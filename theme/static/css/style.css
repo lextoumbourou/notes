@@ -504,7 +504,7 @@ a:hover .go-arrow { transform: translateX(2px); transition: transform 160ms var(
   line-height: 1.45;
   color: var(--ink-2);
   margin: -6px 0 14px;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 .note-byline {

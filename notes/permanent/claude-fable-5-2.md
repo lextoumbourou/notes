@@ -4,6 +4,7 @@ slug: claude-fable-5-2
 date: 2026-11-10 06:00
 modified: 2026-11-10 08:45
 category: model
+cover: /_media/claude-fable-5-2-cover.jpg
 summary: "Some small steps, some giant leaps."
 tags:
   - ModelRelease
