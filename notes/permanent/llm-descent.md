@@ -3,7 +3,6 @@ title: "Weight-Space Programming: training neural networks like a 1990s research
 slug: llm-descent
 date: 2026-11-07 00:00
 modified: 2026-11-09 10:00
-status: draft
 summary: "What an LLM actually does when it writes a neural network's weights."
 cover: /_media/llm-descent-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@adiyusuf90">Adi Yusuf</a> on <a href="https://unsplash.com/photos/people-hiking-on-foggy-mountain-j-UTH7jAnUs">Unsplash</a>
@@ -12,8 +11,6 @@ tags:
   - LLMs
   - Interpretability
 ---
-
-<!-- DRAFT: Lex's rewritten paragraphs are kept word for word. New prose in "What Astra's Go network actually is" and from "A 1990s computer-vision pipeline" onwards is placeholder for the voice pass. -->
 
 ## Intro
 
@@ -25,15 +22,17 @@ In this article, I look more closely at what the model is actually doing when it
 
 ## What Astra's Go network actually is
 
-The Go network is the most striking from-scratch result in the original post. Astra had to fill in every one of 1,480,274 weights: a 9x9 Go policy network with 243 inputs, six hidden layers of 512 units, and 82 outputs (one per point, plus pass), starting from all zeros [@takehi2026weightspace]. It had a Python sandbox, but no training or fitting of any kind, and no search. In some runs it could also spend "passes": play up to 128 practice games against practice opponents, or look at what the network does in chosen positions.
+To me, the from-scratch Go network was the most striking result in the original post.
 
-With 50 passes, its network won 84% and 81% of its games against two hidden PPO opponents, and beat a PPO network of the same size, trained on 20.5 million games, in 70% to 79% of games. With no passes at all, a single 336-line Python run still won just over half its games against the smaller PPO networks [@takehi2026weightspaceLogs].
+Astra was given a 1.5M-parameter 9x9 Go policy network (243 inputs, six hidden layers of 512 units, and 82 outputs, one per point plus pass) with every weight set to zero. It had a Python sandbox, but no training, fitting or search of any kind, and it was asked to make the network play Go as well as possible. In most runs it could also spend "passes": each pass plays up to 128 practice games and shows it the results. Runs got 0, 10, 25 or 50 passes.
 
-So how did it write 1.5 million weights without training? The authors published every log, and Astra's [own description](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp6_go_from_scratch/runs/budget_50/final_answer.md) of its final network answers it:
+With 50 passes, its network won 84% and 81% of its games against two small PPO networks it never played, and beat a PPO network of the same size, trained on 20.5 million games, in 70% to 79% of games. With no passes at all, a single 336-line Python run still won just over half its games against the smaller PPO networks [@takehi2026weightspaceLogs].
+
+So how was this possible? The authors published every log, and Astra's [own description](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp6_go_from_scratch/runs/budget_50/final_answer.md) of its final network answers it:
 
 > The hand-coded, symmetry-preserving policy combines approximate group-liberty propagation, captures, connected-group rescues, self-atari and eye avoidance, and ko/snapback risk suppression.
 
-Every item on that list is a staple of classical Go programs: counting liberties to tell which groups can be captured, recognising eyes to tell which groups live, handling ko, and estimating territory with an influence function, where each stone radiates influence that fades with distance. The first Go programs were built entirely on influence functions [@bouzyComputerGoAI2001] [@mullerComputerGo2002].
+I don't even know how to play Go, so I'm not going to pretend I understand this, but apparently, every item on that list is a staple of classical Go programs: counting liberties to tell which groups can be captured, recognising eyes to tell which groups live, handling ko, and estimating territory with an influence function, where each stone radiates influence that fades with distance. The first Go programs were built entirely on influence functions [@bouzyComputerGoAI2001] [@mullerComputerGo2002].
 
 Behind those 1.48 million weights is a [config of 26 hand-set numbers](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp6_go_from_scratch/runs/budget_50/work/final_policy_config.json), compiled into the network by a design script:
 
@@ -49,9 +48,13 @@ Behind those 1.48 million weights is a [config of 26 hand-set numbers](https://g
 }
 ```
 
-Its improvement from practice games was tuning those numbers by hand: between its first design and its final network, `rescue` went from 6.0 to 8.0, `contact` from 1.4 to 3.0 and `own_adj` from 0.25 to 0.8. That's how rule-based Go programs were built for decades [@mullerComputerGo2002].
+The design script builds the network layer by layer, like a hand-written board analysis: layer 1 counts each stone's liberties, layers 2 and 3 spread that evidence through connected stones, layer 4 flags groups in atari and self-atari, layer 5 scores captures and rescues, and layer 6 combines tactics with connection, territory and eyes. The 26 numbers mostly set how much each rule counts.
 
-So the paper's most impressive from-scratch network is a rule-based Go program, compiled into weights. That made me wonder whether the same is true more generally, so I ran my own experiments.
+Its improvement from practice games was tuning those numbers by hand: between its first design and its final network, `rescue` went from 6.0 to 8.0, `contact` from 1.4 to 3.0 and `own_adj` from 0.25 to 0.8. Practice games also led it to add five new rules along the way, such as a penalty for ko repetition (`repeat_risk`) and a bonus for third-line frameworks (`framework_bonus`). Play, diagnose, add a rule or retune one: that's how rule-based Go programs were built for decades [@mullerComputerGo2002].
+
+So the paper's most impressive from-scratch network is a rule-based Go program, compiled into weights. None of this was hidden: the authors' rules explicitly allowed writing weights from its own design, and Astra calls its own policy hand-coded. A hand-written program that beats a PPO network trained on 20.5 million games is still impressive engineering. It just isn't a new kind of training.
+
+I wanted to know whether Claude does the same, so I ran my own tests. It does: it builds its networks by hand, using techniques of yesteryear.
 
 ## Image classification
 
