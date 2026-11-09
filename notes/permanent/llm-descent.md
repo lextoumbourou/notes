@@ -1,8 +1,8 @@
 ---
-title: "LLM Descent - Weight-Space Programming writing experiments"
+title: "Weight-Space Programming: training neural networks like a 1990s researcher"
 slug: llm-descent
 date: 2026-11-07 00:00
-modified: 2026-11-08 18:30
+modified: 2026-11-09 09:00
 status: draft
 summary: "Training without training."
 cover: /_media/llm-descent-cover.jpg
@@ -13,21 +13,15 @@ tags:
   - Interpretability
 ---
 
-<!-- DRAFT: Lex's rewritten paragraphs are kept word for word. New prose from "A 1990s computer-vision pipeline" onwards (and the intro's last paragraph) is placeholder for the voice pass. -->
+<!-- DRAFT: Lex's rewritten paragraphs are kept word for word. New prose from "A 1990s computer-vision pipeline" onwards is placeholder for the voice pass. -->
 
 ## Intro
 
-[Weight-Space Programming](weight-space-programming.md) has me very intrigued this week. We've learned that models have the capability to read, write and edit weights, and it really feels like there's a lot of new ground to explore.
+[Weight-Space Programming](weight-space-programming.md) still has me pretty intrigued this week. The basic idea is that frontier LLMs can read, write and edit neural network weights, though there's certainly nuance to what's going on here. Still, it feels like there's a lot of new ground to explore.
 
-Predictably, there's been a [flood](https://github.com/SajjadPSavoji/awesome-weight-space-programming) of LLM-assisted follow-up experiments.
+In the [original blog post](https://rikiyat.github.io/blog/weight-space-programming/), beyond the reading and editing experiments, the authors had Astra build a network to play Go from scratch, then improve it by playing practice games, analysing how it lost, and editing the weights.
 
-In the [original blog post](https://rikiyat.github.io/blog/weight-space-programming/), on top of reading and editing experiments, the authors had Astra write a network for playing Go from scratch, then improved it by playing practice games, looking at how it lost and editing the weights.
-
-In this blog post, I add another droplet to that flood, testing whether Claude Opus 5.5 can construct neural network weights on familiar and synthetic datasets. The tests are all in a similar spirit to the original blog post: give the LLM multiple steps to try to produce a working neural network for a problem, without any regression, search or fitting of any kind. The only feedback the LLM gets is the training loss, accuracy and a confusion matrix.
-
-I take a multi-step, conversational approach to creating new networks, and it feels like a new kind of training paradigm; maybe we can call it **LLM Descent**?
-
-The short version of what I found: when Claude trains a network this way, it does classical machine learning. It hand-builds the kind of classifier we built before deep learning, and because it can never see the data, it measures the data through the feedback instead.
+In this article, I look more closely at what the model is actually doing when it builds a network from scratch, and compare it with some well-known but largely forgotten techniques from the 90s. I also run my own weight-writing experiments with Claude Opus 5.5, on a familiar image classification problem and on tabular data, and find that the techniques it reaches for look very similar to those of the pre-deep-learning era.
 
 ## Image classification
 
@@ -274,6 +268,8 @@ That isn't only true of Claude. The original paper's Go network, 1.48 million we
 
 > The hand-coded, symmetry-preserving policy combines approximate group-liberty propagation, captures, connected-group rescues, self-atari and eye avoidance, and ko/snapback risk suppression.
 
+Every item on that list is a staple of classical Go programs: counting liberties to tell which groups can be captured, recognising eyes to tell which groups live, handling ko, and estimating territory with an influence function, where each stone radiates influence that fades with distance. The first Go programs were built entirely on influence functions [@bouzyComputerGoAI2001] [@mullerComputerGo2002].
+
 Behind those 1.48 million weights is a [config of 26 hand-set numbers](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp6_go_from_scratch/runs/budget_50/work/final_policy_config.json), compiled into the network by a design script:
 
 ```json
@@ -288,7 +284,7 @@ Behind those 1.48 million weights is a [config of 26 hand-set numbers](https://g
 }
 ```
 
-Its improvement from practice games was tuning those numbers by hand: between its first design and its final network, `rescue` went from 6.0 to 8.0, `contact` from 1.4 to 3.0 and `own_adj` from 0.25 to 0.8. That's how rule-based Go programs worked for decades, and it's the same coordinate descent Claude did on the Titanic.
+Its improvement from practice games was tuning those numbers by hand: between its first design and its final network, `rescue` went from 6.0 to 8.0, `contact` from 1.4 to 3.0 and `own_adj` from 0.25 to 0.8. That's how rule-based Go programs were built for decades [@mullerComputerGo2002], and it's the same coordinate descent Claude did on the Titanic.
 
 So, at least for writing weights from scratch, weight-space programming is ordinary programming with the weights as the compile target, much like DeepMind's [Tracr](https://arxiv.org/abs/2301.05062), which compiles programs into transformer weights [@lindnerTracrCompiledTransformers2023]. The model writes a program in its head and delivers it as a network. None of this tests the other half of Weight-Space Programming, reading and editing weights that gradient descent trained, which is where the paper's headline results are.
 
