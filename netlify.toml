@@ -6,5 +6,8 @@
   # Build with the public SITEURL; build.sh defaults to local.
   ENV = "prod"
   # Match .python-version and pyproject.toml before setup.sh runs.
-  PYTHON_VERSION = "3.12"
+  # Pinned to 3.12.15 on 9 Nov 2026: the 3.12.16 python-build-standalone download
+  # (release 20261026) returns 504 from GitHub, failing every build. Return to
+  # "3.12" once that download works again.
+  PYTHON_VERSION = "3.12.15"
   PUPPETEER_SKIP_CHROMIUM_DOWNLOAD = "true"
