@@ -15,7 +15,7 @@ tags:
 
 ---
 
-I've always loved beat 'em ups, and they seem to have come back into vogue in the last few years, with remakes of old classics and some new gems. When my nephews come to visit, I use their visits as an excuse to try them out.
+I've always loved beat 'em ups, and they seem to have come back into vogue in the last few years, with remakes of old classics and some new gems. When my nephews visit, I use it as an excuse to try them out.
 
 Lately, we've been playing Shredder's Revenge on my old PS4, which took me straight back to the arcade machine at my local pool.
 
@@ -29,7 +29,7 @@ He had already drawn up the game design docs. There were to be 5 selectable hero
 
 At the time - around January 2026 - building an indie game from scratch was a pretty unreasonable ask for a birthday present, and I did warn him to temper his expectations. Still, I thought it would be a fun exercise to test the agentic tools at my disposal.
 
-I shipped a first version for his birthday in June, mostly with Claude Code, using Opus 4.8 and Fable 5. It worked, but it wasn't worth playing for more than a couple of minutes.
+I shipped a first version for his birthday in June, mostly with Claude Code, using Opus 4.8 and Fable 5, and a side-scrolling template courtesy of [AIOriented.dev](https://www.aioriented.dev/). It worked, but it wasn't worth playing for more than a couple of minutes.
 
 <figure style="margin:1.5em 0"><a href="../_media/aidens-revenge/first-version-fight.jpg"><img src="../_media/aidens-revenge/first-version-fight.jpg" alt="The June version: a single hero fighting two skeletons on a plain green field" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">The June version.</figcaption></figure>
 

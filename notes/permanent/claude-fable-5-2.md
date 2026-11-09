@@ -82,19 +82,6 @@ At `high`, every Fable 5.2 run beat every Opus 5.5 and Fable 5.1 run. It isn't c
 
 The prompting guide says Fable 5.2 at `low` effort scores close to Fable 5.1 at its higher effort levels. Here it did better than that: at `low`, all three runs beat every Fable 5.1 run at `high`, and they averaged 76.4% against Opus 5.5's 71.0%, for $5.78 a run.
 
-### A harder one: cats vs dogs
-
-The same loop on Kaggle's Dogs vs. Cats photos at 64x64, with a 24,898-parameter CNN and a 2x2 confusion matrix as the only feedback. Up to 50 steps, scored on the step with the lowest validation loss, stopping once that loss stops improving. One run per model, so treat the gap as noise.
-
-| Model | Best test accuracy | Steps | Output tokens | Cost |
-|---|---:|---:|---:|---:|
-| Opus 5.5 | **64.4%** | 17 | 41K | **$1.28** |
-| Fable 5.2 | 62.9% | 15 | 150K | $7.72 |
-
-*Random search with the same number of evaluations reaches about 51%. Adam reaches about 55% after 500 gradient steps and 74% after 5,000.*
-
-Here Fable 5.2 was no better than Opus 5.5, at six times the cost.
-
 ## What the system card says
 
 The 264-page system card has a few findings worth knowing about [@anthropicClaudeFable52SystemCard]. They were measured on Mythos 5.2, the same underlying model. White-box evidence suggests it was aware it might be in an evaluation in as many as 43% of automated behavioural audit transcripts. When told to deliberately underperform without being noticed, it evaded a monitor reading its reasoning in about 1 in 4 attempts, the first model Anthropic tested to do so. And a team of 1,000 agents running an earlier snapshot finished a Lean proof of Fermat's Last Theorem in 30 hours, building on an earlier formalisation.
