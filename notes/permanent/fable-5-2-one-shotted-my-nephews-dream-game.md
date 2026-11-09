@@ -2,7 +2,7 @@
 title: "Fable 5.2 One-Shotted My Nephew's Dream Game"
 slug: fable-5-2-one-shotted-my-nephews-dream-game
 date: 2026-11-10 06:50
-modified: 2026-11-10 08:30
+modified: 2026-11-10 09:20
 summary: "LLMs can make complete games that are fun, another insane milestone"
 cover: /_media/aidens-revenge/title.jpg
 category: essay
@@ -28,6 +28,8 @@ He had already drawn up the game design docs. There were to be 5 selectable hero
 At the time - around January 2026 - building an indie game from scratch was a pretty unreasonable ask for a birthday present, and I did warn him to temper his expectations. Still, I thought it would be a fun exercise to test the agentic tools at my disposal.
 
 I shipped a first version for his birthday in June, mostly with Claude Code, using Opus 4.8 and Fable 5. It worked, but it wasn't worth playing for more than a couple of minutes.
+
+<figure style="margin:1.5em 0"><a href="../_media/aidens-revenge/first-version-fight.jpg"><img src="../_media/aidens-revenge/first-version-fight.jpg" alt="The June version: a single hero fighting two skeletons on a plain green field" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">The June version.</figcaption></figure>
 
 Aiden was appreciative, but it clearly wasn't the game he'd imagined.
 
@@ -119,21 +121,33 @@ The very last rescue is Tai Ma, their great-grandmother, who died earlier in the
 
 Here are a few of Aiden's drawings next to the sprites the incredible ChatGPT Images 2.5 made from them.
 
-**Uncle Lex**: "electric guitar".
+<figure style="margin:1.5em 0"><a href="../_media/aidens-revenge/hero-03-uncle-lex.jpg"><img src="../_media/aidens-revenge/hero-03-uncle-lex.jpg" alt="Aiden's drawing of Uncle Lex next to the Uncle Lex sprite" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px"><strong>Uncle Lex</strong>: "electric guitar".</figcaption></figure>
 
-![Aiden's drawing of Uncle Lex next to the Uncle Lex sprite](../_media/aidens-revenge/hero-03-uncle-lex.jpg)
+<figure style="margin:1.5em 0"><a href="../_media/aidens-revenge/hero-08-doggo.jpg"><img src="../_media/aidens-revenge/hero-08-doggo.jpg" alt="Aiden's drawing of Doggo next to the Doggo sprite" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px"><strong>Doggo </strong>(my dog): she bites, and the spiky tail is her kick.</figcaption></figure>
 
-**Doggo** (my dog): she bites, and the spiky tail is her kick.
+<figure style="margin:1.5em 0"><a href="../_media/aidens-revenge/battle-wagon.jpg"><img src="../_media/aidens-revenge/battle-wagon.jpg" alt="Aiden's drawing of the Battle Wagon next to the Battle Wagon sprite" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px"><strong>The Battle Wagon</strong>: the villains steal it, which kicks off the whole game. Claude also decided that it should be an occasional power-up, where you grab the horn and it drives across the screen. That works.</figcaption></figure>
 
-![Aiden's drawing of Doggo next to the Doggo sprite](../_media/aidens-revenge/hero-08-doggo.jpg)
+<figure style="margin:1.5em 0"><a href="../_media/aidens-revenge/boss-08-shellshock.jpg"><img src="../_media/aidens-revenge/boss-08-shellshock.jpg" alt="Aiden's drawing of the 8th villain next to the Shellshock sprite" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px"><strong>8th: Shellshock</strong>. Aiden numbered his villains 1st to 12th, and the game uses that as the boss order.</figcaption></figure>
 
-**The Battle Wagon**: the villains steal it, which kicks off the whole game. Claude also decided that it should be an occasional power-up, where you grab the horn and it drives across the screen. That works.
+<details markdown="1">
+<summary>All 12 villains, drawing by sprite</summary>
 
-![Aiden's drawing of the Battle Wagon next to the Battle Wagon sprite](../_media/aidens-revenge/battle-wagon.jpg)
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:1em 0">
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-01-dogslayer.jpg"><img src="../_media/aidens-revenge/boss-01-dogslayer.jpg" alt="Aiden's drawing of his 1st villain next to the Dog Slayer sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">1st: Dog Slayer</figcaption></figure>
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-02-rammox.jpg"><img src="../_media/aidens-revenge/boss-02-rammox.jpg" alt="Aiden's drawing of his 2nd villain next to the Rammox sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">2nd: Rammox</figcaption></figure>
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-03-blazimp.jpg"><img src="../_media/aidens-revenge/boss-03-blazimp.jpg" alt="Aiden's drawing of his 3rd villain next to the Blazimp sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">3rd: Blazimp</figcaption></figure>
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-04-bullzerk.jpg"><img src="../_media/aidens-revenge/boss-04-bullzerk.jpg" alt="Aiden's drawing of his 4th villain next to the Bullzerk sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">4th: Bullzerk</figcaption></figure>
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-05-beedrill.jpg"><img src="../_media/aidens-revenge/boss-05-beedrill.jpg" alt="Aiden's drawing of his 5th villain next to the Beedrill sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">5th: Beedrill</figcaption></figure>
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-06-quadpunch.jpg"><img src="../_media/aidens-revenge/boss-06-quadpunch.jpg" alt="Aiden's drawing of his 6th villain next to the Quadpunch sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">6th: Quadpunch</figcaption></figure>
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-07-scowl.jpg"><img src="../_media/aidens-revenge/boss-07-scowl.jpg" alt="Aiden's drawing of his 7th villain next to the Sensei Scowl sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">7th: Sensei Scowl</figcaption></figure>
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-08-shellshock.jpg"><img src="../_media/aidens-revenge/boss-08-shellshock.jpg" alt="Aiden's drawing of his 8th villain next to the Shellshock sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">8th: Shellshock</figcaption></figure>
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-09-corvax.jpg"><img src="../_media/aidens-revenge/boss-09-corvax.jpg" alt="Aiden's drawing of his 9th villain next to the Corvax sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">9th: Corvax</figcaption></figure>
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-10-shade.jpg"><img src="../_media/aidens-revenge/boss-10-shade.jpg" alt="Aiden's drawing of his 10th villain next to the Shade sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">10th: Shade</figcaption></figure>
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-11-goldfist.jpg"><img src="../_media/aidens-revenge/boss-11-goldfist.jpg" alt="Aiden's drawing of his 11th villain next to the Goldfist sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">11th: Goldfist</figcaption></figure>
+<figure style="margin:0"><a href="../_media/aidens-revenge/boss-12-crocoking.jpg"><img src="../_media/aidens-revenge/boss-12-crocoking.jpg" alt="Aiden's drawing of his 12th villain next to the CrocoKing sprite" loading="lazy" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">12th: CrocoKing</figcaption></figure>
+</div>
 
-**8th: Shellshock**. Aiden numbered his villains 1st to 12th, and the game uses that as the boss order.
-
-![Aiden's drawing of the 8th villain next to the Shellshock sprite](../_media/aidens-revenge/boss-08-shellshock.jpg)
+</details>
 
 ## The final token tally
 
@@ -147,6 +161,8 @@ The final token tally looked something like this:
 
 So, call it 340M tokens for a 12-level, 18-character, four-player beat 'em up with original art, music and an announcer who shouts everyone's name.
 
-## Conclusion
+## A pretty wild milestone
 
 I must admit I never tested this with Opus 5.5, so I'm not sure whether this was possible before Fable 5.2 rolled around. Still, whether it's thanks to this generation or the last, this is a pretty wild milestone. Claude Code with Fable 5.2 is capable of making entire 12-level *fun* games - in one shot.
+
+<figure style="margin:1.5em 0"><a href="https://aidens-revenge.netlify.app/"><img src="../_media/aidens-revenge/title.jpg" alt="The Aiden's Revenge key art: the family heroes, Doggo and three of the villains under a stormy sky" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px"><a href="https://aidens-revenge.netlify.app/">Try it yourself</a>.</figcaption></figure>
