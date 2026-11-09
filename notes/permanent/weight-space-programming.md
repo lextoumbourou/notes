@@ -1,6 +1,6 @@
 ---
 title: Weight-Space Programming
-video: in-production
+video: published
 youtube_video: https://www.youtube.com/watch?v=ZyIsa8adqU0
 date: 2026-11-03 00:00
 modified: 2026-11-08 18:26
