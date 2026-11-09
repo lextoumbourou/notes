@@ -1,11 +1,11 @@
 ---
-title: "Opus 5.5 One-Shotted My Nephew's Dream Game"
-date: 2026-10-18 07:00
-modified: 2026-11-09 12:51
+title: "Fable 5.2 One-Shotted My Nephew's Dream Game"
+slug: fable-5-2-one-shotted-my-nephews-dream-game
+date: 2026-11-10 06:50
+modified: 2026-11-10 06:50
 summary: "Another insane milestone - LLMs can make games that are fun"
 cover: /_media/aidens-revenge/title.jpg
 category: essay
-status: draft
 tags:
   - GameProjects
   - CodingAgents
@@ -31,9 +31,9 @@ He gave me notes on what was missing, which I half-agreed to take on, but I was 
 
 Unfortunately, he did not forget. Every time I saw him, he asked about the game.
 
-## Enter: Opus 5.5
+## Enter: Fable 5.2
 
-I was lucky enough to get an early look at Opus 5.5, and was told to try it on "my most ambitious use case". Finishing this game immediately sprang to mind.
+I was lucky enough to get an early look at Fable 5.2, and was told to try it on "my most ambitious use case". Finishing this game immediately sprang to mind.
 
 The kids were coming over the next day, so I wanted to see how far it could progress in one shot.
 
@@ -59,7 +59,7 @@ When I woke up, the game was waiting for me.
 
 And I couldn't believe my eyes!
 
-Opus had generated a game that was fun. Like, a lot of fun. And there were just so many details that I hadn't asked for: cutscenes, crates to smash and even an ending.
+Fable had generated a game that was fun. Like, a lot of fun. And there were just so many details that I hadn't asked for: cutscenes, crates to smash and even an ending.
 
 It threw away most of my code and rewrote the game. It generated roughly 175 images and 140 audio clips.
 
@@ -83,15 +83,15 @@ A few rounds of playtesting, however, highlighted some deficiencies in the game.
 
 First, my older nephew, Owen, felt his character lacked a Hulk Smash move. Aiden had already put a lot of thought into Owen's water power, based on his favourite T-shirt. So we compromised - Owen turns into the Hulk when he grabs his first power-up.
 
-Opus made the change, with a special case for this character, and Owen was very happy with the results.
+Fable made the change, with a special case for this character, and Owen was very happy with the results.
 
 ![Hulk Owen slams the boardwalk with Hulk Smash, sending a shockwave through the henchmen](../_media/aidens-revenge/hulk-owen.jpg)
 
-Aiden also insisted that his special weapon be the most OP - the game is named after him after all. Opus obliged.
+Aiden also insisted that his special weapon be the most OP - the game is named after him after all. Fable obliged.
 
-Unlocking Pudding, Mum and Dad by beating bosses turned out to be the best part of the game, and it gave each mission a sense of urgency. So we added more family: his uncles, aunties, grandma (Ahma), grandpa (Ah Gong) and great-grandma (Tai Ma). For each one, I just gave Opus a few photos for reference and the special move Aiden picked. When he couldn't decide, he had us call them up in Penang and ask what they wanted.
+Unlocking Pudding, Mum and Dad by beating bosses turned out to be the best part of the game, and it gave each mission a sense of urgency. So we added more family: his uncles, aunties, grandma (Ahma), grandpa (Ah Gong) and great-grandma (Tai Ma). For each one, I just gave Fable a few photos for reference and the special move Aiden picked. When he couldn't decide, he had us call them up in Penang and ask what they wanted.
 
-Each time we added someone, Opus redrew the cutscene art and updated the story.
+Each time we added someone, Fable redrew the cutscene art and updated the story.
 
 ![The gang driving off in the Battle Wagon with the whole family in a cage on the roof](../_media/aidens-revenge/kidnapped-family.jpg)
 
@@ -145,4 +145,4 @@ So, call it 340M tokens for a 12-level, 18-character, four-player beat 'em up wi
 
 ## Conclusion
 
-This is a pretty wild milestone - Opus is capable of making *fun* games - in one shot.
+This is a pretty wild milestone - Fable is capable of making *fun* games - in one shot.
