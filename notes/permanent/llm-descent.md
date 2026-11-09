@@ -3,6 +3,7 @@ title: "Weight-Space Programming: training neural networks like a 1990s research
 slug: llm-descent
 date: 2026-11-07 00:00
 modified: 2026-11-09 10:00
+status: draft
 summary: "What an LLM actually does when it writes a neural network's weights."
 cover: /_media/llm-descent-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@adiyusuf90">Adi Yusuf</a> on <a href="https://unsplash.com/photos/people-hiking-on-foggy-mountain-j-UTH7jAnUs">Unsplash</a>
