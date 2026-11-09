@@ -2,9 +2,9 @@
 title: "Weight-Space Programming: training neural networks like a 1990s researcher"
 slug: llm-descent
 date: 2026-11-07 00:00
-modified: 2026-11-09 09:00
+modified: 2026-11-09 10:00
 status: draft
-summary: "Training without training."
+summary: "What an LLM actually does when it writes a neural network's weights."
 cover: /_media/llm-descent-cover.jpg
 cover_credits: Photo by <a href="https://unsplash.com/@adiyusuf90">Adi Yusuf</a> on <a href="https://unsplash.com/photos/people-hiking-on-foggy-mountain-j-UTH7jAnUs">Unsplash</a>
 category: essay
@@ -13,7 +13,7 @@ tags:
   - Interpretability
 ---
 
-<!-- DRAFT: Lex's rewritten paragraphs are kept word for word. New prose from "A 1990s computer-vision pipeline" onwards is placeholder for the voice pass. -->
+<!-- DRAFT: Lex's rewritten paragraphs are kept word for word. New prose in "What Astra's Go network actually is" and from "A 1990s computer-vision pipeline" onwards is placeholder for the voice pass. -->
 
 ## Intro
 
@@ -21,7 +21,37 @@ tags:
 
 In the [original blog post](https://rikiyat.github.io/blog/weight-space-programming/), beyond the reading and editing experiments, the authors had Astra build a network to play Go from scratch, then improve it by playing practice games, analysing how it lost, and editing the weights.
 
-In this article, I look more closely at what the model is actually doing when it builds a network from scratch, and compare it with some well-known but largely forgotten techniques from the 90s. I also run my own weight-writing experiments with Claude Opus 5.5, on a familiar image classification problem and on tabular data, and find that the techniques it reaches for look very similar to those of the pre-deep-learning era.
+In this article, I look more closely at what the model is actually doing when it builds a network from scratch, and compare it with some well-known but largely forgotten pre-deep-learning techniques. I also run my own weight-writing experiments with Claude Opus 5.5, on a familiar image classification problem and on tabular data, and find that the techniques it reaches for look very similar.
+
+## What Astra's Go network actually is
+
+The Go network is the most striking from-scratch result in the original post. Astra had to fill in every one of 1,480,274 weights: a 9x9 Go policy network with 243 inputs, six hidden layers of 512 units, and 82 outputs (one per point, plus pass), starting from all zeros [@takehi2026weightspace]. It had a Python sandbox, but no training or fitting of any kind, and no search. In some runs it could also spend "passes": play up to 128 practice games against practice opponents, or look at what the network does in chosen positions.
+
+With 50 passes, its network won 84% and 81% of its games against two hidden PPO opponents, and beat a PPO network of the same size, trained on 20.5 million games, in 70% to 79% of games. With no passes at all, a single 336-line Python run still won just over half its games against the smaller PPO networks [@takehi2026weightspaceLogs].
+
+So how did it write 1.5 million weights without training? The authors published every log, and Astra's [own description](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp6_go_from_scratch/runs/budget_50/final_answer.md) of its final network answers it:
+
+> The hand-coded, symmetry-preserving policy combines approximate group-liberty propagation, captures, connected-group rescues, self-atari and eye avoidance, and ko/snapback risk suppression.
+
+Every item on that list is a staple of classical Go programs: counting liberties to tell which groups can be captured, recognising eyes to tell which groups live, handling ko, and estimating territory with an influence function, where each stone radiates influence that fades with distance. The first Go programs were built entirely on influence functions [@bouzyComputerGoAI2001] [@mullerComputerGo2002].
+
+Behind those 1.48 million weights is a [config of 26 hand-set numbers](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp6_go_from_scratch/runs/budget_50/work/final_policy_config.json), compiled into the network by a design script:
+
+```json
+{
+  "capture": 9.0,
+  "rescue": 8.0,
+  "self_atari": 7.5,
+  "eye": 11.0,
+  "contact": 3.0,
+  "own_adj": 0.8,
+  ...
+}
+```
+
+Its improvement from practice games was tuning those numbers by hand: between its first design and its final network, `rescue` went from 6.0 to 8.0, `contact` from 1.4 to 3.0 and `own_adj` from 0.25 to 0.8. That's how rule-based Go programs were built for decades [@mullerComputerGo2002].
+
+So the paper's most impressive from-scratch network is a rule-based Go program, compiled into weights. That made me wonder whether the same is true more generally, so I ran my own experiments.
 
 ## Image classification
 
@@ -48,7 +78,7 @@ You can read [the whole prompt](https://github.com/lextoumbourou/weight-space-pr
 
 Claude's code runs in a sandbox that can only import numpy and math. Once it returns the weights, a test harness runs the network in MLX on the training and test images.
 
-Each turn, the LLM gets all the historical feedback on train / validation set and has up to 50 steps to solve the problem.
+Each turn, the LLM gets all the historical feedback on train / validation set and has up to 50 steps to solve the problem. Runs stop early once the training loss stops improving, and the network with the lowest training loss is the one scored on the test set.
 
 The training set here is 10,000 images held out from MNIST's own training split. Claude never sees the images, only the loss, accuracy and confusion matrix its network gets on them. The official 10,000 MNIST test images are scored at every step but never shown to Claude.
 
@@ -264,29 +294,18 @@ And every one of those steps is a technique from the classical machine learning 
 
 The network is never used for what makes neural networks special: learning features nobody wrote down. It's a compilation target. Claude designs a classical algorithm, then translates it into weights.
 
-That isn't only true of Claude. The original paper's Go network, 1.48 million weights written by Astra, is the same thing at a bigger scale. Astra's [own description](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp6_go_from_scratch/runs/budget_50/final_answer.md) of its final network:
-
-> The hand-coded, symmetry-preserving policy combines approximate group-liberty propagation, captures, connected-group rescues, self-atari and eye avoidance, and ko/snapback risk suppression.
-
-Every item on that list is a staple of classical Go programs: counting liberties to tell which groups can be captured, recognising eyes to tell which groups live, handling ko, and estimating territory with an influence function, where each stone radiates influence that fades with distance. The first Go programs were built entirely on influence functions [@bouzyComputerGoAI2001] [@mullerComputerGo2002].
-
-Behind those 1.48 million weights is a [config of 26 hand-set numbers](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp6_go_from_scratch/runs/budget_50/work/final_policy_config.json), compiled into the network by a design script:
-
-```json
-{
-  "capture": 9.0,
-  "rescue": 8.0,
-  "self_atari": 7.5,
-  "eye": 11.0,
-  "contact": 3.0,
-  "own_adj": 0.8,
-  ...
-}
-```
-
-Its improvement from practice games was tuning those numbers by hand: between its first design and its final network, `rescue` went from 6.0 to 8.0, `contact` from 1.4 to 3.0 and `own_adj` from 0.25 to 0.8. That's how rule-based Go programs were built for decades [@mullerComputerGo2002], and it's the same coordinate descent Claude did on the Titanic.
+Astra's Go network, from the start of this post, is the same thing at a bigger scale.
 
 So, at least for writing weights from scratch, weight-space programming is ordinary programming with the weights as the compile target, much like DeepMind's [Tracr](https://arxiv.org/abs/2301.05062), which compiles programs into transformer weights [@lindnerTracrCompiledTransformers2023]. The model writes a program in its head and delivers it as a network. None of this tests the other half of Weight-Space Programming, reading and editing weights that gradient descent trained, which is where the paper's headline results are.
+
+## LLM Descent: is it actually a thing?
+
+<!-- LEX: your section. Points the results support either way:
+- For: the training loss goes down on every run, step after step, using nothing but feedback (the loss-by-step chart). Each step is an update to the network driven by a measured signal, which is what training is.
+- Against: no step is a gradient. Each one is a hypothesis and a test: change one setting and keep or revert it (coordinate descent, line search), halve a group (group testing), or deliberately make the loss worse to measure something (probes). What descends is the hand-written program's handful of parameters, not the network's weights.
+- Efficiency: it beats random search with the same 50 evaluations by a wide margin, so the reasoning is doing real work per step. But each step costs cents to dollars, and Adam needs only 50 to 100 cheap steps to match or beat it.
+- Probing is the most "non-descent" part: steps that are useless as classifiers, worth it only because the best step is the one scored.
+- Possible verdict: "LLM Descent" is a good name for the loop, but what it optimises is a classical program, so it's closer to an engineer tuning a system than to gradient descent. -->
 
 ## The ceiling is the old ceiling
 
