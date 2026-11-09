@@ -100,17 +100,17 @@ All three runs descend, but they land in very different places: 65%, 72% and 86%
 
 ## A 1990s computer-vision pipeline
 
-Here's run 3, step by step. Every stage is a technique from before deep learning.
+Here's run 3, step by step. Every stage is a technique from before deep learning. In 1998, the paper that introduced MNIST described that era's approach: "Traditional pattern recognition is performed with two modules: a fixed feature extractor and a trainable classifier", and the feature extractor "is often entirely hand crafted" [@lecunGradientbasedLearningApplied1998]. That's the shape of everything Claude builds below.
 
 [![Line chart of test accuracy for each classifier Opus 5.5 wrote in run 3, over 50 steps, on four coloured bands. Hand-drawn templates (steps 1 to 13) climb from 43% and stall at about 67%. First probes (steps 14 to 20) are marked as ticks at the bottom. Naive Bayes from measured features (steps 21 to 42) lifts accuracy to about 85%. Calibration (steps 43 to 50) ends at 86%. Adam after 50 gradient steps is marked at 92%.](../_media/llm-descent/run-3-story.png)](../_media/llm-descent/run-3-story.png)
 
 ### 1. Hand-made features and templates (steps 1 to 13)
 
-Claude starts like a computer vision engineer from the 1990s. Its first layer is a set of oriented line detectors and an "ink present" blur, written from formulas, much like the edge filters of classic computer vision:
+Claude starts like a computer vision engineer from the 1990s. Its first layer is a set of oriented line detectors and an "ink present" blur, written from formulas, much like the Sobel edge gradients that 1990s digit recognisers started from [@favataMultipleFeatureResolution1996]:
 
 [![Two rows of eight 5 by 5 first-layer filters, teal for positive and pink for negative. Opus 5.5's row: four clean line detectors at 0, 45, 90 and 135 degrees, then four soft blob-shaped detectors. Adam's row: irregular, mixed patterns.](../_media/llm-descent/filters-written-vs-learned.png)](../_media/llm-descent/filters-written-vs-learned.png)
 
-On top of those, its second layer detects shapes: loops, horizontal and vertical bars, and "cavities" open to the left, right, top or bottom, the structural features early handwriting recognisers relied on. Then it draws a stroke template for each digit and classifies by template matching, nudging the details using the confusion matrix. That gets it from 43% to about 67%, and then it stalls:
+On top of those, its second layer detects shapes: loops, horizontal and vertical bars, and "cavities" open to the left, right, top or bottom, the structural and concavity features that handwriting recognisers relied on [@trierFeatureExtractionMethods1996] [@favataMultipleFeatureResolution1996]. Then it draws a stroke template for each digit and classifies by template matching, the oldest approach in character recognition [@moriHistoricalReviewOCR1992], nudging the details using the confusion matrix. That gets it from 43% to about 67%, and then it stalls:
 
 > Accuracy is stuck at about 66%, and the results swing wildly with κ, the guessed ratio of real feature strength to template strength.
 
@@ -138,7 +138,7 @@ Accuracy jumps from 71% to 76%. From there it alternates: probe a new feature, a
 
 > Features with measured per-digit statistics clearly beat hand-guessed templates.
 
-By the end, the final layer is textbook naive Bayes for yes/no features, sitting on top of the original templates. About 35 features each add log(p / (1 − p)) to a digit's score when they fire, with every p a number it measured through a probe and typed into its code (a top bar fires in 990 of every 1,000 sevens, and 7 of every 1,000 ones). It even scales the naive Bayes terms down, because its features overlap and naive Bayes overcounts overlapping evidence.
+By the end, the final layer is textbook naive Bayes for yes/no features, sitting on top of the original templates. Bayesian decision rules for reading characters go back to 1957 [@chowOptimumCharacterRecognition1957]. About 35 features each add log(p / (1 − p)) to a digit's score when they fire, with every p a number it measured through a probe and typed into its code (a top bar fires in 990 of every 1,000 sevens, and 7 of every 1,000 ones). It even scales the naive Bayes terms down, because its features overlap and naive Bayes overcounts overlapping evidence.
 
 ### 4. Calibration (steps 43 to 50)
 
@@ -290,7 +290,7 @@ Behind those 1.48 million weights is a [config of 26 hand-set numbers](https://g
 
 Its improvement from practice games was tuning those numbers by hand: between its first design and its final network, `rescue` went from 6.0 to 8.0, `contact` from 1.4 to 3.0 and `own_adj` from 0.25 to 0.8. That's how rule-based Go programs worked for decades, and it's the same coordinate descent Claude did on the Titanic.
 
-So, at least for writing weights from scratch, weight-space programming is ordinary programming with the weights as the compile target, much like DeepMind's [Tracr](https://arxiv.org/abs/2301.05062), which compiles programs into transformer weights. The model writes a program in its head and delivers it as a network. None of this tests the other half of Weight-Space Programming, reading and editing weights that gradient descent trained, which is where the paper's headline results are.
+So, at least for writing weights from scratch, weight-space programming is ordinary programming with the weights as the compile target, much like DeepMind's [Tracr](https://arxiv.org/abs/2301.05062), which compiles programs into transformer weights [@lindnerTracrCompiledTransformers2023]. The model writes a program in its head and delivers it as a network. None of this tests the other half of Weight-Space Programming, reading and editing weights that gradient descent trained, which is where the paper's headline results are.
 
 ## The ceiling is the old ceiling
 
