@@ -2,7 +2,7 @@
 title: "Weight-Space Programming: training neural networks like a 1990s researcher"
 slug: llm-descent
 date: 2026-11-07 00:00
-modified: 2026-11-09 10:00
+modified: 2026-11-09 19:02
 status: draft
 summary: "What an LLM actually does when it writes a neural network's weights."
 cover: /_media/llm-descent-cover.jpg
@@ -17,23 +17,23 @@ tags:
 
 [Weight-Space Programming](weight-space-programming.md) still has me pretty intrigued this week. The basic idea is that frontier LLMs can read, write and edit neural network weights, though there's certainly nuance to what's going on here. Still, it feels like there's a lot of new ground to explore.
 
-In the [original blog post](https://rikiyat.github.io/blog/weight-space-programming/), beyond the reading and editing experiments, the authors had Astra build a network to play Go from scratch, then improve it by playing practice games, analysing how it lost, and editing the weights.
+In the [original blog post](https://rikiyat.github.io/blog/weight-space-programming/), beyond the reading and editing experiments, the authors had Astra build a network to play Go from scratch, then improve it by playing practice games, analysing how it lost, and editing the weights. It really seems like a new training paradigm, something like *LLM Descent*, but is it?
 
 In this article, I look more closely at what the model is actually doing when it builds a network from scratch, and compare it with some well-known but largely forgotten pre-deep-learning techniques. I also run my own weight-writing experiments with Claude Opus 5.5, on a familiar image classification problem and on tabular data, and find that the techniques it reaches for look very similar.
 
-## What Astra's Go network actually is
+## Exploring the Go network
 
 To me, the from-scratch Go network was the most striking result in the original post.
 
 Astra was given a 1.5M-parameter 9x9 Go policy network (243 inputs, six hidden layers of 512 units, and 82 outputs, one per point plus pass) with every weight set to zero. It had a Python sandbox, but no training, fitting or search of any kind, and it was asked to make the network play Go as well as possible. In most runs it could also spend "passes": each pass plays up to 128 practice games and shows it the results. Runs got 0, 10, 25 or 50 passes.
 
-With 50 passes, its network won 84% and 81% of its games against two small PPO networks it never played, and beat a PPO network of the same size, trained on 20.5 million games, in 70% to 79% of games. With no passes at all, a single 336-line Python run still won just over half its games against the smaller PPO networks [@takehi2026weightspaceLogs].
+With 50 passes, its network won 84% of games against one small PPO network and 81% against another, neither of which it had played during development. It also beat a PPO network of the same size, trained on 20.5 million games, in 70% to 79% of games. With no passes at all, a single 336-line Python run still won just over half its games against the smaller PPO networks [@takehi2026weightspaceLogs].
 
-So how was this possible? The authors published every log, and Astra's [own description](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp6_go_from_scratch/runs/budget_50/final_answer.md) of its final network answers it:
+So, how is this even possible? Well, Astra spells it out in its [final answer](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp6_go_from_scratch/runs/budget_50/final_answer.md):
 
 > The hand-coded, symmetry-preserving policy combines approximate group-liberty propagation, captures, connected-group rescues, self-atari and eye avoidance, and ko/snapback risk suppression.
 
-I don't even know how to play Go, so I'm not going to pretend I understand this, but apparently, every item on that list is a staple of classical Go programs: counting liberties to tell which groups can be captured, recognising eyes to tell which groups live, handling ko, and estimating territory with an influence function, where each stone radiates influence that fades with distance. The first Go programs were built entirely on influence functions [@bouzyComputerGoAI2001] [@mullerComputerGo2002].
+I don't even know how to play Go, so I'm not going to pretend I understand this, but my LLM tells me that every item on that list is a staple of classical Go programs: counting liberties to tell which groups can be captured, recognising eyes to tell which groups live, handling ko, and estimating territory with an influence function, where each stone radiates influence that fades with distance. The first Go programs were built entirely on influence functions [@bouzyComputerGoAI2001] [@mullerComputerGo2002].
 
 Behind those 1.48 million weights is a [config of 26 hand-set numbers](https://github.com/RikiyaT/lm_understand-logs/blob/main/exp6_go_from_scratch/runs/budget_50/work/final_policy_config.json), compiled into the network by a design script:
 
@@ -53,17 +53,19 @@ The design script builds the network layer by layer, like a hand-written board a
 
 Its improvement from practice games was tuning those numbers by hand: between its first design and its final network, `rescue` went from 6.0 to 8.0, `contact` from 1.4 to 3.0 and `own_adj` from 0.25 to 0.8. Practice games also led it to add five new rules along the way, such as a penalty for ko repetition (`repeat_risk`) and a bonus for third-line frameworks (`framework_bonus`). Play, diagnose, add a rule or retune one: that's how rule-based Go programs were built for decades [@mullerComputerGo2002].
 
-So the paper's most impressive from-scratch network is a rule-based Go program, compiled into weights. None of this was hidden: the authors' rules explicitly allowed writing weights from its own design, and Astra calls its own policy hand-coded. A hand-written program that beats a PPO network trained on 20.5 million games is still impressive engineering. It just isn't a new kind of training.
+So the paper's most impressive from-scratch network is a rule-based Go program, compiled into weights. None of this was hidden - the authors' rules explicitly allowed writing weights from its own design, and Astra calls its own policy hand-coded. A hand-written program that beats a PPO network trained on 20.5 million games is still impressive engineering. It doesn't look like a new kind of training so much as a clever combination of training-free tricks of yesteryear.
 
-I wanted to know whether Claude does the same, so I ran my own tests. It does: it builds its networks by hand, using techniques of yesteryear.
+I wanted to try this approach, which I've been calling LLM Descent, on my own problems, starting with image classification, and see what we can learn.
 
-## Image classification
+## Building an image classifier with LLM Descent
 
 The MNIST digit dataset is the OG ML image classification problem. If you've come across this blog post, chances are you're familiar with it.
 
 [![Twenty handwritten digits from the MNIST training set, two of each digit from 0 to 9, drawn in dark ink on off-white 28 by 28 pixel squares.](../_media/llm-descent/mnist-examples.png)](../_media/llm-descent/mnist-examples.png)
 
-I built a test with a fixed CNN, then instructed the LLM to write code that sets all its weights, with a few rules: no example digits, and no fitting, regression, or searching.
+I built a test with a fixed CNN, then instructed Claude to write code that sets all its weights, with a few rules: no example digits, and no fitting, regression, or searching. That's a tighter setup than Astra's: no scipy or PyTorch, no running the network on chosen positions, and no practice games, only a score on the training set after each attempt.
+
+Claude has to set all 5,994 weights of this network:
 
 ```python
 model = nn.Sequential(
@@ -82,9 +84,9 @@ You can read [the whole prompt](https://github.com/lextoumbourou/weight-space-pr
 
 Claude's code runs in a sandbox that can only import numpy and math. Once it returns the weights, a test harness runs the network in MLX on the training and test images.
 
-Each turn, the LLM gets all the historical feedback on train / validation set and has up to 50 steps to solve the problem. Runs stop early once the training loss stops improving, and the network with the lowest training loss is the one scored on the test set.
+Each step, Claude gets all the feedback so far and has up to 50 steps to solve the problem. (The harness calls these 10,000 images the validation set, which is why the feedback says "validation", but since Claude learns from them they're really its training set.) Runs stop early once the training loss stops improving, and the network with the lowest training loss is the one scored on the test set.
 
-The training set here is 10,000 images held out from MNIST's own training split. Claude never sees the images, only the loss, accuracy and confusion matrix its network gets on them. The official 10,000 MNIST test images are scored at every step but never shown to Claude.
+The training set here is 10,000 images held out from MNIST's own training split. The official 10,000 MNIST test images are scored at every step but never shown to Claude.
 
 [![A loop of four flat coloured blocks joined by arrows: Claude writes build_weights(); a sandbox sets all 5,994 weights; the network runs on 10,000 training images; Claude gets back the loss, accuracy and confusion matrix and writes the next step. A separate block notes that the test set is never shown.](../_media/llm-descent/loop.png)](../_media/llm-descent/loop.png)
 
@@ -116,23 +118,21 @@ step | loss | accuracy
 At most 49 steps left. Reply with the complete build_weights() for step 2 in one Python code block.
 ```
 
-## The descent
+### The descent
 
-I ran it multiple times.
-
-It's quite interesting to explore the approach that Opus takes.
+I ran it three times.
 
 [![Step chart of the best training loss so far for three Opus 5.5 runs, with each step's loss as faint dots and probe steps as ticks along the top. Run 1 flattens at 1.25 (65% test accuracy) and stops at step 17. Run 2 descends steadily to 0.86 (72%) and stops at step 26. Run 3 keeps descending, with many probe steps, to 0.42 (86%) at the 50-step cap.](../_media/llm-descent/loss-by-step.png)](../_media/llm-descent/loss-by-step.png)
 
-All three runs descend, but they land in very different places: 65%, 72% and 86% on the test set. The difference comes down to a trick that two of the three runs invented, and run 3 used over and over.
+All three runs descend, but they land in very different places: 65%, 72% and 86% on the test set. The difference comes down to the approach each run takes, in particular a trick that two of the three runs invented and run 3 used over and over.
 
-## A 1990s computer-vision pipeline
+### A 1990s computer-vision pipeline
 
 Here's run 3, step by step. Every stage is a technique from before deep learning. In 1998, the paper that introduced MNIST described that era's approach: "Traditional pattern recognition is performed with two modules: a fixed feature extractor and a trainable classifier", and the feature extractor "is often entirely hand crafted" [@lecunGradientbasedLearningApplied1998]. That's the shape of everything Claude builds below.
 
 [![Line chart of test accuracy for each classifier Opus 5.5 wrote in run 3, over 50 steps, on four coloured bands. Hand-drawn templates (steps 1 to 13) climb from 43% and stall at about 67%. First probes (steps 14 to 20) are marked as ticks at the bottom. Naive Bayes from measured features (steps 21 to 42) lifts accuracy to about 85%. Calibration (steps 43 to 50) ends at 86%. Adam after 50 gradient steps is marked at 92%.](../_media/llm-descent/run-3-story.png)](../_media/llm-descent/run-3-story.png)
 
-### 1. Hand-made features and templates (steps 1 to 13)
+#### 1. Hand-made features and templates (steps 1 to 13)
 
 Claude starts like a computer vision engineer from the 1990s. Its first layer is a set of oriented line detectors and an "ink present" blur, written from formulas, much like the Sobel edge gradients that 1990s digit recognisers started from [@favataMultipleFeatureResolution1996]:
 
@@ -142,7 +142,7 @@ On top of those, its second layer detects shapes: loops, horizontal and vertical
 
 > Accuracy is stuck at about 66%, and the results swing wildly with κ, the guessed ratio of real feature strength to template strength.
 
-### 2. Measuring without looking (steps 14 to 20)
+#### 2. Measuring without looking (steps 14 to 20)
 
 A 1990s engineer would have looked at the digits to see where their features go wrong. Claude can't. At step 14, it does something I didn't expect:
 
@@ -156,7 +156,7 @@ A probe step is useless as a classifier (it scores between 3% and 24%), but it c
 
 Is that cheating? It doesn't break the rules: the code never sees an image, never runs the network and never fits anything. But it squeezes far more out of the training set than the loss alone: class-by-class feature statistics, read through a 100-number window one step at a time. The test set stays untouched, so the scores below are still honest held-out scores.
 
-### 3. Naive Bayes (steps 21 to 42)
+#### 3. Naive Bayes (steps 21 to 42)
 
 With a table of measured feature probabilities per digit, Claude reaches for a classic:
 
@@ -168,7 +168,7 @@ Accuracy jumps from 71% to 76%. From there it alternates: probe a new feature, a
 
 By the end, the final layer is textbook naive Bayes for yes/no features, sitting on top of the original templates. Bayesian decision rules for reading characters go back to 1957 [@chowOptimumCharacterRecognition1957]. About 35 features each add log(p / (1 − p)) to a digit's score when they fire, with every p a number it measured through a probe and typed into its code (a top bar fires in 990 of every 1,000 sevens, and 7 of every 1,000 ones). It even scales the naive Bayes terms down, because its features overlap and naive Bayes overcounts overlapping evidence.
 
-### 4. Calibration (steps 43 to 50)
+#### 4. Calibration (steps 43 to 50)
 
 The last few steps are fine-tuning by hand: sharpening or softening the logits (temperature scaling) and correcting class priors from the column totals.
 
@@ -176,7 +176,7 @@ The last few steps are fine-tuning by hand: sharpening or softening the logits (
 
 [![Three training confusion matrices for run 3, rows true digit and columns predicted digit, shaded pink. At step 1 (43% training accuracy) most digits are predicted as 1 or 7. At step 13 (66%) the diagonal is visible but noisy. At step 50 (87%) the diagonal dominates.](../_media/llm-descent/confusion-over-steps.png)](../_media/llm-descent/confusion-over-steps.png)
 
-### When fitting was allowed, it reached for 1936
+#### When fitting was allowed, it reached for 1936
 
 My first version of the prompt forgot to ban fitting. By step 4, Opus had written this:
 
@@ -188,7 +188,7 @@ W = np.linalg.solve(Sig, (mu - mbar).T).T  # a linear discriminant fitted to the
 
 It drew 300 random versions of each digit from its own stroke models and fitted a linear discriminant to them, Fisher's technique from 1936: training, on data it made up. That run reached 83% by step 14, before I stopped it and tightened the rules.
 
-## Where it landed
+### Where it landed
 
 [![Bar chart of test accuracy. Random search with 50 evaluations: 16%. Opus 5.5 run 1: 65%. Run 2: 72%. Run 3: 86%. Opus 5.5 with fitting allowed, 14 steps: 83%. Adam after 50 gradient steps: 92%. Adam after 5,000 steps: 99%.](../_media/llm-descent/final-scores.png)](../_media/llm-descent/final-scores.png)
 
