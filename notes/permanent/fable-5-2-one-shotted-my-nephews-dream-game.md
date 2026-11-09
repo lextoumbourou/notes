@@ -95,7 +95,7 @@ I asked Claude to make the change, with a special case for this character, and O
 
 ![Hulk Owen slams the boardwalk with Hulk Smash, sending a shockwave through the henchmen](../_media/aidens-revenge/hulk-owen.jpg)
 
-Aiden also insisted that his special weapon be the most OP - the game is named after him after all. Fable obliged, and turned it into a room-destroying thunder shock wave.
+Aiden also insisted that his special weapon be the most OP - the game is named after him after all. Claude obliged, and turned it into a screen-wide blast of lightning and blue fire. "Oh, that's perfect!", Aiden exclaimed.
 
 Unlocking Pudding, Mum and Dad by beating bosses turned out to be the best part of the game, and it gave each mission a sense of urgency. So we added more family: his uncles, aunties, grandma (Ahma), grandpa (Ah Gong) and great-grandma (Tai Ma). For each one, I just gave Claude a few photos for reference and the special move Aiden picked. When he couldn't decide, he had us call them up and ask what they wanted.
 
