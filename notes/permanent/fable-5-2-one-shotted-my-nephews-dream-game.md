@@ -63,6 +63,8 @@ Before bed, I let it rip with this prompt:
 >
 > Commit as you go. Don't worry about destroying what exists. Start fresh where it makes sense.
 
+The prompt uses a technique from this [Latent Space Engineering](https://blog.fsck.com/2026/01/30/Latent-Space-Engineering/) article about gassing up the agent to put it in a good "frame of mind".
+
 When I woke up, the game was waiting for me. And I couldn't believe my eyes!
 
 Fable had generated a game that was fun. Like, a lot of fun. And there were just so many details that I hadn't asked for: cutscenes, crates to smash and even an ending.
