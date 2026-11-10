@@ -2,7 +2,7 @@
 title: "Fable 5.2 One-Shotted My Nephew's Dream Game"
 slug: fable-5-2-one-shotted-my-nephews-dream-game
 date: 2026-11-10 06:50
-modified: 2026-11-10 10:00
+modified: 2026-11-10 12:00
 summary: "LLMs can make complete multi-level games that are fun."
 cover: /_media/aidens-revenge/title.jpg
 category: essay
@@ -63,7 +63,7 @@ Before bed, I let it rip with this prompt:
 >
 > Commit as you go. Don't worry about destroying what exists. Start fresh where it makes sense.
 
-The prompt uses a technique from this [Latent Space Engineering](https://blog.fsck.com/2026/01/30/Latent-Space-Engineering/) article about gassing up the agent to put it in a good "frame of mind".
+The prompt uses a technique from this [Latent Space Engineering](https://blog.fsck.com/2026/01/30/Latent-Space-Engineering/) article about gassing up the agent to put it in a good "frame of mind". Not sure how relevant it is in the Fable 5.2 age, but hey - it didn't hurt.
 
 When I woke up, the game was waiting for me. And I couldn't believe my eyes!
 
@@ -97,7 +97,7 @@ I asked Claude to make the change, with a special case for this character, and O
 
 ![Hulk Owen slams the boardwalk with Hulk Smash, sending a shockwave through the henchmen](../_media/aidens-revenge/hulk-owen.jpg)
 
-Aiden also insisted that his special weapon be the most OP - the game is named after him after all. Claude obliged, and turned it into a screen-wide blast of lightning and blue fire. "Oh, that's perfect!", Aiden exclaimed.
+Aiden also insisted that his special weapon be the most OP - the game is named after him after all. Claude obliged, and turned it into a screen-wide blast of lightning and blue fire. "Oh, that's perfect!" Aiden exclaimed.
 
 Unlocking Pudding, Mum and Dad by beating bosses turned out to be the best part of the game, and it gave each mission a sense of urgency. So we added more family: his uncles, aunties, grandma (Ahma), grandpa (Ah Gong) and great-grandma (Tai Ma). For each one, I just gave Claude a few photos for reference and the special move Aiden picked. When he couldn't decide, he had us call them up and ask what they wanted.
 
@@ -113,7 +113,7 @@ On top of the human family, they decided that their pet turtles, Goldie and Bill
 
 ![Photos of the two pet turtles next to the Goldie and Billy sprites](../_media/aidens-revenge/hero-09-turtles.jpg)
 
-The very last rescue is Tai Ma, their great-grandmother, who died earlier in the year. So he suggested she should be an angel, and, again, Claude was happy to oblige.
+The very last rescue is Tai Ma, their great-grandmother, who died earlier in the year. So Aiden suggested she should be an angel, and, again, Claude was happy to oblige.
 
 ![Tai Ma's Heavenly Light: pillars of golden light hold the enemies in place](../_media/aidens-revenge/super-heavenly-light.jpg)
 
