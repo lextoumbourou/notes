@@ -9,6 +9,7 @@ linkedin_post: https://www.linkedin.com/feed/update/urn:li:activity:752571568756
 mastodon_post: https://fedi.notesbylex.com/@lex/117589313334973344
 threads_post: https://www.threads.com/@lexisoninsta/post/DfinrImGfLK
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mzw6ooye7524
+x_post: https://x.com/notesbylex_/status/2119950355987591450
 hn_post: https://news.ycombinator.com/item?id=50433659
 category: essay
 tags:
