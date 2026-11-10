@@ -11,12 +11,14 @@ threads_post: https://www.threads.com/@lexisoninsta/post/DfinrImGfLK
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mzw6ooye7524
 x_post: https://x.com/notesbylex_/status/2119950355987591450
 hn_post: https://news.ycombinator.com/item?id=50433659
+video: in-production
 category: essay
 tags:
   - GameProjects
   - CodingAgents
 ---
 
+<!-- audio: skip -->
 **TL;DR** - Fable 5.2 one-shotted my nephew's dream game from a bunch of drawings, and it's a lot of fun. You can try it [here](https://aidens-revenge.pages.dev/).
 
 ---
@@ -37,6 +39,7 @@ At the time - around January 2026 - building an indie game from scratch was a pr
 
 I shipped a first version for his birthday in June, mostly with Claude Code, using Opus 4.8 and Fable 5, and a side-scrolling template courtesy of [AIOriented.dev](https://www.aioriented.dev/). It worked, but it wasn't worth playing for more than a couple of minutes.
 
+<!-- audio: skip -->
 <figure style="margin:1.5em 0"><a href="../_media/aidens-revenge/first-version-fight.jpg"><img loading="lazy" src="../_media/aidens-revenge/first-version-fight.jpg" alt="The June version: a single hero fighting two skeletons on a plain green field" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">The June version.</figcaption></figure>
 
 Aiden was appreciative, but it clearly wasn't the game he'd imagined.
@@ -53,6 +56,7 @@ The kids were coming over the next day, so I wanted to see how far it could prog
 
 Before bed, I let it rip with this prompt:
 
+<!-- audio: skip -->
 > I want you to help me finish this game. Make it as fun as possible. It should feel like a modern-day Ninja Turtles arcade game. An action-packed beat 'em up.
 >
 > Make the graphics amazing. You can use OpenAI's ChatGPT Images 2.5 for images. And ElevenLabs for sound effects. OpenAI key is /path/to/openai-key. ElevenLabs key is /path/to/elevenlabs-key
@@ -91,6 +95,7 @@ Before they came over, I charged up my four PS4 controllers and connected them a
 
 When they arrived, Aiden was absolutely delighted. "It's exactly as I imagined," he squealed.
 
+<!-- audio: skip -->
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;align-items:start;margin:1.5em 0">
 <figure style="margin:0"><a href="../_media/aidens-revenge/playtest-afternoon.jpg"><img loading="lazy" src="../_media/aidens-revenge/playtest-afternoon.jpg" alt="Two kids sitting on the floor playing the game on the TV" style="width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center 57%;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">The afternoon shift</figcaption></figure>
 <figure style="margin:0"><a href="../_media/aidens-revenge/playtest-hulk-owen.jpg"><img loading="lazy" src="../_media/aidens-revenge/playtest-hulk-owen.jpg" alt="Playing the Boardwalk Beach boss fight in the evening, with Hulk Owen on screen" style="width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px">Hulk Owen takes on Shellshock</figcaption></figure>
@@ -177,4 +182,5 @@ So, call it 340M tokens for a 12-level, 18-character, four-player beat 'em up wi
 
 I must admit I never tested this with Opus 5.5, so I'm not sure whether this was possible before Fable 5.2 rolled around. Still, whether it's thanks to this generation or the last, this is a pretty wild milestone. Claude Code with Fable 5.2 is capable of making entire 12-level *fun* games - in one shot.
 
+<!-- audio: skip -->
 <figure style="margin:1.5em 0"><a href="https://aidens-revenge.pages.dev/"><img loading="lazy" src="../_media/aidens-revenge/title.jpg" alt="The Aiden's Revenge key art: the family heroes, Doggo and three of the villains under a stormy sky" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px"><a href="https://aidens-revenge.pages.dev/">Try it yourself</a>.</figcaption></figure>
