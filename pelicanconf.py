@@ -58,6 +58,7 @@ MARKDOWN = {
         "markdown.extensions.meta",
         "markdown.extensions.toc",
         "markdown_toc_headings",
+        "markdown_lazy_images",
     ],
     "extension_configs": {
         "markdown_notebook_embed": {"content_dir": "notes"},
