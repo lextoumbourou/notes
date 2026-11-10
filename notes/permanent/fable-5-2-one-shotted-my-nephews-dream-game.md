@@ -11,7 +11,7 @@ tags:
   - CodingAgents
 ---
 
-**TL;DR** - Fable 5.2 one-shotted my nephew's dream game from a bunch of drawings, and it's a lot of fun. You can try it [here](https://aidens-revenge.netlify.app/).
+**TL;DR** - Fable 5.2 one-shotted my nephew's dream game from a bunch of drawings, and it's a lot of fun. You can try it [here](https://aidens-revenge.pages.dev/).
 
 ---
 
@@ -167,4 +167,4 @@ So, call it 340M tokens for a 12-level, 18-character, four-player beat 'em up wi
 
 I must admit I never tested this with Opus 5.5, so I'm not sure whether this was possible before Fable 5.2 rolled around. Still, whether it's thanks to this generation or the last, this is a pretty wild milestone. Claude Code with Fable 5.2 is capable of making entire 12-level *fun* games - in one shot.
 
-<figure style="margin:1.5em 0"><a href="https://aidens-revenge.netlify.app/"><img src="../_media/aidens-revenge/title.jpg" alt="The Aiden's Revenge key art: the family heroes, Doggo and three of the villains under a stormy sky" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px"><a href="https://aidens-revenge.netlify.app/">Try it yourself</a>.</figcaption></figure>
+<figure style="margin:1.5em 0"><a href="https://aidens-revenge.pages.dev/"><img src="../_media/aidens-revenge/title.jpg" alt="The Aiden's Revenge key art: the family heroes, Doggo and three of the villains under a stormy sky" style="width:100%;height:auto;display:block;margin:0;border-radius:6px"></a><figcaption style="font-size:0.85em;text-align:center;margin-top:6px"><a href="https://aidens-revenge.pages.dev/">Try it yourself</a>.</figcaption></figure>
