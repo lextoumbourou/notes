@@ -5,6 +5,11 @@ date: 2026-11-10 06:50
 modified: 2026-11-10 12:00
 summary: "LLMs can make complete multi-level games that are fun."
 cover: /_media/aidens-revenge/title.jpg
+linkedin_post: https://www.linkedin.com/feed/update/urn:li:activity:7525715687563137024/
+mastodon_post: https://fedi.notesbylex.com/@lex/117589313334973344
+threads_post: https://www.threads.com/@lexisoninsta/post/DfinrImGfLK
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mzw6ooye7524
+hn_post: https://news.ycombinator.com/item?id=50433659
 category: essay
 tags:
   - GameProjects
