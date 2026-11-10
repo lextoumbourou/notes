@@ -11,7 +11,6 @@ threads_post: https://www.threads.com/@lexisoninsta/post/DfinrImGfLK
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mzw6ooye7524
 x_post: https://x.com/notesbylex_/status/2119950355987591450
 hn_post: https://news.ycombinator.com/item?id=50433659
-video: in-production
 category: essay
 tags:
   - GameProjects
