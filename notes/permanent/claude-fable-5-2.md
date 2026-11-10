@@ -3,6 +3,11 @@ title: Claude Fable 5.2
 slug: claude-fable-5-2
 date: 2026-11-10 06:00
 modified: 2026-11-10 11:00
+linkedin_post: https://www.linkedin.com/feed/update/urn:li:activity:7525719031526653952/
+mastodon_post: https://fedi.notesbylex.com/@lex/117589369967788992
+threads_post: https://www.threads.com/@lexisoninsta/post/DfipUnPmryP
+bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mzw7igwd3w2y
+x_post: https://x.com/notesbylex_/status/2119953977228066904
 category: model
 cover: /_media/claude-fable-5-2-cover.jpg
 summary: "Some small steps, some giant leaps."
