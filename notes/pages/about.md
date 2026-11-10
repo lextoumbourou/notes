@@ -30,6 +30,7 @@ The main social media I'm active on is:
 * [Hacker News](https://news.ycombinator.com/user?id=lexandstuff)
 * [Bluesky](https://bsky.app/profile/notesbylex.com)
 * [Mastodon](https://fedi.notesbylex.com/@lex)
+* Email: [lextoumbourou@gmail.com](mailto:lextoumbourou@gmail.com)
 
 And previously have been active on:
 
