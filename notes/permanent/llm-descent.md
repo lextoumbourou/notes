@@ -2,7 +2,7 @@
 title: "Weight-Space Programming: training neural networks like a 1990s researcher"
 slug: llm-descent
 date: 2026-11-07 00:00
-modified: 2026-11-10 06:10
+modified: 2026-11-10 12:59
 status: draft
 summary: "What an LLM actually does when it writes a neural network's weights."
 cover: /_media/llm-descent-cover.jpg
