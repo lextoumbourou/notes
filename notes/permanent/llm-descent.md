@@ -120,7 +120,7 @@ We'll study all the steps taken in run 2, which turns out to be an interesting h
 
 #### 1. Hand-drawn templates (steps 1 to 3)
 
-Claude starts like a computer vision engineer from the 1990s. Its first layer is a set of line detectors at four angles, written from formulas, much like the Sobel edge gradients that 1990s digit recognisers started from [@favataMultipleFeatureResolution1996]:
+Claude starts like a 1990s computer vision engineer. Its first layer is a set of line detectors at four angles, written from formulas. They're much like the Sobel filter, a classic way to find edges in an image, which 1990s digit recognisers started with [@favataMultipleFeatureResolution1996].
 
 [![Two rows of eight 5 by 5 first-layer filters, teal for positive and pink for negative. Opus 5.5's row, from run 2: clean line detectors at 0, 45, 90 and 135 degrees, each used twice. Adam's row: irregular, mixed patterns.](../_media/llm-descent/filters-written-vs-learned.png)](../_media/llm-descent/filters-written-vs-learned.png)
 
