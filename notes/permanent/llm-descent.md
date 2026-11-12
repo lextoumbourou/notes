@@ -89,17 +89,21 @@ in one Python code block.
 
 I ran it three times.
 
-[![Two step charts of the best training loss so far, three runs each, with each step's loss as faint dots and probe steps as ticks along the top. Left, numbers only: the runs fall to between 0.85 and 0.91 and stop at steps 19 to 23, scoring 70%, 72% and 74% on the test set. Right, with images: the runs fall more slowly and for longer, to between 0.77 and 0.83, stopping at steps 27, 40 and 50 and scoring 73%, 75% and 77%.](../_media/llm-descent/loss-by-step.png)](../_media/llm-descent/loss-by-step.png)
+[![Step chart of the best training loss so far for three Opus 5.5 runs, with each step's loss as dots and probe steps as ticks along the top. Run 1 falls from 2.6 to 0.89 and stops at step 23 (72% test accuracy). Runs 2 and 3 start near 1.2 and stop at steps 21 and 19, at 0.91 (70%) and 0.85 (74%).](../_media/llm-descent/loss-by-step.png)](../_media/llm-descent/loss-by-step.png)
 
-The left panel is the version with numbers only. (The right is a second version where Claude can also see some digits; more on that below.) All three runs descend, and they land close together: 72%, 70% and 74% on the test set, after 19 to 23 steps.
+All three runs descend, and they land close together: 72%, 70% and 74% on the test set, after 19 to 23 steps.
 
-I want to explore what the runs did, step by step. We can see that it looks very similar to the hand-crafted approaches that early computer vision researchers used.
+Let's look at what the runs actually built, step by step. As we'll see, Claude's approach looks a lot like the hand-crafted methods early computer vision researchers used.
 
 ### A 1990s computer-vision pipeline
 
-In 1998, the paper that introduced MNIST described that era's approach: "Traditional pattern recognition is performed with two modules: a fixed feature extractor and a trainable classifier", and the feature extractor "is often entirely hand crafted" [@lecunGradientbasedLearningApplied1998]. That's pretty much the approach that Claude takes. All three runs built the same kind of pipeline, in roughly the same order:
+In 1998, LeCun's paper that introduced MNIST described that era's approach as "a fixed feature extractor and a trainable classifier", where the feature extractor "is often entirely hand crafted" [@lecunGradientbasedLearningApplied1998]. Accuracy, he wrote, "is largely determined by the ability of the designer to come up with an appropriate set of features", which is "a daunting task which, unfortunately, must be redone for each new problem."
 
-| Technique | Run a-1 | Run a-2 | Run a-3 |
+That daunting task is exactly what Claude takes on, for a few dollars a run.
+
+All three runs built the same kind of pipeline, in roughly the same order:
+
+| Technique | Run 1 | Run 2 | Run 3 |
 |---|---:|---:|---:|
 | Hand-drawn digit templates | step 1 | step 1 | step 1 |
 | Nearest-centroid or cosine matching | step 1 | step 4 | step 2 |
@@ -110,45 +114,65 @@ In 1998, the paper that introduced MNIST described that era's approach: "Traditi
 
 *The first step at which each run's reply uses the technique.*
 
-#### 1. Hand-made features and templates
+We'll study all the steps taken in run 2, which turns out to be an interesting history lesson on how we created image classification models before the deep learning era. It scored the lowest of the three (70.5%), but it has the richest history.
 
-Claude starts like a computer vision engineer from the 1990s. Its first layer is a set of oriented line or edge detectors, written from formulas, much like the Sobel edge gradients that 1990s digit recognisers started from [@favataMultipleFeatureResolution1996]:
+[![Line chart of test accuracy for every network run 2 wrote, over 21 steps, on five coloured bands: templates (steps 1 to 3), nearest centroid (4 to 6), naive Bayes (7 to 9), probes (10 to 16) and calibration and endpoints (17 to 21). Accuracy starts at 58%, dips to 37% at step 3, jumps from 55% to 66% when it switches to naive Bayes, and peaks at 70.5% at step 16. Probe steps at 10, 15 and 20 are marked along the bottom. Adam after 50 gradient steps is marked at 91%.](../_media/llm-descent/run-2-story.png)](../_media/llm-descent/run-2-story.png)
 
-[![Two rows of eight 5 by 5 first-layer filters, teal for positive and pink for negative. Opus 5.5's row, from run a-3: eight clean edge detectors, four orientations each in both polarities. Adam's row: irregular, mixed patterns.](../_media/llm-descent/filters-written-vs-learned.png)](../_media/llm-descent/filters-written-vs-learned.png)
+#### 1. Hand-drawn templates (steps 1 to 3)
 
-On top of those, its second layer detects shapes: loops and holes, stroke endpoints, and regions where a digit should have no ink, the structural features that handwriting recognisers relied on [@trierFeatureExtractionMethods1996] [@favataMultipleFeatureResolution1996]. Then it draws a stroke template for each digit and classifies by template matching, the oldest approach in character recognition [@moriHistoricalReviewOCR1992]. Two of the three first networks score about 60%.
+Claude starts like a computer vision engineer from the 1990s. Its first layer is a set of line detectors at four angles, written from formulas, much like the Sobel edge gradients that 1990s digit recognisers started from [@favataMultipleFeatureResolution1996]:
 
-#### 2. Nearest centroid, then naive Bayes
+[![Two rows of eight 5 by 5 first-layer filters, teal for positive and pink for negative. Opus 5.5's row, from run 2: clean line detectors at 0, 45, 90 and 135 degrees, each used twice. Adam's row: irregular, mixed patterns.](../_media/llm-descent/filters-written-vs-learned.png)](../_media/llm-descent/filters-written-vs-learned.png)
 
-Matching against templates swings wildly with how strong the features turn out to be, which Claude can't see. So it reaches for proper classifiers. Run a-2, at step 4:
+Then it draws a template for each digit and scores every image against them. That's template matching, the oldest approach in character recognition [@moriHistoricalReviewOCR1992]. Its first network gets 58% on the test set. After that, it reads the confusion matrix and corrects the class biases:
+
+> The step 1 confusion matrix shows a strong preference for some classes, while others are under-predicted. Most of all, "2" was predicted 2,122 times against 990 true 2s.
+
+#### 2. Nearest centroid and shape detectors (steps 4 to 6)
+
+At step 4 it upgrades its scoring rule:
 
 > So I'm replacing the ad hoc template matching with a proper nearest-centroid rule in feature space
 
-Run a-3, at step 6:
+The trouble is that it can't see how strong its features are, so every adjustment helps one digit and hurts another. By step 6 it decides templates have hit their limit:
 
-> I use scoring that does not depend on overall feature scale, a multinomial naive Bayes.
+> Plain orientation templates seem to top out around 60%.
 
-Bayesian decision rules for reading characters go back to 1957 [@chowOptimumCharacterRecognition1957].
+So it adds detectors for loops and arcs, the structural features that handwriting recognisers relied on [@trierFeatureExtractionMethods1996] [@favataMultipleFeatureResolution1996].
 
-#### 3. Measuring without looking
+#### 3. Naive Bayes (steps 7 to 9)
 
-A 1990s engineer would have looked at the digits to see where their features go wrong. Claude can't. Two of the three runs did something I didn't expect: they stopped classifying for a step, to measure their own features. Run a-3, at step 17:
+At step 7 it turns every feature into a yes-or-no "presence" value and switches to naive Bayes, which treats each feature as independent evidence for each digit. Bayesian decision rules for reading characters go back to 1957 [@chowOptimumCharacterRecognition1957]. It's the run's biggest jump, from 55% to 66%, and then 69% after it corrects the class priors.
 
-> it is a deliberate probe, and its loss will be poor. It costs nothing in the final score, because only the step with the lowest training loss is kept.
+#### 4. Measuring without looking (steps 10 to 16)
 
-It rewires the output layer so each "predicted digit" stands for a range of one of its own features, which turns each row of the confusion matrix into a histogram of that feature for one true digit.
+A 1990s engineer would have looked at the digits to see where their features go wrong. Claude can't. At step 10 it does something I didn't expect:
+
+> This step is a measurement, not a model.
+
+It rewires the output layer so each "predicted digit" stands for a range of loop-detector activity, which turns each row of the confusion matrix into a histogram for one true digit. The result is bad news:
+
+> Step 10's loop detector fires on almost every digit except 1.
+
+So it redesigns the detector, measures it again at step 15, and this time finds it selective: about 37% of 9s show a loop in the top half, and almost none in the bottom. Step 16, built on that measurement, is its best network, at 70.5% on the test set.
 
 Is that cheating? It doesn't break the rules: the code never sees an image, never runs the network and never fits anything. But it squeezes far more out of the training set than the loss alone: class-by-class feature statistics, read through a 100-number window one step at a time. The test set stays untouched, so the scores below are still honest held-out scores.
 
-In these runs the probes came late, and the stopping rule ended both runs soon after. In [an earlier version of this experiment](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/e26658b/mnist-training/results/opus-p8-3), one run leaned on probing much harder: it probed 13 times, fed the measured probabilities into naive Bayes and reached 86%.
+In [an earlier version of this experiment](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/e26658b/mnist-training/results/opus-p8-3), one run leaned on probing much harder: it probed 13 times, fed the measured probabilities into naive Bayes and reached 86%.
 
-#### 4. Calibration
+#### 5. Calibration, and one detector too many (steps 17 to 21)
 
-The last steps are fine-tuning by hand: sharpening or softening the logits (temperature scaling) and correcting class biases from the column totals. Run a-3, at step 12:
+The last steps are fine-tuning by hand, like scaling the logits so it's less over-confident:
 
-> If the loss falls, the model was underconfident and I can push the scale further. If it rises, I'll go the other way.
+> A smaller λ should make the softmax less over-confident on the ~28% of images it gets wrong.
 
-[![Three training confusion matrices for run a-3, rows true digit and columns predicted digit, shaded pink. At step 1 (61% training accuracy) many 4s and 8s are predicted as 1. At step 6 (68%) the diagonal is clearer. At step 12 (74%), its best step, the diagonal dominates.](../_media/llm-descent/confusion-over-steps.png)](../_media/llm-descent/confusion-over-steps.png)
+Then it adds stroke-endpoint detectors, which make things worse, so it measures them at step 20 and finds out why. Its second layer can't see the edges of the image, where most strokes end:
+
+> True stroke ends, such as the tops and bottoms of 1, 4, 7 and 9 at rows ≈4–5 and ≈23–24, lie *outside* that range.
+
+It drops them at step 21, and the stopping rule ends the run.
+
+[![Three training confusion matrices for run 2, rows true digit and columns predicted digit, shaded pink. At step 1 (59% training accuracy) many digits are predicted as 2. At step 7 (66%), after the switch to naive Bayes, the diagonal is clearer. At step 16 (72%), its best step, the diagonal dominates.](../_media/llm-descent/confusion-over-steps.png)](../_media/llm-descent/confusion-over-steps.png)
 
 #### When fitting was allowed, it reached for 1936
 
