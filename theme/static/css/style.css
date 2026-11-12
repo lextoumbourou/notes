@@ -675,6 +675,7 @@ a.tag:hover { color: var(--tag-fg); background: color-mix(in srgb, var(--hl-teal
 }
 .highlight { background: transparent !important; }
 .prose-body .plain-text pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.prose-body .wide-output pre { white-space: pre; overflow-x: auto; font-size: 0.8rem; }
 
 .prose-body code:not(pre code) {
   font-family: var(--font-mono);

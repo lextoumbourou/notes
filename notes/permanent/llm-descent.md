@@ -15,23 +15,23 @@ tags:
 
 ## Intro
 
-[Weight-Space Programming](weight-space-programming.md) still has me pretty intrigued. The basic idea is that frontier LLMs can read, write and edit neural network weights, though there's certainly nuance to what's going on here. Still, it feels like there's a lot of new ground to explore.
+[Weight-Space Programming](weight-space-programming.md) still has me pretty intrigued. The basic idea is that frontier LLMs can read, write and edit the weights of neural networks. There's nuance to what's going on, but it feels like there's a lot of new ground to explore.
 
-In the [original blog post](https://rikiyat.github.io/blog/weight-space-programming/), beyond the reading and editing experiments, the authors had Astra build a network to play Go from scratch, then improve it by playing practice games, analysing how it lost, and editing the weights. It really seems like a new training paradigm, something like *LLM Descent*, but is it?
+In the [original blog post](https://rikiyat.github.io/blog/weight-space-programming/) beyond the reading and editing experiments, the authors had GPT-6 Astra build a network to play Go from scratch, then improve it by playing practice games, and editing the weights based on analysis of its losses. That loop of writing, testing and editing feels like a new way to train a network, something like *LLM Descent*. But is it?
 
-In this article, I run my own weight-writing experiment with Claude Opus 5.5 on a familiar image classification problem. Looking closely at what the model is doing, we can see that it is actually using some largely forgotten pre-deep-learning techniques.
+In this article, I run my own weight-writing experiment with Claude Opus 5.5 on a familiar image classification problem. Look closely at what it builds, and learn that it's using largely forgotten image classification techniques from before deep learning.
 
-Then, I look more closely at what Astra was actually doing when it built its Go network from scratch, and the findings are very similar.
+Finally, I look at what Astra actually did to build its Go network, and find the same thing.
 
 ## Building an image classifier with LLM Descent
 
-The MNIST digit dataset is the OG ML image classification problem; the goal is to classify each hand-drawn digit.
+MNIST is the OG image classification problem. The goal is to label each handwritten digit, 0 to 9.
 
 [![Twenty handwritten digits from the MNIST training set, two of each digit from 0 to 9, drawn in dark ink on off-white 28 by 28 pixel squares.](../_media/llm-descent/mnist-examples.png)](../_media/llm-descent/mnist-examples.png)
 
-I built a test with a fixed CNN, then prompted Claude to write code that sets all its weights, with a few rules: no fitting, regression, or searching, and in the first version, no example digits. It's a considerably stricter setup than Astra had for Go: no PyTorch and no practice games, only a score on the training set after each attempt.
+I built a test with a fixed CNN, then prompted Claude to write code that sets all its weights, with a few rules that include no fitting, regression, or searching. It's a considerably stricter setup than Astra had for Go, with no PyTorch and no practice games, only a score on the training set after each attempt. I also ran a few tests that gave the model more feedback, including example digits, but they didn't make much difference, so I've left them out of this post.
 
-Claude has to set all 5,994 weights of this network:
+Claude starts with no weights at all, and has to set every one of this network's 5,994 weights "by hand":
 
 ```python
 model = nn.Sequential(
@@ -48,17 +48,17 @@ model = nn.Sequential(
 
 You can read [the whole prompt](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/main/mnist-training/results/a-3/prompt.md) on GitHub.
 
-Claude's code runs in a sandbox that can only import numpy, SciPy and math. Once it returns the weights, a test harness runs the network in MLX on the training and test images.
+Claude's code runs in a sandbox that can only import NumPy, SciPy and math. Once it returns the weights, a test harness runs the network on the training and test images.
 
-Each step, Claude gets all the feedback so far and has up to 50 steps to solve the problem. Runs stop early once the training loss stops improving, and the network with the lowest training loss is the one scored on the test set.
+Claude has up to 50 steps, and at each one it sees all the feedback so far. A run stops early once the training loss stops improving, and the network with the lowest training loss is the one scored on the test set.
 
-The training set here is 10,000 images held out from MNIST's own training split. The official 10,000 MNIST test images are scored at every step but never shown to Claude.
+The training set is 10,000 images from MNIST's official training split. The 10,000 official test images are scored at every step, but Claude never sees those scores.
 
 [![A loop of four flat coloured blocks joined by arrows: Claude writes build_weights(); a sandbox sets all 5,994 weights; the network runs on 10,000 training images; Claude gets back the loss, accuracy and confusion matrix and writes the next step. A separate block notes that the test set is never shown.](../_media/llm-descent/loop.png)](../_media/llm-descent/loop.png)
 
-Example of the feedback it gets each step:
+Here's the feedback it got after its first attempt:
 
-```text
+```output
 Step 1 of 50: training loss 1.2152, accuracy 0.6072.
 
 Confusion matrix (rows: true digit, columns: predicted digit):
@@ -81,7 +81,8 @@ step | loss | accuracy
 ---- | ---- | --------
 1 | 1.2152 | 0.6072
 
-At most 49 steps left. Reply with the complete build_weights() for step 2 in one Python code block.
+At most 49 steps left. Reply with the complete build_weights() for step 2
+in one Python code block.
 ```
 
 ### The descent
