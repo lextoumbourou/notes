@@ -85,7 +85,7 @@ The other big jump is the **Remote Labor Index**, which gives the model real fre
 
 ## Weight-Space Programming: writing the weights of an MNIST classifier
 
-I reran my 15-step [MNIST training test](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/main/mnist-training), a follow-up to [Weight-Space Programming](weight-space-programming.md), on Fable 5.2: the model writes every weight of a 5,994-parameter CNN, then improves them using only the validation loss, accuracy and confusion matrix. It never sees an image or a gradient. Three runs per model at `high` effort, scored on the official MNIST test set, which the model never sees.
+I reran my 15-step [MNIST training test](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/e26658b/mnist-training), a follow-up to [Weight-Space Programming](weight-space-programming.md), on Fable 5.2: the model writes every weight of a 5,994-parameter CNN, then improves them using only the validation loss, accuracy and confusion matrix. It never sees an image or a gradient. Three runs per model at `high` effort, scored on the official MNIST test set, which the model never sees.
 
 | Model | Step 1 (one-shot), mean | Step 15, mean (range) | Output tokens per run | Cost per run |
 |---|---:|---:|---:|---:|
@@ -94,7 +94,7 @@ I reran my 15-step [MNIST training test](https://github.com/lextoumbourou/weight
 | Fable 5.1 | 38.3% | 59.2% (57.2 to 60.8) | 123K | $7.95 |
 | Opus 5.5 | 49.1% | 71.0% (66.5 to 73.6) | 89K | $2.39 |
 
-*Three runs per model, one conversation each, no retries. Fable 5.2 runs were on 10 November 2026; the others are from the [experiments repository](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/main/mnist-training). Costs are computed from each response's token usage at Anthropic's list prices. For reference, Adam on the same network reaches 91.8% after 50 gradient steps, and random search with the same number of evaluations about 12%.*
+*Three runs per model, one conversation each, no retries. Fable 5.2 runs were on 10 November 2026; the others are from the [experiments repository](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/e26658b/mnist-training). Costs are computed from each response's token usage at Anthropic's list prices. For reference, Adam on the same network reaches 91.8% after 50 gradient steps, and random search with the same number of evaluations about 12%.*
 
 At `high`, every Fable 5.2 run beat every Opus 5.5 and Fable 5.1 run. It isn't cheap, though: despite the 20% price cut, a run cost twice as much as Fable 5.1, because it wrote about 2.4 times as many output tokens.
 
