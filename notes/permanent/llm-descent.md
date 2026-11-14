@@ -143,39 +143,39 @@ An old-school model engineer would have studied the digits to see where their fe
 
 It rewires the output layer so that each "predicted digit" means something else: how strongly, and where, the loop detector fired. Each row of the confusion matrix then becomes a histogram of the loop detector for one true digit. One step later, it knows the detector fires on 83% of 8s, in both halves of the image. At steps 6 and 7 it tests its own drawings the same way, putting variants of each digit head to head. That's why the chart dips to almost zero there.
 
-Is that cheating? It doesn't break the rules: the code never sees an image, never runs the network and never fits anything. But it squeezes far more out of the training set than the loss alone: class-by-class feature statistics, read through a 100-number window one step at a time. The test set stays untouched, so the scores below are still honest held-out scores.
+It kinda feels like cheating, but it doesn't break the rules. The code doesn't run the network or fit anything, or even see an image. And hey: the test set is untouched, so the scores are still honest.
 
 #### 3. Corners (steps 10 to 18)
 
-Next, it adds detectors for the four kinds of inner corner, the structural and concavity features that handwriting recognisers relied on [@trierFeatureExtractionMethods1996] [@favataMultipleFeatureResolution1996]. It guesses how they behave at first, and when tuning stalls at about 81% it measures them instead, three steps in a row, then sets their weights from what it measured. By step 18 it's at 83%.
+Next, it adds detectors for four corner shapes where strokes meet (┌ ┐ └ ┘). Handwriting recognisers relied on shape features like these [@trierFeatureExtractionMethods1996] [@favataMultipleFeatureResolution1996]. At first it guesses how often each one shows up in each digit. When that stalls at about 81%, it measures them instead, three steps in a row, and sets their weights from the results. By step 18 it's at 83%. Pretty incredible, if you ask me!
 
 > Three measurement steps on the corners gave more than many steps of guessing, and they showed that some of my hand-drawn expectations were far off.
 
 #### 4. Measuring every stroke (steps 19 to 30)
 
-So it measures everything else too. Over the next twelve steps it reads out how often each of its 32 stroke features fires for each digit, a few features per step. At step 24 it plugs the first fifteen measurements in to check they help, and accuracy jumps from 83% to 88%.
+So it measures everything else too. Over the next twelve steps, it reads out how often each of its 32 stroke features fires on each digit, three at a time. At step 24 it plugs in the first fifteen measurements to check they help, and accuracy jumps from 83% to 88%.
 
 #### 5. Rebuilt from measurements (steps 31 to 40)
 
-At step 31 it throws its drawings away:
+At step 31, it throws its hand-drawn templates away completely.
 
 > rebuild the whole classifier from measured rates: 32 orientation cells, 8 corner zones and the loop detector. No hand-drawn stroke templates remain in the final layer.
 
-What's left is naive Bayes with every probability measured from the training set, counted one feature at a time through the confusion matrix. It reaches 89%, and 90% after tuning a few global settings. Then it spends steps 36 to 40 measuring the half of the stroke grid it hadn't measured yet.
+What's left is naive Bayes, with every probability measured from the training set, one feature at a time, through the confusion matrix. In other words, it's fitting a classifier by hand. It reaches 89%, then 90% after tuning a few global settings. Then it spends steps 36 to 40 measuring the half of the stroke grid it hadn't covered yet.
 
 #### 6. Calibration (steps 41 to 50)
 
-The last ten steps are fine-tuning by hand: how much to trust each kind of evidence, and how sharp to make the probabilities. It knows exactly how it will be scored:
+The last ten steps are fine-tuning by hand, deciding how much to trust each kind of evidence and how confident its predictions should be. It also keeps track of exactly how it will be scored.
 
 > if this step does not beat 0.3111, step 48 is the one that gets scored.
 
-It finishes at 91.3% on the test set.
+It finishes at 91.3% on the test set, which is roughly where 50 steps of training with Adam gets us.
 
 [![Three training confusion matrices for Fable 5.2 run 1, rows true digit and columns predicted digit, shaded pink. At step 1 (71% training accuracy) the diagonal is visible but noisy. At step 18 (83%) it is clearer. At step 50 (91%) the diagonal dominates.](../_media/llm-descent/confusion-over-steps.png)](../_media/llm-descent/confusion-over-steps.png)
 
 ### What about Opus 5.5?
 
-Opus 5.5 reaches for the same toolbox: oriented strokes, hand-drawn templates, nearest centroid, naive Bayes, and loop and endpoint detectors. The difference is how much it measures. Fable's runs spent 20 to 27 steps measuring, while Opus's spent none, three and one, and kept guessing instead. Its runs stopped at steps 19 to 23, scoring 70% to 74% on the test set.
+Opus 5.5 reaches for the same toolbox, with stroke detectors, hand-drawn templates, nearest centroid (picking the closest template), naive Bayes, and loop and endpoint detectors. The difference is how much it measures. Fable's runs spent 20 to 27 steps measuring. Opus's runs spent none, three and one, and kept guessing instead. They stopped after 19 to 23 steps, at 70% to 74% on the test set.
 
 ### When fitting was allowed, it reached for 1936
 
@@ -193,15 +193,17 @@ It drew 300 random versions of each digit from its own stroke models and fitted 
 
 [![Bar chart of test accuracy, with a dot for each run or seed. Random search with 50 evaluations: 16%. Opus 5.5: 72% (70% to 74%). Fable 5.2: 90% (88% to 91%). Adam after 50 gradient steps: 91%. Adam after 5,000 steps: 98%.](../_media/llm-descent/final-scores.png)](../_media/llm-descent/final-scores.png)
 
+So here's a summary of everything I tested so far:
+
 - **Random search** gets the same feedback but no reasoning: 16% on average after 50 tries.
 - **Opus 5.5** lands between 70% and 74%.
-- **Fable 5.2** lands between 88% and 91%, level with Adam after 50 gradient steps, without a single gradient.
-- **Adam**, trained on the same 10,000 images, keeps going: 98% after 5,000 steps, at a tiny fraction of the cost. LLM Descent is not an efficient optimiser.
+- **Fable 5.2** lands between 88% and 91%, roughly level with Adam after 50 gradient steps, without a single gradient.
+- **Adam**, trained on the same 10,000 images, keeps going: 98% after 5,000 steps, for a fraction of a cent of compute. LLM Descent is not an efficient optimiser.
 - The Fable 5.2 runs cost $26.64 to $31.18 each in tokens, and the Opus 5.5 runs $2.74 to $4.23.
 
-## Exploring the Go network
+With this new lens of how Weight-Space Programming builds an image classification model via "LLM Descent", I thought it would be interesting to review the Go network built by Astra in the original article.
 
-Claude's MNIST network turned out to be a 1990s computer-vision pipeline. Does the paper's own Go network work the same way?
+## Exploring the Go network
 
 To me, the from-scratch Go network was the most striking result in the original post.
 
