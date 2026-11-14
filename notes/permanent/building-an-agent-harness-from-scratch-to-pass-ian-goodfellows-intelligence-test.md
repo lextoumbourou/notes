@@ -1,15 +1,16 @@
 ---
-title: Building an agent harness from scratch to pass Ian Goodfellow's intelligence test
+title: Building an Agent Harness From Scratch
 slug: building-an-agent-harness-from-scratch
+video: in-production
+youtube_video: https://www.youtube.com/watch?v=JaZI4PpSEsk
 date: 2026-10-11 13:50
-modified: 2026-10-11 18:40
+modified: 2026-11-14 20:00
 summary: What was once considered a test of "real AI" - now built entirely in a single blog post.
 category: essay
 tags:
 - HarnessDesign
 - AgenticReasoning
-cover: /_media/agent-harness/bertie-the-brain-illustration.jpg
-cover_credits: Illustration by <a href="https://commons.wikimedia.org/wiki/File:Bertie_the_Brain_Illustration.jpg">InclusiveGameLab</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+cover: /_media/agent-harness/agent-harness-robot-cover.jpg
 notebook:
   cwd: ../../code
 bluesky_post: https://bsky.app/profile/notesbylex.com/post/3mxleu7oroh2p
@@ -61,12 +62,19 @@ Of course, in the real world, there's more to think about. The agent needs safet
 
 Even so, the core of a harness is pretty straightforward. [Barbaste et al., 2026](harness-engineering-anatomy-architecture-and-evolution-of-coding-agents.md) studied eleven production coding harnesses, including Claude Code, Codex CLI, Gemini CLI and Pi, and compared them across seven aspects of harness design [@barbasteHarnessEngineeringAnatomy2026]:
 
+<!-- audio: skip -->
 1. the loop
+<!-- audio: skip -->
 2. the LLM integration
+<!-- audio: skip -->
 3. tools
+<!-- audio: skip -->
 4. context management
+<!-- audio: skip -->
 5. safety controls
+<!-- audio: skip -->
 6. orchestration (running several agents or tasks together)
+<!-- audio: skip -->
 7. extension surfaces (places users can plug in their own tools and skills)
 
 [![A central agent loop connects context, model, tools and result. Surrounding notes show LLM integration, a context management strategy, safety controls with sandboxing, orchestration and extension surfaces.](../_media/agent-harness/agent-harness-seven-parts.png)](../_media/agent-harness/agent-harness-seven-parts.png)
@@ -97,13 +105,15 @@ import openai
 
 <!-- /nb-output -->
 
-We've already seen a basic loop, so we'll come back to it at the end, when we put it all together. First on our list is the model.
+We've already seen a basic loop, so we'll leave implementing that until the end, when we put it all together. So, the first thing on our list to implement is the model.
 
 ## Model
 
 Modern agentic AI is only possible thanks to the incredible magic of language models. Since the capabilities of new LLMs are constantly on an upward trajectory and the space is very competitive, today's best model may not be next month's, so it's useful to be as model-agnostic as possible, making it easy to switch.
 
-So, it's typical to hide the vendor's client behind a wrapper, and just plug a generic model into the mix. I've also added a `cost` field to track what the task has cost so far.
+Therefore, it's useful to hide the vendor's client behind a wrapper, and just plug a generic model interface into the mix.
+
+The first thing I'll implement is the types that represent the tool calls and messages to pass between the harness and the model, and a Model protocol that any provider can implement. I've also added a `cost` field to track what the task has cost so far.
 
 ```python
 class ToolCall(TypedDict):
@@ -208,7 +218,7 @@ class ResponsesModel:
 > [!note]
 > The tool schemas below have optional arguments, so this adapter sets `strict=False`. Otherwise, the Responses API tries to make them strict [@openaiResponsesFunctionCalling].
 
-And give that a little test run:
+And give that a little test run with a simple 1+1 prompt:
 
 ```python
 client = openai.OpenAI()
@@ -570,7 +580,7 @@ Since this agent can run any command on your computer, safety is obviously prett
 
 Docker Sandboxes is one example of the first approach. It runs an agent in a microVM with access to a chosen workspace and a network policy [@dockerDockerSandboxesArchitecture]. You can also combine the two.
 
-For this post, I thought it would be interesting to explore typed decisions ([Decision Models](decision-models.md)) for the classification layer. TypeSafe AI's Jev is one example, but OpenAI's new Decisions API looks like a good fit - and saves me adding another API key and/or client lib. It answers typed questions about some input, where a `predicate` returns a probability and a `score` rates the input against ordered levels [@openaiDecisionsGuide].
+For this post, I thought it would be interesting to explore [Decision Models](decision-models.md) for the classification layer. TypeSafe AI's Jev is one example, but OpenAI's new Decisions API looks like a good fit - and saves me adding another API key and/or client lib. It answers typed questions about some input, where a `predicate` returns a probability and a `score` places the input on a scale of levels you define in order, like low, medium, high and critical, returning a number between the first and the last [@openaiDecisionsGuide]. It's basically ordinal regression, if you're familiar with that term.
 
 For a basic safety classifier, we'll pass in the user's request and the proposed tool call, and get back `allow`, `ask` or `deny`. `ask` needs the user's permission; `deny` blocks the call. It's a simplified version of Codex's "guardian" reviewer, which scores each action for risk (`low`, `medium`, `high` or `critical`) and for whether the user authorised it, before letting it run [@openaiCodexGuardianPolicy]. With a `score` and a `predicate`, one Decisions call can ask both of Codex's questions.
 
@@ -693,7 +703,7 @@ def ask_user(tool_name: str, args: dict, reason: str) -> bool:
 
 ## Orchestration
 
-We'll skip this one. In theory, the agent could spin up new copies of itself, but to keep this post simple, we'll stick to a single agent.
+We'll skip orchestration. In theory, the agent could spin up new copies of itself, but to keep this post simple, we'll stick to a single agent.
 
 ## Extension surfaces
 
@@ -704,11 +714,11 @@ There are a few main ways people extend coding harnesses:
 3. [MCP](mcp.md) (Model Context Protocol) servers, which connect the agent to outside tools and data.
 4. Plugins, hooks, custom tools and so on.
 
-For the sake of simplicity, let's just support the first two.
+For the sake of simplicity, let's just support the first two: context files and skill folders.
 
 ### Loading AGENTS.md into context
 
-Pi wraps each context file in a `<project_instructions>` tag that records where it came from [@earendilPiSkills], so we'll do the same. Only the path needs escaping, since it sits inside an attribute. The file's contents go in as written:
+The Pi harness wraps each context file in a `<project_instructions>` tag that records where it came from [@earendilPiSkills], so we'll do the same. Only the path needs escaping, since it sits inside an attribute. The file's contents go in as written:
 
 ```python
 AGENTS_FILE = "AGENTS.md"
@@ -758,24 +768,16 @@ This is the working directory for the harness built in the post &quot;An Agent H
 
 Skills are folders with a `SKILL.md` file, whose frontmatter has a `name` and a `description` saying what the skill does and when to use it [@agentSkillsSpecification]. They load by progressive disclosure. That is, only each skill's name, description and location go into the system prompt. The model reads the full `SKILL.md` with its file tool when a task matches the description [@earendilPiSkills]. That keeps a long list of skills cheap.
 
-For the example workspace, I added one skill that fits the CIFAR-10 challenge at the end of this post:
+For the example workspace, I added a tiny hello-world skill:
 
 ```markdown {run=false}
 ---
-name: evaluate-image-classifier
-description: Evaluate a trained image classifier on held-out images. Use when asked for accuracy or example predictions.
+name: hello-world
+description: Greet the user. Use when the user says hello or asks what this harness can do.
 ---
 
-# Evaluate an image classifier
-
-1. Find the dataset's official test split. Load the saved model and use the same preprocessing as training.
-2. Run inference on the test images without training on them. Count correct predictions and total images.
-3. Show a few test images with their predicted and true labels, including some mistakes.
-4. Report the correct count, total count, accuracy, test split, and whether the model used pretrained weights.
-5. Keep model selection and tuning on training or validation data. Do not choose a model using the test labels.
+Reply with "Hello from the agent harness!" and list the four tools you can use.
 ```
-
-It's just here to show how skills work. I didn't include it in the CIFAR-10 sandbox below.
 
 We'll look in `.agents/skills/`, a common harness convention, read each skill's frontmatter, and skip any skill without a description, since the model has nothing to choose it by:
 
@@ -814,10 +816,10 @@ pprint(find_skills(BASE_DIR), sort_dicts=False)
 ```
 <!-- nb-output hash="9c187b65d3eba977" format="html" -->
 <div class="nb-output">
-<pre class="nb-stream-stdout">[{'name': 'evaluate-image-classifier',
-  'description': 'Evaluate a trained image classifier on held-out images. Use '
-                 'when asked for accuracy or example predictions.',
-  'location': PosixPath('.agents/skills/evaluate-image-classifier/SKILL.md')}]
+<pre class="nb-stream-stdout">[{'name': 'hello-world',
+  'description': 'Greet the user. Use when the user says hello or asks what '
+                 'this harness can do.',
+  'location': PosixPath('.agents/skills/hello-world/SKILL.md')}]
 </pre>
 </div>
 <!-- /nb-output -->
@@ -853,9 +855,9 @@ Resolve relative paths in a skill against the skill's folder.
 
 &lt;available_skills&gt;
   &lt;skill&gt;
-    &lt;name&gt;evaluate-image-classifier&lt;/name&gt;
-    &lt;description&gt;Evaluate a trained image classifier on held-out images. Use when asked for accuracy or example predictions.&lt;/description&gt;
-    &lt;location&gt;.agents/skills/evaluate-image-classifier/SKILL.md&lt;/location&gt;
+    &lt;name&gt;hello-world&lt;/name&gt;
+    &lt;description&gt;Greet the user. Use when the user says hello or asks what this harness can do.&lt;/description&gt;
+    &lt;location&gt;.agents/skills/hello-world/SKILL.md&lt;/location&gt;
   &lt;/skill&gt;
 &lt;/available_skills&gt;
 </pre>
@@ -882,7 +884,7 @@ def build_system_prompt(base_dir: pathlib.Path) -> str:
 
 Now it's time to put all the pieces together.
 
-Every tool call goes through the safety check first. A blocked call isn't an error: the model gets told it was blocked, so it can find another way or ask. Anything else that goes wrong, like malformed arguments or an unknown tool, also goes back to the model as an error message. And there are two limits, turns and cost, because a loop that never stops could cost us a lot of money.
+Every tool call goes through the safety check first. If a call is blocked, the model is told why, so it can try another way or ask the user to confirm. Anything else that goes wrong, like malformed arguments or an unknown tool, also goes back to the model as an error message. And there are two hard limits, on turns and on cost, because a loop that never stops could cost us a lot of money.
 
 ```python
 Policy = Callable[[str, str, dict], tuple[str, str]]
@@ -939,7 +941,7 @@ Compare that with the loop at the top of the post. It's the same loop, with the 
 
 ## The finished harness
 
-All the pieces live in one file, [`harness.py`](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/harness.py), under 500 lines including comments. The last bit wires it up for the command line, taking the working directory as an optional first argument:
+All the pieces live in one file, [`harness.py`](https://github.com/lextoumbourou/agent-harness-from-scratch/blob/main/harness.py), under 500 lines including comments. The last bit wires it up for the command line, taking the working directory as an optional first argument:
 
 ```python {run=false}
 if __name__ == "__main__":
@@ -980,7 +982,7 @@ Since we have all the pieces in place to try exactly that, I thought it'd be an 
 
 CIFAR-10 contains 50,000 training images and 10,000 test images, each 32 × 32 pixels and belonging to one of ten classes [@krizhevskyCIFAR10Dataset].
 
-Since the agent will download data and run code it wrote itself, I ran it in a Docker Sandbox, using Docker's `sbx` CLI to give it a temporary workspace with the harness code mounted read-only [@dockerDockerSandboxesUsage]. On a Mac, the one-time setup is:
+Since the agent will download data and run code it wrote itself, I ran it in a Docker Sandbox, using Docker's `sbx` CLI to give it a temporary workspace with the harness code mounted read-only [@dockerDockerSandboxesUsage]. On a Mac, the one-time setup can be configured as follows:
 
 ```bash {run=false}
 brew trust docker/tap
@@ -991,16 +993,16 @@ sbx policy init balanced
 
 The OpenAI key stays on the host. Docker's proxy adds it to API requests, while the Python client inside the sandbox sees only a placeholder [@dockerDockerSandboxesCredentials].
 
-I'll give the agent a fresh working directory and a goal, without supplying a dataset URL, a training script or a model architecture. If you want to reproduce it yourself, run this from the [`code`](https://github.com/lextoumbourou/notes/tree/main/code) folder of this blog's repository, which holds `agent-harness/`. Inside the sandbox, [uv](https://docs.astral.sh/uv/) installs the OpenAI SDK listed in the header of `harness.py`, so there's nothing else to set up:
+I'll give the agent a fresh working directory and a goal, without supplying a dataset URL, a training script or a model architecture. If you want to reproduce it yourself, clone [agent-harness-from-scratch](https://github.com/lextoumbourou/agent-harness-from-scratch) and run this from its root. Inside the sandbox, [uv](https://docs.astral.sh/uv/) installs the OpenAI SDK listed in the header of `harness.py`, so there's nothing else to set up:
 
 ```bash {run=false}
 name=cifar-$(date +%s)
 mkdir "/private/tmp/$name"
-sbx create --name "$name" shell "/private/tmp/$name" "$PWD/agent-harness:ro"
+sbx create --name "$name" shell "/private/tmp/$name" "$PWD:ro"
 printf '%s' "$OPENAI_API_KEY" | sbx secret set openai --sandbox "$name"
 sbx policy allow network --sandbox "$name" www.cs.toronto.edu,cave.cs.toronto.edu
 sbx exec -it -e OPENAI_API_KEY=proxy-managed "$name" \
-  uv run "$PWD/agent-harness/harness.py" --web-search "/private/tmp/$name" \
+  uv run "$PWD/harness.py" --web-search "/private/tmp/$name" \
   "Build a CIFAR-10 image classifier from scratch. Find the dataset, train a model, and show predictions on images it was not trained on. Report its accuracy on held-out test images and leave the code and trained model in this directory. You may download data and install Python packages."
 ```
 
@@ -1016,8 +1018,13 @@ Saved: train.py, cifar10_model.pt, results.json
 
 That's 81.41% on the held-out test set, for about **$0.0085** in model tokens on the final attempt.
 
-The agent built a small CNN with six convolutional layers and trained it from random initialisation on the sandbox's CPU. Here's the [training script](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-first-run/train.py) and [results](https://github.com/lextoumbourou/notes/blob/main/code/agent-harness/cifar10-first-run/results.json).
+The agent built a small CNN with six convolutional layers and trained it from random initialisation on the sandbox's CPU. Here's the [training script](https://github.com/lextoumbourou/agent-harness-from-scratch/blob/main/cifar10-first-run/train.py) and [results](https://github.com/lextoumbourou/agent-harness-from-scratch/blob/main/cifar10-first-run/results.json).
 
 It wasn't completely hands-off. I had to allow the dataset hosts through the sandbox and nudge the agent once to find a faster download, since the first pass would have taken hours. But overall, this absolutely works.
 
 What a time to be alive.
+## Conclusion
+
+So in this article, we built an entire agent harness from scratch that includes context management, a safety classifier, tools, context files, skills and more. It turns out to be quite an easy process. The whole thing is under 500 lines, and it handled a task once considered very difficult for an agent. Many of us software developers now spend our days in coding agents like Claude Code, and I think the process of writing your own harness from scratch really helps you understand how to be an effective operator: what context files and skills actually are, what compaction is doing, why the agent stops to ask you before running a command and so on.
+
+I hope that helped you really understand what goes on in a modern agent harness.

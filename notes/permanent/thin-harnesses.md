@@ -23,4 +23,4 @@ It's part of a broader move towards simpler harnesses that hand more control to 
 
 The usual argument behind the trend is [The Bitter Lesson](the-bitter-lesson.md). General methods that scale with computation eventually beat hand-built human knowledge, so as models improve, harness logic should give way to the model.
 
-I build a small harness along these lines in [Building an agent harness from scratch to pass Ian Goodfellow's intelligence test](building-an-agent-harness-from-scratch-to-pass-ian-goodfellows-intelligence-test.md).
+I build a small harness along these lines in [Building an Agent Harness From Scratch](building-an-agent-harness-from-scratch-to-pass-ian-goodfellows-intelligence-test.md).
