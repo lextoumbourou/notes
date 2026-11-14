@@ -29,9 +29,9 @@ MNIST is the OG image classification problem. The goal is to label each handwrit
 
 [![Twenty handwritten digits from the MNIST training set, two of each digit from 0 to 9, drawn in dark ink on off-white 28 by 28 pixel squares.](../_media/llm-descent/mnist-examples.png)](../_media/llm-descent/mnist-examples.png)
 
-I built a test with a fixed CNN, then prompted Claude to write code that sets all its weights, with a few rules that include no fitting, regression, or searching. It's a considerably stricter setup than Astra had for Go, with no PyTorch and no practice games, only a score on the training set after each attempt. I also ran a few tests that gave the model more feedback, including example digits, but they didn't make much difference, so I've left them out of this post.
+Similar to the Go test in the original Weight-Space Programming post, I built a test with a fixed CNN, then prompted Claude to write code that sets all its weights from scratch, with a few rules that include no fitting, regression, or searching.
 
-I ran it with Claude Fable 5.2, which came out while I was writing this, and with Opus 5.5 for comparison.
+It's a considerably stricter setup than Astra had for Go, with no PyTorch and no practice games, only a score on the training set after each attempt. I also ran a few tests that gave the model more feedback, including example digits, but they didn't make much difference, so I've left them out of this post. Also, the tests in this blog post were run with Claude Fable 5.2, which performed considerably better than Opus 5.5.
 
 Claude starts with no weights at all, and has to set every one of this network's 5,994 weights "by hand":
 
@@ -93,17 +93,17 @@ I ran it three times.
 
 [![Step chart of the best training loss so far for three Fable 5.2 runs, with each step's loss as dots and measurement steps as ticks along the top. All three fall from between 1.0 and 1.7 to between 0.26 and 0.37 over the full 50 steps, scoring 91.3%, 88.3% and 91.2% on the test set.](../_media/llm-descent/loss-by-step.png)](../_media/llm-descent/loss-by-step.png)
 
-All three runs descend for the full 50 steps, still improving when they run out, and land at 91.3%, 88.3% and 91.2% on the test set. That's about where Adam gets to after 50 gradient steps.
+All three runs descend for the full 50 steps, still improving when they run out, and land at around 90% on the test set. Amazingly, that's close to where a training run with Adam gets to after 50 gradient steps.
 
-Let's look at what the runs actually built, step by step. As we'll see, Claude's approach looks a lot like the hand-crafted methods early computer vision researchers used.
+Let's look at what the runs actually built, step by step, based on Claude's replies and reasoning.
+
+As it turns out, Claude's approach looks a lot like the hand-crafted methods early computer vision researchers used, and it serves as a bit of a history lesson about how people used to build models before the deep learning age.
 
 ### A 1990s computer-vision pipeline
 
 In 1998, LeCun's paper that introduced MNIST described that era's approach as "a fixed feature extractor and a trainable classifier", where the feature extractor "is often entirely hand crafted" [@lecunGradientbasedLearningApplied1998]. Accuracy, he wrote, "is largely determined by the ability of the designer to come up with an appropriate set of features", which is "a daunting task which, unfortunately, must be redone for each new problem."
 
-That daunting task is exactly what Claude takes on, for about $30 a run.
-
-All three runs built the same kind of pipeline, in roughly the same order:
+That daunting task is exactly what Claude takes on. All three runs built the same kind of pipeline, in roughly the same order:
 
 | Technique | Run 1 | Run 2 | Run 3 |
 |---|---:|---:|---:|
@@ -117,7 +117,7 @@ All three runs built the same kind of pipeline, in roughly the same order:
 
 *The first step at which each run's reply uses the technique.*
 
-We'll study all the steps taken in run 1, which turns out to be an interesting history lesson on how we created image classification models before the deep learning era. It's the best of the three, at 91.3%, but the other two follow the same path.
+Let's follow run 1, step by step. It's the best of the three, at 91.3%, but the other two take the same path.
 
 [![Line chart of test accuracy for every network Fable 5.2 wrote in run 1, over 50 steps, on six coloured bands: templates (steps 1 to 3), testing detectors (4 to 9), corners (10 to 18), measuring strokes (19 to 30), rebuilt from measurements (31 to 40) and calibration (41 to 50). Accuracy starts at 71%, reaches 83% by step 18, 89% when it rebuilds the classifier at step 31, and 91.3% at step 50, level with Adam after 50 gradient steps. Twenty measurement steps are marked along the bottom.](../_media/llm-descent/fable-run-1-story.png)](../_media/llm-descent/fable-run-1-story.png)
 
@@ -127,19 +127,21 @@ Claude starts like a 1990s computer vision engineer. Its first layer is a set of
 
 [![Two rows of eight 5 by 5 first-layer filters, teal for positive and pink for negative. Fable 5.2's row, from run 1: four line detectors at 0, 45, 90 and 135 degrees, then four corner detectors, one for each kind of right-angled corner. Adam's row: irregular, mixed patterns.](../_media/llm-descent/filters-written-vs-learned.png)](../_media/llm-descent/filters-written-vs-learned.png)
 
-Then it draws each digit by hand, as a few strokes, and turns the drawings into a table of how likely each stroke is in each part of the image. It scores every image against those tables:
+Then it draws each digit by hand, as a few strokes, and turns each drawing into a table of how likely each stroke direction is in each part of the image. It scores every image against all ten tables.
 
 > The weights are the log-odds of that table, scaled down by a temperature.
 
-That's template matching, the oldest approach in character recognition [@moriHistoricalReviewOCR1992], scored like naive Bayes, which treats each feature as independent evidence for each digit. Bayesian decision rules for reading characters go back to 1957 [@chowOptimumCharacterRecognition1957]. Its first network gets 71% on the test set, and redrawing the digits the confusion matrix says are wrong gets it to 77%.
+The log-odds turn each probability into a score that can simply be added up, and the temperature turns all the scores down, so the network isn't overconfident.
+
+That's [template matching](https://en.wikipedia.org/wiki/Template_matching), the oldest approach in character recognition [@moriHistoricalReviewOCR1992], scored like naive Bayes, which treats each feature as separate evidence for each digit. Bayesian rules for reading characters go back to 1957 [@chowOptimumCharacterRecognition1957]. Its first network gets 71% on the test set. Redrawing the digits the confusion matrix says are wrong gets it to 77%.
 
 #### 2. Testing each detector (steps 4 to 9)
 
-A 1990s engineer would have looked at the digits to see where their features go wrong. Claude can't. At step 4, it does something I didn't expect. It stops classifying for a step, to test its loop detector on its own:
+An old-school model engineer would have studied the digits to see where their features go wrong. We haven't given Claude the ability to do that in this test, so at step 4, it does something cool. It stops classifying for a step, to test its loop detector (a feature for closed loops, like the ones in 0, 6, 8 and 9) on its own:
 
 > I cannot tell that from a confusion matrix where everything is mixed together, so this step tests the detector on its own, like a unit test.
 
-It rewires the output layer so each "predicted digit" stands for how strongly, and where, the loop detector fires. That turns each row of the confusion matrix into a histogram for one true digit. The answer comes back in one step: the detector fires on 83% of 8s, in both halves of the image. At steps 6 and 7 it tests its own drawings the same way, putting variants of each digit head to head, which is why the chart dips to almost zero there.
+It rewires the output layer so that each "predicted digit" means something else: how strongly, and where, the loop detector fired. Each row of the confusion matrix then becomes a histogram of the loop detector for one true digit. One step later, it knows the detector fires on 83% of 8s, in both halves of the image. At steps 6 and 7 it tests its own drawings the same way, putting variants of each digit head to head. That's why the chart dips to almost zero there.
 
 Is that cheating? It doesn't break the rules: the code never sees an image, never runs the network and never fits anything. But it squeezes far more out of the training set than the loss alone: class-by-class feature statistics, read through a 100-number window one step at a time. The test set stays untouched, so the scores below are still honest held-out scores.
 
