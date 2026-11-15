@@ -1,7 +1,7 @@
 ---
 title: Building an Agent Harness From Scratch
 slug: building-an-agent-harness-from-scratch
-video: in-production
+video: published
 youtube_video: https://www.youtube.com/watch?v=CFmrofmKIPc
 date: 2026-10-11 13:50
 modified: 2026-11-15 19:59
