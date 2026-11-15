@@ -2,9 +2,9 @@
 title: Building an Agent Harness From Scratch
 slug: building-an-agent-harness-from-scratch
 video: in-production
-youtube_video: https://www.youtube.com/watch?v=JaZI4PpSEsk
+youtube_video: https://www.youtube.com/watch?v=CFmrofmKIPc
 date: 2026-10-11 13:50
-modified: 2026-11-14 20:00
+modified: 2026-11-15 19:59
 summary: What was once considered a test of "real AI" - now built entirely in a single blog post.
 category: essay
 tags:
@@ -83,7 +83,7 @@ I'll use those as our guide, building one piece at a time. The paper also includ
 
 ---
 
-First, the imports. I'll stick to the standard library, apart from the OpenAI client, which saves writing our own API calls.
+First, the imports. I'll stick to the standard library, apart from the OpenAI client, which saves writing our own API calls. I'm running these snippets in a Markdown notebook as I go, using my [Obsidian Markdown Notebook](https://github.com/lextoumbourou/obsidian-markdown-notebook) plugin. You can also run them in a Jupyter notebook or the REPL of your choice.
 
 ```python
 import html
@@ -249,7 +249,7 @@ Each showed how tools can extend what LLMs can do.
 
 Later in 2023, OpenAI introduced function calling, which gave us a schema for structured tool definitions and a way of returning tool outputs to the model [@openaiFunctionCallingOther2023]. Other vendors soon adopted the idea.
 
-Tool use has seen the most debate and change in harness design in recent months. The community seems to be heading toward a consensus: as LLMs get more capable, the harness should get simpler, with fewer tools. Garry Tan describes [Thin Harnesses](thin-harnesses.md) as systems that run the loop, handle files, manage context and enforce safety, while skills and deterministic tools do the rest [@tanThinHarnessFat2026]. At one extreme, [mini-SWE-agent](https://github.com/SWE-agent/mini-swe-agent) uses only bash.
+Tool use has seen the most debate and change in harness design in recent months. The community seems to be heading toward a consensus: as LLMs get more capable, the harness should get simpler, with fewer built-in tools. Garry Tan describes [Thin Harnesses](thin-harnesses.md) as systems that run the loop, handle files, manage context and enforce safety, while skills and deterministic scripts do the rest [@tanThinHarnessFat2026]. At one extreme, [mini-SWE-agent](https://github.com/SWE-agent/mini-swe-agent) uses only bash.
 
 I'll follow [Pi](https://pi.dev/), a minimal open-source harness, and implement just four tools: read, write, edit and bash. I'll call them `read_file`, `write_file`, `search_replace` and `bash`.
 
@@ -264,6 +264,8 @@ def truncate_text(text: str, limit: int = 25_000) -> str:
 <!-- nb-output hash="9529fe25f5d66f9a" format="html" -->
 
 <!-- /nb-output -->
+
+Here's what happens when a string runs past the limit:
 
 ```python
 print(truncate_text("This is some long winded text...", limit=15))
@@ -314,8 +316,9 @@ stdout:
 </div>
 <!-- /nb-output -->
 
+And we can see that it successfully lists the files in the directory.
 
-Before the file tools, here's a helper that rejects paths outside the working directory. It doesn't restrict bash.
+Before the file tools, here's a helper that rejects paths outside the working directory. It only covers the file tools: bash can still reach anything on the machine, which we'll come back to in safety controls.
 
 ```python
 def _workspace_path(path: str, base_dir: pathlib.Path) -> pathlib.Path:
@@ -345,6 +348,8 @@ def tool_read_file(path: str, offset: int = 0, limit: int = 2000,
 <!-- nb-output hash="349707b9f7739650" format="html" -->
 
 <!-- /nb-output -->
+
+We can see it successfully reads 5 lines of the `AGENTS.md` file that lives in the workspace:
 
 ```python
 print(tool_read_file("AGENTS.md", limit=5, base_dir=BASE_DIR))
@@ -395,7 +400,7 @@ def tool_search_replace(path: str, search: str, replace: str,
 
 <!-- /nb-output -->
 
-Let's try the write and edit tools together, in a temporary folder that cleans up after itself:
+Let's try the write and edit tools together, in a temporary folder that cleans up after itself. Here I'm writing `demo.txt`, replacing the word `world` with `agent` and checking that `demo.txt` has the updated text:
 
 ```python
 with TemporaryDirectory(dir=BASE_DIR) as tmp:
@@ -413,7 +418,7 @@ with TemporaryDirectory(dir=BASE_DIR) as tmp:
 </div>
 <!-- /nb-output -->
 
-Now register the four tools by name:
+Now register the four tools by name in the global `TOOLS` dictionary:
 
 ```python
 TOOLS: dict[str, Callable[..., str]] = {
@@ -427,7 +432,7 @@ TOOLS: dict[str, Callable[..., str]] = {
 
 <!-- /nb-output -->
 
-Then describe them in the JSON schema format that tool-calling APIs expect. Rather than writing each schema by hand, I'll build it from the function's arguments:
+Then describe them in the JSON schema format that tool-calling APIs expect. Rather than writing each schema by hand, I'll build it from introspection of the function's arguments, which is a neat little trick to ensure the schema definition matches the actual function:
 
 ```python
 def schema(name: str, f) -> ToolSpec:
@@ -443,10 +448,17 @@ def schema(name: str, f) -> ToolSpec:
         "parameters": {"type": "object", "properties": props, "required": required,
                        "additionalProperties": False},
     }
+```
+<!-- nb-output hash="c6ad647e1d5716bd" format="html" -->
 
+<!-- /nb-output -->
+
+Then we can print the schema JSON for one of the tool functions to check the results:
+
+```python
 pprint(schema("read_file", tool_read_file), sort_dicts=False)
 ```
-<!-- nb-output hash="fc76062610cb4460" format="html" -->
+<!-- nb-output hash="0508a56b7e250f3c" format="html" -->
 <div class="nb-output">
 <pre class="nb-stream-stdout">{'name': 'read_file',
  'description': 'Read numbered lines from a file in the working directory.',
@@ -460,7 +472,7 @@ pprint(schema("read_file", tool_read_file), sort_dicts=False)
 </div>
 <!-- /nb-output -->
 
-Finally, let's check that OpenAI can call a tool. I'll give it only bash and ask it to run `pwd` once:
+Finally, let's check that OpenAI can call a tool. I'll give it only bash and ask it to run `pwd` once to print the working directory:
 
 ```python
 messages: list[Message] = [
@@ -484,6 +496,8 @@ stdout:
 </pre>
 </div>
 <!-- /nb-output -->
+
+The first print is the tool's result, and the second is the model's answer once we send that result back.
 
 ## Context & memory
 
@@ -565,6 +579,8 @@ user: Show me what you've built.
 </div>
 <!-- /nb-output -->
 
+As you can see, we went from eight messages to five. The system prompt and task stay, the middle turns become a summary and the last two messages also stay.
+
 The downside to summarisation is that it changes the conversation prefix, so the next call may reuse less of the prompt cache [@openaiPromptCaching]. It's best used sparingly.
 
 [Memory](memory.md) is another topic to consider. It's common for an agent to dump out Markdown files as it "learns" things, which get loaded into context next time. Going further, some agents like OpenClaw have a process called "Dreaming" ([Dreams](dreams.md)), which reviews short-term memories on a schedule and promotes useful ones into `MEMORY.md` [@openclawDreaming].
@@ -582,9 +598,9 @@ Docker Sandboxes is one example of the first approach. It runs an agent in a mic
 
 For this post, I thought it would be interesting to explore [Decision Models](decision-models.md) for the classification layer. TypeSafe AI's Jev is one example, but OpenAI's new Decisions API looks like a good fit - and saves me adding another API key and/or client lib. It answers typed questions about some input, where a `predicate` returns a probability and a `score` places the input on a scale of levels you define in order, like low, medium, high and critical, returning a number between the first and the last [@openaiDecisionsGuide]. It's basically ordinal regression, if you're familiar with that term.
 
-For a basic safety classifier, we'll pass in the user's request and the proposed tool call, and get back `allow`, `ask` or `deny`. `ask` needs the user's permission; `deny` blocks the call. It's a simplified version of Codex's "guardian" reviewer, which scores each action for risk (`low`, `medium`, `high` or `critical`) and for whether the user authorised it, before letting it run [@openaiCodexGuardianPolicy]. With a `score` and a `predicate`, one Decisions call can ask both of Codex's questions.
+For a basic safety classifier, we'll pass in the user's request and the proposed tool call, and get back `allow`, `ask` or `deny`. `ask` needs the user's permission; `deny` blocks the call. It's a simplified version of Codex's "guardian" reviewer, which scores each action for risk (`low`, `medium`, `high` or `critical`) and for whether the user authorised it, before letting it run [@openaiCodexGuardianPolicy]. With a `score` and a `predicate`, one Decisions call can ask both of Codex's questions. It's not perfect, but it's good enough for our use case.
 
-It's not perfect, but this is likely where a lot of a harness's code will live. For Anthropic and OpenAI, getting it right is their bread and butter.
+In a production harness, this is likely where a lot of the code and complexity will live. For Anthropic and OpenAI, getting it right is their bread and butter.
 
 In this example, `read_file` skips classification, though reading a sensitive file can still matter. If the classifier can't answer, we fall back to asking the user:
 
@@ -680,7 +696,9 @@ for request, cmd, expected in EXAMPLES:
 
 All five came out as labelled in all four runs I've done against `gpt-6-luna`, including the notebook run above.
 
-The force-push is the interesting one. Its risk score fell below the cut-off, so only the authorisation question stopped it. My first wording asked whether the request authorised "this exact action", which marked `ls -la` as unauthorised (43%) for "What files are in this folder?". Borrowing Codex's idea that a necessary step towards the user's goal counts as authorised fixed that without letting the risky calls through.
+The force-push is the interesting one. Its risk score fell below the cut-off, so only the authorisation question stopped it.
+
+I also found it useful to borrow Codex's idea of instructing the model that a necessary step towards the user's goal counts as authorised, so routine steps like `ls -la`, which could otherwise be considered unauthorised, still get through.
 
 A classifier can still get these calls wrong, so I wouldn't treat it as a security boundary. For real work, I'd run the harness in a sandbox too.
 
@@ -734,9 +752,17 @@ def find_context(base_dir: pathlib.Path) -> str:
         "</project_instructions>"
     )
 
+```
+<!-- nb-output hash="22e65bcf4689bfc3" format="html" -->
+
+<!-- /nb-output -->
+
+And we can print that out to see what it will look like in the context window:
+
+```python
 print(find_context(BASE_DIR))
 ```
-<!-- nb-output hash="fa04261ad741e7da" format="html" -->
+<!-- nb-output hash="e5f41d1edd39c2fb" format="html" -->
 <div class="nb-output">
 <pre class="nb-stream-stdout">&lt;project_instructions path=&quot;agent-harness-working/AGENTS.md&quot;&gt;
 # AGENTS file for Lex's Simple Agent Harness
@@ -844,10 +870,17 @@ def format_skills(skills: list[dict]) -> str:
         "Resolve relative paths in a skill against the skill's folder.\n\n"
         f"<available_skills>\n{entries}\n</available_skills>"
     )
+```
+<!-- nb-output hash="3f4ee04d01d7368e" format="html" -->
 
+<!-- /nb-output -->
+
+And again, we can print it out to see what it will look like in the context window:
+
+```python
 print(format_skills(find_skills(BASE_DIR)))
 ```
-<!-- nb-output hash="9723f3db5c139830" format="html" -->
+<!-- nb-output hash="4b69695a38c66dd4" format="html" -->
 <div class="nb-output">
 <pre class="nb-stream-stdout">The following skills provide specialized instructions for specific tasks.
 Use the read_file tool to load a skill's SKILL.md when the task matches its description.
@@ -882,7 +915,7 @@ def build_system_prompt(base_dir: pathlib.Path) -> str:
 
 ## Loop - putting it all together
 
-Now it's time to put all the pieces together.
+Now it's finally time to write the loop, putting all the pieces together.
 
 Every tool call goes through the safety check first. If a call is blocked, the model is told why, so it can try another way or ask the user to confirm. Anything else that goes wrong, like malformed arguments or an unknown tool, also goes back to the model as an error message. And there are two hard limits, on turns and on cost, because a loop that never stops could cost us a lot of money.
 
@@ -974,7 +1007,7 @@ In a 2019 interview with Lex Fridman, Ian Goodfellow was asked what test of inte
 
 He then went into more detail:
 
-> "...you type in a paragraph explaining what you want it to do and it figures out what web searches it should run and downloads all the whole unnecessary ingredients"
+> "...you type in a paragraph explaining what you want it to do and it figures out what web searches it should run and downloads all the necessary ingredients"
 
 [Here's the timestamped interview](https://youtu.be/Z6rxFNMGdn0?t=3765s).
 
@@ -1022,7 +1055,6 @@ The agent built a small CNN with six convolutional layers and trained it from ra
 
 It wasn't completely hands-off. I had to allow the dataset hosts through the sandbox and nudge the agent once to find a faster download, since the first pass would have taken hours. But overall, this absolutely works.
 
-What a time to be alive.
 ## Conclusion
 
 So in this article, we built an entire agent harness from scratch that includes context management, a safety classifier, tools, context files, skills and more. It turns out to be quite an easy process. The whole thing is under 500 lines, and it handled a task once considered very difficult for an agent. Many of us software developers now spend our days in coding agents like Claude Code, and I think the process of writing your own harness from scratch really helps you understand how to be an effective operator: what context files and skills actually are, what compaction is doing, why the agent stops to ask you before running a command and so on.
