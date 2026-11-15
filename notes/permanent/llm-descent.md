@@ -177,18 +177,6 @@ It finishes at 91.3% on the test set, which is roughly where 50 steps of trainin
 
 Opus 5.5 reaches for the same toolbox, with stroke detectors, hand-drawn templates, nearest centroid (picking the closest template), naive Bayes, and loop and endpoint detectors. The difference is how much it measures. Fable's runs spent 20 to 27 steps measuring. Opus's runs spent none, three and one, and kept guessing instead. They stopped after 19 to 23 steps, at 70% to 74% on the test set.
 
-### When fitting was allowed, it reached for 1936
-
-My first version of the prompt forgot to ban fitting. By step 4, Opus had written this:
-
-```python
-for k in range(300):                      # 300 random synthetic digits per class
-    X[dgt, k] = features(place(polys, slant=rng.uniform(-2, 5), ...))
-W = np.linalg.solve(Sig, (mu - mbar).T).T  # a linear discriminant fitted to them
-```
-
-It drew 300 random versions of each digit from its own stroke models and fitted a linear discriminant to them, Fisher's technique from 1936: training, on data it made up. [That run](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/e26658b/mnist-training/results/opus-high-loose-rules-stopped) reached 83% by step 14, before I stopped it and tightened the rules.
-
 ### Where it landed
 
 [![Bar chart of test accuracy, with a dot for each run or seed. Random search with 50 evaluations: 16%. Opus 5.5: 72% (70% to 74%). Fable 5.2: 90% (88% to 91%). Adam after 50 gradient steps: 91%. Adam after 5,000 steps: 98%.](../_media/llm-descent/final-scores.png)](../_media/llm-descent/final-scores.png)
@@ -204,8 +192,6 @@ So here's a summary of everything I tested so far:
 With this new lens of how Weight-Space Programming builds an image classification model via "LLM Descent", I thought it would be interesting to review the Go network built by Astra in the original article.
 
 ## Exploring the Go network
-
-To me, the from-scratch Go network was the most striking result in the original post.
 
 Astra was given a 1.5M-parameter 9x9 Go policy network (243 inputs, six hidden layers of 512 units, and 82 outputs, one per point plus pass) with every weight set to zero. It had a Python sandbox, but no training, fitting or search of any kind, and it was asked to make the network play Go as well as possible. In most runs it could also spend "passes": each pass plays up to 128 practice games and shows it the results. Runs got 0, 10, 25 or 50 passes.
 
@@ -251,7 +237,6 @@ Every step Claude took on MNIST, and every part of Astra's Go program, is a tech
 | One setting at a time, split the difference (Claude's calibration, Astra's Go coefficients) | coordinate descent and line search | long before computers |
 | Liberties, eyes and influence (Astra) | rule-based Go evaluation | 1970s |
 | Choosing a weight edit for Qwen (Astra, per Barry) | linear programming | 1940s |
-| Synthetic digits plus a linear discriminant (the first attempt) | linear discriminant analysis | 1936 |
 
 The network is never used for what makes neural networks special: learning features nobody wrote down. It's a compilation target. Claude designs a classical algorithm, then translates it into weights.
 
@@ -261,30 +246,6 @@ So, at least for writing weights from scratch, weight-space programming is ordin
 
 But Nathan Barry has looked at one of the editing results, Astra's fix for Qwen3.5-0.8B's thinking loops, and found the same pattern there. Most of Astra's search, he writes, was "solving a linear program by trial and error": a couple of linear-program solves reproduce the edit with 8x fewer changed weights. And the fix is almost a constant push in one direction, which a steering vector can deliver without editing any weights at all: "The only difference is delivery" [@barryCanLinearProgram2026].
 
-## LLM Descent: is it actually a thing?
-
-<!-- LEX: your section. Points the results support either way:
-- For: the training loss goes down on every run, step after step, using nothing but feedback (the loss-by-step chart). Each step is an update to the network driven by a measured signal, which is what training is.
-- Against: no step is a gradient. Each one is a hypothesis and a test: change one setting and keep or revert it (coordinate descent, line search), or deliberately make the loss worse to measure something (probes). What descends is the hand-written program's handful of parameters, not the network's weights.
-- Efficiency: it beats random search with the same 50 evaluations by a wide margin, so the reasoning is doing real work per step. But each step costs cents to dollars, and Adam needs only 50 to 100 cheap steps to match or beat it.
-- Probing is the most "non-descent" part: steps that are useless as classifiers, worth it only because the best step is the one scored.
-- Fable 5.2 comes closest to real training: it effectively fits naive Bayes by hand, counting each feature's rate per digit through the confusion matrix, and matches 50 steps of Adam.
-- Possible verdict: "LLM Descent" is a good name for the loop, but what it optimises is a classical program, so it's closer to an engineer tuning a system than to gradient descent. -->
-
-## The ceiling is the old ceiling
-
-<!-- LEX: this heading may need changing. 1990s hand-crafted systems got well above 91% on MNIST, so Fable didn't hit the old ceiling, it ran out of steps. -->
-
-Fable 5.2 finished at 88% to 91%, still improving when it ran out of steps, while Adam reaches 98% after 5,000. Claude can only use features it can describe, and every feature costs it a step or two to measure.
-
-## What's new
-
-<!-- LEX: in your words. Candidates: (1) it measured the data without ever seeing it, rebuilding the "look at the data" step out of a loss and a confusion matrix; (2) when its hand-written features stalled, it switched from guessing to measuring; (3) it did a feature engineer's day of work for about $30 a run; (4) the newer model wasn't better at guessing, it was better at measuring: Fable spent 20 to 27 steps measuring, Opus 0 to 3; (5) letting it see digits, and its own mistakes, barely changed what Opus built. -->
-
-## Next
-
-<!-- LEX: other models (an earlier 15-step test suggested a big jump from Opus 4.x to Opus 5.5), other data (audio), editing a trained network, and a follow-up on tabular data (Titanic, an anonymised Titanic that Claude saw through, and synthetic data with a known answer): what Claude does when it already knows the answer. -->
-
 ## Code and results
 
-Everything is in the [experiments repo](https://github.com/lextoumbourou/weight-space-programming-experiments): the prompts, every reply and thinking summary, the code and weights from every step, and the [MNIST protocol](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/main/mnist-training). Earlier versions of these experiments, including tabular ones (Titanic and synthetic data) that I'll write up separately, are in [the repo's history](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/e26658b).
+Everything is in the [experiments repo](https://github.com/lextoumbourou/weight-space-programming-experiments): the prompts, every reply and thinking summary, the code and weights from every step, and the [MNIST protocol](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/main/mnist-training).
