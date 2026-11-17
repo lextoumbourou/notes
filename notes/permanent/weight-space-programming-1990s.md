@@ -1,5 +1,5 @@
 ---
-title: "Weight-Space Programming writes neural networks like a 1990s researcher"
+title: "Weight-Space Programming builds neural networks like a 1990s researcher"
 slug: weight-space-programming-1990s
 date: 2026-11-18 07:44
 modified: 2026-11-18 08:05
@@ -241,7 +241,7 @@ It finishes at 91.3% on the test set, which is roughly where 50 steps of trainin
 
 </details>
 
-### What about Opus 5.5?
+### Earlier testing on Opus 5.5
 
 Opus 5.5 reaches for the same toolbox, with stroke detectors, hand-drawn templates, nearest centroid (picking the closest template), naive Bayes, and loop and endpoint detectors. The difference seems to be how much it measures. Fable's runs spent 22 to 27 steps measuring. Opus's runs spent far less (none, three and one, respectively) and kept guessing instead. They stopped after 19 to 23 steps, at 70% to 74% on the test set. I also ran a few tests with Opus 5.5 that gave the model more feedback, including example digits, but they didn't make much difference, so I've left them out of this post.
 
