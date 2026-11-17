@@ -4,6 +4,7 @@ slug: weight-space-programming-1990s
 date: 2026-11-18 07:44
 modified: 2026-11-18 08:05
 video: planned
+hn_post: https://news.ycombinator.com/item?id=50538977
 summary: "The writing aspect of WSP turns out to be quite a history lesson."
 cover: /_media/llm-descent/weight-space-programming-1990s-cover.jpg
 category: essay
