@@ -5,8 +5,7 @@ date: 2026-11-18 07:44
 modified: 2026-11-18 07:44
 video: planned
 summary: "What an LLM actually does when it writes a neural network's weights."
-cover: /_media/llm-descent-cover.jpg
-cover_credits: Photo by <a href="https://unsplash.com/@adiyusuf90">Adi Yusuf</a> on <a href="https://unsplash.com/photos/people-hiking-on-foggy-mountain-j-UTH7jAnUs">Unsplash</a>
+cover: /_media/llm-descent/weight-space-programming-1990s-cover.jpg
 category: essay
 tags:
   - LLMs
