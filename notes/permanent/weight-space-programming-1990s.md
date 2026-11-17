@@ -131,6 +131,17 @@ This is [template matching](https://en.wikipedia.org/wiki/Template_matching) - o
 
 Its first network gets 71% on the test set. Redrawing the digits the confusion matrix says are wrong brings it to 77%.
 
+<details markdown="1">
+<summary>See it for yourself: steps 1 to 3</summary>
+
+| Step | What happened | Files |
+|---:|---|---|
+| 1 | Line detectors and hand-drawn templates, scored as log-odds | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/01/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/01/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/01/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/02/message.md) |
+| 2 | Redraws the templates the confusion matrix says are wrong | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/02/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/02/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/02/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/03/message.md) |
+| 3 | Adds a closed-loop detector built from four corner filters | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/03/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/03/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/03/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/04/message.md) |
+
+</details>
+
 #### 2. Unit-testing the loop detector (steps 4 to 9)
 
 An old-school model engineer would have studied the digits to see where their features go wrong. We haven't given Claude the ability to do that in this test, but at step 4, it tries an interesting approach, where it stops classifying for a step and tests a loop detector (a feature for closed loops, like the ones in 0, 6, 8 and 9) on its own:
@@ -145,6 +156,18 @@ It rewires the output layer so that each "predicted digit" means how strongly, a
 
 In a way, this is kinda cheating, but then again it doesn't break the rules. The code doesn't run the network or fit anything, or even see an image. And hey: the test set is untouched, so the scores are still honest.
 
+<details markdown="1">
+<summary>See it for yourself: steps 4 to 9</summary>
+
+| Step | What happened | Files |
+|---:|---|---|
+| 4 | Tests the loop detector on its own | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/04/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/04/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/04/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/05/message.md) |
+| 5 | Puts the loop detector back, weighted by what it measured | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/05/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/05/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/05/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/06/message.md) |
+| 6 | Tests the size and slant of its drawings, head to head | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/06/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/06/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/06/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/07/message.md) |
+| 7 | A tournament between variants of 2 and 3 | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/07/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/07/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/07/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/08/message.md) |
+
+</details>
+
 #### 3. Corners (steps 10 to 18)
 
 Next, it turns the corner detectors inside its loop detector into features of their own: four corner shapes where strokes meet (┌ ┐ └ ┘). Handwriting recognisers relied on shape features like these [@trierFeatureExtractionMethods1996] [@favataMultipleFeatureResolution1996]. At first it guesses how often each one shows up in each digit. When that stalls at about 81%, it measures them instead, three steps in a row, and sets their weights from the results.
@@ -152,9 +175,30 @@ Next, it turns the corner detectors inside its loop detector into features of th
 > Three measurement steps on the corners gave more than many steps of guessing, and they showed that some of my hand-drawn expectations were far off.
 
 By step 18, it's at 83%. Pretty incredible, if you ask me.
+<details markdown="1">
+<summary>See it for yourself: steps 10 to 18</summary>
+
+| Step | What happened | Files |
+|---:|---|---|
+| 10 | Adds the corner detectors as features of their own | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/10/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/10/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/10/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/11/message.md) |
+| 13 | The first of three corner measurement steps | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/13/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/13/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/13/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/14/message.md) |
+| 16 | Sets the corner weights from the measurements | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/16/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/16/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/16/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/17/message.md) |
+
+</details>
+
 #### 4. Measuring every stroke (steps 19 to 30)
 
 So it measures everything else too. Over the next twelve steps, it reads out how often each of its 32 stroke features fires on each digit, three at a time. At step 24, it plugs in the first fifteen measurements to check they help, and accuracy jumps from 83% to 88%.
+
+<details markdown="1">
+<summary>See it for yourself: steps 19 to 30</summary>
+
+| Step | What happened | Files |
+|---:|---|---|
+| 19 | Starts measuring the stroke features, and reflects on the corners | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/19/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/19/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/19/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/20/message.md) |
+| 24 | Plugs in the first fifteen measurements | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/24/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/24/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/24/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/25/message.md) |
+
+</details>
 
 #### 5. Rebuilt from measurements (steps 31 to 40)
 
@@ -166,6 +210,16 @@ What's left is a naive Bayes-style classifier, with every probability measured f
 
 [![Heatmap of the 400 rates in run 1's step 31 code: for each true digit, how often each of 40 features fires, grouped into horizontal, /, vertical and \ strokes (eight cells each) and eight corner zones. The 1 row is pale almost everywhere. One column is outlined: a horizontal stroke near the bottom fires on 99.8% of 0s and 15.4% of 1s.](../_media/llm-descent/measured-rates.png)](../_media/llm-descent/measured-rates.png)
 
+<details markdown="1">
+<summary>See it for yourself: steps 31 to 40</summary>
+
+| Step | What happened | Files |
+|---:|---|---|
+| 31 | Rebuilds the whole classifier from measured rates | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/31/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/31/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/31/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/32/message.md) |
+| 36 | Starts measuring the half of the stroke grid it hadn't covered | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/36/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/36/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/36/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/37/message.md) |
+
+</details>
+
 #### 6. Calibration (steps 41 to 50)
 
 The last ten steps are fine-tuning by hand, deciding how much to trust each kind of evidence and how confident its predictions should be. It also keeps track of exactly how it will be scored.
@@ -176,11 +230,31 @@ It finishes at 91.3% on the test set, which is roughly where 50 steps of trainin
 
 [![Three training confusion matrices for Fable 5.2 run 1, rows true digit and columns predicted digit, shaded pink. At step 1 (71% training accuracy) the diagonal is visible but noisy. At step 18 (83%) it is clearer. At step 50 (91%) the diagonal dominates.](../_media/llm-descent/confusion-over-steps.png)](../_media/llm-descent/confusion-over-steps.png)
 
+<details markdown="1">
+<summary>See it for yourself: steps 41 to 50</summary>
+
+| Step | What happened | Files |
+|---:|---|---|
+| 41 | Rebuilds with 47 measured stroke cells | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/41/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/41/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/41/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/42/message.md) |
+| 49 | Its best training loss so far | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/49/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/49/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/49/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/50/message.md) |
+| 50 | The last step, keeping track of how it will be scored | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/50/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/50/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/50/submission.py) |
+
+</details>
+
 ### What about Opus 5.5?
 
-Opus 5.5 reaches for the same toolbox, with stroke detectors, hand-drawn templates, nearest centroid (picking the closest template), naive Bayes, and loop and endpoint detectors. The difference is how much it measures. Fable's runs spent 22 to 27 steps measuring. Opus's runs spent none, three and one, and kept guessing instead. They stopped after 19 to 23 steps, at 70% to 74% on the test set. I also ran a few tests with Opus 5.5 that gave the model more feedback, including example digits, but they didn't make much difference, so I've left them out of this post.
+Opus 5.5 reaches for the same toolbox, with stroke detectors, hand-drawn templates, nearest centroid (picking the closest template), naive Bayes, and loop and endpoint detectors. The difference seems to be how much it measures. Fable's runs spent 22 to 27 steps measuring. Opus's runs spent far less (none, three and one, respectively) and kept guessing instead. They stopped after 19 to 23 steps, at 70% to 74% on the test set. I also ran a few tests with Opus 5.5 that gave the model more feedback, including example digits, but they didn't make much difference, so I've left them out of this post.
 
 [![Bar chart of test accuracy, with a dot for each run or seed. Random search with 50 evaluations: 16%. Opus 5.5: 72% (70% to 74%). Fable 5.2: 90% (88% to 91%). Adam after 50 gradient steps: 91%. Adam after 5,000 steps: 98%.](../_media/llm-descent/final-scores.png)](../_media/llm-descent/final-scores.png)
+
+<details markdown="1">
+<summary>See it for yourself: the Opus 5.5 runs</summary>
+
+[run 1](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/68d663a/mnist-training/results/a-1/steps) · [run 2](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/68d663a/mnist-training/results/a-2/steps) · [run 3](https://github.com/lextoumbourou/weight-space-programming-experiments/tree/68d663a/mnist-training/results/a-3/steps)
+
+Each step folder has the reply, thinking summary, code and metrics.
+
+</details>
 
 ### What about a harder problem?
 
@@ -195,6 +269,18 @@ What does work is studying properties of the photo rather than the animal: dog p
 [![Left: a dot plot of nine features Fable 5.2 tested one at a time on cats vs dogs, showing the share of cat photos and dog photos each one fires on. The pointed-ear detector fires on 58% of cats and 64% of dogs. The three features kept in its best network separate the classes most: green (35% of cats, 43% of dogs), texture (57% and 73%) and vertical minus horizontal edges (55% and 69%). Right: test accuracy. Random search 54%, Adam after 50 steps 51%, Adam after 500 steps 55%, Fable 5.2 62%, Adam after 5,000 steps 74%, against a coin flip at 50%.](../_media/llm-descent/cats-vs-dogs.png)](../_media/llm-descent/cats-vs-dogs.png)
 
 It lands at 61.6% on the test set, where a coin flip gets 50%. It actually does better than 500 steps of Adam (55%), but this small network is slow to train, and after 5,000 steps Adam reaches 74%. Fable's run was also very expensive, at $8.08 for 17 steps.
+
+<details markdown="1">
+<summary>See it for yourself: cats vs dogs</summary>
+
+| Step | What happened | Files |
+|---:|---|---|
+| 1 | Builds its detector bank and tests the pointed-ear detector | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/01/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/01/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/01/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/02/message.md) |
+| 2 | Finds the ear detector points the wrong way, and tests green | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/02/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/02/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/02/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/03/message.md) |
+| 9 | Its best network: texture, edge direction and green | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/09/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/09/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/09/submission.py) · [results](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/10/message.md) |
+| 17 | The last step, before the stopping rule ends the run | [reply](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/17/reply.md) · [thinking summary](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/17/thinking.md) · [code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/catdog-training/results/fable-1/steps/17/submission.py) |
+
+</details>
 
 With this new perspective on how Weight-Space Programming builds an image classification model by hand-crafting it using known pre-deep-learning techniques, let's look at the Go network Astra built in the original article and see if there are any parallels.
 
@@ -240,7 +326,7 @@ So the paper's most impressive from-scratch network is a rule-based Go program, 
 
 ## Conclusion
 
-In this article, we've taken a closer look at how weight-space programming "writes" networks. On MNIST and in Go, the models drew on their extensive knowledge of classical techniques and combined them in sophisticated ways, guided by careful measurement of the feedback they were given. On more complex problems like cats vs dogs, we can see the limitations of hand-crafted features, however. So, at least from these experiments, LLMs aren't so much "writing in weight-space" as brilliantly chaining together hand-designed techniques.
+In this article, we've taken a closer look at how weight-space programming "writes" networks. On MNIST and in Go, the models drew on their extensive knowledge of classical techniques and combined them in sophisticated ways, guided by careful measurement of the feedback they were given. On more complex problems like cats vs dogs, we can see the limitations of hand-crafted features, however. So, it seems, from these experiments at least, LLMs aren't so much "writing in weight-space" as brilliantly chaining together hand-designed techniques.
 
 ---
 
