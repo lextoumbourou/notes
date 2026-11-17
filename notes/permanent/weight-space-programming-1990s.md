@@ -1,10 +1,10 @@
 ---
-title: "Weight-Space Programming builds neural networks like a 1990s researcher"
+title: "Weight-Space Programming writes neural networks like a 1990s researcher"
 slug: weight-space-programming-1990s
 date: 2026-11-18 07:44
-modified: 2026-11-18 07:44
+modified: 2026-11-18 08:05
 video: planned
-summary: "What an LLM actually does when it writes a neural network's weights."
+summary: "The writing aspect of WSP turns out to be quite a history lesson."
 cover: /_media/llm-descent/weight-space-programming-1990s-cover.jpg
 category: essay
 tags:
@@ -28,7 +28,7 @@ MNIST is the OG image classification problem. The goal is to label each handwrit
 
 Similar to the Go test in the original Weight-Space Programming post, I built a test with a fixed CNN, then prompted Claude to write code that sets all its weights from scratch, with a few rules that include no fitting, regression, or searching. Drawing filters and templates by hand, from formulas or strokes, is explicitly allowed.
 
-It's a considerably stricter setup than Astra had for Go, with no PyTorch and no practice games, only a score on the training set after each attempt. I also ran a few tests with Opus 5.5 that gave the model more feedback, including example digits, but they didn't make much difference, so I've left them out of this post. Also, the tests in this blog post were run with Claude Fable 5.2, which performed considerably better than Opus 5.5.
+It's a considerably stricter setup than Astra had for Go, with no PyTorch and no practice games, only its training loss, accuracy and confusion matrix after each attempt. The tests in this blog post were run with Claude Fable 5.2, which performed considerably better than Opus 5.5.
 
 Claude starts with no weights at all, and has to set every one of this network's 5,994 weights "by hand":
 
@@ -90,8 +90,6 @@ I ran it three times.
 
 Though I have early stopping configured to stop when the training loss stops improving, all three runs descend for the full 50 steps, still improving when they run out, and land around 90% on the test set. Amazingly, that's close to where a training run with Adam gets to after 50 gradient steps.
 
-Let's look at what the runs actually built, step by step, based on Claude's replies and reasoning.
-
 ### A 1990s computer-vision pipeline
 
 In 1998, LeCun's paper that introduced MNIST described that era's approaches thus far as "a fixed feature extractor and a trainable classifier", where the feature extractor "is often entirely hand crafted" [@lecunGradientbasedLearningApplied1998]. Accuracy, he wrote, "is largely determined by the ability of the designer to come up with an appropriate set of features", which is "a daunting task which, unfortunately, must be redone for each new problem."
@@ -111,7 +109,7 @@ That daunting task is exactly what Claude takes on. All three runs built the sam
 
 *The first step at which each run's network uses the technique.*
 
-Let's follow run 1, step by step. It's the best of the three, at 91.3%, but the other two follow a similar path, measuring their way from hand-drawn templates to a classifier.
+Let's follow run 1, step by step, based on Claude's replies and reasoning. It's the best of the three, at 91.3%, but the other two follow a similar path, measuring their way from hand-drawn templates to a classifier.
 
 [![Line chart of test accuracy for every network Fable 5.2 wrote in run 1, over 50 steps, on six coloured bands: templates (steps 1 to 3), testing detectors (4 to 9), corners (10 to 18), measuring strokes (19 to 30), rebuilt from measurements (31 to 40) and calibration (41 to 50). Accuracy starts at 71%, reaches 83% by step 18, 89% when it rebuilds the classifier at step 31, and 91.3% at step 50, level with Adam after 50 gradient steps. Twenty-two measurement steps are marked along the bottom.](../_media/llm-descent/fable-run-1-story.png)](../_media/llm-descent/fable-run-1-story.png)
 
@@ -180,9 +178,7 @@ It finishes at 91.3% on the test set, which is roughly where 50 steps of trainin
 
 ### What about Opus 5.5?
 
-Opus 5.5 reaches for the same toolbox, with stroke detectors, hand-drawn templates, nearest centroid (picking the closest template), naive Bayes, and loop and endpoint detectors. The difference is how much it measures. Fable's runs spent 22 to 27 steps measuring. Opus's runs spent none, three and one, and kept guessing instead. They stopped after 19 to 23 steps, at 70% to 74% on the test set.
-
-### Summary
+Opus 5.5 reaches for the same toolbox, with stroke detectors, hand-drawn templates, nearest centroid (picking the closest template), naive Bayes, and loop and endpoint detectors. The difference is how much it measures. Fable's runs spent 22 to 27 steps measuring. Opus's runs spent none, three and one, and kept guessing instead. They stopped after 19 to 23 steps, at 70% to 74% on the test set. I also ran a few tests with Opus 5.5 that gave the model more feedback, including example digits, but they didn't make much difference, so I've left them out of this post.
 
 [![Bar chart of test accuracy, with a dot for each run or seed. Random search with 50 evaluations: 16%. Opus 5.5: 72% (70% to 74%). Fable 5.2: 90% (88% to 91%). Adam after 50 gradient steps: 91%. Adam after 5,000 steps: 98%.](../_media/llm-descent/final-scores.png)](../_media/llm-descent/final-scores.png)
 
@@ -190,17 +186,15 @@ Opus 5.5 reaches for the same toolbox, with stroke detectors, hand-drawn templat
 
 I ran the same test on photos from Kaggle's famous [Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats) competition, with an image size of 64x64, using a slightly bigger fixed CNN (24,898 weights), the same rules and the same stopping rule. Here we can see some of the limitations of the hand-crafted feature approach, and some of the potential upper bounds of "weight-space programming".
 
-Fable 5.2 starts the way it did on MNIST, building a bank of hand-designed detectors, including pointed ears, an eyes-and-nose triangle and grass, then testing some of them one at a time. But its ideas about cats and dogs don't survive the measurements:
+Fable 5.2 takes the same initial approach as it did on MNIST, building a bank of hand-designed detectors, including pointed ears, an eyes-and-nose triangle and grass, then testing some of them one at a time. But those initial ideas don't bear much fruit:
 
 > The ear probe showed the opposite of my guess
 
-What does work are properties of the photo rather than the animal: dog photos have more green (grass and outdoor scenes), more texture, and more vertical edges. Its best network, at step 9, uses just those three. Nothing it adds after that does better, so the run stops at step 17.
+What does work is studying properties of the photo rather than the animal: dog photos have more green (grass and outdoor scenes), more texture, and more vertical edges. Its best network, at step 9, uses just those three. Nothing it adds after that does better, so the run stops at step 17.
 
 [![Left: a dot plot of nine features Fable 5.2 tested one at a time on cats vs dogs, showing the share of cat photos and dog photos each one fires on. The pointed-ear detector fires on 58% of cats and 64% of dogs. The three features kept in its best network separate the classes most: green (35% of cats, 43% of dogs), texture (57% and 73%) and vertical minus horizontal edges (55% and 69%). Right: test accuracy. Random search 54%, Adam after 50 steps 51%, Adam after 500 steps 55%, Fable 5.2 62%, Adam after 5,000 steps 74%, against a coin flip at 50%.](../_media/llm-descent/cats-vs-dogs.png)](../_media/llm-descent/cats-vs-dogs.png)
 
-It lands at 61.6% on the test set, where a coin flip gets 50%. It actually does better than 500 steps of Adam (55%), but this small network is slow to train, and after 5,000 steps Adam reaches 74%.
-
-So even though the classical toolbox got close to training on MNIST, on photos we can see how limited these approaches are.
+It lands at 61.6% on the test set, where a coin flip gets 50%. It actually does better than 500 steps of Adam (55%), but this small network is slow to train, and after 5,000 steps Adam reaches 74%. Fable's run was also very expensive, at $8.08 for 17 steps.
 
 With this new perspective on how Weight-Space Programming builds an image classification model by hand-crafting it using known pre-deep-learning techniques, let's look at the Go network Astra built in the original article and see if there are any parallels.
 
@@ -242,11 +236,11 @@ Its improvement from practice games was tuning those numbers by hand. Between it
 
 Play, diagnose, add a rule or retune one, which is basically how rule-based Go programs were built for decades [@mullerComputerGo2002], and shares a lot of parallels with the image classification approach described in the first section.
 
-So the paper's most impressive from-scratch network is a rule-based Go program, compiled into weights. That is truly an incredibly impressive feat of engineering: a hand-written program that beats a PPO network trained on 20.5 million games.
+So the paper's most impressive from-scratch network is a rule-based Go program, compiled into weights. That is truly an incredible feat of engineering: a hand-written program that beats a PPO network trained on 20.5 million games.
 
 ## Conclusion
 
-In this article, we've taken a closer look at how weight-space programming "writes" networks. On MNIST and in Go, the models drew on their extensive knowledge of classical techniques and combined them in sophisticated ways, guided by careful measurement of the feedback they were given. On more complex problems like cats vs dogs, we can see the limitations of hand-crafted features, however. So, at least from these experiments, LLMs aren't so much "writing in weight-space" as brilliantly chaining together training-free techniques.
+In this article, we've taken a closer look at how weight-space programming "writes" networks. On MNIST and in Go, the models drew on their extensive knowledge of classical techniques and combined them in sophisticated ways, guided by careful measurement of the feedback they were given. On more complex problems like cats vs dogs, we can see the limitations of hand-crafted features, however. So, at least from these experiments, LLMs aren't so much "writing in weight-space" as brilliantly chaining together hand-designed techniques.
 
 ---
 
