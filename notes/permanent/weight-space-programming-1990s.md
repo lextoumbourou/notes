@@ -293,7 +293,7 @@ With this new perspective on how Weight-Space Programming builds an image classi
 
 In the original article, Astra was given a 9x9 Go network with 1.5M parameters, all set to zero. It had a Python sandbox, but wasn't allowed to train, fit or search, and was told to make the network play Go as well as it could. In most runs, it could also use "passes": each pass plays a batch of up to 128 practice games and shows it the results. The authors ran it four times, with budgets of 0, 10, 25 and 50 passes.
 
-And that seemed to work really well. With 50 passes, the Astra-built network beat two small networks trained with reinforcement learning (PPO), in 84% and 81% of games respectively. It also beat a PPO network of the same size, which was trained on 20.5 million games, 70% to 79% of the time. Actually, even with no practice games played at all, Astra managed to write a network that still won over half the games played against the smaller networks [@takehi2026weightspaceLogs].
+And that seemed to work really well. With 50 passes, the Astra-built network beat two small networks trained with reinforcement learning (PPO) in over 80% of games, and beat one of the same size, trained on 20.5 million games, most of the time. Actually, even with no practice games played at all, Astra managed to write a network that still won over half the games played against the smaller networks [@takehi2026weightspaceLogs].
 
 Let's dig deeper into this result to try to understand what's going on.
 
@@ -323,7 +323,7 @@ Additionally, behind those 1.48 million weights is a [config of 26 hand-set numb
 
 The design script builds the network layer by layer, like a hand-written board analysis. It starts with layer 1, which counts each stone's liberties. Then layers 2 and 3 spread that evidence through connected stones. Next, layer 4 flags groups in atari and self-atari. After that, layer 5 scores captures and rescues. And, finally, layer 6 combines tactics with connection, territory and eyes. The 26 numbers mostly set how much each rule counts.
 
-Its improvement from practice games was tuning those numbers by hand. Between its first design and its final network, `rescue` went from 6.0 to 8.0, `contact` from 1.4 to 3.0 and `own_adj` from 0.25 to 0.8. Practice games also led it to add five new rules along the way, such as a penalty for ko repetition (`repeat_risk`) and a bonus for third-line frameworks (`framework_bonus`).
+Its improvement from practice games was mostly nudging those numbers by hand, and adding five new rules along the way, such as a penalty for ko repetition.
 
 Play, diagnose, add a rule or retune one, which is basically how rule-based Go programs were built for decades [@mullerComputerGo2002], and shares a lot of parallels with the image classification approach described in the first section.
 
