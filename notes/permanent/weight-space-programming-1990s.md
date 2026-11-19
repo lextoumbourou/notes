@@ -331,7 +331,9 @@ So the paper's most impressive from-scratch network is a rule-based Go program, 
 
 ## Conclusion
 
-In this article, we've taken a closer look at how weight-space programming "writes" networks. On MNIST and in Go, the models drew on their extensive knowledge of classical techniques and combined them in sophisticated ways, guided by careful measurement of the feedback they were given. On more complex problems like cats vs dogs, we can see the limitations of hand-crafted features, however. So, it seems, from these experiments at least, LLMs aren't so much "writing in weight-space" as brilliantly chaining together hand-designed techniques.
+In this article, we've taken a closer look at how weight-space programming "writes" networks, leaving aside its other findings about reading and editing weights. On MNIST and in Go, the models drew on their extensive knowledge of classical techniques and combined them in sophisticated ways, guided by careful measurement of the feedback they were given. On harder problems like cats vs dogs, though, the limits of hand-crafted features start to show.
+
+So, from these experiments at least, LLMs aren't so much "writing in weight-space" as brilliantly chaining together hand-designed techniques. That's still an insane capability. And I think there's a second takeaway: there's a lot to learn from watching LLMs work. They were trained on human knowledge, and now, it seems, they have a lot to teach us.
 
 ---
 
