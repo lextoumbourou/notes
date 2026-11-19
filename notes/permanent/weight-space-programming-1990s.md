@@ -122,9 +122,15 @@ Let's follow run 1, step by step, based on Claude's replies and reasoning. It's 
 
 Claude starts like a 1990s computer vision engineer. Its first layer is a set of line detectors at four angles, written from formulas. They're cousins of the [Sobel filter](https://en.wikipedia.org/wiki/Sobel_operator), a classic way to find edges in an image, which 1990s digit recognisers started with [@favataMultipleFeatureResolution1996].
 
+Each detector is a 5×5 grid of weights in the first convolution layer. As it slides across the image, it multiplies the 25 pixels under it by its 25 weights and adds them up, so it scores high wherever there's a stroke at its angle, and zero on blank paper. Fable fills in four of the layer's eight filters this way and leaves the other four at zero for later.
+
 [![Two rows of eight 5 by 5 first-layer filters, teal for positive and pink for negative. Fable 5.2's row, from run 1: four line detectors at 0, 45, 90 and 135 degrees, then four corner detectors, one for each kind of right-angled corner. Adam's row: irregular, mixed patterns.](../_media/llm-descent/filters-written-vs-learned.png)](../_media/llm-descent/filters-written-vs-learned.png)
 
-Then it draws each digit by hand, as a few strokes, and turns each drawing into a table of how likely each stroke direction is in each part of the image. It scores every image against all ten tables.
+Its second layer adds up each detector's map over patches of the image, so every image ends up as a 4×4 grid of cells saying which stroke directions appear in each.
+
+Then it draws each digit by hand, as a few strokes [in code](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/01/submission.py#L60-L108), and turns each drawing into the same kind of grid: how likely each stroke direction is in each cell. Those tables become the final layer's [weights](https://github.com/lextoumbourou/weight-space-programming-experiments/blob/68d663a/mnist-training/results/fable-a-1/steps/01/submission.py#L169-L186), so it scores every image against all ten tables.
+
+The final layer is a 10 by 256 grid of weights, with one row for each digit's table.
 
 > The weights are the log-odds of that table, scaled down by a temperature.
 
