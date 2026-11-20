@@ -24,7 +24,7 @@ tags:
 
 In the [original blog post](https://rikiyat.github.io/blog/weight-space-programming/), beyond the reading and editing experiments, the authors had GPT-6 Astra build a network to play Go from scratch, then improve it by playing practice games, and editing the weights based on analysis of its losses. That loop of writing, testing and editing feels like a new way to train a network, something like *LLM Descent*. But is it?
 
-In this article, I run my own weight-writing experiment with Claude Fable 5.2 on a familiar image classification problem. Looking closely at what the model builds, I found it to be an interesting history lesson in hand-crafted, pre-deep-learning techniques. With that new lens on weight-space programming, I also study the Go network that Astra built in the original article, and find something very similar.
+In this article, I run my own weight-writing experiment with Claude Fable 5.2 on a familiar image classification problem. Look closely at what the model builds, and it turns out to be an interesting lesson in historical model-building techniques. With that new lens on weight-space programming, I also study the Go network that Astra built in the original article, and find something very similar.
 
 ## Building an image classifier with LLM Descent
 
