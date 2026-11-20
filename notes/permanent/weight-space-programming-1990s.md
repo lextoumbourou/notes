@@ -24,7 +24,7 @@ tags:
 
 In the [original blog post](https://rikiyat.github.io/blog/weight-space-programming/), beyond the reading and editing experiments, the authors had GPT-6 Astra build a network to play Go from scratch, then improve it by playing practice games, and editing the weights based on analysis of its losses. That loop of writing, testing and editing feels like a new way to train a network, something like *LLM Descent*. But is it?
 
-In this article, I run my own weight-writing experiment with Claude Fable 5.2 on a familiar image classification problem. Look closely at what the model builds, and it turns out to be an interesting history lesson in hand-crafted, pre-deep-learning techniques. With that new lens on weight-space programming, I also study the Go network that Astra built in the original article, and find something very similar.
+In this article, I run my own weight-writing experiment with Claude Fable 5.2 on a familiar image classification problem. Looking closer at what the model builds, I found it to be an interesting history lesson in hand-crafted, pre-deep-learning techniques. With that new lens on weight-space programming, I also study the Go network that Astra built in the original article, and find something very similar.
 
 ## Building an image classifier with LLM Descent
 
@@ -162,7 +162,7 @@ Its first network gets 71% on the test set. Redrawing the digits the confusion m
 
 At step 3, it fills its four empty filters with corner detectors, and combines them in conv2's empty channels into a loop detector: four corners around a blank middle.
 
-An old-school model engineer would have studied the digits to see where their features go wrong. We haven't given Claude the ability to do that in this test, but at step 4, it tries an interesting approach, where it stops classifying for a step and tests a loop detector (a feature for closed loops, like the ones in 0, 6, 8 and 9) on its own:
+An engineer might have studied the digits to see where their features go wrong. We haven't given Claude the ability to do that in this test, but at step 4, it tries an interesting approach, where it stops classifying for a step and tests a loop detector (a feature for closed loops, like the ones in 0, 6, 8 and 9) on its own:
 
 > I cannot tell that from a confusion matrix where everything is mixed together, so this step tests the detector on its own, like a unit test.
 
