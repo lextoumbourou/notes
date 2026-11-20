@@ -34,7 +34,7 @@ MNIST is the OG image classification problem. The goal is to label each handwrit
 
 Similar to the Go test in the original Weight-Space Programming post, I built a test with a fixed [CNN](convolutional-neural-network.md), then prompted Claude to write code that sets all its weights from scratch, with a few rules that include no fitting, regression, or searching. Drawing filters and templates by hand, from formulas or strokes, is explicitly allowed.
 
-It's a considerably stricter setup than Astra had for Go, with no PyTorch and no practice games, only its training loss, accuracy and confusion matrix after each attempt. The tests in this blog post were run with Claude Fable 5.2, which performed considerably better than Opus 5.5.
+It's a considerably stricter setup than Astra had for Go, with no PyTorch and no practice games, only its training loss, accuracy and confusion matrix after each attempt. The tests in this blog post were run with Claude Fable 5.2, which performed much better than Opus 5.5.
 
 Claude starts with no weights at all, and has to set every one of this network's 5,994 weights "by hand":
 
@@ -288,7 +288,7 @@ Each step folder has the reply, thinking summary, code and metrics.
 
 I ran the same test on photos from Kaggle's famous [Dogs vs. Cats](https://www.kaggle.com/c/dogs-vs-cats) competition, with an image size of 64x64, using a slightly bigger fixed CNN (24,898 weights), the same rules and the same stopping rule. Here we can see some of the limitations of the hand-crafted feature approach, and some of the potential upper bounds of "weight-space programming".
 
-Fable 5.2 takes the same initial approach as it did on MNIST, building a bank of hand-designed detectors, including pointed ears, an eyes-and-nose triangle and grass, then testing some of them one at a time. But those initial ideas don't bear much fruit:
+Fable 5.2 takes the same initial approach as it did on MNIST, building a bank of hand-designed detectors, including pointed ears, an eyes-and-nose triangle and grass, then testing some of them one at a time. But those ideas don't bear much fruit:
 
 > The ear probe showed the opposite of my guess
 
@@ -296,7 +296,7 @@ What does work is studying properties of the photo rather than the animal: dog p
 
 [![Left: a dot plot of nine features Fable 5.2 tested one at a time on cats vs dogs, showing the share of cat photos and dog photos each one fires on. The pointed-ear detector fires on 58% of cats and 64% of dogs. The three features kept in its best network separate the classes most: green (35% of cats, 43% of dogs), texture (57% and 73%) and vertical minus horizontal edges (55% and 69%). Right: test accuracy. Random search 54%, Adam after 50 steps 51%, Adam after 500 steps 55%, Fable 5.2 62%, Adam after 5,000 steps 74%, against a coin flip at 50%.](../_media/llm-descent/cats-vs-dogs.png)](../_media/llm-descent/cats-vs-dogs.png)
 
-It lands at 61.6% on the test set, where a coin flip gets 50%. It actually does better than 500 steps of Adam (55%), but this small network is slow to train, and after 5,000 steps Adam reaches 74%. Fable's run was also very expensive, at $8.08 for 17 steps.
+It lands at 61.6% on the test set, where a coin flip gets 50%. It actually beats 500 steps of Adam (55%), but this small network is slow to train, and after 5,000 steps Adam reaches 74%. Fable's run was also very expensive, at $8.08 for 17 steps.
 
 <details markdown="1">
 <summary>See it for yourself: cats vs dogs</summary>
@@ -316,7 +316,7 @@ With this new perspective on how Weight-Space Programming builds an image classi
 
 In the original article, Astra was given a 9x9 Go network with 1.5M parameters, all set to zero. It had a Python sandbox, but wasn't allowed to train, fit or search, and was told to make the network play Go as well as it could. In most runs, it could also use "passes": each pass plays a batch of up to 128 practice games and shows it the results. The authors ran it four times, with budgets of 0, 10, 25 and 50 passes.
 
-And that seemed to work really well. With 50 passes, the Astra-built network beat two small networks trained with reinforcement learning (PPO) in over 80% of games, and beat one of the same size, trained on 20.5 million games, most of the time. Actually, even with no practice games played at all, Astra managed to write a network that still won over half the games played against the smaller networks [@takehi2026weightspaceLogs].
+And that seemed to work really well. With 50 passes, the Astra-built network beat two small networks trained with reinforcement learning (PPO) in over 80% of games, and beat one of the same size, trained on 20.5 million games, most of the time. Actually, even with no practice games played at all, Astra managed to write a network that still won over half its games against the smaller networks [@takehi2026weightspaceLogs].
 
 Let's dig deeper into this result to try to understand what's going on.
 
@@ -346,7 +346,7 @@ Additionally, behind those 1.48 million weights is a [config of 26 hand-set numb
 
 The design script builds the network layer by layer, like a hand-written board analysis. It starts with layer 1, which counts each stone's liberties. Then layers 2 and 3 spread that evidence through connected stones. Next, layer 4 flags groups in atari and self-atari. After that, layer 5 scores captures and rescues. And, finally, layer 6 combines tactics with connection, territory and eyes. The 26 numbers mostly set how much each rule counts.
 
-Its improvement from practice games was mostly nudging those numbers by hand, and adding five new rules along the way, such as a penalty for ko repetition.
+Its improvement from practice games was nudging those numbers by hand, and adding five new rules along the way, such as a penalty for ko repetition.
 
 Play, diagnose, add a rule or retune one, which is basically how rule-based Go programs were built for decades [@mullerComputerGo2002], and shares a lot of parallels with the image classification approach described in the first section.
 
