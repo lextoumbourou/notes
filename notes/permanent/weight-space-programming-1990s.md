@@ -9,6 +9,7 @@ bluesky_post: https://bsky.app/profile/notesbylex.com/post/3n2k3je37dc2b
 mastodon_post: https://fedi.notesbylex.com/@lex/117634126351593938
 threads_post: https://www.threads.com/@lexisoninsta/post/Df2_6ExAc3j
 x_post: https://x.com/notesbylex_/status/2122818386799591679
+linkedin_post: https://www.linkedin.com/posts/lextoumbourou_weight-space-programming-still-has-me-pretty-share-7529369349451694080-E_0X
 summary: "The writing aspect of WSP turns out to be quite a history lesson."
 cover: /_media/llm-descent/weight-space-programming-1990s-cover.jpg
 category: essay
