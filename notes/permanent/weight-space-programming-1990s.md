@@ -162,7 +162,7 @@ Its first network gets 71% on the test set. Redrawing the digits the confusion m
 
 At step 3, it fills its four empty filters with corner detectors, and combines them in conv2's empty channels into a loop detector: four corners around a blank middle.
 
-An engineer might have studied the digits to see where their features go wrong. We haven't given Claude the ability to do that in this test, but at step 4, it tries an interesting approach, where it stops classifying for a step and tests a loop detector (a feature for closed loops, like the ones in 0, 6, 8 and 9) on its own:
+A researcher might have studied the digits to see where their features go wrong. We haven't given Claude the ability to do that in this test, but at step 4, it tries an interesting approach, where it stops classifying for a step and tests a loop detector (a feature for closed loops, like the ones in 0, 6, 8 and 9) on its own:
 
 > I cannot tell that from a confusion matrix where everything is mixed together, so this step tests the detector on its own, like a unit test.
 
