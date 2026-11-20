@@ -31,7 +31,7 @@ MNIST is the OG image classification problem. The goal is to label each handwrit
 
 [![Twenty handwritten digits from the MNIST training set, two of each digit from 0 to 9, drawn in dark ink on off-white 28 by 28 pixel squares.](../_media/llm-descent/mnist-examples.png)](../_media/llm-descent/mnist-examples.png)
 
-Similar to the Go test in the original Weight-Space Programming post, I built a test with a fixed CNN, then prompted Claude to write code that sets all its weights from scratch, with a few rules that include no fitting, regression, or searching. Drawing filters and templates by hand, from formulas or strokes, is explicitly allowed.
+Similar to the Go test in the original Weight-Space Programming post, I built a test with a fixed [CNN](convolutional-neural-network.md), then prompted Claude to write code that sets all its weights from scratch, with a few rules that include no fitting, regression, or searching. Drawing filters and templates by hand, from formulas or strokes, is explicitly allowed.
 
 It's a considerably stricter setup than Astra had for Go, with no PyTorch and no practice games, only its training loss, accuracy and confusion matrix after each attempt. The tests in this blog post were run with Claude Fable 5.2, which performed considerably better than Opus 5.5.
 
@@ -120,9 +120,11 @@ Let's follow run 1, step by step, based on Claude's replies and reasoning. It's 
 
 #### 1. Hand-drawn templates (steps 1 to 3)
 
+[![Run 1's network at step 1, as three panels outlined in pink because all three changed. conv1: four line detectors and four empty filters. conv2: four stroke-presence channels, four cap channels and eight empty ones. fc: a 10 by 256 heatmap of weights, filled only in the columns that read the stroke channels: the hand-drawn templates.](../_media/llm-descent/network-stage-1.png)](../_media/llm-descent/network-stage-1.png)
+
 Claude starts like a 1990s computer vision engineer. Its first layer is a set of line detectors at four angles, written from formulas. They're cousins of the [Sobel filter](https://en.wikipedia.org/wiki/Sobel_operator), a classic way to find edges in an image, which 1990s digit recognisers started with [@favataMultipleFeatureResolution1996].
 
-Each detector is a 5×5 grid of weights in the first convolution layer. As it slides across the image, it multiplies the 25 pixels under it by its 25 weights and adds them up, so it scores high wherever there's a stroke at its angle, and zero on blank paper. Fable fills in four of the layer's eight filters this way and leaves the other four at zero for later.
+Each detector is a 5×5 grid of weights in the first [Convolutional Layer](convolutional-layer.md). As it slides across the image, it multiplies the 25 pixels under it by its 25 weights and adds them up, so it scores high wherever there's a stroke at its angle, and zero on blank paper. Fable fills in four of the layer's eight filters this way and leaves the other four at zero for later.
 
 [![Two rows of eight 5 by 5 first-layer filters, teal for positive and pink for negative. Fable 5.2's row, from run 1: four line detectors at 0, 45, 90 and 135 degrees, then four corner detectors, one for each kind of right-angled corner. Adam's row: irregular, mixed patterns.](../_media/llm-descent/filters-written-vs-learned.png)](../_media/llm-descent/filters-written-vs-learned.png)
 
@@ -155,6 +157,10 @@ Its first network gets 71% on the test set. Redrawing the digits the confusion m
 
 #### 2. Unit-testing the loop detector (steps 4 to 9)
 
+[![Run 1's network at step 5, all three panels outlined in pink. conv1 now has four corner detectors in its empty filters. conv2's eight empty channels are now loop detectors. In the fc heatmap, the new loop columns stand out for the digits 6, 8 and 9.](../_media/llm-descent/network-stage-2.png)](../_media/llm-descent/network-stage-2.png)
+
+At step 3, it fills its four empty filters with corner detectors, and combines them in conv2's empty channels into a loop detector: four corners around a blank middle.
+
 An old-school model engineer would have studied the digits to see where their features go wrong. We haven't given Claude the ability to do that in this test, but at step 4, it tries an interesting approach, where it stops classifying for a step and tests a loop detector (a feature for closed loops, like the ones in 0, 6, 8 and 9) on its own:
 
 > I cannot tell that from a confusion matrix where everything is mixed together, so this step tests the detector on its own, like a unit test.
@@ -181,7 +187,9 @@ In a way, this is kinda cheating, but then again it doesn't break the rules. The
 
 #### 3. Corners (steps 10 to 18)
 
-Next, it turns the corner detectors inside its loop detector into features of their own: four corner shapes where strokes meet (┌ ┐ └ ┘). Handwriting recognisers relied on shape features like these [@trierFeatureExtractionMethods1996] [@favataMultipleFeatureResolution1996]. At first it guesses how often each one shows up in each digit. When that stalls at about 81%, it measures them instead, three steps in a row, and sets their weights from the results.
+[![Run 1's network at step 18. conv2 now has four loop channels and four corner channels, and the fc heatmap has new weights in the corner columns.](../_media/llm-descent/network-stage-3.png)](../_media/llm-descent/network-stage-3.png)
+
+Next, it turns the corner detectors inside its loop detector into features of their own: four corner shapes where strokes meet (┌ ┐ └ ┘). It frees four of conv2's loop channels to carry the corner maps, and gives the final layer a weight for each corner in each half of the image. Handwriting recognisers relied on shape features like these [@trierFeatureExtractionMethods1996] [@favataMultipleFeatureResolution1996]. At first it guesses how often each one shows up in each digit. When that stalls at about 81%, it measures them instead, three steps in a row, and sets their weights from the results.
 
 > Three measurement steps on the corners gave more than many steps of guessing, and they showed that some of my hand-drawn expectations were far off.
 
@@ -199,6 +207,10 @@ By step 18, it's at 83%. Pretty incredible, if you ask me.
 
 #### 4. Measuring every stroke (steps 19 to 30)
 
+[![Run 1's network at step 24. conv1 and conv2 are marked unchanged; only the fc panel is outlined in pink, with measured weights in the stroke columns.](../_media/llm-descent/network-stage-4.png)](../_media/llm-descent/network-stage-4.png)
+
+From here on, the convolution layers never change. Every measurement, and every fix, happens in the final layer.
+
 So it measures everything else too. Over the next twelve steps, it reads out how often each of its 32 stroke features fires on each digit, three at a time. At step 24, it plugs in the first fifteen measurements to check they help, and accuracy jumps from 83% to 88%.
 
 <details markdown="1">
@@ -212,6 +224,8 @@ So it measures everything else too. Over the next twelve steps, it reads out how
 </details>
 
 #### 5. Rebuilt from measurements (steps 31 to 40)
+
+[![Run 1's network at step 31. conv1 and conv2 are unchanged; the fc panel, outlined in pink, has been rewritten from measured rates.](../_media/llm-descent/network-stage-5.png)](../_media/llm-descent/network-stage-5.png)
 
 At step 31, it throws its hand-drawn templates away completely.
 
@@ -233,7 +247,9 @@ What's left is a naive Bayes-style classifier, with every probability measured f
 
 #### 6. Calibration (steps 41 to 50)
 
-The last ten steps are fine-tuning by hand, deciding how much to trust each kind of evidence and how confident its predictions should be. It also keeps track of exactly how it will be scored.
+[![Run 1's network at step 50. conv1 and conv2 are unchanged; only the fc weights, outlined in pink, have been rescaled.](../_media/llm-descent/network-stage-6.png)](../_media/llm-descent/network-stage-6.png)
+
+The last ten steps are fine-tuning by hand, scaling groups of the final layer's weights up and down to decide how much to trust each kind of evidence and how confident its predictions should be. It also keeps track of exactly how it will be scored.
 
 > if this step does not beat 0.3111, step 48 is the one that gets scored.
 
