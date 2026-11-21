@@ -16,6 +16,7 @@ SOCIAL = [
     ("🦋", "Bluesky",  "https://bsky.app/profile/notesbylex.com"),
     ("🐘", "Mastodon", "https://fedi.notesbylex.com/@lex"),
     ("💼", "LinkedIn", "https://www.linkedin.com/in/lextoumbourou/"),
+    ("▶",  "YouTube",  "https://www.youtube.com/@NotesByLex"),
     ("⌥",  "GitHub",   "https://github.com/lextoumbourou"),
 ]
 
