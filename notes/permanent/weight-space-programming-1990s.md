@@ -316,7 +316,7 @@ With this new perspective on how Weight-Space Programming builds an image classi
 
 In the original article, Astra was given a 9x9 Go network with 1.5M parameters, all set to zero.
 
-The network is a standard fully connected network. The game state is represented as three 9x9 planes, with the first defining the stones of the player to move, the second the opponent's stones, and the last whose turn it is. This state passes through six layers of 512 units, and outputs 82 scores, one for each point on the board, and one for passing. The move the player takes is sampled from those scores, after illegal moves are removed.
+The network is a standard fully connected network. The game state is represented as three 9x9 planes, with the first defining the stones of the player to move, the second the opponent's stones, and the last whose turn it is. This state passes through six layers of 512 units, and outputs 82 scores: one for each of the 81 points on the board, and an additional one for passing. The move the player takes is sampled from those scores, after illegal moves are removed.
 
 
 [![Astra's Go network, fully connected. Three 9 by 9 input planes (my stones, the opponent's stones, whose turn) make 243 inputs. Six hidden layers of 512 units follow, then 82 output scores, one per board point plus pass. Weights: 124,928 into the first layer, 5 times 262,656 between the hidden layers and 42,066 into the outputs, 1,480,274 in total.](../_media/llm-descent/go-network.png)](../_media/llm-descent/go-network.png)
