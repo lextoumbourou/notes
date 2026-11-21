@@ -314,7 +314,14 @@ With this new perspective on how Weight-Space Programming builds an image classi
 
 ## Reviewing the Go network
 
-In the original article, Astra was given a 9x9 Go network with 1.5M parameters, all set to zero. It had a Python sandbox, but wasn't allowed to train, fit or search, and was told to make the network play Go as well as it could. In most runs, it could also use "passes": each pass plays a batch of up to 128 practice games and shows it the results. The authors ran it four times, with budgets of 0, 10, 25 and 50 passes.
+In the original article, Astra was given a 9x9 Go network with 1.5M parameters, all set to zero.
+
+The network is a standard fully connected network. The game state is represented as three 9x9 planes, with the first defining the stones of the player to move, the second the opponent's stones, and the last whose turn it is. This state passes through six layers of 512 units, and outputs 82 scores, one for each point on the board, and one for passing. The move the player takes is sampled from those scores, after illegal moves are removed.
+
+
+[![Astra's Go network, fully connected. Three 9 by 9 input planes (my stones, the opponent's stones, whose turn) make 243 inputs. Six hidden layers of 512 units follow, then 82 output scores, one per board point plus pass. Weights: 124,928 into the first layer, 5 times 262,656 between the hidden layers and 42,066 into the outputs, 1,480,274 in total.](../_media/llm-descent/go-network.png)](../_media/llm-descent/go-network.png)
+
+Astra also had a Python sandbox, but wasn't allowed to train, fit or search, and was told to make the network play Go as well as it could. In most runs, it could also use "passes": each pass plays a batch of up to 128 practice games and shows it the results. The authors ran it four times, with budgets of 0, 10, 25 and 50 passes.
 
 And that seemed to work really well. With 50 passes, the Astra-built network beat two small networks trained with reinforcement learning (PPO) in over 80% of games, and beat one of the same size, trained on 20.5 million games, most of the time. Actually, even with no practice games played at all, Astra managed to write a network that still won over half its games against the smaller networks [@takehi2026weightspaceLogs].
 
@@ -346,11 +353,13 @@ Additionally, behind those 1.48 million weights is a [config of 26 hand-set numb
 
 The design script builds the network layer by layer, like a hand-written board analysis. It starts with layer 1, which counts each stone's liberties. Then layers 2 and 3 spread that evidence through connected stones. Next, layer 4 flags groups in atari and self-atari. After that, layer 5 scores captures and rescues. And, finally, layer 6 combines tactics with connection, territory and eyes. The 26 numbers mostly set how much each rule counts.
 
+[![The same Go network with each hidden layer labelled by its job in Astra's design script: layer 1 liberties, layers 2 and 3 spread, layer 4 atari, layer 5 captures and rescues, layer 6 combine.](../_media/llm-descent/go-network-layers.png)](../_media/llm-descent/go-network-layers.png)
+
 Its improvement from practice games was nudging those numbers by hand, and adding five new rules along the way, such as a penalty for ko repetition.
 
 Play, diagnose, add a rule or retune one, which is basically how rule-based Go programs were built for decades [@mullerComputerGo2002], and shares a lot of parallels with the image classification approach described in the first section.
 
-So the paper's most impressive from-scratch network is a rule-based Go program, compiled into weights. That is truly an incredible feat of engineering: a hand-written program that beats a PPO network trained on 20.5 million games.
+So the paper's most impressive from-scratch network is a rule-based Go program, compiled into weights. That is truly an incredible feat of engineering: a hand-written program, expressed as a neural network, that beats a PPO network trained on 20.5 million games.
 
 ## Conclusion
 
