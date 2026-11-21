@@ -70,6 +70,11 @@
     </div>
     {% endif %}
 
+    {% if article.youtube_video_id %}
+    {# Shortcut for readers who would rather watch; the player itself stays after the article. #}
+    <p class="note-video-link"><a href="#video">{% include 'icons/youtube.svg' %}<span>Watch the video version</span></a></p>
+    {% endif %}
+
     {% if article.paper_title is defined and article.paper_title %}
     <p class="paper-note-lede">
       Notes on <a href="{{ article.paper_url }}">{{ article.paper_title }}</a>
@@ -91,7 +96,7 @@
     </div>
 
     {% if article.youtube_video_id %}
-    <h2 class="note-after-heading">Video</h2>
+    <h2 class="note-after-heading" id="video">Video</h2>
     <p>I've made a YouTube video for this article.</p>
     <div class="youtube-embed">
       <iframe src="https://www.youtube.com/embed/{{ article.youtube_video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

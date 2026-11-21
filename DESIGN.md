@@ -316,6 +316,9 @@ A contents page for finished pieces, the same on home and the Essays page. Each 
 ### Note rows
 Compact one-line entries for working notes: date, kind, title, on a three-column grid (7.5rem, 4.5rem, the rest) with 12px padding and dashed rules. Titles are body sans at 1.1rem in ink, teal underline on hover. In the year-grouped archive the date column narrows to 4.5rem and drops the year, under Shantell Sans year headings (title size) with a mono count in pencil grey.
 
+### Video shortcut
+An article with a `youtube_video` gets one line under its tags: the YouTube icon and "Watch the video version" in ink at meta size, wavy teal underline on hover, linking to the Video section after the article. The player itself stays after the article, so the opening of the page stays text and the cover, and YouTube's scripts load after the reader has started.
+
 ### Note kinds
 Category labels in note rows and list meta, lettered in Shantell Sans 700. The kinds are `essay` and `project` (finished pieces, Essays section) and `note`, `paper`, `model`, `course`, `book`, `talk` and `news` (working notes). Papers get a yellow highlighter, models pink, news violet, notes a lighter sky blue (they are most rows), courses orange, talks lime, books kraft tan, essays and projects teal. Every kind now has a colour. In dark mode kinds use the solid chalk highlighters (blending toward transparent darkens them on slate and costs contrast). A category page hides the kind on its own entries, since the page title already says it.
 

@@ -531,6 +531,14 @@ a:hover .go-arrow { transform: translateX(2px); transition: transform 160ms var(
 a.tag:hover { color: var(--tag-fg); background: color-mix(in srgb, var(--hl-teal) 45%, var(--tag-bg)); }
 .tag.is-current { background: color-mix(in srgb, var(--hl-pink) 45%, var(--tag-bg)); }
 
+/* Video shortcut: one line under the tags, jumping to the player after the article. */
+.note-video-link { margin: 0 0 28px; font-size: 1rem; }
+.note-tags + .note-video-link { margin-top: -16px; }
+.note-video-link a { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); text-decoration: none; }
+.note-video-link a:hover span { text-decoration: underline wavy var(--hl-teal) 1.5px; text-underline-offset: 5px; }
+.note-video-link svg { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+#video { scroll-margin-top: 24px; }
+
 /* Source line for paper notes: set apart from the prose so it doesn't read as the first paragraph. */
 .paper-note-lede {
   font-size: 0.95rem;
