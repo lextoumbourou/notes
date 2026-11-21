@@ -88,6 +88,8 @@ At most 49 steps left. Reply with the complete build_weights() for step 2
 in one Python code block.
 ```
 
+The confusion matrix shows, for each true digit (the rows), what the network guessed (the columns). The diagonal is where it guessed right, and everything else is a mistake, like the 271 true 2s it called 8s.
+
 ### The descent
 
 I ran it three times.
@@ -123,7 +125,7 @@ Let's follow run 1, step by step, based on Claude's replies and reasoning. It's 
 
 [![Run 1's network at step 1, as three panels outlined in pink because all three changed. conv1: four line detectors and four empty filters. conv2: four stroke-presence channels, four cap channels and eight empty ones. fc: a 10 by 256 heatmap of weights, filled only in the columns that read the stroke channels: the hand-drawn templates.](../_media/llm-descent/network-stage-1.png)](../_media/llm-descent/network-stage-1.png)
 
-Claude starts like a 1990s computer vision engineer. Its first layer is a set of line detectors at four angles, written from formulas. They're cousins of the [Sobel filter](https://en.wikipedia.org/wiki/Sobel_operator), a classic way to find edges in an image, which 1990s digit recognisers started with [@favataMultipleFeatureResolution1996].
+Claude starts like a 1990s computer vision engineer. Its first layer is a set of line detectors at four angles, written from formulas. They're cousins of the [Sobel filter](https://en.wikipedia.org/wiki/Sobel_operator), a classic way to find edges in an image, which many 1990s digit recognisers started with [@favataMultipleFeatureResolution1996].
 
 Each detector is a 5×5 grid of weights in the first [convolutional layer](https://en.wikipedia.org/wiki/Convolutional_layer). The way a conv layer works is that each filter slides across the image, multiplying the 25 pixels under it by its 25 weights and adding them up, so it scores high wherever there's a stroke at its angle, and zero on blank paper. Fable fills in four of the layer's eight filters this way and leaves the other four at zero for later.
 
