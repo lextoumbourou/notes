@@ -316,14 +316,14 @@ With this new perspective on how Weight-Space Programming builds an image classi
 
 In the original article, Astra was given a 9x9 Go network with 1.5M parameters, all set to zero.
 
-The network is a standard fully connected network. The game state is represented as three 9x9 planes, with the first defining the stones of the player to move, the second the opponent's stones, and the last whose turn it is. This state passes through six layers of 512 units, and outputs 82 scores: one for each of the 81 points on the board, and an additional one for passing. The move the player takes is sampled from those scores, after illegal moves are removed.
+The game state is represented as three 9x9 planes: the first defines the stones of the player to move, the second the opponent's stones, and the last indicates whose turn it is. The network is a standard fully connected network, where the game state passes through six layers of 512 units, and outputs 82 scores: one for each of the 81 points on the board, and an additional one for passing (skipping a turn). The move the player takes is sampled from those scores, after illegal moves are removed.
 
 
 [![Astra's Go network, fully connected. Three 9 by 9 input planes (my stones, the opponent's stones, whose turn) make 243 inputs. Six hidden layers of 512 units follow, then 82 output scores, one per board point plus pass. Weights: 124,928 into the first layer, 5 times 262,656 between the hidden layers and 42,066 into the outputs, 1,480,274 in total.](../_media/llm-descent/go-network.png)](../_media/llm-descent/go-network.png)
 
-Astra also had a Python sandbox, but wasn't allowed to train, fit or search, and was told to make the network play Go as well as it could. In most runs, it could also use "passes": each pass plays a batch of up to 128 practice games and shows it the results. The authors ran it four times, with budgets of 0, 10, 25 and 50 passes.
+Astra also had a Python sandbox, but wasn't allowed to train, fit or search, and was told to make the network play Go as well as it could. In most runs, it could also use rounds of practice (the authors call them "forward passes"): each one plays a batch of up to 128 practice games and shows it the results. The authors ran it four times, with budgets of 0, 10, 25 and 50 rounds.
 
-And that seemed to work really well. With 50 passes, the Astra-built network beat two small networks trained with reinforcement learning (PPO) in over 80% of games, and beat one of the same size, trained on 20.5 million games, most of the time. Actually, even with no practice games played at all, Astra managed to write a network that still won over half its games against the smaller networks [@takehi2026weightspaceLogs].
+And that seemed to work really well. With 50 rounds of practice, the Astra-built network beat two small networks trained with reinforcement learning (PPO) in over 80% of games, and beat one of the same size, trained on 20.5 million games, most of the time. Actually, even with no practice games played at all, Astra managed to write a network that still won over half its games against the smaller networks [@takehi2026weightspaceLogs].
 
 Let's dig deeper into this result to try to understand what's going on.
 
